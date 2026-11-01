@@ -12,21 +12,21 @@ import jg.l0;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Cells.a5;
-import org.telegram.ui.Components.in0;
 import org.telegram.ui.Components.j30;
+import org.telegram.ui.Components.jn0;
 import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bw0;
-import org.telegram.ui.ix0;
-import org.telegram.ui.ky0;
-import org.telegram.ui.mu;
+import org.telegram.ui.aw0;
+import org.telegram.ui.hx0;
+import org.telegram.ui.jy0;
+import org.telegram.ui.lu;
 import org.telegram.ui.sa;
 import org.telegram.ui.y6;
 import org.telegram.ui.z5;
 import rh.h8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements ug.a {
     public final /* synthetic */ int a;
@@ -44,12 +44,12 @@ public final /* synthetic */ class a implements ug.a {
         Canvas canvas2;
         switch (this.a) {
             case 0:
-                in0 in0Var = (in0) this.c;
-                yg.d.a(in0Var, canvas, rectF, in0Var, (FrameLayout) this.b);
+                jn0 jn0Var = (jn0) this.c;
+                yg.d.a(jn0Var, canvas, rectF, jn0Var, (FrameLayout) this.b);
                 break;
             case 1:
-                tk0 tk0Var = (tk0) this.c;
-                yg.d.a(tk0Var, canvas, rectF, tk0Var, (FrameLayout) this.b);
+                uk0 uk0Var = (uk0) this.c;
+                yg.d.a(uk0Var, canvas, rectF, uk0Var, (FrameLayout) this.b);
                 break;
             case 2:
                 ((y6) this.c).b0.d(canvas, rectF, (z5) this.b);
@@ -61,33 +61,33 @@ public final /* synthetic */ class a implements ug.a {
                 ((n90) this.c).R.K(canvas, rectF, (l0) this.b);
                 break;
             case 5:
-                mu muVar = (mu) this.c;
+                lu luVar = (lu) this.c;
                 a5 a5Var = (a5) this.b;
-                int childCount = muVar.a.getChildCount();
+                int childCount = luVar.a.getChildCount();
                 for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = muVar.a.getChildAt(i10);
-                    if (childAt instanceof tk0) {
-                        tk0 tk0Var2 = (tk0) childAt;
-                        yg.d.a(tk0Var2, canvas, rectF, tk0Var2, a5Var);
+                    View childAt = luVar.a.getChildAt(i10);
+                    if (childAt instanceof uk0) {
+                        uk0 uk0Var2 = (uk0) childAt;
+                        yg.d.a(uk0Var2, canvas, rectF, uk0Var2, a5Var);
                     }
                 }
                 break;
             case 6:
                 ProfileActivity profileActivity = (ProfileActivity) this.c;
                 tg.j jVar = (tg.j) this.b;
-                Paint paint = profileActivity.L6;
+                Paint paint = profileActivity.M6;
                 ViewGroup viewGroup = (ViewGroup) profileActivity.fragmentView;
-                ix0 ix0Var = profileActivity.N;
-                float f7 = (ix0Var == null || ix0Var.getParent() != profileActivity.a) ? 0.0f : profileActivity.P5;
+                hx0 hx0Var = profileActivity.N;
+                float f7 = (hx0Var == null || hx0Var.getParent() != profileActivity.a) ? 0.0f : profileActivity.Q5;
                 if (f7 < 1.0f) {
-                    ky0 ky0Var = profileActivity.c1;
-                    RectF rectF2 = ProfileActivity.R6;
-                    if (zg.h.c(ky0Var, viewGroup, rectF2) && RectF.intersects(rectF2, rectF)) {
+                    jy0 jy0Var = profileActivity.c1;
+                    RectF rectF2 = ProfileActivity.S6;
+                    if (zg.h.c(jy0Var, viewGroup, rectF2) && RectF.intersects(rectF2, rectF)) {
                         yg.d.a(new sa(profileActivity, 4), canvas, rectF, profileActivity.c1, viewGroup);
                     }
-                    bw0 bw0Var = profileActivity.a;
-                    Objects.requireNonNull(bw0Var);
-                    yg.d.a(new sa(bw0Var, 5), canvas, rectF, profileActivity.a, viewGroup);
+                    aw0 aw0Var = profileActivity.a;
+                    Objects.requireNonNull(aw0Var);
+                    yg.d.a(new sa(aw0Var, 5), canvas, rectF, profileActivity.a, viewGroup);
                     jVar.d(canvas, rectF);
                 }
                 if (f7 > 0.0f) {
@@ -100,9 +100,9 @@ public final /* synthetic */ class a implements ug.a {
                     canvas2 = canvas;
                 }
                 profileActivity.N.K(canvas2, rectF, viewGroup);
-                ProfileActivity.M3(profileActivity.t0, canvas2, rectF, viewGroup);
-                ProfileActivity.M3(profileActivity.n0, canvas2, rectF, viewGroup);
-                ProfileActivity.M3(profileActivity.m0, canvas2, rectF, viewGroup);
+                ProfileActivity.N3(profileActivity.t0, canvas2, rectF, viewGroup);
+                ProfileActivity.N3(profileActivity.n0, canvas2, rectF, viewGroup);
+                ProfileActivity.N3(profileActivity.m0, canvas2, rectF, viewGroup);
                 break;
             case 7:
                 ((rh.i) this.c).f.d(canvas, rectF, (y1) this.b);

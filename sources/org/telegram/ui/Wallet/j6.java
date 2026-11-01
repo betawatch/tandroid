@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j6 extends org.telegram.ui.Components.f6 {
     public final /* synthetic */ int s;
@@ -31,7 +31,7 @@ public final class j6 extends org.telegram.ui.Components.f6 {
                 float e = (1.0f - l6Var.T) * l6Var.f0.e(false, l6Var.d0);
                 org.telegram.ui.Components.e6 drawable = getDrawable();
                 Objects.requireNonNull(drawable);
-                l6Var.c(e, new d3(drawable, 4), new k3(8, this, canvas));
+                l6Var.c(e, new e3(drawable, 4), new m2(9, this, canvas));
                 canvas.restoreToCount(save);
                 break;
             default:
@@ -39,7 +39,7 @@ public final class j6 extends org.telegram.ui.Components.f6 {
                 float e7 = (1.0f - l6Var2.T) * l6Var2.f0.e(false, l6Var2.d0);
                 org.telegram.ui.Components.e6 drawable2 = getDrawable();
                 Objects.requireNonNull(drawable2);
-                l6Var2.c(e7, new d3(drawable2, 4), new k3(9, this, canvas));
+                l6Var2.c(e7, new e3(drawable2, 4), new m2(10, this, canvas));
                 break;
         }
     }

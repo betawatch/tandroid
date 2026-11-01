@@ -10,39 +10,39 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.fe;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.ge;
 import org.telegram.messenger.k20;
+import org.telegram.messenger.l20;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.pw;
-import org.telegram.messenger.qi;
+import org.telegram.messenger.qw;
 import org.telegram.messenger.ri;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.si;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.ac0;
 import org.telegram.ui.Components.s4;
-import org.telegram.ui.Components.sx0;
-import org.telegram.ui.Components.vq0;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.w3;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.Components.x3;
-import org.telegram.ui.Components.xq0;
 import org.telegram.ui.Components.yb0;
+import org.telegram.ui.Components.yq0;
 import org.telegram.ui.Components.z60;
+import org.telegram.ui.hl0;
 import org.telegram.ui.jl0;
-import org.telegram.ui.ll0;
-import org.telegram.ui.se0;
-import org.telegram.ui.wo0;
+import org.telegram.ui.re0;
+import org.telegram.ui.uo0;
 import rh.e6;
 import rh.u5;
 import rh.x7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q2 implements OnFailureListener, yb0, ri, org.telegram.messenger.t1, org.telegram.ui.ActionBar.u1, k20 {
+public final /* synthetic */ class q2 implements OnFailureListener, yb0, si, org.telegram.messenger.t1, org.telegram.ui.ActionBar.u1, l20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -61,72 +61,72 @@ public final /* synthetic */ class q2 implements OnFailureListener, yb0, ri, org
 
     @Override // org.telegram.messenger.t1
     public void a(c5.g gVar, List list) {
-        org.telegram.messenger.i0.g3(new fe((se0) this.c, (String) this.d, gVar, list, (String) this.e, (String) this.f, this.b));
+        org.telegram.messenger.i0.g3(new ge((re0) this.c, (String) this.d, gVar, list, (String) this.e, (String) this.f, this.b));
     }
 
-    @Override // org.telegram.messenger.ri
+    @Override // org.telegram.messenger.si
     public void c(String str, ArrayList arrayList) {
-        sx0 sx0Var = (sx0) this.c;
+        tx0 tx0Var = (tx0) this.c;
         String str2 = (String) this.d;
         HashSet hashSet = (HashSet) this.e;
         ArrayList arrayList2 = (ArrayList) this.f;
-        if (this.b != sx0Var.K) {
+        if (this.b != tx0Var.K) {
             return;
         }
-        sx0Var.I = 1;
-        sx0Var.J = str2;
+        tx0Var.I = 1;
+        tx0Var.J = str2;
         if (arrayList != null) {
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                qi qiVar = (qi) obj;
-                if (!hashSet.contains(qiVar.a)) {
-                    hashSet.add(qiVar.a);
-                    arrayList2.add(qiVar);
+                ri riVar = (ri) obj;
+                if (!hashSet.contains(riVar.a)) {
+                    hashSet.add(riVar.a);
+                    arrayList2.add(riVar);
                 }
             }
         }
         if (arrayList2.isEmpty()) {
-            sx0Var.x = null;
-            sx0Var.y = true;
-            sx0Var.f();
+            tx0Var.x = null;
+            tx0Var.y = true;
+            tx0Var.f();
             return;
         }
-        sx0Var.y = false;
-        sx0Var.w = false;
-        sx0Var.c();
-        l0 l0Var = sx0Var.d;
+        tx0Var.y = false;
+        tx0Var.w = false;
+        tx0Var.c();
+        l0 l0Var = tx0Var.d;
         if (l0Var != null) {
             l0Var.setVisibility(0);
         }
-        sx0Var.W = org.telegram.messenger.i0.L(10.0f);
-        sx0Var.x = arrayList;
-        sx0Var.a0 = 0;
-        sx0Var.b0 = Integer.valueOf(str2.length());
-        l0 l0Var2 = sx0Var.d;
+        tx0Var.W = org.telegram.messenger.i0.L(10.0f);
+        tx0Var.x = arrayList;
+        tx0Var.a0 = 0;
+        tx0Var.b0 = Integer.valueOf(str2.length());
+        l0 l0Var2 = tx0Var.d;
         if (l0Var2 != null) {
             l0Var2.invalidate();
         }
-        fg.j jVar = sx0Var.f;
+        fg.j jVar = tx0Var.f;
         if (jVar != null) {
             jVar.f();
         }
     }
 
-    @Override // org.telegram.messenger.k20
+    @Override // org.telegram.messenger.l20
     public Object d(Number number, Object obj) {
         int i10;
         TL_stars.TL_starGiftCollection tL_starGiftCollection;
-        vq0 vq0Var = (vq0) this.c;
+        wq0 wq0Var = (wq0) this.c;
         org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.d;
         Context context = (Context) this.e;
         p6 p6Var = (p6) this.f;
         Integer num = (Integer) number;
         View view = (View) obj;
-        u5 u5Var = vq0Var.e;
-        if (num.intValue() == -1 || num.intValue() == -2 || num.intValue() == 0 || vq0Var.O) {
+        u5 u5Var = wq0Var.e;
+        if (num.intValue() == -1 || num.intValue() == -2 || num.intValue() == 0 || wq0Var.O) {
             return Boolean.FALSE;
         }
         int i11 = 0;
@@ -144,19 +144,19 @@ public final /* synthetic */ class q2 implements OnFailureListener, yb0, ri, org
             i11++;
         }
         int i12 = this.b;
-        String r10 = o5.r(vp.r1(i12).d2(vq0Var.c));
+        String r10 = o5.r(wp.r1(i12).d2(wq0Var.c));
         boolean h = u5Var.h();
         if (TextUtils.isEmpty(r10) && !h) {
             return Boolean.FALSE;
         }
         z60 H = z60.H(k2Var, view);
-        H.W(new xq0(vq0Var));
-        H.l(R.drawable.menu_gift_add, cd.L0(2131750247, null), new ph.m1(vq0Var, 2), h);
-        H.l(R.drawable.msg_share, cd.L0(2131750243, null), new fe(vq0Var, i12, r10, tL_starGiftCollection, context, p6Var, k2Var, 17), !TextUtils.isEmpty(r10));
-        H.l(R.drawable.msg_edit, cd.L0(2131750245, null), new org.telegram.ui.web.v1(10, vq0Var, tL_starGiftCollection), h);
-        H.l(R.drawable.tabs_reorder, cd.L0(2131750244, null), new ph.m1(vq0Var, 1), h);
-        H.m(R.drawable.msg_delete, new org.telegram.ui.Wallet.x0(vq0Var, i10, tL_starGiftCollection, 8), cd.L0(2131750246, null), h, true);
-        vq0Var.I = H;
+        H.W(new yq0(wq0Var));
+        H.l(R.drawable.menu_gift_add, dd.L0(2131750247, null), new ph.m1(wq0Var, 2), h);
+        H.l(R.drawable.msg_share, dd.L0(2131750243, null), new ge(wq0Var, i12, r10, tL_starGiftCollection, context, p6Var, k2Var, 17), !TextUtils.isEmpty(r10));
+        H.l(R.drawable.msg_edit, dd.L0(2131750245, null), new org.telegram.ui.web.v1(11, wq0Var, tL_starGiftCollection), h);
+        H.l(R.drawable.tabs_reorder, dd.L0(2131750244, null), new ph.m1(wq0Var, 1), h);
+        H.m(R.drawable.msg_delete, new org.telegram.ui.Wallet.x0(wq0Var, i10, tL_starGiftCollection, 8), dd.L0(2131750246, null), h, true);
+        wq0Var.I = H;
         H.Z();
         return Boolean.TRUE;
     }
@@ -165,24 +165,24 @@ public final /* synthetic */ class q2 implements OnFailureListener, yb0, ri, org
     public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
         switch (this.a) {
             case 4:
-                ll0 ll0Var = (ll0) this.c;
-                ll0.d0(this.b, (String) this.f, (pw) this.d, (jl0) this.e, ll0Var);
+                jl0 jl0Var = (jl0) this.c;
+                jl0.e0(this.b, (String) this.f, (qw) this.d, (hl0) this.e, jl0Var);
                 break;
             default:
                 rh.g3 g3Var = (rh.g3) this.c;
                 Context context = (Context) this.d;
                 p6 p6Var = (p6) this.e;
-                j20 j20Var = (j20) this.f;
-                rh.d3 d3Var = (rh.d3) g3Var.o.get(g3Var.q);
-                if (d3Var != null) {
-                    sf.a aVar = d3Var.c;
+                k20 k20Var = (k20) this.f;
+                rh.e3 e3Var = (rh.e3) g3Var.o.get(g3Var.q);
+                if (e3Var != null) {
+                    sf.a aVar = e3Var.c;
                     e6 x10 = e6.x(this.b, g3Var.q);
                     sf.a l4 = x10.e ? sf.a.l(x10.p()) : null;
                     if (l4 != null && aVar.b > l4.b) {
                         sf.b bVar = g3Var.q;
                         if (bVar != sf.b.a) {
                             if (bVar == sf.b.b) {
-                                new wh.f(context, p6Var, d3Var.c, true, null).show();
+                                new wh.f(context, p6Var, e3Var.c, true, null).show();
                                 break;
                             }
                         } else {
@@ -195,7 +195,7 @@ public final /* synthetic */ class q2 implements OnFailureListener, yb0, ri, org
                             eVar.a(false);
                             g3Var.n = null;
                         }
-                        j20Var.a(d3Var, x1Var.h(i10, true, true));
+                        k20Var.a(e3Var, x1Var.h(i10, true, true));
                         break;
                     }
                 }
@@ -208,12 +208,12 @@ public final /* synthetic */ class q2 implements OnFailureListener, yb0, ri, org
         v2 v2Var = (v2) this.c;
         Bitmap bitmap = (Bitmap) this.d;
         int i10 = this.b;
-        wo0 wo0Var = (wo0) this.e;
+        uo0 uo0Var = (uo0) this.e;
         o2 o2Var = (o2) this.f;
         v2Var.y = false;
         f8.g(exc, true);
         if ((exc instanceof fb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && v2Var.isAttachedToWindow()) {
-            org.telegram.messenger.i0.h3(new ag.g3(v2Var, bitmap, i10, wo0Var, 2), 2000L);
+            org.telegram.messenger.i0.h3(new ag.g3(v2Var, bitmap, i10, uo0Var, 2), 2000L);
         } else {
             o2Var.a(new ArrayList());
         }
@@ -238,18 +238,18 @@ public final /* synthetic */ class q2 implements OnFailureListener, yb0, ri, org
         this.f = obj4;
     }
 
-    public /* synthetic */ q2(us usVar, Object obj, int i10, Object obj2, Object obj3, int i11) {
+    public /* synthetic */ q2(vs vsVar, Object obj, int i10, Object obj2, Object obj3, int i11) {
         this.a = i11;
-        this.c = usVar;
+        this.c = vsVar;
         this.d = obj;
         this.b = i10;
         this.e = obj2;
         this.f = obj3;
     }
 
-    public /* synthetic */ q2(se0 se0Var, String str, String str2, String str3, int i10) {
+    public /* synthetic */ q2(re0 re0Var, String str, String str2, String str3, int i10) {
         this.a = 3;
-        this.c = se0Var;
+        this.c = re0Var;
         this.d = str;
         this.e = str2;
         this.f = str3;

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.clearcut;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
@@ -98,7 +98,7 @@ public final class z0 {
         this.s = aVar.a();
         int a2 = aVar.a();
         this.t = a2;
-        int i10 = a2 & zs.e4;
+        int i10 = a2 & at.e4;
         this.u = i10;
         int i11 = this.s;
         if (i11 < this.p) {

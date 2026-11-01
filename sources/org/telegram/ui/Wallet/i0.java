@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i0 implements j20 {
+public final /* synthetic */ class i0 implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ j0 b;
     public final /* synthetic */ TL_wallet.getTransactions c;
@@ -22,7 +22,7 @@ public final /* synthetic */ class i0 implements j20 {
         this.c = gettransactions;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         boolean z10;
         boolean z11;
@@ -34,8 +34,8 @@ public final /* synthetic */ class i0 implements j20 {
                 j0Var.k = -1;
                 if (wallettransactions != null) {
                     int i11 = 0;
-                    vp.r1(i10).V3(wallettransactions.users, false);
-                    vp.r1(i10).P3(wallettransactions.chats, false);
+                    wp.r1(i10).V3(wallettransactions.users, false);
+                    wp.r1(i10).P3(wallettransactions.chats, false);
                     ArrayList<TL_wallet.walletTransaction> arrayList = wallettransactions.transactions;
                     int size = arrayList.size();
                     while (i11 < size) {
@@ -75,8 +75,8 @@ public final /* synthetic */ class i0 implements j20 {
                 j0Var2.j = -1;
                 j0Var2.i = false;
                 if (wallettransactions2 != null) {
-                    vp.r1(i12).V3(wallettransactions2.users, false);
-                    vp.r1(i12).P3(wallettransactions2.chats, false);
+                    wp.r1(i12).V3(wallettransactions2.users, false);
+                    wp.r1(i12).P3(wallettransactions2.chats, false);
                     ArrayList<TL_wallet.walletTransaction> arrayList3 = wallettransactions2.transactions;
                     int size2 = arrayList3.size();
                     int i13 = 0;

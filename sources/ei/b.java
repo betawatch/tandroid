@@ -4,18 +4,16 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.i5;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import w7.b6;
 import w7.b9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class b {
     public final r a;
@@ -26,11 +24,12 @@ public final class b {
     public final tg.b f;
     public final e g;
     public final hi.f h;
-    public Runnable i;
-    public final hi.a j;
-    public FrameLayout k;
-    public ViewGroup l;
-    public ug.a m;
+    public final hi.f i;
+    public Runnable j;
+    public final hi.a k;
+    public FrameLayout l;
+    public ViewGroup m;
+    public ug.a n;
 
     public b(r rVar, org.telegram.ui.ActionBar.o oVar) {
         this.a = rVar;
@@ -40,13 +39,14 @@ public final class b {
         this.b = cVar;
         cVar.a(oVar.c());
         rVar.E.add(new p(cVar, oVar));
-        if (Build.VERSION.SDK_INT < 31 || !tz.f()) {
-            this.j = hi.e.a;
+        if (Build.VERSION.SDK_INT < 31) {
+            this.k = hi.e.a;
             this.g = null;
             this.h = null;
-            tg.b bVar = new tg.b(cVar);
+            this.i = null;
+            tg.b bVar = new tg.b(cVar, cVar, cVar);
             this.c = bVar;
-            bVar.h = rVar;
+            bVar.j = rVar;
             this.e = null;
             this.d = bVar;
             this.f = bVar;
@@ -56,30 +56,26 @@ public final class b {
         this.g = eVar;
         hi.f fVar = new hi.f(cVar);
         fVar.f = cVar;
-        tg.b bVar2 = new tg.b(fVar);
-        this.c = bVar2;
-        bVar2.h = rVar;
-        int L = i0.L(sc.e(262144) ? 8.0f : 48.0f);
-        bVar2.b = L;
-        bVar2.c = L;
-        bVar2.i = true;
         fVar.h = eVar.d(2);
-        bVar2.b = 0;
-        bVar2.c = 0;
         this.h = fVar;
         hi.f fVar2 = new hi.f(cVar);
+        this.i = fVar2;
         fVar2.f = cVar;
         fVar2.h = eVar.d(3);
+        tg.b bVar2 = new tg.b(fVar, fVar2, cVar);
+        this.c = bVar2;
+        bVar2.j = rVar;
+        bVar2.k = true;
         hi.d dVar = new hi.d(fVar, fVar2);
         this.e = dVar;
-        tg.b bVar3 = new tg.b(fVar2);
+        tg.b bVar3 = new tg.b(fVar2, fVar2, cVar);
         this.f = bVar3;
-        bVar3.h = rVar;
-        tg.b bVar4 = new tg.b(dVar);
+        bVar3.j = rVar;
+        tg.b bVar4 = new tg.b(dVar, fVar2, cVar);
         this.d = bVar4;
-        bVar4.h = rVar;
-        bVar4.i = true;
-        this.j = eVar.d(1);
+        bVar4.j = rVar;
+        bVar4.k = true;
+        this.k = eVar.d(1);
     }
 
     public static int c(int i10) {
@@ -99,97 +95,97 @@ public final class b {
         viewGroup.setPadding(0, i15, 0, (i11 + i13) - i16);
     }
 
-    public final fi.f a(View view) {
-        fi.f fVar = new fi.f(this.j);
-        fi.g gVar = new fi.g(i0.L(32.0f));
-        fi.g gVar2 = new fi.g(i0.L(56.0f));
-        fi.g gVar3 = new fi.g(i0.L(48.0f));
-        if (fVar.y != 1) {
-            fVar.y = 1;
-            fVar.w = true;
-            fVar.x = true;
-            fVar.invalidateSelf();
+    public final fi.g a(View view) {
+        fi.g gVar = new fi.g(this.k);
+        fi.h hVar = new fi.h(i0.L(32.0f));
+        fi.h hVar2 = new fi.h(i0.L(56.0f));
+        fi.h hVar3 = new fi.h(i0.L(48.0f));
+        if (gVar.y != 1) {
+            gVar.y = 1;
+            gVar.w = true;
+            gVar.x = true;
+            gVar.invalidateSelf();
         }
-        fVar.G = this.b;
-        fVar.w = true;
-        fVar.updateColors();
-        fVar.invalidateSelf();
-        fVar.I = zs.q2;
-        hi.c cVar = fVar.G;
+        gVar.G = this.b;
+        gVar.w = true;
+        gVar.updateColors();
+        gVar.invalidateSelf();
+        gVar.I = at.q2;
+        hi.c cVar = gVar.G;
         if (cVar != null) {
-            fVar.H = t6.r1(zs.q2 / 255.0f, cVar.b);
+            gVar.H = t6.r1(at.q2 / 255.0f, cVar.b);
         }
-        fVar.w = true;
-        fVar.invalidateSelf();
-        fVar.D = gVar;
-        fVar.w = true;
-        fVar.invalidateSelf();
-        fVar.E = gVar2;
-        fVar.w = true;
-        fVar.invalidateSelf();
-        fVar.K = zs.n3;
-        hi.c cVar2 = fVar.G;
+        gVar.w = true;
+        gVar.invalidateSelf();
+        gVar.D = hVar;
+        gVar.w = true;
+        gVar.invalidateSelf();
+        gVar.E = hVar2;
+        gVar.w = true;
+        gVar.invalidateSelf();
+        gVar.K = at.n3;
+        hi.c cVar2 = gVar.G;
         if (cVar2 != null) {
-            fVar.J = t6.r1(zs.n3 / 255.0f, cVar2.b);
+            gVar.J = t6.r1(at.n3 / 255.0f, cVar2.b);
         }
-        fVar.x = true;
-        fVar.invalidateSelf();
-        fVar.F = gVar3;
-        fVar.x = true;
-        fVar.invalidateSelf();
-        this.a.c.add(new q(view, fVar));
-        return fVar;
+        gVar.x = true;
+        gVar.invalidateSelf();
+        gVar.F = hVar3;
+        gVar.x = true;
+        gVar.invalidateSelf();
+        this.a.c.add(new q(view, gVar));
+        return gVar;
     }
 
-    public final fi.f b(View view) {
-        fi.f fVar = new fi.f(this.j);
-        fi.g gVar = new fi.g(i0.L(28.0f));
-        fi.g gVar2 = new fi.g(i0.L(40.0f));
-        fi.g gVar3 = new fi.g(i0.L(30.0f));
-        if (fVar.y != 4) {
-            fVar.y = 4;
-            fVar.w = true;
-            fVar.x = true;
-            fVar.invalidateSelf();
+    public final fi.g b(View view) {
+        fi.g gVar = new fi.g(this.k);
+        fi.h hVar = new fi.h(i0.L(28.0f));
+        fi.h hVar2 = new fi.h(i0.L(40.0f));
+        fi.h hVar3 = new fi.h(i0.L(30.0f));
+        if (gVar.y != 4) {
+            gVar.y = 4;
+            gVar.w = true;
+            gVar.x = true;
+            gVar.invalidateSelf();
         }
-        fVar.G = this.b;
-        fVar.w = true;
-        fVar.updateColors();
-        fVar.invalidateSelf();
-        fVar.I = zs.q2;
-        hi.c cVar = fVar.G;
+        gVar.G = this.b;
+        gVar.w = true;
+        gVar.updateColors();
+        gVar.invalidateSelf();
+        gVar.I = at.q2;
+        hi.c cVar = gVar.G;
         if (cVar != null) {
-            fVar.H = t6.r1(zs.q2 / 255.0f, cVar.b);
+            gVar.H = t6.r1(at.q2 / 255.0f, cVar.b);
         }
-        fVar.w = true;
-        fVar.invalidateSelf();
-        fVar.D = gVar;
-        fVar.w = true;
-        fVar.invalidateSelf();
-        fVar.E = gVar2;
-        fVar.w = true;
-        fVar.invalidateSelf();
-        fVar.K = zs.n3;
-        hi.c cVar2 = fVar.G;
+        gVar.w = true;
+        gVar.invalidateSelf();
+        gVar.D = hVar;
+        gVar.w = true;
+        gVar.invalidateSelf();
+        gVar.E = hVar2;
+        gVar.w = true;
+        gVar.invalidateSelf();
+        gVar.K = at.n3;
+        hi.c cVar2 = gVar.G;
         if (cVar2 != null) {
-            fVar.J = t6.r1(zs.n3 / 255.0f, cVar2.b);
+            gVar.J = t6.r1(at.n3 / 255.0f, cVar2.b);
         }
-        fVar.x = true;
-        fVar.invalidateSelf();
-        fVar.F = gVar3;
-        fVar.x = true;
-        fVar.invalidateSelf();
-        this.a.c.add(new q(view, fVar));
-        return fVar;
+        gVar.x = true;
+        gVar.invalidateSelf();
+        gVar.F = hVar3;
+        gVar.x = true;
+        gVar.invalidateSelf();
+        this.a.c.add(new q(view, gVar));
+        return gVar;
     }
 
-    public final void f(FrameLayout frameLayout, tk0 tk0Var, View view, p6 p6Var) {
-        this.k = frameLayout;
-        this.l = tk0Var;
-        tk0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.m = new a(1, tk0Var, frameLayout);
-        this.a.b(tk0Var);
-        tk0Var.setClipToPadding(false);
+    public final void f(FrameLayout frameLayout, uk0 uk0Var, View view, p6 p6Var) {
+        this.l = frameLayout;
+        this.m = uk0Var;
+        uk0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.n = new a(1, uk0Var, frameLayout);
+        this.a.b(uk0Var);
+        uk0Var.setClipToPadding(false);
         g(frameLayout, view, p6Var);
     }
 

@@ -9,9 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.k2;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.t8;
 import org.telegram.ui.re;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e {
     public final k2 a;
@@ -53,7 +53,7 @@ public final class e {
             k2 k2Var = this.a;
             TLRPC.Chat chat = this.b;
             if (i10 == -1 && chat != null) {
-                vp messagesController = k2Var.getMessagesController();
+                wp messagesController = k2Var.getMessagesController();
                 long j10 = chat.id;
                 this.l = messagesController.f7.getInt("chatPendingRequests" + j10, 0);
             }
@@ -139,7 +139,7 @@ public final class e {
                 this.h.setBackground(h02);
             }
             a7.t(this.h, t6.Re, k2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
-            this.h.setContentDescription(cd.L0(2131752041, null));
+            this.h.setContentDescription(dd.L0(2131752041, null));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);
             this.h.setOnClickListener(new View.OnClickListener(this) { // from class: oh.a
@@ -199,7 +199,7 @@ public final class e {
         }
         if (this.k != i10) {
             this.k = i10;
-            this.g.setText(cd.G(i10, "JoinUsersRequests", new Object[0]));
+            this.g.setText(dd.G(i10, "JoinUsersRequests", new Object[0]));
             a(true, z10);
             if (list == null || list.isEmpty()) {
                 return;

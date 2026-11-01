@@ -63,12 +63,12 @@ import java.util.concurrent.TimeoutException;
 import java.util.zip.Adler32;
 import m2.t;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.pz;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.qz;
 import org.telegram.messenger.r20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.s20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
@@ -76,12 +76,12 @@ import org.telegram.ui.Components.ai;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.cz;
 import org.telegram.ui.Components.gz;
-import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.mg;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.px0;
-import org.telegram.ui.xn0;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.ox0;
+import org.telegram.ui.vn0;
 import r0.h0;
 import r2.y;
 import s4.c1;
@@ -96,7 +96,6 @@ import uh.m;
 import v7.t6;
 import vb.i;
 import vh.b8;
-import vh.d1;
 import vh.i4;
 import vh.j4;
 import vh.k4;
@@ -104,6 +103,7 @@ import vh.m5;
 import vh.n5;
 import vh.n8;
 import vh.o8;
+import vh.r0;
 import vh.y6;
 import w7.n6;
 import x7.d0;
@@ -111,9 +111,9 @@ import xa.g;
 import xa.j;
 import z7.x;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public class d implements n5.b, xn0, h, ai, ka.a, s61 {
+public class d implements n5.b, vn0, h, ai, ka.a, t61 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -150,8 +150,8 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
             return;
         }
         Object next = selectedPhotos.values().iterator().next();
-        if (next instanceof ef) {
-            n5 l4 = n5.l((ef) next);
+        if (next instanceof ff) {
+            n5 l4 = n5.l((ff) next);
             l4.J0 = j12;
             l4.K0 = str;
             l4.A();
@@ -161,7 +161,7 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
             int i13 = D.c;
             WindowManager windowManager = D.f;
             if (!D.d) {
-                if (vp.r1(i13).u2()) {
+                if (wp.r1(i13).u2()) {
                     org.telegram.ui.b.b(i13);
                 } else {
                     D.v0 = j12;
@@ -221,13 +221,13 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
         return true;
     }
 
-    @Override // org.telegram.ui.xn0
+    @Override // org.telegram.ui.vn0
     public void b(ArrayList arrayList) {
-        String str = !arrayList.isEmpty() ? ((pz) arrayList.get(0)).c : null;
+        String str = !arrayList.isEmpty() ? ((qz) arrayList.get(0)).c : null;
         if (str == null) {
             return;
         }
-        Utilities.e.c(new px0(str, (r20) this.b, (k2) this.c, (q20) this.d, 14));
+        Utilities.e.c(new ox0(str, (s20) this.b, (k2) this.c, (r20) this.d, 14));
     }
 
     @Override // t0.h
@@ -371,53 +371,53 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
         return ByteBuffer.wrap(bArr);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public void onError(u61 u61Var, Exception exc) {
+    @Override // org.telegram.ui.Components.t61
+    public void onError(v61 v61Var, Exception exc) {
         y6 y6Var = ((k4) this.d).N;
         if (y6Var != null) {
             y6Var.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onStateChanged(boolean z10, int i10) {
         k4 k4Var = (k4) this.d;
         i4 i4Var = k4Var.K;
-        u61 u61Var = k4Var.e;
-        if (u61Var == null) {
+        v61 v61Var = k4Var.e;
+        if (v61Var == null) {
             return;
         }
-        if (u61Var.d0()) {
+        if (v61Var.d0()) {
             i0.g3(i4Var);
         } else {
             i0.r(i4Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((k4) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         k4 k4Var = (k4) this.d;
         n5 n5Var = (n5) this.b;
         if (n5Var != null) {
             m5 V = k4Var.e.V(n5Var.d1);
             n5Var.d1 = V;
-            k61 k61Var = k4Var.n;
-            if (k61Var != null) {
-                k61Var.setHDRInfo(V);
+            l61 l61Var = k4Var.n;
+            if (l61Var != null) {
+                l61Var.setHDRInfo(V);
             }
         }
         int i13 = (int) (i10 * f7);
@@ -430,13 +430,13 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
             n5Var.A();
         }
         k4Var.b();
-        k61 k61Var2 = k4Var.n;
-        if (k61Var2 != null) {
+        l61 l61Var2 = k4Var.n;
+        if (l61Var2 != null) {
             int i15 = k4Var.f;
             int i16 = k4Var.h;
-            k61Var2.d = i15;
-            k61Var2.e = i16;
-            gz gzVar = k61Var2.b;
+            l61Var2.d = i15;
+            l61Var2.e = i16;
+            gz gzVar = l61Var2.b;
             if (gzVar == null) {
                 return;
             }
@@ -452,14 +452,14 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
         int childCount = ((RecyclerView) ((t) this.b).b).getChildCount();
         int i11 = i10;
         while (i11 < childCount) {
-            int B = i10 - (i11 - g0Var.B(i11));
-            if (B == 0) {
+            int C = i10 - (i11 - g0Var.C(i11));
+            if (C == 0) {
                 while (g0Var.F(i11)) {
                     i11++;
                 }
                 return i11;
             }
-            i11 += B;
+            i11 += C;
         }
         return -1;
     }
@@ -512,7 +512,7 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
             if (jVar != null) {
                 ExecutorService executorService = (ExecutorService) this.b;
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                jVar.b = executorService.submit(new d1(21, jVar, taskCompletionSource));
+                jVar.b = executorService.submit(new r0(22, jVar, taskCompletionSource));
                 jVar.c = taskCompletionSource.getTask();
             }
             g a2 = xa.d.a((FirebaseMessagingService) this.c, (y) this.d);
@@ -866,7 +866,7 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
         this.c = serializable;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onRenderedFirstFrame() {
         n5 n5Var = (n5) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -885,10 +885,10 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            k61 k61Var = k4Var.n;
-            if (k61Var != null) {
+            l61 l61Var = k4Var.n;
+            if (l61Var != null) {
                 if (j4Var == null || !j4Var.g) {
-                    k61Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new d1(6, this, n5Var)).start();
+                    l61Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new r0(7, this, n5Var)).start();
                     return;
                 }
                 return;
@@ -974,7 +974,7 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
     public /* synthetic */ void N() {
     }
 
-    @Override // org.telegram.ui.xn0
+    @Override // org.telegram.ui.vn0
     public void V() {
     }
 
@@ -1002,11 +1002,11 @@ public class d implements n5.b, xn0, h, ai, ka.a, s61 {
     public /* synthetic */ void n0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 

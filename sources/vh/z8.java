@@ -24,21 +24,21 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.s9;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.ex0;
+import org.telegram.ui.dx0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z8 extends View {
     public final Paint A0;
@@ -83,7 +83,7 @@ public final class z8 extends View {
     public float V;
     public final Paint V0;
     public boolean W;
-    public final zl0 W0;
+    public final am0 W0;
     public boolean X0;
     public final rh.r4 Y0;
     public long Z0;
@@ -127,7 +127,7 @@ public final class z8 extends View {
     public boolean o1;
     public final Path p0;
     public VelocityTracker p1;
-    public final qz0 q0;
+    public final rz0 q0;
     public boolean q1;
     public final ArrayList r;
     public final Drawable r0;
@@ -208,7 +208,7 @@ public final class z8 extends View {
         this.U0 = new Matrix();
         Paint paint8 = new Paint(1);
         this.V0 = paint8;
-        this.W0 = new zl0(getContext(), null);
+        this.W0 = new am0(getContext(), null);
         this.Z0 = -1L;
         this.a1 = -1L;
         this.b1 = new org.telegram.ui.Components.t5(0.0f, this, 0L, 340L, grVar);
@@ -240,7 +240,7 @@ public final class z8 extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.q0 = new qz0(cd.L0(2131744482, null), 12.0f, org.telegram.messenger.i0.o());
+        this.q0 = new rz0(dd.L0(2131744482, null), 12.0f, org.telegram.messenger.i0.o());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.r0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -267,14 +267,14 @@ public final class z8 extends View {
                 h5Var.b = 0.0f;
                 h5Var.c = 1.5f;
                 h5Var.d(z8Var.V);
-                h5Var.h = new q20(z8Var) { // from class: vh.r8
+                h5Var.h = new r20(z8Var) { // from class: vh.r8
                     public final /* synthetic */ z8 b;
 
                     {
                         this.b = z8Var;
                     }
 
-                    @Override // org.telegram.messenger.q20
+                    @Override // org.telegram.messenger.r20
                     public final void a(Object obj) {
                         Float f7 = (Float) obj;
                         switch (i12) {
@@ -318,7 +318,7 @@ public final class z8 extends View {
                 z60 F = z60.F(viewGroup, p6Var, z8Var);
                 F.q(h5Var);
                 F.o();
-                F.c(R.drawable.msg_delete, cd.L0(2131744738, null), new p8(z8Var, 1), false);
+                F.c(R.drawable.msg_delete, dd.L0(2131744738, null), new p8(z8Var, 1), false);
                 F.V(5);
                 F.U = true;
                 F.a0((-(z8Var.v1 - min2)) + org.telegram.messenger.i0.L(18.0f), z8Var.F0.top);
@@ -332,14 +332,14 @@ public final class z8 extends View {
                     h5Var2.b = 0.0f;
                     h5Var2.c = 1.5f;
                     h5Var2.d(z8Var.L);
-                    h5Var2.h = new q20(z8Var) { // from class: vh.r8
+                    h5Var2.h = new r20(z8Var) { // from class: vh.r8
                         public final /* synthetic */ z8 b;
 
                         {
                             this.b = z8Var;
                         }
 
-                        @Override // org.telegram.messenger.q20
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj) {
                             Float f7 = (Float) obj;
                             switch (i17) {
@@ -383,7 +383,7 @@ public final class z8 extends View {
                     z60 F2 = z60.F(viewGroup, p6Var, z8Var);
                     F2.q(h5Var2);
                     F2.o();
-                    F2.c(R.drawable.msg_delete, cd.L0(2131744513, null), new p8(z8Var, 2), false);
+                    F2.c(R.drawable.msg_delete, dd.L0(2131744513, null), new p8(z8Var, 2), false);
                     F2.V(5);
                     F2.U = true;
                     F2.a0((-(z8Var.v1 - min4)) + org.telegram.messenger.i0.L(18.0f), z8Var.x0.top);
@@ -395,14 +395,14 @@ public final class z8 extends View {
                     h5Var3.b = 0.0f;
                     h5Var3.c = 1.5f;
                     h5Var3.d(z8Var.h.i);
-                    h5Var3.h = new q20(z8Var) { // from class: vh.r8
+                    h5Var3.h = new r20(z8Var) { // from class: vh.r8
                         public final /* synthetic */ z8 b;
 
                         {
                             this.b = z8Var;
                         }
 
-                        @Override // org.telegram.messenger.q20
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj) {
                             Float f7 = (Float) obj;
                             switch (i13) {
@@ -455,7 +455,7 @@ public final class z8 extends View {
                     h5Var4.b = 0.0f;
                     h5Var4.c = 1.5f;
                     h5Var4.d(u8Var.i);
-                    h5Var4.h = new rh.e3(10, z8Var, u8Var);
+                    h5Var4.h = new rh.q2(11, z8Var, u8Var);
                     z60 F4 = z60.F(viewGroup, p6Var, z8Var);
                     F4.q(h5Var4);
                     F4.V(5);
@@ -682,8 +682,8 @@ public final class z8 extends View {
 
     @Override // android.view.View
     public final void computeScroll() {
-        zl0 zl0Var = this.W0;
-        if (!zl0Var.b()) {
+        am0 am0Var = this.W0;
+        if (!am0Var.b()) {
             if (this.r1) {
                 this.r1 = false;
                 t8 t8Var = this.a;
@@ -695,13 +695,13 @@ public final class z8 extends View {
             }
             return;
         }
-        int i10 = zl0Var.j;
+        int i10 = am0Var.j;
         long min = Math.min(getBaseDuration(), getMaxScrollDuration());
         if (this.q1) {
             this.f = (long) Math.max(0.0f, (((i10 - this.y1) - this.x1) / this.u1) * min);
         } else {
             if (!this.P) {
-                zl0Var.a();
+                am0Var.a();
                 return;
             }
             int i11 = this.y1;
@@ -927,9 +927,9 @@ public final class z8 extends View {
                     int centerX = (int) (rectF9.centerX() - g10);
                     int centerY = (int) rectF9.centerY();
                     drawable.setBounds(centerX, org.telegram.ui.Cells.f1.y(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.f1.f(2, centerY, drawable));
-                    drawable.setAlpha(zs.V2);
+                    drawable.setAlpha(at.V2);
                     drawable.draw(canvas);
-                    qz0 qz0Var = z8Var.q0;
+                    rz0 rz0Var = z8Var.q0;
                     float centerX2 = (rectF9.centerX() - g10) + drawable.getIntrinsicWidth() + org.telegram.messenger.i0.L(3.66f);
                     float f64 = centerY;
                     paint = paint4;
@@ -937,7 +937,7 @@ public final class z8 extends View {
                     arrayList = arrayList21;
                     w9Var = w9Var2;
                     f7 = 0.4f;
-                    qz0Var.c(centerX2, f64, 0.75f, -1, canvas);
+                    rz0Var.c(centerX2, f64, 0.75f, -1, canvas);
                     canvas.restore();
                 }
             } else {
@@ -949,7 +949,7 @@ public final class z8 extends View {
                 w9Var2 = w9Var3;
                 z8Var.s0.a((((z8Var.Q - z8Var.f) / min) * z8Var.u1) + z8Var.y1 + z8Var.x1, rectF9.left, rectF9.right, org.telegram.messenger.i0.L(28.0f), e, rectF9.bottom, arrayList20);
                 c12 = 31;
-                canvas.saveLayerAlpha(rectF9, zs.n1, 31);
+                canvas.saveLayerAlpha(rectF9, at.n1, 31);
                 canvas.clipPath(z8Var.s0);
                 z8Var.n0.a(canvas);
                 canvas.restore();
@@ -959,9 +959,9 @@ public final class z8 extends View {
             int centerX3 = (int) (rectF9.centerX() - g102);
             int centerY2 = (int) rectF9.centerY();
             drawable.setBounds(centerX3, org.telegram.ui.Cells.f1.y(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.f1.f(2, centerY2, drawable));
-            drawable.setAlpha(zs.V2);
+            drawable.setAlpha(at.V2);
             drawable.draw(canvas);
-            qz0 qz0Var2 = z8Var.q0;
+            rz0 rz0Var2 = z8Var.q0;
             float centerX22 = (rectF9.centerX() - g102) + drawable.getIntrinsicWidth() + org.telegram.messenger.i0.L(3.66f);
             float f642 = centerY2;
             paint = paint4;
@@ -969,7 +969,7 @@ public final class z8 extends View {
             arrayList = arrayList21;
             w9Var = w9Var2;
             f7 = 0.4f;
-            qz0Var2.c(centerX22, f642, 0.75f, -1, canvas);
+            rz0Var2.c(centerX22, f642, 0.75f, -1, canvas);
             canvas.restore();
         } else {
             rectF = rectF6;
@@ -1602,7 +1602,7 @@ public final class z8 extends View {
                             f26 = d15;
                             f25 = f39;
                             f28 = f13;
-                            canvas2.saveLayerAlpha(0.0f, 0.0f, z8Var.v1, z8Var.w1, zs.e4, 31);
+                            canvas2.saveLayerAlpha(0.0f, 0.0f, z8Var.v1, z8Var.w1, at.e4, 31);
                             float min7 = Math.min(f169, z8Var.v1) - org.telegram.messenger.i0.L(12.0f);
                             canvas2.clipRect(N3, 0.0f, min7, z8Var.w1);
                             if (z8Var.M0 != null) {
@@ -1657,7 +1657,7 @@ public final class z8 extends View {
                     rectF4 = rectF16;
                     f38 = d16;
                     z8Var.I0.b((((z8Var.Q - z8Var.f) / j13) * z8Var.u1) + z8Var.y1 + z8Var.x1, T1, f159, f38, j13, audioHeight, e10, rectF4.bottom, s8Var2);
-                    canvas2.saveLayerAlpha(rectF4, zs.n1, 31);
+                    canvas2.saveLayerAlpha(rectF4, at.n1, 31);
                     canvas2.clipPath(z8Var.I0);
                     z8Var.n0.a(canvas2);
                     canvas2.restore();
@@ -1936,7 +1936,7 @@ public final class z8 extends View {
         }
         RectF rectF = org.telegram.messenger.i0.P;
         rectF.set(f11 - org.telegram.messenger.i0.L(10.0f), f7, org.telegram.messenger.i0.L(10.0f) + f12, f10);
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.v1, this.w1, zs.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.v1, this.w1, at.e4, 31);
         int i10 = (int) (255.0f * f13);
         Paint paint2 = this.z0;
         paint2.setAlpha(i10);
@@ -1953,7 +1953,7 @@ public final class z8 extends View {
         float L2 = org.telegram.messenger.i0.L(10.0f);
         Paint paint4 = this.B0;
         Paint paint5 = paint != null ? paint : paint4;
-        paint4.setAlpha(zs.e4);
+        paint4.setAlpha(at.e4);
         paint5.setAlpha(i10);
         float f14 = f7 + f10;
         float f15 = (f14 - L2) / 2.0f;
@@ -2710,7 +2710,7 @@ public final class z8 extends View {
             if (motionEvent.getAction() != 0 || motionEvent.getY() >= timelineHeight) {
                 long currentTimeMillis = System.currentTimeMillis();
                 int action = motionEvent.getAction();
-                zl0 zl0Var = this.W0;
+                am0 am0Var = this.W0;
                 rh.r4 r4Var = this.Y0;
                 if (action == 0) {
                     q8 q8Var2 = this.d1;
@@ -2718,7 +2718,7 @@ public final class z8 extends View {
                         org.telegram.messenger.i0.r(q8Var2);
                         this.d1 = null;
                     }
-                    zl0Var.a();
+                    am0Var.a();
                     this.i1 = -1;
                     this.h1 = c(motionEvent);
                     this.j1 = -1;
@@ -3241,7 +3241,7 @@ public final class z8 extends View {
                     }
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                     org.telegram.messenger.i0.r(r4Var);
-                    zl0Var.a();
+                    am0Var.a();
                     if (motionEvent.getAction() == 1) {
                         if ((System.currentTimeMillis() - this.f1 > ViewConfiguration.getTapTimeout() || this.m1) && this.j0) {
                             int i27 = this.h1;
@@ -3475,9 +3475,9 @@ public final class z8 extends View {
     }
 
     public final void q() {
-        ex0 ex0Var = new ex0(26);
+        dx0 dx0Var = new dx0(26);
         ArrayList arrayList = this.s;
-        Collections.sort(arrayList, ex0Var);
+        Collections.sort(arrayList, dx0Var);
         u8 u8Var = arrayList.isEmpty() ? null : (u8) arrayList.get(0);
         this.w = u8Var;
         if (u8Var != null) {

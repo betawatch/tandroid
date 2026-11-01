@@ -10,9 +10,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r2 implements org.telegram.messenger.q20 {
+public final /* synthetic */ class r2 implements org.telegram.messenger.r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class r2 implements org.telegram.messenger.q20 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         float height;
         switch (this.a) {
@@ -40,7 +40,7 @@ public final /* synthetic */ class r2 implements org.telegram.messenger.q20 {
                 chatAttachAlertPhotoLayout.b.dismiss();
                 break;
             case 3:
-                org.telegram.messenger.vp.r1(((gs) this.b).P).u3(null, (TLRPC.User) obj, null, 0, null, false, false);
+                org.telegram.messenger.wp.r1(((gs) this.b).P).u3(null, (TLRPC.User) obj, null, 0, null, false, false);
                 break;
             case 4:
                 Runnable runnable = (Runnable) this.b;
@@ -86,7 +86,7 @@ public final /* synthetic */ class r2 implements org.telegram.messenger.q20 {
                 if (zc0Var.getContext() != null) {
                     boolean z10 = zc0Var.getContext().getResources().getConfiguration().orientation == 2;
                     int intValue = num2.intValue() - org.telegram.messenger.i0.n;
-                    if (org.telegram.messenger.tz.r == 1) {
+                    if (org.telegram.messenger.uz.r == 1) {
                         ViewPropertyAnimator animate = frameLayout.animate();
                         if (intValue <= org.telegram.messenger.i0.L(20.0f)) {
                             height = 0.0f;
@@ -107,7 +107,7 @@ public final /* synthetic */ class r2 implements org.telegram.messenger.q20 {
                 vd0Var.dismiss();
                 break;
             case 10:
-                org.telegram.messenger.j20 j20Var = (org.telegram.messenger.j20) this.b;
+                org.telegram.messenger.k20 k20Var = (org.telegram.messenger.k20) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 ColorMatrix colorMatrix = new ColorMatrix();
                 org.telegram.messenger.i0.i(colorMatrix, org.telegram.ui.ActionBar.t6.I.q() ? 0.04f : 0.25f);
@@ -122,30 +122,30 @@ public final /* synthetic */ class r2 implements org.telegram.messenger.q20 {
                 Bitmap l10 = org.telegram.messenger.i0.l(bitmap, colorMatrix2);
                 l10.setHasAlpha(false);
                 bitmap.recycle();
-                j20Var.a(l4, l10);
+                k20Var.a(l4, l10);
                 break;
             case 11:
-                nx0 nx0Var = (nx0) this.b;
+                ox0 ox0Var = (ox0) this.b;
                 TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
                 TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
                 updatebirthday.flags |= 1;
                 updatebirthday.birthday = tL_birthday;
-                int i12 = nx0Var.a;
-                TLRPC.UserFull a2 = org.telegram.messenger.vp.r1(i12).a2(org.telegram.messenger.d20.i(i12).e());
+                int i12 = ox0Var.a;
+                TLRPC.UserFull a2 = org.telegram.messenger.wp.r1(i12).a2(org.telegram.messenger.e20.i(i12).e());
                 TL_account.TL_birthday tL_birthday2 = a2 != null ? a2.birthday : null;
                 if (a2 != null) {
                     a2.flags2 |= 32;
                     a2.birthday = tL_birthday;
-                    org.telegram.messenger.hs.a0(i12).j2(a2, false);
+                    org.telegram.messenger.is.a0(i12).j2(a2, false);
                 }
-                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ag.p0(nx0Var, a2, tL_birthday2, 14), 1024);
-                org.telegram.messenger.vp.r1(i12).l2();
-                org.telegram.messenger.vp.r1(i12).h4(0L, "BIRTHDAY_SETUP");
-                org.telegram.messenger.zs.f(i12).k(org.telegram.messenger.zs.s1, new Object[0]);
+                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ag.p0(ox0Var, a2, tL_birthday2, 14), 1024);
+                org.telegram.messenger.wp.r1(i12).l2();
+                org.telegram.messenger.wp.r1(i12).h4(0L, "BIRTHDAY_SETUP");
+                org.telegram.messenger.at.f(i12).k(org.telegram.messenger.at.s1, new Object[0]);
                 break;
             default:
-                u51 u51Var = (u51) this.b;
-                u51Var.f3.R(u51Var.T((View) obj), u51Var.j3);
+                v51 v51Var = (v51) this.b;
+                v51Var.f3.R(v51Var.T((View) obj), v51Var.j3);
                 break;
         }
     }

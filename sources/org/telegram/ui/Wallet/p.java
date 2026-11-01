@@ -1,24 +1,24 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p implements q20 {
+public final /* synthetic */ class p implements r20 {
     public final /* synthetic */ int a = 3;
     public final /* synthetic */ Object b;
     public final /* synthetic */ k0 c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ p(q20 q20Var, k0 k0Var, p0 p0Var, t8 t8Var) {
+    public /* synthetic */ p(r20 r20Var, k0 k0Var, p0 p0Var, t8 t8Var) {
         this.d = t8Var;
-        this.b = q20Var;
+        this.b = r20Var;
         this.e = p0Var;
         this.c = k0Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
@@ -35,18 +35,18 @@ public final /* synthetic */ class p implements q20 {
                 runnable.run();
                 break;
             case 1:
-                k8.Y((k8) this.d, (String) this.b, this.c, (org.telegram.ui.ActionBar.k2) this.e, (String) obj);
+                k8.Z((k8) this.d, (String) this.b, this.c, (org.telegram.ui.ActionBar.k2) this.e, (String) obj);
                 break;
             case 2:
                 t8 t8Var = (t8) this.d;
                 String str2 = (String) this.b;
                 p0 p0Var = (p0) this.e;
                 k0 k0Var2 = this.c;
-                k0Var2.u(str2, new p((q20) obj, k0Var2, p0Var, t8Var));
+                k0Var2.u(str2, new p((r20) obj, k0Var2, p0Var, t8Var));
                 break;
             default:
                 t8 t8Var2 = (t8) this.d;
-                q20 q20Var = (q20) this.b;
+                r20 r20Var = (r20) this.b;
                 p0 p0Var2 = (p0) this.e;
                 b0 b0Var2 = (b0) obj;
                 if (b0Var2 != null) {
@@ -55,22 +55,22 @@ public final /* synthetic */ class p implements q20 {
                     if (bArr == null) {
                         byte[][] m10 = p0Var2.m();
                         if (m10.length <= 0) {
-                            q20Var.a("STORAGE_NO_PUBLIC_KEY");
+                            r20Var.a("STORAGE_NO_PUBLIC_KEY");
                             break;
                         } else {
                             bArr = m10[0];
                         }
                     }
                     if (!p0Var2.f(bArr)) {
-                        q20Var.a("STORAGE_OLD_PUBLIC_KEY");
+                        r20Var.a("STORAGE_OLD_PUBLIC_KEY");
                         break;
                     } else {
-                        m mVar = new m(q20Var, this.c, p0Var2, t8Var2);
+                        m mVar = new m(r20Var, this.c, p0Var2, t8Var2);
                         p0.h.execute(new org.telegram.ui.Components.k2(p0Var2, p0Var2.l(), bArr == null ? "" : p0.o(bArr), z10, mVar));
                         break;
                     }
                 } else {
-                    q20Var.a("ADDRESS_NO_INFO");
+                    r20Var.a("ADDRESS_NO_INFO");
                     break;
                 }
         }

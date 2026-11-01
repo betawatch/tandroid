@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class vq {
     public static boolean a(String str, String str2) {
@@ -38,7 +38,7 @@ public abstract class vq {
         int i10 = 0;
         while (i10 < arrayList.size()) {
             String r10 = a1.g.r(new StringBuilder("'"), (String) arrayList.get(i10), "'");
-            str2 = i10 == 0 ? r10 : i10 == arrayList.size() - 1 ? org.telegram.messenger.cd.a0(null, null, 2131751720, str2, r10) : org.telegram.messenger.cd.a0(null, null, 2131751722, str2, r10);
+            str2 = i10 == 0 ? r10 : i10 == arrayList.size() - 1 ? org.telegram.messenger.dd.a0(null, null, 2131751720, str2, r10) : org.telegram.messenger.dd.a0(null, null, 2131751722, str2, r10);
             i10++;
         }
         return str2;
@@ -65,25 +65,25 @@ public abstract class vq {
             upperCase.getClass();
             switch (upperCase) {
                 case "OWNER_USERNAMES_LIMIT_EXCEEDED":
-                    return org.telegram.messenger.cd.a0(null, null, 2131751726, Integer.valueOf(((org.telegram.messenger.l0) org.telegram.messenger.vp.r1(i10).y7.N.a).c), b(treeSet));
+                    return org.telegram.messenger.dd.a0(null, null, 2131751726, Integer.valueOf(((org.telegram.messenger.l0) org.telegram.messenger.wp.r1(i10).y7.N.a).c), b(treeSet));
                 case "PREMIUM_ACCOUNT_REQUIRED":
                     String c10 = c(str, treeSet);
-                    return org.telegram.messenger.i0.P2(c10 == null ? org.telegram.messenger.cd.L0(2131751724, null) : org.telegram.messenger.cd.a0(null, null, 2131751725, c10), org.telegram.ui.ActionBar.t6.Uc, p6Var, qqVar, false);
+                    return org.telegram.messenger.i0.P2(c10 == null ? org.telegram.messenger.dd.L0(2131751724, null) : org.telegram.messenger.dd.a0(null, null, 2131751725, c10), org.telegram.ui.ActionBar.t6.Uc, p6Var, qqVar, false);
                 case "ADDITIONAL_USERNAME_SUFFIX_MISSING":
-                    return org.telegram.messenger.cd.a0(null, null, 2131751723, b(treeSet));
+                    return org.telegram.messenger.dd.a0(null, null, 2131751723, b(treeSet));
                 case "USERNAME_INVALID":
-                    return org.telegram.messenger.cd.L0(2131743682, null);
+                    return org.telegram.messenger.dd.L0(2131743682, null);
                 case "USERNAME_PURCHASE_AVAILABLE":
                 case "USERNAME_OCCUPIED":
-                    return org.telegram.messenger.cd.L0(2131743684, null);
+                    return org.telegram.messenger.dd.L0(2131743684, null);
                 case "BOT_USERNAMES_LIMIT_EXCEEDED":
-                    return org.telegram.messenger.cd.L0(2131751729, null);
+                    return org.telegram.messenger.dd.L0(2131751729, null);
             }
         }
         return null;
     }
 
-    public static void e(Context context, int i10, TLRPC.User user, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot, boolean z10, org.telegram.messenger.q20 q20Var, org.telegram.ui.ActionBar.p6 p6Var, cc ccVar) {
+    public static void e(Context context, int i10, TLRPC.User user, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot, boolean z10, org.telegram.messenger.r20 r20Var, org.telegram.ui.ActionBar.p6 p6Var, cc ccVar) {
         String str;
         org.telegram.ui.Cells.k3 k3Var;
         CharSequence P2;
@@ -92,19 +92,19 @@ public abstract class vq {
             if (ccVar == null) {
                 org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
                 if (T == null) {
-                    q20Var.a(null);
+                    r20Var.a(null);
                     return;
                 }
                 ccVar2 = cc.a0(T);
             } else {
                 ccVar2 = ccVar;
             }
-            ccVar2.Q(R.raw.error, 36, org.telegram.messenger.i0.O2(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.uj, p6Var), org.telegram.messenger.cd.a0(null, null, 2131751731, TextUtils.isEmpty(org.telegram.messenger.h20.n(user)) ? org.telegram.messenger.h20.p(user) : "@" + org.telegram.messenger.h20.n(user)))).j();
-            q20Var.a(null);
+            ccVar2.Q(R.raw.error, 36, org.telegram.messenger.i0.O2(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.uj, p6Var), org.telegram.messenger.dd.a0(null, null, 2131751731, TextUtils.isEmpty(org.telegram.messenger.i20.n(user)) ? org.telegram.messenger.i20.p(user) : "@" + org.telegram.messenger.i20.n(user)))).j();
+            r20Var.a(null);
             return;
         }
         TreeSet treeSet = new TreeSet();
-        HashSet<String> hashSet = ((org.telegram.messenger.r0) org.telegram.messenger.vp.r1(i10).y7.i0.a).c;
+        HashSet<String> hashSet = ((org.telegram.messenger.r0) org.telegram.messenger.wp.r1(i10).y7.i0.a).c;
         if (hashSet != null) {
             for (String str2 : hashSet) {
                 if (!TextUtils.isEmpty(str2)) {
@@ -135,12 +135,12 @@ public abstract class vq {
         TextView textView2 = new TextView(context);
         org.telegram.ui.ActionBar.a7.V(textView2, i11, p6Var);
         textView2.setTextSize(1, 14.0f);
-        String a02 = org.telegram.messenger.cd.a0(null, null, 2131751733, org.telegram.messenger.h20.p(user));
+        String a02 = org.telegram.messenger.dd.a0(null, null, 2131751733, org.telegram.messenger.i20.p(user));
         int i12 = org.telegram.ui.ActionBar.t6.Uc;
         textView2.setText(org.telegram.messenger.i0.P2(a02, i12, p6Var, null, true));
         textView2.setGravity(17);
         uqVar.addView(textView2, w7.b6.t(-1, -2, 55, 16, 0, 16, 22));
-        org.telegram.ui.Cells.m3 m3Var = new org.telegram.ui.Cells.m3(context, org.telegram.messenger.cd.L0(2131751735, null), false, false, -1, p6Var);
+        org.telegram.ui.Cells.m3 m3Var = new org.telegram.ui.Cells.m3(context, org.telegram.messenger.dd.L0(2131751735, null), false, false, -1, p6Var);
         org.telegram.ui.Cells.k3 k3Var2 = m3Var.d;
         k3Var2.setImeOptions(5);
         int L = org.telegram.messenger.i0.L(16.0f);
@@ -152,9 +152,9 @@ public abstract class vq {
         m3Var.setText(tL_requestPeerTypeCreateBot.suggested_name);
         uqVar.addView(m3Var, w7.b6.t(-1, -2, 55, 12, 0, 12, 0));
         org.telegram.ui.Cells.b9 b9Var = new org.telegram.ui.Cells.b9(context, p6Var);
-        b9Var.setText(org.telegram.messenger.cd.L0(2131751734, null));
+        b9Var.setText(org.telegram.messenger.dd.L0(2131751734, null));
         uqVar.addView(b9Var, w7.b6.t(-1, -2, 55, 9, 0, 9, 0));
-        org.telegram.ui.Cells.m3 m3Var2 = new org.telegram.ui.Cells.m3(context, org.telegram.messenger.cd.L0(2131751730, null), false, false, 32, p6Var);
+        org.telegram.ui.Cells.m3 m3Var2 = new org.telegram.ui.Cells.m3(context, org.telegram.messenger.dd.L0(2131751730, null), false, false, 32, p6Var);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         org.telegram.ui.Cells.k3 k3Var3 = m3Var2.d;
@@ -175,7 +175,7 @@ public abstract class vq {
         m3Var2.setBackground(d03);
         org.telegram.ui.ActionBar.a7.k(m3Var2, d03, N2, null, p6Var);
         k3Var3.setImeOptions(6);
-        k3Var3.setInputType(org.telegram.messenger.zs.b2);
+        k3Var3.setInputType(org.telegram.messenger.at.b2);
         k3Var3.setSingleLine(true);
         String str3 = tL_requestPeerTypeCreateBot.suggested_username;
         if (str3 != null) {
@@ -204,10 +204,10 @@ public abstract class vq {
         } else {
             str = null;
         }
-        dVar.setText(org.telegram.messenger.cd.L0(2131752589, str));
+        dVar.setText(org.telegram.messenger.dd.L0(2131752589, str));
         linearLayout2.addView(dVar, w7.b6.q(0, 48, 119.0f, 1, 0, 0, 5, 0));
-        vh.d i14 = org.telegram.messenger.z20.i(24, context, p6Var, true);
-        i14.setText(org.telegram.messenger.cd.L0(2131751742, null));
+        vh.d i14 = org.telegram.messenger.a30.i(24, context, p6Var, true);
+        i14.setText(org.telegram.messenger.dd.L0(2131751742, null));
         linearLayout2.addView(i14, w7.b6.q(0, 48, 119.0f, 1, 5, 0, 0, 0));
         k10.T0 = false;
         k10.P0 = true;
@@ -227,11 +227,11 @@ public abstract class vq {
         qq qqVar = new qq(k10, i10, 0);
         String b10 = b(treeSet);
         if (TextUtils.isEmpty(b10)) {
-            P2 = org.telegram.messenger.cd.L0(2131751727, null);
+            P2 = org.telegram.messenger.dd.L0(2131751727, null);
             k3Var = k3Var3;
         } else {
             k3Var = k3Var3;
-            P2 = org.telegram.messenger.i0.P2(org.telegram.messenger.cd.a0(null, null, 2131751721, b10), i12, p6Var, qqVar, false);
+            P2 = org.telegram.messenger.i0.P2(org.telegram.messenger.dd.a0(null, null, 2131751721, b10), i12, p6Var, qqVar, false);
         }
         jg jgVar = new jg(b9Var2, P2, p6Var, 3);
         ag.g3 g3Var = new ag.g3(iArr3, runnableArr, iArr2, i10, 17);
@@ -239,7 +239,7 @@ public abstract class vq {
         rq rqVar = new rq(zArr2, iArr, g3Var, strArr, i14, m3Var2, treeSet, jgVar, b9Var2, p6Var, iArr3, runnableArr, iArr2, i10, qqVar, k10);
         jgVar.run();
         org.telegram.ui.Cells.k3 k3Var4 = k3Var;
-        sq sqVar = new sq(zArr2, iArr, m3Var2, treeSet, strArr, rqVar, m3Var, iArr4, g3Var, i14, z10, i10, user, zArr, q20Var, k10, qqVar, p6Var, b9Var2, context);
+        sq sqVar = new sq(zArr2, iArr, m3Var2, treeSet, strArr, rqVar, m3Var, iArr4, g3Var, i14, z10, i10, user, zArr, r20Var, k10, qqVar, p6Var, b9Var2, context);
         k3Var4.addTextChangedListener(new tq(cdVar, rqVar));
         cdVar.run();
         if (!TextUtils.isEmpty(str4)) {
@@ -249,7 +249,7 @@ public abstract class vq {
         dVar.setOnClickListener(new y2(k10, 2));
         i14.setEnabled(false);
         i14.setOnClickListener(new h0(sqVar, 8));
-        k10.setOnDismissListener(new pq(zArr2, g3Var, zArr, q20Var, iArr, i10));
+        k10.setOnDismissListener(new pq(zArr2, g3Var, zArr, r20Var, iArr, i10));
         k10.show();
     }
 }

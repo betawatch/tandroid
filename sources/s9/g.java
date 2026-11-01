@@ -14,11 +14,11 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 import m.p3;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.zm0;
-import org.telegram.ui.mx;
-import org.telegram.ui.os0;
+import org.telegram.messenger.at;
+import org.telegram.messenger.kj;
+import org.telegram.ui.Components.an0;
+import org.telegram.ui.lx;
+import org.telegram.ui.ns0;
 import org.telegram.ui.un;
 import sg.o;
 import th.f7;
@@ -27,15 +27,14 @@ import vh.b0;
 import vh.o8;
 import vh.s7;
 import vh.t8;
+import yh.c0;
 import yh.d0;
-import yh.e0;
-import yh.q;
 import zf.k1;
 import zf.l1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
+public final class g implements fe.e, ns0, p, jg.c, t8, c0, l1 {
     public Object a;
 
     public /* synthetic */ g(Object obj) {
@@ -52,16 +51,16 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
                 oVar.E.setFocusableInTouchMode(false);
             }
         }
-        zs.e().k(zs.k1, 512);
+        at.e().k(at.k1, 512);
     }
 
-    @Override // org.telegram.ui.os0
-    public void H0(jj jjVar) {
+    @Override // org.telegram.ui.ns0
+    public void H0(kj kjVar) {
         ((f7) ((z2) this.a).z1).f(true);
     }
 
-    @Override // org.telegram.ui.os0
-    public void I(jj jjVar) {
+    @Override // org.telegram.ui.ns0
+    public void I(kj kjVar) {
         ((f7) ((z2) this.a).z1).f(false);
     }
 
@@ -72,21 +71,21 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
 
     @Override // zf.l1
     public boolean Y(int i10) {
-        return i10 == ((zm0) this.a).d0;
+        return i10 == ((an0) this.a).d0;
     }
 
-    @Override // yh.d0
+    @Override // yh.c0
     public void a(long j10) {
-        ((q) this.a).presentFragment(un.ha(j10));
+        ((yh.p) this.a).presentFragment(un.ma(j10));
     }
 
-    @Override // yh.d0
+    @Override // yh.c0
     public void b() {
-        q qVar = (q) this.a;
-        fe.b bVar = qVar.a;
-        e0 e0Var = qVar.w;
-        bVar.a(e0Var.n && e0Var.l == 0, true);
-        qVar.d.f3.O(true);
+        yh.p pVar = (yh.p) this.a;
+        fe.b bVar = pVar.a;
+        d0 d0Var = pVar.w;
+        bVar.a(d0Var.n && d0Var.l == 0, true);
+        pVar.d.f3.O(true);
     }
 
     public void c(int i10, int i11, c3.p pVar) {
@@ -205,7 +204,7 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
                 iArr[0] = (i11 - fVar.V) - 3;
             } else {
                 fVar.l(pVar, 4);
-                int i27 = (xVar2.a[3] & zs.e4) + 1;
+                int i27 = (xVar2.a[3] & at.e4) + 1;
                 fVar.S = i27;
                 int[] iArr2 = fVar.T;
                 if (iArr2 == null) {
@@ -356,20 +355,20 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
 
     @Override // zf.l1
     public void c0(ArrayList arrayList) {
-        zm0 zm0Var = (zm0) this.a;
+        an0 an0Var = (an0) this.a;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            zm0Var.J.add(((k1) arrayList.get(i10)).a);
+            an0Var.J.add(((k1) arrayList.get(i10)).a);
         }
-        mx mxVar = zm0Var.U;
-        if (mxVar != null) {
-            mxVar.d(zm0Var.D0 > 0, false);
+        lx lxVar = an0Var.U;
+        if (lxVar != null) {
+            lxVar.d(an0Var.D0 > 0, false);
         }
-        zm0Var.f();
+        an0Var.f();
     }
 
-    @Override // yh.d0
+    @Override // yh.c0
     public void close() {
-        ((q) this.a).finishFragment();
+        ((yh.p) this.a).finishFragment();
     }
 
     @Override // eg.p
@@ -384,24 +383,24 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
 
     @Override // zf.l1
     public void i(int i10) {
-        zm0 zm0Var = (zm0) this.a;
-        zm0Var.D0--;
-        zm0Var.e0 = i10;
-        if (zm0Var.f0 != i10) {
-            zm0Var.s.clear();
+        an0 an0Var = (an0) this.a;
+        an0Var.D0--;
+        an0Var.e0 = i10;
+        if (an0Var.f0 != i10) {
+            an0Var.s.clear();
         }
-        if (zm0Var.g0 != i10) {
-            zm0Var.I.clear();
+        if (an0Var.g0 != i10) {
+            an0Var.I.clear();
         }
-        zm0Var.N = true;
-        mx mxVar = zm0Var.U;
-        if (mxVar != null) {
-            mxVar.d(zm0Var.D0 > 0, true);
+        an0Var.N = true;
+        lx lxVar = an0Var.U;
+        if (lxVar != null) {
+            lxVar.d(an0Var.D0 > 0, true);
         }
-        zm0Var.f();
-        mx mxVar2 = zm0Var.U;
-        if (mxVar2 != null) {
-            mxVar2.c();
+        an0Var.f();
+        lx lxVar2 = an0Var.U;
+        if (lxVar2 != null) {
+            lxVar2.c();
         }
     }
 
@@ -442,7 +441,7 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
             throw w0.a(null, "ContentEncodingScope " + j10 + " not supported");
         }
         switch (i10) {
-            case zs.P1 /* 131 */:
+            case at.P1 /* 131 */:
                 int i11 = (int) j10;
                 if (i11 == 1) {
                     fVar.h(i10);
@@ -466,50 +465,50 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
                     fVar.y.e = 5;
                     return;
                 }
-            case zs.S1 /* 136 */:
+            case at.S1 /* 136 */:
                 fVar.h(i10);
                 fVar.y.Y = j10 == 1;
                 return;
-            case zs.l2 /* 155 */:
+            case at.l2 /* 155 */:
                 fVar.Q = fVar.n(j10);
                 return;
-            case zs.p2 /* 159 */:
+            case at.p2 /* 159 */:
                 fVar.h(i10);
                 fVar.y.Q = (int) j10;
                 return;
-            case zs.G2 /* 176 */:
+            case at.G2 /* 176 */:
                 fVar.h(i10);
                 fVar.y.n = (int) j10;
                 return;
-            case zs.J2 /* 179 */:
+            case at.J2 /* 179 */:
                 if (fVar.z) {
                     return;
                 }
                 fVar.g(i10);
                 fVar.E = fVar.n(j10);
                 return;
-            case zs.Q2 /* 186 */:
+            case at.Q2 /* 186 */:
                 fVar.h(i10);
                 fVar.y.o = (int) j10;
                 return;
-            case zs.s3 /* 215 */:
+            case at.s3 /* 215 */:
                 fVar.h(i10);
                 fVar.y.d = (int) j10;
                 return;
-            case zs.H3 /* 231 */:
+            case at.H3 /* 231 */:
                 fVar.M = fVar.n(j10);
                 return;
-            case zs.N3 /* 238 */:
+            case at.N3 /* 238 */:
                 fVar.X = (int) j10;
                 return;
-            case zs.W3 /* 247 */:
+            case at.W3 /* 247 */:
                 if (fVar.z) {
                     return;
                 }
                 fVar.g(i10);
                 fVar.F = (int) j10;
                 return;
-            case zs.a4 /* 251 */:
+            case at.a4 /* 251 */:
                 fVar.Y = true;
                 return;
             case 16871:
@@ -678,7 +677,7 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
         }
     }
 
-    @Override // org.telegram.ui.os0
+    @Override // org.telegram.ui.ns0
     public /* synthetic */ TextureView k0() {
         return null;
     }
@@ -720,7 +719,7 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
             eVar.B = -1;
             eVar.C = -1;
             eVar.D = 1000;
-            eVar.E = zs.e3;
+            eVar.E = at.e3;
             eVar.F = -1.0f;
             eVar.G = -1.0f;
             eVar.H = -1.0f;
@@ -820,7 +819,7 @@ public final class g implements fe.e, os0, p, jg.c, t8, d0, l1 {
 
     @Override // fe.e
     public void v(int i10, float f7, float f10, fe.f fVar) {
-        ((o) this.a).i0(f7);
+        ((o) this.a).j0(f7);
     }
 
     @Override // zf.l1

@@ -16,15 +16,15 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.s5;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.z20;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.s9;
 import v7.h8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a1 extends s5 {
     public final /* synthetic */ c1 D;
@@ -126,7 +126,7 @@ public final class a1 extends s5 {
         boolean z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (v2.a) {
-                z20.t(this.b, new StringBuilder("eglGetDisplay failed "));
+                a30.t(this.b, new StringBuilder("eglGetDisplay failed "));
             }
             finish();
         } else {
@@ -154,7 +154,7 @@ public final class a1 extends s5 {
                         this.d = eglCreateContext;
                         if (eglCreateContext == null) {
                             if (v2.a) {
-                                z20.t(this.b, new StringBuilder("eglCreateContext failed "));
+                                a30.t(this.b, new StringBuilder("eglCreateContext failed "));
                             }
                             finish();
                         } else {
@@ -167,7 +167,7 @@ public final class a1 extends s5 {
                                 this.e = eglCreateWindowSurface;
                                 if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                                     if (v2.a) {
-                                        z20.t(this.b, new StringBuilder("createWindowSurface failed "));
+                                        a30.t(this.b, new StringBuilder("createWindowSurface failed "));
                                     }
                                     finish();
                                 } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -237,16 +237,16 @@ public final class a1 extends s5 {
                                         i10 = 0;
                                     }
                                     q0Var.r = DesugarCollections.unmodifiableMap(hashMap);
-                                    pu0 pu0Var = q0Var.g;
-                                    if (c1Var.h.getWidth() != pu0Var.a || c1Var.h.getHeight() != pu0Var.b) {
-                                        Bitmap createBitmap = Bitmap.createBitmap((int) pu0Var.a, (int) pu0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap).drawBitmap(c1Var.h, (Rect) null, new RectF(0.0f, 0.0f, pu0Var.a, pu0Var.b), (Paint) null);
+                                    qu0 qu0Var = q0Var.g;
+                                    if (c1Var.h.getWidth() != qu0Var.a || c1Var.h.getHeight() != qu0Var.b) {
+                                        Bitmap createBitmap = Bitmap.createBitmap((int) qu0Var.a, (int) qu0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap).drawBitmap(c1Var.h, (Rect) null, new RectF(0.0f, 0.0f, qu0Var.a, qu0Var.b), (Paint) null);
                                         c1Var.h = createBitmap;
                                         c1Var.r = true;
                                     }
-                                    if (c1Var.n != null && (r5.getWidth() != pu0Var.a || c1Var.n.getHeight() != pu0Var.b)) {
-                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) pu0Var.a, (int) pu0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap2).drawBitmap(c1Var.n, (Rect) null, new RectF(0.0f, 0.0f, pu0Var.a, pu0Var.b), (Paint) null);
+                                    if (c1Var.n != null && (r5.getWidth() != qu0Var.a || c1Var.n.getHeight() != qu0Var.b)) {
+                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) qu0Var.a, (int) qu0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap2).drawBitmap(c1Var.n, (Rect) null, new RectF(0.0f, 0.0f, qu0Var.a, qu0Var.b), (Paint) null);
                                         c1Var.n = createBitmap2;
                                         c1Var.r = true;
                                     }
@@ -265,7 +265,7 @@ public final class a1 extends s5 {
                                     z10 = true;
                                 } else {
                                     if (v2.a) {
-                                        z20.t(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                        a30.t(this.b, new StringBuilder("eglMakeCurrent failed "));
                                     }
                                     finish();
                                 }
@@ -282,13 +282,13 @@ public final class a1 extends s5 {
                     z10 = false;
                 } else {
                     if (v2.a) {
-                        z20.t(this.b, new StringBuilder("eglChooseConfig failed "));
+                        a30.t(this.b, new StringBuilder("eglChooseConfig failed "));
                     }
                     finish();
                 }
             } else {
                 if (v2.a) {
-                    z20.t(this.b, new StringBuilder("eglInitialize failed "));
+                    a30.t(this.b, new StringBuilder("eglInitialize failed "));
                 }
                 finish();
             }

@@ -2,15 +2,15 @@ package li;
 
 import java.io.File;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.x20;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.y20;
 import org.telegram.ui.Components.c50;
 import org.telegram.ui.Components.d50;
-import org.telegram.ui.Components.jz0;
 import org.telegram.ui.Components.kz0;
 import org.telegram.ui.Components.lz0;
+import org.telegram.ui.Components.mz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -37,7 +37,7 @@ public final /* synthetic */ class j0 implements Runnable {
         synchronized (x0Var.g) {
             if (!x0Var.G && !t0Var.d && !t0Var.e) {
                 t0Var.e = true;
-                ((lz0) x0Var.e).b(t0Var.a, file.length(), file);
+                ((mz0) x0Var.e).b(t0Var.a, file.length(), file);
                 x0Var.i.post(new j0(x0Var, t0Var, j10, file, z10));
             }
         }
@@ -45,8 +45,8 @@ public final /* synthetic */ class j0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        kz0 kz0Var;
-        kz0 kz0Var2;
+        lz0 lz0Var;
+        lz0 lz0Var2;
         switch (this.a) {
             case 0:
                 a();
@@ -73,28 +73,28 @@ public final /* synthetic */ class j0 implements Runnable {
                 }
                 d50Var.U = null;
                 d50Var.j0 = true;
-                lz0 lz0Var = d50Var.S;
-                if (lz0Var == null) {
-                    kz0Var2 = null;
+                mz0 mz0Var = d50Var.S;
+                if (mz0Var == null) {
+                    lz0Var2 = null;
                 } else {
-                    synchronized (lz0Var) {
-                        jz0 jz0Var = (jz0) lz0Var.c.get(Long.valueOf(j11));
-                        if (jz0Var != null && !jz0Var.e) {
-                            kz0Var = new kz0(Math.max(jz0Var.c, file.length()), jz0Var.f, jz0Var.g, jz0Var.h, jz0Var.i);
+                    synchronized (mz0Var) {
+                        kz0 kz0Var = (kz0) mz0Var.c.get(Long.valueOf(j11));
+                        if (kz0Var != null && !kz0Var.e) {
+                            lz0Var = new lz0(Math.max(kz0Var.c, file.length()), kz0Var.f, kz0Var.g, kz0Var.h, kz0Var.i);
                         }
-                        kz0Var = new kz0(file.length(), null, null, null, null);
+                        lz0Var = new lz0(file.length(), null, null, null, null);
                     }
-                    kz0Var2 = kz0Var;
+                    lz0Var2 = lz0Var;
                 }
-                x20 s10 = d50Var.s(file, j10, kz0Var2);
+                y20 s10 = d50Var.s(file, j10, lz0Var2);
                 s10.t = !z10;
-                ef efVar = new ef(0, file.getAbsolutePath(), 0, true, 0, 0);
-                efVar.x = c50Var.c;
-                efVar.y = c50Var.d;
-                d50Var.e.t(efVar, s10, c50Var.a, c50Var.b, 0, false, c50Var.e);
-                lz0 lz0Var2 = d50Var.S;
-                if (lz0Var2 != null) {
-                    lz0Var2.d(false);
+                ff ffVar = new ff(0, file.getAbsolutePath(), 0, true, 0, 0);
+                ffVar.x = c50Var.c;
+                ffVar.y = c50Var.d;
+                d50Var.e.u(ffVar, s10, c50Var.a, c50Var.b, 0, false, c50Var.e);
+                mz0 mz0Var2 = d50Var.S;
+                if (mz0Var2 != null) {
+                    mz0Var2.d(false);
                 }
                 d50Var.S = null;
                 MediaController.B().Y(false);

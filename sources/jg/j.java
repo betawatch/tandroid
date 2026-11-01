@@ -15,17 +15,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 import w7.z8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
-    public static final List p0 = Arrays.asList(-90, 0, 90, Integer.valueOf(zs.K2));
+    public static final List p0 = Arrays.asList(-90, 0, 90, Integer.valueOf(at.K2));
     public boolean D;
     public boolean E;
     public h F;
@@ -259,7 +259,7 @@ public abstract class j extends FrameLayout {
                 }
                 h hVar5 = this.F;
                 if (hVar5 != null) {
-                    hVar5.B(z20.v((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) org.telegram.messenger.i0.L(66.0f)));
+                    hVar5.B(a30.v((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) org.telegram.messenger.i0.L(66.0f)));
                     this.F.e(a1.g.c((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - org.telegram.messenger.i0.L(114.0f))));
                 }
                 h hVar6 = this.F;
@@ -562,8 +562,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public oj0 getSelectionBounds() {
-        return new oj0(0.0f, 0.0f, 0.0f, 0.0f);
+    public pj0 getSelectionBounds() {
+        return new pj0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {

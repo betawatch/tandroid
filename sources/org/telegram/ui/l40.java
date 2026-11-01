@@ -1,132 +1,102 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import android.animation.ValueAnimator;
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class l40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ Object d;
+public final class l40 extends Dialog {
+    public final ih.c a;
+    public final bi.t0 b;
+    public Bitmap c;
+    public Paint d;
+    public BitmapShader e;
+    public final Matrix f;
+    public float h;
+    public ValueAnimator n;
+    public boolean r;
 
-    public /* synthetic */ l40(Object obj, float f7, Runnable runnable, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f7;
-        this.c = runnable;
+    public l40(Context context, bi.t0 t0Var) {
+        super(context, R.style.TransparentDialog);
+        this.f = new Matrix();
+        this.b = t0Var;
+        t0Var.setVisibility(4);
+        org.telegram.messenger.i0.l2(new org.telegram.ui.Components.vg(19, this, t0Var), 14.0f);
+        ih.c cVar = new ih.c(this, context, t0Var);
+        this.a = cVar;
+        cVar.setOnClickListener(new a(this, 28));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        Runnable runnable = this.c;
-        float f7 = this.b;
-        Object obj = this.d;
-        switch (i10) {
-            case 0:
-                m40 m40Var = (m40) obj;
-                m40Var.h = f7;
-                m40Var.a.invalidate();
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 1:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                photoViewer.p6 = null;
-                photoViewer.f6 = 0.0f;
-                photoViewer.b6 = 0.0f;
-                photoViewer.g6 = 0.0f;
-                float u22 = photoViewer.u2(false);
-                photoViewer.e6 = u22;
-                photoViewer.a6 = u22;
-                photoViewer.e0.invalidate();
-                CropAreaView cropAreaView = photoViewer.C1.b.a;
-                float u23 = photoViewer.u2(false);
-                cropAreaView.n0 = 0.0f;
-                cropAreaView.o0 = u23;
-                cropAreaView.p0 = 0.0f;
-                cropAreaView.q0 = 0.0f;
-                cropAreaView.invalidate();
-                photoViewer.C1.c.setRotated(false);
-                if (Math.abs(f7) > 0.0f) {
-                    org.telegram.ui.Components.be0 be0Var = photoViewer.C1;
-                    eg.f fVar = be0Var.c;
-                    if (fVar != null) {
-                        fVar.b(0.0f);
-                        fVar.setRotated(false);
-                    }
-                    if (be0Var.b.m(f7)) {
-                        org.telegram.ui.ActionBar.a7.t(photoViewer.b1, org.telegram.ui.ActionBar.t6.ng, photoViewer.v2, PorterDuff.Mode.MULTIPLY);
-                    } else {
-                        photoViewer.b1.setColorFilter((ColorFilter) null);
-                    }
-                }
-                org.telegram.messenger.ye yeVar = photoViewer.X4.c;
-                if (yeVar != null) {
-                    yeVar.b = 0.0f;
-                    yeVar.a = 0.0f;
-                    yeVar.f = 1.0f;
-                    yeVar.e = 1.0f;
-                }
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 2:
-                rh.i4 i4Var = (rh.i4) obj;
-                i4Var.D = f7;
-                i4Var.invalidate();
-                if (animator == i4Var.E && runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 3:
-                th.d1 d1Var = (th.d1) obj;
-                d1Var.n = f7;
-                d1Var.invalidate();
-                if (animator == d1Var.r && runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 4:
-                vh.z1 z1Var = (vh.z1) obj;
-                z1Var.h = f7;
-                z1Var.i();
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                vh.o8 o8Var = (vh.o8) obj;
-                o8Var.L = null;
-                o8Var.I = f7;
-                o8Var.j();
-                o8Var.r.invalidate();
-                o8Var.n.invalidate();
-                runnable.run();
-                o8Var.P.e();
-                org.telegram.messenger.zs.e().k(99, 512);
-                org.telegram.messenger.zs.e().o();
-                o8Var.n();
-                Runnable runnable2 = o8Var.Q;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    o8Var.Q = null;
-                }
-                o8Var.r.invalidate();
-                o8Var.h0.invalidate();
-                break;
+    public final void b(float f7, j40 j40Var) {
+        ValueAnimator valueAnimator = this.n;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.n = null;
         }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
+        this.n = ofFloat;
+        ofFloat.addUpdateListener(new a3(this, 13));
+        this.n.addListener(new k40(this, f7, j40Var, 0));
+        this.n.setDuration(420L);
+        this.n.setInterpolator(org.telegram.ui.Components.gr.h);
+        this.n.start();
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        if (this.r) {
+            return;
+        }
+        this.r = true;
+        b(0.0f, new j40(this, 0));
+        try {
+            WindowManager.LayoutParams attributes = getWindow().getAttributes();
+            attributes.flags |= 16;
+            getWindow().setAttributes(attributes);
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = org.telegram.messenger.at.E1;
+        attributes.dimAmount = 0.0f;
+        int i10 = attributes.flags & (-3);
+        attributes.softInputMode = 48;
+        attributes.flags = (-2013069056) | i10;
+        boolean z10 = org.telegram.messenger.v2.a;
+        attributes.flags = i10 | (-2013060864);
+        org.telegram.messenger.i0.h2();
+        attributes.flags |= 1152;
+        if (Build.VERSION.SDK_INT >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        super.show();
+        b(1.0f, null);
+        org.telegram.messenger.i0.h3(new j40(this, 1), 16L);
     }
 }

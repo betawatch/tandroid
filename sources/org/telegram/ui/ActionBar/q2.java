@@ -11,18 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import j$.util.Objects;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.k31;
+import org.telegram.ui.Components.l31;
 import org.telegram.ui.Components.w00;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.Wallet.r9;
-import org.telegram.ui.be1;
-import org.telegram.ui.mt;
-import org.telegram.ui.q41;
+import org.telegram.ui.lt;
+import org.telegram.ui.o41;
+import org.telegram.ui.zd1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q2 extends TextView {
     public final /* synthetic */ int a;
@@ -57,10 +57,10 @@ public final class q2 extends TextView {
                 break;
             case 6:
                 super.draw(canvas);
-                q41 q41Var = (q41) this.b;
-                org.telegram.ui.Components.voip.g gVar = q41Var.c;
+                o41 o41Var = (o41) this.b;
+                org.telegram.ui.Components.voip.g gVar = o41Var.c;
                 if (gVar.g <= 1.0f) {
-                    SessionsActivity sessionsActivity = q41Var.f;
+                    SessionsActivity sessionsActivity = o41Var.f;
                     if (sessionsActivity.V && sessionsActivity.W) {
                         RectF rectF2 = org.telegram.messenger.i0.P;
                         rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -82,7 +82,7 @@ public final class q2 extends TextView {
         switch (this.a) {
             case 5:
                 super.onAttachedToWindow();
-                zs.e().c((mt) this.b, zs.i4);
+                at.e().c((lt) this.b, at.i4);
                 break;
             default:
                 super.onAttachedToWindow();
@@ -95,7 +95,7 @@ public final class q2 extends TextView {
         switch (this.a) {
             case 5:
                 super.onDetachedFromWindow();
-                zs.e().n((mt) this.b, zs.i4);
+                at.e().n((lt) this.b, at.i4);
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -133,7 +133,7 @@ public final class q2 extends TextView {
                 float e = l6Var.g0.e(false, l6Var.e0);
                 TextPaint paint2 = getPaint();
                 Objects.requireNonNull(paint2);
-                l6Var.c(e, new org.telegram.ui.Wallet.d3(paint2, 3), new org.telegram.ui.Wallet.k3(7, this, canvas));
+                l6Var.c(e, new org.telegram.ui.Wallet.e3(paint2, 3), new org.telegram.ui.Wallet.m2(8, this, canvas));
                 break;
             default:
                 super.onDraw(canvas);
@@ -147,7 +147,7 @@ public final class q2 extends TextView {
             case 8:
                 super.onLayout(z10, i10, i11, i12, i13);
                 if (z10) {
-                    ((be1) this.b).G();
+                    ((zd1) this.b).G();
                     break;
                 }
                 break;
@@ -187,8 +187,8 @@ public final class q2 extends TextView {
                 break;
             case 3:
                 super.onMeasure(i10, i11);
-                if (cd.X) {
-                    ((k31) this.b).b.setPivotX(getMeasuredWidth());
+                if (dd.X) {
+                    ((l31) this.b).b.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
@@ -262,7 +262,7 @@ public final class q2 extends TextView {
         switch (i10) {
             case 5:
                 super(context);
-                this.b = new mt(1, this);
+                this.b = new lt(1, this);
                 break;
             default:
                 break;

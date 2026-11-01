@@ -1,13 +1,13 @@
 package rh;
 
 import java.util.ArrayList;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class s5 implements RequestDelegate {
                                         u5Var2.j();
                                         u5Var2.d = true;
                                         u5Var2.c = false;
-                                        zs.f(i12).k(zs.H3, Long.valueOf(j10), u5Var2);
+                                        at.f(i12).k(at.H3, Long.valueOf(j10), u5Var2);
                                         break;
                                     }
                                 } else {
@@ -63,7 +63,7 @@ public final /* synthetic */ class s5 implements RequestDelegate {
                                     }
                                     u5Var2.d = true;
                                     u5Var2.c = false;
-                                    zs.f(i12).k(zs.H3, Long.valueOf(j10), u5Var2);
+                                    at.f(i12).k(at.H3, Long.valueOf(j10), u5Var2);
                                     break;
                                 }
                                 break;
@@ -112,7 +112,7 @@ public final /* synthetic */ class s5 implements RequestDelegate {
                                         u5Var22.j();
                                         u5Var22.d = true;
                                         u5Var22.c = false;
-                                        zs.f(i12).k(zs.H3, Long.valueOf(j10), u5Var22);
+                                        at.f(i12).k(at.H3, Long.valueOf(j10), u5Var22);
                                         break;
                                     }
                                 } else {
@@ -135,7 +135,7 @@ public final /* synthetic */ class s5 implements RequestDelegate {
                                     }
                                     u5Var22.d = true;
                                     u5Var22.c = false;
-                                    zs.f(i12).k(zs.H3, Long.valueOf(j10), u5Var22);
+                                    at.f(i12).k(at.H3, Long.valueOf(j10), u5Var22);
                                     break;
                                 }
                                 break;
@@ -185,7 +185,7 @@ public final /* synthetic */ class s5 implements RequestDelegate {
                                         u5Var22.j();
                                         u5Var22.d = true;
                                         u5Var22.c = false;
-                                        zs.f(i122).k(zs.H3, Long.valueOf(j10), u5Var22);
+                                        at.f(i122).k(at.H3, Long.valueOf(j10), u5Var22);
                                         break;
                                     }
                                 } else {
@@ -208,7 +208,7 @@ public final /* synthetic */ class s5 implements RequestDelegate {
                                     }
                                     u5Var22.d = true;
                                     u5Var22.c = false;
-                                    zs.f(i122).k(zs.H3, Long.valueOf(j10), u5Var22);
+                                    at.f(i122).k(at.H3, Long.valueOf(j10), u5Var22);
                                     break;
                                 }
                                 break;

@@ -12,7 +12,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ke extends FrameLayout {
     public final org.telegram.ui.ActionBar.p6 a;
@@ -26,7 +26,7 @@ public final class ke extends FrameLayout {
         super(context);
         this.a = p6Var;
         LinearLayout f7 = org.telegram.messenger.m5.f(context, 1);
-        addView(f7, w7.b6.d(-1, -2.0f, org.telegram.messenger.zs.E1, 17.0f, 9.0f, 130.0f, 9.0f));
+        addView(f7, w7.b6.d(-1, -2.0f, org.telegram.messenger.at.E1, 17.0f, 9.0f, 130.0f, 9.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 16.0f);
@@ -58,7 +58,7 @@ public final class ke extends FrameLayout {
             org.telegram.ui.ActionBar.p6 p6Var = this.a;
             Paint d = p6Var != null ? p6Var.d("paintDivider") : org.telegram.ui.ActionBar.t6.k0;
             if (d != null) {
-                canvas.drawLine(org.telegram.messenger.cd.X ? 0.0f : org.telegram.messenger.i0.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.cd.X ? org.telegram.messenger.i0.L(17.0f) : 0), getMeasuredHeight() - 1, d);
+                canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(17.0f) : 0), getMeasuredHeight() - 1, d);
             }
         }
     }

@@ -5,7 +5,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class dy {
     public final ArrayList a = new ArrayList();
@@ -27,10 +27,10 @@ public final class dy {
         ArrayList arrayList = this.a;
         if (z10) {
             arrayList.add(n10);
-            org.telegram.messenger.hs.a0(i10).M(n10, s6Var);
+            org.telegram.messenger.is.a0(i10).M(n10, s6Var);
             return;
         }
-        org.telegram.messenger.vp r12 = org.telegram.messenger.vp.r1(i10);
+        org.telegram.messenger.wp r12 = org.telegram.messenger.wp.r1(i10);
         TLObject e22 = r12.e2(r12.M3);
         if (e22 instanceof TLRPC.User) {
             arrayList.add(n10);

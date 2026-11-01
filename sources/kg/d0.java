@@ -4,16 +4,16 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONObject;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.h3;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.t2;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.cv;
-import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.gx0;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.nx;
 import org.telegram.ui.Components.s4;
@@ -42,9 +42,9 @@ import th.z2;
 import vh.w4;
 import vh.x4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d0 implements q20 {
+public final /* synthetic */ class d0 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -57,7 +57,7 @@ public final /* synthetic */ class d0 implements q20 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         TLRPC.ChatFull M0;
         ArrayList<TLRPC.Document> arrayList;
@@ -75,7 +75,7 @@ public final /* synthetic */ class d0 implements q20 {
                 ((s80) obj3).setLoading(false);
                 if (tL_premium_boostsStatus != null) {
                     q0Var.T1.boosts++;
-                    if (q0Var.Z1 == 32 && (M0 = vp.r1(q0Var.a).M0(-q0Var.S1)) != null) {
+                    if (q0Var.Z1 == 32 && (M0 = wp.r1(q0Var.a).M0(-q0Var.S1)) != null) {
                         M0.boosts_applied++;
                     }
                     q0Var.t1();
@@ -95,7 +95,7 @@ public final /* synthetic */ class d0 implements q20 {
                 TLRPC.InputFile inputFile = (TLRPC.InputFile) obj;
                 if (inputFile != null) {
                     TLRPC.TL_messages_uploadMedia tL_messages_uploadMedia = new TLRPC.TL_messages_uploadMedia();
-                    tL_messages_uploadMedia.peer = vp.r1(w7Var.a).i1(d20.i(w7Var.a).e());
+                    tL_messages_uploadMedia.peer = wp.r1(w7Var.a).i1(e20.i(w7Var.a).e());
                     TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument = new TLRPC.TL_inputMediaUploadedDocument();
                     tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument;
                     tL_inputMediaUploadedDocument.file = inputFile;
@@ -133,7 +133,7 @@ public final /* synthetic */ class d0 implements q20 {
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                         arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        TLRPC.TL_messages_stickerSet l02 = ui.b0(txVar.a.F.c1).l0(ui.Z(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true, false, null);
+                        TLRPC.TL_messages_stickerSet l02 = vi.b0(txVar.a.F.c1).l0(vi.Z(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true, false, null);
                         arrayList = l02 != null ? l02.documents : null;
                     } else {
                         arrayList = stickerSetCovered.covers;
@@ -146,13 +146,13 @@ public final /* synthetic */ class d0 implements q20 {
                 break;
             case 4:
                 org.telegram.ui.ActionBar.x1 x1Var2 = (org.telegram.ui.ActionBar.x1) obj3;
-                fx0 fx0Var = (fx0) obj2;
+                gx0 gx0Var = (gx0) obj2;
                 ((org.telegram.ui.ActionBar.x1) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    fx0Var.setErrorText(".");
-                    org.telegram.messenger.i0.F3(-6.0f, fx0Var, null);
+                    gx0Var.setErrorText(".");
+                    org.telegram.messenger.i0.F3(-6.0f, gx0Var, null);
                     t2.D.a();
-                    org.telegram.messenger.i0.J3(fx0Var);
+                    org.telegram.messenger.i0.J3(gx0Var);
                     break;
                 } else {
                     x1Var2.dismiss();
@@ -199,7 +199,7 @@ public final /* synthetic */ class d0 implements q20 {
                     e4Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.i0.g3(new rh.o(6, e4Var, tL_error));
+                    org.telegram.messenger.i0.g3(new rh.n(7, e4Var, tL_error));
                     break;
                 }
             case 9:
@@ -218,10 +218,10 @@ public final /* synthetic */ class d0 implements q20 {
                 u2 u2Var = (u2) obj4;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
                 TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) obj2;
-                q20 q20Var = (q20) obj;
+                r20 r20Var = (r20) obj;
                 z2 z2Var = u2Var.x;
                 if ((storyItem instanceof p4) && (q4Var = ((p4) storyItem).a) != null) {
-                    l5 l5Var = new l5(q4Var, storyItem2, q20Var, 5);
+                    l5 l5Var = new l5(q4Var, storyItem2, r20Var, 5);
                     if (q4Var.F != 0) {
                         ConnectionsManager.getInstance(q4Var.c).cancelRequest(q4Var.F, true);
                         q4Var.F = 0;
@@ -232,9 +232,9 @@ public final /* synthetic */ class d0 implements q20 {
                     break;
                 } else {
                     TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-                    tL_stories_getStoriesByID.peer = vp.r1(z2Var.l2).i1(storyItem.dialogId);
+                    tL_stories_getStoriesByID.peer = wp.r1(z2Var.l2).i1(storyItem.dialogId);
                     tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem.id));
-                    ConnectionsManager.getInstance(z2Var.l2).sendRequest(tL_stories_getStoriesByID, new ag.p0(u2Var, storyItem, q20Var, 23));
+                    ConnectionsManager.getInstance(z2Var.l2).sendRequest(tL_stories_getStoriesByID, new ag.p0(u2Var, storyItem, r20Var, 23));
                     break;
                 }
                 break;
@@ -242,15 +242,15 @@ public final /* synthetic */ class d0 implements q20 {
                 y4 y4Var = (y4) obj;
                 z2 z2Var2 = ((u2) obj4).x;
                 z2Var2.B1.c(y4Var.a, z2Var2.k1, (TL_stories.StoryItem) obj3);
-                z20.s(cd.a0(null, null, 2131744749, y4Var.b), new cc(z2Var2.L0, (p6) obj2), R.raw.contact_check, 36);
+                a30.s(dd.a0(null, null, 2131744749, y4Var.b), new cc(z2Var2.L0, (p6) obj2), R.raw.contact_check, 36);
                 break;
             case 12:
                 w4 w4Var = (w4) obj4;
-                vp vpVar = (vp) obj3;
+                wp wpVar = (wp) obj3;
                 String str2 = (String) obj2;
                 Long l10 = (Long) obj;
                 if (l10 != null) {
-                    TLObject d22 = vpVar.d2(l10.longValue());
+                    TLObject d22 = wpVar.d2(l10.longValue());
                     if (!(d22 instanceof TLRPC.User)) {
                         if (d22 instanceof TLRPC.Chat) {
                             w4Var.a(new vh.y4(str2, (TLRPC.Chat) d22));
@@ -266,11 +266,11 @@ public final /* synthetic */ class d0 implements q20 {
                 }
                 break;
             default:
-                q20 q20Var2 = (q20) obj3;
+                r20 r20Var2 = (r20) obj3;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj2;
                 ((org.telegram.ui.ActionBar.x1) obj4).dismiss();
-                if (((Boolean) obj).booleanValue() && q20Var2 != null) {
-                    q20Var2.a(inputPeer);
+                if (((Boolean) obj).booleanValue() && r20Var2 != null) {
+                    r20Var2.a(inputPeer);
                     break;
                 }
                 break;

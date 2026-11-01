@@ -6,11 +6,11 @@ import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import vg.f;
 import zg.h;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final Matrix a = new Matrix();
@@ -18,7 +18,7 @@ public abstract class d {
     public static final RectF c = new RectF();
 
     public static void a(ug.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
-        b(aVar, canvas, rectF, view, viewGroup, zs.e4);
+        b(aVar, canvas, rectF, view, viewGroup, at.e4);
     }
 
     public static void b(ug.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i10) {

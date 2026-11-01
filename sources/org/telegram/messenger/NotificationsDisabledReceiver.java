@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class NotificationsDisabledReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -31,7 +31,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
             if (v2.a) {
                 f8.b("received disabled notification channel event for " + stringExtra + " state = " + booleanExtra);
             }
-            if (SystemClock.elapsedRealtime() - ot.t(c.a(intValue).a).O <= 1000) {
+            if (SystemClock.elapsedRealtime() - pt.t(c.a(intValue).a).O <= 1000) {
                 if (v2.a) {
                     f8.b("received disable notification event right after creating notification channel, ignoring");
                     return;
@@ -48,8 +48,8 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 if (v2.a) {
                     f8.b("apply channel{channel} " + stringExtra + " state");
                 }
-                c10.edit().putInt(ot.q(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
-                ot.t(c.a(intValue).a).b0(2);
+                c10.edit().putInt(pt.q(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
+                pt.t(c.a(intValue).a).b0(2);
             } else if (split[1].startsWith("groups")) {
                 if (!stringExtra.equals(c10.getString("groups", null))) {
                     return;
@@ -58,12 +58,12 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     f8.b("apply channel{groups} " + stringExtra + " state");
                 }
                 SharedPreferences.Editor edit = c10.edit();
-                String q6 = ot.q(0);
+                String q6 = pt.q(0);
                 if (!booleanExtra) {
                     i10 = 0;
                 }
                 edit.putInt(q6, i10).commit();
-                ot.t(c.a(intValue).a).b0(0);
+                pt.t(c.a(intValue).a).b0(0);
             } else if (split[1].startsWith("private")) {
                 if (!stringExtra.equals(c10.getString("private", null))) {
                     return;
@@ -71,14 +71,14 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 if (v2.a) {
                     f8.b("apply channel{private} " + stringExtra + " state");
                 }
-                c10.edit().putInt(ot.q(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
-                ot.t(c.a(intValue).a).b0(1);
+                c10.edit().putInt(pt.q(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
+                pt.t(c.a(intValue).a).b0(1);
             } else if (!split[1].startsWith("stories")) {
                 long longValue = Utilities.A(split[1]).longValue();
                 if (longValue == 0) {
                     return;
                 }
-                String v = ot.v(longValue, 0, false);
+                String v = pt.v(longValue, 0, false);
                 if (!stringExtra.equals(c10.getString("org.telegram.key" + longValue, null))) {
                     return;
                 }
@@ -91,7 +91,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     edit2.remove("notifyuntil_" + v);
                 }
                 edit2.commit();
-                ot.t(c.a(intValue).a).c0(longValue, 0L, true);
+                pt.t(c.a(intValue).a).c0(longValue, 0L, true);
             } else {
                 if (!stringExtra.equals(c10.getString("stories", null))) {
                     return;
@@ -99,8 +99,8 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 if (v2.a) {
                     f8.b("apply channel{stories} " + stringExtra + " state");
                 }
-                c10.edit().putBoolean(ot.q(3), !booleanExtra).commit();
-                ot.t(c.a(intValue).a).b0(1);
+                c10.edit().putBoolean(pt.q(3), !booleanExtra).commit();
+                pt.t(c.a(intValue).a).b0(1);
             }
             ConnectionsManager.getInstance(c.a(intValue).a).resumeNetworkMaybe();
         }

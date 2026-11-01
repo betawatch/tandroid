@@ -8,9 +8,9 @@ import android.widget.FrameLayout;
 import j$.util.Objects;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.jw0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class o0 implements View.OnApplyWindowInsetsListener {
     public final hh.e a;
@@ -111,7 +111,7 @@ public final class o0 implements View.OnApplyWindowInsetsListener {
                     m5.e eVar = new m5.e(20, i0.c.b(min, min2, min3, Math.min(i27, i28)), i0.c.b(Math.max(f11.a, f12.a), Math.max(i23, i24), Math.max(i25, i26), Math.max(i27, i28)));
                     p0.f(view, h, false);
                     duration.addUpdateListener(new n0(u0Var, h, j1Var2, i22, view));
-                    duration.addListener(new iw0(15, view, (Object) u0Var));
+                    duration.addListener(new jw0(15, view, (Object) u0Var));
                     o.a(view, new com.google.android.gms.internal.cast.o(view, u0Var, eVar, duration, 5));
                     this.b = h;
                     if (view.getTag(R.id.tag_on_apply_window_listener) == null) {

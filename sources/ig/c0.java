@@ -35,22 +35,22 @@ import jg.w2;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.mc;
+import org.telegram.messenger.nc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.x1;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.er0;
-import org.telegram.ui.qo0;
+import org.telegram.ui.cr0;
+import org.telegram.ui.oo0;
 import v7.g8;
 import vh.l5;
 import w7.n6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c0 implements f0, fe.e, e2.o, f2.w, s1, u1, l5, OnSuccessListener, mc, a5.b, c0.j, m4.e0, m4.h1, e2.j, m4.f1, d9.k {
+public final /* synthetic */ class c0 implements f0, fe.e, e2.o, f2.w, s1, u1, l5, OnSuccessListener, nc, a5.b, c0.j, m4.e0, m4.h1, e2.j, m4.f1, d9.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -61,10 +61,10 @@ public final /* synthetic */ class c0 implements f0, fe.e, e2.o, f2.w, s1, u1, l
 
     @Override // ig.s1
     public void B() {
-        er0 er0Var = (er0) this.b;
-        TextView textView = er0Var.h1;
-        boolean a2 = er0Var.o0.a();
-        ImageView imageView = er0Var.f1;
+        cr0 cr0Var = (cr0) this.b;
+        TextView textView = cr0Var.h1;
+        boolean a2 = cr0Var.o0.a();
+        ImageView imageView = cr0Var.f1;
         imageView.animate().cancel();
         imageView.animate().alpha(a2 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         imageView.setClickable(a2);
@@ -210,7 +210,7 @@ public final /* synthetic */ class c0 implements f0, fe.e, e2.o, f2.w, s1, u1, l
     public void h(x1 x1Var, int i10) {
         switch (this.a) {
             case 10:
-                ((qo0) this.b).run();
+                ((oo0) this.b).run();
                 break;
             case 11:
                 ((jg.i0) this.b).a.O1.r();
@@ -346,16 +346,6 @@ public final /* synthetic */ class c0 implements f0, fe.e, e2.o, f2.w, s1, u1, l
         }
     }
 
-    @Override // org.telegram.messenger.mc
-    public void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        bi0 B;
-        w2 w2Var = (w2) this.b;
-        if (!z10 || z11 || (B = imageReceiver.B()) == null) {
-            return;
-        }
-        w2Var.q(B);
-    }
-
     @Override // com.google.android.gms.tasks.OnSuccessListener
     public void onSuccess(Object obj) {
         int i10 = this.a;
@@ -413,6 +403,16 @@ public final /* synthetic */ class c0 implements f0, fe.e, e2.o, f2.w, s1, u1, l
         }
     }
 
+    @Override // org.telegram.messenger.nc
+    public void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ci0 B;
+        w2 w2Var = (w2) this.b;
+        if (!z10 || z11 || (B = imageReceiver.B()) == null) {
+            return;
+        }
+        w2Var.q(B);
+    }
+
     @Override // fe.e
     public void v(int i10, float f7, float f10, fe.f fVar) {
         ih.d.a((ih.d) this.b);
@@ -428,7 +428,7 @@ public final /* synthetic */ class c0 implements f0, fe.e, e2.o, f2.w, s1, u1, l
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public /* synthetic */ void j(ImageReceiver imageReceiver) {
     }
 
@@ -436,7 +436,7 @@ public final /* synthetic */ class c0 implements f0, fe.e, e2.o, f2.w, s1, u1, l
     public /* synthetic */ void E(float f7, int i10) {
     }
 
-    @Override // org.telegram.messenger.mc
-    public /* synthetic */ void q(int i10, Drawable drawable) {
+    @Override // org.telegram.messenger.nc
+    public /* synthetic */ void s(int i10, Drawable drawable) {
     }
 }

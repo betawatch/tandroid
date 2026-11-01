@@ -9,7 +9,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b5 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -85,10 +85,10 @@ public final /* synthetic */ class b5 implements Runnable {
                     while (i18 < size) {
                         if (i18 == -1) {
                             i12 = i17;
-                            p5 = ui.p(j11, i5Var.getUserConfig().h);
+                            p5 = vi.p(j11, i5Var.getUserConfig().h);
                         } else {
                             i12 = i17;
-                            p5 = ui.p(j11, ((TLRPC.TL_contact) arrayList5.get(i18)).user_id);
+                            p5 = vi.p(j11, ((TLRPC.TL_contact) arrayList5.get(i18)).user_id);
                         }
                         j11 = p5;
                         i18++;
@@ -112,7 +112,7 @@ public final /* synthetic */ class b5 implements Runnable {
                 final boolean z11 = false;
                 while (i19 < arrayList4.size()) {
                     TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList4.get(i19);
-                    if (vp.r1(i5Var.currentAccount).Z1(Long.valueOf(tL_contact.user_id)) == null && tL_contact.user_id != i5Var.getUserConfig().e()) {
+                    if (wp.r1(i5Var.currentAccount).Z1(Long.valueOf(tL_contact.user_id)) == null && tL_contact.user_id != i5Var.getUserConfig().e()) {
                         arrayList4.remove(i19);
                         i19--;
                         z11 = true;
@@ -160,7 +160,7 @@ public final /* synthetic */ class b5 implements Runnable {
                             i11 = 0;
                             hashMap2.put(user.phone.substring(Math.max(0, r3.length() - 7)), tL_contact2);
                         }
-                        String j12 = h20.j(user, true);
+                        String j12 = i20.j(user, true);
                         concurrentHashMap = concurrentHashMap2;
                         if (j12.length() > 1) {
                             j12 = j12.substring(i11, 1);
@@ -226,7 +226,7 @@ public final /* synthetic */ class b5 implements Runnable {
                         }
                         Utilities.h.c(new z4(i5Var2, new ArrayList(i5Var2.e0), 0));
                         i5Var2.N();
-                        i5Var2.getNotificationCenter().k(zs.O, new Object[0]);
+                        i5Var2.getNotificationCenter().k(at.O, new Object[0]);
                         if (i25 == 1 || z13) {
                             i5Var2.J(false);
                         } else {
@@ -250,9 +250,9 @@ public final /* synthetic */ class b5 implements Runnable {
                 }
                 break;
             default:
-                qz qzVar = (qz) f1Var;
+                rz rzVar = (rz) f1Var;
                 TLObject tLObject = (TLObject) obj2;
-                cz czVar = (cz) obj;
+                dz dzVar = (dz) obj;
                 boolean z13 = tLObject instanceof TLRPC.TL_messages_sendMultiMedia;
                 int i25 = this.b;
                 ArrayList arrayList11 = this.c;
@@ -262,24 +262,24 @@ public final /* synthetic */ class b5 implements Runnable {
                     int size2 = tL_messages_sendMultiMedia.multi_media.size();
                     z10 = false;
                     for (int i26 = 0; i26 < size2; i26++) {
-                        if (i25 < 0 ? czVar.y.get(i26) != null : i25 == i26) {
-                            qzVar.i0(((jj) arrayList11.get(i26)).f1(), z14);
+                        if (i25 < 0 ? dzVar.y.get(i26) != null : i25 == i26) {
+                            rzVar.i0(((kj) arrayList11.get(i26)).f1(), z14);
                             TLRPC.TL_inputSingleMedia tL_inputSingleMedia = tL_messages_sendMultiMedia.multi_media.get(i26);
                             TLRPC.InputMedia inputMedia3 = tL_inputSingleMedia.media;
                             if (inputMedia3 instanceof TLRPC.TL_inputMediaPhoto) {
-                                tL_inputSingleMedia.media = (TLRPC.InputMedia) czVar.A.get(i26);
+                                tL_inputSingleMedia.media = (TLRPC.InputMedia) dzVar.A.get(i26);
                             } else if (inputMedia3 instanceof TLRPC.TL_inputMediaDocument) {
-                                tL_inputSingleMedia.media = (TLRPC.InputMedia) czVar.A.get(i26);
+                                tL_inputSingleMedia.media = (TLRPC.InputMedia) dzVar.A.get(i26);
                             }
-                            czVar.o = (x20) czVar.w.get(i26);
-                            czVar.l = (String) czVar.v.get(i26);
-                            TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) czVar.u.get(i26);
-                            czVar.g = photoSize;
-                            czVar.p = true;
+                            dzVar.o = (y20) dzVar.w.get(i26);
+                            dzVar.l = (String) dzVar.v.get(i26);
+                            TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) dzVar.u.get(i26);
+                            dzVar.g = photoSize;
+                            dzVar.p = true;
                             if (tL_inputSingleMedia.media.file == null || photoSize != null) {
                                 z10 = true;
                             }
-                            qzVar.M(czVar, i26);
+                            rzVar.M(dzVar, i26);
                         }
                     }
                     i13 = 0;
@@ -292,55 +292,55 @@ public final /* synthetic */ class b5 implements Runnable {
                         for (0; i14 < size3; i14 + 1) {
                             if (i25 >= 0) {
                                 i14 = i25 != i14 ? i14 + 1 : 0;
-                                qzVar.i0(((jj) arrayList11.get(i14)).f1(), z14);
+                                rzVar.i0(((kj) arrayList11.get(i14)).f1(), z14);
                                 inputMedia = tL_inputMediaPaidMedia.extended_media.get(i14);
                                 if (inputMedia instanceof TLRPC.TL_inputMediaPhoto) {
                                     if (inputMedia instanceof TLRPC.TL_inputMediaDocument) {
                                         ArrayList<TLRPC.InputMedia> arrayList12 = tL_inputMediaPaidMedia.extended_media;
-                                        inputMedia2 = (TLRPC.InputMedia) czVar.A.get(i14);
+                                        inputMedia2 = (TLRPC.InputMedia) dzVar.A.get(i14);
                                         arrayList12.set(i14, inputMedia2);
                                     }
-                                    czVar.o = (x20) czVar.w.get(i14);
-                                    czVar.l = (String) czVar.v.get(i14);
-                                    TLRPC.PhotoSize photoSize2 = (TLRPC.PhotoSize) czVar.u.get(i14);
-                                    czVar.g = photoSize2;
-                                    czVar.p = true;
+                                    dzVar.o = (y20) dzVar.w.get(i14);
+                                    dzVar.l = (String) dzVar.v.get(i14);
+                                    TLRPC.PhotoSize photoSize2 = (TLRPC.PhotoSize) dzVar.u.get(i14);
+                                    dzVar.g = photoSize2;
+                                    dzVar.p = true;
                                     if (inputMedia.file != null || photoSize2 != null) {
                                         z10 = true;
                                     }
-                                    qzVar.M(czVar, i14);
+                                    rzVar.M(dzVar, i14);
                                 } else {
                                     ArrayList<TLRPC.InputMedia> arrayList13 = tL_inputMediaPaidMedia.extended_media;
-                                    inputMedia2 = (TLRPC.InputMedia) czVar.A.get(i14);
+                                    inputMedia2 = (TLRPC.InputMedia) dzVar.A.get(i14);
                                     arrayList13.set(i14, inputMedia2);
                                 }
                                 inputMedia = inputMedia2;
-                                czVar.o = (x20) czVar.w.get(i14);
-                                czVar.l = (String) czVar.v.get(i14);
-                                TLRPC.PhotoSize photoSize22 = (TLRPC.PhotoSize) czVar.u.get(i14);
-                                czVar.g = photoSize22;
-                                czVar.p = true;
+                                dzVar.o = (y20) dzVar.w.get(i14);
+                                dzVar.l = (String) dzVar.v.get(i14);
+                                TLRPC.PhotoSize photoSize22 = (TLRPC.PhotoSize) dzVar.u.get(i14);
+                                dzVar.g = photoSize22;
+                                dzVar.p = true;
                                 if (inputMedia.file != null) {
                                 }
                                 z10 = true;
-                                qzVar.M(czVar, i14);
+                                rzVar.M(dzVar, i14);
                             } else {
-                                if (czVar.y.get(i14) == null) {
+                                if (dzVar.y.get(i14) == null) {
                                 }
-                                qzVar.i0(((jj) arrayList11.get(i14)).f1(), z14);
+                                rzVar.i0(((kj) arrayList11.get(i14)).f1(), z14);
                                 inputMedia = tL_inputMediaPaidMedia.extended_media.get(i14);
                                 if (inputMedia instanceof TLRPC.TL_inputMediaPhoto) {
                                 }
                                 inputMedia = inputMedia2;
-                                czVar.o = (x20) czVar.w.get(i14);
-                                czVar.l = (String) czVar.v.get(i14);
-                                TLRPC.PhotoSize photoSize222 = (TLRPC.PhotoSize) czVar.u.get(i14);
-                                czVar.g = photoSize222;
-                                czVar.p = true;
+                                dzVar.o = (y20) dzVar.w.get(i14);
+                                dzVar.l = (String) dzVar.v.get(i14);
+                                TLRPC.PhotoSize photoSize222 = (TLRPC.PhotoSize) dzVar.u.get(i14);
+                                dzVar.g = photoSize222;
+                                dzVar.p = true;
                                 if (inputMedia.file != null) {
                                 }
                                 z10 = true;
-                                qzVar.M(czVar, i14);
+                                rzVar.M(dzVar, i14);
                             }
                         }
                     } else {
@@ -349,17 +349,17 @@ public final /* synthetic */ class b5 implements Runnable {
                 }
                 if (!z10) {
                     for (int i27 = i13; i27 < arrayList11.size(); i27++) {
-                        TLRPC.Message message = ((jj) arrayList11.get(i27)).k;
-                        qzVar.getMessagesStorage().N0(z14 ? 1 : 0, message);
+                        TLRPC.Message message = ((kj) arrayList11.get(i27)).k;
+                        rzVar.getMessagesStorage().N0(z14 ? 1 : 0, message);
                         message.send_state = 2;
                         message.errorAllowedPriceStars = 0L;
                         message.errorNewPriceStars = 0L;
-                        zs notificationCenter = qzVar.getNotificationCenter();
+                        at notificationCenter = rzVar.getNotificationCenter();
                         Object[] objArr = new Object[1];
                         objArr[i13] = Integer.valueOf(message.id);
                         notificationCenter.k(23, objArr);
-                        qzVar.d0(message.id);
-                        qzVar.i0(message.id, z14);
+                        rzVar.d0(message.id);
+                        rzVar.i0(message.id, z14);
                     }
                     break;
                 }
@@ -367,11 +367,11 @@ public final /* synthetic */ class b5 implements Runnable {
         }
     }
 
-    public /* synthetic */ b5(qz qzVar, TLObject tLObject, int i10, cz czVar, ArrayList arrayList, boolean z10) {
-        this.e = qzVar;
+    public /* synthetic */ b5(rz rzVar, TLObject tLObject, int i10, dz dzVar, ArrayList arrayList, boolean z10) {
+        this.e = rzVar;
         this.f = tLObject;
         this.b = i10;
-        this.h = czVar;
+        this.h = dzVar;
         this.c = arrayList;
         this.d = z10;
     }

@@ -16,7 +16,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d9 {
     public byte[] A;
@@ -184,9 +184,9 @@ public final class d9 {
                     if (!this.E && this.t > 10485760) {
                         this.D = true;
                     }
-                    long j12 = vp.r1(i16).r6;
-                    if (d20.i(c.a(i16).a).q() && this.t > 2097152000) {
-                        j12 = vp.r1(i16).s6;
+                    long j12 = wp.r1(i16).r6;
+                    if (e20.i(c.a(i16).a).q() && this.t > 2097152000) {
+                        j12 = wp.r1(i16).s6;
                     }
                     z11 = z15;
                     long j13 = j12 * 1024;
@@ -200,7 +200,7 @@ public final class d9 {
                         this.h = i17;
                     }
                     this.e = Math.max(1, (this.i ? 32 : TLObject.FLAG_13) / this.h);
-                    this.f = d20.i(c.a(i16).a).q() ? 8 : 4;
+                    this.f = e20.i(c.a(i16).a).q() ? 8 : 4;
                     if (z11) {
                         this.j = new ArrayList(this.e);
                         for (int i18 = 0; i18 < this.e; i18++) {
@@ -314,7 +314,7 @@ public final class d9 {
                                                         System.arraycopy(this.z, 0, bArr6, 32, 32);
                                                         byte[] digest = messageDigest.digest(bArr6);
                                                         for (int i25 = 0; i25 < 4; i25++) {
-                                                            this.C |= ((digest[i25] ^ digest[i25 + 4]) & zs.e4) << (i25 * 8);
+                                                            this.C |= ((digest[i25] ^ digest[i25 + 4]) & at.e4) << (i25 * 8);
                                                         }
                                                     } catch (Exception e) {
                                                         f8.g(e, true);
@@ -569,7 +569,7 @@ public final class d9 {
                         }
                         int f7 = tLObject != null ? tLObject.networkType : w0.f();
                         if (i51 == 50331648) {
-                            uz.e(i52).j(f7, 3, i47);
+                            vz.e(i52).j(f7, 3, i47);
                             i41 = i51;
                             i42 = 5;
                             sparseArray = sparseArray2;
@@ -577,18 +577,18 @@ public final class d9 {
                             i41 = i51;
                             if (i41 == 33554432) {
                                 sparseArray = sparseArray2;
-                                uz.e(i52).j(f7, 2, i47);
+                                vz.e(i52).j(f7, 2, i47);
                             } else {
                                 sparseArray = sparseArray2;
                                 if (i41 == 16777216) {
-                                    uz.e(i52).j(f7, 4, i47);
+                                    vz.e(i52).j(f7, 4, i47);
                                 } else if (i41 == 67108864) {
                                     if (str5 == null || !(str5.toLowerCase().endsWith("mp3") || str5.toLowerCase().endsWith("m4a"))) {
                                         long j19 = i47;
                                         i42 = 5;
-                                        uz.e(i52).j(f7, 5, j19);
+                                        vz.e(i52).j(f7, 5, j19);
                                     } else {
-                                        uz.e(i52).j(f7, 7, i47);
+                                        vz.e(i52).j(f7, 7, i47);
                                     }
                                 }
                             }
@@ -614,14 +614,14 @@ public final class d9 {
                         y7 y7Var = d9Var2.o;
                         int i53 = i42;
                         long j21 = d9Var2.w;
-                        rb rbVar = y7Var.d.E;
-                        if (rbVar != null) {
+                        sb sbVar = y7Var.d.E;
+                        if (sbVar != null) {
                             d9Var = d9Var2;
                             str3 = "m4a";
                             str2 = str5;
                             j17 = 0;
                             i43 = i40;
-                            rbVar.a(d9Var, y7Var.b, j21, max2, y7Var.a);
+                            sbVar.a(d9Var, y7Var.b, j21, max2, y7Var.a);
                         } else {
                             str2 = str5;
                             d9Var = d9Var2;
@@ -699,7 +699,7 @@ public final class d9 {
                             y7Var2.getClass();
                             str4 = str6;
                             i44 = i53;
-                            b8.J.c(new am(y7Var2, y7Var2.a, y7Var2.b, y7Var2.c, inputFile, (TLRPC.InputEncryptedFile) null, (byte[]) null, (byte[]) null, d9Var4));
+                            b8.J.c(new bm(y7Var2, y7Var2.a, y7Var2.b, y7Var2.c, inputFile, (TLRPC.InputEncryptedFile) null, (byte[]) null, (byte[]) null, d9Var4));
                             d9Var4.b();
                         } else {
                             str4 = str3;
@@ -719,26 +719,26 @@ public final class d9 {
                             byte[] bArr10 = d9Var5.y;
                             byte[] bArr11 = d9Var5.z;
                             y7Var3.getClass();
-                            b8.J.c(new am(y7Var3, y7Var3.a, y7Var3.b, y7Var3.c, (TLRPC.InputFile) null, inputEncryptedFile, bArr10, bArr11, d9Var5));
+                            b8.J.c(new bm(y7Var3, y7Var3.a, y7Var3.b, y7Var3.c, (TLRPC.InputFile) null, inputEncryptedFile, bArr10, bArr11, d9Var5));
                             d9Var5.b();
                         }
                         if (i41 == 50331648) {
-                            uz.e(i52).k(w0.f(), 3, 1);
+                            vz.e(i52).k(w0.f(), 3, 1);
                             return;
                         }
                         if (i41 == 33554432) {
-                            uz.e(i52).k(w0.f(), 2, 1);
+                            vz.e(i52).k(w0.f(), 2, 1);
                             return;
                         }
                         if (i41 == 16777216) {
-                            uz.e(i52).k(w0.f(), 4, 1);
+                            vz.e(i52).k(w0.f(), 4, 1);
                             return;
                         }
                         if (i41 == 67108864) {
                             if (str2 == null || !(str2.toLowerCase().endsWith("mp3") || str2.toLowerCase().endsWith(str4))) {
-                                uz.e(i52).k(w0.f(), i44, 1);
+                                vz.e(i52).k(w0.f(), i44, 1);
                             } else {
-                                uz.e(i52).k(w0.f(), 7, 1);
+                                vz.e(i52).k(w0.f(), 7, 1);
                             }
                         }
                     }

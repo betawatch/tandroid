@@ -1,14 +1,14 @@
 package ki;
 
 import java.util.HashMap;
-import org.telegram.messenger.np;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.op;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.oo;
 import org.telegram.ui.web.p1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        p51 p51Var;
+        q51 q51Var;
         switch (this.a) {
             case 0:
                 k kVar = (k) this.d;
@@ -86,32 +86,32 @@ public final /* synthetic */ class d implements Runnable {
                 }
                 break;
             case 2:
-                vp vpVar = (vp) this.d;
+                wp wpVar = (wp) this.d;
                 long j16 = this.b;
                 long j17 = this.c;
-                a0.h hVar = vpVar.Q1;
-                HashMap hashMap = vpVar.S1;
+                a0.h hVar = wpVar.Q1;
+                HashMap hashMap = wpVar.S1;
                 if (j16 == 0) {
-                    np npVar = (np) hVar.f(j17);
-                    if (npVar != null) {
-                        vpVar.R(npVar);
-                        vpVar.P1.remove(npVar);
+                    op opVar = (op) hVar.f(j17);
+                    if (opVar != null) {
+                        wpVar.R(opVar);
+                        wpVar.P1.remove(opVar);
                         hVar.l(j17);
                         break;
                     }
                 } else {
                     String str = j17 + "_" + j16;
-                    np npVar2 = (np) hashMap.get(str);
-                    if (npVar2 != null) {
-                        vpVar.R(npVar2);
-                        vpVar.R1.remove(npVar2);
+                    op opVar2 = (op) hashMap.get(str);
+                    if (opVar2 != null) {
+                        wpVar.R(opVar2);
+                        wpVar.R1.remove(opVar2);
                         hashMap.remove(str);
                         break;
                     }
                 }
                 break;
             case 3:
-                oo.a0((oo) this.d, this.b, this.c);
+                oo.b0((oo) this.d, this.b, this.c);
                 break;
             default:
                 p1 p1Var = (p1) this.d;
@@ -120,8 +120,8 @@ public final /* synthetic */ class d implements Runnable {
                 p1Var.h = j18;
                 p1Var.n = j19;
                 ii iiVar = p1Var.a;
-                if (iiVar != null && (p51Var = iiVar.f3) != null && iiVar.G) {
-                    p51Var.O(true);
+                if (iiVar != null && (q51Var = iiVar.f3) != null && iiVar.G) {
+                    q51Var.O(true);
                     break;
                 }
                 break;

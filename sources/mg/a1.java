@@ -1,8 +1,8 @@
 package mg;
 
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 break;
             default:
                 c1 c1Var = this.b;
-                kg.v1 v1Var = new kg.v1(c1Var.o1, d20.s0, null, null, null, c1Var.I0);
+                kg.v1 v1Var = new kg.v1(c1Var.o1, e20.s0, null, null, null, c1Var.I0);
                 v1Var.B2 = true;
                 v1Var.C2 = true;
                 v1Var.U1 = true;

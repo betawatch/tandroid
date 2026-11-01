@@ -1,58 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.text.TextPaint;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class t21 extends Drawable {
-    public final bi0 a;
-    public int b;
-    public final TextPaint c;
+public final /* synthetic */ class t21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.kj b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ String d;
 
-    public t21(TextPaint textPaint) {
-        bi.s0 s0Var = new bi.s0(this, 5);
-        this.c = textPaint;
-        float textSize = textPaint.getTextSize() * 0.89f;
-        bi0 bi0Var = new bi0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
-        this.a = bi0Var;
-        bi0Var.setCallback(s0Var);
-        bi0Var.K(1);
-        bi0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
-        bi0Var.J(true);
-        bi0Var.start();
+    public /* synthetic */ t21(org.telegram.messenger.kj kjVar, long j10, String str, int i10) {
+        this.a = i10;
+        this.b = kjVar;
+        this.c = j10;
+        this.d = str;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int color = this.c.getColor();
-        int i10 = this.b;
-        bi0 bi0Var = this.a;
-        if (color != i10) {
-            bi0Var.Z = true;
-            bi0Var.Q(color, "Comp 1");
-            bi0Var.o();
-            bi0Var.J(true);
-            bi0Var.V(0L);
-            this.b = color;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        String str = this.d;
+        long j10 = this.c;
+        org.telegram.messenger.kj kjVar = this.b;
+        switch (i10) {
+            case 0:
+                v21.f(kjVar, j10, str);
+                break;
+            default:
+                org.telegram.messenger.at f7 = org.telegram.messenger.at.f(kjVar.I1);
+                Long valueOf = Long.valueOf(j10);
+                Boolean bool = Boolean.TRUE;
+                f7.k(org.telegram.messenger.at.A1, kjVar, valueOf, str, bool, bool);
+                break;
         }
-        bi0Var.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

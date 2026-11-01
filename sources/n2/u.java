@@ -32,20 +32,20 @@ import java.util.Collection;
 import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.aa;
-import org.telegram.messenger.cb;
-import org.telegram.messenger.cv;
+import org.telegram.messenger.ba;
+import org.telegram.messenger.db;
+import org.telegram.messenger.dv;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.ff;
+import org.telegram.messenger.gf;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.k0;
-import org.telegram.messenger.k20;
-import org.telegram.messenger.mc;
-import org.telegram.messenger.nd;
+import org.telegram.messenger.l20;
+import org.telegram.messenger.nc;
+import org.telegram.messenger.od;
 import org.telegram.messenger.q0;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.ra;
-import org.telegram.messenger.x20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.sa;
+import org.telegram.messenger.y20;
 import org.telegram.ui.ActionBar.b1;
 import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.k2;
@@ -54,36 +54,36 @@ import org.telegram.ui.ActionBar.s5;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.w7;
 import org.telegram.ui.Cells.x7;
+import org.telegram.ui.Components.au0;
 import org.telegram.ui.Components.cb0;
 import org.telegram.ui.Components.e50;
 import org.telegram.ui.Components.eb0;
-import org.telegram.ui.Components.ep0;
-import org.telegram.ui.Components.hu0;
+import org.telegram.ui.Components.fp0;
+import org.telegram.ui.Components.iu0;
 import org.telegram.ui.Components.iz;
 import org.telegram.ui.Components.jf0;
 import org.telegram.ui.Components.kf0;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.mn0;
-import org.telegram.ui.Components.nj0;
-import org.telegram.ui.Components.o71;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.u71;
-import org.telegram.ui.Components.w71;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.nn0;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.v71;
 import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.ws0;
 import org.telegram.ui.Components.x40;
-import org.telegram.ui.Components.zt0;
+import org.telegram.ui.Components.x71;
+import org.telegram.ui.Components.xs0;
 import ph.x1;
 import qh.x0;
 import sg.o0;
 import th.z2;
 import v7.i5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u71, qh.x, com.google.android.gms.common.api.internal.o, hu0, n5.b, lj0, ep0, s0, com.google.android.gms.common.api.internal.s {
+public final class u implements o0.a, nc, wg.a, nn0, fe.g, iz, t61, m61, xs0, v71, qh.x, com.google.android.gms.common.api.internal.o, iu0, n5.b, mj0, fp0, s0, com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -92,7 +92,7 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ boolean A() {
         return false;
     }
@@ -106,14 +106,14 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         return b5Var.getButtonsGlassColorProvider();
     }
 
-    @Override // org.telegram.ui.Components.ep0
+    @Override // org.telegram.ui.Components.fp0
     public void B0() {
         z2.h0((z2) this.b);
     }
 
-    @Override // org.telegram.ui.Components.ws0
+    @Override // org.telegram.ui.Components.xs0
     public b1 D(String str) {
-        p5 p5Var = ((zt0) this.b).I;
+        p5 p5Var = ((au0) this.b).I;
         return p5Var.d(0, 0, null, str, true, true, p5Var.m0);
     }
 
@@ -143,7 +143,7 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         throw new IllegalArgumentException("No initializer set for given class ".concat(cls.getName()));
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public void F(boolean z10) {
         fe.b bVar = ((rh.i) this.b).s;
         if (bVar != null) {
@@ -152,11 +152,11 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
     }
 
     public boolean G(int i10) {
-        o71 o71Var = ((w71) this.b).L;
-        if (o71Var == null) {
+        p71 p71Var = ((x71) this.b).L;
+        if (p71Var == null) {
             return false;
         }
-        return o71Var.c(i10);
+        return p71Var.c(i10);
     }
 
     @Override // o0.a
@@ -174,31 +174,31 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
     }
 
     public void J(float f7) {
-        w71 w71Var = (w71) this.b;
-        View[] viewArr = w71Var.e;
+        x71 x71Var = (x71) this.b;
+        View[] viewArr = x71Var.e;
         if (f7 == 1.0f) {
             if (viewArr[1] != null) {
-                w71Var.G();
-                w71Var.h.put(w71Var.f[1], viewArr[1]);
-                w71Var.removeView(viewArr[1]);
-                w71Var.F(viewArr[0], 0.0f);
+                x71Var.G();
+                x71Var.h.put(x71Var.f[1], viewArr[1]);
+                x71Var.removeView(viewArr[1]);
+                x71Var.F(viewArr[0], 0.0f);
                 viewArr[1] = null;
             }
-            w71Var.A(w71Var.b);
+            x71Var.A(x71Var.b);
             return;
         }
         View view = viewArr[1];
         if (view == null) {
             return;
         }
-        if (w71Var.D) {
-            w71Var.F(view, (1.0f - f7) * viewArr[0].getMeasuredWidth());
-            w71Var.F(viewArr[0], (-r1.getMeasuredWidth()) * f7);
+        if (x71Var.D) {
+            x71Var.F(view, (1.0f - f7) * viewArr[0].getMeasuredWidth());
+            x71Var.F(viewArr[0], (-r1.getMeasuredWidth()) * f7);
         } else {
-            w71Var.F(view, (1.0f - f7) * (-viewArr[0].getMeasuredWidth()));
-            w71Var.F(viewArr[0], r1.getMeasuredWidth() * f7);
+            x71Var.F(view, (1.0f - f7) * (-viewArr[0].getMeasuredWidth()));
+            x71Var.F(viewArr[0], r1.getMeasuredWidth() * f7);
         }
-        w71Var.x(false);
+        x71Var.x(false);
     }
 
     @Override // wg.a
@@ -245,9 +245,9 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         return (X2 < 0.0f || X < 0.0f) ? s5Var.a < 0.5f ? X2 : X : i0.T1(X2, X, s5Var.a);
     }
 
-    public Point a0(cb cbVar) {
+    public Point a0(db dbVar) {
         a6.i iVar = (a6.i) this.b;
-        LatLng latLng = new LatLng(cbVar.a, cbVar.b);
+        LatLng latLng = new LatLng(dbVar.a, dbVar.b);
         try {
             i8.b bVar = (i8.b) iVar.b;
             Parcel P0 = bVar.P0();
@@ -261,7 +261,7 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         }
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public float a1() {
         i0.c cVar;
         cVar = ((k2) ((rh.i) this.b)).mSystemInsets;
@@ -299,9 +299,9 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
 
     @Override // org.telegram.ui.Components.iz
     public ByteBuffer b() {
-        ff ffVar = (ff) this.b;
-        ffVar.p.d();
-        return (ByteBuffer) ffVar.p.f;
+        gf gfVar = (gf) this.b;
+        gfVar.p.d();
+        return (ByteBuffer) gfVar.p.f;
     }
 
     @Override // wg.a
@@ -338,12 +338,12 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         return false;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ boolean f() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public int g1() {
         i0.c cVar;
         cVar = ((k2) ((rh.i) this.b)).mSystemInsets;
@@ -357,32 +357,32 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
 
     @Override // org.telegram.ui.Components.iz
     public float getBlurAngle() {
-        return ((ff) this.b).t;
+        return ((gf) this.b).t;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getBlurExcludeBlurSize() {
-        return ((ff) this.b).s;
+        return ((gf) this.b).s;
     }
 
     @Override // org.telegram.ui.Components.iz
     public PointF getBlurExcludePoint() {
-        return ((ff) this.b).r;
+        return ((gf) this.b).r;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getBlurExcludeSize() {
-        return ((ff) this.b).q;
+        return ((gf) this.b).q;
     }
 
     @Override // org.telegram.ui.Components.iz
     public int getBlurType() {
-        return ((ff) this.b).n;
+        return ((gf) this.b).n;
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public CharSequence getContentDescription() {
-        k20 k20Var;
+        l20 l20Var;
         x7 x7Var = (x7) this.b;
         try {
             StringBuilder sb2 = new StringBuilder();
@@ -390,8 +390,8 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
                 sb2.append(x7Var.s);
             }
             w7 w7Var = x7Var.r;
-            if (w7Var != null && (k20Var = w7Var.e) != null) {
-                CharSequence charSequence = (CharSequence) k20Var.d(0, Integer.valueOf(x7Var.f));
+            if (w7Var != null && (l20Var = w7Var.e) != null) {
+                CharSequence charSequence = (CharSequence) l20Var.d(0, Integer.valueOf(x7Var.f));
                 if (!TextUtils.isEmpty(charSequence)) {
                     if (sb2.length() > 0) {
                         sb2.append(", ");
@@ -421,37 +421,37 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
 
     @Override // org.telegram.ui.Components.iz
     public float getContrastValue() {
-        return a1.g.c(((ff) this.b).d, 100.0f, 0.3f, 1.0f);
+        return a1.g.c(((gf) this.b).d, 100.0f, 0.3f, 1.0f);
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getEnhanceValue() {
-        return ((ff) this.b).a / 100.0f;
+        return ((gf) this.b).a / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getExposureValue() {
-        return ((ff) this.b).c / 100.0f;
+        return ((gf) this.b).c / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getFadeValue() {
-        return ((ff) this.b).g / 100.0f;
+        return ((gf) this.b).g / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getGrainValue() {
-        return (((ff) this.b).m / 100.0f) * 0.04f;
+        return (((gf) this.b).m / 100.0f) * 0.04f;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getHighlightsValue() {
-        return c3.i0.x(((ff) this.b).j, 0.75f, 100.0f, 100.0f);
+        return c3.i0.x(((gf) this.b).j, 0.75f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getSaturationValue() {
-        float f7 = ((ff) this.b).f / 100.0f;
+        float f7 = ((gf) this.b).f / 100.0f;
         if (f7 > 0.0f) {
             f7 *= 1.05f;
         }
@@ -460,50 +460,50 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
 
     @Override // org.telegram.ui.Components.iz
     public float getShadowsValue() {
-        return c3.i0.x(((ff) this.b).k, 0.55f, 100.0f, 100.0f);
+        return c3.i0.x(((gf) this.b).k, 0.55f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getSharpenValue() {
-        return a1.g.c(((ff) this.b).o, 100.0f, 0.6f, 0.11f);
+        return a1.g.c(((gf) this.b).o, 100.0f, 0.6f, 0.11f);
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getSoftenSkinValue() {
-        return ((ff) this.b).b / 100.0f;
+        return ((gf) this.b).b / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.iz
     public int getTintHighlightsColor() {
-        return ((ff) this.b).i;
+        return ((gf) this.b).i;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getTintHighlightsIntensityValue() {
-        return ((ff) this.b).i == 0 ? 0.0f : 0.5f;
+        return ((gf) this.b).i == 0 ? 0.0f : 0.5f;
     }
 
     @Override // org.telegram.ui.Components.iz
     public int getTintShadowsColor() {
-        return ((ff) this.b).h;
+        return ((gf) this.b).h;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getTintShadowsIntensityValue() {
-        return ((ff) this.b).h == 0 ? 0.0f : 0.5f;
+        return ((gf) this.b).h == 0 ? 0.0f : 0.5f;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getVignetteValue() {
-        return ((ff) this.b).l / 100.0f;
+        return ((gf) this.b).l / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.iz
     public float getWarmthValue() {
-        return ((ff) this.b).e / 100.0f;
+        return ((gf) this.b).e / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ boolean h() {
         return false;
     }
@@ -522,26 +522,26 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
     @Override // com.google.android.gms.common.api.internal.o
     public void i(Object obj) {
         LocationResult locationResult = (LocationResult) this.b;
-        ra raVar = ((aa) obj).a;
+        sa saVar = ((ba) obj).a;
         List list = locationResult.a;
         int size = list.size();
         Location location = size == 0 ? null : (Location) list.get(size - 1);
-        m2.t tVar = (m2.t) raVar;
+        m2.t tVar = (m2.t) saVar;
         if (location == null) {
             tVar.getClass();
         } else {
-            ((nd) tVar.b).m(location);
+            ((od) tVar.b).m(location);
         }
     }
 
-    @Override // org.telegram.ui.Components.l61
+    @Override // org.telegram.ui.Components.m61
     public void invalidate() {
         ((jf0) this.b).h.invalidate();
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public void j(ImageReceiver imageReceiver) {
-        ((cv) this.b).s0(true);
+        ((dv) this.b).s0(true);
     }
 
     @Override // wg.a
@@ -555,7 +555,7 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         return j02;
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public void k(boolean z10, float f7) {
         int round;
         x7 x7Var = (x7) this.b;
@@ -583,20 +583,20 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
             }
             x7Var.f = round;
             x7Var.e(round, true);
-            q20 q20Var = x7Var.n;
-            if (q20Var != null) {
-                q20Var.a(Integer.valueOf(x7Var.f));
+            r20 r20Var = x7Var.n;
+            if (r20Var != null) {
+                r20Var.a(Integer.valueOf(x7Var.f));
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.ws0
+    @Override // org.telegram.ui.Components.xs0
     public b1 k0(int i10, Runnable runnable, String str, boolean z10, boolean z11) {
-        zt0 zt0Var = (zt0) this.b;
-        b1 e = zt0Var.I.e(0, i10, str);
+        au0 au0Var = (au0) this.b;
+        b1 e = au0Var.I.e(0, i10, str);
         if (z10) {
             int i11 = t6.p7;
-            e.d(zt0Var.q0(i11), zt0Var.q0(i11));
+            e.d(au0Var.r0(i11), au0Var.r0(i11));
         }
         e.setOnClickListener(new cb0(this, z11, runnable));
         return e;
@@ -621,98 +621,8 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         return (s5Var.a >= 1.0f || (b5Var = s5Var.d) == null) ? n02 : i0.b.f(s5Var.a, b5Var.getButtonsGlassBackgroundColor(), n02);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public void onError(u61 u61Var, Exception exc) {
-        switch (this.a) {
-            case 11:
-                f8.g(exc, true);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.s61
-    public void onRenderedFirstFrame() {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.s61
-    public /* synthetic */ void onSeekFinished(j2.a aVar) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.s61
-    public /* synthetic */ void onSeekStarted(j2.a aVar) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.s61
-    public void onStateChanged(boolean z10, int i10) {
-        e50 e50Var;
-        x20 x20Var;
-        switch (this.a) {
-            case 11:
-                x40 x40Var = (x40) this.b;
-                u61 u61Var = x40Var.H0.S;
-                if (u61Var != null && u61Var.d0() && i10 == 4 && (x20Var = (e50Var = x40Var.H0).R) != null) {
-                    u61 u61Var2 = e50Var.S;
-                    long j10 = x20Var.a;
-                    if (j10 <= 0) {
-                        j10 = 0;
-                    }
-                    u61Var2.p0(j10);
-                    break;
-                }
-                break;
-            default:
-                nj0 nj0Var = (nj0) this.b;
-                if (z10 && nj0Var.n.S() >= 0) {
-                    nj0Var.x = true;
-                }
-                kf0 kf0Var = nj0Var.f;
-                eb0 eb0Var = nj0Var.y;
-                kf0Var.a(z10, true);
-                i0.r(eb0Var);
-                if (z10) {
-                    i0.h3(eb0Var, 16L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.s61
-    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.s61
-    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.s61
-    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-        int i13 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.iz
-    public boolean p() {
-        return !((ff) this.b).p.s();
-    }
-
-    @Override // org.telegram.ui.Components.mn0
-    public int p0() {
-        w7 w7Var = ((x7) this.b).r;
-        if (w7Var == null) {
-            return 0;
-        }
-        return w7Var.c != null ? (r1.length - 1) * w7Var.d : w7Var.a() - w7Var.b();
-    }
-
     @Override // qh.x
-    public void s(qh.y yVar) {
+    public void o(qh.y yVar) {
         qh.i0 i0Var = (qh.i0) this.b;
         FrameLayout frameLayout = i0Var.f;
         if (frameLayout != null) {
@@ -725,6 +635,96 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         if (x0Var != null) {
             x0Var.setScanHidden(false);
         }
+    }
+
+    @Override // org.telegram.ui.Components.t61
+    public void onError(v61 v61Var, Exception exc) {
+        switch (this.a) {
+            case 11:
+                f8.g(exc, true);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.t61
+    public void onRenderedFirstFrame() {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.t61
+    public /* synthetic */ void onSeekFinished(j2.a aVar) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.t61
+    public /* synthetic */ void onSeekStarted(j2.a aVar) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.t61
+    public void onStateChanged(boolean z10, int i10) {
+        e50 e50Var;
+        y20 y20Var;
+        switch (this.a) {
+            case 11:
+                x40 x40Var = (x40) this.b;
+                v61 v61Var = x40Var.H0.S;
+                if (v61Var != null && v61Var.d0() && i10 == 4 && (y20Var = (e50Var = x40Var.H0).R) != null) {
+                    v61 v61Var2 = e50Var.S;
+                    long j10 = y20Var.a;
+                    if (j10 <= 0) {
+                        j10 = 0;
+                    }
+                    v61Var2.p0(j10);
+                    break;
+                }
+                break;
+            default:
+                oj0 oj0Var = (oj0) this.b;
+                if (z10 && oj0Var.n.S() >= 0) {
+                    oj0Var.x = true;
+                }
+                kf0 kf0Var = oj0Var.f;
+                eb0 eb0Var = oj0Var.y;
+                kf0Var.a(z10, true);
+                i0.r(eb0Var);
+                if (z10) {
+                    i0.h3(eb0Var, 16L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.t61
+    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.t61
+    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.t61
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
+        int i13 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.iz
+    public boolean p() {
+        return !((gf) this.b).p.s();
+    }
+
+    @Override // org.telegram.ui.Components.nn0
+    public int p0() {
+        w7 w7Var = ((x7) this.b).r;
+        if (w7Var == null) {
+            return 0;
+        }
+        return w7Var.c != null ? (r1.length - 1) * w7Var.d : w7Var.a() - w7Var.b();
     }
 
     @Override // wg.a
@@ -758,16 +758,16 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         return w9;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public void x(View view, o0 o0Var, boolean z10, boolean z11) {
         sg.s sVar = (sg.s) this.b;
-        sVar.a.qb(null, sVar.e, sVar.b, view, 0.0f, 0.0f, o0Var, false, z10, z11, false);
+        sVar.a.vb(null, sVar.e, sVar.b, view, 0.0f, 0.0f, o0Var, false, z10, z11, false);
         i0.g3(new x1(this, 29));
     }
 
-    @Override // org.telegram.ui.Components.ws0
+    @Override // org.telegram.ui.Components.xs0
     public void y() {
-        ((zt0) this.b).I.a(-1);
+        ((au0) this.b).I.a(-1);
     }
 
     @Override // fe.g
@@ -793,7 +793,7 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
         int i10 = this.a;
     }
@@ -825,11 +825,11 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
     private final void M() {
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public /* synthetic */ void C() {
     }
 
-    @Override // org.telegram.ui.Components.ep0
+    @Override // org.telegram.ui.Components.fp0
     public /* synthetic */ void V() {
     }
 
@@ -841,7 +841,7 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
     public /* synthetic */ void n() {
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ void t() {
     }
 
@@ -873,11 +873,11 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
     public /* synthetic */ void g(boolean z10) {
     }
 
-    private final void H(u61 u61Var, Exception exc) {
+    private final void H(v61 v61Var, Exception exc) {
     }
 
-    @Override // org.telegram.messenger.mc
-    public /* synthetic */ void q(int i10, Drawable drawable) {
+    @Override // org.telegram.messenger.nc
+    public /* synthetic */ void s(int i10, Drawable drawable) {
     }
 
     private final void Y(int i10, int i11, float f7, int i12) {
@@ -886,11 +886,11 @@ public final class u implements o0.a, mc, wg.a, mn0, fe.g, iz, s61, l61, ws0, u7
     private final void Z(int i10, int i11, float f7, int i12) {
     }
 
-    @Override // org.telegram.messenger.mc
-    public void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    @Override // org.telegram.messenger.nc
+    public void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ut implements vx {
     public final /* synthetic */ wt a;
@@ -52,9 +52,9 @@ public final class ut implements vx {
         if (wtVar.b()) {
             wtVar.y = i10 != 0;
             wtVar.y();
-            uu0 uu0Var = wtVar.f;
-            if (uu0Var != null) {
-                uu0Var.R();
+            vu0 vu0Var = wtVar.f;
+            if (vu0Var != null) {
+                vu0Var.R();
             }
         }
     }
@@ -95,12 +95,12 @@ public final class ut implements vx {
     public final void n() {
         wt wtVar = this.a;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, wtVar.getContext(), wtVar.M);
-        String L0 = org.telegram.messenger.cd.L0(2131752068, null);
+        String L0 = org.telegram.messenger.dd.L0(2131752068, null);
         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
         x1Var.R = L0;
-        x1Var.T = org.telegram.messenger.cd.L0(2131752069, null);
-        alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131752099, null), new t(this, 28));
-        alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
+        x1Var.T = org.telegram.messenger.dd.L0(2131752069, null);
+        alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131752099, null), new t(this, 28));
+        alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, null), null);
         org.telegram.ui.ActionBar.k2 k2Var = wtVar.h;
         if (k2Var != null) {
             k2Var.showDialog(x1Var);
@@ -157,7 +157,7 @@ public final class ut implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void o(w41 w41Var) {
+    public final /* synthetic */ void o(x41 x41Var) {
     }
 
     @Override // org.telegram.ui.Components.vx
@@ -193,7 +193,7 @@ public final class ut implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.fj fjVar, boolean z10, int i10) {
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.gj gjVar, boolean z10, int i10) {
     }
 
     @Override // org.telegram.ui.Components.vx

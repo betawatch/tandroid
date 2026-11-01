@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,7 +69,7 @@ public final /* synthetic */ class q7 implements Runnable {
                             r5Var.b.a.c(new th.q5(r5Var, peerStories, 0));
                         }
                     }
-                    zs.f(e5Var.a).k(zs.v5, new Object[0]);
+                    at.f(e5Var.a).k(at.v5, new Object[0]);
                     break;
                 }
                 break;

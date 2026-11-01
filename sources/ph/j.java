@@ -4,10 +4,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import android.widget.LinearLayout;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
@@ -20,9 +20,9 @@ import org.telegram.ui.Components.r8;
 import rh.h8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class j extends LinearLayout implements us {
+public final class j extends LinearLayout implements vs {
     public final g9 a;
     public final f6 b;
     public final f6 c;
@@ -61,7 +61,7 @@ public final class j extends LinearLayout implements us {
     }
 
     public final void a(long j10, boolean z10) {
-        this.d.c(h8.Z0(false, i0.a.k((int) j10, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
+        this.d.c(h8.a1(false, i0.a.k((int) j10, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
     }
 
     public final void b(int i10, boolean z10, boolean z11) {
@@ -92,10 +92,10 @@ public final class j extends LinearLayout implements us {
         g9 g9Var = this.a;
         g9Var.e(user, r8Var);
         g9Var.setRoundRadius(org.telegram.messenger.i0.L(16.0f));
-        this.c.setText(h20.p(user));
+        this.c.setText(i20.p(user));
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         this.b.invalidate();
     }
@@ -111,13 +111,13 @@ public final class j extends LinearLayout implements us {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        zs.e().c(this, zs.i4);
+        at.e().c(this, at.i4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        zs.e().n(this, zs.i4);
+        at.e().n(this, at.i4);
     }
 
     @Override // android.widget.LinearLayout, android.view.View

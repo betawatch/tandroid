@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class zw extends mv {
     public final /* synthetic */ vy g0;
@@ -27,10 +27,10 @@ public final class zw extends mv {
     public final void e() {
         vy vyVar = this.g0;
         ArrayList arrayList = vyVar.n1;
-        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || org.telegram.messenger.vp.r1(vyVar.c1).g7.getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
+        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || org.telegram.messenger.wp.r1(vyVar.c1).g7.getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
             return;
         }
-        org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0);
+        org.telegram.messenger.e20.i(org.telegram.messenger.e20.s0);
     }
 
     @Override // org.telegram.ui.Components.mv

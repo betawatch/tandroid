@@ -1,34 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ww0 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
-    public org.telegram.ui.ActionBar.p6 a;
-    public ShapeDrawable b;
-    public View c;
+public final class ww0 extends s4.w {
+    public int e;
+    public final /* synthetic */ dx0 f;
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        try {
-            ShapeDrawable shapeDrawable = this.b;
-            if (shapeDrawable != null) {
-                org.telegram.ui.ActionBar.t6.C1(org.telegram.ui.ActionBar.t6.r1(0.12f, org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Bf, this.a)), shapeDrawable);
-                View view = this.c;
-                if (view != null) {
-                    view.invalidate();
-                }
+    public ww0(dx0 dx0Var) {
+        this.f = dx0Var;
+        this.d = 15;
+        this.e = -1;
+    }
+
+    @Override // s4.u
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        int i10 = c1Var.f;
+        if (i10 == 3 || i10 != c1Var2.f) {
+            return false;
+        }
+        dx0 dx0Var = this.f;
+        if (dx0Var.J1 == null) {
+            return false;
+        }
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        dx0Var.J1.documents.add(b11, dx0Var.J1.documents.remove(b10));
+        dx0Var.k1.j(b10, b11);
+        this.e = b11;
+        return true;
+    }
+
+    @Override // s4.u
+    public final void p(s4.c1 c1Var, int i10) {
+        dx0 dx0Var = this.f;
+        if (i10 != 0 || dx0Var.m1 == null || this.e <= 0) {
+            if (i10 == 2) {
+                dx0Var.m1 = ((org.telegram.ui.Cells.d8) c1Var.a).getSticker();
             }
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
+        } else {
+            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
+            tL_stickers_changeStickerPosition.position = this.e;
+            tL_stickers_changeStickerPosition.sticker = org.telegram.messenger.vi.a0(dx0Var.m1, "").document;
+            this.e = -1;
+            dx0Var.m1 = null;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // s4.u
+    public final void q(s4.c1 c1Var) {
+    }
+
+    @Override // s4.u
+    public final void o(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2, int i10, int i11, int i12) {
     }
 }

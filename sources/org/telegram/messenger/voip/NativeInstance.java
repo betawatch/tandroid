@@ -4,14 +4,14 @@ import android.graphics.Point;
 import java.nio.ByteBuffer;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.messenger.v2;
 import org.telegram.messenger.voip.Instance;
 import org.telegram.messenger.voip.VoIPService;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class NativeInstance {
     private AudioLevelsCallback audioLevelsCallback;
@@ -31,33 +31,33 @@ public class NativeInstance {
     private float[] temp = new float[1];
     private VideoSourcesCallback unknownParticipantsCallback;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface AudioLevelsCallback {
         void run(int[] iArr, float[] fArr, boolean[] zArr);
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface PayloadCallback {
         void run(int i10, String str);
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface RequestBroadcastPartCallback {
         void run(long j10, long j11, int i10, int i11);
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface RequestCurrentTimeCallback {
         void run(long j10);
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static class SsrcGroup {
         public String semantics;
         public int[] ssrcs;
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface VideoSourcesCallback {
         void run(long j10, int[] iArr);
     }
@@ -110,7 +110,7 @@ public class NativeInstance {
         nativeInstance.cancelRequestBroadcastPartCallback = requestBroadcastPartCallback2;
         nativeInstance.requestCurrentTimeCallback = requestCurrentTimeCallback;
         nativeInstance.isGroup = true;
-        nativeInstance.nativePtr = makeGroupNativeInstance(nativeInstance, str, tz.V, j10, z10, z11, z12);
+        nativeInstance.nativePtr = makeGroupNativeInstance(nativeInstance, str, uz.V, j10, z10, z11, z12);
         return nativeInstance;
     }
 

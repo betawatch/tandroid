@@ -1,13 +1,13 @@
 package th;
 
 import android.app.Activity;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.wp;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i1 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,6 +21,7 @@ public final /* synthetic */ class i1 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
+        int i11 = 3;
         boolean z10 = false;
         z2 z2Var = this.b;
         switch (i10) {
@@ -34,15 +35,15 @@ public final /* synthetic */ class i1 implements Runnable {
                         vh.p2 p2Var = new vh.p2(z2Var.getContext(), 3);
                         p2Var.l(1.0f, -22.0f);
                         z2Var.q0 = p2Var;
-                        p2Var.h(i0.b.o(i0.b.f(0.13f, -16777216, -1), zs.P3));
+                        p2Var.h(i0.b.o(i0.b.f(0.13f, -16777216, -1), at.P3));
                         vh.p2 p2Var2 = z2Var.q0;
                         p2Var2.U = false;
-                        p2Var2.s(cd.L0(2131746414, null));
+                        p2Var2.s(dd.L0(2131746414, null));
                         z2Var.q0.setPadding(org.telegram.messenger.i0.L(8.0f), 0, org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(1.0f));
                         z2Var.L0.addView(z2Var.q0, w7.b6.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, z2Var.g2 ? 0.0f : 56.0f));
                     }
                     z2Var.q0.u();
-                    tz.H(true);
+                    uz.H(true);
                     break;
                 }
                 break;
@@ -78,7 +79,7 @@ public final /* synthetic */ class i1 implements Runnable {
             case 8:
                 Activity W = org.telegram.messenger.i0.W(z2Var.getContext());
                 if (W != null) {
-                    o0 o0Var = new o0(2, z2Var, W);
+                    o0 o0Var = new o0(i11, z2Var, W);
                     o7 o7Var2 = ((f7) z2Var.z1).d;
                     n7 n7Var = o7Var2.z0;
                     if (n7Var != null) {
@@ -101,7 +102,7 @@ public final /* synthetic */ class i1 implements Runnable {
                 break;
             case 11:
                 z2Var.a1(false);
-                vp.d1().edit().putInt("taptostorysoundhint", vp.d1().getInt("taptostorysoundhint", 0) + 1).apply();
+                wp.d1().edit().putInt("taptostorysoundhint", wp.d1().getInt("taptostorysoundhint", 0) + 1).apply();
                 break;
             default:
                 z2Var.D3 = true;

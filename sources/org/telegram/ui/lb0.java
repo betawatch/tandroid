@@ -1,53 +1,48 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class lb0 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yb0 b;
+public final class lb0 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ xb0 a;
 
-    public /* synthetic */ lb0(yb0 yb0Var, int i10) {
-        this.a = i10;
-        this.b = yb0Var;
+    public lb0(xb0 xb0Var) {
+        this.a = xb0Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 1) {
-                    yb0 yb0Var = this.b;
-                    if (yb0Var.z0 && yb0Var.A0) {
-                        org.telegram.messenger.i0.v1(yb0Var.getParentActivity().getCurrentFocus());
-                        break;
-                    }
-                }
-                break;
-            default:
-                boolean z10 = i10 != 0;
-                yb0 yb0Var2 = this.b;
-                yb0Var2.O = z10;
-                if (!z10 && yb0Var2.J != null) {
-                    yb0Var2.J = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.k
+    public final void b(int i10) {
+        xb0 xb0Var = this.a;
+        if (i10 == -1) {
+            xb0Var.finishFragment();
+            return;
         }
-    }
-
-    @Override // s4.s0
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                yb0 yb0Var = this.b;
-                yb0Var.O0(false);
-                if (yb0Var.J != null) {
-                    yb0Var.L += i11;
-                    break;
-                }
-                break;
+        if (i10 != 1) {
+            if (i10 == 5) {
+                xb0Var.E0(false);
+                return;
+            }
+            if (i10 == 6) {
+                xb0Var.D0(null);
+                return;
+            }
+            if ((i10 == 2 || i10 == 3 || i10 == 4) && xb0Var.G != null) {
+                xb0Var.F0();
+                xb0Var.G.k(i10 != 3 ? i10 == 4 ? 2 : 0 : 1);
+                return;
+            }
+            return;
+        }
+        try {
+            TLRPC.GeoPoint geoPoint = xb0Var.J0.k.media.geo;
+            double d = geoPoint.lat;
+            double d10 = geoPoint._long;
+            xb0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d10 + "?q=" + d + "," + d10)));
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
         }
     }
 }

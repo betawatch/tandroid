@@ -15,10 +15,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class g9 extends View {
-    public qz0 D;
+    public rz0 D;
     public Path E;
     public ColorMatrixColorFilter F;
     public ImageReceiver a;
@@ -79,8 +79,8 @@ public class g9 extends View {
         d();
     }
 
-    public final void g(int i10, long j10, Object obj, String str, String str2, String str3, org.telegram.messenger.ic icVar, org.telegram.messenger.ic icVar2) {
-        this.a.r0(icVar, str, icVar2, str2, null, j10, str3, obj, i10);
+    public final void g(int i10, long j10, Object obj, String str, String str2, String str3, org.telegram.messenger.jc jcVar, org.telegram.messenger.jc jcVar2) {
+        this.a.r0(jcVar, str, jcVar2, str2, null, j10, str3, obj, i10);
         d();
     }
 
@@ -104,28 +104,28 @@ public class g9 extends View {
     }
 
     public final void h(String str, String str2, Drawable drawable) {
-        o(org.telegram.messenger.ic.g(str), str2, null, null, drawable, null, 0, null);
+        n(org.telegram.messenger.jc.g(str), str2, null, null, drawable, null, 0, null);
     }
 
-    public final void j(org.telegram.messenger.ic icVar, String str, Drawable drawable, Object obj) {
-        o(icVar, str, null, null, drawable, null, 0, obj);
+    public final void j(org.telegram.messenger.jc jcVar, String str, Drawable drawable, Object obj) {
+        n(jcVar, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void k(org.telegram.messenger.ic icVar, String str, String str2, Drawable drawable, Object obj) {
-        o(icVar, str, null, null, drawable, str2, 0, obj);
+    public final void k(org.telegram.messenger.jc jcVar, String str, String str2, Drawable drawable, Object obj) {
+        n(jcVar, str, null, null, drawable, str2, 0, obj);
     }
 
-    public final void l(org.telegram.messenger.ic icVar, String str, org.telegram.messenger.ic icVar2, String str2, int i10, Object obj) {
-        o(icVar, str, icVar2, str2, null, null, i10, obj);
+    public final void l(org.telegram.messenger.jc jcVar, String str, org.telegram.messenger.jc jcVar2, String str2, int i10, Object obj) {
+        n(jcVar, str, jcVar2, str2, null, null, i10, obj);
     }
 
-    public final void m(org.telegram.messenger.ic icVar, String str, org.telegram.messenger.ic icVar2, String str2, Drawable drawable, Object obj) {
-        this.a.u0(icVar, str, icVar2, str2, null, null, drawable, 0L, null, obj, 1);
+    public final void m(org.telegram.messenger.jc jcVar, String str, org.telegram.messenger.jc jcVar2, String str2, Drawable drawable, Object obj) {
+        this.a.u0(jcVar, str, jcVar2, str2, null, null, drawable, 0L, null, obj, 1);
         d();
     }
 
-    public final void o(org.telegram.messenger.ic icVar, String str, org.telegram.messenger.ic icVar2, String str2, Drawable drawable, String str3, int i10, Object obj) {
-        this.a.r0(icVar, str, icVar2, str2, drawable, i10, str3, obj, 0);
+    public final void n(org.telegram.messenger.jc jcVar, String str, org.telegram.messenger.jc jcVar2, String str2, Drawable drawable, String str3, int i10, Object obj) {
+        this.a.r0(jcVar, str, jcVar2, str2, drawable, i10, str3, obj, 0);
         d();
     }
 
@@ -201,15 +201,15 @@ public class g9 extends View {
         }
     }
 
-    public final void p(org.telegram.messenger.ic icVar, String str, Drawable drawable, Object obj) {
-        o(icVar, str, null, null, drawable, null, 0, obj);
+    public final void p(org.telegram.messenger.jc jcVar, String str, Drawable drawable, Object obj) {
+        n(jcVar, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void q(g61 g61Var, org.telegram.messenger.ic icVar, String str, org.telegram.messenger.ic icVar2, org.telegram.messenger.ic icVar3, String str2, int i10, String str3) {
-        if (g61Var != null) {
-            this.a.w0(g61Var);
+    public final void q(h61 h61Var, org.telegram.messenger.jc jcVar, String str, org.telegram.messenger.jc jcVar2, org.telegram.messenger.jc jcVar3, String str2, int i10, String str3) {
+        if (h61Var != null) {
+            this.a.w0(h61Var);
         } else {
-            this.a.u0(icVar, str, icVar2, null, icVar3, str2, null, i10, null, str3, 1);
+            this.a.u0(jcVar, str, jcVar2, null, jcVar3, str2, null, i10, null, str3, 1);
         }
         d();
     }
@@ -256,7 +256,7 @@ public class g9 extends View {
             this.D = null;
             return;
         }
-        this.D = new qz0(charSequence, 16.5f, org.telegram.messenger.i0.o());
+        this.D = new rz0(charSequence, 16.5f, org.telegram.messenger.i0.o());
         if (this.F == null) {
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.2f);

@@ -13,26 +13,26 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.w5;
 import vh.n5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
-    private q20 doneCallback;
+    private r20 doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private q20 progressCallback;
+    private r20 progressCallback;
 
-    public HttpGetFileTask(q20 q20Var, q20 q20Var2) {
-        this.doneCallback = q20Var;
-        this.progressCallback = q20Var2;
+    public HttpGetFileTask(r20 r20Var, r20 r20Var2) {
+        this.doneCallback = r20Var;
+        this.progressCallback = r20Var2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -175,7 +175,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         if (str2 == null) {
                             str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                         }
-                        this.file = n5.w(d20.s0, str2);
+                        this.file = n5.w(e20.s0, str2);
                     }
                     try {
                         bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
@@ -316,12 +316,12 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
 
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        q20 q20Var = this.doneCallback;
-        if (q20Var != null) {
+        r20 r20Var = this.doneCallback;
+        if (r20Var != null) {
             if (this.exception == null) {
-                q20Var.a(file);
+                r20Var.a(file);
             } else {
-                q20Var.a(null);
+                r20Var.a(null);
             }
         }
     }

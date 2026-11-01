@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class hd extends org.telegram.ui.Components.ei0 {
+public final class hd extends org.telegram.ui.Components.fi0 {
     public final /* synthetic */ int r;
     public final /* synthetic */ Object s;
 
@@ -30,11 +30,11 @@ public final class hd extends org.telegram.ui.Components.ei0 {
                 break;
             case 3:
                 super.invalidate(i10, i11, i12, i13);
-                ((c60) this.s).e.invalidate();
+                ((b60) this.s).e.invalidate();
                 break;
             case 4:
                 super.invalidate(i10, i11, i12, i13);
-                ((wd0) this.s).h.invalidate();
+                ((vd0) this.s).h.invalidate();
                 break;
         }
     }
@@ -45,10 +45,10 @@ public final class hd extends org.telegram.ui.Components.ei0 {
             case 1:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 if (!((org.telegram.ui.Components.dp) this.s).D1) {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.cd.L0(2131754750, null));
+                    accessibilityNodeInfo.setText(org.telegram.messenger.dd.L0(2131754750, null));
                     break;
                 } else {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.cd.L0(2131754751, null));
+                    accessibilityNodeInfo.setText(org.telegram.messenger.dd.L0(2131754751, null));
                     break;
                 }
             default:
@@ -74,11 +74,11 @@ public final class hd extends org.telegram.ui.Components.ei0 {
                 break;
             case 3:
                 super.invalidate();
-                ((c60) this.s).e.invalidate();
+                ((b60) this.s).e.invalidate();
                 break;
             case 4:
                 super.invalidate();
-                ((wd0) this.s).h.invalidate();
+                ((vd0) this.s).h.invalidate();
                 break;
         }
     }

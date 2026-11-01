@@ -4,9 +4,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s6 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class s6 extends AnimatorListenerAdapter {
                             i6Var.run();
                         }
                         if (t6Var.L) {
-                            t6Var.fullScroll(zs.O1);
+                            t6Var.fullScroll(at.O1);
                             t6Var.L = false;
                             break;
                         }
@@ -68,7 +68,7 @@ public final class s6 extends AnimatorListenerAdapter {
                             i6Var2.run();
                         }
                         if (t6Var2.L) {
-                            t6Var2.fullScroll(zs.O1);
+                            t6Var2.fullScroll(at.O1);
                             t6Var2.L = false;
                             break;
                         }

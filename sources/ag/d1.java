@@ -8,19 +8,19 @@ import org.telegram.ui.Components.bl;
 import org.telegram.ui.Components.mj;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tk;
-import org.telegram.ui.Components.tk0;
 import org.telegram.ui.Components.uh;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.zm;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d1 extends az {
     public final /* synthetic */ int U;
     public final /* synthetic */ uh V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d1(uh uhVar, int i10, tk0 tk0Var, int i11) {
-        super(i10, 0, tk0Var);
+    public /* synthetic */ d1(uh uhVar, int i10, uk0 uk0Var, int i11) {
+        super(i10, 0, uk0Var);
         this.U = i11;
         this.V = uhVar;
     }

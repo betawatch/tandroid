@@ -33,24 +33,24 @@ import java.util.Random;
 import org.json.JSONObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.uk;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.vk;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.ng;
+import org.telegram.ui.gg;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h8 extends View {
     public static final /* synthetic */ int G1 = 0;
@@ -119,7 +119,7 @@ public final class h8 extends View {
     public final Paint d0;
     public boolean d1;
     public final SharedPreferences e;
-    public final bi0 e0;
+    public final ci0 e0;
     public boolean e1;
     public final LinkedHashMap f;
     public boolean f0;
@@ -193,7 +193,7 @@ public final class h8 extends View {
         this.H = new RectF();
         this.I = new Path();
         this.J = new float[450];
-        this.K = new int[zs.C3];
+        this.K = new int[at.C3];
         this.N = new f8(0.0f, 260.0f, 0.78f);
         this.O = new f8(0.0f, 420.0f, 0.72f);
         this.P = new f8(1.0f, 420.0f, 0.38f);
@@ -241,9 +241,9 @@ public final class h8 extends View {
         int i12 = 0;
         boolean z10 = cardVar != null;
         this.b = z10;
-        bi0 bi0Var = new bi0(R.raw.wallet_gift_trash, org.telegram.messenger.i0.L(42.0f), org.telegram.messenger.i0.L(42.0f), true, null);
-        this.e0 = bi0Var;
-        bi0Var.R(this);
+        ci0 ci0Var = new ci0(R.raw.wallet_gift_trash, org.telegram.messenger.i0.L(42.0f), org.telegram.messenger.i0.L(42.0f), true, null);
+        this.e0 = ci0Var;
+        ci0Var.R(this);
         this.c = l6Var;
         this.d = cVar;
         paint3.setShader(linearGradient);
@@ -255,7 +255,7 @@ public final class h8 extends View {
         }
         this.e = sharedPreferences;
         this.P0 = z10 ? null : sharedPreferences.getString("style", null);
-        this.h1 = (z10 || vp.d1().getBoolean("walletcardstickerhint", false)) ? false : true;
+        this.h1 = (z10 || wp.d1().getBoolean("walletcardstickerhint", false)) ? false : true;
         Paint.Style style = Paint.Style.STROKE;
         paint4.setStyle(style);
         Paint.Cap cap = Paint.Cap.ROUND;
@@ -280,8 +280,8 @@ public final class h8 extends View {
             return;
         }
         int currentAccount = k2Var.getCurrentAccount();
-        vp r12 = vp.r1(currentAccount);
-        long e = d20.i(currentAccount).e();
+        wp r12 = wp.r1(currentAccount);
+        long e = e20.i(currentAccount).e();
         TLRPC.UserFull a2 = r12.a2(e);
         if (a2 == null) {
             r12.U2(r12.Z1(Long.valueOf(e)), 0, true, new k(this, 4));
@@ -294,7 +294,7 @@ public final class h8 extends View {
     public static boolean F(int i10, String str) {
         if (!TextUtils.isEmpty(str)) {
             int lastIndexOf = str.lastIndexOf(45);
-            HashSet hashSet = ((org.telegram.messenger.r0) vp.r1(i10).y7.m0.a).c;
+            HashSet hashSet = ((org.telegram.messenger.r0) wp.r1(i10).y7.m0.a).c;
             if (hashSet != null) {
                 if (lastIndexOf > 0) {
                     str = str.substring(0, lastIndexOf);
@@ -486,12 +486,12 @@ public final class h8 extends View {
     }
 
     public static void e0(int i10, TL_wallet.card cardVar) {
-        TLRPC.UserFull a2 = vp.r1(i10).a2(d20.i(i10).e());
+        TLRPC.UserFull a2 = wp.r1(i10).a2(e20.i(i10).e());
         if (a2 == null) {
             return;
         }
         a2.wallet_card = cardVar;
-        hs.a0(i10).j2(a2, false);
+        is.a0(i10).j2(a2, false);
     }
 
     public static float n(RectF rectF, RectF rectF2) {
@@ -541,12 +541,12 @@ public final class h8 extends View {
         p2Var.K = Layout.Alignment.ALIGN_NORMAL;
         p2Var.q(12.0f);
         p2Var.d = -1L;
-        String L0 = cd.L0(i10, null);
+        String L0 = dd.L0(i10, null);
         p2Var.h = vh.p2.a(L0, p2Var.getTextPaint());
         p2Var.s(L0);
         p2Var.setPadding(org.telegram.messenger.i0.L(16.0f), 0, org.telegram.messenger.i0.L(16.0f), 0);
         p2Var.setTranslationZ(getTranslationZ() + 1.0f);
-        ((ViewGroup) getParent()).addView(p2Var, w7.b6.e(-1, zs.g2, 48));
+        ((ViewGroup) getParent()).addView(p2Var, w7.b6.e(-1, at.g2, 48));
         return p2Var;
     }
 
@@ -619,7 +619,7 @@ public final class h8 extends View {
 
     public final ArrayList G() {
         ArrayList arrayList = new ArrayList(this.f.values());
-        List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new uk(5)));
+        List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new vk(5)));
         return arrayList;
     }
 
@@ -638,7 +638,7 @@ public final class h8 extends View {
                 }
             }
             if (arrayList.size() >= 10) {
-                List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new uk(6)));
+                List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new vk(6)));
                 for (int i10 = 0; i10 <= arrayList.size() - 10; i10++) {
                     g8 g8Var3 = (g8) arrayList.get(i10);
                     if (this.d.L()) {
@@ -902,7 +902,7 @@ public final class h8 extends View {
                 }
             }
             e0(currentAccount, cardVar2);
-            this.f1 = ConnectionsManager.getInstance(currentAccount).sendRequestTyped(setcardstickers, new a3.b(1), new ng(this, currentAccount, cardVar, 3));
+            this.f1 = ConnectionsManager.getInstance(currentAccount).sendRequestTyped(setcardstickers, new a3.b(1), new gg(this, currentAccount, cardVar, 3));
         }
     }
 
@@ -951,7 +951,7 @@ public final class h8 extends View {
         z60 I = z60.I(this.a, u7Var);
         I.s = 51;
         if (m(v) || str.equals(this.P0)) {
-            I.c(R.drawable.msg_colors, cd.L0(str.equals(this.P0) ? 2131743129 : 2131743135, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.y7
+            I.c(R.drawable.msg_colors, dd.L0(str.equals(this.P0) ? 2131743129 : 2131743135, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.y7
                 public final /* synthetic */ h8 b;
 
                 {
@@ -973,7 +973,7 @@ public final class h8 extends View {
                 }
             }, false);
         }
-        I.c(R.drawable.msg_sticker, cd.L0(v.b() ? 2131743128 : 2131743136, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.y7
+        I.c(R.drawable.msg_sticker, dd.L0(v.b() ? 2131743128 : 2131743136, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.y7
             public final /* synthetic */ h8 b;
 
             {
@@ -1030,7 +1030,7 @@ public final class h8 extends View {
             this.i1 = g8Var == this.k1 && !z10;
             this.j1 = false;
             this.h1 = false;
-            vp.d1().edit().putBoolean("walletcardstickerhint", true).apply();
+            wp.d1().edit().putBoolean("walletcardstickerhint", true).apply();
         }
         boolean z11 = g8Var.N;
         f8 f8Var = g8Var.m;
@@ -1061,7 +1061,7 @@ public final class h8 extends View {
             f8Var5.e = 0.75f;
             f8Var5.a((f(g8Var) * Z.width()) / U());
             f8Var.a(0.0f);
-            b6.l0((b6) this.d.c, 0L);
+            b6.m0((b6) this.d.c, 0L);
             fArr = fArr2;
         }
         f8Var3.d = 1100.0f;
@@ -1334,7 +1334,7 @@ public final class h8 extends View {
     }
 
     public final void d0(g8 g8Var) {
-        b6.l0((b6) this.d.c, 2600L);
+        b6.m0((b6) this.d.c, 2600L);
         if (A()) {
             float[] x10 = x(g8Var, Float.NaN, Float.NaN, true);
             RectF Z = Z(g8Var);
@@ -1591,7 +1591,7 @@ public final class h8 extends View {
                     float L = org.telegram.messenger.i0.L(15.0f);
                     Paint paint = this.G;
                     paint.setTextSize(L);
-                    f7 = (getWidth() / 2.0f) - ((paint.measureText(cd.L0(2131746336, null)) + org.telegram.messenger.i0.L(72.0f)) / 2.0f);
+                    f7 = (getWidth() / 2.0f) - ((paint.measureText(dd.L0(2131746336, null)) + org.telegram.messenger.i0.L(72.0f)) / 2.0f);
                     f11 = org.telegram.messenger.i0.L(30.0f);
                 }
                 f8Var.b = f7 + f11;
@@ -1779,7 +1779,7 @@ public final class h8 extends View {
             i10 = 16;
         }
         paint.setColorFilter(null);
-        paint.setAlpha(zs.e4);
+        paint.setAlpha(at.e4);
         canvas.restore();
     }
 
@@ -1880,7 +1880,7 @@ public final class h8 extends View {
                     float L = org.telegram.messenger.i0.L(15.0f);
                     Paint paint = this.G;
                     paint.setTextSize(L);
-                    f8Var4.b = ((getWidth() / 2.0f) - ((paint.measureText(cd.L0(2131746336, null)) + org.telegram.messenger.i0.L(72.0f)) / 2.0f)) + org.telegram.messenger.i0.L(30.0f);
+                    f8Var4.b = ((getWidth() / 2.0f) - ((paint.measureText(dd.L0(2131746336, null)) + org.telegram.messenger.i0.L(72.0f)) / 2.0f)) + org.telegram.messenger.i0.L(30.0f);
                     f8Var3.d = 500.0f;
                     f8Var3.e = 0.9f;
                     f8Var3.b = h();
@@ -1972,7 +1972,7 @@ public final class h8 extends View {
                     c2Var.P0(false);
                     performHapticFeedback(3);
                 } else {
-                    ((b6) this.a).G0(g8Var.b);
+                    ((b6) this.a).H0(g8Var.b);
                 }
             }
         }

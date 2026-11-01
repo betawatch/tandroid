@@ -10,7 +10,7 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends w0 {
     @Override // org.telegram.messenger.w0
@@ -41,7 +41,7 @@ public class ApplicationLoaderImpl extends w0 {
 
     @Override // org.telegram.messenger.w0
     public final boolean q() {
-        return !TextUtils.isEmpty("https://telegram.org/dl/android/apk-public-beta.json");
+        return !TextUtils.isEmpty("null");
     }
 
     @Override // org.telegram.messenger.w0
@@ -49,7 +49,7 @@ public class ApplicationLoaderImpl extends w0 {
         boolean z10 = false;
         try {
             b8.r(null, document);
-            b8.G(d20.s0);
+            b8.G(e20.s0);
             File K = b8.K(document, null, true, true);
             z10 = K.exists();
             if (z10) {

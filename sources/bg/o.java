@@ -11,14 +11,15 @@ import org.telegram.messenger.i0;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.m71;
-import org.telegram.ui.Components.voip.a1;
-import org.telegram.ui.Components.w71;
-import org.telegram.ui.kd1;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.voip.c1;
+import org.telegram.ui.Components.x71;
+import org.telegram.ui.id1;
 import th.f3;
 import vh.w;
+import zf.a1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -76,27 +77,27 @@ public final class o implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 8:
-                w71 w71Var = (w71) this.b;
-                View[] viewArr = w71Var.e;
-                if (w71Var.y) {
+                x71 x71Var = (x71) this.b;
+                View[] viewArr = x71Var.e;
+                if (x71Var.y) {
                     float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    w71Var.c = abs;
-                    m71 m71Var = w71Var.M;
-                    if (m71Var != null) {
-                        m71Var.e(abs, w71Var.d, w71Var.b);
+                    x71Var.c = abs;
+                    n71 n71Var = x71Var.M;
+                    if (n71Var != null) {
+                        n71Var.e(abs, x71Var.d, x71Var.b);
                     }
                 }
-                w71Var.x(false);
+                x71Var.x(false);
                 break;
             case 9:
-                org.telegram.ui.Components.voip.b1 b1Var2 = (org.telegram.ui.Components.voip.b1) this.b;
+                c1 c1Var = (c1) this.b;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b1Var2.J = floatValue;
-                a1 a1Var = b1Var2.i0;
-                if (a1Var != null) {
-                    ((kd1) a1Var).b.d0.d(b1Var2.P, floatValue);
+                c1Var.J = floatValue;
+                org.telegram.ui.Components.voip.b1 b1Var2 = c1Var.i0;
+                if (b1Var2 != null) {
+                    ((id1) b1Var2).b.d0.d(c1Var.P, floatValue);
                 }
-                b1Var2.invalidate();
+                c1Var.invalidate();
                 break;
             case 10:
                 ((s4.t) this.b).y = valueAnimator.getAnimatedFraction();
@@ -117,23 +118,23 @@ public final class o implements ValueAnimator.AnimatorUpdateListener {
                 wVar.p.invalidate();
                 break;
             default:
-                zf.a1 a1Var2 = (zf.a1) this.b;
-                a1Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a1Var2.invalidate();
+                a1 a1Var = (a1) this.b;
+                a1Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a1Var.invalidate();
                 int i11 = 0;
                 while (i11 < 2) {
-                    a1Var2.c[i11].setTranslationX(i0.W1(a1Var2.e, 0, -i0.L(62.0f)));
-                    a1Var2.c[i11].setVisibility(0);
+                    a1Var.c[i11].setTranslationX(i0.W1(a1Var.e, 0, -i0.L(62.0f)));
+                    a1Var.c[i11].setVisibility(0);
                     float f7 = 0.0f;
-                    a1Var2.c[i11].setAlpha(i0.T1(i11 == 0 ? 1.0f : 0.0f, i11 == 1 ? 1.0f : 0.0f, a1Var2.e));
-                    a1Var2.d[i11].setTranslationX(i0.W1(a1Var2.e, 0, -i0.L(62.0f)));
-                    a1Var2.d[i11].setVisibility(0);
-                    TextView textView = a1Var2.d[i11];
+                    a1Var.c[i11].setAlpha(i0.T1(i11 == 0 ? 1.0f : 0.0f, i11 == 1 ? 1.0f : 0.0f, a1Var.e));
+                    a1Var.d[i11].setTranslationX(i0.W1(a1Var.e, 0, -i0.L(62.0f)));
+                    a1Var.d[i11].setVisibility(0);
+                    TextView textView = a1Var.d[i11];
                     float f10 = i11 == 0 ? 1.0f : 0.0f;
                     if (i11 == 1) {
                         f7 = 1.0f;
                     }
-                    textView.setAlpha(i0.T1(f10, f7, a1Var2.e));
+                    textView.setAlpha(i0.T1(f10, f7, a1Var.e));
                     i11++;
                 }
                 break;

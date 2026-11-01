@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
-import org.telegram.ui.m91;
+import org.telegram.ui.k91;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class tl extends org.telegram.ui.ActionBar.t0 {
     public final /* synthetic */ Object A0;
@@ -31,7 +31,7 @@ public final class tl extends org.telegram.ui.ActionBar.t0 {
                 break;
             case 2:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((m91) this.A0).h.getText());
+                accessibilityNodeInfo.setText(((k91) this.A0).h.getText());
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -41,9 +41,9 @@ public final class tl extends org.telegram.ui.ActionBar.t0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tl(m91 m91Var, Context context, org.telegram.ui.ActionBar.y yVar) {
+    public tl(k91 k91Var, Context context, org.telegram.ui.ActionBar.y yVar) {
         super(context, yVar, 0);
         this.z0 = 2;
-        this.A0 = m91Var;
+        this.A0 = k91Var;
     }
 }

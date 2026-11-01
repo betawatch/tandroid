@@ -5,18 +5,18 @@ import android.graphics.Picture;
 import android.graphics.RenderNode;
 import android.os.Build;
 import android.view.View;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f {
     public final Picture a;
     public final RenderNode b;
 
-    public f(int i10, int i11, q20 q20Var) {
+    public f(int i10, int i11, r20 r20Var) {
         Picture picture = new Picture();
         this.a = picture;
-        q20Var.a(picture.beginRecording(i10, i11));
+        r20Var.a(picture.beginRecording(i10, i11));
         picture.endRecording();
         if (Build.VERSION.SDK_INT < 29) {
             this.b = null;

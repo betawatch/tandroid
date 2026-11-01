@@ -15,17 +15,17 @@ import kg.j2;
 import kg.k2;
 import kg.x0;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.dj;
+import org.telegram.messenger.ej;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.ru;
+import org.telegram.messenger.su;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.h1;
 import org.telegram.ui.ActionBar.i3;
 import org.telegram.ui.ActionBar.m1;
 import org.telegram.ui.ActionBar.q3;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.e8;
 import org.telegram.ui.h4;
 import org.telegram.ui.h8;
@@ -33,7 +33,7 @@ import org.telegram.ui.q4;
 import org.telegram.ui.t5;
 import org.telegram.ui.u3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -74,9 +74,9 @@ public final class e extends AnimatorListenerAdapter {
                 iVar.f0 = false;
                 break;
             case 1:
-                dj djVar = (dj) obj;
-                djVar.j = false;
-                djVar.i = false;
+                ej ejVar = (ej) obj;
+                ejVar.j = false;
+                ejVar.i = false;
                 break;
             case 2:
                 ((dg.f) obj).h.setVisibility(8);
@@ -171,15 +171,15 @@ public final class e extends AnimatorListenerAdapter {
                 }
                 break;
             case 16:
-                u61 u61Var = ((MediaController) obj).i0;
-                if (u61Var != null) {
-                    u61Var.g0();
+                v61 v61Var = ((MediaController) obj).i0;
+                if (v61Var != null) {
+                    v61Var.g0();
                     break;
                 }
                 break;
             case 17:
                 try {
-                    ((u61) obj).m0();
+                    ((v61) obj).m0();
                     break;
                 } catch (Exception e) {
                     f8.g(e, true);
@@ -187,7 +187,7 @@ public final class e extends AnimatorListenerAdapter {
                 }
             case 18:
                 super.onAnimationEnd(animator);
-                ((ru) obj).w = null;
+                ((su) obj).w = null;
                 break;
             case 19:
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj;

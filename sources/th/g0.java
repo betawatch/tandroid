@@ -3,15 +3,15 @@ package th;
 import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.r8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g0 extends FrameLayout {
     public final d0 a;
@@ -27,7 +27,7 @@ public final class g0 extends FrameLayout {
         d0 d0Var = new d0(this, context);
         this.a = d0Var;
         d0Var.setOrientation(0);
-        addView(d0Var, w7.b6.d(-2, -2.0f, zs.E1, 0.0f, 0.0f, 6.0f, 0.0f));
+        addView(d0Var, w7.b6.d(-2, -2.0f, at.E1, 0.0f, 0.0f, 6.0f, 0.0f));
         this.c = new r8((org.telegram.ui.ActionBar.p6) null);
         g9 g9Var = new g9(context);
         this.b = g9Var;
@@ -53,11 +53,11 @@ public final class g0 extends FrameLayout {
         g9 g9Var = this.b;
         r8 r8Var = this.c;
         if (j10 >= 0) {
-            TLRPC.User Z1 = vp.r1(d20.s0).Z1(Long.valueOf(i0Var.b));
+            TLRPC.User Z1 = wp.r1(e20.s0).Z1(Long.valueOf(i0Var.b));
             r8Var.r(Z1);
             g9Var.e(Z1, r8Var);
         } else {
-            TLRPC.Chat L0 = vp.r1(d20.s0).L0(Long.valueOf(-i0Var.b));
+            TLRPC.Chat L0 = wp.r1(e20.s0).L0(Long.valueOf(-i0Var.b));
             r8Var.q(L0);
             g9Var.e(L0, r8Var);
         }
@@ -69,7 +69,7 @@ public final class g0 extends FrameLayout {
         } else {
             imageView.setVisibility(8);
         }
-        this.e.setText(org.telegram.messenger.o5.l(d20.s0, i0Var.b));
+        this.e.setText(org.telegram.messenger.o5.l(e20.s0, i0Var.b));
         this.a.invalidate();
     }
 }

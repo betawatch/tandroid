@@ -6,12 +6,12 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import v7.c8;
 import v7.e8;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class x {
     public static final char[] d = {'\r', '\n'};
@@ -338,7 +338,7 @@ public final class x {
                 t6.d(j11, "Out of range: %s", ((long) c10) == j11);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = c8.b(h & zs.e4) + this.b;
+                        this.b = c8.b(h & at.e4) + this.b;
                         return c10;
                     }
                 }

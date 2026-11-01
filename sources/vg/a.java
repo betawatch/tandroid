@@ -11,7 +11,7 @@ import java.lang.ref.WeakReference;
 import org.telegram.ui.ActionBar.t6;
 import w7.k8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a extends k8 {
     public final Paint a;
@@ -51,8 +51,8 @@ public final class a extends k8 {
                 paint.setShader(bitmapShader);
             }
         }
-        if (Color.alpha(fVar.r) > 0) {
-            fVar.Y.c(canvas, 0);
+        if (Color.alpha(fVar.x) > 0) {
+            fVar.b0.c(canvas, 0);
         }
         if (this.e != null && bitmap != null && !bitmap.isRecycled() && i10 > 0) {
             Matrix matrix = bVar.b;
@@ -61,13 +61,13 @@ public final class a extends k8 {
             matrix2.postTranslate(-fVar.d, -fVar.e);
             this.e.setLocalMatrix(matrix2);
             paint.setAlpha(i10);
-            fVar.M.b(canvas, paint);
+            fVar.P.b(canvas, paint);
         }
-        int r12 = t6.r1(i10 / 255.0f, fVar.s);
+        int r12 = t6.r1(i10 / 255.0f, fVar.y);
         if (Color.alpha(r12) > 0) {
             Paint paint2 = this.b;
             paint2.setColor(r12);
-            fVar.M.b(canvas, paint2);
+            fVar.P.b(canvas, paint2);
         }
     }
 }

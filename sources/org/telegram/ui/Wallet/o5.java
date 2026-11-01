@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o5 extends l6 {
     public final /* synthetic */ b6 l0;
@@ -32,7 +32,7 @@ public final class o5 extends l6 {
     public final void setStickerStyle(float[] fArr) {
         super.setStickerStyle(fArr);
         b6 b6Var = this.l0;
-        b6Var.T0(b6Var.x0);
-        b6Var.U0(fArr);
+        b6Var.U0(b6Var.x0);
+        b6Var.V0(fArr);
     }
 }

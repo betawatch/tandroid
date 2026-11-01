@@ -3,17 +3,17 @@ package kg;
 import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b extends a {
     public c d;
 
     @Override // kg.a
     public final s4.g0 a() {
-        c cVar = new c(d20.s0, this.a);
+        c cVar = new c(e20.s0, this.a);
         this.d = cVar;
         cVar.r = this;
         return cVar;

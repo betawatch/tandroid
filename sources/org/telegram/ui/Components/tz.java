@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class tz extends FrameLayout {
     public static final /* synthetic */ int A0 = 0;
@@ -181,7 +181,7 @@ public abstract class tz extends FrameLayout {
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
         TextPaint textPaint = this.b;
-        pz pzVar = new pz(this, i10, org.telegram.messenger.jj.A5(org.telegram.messenger.k6.m(spannableStringBuilder, textPaint.getFontMetricsInt(), false, null, 0), arrayList, textPaint.getFontMetricsInt(), false), z10);
+        pz pzVar = new pz(this, i10, org.telegram.messenger.kj.A5(org.telegram.messenger.k6.m(spannableStringBuilder, textPaint.getFontMetricsInt(), false, null, 0), arrayList, textPaint.getFontMetricsInt(), false), z10);
         pzVar.e = z11;
         pzVar.f = z12;
         this.M = org.telegram.messenger.m5.C(24.0f, pzVar.a(true), this.M);
@@ -218,8 +218,8 @@ public abstract class tz extends FrameLayout {
         boolean z10 = false;
         for (int i10 = 0; i10 < size; i10++) {
             pz pzVar = (pz) arrayList.get(i10);
-            if (pzVar.d != ((org.telegram.ui.rx) this.J).a(pzVar.a)) {
-                if (((org.telegram.ui.rx) this.J).a(pzVar.a) < 0) {
+            if (pzVar.d != ((org.telegram.ui.qx) this.J).a(pzVar.a)) {
+                if (((org.telegram.ui.qx) this.J).a(pzVar.a) < 0) {
                     continue;
                 } else {
                     if (this.m0.get(i10) != pzVar.a(true) || this.h0) {
@@ -228,7 +228,7 @@ public abstract class tz extends FrameLayout {
                         this.M = 0;
                         pz d = d();
                         if (d != null) {
-                            d.b(org.telegram.messenger.cd.L0(2131750808, null));
+                            d.b(org.telegram.messenger.dd.L0(2131750808, null));
                         }
                         for (int i11 = 0; i11 < size; i11++) {
                             this.M = org.telegram.messenger.m5.C(24.0f, ((pz) arrayList.get(i11)).a(true), this.M);
@@ -427,7 +427,7 @@ public abstract class tz extends FrameLayout {
         if (pzVar.f) {
             oz ozVar = this.J;
             if (ozVar != null) {
-                ((org.telegram.ui.rx) ozVar).c(pzVar, false);
+                ((org.telegram.ui.qx) ozVar).c(pzVar, false);
                 return;
             }
             return;
@@ -452,7 +452,7 @@ public abstract class tz extends FrameLayout {
         org.telegram.messenger.i0.h3(ewVar, 16L);
         oz ozVar2 = this.J;
         if (ozVar2 != null) {
-            ((org.telegram.ui.rx) ozVar2).c(pzVar, z10);
+            ((org.telegram.ui.qx) ozVar2).c(pzVar, z10);
         }
         e(i10);
     }
@@ -512,7 +512,7 @@ public abstract class tz extends FrameLayout {
         return this.j0.get(getTabsCount() - 1, 0);
     }
 
-    public tk0 getListView() {
+    public uk0 getListView() {
         return this.F;
     }
 
@@ -524,7 +524,7 @@ public abstract class tz extends FrameLayout {
         return this.T;
     }
 
-    public tk0 getTabsContainer() {
+    public uk0 getTabsContainer() {
         return this.F;
     }
 
@@ -598,7 +598,7 @@ public abstract class tz extends FrameLayout {
                 setEnabled(true);
                 oz ozVar = this.J;
                 if (ozVar != null) {
-                    ((org.telegram.ui.rx) ozVar).b(1.0f);
+                    ((org.telegram.ui.qx) ozVar).b(1.0f);
                 }
             }
         }
@@ -611,9 +611,9 @@ public abstract class tz extends FrameLayout {
             int size = View.MeasureSpec.getSize(i10) - (this.G * 2);
             pz d = d();
             if (d != null) {
-                d.b(org.telegram.messenger.cd.L0(2131750808, null));
+                d.b(org.telegram.messenger.dd.L0(2131750808, null));
                 int a2 = d.a(false);
-                d.b(org.telegram.messenger.cd.L0(this.M > size ? 2131750807 : 2131750808, null));
+                d.b(org.telegram.messenger.dd.L0(this.M > size ? 2131750807 : 2131750808, null));
                 int a10 = d.a(false) + (this.M - a2);
                 int i12 = this.N;
                 int size2 = a10 < size ? (size - a10) / arrayList.size() : 0;
@@ -658,7 +658,7 @@ public abstract class tz extends FrameLayout {
         invalidate();
         oz ozVar = this.J;
         if (ozVar != null) {
-            ((org.telegram.ui.rx) ozVar).b(f7);
+            ((org.telegram.ui.qx) ozVar).b(f7);
         }
     }
 
@@ -682,20 +682,20 @@ public abstract class tz extends FrameLayout {
         if (this.n || !this.D) {
             return;
         }
-        org.telegram.messenger.hs.a0(org.telegram.messenger.d20.s0).y1();
+        org.telegram.messenger.is.a0(org.telegram.messenger.e20.s0).y1();
         TLRPC.TL_messages_updateDialogFiltersOrder tL_messages_updateDialogFiltersOrder = new TLRPC.TL_messages_updateDialogFiltersOrder();
-        ArrayList S0 = org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).S0();
+        ArrayList S0 = org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).S0();
         int size = S0.size();
         for (int i10 = 0; i10 < size; i10++) {
-            org.telegram.messenger.ap apVar = (org.telegram.messenger.ap) S0.get(i10);
-            if (apVar.e()) {
+            org.telegram.messenger.bp bpVar = (org.telegram.messenger.bp) S0.get(i10);
+            if (bpVar.e()) {
                 tL_messages_updateDialogFiltersOrder.order.add(0);
             } else {
-                tL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(apVar.a));
+                tL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(bpVar.a));
             }
         }
-        org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).g3();
-        ConnectionsManager.getInstance(org.telegram.messenger.d20.s0).sendRequest(tL_messages_updateDialogFiltersOrder, new ag.c3(15));
+        org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).g3();
+        ConnectionsManager.getInstance(org.telegram.messenger.e20.s0).sendRequest(tL_messages_updateDialogFiltersOrder, new ag.c3(15));
         this.D = false;
     }
 }

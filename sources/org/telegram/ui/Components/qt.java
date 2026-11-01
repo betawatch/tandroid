@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Stack;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class qt extends EditText {
     public static Boolean W;
@@ -63,10 +63,10 @@ public abstract class qt extends EditText {
         boolean z10 = false;
         if (text instanceof Spannable) {
             Spannable spannable = (Spannable) text;
-            for (zz0 zz0Var : (zz0[]) spannable.getSpans(0, spannable.length(), zz0.class)) {
-                int spanStart = spannable.getSpanStart(zz0Var);
-                int spanEnd = spannable.getSpanEnd(zz0Var);
-                if (zz0Var.c() && ((spanStart > (i10 = this.r) && spanEnd < this.s) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.s) > spanStart && i11 < spanEnd)))) {
+            for (a01 a01Var : (a01[]) spannable.getSpans(0, spannable.length(), a01.class)) {
+                int spanStart = spannable.getSpanStart(a01Var);
+                int spanEnd = spannable.getSpanEnd(a01Var);
+                if (a01Var.c() && ((spanStart > (i10 = this.r) && spanEnd < this.s) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.s) > spanStart && i11 < spanEnd)))) {
                     removeCallbacks(otVar);
                     this.y = false;
                     z10 = true;
@@ -97,16 +97,16 @@ public abstract class qt extends EditText {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                sh0 sh0Var = (sh0) obj;
-                e0.h hVar = sh0Var.e.J;
-                boolean z12 = sh0Var.b() && sh0Var.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
+                th0 th0Var = (th0) obj;
+                e0.h hVar = th0Var.e.J;
+                boolean z12 = th0Var.b() && th0Var.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
                 if (motionEvent.getAction() == 0) {
                     if (hVar != null) {
                         hVar.g(z12);
                     }
                 } else if (motionEvent.getAction() == 1) {
                     if (hVar != null && hVar.c && z12) {
-                        sh0Var.e.e = !r5.e;
+                        th0Var.e.e = !r5.e;
                         g(true);
                         z10 = true;
                     }
@@ -144,14 +144,14 @@ public abstract class qt extends EditText {
     public final void f() {
         Editable text = getText();
         if (text != null) {
-            for (zz0 zz0Var : (zz0[]) text.getSpans(0, text.length(), zz0.class)) {
-                if (zz0Var.c()) {
+            for (a01 a01Var : (a01[]) text.getSpans(0, text.length(), a01.class)) {
+                if (a01Var.c()) {
                     boolean z10 = this.d;
-                    yz0 yz0Var = zz0Var.b;
+                    zz0 zz0Var = a01Var.b;
                     if (z10) {
-                        yz0Var.a |= 512;
+                        zz0Var.a |= 512;
                     } else {
-                        yz0Var.a &= -513;
+                        zz0Var.a &= -513;
                     }
                 }
             }
@@ -177,9 +177,9 @@ public abstract class qt extends EditText {
             this.T[0] = false;
             this.V = false;
             this.U = true;
-            this.c = wh0.d(this, getLayout(), this.c, this.T);
+            this.c = xh0.d(this, getLayout(), this.c, this.T);
             if (this.V) {
-                this.c = wh0.d(this, getLayout(), this.c, this.T);
+                this.c = xh0.d(this, getLayout(), this.c, this.T);
             }
             this.U = false;
             this.V = false;
@@ -206,12 +206,12 @@ public abstract class qt extends EditText {
             return null;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
-        uh0[] uh0VarArr = (uh0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), uh0.class);
-        for (int length = uh0VarArr.length - 1; length >= 0; length--) {
-            uh0 uh0Var = uh0VarArr[length];
-            int spanStart = spannableStringBuilder.getSpanStart(uh0Var);
-            int spanEnd = spannableStringBuilder.getSpanEnd(uh0Var);
-            spannableStringBuilder.removeSpan(uh0Var);
+        vh0[] vh0VarArr = (vh0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), vh0.class);
+        for (int length = vh0VarArr.length - 1; length >= 0; length--) {
+            vh0 vh0Var = vh0VarArr[length];
+            int spanStart = spannableStringBuilder.getSpanStart(vh0Var);
+            int spanEnd = spannableStringBuilder.getSpanEnd(vh0Var);
+            spannableStringBuilder.removeSpan(vh0Var);
             spannableStringBuilder.delete(spanStart, spanEnd);
         }
         return spannableStringBuilder;
@@ -282,13 +282,13 @@ public abstract class qt extends EditText {
         this.d = z10;
         Editable text = getText();
         if (text != null) {
-            for (zz0 zz0Var : (zz0[]) text.getSpans(0, text.length(), zz0.class)) {
-                if (zz0Var.c()) {
-                    yz0 yz0Var = zz0Var.b;
+            for (a01 a01Var : (a01[]) text.getSpans(0, text.length(), a01.class)) {
+                if (a01Var.c()) {
+                    zz0 zz0Var = a01Var.b;
                     if (z10) {
-                        yz0Var.a |= 512;
+                        zz0Var.a |= 512;
                     } else {
-                        yz0Var.a &= -513;
+                        zz0Var.a &= -513;
                     }
                 }
             }
@@ -359,11 +359,11 @@ public abstract class qt extends EditText {
         }
         g(false);
         for (int i13 = 0; i13 < this.c.size(); i13++) {
-            sh0 sh0Var = (sh0) this.c.get(i13);
+            th0 th0Var = (th0) this.c.get(i13);
             int width = getWidth();
             int i14 = this.D;
             getPaint();
-            sh0Var.a(canvas, width, i14);
+            th0Var.a(canvas, width, i14);
         }
         k(false);
         if (z10) {

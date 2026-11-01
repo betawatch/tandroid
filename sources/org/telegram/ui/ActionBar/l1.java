@@ -11,15 +11,15 @@ import java.util.ArrayList;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.g20;
-import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.k20;
+import org.telegram.ui.Components.k51;
 import org.telegram.ui.Components.m20;
-import org.telegram.ui.Components.m81;
+import org.telegram.ui.Components.n81;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.s9;
 import org.telegram.ui.w7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class l1 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final class l1 implements ViewTreeObserver.OnPreDrawListener {
                                     arrayList.add(view);
                                     if (view == m1Var.d) {
                                         LaunchActivity launchActivity = LaunchActivity.I1;
-                                        int expandedHeight = (launchActivity != null || launchActivity.O() == null) ? 0 : LaunchActivity.I1.O().getExpandedHeight();
+                                        int expandedHeight = (launchActivity != null || launchActivity.N() == null) ? 0 : LaunchActivity.I1.N().getExpandedHeight();
                                         z10 = m1Var instanceof sg.k;
                                         if (!z10) {
                                             m1Var.h(Math.max(i13, height + expandedHeight));
@@ -225,20 +225,20 @@ public final class l1 implements ViewTreeObserver.OnPreDrawListener {
                 ((kg.f0) obj).invalidate();
                 break;
             default:
-                m81 m81Var = (m81) ((li.e) obj).b;
-                m81Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = m81Var.e;
+                n81 n81Var = (n81) ((li.e) obj).b;
+                n81Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = n81Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    m81Var.e.setImageDrawable(null);
-                    Bitmap bitmap = m81Var.h;
+                    n81Var.e.setImageDrawable(null);
+                    Bitmap bitmap = n81Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        m81Var.h = null;
+                        n81Var.h = null;
                     }
                 }
-                org.telegram.messenger.i0.g3(new j51(this, 6));
-                m81Var.r = 0;
+                org.telegram.messenger.i0.g3(new k51(this, 6));
+                n81Var.r = 0;
                 break;
         }
         return true;

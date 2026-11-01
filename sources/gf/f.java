@@ -27,13 +27,13 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.CustomTabsCopyReceiver;
 import org.telegram.messenger.ShareBroadcastReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w0;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
@@ -50,7 +50,7 @@ import org.telegram.ui.l3;
 import org.telegram.ui.web.v0;
 import org.telegram.ui.x2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static m5.e a;
@@ -217,7 +217,7 @@ public abstract class f {
         Typeface typeface = i0.a;
         String K0 = uri == null ? null : i0.K0(uri.toString(), false);
         String lowerCase = K0 != null ? K0.toLowerCase() : "";
-        if (!vp.r1(d20.s0).g4.contains(lowerCase)) {
+        if (!wp.r1(e20.s0).g4.contains(lowerCase)) {
             Matcher matcher = LaunchActivity.D1.matcher(lowerCase);
             if (matcher.find()) {
                 StringBuilder sb2 = new StringBuilder("https://t.me/");
@@ -289,7 +289,7 @@ public abstract class f {
 
     public static boolean f(String str) {
         try {
-            return TextUtils.equals(i0.K0(str, false), vp.r1(d20.s0).U2);
+            return TextUtils.equals(i0.K0(str, false), wp.r1(e20.s0).U2);
         } catch (Exception e7) {
             f8.g(e7, true);
             return false;
@@ -432,14 +432,14 @@ public abstract class f {
     }
 
     public static void m(String str) {
-        i3 O;
+        i3 N;
         h3 h3Var;
         l3[] l3VarArr;
         l3 l3Var;
         LaunchActivity launchActivity = LaunchActivity.I1;
-        if (launchActivity != null && (O = launchActivity.O()) != null) {
+        if (launchActivity != null && (N = launchActivity.N()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<h3> tabs = O.getTabs();
+                ArrayList<h3> tabs = N.getTabs();
                 for (int i10 = 0; i10 < tabs.size(); i10++) {
                     h3Var = tabs.get(i10);
                     h4 h4Var = h3Var.J;
@@ -452,7 +452,7 @@ public abstract class f {
                             }
                             if (v0Var != null) {
                                 if (TextUtils.equals(i3.p(v0Var.canGoBack() ? v0Var.getUrl() : v0Var.getOpenURL()), i3.p(str))) {
-                                    O.e(h3Var);
+                                    N.e(h3Var);
                                     break;
                                 }
                             } else {
@@ -586,7 +586,7 @@ public abstract class f {
         if (context == null || uri == null) {
             return;
         }
-        int i11 = d20.s0;
+        int i11 = e20.s0;
         boolean[] zArr = {false};
         boolean e7 = e(uri, false, zArr);
         int i12 = 4;
@@ -664,7 +664,7 @@ public abstract class f {
                     K0 = i0.K0(uri.toString(), false);
                 } catch (Exception unused) {
                 }
-                if (d20.i(d20.s0).f() != null) {
+                if (e20.i(e20.s0).f() != null) {
                     if (g(K0, true, false)) {
                         z18 = false;
                     } else {
@@ -717,9 +717,9 @@ public abstract class f {
                         uri2 = uri.normalizeScheme();
                         boolean z23 = z18;
                         K02 = i0.K0(uri2.toString().toLowerCase(), z23);
-                        if (vp.r1(org.telegram.messenger.c.a(i10).a).f4.contains(K02)) {
+                        if (wp.r1(org.telegram.messenger.c.a(i10).a).f4.contains(K02)) {
                             try {
-                                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(vp.r1(org.telegram.messenger.c.a(d20.s0).a).h4, "UTF-8")).build();
+                                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(wp.r1(org.telegram.messenger.c.a(e20.s0).a).h4, "UTF-8")).build();
                             } catch (Exception e11) {
                                 e = e11;
                                 z21 = true;
@@ -738,13 +738,13 @@ public abstract class f {
                                 }
                             }
                         }
-                        if (z19 || ((uri2 != null && vp.r1(i10).L2(uri2.toString())) || !vp.r1(i10).M2() || e7 || str5.equals("tel") || h(uri2.toString()) || (!zArr[0] && k(context, uri2.toString(), false) && d(context, uri2.toString())))) {
+                        if (z19 || ((uri2 != null && wp.r1(i10).L2(uri2.toString())) || !wp.r1(i10).M2() || e7 || str5.equals("tel") || h(uri2.toString()) || (!zArr[0] && k(context, uri2.toString(), false) && d(context, uri2.toString())))) {
                             z20 = false;
                             if (z14) {
                                 try {
                                     if (BubbleActivity.a0 == null) {
                                         if (uri2 != null) {
-                                            if (vp.r1(i10).L2(uri2.toString())) {
+                                            if (wp.r1(i10).L2(uri2.toString())) {
                                                 if (TextUtils.isEmpty(str4)) {
                                                     if (uri2.getScheme() != null && !"https".equals(uri2.getScheme()) && !"http".equals(uri2.getScheme()) && !"tonsite".equals(uri2.getScheme())) {
                                                     }
@@ -797,7 +797,7 @@ public abstract class f {
                             if (z22) {
                             }
                         } else {
-                            if (vp.r1(i10).g4.contains(K02)) {
+                            if (wp.r1(i10).g4.contains(K02)) {
                                 Intent intent2 = new Intent("android.intent.action.VIEW", uri2);
                                 intent2.addFlags(TLObject.FLAG_28);
                                 w0.b.startActivity(intent2);
@@ -820,7 +820,7 @@ public abstract class f {
                                 Bundle bundle = new Bundle();
                                 bundle.putBinder("android.support.customtabs.extra.SESSION", c10 == null ? null : (pf.b) c10.b);
                                 intent.putExtras(bundle);
-                                String L02 = cd.L0(2131751762, null);
+                                String L02 = dd.L0(2131751762, null);
                                 arrayList = new ArrayList<>();
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", L02);
@@ -830,7 +830,7 @@ public abstract class f {
                                 intent.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", t6.x0(null, t6.S8, false));
                                 intent.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                                 decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
-                                L0 = cd.L0(2131745477, null);
+                                L0 = dd.L0(2131745477, null);
                                 z20 = false;
                             } catch (Exception e14) {
                                 e = e14;
@@ -890,7 +890,7 @@ public abstract class f {
                     str4 = str3;
                     z19 = z16;
                     try {
-                        int sendRequest = ConnectionsManager.getInstance(d20.s0).sendRequest(getwebpagepreview, new a(eVar2, x1VarArr, i11, uri, context, z19));
+                        int sendRequest = ConnectionsManager.getInstance(e20.s0).sendRequest(getwebpagepreview, new a(eVar2, x1VarArr, i11, uri, context, z19));
                         if (eVar2 != null) {
                             eVar2.d();
                             return;
@@ -922,7 +922,7 @@ public abstract class f {
             uri2 = uri.normalizeScheme();
             boolean z232 = z18;
             K02 = i0.K0(uri2.toString().toLowerCase(), z232);
-            if (vp.r1(org.telegram.messenger.c.a(i10).a).f4.contains(K02)) {
+            if (wp.r1(org.telegram.messenger.c.a(i10).a).f4.contains(K02)) {
             }
             if (z19) {
             }
@@ -959,7 +959,7 @@ public abstract class f {
         uri2 = uri.normalizeScheme();
         boolean z2322 = z18;
         K02 = i0.K0(uri2.toString().toLowerCase(), z2322);
-        if (vp.r1(org.telegram.messenger.c.a(i10).a).f4.contains(K02)) {
+        if (wp.r1(org.telegram.messenger.c.a(i10).a).f4.contains(K02)) {
         }
         if (z19) {
         }

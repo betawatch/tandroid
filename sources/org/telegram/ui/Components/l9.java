@@ -14,7 +14,7 @@ import android.graphics.Typeface;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class l9 extends s4.m0 implements ug.a {
     public final Rect D;
@@ -25,7 +25,7 @@ public final class l9 extends s4.m0 implements ug.a {
     public int I;
     public float J;
     public boolean K;
-    public rk0 L;
+    public sk0 L;
     public float[] M;
     public int[] N;
     public short[] O;
@@ -40,13 +40,13 @@ public final class l9 extends s4.m0 implements ug.a {
     public short[] X;
     public int Y;
     public int Z;
-    public final tk0 a;
+    public final uk0 a;
     public boolean a0;
-    public final org.telegram.messenger.r20 b;
+    public final org.telegram.messenger.s20 b;
     public float[] b0;
-    public final org.telegram.messenger.r20 c;
+    public final org.telegram.messenger.s20 c;
     public int c0;
-    public final org.telegram.messenger.o20 d;
+    public final org.telegram.messenger.p20 d;
     public float[] d0;
     public final int e;
     public int e0;
@@ -59,7 +59,7 @@ public final class l9 extends s4.m0 implements ug.a {
     public final Paint x;
     public final RectF y;
 
-    public l9(tk0 tk0Var, org.telegram.messenger.r20 r20Var, org.telegram.messenger.r20 r20Var2, int i10, float f7, px pxVar, boolean z10, boolean z11, rk0 rk0Var) {
+    public l9(uk0 uk0Var, org.telegram.messenger.s20 s20Var, org.telegram.messenger.s20 s20Var2, int i10, float f7, px pxVar, boolean z10, boolean z11, sk0 sk0Var) {
         Paint paint = new Paint();
         this.x = paint;
         this.y = new RectF();
@@ -75,15 +75,15 @@ public final class l9 extends s4.m0 implements ug.a {
         this.X = new short[96];
         this.b0 = new float[48];
         this.d0 = new float[32];
-        this.a = tk0Var;
-        this.b = r20Var;
-        this.c = r20Var2;
+        this.a = uk0Var;
+        this.b = s20Var;
+        this.c = s20Var2;
         this.e = i10;
         this.f = f7;
         this.d = pxVar;
         this.h = z10;
         this.K = z11;
-        this.L = rk0Var;
+        this.L = sk0Var;
         paint.setColor(-1);
     }
 
@@ -123,11 +123,11 @@ public final class l9 extends s4.m0 implements ug.a {
 
     @Override // s4.m0
     public final void e(Canvas canvas, RecyclerView recyclerView) {
-        tk0 tk0Var = this.a;
-        if (recyclerView != tk0Var) {
+        uk0 uk0Var = this.a;
+        if (recyclerView != uk0Var) {
             return;
         }
-        int sectionsBackgroundColorForDecoration = tk0Var.getSectionsBackgroundColorForDecoration();
+        int sectionsBackgroundColorForDecoration = uk0Var.getSectionsBackgroundColorForDecoration();
         Paint paint = this.s;
         if (paint.getColor() != sectionsBackgroundColorForDecoration) {
             paint.setColor(sectionsBackgroundColorForDecoration);
@@ -140,7 +140,7 @@ public final class l9 extends s4.m0 implements ug.a {
         }
         int ordinal = this.L.ordinal();
         if (ordinal == 0) {
-            canvas.drawRect(0.0f, 0.0f, tk0Var.getWidth(), tk0Var.getHeight(), paint);
+            canvas.drawRect(0.0f, 0.0f, uk0Var.getWidth(), uk0Var.getHeight(), paint);
             p(canvas);
             return;
         }
@@ -148,7 +148,7 @@ public final class l9 extends s4.m0 implements ug.a {
             int r10 = r(1.0f);
             Paint paint2 = this.w;
             paint2.setColor(r10);
-            canvas.drawRect(0.0f, 0.0f, tk0Var.getWidth(), tk0Var.getHeight(), paint2);
+            canvas.drawRect(0.0f, 0.0f, uk0Var.getWidth(), uk0Var.getHeight(), paint2);
             m(canvas, 0.0f);
             this.T = true;
             p(canvas);
@@ -179,13 +179,13 @@ public final class l9 extends s4.m0 implements ug.a {
         Canvas canvas2;
         int i10;
         l9 l9Var = this;
-        tk0 tk0Var = l9Var.a;
-        if (recyclerView == tk0Var) {
+        uk0 uk0Var = l9Var.a;
+        if (recyclerView == uk0Var) {
             float f7 = l9Var.f;
             if (f7 <= 0.0f) {
                 return;
             }
-            int sectionsBackgroundColorForDecoration = tk0Var.getSectionsBackgroundColorForDecoration();
+            int sectionsBackgroundColorForDecoration = uk0Var.getSectionsBackgroundColorForDecoration();
             Paint paint = l9Var.s;
             if (paint.getColor() != sectionsBackgroundColorForDecoration) {
                 paint.setColor(sectionsBackgroundColorForDecoration);
@@ -210,17 +210,17 @@ public final class l9 extends s4.m0 implements ug.a {
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 paint2.setShader(new BitmapShader(bitmap2, tileMode, tileMode));
             }
-            boolean z10 = l9Var.K && l9Var.L == rk0.b;
+            boolean z10 = l9Var.K && l9Var.L == sk0.b;
             l9Var.a0 = z10;
             if (z10) {
                 l9Var.Y = 0;
                 l9Var.Z = 0;
             }
-            if (tk0Var.b0()) {
-                int paddingLeft = tk0Var.getPaddingLeft();
+            if (uk0Var.b0()) {
+                int paddingLeft = uk0Var.getPaddingLeft();
                 int i12 = l9Var.e;
                 float f11 = paddingLeft + i12;
-                float width = (tk0Var.getWidth() - tk0Var.getPaddingRight()) - i12;
+                float width = (uk0Var.getWidth() - uk0Var.getPaddingRight()) - i12;
                 float f12 = f7 * 0.2f;
                 for (int i13 = 0; i13 < l9Var.e0; i13 += 4) {
                     float[] fArr = l9Var.d0;
@@ -236,14 +236,14 @@ public final class l9 extends s4.m0 implements ug.a {
                     }
                     int i14 = 0;
                     while (true) {
-                        if (i14 >= tk0Var.getChildCount()) {
+                        if (i14 >= uk0Var.getChildCount()) {
                             canvas2 = canvas;
                             l9Var.q(canvas2, f11, width, f13, f15);
                             l9Var = this;
                             break;
                         } else {
-                            View childAt = tk0Var.getChildAt(i14);
-                            if (tk0.a1(childAt) && Math.abs(tk0.v1(childAt) - f13) < 1.0f) {
+                            View childAt = uk0Var.getChildAt(i14);
+                            if (uk0.a1(childAt) && Math.abs(uk0.v1(childAt) - f13) < 1.0f) {
                                 canvas2 = canvas;
                                 break;
                             }
@@ -254,35 +254,35 @@ public final class l9 extends s4.m0 implements ug.a {
                 }
             } else {
                 int i15 = 0;
-                while (i15 < tk0Var.getChildCount()) {
-                    View childAt2 = tk0Var.getChildAt(i15);
-                    s4.c1 T = tk0Var.T(childAt2);
+                while (i15 < uk0Var.getChildCount()) {
+                    View childAt2 = uk0Var.getChildAt(i15);
+                    s4.c1 T = uk0Var.T(childAt2);
                     int R = RecyclerView.R(childAt2);
-                    if (childAt2 != tk0Var.getEmptyView() && childAt2.getVisibility() == 0 && childAt2.getAlpha() > 0.0f && R != -1 && ((T == null || !T.j()) && l9Var.u(childAt2) && !tk0Var.h1(R))) {
+                    if (childAt2 != uk0Var.getEmptyView() && childAt2.getVisibility() == 0 && childAt2.getAlpha() > 0.0f && R != -1 && ((T == null || !T.j()) && l9Var.u(childAt2) && !uk0Var.h1(R))) {
                         float x10 = childAt2.getX();
                         float width2 = x10 + childAt2.getWidth();
-                        if (!l9Var.v(R - 1) && !tk0.a1(childAt2)) {
-                            l9Var.q(canvas, x10, width2, tk0.v1(childAt2), 1.0f);
+                        if (!l9Var.v(R - 1) && !uk0.a1(childAt2)) {
+                            l9Var.q(canvas, x10, width2, uk0.v1(childAt2), 1.0f);
                         }
                         if (!l9Var.v(R + 1)) {
-                            l9Var.k(canvas, x10, width2, tk0.G0(childAt2), 1.0f);
+                            l9Var.k(canvas, x10, width2, uk0.G0(childAt2), 1.0f);
                         }
                     }
                     i15++;
                     l9Var = this;
                 }
             }
-            if (tk0Var.K2 != null) {
-                for (int i16 = 0; i16 < tk0Var.K2.size(); i16++) {
-                    long longValue = ((Long) tk0Var.K2.get(i16)).longValue();
+            if (uk0Var.K2 != null) {
+                for (int i16 = 0; i16 < uk0Var.K2.size(); i16++) {
+                    long longValue = ((Long) uk0Var.K2.get(i16)).longValue();
                     Typeface typeface = org.telegram.messenger.i0.a;
-                    View T0 = tk0Var.T0((int) (longValue >> 32));
-                    View T02 = tk0Var.T0((int) longValue);
-                    if (T0 != null && !tk0.a1(T0)) {
-                        q(canvas, T0.getX(), T0.getWidth() + T0.getX(), tk0.v1(T0), 1.0f);
+                    View T0 = uk0Var.T0((int) (longValue >> 32));
+                    View T02 = uk0Var.T0((int) longValue);
+                    if (T0 != null && !uk0.a1(T0)) {
+                        q(canvas, T0.getX(), T0.getWidth() + T0.getX(), uk0.v1(T0), 1.0f);
                     }
                     if (T02 != null) {
-                        k(canvas, T02.getX(), T02.getX() + T02.getWidth(), tk0.G0(T02), 1.0f);
+                        k(canvas, T02.getX(), T02.getX() + T02.getWidth(), uk0.G0(T02), 1.0f);
                     }
                 }
             }
@@ -534,45 +534,45 @@ public final class l9 extends s4.m0 implements ug.a {
         l9 l9Var;
         float f10;
         float f11;
-        tk0 tk0Var = this.a;
-        float width = tk0Var.getWidth();
-        float height = tk0Var.getHeight();
-        int paddingLeft = tk0Var.getPaddingLeft();
+        uk0 uk0Var = this.a;
+        float width = uk0Var.getWidth();
+        float height = uk0Var.getHeight();
+        int paddingLeft = uk0Var.getPaddingLeft();
         int i10 = this.e;
         float max = Math.max(0.0f, Math.min(width, paddingLeft + i10));
-        float max2 = Math.max(max, Math.min(width, (width - tk0Var.getPaddingRight()) - i10));
+        float max2 = Math.max(max, Math.min(width, (width - uk0Var.getPaddingRight()) - i10));
         if (max >= max2) {
             j(canvas, 0.0f, 0.0f, width, height);
             return;
         }
         this.H = 0;
-        for (int i11 = 0; i11 < tk0Var.getChildCount(); i11++) {
-            View childAt = tk0Var.getChildAt(i11);
+        for (int i11 = 0; i11 < uk0Var.getChildCount(); i11++) {
+            View childAt = uk0Var.getChildAt(i11);
             int R = RecyclerView.R(childAt);
-            s4.c1 T = tk0Var.T(childAt);
-            if (childAt != tk0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && ((!tk0Var.b0() || T == null || !T.j() || childAt.getAlpha() >= 1.0f) && u(childAt) && !tk0Var.h1(R))) {
-                float v12 = tk0.v1(childAt);
-                float G0 = tk0.G0(childAt);
+            s4.c1 T = uk0Var.T(childAt);
+            if (childAt != uk0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && ((!uk0Var.b0() || T == null || !T.j() || childAt.getAlpha() >= 1.0f) && u(childAt) && !uk0Var.h1(R))) {
+                float v12 = uk0.v1(childAt);
+                float G0 = uk0.G0(childAt);
                 if (childAt instanceof y70) {
                     G0 -= ((y70) childAt).getBottomInfoMargin();
                 }
                 h(v12, G0);
             }
         }
-        if (tk0Var.K2 != null) {
-            for (int i12 = 0; i12 < tk0Var.K2.size(); i12++) {
-                long longValue = ((Long) tk0Var.K2.get(i12)).longValue();
+        if (uk0Var.K2 != null) {
+            for (int i12 = 0; i12 < uk0Var.K2.size(); i12++) {
+                long longValue = ((Long) uk0Var.K2.get(i12)).longValue();
                 Typeface typeface = org.telegram.messenger.i0.a;
                 int i13 = (int) (longValue >> 32);
                 int i14 = (int) longValue;
                 float f12 = height;
                 float f13 = 0.0f;
-                for (int i15 = 0; i15 < tk0Var.getChildCount(); i15++) {
-                    View childAt2 = tk0Var.getChildAt(i15);
+                for (int i15 = 0; i15 < uk0Var.getChildCount(); i15++) {
+                    View childAt2 = uk0Var.getChildAt(i15);
                     int R2 = RecyclerView.R(childAt2);
                     if (R2 >= i13 && R2 <= i14) {
-                        f12 = Math.min(f12, tk0.v1(childAt2));
-                        f13 = Math.max(f13, tk0.G0(childAt2));
+                        f12 = Math.min(f12, uk0.v1(childAt2));
+                        f13 = Math.max(f13, uk0.G0(childAt2));
                     }
                 }
                 h(f12, f13);
@@ -667,9 +667,9 @@ public final class l9 extends s4.m0 implements ug.a {
         float left = view.getLeft();
         this.a.getClass();
         float f7 = this.f;
-        float max = Math.max((-f7) - r3.getSectionsOverscanTop(), tk0.v1(view) - (z10 ? f7 : 0.0f));
+        float max = Math.max((-f7) - r3.getSectionsOverscanTop(), uk0.v1(view) - (z10 ? f7 : 0.0f));
         float right = view.getRight();
-        float min = Math.min(r3.getHeight() - (-f7), (tk0.G0(view2) + (z11 ? f7 : 0.0f)) - bottomInfoMargin);
+        float min = Math.min(r3.getHeight() - (-f7), (uk0.G0(view2) + (z11 ? f7 : 0.0f)) - bottomInfoMargin);
         RectF rectF = this.y;
         rectF.set(left, max, right, min);
         if (rectF.bottom >= rectF.top) {
@@ -713,8 +713,8 @@ public final class l9 extends s4.m0 implements ug.a {
         View T0;
         s4.c1 T;
         Canvas canvas2 = canvas;
-        tk0 tk0Var = this.a;
-        boolean b02 = tk0Var.b0();
+        uk0 uk0Var = this.a;
+        boolean b02 = uk0Var.b0();
         RectF rectF = this.y;
         int i13 = this.e;
         float f7 = 0.0f;
@@ -722,14 +722,14 @@ public final class l9 extends s4.m0 implements ug.a {
         if (b02) {
             this.c0 = 0;
             this.e0 = 0;
-            for (int i15 = 0; i15 < tk0Var.getChildCount(); i15++) {
-                View childAt = tk0Var.getChildAt(i15);
-                if (childAt != tk0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && u(childAt)) {
-                    float v12 = tk0.v1(childAt);
-                    float G0 = tk0.G0(childAt);
-                    s4.c1 T2 = tk0Var.T(childAt);
+            for (int i15 = 0; i15 < uk0Var.getChildCount(); i15++) {
+                View childAt = uk0Var.getChildAt(i15);
+                if (childAt != uk0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && u(childAt)) {
+                    float v12 = uk0.v1(childAt);
+                    float G0 = uk0.G0(childAt);
+                    s4.c1 T2 = uk0Var.T(childAt);
                     if (T2 == null || !T2.j() || childAt.getAlpha() >= 1.0f) {
-                        if (tk0Var.h1(RecyclerView.R(childAt))) {
+                        if (uk0Var.h1(RecyclerView.R(childAt))) {
                         }
                         float alpha = childAt.getAlpha();
                         int i16 = this.c0;
@@ -752,7 +752,7 @@ public final class l9 extends s4.m0 implements ug.a {
                         fArr3[i19] = alpha;
                     } else {
                         int i20 = T2.i;
-                        if (i20 >= 0 && (T0 = tk0Var.T0(((int) Math.ceil(i20 / 1000.0d)) + 1)) != null && G0 > T0.getY() && u(T0) && (T = tk0Var.T(T0)) != null && !T.j()) {
+                        if (i20 >= 0 && (T0 = uk0Var.T0(((int) Math.ceil(i20 / 1000.0d)) + 1)) != null && G0 > T0.getY() && u(T0) && (T = uk0Var.T(T0)) != null && !T.j()) {
                             v12 -= 1.0f;
                             G0 = T0.getY();
                             if (G0 < v12) {
@@ -857,7 +857,7 @@ public final class l9 extends s4.m0 implements ug.a {
                         f17 = 1.0f;
                     }
                     if (f15 > f19) {
-                        rectF.set(tk0Var.getPaddingLeft() + i13, f19, (tk0Var.getWidth() - tk0Var.getPaddingRight()) - i13, f15);
+                        rectF.set(uk0Var.getPaddingLeft() + i13, f19, (uk0Var.getWidth() - uk0Var.getPaddingRight()) - i13, f15);
                         o(canvas2, rectF, f17);
                         int i26 = this.e0;
                         int i27 = i26 + 4;
@@ -901,9 +901,9 @@ public final class l9 extends s4.m0 implements ug.a {
             int i34 = 0;
             View view = null;
             View view2 = null;
-            while (i34 < tk0Var.getChildCount()) {
-                View childAt2 = tk0Var.getChildAt(i34);
-                if (childAt2 == tk0Var.getEmptyView() || childAt2.getVisibility() != 0 || childAt2.getAlpha() <= 0.0f || !u(childAt2) || tk0Var.h1(RecyclerView.R(childAt2))) {
+            while (i34 < uk0Var.getChildCount()) {
+                View childAt2 = uk0Var.getChildAt(i34);
+                if (childAt2 == uk0Var.getEmptyView() || childAt2.getVisibility() != 0 || childAt2.getAlpha() <= 0.0f || !u(childAt2) || uk0Var.h1(RecyclerView.R(childAt2))) {
                     n(canvas, view, view2, s(i32, view), t(i33, view2));
                     i32 = -1;
                     i33 = -1;
@@ -928,28 +928,28 @@ public final class l9 extends s4.m0 implements ug.a {
             canvas2 = canvas;
             n(canvas2, view, view2, s(i32, view), t(i33, view2));
         }
-        if (tk0Var.K2 == null) {
+        if (uk0Var.K2 == null) {
             return;
         }
-        for (int i35 = i10; i35 < tk0Var.K2.size(); i35++) {
-            long longValue = ((Long) tk0Var.K2.get(i35)).longValue();
+        for (int i35 = i10; i35 < uk0Var.K2.size(); i35++) {
+            long longValue = ((Long) uk0Var.K2.get(i35)).longValue();
             Typeface typeface = org.telegram.messenger.i0.a;
             int i36 = (int) (longValue >> 32);
             int i37 = (int) longValue;
-            float height = tk0Var.getHeight();
+            float height = uk0Var.getHeight();
             float f30 = this.f;
             float f31 = height + f30;
             float f32 = -f30;
-            for (int i38 = i10; i38 < tk0Var.getChildCount(); i38++) {
-                View childAt3 = tk0Var.getChildAt(i38);
+            for (int i38 = i10; i38 < uk0Var.getChildCount(); i38++) {
+                View childAt3 = uk0Var.getChildAt(i38);
                 int R = RecyclerView.R(childAt3);
                 if (R >= i36 && R <= i37) {
-                    f31 = Math.min(f31, tk0.v1(childAt3));
-                    f32 = Math.max(f32, tk0.G0(childAt3));
+                    f31 = Math.min(f31, uk0.v1(childAt3));
+                    f32 = Math.max(f32, uk0.G0(childAt3));
                 }
             }
             if (f31 < f32) {
-                rectF.set(tk0Var.getPaddingLeft() + i13, f31, (tk0Var.getWidth() - tk0Var.getPaddingRight()) - i13, f32);
+                rectF.set(uk0Var.getPaddingLeft() + i13, f31, (uk0Var.getWidth() - uk0Var.getPaddingRight()) - i13, f32);
                 o(canvas2, rectF, 1.0f);
             }
         }
@@ -985,11 +985,11 @@ public final class l9 extends s4.m0 implements ug.a {
         if (view == null) {
             return false;
         }
-        tk0 tk0Var = this.a;
-        if (i10 < tk0Var.getChildCount() - 1) {
+        uk0 uk0Var = this.a;
+        if (i10 < uk0Var.getChildCount() - 1) {
             return false;
         }
-        s4.g0 adapter = tk0Var.getAdapter();
+        s4.g0 adapter = uk0Var.getAdapter();
         int R = RecyclerView.R(view);
         if (adapter == null || R < 0 || R >= adapter.b() - 1) {
             return false;
@@ -1002,14 +1002,14 @@ public final class l9 extends s4.m0 implements ug.a {
     }
 
     public final boolean v(int i10) {
-        tk0 tk0Var = this.a;
-        s4.g0 adapter = tk0Var.getAdapter();
+        uk0 uk0Var = this.a;
+        s4.g0 adapter = uk0Var.getAdapter();
         if (i10 >= 0 && adapter != null && i10 < adapter.b()) {
-            View T0 = tk0Var.T0(i10);
+            View T0 = uk0Var.T0(i10);
             if (T0 != null) {
-                return u(T0) && !tk0Var.h1(i10);
+                return u(T0) && !uk0Var.h1(i10);
             }
-            if (((Boolean) this.c.a(Integer.valueOf(adapter.d(i10)))).booleanValue() && !tk0Var.h1(i10)) {
+            if (((Boolean) this.c.a(Integer.valueOf(adapter.d(i10)))).booleanValue() && !uk0Var.h1(i10)) {
                 return true;
             }
         }

@@ -21,16 +21,16 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.eb;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
@@ -39,7 +39,7 @@ public final class j extends Drawable implements Animator.AnimatorListener {
     public static final g e0 = new g("openFactor", 0);
     public static final g f0 = new g("openFactor", 1);
     public final q1 D;
-    public final jj E;
+    public final kj E;
     public float F;
     public Bitmap I;
     public BitmapShader J;
@@ -211,7 +211,7 @@ public final class j extends Drawable implements Animator.AnimatorListener {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        e(canvas, false, zs.e4);
+        e(canvas, false, at.e4);
     }
 
     public final void e(Canvas canvas, boolean z10, int i10) {
@@ -301,7 +301,7 @@ public final class j extends Drawable implements Animator.AnimatorListener {
                     final int i24 = 1;
                     b bVar2 = new b(new a() { // from class: mh.c
                         @Override // mh.a
-                        public final void s(Canvas canvas3, int i25) {
+                        public final void r(Canvas canvas3, int i25) {
                             float f21;
                             switch (i24) {
                                 case 0:
@@ -471,7 +471,7 @@ public final class j extends Drawable implements Animator.AnimatorListener {
                                 final int i27 = 0;
                                 b bVar4 = new b(new a() { // from class: mh.c
                                     @Override // mh.a
-                                    public final void s(Canvas canvas3, int i252) {
+                                    public final void r(Canvas canvas3, int i252) {
                                         float f212;
                                         switch (i27) {
                                             case 0:

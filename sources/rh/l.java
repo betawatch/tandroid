@@ -1,14 +1,14 @@
 package rh;
 
 import java.util.ArrayList;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class l implements RequestDelegate {
                                     for (int i11 = 0; i11 < vector.objects.size(); i11++) {
                                         rVar2.j.add((TLRPC.User) vector.objects.get(i11));
                                     }
-                                    vp.r1(rVar2.a).V3(rVar2.j, false);
+                                    wp.r1(rVar2.a).V3(rVar2.j, false);
                                     break;
                                 }
                                 break;
@@ -52,10 +52,10 @@ public final /* synthetic */ class l implements RequestDelegate {
                                 TLObject tLObject3 = tLObject;
                                 if (tLObject3 instanceof TLRPC.messages_Chats) {
                                     TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
-                                    vp.r1(i12).P3(messages_chats.chats, false);
+                                    wp.r1(i12).P3(messages_chats.chats, false);
                                     rVar3.l.addAll(messages_chats.chats);
                                 }
-                                zs.f(i12).k(zs.M3, new Object[0]);
+                                at.f(i12).k(at.M3, new Object[0]);
                                 break;
                         }
                     }
@@ -79,7 +79,7 @@ public final /* synthetic */ class l implements RequestDelegate {
                                     for (int i112 = 0; i112 < vector.objects.size(); i112++) {
                                         rVar22.j.add((TLRPC.User) vector.objects.get(i112));
                                     }
-                                    vp.r1(rVar22.a).V3(rVar22.j, false);
+                                    wp.r1(rVar22.a).V3(rVar22.j, false);
                                     break;
                                 }
                                 break;
@@ -91,10 +91,10 @@ public final /* synthetic */ class l implements RequestDelegate {
                                 TLObject tLObject3 = tLObject;
                                 if (tLObject3 instanceof TLRPC.messages_Chats) {
                                     TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
-                                    vp.r1(i12).P3(messages_chats.chats, false);
+                                    wp.r1(i12).P3(messages_chats.chats, false);
                                     rVar3.l.addAll(messages_chats.chats);
                                 }
-                                zs.f(i12).k(zs.M3, new Object[0]);
+                                at.f(i12).k(at.M3, new Object[0]);
                                 break;
                         }
                     }

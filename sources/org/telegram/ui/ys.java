@@ -1,73 +1,58 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.app.Activity;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ys implements r0.m, org.telegram.ui.Components.lj0 {
-    public final /* synthetic */ lt a;
+public final /* synthetic */ class ys implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kt b;
 
-    public /* synthetic */ ys(lt ltVar) {
-        this.a = ltVar;
+    public /* synthetic */ ys(kt ktVar, int i10) {
+        this.a = i10;
+        this.b = ktVar;
     }
 
-    @Override // org.telegram.ui.Components.lj0
-    public /* synthetic */ boolean A() {
-        return false;
-    }
-
-    @Override // r0.m
-    public r0.j1 R0(View view, r0.j1 j1Var) {
-        this.a.q = org.telegram.messenger.i0.I0(j1Var, false);
-        return j1Var;
-    }
-
-    @Override // org.telegram.ui.Components.lj0
-    public /* synthetic */ boolean f() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.lj0
-    public /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.lj0
-    public void x(View view, sg.o0 o0Var, boolean z10, boolean z11) {
-        if (o0Var == null) {
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                kt ktVar = this.b;
+                ktVar.K = false;
+                ktVar.z.invalidate();
+                ktVar.m();
+                break;
+            case 1:
+                kt ktVar2 = this.b;
+                Activity activity = ktVar2.w;
+                if (activity instanceof LaunchActivity) {
+                    LaunchActivity launchActivity = (LaunchActivity) activity;
+                    if (launchActivity.M() != null && launchActivity.M().getLastFragment() != null) {
+                        launchActivity.M().getLastFragment().dismissCurrentDialog();
+                    }
+                    launchActivity.t0(new PremiumPreviewFragment(0, PremiumPreviewFragment.q0(5)));
+                }
+                ktVar2.K = false;
+                ktVar2.z.invalidate();
+                ktVar2.m();
+                break;
+            case 2:
+                kt ktVar3 = this.b;
+                ht htVar = ktVar3.l;
+                if (htVar != null) {
+                    htVar.J();
+                }
+                ktVar3.o();
+                break;
+            default:
+                kt ktVar4 = this.b;
+                ht htVar2 = ktVar4.l;
+                if (htVar2 != null) {
+                    htVar2.q();
+                }
+                ktVar4.o();
+                break;
         }
-        lt ltVar = this.a;
-        sg.b0 reactionsWindow = ltVar.P.getReactionsWindow();
-        if (!ltVar.o.contains(o0Var.f)) {
-            ltVar.o.add(o0Var.f);
-            if (ltVar.o.size() > 7) {
-                ltVar.o.remove(0);
-            }
-        } else if (ltVar.o.size() <= 1) {
-            return;
-        } else {
-            ltVar.o.remove(o0Var.f);
-        }
-        ltVar.P.setSelectedEmojis(ltVar.o);
-        if (reactionsWindow != null) {
-            sg.w wVar = reactionsWindow.m;
-            ltVar.P.p(null, null, false);
-            if (wVar != null) {
-                wVar.setSelectedReactions(ltVar.o);
-                wVar.setRecentReactions(ltVar.P.V);
-            }
-            reactionsWindow.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lj0
-    public /* synthetic */ void t() {
-    }
-
-    @Override // org.telegram.ui.Components.lj0
-    public /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

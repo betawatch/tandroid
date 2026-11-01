@@ -19,9 +19,9 @@ import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import n2.y;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.hj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.s2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -35,10 +35,10 @@ import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.sf;
 import org.telegram.ui.kn;
-import org.telegram.ui.qs0;
+import org.telegram.ui.ps0;
 import p2.t;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l1, t, r0.q, Continuation, uf.a, vf.a, s0, y6.c, y2.i {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean A1(q1 q1Var, jj jjVar) {
+    public /* synthetic */ boolean A1(q1 q1Var, kj kjVar) {
         switch (this.a) {
         }
         return false;
@@ -140,7 +140,7 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void F1(q1 q1Var, c20 c20Var) {
+    public /* synthetic */ void F1(q1 q1Var, d20 d20Var) {
         int i10 = this.a;
     }
 
@@ -165,7 +165,7 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ qs0 H1() {
+    public /* synthetic */ ps0 H1() {
         switch (this.a) {
         }
         return null;
@@ -184,7 +184,7 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void J(gj gjVar) {
+    public /* synthetic */ void J(hj hjVar) {
         int i10 = this.a;
     }
 
@@ -269,7 +269,7 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void O(jj jjVar) {
+    public /* synthetic */ void O(kj kjVar) {
         int i10 = this.a;
     }
 
@@ -327,9 +327,9 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean S0(jj jjVar) {
+    public /* synthetic */ boolean S0(kj kjVar) {
         int i10 = this.a;
-        return f1.a(jjVar);
+        return f1.a(kjVar);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -778,12 +778,12 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void v1(jj jjVar) {
+    public /* synthetic */ void v1(kj kjVar) {
         int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean w0(jj jjVar) {
+    public /* synthetic */ boolean w0(kj kjVar) {
         switch (this.a) {
         }
         return true;
@@ -837,7 +837,7 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void z1(jj jjVar, String str, String str2, String str3, String str4, int i10, int i11) {
+    public /* synthetic */ void z1(kj kjVar, String str, String str2, String str3, String str4, int i10, int i11) {
         int i12 = this.a;
     }
 
@@ -999,10 +999,10 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     private final /* synthetic */ void B3(q1 q1Var) {
     }
 
-    private final /* synthetic */ void B4(jj jjVar) {
+    private final /* synthetic */ void B4(kj kjVar) {
     }
 
-    private final /* synthetic */ void C4(jj jjVar) {
+    private final /* synthetic */ void C4(kj kjVar) {
     }
 
     private final /* synthetic */ void E2(q1 q1Var) {
@@ -1017,10 +1017,10 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     private final /* synthetic */ void F3(q1 q1Var) {
     }
 
-    private final /* synthetic */ void G2(gj gjVar) {
+    private final /* synthetic */ void G2(hj hjVar) {
     }
 
-    private final /* synthetic */ void H2(gj gjVar) {
+    private final /* synthetic */ void H2(hj hjVar) {
     }
 
     private final /* synthetic */ void I2(q1 q1Var) {
@@ -1068,13 +1068,13 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     private final /* synthetic */ void a3(q1 q1Var) {
     }
 
-    private final /* synthetic */ void a4(jj jjVar) {
+    private final /* synthetic */ void a4(kj kjVar) {
     }
 
     private final /* synthetic */ void b3(q1 q1Var) {
     }
 
-    private final /* synthetic */ void b4(jj jjVar) {
+    private final /* synthetic */ void b4(kj kjVar) {
     }
 
     private final /* synthetic */ void c4(q1 q1Var) {
@@ -1204,13 +1204,13 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     private final /* synthetic */ void e3(q1 q1Var, int i10) {
     }
 
-    private final /* synthetic */ void e4(q1 q1Var, c20 c20Var) {
+    private final /* synthetic */ void e4(q1 q1Var, d20 d20Var) {
     }
 
     private final /* synthetic */ void f3(q1 q1Var, int i10) {
     }
 
-    private final /* synthetic */ void f4(q1 q1Var, c20 c20Var) {
+    private final /* synthetic */ void f4(q1 q1Var, d20 d20Var) {
     }
 
     private final /* synthetic */ void i4(q1 q1Var, boolean z10) {
@@ -1382,9 +1382,9 @@ public final class b implements c3.q, fa.a, r9.d, OnFailureListener, n2.m, sf, l
     public void V1(int i10, int i11, int i12, long j10, long j11, boolean z10) {
     }
 
-    private final /* synthetic */ void s4(jj jjVar, String str, String str2, String str3, String str4, int i10, int i11) {
+    private final /* synthetic */ void s4(kj kjVar, String str, String str2, String str3, String str4, int i10, int i11) {
     }
 
-    private final /* synthetic */ void t4(jj jjVar, String str, String str2, String str3, String str4, int i10, int i11) {
+    private final /* synthetic */ void t4(kj kjVar, String str, String str2, String str3, String str4, int i10, int i11) {
     }
 }

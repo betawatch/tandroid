@@ -5,7 +5,7 @@ import android.text.SpannableString;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -13,11 +13,11 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.o5;
-import org.telegram.ui.i31;
+import org.telegram.ui.g31;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class m extends i31 {
+public final class m extends g31 {
     public boolean e2;
     public final /* synthetic */ o f2;
 
@@ -29,7 +29,7 @@ public final class m extends i31 {
         setDrawBackground(false);
     }
 
-    @Override // org.telegram.ui.i31, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.g31, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.e2) {
@@ -38,7 +38,7 @@ public final class m extends i31 {
         }
     }
 
-    @Override // org.telegram.ui.i31
+    @Override // org.telegram.ui.g31
     public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         o oVar = this.f2;
         int i10 = oVar.M;
@@ -47,14 +47,14 @@ public final class m extends i31 {
         if (linkedHashMap.containsKey(l4)) {
             arrayList.remove(l4);
             o5 o5Var = (o5) linkedHashMap.remove(l4);
-            o5Var.setRemoved(new rh.o(22, this, o5Var));
-            oVar.b0(o5Var);
+            o5Var.setRemoved(new rh.n(23, this, o5Var));
+            oVar.c0(o5Var);
             oVar.b.x(l4, true);
-            oVar.d0(false);
+            oVar.e0(false);
             return;
         }
         if (linkedHashMap.size() - (linkedHashMap.containsKey(-1L) ? 1 : 0) >= i10) {
-            cc.a0(oVar).t(cd.G(i10, "ReactionMaxCountError", new Object[0]), null).j();
+            cc.a0(oVar).t(dd.G(i10, "ReactionMaxCountError", new Object[0]), null).j();
             return;
         }
         try {
@@ -69,8 +69,8 @@ public final class m extends i31 {
             oVar.h.getText().insert(editTextSelectionEnd, spannableString);
             oVar.h.setSelection(editTextSelectionEnd + spannableString.length());
             oVar.b.x(l4, true);
-            oVar.d0(true);
-            oVar.b0(e);
+            oVar.e0(true);
+            oVar.c0(e);
         } catch (Exception e7) {
             f8.g(e7, true);
         }

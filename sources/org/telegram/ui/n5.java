@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n5 extends View {
     public final /* synthetic */ int a = 0;
@@ -25,7 +25,7 @@ public final class n5 extends View {
                 org.telegram.ui.Components.kp kpVar = this.b;
                 kpVar.setBounds(0, 0, width, height);
                 kpVar.b(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.m5, false));
-                kpVar.setAlpha(org.telegram.messenger.zs.e4);
+                kpVar.setAlpha(org.telegram.messenger.at.e4);
                 kpVar.draw(canvas);
                 invalidate();
                 super.onDraw(canvas);

@@ -50,28 +50,28 @@ import m4.l1;
 import m4.p1;
 import m4.q1;
 import org.json.JSONObject;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.us;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.vs;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.ws;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.Components.m81;
-import org.telegram.ui.rz0;
+import org.telegram.ui.Components.n81;
+import org.telegram.ui.qz0;
 import org.telegram.ui.ue;
 import org.telegram.ui.un;
 import org.telegram.ui.web.e1;
 import org.telegram.ui.web.f1;
-import org.telegram.ui.xz0;
+import org.telegram.ui.wz0;
 import v7.t6;
 import z9.t0;
 import z9.z0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class n implements z3.m, vs, xz0, n5.b {
+public final class n implements z3.m, ws, wz0, n5.b {
     public static n e;
     public Object a;
     public Object b;
@@ -229,7 +229,7 @@ public final class n implements z3.m, vs, xz0, n5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = m81.z0.matcher(trim);
+            Matcher matcher = n81.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -386,11 +386,11 @@ public final class n implements z3.m, vs, xz0, n5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = m81.x0.matcher(trim);
+        Matcher matcher = n81.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = m81.y0.matcher(trim);
+            Matcher matcher2 = n81.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;
@@ -627,10 +627,10 @@ public final class n implements z3.m, vs, xz0, n5.b {
         return continueWithTask;
     }
 
-    @Override // org.telegram.messenger.vs
+    @Override // org.telegram.messenger.ws
     public void a() {
         a0.k kVar = (a0.k) this.c;
-        if (((us) this.b) == null) {
+        if (((vs) this.b) == null) {
             return;
         }
         n nVar = (n) this.d;
@@ -640,12 +640,12 @@ public final class n implements z3.m, vs, xz0, n5.b {
         }
         int i10 = kVar.b;
         for (int i11 = 0; i11 < i10; i11++) {
-            zs zsVar = (zs) this.a;
-            us usVar = (us) this.b;
+            at atVar = (at) this.a;
+            vs vsVar = (vs) this.b;
             if (i11 < 0) {
                 kVar.getClass();
             } else if (i11 < kVar.b) {
-                zsVar.n(usVar, kVar.a[i11]);
+                atVar.n(vsVar, kVar.a[i11]);
             }
             StringBuilder l4 = i0.a.l(i11, "Index ", " must be in 0..");
             l4.append(kVar.b - 1);
@@ -656,24 +656,24 @@ public final class n implements z3.m, vs, xz0, n5.b {
         this.b = null;
     }
 
-    @Override // org.telegram.ui.xz0
+    @Override // org.telegram.ui.wz0
     public void b() {
-        org.telegram.messenger.i0.h3(new rz0((un) this.a, (Activity) this.b, (p6) this.c, (jj) this.d, 2), 200L);
+        org.telegram.messenger.i0.h3(new qz0((un) this.a, (Activity) this.b, (p6) this.c, (kj) this.d, 2), 200L);
     }
 
-    @Override // org.telegram.ui.xz0
+    @Override // org.telegram.ui.wz0
     public void c() {
-        org.telegram.messenger.i0.h3(new ue((un) this.a, (jj) this.d, 8), 200L);
+        org.telegram.messenger.i0.h3(new ue((un) this.a, (kj) this.d, 8), 200L);
     }
 
-    @Override // org.telegram.ui.xz0
+    @Override // org.telegram.ui.wz0
     public void d() {
         un unVar = (un) this.a;
         unVar.showDialog(new i1((k2) unVar, 3, true));
     }
 
     public n e(int i10) {
-        if (((us) this.b) == null) {
+        if (((vs) this.b) == null) {
             return this;
         }
         a0.k kVar = (a0.k) this.c;
@@ -688,7 +688,7 @@ public final class n implements z3.m, vs, xz0, n5.b {
         int i12 = kVar.b;
         iArr2[i12] = i10;
         kVar.b = i12 + 1;
-        ((zs) this.a).b((us) this.b, i10);
+        ((at) this.a).b((vs) this.b, i10);
         return this;
     }
 
@@ -731,11 +731,11 @@ public final class n implements z3.m, vs, xz0, n5.b {
     }
 
     public n h(int i10) {
-        if (((us) this.b) == null) {
+        if (((vs) this.b) == null) {
             return this;
         }
         if (((n) this.d) == null) {
-            this.d = new n(zs.e(), (us) this.b);
+            this.d = new n(at.e(), (vs) this.b);
         }
         ((n) this.d).e(i10);
         return this;
@@ -1035,7 +1035,7 @@ public final class n implements z3.m, vs, xz0, n5.b {
                                     double A3 = xVar2.A();
                                     double A4 = xVar2.A() - 128;
                                     double A5 = xVar2.A() - 128;
-                                    iArr[A2] = l0.i((int) ((A5 * 1.772d) + A3), 0, zs.e4) | (xVar2.A() << 24) | (l0.i((int) ((1.402d * A4) + A3), 0, zs.e4) << 16) | (l0.i((int) ((A3 - (0.34414d * A5)) - (A4 * 0.71414d)), 0, zs.e4) << 8);
+                                    iArr[A2] = l0.i((int) ((A5 * 1.772d) + A3), 0, at.e4) | (xVar2.A() << 24) | (l0.i((int) ((1.402d * A4) + A3), 0, at.e4) << 16) | (l0.i((int) ((A3 - (0.34414d * A5)) - (A4 * 0.71414d)), 0, at.e4) << 8);
                                     i19++;
                                     c10 = c11;
                                     aVar = aVar;
@@ -1235,11 +1235,11 @@ public final class n implements z3.m, vs, xz0, n5.b {
         this.d = kVar2;
     }
 
-    public n(zs zsVar, us usVar) {
+    public n(at atVar, vs vsVar) {
         a0.k kVar = new a0.k();
         kVar.a = new int[16];
         this.c = kVar;
-        this.a = zsVar;
-        this.b = usVar;
+        this.a = atVar;
+        this.b = vsVar;
     }
 }

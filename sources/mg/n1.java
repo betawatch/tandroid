@@ -8,12 +8,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.a7;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.p80;
 import org.telegram.ui.Components.r8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n1 extends LinearLayout {
     public final ArrayList a;
@@ -58,7 +58,7 @@ public final class n1 extends LinearLayout {
         addView(frameLayout, b6.k(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
         TextView textView = new TextView(context);
         textView.setTypeface(org.telegram.messenger.i0.o());
-        textView.setText(cd.L0(2131753321, null));
+        textView.setText(dd.L0(2131753321, null));
         textView.setTextSize(1, 20.0f);
         a7.V(textView, t6.G6, null);
         addView(textView, b6.t(-2, -2, 1, 0, 15, 0, 7));
@@ -86,7 +86,7 @@ public final class n1 extends LinearLayout {
         while (i13 < size) {
             Object obj = arrayList.get(i13);
             i13++;
-            arrayList3.add(vp.r1(d20.s0).L0(Long.valueOf(-o5.o(((TL_stories.TL_myBoost) obj).peer))));
+            arrayList3.add(wp.r1(e20.s0).L0(Long.valueOf(-o5.o(((TL_stories.TL_myBoost) obj).peer))));
         }
         ArrayList arrayList4 = new ArrayList();
         ArrayList arrayList5 = new ArrayList();
@@ -151,7 +151,7 @@ public final class n1 extends LinearLayout {
             j1Var3.setScaleX(0.1f);
             j1Var3.setScaleY(0.1f);
             ArrayList arrayList7 = arrayList5;
-            j1Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setInterpolator(grVar).setDuration(zs.e3).start();
+            j1Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setInterpolator(grVar).setDuration(at.e3).start();
             if (size5 == 0) {
                 k1 k1Var = j1Var3.b;
                 k1Var.setScaleY(1.0f);
@@ -185,7 +185,7 @@ public final class n1 extends LinearLayout {
             if (j1Var != null) {
                 j1Var.setTag("REMOVED");
                 ViewPropertyAnimator interpolator = j1Var.animate().alpha(0.0f).translationXBy(org.telegram.messenger.i0.L(23.0f)).scaleX(0.1f).scaleY(0.1f).setInterpolator(grVar);
-                long j10 = zs.e3;
+                long j10 = at.e3;
                 interpolator.setDuration(j10).setListener(new m1(this, j1Var)).start();
                 int size8 = arrayList6.size();
                 int i20 = 0;
@@ -234,21 +234,21 @@ public final class n1 extends LinearLayout {
         FrameLayout frameLayout2 = this.c;
         frameLayout2.animate().cancel();
         if (arrayList2.isEmpty() || arrayList2.size() == 1) {
-            frameLayout2.animate().setInterpolator(grVar).translationX(0.0f).setDuration(zs.e3).start();
+            frameLayout2.animate().setInterpolator(grVar).translationX(0.0f).setDuration(at.e3).start();
         } else {
-            frameLayout2.animate().setInterpolator(grVar).translationX(org.telegram.messenger.i0.L(11.5f) * (arrayList2.size() - 1)).setDuration(zs.e3).start();
+            frameLayout2.animate().setInterpolator(grVar).translationX(org.telegram.messenger.i0.L(11.5f) * (arrayList2.size() - 1)).setDuration(at.e3).start();
         }
         j1Var5.animate().cancel();
         frameLayout.animate().cancel();
         if (arrayList2.isEmpty()) {
             ViewPropertyAnimator translationX = frameLayout.animate().setInterpolator(grVar).translationX(0.0f);
-            long j11 = zs.e3;
+            long j11 = at.e3;
             translationX.setDuration(j11).start();
             j1Var5.animate().setInterpolator(grVar).translationX(0.0f).setDuration(j11).start();
             return;
         }
         ViewPropertyAnimator translationX2 = frameLayout.animate().setInterpolator(grVar).translationX(-org.telegram.messenger.i0.L(48.0f));
-        long j12 = zs.e3;
+        long j12 = at.e3;
         translationX2.setDuration(j12).start();
         j1Var5.animate().setInterpolator(grVar).translationX(org.telegram.messenger.i0.L(48.0f)).setDuration(j12).start();
     }

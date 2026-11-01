@@ -1,55 +1,62 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ow b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ pw b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.x1 d;
 
-    public /* synthetic */ mw(ow owVar, ArrayList arrayList, int i10) {
+    public /* synthetic */ mw(pw pwVar, Context context, org.telegram.ui.ActionBar.x1 x1Var, int i10) {
         this.a = i10;
-        this.b = owVar;
-        this.c = arrayList;
+        this.b = pwVar;
+        this.c = context;
+        this.d = x1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        org.telegram.ui.ActionBar.x1 x1Var = this.d;
+        Context context = this.c;
+        pw pwVar = this.b;
+        switch (i10) {
             case 0:
-                ow owVar = this.b;
-                owVar.getClass();
-                int i10 = 0;
-                while (true) {
-                    ArrayList arrayList = this.c;
-                    if (i10 >= arrayList.size()) {
+                pwVar.n = false;
+                if (!((Activity) context).isFinishing()) {
+                    try {
+                        x1Var.dismiss();
                         break;
-                    } else {
-                        jj jjVar = new jj(owVar.currentAccount, (TLRPC.Message) arrayList.get(i10), false, true);
-                        jjVar.A0 = true;
-                        owVar.getSendMessagesHelper().k0(0L, jjVar, true);
-                        i10++;
+                    } catch (Exception e) {
+                        f8.g(e, true);
+                        return;
                     }
                 }
+                break;
             default:
-                ow owVar2 = this.b;
-                owVar2.getClass();
-                int i11 = 0;
-                while (true) {
-                    ArrayList arrayList2 = this.c;
-                    if (i11 >= arrayList2.size()) {
-                        break;
-                    } else {
-                        jj jjVar2 = (jj) owVar2.getMessagesController().S.f(((Long) arrayList2.get(i11)).longValue());
-                        if (jjVar2 != null) {
-                            jjVar2.Z = true;
-                        }
-                        i11++;
+                if (!((Activity) context).isFinishing()) {
+                    pwVar.n = false;
+                    try {
+                        x1Var.dismiss();
+                    } catch (Exception e7) {
+                        f8.g(e7, true);
                     }
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
+                    String L0 = dd.L0(R.string.AppName, null);
+                    org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder.a;
+                    x1Var2.R = L0;
+                    x1Var2.T = dd.L0(2131751750, null);
+                    alertDialog$Builder.k(dd.L0(2131747847, null), null);
+                    alertDialog$Builder.p().setCanceledOnTouchOutside(true);
+                    break;
                 }
+                break;
         }
     }
 }

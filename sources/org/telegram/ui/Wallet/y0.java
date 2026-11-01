@@ -2,9 +2,9 @@ package org.telegram.ui.Wallet;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.d11;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y0 {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class y0 {
         sb2.append(yVar == null ? "none" : Integer.valueOf(yVar.b()));
         sb2.append(", clientCloseCode=");
         sb2.append(yVar2 != null ? Integer.valueOf(yVar2.b()) : "none");
-        org.telegram.messenger.i0.g3(new c11(this.c, vVar, this.a, sb2.toString(), 13));
+        org.telegram.messenger.i0.g3(new d11(this.c, vVar, this.a, sb2.toString(), 13));
     }
 
     public final void b(lc.v vVar, String str) {
@@ -37,7 +37,7 @@ public final class y0 {
         sb2.append(str);
         org.telegram.messenger.f8.b(sb2.toString());
         try {
-            org.telegram.messenger.i0.g3(new c11(this, vVar, i10, new JSONObject(str), 14));
+            org.telegram.messenger.i0.g3(new d11(this, vVar, i10, new JSONObject(str), 14));
         } catch (JSONException unused) {
             org.telegram.messenger.i0.g3(new x0(this, vVar, i10, 0));
         }

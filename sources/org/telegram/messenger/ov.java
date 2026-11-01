@@ -1,103 +1,210 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.graphics.Shader;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.xh0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class ov extends qu implements Drawable.Callback {
-    public final x51 W;
-    public final int X;
-    public final int Y;
-    public final int Z;
-    public final int a0;
-    public hb.a b0;
-    public Bitmap c0;
+public final class ov extends ru {
+    public final vv W;
+    public final vv[] X;
+    public int Y;
+    public LinearGradient Z;
+    public final Matrix a0;
+    public final Paint b0;
 
-    public ov(vv vvVar, Rect rect, int i10, int i11, int i12) {
-        super(vvVar, rect, i10);
-        this.Z = i11;
-        this.a0 = i12;
-        x51 x51Var = new x51();
-        this.W = x51Var;
-        x51Var.setCallback(this);
-        x51Var.n = cd.L0(2131743856, null);
-        x51Var.o = cd.L0(2131743857, null);
-        x51Var.p = cd.L0(2131743852, null);
-        x51Var.j = new ms(vvVar, 8);
-        int i13 = this.c;
-        this.X = i13;
-        this.Y = x51Var.a(i13);
+    public ov(wv wvVar, Rect rect, int i10, SpannableStringBuilder spannableStringBuilder) {
+        super(wvVar, rect, i10);
+        this.a0 = new Matrix();
+        this.b0 = new Paint(1);
+        vv vvVar = new vv(wvVar, spannableStringBuilder, this.c);
+        this.W = vvVar;
+        this.X = new vv[]{vvVar};
     }
 
-    @Override // org.telegram.messenger.qu
+    @Override // org.telegram.messenger.ru
     public final int H() {
         Rect rect = this.b;
-        return rect.top + this.Y + rect.bottom;
+        return this.W.b.getHeight() + rect.top + rect.bottom;
     }
 
-    @Override // org.telegram.messenger.qu
-    public final boolean X(MotionEvent motionEvent) {
-        View view = this.V;
-        if (view != null) {
-            return this.W.i.a(view, motionEvent);
+    @Override // org.telegram.messenger.ru
+    public final int I() {
+        Rect rect = this.b;
+        return this.W.q() + rect.left + rect.right;
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final int J() {
+        Rect rect = this.b;
+        return this.W.r() + rect.left + rect.right;
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final org.telegram.ui.Cells.u9[] K() {
+        return this.X;
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final void S() {
+        this.W.i(this.V);
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final void U() {
+        this.W.f(this.V);
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final void V(Canvas canvas) {
+        wv wvVar = this.a;
+        canvas.saveLayerAlpha(0.0f, 0.0f, wvVar.C, H(), at.e4, 31);
+        int h02 = h0();
+        vv vvVar = this.W;
+        if (h02 != 0) {
+            vvVar.c = (this.b.left + h02) - vvVar.f;
+            canvas.save();
+            canvas.translate(h02, 0.0f);
         }
-        return false;
-    }
-
-    public final float h0(org.telegram.ui.Cells.x1 x1Var) {
-        int i10;
-        if (x1Var != null) {
-            vv vvVar = this.a;
-            if (vvVar.s || vvVar.u) {
-                i10 = i0.W1(Math.max(0.0f, Math.min(1.0f, x1Var.L1)), this.P, this.N);
-                return i10;
-            }
+        vvVar.d(canvas, vvVar.S);
+        if (wvVar.F()) {
+            canvas.save();
+            canvas.translate(-vvVar.f, 0.0f);
+            org.telegram.ui.Components.o5.drawAnimatedEmojis(canvas, vvVar.b, vvVar.E, 0.0f, vvVar.x, 0.0f, 0.0f, 0.0f, 1.0f);
+            canvas.restore();
         }
-        i10 = this.N;
-        return i10;
-    }
-
-    public final float i0(org.telegram.ui.Cells.x1 x1Var) {
-        if (x1Var != null) {
-            vv vvVar = this.a;
-            if (vvVar.s || vvVar.u) {
-                return i0.T1(this.O, this.M, Math.max(0.0f, Math.min(1.0f, x1Var.L1)));
-            }
+        if (h02 != 0) {
+            canvas.restore();
         }
-        return this.M;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
+        i0();
+        Matrix matrix = this.a0;
+        matrix.reset();
+        matrix.postTranslate(((System.currentTimeMillis() % 2000) / 2000.0f) * this.c, 0.0f);
+        this.Z.setLocalMatrix(matrix);
+        canvas.drawRect(0.0f, 0.0f, wvVar.C, H(), this.b0);
+        canvas.restore();
         View view = this.V;
         if (view != null) {
             view.invalidate();
         }
     }
 
-    @Override // org.telegram.messenger.qu
-    public final void q(Canvas canvas) {
+    @Override // org.telegram.messenger.ru
+    public final void W(Canvas canvas, int i10, float f7) {
+        wv wvVar = this.a;
+        int i11 = wvVar.C;
+        TextPaint textPaint = wvVar.w;
+        canvas.saveLayerAlpha(0.0f, 0.0f, i11, H(), at.e4, 31);
+        int h02 = h0();
+        vv vvVar = this.W;
+        if (h02 != 0) {
+            vvVar.c = (this.b.left + h02) - vvVar.f;
+        }
+        canvas.save();
+        canvas.translate(h02 - vvVar.f, 0.0f);
+        int color = textPaint.getColor();
+        textPaint.setColor(-1);
+        textPaint.linkColor = org.telegram.ui.ActionBar.t6.w0(wvVar.E() ? org.telegram.ui.ActionBar.t6.Vc : org.telegram.ui.ActionBar.t6.Uc, wvVar.D);
+        xh0.b(canvas, vvVar.b, i10, f7, new p(5, this, this.V));
+        canvas.restore();
+        textPaint.setColor(color);
+        i0();
+        Matrix matrix = this.a0;
+        matrix.reset();
+        matrix.postTranslate(((System.currentTimeMillis() % 2000) / 2000.0f) * this.c, 0.0f);
+        this.Z.setLocalMatrix(matrix);
+        canvas.drawRect(0.0f, 0.0f, wvVar.C, H(), this.b0);
+        canvas.restore();
+        View view = this.V;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final boolean X(MotionEvent motionEvent) {
+        int h02 = h0();
+        vv vvVar = this.W;
+        if (h02 == 0) {
+            return vvVar.t(motionEvent);
+        }
+        motionEvent.offsetLocation(-h02, 0.0f);
+        boolean t10 = vvVar.t(motionEvent);
+        motionEvent.offsetLocation(h02, 0.0f);
+        return t10;
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final void Y(int i10, int i11, int i12) {
+        super.Y(i10, i11, i12);
+        int h02 = h0();
+        if (h02 != 0) {
+            int i13 = i10 + h02;
+            vv vvVar = this.W;
+            vvVar.c = i13 - vvVar.f;
+        }
+    }
+
+    @Override // org.telegram.messenger.ru, org.telegram.ui.vh0
+    public final Layout a() {
+        return this.W.b;
+    }
+
+    public final int h0() {
+        wv wvVar = this.a;
+        if (!wvVar.I()) {
+            return 0;
+        }
+        int L = (wvVar.C + wvVar.T) - i0.L(14.0f);
         Rect rect = this.b;
-        int i10 = rect.left;
-        int i11 = rect.top;
-        int i12 = this.X + i10;
-        int i13 = this.Y + i11;
-        x51 x51Var = this.W;
-        x51Var.setBounds(i10, i11, i12, i13);
-        x51Var.draw(canvas);
+        return ((L - rect.right) - rect.left) - this.W.r();
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+    public final void i0() {
+        wv wvVar = this.a;
+        int w02 = org.telegram.ui.ActionBar.t6.w0(wvVar.E() ? org.telegram.ui.ActionBar.t6.Tc : org.telegram.ui.ActionBar.t6.Sc, wvVar.D);
+        if (this.Z == null || this.Y != w02) {
+            this.Y = w02;
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{org.telegram.ui.ActionBar.t6.r1(0.7f, w02), org.telegram.ui.ActionBar.t6.r1(0.25f, w02), org.telegram.ui.ActionBar.t6.r1(0.7f, w02)}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.REPEAT);
+            this.Z = linearGradient;
+            Paint paint = this.b0;
+            paint.setShader(linearGradient);
+            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+    @Override // org.telegram.messenger.ru
+    public final void k(SpannableStringBuilder spannableStringBuilder) {
+        ru.l(spannableStringBuilder, this.W, this.X);
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final boolean s(Canvas canvas, ColorFilter colorFilter) {
+        return false;
+    }
+
+    @Override // org.telegram.messenger.ru
+    public final boolean u(CharacterStyle characterStyle, int i10, iu iuVar) {
+        if (!this.W.o(characterStyle, iuVar)) {
+            return false;
+        }
+        Rect rect = this.b;
+        iuVar.e = (h0() + rect.left) - r0.f;
+        iuVar.f = i10 + rect.top;
+        return true;
     }
 }

@@ -2,9 +2,9 @@ package oh;
 
 import android.text.TextUtils;
 import android.text.style.CharacterStyle;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -19,7 +19,7 @@ import rh.e6;
 import rh.r1;
 import rh.u5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -75,7 +75,7 @@ public final /* synthetic */ class h implements Runnable {
                 un unVar = (un) obj5;
                 String str2 = (String) obj;
                 CharacterStyle characterStyle = (CharacterStyle) obj3;
-                jj jjVar = (jj) obj2;
+                kj kjVar = (kj) obj2;
                 q1 q1Var = (q1) obj4;
                 if (!str2.startsWith("video?")) {
                     if (z11 && !z10) {
@@ -83,12 +83,12 @@ public final /* synthetic */ class h implements Runnable {
                         gf.f.m(str2);
                         break;
                     } else {
-                        unVar.Z9(jjVar, false, false);
-                        unVar.pa(characterStyle, str2, false, q1Var, jjVar);
+                        unVar.ea(kjVar, false, false);
+                        unVar.ua(characterStyle, str2, false, q1Var, kjVar);
                         break;
                     }
                 } else {
-                    unVar.c8(characterStyle, false, jjVar, q1Var);
+                    unVar.g8(characterStyle, false, kjVar, q1Var);
                     break;
                 }
             default:
@@ -104,7 +104,7 @@ public final /* synthetic */ class h implements Runnable {
                             if (z11 && e4Var.x2 != null && (F = e6.y(e4Var.a, false).F(e4Var.P1, false)) != null) {
                                 F.m(e4Var.x2, !savestargift.unsave);
                             }
-                            e4Var.k().t(cd.a0(null, null, 2131743903, tL_error2.text), null).k(false);
+                            e4Var.k().t(dd.a0(null, null, 2131743903, tL_error2.text), null).k(false);
                             break;
                         }
                     } else {
@@ -114,10 +114,10 @@ public final /* synthetic */ class h implements Runnable {
                             e6.y(e4Var.a, false).P(x12);
                         }
                         if (x12 < 0) {
-                            cc.a0(T).s(document, cd.L0(z10 ? 2131750269 : 2131750267, null), cd.L0(z10 ? 2131750270 : 2131750268, null)).j();
+                            cc.a0(T).s(document, dd.L0(z10 ? 2131750269 : 2131750267, null), dd.L0(z10 ? 2131750270 : 2131750268, null)).j();
                             break;
                         } else {
-                            cc.a0(T).s(document, cd.L0(z10 ? 2131750132 : 2131750130, null), i0.T2(cd.L0(z10 ? 2131750133 : 2131750131, null), T instanceof ProfileActivity ? null : new r1(x12, T))).k(true);
+                            cc.a0(T).s(document, dd.L0(z10 ? 2131750132 : 2131750130, null), i0.T2(dd.L0(z10 ? 2131750133 : 2131750131, null), T instanceof ProfileActivity ? null : new r1(x12, T))).k(true);
                             break;
                         }
                     }
@@ -126,11 +126,11 @@ public final /* synthetic */ class h implements Runnable {
         }
     }
 
-    public /* synthetic */ h(un unVar, String str, CharacterStyle characterStyle, jj jjVar, q1 q1Var, boolean z10, boolean z11) {
+    public /* synthetic */ h(un unVar, String str, CharacterStyle characterStyle, kj kjVar, q1 q1Var, boolean z10, boolean z11) {
         this.e = unVar;
         this.b = str;
         this.f = characterStyle;
-        this.h = jjVar;
+        this.h = kjVar;
         this.n = q1Var;
         this.c = z10;
         this.d = z11;

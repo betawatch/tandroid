@@ -7,10 +7,10 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -182,7 +182,7 @@ final class zzvc {
         long j11 = (-4) & j10;
         int i10 = unsafe.getInt(obj, j11);
         int i11 = ((~((int) j10)) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(zs.e4 << i11))));
+        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(at.e4 << i11))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -190,7 +190,7 @@ final class zzvc {
         Unsafe unsafe = zzf.zza;
         long j11 = (-4) & j10;
         int i10 = (((int) j10) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(zs.e4 << i10))));
+        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(at.e4 << i10))));
     }
 
     public static double zza(Object obj, long j10) {
@@ -262,11 +262,11 @@ final class zzvc {
     }
 
     public static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j10) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & zs.e4)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & at.e4)) != 0;
     }
 
     public static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j10) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & zs.e4)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & at.e4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

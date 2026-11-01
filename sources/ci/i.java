@@ -10,16 +10,16 @@ import android.widget.TextView;
 import org.telegram.ui.ActionBar.t0;
 import org.telegram.ui.ActionBar.w5;
 import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Components.au0;
 import org.telegram.ui.Components.ns;
 import org.telegram.ui.Components.ps;
-import org.telegram.ui.Components.ss0;
-import org.telegram.ui.Components.voip.v1;
-import org.telegram.ui.Components.zt0;
+import org.telegram.ui.Components.ts0;
+import org.telegram.ui.Components.voip.w1;
 import org.telegram.ui.ProfileActivity;
 import s4.c1;
 import zf.a0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class i extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -83,17 +83,17 @@ public final class i extends AnimatorListenerAdapter {
                 psVar.A();
                 break;
             case 2:
-                ((zt0) this.e).K1 = false;
+                ((au0) this.e).K1 = false;
                 View view2 = (View) this.c;
                 if (view2.getParent() != null) {
-                    ((ss0) this.b).removeView(view2);
+                    ((ts0) this.b).removeView(view2);
                     ((Bitmap) this.d).recycle();
                     break;
                 }
                 break;
             case 3:
-                v1 v1Var = (v1) this.e;
-                TextView[] textViewArr = v1Var.a;
+                w1 w1Var = (w1) this.e;
+                TextView[] textViewArr = w1Var.a;
                 View view3 = (View) this.c;
                 view3.setVisibility(8);
                 view3.setAlpha(1.0f);
@@ -110,16 +110,16 @@ public final class i extends AnimatorListenerAdapter {
                 if (runnable != null) {
                     runnable.run();
                 }
-                v1Var.f = false;
-                CharSequence charSequence = v1Var.e;
+                w1Var.f = false;
+                CharSequence charSequence = w1Var.e;
                 if (charSequence != null) {
                     if (charSequence.equals("timer")) {
-                        v1Var.e(true);
+                        w1Var.e(true);
                     } else {
-                        textViewArr[1].setText(v1Var.e);
-                        v1Var.a(textViewArr[0], textViewArr[1], new w5(this, 9));
+                        textViewArr[1].setText(w1Var.e);
+                        w1Var.a(textViewArr[0], textViewArr[1], new w5(this, 9));
                     }
-                    v1Var.e = null;
+                    w1Var.e = null;
                     break;
                 }
                 break;

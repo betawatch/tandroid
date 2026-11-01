@@ -3,18 +3,18 @@ package org.telegram.ui.Cells;
 import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.mq;
-import org.telegram.messenger.n00;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.nq;
+import org.telegram.messenger.o00;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i6 {
     public final int a;
@@ -30,7 +30,7 @@ public final class i6 {
         this.a = i10;
     }
 
-    public static /* synthetic */ void a(i6 i6Var, TLObject tLObject, hs hsVar, long j10, int i10, ArrayList arrayList) {
+    public static /* synthetic */ void a(i6 i6Var, TLObject tLObject, is isVar, long j10, int i10, ArrayList arrayList) {
         ArrayList arrayList2 = i6Var.d;
         int i11 = i6Var.a;
         if (!(tLObject instanceof TLRPC.messages_Messages)) {
@@ -41,10 +41,10 @@ public final class i6 {
             return;
         }
         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-        vp.r1(i11).V3(messages_messages.users, false);
-        vp.r1(i11).P3(messages_messages.chats, false);
-        hsVar.m1(messages_messages.users, messages_messages.chats, true, true);
-        hsVar.h1(3, 0, 0, -j10, 0L, messages_messages, false);
+        wp.r1(i11).V3(messages_messages.users, false);
+        wp.r1(i11).P3(messages_messages.chats, false);
+        isVar.m1(messages_messages.users, messages_messages.chats, true, true);
+        isVar.h1(3, 0, 0, -j10, 0L, messages_messages, false);
         if (i10 == i6Var.e && !messages_messages.messages.isEmpty()) {
             arrayList2.clear();
             Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.t6(7)));
@@ -59,11 +59,11 @@ public final class i6 {
                     i12++;
                     TLRPC.Message message3 = message2;
                     if (message3.grouped_id == j11) {
-                        arrayList2.add(new jj(i11, message3, false, true));
+                        arrayList2.add(new kj(i11, message3, false, true));
                     }
                 }
             } else {
-                arrayList2.add(new jj(i11, message, false, true));
+                arrayList2.add(new kj(i11, message, false, true));
             }
             if (arrayList2.isEmpty()) {
                 return;
@@ -72,7 +72,7 @@ public final class i6 {
         }
     }
 
-    public static /* synthetic */ void b(final i6 i6Var, final int i10, final ArrayList arrayList, final long j10, int i11, final hs hsVar) {
+    public static /* synthetic */ void b(final i6 i6Var, final int i10, final ArrayList arrayList, final long j10, int i11, final is isVar) {
         int i12 = i6Var.a;
         ArrayList arrayList2 = i6Var.d;
         if (i10 != i6Var.e) {
@@ -91,11 +91,11 @@ public final class i6 {
                     i13++;
                     TLRPC.Message message2 = (TLRPC.Message) obj;
                     if (message2.grouped_id == j11) {
-                        arrayList2.add(new jj(i12, message2, false, true));
+                        arrayList2.add(new kj(i12, message2, false, true));
                     }
                 }
             } else {
-                arrayList2.add(new jj(i12, message, false, true));
+                arrayList2.add(new kj(i12, message, false, true));
             }
             if (!arrayList2.isEmpty()) {
                 i6Var.c();
@@ -103,7 +103,7 @@ public final class i6 {
             }
         }
         TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
-        tL_channels_getMessages.channel = vp.r1(i12).g1(j10);
+        tL_channels_getMessages.channel = wp.r1(i12).g1(j10);
         for (int i14 = 10; i14 >= 0; i14--) {
             int i15 = i11 - i14;
             if (i15 >= 0) {
@@ -113,7 +113,7 @@ public final class i6 {
         ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Cells.h6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                org.telegram.messenger.i0.g3(new n00(i6.this, tLObject, hsVar, j10, i10, arrayList, 1));
+                org.telegram.messenger.i0.g3(new o00(i6.this, tLObject, isVar, j10, i10, arrayList, 1));
             }
         });
     }
@@ -156,8 +156,8 @@ public final class i6 {
         this.f = j10;
         this.g = i10;
         int i12 = this.a;
-        long e = d20.i(i12).e();
-        hs a02 = hs.a0(i12);
-        a02.a.c(new mq(this, i10, a02, j10, e, i11));
+        long e = e20.i(i12).e();
+        is a02 = is.a0(i12);
+        a02.a.c(new nq(this, i10, a02, j10, e, i11));
     }
 }

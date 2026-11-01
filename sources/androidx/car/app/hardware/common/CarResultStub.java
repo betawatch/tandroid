@@ -15,7 +15,7 @@ import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -54,7 +54,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private void notifyResults(boolean z10, b bVar) {
         T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
         for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new v1(23, entry, convertAndRecast));
+            entry.getValue().execute(new v1(24, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();

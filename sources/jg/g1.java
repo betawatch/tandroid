@@ -3,16 +3,16 @@ package jg;
 import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.bj;
-import org.telegram.messenger.ej;
+import org.telegram.messenger.cj;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.kj;
 import org.telegram.ui.Components.ho;
 import org.telegram.ui.Components.ua0;
-import org.telegram.ui.kh0;
+import org.telegram.ui.ih0;
 import vh.s3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g1 extends s4.s {
     public final /* synthetic */ int S;
@@ -27,7 +27,7 @@ public final class g1 extends s4.s {
 
     @Override // s4.s
     public final boolean B1(int i10) {
-        bj d;
+        cj d;
         byte b10;
         byte b11;
         byte b12;
@@ -36,15 +36,15 @@ public final class g1 extends s4.s {
                 s3 s3Var = (s3) this.T;
                 ArrayList arrayList = s3Var.s0;
                 int size = (arrayList.size() - 1) - i10;
-                ej ejVar = s3Var.t0;
-                if (ejVar != null && size >= 0 && size < arrayList.size() && (d = ejVar.d((jj) arrayList.get(size))) != null && d.a != d.b && (b10 = d.c) == d.d && b10 != 0) {
-                    int size2 = ejVar.e.size();
+                fj fjVar = s3Var.t0;
+                if (fjVar != null && size >= 0 && size < arrayList.size() && (d = fjVar.d((kj) arrayList.get(size))) != null && d.a != d.b && (b10 = d.c) == d.d && b10 != 0) {
+                    int size2 = fjVar.e.size();
                     for (int i11 = 0; i11 < size2; i11++) {
-                        bj bjVar = (bj) ejVar.e.get(i11);
-                        if (bjVar != d) {
-                            byte b13 = bjVar.c;
+                        cj cjVar = (cj) fjVar.e.get(i11);
+                        if (cjVar != d) {
+                            byte b13 = cjVar.c;
                             byte b14 = d.c;
-                            if (b13 <= b14 && bjVar.d >= b14) {
+                            if (b13 <= b14 && cjVar.d >= b14) {
                                 break;
                             }
                         }
@@ -53,19 +53,19 @@ public final class g1 extends s4.s {
                 break;
             case 1:
                 ua0 ua0Var = (ua0) this.T;
-                jj jjVar = (jj) ua0Var.r.f.get(i10);
-                ej a2 = ua0.a(ua0Var, jjVar);
+                kj kjVar = (kj) ua0Var.r.f.get(i10);
+                fj a2 = ua0.a(ua0Var, kjVar);
                 if (a2 != null) {
                     ArrayList arrayList2 = a2.e;
-                    bj d10 = a2.d(jjVar);
+                    cj d10 = a2.d(kjVar);
                     if (d10.a != d10.b && (b11 = d10.c) == d10.d && b11 != 0) {
                         int size3 = arrayList2.size();
                         for (int i12 = 0; i12 < size3; i12++) {
-                            bj bjVar2 = (bj) arrayList2.get(i12);
-                            if (bjVar2 != d10) {
-                                byte b15 = bjVar2.c;
+                            cj cjVar2 = (cj) arrayList2.get(i12);
+                            if (cjVar2 != d10) {
+                                byte b15 = cjVar2.c;
                                 byte b16 = d10.c;
-                                if (b15 <= b16 && bjVar2.d >= b16) {
+                                if (b15 <= b16 && cjVar2.d >= b16) {
                                     break;
                                 }
                             }
@@ -75,20 +75,20 @@ public final class g1 extends s4.s {
                 }
                 break;
             default:
-                kh0 kh0Var = (kh0) this.T;
-                jj jjVar2 = (jj) kh0Var.M.get((B() - 1) - i10);
-                ej k10 = kh0Var.k(jjVar2);
+                ih0 ih0Var = (ih0) this.T;
+                kj kjVar2 = (kj) ih0Var.M.get((B() - 1) - i10);
+                fj k10 = ih0Var.k(kjVar2);
                 if (k10 != null) {
                     ArrayList arrayList3 = k10.e;
-                    bj d11 = k10.d(jjVar2);
+                    cj d11 = k10.d(kjVar2);
                     if (d11.a != d11.b && (b12 = d11.c) == d11.d && b12 != 0) {
                         int size4 = arrayList3.size();
                         for (int i13 = 0; i13 < size4; i13++) {
-                            bj bjVar3 = (bj) arrayList3.get(i13);
-                            if (bjVar3 != d11) {
-                                byte b17 = bjVar3.c;
+                            cj cjVar3 = (cj) arrayList3.get(i13);
+                            if (cjVar3 != d11) {
+                                byte b17 = cjVar3.c;
                                 byte b18 = d11.c;
-                                if (b17 <= b18 && bjVar3.d >= b18) {
+                                if (b17 <= b18 && cjVar3.d >= b18) {
                                     break;
                                 }
                             }

@@ -1,96 +1,138 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.WindowInsets;
-import android.widget.FrameLayout;
-import org.telegram.messenger.voip.VoIPService;
+import android.animation.ValueAnimator;
+import android.content.SharedPreferences;
+import android.view.ViewPropertyAnimator;
+import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kd1 implements org.telegram.ui.ActionBar.u1, org.telegram.ui.Components.voip.a1, r0.m, org.telegram.ui.Components.voip.p2 {
+public final /* synthetic */ class kd1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ be1 b;
+    public final /* synthetic */ zd1 b;
 
-    public /* synthetic */ kd1(be1 be1Var, int i10) {
+    public /* synthetic */ kd1(zd1 zd1Var, int i10) {
         this.a = i10;
-        this.b = be1Var;
+        this.b = zd1Var;
     }
 
-    @Override // r0.m
-    public r0.j1 R0(View view, r0.j1 j1Var) {
-        WindowInsets g10 = j1Var.g();
-        be1 be1Var = this.b;
-        be1Var.r0 = g10;
-        ((FrameLayout.LayoutParams) be1Var.j0.getLayoutParams()).bottomMargin = be1Var.r0.getSystemWindowInsetBottom();
-        ((FrameLayout.LayoutParams) be1Var.e0.getLayoutParams()).bottomMargin = be1Var.r0.getSystemWindowInsetBottom();
-        ((FrameLayout.LayoutParams) be1Var.H.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop();
-        ((FrameLayout.LayoutParams) be1Var.I.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop();
-        ((FrameLayout.LayoutParams) be1Var.K.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop() + org.telegram.messenger.i0.L(56.0f);
-        ((FrameLayout.LayoutParams) be1Var.X.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop() + org.telegram.messenger.i0.L(135.0f);
-        ((FrameLayout.LayoutParams) be1Var.N.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop() + org.telegram.messenger.i0.L(17.0f);
-        ((FrameLayout.LayoutParams) be1Var.D.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop() + org.telegram.messenger.i0.L(93.0f);
-        ((FrameLayout.LayoutParams) be1Var.O.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop();
-        ((FrameLayout.LayoutParams) be1Var.R.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop() + org.telegram.messenger.i0.L(118.0f);
-        ((FrameLayout.LayoutParams) be1Var.Q.getLayoutParams()).topMargin = be1Var.r0.getSystemWindowInsetTop() + org.telegram.messenger.i0.L(380.0f);
-        ((FrameLayout.LayoutParams) be1Var.Z.getLayoutParams()).bottomMargin = be1Var.r0.getSystemWindowInsetBottom();
-        ((FrameLayout.LayoutParams) be1Var.M0.getLayoutParams()).bottomMargin = be1Var.r0.getSystemWindowInsetBottom();
-        be1Var.Y.setInsets(be1Var.r0);
-        be1Var.Z.setInsets(be1Var.r0);
-        be1Var.s.requestLayout();
-        ud1 ud1Var = be1Var.o0;
-        if (ud1Var != null) {
-            ud1Var.setBottomPadding(be1Var.r0.getSystemWindowInsetBottom());
-        }
-        return r0.j1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                td1 td1Var = this.b.u0;
-                if (td1Var != null) {
-                    td1Var.b();
-                    break;
-                }
-                break;
-            default:
                 this.b.u0.b();
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.voip.p2
-    public void j(org.telegram.ui.Components.voip.q2 q2Var) {
-        int i10 = this.a;
-        be1 be1Var = this.b;
-        switch (i10) {
+            case 1:
+                this.b.u0.b();
+                break;
+            case 2:
+                this.b.u0.b();
+                break;
+            case 3:
+                this.b.u0.b();
+                break;
+            case 4:
+                org.telegram.ui.Components.voip.c1 c1Var = this.b.Z;
+                c1Var.c0 = false;
+                c1Var.invalidate();
+                break;
             case 5:
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    org.telegram.messenger.i0.r(be1Var.S0);
-                    be1Var.R0 = false;
-                    boolean isMicMute = sharedInstance.isMicMute();
-                    boolean z10 = !isMicMute;
-                    if (be1Var.w0.isTouchExplorationEnabled()) {
-                        q2Var.announceForAccessibility(org.telegram.messenger.cd.L0(!isMicMute ? 2131754729 : 2131754728, null));
-                    }
-                    sharedInstance.setMicMute(z10, false, true);
-                    be1Var.q0 = be1Var.p0;
-                    be1Var.G();
+                zd1 zd1Var = this.b;
+                zd1Var.q0 = zd1Var.p0;
+                zd1Var.G();
+                break;
+            case 6:
+                this.b.A();
+                break;
+            case 7:
+                int[] iArr = new int[2];
+                zd1 zd1Var2 = this.b;
+                zd1Var2.e0.getLocationOnScreen(iArr);
+                int i10 = iArr[0];
+                int i11 = iArr[1];
+                zd1Var2.e.getLocationOnScreen(iArr);
+                zd1Var2.e.setTranslationX(org.telegram.messenger.i0.L(42.0f) + (i10 - iArr[0]));
+                zd1Var2.e.setTranslationY(org.telegram.messenger.i0.L(44.0f) + (i11 - iArr[1]));
+                zd1Var2.h.getLocationOnScreen(iArr);
+                zd1Var2.h.setTranslationX(org.telegram.messenger.i0.L(42.0f) + (i10 - iArr[0]));
+                zd1Var2.h.setTranslationY(org.telegram.messenger.i0.L(44.0f) + (i11 - iArr[1]));
+                zd1Var2.f.getLocationOnScreen(iArr);
+                zd1Var2.f.setTranslationX(org.telegram.messenger.i0.L(42.0f) + (i10 - iArr[0]));
+                zd1Var2.f.setTranslationY(org.telegram.messenger.i0.L(44.0f) + (i11 - iArr[1]));
+                zd1Var2.n.getLocationOnScreen(iArr);
+                zd1Var2.n.setTranslationX((((zd1Var2.e0.getWidth() + i10) - iArr[0]) - org.telegram.messenger.i0.L(49.0f)) - org.telegram.messenger.i0.L(60.0f));
+                zd1Var2.n.setTranslationY(org.telegram.messenger.i0.L(44.0f) + (i11 - iArr[1]));
+                zd1Var2.n.setAlpha(1.0f);
+                zd1Var2.e.setAlpha(1.0f);
+                zd1Var2.h.setAlpha(1.0f);
+                zd1Var2.f.setAlpha(1.0f);
+                ViewPropertyAnimator translationX = zd1Var2.n.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f);
+                long j10 = org.telegram.messenger.at.e3;
+                translationX.setDuration(j10).start();
+                zd1Var2.e.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
+                zd1Var2.h.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
+                zd1Var2.f.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
+                break;
+            case 8:
+                this.b.u0.b();
+                break;
+            case 9:
+                int i12 = org.telegram.messenger.uz.f1;
+                if (i12 < 2) {
+                    org.telegram.messenger.uz.f1 = i12 + 1;
+                    SharedPreferences.Editor edit = org.telegram.messenger.wp.d1().edit();
+                    edit.putInt("callEncryptionHintDisplayedCount", org.telegram.messenger.uz.f1);
+                    edit.apply();
+                    zd1 zd1Var3 = this.b;
+                    zd1Var3.O0.setTranslationY(zd1Var3.N.getY() + org.telegram.messenger.i0.L(36.0f));
+                    zd1Var3.O0.u();
+                    break;
+                }
+                break;
+            case 10:
+                this.b.u0.b();
+                break;
+            case 11:
+                zd1 zd1Var4 = this.b;
+                zd1Var4.u0.setAlpha(1.0f);
+                zd1Var4.u0.invalidate();
+                ValueAnimator b10 = zd1Var4.b(true);
+                zd1Var4.H.setAlpha(0.0f);
+                zd1Var4.I.setAlpha(0.0f);
+                zd1Var4.N.setAlpha(0.0f);
+                zd1Var4.X.setAlpha(0.0f);
+                zd1Var4.j0.setAlpha(0.0f);
+                zd1Var4.h0.setAlpha(0.0f);
+                zd1Var4.i0.setAlpha(0.0f);
+                zd1Var4.K.setAlpha(0.0f);
+                zd1Var4.M0.setAlpha(0.0f);
+                zd1Var4.Y.b0 = true;
+                org.telegram.messenger.i0.h3(new y01(23, zd1Var4, b10), 32L);
+                break;
+            case 12:
+                zd1 zd1Var5 = this.b;
+                zd1Var5.R0 = false;
+                org.telegram.ui.Components.voip.l2 l2Var = zd1Var5.N0;
+                boolean z10 = l2Var != null && l2Var.V;
+                if (zd1Var5.z0 && zd1Var5.x0 && !zd1Var5.C0 && !z10) {
+                    zd1Var5.K0 = System.currentTimeMillis();
+                    zd1Var5.z(false);
+                    zd1Var5.q0 = zd1Var5.p0;
+                    zd1Var5.G();
                     break;
                 }
                 break;
             default:
-                org.telegram.messenger.i0.r(be1Var.S0);
-                be1Var.R0 = false;
-                if (be1Var.b.checkSelfPermission("android.permission.CAMERA") == 0) {
-                    be1Var.B();
-                    break;
-                } else {
-                    be1Var.b.requestPermissions(new String[]{"android.permission.CAMERA"}, org.telegram.messenger.zs.n1);
-                    break;
+                zd1 zd1Var6 = this.b;
+                if (zd1Var6.p0 == 3) {
+                    zd1Var6.D.b(true, false);
+                    org.telegram.ui.Components.voip.k2 k2Var = zd1Var6.w;
+                    if (!k2Var.R) {
+                        k2Var.R = true;
+                        break;
+                    }
                 }
+                break;
         }
     }
 }

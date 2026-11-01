@@ -13,12 +13,12 @@ import e9.n0;
 import e9.x1;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class i implements m {
     public static final byte[] n = {0, 7, 8, 15};
@@ -65,16 +65,16 @@ public final class i implements m {
         iArr[0] = 0;
         for (int i10 = 1; i10 < 16; i10++) {
             if (i10 < 8) {
-                iArr[i10] = d(zs.e4, (i10 & 1) != 0 ? 255 : 0, (i10 & 2) != 0 ? 255 : 0, (i10 & 4) != 0 ? 255 : 0);
+                iArr[i10] = d(at.e4, (i10 & 1) != 0 ? 255 : 0, (i10 & 2) != 0 ? 255 : 0, (i10 & 4) != 0 ? 255 : 0);
             } else {
                 int i11 = i10 & 1;
-                int i12 = zs.L1;
+                int i12 = at.L1;
                 int i13 = i11 != 0 ? 127 : 0;
                 int i14 = (i10 & 2) != 0 ? 127 : 0;
                 if ((i10 & 4) == 0) {
                     i12 = 0;
                 }
-                iArr[i10] = d(zs.e4, i13, i14, i12);
+                iArr[i10] = d(at.e4, i13, i14, i12);
             }
         }
         return iArr;
@@ -85,7 +85,7 @@ public final class i implements m {
         int[] iArr = new int[256];
         iArr[0] = 0;
         for (int i11 = 0; i11 < 256; i11++) {
-            int i12 = zs.e4;
+            int i12 = at.e4;
             if (i11 < 8) {
                 int i13 = (i11 & 1) != 0 ? 255 : 0;
                 int i14 = (i11 & 2) != 0 ? 255 : 0;
@@ -94,8 +94,8 @@ public final class i implements m {
                 }
                 iArr[i11] = d(63, i13, i14, i12);
             } else {
-                int i15 = i11 & zs.S1;
-                int i16 = zs.A2;
+                int i15 = i11 & at.S1;
+                int i16 = at.A2;
                 if (i15 == 0) {
                     int i17 = ((i11 & 1) != 0 ? 85 : 0) + ((i11 & 16) != 0 ? 170 : 0);
                     int i18 = ((i11 & 2) != 0 ? 85 : 0) + ((i11 & 32) != 0 ? 170 : 0);
@@ -103,7 +103,7 @@ public final class i implements m {
                     if ((i11 & 64) == 0) {
                         i16 = 0;
                     }
-                    iArr[i11] = d(zs.e4, i17, i18, i10 + i16);
+                    iArr[i11] = d(at.e4, i17, i18, i10 + i16);
                 } else if (i15 == 8) {
                     int i19 = ((i11 & 1) != 0 ? 85 : 0) + ((i11 & 16) != 0 ? 170 : 0);
                     int i20 = ((i11 & 2) != 0 ? 85 : 0) + ((i11 & 32) != 0 ? 170 : 0);
@@ -111,11 +111,11 @@ public final class i implements m {
                     if ((i11 & 64) == 0) {
                         i16 = 0;
                     }
-                    iArr[i11] = d(zs.L1, i19, i20, i10 + i16);
+                    iArr[i11] = d(at.L1, i19, i20, i10 + i16);
                 } else if (i15 == 128) {
-                    iArr[i11] = d(zs.e4, ((i11 & 1) != 0 ? 43 : 0) + zs.L1 + ((i11 & 16) != 0 ? 85 : 0), ((i11 & 2) != 0 ? 43 : 0) + zs.L1 + ((i11 & 32) != 0 ? 85 : 0), ((i11 & 4) == 0 ? 0 : 43) + zs.L1 + ((i11 & 64) == 0 ? 0 : 85));
+                    iArr[i11] = d(at.e4, ((i11 & 1) != 0 ? 43 : 0) + at.L1 + ((i11 & 16) != 0 ? 85 : 0), ((i11 & 2) != 0 ? 43 : 0) + at.L1 + ((i11 & 32) != 0 ? 85 : 0), ((i11 & 4) == 0 ? 0 : 43) + at.L1 + ((i11 & 64) == 0 ? 0 : 85));
                 } else if (i15 == 136) {
-                    iArr[i11] = d(zs.e4, ((i11 & 1) != 0 ? 43 : 0) + ((i11 & 16) != 0 ? 85 : 0), ((i11 & 2) != 0 ? 43 : 0) + ((i11 & 32) != 0 ? 85 : 0), ((i11 & 4) == 0 ? 0 : 43) + ((i11 & 64) == 0 ? 0 : 85));
+                    iArr[i11] = d(at.e4, ((i11 & 1) != 0 ? 43 : 0) + ((i11 & 16) != 0 ? 85 : 0), ((i11 & 2) != 0 ? 43 : 0) + ((i11 & 32) != 0 ? 85 : 0), ((i11 & 4) == 0 ? 0 : 43) + ((i11 & 64) == 0 ? 0 : 85));
                 }
             }
         }
@@ -444,7 +444,7 @@ public final class i implements m {
             double d = i14;
             double d10 = i15 - 128;
             double d11 = i11 - 128;
-            iArr2[i21] = d((byte) (255 - (i13 & zs.e4)), l0.i((int) ((1.402d * d10) + d), 0, zs.e4), l0.i((int) ((d - (0.34414d * d11)) - (d10 * 0.71414d)), 0, zs.e4), l0.i((int) ((d11 * 1.772d) + d), 0, zs.e4));
+            iArr2[i21] = d((byte) (255 - (i13 & at.e4)), l0.i((int) ((1.402d * d10) + d), 0, at.e4), l0.i((int) ((d - (0.34414d * d11)) - (d10 * 0.71414d)), 0, at.e4), l0.i((int) ((d11 * 1.772d) + d), 0, at.e4));
             i19 = i12;
             i20 = 0;
             i17 = i17;

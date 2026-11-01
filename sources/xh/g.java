@@ -4,37 +4,37 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class g extends z41 {
+public final class g extends a51 {
     static {
-        z41.h(new g());
+        a51.h(new g());
     }
 
-    public static a51 i(int i10, String str, String str2) {
-        a51 K = a51.K(g.class);
+    public static b51 i(int i10, String str, String str2) {
+        b51 K = b51.K(g.class);
         K.k = i10;
         K.l = str;
         K.m = str2;
         return K;
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
-        ((h) view).a(a51Var.k, a51Var.l, a51Var.m);
+    @Override // org.telegram.ui.Components.a51
+    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
+        ((h) view).a(b51Var.k, b51Var.l, b51Var.m);
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final View d(Context context, tk0 tk0Var, int i10, p6 p6Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final View d(Context context, uk0 uk0Var, int i10, p6 p6Var) {
         return new h(context, p6Var, false);
     }
 
-    @Override // org.telegram.ui.Components.z41
+    @Override // org.telegram.ui.Components.a51
     public final boolean f() {
         return false;
     }

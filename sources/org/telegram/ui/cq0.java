@@ -1,21 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class cq0 implements Runnable {
-    public final /* synthetic */ PhotoViewer a;
+public final class cq0 extends org.telegram.ui.Cells.t9 {
+    public final /* synthetic */ int q0 = 0;
 
-    public cq0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+    public /* synthetic */ cq0(th.i6 i6Var, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(i6Var, p6Var);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        PhotoViewer photoViewer = this.a;
-        org.telegram.messenger.jj jjVar = photoViewer.T4;
-        if (jjVar == null) {
-            return;
+    @Override // org.telegram.ui.Cells.w9
+    public final int o() {
+        switch (this.q0) {
         }
-        org.telegram.messenger.b8.G(jjVar.I1).c0(photoViewer.T4.F0(), true, false);
+        return 0;
+    }
+
+    public cq0(th.b bVar) {
+        super(null, bVar);
     }
 }

@@ -13,9 +13,9 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.Gravity;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class a extends Drawable {
     public final Bitmap a;
@@ -24,7 +24,7 @@ public final class a extends Drawable {
     public float g;
     public final int k;
     public final int l;
-    public final int c = zs.E1;
+    public final int c = at.E1;
     public final Paint d = new Paint(3);
     public final Matrix f = new Matrix();
     public final Rect h = new Rect();
@@ -32,7 +32,7 @@ public final class a extends Drawable {
     public boolean j = true;
 
     public a(Resources resources, Bitmap bitmap) {
-        this.b = zs.q2;
+        this.b = at.q2;
         if (resources != null) {
             this.b = resources.getDisplayMetrics().densityDpi;
         }

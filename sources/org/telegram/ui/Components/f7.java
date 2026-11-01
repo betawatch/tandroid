@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f7 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final class f7 implements Runnable {
             default:
                 g7 g7Var2 = this.b;
                 w7 w7Var2 = g7Var2.H;
-                u61 u61Var = MediaController.B().i0;
-                long U = u61Var == null ? 0L : u61Var.U();
+                v61 v61Var = MediaController.B().i0;
+                long U = v61Var == null ? 0L : v61Var.U();
                 if (U != 0 && U != -9223372036854775807L) {
                     float f7 = w7Var2.y2;
                     long currentTimeMillis = System.currentTimeMillis();
@@ -52,18 +52,18 @@ public final class f7 implements Runnable {
                         f10 = 0.0f;
                     }
                     w7Var2.y2 = f10;
-                    org.telegram.messenger.jj jjVar = MediaController.B().u0;
-                    if (jjVar != null && jjVar.I3()) {
-                        w7Var2.b1(jjVar, false);
+                    org.telegram.messenger.kj kjVar = MediaController.B().u0;
+                    if (kjVar != null && kjVar.I3()) {
+                        w7Var2.b1(kjVar, false);
                     }
                     if (w7Var2.x2 == -1 && g7Var2.w > 0) {
                         if (j11 > 200 || w7Var2.y2 == 0.0f) {
                             g7Var2.y = currentTimeMillis;
                             if (w7Var2.y2 == 0.0f) {
                                 MediaController.B().i0(MediaController.B().u0, 0.0f);
-                                u61 u61Var2 = MediaController.B().i0;
-                                if (u61Var2 != null) {
-                                    u61Var2.g0();
+                                v61 v61Var2 = MediaController.B().i0;
+                                if (v61Var2 != null) {
+                                    v61Var2.g0();
                                 }
                             } else {
                                 MediaController.B().i0(MediaController.B().u0, f10);

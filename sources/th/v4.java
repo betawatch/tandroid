@@ -7,24 +7,24 @@ import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.is;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.v8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v4 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ x4 b;
-    public final /* synthetic */ hs c;
+    public final /* synthetic */ is c;
 
-    public /* synthetic */ v4(x4 x4Var, hs hsVar, int i10) {
+    public /* synthetic */ v4(x4 x4Var, is isVar, int i10) {
         this.a = i10;
         this.b = x4Var;
-        this.c = hsVar;
+        this.c = isVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:74:0x01a6, code lost:
@@ -42,7 +42,7 @@ public final /* synthetic */ class v4 implements Runnable {
         TLRPC.Peer peer;
         switch (this.a) {
             case 0:
-                hs hsVar = this.c;
+                is isVar = this.c;
                 x4 x4Var2 = this.b;
                 long j12 = x4Var2.d;
                 ArrayList arrayList = new ArrayList();
@@ -55,14 +55,14 @@ public final /* synthetic */ class v4 implements Runnable {
                 boolean z10 = true;
                 SQLiteCursor sQLiteCursor = null;
                 try {
-                    sQLiteCursor = hsVar.x(x4Var2.f, x4Var2.e, j12);
+                    sQLiteCursor = isVar.x(x4Var2.f, x4Var2.e, j12);
                     while (sQLiteCursor.next()) {
                         NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
                         if (byteBufferValue != null) {
                             TL_stories.StoryItem TLdeserialize = TL_stories.StoryItem.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(z10), z10);
                             TLdeserialize.dialogId = j12;
                             TLdeserialize.messageId = TLdeserialize.id;
-                            jj jjVar = new jj(x4Var2.c, TLdeserialize);
+                            kj kjVar = new kj(x4Var2.c, TLdeserialize);
                             ArrayList<TLRPC.PrivacyRule> arrayList5 = TLdeserialize.privacy;
                             x4Var = x4Var2;
                             try {
@@ -107,8 +107,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                         hashSet3.add(Long.valueOf(-o11));
                                     }
                                 }
-                                jjVar.r0(false);
-                                arrayList2.add(jjVar);
+                                kjVar.r0(false);
+                                arrayList2.add(kjVar);
                                 byteBufferValue.reuse();
                                 if (sQLiteCursor.intValue(1) == 1) {
                                     hashSet.add(Integer.valueOf(TLdeserialize.id));
@@ -120,7 +120,7 @@ public final /* synthetic */ class v4 implements Runnable {
                             } catch (Throwable th2) {
                                 th = th2;
                                 try {
-                                    hsVar.o(th, true);
+                                    isVar.o(th, true);
                                     break;
                                 } catch (Throwable th3) {
                                     if (sQLiteCursor != null) {
@@ -140,10 +140,10 @@ public final /* synthetic */ class v4 implements Runnable {
                     x4Var = x4Var2;
                     sQLiteCursor.dispose();
                     if (!hashSet2.isEmpty()) {
-                        hsVar.o0(arrayList3, hashSet2);
+                        isVar.o0(arrayList3, hashSet2);
                     }
                     if (!hashSet3.isEmpty()) {
-                        hsVar.Q(TextUtils.join(",", hashSet3), arrayList4);
+                        isVar.Q(TextUtils.join(",", hashSet3), arrayList4);
                     }
                 } catch (Throwable th4) {
                     th = th4;
@@ -154,13 +154,13 @@ public final /* synthetic */ class v4 implements Runnable {
                 return;
             default:
                 x4 x4Var3 = this.b;
-                hs hsVar2 = this.c;
+                is isVar2 = this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase = hsVar2.b;
+                    SQLiteDatabase sQLiteDatabase = isVar2.b;
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("DELETE FROM profile_stories WHERE dialog_id = " + x4Var3.d + " AND type = " + x4Var3.e).stepThis().dispose();
                 } catch (Throwable th5) {
-                    hsVar2.o(th5, true);
+                    isVar2.o(th5, true);
                 }
                 org.telegram.messenger.i0.g3(new u4(x4Var3, 3));
                 return;

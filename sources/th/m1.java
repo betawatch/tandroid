@@ -11,17 +11,17 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.k20;
-import org.telegram.messenger.l9;
-import org.telegram.messenger.s20;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.we;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.l20;
+import org.telegram.messenger.m9;
+import org.telegram.messenger.t20;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.xe;
 import w7.b9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.u1, d9.k, e2.j, qa.a, q3.g, l9, k20, s20, Continuation, r9.d, i5.e, wg.c {
+public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.u1, d9.k, e2.j, qa.a, q3.g, m9, l20, t20, Continuation, r9.d, i5.e, wg.c {
     public final /* synthetic */ int a;
 
     public /* synthetic */ m1(int i10) {
@@ -93,11 +93,11 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.u1, d
         return false;
     }
 
-    @Override // org.telegram.messenger.k20
+    @Override // org.telegram.messenger.l20
     public Object d(Number number, Object obj) {
         Integer num = (Integer) obj;
         if (((Integer) number).intValue() == 0) {
-            return num.intValue() == 0 ? cd.L0(2131748815, null) : cd.H(',', "Stars", num.intValue());
+            return num.intValue() == 0 ? dd.L0(2131748815, null) : dd.H(',', "Stars", num.intValue());
         }
         return "" + num;
     }
@@ -108,7 +108,7 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.u1, d
             case 28:
                 return org.telegram.ui.ActionBar.t6.r1(z10 ? 0.85f : 0.825f, org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.G8, false));
             default:
-                return b9.n(sc.e(262144) ? 0.85f : 0.76f, org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, p6Var), org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Nl, p6Var));
+                return b9.n(tc.e(262144) ? 0.85f : 0.76f, org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, p6Var), org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Nl, p6Var));
         }
     }
 
@@ -123,9 +123,9 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.u1, d
         throw new ClassCastException();
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
-        we weVar = vh.k2.j0;
+        xe xeVar = vh.k2.j0;
         return 0;
     }
 

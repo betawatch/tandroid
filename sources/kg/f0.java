@@ -12,9 +12,9 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.s5;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.p6;
@@ -32,23 +32,23 @@ import org.telegram.ui.Components.tf;
 import org.telegram.ui.Wallet.c6;
 import org.telegram.ui.Wallet.g6;
 import org.telegram.ui.Wallet.v7;
-import org.telegram.ui.bz;
-import org.telegram.ui.c60;
-import org.telegram.ui.gz;
+import org.telegram.ui.az;
+import org.telegram.ui.b60;
+import org.telegram.ui.fz;
+import org.telegram.ui.g31;
 import org.telegram.ui.h8;
-import org.telegram.ui.i31;
 import org.telegram.ui.id;
+import org.telegram.ui.k91;
 import org.telegram.ui.kd;
-import org.telegram.ui.m91;
 import org.telegram.ui.ns;
 import org.telegram.ui.oo;
+import org.telegram.ui.rc1;
 import org.telegram.ui.sn;
-import org.telegram.ui.tc1;
 import org.telegram.ui.un;
-import org.telegram.ui.wd0;
-import org.telegram.ui.y20;
+import org.telegram.ui.vd0;
+import org.telegram.ui.x20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f0 extends View implements fe.e {
     public final /* synthetic */ int a;
@@ -81,12 +81,12 @@ public final class f0 extends View implements fe.e {
                 un unVar = (un) this.c;
                 int backgroundSizeY = unVar.l1.getBackgroundSizeY();
                 float x10 = getX();
-                float c92 = unVar.c9(this);
+                float g92 = unVar.g9(this);
                 sn snVar = unVar.xa;
                 if (snVar != null) {
-                    snVar.b(x10, c92, measuredWidth, backgroundSizeY);
+                    snVar.b(x10, g92, measuredWidth, backgroundSizeY);
                 } else {
-                    t6.r(x10, c92, measuredWidth, backgroundSizeY);
+                    t6.r(x10, g92, measuredWidth, backgroundSizeY);
                 }
                 canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(18.0f), org.telegram.messenger.i0.L(18.0f), unVar.getThemedPaint("paintChatActionBackground"));
                 sn snVar2 = unVar.xa;
@@ -96,10 +96,10 @@ public final class f0 extends View implements fe.e {
                 super.dispatchDraw(canvas);
                 break;
             case 8:
-                y20 y20Var = (y20) this.c;
-                float measuredWidth2 = y20Var.d0.getMeasuredWidth();
-                dr drVar = y20Var.c0;
-                float measuredWidth3 = (y20Var.e0.getMeasuredWidth() * drVar.g) + ((1.0f - drVar.g) * measuredWidth2);
+                x20 x20Var = (x20) this.c;
+                float measuredWidth2 = x20Var.d0.getMeasuredWidth();
+                dr drVar = x20Var.c0;
+                float measuredWidth3 = (x20Var.e0.getMeasuredWidth() * drVar.g) + ((1.0f - drVar.g) * measuredWidth2);
                 canvas.save();
                 org.telegram.ui.Cells.y yVar = (org.telegram.ui.Cells.y) this.b;
                 yVar.setBounds(0, 0, org.telegram.messenger.i0.L(50.0f) + ((int) measuredWidth3), getMeasuredHeight());
@@ -413,11 +413,11 @@ public final class f0 extends View implements fe.e {
                 break;
             case 10:
                 canvas.drawColor(855638016);
-                gz gzVar = (gz) this.c;
-                FrameLayout frameLayout3 = gzVar.a;
+                fz fzVar = (fz) this.c;
+                FrameLayout frameLayout3 = fzVar.a;
                 FrameLayout frameLayout4 = (FrameLayout) this.b;
-                float[] fArr2 = gzVar.D;
-                bz.a(frameLayout3, frameLayout4, fArr2);
+                float[] fArr2 = fzVar.D;
+                az.a(frameLayout3, frameLayout4, fArr2);
                 canvas.save();
                 float y10 = frameLayout3.getY() + ((View) frameLayout3.getParent()).getY();
                 if (y10 < 1.0f) {
@@ -429,18 +429,18 @@ public final class f0 extends View implements fe.e {
                 break;
             case 11:
                 Paint paint7 = (Paint) this.b;
-                c60 c60Var = (c60) this.c;
-                if (c60Var.d != null && c60Var.n.getVisibility() == 0 && c60Var.d.getImageReceiver().L()) {
-                    paint7.setAlpha((int) (c60Var.n.getAlpha() * c60Var.d.getImageReceiver().h1 * 85.0f));
+                b60 b60Var = (b60) this.c;
+                if (b60Var.d != null && b60Var.n.getVisibility() == 0 && b60Var.d.getImageReceiver().L()) {
+                    paint7.setAlpha((int) (b60Var.n.getAlpha() * b60Var.d.getImageReceiver().h1 * 85.0f));
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint7);
                     break;
                 }
                 break;
             case 13:
                 Paint paint8 = (Paint) this.b;
-                wd0 wd0Var = (wd0) this.c;
-                id idVar = wd0Var.r;
-                ag.d2 d2Var3 = wd0Var.e;
+                vd0 vd0Var = (vd0) this.c;
+                id idVar = vd0Var.r;
+                ag.d2 d2Var3 = vd0Var.e;
                 if (d2Var3 != null && idVar.getVisibility() == 0) {
                     paint8.setAlpha((int) (idVar.getAlpha() * d2Var3.getImageReceiver().h1 * 85.0f));
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint8);
@@ -448,7 +448,7 @@ public final class f0 extends View implements fe.e {
                 }
                 break;
             case 14:
-                if (((i31) this.c).Q0) {
+                if (((g31) this.c).Q0) {
                     canvas.drawColor(t6.w0(t6.G8, (p6) this.b));
                     break;
                 } else {
@@ -456,14 +456,14 @@ public final class f0 extends View implements fe.e {
                     break;
                 }
             case 15:
-                m91 m91Var = (m91) this.c;
-                int currentItem = m91Var.k0.getCurrentItem();
+                k91 k91Var = (k91) this.c;
+                int currentItem = k91Var.k0.getCurrentItem();
                 Paint paint9 = (Paint) this.b;
                 int i13 = t6.pf;
-                paint9.setColor(m91Var.d ? t6.F0(i13) : m91Var.getThemedColor(i13));
+                paint9.setColor(k91Var.d ? t6.F0(i13) : k91Var.getThemedColor(i13));
                 int i14 = 0;
                 while (i14 < 2) {
-                    paint9.setAlpha(i14 == currentItem ? zs.e4 : zs.L1);
+                    paint9.setAlpha(i14 == currentItem ? at.e4 : at.L1);
                     canvas.drawCircle(org.telegram.messenger.i0.L((i14 * 15) + 3), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(3.0f), paint9);
                     i14++;
                 }
@@ -473,7 +473,7 @@ public final class f0 extends View implements fe.e {
                 paint10.setColor(t6.x0(null, t6.d6, false));
                 int measuredHeight3 = getMeasuredHeight() - org.telegram.messenger.i0.L(3.0f);
                 canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), measuredHeight3, paint10);
-                z4Var = ((org.telegram.ui.ActionBar.k2) ((tc1) this.c)).parentLayout;
+                z4Var = ((org.telegram.ui.ActionBar.k2) ((rc1) this.c)).parentLayout;
                 ((ActionBarLayout) z4Var).q(canvas, measuredHeight3);
                 break;
             case 17:
@@ -696,18 +696,18 @@ public final class f0 extends View implements fe.e {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(tc1 tc1Var, Context context) {
+    public f0(rc1 rc1Var, Context context) {
         super(context);
         this.a = 16;
-        this.c = tc1Var;
+        this.c = rc1Var;
         this.b = new Paint();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(Context context, m91 m91Var) {
+    public f0(Context context, k91 k91Var) {
         super(context);
         this.a = 15;
-        this.c = m91Var;
+        this.c = k91Var;
         this.b = new Paint(1);
     }
 

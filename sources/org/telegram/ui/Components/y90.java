@@ -10,9 +10,9 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class y90 extends FrameLayout implements org.telegram.messenger.us {
+public abstract class y90 extends FrameLayout implements org.telegram.messenger.vs {
     public static final /* synthetic */ int U = 0;
     public final Rect D;
     public Paint E;
@@ -88,9 +88,9 @@ public abstract class y90 extends FrameLayout implements org.telegram.messenger.
         zf.c1 c1Var = new zf.c1();
         c1Var.d = null;
         c1Var.f = false;
-        xj0 xj0Var = new xj0(c1Var, 2);
+        yj0 yj0Var = new yj0(c1Var, 2);
         c1Var.c = x0Var;
-        x0Var.B(xj0Var);
+        x0Var.B(yj0Var);
         this.e = c1Var;
         x90Var.setAdapter(c1Var);
         x90Var.setTranslationY(org.telegram.messenger.i0.L(6.0f));
@@ -125,7 +125,7 @@ public abstract class y90 extends FrameLayout implements org.telegram.messenger.
             fVar.setBounds(0, ((int) this.n) - org.telegram.messenger.i0.L(5.0f), getMeasuredWidth(), org.telegram.messenger.i0.L(5.0f) + ((int) this.r));
             Path path = this.S;
             path.rewind();
-            Rect rect = this.R.M.m;
+            Rect rect = this.R.P.m;
             RectF rectF = this.T;
             rectF.set(rect);
             if (x90Var == null || (r90Var = this.d) == null || x90Var.getLayoutManager() != r90Var || (x0Var = this.f) == null || x0Var.R == null) {
@@ -161,9 +161,9 @@ public abstract class y90 extends FrameLayout implements org.telegram.messenger.
         return 0.0f;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == org.telegram.messenger.zs.i4) {
+        if (i10 == org.telegram.messenger.at.i4) {
             org.telegram.messenger.i0.d0(this.b, new ag.z0(12));
         }
     }
@@ -317,13 +317,13 @@ public abstract class y90 extends FrameLayout implements org.telegram.messenger.
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.zs.e().c(this, org.telegram.messenger.zs.i4);
+        org.telegram.messenger.at.e().c(this, org.telegram.messenger.at.i4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.zs.e().n(this, org.telegram.messenger.zs.i4);
+        org.telegram.messenger.at.e().n(this, org.telegram.messenger.at.i4);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

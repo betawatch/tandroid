@@ -1,41 +1,42 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class u11 extends g.o {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ i31 d;
+public final class u11 extends s4.r {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ g31 R;
 
-    public /* synthetic */ u11(i31 i31Var, int i10) {
-        this.c = i10;
-        this.d = i31Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u11(g31 g31Var, int i10) {
+        super(40);
+        this.Q = i10;
+        this.R = g31Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        ArrayList arrayList;
-        int i12;
-        switch (this.c) {
+    @Override // s4.a0, s4.n0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        switch (this.Q) {
             case 0:
-                i31 i31Var = this.d;
-                return (i31Var.w0.indexOfKey(i10) >= 0 || i31Var.z0.indexOfKey(i10) >= 0 || i10 == i31Var.f || i10 == i31Var.D || i10 == i31Var.n || i10 == i31Var.h || i10 == i31Var.w || i10 == i31Var.a || i10 == i31Var.y) ? i31Var.r0.J : ((i10 < i31Var.E || i10 >= i31Var.F) && !i31Var.Q) ? 5 : 8;
+                try {
+                    org.telegram.ui.Components.qw qwVar = new org.telegram.ui.Components.qw(this, recyclerView.getContext(), 2);
+                    qwVar.a = i10;
+                    w0(qwVar);
+                    break;
+                } catch (Exception e) {
+                    org.telegram.messenger.f8.g(e, true);
+                }
             default:
-                i31 i31Var2 = this.d;
-                t21 t21Var = i31Var2.q0;
-                int d = t21Var.d(i10);
-                if (d == 6) {
-                    return i31Var2.r0.J;
+                try {
+                    org.telegram.ui.Components.qw qwVar2 = new org.telegram.ui.Components.qw(this, recyclerView.getContext(), 4);
+                    qwVar2.a = i10;
+                    w0(qwVar2);
+                    break;
+                } catch (Exception e7) {
+                    org.telegram.messenger.f8.g(e7, true);
+                    return;
                 }
-                if (d != 5) {
-                    i31 i31Var3 = t21Var.s;
-                    if (i31Var3.W != 14 ? i10 <= (i11 = t21Var.c) || (i10 - i11) - 1 >= i31Var3.D1.size() : (arrayList = i31Var3.C1) == null || i10 < (i12 = t21Var.c) || i10 - i12 >= arrayList.size()) {
-                        return 5;
-                    }
-                }
-                return 8;
         }
     }
 }

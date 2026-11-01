@@ -4,10 +4,10 @@ import android.util.SparseArray;
 import j$.util.Objects;
 import java.io.EOFException;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pn0;
+import org.telegram.ui.Components.qn0;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class c1 implements c3.k0 {
     public boolean B;
@@ -17,7 +17,7 @@ public class c1 implements c3.k0 {
     public boolean G;
     public long H;
     public boolean I;
-    public final pn0 a;
+    public final qn0 a;
     public final n2.m d;
     public final n2.j e;
     public Object f;
@@ -49,7 +49,7 @@ public class c1 implements c3.k0 {
     public c1(android.support.v4.media.session.a0 a0Var, n2.m mVar, n2.j jVar) {
         this.d = mVar;
         this.e = jVar;
-        this.a = new pn0(a0Var);
+        this.a = new qn0(a0Var);
     }
 
     public final synchronized boolean A(boolean z10) {
@@ -201,11 +201,11 @@ public class c1 implements c3.k0 {
             boolean z13 = (i10 & 1) != 0;
             if ((i10 & 4) == 0) {
                 if (z13) {
-                    pn0 pn0Var = this.a;
-                    pn0.f((z0) pn0Var.f, hVar, this.b, (e2.x) pn0Var.d);
+                    qn0 qn0Var = this.a;
+                    qn0.f((z0) qn0Var.f, hVar, this.b, (e2.x) qn0Var.d);
                 } else {
-                    pn0 pn0Var2 = this.a;
-                    pn0Var2.f = pn0.f((z0) pn0Var2.f, hVar, this.b, (e2.x) pn0Var2.d);
+                    qn0 qn0Var2 = this.a;
+                    qn0Var2.f = qn0.f((z0) qn0Var2.f, hVar, this.b, (e2.x) qn0Var2.d);
                 }
             }
             if (!z13) {
@@ -216,10 +216,10 @@ public class c1 implements c3.k0 {
     }
 
     public final void G(boolean z10) {
-        pn0 pn0Var = this.a;
-        z0 z0Var = (z0) pn0Var.e;
+        qn0 qn0Var = this.a;
+        z0 z0Var = (z0) qn0Var.e;
         if (((y2.a) z0Var.c) != null) {
-            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) pn0Var.c;
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) qn0Var.c;
             synchronized (a0Var) {
                 ((i2.h) a0Var.d).c.b(z0Var);
                 z0 z0Var2 = z0Var;
@@ -236,16 +236,16 @@ public class c1 implements c3.k0 {
             z0Var.c = null;
             z0Var.d = null;
         }
-        z0 z0Var3 = (z0) pn0Var.e;
-        int i10 = pn0Var.a;
+        z0 z0Var3 = (z0) qn0Var.e;
+        int i10 = qn0Var.a;
         t6.p(((y2.a) z0Var3.c) == null);
         z0Var3.a = 0L;
         z0Var3.b = i10;
-        z0 z0Var4 = (z0) pn0Var.e;
-        pn0Var.f = z0Var4;
-        pn0Var.g = z0Var4;
-        pn0Var.b = 0L;
-        ((android.support.v4.media.session.a0) pn0Var.c).G();
+        z0 z0Var4 = (z0) qn0Var.e;
+        qn0Var.f = z0Var4;
+        qn0Var.g = z0Var4;
+        qn0Var.b = 0L;
+        ((android.support.v4.media.session.a0) qn0Var.c).G();
         this.p = 0;
         this.q = 0;
         this.r = 0;
@@ -273,8 +273,8 @@ public class c1 implements c3.k0 {
 
     public final synchronized void H() {
         this.s = 0;
-        pn0 pn0Var = this.a;
-        pn0Var.f = (z0) pn0Var.e;
+        qn0 qn0Var = this.a;
+        qn0Var.f = (z0) qn0Var.e;
     }
 
     public final synchronized boolean I(int i10) {
@@ -525,22 +525,22 @@ public class c1 implements c3.k0 {
 
     @Override // c3.k0
     public final int f(b2.p pVar, int i10, boolean z10) {
-        pn0 pn0Var = this.a;
-        int c10 = pn0Var.c(i10);
-        z0 z0Var = (z0) pn0Var.g;
+        qn0 qn0Var = this.a;
+        int c10 = qn0Var.c(i10);
+        z0 z0Var = (z0) qn0Var.g;
         y2.a aVar = (y2.a) z0Var.c;
-        int read = pVar.read(aVar.a, ((int) (pn0Var.b - z0Var.a)) + aVar.b, c10);
+        int read = pVar.read(aVar.a, ((int) (qn0Var.b - z0Var.a)) + aVar.b, c10);
         if (read == -1) {
             if (z10) {
                 return -1;
             }
             throw new EOFException();
         }
-        long j10 = pn0Var.b + read;
-        pn0Var.b = j10;
-        z0 z0Var2 = (z0) pn0Var.g;
+        long j10 = qn0Var.b + read;
+        qn0Var.b = j10;
+        z0 z0Var2 = (z0) qn0Var.g;
         if (j10 == z0Var2.b) {
-            pn0Var.g = (z0) z0Var2.d;
+            qn0Var.g = (z0) z0Var2.d;
         }
         return read;
     }
@@ -548,21 +548,21 @@ public class c1 implements c3.k0 {
     @Override // c3.k0
     public final void g(e2.x xVar, int i10, int i11) {
         while (true) {
-            pn0 pn0Var = this.a;
+            qn0 qn0Var = this.a;
             if (i10 <= 0) {
-                pn0Var.getClass();
+                qn0Var.getClass();
                 return;
             }
-            int c10 = pn0Var.c(i10);
-            z0 z0Var = (z0) pn0Var.g;
+            int c10 = qn0Var.c(i10);
+            z0 z0Var = (z0) qn0Var.g;
             y2.a aVar = (y2.a) z0Var.c;
-            xVar.k(((int) (pn0Var.b - z0Var.a)) + aVar.b, c10, aVar.a);
+            xVar.k(((int) (qn0Var.b - z0Var.a)) + aVar.b, c10, aVar.a);
             i10 -= c10;
-            long j10 = pn0Var.b + c10;
-            pn0Var.b = j10;
-            z0 z0Var2 = (z0) pn0Var.g;
+            long j10 = qn0Var.b + c10;
+            qn0Var.b = j10;
+            z0 z0Var2 = (z0) qn0Var.g;
             if (j10 == z0Var2.b) {
-                pn0Var.g = (z0) z0Var2.d;
+                qn0Var.g = (z0) z0Var2.d;
             }
         }
     }
@@ -714,7 +714,7 @@ public class c1 implements c3.k0 {
 
     public final void k(long j10, boolean z10) {
         Throwable th2;
-        pn0 pn0Var = this.a;
+        qn0 qn0Var = this.a;
         synchronized (this) {
             try {
                 try {
@@ -739,10 +739,10 @@ public class c1 implements c3.k0 {
                             if (q6 != -1) {
                                 j11 = j(q6);
                             }
-                            pn0Var.b(j11);
+                            qn0Var.b(j11);
                         }
                     }
-                    pn0Var.b(j11);
+                    qn0Var.b(j11);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -758,12 +758,12 @@ public class c1 implements c3.k0 {
 
     public final void l() {
         long j10;
-        pn0 pn0Var = this.a;
+        qn0 qn0Var = this.a;
         synchronized (this) {
             int i10 = this.p;
             j10 = i10 == 0 ? -1L : j(i10);
         }
-        pn0Var.b(j10);
+        qn0Var.b(j10);
     }
 
     public final void m(long j10) {
@@ -806,21 +806,21 @@ public class c1 implements c3.k0 {
     }
 
     public final void o(int i10) {
-        pn0 pn0Var = this.a;
+        qn0 qn0Var = this.a;
         long n10 = n(i10);
-        int i11 = pn0Var.a;
-        t6.f(n10 <= pn0Var.b);
-        pn0Var.b = n10;
+        int i11 = qn0Var.a;
+        t6.f(n10 <= qn0Var.b);
+        qn0Var.b = n10;
         if (n10 != 0) {
-            z0 z0Var = (z0) pn0Var.e;
+            z0 z0Var = (z0) qn0Var.e;
             if (n10 != z0Var.a) {
-                while (pn0Var.b > z0Var.b) {
+                while (qn0Var.b > z0Var.b) {
                     z0Var = (z0) z0Var.d;
                 }
                 z0 z0Var2 = (z0) z0Var.d;
                 z0Var2.getClass();
                 if (((y2.a) z0Var2.c) != null) {
-                    android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) pn0Var.c;
+                    android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) qn0Var.c;
                     synchronized (a0Var) {
                         ((i2.h) a0Var.d).c.b(z0Var2);
                         z0 z0Var3 = z0Var2;
@@ -839,22 +839,22 @@ public class c1 implements c3.k0 {
                 }
                 z0 z0Var4 = new z0(z0Var.b, i11);
                 z0Var.d = z0Var4;
-                if (pn0Var.b == z0Var.b) {
+                if (qn0Var.b == z0Var.b) {
                     z0Var = z0Var4;
                 }
-                pn0Var.g = z0Var;
-                if (((z0) pn0Var.f) == z0Var2) {
-                    pn0Var.f = z0Var4;
+                qn0Var.g = z0Var;
+                if (((z0) qn0Var.f) == z0Var2) {
+                    qn0Var.f = z0Var4;
                     return;
                 }
                 return;
             }
         }
-        pn0Var.a((z0) pn0Var.e);
-        z0 z0Var5 = new z0(pn0Var.b, i11);
-        pn0Var.e = z0Var5;
-        pn0Var.f = z0Var5;
-        pn0Var.g = z0Var5;
+        qn0Var.a((z0) qn0Var.e);
+        z0 z0Var5 = new z0(qn0Var.b, i11);
+        qn0Var.e = z0Var5;
+        qn0Var.f = z0Var5;
+        qn0Var.g = z0Var5;
     }
 
     public final int p(int i10, int i11, long j10, boolean z10) {

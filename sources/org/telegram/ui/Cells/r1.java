@@ -4,13 +4,13 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Components.dc;
-import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.el0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r1 {
     public final q1 a;
@@ -55,7 +55,7 @@ public final class r1 {
             q1Var.u0 = org.telegram.messenger.i0.L(60.0f) + q1Var.u0;
             if (z13 != this.f) {
                 this.f = 0;
-                int y3 = z20.y(75.0f, q1Var.Z6, i10);
+                int y3 = a30.y(75.0f, q1Var.Z6, i10);
                 float N = (q1Var.Z6 - org.telegram.messenger.i0.N(37.0f)) / i10;
                 ArrayList arrayList = this.g;
                 if (arrayList == null) {
@@ -65,15 +65,15 @@ public final class r1 {
                 }
                 if (this.d) {
                     this.f |= 1;
-                    this.g.add(q1.v0(5, cd.L0(2131743582, "ViewContact"), y3, N));
+                    this.g.add(q1.v0(5, dd.L0(2131743582, "ViewContact"), y3, N));
                 }
                 if (this.c) {
                     this.f |= 2;
-                    this.g.add(q1.v0(30, cd.L0(2131745435, "SharedContactMessage"), y3, N));
+                    this.g.add(q1.v0(30, dd.L0(2131745435, "SharedContactMessage"), y3, N));
                 }
                 if (this.e) {
                     this.f |= 4;
-                    this.g.add(q1.v0(31, cd.L0(2131745436, "SharedContactAdd"), y3, N));
+                    this.g.add(q1.v0(31, dd.L0(2131745436, "SharedContactAdd"), y3, N));
                 }
             }
         }
@@ -89,7 +89,7 @@ public final class r1 {
         Drawable[] drawableArr = q1Var.H2;
         ag.c2 c2Var = q1Var.T0;
         if (q1Var.o8 == null) {
-            q1Var.o8 = new dl0(q1Var);
+            q1Var.o8 = new el0(q1Var);
         }
         int a2 = q1Var.o8.a(q1Var.O5, q1Var.ha, q1Var.ia, q1Var.Ob, 4);
         if (q1Var.Ea == null) {
@@ -135,7 +135,7 @@ public final class r1 {
         } else {
             f7 = 2.0f;
         }
-        float floor = (float) Math.floor(tz.Y0 / 3.0f);
+        float floor = (float) Math.floor(uz.Y0 / 3.0f);
         int i11 = (int) floor;
         float f11 = 1.0f;
         q1Var.o8.c(floor, floor, floor, 1.0f, canvas, q1Var.t2);

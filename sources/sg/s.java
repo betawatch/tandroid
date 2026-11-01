@@ -7,19 +7,19 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.dj;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.ej;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.gk;
 import org.telegram.ui.un;
 import org.telegram.ui.vj;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s extends FrameLayout {
     public final int[] D;
@@ -27,7 +27,7 @@ public final class s extends FrameLayout {
     public q b;
     public List c;
     public boolean d;
-    public jj e;
+    public kj e;
     public final int f;
     public final int h;
     public float n;
@@ -47,7 +47,7 @@ public final class s extends FrameLayout {
         this.a = unVar;
         setClipToPadding(false);
         setClipChildren(false);
-        unVar.z0.j(new bu0(this, 21));
+        unVar.z0.j(new cu0(this, 21));
     }
 
     public final void a(boolean z10) {
@@ -64,8 +64,8 @@ public final class s extends FrameLayout {
         duration.start();
     }
 
-    public final jj b() {
-        ej L8;
+    public final kj b() {
+        fj P8;
         ArrayList arrayList;
         TLRPC.TL_messageReactions tL_messageReactions;
         ArrayList<TLRPC.ReactionCount> arrayList2;
@@ -73,20 +73,20 @@ public final class s extends FrameLayout {
             return null;
         }
         int i10 = 0;
-        jj jjVar = (jj) this.c.get(0);
-        if (jjVar.d1() != 0 && (L8 = this.a.L8(jjVar.d1())) != null && (arrayList = L8.d) != null) {
+        kj kjVar = (kj) this.c.get(0);
+        if (kjVar.d1() != 0 && (P8 = this.a.P8(kjVar.d1())) != null && (arrayList = P8.d) != null) {
             int size = arrayList.size();
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                jj jjVar2 = (jj) obj;
-                TLRPC.Message message = jjVar2.k;
+                kj kjVar2 = (kj) obj;
+                TLRPC.Message message = kjVar2.k;
                 if (message != null && (tL_messageReactions = message.reactions) != null && (arrayList2 = tL_messageReactions.results) != null && !arrayList2.isEmpty()) {
-                    return jjVar2;
+                    return kjVar2;
                 }
             }
         }
-        return jjVar;
+        return kjVar;
     }
 
     public final void c(boolean z10) {
@@ -122,7 +122,7 @@ public final class s extends FrameLayout {
             View childAt = vjVar.getChildAt(i10);
             if (childAt instanceof q1) {
                 q1 q1Var = (q1) childAt;
-                jj messageObject = q1Var.getMessageObject();
+                kj messageObject = q1Var.getMessageObject();
                 if (messageObject.f1() == this.e.f1()) {
                     boolean P3 = messageObject.P3();
                     q qVar = this.b;
@@ -130,21 +130,21 @@ public final class s extends FrameLayout {
                         qVar.setMirrorX(P3);
                         q qVar2 = this.b;
                         int L = org.telegram.messenger.i0.L(4.0f);
-                        boolean z15 = cd.X;
+                        boolean z15 = dd.X;
                         int i11 = this.h;
                         int i12 = L + ((z15 || P3) ? 0 : i11);
                         float f14 = this.f;
                         int L2 = org.telegram.messenger.i0.L(f14);
                         int L3 = org.telegram.messenger.i0.L(4.0f);
-                        if (!cd.X && !P3) {
+                        if (!dd.X && !P3) {
                             i11 = 0;
                         }
                         qVar2.setPadding(i12, L2, L3 + i11, org.telegram.messenger.i0.L(f14));
                     }
                     int height2 = getHeight() != 0 ? getHeight() : vjVar.getHeight();
                     if (q1Var.getCurrentMessagesGroup() != null) {
-                        dj djVar = q1Var.getCurrentMessagesGroup().m;
-                        height = djVar.d - djVar.b;
+                        ej ejVar = q1Var.getCurrentMessagesGroup().m;
+                        height = ejVar.d - ejVar.b;
                     } else {
                         height = q1Var.getHeight();
                     }
@@ -253,22 +253,22 @@ public final class s extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void setSelectedMessages(List<jj> list) {
+    public void setSelectedMessages(List<kj> list) {
         TLRPC.ChatFull chatFull;
         TLRPC.Message message;
         this.c = list;
         un unVar = this.a;
         int i10 = unVar.f4;
         boolean z10 = true;
-        if (i10 != 1 && i10 != 5 && i10 != 6 && !unVar.M9() && !unVar.z() && (((chatFull = unVar.p8) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
+        if (i10 != 1 && i10 != 5 && i10 != 6 && !unVar.R9() && !unVar.A() && (((chatFull = unVar.p8) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
             long j10 = 0;
             boolean z11 = false;
-            for (jj jjVar : list) {
-                if ((jjVar != null && (message = jjVar.k) != null && message.rich_message != null) || (jjVar != null && !jjVar.m5() && ((jj.S3(jjVar.k) && jj.o1(jjVar.k).webpage == null) || (jjVar.F0() != null && (jj.K4(jjVar.F0()) || jj.s3(jjVar.F0(), false)))))) {
+            for (kj kjVar : list) {
+                if ((kjVar != null && (message = kjVar.k) != null && message.rich_message != null) || (kjVar != null && !kjVar.m5() && ((kj.S3(kjVar.k) && kj.o1(kjVar.k).webpage == null) || (kjVar.F0() != null && (kj.K4(kjVar.F0()) || kj.s3(kjVar.F0(), false)))))) {
                     if (!z11) {
-                        j10 = jjVar.d1();
+                        j10 = kjVar.d1();
                         z11 = true;
-                    } else if (j10 == jjVar.d1() && j10 != 0) {
+                    } else if (j10 == kjVar.d1() && j10 != 0) {
                     }
                 }
             }

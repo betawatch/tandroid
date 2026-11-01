@@ -10,9 +10,9 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t {
     public final Context a;
@@ -38,7 +38,7 @@ public final class t {
     public t(Context context, int i10) {
         this.a = context;
         this.e = i10;
-        this.c = Math.max(1, Math.min(zs.W2, Math.round(context.getResources().getDisplayMetrics().density * 42.0f)));
+        this.c = Math.max(1, Math.min(at.W2, Math.round(context.getResources().getDisplayMetrics().density * 42.0f)));
         HandlerThread handlerThread = new HandlerThread("WalletDiamondTextures");
         handlerThread.start();
         this.b = new Handler(handlerThread.getLooper());

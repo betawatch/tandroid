@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class aj extends sk0 {
+public final class aj extends tk0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -21,7 +21,7 @@ public final class aj extends sk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -97,6 +97,6 @@ public final class aj extends sk0 {
             djVar.setLayoutParams(new s4.o0(-1, org.telegram.messenger.i0.L(56.0f)));
             djVar.setTag(-33024);
         }
-        return new ck0(djVar);
+        return new dk0(djVar);
     }
 }

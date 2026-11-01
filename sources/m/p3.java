@@ -24,15 +24,15 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicMarkableReference;
-import org.telegram.messenger.ia;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.ja;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.z60;
 import v7.z7;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class p3 implements n5.b {
     public Object a;
@@ -207,7 +207,7 @@ public final class p3 implements n5.b {
         a10.Q = true;
         a10.s = 0;
         a10.t = false;
-        a10.r((LinearLayout) this.d, b6.o(zs.x3, -2));
+        a10.r((LinearLayout) this.d, b6.o(at.x3, -2));
         a10.X = org.telegram.messenger.i0.L(240.0f);
         a10.i = 3;
         a10.a0(-org.telegram.messenger.i0.L(12.0f), 0.0f);
@@ -271,7 +271,7 @@ public final class p3 implements n5.b {
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    ((android.support.v4.media.session.a0) this.b).q((ia) obj);
+                    ((android.support.v4.media.session.a0) this.b).q((ja) obj);
                 }
                 arrayList.clear();
             } catch (RemoteException e) {

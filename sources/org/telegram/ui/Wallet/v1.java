@@ -3,14 +3,14 @@ package org.telegram.ui.Wallet;
 import java.util.Arrays;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.f11;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v1 implements j20 {
+public final /* synthetic */ class v1 implements k20 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ byte[] c;
@@ -19,16 +19,16 @@ public final /* synthetic */ class v1 implements j20 {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ v1(e2 e2Var, byte[] bArr, a2 a2Var, f11 f11Var, boolean z10, h0 h0Var) {
+    public /* synthetic */ v1(e2 e2Var, byte[] bArr, a2 a2Var, d01 d01Var, boolean z10, h0 h0Var) {
         this.d = e2Var;
         this.c = bArr;
         this.e = a2Var;
-        this.f = f11Var;
+        this.f = d01Var;
         this.b = z10;
         this.g = h0Var;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         String str;
         switch (this.a) {
@@ -36,7 +36,7 @@ public final /* synthetic */ class v1 implements j20 {
                 e2 e2Var = (e2) this.d;
                 byte[] bArr = this.c;
                 a2 a2Var = (a2) this.e;
-                f11 f11Var = (f11) this.f;
+                d01 d01Var = (d01) this.f;
                 boolean z10 = this.b;
                 h0 h0Var = (h0) this.g;
                 TLRPC.Bool bool = (TLRPC.Bool) obj;
@@ -48,7 +48,7 @@ public final /* synthetic */ class v1 implements j20 {
                     if (tL_error != null && ("TONCONNECT_REQUEST_ALREADY_CLAIMED".equals(tL_error.text) || "TONCONNECT_REQUEST_EXPIRED".equals(tL_error.text) || "TONCONNECT_REQUEST_NOT_FOUND".equals(tL_error.text))) {
                         a2Var.n = true;
                     }
-                    f11Var.a(e2.z(tL_error, "claimRequest"));
+                    d01Var.a(e2.z(tL_error, "claimRequest"));
                     break;
                 } else {
                     a2Var.o = true;
@@ -56,31 +56,31 @@ public final /* synthetic */ class v1 implements j20 {
                         if (!"disconnect".equals(a2Var.e)) {
                             if (!"signData".equals(a2Var.e)) {
                                 if (!"signMessage".equals(a2Var.e)) {
-                                    e2Var.B(a2Var, h0Var, f11Var);
+                                    e2Var.B(a2Var, h0Var, d01Var);
                                     break;
                                 } else {
                                     WalletEngine2 walletEngine2 = e2Var.b.b;
                                     if (walletEngine2 != null && e2Var.A(a2Var) && !e2Var.j(a2Var)) {
-                                        walletEngine2.signMessage(h0Var, a2Var.f, "ton-connect:" + a2Var.a.id + ":" + a2Var.b, new q(e2Var, a2Var, h0Var, f11Var, 8));
+                                        walletEngine2.signMessage(h0Var, a2Var.f, "ton-connect:" + a2Var.a.id + ":" + a2Var.b, new q(e2Var, a2Var, h0Var, d01Var, 8));
                                         break;
                                     } else {
-                                        e2Var.y(a2Var, h0Var, null, 0, "Wallet unavailable or request expired", f11Var);
+                                        e2Var.y(a2Var, h0Var, null, 0, "Wallet unavailable or request expired", d01Var);
                                         break;
                                     }
                                 }
                             } else if (e2Var.A(a2Var) && !e2Var.j(a2Var)) {
-                                Utilities.e.c(new k7(e2Var, h0Var, a2Var, f11Var, 9));
+                                Utilities.e.c(new k7(e2Var, h0Var, a2Var, d01Var, 9));
                                 break;
                             } else {
-                                e2Var.y(a2Var, h0Var, null, 0, "Request expired or wallet changed", f11Var);
+                                e2Var.y(a2Var, h0Var, null, 0, "Request expired or wallet changed", d01Var);
                                 break;
                             }
                         } else {
-                            e2Var.y(a2Var, h0Var, new JSONObject(), -1, null, f11Var);
+                            e2Var.y(a2Var, h0Var, new JSONObject(), -1, null, d01Var);
                             break;
                         }
                     } else {
-                        e2Var.y(a2Var, h0Var, null, z10 ? zs.X4 : a2Var.l, z10 ? "User declined the request" : a2Var.j, f11Var);
+                        e2Var.y(a2Var, h0Var, null, z10 ? at.X4 : a2Var.l, z10 ? "User declined the request" : a2Var.j, d01Var);
                         break;
                     }
                 }

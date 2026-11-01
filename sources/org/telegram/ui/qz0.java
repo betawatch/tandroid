@@ -1,54 +1,95 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qz0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ org.telegram.messenger.q20 c;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 d;
+    public final /* synthetic */ org.telegram.messenger.kj e;
 
-    public /* synthetic */ qz0(int i10, org.telegram.messenger.q20 q20Var, boolean[] zArr) {
+    public /* synthetic */ qz0(un unVar, Activity activity, org.telegram.ui.ActionBar.p6 p6Var, org.telegram.messenger.kj kjVar, int i10) {
         this.a = i10;
-        this.b = zArr;
-        this.c = q20Var;
+        this.b = unVar;
+        this.c = activity;
+        this.d = p6Var;
+        this.e = kjVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.messenger.q20 q20Var;
-        org.telegram.messenger.q20 q20Var2;
-        org.telegram.messenger.q20 q20Var3;
-        switch (this.a) {
+        int i10 = this.a;
+        org.telegram.messenger.kj kjVar = this.e;
+        org.telegram.ui.ActionBar.p6 p6Var = this.d;
+        final Activity activity = this.c;
+        un unVar = this.b;
+        final int i11 = 2;
+        switch (i10) {
             case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0] && (q20Var = this.c) != null) {
-                    zArr[0] = true;
-                    q20Var.a(Boolean.TRUE);
-                }
-                org.telegram.messenger.i0.h3(new org.telegram.ui.Components.voip.m0(14), 220L);
+                final int i12 = 1;
+                org.telegram.ui.Components.cc.a0(unVar).c(org.telegram.messenger.i0.R2(org.telegram.messenger.dd.L0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.rz0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, p6Var)).j();
+                unVar.Za(kjVar);
+                unVar.bb(kjVar);
                 break;
             case 1:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0] && (q20Var2 = this.c) != null) {
-                    zArr2[0] = true;
-                    q20Var2.a(Boolean.FALSE);
-                    break;
-                }
+                final int i13 = 0;
+                org.telegram.ui.Components.cc.a0(unVar).c(org.telegram.messenger.i0.R2(org.telegram.messenger.dd.L0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.rz0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i13) {
+                            case 0:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, p6Var)).j();
+                unVar.Za(kjVar);
+                unVar.bb(kjVar);
                 break;
             default:
-                boolean[] zArr3 = this.b;
-                if (!zArr3[0] && (q20Var3 = this.c) != null) {
-                    q20Var3.a("cancelled");
-                    zArr3[0] = true;
-                    break;
-                }
+                org.telegram.ui.Components.cc.a0(unVar).c(org.telegram.messenger.i0.R2(org.telegram.messenger.dd.L0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.rz0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                gf.f.r(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, p6Var)).j();
+                unVar.Za(kjVar);
+                unVar.bb(kjVar);
                 break;
         }
-    }
-
-    public /* synthetic */ qz0(rh.e6 e6Var, boolean[] zArr, org.telegram.messenger.q20 q20Var) {
-        this.a = 2;
-        this.b = zArr;
-        this.c = q20Var;
     }
 }

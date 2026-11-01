@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.Date;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.RadioButton;
 import w7.b6;
 import w7.g6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e1 extends FrameLayout {
     public final String a;
@@ -31,7 +31,7 @@ public final class e1 extends FrameLayout {
         b10.setText(f1Var.c);
         addView(b10, b6.t(-1, -2, 7, 62, 9, 8, 0));
         TextView b11 = g6.b(context, 14.0f, t6.y6, false, null);
-        b11.setText(cd.a0(null, null, 2131752993, cd.a0(null, null, 2131742808, cd.T(f1Var.d / 1000), cd.D0().o0().format(new Date(f1Var.d / 1000)))));
+        b11.setText(dd.a0(null, null, 2131752993, dd.a0(null, null, 2131742808, dd.T(f1Var.d / 1000), dd.D0().o0().format(new Date(f1Var.d / 1000)))));
         addView(b11, b6.t(-1, -2, 7, 62, 32, 8, 0));
         this.c = z10;
         setWillNotDraw(!z10);

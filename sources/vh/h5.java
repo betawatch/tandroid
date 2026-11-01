@@ -16,13 +16,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.r20;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.d81;
+import org.telegram.ui.b81;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class h5 extends View {
     public final org.telegram.ui.Components.e6 D;
@@ -46,7 +46,7 @@ public class h5 extends View {
     public float d;
     public boolean e;
     public final org.telegram.ui.Components.t5 f;
-    public q20 h;
+    public r20 h;
     public final Paint n;
     public final Paint r;
     public final Paint s;
@@ -108,11 +108,11 @@ public class h5 extends View {
             e6Var2.setCallback(this);
             e6Var2.u(-1);
             if (i10 == 1) {
-                e6Var2.t(cd.L0(2131750692, null), true, true);
+                e6Var2.t(dd.L0(2131750692, null), true, true);
             } else if (i10 == 2) {
-                e6Var2.t(cd.L0(2131750693, null), true, true);
+                e6Var2.t(dd.L0(2131750693, null), true, true);
             } else if (i10 == 3) {
-                e6Var2.t(cd.L0(2131742980, null), true, true);
+                e6Var2.t(dd.L0(2131742980, null), true, true);
             }
         }
         e6Var.t("", true, true);
@@ -132,8 +132,8 @@ public class h5 extends View {
         this.c = 0.9f;
     }
 
-    public final void c(d81 d81Var) {
-        this.h = d81Var;
+    public final void c(b81 b81Var) {
+        this.h = b81Var;
     }
 
     public final void d(float f7) {
@@ -156,7 +156,7 @@ public class h5 extends View {
         path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
         canvas.clipPath(path);
         float e = this.e ? this.f.e(false, this.d) : this.d;
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.O, this.P, zs.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.O, this.P, at.e4, 31);
         int i10 = this.a;
         org.telegram.ui.Components.e6 e6Var = this.y;
         if (i10 == 0) {
@@ -239,9 +239,9 @@ public class h5 extends View {
                 }
             }
             e(z12);
-            q20 q20Var = this.h;
-            if (q20Var != null) {
-                q20Var.a(Float.valueOf(z12));
+            r20 r20Var = this.h;
+            if (r20Var != null) {
+                r20Var.a(Float.valueOf(z12));
             }
         }
         this.L = x10;
@@ -275,7 +275,7 @@ public class h5 extends View {
             this.O = i12;
             this.P = org.telegram.messenger.i0.L(48.0f);
         } else if (i13 == 0) {
-            this.O = (int) Math.min(textPaint.measureText(cd.L0(2131744738, null)) + org.telegram.messenger.i0.L(88.0f), View.MeasureSpec.getSize(i10));
+            this.O = (int) Math.min(textPaint.measureText(dd.L0(2131744738, null)) + org.telegram.messenger.i0.L(88.0f), View.MeasureSpec.getSize(i10));
             this.P = org.telegram.messenger.i0.L(48.0f);
         } else {
             this.O = org.telegram.messenger.i0.L(190.0f);

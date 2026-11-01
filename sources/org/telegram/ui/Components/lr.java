@@ -9,7 +9,7 @@ import android.widget.EditText;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class lr extends ViewGroup {
     public static final /* synthetic */ int x = 0;
@@ -128,8 +128,8 @@ public final class lr extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int y3 = org.telegram.messenger.z20.y(32.0f, getWidth(), 3);
-        int y10 = org.telegram.messenger.z20.y(42.0f, getHeight(), 4);
+        int y3 = org.telegram.messenger.a30.y(32.0f, getWidth(), 3);
+        int y10 = org.telegram.messenger.a30.y(42.0f, getHeight(), 4);
         int i14 = 0;
         while (true) {
             View[] viewArr = this.c;
@@ -151,8 +151,8 @@ public final class lr extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        int y3 = org.telegram.messenger.z20.y(32.0f, getWidth(), 3);
-        int y10 = org.telegram.messenger.z20.y(42.0f, getHeight(), 4);
+        int y3 = org.telegram.messenger.a30.y(32.0f, getWidth(), 3);
+        int y10 = org.telegram.messenger.a30.y(42.0f, getHeight(), 4);
         for (View view : this.c) {
             if (view != null) {
                 view.measure(View.MeasureSpec.makeMeasureSpec(y3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(y10, TLObject.FLAG_30));

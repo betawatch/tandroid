@@ -20,15 +20,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.voip.m1;
+import org.telegram.ui.Components.voip.n1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public final class Data {
         long access_hash;
         long callId;
@@ -121,7 +121,7 @@ public class VoIPDebugToSend {
     public void push(long j10, long j11, Instance.FinalState finalState, String str) {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
-                finalState.debugLog = VoIPService.getStringFromFile(m1.e("" + j10));
+                finalState.debugLog = VoIPService.getStringFromFile(n1.e("" + j10));
             } catch (Exception e) {
                 e.printStackTrace();
             }

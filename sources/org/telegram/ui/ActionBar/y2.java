@@ -12,12 +12,12 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.op0;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.rz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y2 extends Drawable {
     public final /* synthetic */ int a;
@@ -88,10 +88,10 @@ public final class y2 extends Drawable {
                 Rect bounds2 = getBounds();
                 float L = org.telegram.messenger.i0.L(25.0f);
                 float f7 = bounds2.top;
-                op0 op0Var = (op0) this.d;
-                float min = Math.min(f7, op0Var.o1 - op0Var.i1.getY());
+                pp0 pp0Var = (pp0) this.d;
+                float min = Math.min(f7, pp0Var.o1 - pp0Var.i1.getY());
                 Paint paint3 = (Paint) this.b;
-                paint3.setColor(t6.w0(t6.h5, op0Var.I0));
+                paint3.setColor(t6.w0(t6.h5, pp0Var.I0));
                 Path path = (Path) this.c;
                 path.rewind();
                 path.addRoundRect(bounds2.left, min, bounds2.right, bounds2.bottom + L, L, L, Path.Direction.CW);
@@ -112,7 +112,7 @@ public final class y2 extends Drawable {
                 Drawable drawable3 = (Drawable) this.c;
                 drawable3.setBounds(org.telegram.messenger.i0.L(3.33f) + i10, (int) (f10 - ((drawable3.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable3.getIntrinsicWidth() * 0.875f) + org.telegram.messenger.i0.L(3.33f) + i10), (int) a1.g.A(drawable3.getIntrinsicHeight(), 0.875f, 2.0f, f10));
                 drawable3.draw(canvas);
-                ((qz0) this.b).c((drawable3.getIntrinsicWidth() * 0.875f) + org.telegram.messenger.i0.L(3.66f) + i10, f10, 1.0f, -1, canvas);
+                ((rz0) this.b).c((drawable3.getIntrinsicWidth() * 0.875f) + org.telegram.messenger.i0.L(3.66f) + i10, f10, 1.0f, -1, canvas);
                 break;
         }
     }
@@ -149,7 +149,7 @@ public final class y2 extends Drawable {
             default:
                 return super.getIntrinsicWidth();
             case 4:
-                return (int) (((qz0) this.b).k() + (((Drawable) this.c).getIntrinsicWidth() * 0.875f) + org.telegram.messenger.i0.L(9.66f));
+                return (int) (((rz0) this.b).k() + (((Drawable) this.c).getIntrinsicWidth() * 0.875f) + org.telegram.messenger.i0.L(9.66f));
         }
     }
 
@@ -239,16 +239,16 @@ public final class y2 extends Drawable {
         this.b = paint;
     }
 
-    public y2(op0 op0Var) {
+    public y2(pp0 pp0Var) {
         this.a = 3;
-        this.d = op0Var;
+        this.d = pp0Var;
         this.b = new Paint(1);
         this.c = new Path();
     }
 
     public y2(int i10, Context context, p6 p6Var, boolean z10) {
         this.a = 4;
-        this.b = new qz0(cd.G(i10, z10 ? "BoostLevelPlus" : "BoostLevel", new Object[0]), 12.0f, org.telegram.messenger.i0.o());
+        this.b = new rz0(dd.G(i10, z10 ? "BoostLevelPlus" : "BoostLevel", new Object[0]), 12.0f, org.telegram.messenger.i0.o());
         Drawable f7 = i0.a.f(context, R.drawable.mini_switch_lock);
         this.c = f7;
         f7.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));

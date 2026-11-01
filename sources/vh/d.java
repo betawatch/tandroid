@@ -18,10 +18,10 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.HashSet;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.kp;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.s80;
 import org.telegram.ui.Components.t80;
 import org.telegram.ui.be;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class d extends FrameLayout implements s80, org.telegram.ui.ActionBar.k6 {
     public int D;
@@ -124,13 +124,13 @@ public class d extends FrameLayout implements s80, org.telegram.ui.ActionBar.k6 
             this.T = ofFloat;
             ofFloat.addUpdateListener(new b(this, 0));
             this.T.addListener(new c(this, i12));
-            z20.j(2.0f, this.T);
+            a30.j(2.0f, this.T);
             this.T.setDuration(200L);
             this.T.start();
         }
         this.U = i10;
         this.h = (i10 != 0 || this.V) ? 1.0f : 0.0f;
-        e6Var.t(cd.E(i10, ' '), z10, true);
+        e6Var.t(dd.E(i10, ' '), z10, true);
         invalidate();
     }
 
@@ -597,7 +597,7 @@ public class d extends FrameLayout implements s80, org.telegram.ui.ActionBar.k6 
         this.S = 1.0f;
         this.b0 = 1.0f;
         this.c0 = true;
-        this.f0 = zs.e4;
+        this.f0 = at.e4;
         this.s = z10;
         this.a = p6Var;
         w7.e6.b(this, 0.02f, 1.2f);

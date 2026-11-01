@@ -11,15 +11,15 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class s0 extends FrameLayout implements fe.e, k6 {
     public int D;
@@ -92,7 +92,7 @@ public class s0 extends FrameLayout implements fe.e, k6 {
         this.s = false;
         String str = e0Var.c;
         if (str == null) {
-            str = cd.L0(e0Var.b, null);
+            str = dd.L0(e0Var.b, null);
         }
         this.e.setText(str);
         eq N = t6.N(org.telegram.messenger.i0.L(32.0f), e0Var.a);
@@ -138,7 +138,7 @@ public class s0 extends FrameLayout implements fe.e, k6 {
             return;
         }
         TLRPC.User user = (TLRPC.User) tLObject;
-        if (d20.i(d20.s0).f().id != user.id) {
+        if (e20.i(e20.s0).f().id != user.id) {
             g9Var.getImageReceiver().J0(org.telegram.messenger.i0.L(16.0f));
             g9Var.getImageReceiver().i0(user, this.b, null);
             return;

@@ -2,16 +2,16 @@ package yh;
 
 import android.view.View;
 import java.io.Serializable;
-import org.telegram.messenger.o20;
+import org.telegram.messenger.as;
+import org.telegram.messenger.at;
 import org.telegram.messenger.p20;
-import org.telegram.messenger.zr;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.a51;
+import org.telegram.messenger.q20;
+import org.telegram.ui.Components.b51;
 import r0.j1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements o20, p20, r0.m, zr {
+public final /* synthetic */ class i implements p20, q20, r0.m, as {
     public final /* synthetic */ l a;
 
     public /* synthetic */ i(l lVar) {
@@ -25,20 +25,20 @@ public final /* synthetic */ class i implements o20, p20, r0.m, zr {
         return j1.b;
     }
 
-    @Override // org.telegram.messenger.p20
-    public Boolean a(a51 a51Var, View view, Integer num, Float f7, Float f10) {
-        return Boolean.valueOf(l.Y(this.a, a51Var, view));
+    @Override // org.telegram.messenger.q20
+    public Boolean a(b51 b51Var, View view, Integer num, Float f7, Float f10) {
+        return Boolean.valueOf(l.Z(this.a, b51Var, view));
     }
 
-    @Override // org.telegram.messenger.zr
+    @Override // org.telegram.messenger.as
     public void i(boolean z10) {
         l lVar = this.a;
         lVar.finishFragment();
-        lVar.getNotificationCenter().k(zs.K2, Long.valueOf(-lVar.c), null, lVar.I, Boolean.valueOf(z10));
+        lVar.getNotificationCenter().k(at.K2, Long.valueOf(-lVar.c), null, lVar.I, Boolean.valueOf(z10));
     }
 
-    @Override // org.telegram.messenger.o20
+    @Override // org.telegram.messenger.p20
     public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        l.Z(this.a, (a51) obj);
+        l.a0(this.a, (b51) obj);
     }
 }

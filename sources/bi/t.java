@@ -18,18 +18,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.qz;
-import org.telegram.messenger.sw;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.rz;
+import org.telegram.messenger.tw;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
@@ -47,14 +47,14 @@ import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.wg;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Components.zf;
-import org.telegram.ui.kh0;
+import org.telegram.ui.ih0;
 import org.telegram.ui.kn;
 import org.telegram.ui.mk;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final class t extends uh implements us {
+public final class t extends uh implements vs {
     public static final int[] Q = {1, 2, 16, 8, 256, 4, TLObject.FLAG_14, 32768};
     public boolean D;
     public int E;
@@ -67,7 +67,7 @@ public final class t extends uh implements us {
     public boolean L;
     public int M;
     public boolean N;
-    public kh0 O;
+    public ih0 O;
     public final f P;
     public final int n;
     public final d4 r;
@@ -88,8 +88,8 @@ public final class t extends uh implements us {
         this.r = d4Var;
         d4Var.setAdaptiveLinkDialogs(false);
         d4Var.setAllowTapAboveContent(false);
-        addView(d4Var, w7.b6.e(-1, -1, zs.E1));
-        addView(d4Var.getOverlayView(), w7.b6.e(-1, -1, zs.E1));
+        addView(d4Var, w7.b6.e(-1, -1, at.E1));
+        addView(d4Var.getOverlayView(), w7.b6.e(-1, -1, at.E1));
         d4Var.C4();
         o2 o2Var = d4Var.Q3;
         if (o2Var != null) {
@@ -107,7 +107,7 @@ public final class t extends uh implements us {
         i4Var.setBackVisible(false);
         i4Var.setTopGradientVisible(false);
         b0();
-        addView(i4Var, w7.b6.e(-1, -1, zs.E1));
+        addView(i4Var, w7.b6.e(-1, -1, at.E1));
         a0();
         c0();
         Y(false);
@@ -211,7 +211,7 @@ public final class t extends uh implements us {
         biVar2.show();
     }
 
-    public static void X(Context context, final String str, final q20 q20Var, org.telegram.ui.ActionBar.p6 p6Var) {
+    public static void X(Context context, final String str, final r20 r20Var, org.telegram.ui.ActionBar.p6 p6Var) {
         org.telegram.ui.ActionBar.z2 k10 = org.telegram.messenger.m5.k(1, context, p6Var, true);
         LinearLayout f7 = org.telegram.messenger.m5.f(context, 1);
         final String[] strArr = {str == null ? "" : str};
@@ -232,11 +232,11 @@ public final class t extends uh implements us {
         horizontalScrollView.setVisibility(8);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
         f7.addView(horizontalScrollView, w7.b6.t(-1, -2, 49, 12, 2, 12, 0));
-        vh.d i11 = z20.i(24, context, p6Var, true);
+        vh.d i11 = a30.i(24, context, p6Var, true);
         final boolean[] zArr = {false};
         final boolean[] zArr2 = {false};
         n nVar = new n(strArr, horizontalScrollView, i11, zArr2, new ag.a(strArr, 11), imageView, p6Var, new int[]{6}, 0);
-        final org.telegram.ui.Cells.m3 m3Var = new org.telegram.ui.Cells.m3(context, cd.L0(2131754008, null), true, false, -1, p6Var);
+        final org.telegram.ui.Cells.m3 m3Var = new org.telegram.ui.Cells.m3(context, dd.L0(2131754008, null), true, false, -1, p6Var);
         org.telegram.ui.Cells.k3 k3Var = m3Var.d;
         k3Var.setImeOptions(6);
         k3Var.setMaxLines(5);
@@ -249,7 +249,7 @@ public final class t extends uh implements us {
         m3Var.setText(strArr[0]);
         k3Var.addTextChangedListener(new ag.u2(1, strArr, nVar));
         f7.addView(m3Var, w7.b6.t(-1, -2, 55, 12, 8, 12, 0));
-        i11.setText(cd.L0(2131751355, null));
+        i11.setText(dd.L0(2131751355, null));
         f7.addView(i11, w7.b6.t(-1, 48, 55, 12, 12, 12, 12));
         nVar.run();
         k10.N = f7;
@@ -268,21 +268,21 @@ public final class t extends uh implements us {
                     return;
                 }
                 zArr3[0] = true;
-                q20Var.a(strArr2[0]);
+                r20Var.a(strArr2[0]);
             }
         };
         k10.show();
         int i13 = org.telegram.ui.ActionBar.t6.a7;
         k10.w0(i13);
         k10.Q(i13);
-        i11.setOnClickListener(new c(i11, zArr, q20Var, strArr, k10, 0));
+        i11.setOnClickListener(new c(i11, zArr, r20Var, strArr, k10, 0));
         org.telegram.messenger.i0.h3(new a3.d(m3Var, 18), 200L);
     }
 
     private int getEmojiPanelHeight() {
         int Q2 = this.b.l3.Q();
         if (Q2 <= 0) {
-            SharedPreferences c12 = vp.c1();
+            SharedPreferences c12 = wp.c1();
             Point point = org.telegram.messenger.i0.q;
             Q2 = c12.getInt(point.x > point.y ? "kbd_height_land3" : "kbd_height", org.telegram.messenger.i0.L(200.0f));
         }
@@ -356,24 +356,24 @@ public final class t extends uh implements us {
 
     @Override // org.telegram.ui.Components.uh
     public final boolean J(boolean z10, int i10, int i11, long j10, boolean z11) {
-        jj jjVar;
+        kj kjVar;
         kn knVar;
-        sw swVar;
+        tw twVar;
         long j11;
-        jj jjVar2;
+        kj kjVar2;
         mk mkVar;
         sf sfVar;
         mk mkVar2;
         int i12 = this.n;
-        boolean p42 = vp.r1(i12).p4();
+        boolean p42 = wp.r1(i12).p4();
         d4 d4Var = this.r;
-        if (!p42 && !d20.i(i12).q() && n5.d(d4Var.s3, d4Var.t3)) {
-            k2.t0(getContext(), new b(d4Var, 0), new f(this, 2), this.a);
+        if (!p42 && !e20.i(i12).q() && n5.d(d4Var.s3, d4Var.t3)) {
+            k2.u0(getContext(), new b(d4Var, 0), new f(this, 2), this.a);
             return false;
         }
         if (d4Var.n3() && !d4Var.p3()) {
             if (d4Var.P3()) {
-                boolean p43 = vp.r1(i12).p4();
+                boolean p43 = wp.r1(i12).p4();
                 bi biVar = this.b;
                 if (p43) {
                     ArrayList c32 = d4Var.c3();
@@ -384,23 +384,23 @@ public final class t extends uh implements us {
                         org.telegram.ui.ActionBar.k2 k2Var = biVar.W1;
                         if (k2Var instanceof un) {
                             un unVar = (un) k2Var;
-                            jj jjVar3 = unVar.D5;
-                            jj jjVar4 = unVar.l4;
+                            kj kjVar3 = unVar.D5;
+                            kj kjVar4 = unVar.l4;
                             kn knVar2 = unVar.B5;
-                            long a92 = unVar.a9();
-                            swVar = unVar.P8();
-                            jjVar = jjVar4;
+                            long e92 = unVar.e9();
+                            twVar = unVar.T8();
+                            kjVar = kjVar4;
                             knVar = knVar2;
-                            j11 = a92;
-                            jjVar2 = jjVar3;
+                            j11 = e92;
+                            kjVar2 = kjVar3;
                         } else {
-                            jjVar = null;
+                            kjVar = null;
                             knVar = null;
-                            swVar = null;
+                            twVar = null;
                             j11 = 0;
-                            jjVar2 = null;
+                            kjVar2 = null;
                         }
-                        qz.R(org.telegram.messenger.c.a(biVar.D3), c32, E2, B2, a2, biVar.a1(), jjVar2, jjVar, knVar, z10, i10, i11, swVar, j10, j11, 0L);
+                        rz.R(org.telegram.messenger.c.a(biVar.D3), c32, E2, B2, a2, biVar.a1(), kjVar2, kjVar, knVar, z10, i10, i11, twVar, j10, j11, 0L);
                         org.telegram.ui.ActionBar.k2 k2Var2 = biVar.W1;
                         if ((k2Var2 instanceof un) && (mkVar = ((un) k2Var2).Z) != null && (sfVar = mkVar.Z2) != null) {
                             sfVar.E(null, z10, i10, i11, 0L);
@@ -428,7 +428,7 @@ public final class t extends uh implements us {
     }
 
     @Override // org.telegram.ui.Components.uh
-    public final boolean L() {
+    public final boolean K() {
         return !this.r.n3();
     }
 
@@ -446,11 +446,11 @@ public final class t extends uh implements us {
         }
         final int i11 = 0;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.a);
-        String L0 = cd.L0(2131753993, null);
+        String L0 = dd.L0(2131753993, null);
         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
         x1Var.R = L0;
-        x1Var.T = cd.L0(2131753994, null);
-        alertDialog$Builder.h(cd.L0(2131751599, null), new org.telegram.ui.ActionBar.u1(this) { // from class: bi.m
+        x1Var.T = dd.L0(2131753994, null);
+        alertDialog$Builder.h(dd.L0(2131751599, null), new org.telegram.ui.ActionBar.u1(this) { // from class: bi.m
             public final /* synthetic */ t b;
 
             {
@@ -471,7 +471,7 @@ public final class t extends uh implements us {
                 }
             }
         });
-        alertDialog$Builder.k(cd.L0(2131745963, null), new org.telegram.ui.ActionBar.u1(this) { // from class: bi.m
+        alertDialog$Builder.k(dd.L0(2131745963, null), new org.telegram.ui.ActionBar.u1(this) { // from class: bi.m
             public final /* synthetic */ t b;
 
             {
@@ -576,7 +576,7 @@ public final class t extends uh implements us {
             return false;
         }
         TL_iv.RichMessage m22 = d4Var.m2();
-        ui.b0(org.telegram.messenger.c.a(this.n).a).Q1(unVar.a(), unVar.J7(unVar.D5), "", null, null, null, null, 0L, false, false, m22);
+        vi.b0(org.telegram.messenger.c.a(this.n).a).Q1(unVar.a(), unVar.N7(unVar.D5), "", null, null, null, null, 0L, false, false, m22);
         mk mkVar = unVar.Z;
         if (mkVar == null) {
             return true;
@@ -749,7 +749,7 @@ public final class t extends uh implements us {
         if (i4Var != null) {
             int i10 = this.n;
             boolean z10 = false;
-            boolean z11 = (vp.r1(i10).p4() || d20.i(i10).q()) ? false : true;
+            boolean z11 = (wp.r1(i10).p4() || e20.i(i10).q()) ? false : true;
             zf sendButton = i4Var.getSendButton();
             if (z11) {
                 d4 d4Var = this.r;
@@ -870,9 +870,9 @@ public final class t extends uh implements us {
         i4Var.setTopButtonsOffset(Math.max(currentActionBarHeight, paddingTop));
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.f5) {
+        if (i10 == at.f5) {
             b0();
         }
     }
@@ -1005,9 +1005,9 @@ public final class t extends uh implements us {
 
     @Override // org.telegram.ui.Components.uh
     public final void o() {
-        kh0 kh0Var = this.O;
-        if (kh0Var != null) {
-            kh0Var.h();
+        ih0 ih0Var = this.O;
+        if (ih0Var != null) {
+            ih0Var.h();
             this.O = null;
         }
         m.p3 p3Var = this.w;
@@ -1027,14 +1027,14 @@ public final class t extends uh implements us {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        zs.f(this.n).c(this, zs.f5);
+        at.f(this.n).c(this, at.f5);
         b0();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        zs.f(this.n).n(this, zs.f5);
+        at.f(this.n).n(this, at.f5);
     }
 
     @Override // org.telegram.ui.Components.uh

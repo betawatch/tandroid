@@ -11,14 +11,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.z20;
-import org.telegram.ui.Components.tu0;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vi;
 import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ja extends org.telegram.ui.ActionBar.k2 {
     public final String[] a;
@@ -62,7 +62,7 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
         }
     }
 
-    public final void Y() {
+    public final void Z() {
         if (this.h == null) {
             return;
         }
@@ -89,10 +89,10 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
         final int i10 = 0;
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(false);
-        uu0 uu0Var = new uu0(context, null);
-        uu0Var.setDelegate(new tu0() { // from class: org.telegram.ui.Wallet.ha
-            @Override // org.telegram.ui.Components.tu0
-            public final void K(int i11, boolean z10) {
+        vu0 vu0Var = new vu0(context, null);
+        vu0Var.setDelegate(new uu0() { // from class: org.telegram.ui.Wallet.ha
+            @Override // org.telegram.ui.Components.uu0
+            public final void L(int i11, boolean z10) {
                 ja jaVar = ja.this;
                 jaVar.getClass();
                 if (i11 <= org.telegram.messenger.i0.L(20.0f)) {
@@ -102,8 +102,8 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
                 jaVar.onInsets(jaVar.r, jaVar.s, jaVar.w, jaVar.x);
             }
         });
-        org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d6, uu0Var, this.resourceProvider);
-        this.fragmentView = uu0Var;
+        org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d6, vu0Var, this.resourceProvider);
+        this.fragmentView = vu0Var;
         ScrollView scrollView = new ScrollView(context);
         this.e = scrollView;
         final int i11 = 1;
@@ -111,7 +111,7 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
         this.e.setVerticalScrollBarEnabled(false);
         this.e.setClipToPadding(false);
         this.e.setPadding(0, org.telegram.messenger.i0.L(96.0f), 0, 0);
-        uu0Var.addView(this.e, w7.b6.c(-1.0f, -1));
+        vu0Var.addView(this.e, w7.b6.c(-1.0f, -1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setPadding(org.telegram.messenger.i0.L(36.0f), 0, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(24.0f));
@@ -168,7 +168,7 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
                             }
                             if (z11) {
                                 jaVar.y = true;
-                                jaVar.Y();
+                                jaVar.Z();
                                 org.telegram.messenger.i0.v1(jaVar.fragmentView);
                                 l lVar = jaVar.c;
                                 if (lVar != null) {
@@ -181,19 +181,19 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
                 }
             }
         });
-        uu0Var.addView(this.f, w7.b6.d(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
+        vu0Var.addView(this.f, w7.b6.d(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.g9 g9Var = new org.telegram.ui.Components.g9(context);
         g9Var.setAspectFit(true);
         g9Var.getImageReceiver().d = org.telegram.messenger.i0.t0();
-        ui.b0(org.telegram.messenger.i0.t0()).c2(g9Var, "RestrictedEmoji", "👨\u200d🏫", "100_100");
+        vi.b0(org.telegram.messenger.i0.t0()).c2(g9Var, "RestrictedEmoji", "👨\u200d🏫", "100_100");
         g9Var.getImageReceiver().X(1);
         linearLayout.addView(g9Var, w7.b6.t(100, 100, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.i0.o());
         textView.setGravity(1);
-        z20.p(textView, i12, this.resourceProvider, null, 2131743031);
-        TextView f7 = z20.f(linearLayout, textView, w7.b6.t(-1, -2, 1, 32, 0, 32, 10), context);
+        a30.p(textView, i12, this.resourceProvider, null, 2131743031);
+        TextView f7 = a30.f(linearLayout, textView, w7.b6.t(-1, -2, 1, 32, 0, 32, 10), context);
         f7.setTextSize(1, 14.0f);
         f7.setGravity(1);
         org.telegram.ui.ActionBar.a7.V(f7, org.telegram.ui.ActionBar.t6.z6, this.resourceProvider);
@@ -231,7 +231,7 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
         vh.d dVar = new vh.d(context, this.resourceProvider, true);
         this.h = dVar;
         dVar.f();
-        this.h.setText(cd.L0(2131743180, null));
+        this.h.setText(dd.L0(2131743180, null));
         this.h.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.ia
             public final /* synthetic */ ja b;
 
@@ -273,7 +273,7 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
                             }
                             if (z11) {
                                 jaVar.y = true;
-                                jaVar.Y();
+                                jaVar.Z();
                                 org.telegram.messenger.i0.v1(jaVar.fragmentView);
                                 l lVar = jaVar.c;
                                 if (lVar != null) {
@@ -287,7 +287,7 @@ public final class ja extends org.telegram.ui.ActionBar.k2 {
             }
         });
         linearLayout.addView(this.h, w7.b6.t(-1, 48, 1, 0, 24, 0, 0));
-        Y();
+        Z();
         return this.fragmentView;
     }
 

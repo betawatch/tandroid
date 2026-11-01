@@ -3,16 +3,16 @@ package org.telegram.ui.Components;
 import android.text.TextUtils;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class re implements gk0 {
+public final class re implements hk0 {
     public final /* synthetic */ ChatActivityEnterView a;
 
     public re(ChatActivityEnterView chatActivityEnterView) {
         this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.gk0
+    @Override // org.telegram.ui.Components.hk0
     public final void f(int i10, View view) {
         if (view instanceof xh.u) {
             String command = ((xh.u) view).getCommand();
@@ -25,7 +25,7 @@ public final class re implements gk0 {
                 return;
             }
             org.telegram.ui.un unVar = chatActivityEnterView.P2;
-            if (unVar == null || !unVar.m7(view)) {
+            if (unVar == null || !unVar.q7(view)) {
                 s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new ag.e0(29, this, command));
             }
         }

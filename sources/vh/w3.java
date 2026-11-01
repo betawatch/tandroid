@@ -12,31 +12,31 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
-import org.telegram.ui.Components.hu0;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.do0;
-import org.telegram.ui.o10;
+import org.telegram.ui.Components.iu0;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.bo0;
+import org.telegram.ui.n10;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class w3 implements ig.b1, s61, hu0 {
+public final class w3 implements ig.b1, t61, iu0 {
     public final Object a;
 
     public /* synthetic */ w3(Object obj) {
         this.a = obj;
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public void F(boolean z10) {
         wh.g gVar = (wh.g) this.a;
         fe.b bVar = gVar.Y;
         if (bVar != null) {
             bVar.a(z10, true);
         }
-        o10 o10Var = gVar.s;
-        if (o10Var != null) {
-            o10Var.invalidate();
+        n10 n10Var = gVar.s;
+        if (n10Var != null) {
+            n10Var.invalidate();
         }
     }
 
@@ -672,7 +672,7 @@ public final class w3 implements ig.b1, s61, hu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public float a1() {
         return i0.a.d(9.66f, ei.b.d(((wh.g) this.a).b0), 0);
     }
@@ -702,13 +702,13 @@ public final class w3 implements ig.b1, s61, hu0 {
 
     @Override // ig.b1
     public void g() {
-        do0 do0Var = ((s7) this.a).y0;
-        if (do0Var != null) {
-            do0Var.invalidate();
+        bo0 bo0Var = ((s7) this.a).y0;
+        if (bo0Var != null) {
+            bo0Var.invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public int g1() {
         return ((wh.g) this.a).c0;
     }
@@ -741,31 +741,31 @@ public final class w3 implements ig.b1, s61, hu0 {
         s7Var.M0.setViewHidden(false);
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onStateChanged(boolean z10, int i10) {
         k4 k4Var = (k4) this.a;
         i4 i4Var = k4Var.M;
-        u61 u61Var = k4Var.y;
-        if (u61Var == null) {
+        v61 v61Var = k4Var.y;
+        if (v61Var == null) {
             return;
         }
-        if (u61Var.d0()) {
+        if (v61Var.d0()) {
             org.telegram.messenger.i0.g3(i4Var);
         } else {
             org.telegram.messenger.i0.r(i4Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         jg.i2 i2Var = ((k4) this.a).x;
         if (i2Var != null) {
@@ -790,7 +790,7 @@ public final class w3 implements ig.b1, s61, hu0 {
         this.a = new k6.h(2);
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onRenderedFirstFrame() {
     }
 
@@ -820,15 +820,15 @@ public final class w3 implements ig.b1, s61, hu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -836,7 +836,7 @@ public final class w3 implements ig.b1, s61, hu0 {
     public void d() {
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public void onError(u61 u61Var, Exception exc) {
+    @Override // org.telegram.ui.Components.t61
+    public void onError(v61 v61Var, Exception exc) {
     }
 }

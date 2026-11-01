@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class y1 {
     public static volatile y1[] f = new y1[4];
@@ -32,7 +32,7 @@ public final class y1 {
         Exception exc;
         x1 x1Var;
         this.a = i10;
-        SharedPreferences sharedPreferences = vp.r1(i10).f7;
+        SharedPreferences sharedPreferences = wp.r1(i10).f7;
         this.b = sharedPreferences.getLong("bday_check", 0L);
         x1 x1Var2 = null;
         String string = sharedPreferences.getString("bday_contacts", null);
@@ -64,7 +64,7 @@ public final class y1 {
                 }
                 y1Var = this;
                 try {
-                    hs.a0(i10).a.c(new cg(y1Var, i10, arrayList, x1Var, 2));
+                    is.a0(i10).a.c(new dg(y1Var, i10, arrayList, x1Var, 2));
                 } catch (Exception e10) {
                     e = e10;
                     exc = e;
@@ -101,7 +101,7 @@ public final class y1 {
     }
 
     public static boolean d(TLRPC.UserFull userFull) {
-        return (userFull == null || !e(userFull.birthday) || h20.b(userFull)) ? false : true;
+        return (userFull == null || !e(userFull.birthday) || i20.b(userFull)) ? false : true;
     }
 
     public static boolean e(TL_account.TL_birthday tL_birthday) {
@@ -125,7 +125,7 @@ public final class y1 {
         if (w1Var != null && w1Var.a(j10)) {
             return true;
         }
-        TLRPC.UserFull a2 = vp.r1(this.a).a2(j10);
-        return (a2 == null || !e(a2.birthday) || h20.b(a2)) ? false : true;
+        TLRPC.UserFull a2 = wp.r1(this.a).a2(j10);
+        return (a2 == null || !e(a2.birthday) || i20.b(a2)) ? false : true;
     }
 }

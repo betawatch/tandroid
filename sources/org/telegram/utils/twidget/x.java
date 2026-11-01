@@ -17,7 +17,7 @@ import m4.v0;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public abstract class x {
     public static void a(a0 a0Var, cc.f fVar, JSONArray jSONArray, int i10, JSONObject jSONObject, z zVar, float f7) {
@@ -27,7 +27,7 @@ public abstract class x {
         if (c10 == null || !((Matrix) fVar.d).invert(matrix)) {
             return;
         }
-        if (a0.k(jSONObject, "r", new RectF()).isEmpty()) {
+        if (a0.j(jSONObject, "r", new RectF()).isEmpty()) {
             return;
         }
         RenderNode renderNode = new RenderNode("widget-backdrop");
@@ -36,13 +36,13 @@ public abstract class x {
         beginRecording.translate(-r3, -r4);
         beginRecording.scale(f7, f7);
         beginRecording.concat(matrix);
-        a0Var.f(beginRecording, jSONArray, i10, zVar, f7, false);
+        a0Var.e(beginRecording, jSONArray, i10, zVar, f7, false);
         renderNode.endRecording();
         renderNode.setRenderEffect(c10);
         Canvas canvas = (Canvas) fVar.c;
         canvas.save();
         Path path = a0Var.f;
-        a0Var.l(jSONObject, "r", path);
+        a0Var.k(jSONObject, "r", path);
         canvas.clipPath(path);
         canvas.drawColor(0, PorterDuff.Mode.CLEAR);
         float f10 = 1.0f / f7;

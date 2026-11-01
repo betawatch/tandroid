@@ -21,23 +21,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.w5;
 import org.telegram.ui.ActionBar.x4;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.ex0;
+import org.telegram.ui.dx0;
 import org.telegram.ui.nc;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class j extends FrameLayout {
     public final h D;
@@ -68,11 +68,11 @@ public final class j extends FrameLayout {
 
     public j(Activity activity) {
         super(activity);
-        int i10 = d20.s0;
+        int i10 = e20.s0;
         this.y = new ArrayList();
         this.J = 0.0f;
         setWillNotDraw(false);
-        int i11 = d20.s0;
+        int i11 = e20.s0;
         ag.a aVar = new ag.a(this, 19);
         a aVar2 = new a(this);
         x4 x4Var = new x4(1, null);
@@ -82,7 +82,7 @@ public final class j extends FrameLayout {
         iiVar.f3.r = false;
         iiVar.setOverScrollMode(2);
         iiVar.setPadding(0, 0, 0, 0);
-        addView(iiVar, b6.e(-1, -1, zs.E1));
+        addView(iiVar, b6.e(-1, -1, at.E1));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
@@ -128,19 +128,19 @@ public final class j extends FrameLayout {
         setImportantForAccessibility(4);
     }
 
-    public static String a(jj jjVar) {
-        TLRPC.Message message = jjVar.k;
+    public static String a(kj kjVar) {
+        TLRPC.Message message = kjVar.k;
         if (message != null) {
             TLRPC.MessageMedia messageMedia = message.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                 return messageMedia.webpage.url;
             }
         }
-        CharSequence charSequence = jjVar.v;
+        CharSequence charSequence = kjVar.v;
         if (charSequence == null || charSequence.length() <= 0) {
             return null;
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jjVar.v);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(kjVar.v);
         for (URLSpan uRLSpan : (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class)) {
             String url = uRLSpan.getURL();
             if (url != null && !url.startsWith("@") && !url.startsWith("#") && !url.startsWith("$")) {
@@ -204,7 +204,7 @@ public final class j extends FrameLayout {
                     }
                 }
                 sharedPreferences = sharedPreferences2;
-                Collections.sort(arrayList, new ex0(9));
+                Collections.sort(arrayList, new dx0(9));
             } catch (Exception e10) {
                 e = e10;
                 sharedPreferences = sharedPreferences2;

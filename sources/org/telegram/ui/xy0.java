@@ -1,164 +1,142 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class xy0 extends org.telegram.ui.Components.w71 {
-    public final /* synthetic */ int V;
-    public Object W;
-    public final /* synthetic */ FrameLayout a0;
+public final class xy0 extends org.telegram.ui.Components.p71 {
+    public boolean a;
+    public final /* synthetic */ org.telegram.ui.Components.ar0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xy0(FrameLayout frameLayout, Context context, Object obj, int i10) {
-        super(context, null);
-        this.V = i10;
-        this.a0 = frameLayout;
-        this.W = obj;
+    public xy0(org.telegram.ui.Components.ar0 ar0Var) {
+        this.b = ar0Var;
     }
 
-    @Override // org.telegram.ui.Components.w71
-    public final void A(int i10) {
-        switch (this.V) {
-            case 0:
-                org.telegram.ui.Components.yq0 yq0Var = (org.telegram.ui.Components.yq0) this.W;
-                ((org.telegram.ui.Components.zq0) this.a0).b.b0.get(i10, -1);
-                yq0Var.d.R0(1.0f);
-                break;
-            case 1:
-                ((org.telegram.ui.Components.vq0) this.a0).l();
-                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.W;
-                if (k2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) k2Var).V();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Components.uq0 uq0Var = (org.telegram.ui.Components.uq0) this.a0;
-                String currentLang = uq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.W, currentLang)) {
-                    this.W = currentLang;
-                    uq0Var.G.T0();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.p71
+    public final void a(ArrayList arrayList) {
+        org.telegram.ui.Components.ar0 ar0Var = this.b;
+        vv0 vv0Var = ar0Var.w;
+        org.telegram.ui.Components.w71 w71Var = ar0Var.b;
+        ArrayList arrayList2 = new ArrayList();
+        int size = arrayList.size();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            Integer num = (Integer) obj;
+            int intValue = num.intValue();
+            if (intValue != -1 && intValue != -2 && intValue != 0) {
+                arrayList2.add(num);
+            }
         }
-    }
-
-    @Override // org.telegram.ui.Components.w71
-    public void h() {
-        switch (this.V) {
-            case 1:
-                org.telegram.ui.Components.vq0 vq0Var = (org.telegram.ui.Components.vq0) this.a0;
-                org.telegram.ui.Components.v71 v71Var = vq0Var.n;
-                if (vq0Var.b() && v71Var != null) {
-                    if (vq0Var.J == null) {
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a1.g.m(null, 2131750107, new StringBuilder("+ ")));
-                        org.telegram.ui.Components.dq dqVar = new org.telegram.ui.Components.dq(R.drawable.poll_add_plus, 0);
-                        dqVar.G = 0.8f;
-                        spannableStringBuilder.setSpan(dqVar, 0, 1, 33);
-                        vq0Var.J = spannableStringBuilder;
-                    }
-                    v71Var.a(-1, vq0Var.J);
-                    break;
-                }
-                break;
+        int f7 = f(w71Var.getCurrentPosition());
+        th.t4 t4Var = ar0Var.c;
+        t4Var.getClass();
+        HashMap hashMap = new HashMap();
+        ArrayList arrayList3 = t4Var.h;
+        int size2 = arrayList3.size();
+        int i12 = 0;
+        while (i12 < size2) {
+            Object obj2 = arrayList3.get(i12);
+            i12++;
+            th.y4 y4Var = (th.y4) obj2;
+            hashMap.put(Integer.valueOf(y4Var.a), y4Var);
         }
-    }
-
-    @Override // org.telegram.ui.Components.w71
-    public boolean i(MotionEvent motionEvent) {
-        boolean g10;
-        switch (this.V) {
-            case 1:
-                g10 = ((org.telegram.ui.Components.vq0) this.a0).g();
-                break;
-            case 2:
-                g10 = ((org.telegram.ui.Components.uq0) this.a0).G.E1;
-                break;
-            default:
-                return super.i(motionEvent);
+        ArrayList arrayList4 = new ArrayList();
+        int size3 = arrayList2.size();
+        while (i10 < size3) {
+            Object obj3 = arrayList2.get(i10);
+            i10++;
+            Integer num2 = (Integer) obj3;
+            num2.getClass();
+            th.y4 y4Var2 = (th.y4) hashMap.get(num2);
+            if (y4Var2 != null) {
+                arrayList4.add(y4Var2);
+            }
         }
-        return !g10;
-    }
-
-    @Override // org.telegram.ui.Components.w71
-    public final void w(boolean z10) {
-        switch (this.V) {
-            case 0:
-                org.telegram.ui.Components.yq0 yq0Var = (org.telegram.ui.Components.yq0) this.W;
-                yq0Var.d.R0(((org.telegram.ui.Components.zq0) this.a0).b.getAnimatingIndicatorProgress());
-                break;
-            case 1:
-                org.telegram.ui.Components.vq0 vq0Var = (org.telegram.ui.Components.vq0) this.a0;
-                vq0Var.l();
-                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.W;
-                if (k2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) k2Var).V();
-                    View fragmentView = k2Var.getFragmentView();
-                    if (fragmentView != null) {
-                        fragmentView.invalidate();
-                    }
-                }
-                vq0Var.p();
-                break;
-            default:
-                org.telegram.ui.Components.uq0 uq0Var = (org.telegram.ui.Components.uq0) this.a0;
-                String currentLang = uq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.W, currentLang)) {
-                    this.W = currentLang;
-                    uq0Var.G.T0();
-                    break;
-                }
-                break;
+        arrayList3.clear();
+        arrayList3.addAll(arrayList4);
+        if (f7 >= 0) {
+            int i13 = i(f7);
+            w71Var.e(0.0f, i13, i13);
         }
+        org.telegram.messenger.i0.r(vv0Var);
+        org.telegram.messenger.i0.h3(vv0Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.w71
-    public void y(int i10) {
-        switch (this.V) {
-            case 2:
-                org.telegram.ui.Components.uq0 uq0Var = (org.telegram.ui.Components.uq0) this.a0;
-                String currentLang = uq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.W, currentLang)) {
-                    this.W = currentLang;
-                    uq0Var.G.T0();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.p71
+    public final boolean c(int i10) {
+        if (i10 == 0) {
+            return false;
         }
+        return (this.a && i10 == e() - 1) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.w71
-    public void z(int i10, boolean z10) {
-        switch (this.V) {
-            case 0:
-                org.telegram.ui.Components.yq0 yq0Var = (org.telegram.ui.Components.yq0) this.W;
-                int i11 = ((org.telegram.ui.Components.zq0) this.a0).b.b0.get(i10, -1);
-                org.telegram.ui.Components.zt0 zt0Var = yq0Var.d;
-                if (i11 > 0) {
-                    org.telegram.ui.Components.zt0.s(zt0Var, zt0Var.s1(i11).a, z10);
-                    break;
-                } else {
-                    org.telegram.ui.Components.zt0.s(zt0Var, 8, z10);
-                    break;
-                }
-            default:
-                super.z(i10, z10);
-                break;
+    @Override // org.telegram.ui.Components.p71
+    public final View d(int i10) {
+        if (i10 == -1) {
+            return null;
         }
+        return new View(this.b.getContext());
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xy0(org.telegram.ui.Components.uq0 uq0Var, Context context) {
-        super(context, null);
-        this.V = 2;
-        this.a0 = uq0Var;
+    @Override // org.telegram.ui.Components.p71
+    public final int e() {
+        return this.b.c.h.size() + 1 + (this.a ? 1 : 0);
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public final int f(int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        if (this.a && i10 == e() - 1) {
+            return -1;
+        }
+        return ((th.y4) this.b.c.h.get(i10 - 1)).a;
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public final CharSequence g(int i10) {
+        if (i10 == 0) {
+            return org.telegram.messenger.dd.L0(2131744804, null);
+        }
+        if (!this.a || i10 != e() - 1) {
+            return ((th.y4) this.b.c.h.get(i10 - 1)).b;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.L0(2131744825, null));
+        org.telegram.ui.Components.dq dqVar = new org.telegram.ui.Components.dq(R.drawable.poll_add_plus, 0);
+        dqVar.G = 0.8f;
+        spannableStringBuilder.setSpan(dqVar, 0, 1, 33);
+        return spannableStringBuilder;
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public final int h(int i10) {
+        if (this.a && i10 == e() - 1) {
+            return -1;
+        }
+        return i10;
+    }
+
+    public final int i(int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        int c10 = this.b.c.c(i10);
+        if (c10 == -1) {
+            return -1;
+        }
+        return c10 + 1;
+    }
+
+    @Override // org.telegram.ui.Components.p71
+    public final void b(View view, int i10, int i11) {
     }
 }

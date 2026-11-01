@@ -2,9 +2,9 @@ package kg;
 
 import android.content.Context;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.n10;
+import org.telegram.ui.m10;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g extends g2 {
     public final /* synthetic */ int r;
@@ -44,19 +44,19 @@ public final class g extends g2 {
                 f2Var3.c();
                 break;
             case 2:
-                n10 n10Var = new n10(50);
-                this.a = n10Var;
-                n10Var.O = 100;
-                n10Var.M = false;
-                n10Var.G = false;
-                n10Var.K = true;
-                n10Var.H = true;
-                n10Var.J = false;
-                n10Var.r = 4;
-                n10Var.w = 0.98f;
-                n10Var.v = 0.98f;
-                n10Var.u = 0.98f;
-                n10Var.c();
+                m10 m10Var = new m10(50);
+                this.a = m10Var;
+                m10Var.O = 100;
+                m10Var.M = false;
+                m10Var.G = false;
+                m10Var.K = true;
+                m10Var.H = true;
+                m10Var.J = false;
+                m10Var.r = 4;
+                m10Var.w = 0.98f;
+                m10Var.v = 0.98f;
+                m10Var.u = 0.98f;
+                m10Var.c();
                 break;
             case 3:
                 f2 f2Var4 = this.a;

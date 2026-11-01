@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class w3 {
     public static boolean A(int i10, TLRPC.Chat chat, int i11) {
@@ -136,7 +136,7 @@ public abstract class w3 {
         if (chat == null || chat.linked_monoforum_id == 0) {
             return null;
         }
-        return chat.monoforum ? vp.r1(i10).L0(Long.valueOf(chat.linked_monoforum_id)) : chat;
+        return chat.monoforum ? wp.r1(i10).L0(Long.valueOf(chat.linked_monoforum_id)) : chat;
     }
 
     public static int F(TLRPC.Chat chat) {
@@ -219,7 +219,7 @@ public abstract class w3 {
     }
 
     public static String L(int i10, TLRPC.Chat chat) {
-        return i10 == 23 ? (chat == null || P(i10, chat)) ? cd.L0(2131749554, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachGifRestrictedForever", null, 2131753969, new Object[0]) : cd.a0("AttachGifRestricted", null, 2131753970, cd.v(chat.banned_rights.until_date)) : i10 == 8 ? (chat == null || P(i10, chat)) ? cd.L0(2131749548, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachStickersRestrictedForever", null, 2131753934, new Object[0]) : cd.a0("AttachStickersRestricted", null, 2131753935, cd.v(chat.banned_rights.until_date)) : i10 == 16 ? (chat == null || P(i10, chat)) ? cd.L0(2131749551, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachPhotoRestrictedForever", null, 2131753945, new Object[0]) : cd.a0("AttachPhotoRestricted", null, 2131753946, cd.v(chat.banned_rights.until_date)) : i10 == 17 ? (chat == null || P(i10, chat)) ? cd.L0(2131749547, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachVideoRestrictedForever", null, 2131753930, new Object[0]) : cd.a0("AttachVideoRestricted", null, 2131753931, cd.v(chat.banned_rights.until_date)) : i10 == 19 ? (chat == null || P(i10, chat)) ? cd.L0(2131749556, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachDocumentsRestrictedForever", null, 2131753973, new Object[0]) : cd.a0("AttachDocumentsRestricted", null, 2131753974, cd.v(chat.banned_rights.until_date)) : i10 == 7 ? (chat == null || P(i10, chat)) ? cd.L0(2131749552, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachMediaRestrictedForever", null, 2131753955, new Object[0]) : cd.a0("AttachMediaRestricted", null, 2131753956, cd.v(chat.banned_rights.until_date)) : i10 == 18 ? (chat == null || P(i10, chat)) ? cd.L0(2131749557, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachAudioRestrictedForever", null, 2131753980, new Object[0]) : cd.a0("AttachAudioRestricted", null, 2131753981, cd.v(chat.banned_rights.until_date)) : i10 == 22 ? (chat == null || P(i10, chat)) ? cd.L0(2131749550, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachPlainRestrictedForever", null, 2131753943, new Object[0]) : cd.a0("AttachPlainRestricted", null, 2131753944, cd.v(chat.banned_rights.until_date)) : i10 == 21 ? (chat == null || P(i10, chat)) ? cd.L0(2131749549, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachRoundRestrictedForever", null, 2131753938, new Object[0]) : cd.a0("AttachRoundRestricted", null, 2131753939, cd.v(chat.banned_rights.until_date)) : i10 == 20 ? (chat == null || P(i10, chat)) ? cd.L0(2131749546, null) : i0.D1(chat.banned_rights) ? cd.a0("AttachVoiceRestrictedForever", null, 2131753927, new Object[0]) : cd.a0("AttachVoiceRestricted", null, 2131753928, cd.v(chat.banned_rights.until_date)) : "";
+        return i10 == 23 ? (chat == null || P(i10, chat)) ? dd.L0(2131749554, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachGifRestrictedForever", null, 2131753969, new Object[0]) : dd.a0("AttachGifRestricted", null, 2131753970, dd.v(chat.banned_rights.until_date)) : i10 == 8 ? (chat == null || P(i10, chat)) ? dd.L0(2131749548, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachStickersRestrictedForever", null, 2131753934, new Object[0]) : dd.a0("AttachStickersRestricted", null, 2131753935, dd.v(chat.banned_rights.until_date)) : i10 == 16 ? (chat == null || P(i10, chat)) ? dd.L0(2131749551, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachPhotoRestrictedForever", null, 2131753945, new Object[0]) : dd.a0("AttachPhotoRestricted", null, 2131753946, dd.v(chat.banned_rights.until_date)) : i10 == 17 ? (chat == null || P(i10, chat)) ? dd.L0(2131749547, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachVideoRestrictedForever", null, 2131753930, new Object[0]) : dd.a0("AttachVideoRestricted", null, 2131753931, dd.v(chat.banned_rights.until_date)) : i10 == 19 ? (chat == null || P(i10, chat)) ? dd.L0(2131749556, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachDocumentsRestrictedForever", null, 2131753973, new Object[0]) : dd.a0("AttachDocumentsRestricted", null, 2131753974, dd.v(chat.banned_rights.until_date)) : i10 == 7 ? (chat == null || P(i10, chat)) ? dd.L0(2131749552, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachMediaRestrictedForever", null, 2131753955, new Object[0]) : dd.a0("AttachMediaRestricted", null, 2131753956, dd.v(chat.banned_rights.until_date)) : i10 == 18 ? (chat == null || P(i10, chat)) ? dd.L0(2131749557, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachAudioRestrictedForever", null, 2131753980, new Object[0]) : dd.a0("AttachAudioRestricted", null, 2131753981, dd.v(chat.banned_rights.until_date)) : i10 == 22 ? (chat == null || P(i10, chat)) ? dd.L0(2131749550, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachPlainRestrictedForever", null, 2131753943, new Object[0]) : dd.a0("AttachPlainRestricted", null, 2131753944, dd.v(chat.banned_rights.until_date)) : i10 == 21 ? (chat == null || P(i10, chat)) ? dd.L0(2131749549, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachRoundRestrictedForever", null, 2131753938, new Object[0]) : dd.a0("AttachRoundRestricted", null, 2131753939, dd.v(chat.banned_rights.until_date)) : i10 == 20 ? (chat == null || P(i10, chat)) ? dd.L0(2131749546, null) : i0.D1(chat.banned_rights) ? dd.a0("AttachVoiceRestrictedForever", null, 2131753927, new Object[0]) : dd.a0("AttachVoiceRestricted", null, 2131753928, dd.v(chat.banned_rights.until_date)) : "";
     }
 
     public static long M(TLRPC.Chat chat, TLRPC.ChatFull chatFull, boolean z10) {
@@ -238,7 +238,7 @@ public abstract class w3 {
             return z10 ? -j12 : j12;
         }
         if (chat == null || !V(chat) || chat.signatures) {
-            return d20.i(d20.s0).e();
+            return e20.i(e20.s0).e();
         }
         long j13 = chat.id;
         return z10 ? -j13 : j13;
@@ -292,7 +292,7 @@ public abstract class w3 {
     }
 
     public static boolean S(int i10, long j10) {
-        return T(vp.r1(i10).L0(Long.valueOf(j10)));
+        return T(wp.r1(i10).L0(Long.valueOf(j10)));
     }
 
     public static boolean T(TLRPC.Chat chat) {
@@ -300,7 +300,7 @@ public abstract class w3 {
     }
 
     public static boolean U(int i10, long j10) {
-        return V(vp.r1(i10).L0(Long.valueOf(j10)));
+        return V(wp.r1(i10).L0(Long.valueOf(j10)));
     }
 
     public static boolean V(TLRPC.Chat chat) {
@@ -316,7 +316,7 @@ public abstract class w3 {
 
     public static boolean X(int i10, TLRPC.Chat chat) {
         TLRPC.Chat L0;
-        return (chat == null || chat.linked_community_id == 0 || (L0 = vp.r1(i10).L0(Long.valueOf(chat.linked_community_id))) == null || !L0.collapsed_in_dialogs) ? false : true;
+        return (chat == null || chat.linked_community_id == 0 || (L0 = wp.r1(i10).L0(Long.valueOf(chat.linked_community_id))) == null || !L0.collapsed_in_dialogs) ? false : true;
     }
 
     public static boolean Y(TLRPC.Chat chat) {
@@ -324,14 +324,14 @@ public abstract class w3 {
     }
 
     public static boolean Z(int i10, long j10) {
-        vp r12 = vp.r1(i10);
+        wp r12 = wp.r1(i10);
         TLRPC.Chat L0 = r12.L0(Long.valueOf(j10));
         TLRPC.ChatFull M0 = r12.M0(j10);
         return (!n0(L0) || M0 == null || M0.linked_chat_id == 0) ? false : true;
     }
 
     public static boolean a(TLRPC.Chat chat) {
-        if (tz.n) {
+        if (uz.n) {
             return true;
         }
         return chat != null && chat.forum_tabs;
@@ -353,7 +353,7 @@ public abstract class w3 {
     }
 
     public static boolean b0(int i10, long j10) {
-        TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-j10));
+        TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-j10));
         if (L0 != null) {
             return L0.forum;
         }
@@ -373,7 +373,7 @@ public abstract class w3 {
     }
 
     public static boolean d0(int i10, long j10) {
-        return j10 > 0 ? f0(i10, vp.r1(i10).Z1(Long.valueOf(j10))) : e0(i10, vp.r1(i10).L0(Long.valueOf(-j10)));
+        return j10 > 0 ? f0(i10, wp.r1(i10).Z1(Long.valueOf(j10))) : e0(i10, wp.r1(i10).L0(Long.valueOf(-j10)));
     }
 
     public static boolean e(int i10, TLRPC.Chat chat, TLRPC.TL_forumTopic tL_forumTopic) {
@@ -383,8 +383,8 @@ public abstract class w3 {
             if (!w(13, chat)) {
                 if (q0(i10, tL_forumTopic) && (message = tL_forumTopic.topMessage) != null && (message2 = tL_forumTopic.topicStartMessage) != null) {
                     int i11 = message.id - message2.id;
-                    ArrayList<jj> arrayList = tL_forumTopic.groupedMessages;
-                    if (i11 > Math.max(1, arrayList == null ? 0 : arrayList.size()) || !jj.v5(tL_forumTopic.from_id, tL_forumTopic.topMessage.from_id)) {
+                    ArrayList<kj> arrayList = tL_forumTopic.groupedMessages;
+                    if (i11 > Math.max(1, arrayList == null ? 0 : arrayList.size()) || !kj.v5(tL_forumTopic.from_id, tL_forumTopic.topMessage.from_id)) {
                     }
                 }
             }
@@ -412,7 +412,7 @@ public abstract class w3 {
     public static boolean g0(long j10, int i10, long j11) {
         TLRPC.ChatFull M0;
         ArrayList<TL_communities.CommunityPeer> arrayList;
-        if (j10 != 0 && j11 != 0 && (M0 = vp.r1(i10).M0(j10)) != null && (arrayList = M0.linked_peers) != null) {
+        if (j10 != 0 && j11 != 0 && (M0 = wp.r1(i10).M0(j10)) != null && (arrayList = M0.linked_peers) != null) {
             int size = arrayList.size();
             int i11 = 0;
             while (i11 < size) {
@@ -450,7 +450,7 @@ public abstract class w3 {
 
     public static boolean h0(TLRPC.Chat chat) {
         if (chat != null) {
-            return i0(vp.r1(d20.s0).M0(chat.id));
+            return i0(wp.r1(e20.s0).M0(chat.id));
         }
         return false;
     }
@@ -516,7 +516,7 @@ public abstract class w3 {
     }
 
     public static boolean m0(int i10, long j10) {
-        TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(j10));
+        TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(j10));
         return T(L0) && L0.megagroup;
     }
 
@@ -542,7 +542,7 @@ public abstract class w3 {
     }
 
     public static boolean o0(int i10, long j10) {
-        TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-j10));
+        TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-j10));
         if (L0 != null) {
             return L0.monoforum;
         }
@@ -575,7 +575,7 @@ public abstract class w3 {
             return true;
         }
         TLRPC.Peer peer = tL_forumTopic.from_id;
-        return (peer instanceof TLRPC.TL_peerUser) && peer.user_id == d20.i(i10).n;
+        return (peer instanceof TLRPC.TL_peerUser) && peer.user_id == e20.i(i10).n;
     }
 
     public static boolean r(TLRPC.Chat chat) {
@@ -601,7 +601,7 @@ public abstract class w3 {
 
     public static boolean s0(TLRPC.Chat chat) {
         TLRPC.ChatFull M0;
-        return (chat == null || (M0 = vp.r1(d20.s0).M0(chat.id)) == null || M0.boosts_unrestrict <= 0) ? false : true;
+        return (chat == null || (M0 = wp.r1(e20.s0).M0(chat.id)) == null || M0.boosts_unrestrict <= 0) ? false : true;
     }
 
     public static boolean t(TLRPC.Chat chat) {
@@ -622,11 +622,9 @@ public abstract class w3 {
         return w(17, chat);
     }
 
-    public static boolean u0(TLRPC.Chat chat) {
-        if (chat != null) {
-            return (chat.forum && chat.forum_sidebar) || chat.monoforum;
-        }
-        return false;
+    public static boolean u0(int i10, TLRPC.User user) {
+        TLRPC.Chat L0;
+        return (user == null || user.linked_community_id == 0 || (L0 = wp.r1(i10).L0(Long.valueOf(user.linked_community_id))) == null || !L0.collapsed_in_dialogs) ? false : true;
     }
 
     public static boolean v(TLRPC.Chat chat) {
@@ -636,9 +634,20 @@ public abstract class w3 {
         return w(20, chat);
     }
 
-    public static boolean v0(int i10, TLRPC.User user) {
-        TLRPC.Chat L0;
-        return (user == null || user.linked_community_id == 0 || (L0 = vp.r1(i10).L0(Long.valueOf(user.linked_community_id))) == null || !L0.collapsed_in_dialogs) ? false : true;
+    public static boolean v0(TLRPC.ChatFull chatFull, String str) {
+        TLRPC.ChatReactions chatReactions = chatFull.available_reactions;
+        if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
+            return true;
+        }
+        if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
+            TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
+            for (int i10 = 0; i10 < tL_chatReactionsSome.reactions.size(); i10++) {
+                if ((tL_chatReactionsSome.reactions.get(i10) instanceof TLRPC.TL_reactionEmoji) && TextUtils.equals(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i10)).emoticon, str)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static boolean w(int i10, TLRPC.Chat chat) {
@@ -683,22 +692,6 @@ public abstract class w3 {
             return false;
         }
         return true;
-    }
-
-    public static boolean w0(TLRPC.ChatFull chatFull, String str) {
-        TLRPC.ChatReactions chatReactions = chatFull.available_reactions;
-        if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-            return true;
-        }
-        if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
-            TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
-            for (int i10 = 0; i10 < tL_chatReactionsSome.reactions.size(); i10++) {
-                if ((tL_chatReactionsSome.reactions.get(i10) instanceof TLRPC.TL_reactionEmoji) && TextUtils.equals(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i10)).emoticon, str)) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x0050  */
@@ -857,6 +850,6 @@ public abstract class w3 {
     }
 
     public static boolean z(int i10, int i11, long j10) {
-        return y(i11, E(i10, vp.r1(i10).L0(Long.valueOf(-j10))));
+        return y(i11, E(i10, wp.r1(i10).L0(Long.valueOf(-j10))));
     }
 }

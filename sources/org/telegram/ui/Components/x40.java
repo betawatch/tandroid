@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLObject;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x40 implements Runnable {
     public org.telegram.messenger.s5 B0;
@@ -62,7 +62,7 @@ public final class x40 implements Runnable {
     public volatile int X;
     public volatile u40 Y;
     public long Z;
-    public org.telegram.messenger.pe a;
+    public org.telegram.messenger.qe a;
     public boolean a0;
     public File b;
     public long b0;
@@ -166,7 +166,7 @@ public final class x40 implements Runnable {
             mediaFormat.setString("mime", "audio/mp4a-latm");
             mediaFormat.setInteger("sample-rate", 48000);
             mediaFormat.setInteger("channel-count", 1);
-            mediaFormat.setInteger("bitrate", org.telegram.messenger.vp.r1(x40Var.H0.e).x3 * 1024);
+            mediaFormat.setInteger("bitrate", org.telegram.messenger.wp.r1(x40Var.H0.e).x3 * 1024);
             mediaFormat.setInteger("max-input-size", 20480);
             MediaCodec createEncoderByType = MediaCodec.createEncoderByType("audio/mp4a-latm");
             x40Var.F = createEncoderByType;
@@ -183,9 +183,9 @@ public final class x40 implements Runnable {
             x40Var.r = x40Var.E.createInputSurface();
             x40Var.E.start();
             if (!z10) {
-                org.telegram.messenger.pe peVar = x40Var.a;
-                ThreadLocal threadLocal = org.telegram.messenger.hc.I;
-                boolean z11 = !TextUtils.isEmpty(org.telegram.messenger.tz.h0) && peVar.getAbsolutePath().startsWith(org.telegram.messenger.tz.h0);
+                org.telegram.messenger.qe qeVar = x40Var.a;
+                ThreadLocal threadLocal = org.telegram.messenger.ic.I;
+                boolean z11 = !TextUtils.isEmpty(org.telegram.messenger.uz.h0) && qeVar.getAbsolutePath().startsWith(org.telegram.messenger.uz.h0);
                 x40Var.b = x40Var.a;
                 if (z11) {
                     try {
@@ -208,7 +208,7 @@ public final class x40 implements Runnable {
                 MP4Builder createMovie = new MP4Builder().createMovie(mp4Movie, x40Var.H0.Q, false);
                 x40Var.K = createMovie;
                 e50 e50Var = x40Var.H0;
-                boolean j11 = org.telegram.messenger.tz.j();
+                boolean j11 = org.telegram.messenger.uz.j();
                 e50Var.Z0 = j11;
                 createMovie.setAllowSyncFiles(j11);
             }
@@ -258,7 +258,7 @@ public final class x40 implements Runnable {
             x40Var.x0 = new h40(x40Var.d, x40Var.e);
             e50 e50Var2 = x40Var.H0;
             Size size = e50Var2.m0[0];
-            String str = (org.telegram.messenger.tz.o() != 0 && e50.l() && (size == null || ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f >= ((float) org.telegram.messenger.vp.r1(e50Var2.e).v3))) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 c_textureSize = preview;\n   vec2 c_onePixel = (1.0 / c_textureSize);\n   vec2 uv = vTextureCoord;\n   vec2 pixel = uv * c_textureSize + 0.5;\n   vec2 frac = fract(pixel);\n   pixel = (floor(pixel) / c_textureSize) - vec2(c_onePixel);\n   vec4 tl = texture2D(sTexture, pixel + vec2(0.0         , 0.0));\n   vec4 tr = texture2D(sTexture, pixel + vec2(c_onePixel.x, 0.0));\n   vec4 bl = texture2D(sTexture, pixel + vec2(0.0         , c_onePixel.y));\n   vec4 br = texture2D(sTexture, pixel + vec2(c_onePixel.x, c_onePixel.y));\n   vec4 x1 = mix(tl, tr, frac.x);\n   vec4 x2 = mix(bl, br, frac.x);\n   gl_FragColor = mix(x1, x2, frac.y) * alpha;\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   gl_FragColor = vec4(textColor.rgb * alpha, alpha);\n}\n";
+            String str = (org.telegram.messenger.uz.o() != 0 && e50.l() && (size == null || ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f >= ((float) org.telegram.messenger.wp.r1(e50Var2.e).v3))) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 c_textureSize = preview;\n   vec2 c_onePixel = (1.0 / c_textureSize);\n   vec2 uv = vTextureCoord;\n   vec2 pixel = uv * c_textureSize + 0.5;\n   vec2 frac = fract(pixel);\n   pixel = (floor(pixel) / c_textureSize) - vec2(c_onePixel);\n   vec4 tl = texture2D(sTexture, pixel + vec2(0.0         , 0.0));\n   vec4 tr = texture2D(sTexture, pixel + vec2(c_onePixel.x, 0.0));\n   vec4 bl = texture2D(sTexture, pixel + vec2(0.0         , c_onePixel.y));\n   vec4 br = texture2D(sTexture, pixel + vec2(c_onePixel.x, c_onePixel.y));\n   vec4 x1 = mix(tl, tr, frac.x);\n   vec4 x2 = mix(bl, br, frac.x);\n   gl_FragColor = mix(x1, x2, frac.y) * alpha;\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   gl_FragColor = vec4(textColor.rgb * alpha, alpha);\n}\n";
             int k10 = e50.k(x40Var.H0, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
             int k11 = e50.k(x40Var.H0, 35632, str);
             if (k10 == 0 || k11 == 0) {
@@ -292,8 +292,8 @@ public final class x40 implements Runnable {
     public static void b(x40 x40Var, int i10, u40 u40Var) {
         boolean z10;
         org.telegram.messenger.s5 s5Var;
-        org.telegram.messenger.x20 x20Var;
-        if (i10 != 1 || (((x20Var = x40Var.H0.R) != null && x20Var.c()) || x40Var.H0.h.c())) {
+        org.telegram.messenger.y20 y20Var;
+        if (i10 != 1 || (((y20Var = x40Var.H0.R) != null && y20Var.c()) || x40Var.H0.h.c())) {
             z10 = true;
         } else {
             if (!x40Var.G0) {
@@ -423,11 +423,11 @@ public final class x40 implements Runnable {
 
     public static void g(boolean z10) {
         AudioManager audioManager = (AudioManager) org.telegram.messenger.w0.b.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (org.telegram.messenger.tz.u0 && !w7.c6.d("android.permission.BLUETOOTH_CONNECT")) {
-            org.telegram.messenger.tz.u0 = false;
-            org.telegram.messenger.tz.y();
+        if (org.telegram.messenger.uz.u0 && !w7.c6.d("android.permission.BLUETOOTH_CONNECT")) {
+            org.telegram.messenger.uz.u0 = false;
+            org.telegram.messenger.uz.y();
         }
-        if (!(audioManager.isBluetoothScoAvailableOffCall() && org.telegram.messenger.tz.u0) && z10) {
+        if (!(audioManager.isBluetoothScoAvailableOffCall() && org.telegram.messenger.uz.u0) && z10) {
             return;
         }
         BluetoothAdapter defaultAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -470,17 +470,17 @@ public final class x40 implements Runnable {
         }
     }
 
-    public final void c(org.telegram.messenger.pe peVar, long j10, boolean z10) {
+    public final void c(org.telegram.messenger.qe qeVar, long j10, boolean z10) {
         e50 e50Var = this.H0;
         int i10 = e50Var.e;
         if (!this.h) {
-            org.telegram.messenger.b8.G(i10).n(peVar.toString(), e50Var.Q, j10, z10 ? peVar.length() : 0L, null);
+            org.telegram.messenger.b8.G(i10).n(qeVar.toString(), e50Var.Q, j10, z10 ? qeVar.length() : 0L, null);
             return;
         }
-        org.telegram.messenger.b8.G(i10).h0(peVar.toString(), e50Var.Q, false, 1L, 33554432, false);
+        org.telegram.messenger.b8.G(i10).h0(qeVar.toString(), e50Var.Q, false, 1L, 33554432, false);
         this.h = false;
         if (z10) {
-            org.telegram.messenger.b8.G(i10).n(peVar.toString(), e50Var.Q, j10, z10 ? peVar.length() : 0L, null);
+            org.telegram.messenger.b8.G(i10).n(qeVar.toString(), e50Var.Q, j10, z10 ? qeVar.length() : 0L, null);
         }
     }
 
@@ -686,11 +686,11 @@ public final class x40 implements Runnable {
     }
 
     public final void h(File file) {
-        u61 u61Var = new u61();
+        v61 v61Var = new v61();
         e50 e50Var = this.H0;
-        e50Var.S = u61Var;
-        u61Var.J = new n2.u(this, 11);
-        u61Var.A0(e50Var.p0);
+        e50Var.S = v61Var;
+        v61Var.J = new n2.u(this, 11);
+        v61Var.A0(e50Var.p0);
         e50Var.S.j0(Uri.fromFile(file), "other");
         e50Var.S.h0();
         e50Var.S.t0(true);
@@ -724,7 +724,7 @@ public final class x40 implements Runnable {
 
     public final void i(int i10, u40 u40Var) {
         this.T.sendMessage(this.T.obtainMessage(1, i10, 0, u40Var));
-        org.telegram.messenger.i0.g3(new org.telegram.messenger.rz(23));
+        org.telegram.messenger.i0.g3(new org.telegram.messenger.sz(23));
     }
 
     @Override // java.lang.Runnable

@@ -1,52 +1,35 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.ArrayList;
+import android.graphics.Outline;
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class c21 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ i31 c;
+public final class c21 extends ViewOutlineProvider {
+    public final Rect a = new Rect();
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ g31 c;
 
-    public /* synthetic */ c21(i31 i31Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = i31Var;
-        this.b = z10;
+    public c21(g31 g31Var, Integer num) {
+        this.c = g31Var;
+        this.b = num;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                i31 i31Var = this.c;
-                v11 v11Var = i31Var.i0;
-                boolean z10 = this.b;
-                v11Var.setVisibility(z10 ? 0 : 8);
-                i31Var.h0.setVisibility(z10 ? 8 : 0);
-                i31Var.F1 = null;
-                if (!z10 && (arrayList2 = i31Var.B1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = i31Var.E1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    i31Var.q0.E(false);
-                }
-                if (!z10 && (arrayList = i31Var.C1) != null) {
-                    arrayList.clear();
-                    break;
-                }
-                break;
-            default:
-                i31 i31Var2 = this.c;
-                i31Var2.j0.setVisibility((this.b && i31Var2.i0.getVisibility() == 0) ? 0 : 8);
-                i31Var2.I1 = null;
-                break;
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        float width = (this.b == null ? view.getWidth() / 2.0f : r0.intValue()) + org.telegram.messenger.i0.L(20.0f);
+        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
+        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
+        g31 g31Var = this.c;
+        boolean n10 = g31Var.n();
+        Rect rect = this.a;
+        if (n10) {
+            rect.set((int) ((width - (g31Var.a1 * width)) + view.getPaddingLeft()), (int) c3.i0.z(1.0f, g31Var.b1, org.telegram.messenger.i0.L(g31Var.d1), c3.i0.z(1.0f, g31Var.b1, height, view.getPaddingTop())), (int) (((width2 - width) * g31Var.a1) + view.getPaddingLeft() + width), (int) c3.i0.z(1.0f, g31Var.b1, org.telegram.messenger.i0.L(g31Var.d1), view.getPaddingTop() + height));
+        } else {
+            rect.set((int) ((width - (g31Var.a1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * g31Var.a1) + view.getPaddingLeft() + width), (int) ((height * g31Var.b1) + view.getPaddingTop()));
         }
+        outline.setRoundRect(rect, org.telegram.messenger.i0.L(12.0f));
     }
 }

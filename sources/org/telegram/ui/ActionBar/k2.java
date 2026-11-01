@@ -27,30 +27,30 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.nd;
-import org.telegram.messenger.ot;
-import org.telegram.messenger.ow;
-import org.telegram.messenger.qz;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.x9;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.is;
+import org.telegram.messenger.od;
+import org.telegram.messenger.pt;
+import org.telegram.messenger.pw;
+import org.telegram.messenger.rz;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.y9;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.in0;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.jn0;
 import org.telegram.ui.Components.ua;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.k01;
-import org.telegram.ui.my;
-import org.telegram.ui.tj0;
+import org.telegram.ui.ly;
+import org.telegram.ui.rj0;
 import th.n7;
 import th.o7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class k2 {
     protected l actionBar;
@@ -79,7 +79,7 @@ public abstract class k2 {
     private s5 simpleMenuOverlay;
     private k2 simpleMenuOverlayHost;
     public Dialog visibleDialog;
-    protected int currentAccount = d20.s0;
+    protected int currentAccount = e20.s0;
     protected boolean hasOwnBackground = false;
     protected boolean isPaused = true;
     protected boolean inTransitionAnimation = false;
@@ -94,7 +94,7 @@ public abstract class k2 {
     }
 
     public static boolean hasFullyVisibleSheets(k2 k2Var) {
-        my w9;
+        ly w9;
         if (k2Var == null) {
             return false;
         }
@@ -105,7 +105,7 @@ public abstract class k2 {
     }
 
     public static boolean hasSheets(k2 k2Var) {
-        my w9;
+        ly w9;
         if (k2Var == null) {
             return false;
         }
@@ -115,7 +115,7 @@ public abstract class k2 {
         return (k2Var.getParentLayout() instanceof ActionBarLayout) && (w9 = ((ActionBarLayout) k2Var.getParentLayout()).w()) != null && w9.hasShownSheet();
     }
 
-    public boolean W(MotionEvent motionEvent, boolean z10) {
+    public boolean X(MotionEvent motionEvent, boolean z10) {
         return isSwipeBackEnabled(motionEvent);
     }
 
@@ -126,7 +126,7 @@ public abstract class k2 {
         o7 lastStoryViewer = getLastStoryViewer();
         if (lastStoryViewer != null) {
             lastStoryViewer.v0 = g2Var;
-            g2Var.o(new th.i2(lastStoryViewer, 3));
+            g2Var.n(new th.i2(lastStoryViewer, 3));
         }
         this.sheetsStack.add(g2Var);
         updateSheetsVisibility();
@@ -341,7 +341,7 @@ public abstract class k2 {
         } else if (!this.inPreviewMode || (j2Var = this.previewDelegate) == null) {
             finishFragment(true);
         } else {
-            ((k01) ((tj0) j2Var).b).a();
+            ((k01) ((rj0) j2Var).b).a();
         }
     }
 
@@ -463,8 +463,8 @@ public abstract class k2 {
         return this.fragmentView;
     }
 
-    public x9 getGiftAuctionsController() {
-        return x9.c(getAccountInstance().a);
+    public y9 getGiftAuctionsController() {
+        return y9.c(getAccountInstance().a);
     }
 
     public boolean getInPassivePreviewMode() {
@@ -514,28 +514,28 @@ public abstract class k2 {
         return null;
     }
 
-    public tk0 getListViewForSimpleGlass() {
+    public uk0 getListViewForSimpleGlass() {
         return null;
     }
 
-    public nd getLocationController() {
-        return nd.f(getAccountInstance().a);
+    public od getLocationController() {
+        return od.f(getAccountInstance().a);
     }
 
     public MediaController getMediaController() {
         return MediaController.B();
     }
 
-    public ui getMediaDataController() {
-        return ui.b0(getAccountInstance().a);
+    public vi getMediaDataController() {
+        return vi.b0(getAccountInstance().a);
     }
 
-    public vp getMessagesController() {
-        return vp.r1(getAccountInstance().a);
+    public wp getMessagesController() {
+        return wp.r1(getAccountInstance().a);
     }
 
-    public hs getMessagesStorage() {
-        return hs.a0(getAccountInstance().a);
+    public is getMessagesStorage() {
+        return is.a0(getAccountInstance().a);
     }
 
     public int getNavigationBarColor() {
@@ -551,12 +551,12 @@ public abstract class k2 {
         return w02;
     }
 
-    public zs getNotificationCenter() {
-        return zs.f(getAccountInstance().a);
+    public at getNotificationCenter() {
+        return at.f(getAccountInstance().a);
     }
 
-    public ot getNotificationsController() {
-        return ot.t(getAccountInstance().a);
+    public pt getNotificationsController() {
+        return pt.t(getAccountInstance().a);
     }
 
     public SharedPreferences getNotificationsSettings() {
@@ -600,16 +600,16 @@ public abstract class k2 {
         return this.resourceProvider;
     }
 
-    public in0 getScrollViewForSimpleGlass() {
+    public jn0 getScrollViewForSimpleGlass() {
         return null;
     }
 
-    public ow getSecretChatHelper() {
-        return ow.i(getAccountInstance().a);
+    public pw getSecretChatHelper() {
+        return pw.i(getAccountInstance().a);
     }
 
-    public qz getSendMessagesHelper() {
-        return qz.C(getAccountInstance().a);
+    public rz getSendMessagesHelper() {
+        return rz.C(getAccountInstance().a);
     }
 
     public i5 getSimpleActionBar() {
@@ -663,8 +663,8 @@ public abstract class k2 {
         return d != null ? d : t6.V0(str);
     }
 
-    public d20 getUserConfig() {
-        return d20.i(getAccountInstance().a);
+    public e20 getUserConfig() {
+        return e20.i(getAccountInstance().a);
     }
 
     public Dialog getVisibleDialog() {
@@ -1057,11 +1057,11 @@ public abstract class k2 {
 
     public View performCreateView(Context context) {
         View createView = createView(context);
-        tk0 listViewForSimpleGlass = getListViewForSimpleGlass();
-        in0 scrollViewForSimpleGlass = getScrollViewForSimpleGlass();
-        tk0 tk0Var = listViewForSimpleGlass != null ? listViewForSimpleGlass : scrollViewForSimpleGlass;
-        this.listViewForSimpleGlass = tk0Var;
-        if (tk0Var != null && (createView instanceof FrameLayout)) {
+        uk0 listViewForSimpleGlass = getListViewForSimpleGlass();
+        jn0 scrollViewForSimpleGlass = getScrollViewForSimpleGlass();
+        uk0 uk0Var = listViewForSimpleGlass != null ? listViewForSimpleGlass : scrollViewForSimpleGlass;
+        this.listViewForSimpleGlass = uk0Var;
+        if (uk0Var != null && (createView instanceof FrameLayout)) {
             ei.b baseSimpleGlass = getBaseSimpleGlass();
             View view = this.simpleActionBar;
             if (view == null) {
@@ -1072,9 +1072,9 @@ public abstract class k2 {
             } else if (scrollViewForSimpleGlass != null) {
                 FrameLayout frameLayout = (FrameLayout) createView;
                 p6 p6Var = this.resourceProvider;
-                baseSimpleGlass.k = frameLayout;
-                baseSimpleGlass.l = scrollViewForSimpleGlass;
-                baseSimpleGlass.m = new ei.a(0, scrollViewForSimpleGlass, frameLayout);
+                baseSimpleGlass.l = frameLayout;
+                baseSimpleGlass.m = scrollViewForSimpleGlass;
+                baseSimpleGlass.n = new ei.a(0, scrollViewForSimpleGlass, frameLayout);
                 ei.r rVar = baseSimpleGlass.a;
                 rVar.getClass();
                 scrollViewForSimpleGlass.L.add(new ei.l(rVar, scrollViewForSimpleGlass));
@@ -1279,7 +1279,7 @@ public abstract class k2 {
                 rectF2.set(rectF);
                 rVar.f = true;
             }
-            this.simpleGlass.i = runnable;
+            this.simpleGlass.j = runnable;
         }
     }
 

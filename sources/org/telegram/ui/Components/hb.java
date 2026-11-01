@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class hb extends eb implements org.telegram.messenger.us {
+public final class hb extends eb implements org.telegram.messenger.vs {
     public final fb d;
     public SparseLongArray e;
     public final org.telegram.ui.ActionBar.k2 f;
@@ -26,14 +26,14 @@ public final class hb extends eb implements org.telegram.messenger.us {
         this.d.setClipToPadding(false);
         this.d.setVisibility(0);
         this.d.setBubbleOffset(-org.telegram.messenger.i0.L(80.0f));
-        this.d.setHint(org.telegram.messenger.cd.L0(2131745892, null));
+        this.d.setHint(org.telegram.messenger.dd.L0(2131745892, null));
         addView(this.d, w7.b6.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
         this.d.p(null, null, true);
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == org.telegram.messenger.zs.k3) {
+        if (i10 == org.telegram.messenger.at.k3) {
             this.e = (SparseLongArray) objArr[0];
         }
     }
@@ -55,13 +55,13 @@ public final class hb extends eb implements org.telegram.messenger.us {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.zs.f(org.telegram.messenger.d20.s0).c(this, org.telegram.messenger.zs.k3);
+        org.telegram.messenger.at.f(org.telegram.messenger.e20.s0).c(this, org.telegram.messenger.at.k3);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.zs.f(org.telegram.messenger.d20.s0).n(this, org.telegram.messenger.zs.k3);
+        org.telegram.messenger.at.f(org.telegram.messenger.e20.s0).n(this, org.telegram.messenger.at.k3);
     }
 
     public void setBulletin(wb wbVar) {

@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class pc extends View {
     public final Paint a;
@@ -45,27 +45,27 @@ public final class pc extends View {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(org.telegram.messenger.kp kpVar) {
+    public final void a(org.telegram.messenger.lp lpVar) {
         org.telegram.ui.ActionBar.p6 p6Var = this.x.a;
         boolean a2 = p6Var != null ? p6Var.a() : org.telegram.ui.ActionBar.t6.I.q();
         Paint paint = this.c;
         Paint paint2 = this.b;
         if (a2) {
-            if (kpVar.g() != kpVar.f()) {
-                if (!(kpVar.i() != kpVar.f())) {
-                    paint2.setColor(kpVar.e(1, p6Var));
-                    paint.setColor(kpVar.e(0, p6Var));
-                    this.d.setColor(kpVar.e(2, p6Var));
-                    this.h = kpVar.g() == kpVar.f();
-                    this.n = kpVar.i() != kpVar.f();
+            if (lpVar.g() != lpVar.f()) {
+                if (!(lpVar.i() != lpVar.f())) {
+                    paint2.setColor(lpVar.e(1, p6Var));
+                    paint.setColor(lpVar.e(0, p6Var));
+                    this.d.setColor(lpVar.e(2, p6Var));
+                    this.h = lpVar.g() == lpVar.f();
+                    this.n = lpVar.i() != lpVar.f();
                 }
             }
         }
-        paint2.setColor(kpVar.e(0, p6Var));
-        paint.setColor(kpVar.e(1, p6Var));
-        this.d.setColor(kpVar.e(2, p6Var));
-        this.h = kpVar.g() == kpVar.f();
-        this.n = kpVar.i() != kpVar.f();
+        paint2.setColor(lpVar.e(0, p6Var));
+        paint.setColor(lpVar.e(1, p6Var));
+        this.d.setColor(lpVar.e(2, p6Var));
+        this.h = lpVar.g() == lpVar.f();
+        this.n = lpVar.i() != lpVar.f();
     }
 
     @Override // android.view.View

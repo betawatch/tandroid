@@ -9,9 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class t3 extends org.telegram.ui.Components.uu0 implements org.telegram.ui.ActionBar.h2, org.telegram.ui.ActionBar.o3 {
+public final class t3 extends org.telegram.ui.Components.vu0 implements org.telegram.ui.ActionBar.h2, org.telegram.ui.ActionBar.o3 {
     public final Paint f0;
     public final Paint g0;
     public final Paint h0;
@@ -46,7 +46,7 @@ public final class t3 extends org.telegram.ui.Components.uu0 implements org.tele
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1 */
     /* JADX WARN: Type inference failed for: r20v3 */
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         int i10;

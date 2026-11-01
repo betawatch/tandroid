@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eg implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -47,19 +47,19 @@ public final /* synthetic */ class eg implements ValueAnimator.AnimatorUpdateLis
                 ((org.telegram.ui.Components.jn) this.c).E.setTranslationY(org.telegram.messenger.i0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 3:
-                ((at0) this.c).R.setTranslationY(org.telegram.messenger.i0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((zs0) this.c).R.setTranslationY(org.telegram.messenger.i0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 4:
-                cz0 cz0Var = (cz0) this.c;
-                cz0Var.getClass();
+                bz0 bz0Var = (bz0) this.c;
+                bz0Var.getClass();
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float T1 = org.telegram.messenger.i0.T1(0.0f, this.b, floatValue3);
-                cz0Var.a.setTranslationX(T1);
-                cz0Var.b.setTranslationX(T1);
-                ImageView imageView = cz0Var.c;
+                bz0Var.a.setTranslationX(T1);
+                bz0Var.b.setTranslationX(T1);
+                ImageView imageView = bz0Var.c;
                 imageView.setTranslationX(T1);
-                org.telegram.ui.Components.ep epVar = cz0Var.f;
-                epVar.setTranslationX((org.telegram.messenger.cd.X ? org.telegram.messenger.i0.L(32.0f) : -org.telegram.messenger.i0.L(32.0f)) + T1);
+                org.telegram.ui.Components.ep epVar = bz0Var.f;
+                epVar.setTranslationX((org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(32.0f) : -org.telegram.messenger.i0.L(32.0f)) + T1);
                 float f7 = (floatValue3 * 0.5f) + 0.5f;
                 epVar.setScaleX(f7);
                 epVar.setScaleY(f7);

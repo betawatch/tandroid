@@ -1,9 +1,9 @@
 package org.webrtc;
 
 import java.nio.ByteBuffer;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public class YuvHelper {
     public static void ABGRToI420(ByteBuffer byteBuffer, int i10, ByteBuffer byteBuffer2, int i11, ByteBuffer byteBuffer3, int i12, ByteBuffer byteBuffer4, int i13, int i14, int i15) {
@@ -38,7 +38,7 @@ public class YuvHelper {
         checkNotNull(byteBuffer2, "srcU");
         checkNotNull(byteBuffer3, "srcV");
         checkNotNull(byteBuffer4, "dst");
-        int i16 = i15 % zs.K2;
+        int i16 = i15 % at.K2;
         int i17 = i16 == 0 ? i13 : i14;
         int i18 = i16 == 0 ? i14 : i13;
         int i19 = (i18 + 1) / 2;

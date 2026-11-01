@@ -1,49 +1,88 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.view.ViewTreeObserver;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.s9;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class z0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ b1 c;
+public final class z0 extends FrameLayout {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public boolean e;
 
-    public z0(b1 b1Var, float f7, float f10) {
-        this.c = b1Var;
-        this.a = f7;
-        this.b = f10;
+    public z0(Context context) {
+        super(context);
+        this.d = 68;
+        this.e = true;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        b1 b1Var = this.c;
-        if (b1Var.P) {
-            b1Var.M = false;
-            b1Var.requestLayout();
-            return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.dispatchTouchEvent(motionEvent);
         }
-        ValueAnimator valueAnimator = b1Var.d0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(b1Var.J, 0.0f);
-        b1Var.d0 = ofFloat;
-        ofFloat.addUpdateListener(b1Var.e0);
-        b1Var.d0.setDuration(300L);
-        b1Var.d0.start();
-        float measuredWidth = this.a - ((b1Var.getMeasuredWidth() - (b1Var.getMeasuredWidth() * 0.23f)) / 2.0f);
-        float measuredHeight = this.b - ((b1Var.getMeasuredHeight() - (b1Var.getMeasuredHeight() * 0.23f)) / 2.0f);
-        b1Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        b1Var.setTranslationX(measuredWidth);
-        b1Var.setTranslationY(measuredHeight);
-        b1Var.setScaleX(0.23f);
-        b1Var.setScaleY(0.23f);
-        b1Var.animate().setListener(null).cancel();
-        b1Var.animate().setListener(new s9(this, 26)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(gr.f).start();
         return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        if (this.e) {
+            int childCount = (int) (((getChildCount() - this.a) / 2.0f) * ((this.c * 2) + this.b));
+            for (int i14 = 0; i14 < getChildCount(); i14++) {
+                View childAt = getChildAt(i14);
+                if (childAt.getVisibility() != 8) {
+                    int i15 = this.c;
+                    childAt.layout(childCount + i15, 0, childAt.getMeasuredWidth() + i15 + childCount, childAt.getMeasuredHeight());
+                    childCount = childAt.getMeasuredWidth() + (this.c * 2) + childCount;
+                }
+            }
+            return;
+        }
+        int measuredWidth = this.a > 0 ? (getMeasuredWidth() - this.b) / (this.a - 1) : 0;
+        int i16 = 0;
+        for (int i17 = 0; i17 < getChildCount(); i17++) {
+            View childAt2 = getChildAt(i17);
+            if (childAt2.getVisibility() != 8) {
+                int i18 = i16 * measuredWidth;
+                childAt2.layout(i18, 0, childAt2.getMeasuredWidth() + i18, childAt2.getMeasuredHeight());
+                i16++;
+            }
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        this.a = 0;
+        for (int i12 = 0; i12 < getChildCount(); i12++) {
+            if (getChildAt(i12).getVisibility() != 8) {
+                this.a++;
+            }
+        }
+        this.b = org.telegram.messenger.i0.L(this.d);
+        this.c = ((size / getChildCount()) - this.b) / 2;
+        int i13 = 0;
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            if (getChildAt(i14).getVisibility() != 8) {
+                getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30), i11);
+                if (getChildAt(i14).getMeasuredHeight() > i13) {
+                    i13 = getChildAt(i14).getMeasuredHeight();
+                }
+            }
+        }
+        setMeasuredDimension(size, Math.max(i13, org.telegram.messenger.i0.L(80.0f)));
+    }
+
+    public void setChildSize(int i10) {
+        this.d = i10;
+    }
+
+    public void setUseStartPadding(boolean z10) {
+        this.e = z10;
     }
 }

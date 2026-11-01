@@ -1,41 +1,55 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class nw extends TLObject {
-    public int a;
-    public TLRPC.TL_decryptedMessageLayer b;
-    public TLRPC.EncryptedFile c;
-    public boolean d;
-    public int e;
+public final /* synthetic */ class nw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pw b;
+    public final /* synthetic */ ArrayList c;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        inputSerializedData.readInt64(z10);
-        this.a = inputSerializedData.readInt32(z10);
-        this.b = TLRPC.TL_decryptedMessageLayer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        if (inputSerializedData.readBool(z10)) {
-            this.c = TLRPC.EncryptedFile.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        this.d = inputSerializedData.readBool(z10);
+    public /* synthetic */ nw(pw pwVar, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = pwVar;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(TLRPC.TL_message_secret_layer72.constructor);
-        outputSerializedData.writeInt64(0L);
-        outputSerializedData.writeInt32(this.a);
-        this.b.serializeToStream(outputSerializedData);
-        outputSerializedData.writeBool(this.c != null);
-        TLRPC.EncryptedFile encryptedFile = this.c;
-        if (encryptedFile != null) {
-            encryptedFile.serializeToStream(outputSerializedData);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                pw pwVar = this.b;
+                pwVar.getClass();
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList = this.c;
+                    if (i10 >= arrayList.size()) {
+                        break;
+                    } else {
+                        kj kjVar = new kj(pwVar.currentAccount, (TLRPC.Message) arrayList.get(i10), false, true);
+                        kjVar.A0 = true;
+                        pwVar.getSendMessagesHelper().k0(0L, kjVar, true);
+                        i10++;
+                    }
+                }
+            default:
+                pw pwVar2 = this.b;
+                pwVar2.getClass();
+                int i11 = 0;
+                while (true) {
+                    ArrayList arrayList2 = this.c;
+                    if (i11 >= arrayList2.size()) {
+                        break;
+                    } else {
+                        kj kjVar2 = (kj) pwVar2.getMessagesController().S.f(((Long) arrayList2.get(i11)).longValue());
+                        if (kjVar2 != null) {
+                            kjVar2.Z = true;
+                        }
+                        i11++;
+                    }
+                }
         }
-        outputSerializedData.writeBool(this.d);
     }
 }

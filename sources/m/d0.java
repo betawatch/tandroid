@@ -8,7 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d0 extends y {
     public final c0 e;
@@ -40,17 +40,17 @@ public final class d0 extends y {
         if (z10 != null) {
             c0Var.setThumb(z10);
         }
-        Drawable w9 = G.w(1);
+        Drawable v = G.v(1);
         Drawable drawable = this.f;
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.f = w9;
-        if (w9 != null) {
-            w9.setCallback(c0Var);
-            w9.setLayoutDirection(c0Var.getLayoutDirection());
-            if (w9.isStateful()) {
-                w9.setState(c0Var.getDrawableState());
+        this.f = v;
+        if (v != null) {
+            v.setCallback(c0Var);
+            v.setLayoutDirection(c0Var.getLayoutDirection());
+            if (v.isStateful()) {
+                v.setState(c0Var.getDrawableState());
             }
             f();
         }
@@ -60,7 +60,7 @@ public final class d0 extends y {
             this.j = true;
         }
         if (typedArray.hasValue(2)) {
-            this.g = G.v(2);
+            this.g = G.u(2);
             this.i = true;
         }
         G.I();

@@ -7,17 +7,17 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class w8 {
     public int a;
@@ -33,14 +33,14 @@ public final class w8 {
     public final ImageReceiver k;
     public final org.telegram.ui.Components.r8 l;
     public final org.telegram.ui.Components.r8 m;
-    public qz0 n;
-    public qz0 o;
+    public rz0 n;
+    public rz0 o;
     public boolean p;
     public final dc q;
     public int r;
     public Drawable s;
     public Drawable t;
-    public qz0 u;
+    public rz0 u;
     public int v;
     public final /* synthetic */ x8 w;
 
@@ -66,12 +66,12 @@ public final class w8 {
         this.i = z10;
         this.j = j10;
         if (j10 >= 0) {
-            TLRPC.User Z1 = vp.r1(y8Var.j1).Z1(Long.valueOf(j10));
-            str = h20.k(Z1);
+            TLRPC.User Z1 = wp.r1(y8Var.j1).Z1(Long.valueOf(j10));
+            str = i20.k(Z1);
             r8Var.r(Z1);
             imageReceiver.i0(Z1, r8Var, null);
         } else {
-            TLRPC.Chat L0 = vp.r1(y8Var.j1).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = wp.r1(y8Var.j1).L0(Long.valueOf(-j10));
             str = L0 == null ? "" : L0.title;
             r8Var.q(L0);
             imageReceiver.i0(L0, r8Var, null);
@@ -81,7 +81,7 @@ public final class w8 {
         imageReceiver.A0 = true;
         r8Var2.g(21);
         r8Var2.h(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.c8, y8Var.i1));
-        this.n = new qz0(str, 12.0f, null);
+        this.n = new rz0(str, 12.0f, null);
     }
 
     public final void a(Canvas canvas) {
@@ -135,7 +135,7 @@ public final class w8 {
                 r8Var.setBounds(L5, L6, L7, L8);
                 r8Var.y = (int) (d * f11 * d10);
                 r8Var.draw(canvas);
-                r8Var.y = zs.e4;
+                r8Var.y = at.e4;
             }
         } else {
             f7 = 40.0f;
@@ -155,11 +155,11 @@ public final class w8 {
             this.f.setLocalMatrix(matrix);
         }
         canvas.drawRoundRect(rectF, rectF.height() / f10, rectF.height() / f10, paint);
-        qz0 qz0Var = this.o;
-        qz0Var.c(L - (qz0Var.c / f10), org.telegram.messenger.i0.L(23.0f) + L2, d, -1, canvas);
-        qz0 qz0Var2 = this.n;
-        qz0Var2.p = width - org.telegram.messenger.i0.L(4.0f);
-        qz0Var2.c(L - (this.n.k() / f10), org.telegram.messenger.i0.L(42.0f) + L2, d, org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.G6, x8Var.w.i1), canvas);
+        rz0 rz0Var = this.o;
+        rz0Var.c(L - (rz0Var.c / f10), org.telegram.messenger.i0.L(23.0f) + L2, d, -1, canvas);
+        rz0 rz0Var2 = this.n;
+        rz0Var2.p = width - org.telegram.messenger.i0.L(4.0f);
+        rz0Var2.c(L - (this.n.k() / f10), org.telegram.messenger.i0.L(42.0f) + L2, d, org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.G6, x8Var.w.i1), canvas);
         if (this.v > 0) {
             int i14 = (int) L;
             int i15 = (int) L2;
@@ -169,8 +169,8 @@ public final class w8 {
             this.s.setAlpha(i13);
             this.t.draw(canvas);
             this.s.draw(canvas);
-            qz0 qz0Var3 = this.u;
-            qz0Var3.c(L - (qz0Var3.c / f10), L2 - org.telegram.messenger.i0.L(27.0f), d, -1, canvas);
+            rz0 rz0Var3 = this.u;
+            rz0Var3.c(L - (rz0Var3.c / f10), L2 - org.telegram.messenger.i0.L(27.0f), d, -1, canvas);
         }
         canvas.restore();
     }
@@ -181,31 +181,31 @@ public final class w8 {
         x8 x8Var = this.w;
         y8 y8Var = x8Var.w;
         if (this.i) {
-            if ((this.p ? 2666000L : this.j == d20.i(y8Var.j1).e() ? 0L : this.j) != j10) {
+            if ((this.p ? 2666000L : this.j == e20.i(y8Var.j1).e() ? 0L : this.j) != j10) {
                 this.p = j10 == 2666000;
                 if (j10 == 0 || j10 == 2666000) {
-                    j10 = d20.i(y8Var.j1).e();
+                    j10 = e20.i(y8Var.j1).e();
                 }
                 this.j = j10;
                 if (this.p) {
-                    str2 = cd.L0(2131745066, null);
+                    str2 = dd.L0(2131745066, null);
                 } else {
                     ImageReceiver imageReceiver = this.k;
                     org.telegram.ui.Components.r8 r8Var = this.l;
                     if (j10 >= 0) {
-                        TLRPC.User Z1 = vp.r1(y8Var.j1).Z1(Long.valueOf(this.j));
-                        str = h20.k(Z1);
+                        TLRPC.User Z1 = wp.r1(y8Var.j1).Z1(Long.valueOf(this.j));
+                        str = i20.k(Z1);
                         r8Var.r(Z1);
                         imageReceiver.i0(Z1, r8Var, null);
                     } else {
-                        TLRPC.Chat L0 = vp.r1(y8Var.j1).L0(Long.valueOf(-this.j));
+                        TLRPC.Chat L0 = wp.r1(y8Var.j1).L0(Long.valueOf(-this.j));
                         str = L0 == null ? "" : L0.title;
                         r8Var.q(L0);
                         imageReceiver.i0(L0, r8Var, null);
                     }
                     str2 = str;
                 }
-                this.n = new qz0(str2, 12.0f, null);
+                this.n = new rz0(str2, 12.0f, null);
                 x8Var.invalidate();
             }
         }

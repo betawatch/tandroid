@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gf0 implements o1.f {
     public final /* synthetic */ int a;
@@ -35,15 +35,15 @@ public final /* synthetic */ class gf0 implements o1.f {
                 }
                 break;
             default:
-                xh.h3 h3Var = (xh.h3) this.c;
-                h3Var.w = null;
+                xh.i3 i3Var = (xh.i3) this.c;
+                i3Var.w = null;
                 float f11 = this.b;
                 if (!z10) {
-                    h3Var.f = f11;
-                    h3Var.c();
+                    i3Var.f = f11;
+                    i3Var.c();
                     break;
                 } else {
-                    h3Var.h = f11;
+                    i3Var.h = f11;
                     break;
                 }
         }

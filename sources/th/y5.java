@@ -4,11 +4,11 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.ui.Components.e50;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.nj0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y5 extends z4.a {
     public final /* synthetic */ Context c;
@@ -57,13 +57,13 @@ public final class y5 extends z4.a {
                 x5Var.K1.N0();
                 x5Var.K1.setAlpha(1.0f - x5Var.N3);
             }
-            mj0 mj0Var = x5Var.O1;
-            if (mj0Var != null) {
-                mj0Var.n();
+            nj0 nj0Var = x5Var.O1;
+            if (nj0Var != null) {
+                nj0Var.n();
             }
-            mj0 mj0Var2 = x5Var.a3;
-            if (mj0Var2 != null) {
-                mj0Var2.n();
+            nj0 nj0Var2 = x5Var.a3;
+            if (nj0Var2 != null) {
+                nj0Var2.n();
             }
             e50 e50Var = x5Var.s2;
             if (e50Var != null) {
@@ -93,8 +93,8 @@ public final class y5 extends z4.a {
             z5Var.c = arrayList3;
             x4 x4Var = o7Var.O0;
             if ((x4Var instanceof r4) || (x4Var instanceof z4)) {
-                jj f7 = x4Var.f(((Integer) arrayList3.get(0)).intValue());
-                z5Var.b = f7 == null ? qVar.w0 : jj.B0(f7.k);
+                kj f7 = x4Var.f(((Integer) arrayList3.get(0)).intValue());
+                z5Var.b = f7 == null ? qVar.w0 : kj.B0(f7.k);
             } else {
                 z5Var.b = qVar.w0;
             }

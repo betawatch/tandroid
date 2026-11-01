@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class m5 {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -74,9 +74,9 @@ public abstract /* synthetic */ class m5 {
         return arrayList;
     }
 
-    public static ArrayList j(jj jjVar) {
+    public static ArrayList j(kj kjVar) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(jjVar);
+        arrayList.add(kjVar);
         return arrayList;
     }
 
@@ -88,7 +88,7 @@ public abstract /* synthetic */ class m5 {
 
     public static void l(TextView textView, int i10, String str, int i11) {
         textView.setGravity(i10);
-        textView.setText(cd.L0(i11, str));
+        textView.setText(dd.L0(i11, str));
     }
 
     public static void m(TextView textView, int i10, org.telegram.ui.ActionBar.p6 p6Var, int i11, float f7) {
@@ -98,25 +98,25 @@ public abstract /* synthetic */ class m5 {
     }
 
     public static void n(String str, int i10, org.telegram.ui.Components.cc ccVar, int i11, int i12) {
-        ccVar.Q(i11, i12, cd.L0(i10, str)).j();
+        ccVar.Q(i11, i12, dd.L0(i10, str)).j();
     }
 
     public static void o(String str, int i10, org.telegram.ui.Components.cc ccVar, org.telegram.ui.ActionBar.p6 p6Var) {
-        ccVar.t(cd.L0(i10, str), p6Var).j();
+        ccVar.t(dd.L0(i10, str), p6Var).j();
     }
 
     public static void p(String str, String str2, int i10, Object[] objArr, SpannableStringBuilder spannableStringBuilder) {
-        spannableStringBuilder.append((CharSequence) i0.W2(cd.a0(str, str2, i10, objArr)));
+        spannableStringBuilder.append((CharSequence) i0.W2(dd.a0(str, str2, i10, objArr)));
     }
 
     public static void q(String str, String str2, int i10, Object[] objArr, TextView textView) {
-        textView.setText(i0.W2(cd.a0(str, str2, i10, objArr)));
+        textView.setText(i0.W2(dd.a0(str, str2, i10, objArr)));
     }
 
     public static void r(StringBuilder sb2, char c10, char c11, int i10) {
         sb2.append(c10);
         sb2.append(c11);
-        sb2.append(cd.L0(i10, null));
+        sb2.append(dd.L0(i10, null));
     }
 
     public static void s(SQLiteDatabase sQLiteDatabase, String str) {

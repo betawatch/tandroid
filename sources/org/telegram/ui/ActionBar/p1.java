@@ -6,25 +6,25 @@ import android.graphics.Rect;
 import android.view.View;
 import android.widget.ScrollView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.us;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.qe0;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.hf0;
-import org.telegram.ui.ll0;
+import org.telegram.ui.gf0;
+import org.telegram.ui.jl0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p1 extends ScrollView {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p1(us usVar, Context context, int i10) {
+    public /* synthetic */ p1(vs vsVar, Context context, int i10) {
         super(context);
         this.a = i10;
-        this.b = usVar;
+        this.b = vsVar;
     }
 
     @Override // android.view.ViewGroup
@@ -70,7 +70,7 @@ public final class p1 extends ScrollView {
                 super.onMeasure(i10, i11);
                 break;
             case 4:
-                ((ll0) this.b).s0 = View.MeasureSpec.getSize(i11) - org.telegram.messenger.i0.L(30.0f);
+                ((jl0) this.b).s0 = View.MeasureSpec.getSize(i11) - org.telegram.messenger.i0.L(30.0f);
                 super.onMeasure(i10, i11);
                 break;
         }
@@ -90,13 +90,13 @@ public final class p1 extends ScrollView {
     public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
         switch (this.a) {
             case 3:
-                int i10 = ((hf0) this.b).a;
+                int i10 = ((gf0) this.b).a;
                 if (i10 == 1 || i10 == 2 || i10 == 4) {
                     rect.bottom = org.telegram.messenger.i0.L(40.0f) + rect.bottom;
                 }
                 break;
             case 4:
-                int i11 = ((ll0) this.b).I1;
+                int i11 = ((jl0) this.b).I1;
                 if (i11 == 1 || i11 == 2 || i11 == 4) {
                     rect.bottom = org.telegram.messenger.i0.L(40.0f) + rect.bottom;
                 }

@@ -24,13 +24,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.rr;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.sr;
+import org.telegram.messenger.uz;
 import org.telegram.messenger.v2;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.ew;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -94,7 +94,7 @@ public final class e {
         File file3 = new File(file2, a1.g.r(sb2, i12 != 0 ? i0.a.i(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < i0.L(60.0f) && i11 < i0.L(60.0f);
-        if (tz.o() < 2) {
+        if (uz.o() < 2) {
             this.k = false;
             this.q = false;
             return;
@@ -153,7 +153,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            bi0.T0.postRunnable(new r5.a(1));
+            ci0.T0.postRunnable(new r5.a(1));
         }
     }
 
@@ -352,7 +352,7 @@ public final class e {
                 this.k = true;
             } else {
                 countDownLatchArr[i11] = new CountDownLatch(1);
-                z.execute(new rr(this, atomicBoolean2, bitmapArr, i11, xVarArr2, i122, randomAccessFile22, arrayList2, countDownLatchArr));
+                z.execute(new sr(this, atomicBoolean2, bitmapArr, i11, xVarArr2, i122, randomAccessFile22, arrayList2, countDownLatchArr));
                 i11++;
                 i122++;
                 if (i11 >= y) {

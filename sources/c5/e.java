@@ -7,17 +7,17 @@ import androidx.appcompat.widget.ActionBarContextView;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.security.MessageDigest;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.bx;
 import org.telegram.ui.Components.ny;
 import org.telegram.ui.Components.se;
 import org.telegram.ui.Components.sf;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 import r0.l0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e implements l0, bx {
     public int a;
@@ -61,7 +61,7 @@ public final class e implements l0, bx {
 
     public void e() {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        uu0 uu0Var = chatActivityEnterView.m1;
+        vu0 vu0Var = chatActivityEnterView.m1;
         if (d()) {
             AnimatorSet animatorSet = chatActivityEnterView.B3;
             if (animatorSet != null) {
@@ -70,8 +70,8 @@ public final class e implements l0, bx {
             chatActivityEnterView.E3 = true;
             this.b = chatActivityEnterView.z3;
             chatActivityEnterView.z3 = true;
-            zs.e().k(zs.j1, 1);
-            int height = ((((uu0Var.getHeight() - i0.m) - i0.n) - i0.L(6.0f)) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
+            at.e().k(at.j1, 1);
+            int height = ((((vu0Var.getHeight() - i0.m) - i0.n) - i0.L(6.0f)) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
             chatActivityEnterView.D3 = height;
             if (chatActivityEnterView.R1 == 2) {
                 int L = i0.L(175.0f);
@@ -82,9 +82,9 @@ public final class e implements l0, bx {
                 chatActivityEnterView.U0.getLayoutParams().height = chatActivityEnterView.D3;
             }
             chatActivityEnterView.U0.setLayerType(2, null);
-            uu0Var.requestLayout();
+            vu0Var.requestLayout();
             if (chatActivityEnterView.y4) {
-                uu0Var.setForeground(new jh.g(chatActivityEnterView));
+                vu0Var.setForeground(new jh.g(chatActivityEnterView));
             }
             this.a = (int) chatActivityEnterView.getTranslationY();
             sf sfVar = chatActivityEnterView.Z2;

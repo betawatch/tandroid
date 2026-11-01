@@ -2,23 +2,23 @@ package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
 import java.nio.charset.StandardCharsets;
-import org.telegram.ui.Components.r51;
-import org.telegram.ui.aa0;
-import org.telegram.ui.f11;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.d01;
 import org.telegram.ui.jo;
+import org.telegram.ui.z90;
 import org.telegram.ui.zh;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o8 implements org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r51 b;
+    public final /* synthetic */ s51 b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ o8(r51 r51Var, Object obj, Object obj2, int i10) {
+    public /* synthetic */ o8(s51 s51Var, Object obj, Object obj2, int i10) {
         this.a = i10;
-        this.b = r51Var;
+        this.b = s51Var;
         this.d = obj;
         this.c = obj2;
     }
@@ -33,7 +33,7 @@ public final /* synthetic */ class o8 implements org.telegram.ui.ActionBar.u1 {
                 if (!bool.booleanValue()) {
                     k0Var.c.B();
                 }
-                h3.a(k0Var.a, new zh(7), null, null, null, new jo(2, k0Var, new f11(16, t8Var, (t8Var.getParentLayout() == null || t8Var.getParentLayout().getFragmentStack().size() <= 1) ? null : (org.telegram.ui.ActionBar.k2) t8Var.getParentLayout().getFragmentStack().get(t8Var.getParentLayout().getFragmentStack().size() - 2))), false, true, new aa0((Object) null, 1));
+                i3.a(k0Var.a, new zh(7), null, null, null, new jo(2, k0Var, new d01(17, t8Var, (t8Var.getParentLayout() == null || t8Var.getParentLayout().getFragmentStack().size() <= 1) ? null : (org.telegram.ui.ActionBar.k2) t8Var.getParentLayout().getFragmentStack().get(t8Var.getParentLayout().getFragmentStack().size() - 2))), false, true, new z90((Object) null, 1));
                 break;
             case 1:
                 t8 t8Var2 = (t8) this.b;
@@ -59,9 +59,9 @@ public final /* synthetic */ class o8 implements org.telegram.ui.ActionBar.u1 {
                         r9Var.P.setText(r9Var.g0);
                         r9Var.P.setVisibility(0);
                     }
-                    r9Var.D0();
+                    r9Var.E0();
                     x1Var.dismiss();
-                    r9Var.s0();
+                    r9Var.t0();
                     break;
                 } else {
                     int i11 = -r9Var.o0;

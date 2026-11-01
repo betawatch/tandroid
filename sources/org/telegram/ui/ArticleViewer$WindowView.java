@@ -24,7 +24,7 @@ import java.util.Map;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public int D;
@@ -129,7 +129,7 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                     } else {
                         animatorSet.playTogether(ObjectAnimator.ofFloat(h4Var.g0, (Property<l0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this, h4.e1, 0.0f));
                     }
-                    animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), org.telegram.messenger.zs.Z3));
+                    animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), org.telegram.messenger.at.Z3));
                     animatorSet.setInterpolator(org.telegram.ui.Components.gr.h);
                     animatorSet.addListener(new g4(this, z11));
                     animatorSet.start();
@@ -501,9 +501,9 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         h4Var.l0.setAlpha(i10);
         h4Var.x0.setAlpha(i10);
         this.x = f7;
-        aa0 aa0Var = h4Var.V0;
-        if (aa0Var != null) {
-            aa0Var.c(h4Var.V && f7 == 1.0f && this.w == 0.0f);
+        z90 z90Var = h4Var.V0;
+        if (z90Var != null) {
+            z90Var.c(h4Var.V && f7 == 1.0f && this.w == 0.0f);
         }
         invalidate();
     }
@@ -511,9 +511,9 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
     public void setInnerTranslationX(float f7) {
         this.w = f7;
         h4 h4Var = this.H;
-        aa0 aa0Var = h4Var.V0;
-        if (aa0Var != null) {
-            aa0Var.c(h4Var.V && this.x == 1.0f && f7 == 0.0f);
+        z90 z90Var = h4Var.V0;
+        if (z90Var != null) {
+            z90Var.c(h4Var.V && this.x == 1.0f && f7 == 0.0f);
         }
         invalidate();
     }
@@ -558,10 +558,10 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
             m0 m0Var = h4Var.h0;
             if (m0Var != null) {
                 l3[] l3VarArr2 = h4Var.u0;
-                m0Var.setMenuColors((l3VarArr2 == null || (l3Var2 = l3VarArr2[0]) == null || !org.telegram.messenger.tz.v0) ? x02 : l3Var2.getBackgroundColor());
+                m0Var.setMenuColors((l3VarArr2 == null || (l3Var2 = l3VarArr2[0]) == null || !org.telegram.messenger.uz.v0) ? x02 : l3Var2.getBackgroundColor());
                 m0 m0Var2 = h4Var.h0;
                 l3[] l3VarArr3 = h4Var.u0;
-                m0Var2.d((l3VarArr3 == null || (l3Var = l3VarArr3[0]) == null || !org.telegram.messenger.tz.v0) ? x02 : l3Var.getActionBarColor(), false);
+                m0Var2.d((l3VarArr3 == null || (l3Var = l3VarArr3[0]) == null || !org.telegram.messenger.uz.v0) ? x02 : l3Var.getActionBarColor(), false);
             }
             Paint paint2 = h4Var.l0;
             if (paint2 != null) {

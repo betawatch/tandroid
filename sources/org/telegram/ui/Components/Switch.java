@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class Switch extends View implements org.telegram.ui.ActionBar.k6 {
     public int D;
@@ -84,7 +84,7 @@ public class Switch extends View implements org.telegram.ui.ActionBar.k6 {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
                 this.d = ofFloat;
                 ofFloat.setDuration(200L);
-                this.d.addListener(new zx0(this, 0));
+                this.d.addListener(new ay0(this, 0));
                 this.d.start();
             } else {
                 ObjectAnimator objectAnimator = this.d;
@@ -101,7 +101,7 @@ public class Switch extends View implements org.telegram.ui.ActionBar.k6 {
                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, "iconProgress", i10 == 0 ? 1.0f : 0.0f);
                 this.e = ofFloat2;
                 ofFloat2.setDuration(200L);
-                this.e.addListener(new zx0(this, 1));
+                this.e.addListener(new ay0(this, 1));
                 this.e.start();
                 return;
             }
@@ -257,7 +257,7 @@ public class Switch extends View implements org.telegram.ui.ActionBar.k6 {
                     int green2 = Color.green(a10);
                     int blue = Color.blue(a2);
                     int blue2 = Color.blue(a10);
-                    int alpha = (((int) (((blue2 - blue) * f14) + blue)) & org.telegram.messenger.zs.e4) | ((((int) (((Color.alpha(a10) - r6) * f14) + Color.alpha(a2))) & org.telegram.messenger.zs.e4) << 24) | ((((int) (((red2 - red) * f14) + red)) & org.telegram.messenger.zs.e4) << 16) | ((((int) (((green2 - green) * f14) + green)) & org.telegram.messenger.zs.e4) << 8);
+                    int alpha = (((int) (((blue2 - blue) * f14) + blue)) & org.telegram.messenger.at.e4) | ((((int) (((Color.alpha(a10) - r6) * f14) + Color.alpha(a2))) & org.telegram.messenger.at.e4) << 24) | ((((int) (((red2 - red) * f14) + red)) & org.telegram.messenger.at.e4) << 16) | ((((int) (((green2 - green) * f14) + green)) & org.telegram.messenger.at.e4) << 8);
                     paint5.setColor(alpha);
                     paint.setColor(alpha);
                     float N = org.telegram.messenger.i0.N(f15) + measuredHeight;
@@ -314,7 +314,7 @@ public class Switch extends View implements org.telegram.ui.ActionBar.k6 {
                 int blue3 = Color.blue(w02);
                 int blue4 = Color.blue(a11);
                 float f18 = f10;
-                paint6.setColor((((int) (((blue4 - blue3) * f18) + blue3)) & org.telegram.messenger.zs.e4) | ((((int) (((red4 - red3) * f18) + red3)) & org.telegram.messenger.zs.e4) << 16) | ((((int) (((Color.alpha(a11) - r7) * f18) + Color.alpha(w02))) & org.telegram.messenger.zs.e4) << 24) | ((((int) (((green4 - green3) * f18) + green3)) & org.telegram.messenger.zs.e4) << 8));
+                paint6.setColor((((int) (((blue4 - blue3) * f18) + blue3)) & org.telegram.messenger.at.e4) | ((((int) (((red4 - red3) * f18) + red3)) & org.telegram.messenger.at.e4) << 16) | ((((int) (((Color.alpha(a11) - r7) * f18) + Color.alpha(w02))) & org.telegram.messenger.at.e4) << 24) | ((((int) (((green4 - green3) * f18) + green3)) & org.telegram.messenger.at.e4) << 8));
                 float f19 = L2;
                 float f20 = measuredHeight2;
                 canvas4.drawCircle(f19, f20, org.telegram.messenger.i0.L(8.0f), paint6);
@@ -525,6 +525,6 @@ public class Switch extends View implements org.telegram.ui.ActionBar.k6 {
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
-    public void setOnCheckedChangeListener(ay0 ay0Var) {
+    public void setOnCheckedChangeListener(by0 by0Var) {
     }
 }

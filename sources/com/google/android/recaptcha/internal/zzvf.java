@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 final class zzvf {
     static {
@@ -84,7 +84,7 @@ final class zzvf {
                         if (Character.isSurrogatePair(charAt2, charAt3)) {
                             int i18 = i16 + 3;
                             int codePoint = Character.toCodePoint(charAt2, charAt3);
-                            bArr[i16] = (byte) ((codePoint >>> 18) | zs.P3);
+                            bArr[i16] = (byte) ((codePoint >>> 18) | at.P3);
                             bArr[i16 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                             bArr[i16 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
                             i16 += 4;
@@ -275,7 +275,7 @@ final class zzvf {
                 if (i16 > -65) {
                     return false;
                 }
-                if ((((i16 + zs.x1) + (i13 << 28)) >> 30) != 0) {
+                if ((((i16 + at.x1) + (i13 << 28)) >> 30) != 0) {
                     return false;
                 }
                 int i17 = i10 + 3;

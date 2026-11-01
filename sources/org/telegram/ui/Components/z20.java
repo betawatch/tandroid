@@ -10,9 +10,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class z20 extends e61 {
+public final class z20 extends f61 {
     public final y20 K1;
     public int L1;
     public final TLRPC.Chat M1;
@@ -26,7 +26,7 @@ public final class z20 extends e61 {
     public boolean U1;
     public final a0.h V1;
     public final HashSet W1;
-    public org.telegram.ui.h20 X1;
+    public org.telegram.ui.g20 X1;
     public boolean Y1;
     public int Z1;
     public int a2;
@@ -66,20 +66,20 @@ public final class z20 extends e61 {
         M0(0.0f);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void J0(MotionEvent motionEvent, org.telegram.ui.ActionBar.n0 n0Var) {
-        org.telegram.ui.b50 b50Var = this.X1.a;
-        if (b50Var.n2) {
+        org.telegram.ui.a50 a50Var = this.X1.a;
+        if (a50Var.n2) {
             return;
         }
         if (motionEvent.getX() <= n0Var.getLeft() || motionEvent.getX() >= n0Var.getRight() || motionEvent.getY() <= n0Var.getTop() || motionEvent.getY() >= n0Var.getBottom()) {
-            b50Var.u1(b50Var.v3, null, n0Var, false);
+            a50Var.u1(a50Var.v3, null, n0Var, false);
         } else {
-            b50Var.u1(b50Var.v3, null, n0Var, true);
+            a50Var.u1(a50Var.v3, null, n0Var, true);
         }
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void L0(String str) {
         y20 y20Var = this.K1;
         zf.m1 m1Var = y20Var.d;
@@ -110,13 +110,13 @@ public final class z20 extends e61 {
         y20Var.e = w20Var2;
         org.telegram.messenger.i0.h3(w20Var2, 300L);
         s4.g0 adapter = b1Var.getAdapter();
-        sk0 sk0Var = z20Var.l1;
-        if (adapter != sk0Var) {
-            b1Var.setAdapter(sk0Var);
+        tk0 tk0Var = z20Var.l1;
+        if (adapter != tk0Var) {
+            b1Var.setAdapter(tk0Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void P0() {
         this.z1 = org.telegram.ui.ActionBar.t6.Dh;
         this.A1 = org.telegram.ui.ActionBar.t6.Sg;
@@ -135,7 +135,7 @@ public final class z20 extends e61 {
             ArrayList arrayList = org.telegram.messenger.i5.r(this.a).e0;
             ArrayList arrayList2 = this.P1;
             arrayList2.addAll(arrayList);
-            long j10 = org.telegram.messenger.d20.i(this.a).n;
+            long j10 = org.telegram.messenger.e20.i(this.a).n;
             int size = arrayList2.size();
             int i10 = 0;
             while (i10 < size) {
@@ -150,7 +150,7 @@ public final class z20 extends e61 {
                 }
                 i10++;
             }
-            Collections.sort(arrayList2, new u20(org.telegram.messenger.vp.r1(this.a), ConnectionsManager.getInstance(this.a).getCurrentTime(), 0));
+            Collections.sort(arrayList2, new u20(org.telegram.messenger.wp.r1(this.a), ConnectionsManager.getInstance(this.a).getCurrentTime(), 0));
         }
     }
 
@@ -161,16 +161,16 @@ public final class z20 extends e61 {
         TLRPC.ChatFull chatFull = this.N1;
         if (T) {
             this.T1 = true;
-            dw0 dw0Var = this.q1;
-            if (dw0Var != null) {
-                dw0Var.e(true, false);
+            ew0 ew0Var = this.q1;
+            if (ew0Var != null) {
+                ew0Var.e(true, false);
             }
-            sk0 sk0Var = this.m1;
-            if (sk0Var != null) {
-                sk0Var.f();
+            tk0 tk0Var = this.m1;
+            if (tk0Var != null) {
+                tk0Var.f();
             }
             TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-            tL_channels_getParticipants.channel = org.telegram.messenger.vp.h1(chat);
+            tL_channels_getParticipants.channel = org.telegram.messenger.wp.h1(chat);
             if (chatFull != null && chatFull.participants_count <= 200) {
                 tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
             } else if (this.Q1) {
@@ -183,7 +183,7 @@ public final class z20 extends e61 {
             }
             tL_channels_getParticipants.filter.q = "";
             tL_channels_getParticipants.offset = 0;
-            tL_channels_getParticipants.limit = org.telegram.messenger.zs.e3;
+            tL_channels_getParticipants.limit = org.telegram.messenger.at.e3;
             ConnectionsManager.getInstance(this.a).sendRequest(tL_channels_getParticipants, new t20(0, this, tL_channels_getParticipants));
             return;
         }
@@ -195,14 +195,14 @@ public final class z20 extends e61 {
         hVar2.b();
         this.S1.b();
         if (chatFull != null) {
-            long j10 = org.telegram.messenger.d20.i(this.a).n;
+            long j10 = org.telegram.messenger.e20.i(this.a).n;
             int size = chatFull.participants.participants.size();
             for (int i10 = 0; i10 < size; i10++) {
                 TLRPC.ChatParticipant chatParticipant = chatFull.participants.participants.get(i10);
                 long j11 = chatParticipant.user_id;
                 if (j11 != j10 && ((hVar = this.V1) == null || hVar.h(j11) < 0)) {
-                    TLRPC.User Z1 = org.telegram.messenger.vp.r1(this.a).Z1(Long.valueOf(chatParticipant.user_id));
-                    if (!org.telegram.messenger.h20.x(Z1) && !Z1.bot) {
+                    TLRPC.User Z1 = org.telegram.messenger.wp.r1(this.a).Z1(Long.valueOf(chatParticipant.user_id));
+                    if (!org.telegram.messenger.i20.x(Z1) && !Z1.bot) {
                         arrayList.add(chatParticipant);
                         hVar2.k(chatParticipant, chatParticipant.user_id);
                     }
@@ -214,9 +214,9 @@ public final class z20 extends e61 {
             }
         }
         T0();
-        sk0 sk0Var2 = this.m1;
-        if (sk0Var2 != null) {
-            sk0Var2.f();
+        tk0 tk0Var2 = this.m1;
+        if (tk0Var2 != null) {
+            tk0Var2.f();
         }
     }
 

@@ -9,9 +9,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e0 implements ja.e {
     public static final Charset f = Charset.forName("UTF-8");
@@ -225,17 +225,17 @@ public final class e0 implements ja.e {
 
     public final void k(int i10) {
         while ((i10 & (-128)) != 0) {
-            this.a.write((i10 & zs.L1) | 128);
+            this.a.write((i10 & at.L1) | 128);
             i10 >>>= 7;
         }
-        this.a.write(i10 & zs.L1);
+        this.a.write(i10 & at.L1);
     }
 
     public final void l(long j10) {
         while (((-128) & j10) != 0) {
-            this.a.write((((int) j10) & zs.L1) | 128);
+            this.a.write((((int) j10) & at.L1) | 128);
             j10 >>>= 7;
         }
-        this.a.write(((int) j10) & zs.L1);
+        this.a.write(((int) j10) & at.L1);
     }
 }

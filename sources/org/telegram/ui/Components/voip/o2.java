@@ -1,31 +1,44 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class o2 extends AnimatorListenerAdapter {
+public final /* synthetic */ class o2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q2 b;
+    public final /* synthetic */ r2 b;
 
-    public /* synthetic */ o2(q2 q2Var, int i10) {
+    public /* synthetic */ o2(r2 r2Var, int i10) {
         this.a = i10;
-        this.b = q2Var;
+        this.b = r2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                q2 q2Var = this.b;
-                q2Var.r = 0;
-                q2Var.invalidate();
+                r2 r2Var = this.b;
+                r2Var.getClass();
+                r2Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r2Var.invalidate();
+                break;
+            case 1:
+                r2 r2Var2 = this.b;
+                r2Var2.getClass();
+                r2Var2.x = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                r2Var2.invalidate();
+                break;
+            case 2:
+                r2 r2Var3 = this.b;
+                r2Var3.getClass();
+                r2Var3.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                r2Var3.invalidate();
                 break;
             default:
-                q2 q2Var2 = this.b;
-                q2Var2.s = 0;
-                q2Var2.invalidate();
+                r2 r2Var4 = this.b;
+                r2Var4.getClass();
+                r2Var4.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                r2Var4.invalidate();
                 break;
         }
     }

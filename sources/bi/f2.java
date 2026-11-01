@@ -5,13 +5,13 @@ import android.graphics.drawable.Drawable;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.ui.Components.op0;
+import org.telegram.messenger.dd;
+import org.telegram.ui.Components.pp0;
 import org.telegram.ui.Components.zf;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ay;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class f2 extends zf {
     public final /* synthetic */ int n0 = 1;
@@ -27,7 +27,7 @@ public final class f2 extends zf {
     public boolean d() {
         switch (this.n0) {
             case 0:
-                return ((k2) this.o0).p0();
+                return ((k2) this.o0).q0();
             case 1:
             case 2:
             default:
@@ -60,7 +60,7 @@ public final class f2 extends zf {
         Object obj = this.o0;
         switch (i10) {
             case 2:
-                return org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.S5, ((op0) obj).I0);
+                return org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.S5, ((pp0) obj).I0);
             case 3:
             default:
                 return super.getFillColor();
@@ -90,7 +90,7 @@ public final class f2 extends zf {
         switch (this.n0) {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(cd.G(((ay) this.o0).I2.size(), "AccDescrShareInChats", new Object[0]));
+                accessibilityNodeInfo.setText(dd.G(((zx) this.o0).I2.size(), "AccDescrShareInChats", new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);
@@ -108,15 +108,15 @@ public final class f2 extends zf {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(op0 op0Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+    public f2(pp0 pp0Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
         super(R.drawable.send_plane_24, context, p6Var, false);
-        this.o0 = op0Var;
+        this.o0 = pp0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(ay ayVar, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+    public f2(zx zxVar, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
         super(R.drawable.send_plane_24, context, p6Var, false);
-        this.o0 = ayVar;
+        this.o0 = zxVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

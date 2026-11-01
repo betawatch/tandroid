@@ -21,21 +21,20 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.ApplicationLoaderImpl;
-import org.telegram.messenger.ap;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.is;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.vi;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -48,19 +47,20 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.v5;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a61;
+import org.telegram.ui.Components.b61;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.cd;
 import org.telegram.ui.Components.cg0;
 import org.telegram.ui.Components.cv;
-import org.telegram.ui.Components.cx0;
 import org.telegram.ui.Components.d50;
+import org.telegram.ui.Components.dx0;
 import org.telegram.ui.Components.eb;
 import org.telegram.ui.Components.g00;
 import org.telegram.ui.Components.j00;
 import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Components.zc0;
@@ -68,21 +68,21 @@ import org.telegram.ui.Components.zz;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ay;
 import org.telegram.ui.bp;
+import org.telegram.ui.ch;
 import org.telegram.ui.e70;
 import org.telegram.ui.fn;
-import org.telegram.ui.i00;
-import org.telegram.ui.iz;
+import org.telegram.ui.h00;
+import org.telegram.ui.hz;
 import org.telegram.ui.lp;
 import org.telegram.ui.mp;
 import org.telegram.ui.qp;
-import org.telegram.ui.rx;
+import org.telegram.ui.qx;
 import org.telegram.ui.un;
-import org.telegram.ui.zg;
 import org.telegram.ui.zo;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -132,14 +132,14 @@ public final /* synthetic */ class j0 implements Runnable {
         switch (this.a) {
             case 0:
                 s0 s0Var = (s0) this.c;
-                hs hsVar = (hs) this.d;
+                is isVar = (is) this.d;
                 boolean z11 = this.b;
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
                 ArrayList arrayList4 = new ArrayList();
                 try {
                     try {
-                        sQLiteCursor = hsVar.b.queryFinalized("SELECT data FROM business_links ORDER BY order_value ASC", new Object[0]);
+                        sQLiteCursor = isVar.b.queryFinalized("SELECT data FROM business_links ORDER BY order_value ASC", new Object[0]);
                         while (sQLiteCursor.next()) {
                             try {
                                 NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
@@ -171,10 +171,10 @@ public final /* synthetic */ class j0 implements Runnable {
                             r7 = false;
                         }
                         if (!arrayList5.isEmpty()) {
-                            hsVar.n0(arrayList5, arrayList3, false);
+                            isVar.n0(arrayList5, arrayList3, false);
                         }
                         if (!arrayList6.isEmpty()) {
-                            hsVar.Q(TextUtils.join(",", arrayList6), arrayList4);
+                            isVar.Q(TextUtils.join(",", arrayList6), arrayList4);
                         }
                     } catch (Exception e10) {
                         e = e10;
@@ -190,10 +190,10 @@ public final /* synthetic */ class j0 implements Runnable {
                     throw th2;
                 }
             case 1:
-                ((ai.a) this.c).d1((q20) this.d, this.b, false);
+                ((ai.a) this.c).d1((r20) this.d, this.b, false);
                 return;
             case 2:
-                ((j20) this.c).a((Bitmap) this.d, Boolean.valueOf(this.b));
+                ((k20) this.c).a((Bitmap) this.d, Boolean.valueOf(this.b));
                 return;
             case 3:
                 d4 d4Var = (d4) this.c;
@@ -470,38 +470,38 @@ public final /* synthetic */ class j0 implements Runnable {
                 if (!z20) {
                     HashMap hashMap = o6Var.b;
                     if (hashMap == null || hashMap.isEmpty()) {
-                        zs.f(i20).n(o6Var, zs.Y1);
-                        zs.f(i20).n(o6Var, zs.Z1);
+                        at.f(i20).n(o6Var, at.Y1);
+                        at.f(i20).n(o6Var, at.Z1);
                         return;
                     }
                     return;
                 }
                 if (o6Var.b != null) {
-                    zs.f(i20).b(o6Var, zs.Y1);
-                    zs.f(i20).b(o6Var, zs.Z1);
+                    at.f(i20).b(o6Var, at.Y1);
+                    at.f(i20).b(o6Var, at.Z1);
                     Iterator it2 = o6Var.b.entrySet().iterator();
                     while (it2.hasNext()) {
-                        b8.G(i20).W(ic.b(((n6) ((Map.Entry) it2.next()).getValue()).a.document), "wallpaper", null, 0, 1);
+                        b8.G(i20).W(jc.b(((n6) ((Map.Entry) it2.next()).getValue()).a.document), "wallpaper", null, 0, 1);
                     }
                     return;
                 }
                 return;
             case 11:
-                ((un) this.c).Lc((jj) this.d, this.b);
+                ((un) this.c).Qc((kj) this.d, this.b);
                 return;
             case 12:
                 fn fnVar = (fn) this.c;
                 TLObject tLObject = (TLObject) this.d;
                 boolean z21 = this.b;
                 un unVar = fnVar.a;
-                unVar.Vb.b();
+                unVar.Wb.b();
                 if (!(tLObject instanceof TLRPC.TL_messages_stickerSet)) {
-                    cc.a0(unVar).Q(R.raw.error, 36, cd.L0(z21 ? 2131754435 : 2131754385, null)).k(true);
+                    cc.a0(unVar).Q(R.raw.error, 36, dd.L0(z21 ? 2131754435 : 2131754385, null)).k(true);
                     return;
                 }
                 i11 = ((org.telegram.ui.ActionBar.k2) unVar).currentAccount;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
-                ui.b0(i11).I1(tL_messages_stickerSet, false);
+                vi.b0(i11).I1(tL_messages_stickerSet, false);
                 if (unVar.getParentActivity() == null || unVar.getParentActivity() == null) {
                     return;
                 }
@@ -510,19 +510,19 @@ public final /* synthetic */ class j0 implements Runnable {
                 tL_inputStickerSetID.access_hash = stickerSet.access_hash;
                 tL_inputStickerSetID.id = stickerSet.id;
                 if (!z21) {
-                    cx0 cx0Var = new cx0(unVar.getParentActivity(), unVar, tL_inputStickerSetID, null, unVar.Z, unVar.xa);
-                    boolean J9 = unVar.J9();
-                    cx0Var.h0 = J9;
-                    cx0Var.n = J9;
-                    unVar.showDialog(cx0Var);
+                    dx0 dx0Var = new dx0(unVar.getParentActivity(), unVar, tL_inputStickerSetID, null, unVar.Z, unVar.xa);
+                    boolean O9 = unVar.O9();
+                    dx0Var.h0 = O9;
+                    dx0Var.n = O9;
+                    unVar.showDialog(dx0Var);
                     return;
                 }
                 ArrayList arrayList8 = new ArrayList(1);
                 arrayList8.add(tL_inputStickerSetID);
                 cv cvVar = new cv(unVar, unVar.getParentActivity(), unVar.xa, arrayList8);
-                boolean J92 = unVar.J9();
-                cvVar.h0 = J92;
-                cvVar.n = J92;
+                boolean O92 = unVar.O9();
+                cvVar.h0 = O92;
+                cvVar.n = O92;
                 unVar.showDialog(cvVar);
                 return;
             case 13:
@@ -531,9 +531,9 @@ public final /* synthetic */ class j0 implements Runnable {
                 boolean z22 = this.b;
                 bp bpVar = zoVar.a;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bpVar.getContext(), bpVar.n2);
-                alertDialog$Builder.a.R = cd.L0(2131743698, null);
-                alertDialog$Builder.a.T = cd.L0(2131743699, null);
-                alertDialog$Builder.k(cd.L0(2131747847, null), new v0(zoVar, tL_username, z22, i14));
+                alertDialog$Builder.a.R = dd.L0(2131743698, null);
+                alertDialog$Builder.a.T = dd.L0(2131743699, null);
+                alertDialog$Builder.k(dd.L0(2131747847, null), new v0(zoVar, tL_username, z22, i14));
                 alertDialog$Builder.p();
                 return;
             case 14:
@@ -547,7 +547,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 }
                 chat.join_request = false;
                 qpVar.P = true;
-                qpVar.getMessagesController().Z4(chat.id, 0L, false, false, false, new lp(mpVar, i15), new zg(21, mpVar, chat));
+                qpVar.getMessagesController().Z4(chat.id, 0L, false, false, false, new lp(mpVar, i15), new ch(21, mpVar, chat));
                 return;
             case 15:
                 AnimatedPhoneNumberEditText.A((AnimatedPhoneNumberEditText) this.c, this.b, (String) this.d);
@@ -560,7 +560,7 @@ public final /* synthetic */ class j0 implements Runnable {
                     biVar.A0(true);
                     editTextBoldCursor.requestFocus();
                     if (z24) {
-                        org.telegram.messenger.i0.g3(new org.telegram.ui.Components.cd(i13, biVar, editTextBoldCursor));
+                        org.telegram.messenger.i0.g3(new cd(i13, biVar, editTextBoldCursor));
                         return;
                     }
                     return;
@@ -597,7 +597,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 return;
             case 21:
                 cg0 cg0Var = (cg0) this.c;
-                u51 u51Var = cg0Var.c;
+                v51 v51Var = cg0Var.c;
                 boolean z27 = this.b;
                 ArrayList arrayList9 = (ArrayList) this.d;
                 if (z27) {
@@ -606,9 +606,9 @@ public final /* synthetic */ class j0 implements Runnable {
                 if (arrayList9.isEmpty()) {
                     return;
                 }
-                if (u51Var.canScrollVertically(1)) {
-                    for (int i21 = 0; i21 < u51Var.getChildCount(); i21++) {
-                        if (!(u51Var.getChildAt(i21) instanceof zz)) {
+                if (v51Var.canScrollVertically(1)) {
+                    for (int i21 = 0; i21 < v51Var.getChildCount(); i21++) {
+                        if (!(v51Var.getChildAt(i21) instanceof zz)) {
                         }
                     }
                     return;
@@ -636,32 +636,32 @@ public final /* synthetic */ class j0 implements Runnable {
                 rVar.C0 = null;
                 return;
             case 24:
-                ((rx) this.c).b.presentFragment(this.b ? new FiltersSetupActivity() : new i00((ap) this.d, null));
+                ((qx) this.c).b.presentFragment(this.b ? new FiltersSetupActivity() : new h00((org.telegram.messenger.bp) this.d, null));
                 return;
             case 25:
-                rx rxVar = (rx) this.c;
+                qx qxVar = (qx) this.c;
                 ArrayList arrayList10 = (ArrayList) this.d;
                 boolean z30 = this.b;
-                ay ayVar = rxVar.b;
+                zx zxVar = qxVar.b;
                 int i22 = 0;
                 for (int i23 = 0; i23 < arrayList10.size(); i23++) {
                     TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList10.get(i23);
                     if (dialog != null) {
-                        ayVar.getNotificationsController().T(dialog.id, z30 ? 3 : 4, 0L);
+                        zxVar.getNotificationsController().T(dialog.id, z30 ? 3 : 4, 0L);
                         i22++;
                     }
                 }
-                eb ebVar = new eb(ayVar.getParentActivity(), null);
-                ebVar.b.setText(z30 ? cd.G(i22, "NotificationsMutedHintChats", new Object[0]) : cd.G(i22, "NotificationsUnmutedHintChats", new Object[0]));
+                eb ebVar = new eb(zxVar.getParentActivity(), null);
+                ebVar.b.setText(z30 ? dd.G(i22, "NotificationsMutedHintChats", new Object[0]) : dd.G(i22, "NotificationsUnmutedHintChats", new Object[0]));
                 if (z30) {
                     ebVar.d(R.raw.ic_mute, "Body Main", "Body Top", "Line", "Curve Big", "Curve Small");
                 } else {
                     ebVar.d(R.raw.ic_unmute, "BODY", "Wibe Big", "Wibe Big 3", "Wibe Small");
                 }
-                wb.g(ayVar, ebVar, 1500).j();
+                wb.g(zxVar, ebVar, 1500).j();
                 return;
             case 26:
-                ((iz) this.c).d0((g00) this.d, !this.b);
+                ((hz) this.c).e0((g00) this.d, !this.b);
                 return;
             case 27:
                 LanguageSelectActivity languageSelectActivity = (LanguageSelectActivity) this.c;
@@ -692,10 +692,10 @@ public final /* synthetic */ class j0 implements Runnable {
                     if (((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q() ? org.telegram.messenger.k1.e().j : false) {
                         return;
                     }
-                    if (z33 || g1Var2 == null || (tz.U(g1Var.a, g1Var2.a) && g1Var.c > g1Var2.c)) {
+                    if (z33 || g1Var2 == null || (uz.U(g1Var.a, g1Var2.a) && g1Var.c > g1Var2.c)) {
                         ((ApplicationLoaderImpl) org.telegram.messenger.w0.a).getClass();
                         try {
-                            new a61(launchActivity2, g1Var).show();
+                            new b61(launchActivity2, g1Var).show();
                             return;
                         } catch (Exception e11) {
                             f8.g(e11, true);

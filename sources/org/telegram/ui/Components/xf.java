@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class xf extends j1.b {
     public final int[] o;
@@ -65,7 +65,7 @@ public final class xf extends j1.b {
         ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
         if (i10 == 1) {
             cVar.h(chatActivityEnterView.T3);
-            cVar.o(org.telegram.messenger.cd.L0(2131745657, "Send"));
+            cVar.o(org.telegram.messenger.dd.L0(2131745657, "Send"));
             return;
         }
         if (i10 == 2) {
@@ -73,7 +73,7 @@ public final class xf extends j1.b {
             RectF rectF = chatActivityEnterView.S3;
             rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
             cVar.h(chatActivityEnterView.U3);
-            cVar.o(org.telegram.messenger.cd.L0(2131744859, null));
+            cVar.o(org.telegram.messenger.dd.L0(2131744859, null));
             return;
         }
         if (i10 != 3 || chatActivityEnterView.N1 == null) {
@@ -91,6 +91,6 @@ public final class xf extends j1.b {
             rect3.offset(-iArr[0], -iArr[1]);
             cVar.h(rect3);
         }
-        cVar.o(org.telegram.messenger.cd.L0(2131752589, "Cancel"));
+        cVar.o(org.telegram.messenger.dd.L0(2131752589, "Cancel"));
     }
 }

@@ -1,51 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class mm0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ lm0 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Reaction c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.x1[] d;
-    public final /* synthetic */ View e;
+public final class mm0 extends EditTextBoldCursor {
+    public final w4 G1;
+    public int H1;
+    public final e6 I1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 J1;
 
-    public mm0(lm0 lm0Var, int i10, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.x1[] x1VarArr, View view) {
-        this.a = lm0Var;
-        this.b = i10;
-        this.c = reaction;
-        this.d = x1VarArr;
-        this.e = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mm0(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context);
+        this.J1 = p6Var;
+        this.G1 = new w4(this);
+        e6 e6Var = new e6(false, true, true);
+        this.I1 = e6Var;
+        e6Var.n(0.2f, 160L, gr.h);
+        e6Var.w(org.telegram.messenger.i0.L(15.33f));
+        e6Var.setCallback(this);
+        e6Var.b = 5;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.G1.a(org.telegram.ui.ActionBar.t6.w0(this.H1 < 0 ? org.telegram.ui.ActionBar.t6.p7 : org.telegram.ui.ActionBar.t6.P5, this.J1), false);
+        e6 e6Var = this.I1;
+        e6Var.u(a2);
+        e6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        e6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.qt, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        e6 e6Var = this.I1;
+        if (e6Var != null) {
+            this.H1 = 12 - charSequence.length();
+            e6Var.a();
+            String str = "";
+            if (this.H1 <= 4) {
+                str = "" + this.H1;
+            }
+            e6Var.t(str, true, true);
         }
-        lm0 lm0Var = this.a;
-        String obj = lm0Var.getText().toString();
-        if (obj.length() > 12) {
-            org.telegram.messenger.i0.E3(lm0Var);
-            return true;
-        }
-        org.telegram.messenger.vp.r1(this.b).i4(obj, sg.o0.d(this.c));
-        org.telegram.ui.ActionBar.x1[] x1VarArr = this.d;
-        org.telegram.ui.ActionBar.x1 x1Var = x1VarArr[0];
-        if (x1Var != null) {
-            x1Var.dismiss();
-        }
-        if (x1VarArr[0] == rm0.H) {
-            rm0.H = null;
-        }
-        View view = this.e;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.I1 || super.verifyDrawable(drawable);
     }
 }

@@ -6,14 +6,14 @@ import android.webkit.URLUtil;
 import android.widget.TextView;
 import java.util.List;
 import org.telegram.messenger.b6;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class u0 implements DownloadListener {
     public final /* synthetic */ v0 a;
@@ -53,16 +53,16 @@ public final class u0 implements DownloadListener {
             guessFileName = URLUtil.guessFileName(str, str3, str4);
             String U = org.telegram.messenger.i0.U(guessFileName);
             x xVar = new x(this, str, str4, str2, U, 4);
-            if (b6.q(d20.s0).c(8, j10)) {
+            if (b6.q(e20.s0).c(8, j10)) {
                 xVar.run();
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(v0Var.getContext());
             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-            x1Var.R = cd.L0(2131742956, null);
-            x1Var.T = org.telegram.messenger.i0.W2(j10 > 0 ? cd.a0(null, null, 2131742957, U, org.telegram.messenger.i0.i0(j10, false, false)) : cd.a0(null, null, 2131742958, U));
-            alertDialog$Builder.k(cd.L0(2131742955, null), new mg.l(xVar, 17));
-            alertDialog$Builder.h(cd.L0(2131752589, null), null);
+            x1Var.R = dd.L0(2131742956, null);
+            x1Var.T = org.telegram.messenger.i0.W2(j10 > 0 ? dd.a0(null, null, 2131742957, U, org.telegram.messenger.i0.i0(j10, false, false)) : dd.a0(null, null, 2131742958, U));
+            alertDialog$Builder.k(dd.L0(2131742955, null), new mg.l(xVar, 17));
+            alertDialog$Builder.h(dd.L0(2131752589, null), null);
             TextView textView = (TextView) alertDialog$Builder.p().d(-2);
             if (textView != null) {
                 a7.V(textView, t6.q7, null);

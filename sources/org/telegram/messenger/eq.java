@@ -1,71 +1,210 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.c70;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class eq implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hs b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ eq(hs hsVar, ArrayList arrayList, ArrayList arrayList2, int i10) {
-        this.a = i10;
-        this.b = hsVar;
-        this.c = arrayList;
-        this.d = arrayList2;
+    public /* synthetic */ eq(is isVar, long j10, boolean z10, String str, long j11, int i10, String str2, String str3, String str4) {
+        this.f = isVar;
+        this.c = j10;
+        this.b = z10;
+        this.h = str;
+        this.e = j11;
+        this.d = i10;
+        this.n = str2;
+        this.r = str3;
+        this.s = str4;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:37:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:39:? A[RETURN, SYNTHETIC] */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
+        int intValue;
         switch (this.a) {
             case 0:
-                ArrayList arrayList = this.c;
-                ArrayList arrayList2 = this.d;
-                hs hsVar = this.b;
-                hsVar.getClass();
+                is isVar = (is) this.f;
+                long j10 = this.c;
+                boolean z10 = this.b;
+                String str = (String) this.h;
+                long j11 = this.e;
+                int i10 = this.d;
+                String str2 = (String) this.n;
+                String str3 = (String) this.r;
+                String str4 = (String) this.s;
                 SQLitePreparedStatement sQLitePreparedStatement = null;
                 try {
+                    if (j10 == 0) {
+                        try {
+                            SQLiteDatabase sQLiteDatabase = isVar.b;
+                            Locale locale = Locale.ENGLISH;
+                            SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("UPDATE dialogs SET " + str3 + " = ? WHERE did = ?");
+                            try {
+                                executeFast.bindInteger(1, Math.max(i10, 0));
+                                executeFast.bindLong(2, j11);
+                                executeFast.step();
+                                executeFast.dispose();
+                                if (i10 == 0) {
+                                    SQLitePreparedStatement executeFast2 = isVar.b.executeFast("UPDATE " + str4 + " SET state = 0 WHERE dialog_id = ?");
+                                    try {
+                                        executeFast2.bindLong(1, j11);
+                                        executeFast2.step();
+                                        executeFast2.dispose();
+                                    } catch (SQLiteException e) {
+                                        e = e;
+                                        sQLitePreparedStatement = executeFast2;
+                                        e.printStackTrace();
+                                        if (sQLitePreparedStatement != null) {
+                                            sQLitePreparedStatement.dispose();
+                                        }
+                                        return;
+                                    } catch (Throwable th2) {
+                                        th = th2;
+                                        sQLitePreparedStatement = executeFast2;
+                                        if (sQLitePreparedStatement != null) {
+                                            sQLitePreparedStatement.dispose();
+                                        }
+                                        throw th;
+                                    }
+                                }
+                            } catch (SQLiteException e7) {
+                                e = e7;
+                                sQLitePreparedStatement = executeFast;
+                            } catch (Throwable th3) {
+                                th = th3;
+                                sQLitePreparedStatement = executeFast;
+                            }
+                        } catch (SQLiteException e10) {
+                            e = e10;
+                        }
+                        return;
+                    }
                     try {
-                        sQLitePreparedStatement = hsVar.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
-                        int size = arrayList.size();
-                        for (int i10 = 0; i10 < size; i10++) {
-                            sQLitePreparedStatement.requery();
-                            sQLitePreparedStatement.bindInteger(1, ((Integer) arrayList2.get(i10)).intValue());
-                            sQLitePreparedStatement.bindLong(2, ((Long) arrayList.get(i10)).longValue());
-                            sQLitePreparedStatement.step();
+                        if (z10) {
+                            try {
+                                SQLiteDatabase sQLiteDatabase2 = isVar.b;
+                                Locale locale2 = Locale.ENGLISH;
+                                SQLiteCursor queryFinalized = sQLiteDatabase2.queryFinalized("SELECT " + str + " FROM topics WHERE did = " + j11 + " AND topic_id = " + j10, new Object[0]);
+                                intValue = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
+                                queryFinalized.dispose();
+                            } catch (SQLiteException e11) {
+                                e = e11;
+                                e.printStackTrace();
+                                if (sQLitePreparedStatement == null) {
+                                    sQLitePreparedStatement.dispose();
+                                    return;
+                                }
+                                return;
+                            }
+                        } else {
+                            intValue = 0;
                         }
-                        sQLitePreparedStatement.dispose();
-                        return;
-                    } catch (Exception e) {
-                        hsVar.o(e, true);
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                            return;
+                        SQLiteDatabase sQLiteDatabase3 = isVar.b;
+                        Locale locale3 = Locale.ENGLISH;
+                        SQLitePreparedStatement executeFast3 = sQLiteDatabase3.executeFast("UPDATE topics SET " + str + " = ? WHERE did = ? AND topic_id = ?");
+                        try {
+                            executeFast3.bindInteger(1, Math.max(intValue + i10, 0));
+                            executeFast3.bindLong(2, j11);
+                            executeFast3.bindLong(3, j10);
+                            executeFast3.step();
+                            executeFast3.dispose();
+                            if (i10 != 0) {
+                                return;
+                            }
+                            SQLitePreparedStatement executeFast4 = isVar.b.executeFast("UPDATE " + str2 + " SET state = 0 WHERE dialog_id = ? AND topic_id = ? ");
+                            try {
+                                executeFast4.bindLong(1, j11);
+                                executeFast4.bindLong(2, j10);
+                                executeFast4.step();
+                                executeFast4.dispose();
+                                return;
+                            } catch (SQLiteException e12) {
+                                e = e12;
+                                sQLitePreparedStatement = executeFast4;
+                                e.printStackTrace();
+                                if (sQLitePreparedStatement == null) {
+                                }
+                            } catch (Throwable th4) {
+                                th = th4;
+                                sQLitePreparedStatement = executeFast4;
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                                throw th;
+                            }
+                        } catch (SQLiteException e13) {
+                            e = e13;
+                            sQLitePreparedStatement = executeFast3;
+                        } catch (Throwable th5) {
+                            th = th5;
+                            sQLitePreparedStatement = executeFast3;
                         }
-                        return;
+                    } catch (Throwable th6) {
+                        th = th6;
                     }
-                } catch (Throwable th2) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th2;
+                } catch (Throwable th7) {
+                    th = th7;
                 }
             default:
-                hs hsVar2 = this.b;
-                hsVar2.getClass();
-                ArrayList arrayList3 = this.c;
-                if (!arrayList3.isEmpty()) {
-                    hsVar2.getMessagesController().V3(arrayList3, true);
-                }
-                ArrayList arrayList4 = this.d;
-                if (arrayList4.isEmpty()) {
+                rh.e6 e6Var = (rh.e6) this.f;
+                TLObject tLObject = (TLObject) this.h;
+                Runnable runnable = (Runnable) this.n;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.r;
+                boolean z11 = this.b;
+                long j12 = this.c;
+                int i11 = this.d;
+                kj kjVar = (kj) this.s;
+                long j13 = this.e;
+                if (tLObject instanceof TLRPC.Updates) {
+                    Utilities.d.c(new rh.k5(e6Var, tLObject, 5));
+                    runnable.run();
+                    return;
+                } else {
+                    if (tL_error == null || !w8.r(tL_error.text) || z11) {
+                        runnable.run();
+                        return;
+                    }
+                    TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
+                    tL_messages_getScheduledMessages.peer = wp.r1(e6Var.a).i1(j12);
+                    tL_messages_getScheduledMessages.id.add(Integer.valueOf(i11));
+                    ConnectionsManager.getInstance(e6Var.a).sendRequest(tL_messages_getScheduledMessages, new c70(e6Var, kjVar, j13, runnable));
                     return;
                 }
-                hsVar2.getMessagesController().P3(arrayList4, true);
-                return;
         }
+    }
+
+    public /* synthetic */ eq(rh.e6 e6Var, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j10, int i10, kj kjVar, long j11) {
+        this.f = e6Var;
+        this.h = tLObject;
+        this.n = runnable;
+        this.r = tL_error;
+        this.b = z10;
+        this.c = j10;
+        this.d = i10;
+        this.s = kjVar;
+        this.e = j11;
     }
 }

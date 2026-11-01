@@ -5,9 +5,9 @@ import com.google.android.gms.internal.play_billing.s0;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class t {
     public static final HashMap b;
@@ -38,7 +38,7 @@ public final class t {
         a(hashMap, 21, "punctuation");
         a(hashMap, 256, "bold");
         a(hashMap, 512, "italic");
-        a(hashMap, zs.g4, "important");
+        a(hashMap, at.g4, "important");
         b = hashMap;
     }
 
@@ -49,7 +49,7 @@ public final class t {
             for (String str : strArr[i10].split("\\s+")) {
                 Integer num = (Integer) b.get(str);
                 if (num != null) {
-                    i11 = ((i11 & zs.e4) == 0 ? i11 | (num.intValue() & zs.e4) : i11) | (num.intValue() & (-256));
+                    i11 = ((i11 & at.e4) == 0 ? i11 | (num.intValue() & at.e4) : i11) | (num.intValue() & (-256));
                 }
             }
             this.a[i10] = i11;
@@ -99,12 +99,12 @@ public final class t {
             int[] iArr5 = this.a;
             int i20 = iArr5[i19];
             int i21 = iArr5[iArr[i13 + 3]];
-            int i22 = i21 & zs.e4;
+            int i22 = i21 & at.e4;
             if (i22 == 0) {
-                i22 = i20 & zs.e4;
+                i22 = i20 & at.e4;
             }
             if (i22 == 0) {
-                i22 = i18 & zs.e4;
+                i22 = i18 & at.e4;
             }
             int i23 = ((i18 | i20 | i21) & (-256)) | i22;
             iArr2[i11] = i23;

@@ -1,31 +1,84 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class zf0 implements Runnable {
-    public final /* synthetic */ kg0 a;
+public final class zf0 extends s4.n {
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final SparseIntArray i = new SparseIntArray();
+    public final SparseIntArray j = new SparseIntArray();
+    public final ArrayList k = new ArrayList();
+    public final ArrayList l = new ArrayList();
+    public final /* synthetic */ ig0 m;
 
-    public zf0(kg0 kg0Var) {
-        this.a = kg0Var;
+    public zf0(ig0 ig0Var) {
+        this.m = ig0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        kg0 kg0Var = this.a;
-        if (kg0Var.b == null) {
-            return;
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
-        for (int i10 = 0; i10 < kg0Var.b.getChildCount(); i10++) {
-            View childAt = kg0Var.b.getChildAt(i10);
-            if (childAt instanceof hg0) {
-                hg0 hg0Var = (hg0) childAt;
-                if (hg0Var.I) {
-                    hg0Var.b(hg0Var.n, hg0Var.r);
-                }
-            }
+    }
+
+    @Override // s4.n
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
+    }
+
+    @Override // s4.n
+    public final boolean b(int i10, int i11) {
+        int i12;
+        int i13;
+        int i14 = this.c;
+        ig0 ig0Var = this.m;
+        if (((i10 >= i14 && i10 < this.d) || (i10 >= this.e && i10 < this.f)) && ((i11 >= (i13 = ig0Var.D) && i11 < ig0Var.E) || (i11 >= ig0Var.H && i11 < ig0Var.I))) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i11 < i13 || i11 >= ig0Var.E) ? (TLRPC.TL_chatInviteExported) ig0Var.j0.get(i11 - ig0Var.H) : (TLRPC.TL_chatInviteExported) ig0Var.i0.get(i11 - i13);
+            int i15 = this.c;
+            return ((i10 < i15 || i10 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i10 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i10 - i15)).link.equals(tL_chatInviteExported.link);
         }
-        org.telegram.messenger.i0.h3(this, 500L);
+        int i16 = this.g;
+        if (i10 >= i16 && i10 < this.h && i11 >= (i12 = ig0Var.U) && i11 < ig0Var.V) {
+            return i10 - i16 == i11 - i12;
+        }
+        int i17 = this.i.get(i10, -1);
+        return i17 >= 0 && i17 == this.j.get(i11, -1);
+    }
+
+    @Override // s4.n
+    public final int d() {
+        return this.m.X;
+    }
+
+    @Override // s4.n
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        sparseIntArray.clear();
+        ig0 ig0Var = this.m;
+        g(1, ig0Var.r, sparseIntArray);
+        g(2, ig0Var.s, sparseIntArray);
+        g(3, ig0Var.w, sparseIntArray);
+        g(4, ig0Var.x, sparseIntArray);
+        g(5, ig0Var.y, sparseIntArray);
+        g(6, ig0Var.L, sparseIntArray);
+        g(7, ig0Var.N, sparseIntArray);
+        g(8, ig0Var.O, sparseIntArray);
+        g(9, ig0Var.Q, sparseIntArray);
+        g(10, ig0Var.R, sparseIntArray);
+        g(11, ig0Var.S, sparseIntArray);
+        g(12, ig0Var.P, sparseIntArray);
+        g(13, ig0Var.F, sparseIntArray);
     }
 }

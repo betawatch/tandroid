@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import v7.u7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class i {
     public final /* synthetic */ r a;
@@ -31,6 +31,7 @@ public final class i {
         long j11 = r.G;
         if (j10 != j11) {
             rVar.t = j11;
+            rVar.f = true;
             i10 = 32;
         } else {
             i10 = 0;
@@ -42,7 +43,7 @@ public final class i {
         }
         Iterator it = rVar.n.iterator();
         while (it.hasNext()) {
-            if (((tk0) it.next()).b0()) {
+            if (((uk0) it.next()).b0()) {
                 rVar.i++;
             }
         }

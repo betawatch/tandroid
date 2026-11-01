@@ -28,21 +28,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cb;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ea;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.db;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
+import org.telegram.messenger.fa;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.h0;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.i5;
 import org.telegram.messenger.k6;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.ra;
-import org.telegram.messenger.xa;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.sa;
+import org.telegram.messenger.ya;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -54,10 +54,10 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.g0;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.hu0;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.lp0;
-import org.telegram.ui.Components.op0;
+import org.telegram.ui.Components.iu0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.pp0;
 import org.telegram.ui.Components.q10;
 import org.telegram.ui.Components.q4;
 import org.telegram.ui.Components.r10;
@@ -66,9 +66,9 @@ import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.ud0;
 import org.telegram.ui.Components.v90;
 import org.telegram.ui.Components.vd0;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.xk0;
 import org.telegram.ui.Wallet.ba;
-import org.telegram.ui.o10;
+import org.telegram.ui.n10;
 import rh.h8;
 import s4.i1;
 import s4.n0;
@@ -76,9 +76,9 @@ import s4.o0;
 import w7.b6;
 import zf.l1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.android.gms.common.api.internal.s, r4.c, hu0, i1, v90 {
+public final class t implements l2.i, ya, sa, m61, q4, xk0, l1, com.google.android.gms.common.api.internal.s, r4.c, iu0, i1, v90 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -101,9 +101,9 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
         return ((n0) this.b).q(i10);
     }
 
-    public t D(cb cbVar) {
+    public t D(db dbVar) {
         ig.i1 i1Var = (ig.i1) this.b;
-        LatLng latLng = new LatLng(cbVar.a, cbVar.b);
+        LatLng latLng = new LatLng(dbVar.a, dbVar.b);
         i1Var.getClass();
         double d = i1Var.b;
         double d10 = latLng.a;
@@ -133,16 +133,16 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
         return n0.v(view) + ((ViewGroup.MarginLayoutParams) ((o0) view.getLayoutParams())).bottomMargin;
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public void F(boolean z10) {
         h8 h8Var = (h8) this.b;
         fe.b bVar = h8Var.Y;
         if (bVar != null) {
             bVar.a(z10, true);
         }
-        o10 o10Var = h8Var.s;
-        if (o10Var != null) {
-            o10Var.invalidate();
+        n10 n10Var = h8Var.s;
+        if (n10Var != null) {
+            n10Var.invalidate();
         }
     }
 
@@ -167,7 +167,7 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
             q10Var.v = VelocityTracker.obtain();
         }
         q10Var.v.addMovement(motionEvent);
-        int i11 = action & zs.e4;
+        int i11 = action & at.e4;
         boolean z12 = i11 == 6;
         int actionIndex = z12 ? motionEvent.getActionIndex() : -1;
         int pointerCount = motionEvent.getPointerCount();
@@ -425,7 +425,7 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
     public boolean Y(int i10) {
         switch (this.a) {
             case 13:
-                return i10 == ((lp0) this.b).r;
+                return i10 == ((mp0) this.b).r;
             default:
                 return true;
         }
@@ -436,7 +436,7 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public float a1() {
         return i0.a.d(9.66f, ei.b.d(((h8) this.b).b0), 0);
     }
@@ -472,7 +472,7 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
         }
     }
 
-    @Override // org.telegram.ui.Components.wk0
+    @Override // org.telegram.ui.Components.xk0
     public void b(boolean z10) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.b;
         chatAttachAlertPhotoLayout.L = z10 ? 1 : 0;
@@ -484,7 +484,7 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.wk0
+    @Override // org.telegram.ui.Components.xk0
     public boolean d(int i10) {
         return ((ChatAttachAlertPhotoLayout) this.b).G.d(i10) == 0;
     }
@@ -504,12 +504,12 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
         return (j) this.b;
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public int g1() {
         return ((h8) this.b).c0;
     }
 
-    @Override // org.telegram.ui.Components.wk0
+    @Override // org.telegram.ui.Components.xk0
     public void h(View view, boolean z10) {
         if (z10 == ((ChatAttachAlertPhotoLayout) this.b).K && (view instanceof v5)) {
             v5 v5Var = (v5) view;
@@ -521,40 +521,40 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
     public void i(int i10) {
         switch (this.a) {
             case 13:
-                lp0 lp0Var = (lp0) this.b;
-                op0 op0Var = lp0Var.K;
-                lp0Var.s = i10;
-                if (lp0Var.w != i10) {
-                    lp0Var.d.clear();
+                mp0 mp0Var = (mp0) this.b;
+                pp0 pp0Var = mp0Var.K;
+                mp0Var.s = i10;
+                if (mp0Var.w != i10) {
+                    mp0Var.d.clear();
                 }
-                int i11 = lp0Var.J;
-                if (lp0Var.b() != 0 || lp0Var.e.e() || lp0Var.I) {
-                    op0Var.p2.b(i11);
+                int i11 = mp0Var.J;
+                if (mp0Var.b() != 0 || mp0Var.e.e() || mp0Var.I) {
+                    pp0Var.p2.b(i11);
                 } else {
-                    op0Var.I1.e(false, true);
+                    pp0Var.I1.e(false, true);
                 }
-                lp0Var.f();
-                int i12 = op0.Q2;
-                op0Var.K0(true);
+                mp0Var.f();
+                int i12 = pp0.Q2;
+                pp0Var.K0(true);
                 break;
             default:
                 ba baVar = (ba) this.b;
                 if (!baVar.r && i10 == baVar.J) {
-                    baVar.i0(baVar.N.getText().toString().trim());
+                    baVar.j0(baVar.N.getText().toString().trim());
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.l61
+    @Override // org.telegram.ui.Components.m61
     public void invalidate() {
         ((q1) ((j1) this.b).b).invalidate();
     }
 
-    @Override // org.telegram.ui.Components.wk0
+    @Override // org.telegram.ui.Components.xk0
     public boolean j(int i10) {
-        ef M = ((ChatAttachAlertPhotoLayout) this.b).G.M(i10);
+        ff M = ((ChatAttachAlertPhotoLayout) this.b).G.M(i10);
         return M != null && ChatAttachAlertPhotoLayout.s1.containsKey(Integer.valueOf(M.C));
     }
 
@@ -563,13 +563,13 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
         return n0.z(view) - ((ViewGroup.MarginLayoutParams) ((o0) view.getLayoutParams())).topMargin;
     }
 
-    public ea l() {
+    public fa l() {
         ig.i1 i1Var = (ig.i1) this.b;
         n6.l.i("no included points", !Double.isNaN(i1Var.d));
         LatLngBounds latLngBounds = new LatLngBounds(new LatLng(i1Var.b, i1Var.d), new LatLng(i1Var.c, i1Var.e));
-        ea eaVar = new ea();
-        eaVar.a = latLngBounds;
-        return eaVar;
+        fa faVar = new fa();
+        faVar.a = latLngBounds;
+        return faVar;
     }
 
     public void n(Runnable runnable) {
@@ -693,23 +693,23 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
             a7.V(textView, i12, p6Var);
             textView.setTextSize(1, 16.0f);
             textView.setSingleLine(false);
-            textView.setGravity((cd.X ? 5 : 3) | 48);
+            textView.setGravity((dd.X ? 5 : 3) | 48);
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            boolean z13 = cd.X;
+            boolean z13 = dd.X;
             td0Var2.addView(textView, b6.d(-1, -1.0f, (z13 ? 5 : 3) | 48, z13 ? z12 ? 17 : 64 : 72.0f, 10.0f, z13 ? 72.0f : z12 ? 17 : 64, 0.0f));
             TextView textView2 = new TextView(context);
             td0Var2.b = textView2;
             a7.V(textView2, t6.z6, vd0Var.I0);
-            z20.o(textView2, 1, 13.0f, 1, 1);
+            a30.o(textView2, 1, 13.0f, 1, 1);
             textView2.setSingleLine(true);
-            textView2.setGravity(cd.X ? 5 : 3);
-            boolean z14 = cd.X;
+            textView2.setGravity(dd.X ? 5 : 3);
+            boolean z14 = dd.X;
             td0Var2.addView(textView2, b6.d(-2, -2.0f, z14 ? 5 : 3, z14 ? z12 ? 17 : 64 : 72.0f, 35.0f, z14 ? 72.0f : z12 ? 17 : 64, 0.0f));
             ImageView imageView = new ImageView(context);
             td0Var2.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             a7.t(imageView, t6.m6, vd0Var.I0, PorterDuff.Mode.MULTIPLY);
-            boolean z15 = cd.X;
+            boolean z15 = dd.X;
             td0Var2.addView(imageView, b6.d(-2, -2.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : 20.0f, 20.0f, z15 ? 20.0f : 0.0f, 0.0f));
             td0Var = td0Var2;
             if (!z12) {
@@ -719,7 +719,7 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
                 int i15 = t6.N6;
                 int i16 = t6.d6;
                 r92.d(i14, i15, i16, i16);
-                td0Var2.addView(r92, b6.d(37, 40.0f, (cd.X ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+                td0Var2.addView(r92, b6.d(37, 40.0f, (dd.X ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
                 td0Var = td0Var2;
             }
         } else {
@@ -735,7 +735,7 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
                     z10 = true;
                     str = null;
                 } else {
-                    str = cd.d0(vd0Var.a, tL_userContact_old2, null, null);
+                    str = dd.d0(vd0Var.a, tL_userContact_old2, null, null);
                     z10 = true;
                 }
             }
@@ -747,7 +747,7 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
             g9Var.e(tL_userContact_old2, r8Var);
             ud0Var.addView(g9Var, b6.t(80, 80, 49, 0, 32, 0, 0));
             TextView textView3 = new TextView(context);
-            z20.n(textView3, 1, 17.0f);
+            a30.n(textView3, 1, 17.0f);
             a7.V(textView3, t6.j5, vd0Var.I0);
             textView3.setSingleLine(true);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -798,13 +798,13 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
             TextView textView4 = td0Var3.b;
             int i19 = h0Var.c;
             if (i19 == 4) {
-                str2 = cd.L0(2131751787, null);
+                str2 = dd.L0(2131751787, null);
             } else if (i19 == 3) {
-                str2 = cd.L0(2131751781, null);
+                str2 = dd.L0(2131751781, null);
             } else if (i19 == 5) {
-                str2 = cd.L0(2131751803, null);
+                str2 = dd.L0(2131751803, null);
             } else if (i19 == 6) {
-                str2 = "ORG".equalsIgnoreCase(h0Var.a(true)) ? cd.L0(2131751792, null) : cd.L0(2131751791, null);
+                str2 = "ORG".equalsIgnoreCase(h0Var.a(true)) ? dd.L0(2131751792, null) : dd.L0(2131751791, null);
             } else {
                 int indexOf = h0Var.b.indexOf(58);
                 if (indexOf < 0) {
@@ -865,19 +865,19 @@ public final class t implements l2.i, xa, ra, l61, q4, wk0, l1, com.google.andro
                         switch (c10) {
                             case 0:
                             case 1:
-                                L0 = cd.L0(2131747307, null);
+                                L0 = dd.L0(2131747307, null);
                                 break;
                             case 2:
-                                L0 = cd.L0(2131747309, null);
+                                L0 = dd.L0(2131747309, null);
                                 break;
                             case 3:
-                                L0 = cd.L0(2131747308, null);
+                                L0 = dd.L0(2131747308, null);
                                 break;
                             case 4:
-                                L0 = cd.L0(2131747297, null);
+                                L0 = dd.L0(2131747297, null);
                                 break;
                             case 5:
-                                L0 = cd.L0(2131747298, null);
+                                L0 = dd.L0(2131747298, null);
                                 break;
                             default:
                                 L0 = substring2;

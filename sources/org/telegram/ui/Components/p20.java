@@ -8,17 +8,17 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p20 extends TextView {
     public final Paint[] a;
-    public final /* synthetic */ org.telegram.ui.b40 b;
+    public final /* synthetic */ org.telegram.ui.a40 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p20(org.telegram.ui.b40 b40Var, Context context) {
+    public p20(org.telegram.ui.a40 a40Var, Context context) {
         super(context);
-        this.b = b40Var;
-        this.a = new Paint[b40Var.l1.length];
+        this.b = a40Var;
+        this.a = new Paint[a40Var.l1.length];
         int i10 = 0;
         while (true) {
             Paint[] paintArr = this.a;
@@ -35,15 +35,15 @@ public final class p20 extends TextView {
         int i10;
         RectF rectF = org.telegram.messenger.i0.P;
         rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        org.telegram.ui.b40 b40Var = this.b;
-        int i11 = b40Var.n1;
+        org.telegram.ui.a40 a40Var = this.b;
+        int i11 = a40Var.n1;
         Paint[] paintArr = this.a;
-        paintArr[i11].setAlpha(org.telegram.messenger.zs.e4);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), paintArr[b40Var.n1]);
-        float f7 = b40Var.m1;
-        if (f7 > 0.0f && (i10 = b40Var.n1 + 1) < paintArr.length) {
+        paintArr[i11].setAlpha(org.telegram.messenger.at.e4);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), paintArr[a40Var.n1]);
+        float f7 = a40Var.m1;
+        if (f7 > 0.0f && (i10 = a40Var.n1 + 1) < paintArr.length) {
             paintArr[i10].setAlpha((int) (f7 * 255.0f));
-            canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), paintArr[b40Var.n1 + 1]);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), paintArr[a40Var.n1 + 1]);
         }
         super.onDraw(canvas);
     }

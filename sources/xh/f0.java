@@ -12,10 +12,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import org.json.JSONObject;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f0 {
     public static final HashMap g = new HashMap();
@@ -104,7 +104,7 @@ public final class f0 {
     }
 
     public final void e() {
-        zs.f(this.b).k(zs.J3, new Object[0]);
+        at.f(this.b).k(at.J3, new Object[0]);
     }
 
     public final void f() {

@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class y70 extends LinearLayout {
     public final org.telegram.ui.Cells.p4 a;
@@ -34,12 +34,12 @@ public abstract class y70 extends LinearLayout {
         setOrientation(1);
         org.telegram.ui.Cells.p4 p4Var = new org.telegram.ui.Cells.p4(context, 20);
         this.a = p4Var;
-        p4Var.setText(org.telegram.messenger.cd.L0(2131752300, null));
+        p4Var.setText(org.telegram.messenger.dd.L0(2131752300, null));
         org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d6, p4Var, null);
         addView(p4Var);
         org.telegram.ui.Cells.t8 t8Var = new org.telegram.ui.Cells.t8(context, 20);
         this.b = t8Var;
-        String L0 = org.telegram.messenger.cd.L0(2131752299, null);
+        String L0 = org.telegram.messenger.dd.L0(2131752299, null);
         boolean z10 = this.f;
         t8Var.f(L0, z10, z10);
         t8Var.setEnabled(chat.creator || ((tL_chatAdminRights2 = chat.admin_rights) != null && tL_chatAdminRights2.ban_users));
@@ -78,7 +78,7 @@ public abstract class y70 extends LinearLayout {
         addView(t8Var);
         org.telegram.ui.Cells.t8 t8Var2 = new org.telegram.ui.Cells.t8(context, 20);
         this.c = t8Var2;
-        t8Var2.f(org.telegram.messenger.cd.L0(2131752304, null), this.h, false);
+        t8Var2.f(org.telegram.messenger.dd.L0(2131752304, null), this.h, false);
         t8Var2.setPivotY(0.0f);
         t8Var2.setEnabled(chat.creator || ((tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.ban_users));
         t8Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.v70
@@ -116,11 +116,11 @@ public abstract class y70 extends LinearLayout {
         addView(t8Var2);
         org.telegram.ui.Cells.b9 b9Var = new org.telegram.ui.Cells.b9(12, context, null);
         this.d = b9Var;
-        b9Var.setText(org.telegram.messenger.cd.L0(2131752298, null));
+        b9Var.setText(org.telegram.messenger.dd.L0(2131752298, null));
         addView(b9Var);
         org.telegram.ui.Cells.b9 b9Var2 = new org.telegram.ui.Cells.b9(12, context, null);
         this.e = b9Var2;
-        b9Var2.setText(org.telegram.messenger.cd.L0(2131752303, null));
+        b9Var2.setText(org.telegram.messenger.dd.L0(2131752303, null));
         addView(b9Var2);
         boolean z11 = this.f;
         this.s = z11 ? 1.0f : 0.0f;

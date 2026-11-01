@@ -3,16 +3,16 @@ package vh;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.widget.FrameLayout;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.xg0;
+import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final org.telegram.ui.g3 a;
     public r b;
-    public q20 c;
+    public r20 c;
     public float d;
     public boolean e;
     public ValueAnimator f;
@@ -21,7 +21,7 @@ public final class t extends FrameLayout {
         super(activity);
         org.telegram.ui.g3 g3Var = new org.telegram.ui.g3(this, activity);
         this.a = g3Var;
-        g3Var.setAdapter(new xg0(this, activity, z1Var, 1));
+        g3Var.setAdapter(new vg0(this, activity, z1Var, 1));
         g3Var.setLayoutManager(new s4.a0(0, false));
         g3Var.setClipToPadding(false);
         g3Var.setVisibility(8);
@@ -56,8 +56,8 @@ public final class t extends FrameLayout {
         this.f.start();
     }
 
-    public void setOnLayoutClick(q20 q20Var) {
-        this.c = q20Var;
+    public void setOnLayoutClick(r20 r20Var) {
+        this.c = r20Var;
     }
 
     public void setSelected(r rVar) {

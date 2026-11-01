@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k0 extends gf.e {
     public final /* synthetic */ int d = 1;
@@ -39,7 +39,7 @@ public final class k0 extends gf.e {
         switch (this.d) {
             case 1:
                 if (!z10) {
-                    org.telegram.messenger.i0.h3(new zj(((fn) this.g).a, 10), 250L);
+                    org.telegram.messenger.i0.h3(new zj(((fn) this.g).a, 9), 250L);
                     break;
                 }
                 break;
@@ -74,18 +74,18 @@ public final class k0 extends gf.e {
                 break;
             default:
                 fn fnVar = (fn) this.g;
-                fnVar.a.Rb = ((org.telegram.messenger.jj) this.e).f1();
+                fnVar.a.Sb = ((org.telegram.messenger.kj) this.e).f1();
                 un unVar = fnVar.a;
-                unVar.Sb = 0;
-                unVar.Tb = null;
+                unVar.Tb = 0;
+                unVar.Ub = null;
                 ((org.telegram.ui.Cells.q1) this.f).invalidate();
                 break;
         }
     }
 
-    public k0(fn fnVar, org.telegram.messenger.jj jjVar, org.telegram.ui.Cells.q1 q1Var) {
+    public k0(fn fnVar, org.telegram.messenger.kj kjVar, org.telegram.ui.Cells.q1 q1Var) {
         this.g = fnVar;
-        this.e = jjVar;
+        this.e = kjVar;
         this.f = q1Var;
     }
 }

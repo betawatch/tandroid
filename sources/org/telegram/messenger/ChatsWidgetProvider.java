@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class ChatsWidgetProvider extends AppWidgetProvider {
     public static void a(Context context, AppWidgetManager appWidgetManager, int i10) {
@@ -35,12 +35,12 @@ public class ChatsWidgetProvider extends AppWidgetProvider {
             int i14 = sharedPreferences.getInt("account" + i10, -1);
             if (i14 == -1) {
                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                edit.putInt(i0.a.i(i10, "account"), d20.s0);
+                edit.putInt(i0.a.i(i10, "account"), e20.s0);
                 edit.putInt(TeXSymbolParser.TYPE_ATTR + i10, 0).commit();
             }
             ArrayList arrayList = new ArrayList();
             if (i14 >= 0) {
-                hs.a0(c.a(i14).a).q0(i10, 0, arrayList, null, null, false);
+                is.a0(c.a(i14).a).q0(i10, 0, arrayList, null, null, false);
             }
             if (i12 != 1 && arrayList.size() > 1) {
                 i13 = (i12 == 2 || arrayList.size() <= 2) ? R.layout.shortcut_widget_layout_2 : (i12 == 3 || arrayList.size() <= 3) ? R.layout.shortcut_widget_layout_3 : R.layout.shortcut_widget_layout_4;
@@ -73,8 +73,8 @@ public class ChatsWidgetProvider extends AppWidgetProvider {
         for (int i10 = 0; i10 < iArr.length; i10++) {
             int i11 = sharedPreferences.getInt("account" + iArr[i10], -1);
             if (i11 >= 0) {
-                hs a02 = hs.a0(c.a(i11).a);
-                a02.a.c(new yp(a02, iArr[i10], 2));
+                is a02 = is.a0(c.a(i11).a);
+                a02.a.c(new zp(a02, iArr[i10], 2));
             }
             edit.remove("account" + iArr[i10]);
             edit.remove(TeXSymbolParser.TYPE_ATTR + iArr[i10]);

@@ -32,13 +32,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.i0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.dg0;
-import org.telegram.ui.Components.ep0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.fp0;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.g31;
-import org.telegram.ui.jx0;
-import org.telegram.ui.mw0;
+import org.telegram.ui.e31;
+import org.telegram.ui.ix0;
+import org.telegram.ui.lw0;
 import rh.e4;
 import s4.i1;
 import s4.n0;
@@ -55,9 +55,9 @@ import vh.s7;
 import vh.t8;
 import vh.x3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public class y implements m, com.google.android.gms.common.api.internal.o, ep0, i1, com.google.android.gms.common.api.internal.s, g31, k7, v0.h, c2, t8, w2.d, wd.b, Continuation, y2.g {
+public class y implements m, com.google.android.gms.common.api.internal.o, fp0, i1, com.google.android.gms.common.api.internal.s, e31, k7, v0.h, c2, t8, w2.d, wd.b, Continuation, y2.g {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -134,7 +134,7 @@ public class y implements m, com.google.android.gms.common.api.internal.o, ep0, 
         ((n5) k4Var.d.T.get(i10)).V = f7;
     }
 
-    @Override // org.telegram.ui.Components.ep0
+    @Override // org.telegram.ui.Components.fp0
     public void B0() {
         wb k10 = ((e4) this.b).k().k(false);
         k10.t = true;
@@ -562,9 +562,9 @@ public class y implements m, com.google.android.gms.common.api.internal.o, ep0, 
 
     @Override // th.k7
     public void d(long j10, int i10, th.i2 i2Var) {
-        mw0 mw0Var = (mw0) this.b;
+        lw0 lw0Var = (lw0) this.b;
         int i11 = ProfileStoriesView.s0;
-        mw0Var.f(true, false);
+        lw0Var.f(true, false);
         i2Var.run();
     }
 
@@ -650,18 +650,18 @@ public class y implements m, com.google.android.gms.common.api.internal.o, ep0, 
             k4Var.m(j10);
             return;
         }
-        u61 u61Var = k4Var.e;
-        if (u61Var != null) {
-            u61Var.q0(j10, true);
+        v61 v61Var = k4Var.e;
+        if (v61Var != null) {
+            v61Var.q0(j10, true);
             return;
         }
         if (k4Var.j()) {
             k4Var.E.m(j10, true);
             return;
         }
-        u61 u61Var2 = k4Var.D;
-        if (u61Var2 != null) {
-            u61Var2.q0(j10, false);
+        v61 v61Var2 = k4Var.D;
+        if (v61Var2 != null) {
+            v61Var2.q0(j10, false);
         }
     }
 
@@ -814,8 +814,8 @@ public class y implements m, com.google.android.gms.common.api.internal.o, ep0, 
         }
         n5Var.Z = f7;
         n5Var.j = true;
-        u61 u61Var = k4Var.e;
-        if (u61Var == null || u61Var.U() == -9223372036854775807L) {
+        v61 v61Var = k4Var.e;
+        if (v61Var == null || v61Var.U() == -9223372036854775807L) {
             return;
         }
         k4Var.m((long) (f7 * k4Var.e.U()));
@@ -875,17 +875,17 @@ public class y implements m, com.google.android.gms.common.api.internal.o, ep0, 
         c3 c3Var2;
         l7Var.b = null;
         l7Var.c = null;
-        mw0 mw0Var = (mw0) this.b;
-        jx0 jx0Var = mw0Var.h;
-        ArrayList arrayList = mw0Var.x;
-        if (mw0Var.N < 0.2f) {
-            l7Var.b = jx0Var.getImageReceiver();
+        lw0 lw0Var = (lw0) this.b;
+        ix0 ix0Var = lw0Var.h;
+        ArrayList arrayList = lw0Var.x;
+        if (lw0Var.N < 0.2f) {
+            l7Var.b = ix0Var.getImageReceiver();
             l7Var.c = null;
-            l7Var.a = jx0Var;
+            l7Var.a = ix0Var;
             l7Var.h = 0.0f;
             l7Var.i = i0.q.y;
-            l7Var.g = (View) mw0Var.getParent();
-            l7Var.d = mw0Var.D;
+            l7Var.g = (View) lw0Var.getParent();
+            l7Var.d = lw0Var.D;
             l7Var.n = true;
             return true;
         }
@@ -914,10 +914,10 @@ public class y implements m, com.google.android.gms.common.api.internal.o, ep0, 
         }
         l7Var.c = imageReceiver;
         l7Var.b = null;
-        l7Var.a = mw0Var;
+        l7Var.a = lw0Var;
         l7Var.h = 0.0f;
         l7Var.i = i0.q.y;
-        l7Var.g = (View) mw0Var.getParent();
+        l7Var.g = (View) lw0Var.getParent();
         if (c3Var == null || c3Var2 == null) {
             l7Var.f = null;
             return true;
@@ -984,7 +984,7 @@ public class y implements m, com.google.android.gms.common.api.internal.o, ep0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.ep0
+    @Override // org.telegram.ui.Components.fp0
     public /* synthetic */ void V() {
     }
 

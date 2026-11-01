@@ -14,18 +14,18 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import li.a1;
-import org.telegram.messenger.ot;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.pt;
+import org.telegram.messenger.wp;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.fo;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.uy0;
-import org.telegram.ui.vb1;
+import org.telegram.ui.tb1;
+import org.telegram.ui.ty0;
 import v7.t6;
 import v7.y8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
     public final /* synthetic */ int a;
@@ -43,7 +43,18 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
         return ((j) this.c).a;
     }
 
-    public int B(int i10) {
+    public void B(int i10) {
+        if (i10 < 64) {
+            this.b &= ~(1 << i10);
+            return;
+        }
+        g0 g0Var = (g0) this.c;
+        if (g0Var != null) {
+            g0Var.B(i10 - 64);
+        }
+    }
+
+    public int C(int i10) {
         g0 g0Var = (g0) this.c;
         if (g0Var == null) {
             return i10 >= 64 ? Long.bitCount(this.b) : Long.bitCount(this.b & ((1 << i10) - 1));
@@ -51,16 +62,16 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
         if (i10 < 64) {
             return Long.bitCount(this.b & ((1 << i10) - 1));
         }
-        return Long.bitCount(this.b) + g0Var.B(i10 - 64);
+        return Long.bitCount(this.b) + g0Var.C(i10 - 64);
     }
 
-    public void C() {
+    public void D() {
         if (((g0) this.c) == null) {
             this.c = new g0(7);
         }
     }
 
-    public void D(sc.a aVar) {
+    public void E(sc.a aVar) {
         this.b++;
         Thread thread = new Thread(aVar);
         thread.setDaemon(true);
@@ -69,39 +80,17 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
         thread.start();
     }
 
-    @Override // org.telegram.ui.Components.fo
-    public void E(int i10) {
-        ProfileActivity profileActivity = (ProfileActivity) this.c;
-        if (i10 == 0) {
-            if (profileActivity.getMessagesController().q2(this.b, profileActivity.f1, null)) {
-                v();
-            }
-            if (cc.a(profileActivity)) {
-                cc.z(profileActivity, 4, i10, profileActivity.z0).j();
-                return;
-            }
-            return;
-        }
-        RectF rectF = ProfileActivity.R6;
-        profileActivity.getNotificationsController().H(this.b, i10, profileActivity.f1);
-        if (cc.a(profileActivity)) {
-            cc.z(profileActivity, 5, i10, profileActivity.z0).j();
-        }
-        profileActivity.u5();
-        profileActivity.E5(true);
-    }
-
     public boolean F(int i10) {
         if (i10 < 64) {
             return (this.b & (1 << i10)) != 0;
         }
-        C();
+        D();
         return ((g0) this.c).F(i10 - 64);
     }
 
     public void G(int i10, boolean z10) {
         if (i10 >= 64) {
-            C();
+            D();
             ((g0) this.c).G(i10 - 64, z10);
             return;
         }
@@ -112,10 +101,10 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
         if (z10) {
             J(i10);
         } else {
-            w(i10);
+            B(i10);
         }
         if (z11 || ((g0) this.c) != null) {
-            C();
+            D();
             ((g0) this.c).G(0, z11);
         }
     }
@@ -127,7 +116,7 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
 
     public boolean H(int i10) {
         if (i10 >= 64) {
-            C();
+            D();
             return ((g0) this.c).H(i10 - 64);
         }
         long j10 = 1 << i10;
@@ -164,7 +153,7 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
         if (i10 < 64) {
             this.b |= 1 << i10;
         } else {
-            C();
+            D();
             ((g0) this.c).J(i10 - 64);
         }
     }
@@ -253,12 +242,12 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
     public void n() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        vb1 vb1Var = new vb1(bundle);
-        vb1Var.d = new ArrayList();
-        vb1Var.e = new HashSet();
+        tb1 tb1Var = new tb1(bundle);
+        tb1Var.d = new ArrayList();
+        tb1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        vb1Var.e = profileActivity.h5;
-        profileActivity.presentFragment(vb1Var);
+        tb1Var.e = profileActivity.h5;
+        profileActivity.presentFragment(tb1Var);
     }
 
     @Override // l2.i
@@ -315,9 +304,16 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
         ((p) this.c).readFully(bArr, i10, i11);
     }
 
-    @Override // li.a1
-    public void s(MediaFormat mediaFormat) {
-        ((li.z) this.c).n(mediaFormat, true);
+    @Override // org.telegram.ui.Components.fo
+    public void s() {
+        ProfileActivity profileActivity = (ProfileActivity) this.c;
+        boolean z10 = !profileActivity.getMessagesController().q2(this.b, profileActivity.f1, null);
+        profileActivity.getNotificationsController().G(this.b, profileActivity.f1, z10);
+        if (profileActivity.fragmentView != null) {
+            cc.A(profileActivity, z10, null).j();
+        }
+        profileActivity.v5();
+        profileActivity.F5(true);
     }
 
     @Override // c3.p
@@ -350,53 +346,57 @@ public final class g0 implements p, q, OnFailureListener, l2.i, a1, fo {
     @Override // org.telegram.ui.Components.fo
     public void v() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        boolean z10 = !profileActivity.getMessagesController().q2(this.b, profileActivity.f1, null);
-        profileActivity.getNotificationsController().G(this.b, profileActivity.f1, z10);
-        if (profileActivity.fragmentView != null) {
-            cc.A(profileActivity, z10, null).j();
-        }
-        profileActivity.u5();
-        profileActivity.E5(true);
-    }
-
-    public void w(int i10) {
-        if (i10 < 64) {
-            this.b &= ~(1 << i10);
-            return;
-        }
-        g0 g0Var = (g0) this.c;
-        if (g0Var != null) {
-            g0Var.w(i10 - 64);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fo
-    public void x() {
-        ProfileActivity profileActivity = (ProfileActivity) this.c;
         long j10 = this.b;
         if (j10 != 0) {
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", j10);
             bundle.putLong("topic_id", profileActivity.f1);
-            profileActivity.presentFragment(new uy0(bundle, profileActivity.z0));
+            profileActivity.presentFragment(new ty0(bundle, profileActivity.z0));
+        }
+    }
+
+    @Override // li.a1
+    public void w(MediaFormat mediaFormat) {
+        ((li.z) this.c).n(mediaFormat, true);
+    }
+
+    @Override // org.telegram.ui.Components.fo
+    public void x() {
+        int i10;
+        ProfileActivity profileActivity = (ProfileActivity) this.c;
+        i10 = ((k2) profileActivity).currentAccount;
+        SharedPreferences sharedPreferences = wp.r1(i10).e7;
+        StringBuilder sb2 = new StringBuilder("sound_enabled_");
+        long j10 = this.b;
+        sb2.append(pt.v(j10, profileActivity.f1, false));
+        boolean z10 = sharedPreferences.getBoolean(sb2.toString(), true);
+        boolean z11 = !z10;
+        sharedPreferences.edit().putBoolean("sound_enabled_" + pt.v(j10, profileActivity.f1, false), z11).apply();
+        if (cc.a(profileActivity)) {
+            cc.S(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
         }
     }
 
     @Override // org.telegram.ui.Components.fo
-    public void y() {
-        int i10;
+    public void y(int i10) {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        i10 = ((k2) profileActivity).currentAccount;
-        SharedPreferences sharedPreferences = vp.r1(i10).e7;
-        StringBuilder sb2 = new StringBuilder("sound_enabled_");
-        long j10 = this.b;
-        sb2.append(ot.v(j10, profileActivity.f1, false));
-        boolean z10 = sharedPreferences.getBoolean(sb2.toString(), true);
-        boolean z11 = !z10;
-        sharedPreferences.edit().putBoolean("sound_enabled_" + ot.v(j10, profileActivity.f1, false), z11).apply();
-        if (cc.a(profileActivity)) {
-            cc.S(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
+        if (i10 == 0) {
+            if (profileActivity.getMessagesController().q2(this.b, profileActivity.f1, null)) {
+                s();
+            }
+            if (cc.a(profileActivity)) {
+                cc.z(profileActivity, 4, i10, profileActivity.z0).j();
+                return;
+            }
+            return;
         }
+        RectF rectF = ProfileActivity.S6;
+        profileActivity.getNotificationsController().H(this.b, i10, profileActivity.f1);
+        if (cc.a(profileActivity)) {
+            cc.z(profileActivity, 5, i10, profileActivity.z0).j();
+        }
+        profileActivity.v5();
+        profileActivity.F5(true);
     }
 
     @Override // l2.i

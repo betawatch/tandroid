@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.h0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class ListMenuItemView extends LinearLayout implements z, AbsListView.SelectionBoundsAdjuster {
     public final Drawable D;
@@ -355,12 +355,12 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
         k G = k.G(getContext(), attributeSet, a.r, i10);
-        this.s = G.w(5);
+        this.s = G.v(5);
         TypedArray typedArray = (TypedArray) G.c;
         this.w = typedArray.getResourceId(1, -1);
         this.y = typedArray.getBoolean(7, false);
         this.x = context;
-        this.D = G.w(8);
+        this.D = G.v(8);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
         this.E = obtainStyledAttributes.hasValue(0);
         G.I();

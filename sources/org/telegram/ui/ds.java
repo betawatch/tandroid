@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ds implements Runnable {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class ds implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ns.c0(this.b);
+                ns.d0(this.b);
                 break;
             case 1:
                 ns nsVar = this.b;
@@ -27,7 +27,7 @@ public final /* synthetic */ class ds implements Runnable {
                 break;
             default:
                 ns nsVar2 = this.b;
-                nsVar2.presentFragment(un.ha(nsVar2.H), true);
+                nsVar2.presentFragment(un.ma(nsVar2.H), true);
                 break;
         }
     }

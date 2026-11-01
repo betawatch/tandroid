@@ -1,104 +1,112 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.ViewGroup;
-import java.util.HashSet;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.tk0;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.telegram.messenger.at;
+import org.telegram.ui.hk;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class z2 extends org.telegram.ui.Components.ha implements org.telegram.ui.ActionBar.k6 {
-    public p51 P1;
-    public final ViewGroup Q1;
-    public final Paint R1;
-    public float S1;
+public final class z2 extends org.telegram.ui.ActionBar.z2 {
+    public final hk i1;
+    public final ArrayList j1;
+    public boolean k1;
+    public FrameLayout l1;
+    public Integer m1;
 
-    public z2(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, null, true, false, p6Var);
-        this.R1 = new Paint();
-        this.r1 = 0.1f;
-        this.Q1 = viewGroup;
-        tk0 tk0Var = this.k1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z2(Context context, org.telegram.ui.ActionBar.p6 p6Var, View... viewArr) {
+        super(1, context, p6Var, true);
+        List asList = Arrays.asList(viewArr);
+        ArrayList arrayList = new ArrayList();
+        this.j1 = arrayList;
+        if (asList != null) {
+            arrayList.addAll(asList);
+        }
+        w2 w2Var = new w2(this, context);
+        this.b = w2Var;
+        hk hkVar = new hk(this, context, 5);
+        this.i1 = hkVar;
         int i10 = this.t0;
-        tk0Var.setPadding(i10, 0, i10, 0);
-        updateColors();
-        this.P1.O(false);
+        hkVar.setPadding(i10, 0, i10, org.telegram.messenger.i0.n);
+        w2Var.addView(hkVar, w7.b6.e(-1, -1, at.E1));
     }
 
     @Override // org.telegram.ui.ActionBar.z2
-    public final void E0(int i10) {
-        super.E0(i10);
-        org.telegram.messenger.i0.t3(this, 0, false, null);
+    public final boolean H() {
+        return this.i1.getCurrentPosition() == 0;
     }
 
-    @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(tk0Var, getContext(), this.a, 0, true, new d(this, 5), this.I0);
-        this.P1 = p51Var;
-        return p51Var;
-    }
-
-    @Override // org.telegram.ui.Components.ha
-    public final CharSequence O0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.ha
-    public void T0(float f7) {
-        this.S1 = f7;
-        if (this.E != null) {
-            this.E.setTranslationY(Math.max((this.b.getY() + f7) + this.s0, this.E.getHeight() + (org.telegram.messenger.i0.L(56.0f) + org.telegram.messenger.i0.m)) - this.E.getBottom());
+    public final void I0(y2 y2Var) {
+        this.j1.add(y2Var);
+        if (this.k1) {
+            hk hkVar = this.i1;
+            hkVar.D(false);
+            hkVar.o(false);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.z2
-    public final void Z(Canvas canvas) {
-        org.telegram.ui.ActionBar.p2 p2Var = this.c;
-        float height = p2Var.getHeight();
-        float max = Math.max(height - org.telegram.messenger.i0.n, this.b.getY() + this.S1 + this.s0);
-        if (max >= height) {
-            return;
+    public final boolean J(MotionEvent motionEvent) {
+        return this.i1.getCurrentPosition() == 0;
+    }
+
+    public final void J0(int i10) {
+        this.m1 = Integer.valueOf(i10);
+        v0(i10);
+        P(i10);
+        ((w2) this.b).invalidate();
+    }
+
+    public final void K0(LinearLayout linearLayout) {
+        FrameLayout frameLayout = this.l1;
+        if (frameLayout == null) {
+            FrameLayout frameLayout2 = new FrameLayout(getContext());
+            this.l1 = frameLayout2;
+            frameLayout2.setClipChildren(false);
+            this.l1.setClipToPadding(false);
+            this.b.addView(this.l1, w7.b6.e(-1, -2, 80));
+        } else {
+            frameLayout.removeAllViews();
         }
-        boolean z10 = this.b.getWidth() < p2Var.getWidth();
-        canvas.drawRect(z10 ? this.b.getX() + this.t0 : 0.0f, max, z10 ? (this.b.getX() + this.b.getWidth()) - this.t0 : p2Var.getWidth(), height, this.R1);
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.t6.a7));
-    }
-
-    public int d1() {
-        return org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.a7, this.I0);
+        this.l1.addView(linearLayout, w7.b6.e(-1, -2, 80));
+        hk hkVar = this.i1;
+        int i10 = this.t0;
+        hkVar.setPadding(i10, 0, i10, 0);
+        ((w2) this.b).requestLayout();
     }
 
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog
-    public void show() {
-        if (getWindow() != null) {
-            org.telegram.messenger.i0.S(getWindow());
+    public final void onBackPressed() {
+        hk hkVar = this.i1;
+        if (hkVar.getCurrentPosition() <= 0) {
+            super.onBackPressed();
+            return;
         }
-        super.show();
-        int d12 = d1();
-        E0(d12);
-        org.telegram.messenger.i0.m3(this, org.telegram.messenger.i0.B(d12) > 0.721f);
-        if (getWindow() != null) {
-            getWindow().getDecorView().requestApplyInsets();
+        for (View view : hkVar.getViewPages()) {
+            if (view != null) {
+                org.telegram.messenger.i0.v1(view);
+            }
         }
+        hkVar.E(hkVar.getCurrentPosition() - 1);
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        int d12 = d1();
-        this.R1.setColor(d12);
-        v0(d12);
-        P(d12);
-        ViewGroup viewGroup = this.Q1;
-        if (viewGroup != null) {
-            viewGroup.invalidate();
+    @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog
+    public final void show() {
+        if (!this.k1) {
+            this.k1 = true;
+            this.i1.setAdapter(new ig.n(this, 3));
+        }
+        super.show();
+        Integer num = this.m1;
+        if (num != null) {
+            E0(num.intValue());
         }
     }
 }

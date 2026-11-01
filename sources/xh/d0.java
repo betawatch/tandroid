@@ -2,7 +2,7 @@ package xh;
 
 import th.r4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final /* synthetic */ class d0 implements Runnable {
                 ((e2.f) this.b).e();
                 break;
             case 7:
-                h3 h3Var = (h3) this.b;
-                h3Var.Q = h3Var.r;
+                i3 i3Var = (i3) this.b;
+                i3Var.Q = i3Var.r;
                 break;
             default:
                 r4 r4Var = ((zf.b1) this.b).D;

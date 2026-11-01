@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j01 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -24,13 +24,13 @@ public final class j01 extends AnimatorListenerAdapter {
                     k01Var.e = 0.0f;
                     k01Var.g();
                     k01Var.n.e();
-                    ex exVar = k01Var.a;
-                    if (exVar != null) {
-                        exVar.onPause();
+                    dx dxVar = k01Var.a;
+                    if (dxVar != null) {
+                        dxVar.onPause();
                         k01Var.a.onFragmentDestroy();
                         k01Var.removeAllViews();
                         k01Var.a = null;
-                        org.telegram.messenger.zs.e().k(org.telegram.messenger.zs.r4, new Object[0]);
+                        org.telegram.messenger.at.e().k(org.telegram.messenger.at.r4, new Object[0]);
                     }
                     k01Var.d(false);
                     break;

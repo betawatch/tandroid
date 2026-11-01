@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.Locale;
-import org.telegram.messenger.b30;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.c30;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.jc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o5 extends FrameLayout {
     public final TextView a;
@@ -27,7 +27,7 @@ public final class o5 extends FrameLayout {
         org.telegram.ui.Components.g9 g9Var = new org.telegram.ui.Components.g9(context);
         this.d = g9Var;
         g9Var.getImageReceiver().J0(org.telegram.messenger.i0.L(8.0f));
-        addView(g9Var, w7.b6.d(100, 100.0f, cd.X ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
+        addView(g9Var, w7.b6.d(100, 100.0f, dd.X ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
         int i10 = org.telegram.ui.ActionBar.t6.G6;
@@ -39,8 +39,8 @@ public final class o5 extends FrameLayout {
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setGravity((cd.X ? 5 : 3) | 48);
-        boolean z10 = cd.X;
+        textView.setGravity((dd.X ? 5 : 3) | 48);
+        boolean z10 = dd.X;
         addView(textView, w7.b6.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 9.0f, z10 ? 123.0f : 10.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
@@ -48,17 +48,17 @@ public final class o5 extends FrameLayout {
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(truncateAt);
-        textView2.setGravity((cd.X ? 5 : 3) | 48);
-        boolean z11 = cd.X;
+        textView2.setGravity((dd.X ? 5 : 3) | 48);
+        boolean z11 = dd.X;
         addView(textView2, w7.b6.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
         org.telegram.ui.ActionBar.a7.V(textView3, org.telegram.ui.ActionBar.t6.z6, null);
-        z20.o(textView3, 1, 14.0f, 1, 1);
+        a30.o(textView3, 1, 14.0f, 1, 1);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);
-        textView3.setGravity((cd.X ? 5 : 3) | 48);
-        boolean z12 = cd.X;
+        textView3.setGravity((dd.X ? 5 : 3) | 48);
+        boolean z12 = dd.X;
         addView(textView3, w7.b6.d(-1, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 9.0f));
     }
 
@@ -82,21 +82,21 @@ public final class o5 extends FrameLayout {
         int i11 = (int) (360 / L);
         org.telegram.ui.Components.g9 g9Var = this.d;
         if (webDocument == null || !webDocument.mime_type.startsWith("image/")) {
-            textView.setLayoutParams(w7.b6.d(-1, -2.0f, (cd.X ? 5 : 3) | 48, 17.0f, 9.0f, 17.0f, 0.0f));
-            textView2.setLayoutParams(w7.b6.d(-1, -2.0f, (cd.X ? 5 : 3) | 48, 17.0f, 33.0f, 17.0f, 0.0f));
-            textView3.setLayoutParams(w7.b6.d(-1, -2.0f, (cd.X ? 5 : 3) | 48, 17.0f, 90.0f, 17.0f, 9.0f));
+            textView.setLayoutParams(w7.b6.d(-1, -2.0f, (dd.X ? 5 : 3) | 48, 17.0f, 9.0f, 17.0f, 0.0f));
+            textView2.setLayoutParams(w7.b6.d(-1, -2.0f, (dd.X ? 5 : 3) | 48, 17.0f, 33.0f, 17.0f, 0.0f));
+            textView3.setLayoutParams(w7.b6.d(-1, -2.0f, (dd.X ? 5 : 3) | 48, 17.0f, 90.0f, 17.0f, 9.0f));
             g9Var.setVisibility(8);
             return;
         }
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         textView.setLayoutParams(w7.b6.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 9.0f, z10 ? 123.0f : 10.0f, 0.0f));
-        boolean z11 = cd.X;
+        boolean z11 = dd.X;
         textView2.setLayoutParams(w7.b6.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
-        boolean z12 = cd.X;
+        boolean z12 = dd.X;
         textView3.setLayoutParams(w7.b6.d(-1, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 0.0f));
         g9Var.setVisibility(0);
         Locale locale = Locale.US;
-        g9Var.getImageReceiver().r0(ic.p(b30.c(webDocument)), a1.g.i(i10, i11, "_"), null, null, null, -1L, null, obj, 1);
+        g9Var.getImageReceiver().r0(jc.p(c30.c(webDocument)), a1.g.i(i10, i11, "_"), null, null, null, -1L, null, obj, 1);
     }
 
     public final void b(TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, String str) {

@@ -6,11 +6,11 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,12 +36,12 @@ public final /* synthetic */ class b5 implements View.OnClickListener {
                 ArrayList arrayList = f5Var.E;
                 int indexOf = arrayList.indexOf(view);
                 if (f5Var.N != null && f5Var.a != null) {
-                    List o10 = f5Var.o();
-                    if (indexOf >= 0 && indexOf < o10.size() && indexOf < arrayList.size()) {
-                        final w wVar = (w) o10.get(indexOf);
+                    List n10 = f5Var.n();
+                    if (indexOf >= 0 && indexOf < n10.size() && indexOf < arrayList.size()) {
+                        final w wVar = (w) n10.get(indexOf);
                         z60 U = f5Var.N.a.o3.U((View) arrayList.get(indexOf));
                         boolean z10 = wVar.n;
-                        U.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, cd.L0(z10 ? 2131751431 : 2131751155, null), new Runnable() { // from class: bi.c5
+                        U.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, dd.L0(z10 ? 2131751431 : 2131751155, null), new Runnable() { // from class: bi.c5
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -87,7 +87,7 @@ public final /* synthetic */ class b5 implements View.OnClickListener {
                                 }
                             }
                         }, false);
-                        U.c(R.drawable.msg_delete, cd.L0(2131751599, null), new Runnable() { // from class: bi.c5
+                        U.c(R.drawable.msg_delete, dd.L0(2131751599, null), new Runnable() { // from class: bi.c5
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;

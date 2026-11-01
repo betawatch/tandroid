@@ -8,10 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.w71;
-import org.telegram.ui.Components.y41;
+import org.telegram.ui.Components.x71;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b5 extends View {
     public final /* synthetic */ int a = 1;
@@ -25,11 +25,11 @@ public final class b5 extends View {
         this.c = new fe.b(this, gr.h, 380L);
         this.b = new Paint(1);
         this.d = p6Var;
-        y41 y41Var = new y41(true);
-        this.e = y41Var;
-        y41Var.setCallback(this);
-        y41Var.b(-1);
-        y41Var.i = true;
+        z41 z41Var = new z41(true);
+        this.e = z41Var;
+        z41Var.setCallback(this);
+        z41Var.b(-1);
+        z41Var.i = true;
     }
 
     @Override // android.view.View
@@ -37,7 +37,7 @@ public final class b5 extends View {
         switch (this.a) {
             case 1:
                 super.onAttachedToWindow();
-                ((y41) this.e).d();
+                ((z41) this.e).d();
                 break;
             default:
                 super.onAttachedToWindow();
@@ -50,7 +50,7 @@ public final class b5 extends View {
         switch (this.a) {
             case 1:
                 super.onDetachedFromWindow();
-                ((y41) this.e).e();
+                ((z41) this.e).e();
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -72,12 +72,12 @@ public final class b5 extends View {
                 int[] iArr2 = (int[]) this.d;
                 getLocationInWindow(iArr2);
                 float f7 = iArr[0] - iArr2[0];
-                View view = ((w71) c5Var.T1).getViewPages()[0];
+                View view = ((x71) c5Var.T1).getViewPages()[0];
                 int paddingLeft = view != null ? view.getPaddingLeft() : 0;
                 int paddingRight = view != null ? view.getPaddingRight() : 0;
                 canvas.save();
                 canvas.clipRect(paddingLeft + f7, 0.0f, (f7 + c5Var.T1.getWidth()) - paddingRight, getHeight());
-                for (View view2 : ((w71) c5Var.T1).getViewPages()) {
+                for (View view2 : ((x71) c5Var.T1).getViewPages()) {
                     if (view2 != null && view2.getVisibility() == 0) {
                         canvas.save();
                         canvas.translate(view2.getLeft() + (iArr[0] - iArr2[0]), view2.getTop() + (iArr[1] - iArr2[1]));
@@ -99,7 +99,7 @@ public final class b5 extends View {
                 float f10 = ((fe.b) this.c).e;
                 float f11 = 1.0f - f10;
                 if (f11 > 0.0f) {
-                    rf.o.b(canvas, (y41) this.e, f11 * 1.35f);
+                    rf.o.b(canvas, (z41) this.e, f11 * 1.35f);
                     invalidate();
                 }
                 if (f10 > 0.0f) {
@@ -117,7 +117,7 @@ public final class b5 extends View {
         switch (this.a) {
             case 1:
                 super.onSizeChanged(i10, i11, i12, i13);
-                rf.o.d((y41) this.e, i10 / 2.0f, i11 / 2.0f, 17);
+                rf.o.d((z41) this.e, i10 / 2.0f, i11 / 2.0f, 17);
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -129,7 +129,7 @@ public final class b5 extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 1:
-                return super.verifyDrawable(drawable) || (drawable == ((y41) this.e) && !((fe.b) this.c).f);
+                return super.verifyDrawable(drawable) || (drawable == ((z41) this.e) && !((fe.b) this.c).f);
             default:
                 return super.verifyDrawable(drawable);
         }

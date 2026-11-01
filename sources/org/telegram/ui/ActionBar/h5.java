@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.oo0;
+import org.telegram.ui.mo0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h5 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -19,9 +19,9 @@ public final class h5 extends FrameLayout {
     public final /* synthetic */ Object h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h5(oo0 oo0Var, Context context) {
+    public h5(mo0 mo0Var, Context context) {
         super(context);
-        this.h = oo0Var;
+        this.h = mo0Var;
     }
 
     public u5 a() {
@@ -180,10 +180,10 @@ public final class h5 extends FrameLayout {
         switch (this.a) {
             case 1:
                 super.setTranslationX(f7);
-                oo0 oo0Var = (oo0) this.h;
-                h5[] h5VarArr = oo0Var.n;
-                if (oo0Var.s && (h5Var = h5VarArr[0]) == this) {
-                    oo0Var.h.i(Math.abs(h5Var.getTranslationX()) / h5VarArr[0].getMeasuredWidth(), h5VarArr[1].b);
+                mo0 mo0Var = (mo0) this.h;
+                h5[] h5VarArr = mo0Var.n;
+                if (mo0Var.s && (h5Var = h5VarArr[0]) == this) {
+                    mo0Var.h.i(Math.abs(h5Var.getTranslationX()) / h5VarArr[0].getMeasuredWidth(), h5VarArr[1].b);
                     break;
                 }
                 break;

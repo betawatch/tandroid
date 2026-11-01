@@ -27,7 +27,7 @@ import u2.f1;
 import v7.t6;
 import x2.q;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class i implements d1, f1, y2.g, y2.j {
     public final c1[] D;
@@ -66,7 +66,7 @@ public final class i implements d1, f1, y2.g, y2.j {
         this.h = aVar2;
         this.n = aVar;
         this.r = aVar3 != null ? new y2.l(aVar3) : new y2.l("ChunkSampleStream");
-        this.s = new u(6);
+        this.s = new u(7);
         ArrayList arrayList = new ArrayList();
         this.w = arrayList;
         this.x = DesugarCollections.unmodifiableList(arrayList);

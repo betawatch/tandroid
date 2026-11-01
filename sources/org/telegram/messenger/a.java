@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -143,12 +143,12 @@ public final /* synthetic */ class a implements Runnable {
                     longSparseArray.removeAt(0);
                     ArrayList arrayList = new ArrayList(hashMap2.keySet());
                     a7Var.d.addAll(arrayList);
-                    k10 k10Var = new k10(a7Var, keyAt, arrayList, hashMap2, 1);
+                    l10 l10Var = new l10(a7Var, keyAt, arrayList, hashMap2, 1);
                     if (arrayList.isEmpty()) {
-                        k10Var.a(new ArrayList());
+                        l10Var.a(new ArrayList());
                     } else {
-                        hs a02 = hs.a0(a7Var.a);
-                        a02.a.c(new mg(a02, arrayList, k10Var, 19));
+                        is a02 = is.a0(a7Var.a);
+                        a02.a.c(new ng(a02, arrayList, l10Var, 19));
                     }
                 }
                 longSparseArray.clear();
@@ -190,16 +190,16 @@ public final /* synthetic */ class a implements Runnable {
                 filesMigrationService.stopSelf();
                 return;
             case 11:
-                ((hc) ((androidx.mediarouter.app.f) this.b).b).i(null);
+                ((ic) ((androidx.mediarouter.app.f) this.b).b).i(null);
                 return;
             case 12:
                 ((ImageReceiver) this.b).invalidate();
                 return;
             case 13:
-                if (((cd) ((androidx.mediarouter.app.f) this.b).b).p0().getTimeZone().equals(TimeZone.getDefault())) {
+                if (((dd) ((androidx.mediarouter.app.f) this.b).b).p0().getTimeZone().equals(TimeZone.getDefault())) {
                     return;
                 }
-                cd.D0().V0();
+                dd.D0().V0();
                 return;
             case 14:
                 org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) this.b;
@@ -212,7 +212,7 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 15:
-                ((le) this.b).d.q(true, true, false, false);
+                ((me) this.b).d.q(true, true, false, false);
                 return;
             case 16:
                 ((MediaController) ((e2.w) this.b).e).q(true, true, false, false);
@@ -230,13 +230,13 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 18:
-                ((df) this.b).d();
+                ((ef) this.b).d();
                 return;
             case 19:
-                jf jfVar = (jf) this.b;
+                kf kfVar = (kf) this.b;
                 try {
                     mg.c2 c2Var = new mg.c2();
-                    c2Var.b = jfVar;
+                    c2Var.b = kfVar;
                     Thread thread = new Thread(c2Var, "VideoConvertRunnable");
                     thread.start();
                     thread.join();
@@ -246,7 +246,7 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 20:
-                zs.e().k(zs.P4, 0, (TLRPC.Document) this.b, 7);
+                at.e().k(at.P4, 0, (TLRPC.Document) this.b, 7);
                 return;
             case 21:
                 ((org.telegram.ui.Components.ub) this.b).f();
@@ -269,7 +269,7 @@ public final /* synthetic */ class a implements Runnable {
                 return;
             case 23:
                 TL_update.TL_updateLangPack tL_updateLangPack = (TL_update.TL_updateLangPack) this.b;
-                cd D0 = cd.D0();
+                dd D0 = dd.D0();
                 TLRPC.TL_langPackDifference tL_langPackDifference = tL_updateLangPack.difference;
                 if (D0.B == null) {
                     return;
@@ -295,12 +295,12 @@ public final /* synthetic */ class a implements Runnable {
                 }
                 return;
             case 26:
-                ((org.telegram.ui.lg) this.b).run();
+                ((org.telegram.ui.ng) this.b).run();
                 return;
             case 27:
-                zr zrVar = (zr) this.b;
-                if (zrVar != null) {
-                    zrVar.i(true);
+                as asVar = (as) this.b;
+                if (asVar != null) {
+                    asVar.i(true);
                     return;
                 }
                 return;
@@ -313,7 +313,7 @@ public final /* synthetic */ class a implements Runnable {
         }
     }
 
-    public /* synthetic */ a(vp vpVar, TL_update.TL_updateLangPack tL_updateLangPack) {
+    public /* synthetic */ a(wp wpVar, TL_update.TL_updateLangPack tL_updateLangPack) {
         this.a = 23;
         this.b = tL_updateLangPack;
     }

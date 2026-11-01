@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n3 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -29,14 +29,14 @@ public final class n3 extends LinearLayout {
         switch (this.a) {
             case 0:
                 int i10 = org.telegram.ui.ActionBar.t6.G6;
-                ((qz0) this.c).c((getWidth() - ((qz0) this.c).c) / 2.0f, getHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.t6.x0(null, i10, false), canvas);
-                if (!org.telegram.messenger.cd.Z) {
+                ((rz0) this.c).c((getWidth() - ((rz0) this.c).c) / 2.0f, getHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.t6.x0(null, i10, false), canvas);
+                if (!org.telegram.messenger.dd.Z) {
                     boolean z10 = ((m3) this.e).getValue() % 24 < 12;
-                    if (this.b != z10 || ((qz0) this.d) == null) {
+                    if (this.b != z10 || ((rz0) this.d) == null) {
                         this.b = z10;
-                        this.d = new qz0(z10 ? "AM" : "PM", 18.0f, null);
+                        this.d = new rz0(z10 ? "AM" : "PM", 18.0f, null);
                     }
-                    ((qz0) this.d).c((getWidth() / 2.0f) + org.telegram.messenger.i0.L(43.0f), (getHeight() / 2.0f) + org.telegram.messenger.i0.L(1.0f), 1.0f, org.telegram.ui.ActionBar.t6.x0(null, i10, false), canvas);
+                    ((rz0) this.d).c((getWidth() / 2.0f) + org.telegram.messenger.i0.L(43.0f), (getHeight() / 2.0f) + org.telegram.messenger.i0.L(1.0f), 1.0f, org.telegram.ui.ActionBar.t6.x0(null, i10, false), canvas);
                 }
                 super.dispatchDraw(canvas);
                 break;
@@ -223,6 +223,6 @@ public final class n3 extends LinearLayout {
         super(context);
         this.a = 0;
         this.e = m3Var;
-        this.c = new qz0(":", 18.0f, null);
+        this.c = new rz0(":", 18.0f, null);
     }
 }

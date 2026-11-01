@@ -6,16 +6,16 @@ import android.graphics.RectF;
 import android.widget.ImageView;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.tk0;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.st0;
-import org.telegram.ui.yt0;
+import org.telegram.ui.rt0;
+import org.telegram.ui.xt0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class u1 extends st0 {
+public final class u1 extends rt0 {
     public final /* synthetic */ int r = 0;
-    public final /* synthetic */ sk0 s;
+    public final /* synthetic */ tk0 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public u1(f fVar, Context context, p6 p6Var) {
@@ -23,7 +23,7 @@ public final class u1 extends st0 {
         this.s = fVar;
     }
 
-    @Override // org.telegram.ui.st0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.rt0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         p6 p6Var;
         boolean q6;
@@ -43,7 +43,7 @@ public final class u1 extends st0 {
                 RectF rectF2 = org.telegram.messenger.i0.P;
                 ImageView imageView2 = this.c;
                 rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
-                PremiumPreviewFragment premiumPreviewFragment = ((yt0) this.s).c;
+                PremiumPreviewFragment premiumPreviewFragment = ((xt0) this.s).c;
                 premiumPreviewFragment.S.reset();
                 premiumPreviewFragment.S.postScale(1.0f, premiumPreviewFragment.N / 100.0f, 0.0f, 0.0f);
                 premiumPreviewFragment.S.postTranslate(0.0f, -this.f.e);
@@ -73,8 +73,8 @@ public final class u1 extends st0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(yt0 yt0Var, Context context) {
+    public u1(xt0 xt0Var, Context context) {
         super(context, null);
-        this.s = yt0Var;
+        this.s = xt0Var;
     }
 }

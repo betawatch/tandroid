@@ -4,15 +4,15 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i0 extends ha {
-    public p51 P1;
+    public q51 P1;
     public TLRPC.TL_channelAdminLogEventsFilter Q1;
     public ArrayList R1;
     public a0.h S1;
     public final boolean T1;
-    public final org.telegram.ui.m10 U1;
+    public final org.telegram.ui.l10 U1;
     public boolean V1;
     public boolean W1;
     public boolean X1;
@@ -86,23 +86,23 @@ public final class i0 extends ha {
         jVar.n(350L);
         this.k1.setItemAnimator(jVar);
         this.k1.setOnItemClickListener(new t(this, i12));
-        org.telegram.ui.m10 m10Var = new org.telegram.ui.m10(getContext(), this.I0, (tk0) null);
-        this.U1 = m10Var;
-        m10Var.setClickable(true);
-        m10Var.setOrientation(1);
-        m10Var.setPadding(org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f));
-        org.telegram.ui.ActionBar.a7.i(i11, m10Var, this.I0);
+        org.telegram.ui.l10 l10Var = new org.telegram.ui.l10(getContext(), this.I0, (uk0) null);
+        this.U1 = l10Var;
+        l10Var.setClickable(true);
+        l10Var.setOrientation(1);
+        l10Var.setPadding(org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f));
+        org.telegram.ui.ActionBar.a7.i(i11, l10Var, this.I0);
         vh.d dVar = new vh.d(getContext(), this.I0, true);
         dVar.f();
-        dVar.i(org.telegram.messenger.cd.L0(2131751004, null), false, true);
+        dVar.i(org.telegram.messenger.dd.L0(2131751004, null), false, true);
         dVar.setOnClickListener(new h0(this, i10));
-        m10Var.addView(dVar, w7.b6.r(-1, 48, 87));
+        l10Var.addView(dVar, w7.b6.r(-1, 48, 87));
         ViewGroup viewGroup = this.b;
         int i13 = this.t0;
-        viewGroup.addView(m10Var, w7.b6.f(-2.0f, -1, 87, i13, 0, i13, 0));
-        tk0 tk0Var = this.k1;
+        viewGroup.addView(l10Var, w7.b6.f(-2.0f, -1, 87, i13, 0, i13, 0));
+        uk0 uk0Var = this.k1;
         int i14 = this.t0;
-        tk0Var.setPadding(i14, 0, i14, org.telegram.messenger.i0.L(68.0f));
+        uk0Var.setPadding(i14, 0, i14, org.telegram.messenger.i0.L(68.0f));
         this.k1.r1();
     }
 
@@ -112,15 +112,15 @@ public final class i0 extends ha {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(tk0Var, getContext(), this.a, 0, true, new d(this, 3), this.I0);
-        this.P1 = p51Var;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(uk0Var, getContext(), this.a, 0, true, new d(this, 3), this.I0);
+        this.P1 = q51Var;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return org.telegram.messenger.cd.L0(2131751080, null);
+        return org.telegram.messenger.dd.L0(2131751080, null);
     }
 
     public final String d1(int i10) {
@@ -159,12 +159,12 @@ public final class i0 extends ha {
                 Object obj = arrayList2.get(i10);
                 i10++;
                 long o10 = org.telegram.messenger.o5.o(((TLRPC.ChannelParticipant) obj).peer);
-                this.S1.k(org.telegram.messenger.vp.r1(this.a).Z1(Long.valueOf(o10)), o10);
+                this.S1.k(org.telegram.messenger.wp.r1(this.a).Z1(Long.valueOf(o10)), o10);
             }
         }
-        p51 p51Var = this.P1;
-        if (p51Var != null) {
-            p51Var.O(true);
+        q51 q51Var = this.P1;
+        if (q51Var != null) {
+            q51Var.O(true);
         }
     }
 

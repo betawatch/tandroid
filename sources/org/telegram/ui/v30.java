@@ -1,36 +1,37 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class v30 implements ViewTreeObserver.OnPreDrawListener {
+public final class v30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b50 b;
+    public final /* synthetic */ a50 b;
 
-    public /* synthetic */ v30(b50 b50Var, int i10) {
+    public /* synthetic */ v30(a50 a50Var, int i10) {
         this.a = i10;
-        this.b = b50Var;
+        this.b = a50Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                b50 b50Var = this.b;
-                b50Var.H1.getViewTreeObserver().removeOnPreDrawListener(this);
-                b50Var.R3.j(null);
-                org.telegram.messenger.i0.a4(b50Var.d4);
-                b50Var.b.requestLayout();
+                a50 a50Var = this.b;
+                a50Var.M1.setVisibility(4);
+                a50Var.N1.setVisibility(4);
+                a50Var.L1.setVisibility(4);
+                break;
+            case 1:
+                this.b.Y1 = null;
                 break;
             default:
-                b50 b50Var2 = this.b;
-                b50Var2.H1.getViewTreeObserver().removeOnPreDrawListener(this);
-                b50Var2.R3.j(null);
-                org.telegram.messenger.i0.a4(b50Var2.d4);
-                b50Var2.b.requestLayout();
+                a50 a50Var2 = this.b;
+                a50Var2.Y2 = null;
+                a50Var2.X2.setColor(a50Var2.K3 == 3 ? -1163700 : -12761513);
+                a50Var2.W2.invalidate();
                 break;
         }
-        return false;
     }
 }

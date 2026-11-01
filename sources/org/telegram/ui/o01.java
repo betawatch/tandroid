@@ -2,10 +2,10 @@ package org.telegram.ui;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o01 extends hg.b {
-    public final org.telegram.messenger.bw c;
+    public final org.telegram.messenger.cw c;
     public final String d;
 
     public o01(int i10) {
@@ -14,7 +14,7 @@ public final class o01 extends hg.b {
     }
 
     public final boolean equals(Object obj) {
-        org.telegram.messenger.bw bwVar;
+        org.telegram.messenger.cw cwVar;
         if (this == obj) {
             return true;
         }
@@ -29,13 +29,13 @@ public final class o01 extends hg.b {
         if (str != null) {
             return Objects.equals(str, o01Var.d);
         }
-        org.telegram.messenger.bw bwVar2 = this.c;
-        return bwVar2 == null || (bwVar = o01Var.c) == null || bwVar2.d == bwVar.d;
+        org.telegram.messenger.cw cwVar2 = this.c;
+        return cwVar2 == null || (cwVar = o01Var.c) == null || cwVar2.d == cwVar.d;
     }
 
-    public o01(org.telegram.messenger.bw bwVar) {
+    public o01(org.telegram.messenger.cw cwVar) {
         super(2, false);
-        this.c = bwVar;
+        this.c = cwVar;
     }
 
     public o01(int i10, String str) {

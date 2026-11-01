@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class dm {
     public float a;
@@ -81,18 +81,18 @@ public final class dm {
         boolean z12 = false;
         float f12 = 1.0f;
         while (i11 < size) {
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) arrayList.get(i11);
-            org.telegram.messenger.bj bjVar = new org.telegram.messenger.bj();
-            bjVar.h = i11 == size + (-1) ? true : z11;
-            org.telegram.messenger.ye yeVar = efVar.A;
-            String str = efVar.I;
-            int i12 = yeVar != null ? yeVar.s : efVar.F;
-            int i13 = yeVar != null ? yeVar.t : efVar.G;
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) arrayList.get(i11);
+            org.telegram.messenger.cj cjVar = new org.telegram.messenger.cj();
+            cjVar.h = i11 == size + (-1) ? true : z11;
+            org.telegram.messenger.ze zeVar = ffVar.A;
+            String str = ffVar.I;
+            int i12 = zeVar != null ? zeVar.s : ffVar.F;
+            int i13 = zeVar != null ? zeVar.t : ffVar.G;
             HashMap hashMap2 = jm.U;
-            if (hashMap2.containsKey(efVar)) {
-                z10 = ((Boolean) hashMap2.get(efVar)).booleanValue();
+            if (hashMap2.containsKey(ffVar)) {
+                z10 = ((Boolean) hashMap2.get(ffVar)).booleanValue();
             } else {
-                if (efVar.b) {
+                if (ffVar.b) {
                     MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
                     mediaMetadataRetriever.setDataSource(str);
                     String extractMetadata = mediaMetadataRetriever.extractMetadata(24);
@@ -101,14 +101,14 @@ public final class dm {
                         }
                     }
                     z10 = false;
-                    jm.U.put(efVar, Boolean.valueOf(z10));
+                    jm.U.put(ffVar, Boolean.valueOf(z10));
                 } else {
                     int c11 = new r1.g(str).c();
                     if (c11 != 6) {
                     }
                 }
                 z10 = true;
-                jm.U.put(efVar, Boolean.valueOf(z10));
+                jm.U.put(ffVar, Boolean.valueOf(z10));
             }
             if (z10) {
                 int i14 = i12;
@@ -116,14 +116,14 @@ public final class dm {
                 i13 = i14;
             }
             float f13 = i12 / i13;
-            bjVar.g = f13;
+            cjVar.g = f13;
             cArr[i11] = f13 > 1.2f ? 'w' : f13 < 0.8f ? 'n' : 'q';
             f12 += f13;
             if (f13 > 2.0f) {
                 z12 = true;
             }
-            hashMap.put(efVar, bjVar);
-            arrayList2.add(bjVar);
+            hashMap.put(ffVar, cjVar);
+            arrayList2.add(cjVar);
             i11++;
             z11 = false;
         }
@@ -137,9 +137,9 @@ public final class dm {
         float f15 = f12 / size;
         float L4 = org.telegram.messenger.i0.L(100.0f) / 814.0f;
         if (size == 1) {
-            org.telegram.messenger.bj bjVar2 = (org.telegram.messenger.bj) arrayList2.get(0);
+            org.telegram.messenger.cj cjVar2 = (org.telegram.messenger.cj) arrayList2.get(0);
             int i15 = point.x;
-            bjVar2.a((((i15 - (((jm) this.h).b.t0 * 2)) * 0.8f) / bjVar2.g) / (Math.max(i15, point.y) * 0.5f), 0, 0, 0, 0, 800, 15);
+            cjVar2.a((((i15 - (((jm) this.h).b.t0 * 2)) * 0.8f) / cjVar2.g) / (Math.max(i15, point.y) * 0.5f), 0, 0, 0, 0, 800, 15);
         } else {
             char c12 = 4;
             if (z12 || !(size == 2 || size == 3 || size == 4)) {
@@ -150,10 +150,10 @@ public final class dm {
                 while (i17 < size) {
                     if (f15 > 1.1f) {
                         f11 = f14;
-                        fArr[i17] = Math.max(f11, ((org.telegram.messenger.bj) arrayList2.get(i17)).g);
+                        fArr[i17] = Math.max(f11, ((org.telegram.messenger.cj) arrayList2.get(i17)).g);
                     } else {
                         f11 = f14;
-                        fArr[i17] = Math.min(f11, ((org.telegram.messenger.bj) arrayList2.get(i17)).g);
+                        fArr[i17] = Math.min(f11, ((org.telegram.messenger.cj) arrayList2.get(i17)).g);
                     }
                     fArr[i17] = Math.max(0.66667f, Math.min(1.7f, fArr[i17]));
                     i17++;
@@ -297,12 +297,12 @@ public final class dm {
                     int i39 = iArr2[i37];
                     float f20 = cmVar4.b[i37];
                     int i40 = 0;
-                    org.telegram.messenger.bj bjVar3 = null;
+                    org.telegram.messenger.cj cjVar3 = null;
                     int i41 = 1000;
                     while (i40 < i39) {
                         int i42 = (int) (fArr[i38] * f20);
                         i41 -= i42;
-                        org.telegram.messenger.bj bjVar4 = (org.telegram.messenger.bj) arrayList2.get(i38);
+                        org.telegram.messenger.cj cjVar4 = (org.telegram.messenger.cj) arrayList2.get(i38);
                         int i43 = i37 == 0 ? 4 : 0;
                         float[] fArr4 = fArr;
                         if (i37 == iArr2.length - 1) {
@@ -310,96 +310,96 @@ public final class dm {
                         }
                         if (i40 == 0) {
                             i43 |= 1;
-                            bjVar3 = bjVar4;
+                            cjVar3 = cjVar4;
                         }
                         if (i40 == i39 - 1) {
                             i43 |= 2;
-                            bjVar3 = bjVar4;
+                            cjVar3 = cjVar4;
                         }
                         int i44 = i40;
-                        bjVar4.a(Math.max(L4, f20 / 814.0f), i44, i40, i37, i37, i42, i43);
+                        cjVar4.a(Math.max(L4, f20 / 814.0f), i44, i40, i37, i37, i42, i43);
                         i38++;
                         i40 = i44 + 1;
                         fArr = fArr4;
                     }
                     int i45 = i37;
                     float[] fArr5 = fArr;
-                    if (bjVar3 != null) {
-                        bjVar3.e += i41;
-                        bjVar3.i += i41;
+                    if (cjVar3 != null) {
+                        cjVar3.e += i41;
+                        cjVar3.i += i41;
                     }
                     i37 = i45 + 1;
                     fArr = fArr5;
                 }
             } else if (size == 2) {
-                org.telegram.messenger.bj bjVar5 = (org.telegram.messenger.bj) arrayList2.get(0);
-                org.telegram.messenger.bj bjVar6 = (org.telegram.messenger.bj) arrayList2.get(1);
+                org.telegram.messenger.cj cjVar5 = (org.telegram.messenger.cj) arrayList2.get(0);
+                org.telegram.messenger.cj cjVar6 = (org.telegram.messenger.cj) arrayList2.get(1);
                 if (str2.equals("ww") && f15 > 1.2285012f * 1.4d) {
-                    float f21 = bjVar5.g;
-                    float f22 = bjVar6.g;
+                    float f21 = cjVar5.g;
+                    float f22 = cjVar6.g;
                     if (f21 - f22 < 0.2d) {
                         float round = Math.round(Math.min(1000.0f / f21, Math.min(1000.0f / f22, 407.0f))) / 814.0f;
-                        bjVar5.a(round, 0, 0, 0, 0, 1000, 7);
-                        bjVar6.a(round, 0, 0, 1, 1, 1000, 11);
+                        cjVar5.a(round, 0, 0, 0, 0, 1000, 7);
+                        cjVar6.a(round, 0, 0, 1, 1, 1000, 11);
                     }
                 }
                 if (str2.equals("ww") || str2.equals("qq")) {
                     float f23 = 500;
-                    float round2 = Math.round(Math.min(f23 / bjVar5.g, Math.min(f23 / bjVar6.g, 814.0f))) / 814.0f;
-                    bjVar5.a(round2, 0, 0, 0, 0, 500, 13);
-                    bjVar6.a(round2, 1, 1, 0, 0, 500, 14);
+                    float round2 = Math.round(Math.min(f23 / cjVar5.g, Math.min(f23 / cjVar6.g, 814.0f))) / 814.0f;
+                    cjVar5.a(round2, 0, 0, 0, 0, 500, 13);
+                    cjVar6.a(round2, 1, 1, 0, 0, 500, 14);
                 } else {
-                    float f24 = bjVar5.g;
-                    int max = (int) Math.max(400.0f, Math.round((1000.0f / f24) / ((1.0f / bjVar6.g) + (1.0f / f24))));
+                    float f24 = cjVar5.g;
+                    int max = (int) Math.max(400.0f, Math.round((1000.0f / f24) / ((1.0f / cjVar6.g) + (1.0f / f24))));
                     int i46 = 1000 - max;
                     if (i46 < min) {
                         max -= min - i46;
                     } else {
                         min = i46;
                     }
-                    float min2 = Math.min(814.0f, Math.round(Math.min(min / bjVar5.g, max / bjVar6.g))) / 814.0f;
-                    bjVar5.a(min2, 0, 0, 0, 0, min, 13);
-                    bjVar6.a(min2, 1, 1, 0, 0, max, 14);
+                    float min2 = Math.min(814.0f, Math.round(Math.min(min / cjVar5.g, max / cjVar6.g))) / 814.0f;
+                    cjVar5.a(min2, 0, 0, 0, 0, min, 13);
+                    cjVar6.a(min2, 1, 1, 0, 0, max, 14);
                 }
             } else if (size == 3) {
-                org.telegram.messenger.bj bjVar7 = (org.telegram.messenger.bj) arrayList2.get(0);
-                org.telegram.messenger.bj bjVar8 = (org.telegram.messenger.bj) arrayList2.get(1);
-                org.telegram.messenger.bj bjVar9 = (org.telegram.messenger.bj) arrayList2.get(2);
+                org.telegram.messenger.cj cjVar7 = (org.telegram.messenger.cj) arrayList2.get(0);
+                org.telegram.messenger.cj cjVar8 = (org.telegram.messenger.cj) arrayList2.get(1);
+                org.telegram.messenger.cj cjVar9 = (org.telegram.messenger.cj) arrayList2.get(2);
                 if (str2.charAt(0) == 'n') {
-                    float f25 = bjVar8.g;
-                    float min3 = Math.min(407.0f, Math.round((f25 * 1000.0f) / (bjVar9.g + f25)));
-                    int max2 = (int) Math.max(min, Math.min(500.0f, Math.round(Math.min(bjVar9.g * min3, bjVar8.g * r8))));
-                    float f26 = (bjVar7.g * 814.0f) + L3;
+                    float f25 = cjVar8.g;
+                    float min3 = Math.min(407.0f, Math.round((f25 * 1000.0f) / (cjVar9.g + f25)));
+                    int max2 = (int) Math.max(min, Math.min(500.0f, Math.round(Math.min(cjVar9.g * min3, cjVar8.g * r8))));
+                    float f26 = (cjVar7.g * 814.0f) + L3;
                     int i47 = 1000 - max2;
-                    bjVar7.a(1.0f, 0, 0, 0, 1, Math.round(Math.min(f26, i47)), 13);
+                    cjVar7.a(1.0f, 0, 0, 0, 1, Math.round(Math.min(f26, i47)), 13);
                     float f27 = (814.0f - min3) / 814.0f;
-                    bjVar8.a(f27, 1, 1, 0, 0, max2, 6);
+                    cjVar8.a(f27, 1, 1, 0, 0, max2, 6);
                     float f28 = min3 / 814.0f;
-                    bjVar9.a(f28, 1, 1, 1, 1, max2, 10);
-                    bjVar9.i = 1000;
-                    bjVar7.m = new float[]{f28, f27};
-                    bjVar7.i = i47;
+                    cjVar9.a(f28, 1, 1, 1, 1, max2, 10);
+                    cjVar9.i = 1000;
+                    cjVar7.m = new float[]{f28, f27};
+                    cjVar7.i = i47;
                 } else {
-                    float round3 = Math.round(Math.min(1000.0f / bjVar7.g, 537.24005f)) / 814.0f;
-                    bjVar7.a(round3, 0, 1, 0, 0, 1000, 7);
+                    float round3 = Math.round(Math.min(1000.0f / cjVar7.g, 537.24005f)) / 814.0f;
+                    cjVar7.a(round3, 0, 1, 0, 0, 1000, 7);
                     float f29 = 500;
-                    float min4 = Math.min(814.0f - round3, Math.round(Math.min(f29 / bjVar8.g, f29 / bjVar9.g))) / 814.0f;
+                    float min4 = Math.min(814.0f - round3, Math.round(Math.min(f29 / cjVar8.g, f29 / cjVar9.g))) / 814.0f;
                     float f30 = min4 < L4 ? L4 : min4;
-                    bjVar8.a(f30, 0, 0, 1, 1, 500, 9);
-                    bjVar9.a(f30, 1, 1, 1, 1, 500, 10);
+                    cjVar8.a(f30, 0, 0, 1, 1, 500, 9);
+                    cjVar9.a(f30, 1, 1, 1, 1, 500, 10);
                 }
             } else {
-                org.telegram.messenger.bj bjVar10 = (org.telegram.messenger.bj) arrayList2.get(0);
-                org.telegram.messenger.bj bjVar11 = (org.telegram.messenger.bj) arrayList2.get(1);
-                org.telegram.messenger.bj bjVar12 = (org.telegram.messenger.bj) arrayList2.get(2);
-                org.telegram.messenger.bj bjVar13 = (org.telegram.messenger.bj) arrayList2.get(3);
+                org.telegram.messenger.cj cjVar10 = (org.telegram.messenger.cj) arrayList2.get(0);
+                org.telegram.messenger.cj cjVar11 = (org.telegram.messenger.cj) arrayList2.get(1);
+                org.telegram.messenger.cj cjVar12 = (org.telegram.messenger.cj) arrayList2.get(2);
+                org.telegram.messenger.cj cjVar13 = (org.telegram.messenger.cj) arrayList2.get(3);
                 if (str2.charAt(0) == 'w') {
-                    float round4 = Math.round(Math.min(1000.0f / bjVar10.g, 537.24005f)) / 814.0f;
-                    bjVar10.a(round4, 0, 2, 0, 0, 1000, 7);
-                    float round5 = Math.round(1000.0f / ((bjVar11.g + bjVar12.g) + bjVar13.g));
+                    float round4 = Math.round(Math.min(1000.0f / cjVar10.g, 537.24005f)) / 814.0f;
+                    cjVar10.a(round4, 0, 2, 0, 0, 1000, 7);
+                    float round5 = Math.round(1000.0f / ((cjVar11.g + cjVar12.g) + cjVar13.g));
                     float f31 = min;
-                    int max3 = (int) Math.max(f31, Math.min(400.0f, bjVar11.g * round5));
-                    int max4 = (int) Math.max(Math.max(f31, 330.0f), bjVar13.g * round5);
+                    int max3 = (int) Math.max(f31, Math.min(400.0f, cjVar11.g * round5));
+                    int max4 = (int) Math.max(Math.max(f31, 330.0f), cjVar13.g * round5);
                     int i48 = (1000 - max3) - max4;
                     if (i48 < org.telegram.messenger.i0.L(58.0f)) {
                         int L5 = org.telegram.messenger.i0.L(58.0f) - i48;
@@ -411,55 +411,55 @@ public final class dm {
                     int i50 = max3;
                     float min5 = Math.min(814.0f - round4, round5) / 814.0f;
                     float f32 = min5 < L4 ? L4 : min5;
-                    bjVar11.a(f32, 0, 0, 1, 1, i50, 9);
-                    bjVar12.a(f32, 1, 1, 1, 1, i48, 8);
-                    bjVar13.a(f32, 2, 2, 1, 1, max4, 10);
+                    cjVar11.a(f32, 0, 0, 1, 1, i50, 9);
+                    cjVar12.a(f32, 1, 1, 1, 1, i48, 8);
+                    cjVar13.a(f32, 2, 2, 1, 1, max4, 10);
                 } else {
-                    int max5 = Math.max(min, Math.round(814.0f / ((1.0f / bjVar13.g) + ((1.0f / bjVar12.g) + (1.0f / bjVar11.g)))));
+                    int max5 = Math.max(min, Math.round(814.0f / ((1.0f / cjVar13.g) + ((1.0f / cjVar12.g) + (1.0f / cjVar11.g)))));
                     float f33 = L;
                     float f34 = max5;
-                    float min6 = Math.min(0.33f, Math.max(f33, f34 / bjVar11.g) / 814.0f);
-                    float min7 = Math.min(0.33f, Math.max(f33, f34 / bjVar12.g) / 814.0f);
+                    float min6 = Math.min(0.33f, Math.max(f33, f34 / cjVar11.g) / 814.0f);
+                    float min7 = Math.min(0.33f, Math.max(f33, f34 / cjVar12.g) / 814.0f);
                     float f35 = (1.0f - min6) - min7;
-                    float f36 = (bjVar10.g * 814.0f) + L3;
+                    float f36 = (cjVar10.g * 814.0f) + L3;
                     int i51 = 1000 - max5;
-                    bjVar10.a(min6 + min7 + f35, 0, 0, 0, 2, Math.round(Math.min(f36, i51)), 13);
-                    bjVar11.a(min6, 1, 1, 0, 0, max5, 6);
-                    bjVar12.a(min7, 1, 1, 1, 1, max5, 2);
-                    bjVar12.i = 1000;
-                    bjVar13.a(f35, 1, 1, 2, 2, max5, 10);
-                    bjVar13.i = 1000;
-                    bjVar10.i = i51;
-                    bjVar10.m = new float[]{min6, min7, f35};
+                    cjVar10.a(min6 + min7 + f35, 0, 0, 0, 2, Math.round(Math.min(f36, i51)), 13);
+                    cjVar11.a(min6, 1, 1, 0, 0, max5, 6);
+                    cjVar12.a(min7, 1, 1, 1, 1, max5, 2);
+                    cjVar12.i = 1000;
+                    cjVar13.a(f35, 1, 1, 2, 2, max5, 10);
+                    cjVar13.i = 1000;
+                    cjVar10.i = i51;
+                    cjVar10.m = new float[]{min6, min7, f35};
                 }
             }
         }
         int i52 = 0;
         while (i52 < size) {
-            org.telegram.messenger.bj bjVar14 = (org.telegram.messenger.bj) arrayList2.get(i52);
-            if (bjVar14.a == 0) {
-                bjVar14.i += org.telegram.messenger.zs.e3;
+            org.telegram.messenger.cj cjVar14 = (org.telegram.messenger.cj) arrayList2.get(i52);
+            if (cjVar14.a == 0) {
+                cjVar14.i += org.telegram.messenger.at.e3;
             }
-            if ((bjVar14.l & 2) != 0) {
-                bjVar14.k = true;
+            if ((cjVar14.l & 2) != 0) {
+                cjVar14.k = true;
             }
-            this.c = Math.max(this.c, (int) bjVar14.b);
-            this.d = Math.max(this.d, (int) bjVar14.d);
-            byte b19 = bjVar14.c;
-            byte b20 = bjVar14.d;
-            byte b21 = bjVar14.a;
+            this.c = Math.max(this.c, (int) cjVar14.b);
+            this.d = Math.max(this.d, (int) cjVar14.d);
+            byte b19 = cjVar14.c;
+            byte b20 = cjVar14.d;
+            byte b21 = cjVar14.a;
             int i53 = (b20 - b19) + 1;
             float[] fArr6 = new float[i53];
             Arrays.fill(fArr6, 0.0f);
             int size3 = arrayList2.size();
             int i54 = 0;
             while (i54 < size3) {
-                org.telegram.messenger.bj bjVar15 = (org.telegram.messenger.bj) arrayList2.get(i54);
-                if (bjVar15 != bjVar14 && bjVar15.b < b21) {
-                    int min8 = Math.min((int) bjVar15.d, (int) b20) - b19;
-                    int max6 = Math.max(bjVar15.c - b19, 0);
+                org.telegram.messenger.cj cjVar15 = (org.telegram.messenger.cj) arrayList2.get(i54);
+                if (cjVar15 != cjVar14 && cjVar15.b < b21) {
+                    int min8 = Math.min((int) cjVar15.d, (int) b20) - b19;
+                    int max6 = Math.max(cjVar15.c - b19, 0);
                     while (max6 <= min8) {
-                        fArr6[max6] = fArr6[max6] + bjVar15.e;
+                        fArr6[max6] = fArr6[max6] + cjVar15.e;
                         max6++;
                         i52 = i52;
                     }
@@ -475,21 +475,21 @@ public final class dm {
                     f37 = f38;
                 }
             }
-            bjVar14.q = f37;
+            cjVar14.q = f37;
             i52 = i55 + 1;
         }
         for (int i57 = 0; i57 < size; i57++) {
-            org.telegram.messenger.bj bjVar16 = (org.telegram.messenger.bj) arrayList2.get(i57);
-            byte b22 = bjVar16.c;
+            org.telegram.messenger.cj cjVar16 = (org.telegram.messenger.cj) arrayList2.get(i57);
+            byte b22 = cjVar16.c;
             int i58 = this.c + 1;
             float[] fArr7 = new float[i58];
             Arrays.fill(fArr7, 0.0f);
             int size4 = arrayList2.size();
             for (int i59 = 0; i59 < size4; i59++) {
-                org.telegram.messenger.bj bjVar17 = (org.telegram.messenger.bj) arrayList2.get(i59);
-                if (bjVar17 != bjVar16 && bjVar17.d < b22) {
-                    for (int i60 = bjVar17.a; i60 <= bjVar17.b; i60++) {
-                        fArr7[i60] = fArr7[i60] + bjVar17.f;
+                org.telegram.messenger.cj cjVar17 = (org.telegram.messenger.cj) arrayList2.get(i59);
+                if (cjVar17 != cjVar16 && cjVar17.d < b22) {
+                    for (int i60 = cjVar17.a; i60 <= cjVar17.b; i60++) {
+                        fArr7[i60] = fArr7[i60] + cjVar17.f;
                     }
                 }
             }
@@ -500,15 +500,15 @@ public final class dm {
                     f39 = f40;
                 }
             }
-            bjVar16.p = f39;
+            cjVar16.p = f39;
         }
         int[] iArr3 = new int[10];
         Arrays.fill(iArr3, 0);
         int size5 = arrayList2.size();
         for (int i62 = 0; i62 < size5; i62++) {
-            org.telegram.messenger.bj bjVar18 = (org.telegram.messenger.bj) arrayList2.get(i62);
-            int i63 = bjVar18.e;
-            for (int i64 = bjVar18.c; i64 <= bjVar18.d; i64++) {
+            org.telegram.messenger.cj cjVar18 = (org.telegram.messenger.cj) arrayList2.get(i62);
+            int i63 = cjVar18.e;
+            for (int i64 = cjVar18.c; i64 <= cjVar18.d; i64++) {
                 iArr3[i64] = iArr3[i64] + i63;
             }
         }
@@ -524,9 +524,9 @@ public final class dm {
         Arrays.fill(fArr8, 0.0f);
         int size6 = arrayList2.size();
         for (int i68 = 0; i68 < size6; i68++) {
-            org.telegram.messenger.bj bjVar19 = (org.telegram.messenger.bj) arrayList2.get(i68);
-            float f41 = bjVar19.f;
-            for (int i69 = bjVar19.a; i69 <= bjVar19.b; i69++) {
+            org.telegram.messenger.cj cjVar19 = (org.telegram.messenger.cj) arrayList2.get(i68);
+            float f41 = cjVar19.f;
+            for (int i69 = cjVar19.a; i69 <= cjVar19.b; i69++) {
                 fArr8[i69] = fArr8[i69] + f41;
             }
         }

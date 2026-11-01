@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pq implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 0;
@@ -16,11 +16,11 @@ public final /* synthetic */ class pq implements DialogInterface.OnDismissListen
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ pq(boolean[] zArr, ag.g3 g3Var, boolean[] zArr2, org.telegram.messenger.q20 q20Var, int[] iArr, int i10) {
+    public /* synthetic */ pq(boolean[] zArr, ag.g3 g3Var, boolean[] zArr2, org.telegram.messenger.r20 r20Var, int[] iArr, int i10) {
         this.b = zArr;
         this.e = g3Var;
         this.c = zArr2;
-        this.f = q20Var;
+        this.f = r20Var;
         this.h = iArr;
         this.d = i10;
     }
@@ -30,14 +30,14 @@ public final /* synthetic */ class pq implements DialogInterface.OnDismissListen
         switch (this.a) {
             case 0:
                 ag.g3 g3Var = (ag.g3) this.e;
-                org.telegram.messenger.q20 q20Var = (org.telegram.messenger.q20) this.f;
+                org.telegram.messenger.r20 r20Var = (org.telegram.messenger.r20) this.f;
                 int[] iArr = (int[]) this.h;
                 this.b[0] = true;
                 g3Var.run();
                 boolean[] zArr = this.c;
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    q20Var.a(null);
+                    r20Var.a(null);
                 }
                 if (iArr[0] >= 0) {
                     ConnectionsManager.getInstance(this.d).cancelRequest(iArr[0], true);
@@ -53,7 +53,7 @@ public final /* synthetic */ class pq implements DialogInterface.OnDismissListen
                     boolean[] zArr2 = this.c;
                     if (!zArr2[0]) {
                         zArr2[0] = true;
-                        xh.q3.e(context, this.d, user.id);
+                        xh.r3.e(context, this.d, user.id);
                         oVar.a(Boolean.TRUE, "cancelled");
                         break;
                     }

@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s6 extends LinearLayout {
     public static final /* synthetic */ int c = 0;
@@ -25,9 +25,9 @@ public final class s6 extends LinearLayout {
         ArrayList arrayList = this.b;
         if (bool != null) {
             if (bool.booleanValue()) {
-                arrayList.add(t6.a(org.telegram.messenger.i0.W2(cd.L0(i10, null))));
+                arrayList.add(t6.a(org.telegram.messenger.i0.W2(dd.L0(i10, null))));
             } else {
-                arrayList.add(t6.a(org.telegram.messenger.i0.W2(cd.L0(i11, null))));
+                arrayList.add(t6.a(org.telegram.messenger.i0.W2(dd.L0(i11, null))));
             }
         }
     }
@@ -46,63 +46,63 @@ public final class s6 extends LinearLayout {
                     a(requestPeerType.has_username, 2131747363, 2131747364);
                     Boolean bool = requestPeerType.bot_participant;
                     if (bool != null && bool.booleanValue()) {
-                        arrayList.add(t6.a(org.telegram.messenger.i0.W2(cd.L0(2131747366, null))));
+                        arrayList.add(t6.a(org.telegram.messenger.i0.W2(dd.L0(2131747366, null))));
                     }
                     Boolean bool2 = requestPeerType.creator;
                     if (bool2 != null && bool2.booleanValue()) {
-                        arrayList.add(t6.a(org.telegram.messenger.i0.W2(cd.L0(2131747365, null))));
+                        arrayList.add(t6.a(org.telegram.messenger.i0.W2(dd.L0(2131747365, null))));
                     }
                 } else {
                     a(requestPeerType.has_username, 2131747357, 2131747358);
                     a(requestPeerType.forum, 2131747361, 2131747362);
                     Boolean bool3 = requestPeerType.bot_participant;
                     if (bool3 != null && bool3.booleanValue()) {
-                        arrayList.add(t6.a(org.telegram.messenger.i0.W2(cd.L0(2131747360, null))));
+                        arrayList.add(t6.a(org.telegram.messenger.i0.W2(dd.L0(2131747360, null))));
                     }
                     Boolean bool4 = requestPeerType.creator;
                     if (bool4 != null && bool4.booleanValue()) {
-                        arrayList.add(t6.a(org.telegram.messenger.i0.W2(cd.L0(2131747359, null))));
+                        arrayList.add(t6.a(org.telegram.messenger.i0.W2(dd.L0(2131747359, null))));
                     }
                 }
                 Boolean bool5 = requestPeerType.creator;
                 if (bool5 == null || !bool5.booleanValue()) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.user_admin_rights;
-                    SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(cd.L0(2131747353, null));
-                    SpannableStringBuilder W22 = org.telegram.messenger.i0.W2(cd.L0(2131747354, null));
+                    SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(dd.L0(2131747353, null));
+                    SpannableStringBuilder W22 = org.telegram.messenger.i0.W2(dd.L0(2131747354, null));
                     if (tL_chatAdminRights != null) {
                         ArrayList arrayList2 = new ArrayList();
                         if (tL_chatAdminRights.change_info) {
-                            f1.q(1, z10 ? cd.L0(2131751325, null) : cd.L0(2131751324, null), arrayList2);
+                            f1.q(1, z10 ? dd.L0(2131751325, null) : dd.L0(2131751324, null), arrayList2);
                         }
                         if (tL_chatAdminRights.post_messages && z10) {
-                            f1.q(1, cd.L0(2131751313, null), arrayList2);
+                            f1.q(1, dd.L0(2131751313, null), arrayList2);
                         }
                         if (tL_chatAdminRights.edit_messages && z10) {
-                            f1.q(1, cd.L0(2131751320, null), arrayList2);
+                            f1.q(1, dd.L0(2131751320, null), arrayList2);
                         }
                         if (tL_chatAdminRights.delete_messages) {
-                            f1.q(1, cd.L0(z10 ? 2131751322 : 2131751317, null), arrayList2);
+                            f1.q(1, dd.L0(z10 ? 2131751322 : 2131751317, null), arrayList2);
                         }
                         if (tL_chatAdminRights.ban_users && !z10) {
-                            f1.q(1, cd.L0(2131751329, null), arrayList2);
+                            f1.q(1, dd.L0(2131751329, null), arrayList2);
                         }
                         if (tL_chatAdminRights.invite_users) {
-                            f1.q(1, cd.L0(2131751331, null), arrayList2);
+                            f1.q(1, dd.L0(2131751331, null), arrayList2);
                         }
                         if (tL_chatAdminRights.pin_messages && !z10) {
-                            f1.q(1, cd.L0(2131751314, null), arrayList2);
+                            f1.q(1, dd.L0(2131751314, null), arrayList2);
                         }
                         if (tL_chatAdminRights.add_admins) {
-                            f1.q(1, cd.L0(2131751332, null), arrayList2);
+                            f1.q(1, dd.L0(2131751332, null), arrayList2);
                         }
                         if (tL_chatAdminRights.anonymous && !z10) {
-                            f1.q(1, cd.L0(2131751304, null), arrayList2);
+                            f1.q(1, dd.L0(2131751304, null), arrayList2);
                         }
                         if (tL_chatAdminRights.manage_call) {
-                            f1.q(1, cd.L0(2131744919, null), arrayList2);
+                            f1.q(1, dd.L0(2131744919, null), arrayList2);
                         }
                         if (tL_chatAdminRights.manage_topics && !z10) {
-                            f1.q(1, cd.L0(2131748707, null), arrayList2);
+                            f1.q(1, dd.L0(2131748707, null), arrayList2);
                         }
                         if (arrayList2.size() == 1) {
                             arrayList.add(t6.a(TextUtils.concat(W22, " ", ((t6) arrayList2.get(0)).b)));
@@ -125,7 +125,7 @@ public final class s6 extends LinearLayout {
                 return;
             }
             p4 p4Var = new p4(getContext(), 20);
-            p4Var.setText(cd.L0(2131747352, null));
+            p4Var.setText(dd.L0(2131747352, null));
             int i11 = org.telegram.ui.ActionBar.t6.d6;
             org.telegram.ui.ActionBar.a7.i(i11, p4Var, null);
             addView(p4Var, w7.b6.o(-1, -2));

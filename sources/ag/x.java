@@ -2,10 +2,10 @@ package ag;
 
 import android.content.DialogInterface;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.qz0;
+import org.telegram.ui.pz0;
 import th.o7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -80,10 +80,10 @@ public final /* synthetic */ class x implements DialogInterface.OnDismissListene
                 org.telegram.messenger.i0.v1((EditTextBoldCursor) this.b);
                 break;
             case 12:
-                ((rh.o) this.b).run();
+                ((rh.n) this.b).run();
                 break;
             case 13:
-                ((qz0) this.b).run();
+                ((pz0) this.b).run();
                 break;
             case 14:
                 ((sg.v) this.b).run();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class fs {
     public final int a;
@@ -31,7 +31,7 @@ public final class fs {
         int i10 = this.a;
         if (!z10) {
             es esVar = new es(this, 0);
-            org.telegram.messenger.hs a02 = org.telegram.messenger.hs.a0(i10);
+            org.telegram.messenger.is a02 = org.telegram.messenger.is.a0(i10);
             a02.a.c(new jg(this, a02, esVar, 4));
             return;
         }

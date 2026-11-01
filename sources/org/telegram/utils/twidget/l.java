@@ -4,14 +4,14 @@ import android.os.Process;
 import android.text.TextUtils;
 import java.util.HashMap;
 import java.util.Iterator;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.mn;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.is;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.nn;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -46,11 +46,11 @@ public final /* synthetic */ class l implements Runnable {
                 }
                 if (mVar != null) {
                     TLRPC.TL_messages_getWidgetPublicData tL_messages_getWidgetPublicData = new TLRPC.TL_messages_getWidgetPublicData();
-                    tL_messages_getWidgetPublicData.peer = vp.r1(mVar.b).i1(mVar.c);
+                    tL_messages_getWidgetPublicData.peer = wp.r1(mVar.b).i1(mVar.c);
                     tL_messages_getWidgetPublicData.msg_id = mVar.d;
                     tL_messages_getWidgetPublicData.hash = oVar.c;
-                    oVar.e = ConnectionsManager.getInstance(i10).sendRequestTyped(tL_messages_getWidgetPublicData, new a3.b(1), new j20() { // from class: org.telegram.utils.twidget.j
-                        @Override // org.telegram.messenger.j20
+                    oVar.e = ConnectionsManager.getInstance(i10).sendRequestTyped(tL_messages_getWidgetPublicData, new a3.b(1), new k20() { // from class: org.telegram.utils.twidget.j
+                        @Override // org.telegram.messenger.k20
                         public final void a(Object obj, Object obj2) {
                             TLRPC.messages_WidgetPublicData messages_widgetpublicdata = (TLRPC.messages_WidgetPublicData) obj;
                             o oVar2 = o.this;
@@ -82,8 +82,8 @@ public final /* synthetic */ class l implements Runnable {
                                             if (tL_messageMediaWidget != null) {
                                                 tL_messageMediaWidget.public_data_hash = j11;
                                             }
-                                            hs a02 = hs.a0(i11);
-                                            a02.a.c(new mn(a02, mVar3.d, mVar3.c, str == null ? "" : str, j11, (String) null));
+                                            is a02 = is.a0(i11);
+                                            a02.a.c(new nn(a02, mVar3.d, mVar3.c, str == null ? "" : str, j11, (String) null));
                                             str = str;
                                         }
                                     }

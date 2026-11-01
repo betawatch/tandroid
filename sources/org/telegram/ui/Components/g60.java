@@ -7,16 +7,16 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class g60 extends sk0 {
+public final class g60 extends tk0 {
     public final /* synthetic */ m60 c;
 
     public g60(m60 m60Var) {
         this.c = m60Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 1;
@@ -28,7 +28,7 @@ public final class g60 extends sk0 {
             return (TLObject) m60Var.V1.get(i10 - m60Var.P1);
         }
         TLRPC.Dialog dialog = (TLRPC.Dialog) m60Var.e2.get(i10 - m60Var.P1);
-        return org.telegram.messenger.o5.E(dialog.id) ? org.telegram.messenger.vp.r1(m60Var.a).Z1(Long.valueOf(dialog.id)) : org.telegram.messenger.vp.r1(m60Var.a).L0(Long.valueOf(-dialog.id));
+        return org.telegram.messenger.o5.E(dialog.id) ? org.telegram.messenger.wp.r1(m60Var.a).Z1(Long.valueOf(dialog.id)) : org.telegram.messenger.wp.r1(m60Var.a).L0(Long.valueOf(-dialog.id));
     }
 
     @Override // s4.g0
@@ -99,7 +99,7 @@ public final class g60 extends sk0 {
                 boolean z10 = false;
                 if (i10 != 5) {
                     org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(context);
-                    b5Var.b(R.drawable.msg_link, 7, org.telegram.messenger.cd.L0(2131743416, null), true);
+                    b5Var.b(R.drawable.msg_link, 7, org.telegram.messenger.dd.L0(2131743416, null), true);
                     int i12 = org.telegram.ui.ActionBar.t6.n5;
                     b5Var.a(i12, i12);
                     view = b5Var;
@@ -107,12 +107,12 @@ public final class g60 extends sk0 {
                     f60 f60Var = new f60(context, view2, i11, z10 ? 1 : 0, 0);
                     f60Var.setLayoutParams(new s4.o0(-1, -1));
                     f60Var.e.setVisibility(8);
-                    org.telegram.ui.tt ttVar = m60Var.d2;
+                    org.telegram.ui.st stVar = m60Var.d2;
                     nh.p pVar = f60Var.d;
-                    if (ttVar != null) {
-                        pVar.setText(org.telegram.messenger.cd.L0(2131750727, null));
+                    if (stVar != null) {
+                        pVar.setText(org.telegram.messenger.dd.L0(2131750727, null));
                     } else {
-                        pVar.setText(org.telegram.messenger.cd.L0(2131748240, null));
+                        pVar.setText(org.telegram.messenger.dd.L0(2131748240, null));
                     }
                     f60Var.setAnimateLayoutChange(true);
                     view = f60Var;
@@ -123,6 +123,6 @@ public final class g60 extends sk0 {
         } else {
             view = new bi.t0(this, context, 14);
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

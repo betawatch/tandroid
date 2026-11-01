@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
 /* loaded from: classes2.dex */
 public class o6 extends s6 implements IntConsumer {
@@ -79,6 +79,6 @@ public class o6 extends s6 implements IntConsumer {
         if (iArr.length < 200) {
             return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(iArr));
         }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(iArr, zs.e3)));
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(iArr, at.e3)));
     }
 }

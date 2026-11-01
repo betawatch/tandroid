@@ -4,22 +4,22 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.hk0;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Components.za0;
-import org.telegram.ui.ba0;
+import org.telegram.ui.aa0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements gk0 {
+public final /* synthetic */ class o implements hk0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -32,38 +32,39 @@ public final /* synthetic */ class o implements gk0 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.gk0
+    @Override // org.telegram.ui.Components.hk0
     public final void f(int i10, View view) {
         TLRPC.WebPage webPage;
         int i11 = this.a;
+        int i12 = 29;
         Object obj = this.c;
         Object obj2 = this.d;
         Object obj3 = this.b;
-        int i12 = 1;
+        int i13 = 1;
         switch (i11) {
             case 0:
                 t tVar = (t) obj3;
                 org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) obj;
                 Context context = (Context) obj2;
                 s sVar = (s) view;
-                ba0 ba0Var = (ba0) tVar.e3.get(i10);
-                if (ba0Var.e && !d20.o()) {
+                aa0 aa0Var = (aa0) tVar.e3.get(i10);
+                if (aa0Var.e && !e20.o()) {
                     k2Var.showDialog(new kg.i1(k2Var, 10, true));
                     break;
-                } else if (!w7.j6.a(ba0Var)) {
+                } else if (!w7.j6.a(aa0Var)) {
                     p pVar = new p(context);
                     pVar.a = i10;
                     tVar.f3.w0(pVar);
-                    w7.j6.b(ba0Var);
-                    int i13 = s.h;
+                    w7.j6.b(aa0Var);
+                    int i14 = s.h;
                     sVar.b(true, true);
-                    for (int i14 = 0; i14 < tVar.getChildCount(); i14++) {
-                        s sVar2 = (s) tVar.getChildAt(i14);
+                    for (int i15 = 0; i15 < tVar.getChildCount(); i15++) {
+                        s sVar2 = (s) tVar.getChildAt(i15);
                         if (sVar2 != sVar) {
                             sVar2.b(false, true);
                         }
                     }
-                    zs.e().k(zs.P4, 5, ba0Var);
+                    at.e().k(at.P4, 5, aa0Var);
                     break;
                 }
                 break;
@@ -72,21 +73,21 @@ public final /* synthetic */ class o implements gk0 {
                 th.c0 c0Var = (th.c0) view;
                 th.h0 h0Var = c0Var.K;
                 z60 F = z60.F((ViewGroup) obj, new th.b(), view);
-                F.p(15, -1, cd.a0(null, null, 2131748818, cd.x(h0Var.d, true)));
+                F.p(15, -1, dd.a0(null, null, 2131748818, dd.x(h0Var.d, true)));
                 F.k();
-                F.c(R.drawable.msg_openprofile, cd.L0(2131747802, null), new rh.o(26, (th.o7) obj2, h0Var), false);
-                F.l(R.drawable.msg_copy, cd.L0(2131751767, null), new rh.o(27, p1Var, c0Var), !h0Var.e);
-                F.l(R.drawable.msg_delete, cd.L0(2131751599, null), new rh.o(28, p1Var, h0Var), p1Var.M == d20.i(p1Var.N).e() || p1Var.f());
+                F.c(R.drawable.msg_openprofile, dd.L0(2131747802, null), new rh.n(27, (th.o7) obj2, h0Var), false);
+                F.l(R.drawable.msg_copy, dd.L0(2131751767, null), new rh.n(28, p1Var, c0Var), !h0Var.e);
+                F.l(R.drawable.msg_delete, dd.L0(2131751599, null), new rh.n(i12, p1Var, h0Var), p1Var.M == e20.i(p1Var.N).e() || p1Var.f());
                 F.Z();
                 break;
             case 2:
                 vh.f5 f5Var = (vh.f5) obj3;
-                q20 q20Var = (q20) obj;
+                r20 r20Var = (r20) obj;
                 org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) obj2;
                 if (!(view instanceof k7)) {
-                    a51 G = f5Var.h2.G(i10 - 1);
+                    b51 G = f5Var.h2.G(i10 - 1);
                     if (G != null && G.d == 1) {
-                        new vh.f5(f5Var.getContext(), true, f5Var, q20Var, p6Var).show();
+                        new vh.f5(f5Var.getContext(), true, f5Var, r20Var, p6Var).show();
                         break;
                     } else if (G != null && G.d == 2) {
                         f5Var.W1.b();
@@ -99,7 +100,7 @@ public final /* synthetic */ class o implements gk0 {
                         break;
                     }
                 } else {
-                    jj message = ((k7) view).getMessage();
+                    kj message = ((k7) view).getMessage();
                     if (message != null) {
                         org.telegram.messenger.b6.q(f5Var.a).v(f5Var);
                         if (f5Var.Y1 != null) {
@@ -132,7 +133,7 @@ public final /* synthetic */ class o implements gk0 {
                 vh.k4 k4Var = (vh.k4) obj;
                 m3 m3Var = t5Var.R1;
                 m3 m3Var2 = t5Var.Q1;
-                a51 G2 = t5Var.P1.G(i10 - 1);
+                b51 G2 = t5Var.P1.G(i10 - 1);
                 if (G2 != null) {
                     if (G2.H(vh.r5.class) && (webPage = t5Var.Y1) != null && !vh.t5.g1(webPage)) {
                         jg.d3 d3Var = new jg.d3(context2, t5Var.a);
@@ -143,16 +144,16 @@ public final /* synthetic */ class o implements gk0 {
                         s0Var.d = webPage2;
                         s0Var.e = t5Var.g2;
                         s0Var.f = t5Var.f2;
-                        ph.h1 h1Var = new ph.h1(t5Var, 29);
+                        ph.h1 h1Var = new ph.h1(t5Var, i12);
                         d3Var.G = s0Var;
-                        int i15 = (webPage2 == null || (webPage2.photo == null && !jj.K4(webPage2.document))) ? 8 : 0;
+                        int i16 = (webPage2 == null || (webPage2.photo == null && !kj.K4(webPage2.document))) ? 8 : 0;
                         za0 za0Var = d3Var.y;
-                        za0Var.setVisibility(i15);
+                        za0Var.setVisibility(i16);
                         d3Var.f.b(d3Var.a, s0Var, false);
                         d3Var.x.a(!s0Var.f, false);
                         za0Var.a(!s0Var.e, false);
                         d3Var.H = h1Var;
-                        d3Var.e.setImageDrawable(new jg.x0(k4Var, i12));
+                        d3Var.e.setImageDrawable(new jg.x0(k4Var, i13));
                         d3Var.show();
                         break;
                     } else if (G2.d == 2 && (view instanceof t8)) {

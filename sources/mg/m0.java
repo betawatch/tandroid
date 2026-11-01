@@ -1,15 +1,15 @@
 package mg;
 
 import android.view.View;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.w3;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.q4;
-import org.telegram.ui.Components.xu0;
+import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m0 implements q4, xu0, og.g, og.l {
+public final /* synthetic */ class m0 implements q4, yu0, og.g, og.l {
     public final /* synthetic */ w0 a;
 
     public /* synthetic */ m0(w0 w0Var) {
@@ -23,7 +23,7 @@ public final /* synthetic */ class m0 implements q4, xu0, og.g, og.l {
         w0Var.k1(false, true);
     }
 
-    @Override // org.telegram.ui.Components.xu0
+    @Override // org.telegram.ui.Components.yu0
     public void m(int i10) {
         w0 w0Var = this.a;
         int i11 = w0Var.Z1;
@@ -45,7 +45,7 @@ public final /* synthetic */ class m0 implements q4, xu0, og.g, og.l {
             View childAt = bVar.f.getChildAt(i13);
             if (childAt instanceof og.z) {
                 f6 f6Var = ((og.z) childAt).r;
-                String G = f12 <= 0 ? "" : cd.G(f12, "BoostingBoostsCountTitle", Integer.valueOf(f12));
+                String G = f12 <= 0 ? "" : dd.G(f12, "BoostingBoostsCountTitle", Integer.valueOf(f12));
                 f6Var.a();
                 f6Var.c(G, true, true);
             }
@@ -54,9 +54,9 @@ public final /* synthetic */ class m0 implements q4, xu0, og.g, og.l {
                 int F = bVar.F(hVar.getChat());
                 boolean V = w3.V(hVar.x);
                 if (hVar.y) {
-                    hVar.setSubtitle(F >= 1 ? cd.G(F, V ? "Subscribers" : "Members", new Object[0]) : cd.L0(V ? 2131751391 : 2131754876, null));
+                    hVar.setSubtitle(F >= 1 ? dd.G(F, V ? "Subscribers" : "Members", new Object[0]) : dd.L0(V ? 2131751391 : 2131754876, null));
                 } else {
-                    hVar.setSubtitle(cd.G(f12, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
+                    hVar.setSubtitle(dd.G(f12, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
                 }
             }
         }
@@ -64,7 +64,7 @@ public final /* synthetic */ class m0 implements q4, xu0, og.g, og.l {
         bVar.k(bVar.e.size() - 12, 12);
     }
 
-    @Override // org.telegram.ui.Components.xu0
-    public /* synthetic */ void s() {
+    @Override // org.telegram.ui.Components.yu0
+    public /* synthetic */ void r() {
     }
 }

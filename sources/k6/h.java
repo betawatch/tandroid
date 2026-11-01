@@ -71,18 +71,18 @@ import org.chromium.support_lib_boundary.WebMessageListenerBoundaryInterface;
 import org.chromium.support_lib_boundary.WebMessagePayloadBoundaryInterface;
 import org.chromium.support_lib_boundary.WebMessagePortBoundaryInterface;
 import org.json.JSONObject;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.q4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.dr0;
-import org.telegram.ui.kh0;
+import org.telegram.ui.br0;
+import org.telegram.ui.ih0;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class h implements a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, q4, m1, s, OnCompleteListener, g6.n, f6.a, i1, z3.m, b1 {
     public static h c;
@@ -185,7 +185,7 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
             }
             if ("com.android.vending".equals(packageInfo.packageName) || "com.google.android.gms".equals(packageInfo.packageName)) {
                 ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-                z10 = (applicationInfo == null || (applicationInfo.flags & zs.N1) == 0) ? false : true;
+                z10 = (applicationInfo == null || (applicationInfo.flags & at.N1) == 0) ? false : true;
             }
         }
         packageInfo2 = packageInfo;
@@ -222,7 +222,7 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
                                 char charAt3 = charSequence.charAt(i12);
                                 if (Character.isSurrogatePair(charAt2, charAt3)) {
                                     int codePoint = Character.toCodePoint(charAt2, charAt3);
-                                    byteBuffer.put((byte) ((codePoint >>> 18) | zs.P3));
+                                    byteBuffer.put((byte) ((codePoint >>> 18) | at.P3));
                                     byteBuffer.put((byte) (((codePoint >>> 12) & 63) | 128));
                                     byteBuffer.put((byte) (((codePoint >>> 6) & 63) | 128));
                                     byteBuffer.put((byte) ((codePoint & 63) | 128));
@@ -290,7 +290,7 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
                                 char charAt5 = charSequence.charAt(i16);
                                 if (Character.isSurrogatePair(charAt4, charAt5)) {
                                     int codePoint2 = Character.toCodePoint(charAt4, charAt5);
-                                    array[i10] = (byte) ((codePoint2 >>> 18) | zs.P3);
+                                    array[i10] = (byte) ((codePoint2 >>> 18) | at.P3);
                                     array[i10 + 1] = (byte) (((codePoint2 >>> 12) & 63) | 128);
                                     int i17 = i10 + 3;
                                     array[i10 + 2] = (byte) (((codePoint2 >>> 6) & 63) | 128);
@@ -507,15 +507,15 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
             case 10:
                 ((t) this.b).J(z10, i10, i11, 0L, false);
                 t tVar = (t) this.b;
-                kh0 kh0Var = tVar.O;
-                if (kh0Var != null) {
-                    kh0Var.h();
+                ih0 ih0Var = tVar.O;
+                if (ih0Var != null) {
+                    ih0Var.h();
                     tVar.O = null;
                     break;
                 }
                 break;
             default:
-                ((k2) this.b).w0(i10, i11, z10);
+                ((k2) this.b).x0(i10, i11, z10);
                 break;
         }
     }
@@ -542,7 +542,7 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
 
     public void N(int i10) {
         while ((i10 & (-128)) != 0) {
-            M((i10 & zs.L1) | 128);
+            M((i10 & at.L1) | 128);
             i10 >>>= 7;
         }
         M(i10);
@@ -554,7 +554,7 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
 
     public void S(long j10) {
         while (((-128) & j10) != 0) {
-            M((((int) j10) & zs.L1) | 128);
+            M((((int) j10) & at.L1) | 128);
             j10 >>>= 7;
         }
         M((int) j10);
@@ -601,7 +601,7 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
         } else {
             pVar.l0.k = null;
         }
-        if (pVar.Q() && new android.support.v4.media.session.a0(new androidx.biometric.s(k10, 0)).h(zs.e4) != 0) {
+        if (pVar.Q() && new android.support.v4.media.session.a0(new androidx.biometric.s(k10, 0)).h(at.e4) != 0) {
             pVar.l0.n = true;
             pVar.S();
         } else if (pVar.l0.p) {
@@ -915,11 +915,11 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
                             i11 = 1;
                             int f11 = dVar3.f(8);
                             if ((f11 & 128) == 0) {
-                                f10 = f11 & zs.L1;
-                            } else if ((f11 & zs.W2) == 128) {
+                                f10 = f11 & at.L1;
+                            } else if ((f11 & at.W2) == 128) {
                                 f10 = ((f11 & 63) << 8) | dVar3.f(8);
                             } else {
-                                if ((f11 & zs.B3) != 192) {
+                                if ((f11 & at.B3) != 192) {
                                     throw vb.c.a();
                                 }
                                 f10 = ((f11 & 31) << 16) | dVar3.f(16);
@@ -1158,7 +1158,7 @@ public final class h implements a0, androidx.activity.result.b, WebMessageListen
         a1 a1Var = (a1) this.b;
         a1Var.b.a.B();
         a1Var.x.setViewHidden(false);
-        PhotoViewer photoViewer = ((dr0) a1Var).K;
+        PhotoViewer photoViewer = ((br0) a1Var).K;
         Drawable[] drawableArr = PhotoViewer.U8;
         photoViewer.a3(true, true);
     }

@@ -1,148 +1,114 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+import android.text.TextUtils;
+import java.io.File;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class ad {
-    public final /* synthetic */ int a;
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public boolean g;
+    public int h;
+    public int i;
+    public boolean j;
+    public int k;
 
-    public final int a(int i10) {
-        switch (this.a) {
-            case 0:
-                int i11 = i10 % 100;
-                if (i10 == 0) {
-                    return 1;
+    public static ad a(String str) {
+        ad adVar = null;
+        if (str != null && str.length() != 0) {
+            String[] split = str.split("\\|");
+            if (split.length >= 4) {
+                adVar = new ad();
+                adVar.a = split[0];
+                adVar.b = split[1];
+                adVar.c = split[2].toLowerCase();
+                adVar.d = split[3];
+                if (split.length >= 5) {
+                    adVar.h = Utilities.z(split[4]).intValue();
                 }
-                if (i10 == 1) {
-                    return 2;
+                adVar.e = split.length >= 6 ? split[5] : "";
+                adVar.f = split.length >= 7 ? split[6] : adVar.c;
+                if (split.length >= 8) {
+                    adVar.g = Utilities.z(split[7]).intValue() == 1;
                 }
-                if (i10 == 2) {
-                    return 4;
+                if (split.length >= 9) {
+                    adVar.i = Utilities.z(split[8]).intValue();
                 }
-                if (i11 < 3 || i11 > 10) {
-                    return (i11 < 11 || i11 > 99) ? 0 : 16;
+                if (split.length >= 10) {
+                    adVar.k = Utilities.z(split[9]).intValue();
+                } else {
+                    adVar.k = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 }
-                return 8;
-            case 1:
-                int i12 = i10 % 100;
-                int i13 = i10 % 10;
-                if (i13 == 1 && i12 != 11) {
-                    return 2;
+                if (!TextUtils.isEmpty(adVar.e)) {
+                    adVar.e = adVar.e.replace("-", "_");
                 }
-                if (i13 < 2 || i13 > 4 || (i12 >= 12 && i12 <= 14)) {
-                    return (i13 == 0 || (i13 >= 5 && i13 <= 9) || (i12 >= 11 && i12 <= 14)) ? 16 : 0;
-                }
-                return 8;
-            case 2:
-                if (i10 == 0) {
-                    return 1;
-                }
-                if (i10 == 1) {
-                    return 2;
-                }
-                if (i10 == 2) {
-                    return 4;
-                }
-                if (i10 == 3) {
-                    return 8;
-                }
-                return i10 == 6 ? 16 : 0;
-            case 3:
-                if (i10 == 1) {
-                    return 2;
-                }
-                return (i10 < 2 || i10 > 4) ? 0 : 8;
-            case 4:
-                return (i10 < 0 || i10 >= 2) ? 0 : 2;
-            case 5:
-                if (i10 == 0) {
-                    return 1;
-                }
-                return i10 == 1 ? 2 : 0;
-            case 6:
-                if (i10 == 0) {
-                    return 1;
-                }
-                return (i10 % 10 != 1 || i10 % 100 == 11) ? 0 : 2;
-            case 7:
-                int i14 = i10 % 100;
-                int i15 = i10 % 10;
-                if (i15 != 1 || (i14 >= 11 && i14 <= 19)) {
-                    return (i15 < 2 || i15 > 9 || (i14 >= 11 && i14 <= 19)) ? 0 : 8;
-                }
-                return 2;
-            case 8:
-                return (i10 % 10 != 1 || i10 == 11) ? 0 : 2;
-            case 9:
-                int i16 = i10 % 100;
-                if (i10 == 1) {
-                    return 2;
-                }
-                if (i10 == 0 || (i16 >= 2 && i16 <= 10)) {
-                    return 8;
-                }
-                return (i16 < 11 || i16 > 19) ? 0 : 16;
-            case 10:
-                return 0;
-            case 11:
-                return i10 == 1 ? 2 : 0;
-            case 12:
-                int i17 = i10 % 100;
-                int i18 = i10 % 10;
-                if (i10 == 1) {
-                    return 2;
-                }
-                if (i18 < 2 || i18 > 4 || (i17 >= 12 && i17 <= 14)) {
-                    return ((i18 < 0 || i18 > 1) && (i18 < 5 || i18 > 9) && (i17 < 12 || i17 > 14)) ? 0 : 16;
-                }
-                return 8;
-            case 13:
-                int i19 = i10 % 100;
-                if (i10 == 1) {
-                    return 2;
-                }
-                return (i10 == 0 || (i19 >= 1 && i19 <= 19)) ? 8 : 0;
-            case 14:
-                int i20 = i10 % 100;
-                int i21 = i10 % 10;
-                if (i21 != 1 || i20 == 11) {
-                    return (i21 < 2 || i21 > 4 || (i20 >= 12 && i20 <= 14)) ? 0 : 8;
-                }
-                return 2;
-            case 15:
-                int i22 = i10 % 100;
-                if (i22 == 1) {
-                    return 2;
-                }
-                if (i22 == 2) {
-                    return 4;
-                }
-                return (i22 < 3 || i22 > 4) ? 0 : 8;
-            case 16:
-                if (i10 < 0 || i10 > 1) {
-                    return (i10 < 2 || i10 > 10) ? 0 : 8;
-                }
-                return 2;
-            case 17:
-                if (i10 == 1) {
-                    return 2;
-                }
-                return i10 == 2 ? 4 : 0;
-            case 18:
-                if (i10 == 0) {
-                    return 1;
-                }
-                if (i10 == 1) {
-                    return 2;
-                }
-                if (i10 == 2) {
-                    return 4;
-                }
-                if (i10 == 3) {
-                    return 8;
-                }
-                return i10 == 6 ? 16 : 0;
-            default:
-                return (i10 == 0 || i10 == 1) ? 2 : 0;
+            }
         }
+        return adVar;
+    }
+
+    public final String b() {
+        if (this.d != null && !i() && !j()) {
+            return "local_" + this.c;
+        }
+        if (!j()) {
+            return this.c;
+        }
+        return "unofficial_" + this.c;
+    }
+
+    public final String c() {
+        return this.c.replace("_", "-");
+    }
+
+    public final File d() {
+        if (j()) {
+            return new File(w0.h(), a1.g.r(new StringBuilder("unofficial_base_"), this.c, ".xml"));
+        }
+        return null;
+    }
+
+    public final File e() {
+        if (i()) {
+            return new File(w0.h(), a1.g.r(new StringBuilder("remote_"), this.c, ".xml"));
+        }
+        if (j()) {
+            return new File(w0.h(), a1.g.r(new StringBuilder("unofficial_"), this.c, ".xml"));
+        }
+        if (TextUtils.isEmpty(this.d)) {
+            return null;
+        }
+        return new File(this.d);
+    }
+
+    public final String f() {
+        String str = this.e;
+        if (str == null) {
+            str = "";
+        }
+        TextUtils.isEmpty(this.f);
+        return this.a + "|" + this.b + "|" + this.c + "|" + this.d + "|" + this.h + "|" + str + "|" + this.f + "|" + (this.g ? 1 : 0) + "|" + this.i + "|" + this.k;
+    }
+
+    public final boolean g() {
+        return (!j() || TextUtils.isEmpty(this.e) || this.e.equals(this.c)) ? false : true;
+    }
+
+    public final boolean h() {
+        return (TextUtils.isEmpty(this.d) || i() || j()) ? false : true;
+    }
+
+    public final boolean i() {
+        return "remote".equals(this.d);
+    }
+
+    public final boolean j() {
+        return "unofficial".equals(this.d);
     }
 }

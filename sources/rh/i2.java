@@ -6,9 +6,9 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ul0;
+import org.telegram.ui.sl0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i2 extends ClickableSpan {
     public final /* synthetic */ boolean[] a;
@@ -46,7 +46,7 @@ public final class i2 extends ClickableSpan {
         }
         TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
         getuniquestargift.slug = this.h.concat("-1");
-        ConnectionsManager.getInstance(i10).sendRequest(getuniquestargift, new ul0(28, f0Var, str));
+        ConnectionsManager.getInstance(i10).sendRequest(getuniquestargift, new sl0(28, f0Var, str));
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle

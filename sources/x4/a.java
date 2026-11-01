@@ -19,11 +19,11 @@ import android.view.InflateException;
 import android.view.animation.AnimationUtils;
 import c3.i0;
 import java.util.ArrayList;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.xmlpull.v1.XmlPullParser;
 import v7.w7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -454,9 +454,9 @@ public abstract class a {
         TypedArray f10 = h0.b.f(resources, theme, attributeSet, k);
         ValueAnimator valueAnimator3 = objectAnimator == null ? new ValueAnimator() : objectAnimator;
         boolean c10 = h0.b.c(xmlPullParser, "duration");
-        int i11 = zs.X4;
+        int i11 = at.X4;
         if (c10) {
-            i11 = f7.getInt(1, zs.X4);
+            i11 = f7.getInt(1, at.X4);
         }
         long j10 = i11;
         long j11 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "startOffset") != null ? f7.getInt(2, 0) : 0;

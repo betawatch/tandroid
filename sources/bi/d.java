@@ -8,15 +8,15 @@ import android.view.KeyEvent;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements j20 {
+public final /* synthetic */ class d implements k20 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ vh.d c;
@@ -40,7 +40,7 @@ public final /* synthetic */ class d implements j20 {
         this.b = zArr;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         int i10 = this.a;
         org.telegram.ui.ActionBar.p6 p6Var = this.e;
@@ -84,7 +84,7 @@ public final /* synthetic */ class d implements j20 {
                 boolean[] zArr2 = (boolean[]) obj5;
                 org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj4;
                 TextView textView = (TextView) obj3;
-                org.telegram.ui.Wallet.y2 y2Var = (org.telegram.ui.Wallet.y2) callback;
+                org.telegram.ui.Wallet.z2 z2Var = (org.telegram.ui.Wallet.z2) callback;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str = (String) obj2;
                 if (!zArr[0] && !a2Var.m && !a2Var.n) {
@@ -95,14 +95,14 @@ public final /* synthetic */ class d implements j20 {
                     if (z12 && !z10) {
                         SpannableStringBuilder n10 = org.telegram.ui.Wallet.k0.n(wallettransaction.fee, true);
                         CharSequence m10 = k0Var.m(wallettransaction.fee, true);
-                        textView.setText(TextUtils.isEmpty(m10) ? cd.V(null, null, 2131743146, n10) : cd.V(null, null, 2131743145, n10, m10));
+                        textView.setText(TextUtils.isEmpty(m10) ? dd.V(null, null, 2131743146, n10) : dd.V(null, null, 2131743145, n10, m10));
                         break;
                     } else if (!z12) {
-                        String L0 = str != null ? str : cd.L0(2131743012, null);
+                        String L0 = str != null ? str : dd.L0(2131743012, null);
                         if (str == null) {
                             org.telegram.ui.Wallet.e2.m("preview", L0);
                         }
-                        cc.c0(L0, y2Var.E, p6Var);
+                        cc.c0(L0, z2Var.E, p6Var);
                         break;
                     }
                 }
@@ -110,7 +110,7 @@ public final /* synthetic */ class d implements j20 {
         }
     }
 
-    public /* synthetic */ d(boolean[] zArr, org.telegram.ui.Wallet.a2 a2Var, boolean[] zArr2, vh.d dVar, boolean z10, org.telegram.ui.Wallet.k0 k0Var, TextView textView, org.telegram.ui.Wallet.y2 y2Var, org.telegram.ui.ActionBar.p6 p6Var) {
+    public /* synthetic */ d(boolean[] zArr, org.telegram.ui.Wallet.a2 a2Var, boolean[] zArr2, vh.d dVar, boolean z10, org.telegram.ui.Wallet.k0 k0Var, TextView textView, org.telegram.ui.Wallet.z2 z2Var, org.telegram.ui.ActionBar.p6 p6Var) {
         this.b = zArr;
         this.f = a2Var;
         this.g = zArr2;
@@ -118,7 +118,7 @@ public final /* synthetic */ class d implements j20 {
         this.d = z10;
         this.h = k0Var;
         this.i = textView;
-        this.j = y2Var;
+        this.j = z2Var;
         this.e = p6Var;
     }
 }

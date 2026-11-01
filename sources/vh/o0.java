@@ -10,10 +10,10 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o0 extends View {
     public final Paint a;
@@ -39,7 +39,7 @@ public final class o0 extends View {
         paint.setPathEffect(new CornerPathEffect(org.telegram.messenger.i0.L(6.0f)));
         textPaint.setTextSize(org.telegram.messenger.i0.L(14.0f));
         textPaint.setColor(-1);
-        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(cd.M0("StoryDraftSaved"), textPaint, r1.x, TextUtils.TruncateAt.END), textPaint, org.telegram.messenger.i0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(dd.M0("StoryDraftSaved"), textPaint, r1.x, TextUtils.TruncateAt.END), textPaint, org.telegram.messenger.i0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.c = staticLayout;
         this.d = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
         this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;

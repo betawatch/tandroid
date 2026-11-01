@@ -1,8 +1,8 @@
 package kg;
 
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class m1 implements Runnable {
         switch (this.a) {
             case 0:
                 v1 v1Var = this.b;
-                gf.f.r(v1Var.getContext(), "https://" + vp.r1(v1Var.Q1).U2 + "/nft/" + v1Var.v2.slug);
+                gf.f.r(v1Var.getContext(), "https://" + wp.r1(v1Var.Q1).U2 + "/nft/" + v1Var.v2.slug);
                 break;
             case 1:
                 v1 v1Var2 = this.b;

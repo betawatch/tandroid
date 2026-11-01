@@ -1,86 +1,187 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.os.Bundle;
+import java.util.ArrayList;
 import java.util.regex.Pattern;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a80 implements org.telegram.messenger.j20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class a80 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ byte[] c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Integer e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ long n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Object w;
 
-    public /* synthetic */ a80(Object obj, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = j10;
+    public /* synthetic */ a80(LaunchActivity launchActivity, Bundle bundle, byte[] bArr, int i10, Integer num, String str, int i11, long j10, k0 k0Var, org.telegram.ui.ActionBar.k2 k2Var) {
+        this.b = launchActivity;
+        this.r = bundle;
+        this.c = bArr;
+        this.d = i10;
+        this.e = num;
+        this.f = str;
+        this.h = i11;
+        this.n = j10;
+        this.s = k0Var;
+        this.w = k2Var;
     }
 
-    @Override // org.telegram.messenger.j20
-    public final void a(Object obj, Object obj2) {
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0111  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        TLRPC.Message message;
         int i10 = this.a;
-        long j10 = this.b;
-        Object obj3 = this.c;
+        Object obj = this.w;
+        Object obj2 = this.s;
+        Object obj3 = this.r;
         switch (i10) {
             case 0:
-                LaunchActivity launchActivity = (LaunchActivity) obj3;
-                Long l4 = (Long) obj2;
+                TLObject tLObject = (TLObject) obj3;
+                Integer num = (Integer) obj2;
+                Runnable runnable = (Runnable) obj;
                 Pattern pattern = LaunchActivity.D1;
-                if ("paid".equals((String) obj) && l4.longValue() != 0) {
-                    org.telegram.messenger.i0.g3(new a3.i0(launchActivity, l4, this.b, 19));
-                    break;
+                if (tLObject instanceof TLRPC.messages_Messages) {
+                    ArrayList<TLRPC.Message> arrayList = ((TLRPC.messages_Messages) tLObject).messages;
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        if (arrayList.get(i11) != null && arrayList.get(i11).id == this.e.intValue()) {
+                            message = arrayList.get(i11);
+                            LaunchActivity launchActivity = this.b;
+                            long j10 = this.n;
+                            if (message == null) {
+                                int i12 = launchActivity.O;
+                                Integer valueOf = Integer.valueOf(message.id);
+                                int i13 = launchActivity.O;
+                                launchActivity.z0(i12, null, valueOf, null, Long.valueOf(org.telegram.messenger.kj.c2(i13, message, org.telegram.messenger.wp.r1(i13).s2(org.telegram.messenger.kj.B0(message)), false)), num, this.c, org.telegram.messenger.wp.r1(launchActivity.O).L0(Long.valueOf(-j10)), runnable, this.f, this.d, this.h);
+                                break;
+                            } else {
+                                Bundle bundle = new Bundle();
+                                bundle.putLong("chat_id", -j10);
+                                launchActivity.t0(nb1.J0(launchActivity, bundle));
+                                if (runnable != null) {
+                                    runnable.run();
+                                    break;
+                                }
+                            }
+                        }
+                    }
                 }
-                break;
-            case 1:
-                ph.m mVar = (ph.m) obj3;
-                Boolean bool = (Boolean) obj;
-                String str = (String) obj2;
-                FrameLayout frameLayout = mVar.c2;
-                mVar.S1.setLoading(false);
-                mVar.r2 = false;
-                if (bool != null) {
-                    boolean z10 = j10 > 0;
-                    org.telegram.ui.Components.sb sbVar = new org.telegram.ui.Components.sb(mVar.getContext(), mVar.I0);
-                    sbVar.a.setImageResource(R.drawable.filled_gift_sell_24);
-                    String L0 = org.telegram.messenger.cd.L0(z10 ? 2131750316 : 2131750315, null);
-                    TextView textView = sbVar.b;
-                    textView.setText(L0);
-                    textView.setSingleLine(true);
-                    textView.setTextSize(1, 15.0f);
-                    textView.setMaxLines(1);
-                    textView.setTypeface(org.telegram.messenger.i0.o());
-                    String a02 = org.telegram.messenger.cd.a0(null, null, 2131750351, Integer.valueOf(mVar.d2.d.gifts_per_round));
-                    TextView textView2 = sbVar.c;
-                    textView2.setText(a02);
-                    textView2.setSingleLine(false);
-                    textView2.setMaxLines(5);
-                    mVar.h1();
-                    org.telegram.ui.Components.wb.f(frameLayout, sbVar, 2750).j();
-                    rh.e6.y(mVar.a, false).q(null, false, true);
-                }
-                if (str != null) {
-                    mVar.h1();
-                    new org.telegram.ui.Components.cc(frameLayout, mVar.I0).Q(R.raw.error, 36, org.telegram.messenger.cd.a0(null, null, 2131743903, str)).j();
-                    break;
+                message = null;
+                LaunchActivity launchActivity2 = this.b;
+                long j102 = this.n;
+                if (message == null) {
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) obj3;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (tL_error == null) {
-                    yh.f0.d(k2Var, -j10, 1);
-                    break;
-                } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
-                    org.telegram.ui.Components.cc.a0(k2Var).f0(tL_error, false);
-                    break;
+                final Bundle bundle2 = (Bundle) obj3;
+                final k0 k0Var = (k0) obj2;
+                final org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) obj;
+                Pattern pattern2 = LaunchActivity.D1;
+                final LaunchActivity launchActivity3 = this.b;
+                launchActivity3.getClass();
+                final un unVar = new un(bundle2);
+                final byte[] bArr = this.c;
+                final int i14 = this.d;
+                final Integer num2 = this.e;
+                final String str = this.f;
+                final int i15 = this.h;
+                if (bArr != null) {
+                    unVar.h8 = bArr;
+                    unVar.b8 = i14;
+                } else if (num2 != null) {
+                    unVar.g8 = num2;
+                    unVar.b8 = i14;
                 } else {
-                    yh.f0.d(k2Var, -j10, 2);
-                    break;
+                    unVar.Jb(i14, i15, str);
                 }
+                if (!((ActionBarLayout) (org.telegram.messenger.i0.Q1() ? launchActivity3.s0 : launchActivity3.M())).R(unVar)) {
+                    final long j11 = this.n;
+                    if (j11 < 0) {
+                        TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
+                        TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
+                        tL_inputChannel.channel_id = -j11;
+                        tL_channels_getChannels.id.add(tL_inputChannel);
+                        k0Var.b = new s80(launchActivity3, ConnectionsManager.getInstance(launchActivity3.O).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.r80
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                Pattern pattern3 = LaunchActivity.D1;
+                                final LaunchActivity launchActivity4 = LaunchActivity.this;
+                                launchActivity4.getClass();
+                                final k0 k0Var2 = k0Var;
+                                final long j12 = j11;
+                                final int i16 = i14;
+                                final Integer num3 = num2;
+                                final byte[] bArr2 = bArr;
+                                final org.telegram.ui.ActionBar.k2 k2Var2 = k2Var;
+                                final Bundle bundle3 = bundle2;
+                                final un unVar2 = unVar;
+                                final String str2 = str;
+                                final int i17 = i15;
+                                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.v80
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        Pattern pattern4 = LaunchActivity.D1;
+                                        LaunchActivity launchActivity5 = LaunchActivity.this;
+                                        launchActivity5.getClass();
+                                        k0Var2.c(false);
+                                        TLObject tLObject3 = tLObject2;
+                                        if (tLObject3 instanceof TLRPC.TL_messages_chats) {
+                                            TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject3;
+                                            if (!tL_messages_chats.chats.isEmpty()) {
+                                                org.telegram.messenger.wp.r1(launchActivity5.O).P3(tL_messages_chats.chats, false);
+                                                TLRPC.Chat chat = tL_messages_chats.chats.get(0);
+                                                int i18 = i16;
+                                                if (chat != null && chat.forum) {
+                                                    launchActivity5.l0(-j12, Integer.valueOf(i18), null, num3, bArr2, null, 0, -1);
+                                                }
+                                                org.telegram.ui.ActionBar.k2 k2Var3 = k2Var2;
+                                                Bundle bundle4 = bundle3;
+                                                if (k2Var3 == null || org.telegram.messenger.wp.r1(launchActivity5.O).E(bundle4, k2Var3, null, null)) {
+                                                    un unVar3 = new un(bundle4);
+                                                    unVar2.Jb(i18, i17, str2);
+                                                    ((ActionBarLayout) launchActivity5.M()).R(unVar3);
+                                                    return;
+                                                }
+                                                return;
+                                            }
+                                        }
+                                        launchActivity5.F0(org.telegram.ui.Components.s4.G(launchActivity5, org.telegram.messenger.dd.L0(2131751455, null), org.telegram.messenger.dd.L0(2131748905, null)));
+                                    }
+                                });
+                            }
+                        }), 0);
+                        break;
+                    }
+                }
+                k0Var.c(false);
+                break;
         }
+    }
+
+    public /* synthetic */ a80(LaunchActivity launchActivity, TLObject tLObject, Integer num, Integer num2, byte[] bArr, long j10, Runnable runnable, String str, int i10, int i11) {
+        this.b = launchActivity;
+        this.r = tLObject;
+        this.e = num;
+        this.s = num2;
+        this.c = bArr;
+        this.n = j10;
+        this.w = runnable;
+        this.f = str;
+        this.d = i10;
+        this.h = i11;
     }
 }

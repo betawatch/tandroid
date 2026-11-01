@@ -12,14 +12,14 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.zs;
 import org.telegram.ui.Components.d50;
-import org.telegram.ui.Components.lz0;
+import org.telegram.ui.Components.mz0;
 import org.telegram.ui.Components.px;
 import org.telegram.ui.Components.z40;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class x0 {
     public boolean A;
@@ -234,16 +234,16 @@ public final class x0 {
             d50 d50Var = (d50) this.d.a;
             d50Var.A();
             f8.g(exc, true);
-            lz0 lz0Var = d50Var.S;
-            if (lz0Var != null) {
-                lz0Var.d(true);
+            mz0 mz0Var = d50Var.S;
+            if (mz0Var != null) {
+                mz0Var.d(true);
             }
             d50Var.S = null;
             MediaController.B().Y(false);
             if (d50Var.f0) {
                 d50Var.x(6);
             } else {
-                zs.f(d50Var.f).k(zs.m2, Integer.valueOf(d50Var.h));
+                at.f(d50Var.f).k(at.m2, Integer.valueOf(d50Var.h));
             }
             d50Var.z(false, false);
             if (!this.E && !this.l.Y()) {
@@ -360,17 +360,17 @@ public final class x0 {
         if (i10 == 3) {
             if (!d50Var.C0) {
                 d50Var.C0 = true;
-                zs.e().k(zs.j1, 512);
+                at.e().k(at.j1, 512);
             }
             d50.n(d50Var);
             d50Var.setRecordingUiFrameClockActive(true);
             d50Var.D();
             if (!d50Var.f0) {
                 d50Var.f0 = true;
-                zs.f(i11).k(zs.l2, Integer.valueOf(d50Var.h), Boolean.FALSE);
+                at.f(i11).k(at.l2, Integer.valueOf(d50Var.h), Boolean.FALSE);
             } else if (d50Var.g0) {
                 d50Var.g0 = false;
-                zs.f(i11).k(zs.p2, new Object[0]);
+                at.f(i11).k(at.p2, new Object[0]);
             }
         } else {
             d50Var.setRecordingUiFrameClockActive(false);

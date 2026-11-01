@@ -4,18 +4,18 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.wb;
-import org.telegram.ui.ay;
+import org.telegram.ui.zx;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c1 extends kg.v1 {
     public static c1 K2;
@@ -27,9 +27,9 @@ public final class c1 extends kg.v1 {
         this.J2 = str;
         wb.a((FrameLayout) this.b, new u(2));
         if (!z10) {
-            tk0 tk0Var = this.k1;
+            uk0 uk0Var = this.k1;
             int i11 = this.t0;
-            tk0Var.setPadding(i11, 0, i11, org.telegram.messenger.i0.L(68.0f));
+            uk0Var.setPadding(i11, 0, i11, org.telegram.messenger.i0.L(68.0f));
             og.a aVar = new og.a(getContext(), this.I0);
             this.I2 = aVar;
             aVar.setOnClickListener(new ag.g(this, 13));
@@ -37,7 +37,7 @@ public final class c1 extends kg.v1 {
             aVar2.e = true;
             vh.d dVar = aVar2.a;
             dVar.setEnabled(true);
-            dVar.i(cd.L0(2131749684, null), false, true);
+            dVar.i(dd.L0(2131749684, null), false, true);
             a7.i(t6.h5, aVar2.b, aVar2.c);
             this.b.addView(this.I2, b6.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
@@ -46,9 +46,9 @@ public final class c1 extends kg.v1 {
 
     public static void l1(c1 c1Var) {
         String str = "https://t.me/giftcode/" + c1Var.J2;
-        ay ayVar = new ay(org.telegram.ui.Cells.f1.j(3, "onlySelect", "dialogsType", true));
-        ayVar.C2 = new zf.j0(c1Var, str);
-        c1Var.o1.presentFragment(ayVar);
+        zx zxVar = new zx(org.telegram.ui.Cells.f1.j(3, "onlySelect", "dialogsType", true));
+        zxVar.C2 = new zf.j0(c1Var, str);
+        c1Var.o1.presentFragment(zxVar);
         c1Var.dismiss();
     }
 
@@ -84,7 +84,7 @@ public final class c1 extends kg.v1 {
         this.H2.setLineSpacing(org.telegram.messenger.i0.L(2.0f), 1.0f);
         ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).bottomMargin = org.telegram.messenger.i0.L(14.0f);
         ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).topMargin = org.telegram.messenger.i0.L(12.0f);
-        this.H2.setText(org.telegram.messenger.i0.J2(org.telegram.messenger.i0.R2(cd.L0(2131749688, "GiftPremiumAboutThisLink"), t6.Uc, 0, new a1(this, 0), null), org.telegram.messenger.i0.W2(cd.L0(2131749687, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
+        this.H2.setText(org.telegram.messenger.i0.J2(org.telegram.messenger.i0.R2(dd.L0(2131749688, "GiftPremiumAboutThisLink"), t6.Uc, 0, new a1(this, 0), null), org.telegram.messenger.i0.W2(dd.L0(2131749687, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
     }
 
     @Override // kg.v1

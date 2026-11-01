@@ -3,9 +3,9 @@ package mg;
 import android.content.Context;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.wh0;
+import org.telegram.ui.uh0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g2 extends vh.d {
     public final /* synthetic */ int k0;
@@ -32,12 +32,12 @@ public final class g2 extends vh.d {
                 }
                 break;
             default:
-                wh0 wh0Var = (wh0) this.l0;
-                boolean z11 = wh0Var.f2 == 0.0f;
-                wh0Var.f2 = f7;
+                uh0 uh0Var = (uh0) this.l0;
+                boolean z11 = uh0Var.f2 == 0.0f;
+                uh0Var.f2 = f7;
                 if (z11) {
-                    wh0Var.g2 = new d2(wh0Var, 3);
-                    wh0Var.e1(false);
+                    uh0Var.g2 = new d2(uh0Var, 3);
+                    uh0Var.e1(false);
                     break;
                 }
                 break;

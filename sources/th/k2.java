@@ -12,31 +12,31 @@ import java.net.URLDecoder;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.oz;
-import org.telegram.messenger.pp;
-import org.telegram.messenger.qz;
+import org.telegram.messenger.pz;
+import org.telegram.messenger.qp;
 import org.telegram.messenger.rz;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.sz;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.d51;
 import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.f51;
 import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.j30;
 import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.wb;
-import org.telegram.ui.Components.yz0;
 import org.telegram.ui.Components.z60;
+import org.telegram.ui.Components.zz0;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k2 extends j6 {
     public final /* synthetic */ o7 x0;
@@ -80,25 +80,25 @@ public final class k2 extends j6 {
     public final void G(CharacterStyle characterStyle, View view) {
         o7 o7Var = this.x0;
         org.telegram.ui.ActionBar.k2 k2Var = o7Var.f;
-        boolean z10 = characterStyle instanceof h51;
+        boolean z10 = characterStyle instanceof i51;
         z2 z2Var = this.z0;
         if (z10) {
-            TLRPC.User Z1 = vp.r1(z2Var.l2).Z1(Utilities.A(((h51) characterStyle).getURL()));
+            TLRPC.User Z1 = wp.r1(z2Var.l2).Z1(Utilities.A(((i51) characterStyle).getURL()));
             if (Z1 != null) {
-                vp.r1(z2Var.l2).w3(Z1, null, k2Var, 0);
+                wp.r1(z2Var.l2).w3(Z1, null, k2Var, 0);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof e51)) {
+        if (!(characterStyle instanceof f51)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof g51);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof h51);
                 return;
             }
-            if (characterStyle instanceof d51) {
-                d51 d51Var = (d51) characterStyle;
-                org.telegram.messenger.i0.g(d51Var.a.subSequence(d51Var.b, d51Var.c).toString());
-                z20.r(null, 2131744219, new cc(z2Var.L0, this.y0));
+            if (characterStyle instanceof e51) {
+                e51 e51Var = (e51) characterStyle;
+                org.telegram.messenger.i0.g(e51Var.a.subSequence(e51Var.b, e51Var.c).toString());
+                a30.r(null, 2131744219, new cc(z2Var.L0, this.y0));
                 return;
             } else {
                 if (characterStyle instanceof ClickableSpan) {
@@ -108,7 +108,7 @@ public final class k2 extends j6 {
                 return;
             }
         }
-        String url = ((e51) characterStyle).getURL();
+        String url = ((f51) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
                 o7Var.V(new j30(url, null));
@@ -127,7 +127,7 @@ public final class k2 extends j6 {
         }
         String lowerCase = b10.toLowerCase();
         if (url.startsWith("@")) {
-            vp.r1(z2Var.l2).v3(lowerCase, k2Var, 0, null);
+            wp.r1(z2Var.l2).v3(lowerCase, k2Var, 0, null);
         } else {
             M(0, url, characterStyle, false);
         }
@@ -162,7 +162,7 @@ public final class k2 extends j6 {
         k10.Q = true;
         z2 z2Var = this.z0;
         y2 y2Var = z2Var.x1;
-        CharSequence[] charSequenceArr = (y2Var == null || y2Var.d()) ? new CharSequence[]{cd.L0(2131747833, null), cd.L0(2131751767, null)} : new CharSequence[]{cd.L0(2131747833, null)};
+        CharSequence[] charSequenceArr = (y2Var == null || y2Var.d()) ? new CharSequence[]{dd.L0(2131747833, null), dd.L0(2131751767, null)} : new CharSequence[]{dd.L0(2131747833, null)};
         final org.telegram.ui.ActionBar.p6 p6Var2 = this.y0;
         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: th.j2
             @Override // android.content.DialogInterface.OnClickListener
@@ -198,7 +198,7 @@ public final class k2 extends j6 {
             F.i = 3;
             F.a0(-org.telegram.messenger.i0.L(8.0f), 0.0f);
             final int i11 = 0;
-            F.l(R.drawable.msg_saved, cd.L0(2131744740, null), new Runnable(this) { // from class: th.h2
+            F.l(R.drawable.msg_saved, dd.L0(2131744740, null), new Runnable(this) { // from class: th.h2
                 public final /* synthetic */ k2 b;
 
                 {
@@ -214,12 +214,12 @@ public final class k2 extends j6 {
                     switch (i12) {
                         case 0:
                             z2 z2Var2 = k2Var.z0;
-                            qz C = qz.C(z2Var2.l2);
+                            rz C = rz.C(z2Var2.l2);
                             TLRPC.TL_document tL_document = (TLRPC.TL_document) document2;
-                            long e = d20.i(z2Var2.l2).e();
+                            long e = e20.i(z2Var2.l2).e();
                             y2 y2Var = z2Var2.x1;
-                            C.r0(oz.f(tL_document, null, null, e, null, null, null, null, null, null, false, 0, 0, 0, y2Var != null ? y2Var.a : null, null, false));
-                            new cc(z2Var2.L0, p6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.i0.R2(cd.L0(2131744739, null), -1, 2, new rz(10), null)).k(true);
+                            C.r0(pz.f(tL_document, null, null, e, null, null, null, null, null, null, false, 0, 0, 0, y2Var != null ? y2Var.a : null, null, false));
+                            new cc(z2Var2.L0, p6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.i0.R2(dd.L0(2131744739, null), -1, 2, new sz(10), null)).k(true);
                             break;
                         default:
                             z2 z2Var3 = k2Var.z0;
@@ -229,18 +229,18 @@ public final class k2 extends j6 {
                             tL_inputDocument.id = document2.id;
                             tL_inputDocument.access_hash = document2.access_hash;
                             tL_inputDocument.file_reference = document2.file_reference;
-                            if (MediaController.B().Q0 != null && MediaController.B().Q0.b == d20.i(z2Var3.l2).e()) {
-                                pp ppVar = MediaController.B().Q0;
-                                ppVar.c.add(0, ppVar.d(document2));
-                                ppVar.e();
+                            if (MediaController.B().Q0 != null && MediaController.B().Q0.b == e20.i(z2Var3.l2).e()) {
+                                qp qpVar = MediaController.B().Q0;
+                                qpVar.c.add(0, qpVar.d(document2));
+                                qpVar.e();
                             }
                             ConnectionsManager.getInstance(z2Var3.l2).sendRequest(tL_account_saveMusic, null);
-                            new cc(z2Var3.L0, p6Var2).Q(R.raw.ic_save_to_music, 36, cd.L0(2131744741, null)).k(true);
+                            new cc(z2Var3.L0, p6Var2).Q(R.raw.ic_save_to_music, 36, dd.L0(2131744741, null)).k(true);
                             break;
                     }
                 }
             }, document instanceof TLRPC.TL_document);
-            F.c(R.drawable.msg_tone_add, cd.L0(2131744742, null), new Runnable(this) { // from class: th.h2
+            F.c(R.drawable.msg_tone_add, dd.L0(2131744742, null), new Runnable(this) { // from class: th.h2
                 public final /* synthetic */ k2 b;
 
                 {
@@ -256,12 +256,12 @@ public final class k2 extends j6 {
                     switch (i12) {
                         case 0:
                             z2 z2Var2 = k2Var.z0;
-                            qz C = qz.C(z2Var2.l2);
+                            rz C = rz.C(z2Var2.l2);
                             TLRPC.TL_document tL_document = (TLRPC.TL_document) document2;
-                            long e = d20.i(z2Var2.l2).e();
+                            long e = e20.i(z2Var2.l2).e();
                             y2 y2Var = z2Var2.x1;
-                            C.r0(oz.f(tL_document, null, null, e, null, null, null, null, null, null, false, 0, 0, 0, y2Var != null ? y2Var.a : null, null, false));
-                            new cc(z2Var2.L0, p6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.i0.R2(cd.L0(2131744739, null), -1, 2, new rz(10), null)).k(true);
+                            C.r0(pz.f(tL_document, null, null, e, null, null, null, null, null, null, false, 0, 0, 0, y2Var != null ? y2Var.a : null, null, false));
+                            new cc(z2Var2.L0, p6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.i0.R2(dd.L0(2131744739, null), -1, 2, new sz(10), null)).k(true);
                             break;
                         default:
                             z2 z2Var3 = k2Var.z0;
@@ -271,13 +271,13 @@ public final class k2 extends j6 {
                             tL_inputDocument.id = document2.id;
                             tL_inputDocument.access_hash = document2.access_hash;
                             tL_inputDocument.file_reference = document2.file_reference;
-                            if (MediaController.B().Q0 != null && MediaController.B().Q0.b == d20.i(z2Var3.l2).e()) {
-                                pp ppVar = MediaController.B().Q0;
-                                ppVar.c.add(0, ppVar.d(document2));
-                                ppVar.e();
+                            if (MediaController.B().Q0 != null && MediaController.B().Q0.b == e20.i(z2Var3.l2).e()) {
+                                qp qpVar = MediaController.B().Q0;
+                                qpVar.c.add(0, qpVar.d(document2));
+                                qpVar.e();
                             }
                             ConnectionsManager.getInstance(z2Var3.l2).sendRequest(tL_account_saveMusic, null);
-                            new cc(z2Var3.L0, p6Var2).Q(R.raw.ic_save_to_music, 36, cd.L0(2131744741, null)).k(true);
+                            new cc(z2Var3.L0, p6Var2).Q(R.raw.ic_save_to_music, 36, dd.L0(2131744741, null)).k(true);
                             break;
                     }
                 }
@@ -297,20 +297,20 @@ public final class k2 extends j6 {
             return;
         }
         if (e6Var.b == null || e6Var.c == null) {
-            wb Q = new cc(z2Var.L0, p6Var).Q(R.raw.error, 36, cd.L0(2131744683, null));
+            wb Q = new cc(z2Var.L0, p6Var).Q(R.raw.error, 36, dd.L0(2131744683, null));
             Q.a = 3;
             Q.k(true);
         } else {
-            vp.r1(z2Var.l2).O1().g0(e6Var.c.intValue(), e6Var.b.longValue(), new ag.m2(this, e6Var, o7Var, p6Var, 18));
+            wp.r1(z2Var.l2).O1().g0(e6Var.c.intValue(), e6Var.b.longValue(), new ag.m2(this, e6Var, o7Var, p6Var, 18));
         }
     }
 
     public final void M(int i10, String str, CharacterStyle characterStyle, boolean z10) {
-        yz0 yz0Var;
+        zz0 zz0Var;
         if (z10 || org.telegram.messenger.i0.I3(str)) {
             o7 o7Var = this.x0;
             if (i10 == 0 || i10 == 2) {
-                org.telegram.ui.Components.s4.q0(o7Var.f, str, true, true, true, (!(characterStyle instanceof g51) || (yz0Var = ((g51) characterStyle).a) == null || (yz0Var.a & 1024) == 0) ? false : true, null, null, this.y0);
+                org.telegram.ui.Components.s4.q0(o7Var.f, str, true, true, true, (!(characterStyle instanceof h51) || (zz0Var = ((h51) characterStyle).a) == null || (zz0Var.a & 1024) == 0) ? false : true, null, null, this.y0);
                 return;
             } else {
                 if (i10 == 1) {

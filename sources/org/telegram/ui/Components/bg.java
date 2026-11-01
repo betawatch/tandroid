@@ -10,7 +10,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class bg extends View {
     public StaticLayout D;
@@ -99,7 +99,7 @@ public final class bg extends View {
         }
         if (this.a && currentTimeMillis > this.f + 5000) {
             this.f = currentTimeMillis;
-            org.telegram.messenger.vp r12 = org.telegram.messenger.vp.r1(chatActivityEnterView.Q);
+            org.telegram.messenger.wp r12 = org.telegram.messenger.wp.r1(chatActivityEnterView.Q);
             long j14 = chatActivityEnterView.Q2;
             threadMessageId = chatActivityEnterView.getThreadMessageId();
             r12.z4(chatActivityEnterView.c1 ? 7 : 1, 0, j14, threadMessageId, null);
@@ -238,7 +238,7 @@ public final class bg extends View {
                 canvas.restore();
             }
             canvas.save();
-            this.F.setAlpha(org.telegram.messenger.zs.e4);
+            this.F.setAlpha(org.telegram.messenger.at.e4);
             StaticLayout staticLayout3 = new StaticLayout(this.x, this.F, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             canvas.translate(0.0f, measuredHeight - (staticLayout3.getHeight() / 2.0f));
             staticLayout3.draw(canvas);

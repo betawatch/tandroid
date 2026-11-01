@@ -7,7 +7,7 @@ import android.text.SpannableStringBuilder;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.s9;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class j2 extends vh.d {
     public final w9 k0;
@@ -75,7 +75,7 @@ public abstract class j2 extends vh.d {
 
     public void setCancelState(boolean z10) {
         this.m0 = 2;
-        i(cd.L0(2131752589, null), z10, true);
+        i(dd.L0(2131752589, null), z10, true);
     }
 
     public void setCutOutState(boolean z10) {
@@ -87,7 +87,7 @@ public abstract class j2 extends vh.d {
         dqVar.s = org.telegram.messenger.i0.L(2.0f);
         dqVar.G = 1.2f;
         spannableStringBuilder.setSpan(dqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) cd.L0(2131745697, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) dd.L0(2131745697, null));
         i(spannableStringBuilder, z10, true);
     }
 
@@ -98,7 +98,7 @@ public abstract class j2 extends vh.d {
         dqVar.c(org.telegram.messenger.i0.L(20.0f));
         dqVar.r = org.telegram.messenger.i0.L(-3.0f);
         spannableStringBuilder.setSpan(dqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) cd.L0(2131745695, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) dd.L0(2131745695, null));
         i(spannableStringBuilder, z10, true);
     }
 
@@ -109,7 +109,7 @@ public abstract class j2 extends vh.d {
         dqVar.c(org.telegram.messenger.i0.L(20.0f));
         dqVar.r = org.telegram.messenger.i0.L(-3.0f);
         spannableStringBuilder.setSpan(dqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) cd.L0(2131745694, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) dd.L0(2131745694, null));
         i(spannableStringBuilder, z10, true);
     }
 
@@ -125,7 +125,7 @@ public abstract class j2 extends vh.d {
         dqVar.c(org.telegram.messenger.i0.L(20.0f));
         dqVar.r = org.telegram.messenger.i0.L(-3.0f);
         spannableStringBuilder.setSpan(dqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) cd.L0(2131745693, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) dd.L0(2131745693, null));
         i(spannableStringBuilder, z10, true);
     }
 
@@ -140,7 +140,7 @@ public abstract class j2 extends vh.d {
         dqVar.c(org.telegram.messenger.i0.L(20.0f));
         dqVar.r = org.telegram.messenger.i0.L(-3.0f);
         spannableStringBuilder.setSpan(dqVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) cd.L0(2131745691, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) dd.L0(2131745691, null));
         i(spannableStringBuilder, z10, true);
     }
 

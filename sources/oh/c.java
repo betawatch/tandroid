@@ -7,14 +7,14 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import bi.t3;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.n0;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.at;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.ot;
 import org.telegram.ui.Components.zz;
@@ -23,14 +23,14 @@ import org.telegram.ui.un;
 import s4.s0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class c extends e61 {
+public final class c extends f61 {
     public final int K1;
     public final o90 L1;
     public final zz M1;
-    public final dw0 N1;
-    public final dw0 O1;
+    public final ew0 N1;
+    public final ew0 O1;
     public float P1;
     public boolean Q1;
     public int R1;
@@ -53,7 +53,7 @@ public final class c extends e61 {
         this.L1 = o90Var;
         o90Var.B = false;
         this.p0 = 75;
-        this.s1.J.setHint(cd.L0(2131745775, null));
+        this.s1.J.setHint(dd.L0(2131745775, null));
         j jVar = o90Var.f;
         this.m1 = jVar;
         this.l1 = jVar;
@@ -72,16 +72,16 @@ public final class c extends e61 {
         zz b10 = o90Var.b();
         this.M1 = b10;
         this.b.addView(b10, indexOfChild, b6.c(-1.0f, -1));
-        dw0 a2 = o90Var.a();
+        ew0 a2 = o90Var.a();
         this.N1 = a2;
         this.b.addView(a2, indexOfChild, b6.c(-1.0f, -1));
-        dw0 c10 = o90Var.c();
+        ew0 c10 = o90Var.c();
         this.O1 = c10;
         this.b.addView(c10, indexOfChild, b6.c(-1.0f, -1));
         o90Var.e();
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void J0(MotionEvent motionEvent, n0 n0Var) {
         k2 k2Var;
         int action = motionEvent.getAction();
@@ -98,9 +98,9 @@ public final class c extends e61 {
                 k2Var = null;
             }
             if (k2Var instanceof un) {
-                boolean fa2 = ((un) k2Var).fa();
+                boolean ka2 = ((un) k2Var).ka();
                 this.Q1 = true;
-                i0.h3(new at(24, this, n0Var), fa2 ? 200L : 0L);
+                i0.h3(new at(24, this, n0Var), ka2 ? 200L : 0L);
             } else {
                 this.Q1 = true;
                 A0(true);
@@ -113,12 +113,12 @@ public final class c extends e61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void L0(String str) {
         this.L1.j(str);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void N0(int i10) {
         super.N0(i10);
         this.M1.setTranslationY(this.j1.getMeasuredHeight() + i10);
@@ -127,7 +127,7 @@ public final class c extends e61 {
         this.O1.setTranslationY(f7);
     }
 
-    @Override // org.telegram.ui.Components.e61
+    @Override // org.telegram.ui.Components.f61
     public final void Q0() {
         b1 b1Var = this.k1;
         if (b1Var.getChildCount() > 0) {
@@ -141,7 +141,7 @@ public final class c extends e61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.e61, org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
+    @Override // org.telegram.ui.Components.f61, org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
         e eVar = this.S1;
         c cVar = eVar.i;

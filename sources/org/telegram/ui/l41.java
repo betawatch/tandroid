@@ -1,32 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class l41 extends UndoView {
-    public final /* synthetic */ SessionsActivity j0;
+public final /* synthetic */ class l41 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m41 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l41(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.j0 = sessionsActivity;
+    public /* synthetic */ l41(m41 m41Var, int i10) {
+        this.a = i10;
+        this.b = m41Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void d(int i10, boolean z10) {
-        int i11;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i11 = ((org.telegram.ui.ActionBar.k2) this.j0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new ul0(9, this, tL_authorization));
+    @Override // java.lang.Runnable
+    public final void run() {
+        String sb2;
+        int i10 = this.a;
+        m41 m41Var = this.b;
+        switch (i10) {
+            case 0:
+                String str = m41Var.b.text;
+                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
+                    StringBuilder sb3 = new StringBuilder();
+                    org.telegram.messenger.a30.q(null, 2131751106, sb3, "\n");
+                    sb3.append(m41Var.b.text);
+                    sb2 = sb3.toString();
+                } else {
+                    sb2 = org.telegram.messenger.dd.L0(2131754709, null);
+                }
+                org.telegram.ui.Components.s4.t0(m41Var.c, org.telegram.messenger.dd.L0(2131753894, null), sb2, null);
+                break;
+            default:
+                org.telegram.ui.Components.s4.t0(m41Var.c, org.telegram.messenger.dd.L0(2131753894, null), org.telegram.messenger.dd.L0(2131751106, null), null);
+                break;
         }
-        super.d(i10, z10);
     }
 }

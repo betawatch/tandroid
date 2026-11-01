@@ -15,19 +15,19 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.TreeSet;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.is;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ex0;
-import org.telegram.ui.px0;
+import org.telegram.ui.dx0;
+import org.telegram.ui.ox0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class x4 {
     public static HashMap B;
@@ -59,12 +59,12 @@ public class x4 {
     public int s = -1;
     public int A = -1;
 
-    public x4(int i10, long j10, int i11, int i12, q20 q20Var) {
+    public x4(int i10, long j10, int i11, int i12, r20 r20Var) {
         this.c = i10;
         this.d = j10;
         this.e = i11;
         this.f = i12;
-        this.x = new o0(9, this, q20Var);
+        this.x = new o0(10, this, r20Var);
         if (i11 != 0 || i12 <= 0) {
             this.k = new TreeSet(Comparator$-CC.reverseOrder());
             this.l = new TreeSet(Comparator$-CC.reverseOrder());
@@ -75,24 +75,24 @@ public class x4 {
         s();
     }
 
-    public static long b(jj jjVar) {
-        if (jjVar == null) {
+    public static long b(kj kjVar) {
+        if (kjVar == null) {
             return 0L;
         }
-        long j10 = jjVar.k.date;
+        long j10 = kjVar.k.date;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(j10 * 1000);
         return (calendar.get(2) * 100) + (calendar.get(1) * 10000) + calendar.get(5);
     }
 
-    public static boolean e(jj jjVar, boolean z10, boolean z11) {
-        if (jjVar == null || !jjVar.x4()) {
+    public static boolean e(kj kjVar, boolean z10, boolean z11) {
+        if (kjVar == null || !kjVar.x4()) {
             return false;
         }
-        if (z10 && jj.S3(jjVar.k)) {
+        if (z10 && kj.S3(kjVar.k)) {
             return true;
         }
-        return (z11 && jj.L4(jjVar.k)) || (jjVar.l.media instanceof TLRPC.TL_messageMediaUnsupported);
+        return (z11 && kj.L4(kjVar.k)) || (kjVar.l.media instanceof TLRPC.TL_messageMediaUnsupported);
     }
 
     public static void v(AbstractSet abstractSet, ArrayList arrayList) {
@@ -162,7 +162,7 @@ public class x4 {
         if (z10) {
             TL_stories.TL_updateAlbum tL_updateAlbum = new TL_stories.TL_updateAlbum();
             int i10 = this.c;
-            tL_updateAlbum.peer = vp.r1(i10).i1(this.d);
+            tL_updateAlbum.peer = wp.r1(i10).i1(this.d);
             tL_updateAlbum.album_id = this.f;
             tL_updateAlbum.order = new ArrayList<>(arrayList);
             ConnectionsManager.getInstance(i10).sendRequest(tL_updateAlbum, null);
@@ -176,7 +176,7 @@ public class x4 {
         }
         ArrayList arrayList2 = new ArrayList(arrayList);
         int i10 = this.c;
-        int i11 = vp.r1(i10).O5;
+        int i11 = wp.r1(i10).O5;
         if (arrayList2.size() > i11) {
             arrayList2.subList(i11, arrayList2.size()).clear();
         }
@@ -191,14 +191,14 @@ public class x4 {
         if (z10) {
             TL_stories.TL_togglePinnedToTop tL_togglePinnedToTop = new TL_stories.TL_togglePinnedToTop();
             tL_togglePinnedToTop.id.addAll(arrayList3);
-            tL_togglePinnedToTop.peer = vp.r1(i10).i1(this.d);
+            tL_togglePinnedToTop.peer = wp.r1(i10).i1(this.d);
             ConnectionsManager.getInstance(i10).sendRequest(tL_togglePinnedToTop, new ag.c3(27));
         }
     }
 
     public final void D(List list, boolean z10) {
         int i10;
-        jj jjVar;
+        kj kjVar;
         TL_stories.StoryItem storyItem;
         StringBuilder sb2 = new StringBuilder("StoriesList ");
         int i11 = this.e;
@@ -268,7 +268,7 @@ public class x4 {
                         this.w = false;
                         p(Utilities.j(size2, 50, 10), true);
                     }
-                } else if (z12 && z13 && ((jjVar = (jj) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z10 || (storyItem = jjVar.l) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
+                } else if (z12 && z13 && ((kjVar = (kj) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z10 || (storyItem = kjVar.l) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
                     i0.a.p(storyItem2.id, new StringBuilder("StoriesList update story "));
                     hashMap.put(Integer.valueOf(storyItem2.id), y(storyItem2));
                 }
@@ -295,8 +295,8 @@ public class x4 {
             i11++;
             Integer num = (Integer) obj;
             num.getClass();
-            jj jjVar = (jj) this.j.get(num);
-            if (jjVar != null && (storyItem = jjVar.l) != null) {
+            kj kjVar = (kj) this.j.get(num);
+            if (kjVar != null && (storyItem = kjVar.l) != null) {
                 HashSet hashSet = storyItem.albums != null ? new HashSet(storyItem.albums) : new HashSet();
                 Integer valueOf = Integer.valueOf(i10);
                 boolean remove = z10 ? hashSet.remove(valueOf) : hashSet.add(valueOf);
@@ -337,19 +337,19 @@ public class x4 {
                 i12++;
                 Integer num = (Integer) obj;
                 num.getClass();
-                jj jjVar = (jj) hashMap.get(num);
-                if (e(jjVar, z10, z11)) {
-                    arrayList2.add(jjVar);
+                kj kjVar = (kj) hashMap.get(num);
+                if (e(kjVar, z10, z11)) {
+                    arrayList2.add(kjVar);
                 }
             }
         }
         int i13 = Integer.MAX_VALUE;
         for (Integer num2 : this.l) {
             int intValue = num2.intValue();
-            jj jjVar2 = (jj) hashMap.get(num2);
+            kj kjVar2 = (kj) hashMap.get(num2);
             if (i11 != 0 || i10 > 0 || !arrayList3.contains(num2)) {
-                if (e(jjVar2, z10, z11)) {
-                    arrayList2.add(jjVar2);
+                if (e(kjVar2, z10, z11)) {
+                    arrayList2.add(kjVar2);
                 }
                 if (intValue < i13) {
                     i13 = intValue;
@@ -362,9 +362,9 @@ public class x4 {
                 Integer num3 = (Integer) it.next();
                 int intValue2 = num3.intValue();
                 if (i11 != 0 || i10 > 0 || !arrayList3.contains(num3)) {
-                    jj jjVar3 = (jj) hashMap.get(num3);
-                    if (e(jjVar3, z10, z11)) {
-                        arrayList2.add(jjVar3);
+                    kj kjVar3 = (kj) hashMap.get(num3);
+                    if (e(kjVar3, z10, z11)) {
+                        arrayList2.add(kjVar3);
                     }
                 }
             }
@@ -382,8 +382,8 @@ public class x4 {
         }
     }
 
-    public jj f(int i10) {
-        return (jj) this.j.get(Integer.valueOf(i10));
+    public kj f(int i10) {
+        return (kj) this.j.get(Integer.valueOf(i10));
     }
 
     public int g() {
@@ -395,7 +395,7 @@ public class x4 {
     public ArrayList h() {
         HashMap hashMap = this.h;
         ArrayList arrayList = new ArrayList(hashMap.keySet());
-        Collections.sort(arrayList, new ex0(24));
+        Collections.sort(arrayList, new dx0(24));
         ArrayList arrayList2 = new ArrayList();
         int i10 = 0;
         int i11 = this.e;
@@ -406,7 +406,7 @@ public class x4 {
             while (i10 < size) {
                 Object obj = arrayList4.get(i10);
                 i10++;
-                arrayList3.add(Integer.valueOf(((jj) obj).l.id));
+                arrayList3.add(Integer.valueOf(((kj) obj).l.id));
             }
             arrayList2.add(arrayList3);
             return arrayList2;
@@ -452,7 +452,7 @@ public class x4 {
             return;
         }
         w();
-        hs a02 = hs.a0(this.c);
+        is a02 = is.a0(this.c);
         a02.a.c(new v4(this, a02, 1));
     }
 
@@ -520,27 +520,27 @@ public class x4 {
         if (i12 == 0 && (i11 = this.f) > 0) {
             TL_stories.TL_stories_getAlbumStories tL_stories_getAlbumStories = new TL_stories.TL_stories_getAlbumStories();
             tL_stories_getAlbumStories.album_id = i11;
-            tL_stories_getAlbumStories.peer = vp.r1(i13).i1(j10);
+            tL_stories_getAlbumStories.peer = wp.r1(i13).i1(j10);
             n10 = this.l.size();
             tL_stories_getAlbumStories.offset = n10;
             tL_stories_getAlbumStories.limit = i10;
             tL_stories_getStoriesArchive = tL_stories_getAlbumStories;
         } else if (i12 == 0) {
             TL_stories.TL_stories_getPinnedStories tL_stories_getPinnedStories = new TL_stories.TL_stories_getPinnedStories();
-            tL_stories_getPinnedStories.peer = vp.r1(i13).i1(j10);
+            tL_stories_getPinnedStories.peer = wp.r1(i13).i1(j10);
             n10 = n();
             tL_stories_getPinnedStories.offset_id = n10;
             tL_stories_getPinnedStories.limit = i10;
             tL_stories_getStoriesArchive = tL_stories_getPinnedStories;
         } else if (i12 == 2) {
             TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-            tL_stories_getStoriesByID.peer = vp.r1(i13).i1(j10);
+            tL_stories_getStoriesByID.peer = wp.r1(i13).i1(j10);
             tL_stories_getStoriesByID.id.addAll(list);
             n10 = -1;
             tL_stories_getStoriesArchive = tL_stories_getStoriesByID;
         } else {
             TL_stories.TL_stories_getStoriesArchive tL_stories_getStoriesArchive2 = new TL_stories.TL_stories_getStoriesArchive();
-            tL_stories_getStoriesArchive2.peer = vp.r1(i13).i1(j10);
+            tL_stories_getStoriesArchive2.peer = wp.r1(i13).i1(j10);
             n10 = n();
             tL_stories_getStoriesArchive2.offset_id = n10;
             tL_stories_getStoriesArchive2.limit = i10;
@@ -566,10 +566,10 @@ public class x4 {
         x();
         TL_stories.TL_stories_incrementStoryViews tL_stories_incrementStoryViews = new TL_stories.TL_stories_incrementStoryViews();
         int i11 = this.c;
-        tL_stories_incrementStoryViews.peer = vp.r1(i11).i1(this.d);
+        tL_stories_incrementStoryViews.peer = wp.r1(i11).i1(this.d);
         tL_stories_incrementStoryViews.id.add(Integer.valueOf(i10));
         ConnectionsManager.getInstance(i11).sendRequest(tL_stories_incrementStoryViews, new ag.c3(4));
-        zs.f(i11).k(zs.F5, new Object[0]);
+        at.f(i11).k(at.F5, new Object[0]);
         return true;
     }
 
@@ -578,17 +578,17 @@ public class x4 {
             return;
         }
         this.t = true;
-        hs a02 = hs.a0(this.c);
+        is a02 = is.a0(this.c);
         a02.a.c(new v4(this, a02, 0));
     }
 
-    public final void t(jj jjVar, boolean z10) {
-        if (jjVar == null) {
+    public final void t(kj kjVar, boolean z10) {
+        if (kjVar == null) {
             return;
         }
-        this.j.put(Integer.valueOf(jjVar.f1()), jjVar);
-        (z10 ? this.k : this.l).add(Integer.valueOf(jjVar.f1()));
-        long b10 = b(jjVar);
+        this.j.put(Integer.valueOf(kjVar.f1()), kjVar);
+        (z10 ? this.k : this.l).add(Integer.valueOf(kjVar.f1()));
+        long b10 = b(kjVar);
         Long valueOf = Long.valueOf(b10);
         HashMap hashMap = this.h;
         TreeSet treeSet = (TreeSet) hashMap.get(valueOf);
@@ -598,18 +598,18 @@ public class x4 {
             hashMap.put(valueOf2, treeSet2);
             treeSet = treeSet2;
         }
-        treeSet.add(Integer.valueOf(jjVar.f1()));
+        treeSet.add(Integer.valueOf(kjVar.f1()));
     }
 
     public final void u(int i10, boolean z10) {
-        jj jjVar = (jj) this.j.remove(Integer.valueOf(i10));
+        kj kjVar = (kj) this.j.remove(Integer.valueOf(i10));
         if (z10) {
             this.k.remove(Integer.valueOf(i10));
         }
         this.l.remove(Integer.valueOf(i10));
         this.g.remove(Integer.valueOf(i10));
-        if (jjVar != null) {
-            long b10 = b(jjVar);
+        if (kjVar != null) {
+            long b10 = b(kjVar);
             Long valueOf = Long.valueOf(b10);
             HashMap hashMap = this.h;
             Collection collection = (Collection) hashMap.get(valueOf);
@@ -637,16 +637,16 @@ public class x4 {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList(this.g);
         c(arrayList, true, true);
-        hs a02 = hs.a0(this.c);
-        a02.a.c(new px0(this, arrayList, a02, arrayList2, 25));
+        is a02 = is.a0(this.c);
+        a02.a.c(new ox0(this, arrayList, a02, arrayList2, 25));
     }
 
-    public final jj y(TL_stories.StoryItem storyItem) {
+    public final kj y(TL_stories.StoryItem storyItem) {
         storyItem.dialogId = this.d;
         storyItem.messageId = storyItem.id;
-        jj jjVar = new jj(this.c, storyItem);
-        jjVar.r0(false);
-        return jjVar;
+        kj kjVar = new kj(this.c, storyItem);
+        kjVar.r0(false);
+        return kjVar;
     }
 
     public final void z(int i10) {

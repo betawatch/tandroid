@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class pn implements a8 {
     public final /* synthetic */ org.telegram.ui.ActionBar.k1[] a;
@@ -25,7 +25,7 @@ public final class pn implements a8 {
         if (userFull == null && chatFull == null) {
             return;
         }
-        unVar.Y7();
+        unVar.c8();
         UndoView undoView = unVar.M3;
         if (undoView != null) {
             undoView.k(unVar.a(), i11, unVar.j(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);

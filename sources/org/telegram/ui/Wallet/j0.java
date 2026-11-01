@@ -7,12 +7,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.json.JSONObject;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ex0;
+import org.telegram.ui.dx0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j0 {
     public boolean h;
@@ -162,7 +162,7 @@ public final class j0 {
 
     public final void i() {
         k0 k0Var = this.l;
-        zs.f(k0Var.a).k(zs.b4, this, k0Var);
+        at.f(k0Var.a).k(at.b4, this, k0Var);
     }
 
     public final void k() {
@@ -217,7 +217,7 @@ public final class j0 {
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
         arrayList3.addAll(arrayList);
-        List.-EL.sort(arrayList3, new ex0(6));
+        List.-EL.sort(arrayList3, new dx0(6));
         v3 v3Var = this.a;
         HashSet hashSet2 = v3Var.a;
         HashSet hashSet3 = v3Var.a;

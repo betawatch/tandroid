@@ -2,16 +2,16 @@ package org.telegram.ui.web;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final class h implements us {
+public final class h implements vs {
     public final int b;
     public final Runnable c;
     public final String d;
@@ -33,8 +33,8 @@ public final class h implements us {
         }
         this.h = true;
         int i10 = this.b;
-        zs.f(i10).c(this, zs.V);
-        zs.f(i10).c(this, zs.H1);
+        at.f(i10).c(this, at.V);
+        at.f(i10).c(this, at.H1);
         if (TextUtils.isEmpty(this.d)) {
             d();
         }
@@ -47,7 +47,7 @@ public final class h implements us {
             if (i10 >= arrayList2.size()) {
                 return;
             }
-            if (arrayList.contains(Integer.valueOf(((jj) arrayList2.get(i10)).f1()))) {
+            if (arrayList.contains(Integer.valueOf(((kj) arrayList2.get(i10)).f1()))) {
                 arrayList2.remove(i10);
                 i10--;
             }
@@ -59,8 +59,8 @@ public final class h implements us {
         if (this.h) {
             this.h = false;
             int i10 = this.b;
-            zs.f(i10).n(this, zs.V);
-            zs.f(i10).n(this, zs.H1);
+            at.f(i10).n(this, at.V);
+            at.f(i10).n(this, at.H1);
             ConnectionsManager.getInstance(i10).cancelRequestsForGuid(this.e);
             this.n = false;
         }
@@ -73,7 +73,7 @@ public final class h implements us {
         }
         this.n = true;
         int i10 = this.b;
-        long e = d20.i(i10).e();
+        long e = e20.i(i10).e();
         int i11 = 0;
         int i12 = Integer.MAX_VALUE;
         while (true) {
@@ -81,10 +81,10 @@ public final class h implements us {
             if (i11 >= arrayList.size()) {
                 break;
             }
-            i12 = Math.min(i12, ((jj) arrayList.get(i11)).f1());
+            i12 = Math.min(i12, ((kj) arrayList.get(i11)).f1());
             i11++;
         }
-        ui b02 = ui.b0(i10);
+        vi b02 = vi.b0(i10);
         int i13 = arrayList.isEmpty() ? 30 : 50;
         if (i12 == Integer.MAX_VALUE) {
             i12 = 0;
@@ -92,13 +92,13 @@ public final class h implements us {
         b02.N0(e, i13, i12, 0, 3, 0L, 1, this.e, 0, null, this.d);
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = zs.V;
+        int i12 = at.V;
         ArrayList arrayList = this.a;
         if (i10 != i12) {
-            if (i10 == zs.H1) {
-                arrayList.add(0, (jj) objArr[0]);
+            if (i10 == at.H1) {
+                arrayList.add(0, (kj) objArr[0]);
             }
         } else if (((Integer) objArr[3]).intValue() == this.e) {
             this.n = false;

@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.LinearLayout;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tg implements o1.g {
     public final /* synthetic */ int a = 0;
@@ -47,21 +47,21 @@ public final /* synthetic */ class tg implements o1.g {
                 linearLayout2.setTranslationX(f12 * org.telegram.messenger.i0.L(16.0f));
                 break;
             default:
-                do0 do0Var = (do0) this.e;
+                eo0 eo0Var = (eo0) this.e;
                 boolean z10 = this.b;
                 if (z10) {
-                    if (f7 > this.c / 2.0f || !do0Var.s) {
+                    if (f7 > this.c / 2.0f || !eo0Var.s) {
                     }
-                } else if (f7 < this.d / 2.0f || !do0Var.r) {
+                } else if (f7 < this.d / 2.0f || !eo0Var.r) {
                 }
-                do0Var.s = !z10;
-                do0Var.r = z10;
+                eo0Var.s = !z10;
+                eo0Var.r = z10;
                 break;
         }
     }
 
-    public /* synthetic */ tg(do0 do0Var, boolean z10, float f7, float f10) {
-        this.e = do0Var;
+    public /* synthetic */ tg(eo0 eo0Var, boolean z10, float f7, float f10) {
+        this.e = eo0Var;
         this.b = z10;
         this.c = f7;
         this.d = f10;

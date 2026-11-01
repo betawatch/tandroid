@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
     public boolean D;
@@ -32,7 +32,7 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
     public boolean b;
     public final boolean c;
     public final g9 d;
-    public final bi0 e;
+    public final ci0 e;
     public final kg.l1 f;
     public final boolean h;
     public final boolean n;
@@ -51,12 +51,12 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
         this.h = true;
         this.n = false;
         setBackground(org.telegram.ui.ActionBar.t6.O(mvVar.k(), 0, 0));
-        bi0 bi0Var = new bi0(i10, org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(24.0f), false, null);
-        this.e = bi0Var;
-        bi0Var.setBounds(org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(27.0f), org.telegram.messenger.i0.L(27.0f));
-        bi0Var.R(this);
-        bi0Var.J(true);
-        bi0Var.start();
+        ci0 ci0Var = new ci0(i10, org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(24.0f), false, null);
+        this.e = ci0Var;
+        ci0Var.setBounds(org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(27.0f), org.telegram.messenger.i0.L(27.0f));
+        ci0Var.R(this);
+        ci0Var.J(true);
+        ci0Var.start();
         d();
     }
 
@@ -72,9 +72,9 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
             g9Var.setColorFilter(porterDuffColorFilter);
             g9Var.invalidate();
         }
-        bi0 bi0Var = this.e;
-        if (bi0Var != null) {
-            bi0Var.setColorFilter(porterDuffColorFilter);
+        ci0 ci0Var = this.e;
+        if (ci0Var != null) {
+            ci0Var.setColorFilter(porterDuffColorFilter);
             invalidate();
         }
     }
@@ -123,7 +123,7 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
     public final void c() {
         TLRPC.PhotoSize w9;
         TLRPC.InputStickerSet tL_inputStickerSetShortName;
-        org.telegram.messenger.ic h;
+        org.telegram.messenger.jc h;
         g9 g9Var = this.d;
         if (g9Var == null) {
             return;
@@ -152,11 +152,11 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
                         }
                         TLRPC.InputStickerSet inputStickerSet = tL_inputStickerSetShortName;
                         TLRPC.FileLocation fileLocation = w9.location;
-                        h = org.telegram.messenger.ic.h(fileLocation, w9.size, null, null, null, 1, fileLocation.dc_id, inputStickerSet, w9.type);
+                        h = org.telegram.messenger.jc.h(fileLocation, w9.size, null, null, null, 1, fileLocation.dc_id, inputStickerSet, w9.type);
                     }
                     this.d.k(h, "24_24", null, null, this.w);
                     if (this.w.d != null) {
-                        org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).m0(this.w.d, false);
+                        org.telegram.messenger.vi.b0(org.telegram.messenger.e20.s0).m0(this.w.d, false);
                         this.w.d = null;
                     }
                 }
@@ -165,9 +165,9 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
                 TLRPC.Document document = this.s;
                 mv mvVar = this.N;
                 if (document != null) {
-                    this.x = f5.l(org.telegram.messenger.d20.s0, mvVar.S, document);
+                    this.x = f5.l(org.telegram.messenger.e20.s0, mvVar.S, document);
                 } else {
-                    this.x = f5.m(org.telegram.messenger.d20.s0, this.r.longValue(), null, mvVar.S);
+                    this.x = f5.m(org.telegram.messenger.e20.s0, this.r.longValue(), null, mvVar.S);
                 }
                 this.x.a(g9Var);
                 g9Var.setImageDrawable(this.x);
@@ -204,11 +204,11 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        bi0 bi0Var = this.e;
-        if (bi0Var == null || !this.D) {
+        ci0 ci0Var = this.e;
+        if (ci0Var == null || !this.D) {
             return;
         }
-        bi0Var.draw(canvas);
+        ci0Var.draw(canvas);
     }
 
     @Override // android.view.ViewGroup
@@ -325,11 +325,11 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
             if (ixVar == null || (stickerSet = ixVar.b) == null || (str = stickerSet.title) == null) {
                 TLRPC.Document document = this.s;
                 if (document != null) {
-                    contentDescription = org.telegram.messenger.jj.V(document, null, null);
+                    contentDescription = org.telegram.messenger.kj.V(document, null, null);
                 } else {
                     Long l4 = this.r;
-                    if (l4 != null && (e = f5.e(org.telegram.messenger.d20.s0, l4.longValue())) != null) {
-                        contentDescription = org.telegram.messenger.jj.V(e, null, null);
+                    if (l4 != null && (e = f5.e(org.telegram.messenger.e20.s0, l4.longValue())) != null) {
+                        contentDescription = org.telegram.messenger.kj.V(e, null, null);
                     }
                 }
             } else {
@@ -338,7 +338,7 @@ public class iv extends ViewGroup implements org.telegram.ui.ActionBar.k6 {
         }
         Boolean bool = this.E;
         if (bool != null && !bool.booleanValue()) {
-            String L0 = org.telegram.messenger.cd.L0(2131750832, null);
+            String L0 = org.telegram.messenger.dd.L0(2131750832, null);
             if (contentDescription == null) {
                 contentDescription = L0;
             } else {

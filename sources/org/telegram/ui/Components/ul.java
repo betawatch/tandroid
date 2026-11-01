@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ul extends s4.s0 {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final class ul extends s4.s0 {
 
     @Override // s4.s0
     public final void a(RecyclerView recyclerView, int i10) {
-        ck0 ck0Var;
+        dk0 dk0Var;
         int topScrollOffset;
         int topScrollOffset2;
         int i11 = this.a;
@@ -33,8 +33,8 @@ public final class ul extends s4.s0 {
                     org.telegram.ui.ActionBar.t0 t0Var = biVar.U2;
                     int L2 = L + (t0Var != null ? org.telegram.messenger.i0.L(t0Var.getAlpha() * 26.0f) : 0);
                     int i12 = biVar.s0;
-                    if (((biVar.V3[0] - i12) - L2) + i12 < (biVar.I2.getAlpha() * biVar.I2.getMeasuredHeight()) + org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() && (ck0Var = (ck0) plVar.K(0)) != null) {
-                        View view = ck0Var.a;
+                    if (((biVar.V3[0] - i12) - L2) + i12 < (biVar.I2.getAlpha() * biVar.I2.getMeasuredHeight()) + org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() && (dk0Var = (dk0) plVar.K(0)) != null) {
+                        View view = dk0Var.a;
                         int top = view.getTop();
                         topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
                         if (top > topScrollOffset) {
@@ -55,7 +55,7 @@ public final class ul extends s4.s0 {
                 break;
             default:
                 vh.r6 r6Var = (vh.r6) obj;
-                tk0 tk0Var = r6Var.f;
+                uk0 uk0Var = r6Var.f;
                 if (i10 == 1) {
                     vh.w6 w6Var = r6Var.W;
                     int i13 = vh.w6.U1;
@@ -64,8 +64,8 @@ public final class ul extends s4.s0 {
                     }
                 }
                 if (i10 == 0) {
-                    r6Var.S = !tk0Var.canScrollVertically(-1);
-                    tk0Var.canScrollVertically(1);
+                    r6Var.S = !uk0Var.canScrollVertically(-1);
+                    uk0Var.canScrollVertically(1);
                 }
                 r6Var.M = i10 != 0;
                 break;
@@ -88,7 +88,7 @@ public final class ul extends s4.s0 {
                         boolean z11 = biVar.I1;
                         if (z10 != z11) {
                             this.b = z11;
-                            org.telegram.messenger.z20.l(plVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
+                            org.telegram.messenger.a30.l(plVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
                         }
                     } else {
                         plVar.getFastScroll().setAlpha(0.0f);
@@ -107,8 +107,8 @@ public final class ul extends s4.s0 {
             default:
                 vh.r6 r6Var = (vh.r6) obj;
                 vh.w6 w6Var = r6Var.W;
-                tk0 tk0Var = r6Var.f;
-                boolean canScrollVertically = tk0Var.canScrollVertically(1);
+                uk0 uk0Var = r6Var.f;
+                boolean canScrollVertically = uk0Var.canScrollVertically(1);
                 if (canScrollVertically != this.b) {
                     r6Var.r.invalidate();
                     this.b = canScrollVertically;
@@ -116,8 +116,8 @@ public final class ul extends s4.s0 {
                 r6Var.e.invalidate();
                 int i13 = vh.w6.U1;
                 w6Var.b.invalidate();
-                if (r6Var.a == 6 && tk0Var.getChildCount() > 0 && RecyclerView.R(tk0Var.getChildAt(0)) >= org.telegram.messenger.vp.r1(w6Var.a).O1().L.size()) {
-                    org.telegram.messenger.vp.r1(w6Var.a).O1().S();
+                if (r6Var.a == 6 && uk0Var.getChildCount() > 0 && RecyclerView.R(uk0Var.getChildAt(0)) >= org.telegram.messenger.wp.r1(w6Var.a).O1().L.size()) {
+                    org.telegram.messenger.wp.r1(w6Var.a).O1().S();
                     break;
                 }
                 break;

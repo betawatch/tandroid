@@ -13,11 +13,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.t8;
 import th.r4;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a1 extends FrameLayout {
     public final p6 a;
@@ -70,7 +70,7 @@ public final class a1 extends FrameLayout {
             addView(this.d[i10], b6.d(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
             i10++;
         }
-        ImageView e = z20.e(context, R.drawable.msg_arrowright);
+        ImageView e = a30.e(context, R.drawable.msg_arrowright);
         a7.t(e, t6.P5, p6Var, PorterDuff.Mode.SRC_IN);
         addView(e, b6.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
     }
@@ -88,10 +88,10 @@ public final class a1 extends FrameLayout {
             if (i10 >= size || i11 >= 3) {
                 break;
             }
-            jj jjVar = (jj) r4Var.i.get(i10);
-            long j10 = jjVar.l.dialogId;
+            kj kjVar = (kj) r4Var.i.get(i10);
+            long j10 = kjVar.l.dialogId;
             TextUtils.isEmpty(str);
-            t8Var.j(i11, r4Var.c, jjVar.l);
+            t8Var.j(i11, r4Var.c, kjVar.l);
             i11++;
             i10++;
         }
@@ -100,11 +100,11 @@ public final class a1 extends FrameLayout {
         boolean isEmpty = TextUtils.isEmpty(str);
         TextView[] textViewArr = this.c;
         if (isEmpty) {
-            textViewArr[0].setText(cd.H(' ', "HashtagStoriesFound", r4Var.J));
+            textViewArr[0].setText(dd.H(' ', "HashtagStoriesFound", r4Var.J));
         } else {
-            textViewArr[0].setText(c(cd.K("HashtagStoriesFoundChannel", r4Var.J, ' ', sc.e.h("@", str))));
+            textViewArr[0].setText(c(dd.K("HashtagStoriesFoundChannel", r4Var.J, ' ', sc.e.h("@", str))));
         }
-        this.d[0].setText(cd.a0(null, null, 2131749357, r4Var.C));
+        this.d[0].setText(dd.a0(null, null, 2131749357, r4Var.C));
         return i11 > 0;
     }
 
@@ -112,11 +112,11 @@ public final class a1 extends FrameLayout {
         boolean isEmpty = TextUtils.isEmpty(str2);
         TextView[] textViewArr = this.c;
         if (isEmpty) {
-            textViewArr[1].setText(cd.H(' ', "HashtagMessagesFound", i10));
+            textViewArr[1].setText(dd.H(' ', "HashtagMessagesFound", i10));
         } else {
-            textViewArr[1].setText(c(cd.K("HashtagMessagesFoundChannel", i10, ' ', sc.e.h("@", str2))));
+            textViewArr[1].setText(c(dd.K("HashtagMessagesFoundChannel", i10, ' ', sc.e.h("@", str2))));
         }
-        this.d[1].setText(cd.a0(null, null, 2131749366, str));
+        this.d[1].setText(dd.a0(null, null, 2131749366, str));
     }
 
     public final SpannableStringBuilder c(String str) {

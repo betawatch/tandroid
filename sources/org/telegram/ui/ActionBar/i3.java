@@ -17,19 +17,19 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.WeakHashMap;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mk;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -65,7 +65,7 @@ public final class i3 extends FrameLayout {
         this.h = new org.telegram.ui.Components.w4(this, 200L, grVar, 0);
         this.r = new org.telegram.ui.Components.w4(this, 200L, grVar, 0);
         this.w = new org.telegram.ui.Components.t5(this, 0L, 200L, grVar);
-        this.x = d20.s0;
+        this.x = e20.s0;
         this.E = new RectF();
         this.I = new HashSet();
         this.J = new HashSet();
@@ -198,7 +198,7 @@ public final class i3 extends FrameLayout {
         }
         boolean z10 = Q instanceof un;
         if (z10 && (mkVar = (unVar = (un) Q).Z) != null) {
-            mkVar.L();
+            mkVar.K();
             unVar.Z.j0(true, false, true);
         }
         if (h3Var.J == null) {
@@ -208,7 +208,7 @@ public final class i3 extends FrameLayout {
                     return;
                 }
                 this.c = true;
-                org.telegram.messenger.i0.h3(new li.s(this, Q, un.ha(h3Var.a.c), 19), 220L);
+                org.telegram.messenger.i0.h3(new li.s(this, Q, un.ma(h3Var.a.c), 19), 220L);
                 return;
             }
             return;
@@ -237,7 +237,7 @@ public final class i3 extends FrameLayout {
         t3Var.requestLayout();
         h4Var.W(sheetFragment.getParentActivity(), sheetFragment);
         u3Var.q(sheetFragment);
-        u3Var.n();
+        u3Var.o();
         h(this.x, h3Var, false);
     }
 
@@ -257,33 +257,33 @@ public final class i3 extends FrameLayout {
         tabs.isEmpty();
     }
 
-    public final void g(h3 h3Var, q20 q20Var) {
+    public final void g(h3 h3Var, r20 r20Var) {
         String str;
         if (h3Var == null) {
-            q20Var.a(Boolean.TRUE);
+            r20Var.a(Boolean.TRUE);
             return;
         }
         if (!h3Var.y) {
             h(this.x, h3Var, true);
-            q20Var.a(Boolean.TRUE);
+            r20Var.a(Boolean.TRUE);
             return;
         }
-        TLRPC.User Z1 = vp.r1(h3Var.a.a).Z1(Long.valueOf(h3Var.a.c));
+        TLRPC.User Z1 = wp.r1(h3Var.a.a).Z1(Long.valueOf(h3Var.a.c));
         if (Z1 != null) {
             str = org.telegram.messenger.i5.m(0, Z1.first_name, Z1.last_name);
         } else {
-            xh.s3 s3Var = h3Var.a;
-            str = s3Var.g == 6 ? s3Var.e : null;
+            xh.t3 t3Var = h3Var.a;
+            str = t3Var.g == 6 ? t3Var.e : null;
         }
         boolean[] zArr = {false};
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         x1 x1Var = alertDialog$Builder.a;
         x1Var.R = str;
-        x1Var.T = cd.L0(2131752917, null);
-        alertDialog$Builder.k(cd.L0(2131752916, null), new f1.a(this, zArr, h3Var, q20Var, r9));
-        alertDialog$Builder.h(cd.L0(2131752589, null), new androidx.car.app.utils.a(zArr, q20Var, r9, 9));
+        x1Var.T = dd.L0(2131752917, null);
+        alertDialog$Builder.k(dd.L0(2131752916, null), new f1.a(this, zArr, h3Var, r20Var, r9));
+        alertDialog$Builder.h(dd.L0(2131752589, null), new androidx.car.app.utils.a(zArr, r20Var, r9, 9));
         x1[] x1VarArr = {x1Var};
-        x1Var.setOnDismissListener(new e3(zArr, q20Var));
+        x1Var.setOnDismissListener(new e3(zArr, r20Var));
         x1VarArr[0].show();
         a7.V((TextView) x1VarArr[0].d(-1), t6.q7, null);
     }
@@ -430,11 +430,11 @@ public final class i3 extends FrameLayout {
         return this.D || this.y;
     }
 
-    public final h3 k(jj jjVar) {
+    public final h3 k(kj kjVar) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
         TLRPC.WebPage webPage;
-        if (jjVar == null || (message = jjVar.k) == null || (messageMedia = message.media) == null || (webPage = messageMedia.webpage) == null) {
+        if (kjVar == null || (message = kjVar.k) == null || (messageMedia = message.media) == null || (webPage = messageMedia.webpage) == null) {
             return null;
         }
         return l(webPage);
@@ -459,7 +459,7 @@ public final class i3 extends FrameLayout {
         return null;
     }
 
-    public final h3 m(xh.s3 s3Var) {
+    public final h3 m(xh.t3 t3Var) {
         Integer valueOf = Integer.valueOf(this.x);
         HashMap hashMap = K;
         ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
@@ -471,7 +471,7 @@ public final class i3 extends FrameLayout {
         }
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             h3 h3Var = (h3) arrayList.get(i10);
-            if (s3Var.equals(h3Var.a)) {
+            if (t3Var.equals(h3Var.a)) {
                 e(h3Var);
                 return h3Var;
             }
@@ -490,24 +490,24 @@ public final class i3 extends FrameLayout {
                 m10 = org.telegram.messenger.k6.m(f3Var.a.b(), getTextPaint().getFontMetricsInt(), false, null, 0);
                 f3Var.v = null;
             } else {
-                m10 = org.telegram.messenger.k6.m(cd.G(tabs.size() - 1, "BotMoreTabs", f3Var.a.b()), getTextPaint().getFontMetricsInt(), false, null, 0);
+                m10 = org.telegram.messenger.k6.m(dd.G(tabs.size() - 1, "BotMoreTabs", f3Var.a.b()), getTextPaint().getFontMetricsInt(), false, null, 0);
                 if (m10 == null) {
                     f3Var.v = null;
                 } else {
-                    f3Var.v = new qz0(m10, 17.0f, org.telegram.messenger.i0.o());
+                    f3Var.v = new rz0(m10, 17.0f, org.telegram.messenger.i0.o());
                 }
             }
             charSequence = m10;
         }
         if (tabs.isEmpty()) {
             setImportantForAccessibility(2);
-            setContentDescription(cd.a0(null, null, 2131754749, ""));
+            setContentDescription(dd.a0(null, null, 2131754749, ""));
         } else {
             setImportantForAccessibility(1);
             if (charSequence == null) {
                 charSequence = "";
             }
-            setContentDescription(cd.a0(null, null, 2131754749, charSequence));
+            setContentDescription(dd.a0(null, null, 2131754749, charSequence));
         }
     }
 

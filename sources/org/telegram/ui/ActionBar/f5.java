@@ -18,18 +18,18 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.u80;
 import org.telegram.ui.nc;
 import vh.k9;
 import vh.l9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f5 extends View implements fe.e {
     public final /* synthetic */ int a = 1;
@@ -48,7 +48,7 @@ public final class f5 extends View implements fe.e {
         this.c = new Matrix();
         this.d = new Paint(1);
         this.e = new Paint(1);
-        this.f = new qz0(cd.L0(2131745054, null), 14.16f, org.telegram.messenger.i0.o());
+        this.f = new rz0(dd.L0(2131745054, null), 14.16f, org.telegram.messenger.i0.o());
     }
 
     public static void a(Canvas canvas, Drawable drawable, float f7, float f10, float f11, float f12) {
@@ -139,8 +139,8 @@ public final class f5 extends View implements fe.e {
                 linearGradient.setLocalMatrix(matrix);
                 Paint paint = (Paint) this.d;
                 paint.setShader(linearGradient);
-                qz0 qz0Var = (qz0) this.f;
-                float L = qz0Var.c + org.telegram.messenger.i0.L(30.0f);
+                rz0 rz0Var = (rz0) this.f;
+                float L = rz0Var.c + org.telegram.messenger.i0.L(30.0f);
                 Paint paint2 = (Paint) this.e;
                 paint2.setColor(t6.w0(t6.d7, (p6) this.h));
                 canvas.drawRect(org.telegram.messenger.i0.L(24.0f), (getHeight() / 2.0f) - 1.0f, ((getWidth() - L) / 2.0f) - org.telegram.messenger.i0.L(8.0f), getHeight() / 2.0f, paint2);
@@ -148,7 +148,7 @@ public final class f5 extends View implements fe.e {
                 RectF rectF = org.telegram.messenger.i0.P;
                 rectF.set((getWidth() - L) / 2.0f, 0.0f, (getWidth() + L) / 2.0f, getHeight());
                 canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, paint);
-                ((qz0) this.f).c((getWidth() - qz0Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
+                ((rz0) this.f).c((getWidth() - rz0Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
                 break;
             case 2:
                 ArrayList arrayList = (ArrayList) this.d;
@@ -328,7 +328,7 @@ public final class f5 extends View implements fe.e {
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         vh.q1 q1Var;
-        vh.v0 v0Var;
+        vh.w0 w0Var;
         switch (this.a) {
             case 2:
                 ArrayList arrayList = (ArrayList) this.d;
@@ -358,8 +358,8 @@ public final class f5 extends View implements fe.e {
                 if (q1Var != null) {
                     q1Var.g.c((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) ? false : true);
                 }
-                if (motionEvent.getAction() == 1 && q1Var != null && (v0Var = (vh.v0) this.f) != null) {
-                    v0Var.a(Integer.valueOf(q1Var.a));
+                if (motionEvent.getAction() == 1 && q1Var != null && (w0Var = (vh.w0) this.f) != null) {
+                    w0Var.a(Integer.valueOf(q1Var.a));
                 }
                 return q1Var != null;
             default:
@@ -435,10 +435,11 @@ public final class f5 extends View implements fe.e {
         this.d = arrayList;
         boolean z10 = false;
         setPadding(0, 0, 0, 0);
+        int i10 = 4;
         if (u1Var.J0(4)) {
-            vh.r1 r1Var = new vh.r1(this, 4, R.drawable.msg_limit_links, cd.L0(2131744469, null));
-            int i10 = vh.u1.y1;
-            if (!d20.i(u1Var.a).q()) {
+            vh.r1 r1Var = new vh.r1(this, 4, R.drawable.msg_limit_links, dd.L0(2131744469, null));
+            int i11 = vh.u1.y1;
+            if (!e20.i(u1Var.a).q()) {
                 Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
                 r1Var.j = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(t6.r1(0.6f, -1), PorterDuff.Mode.SRC_IN));
@@ -449,9 +450,8 @@ public final class f5 extends View implements fe.e {
             arrayList.add(r1Var);
         }
         if (u1Var.J0(0)) {
-            arrayList.add(new vh.r1(this, 0, R.drawable.map_pin3, cd.L0(2131744468, null)));
+            arrayList.add(new vh.r1(this, 0, R.drawable.map_pin3, dd.L0(2131744468, null)));
         }
-        int i11 = 3;
         if (u1Var.J0(5)) {
             k9 k9Var = l9.b;
             vh.r1[] r1VarArr = {null};
@@ -461,14 +461,14 @@ public final class f5 extends View implements fe.e {
             sb2.append(k9Var == null ? l9.a() ? "24°C" : "72°F" : k9Var.a());
             CharSequence m10 = org.telegram.messenger.k6.m(sb2.toString(), textPaint.getFontMetricsInt(), false, null, 0);
             CharSequence charSequence = m10;
-            if (vp.r1(u1Var.a).X5) {
+            if (wp.r1(u1Var.a).X5) {
                 charSequence = m10;
                 charSequence = m10;
                 if (w7.c6.d("android.permission.ACCESS_COARSE_LOCATION") && k9Var == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
                     spannableStringBuilder.setSpan(new u80(org.telegram.messenger.i0.L(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     r1VarArr[0] = new vh.r1(this, spannableStringBuilder);
-                    w7.c6.c(R.raw.permission_request_location, 2131747318, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new nc(10, new nc(9, new rh.e3(i11, this, r1VarArr), z10), z10));
+                    w7.c6.c(R.raw.permission_request_location, 2131747318, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new nc(10, new nc(9, new rh.q2(i10, this, r1VarArr), z10), z10));
                     charSequence = spannableStringBuilder;
                 }
             }
@@ -476,10 +476,10 @@ public final class f5 extends View implements fe.e {
             arrayList.add(r1Var2 == null ? new vh.r1(this, charSequence) : r1Var2);
         }
         if (u1Var.J0(1)) {
-            arrayList.add(new vh.r1(this, 1, R.drawable.filled_widget_music, cd.L0(2131744470, null)));
+            arrayList.add(new vh.r1(this, 1, R.drawable.filled_widget_music, dd.L0(2131744470, null)));
         }
         if (u1Var.J0(2)) {
-            arrayList.add(new vh.r1(this, 2, R.drawable.filled_premium_camera, cd.L0(2131744467, null)));
+            arrayList.add(new vh.r1(this, 2, R.drawable.filled_premium_camera, dd.L0(2131744467, null)));
         }
         if (u1Var.J0(3)) {
             arrayList.add(new vh.s1(this));

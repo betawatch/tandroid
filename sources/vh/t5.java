@@ -5,19 +5,19 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.regex.Pattern;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class t5 extends ha implements us {
+public final class t5 extends ha implements vs {
     public rh.t P1;
     public final org.telegram.ui.Cells.m3 Q1;
     public final org.telegram.ui.Cells.m3 R1;
@@ -25,7 +25,7 @@ public final class t5 extends ha implements us {
     public final d T1;
     public boolean U1;
     public boolean V1;
-    public rh.e3 W1;
+    public rh.q2 W1;
     public long X1;
     public TLRPC.WebPage Y1;
     public boolean Z1;
@@ -38,15 +38,15 @@ public final class t5 extends ha implements us {
     public boolean g2;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public t5(Context context, org.telegram.ui.ActionBar.x4 x4Var, k4 k4Var, rh.e3 e3Var) {
+    public t5(Context context, org.telegram.ui.ActionBar.x4 x4Var, k4 k4Var, rh.q2 q2Var) {
         super(context, null, true, true, 2, x4Var);
         this.c2 = new p5(this, 0);
-        this.W1 = e3Var;
+        this.W1 = q2Var;
         O();
         Y0();
         this.z1 = org.telegram.messenger.i0.L(4.0f);
         this.A1 = org.telegram.messenger.i0.L(-15.0f);
-        org.telegram.ui.Cells.m3 m3Var = new org.telegram.ui.Cells.m3(context, cd.L0(2131744651, null), true, false, -1, x4Var);
+        org.telegram.ui.Cells.m3 m3Var = new org.telegram.ui.Cells.m3(context, dd.L0(2131744651, null), true, false, -1, x4Var);
         this.Q1 = m3Var;
         int i10 = 1;
         p5 p5Var = new p5(this, i10);
@@ -61,7 +61,7 @@ public final class t5 extends ha implements us {
         TextView textView = new TextView(getContext());
         textView.setTextSize(1, 12.0f);
         textView.setTypeface(org.telegram.messenger.i0.o());
-        textView.setText(cd.L0(2131747451, null));
+        textView.setText(dd.L0(2131747451, null));
         textView.setPadding(org.telegram.messenger.i0.L(10.0f), 0, org.telegram.messenger.i0.L(10.0f), 0);
         textView.setGravity(17);
         int i12 = org.telegram.ui.ActionBar.t6.o6;
@@ -77,11 +77,11 @@ public final class t5 extends ha implements us {
         org.telegram.ui.ActionBar.a7.k(textView, k02, L2, L3, x4Var);
         w7.e6.b(textView, 0.1f, 1.5f);
         m3Var.addView(textView, w7.b6.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
-        d1 d1Var = new d1(14, this, textView);
-        textView.setOnClickListener(new rh.u1(9, this, d1Var));
-        d1Var.run();
-        k3Var.addTextChangedListener(new ag.u2(this, d1Var, 0 == true ? 1 : 0, 17));
-        org.telegram.ui.Cells.m3 m3Var2 = new org.telegram.ui.Cells.m3(context, cd.L0(2131744655, null), true, false, -1, x4Var);
+        r0 r0Var = new r0(15, this, textView);
+        textView.setOnClickListener(new rh.u1(9, this, r0Var));
+        r0Var.run();
+        k3Var.addTextChangedListener(new ag.u2(this, r0Var, 0 == true ? 1 : 0, 17));
+        org.telegram.ui.Cells.m3 m3Var2 = new org.telegram.ui.Cells.m3(context, dd.L0(2131744655, null), true, false, -1, x4Var);
         this.R1 = m3Var2;
         p5 p5Var2 = new p5(this, i10);
         org.telegram.ui.Cells.k3 k3Var2 = m3Var2.d;
@@ -91,10 +91,10 @@ public final class t5 extends ha implements us {
         this.S1 = frameLayout;
         d dVar = new d(context, x4Var, true);
         this.T1 = dVar;
-        dVar.i(cd.L0(2131744664, null), false, true);
+        dVar.i(dd.L0(2131744664, null), false, true);
         dVar.setOnClickListener(new o5(this, 1));
         dVar.setEnabled(f1(m3Var.getText().toString()));
-        frameLayout.addView(dVar, w7.b6.d(-1, 48.0f, zs.E1, 10.0f, 10.0f, 10.0f, 10.0f));
+        frameLayout.addView(dVar, w7.b6.d(-1, 48.0f, at.E1, 10.0f, 10.0f, 10.0f, 10.0f));
         this.r1 = 0.2f;
         this.F1 = true;
         this.P0 = true;
@@ -105,9 +105,9 @@ public final class t5 extends ha implements us {
         q5Var.o(gr.h);
         q5Var.n(350L);
         this.k1.setItemAnimator(q5Var);
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i13 = this.t0;
-        tk0Var.setPadding(i13, 0, i13, 0);
+        uk0Var.setPadding(i13, 0, i13, 0);
         this.k1.setOnItemClickListener(new org.telegram.ui.Cells.o(this, context, k4Var));
         rh.t tVar = this.P1;
         if (tVar != null) {
@@ -156,7 +156,7 @@ public final class t5 extends ha implements us {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
+    public final tk0 L0(uk0 uk0Var) {
         rh.t tVar = new rh.t(this.k1, getContext(), this.a, 0, true, new qh.d(this, 21), this.I0, 1);
         this.P1 = tVar;
         return tVar;
@@ -164,12 +164,12 @@ public final class t5 extends ha implements us {
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return cd.L0(2131744661, null);
+        return dd.L0(2131744661, null);
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 != zs.w0 || this.X1 == 0) {
+        if (i10 != at.w0 || this.X1 == 0) {
             return;
         }
         a0.h hVar = (a0.h) objArr[0];
@@ -197,7 +197,7 @@ public final class t5 extends ha implements us {
         org.telegram.messenger.i0.v1(this.Q1.d);
         org.telegram.messenger.i0.v1(this.R1.d);
         super.dismiss();
-        zs.f(this.a).n(this, zs.w0);
+        at.f(this.a).n(this, at.w0);
     }
 
     public final void e1() {
@@ -242,7 +242,7 @@ public final class t5 extends ha implements us {
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog
     public final void show() {
         super.show();
-        zs.f(this.a).c(this, zs.w0);
+        at.f(this.a).c(this, at.w0);
         org.telegram.messenger.i0.h3(new p5(this, 2), 150L);
     }
 }

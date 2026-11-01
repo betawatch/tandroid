@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -16,7 +16,7 @@ import org.telegram.ui.jj;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e extends LinearLayout {
     public static final /* synthetic */ int e = 0;
@@ -41,8 +41,8 @@ public final class e extends LinearLayout {
         dVar2.a = c11;
         c11.setOnClickListener(new c(i10));
         e6.b((ah.a) dVar2.a, 0.065f, 2.0f);
-        a(dVar, cd.L0(2131746278, null), R.drawable.input_reply, false);
-        a(dVar2, cd.L0(2131750588, null), R.drawable.input_forward, true);
+        a(dVar, dd.L0(2131746278, null), R.drawable.input_reply, false);
+        a(dVar2, dd.L0(2131750588, null), R.drawable.input_forward, true);
         setOrientation(0);
         setClipChildren(false);
         addView((ah.a) dVar.a, b6.m(1.0f, 0, 56, 1, -1, 0));

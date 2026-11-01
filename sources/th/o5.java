@@ -2,9 +2,9 @@ package th;
 
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.is;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o5 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,27 +25,27 @@ public final /* synthetic */ class o5 implements Runnable {
             case 0:
                 long j10 = this.c;
                 int i10 = this.d;
-                hs hsVar = this.b.b;
-                SQLiteDatabase sQLiteDatabase = hsVar.b;
+                is isVar = this.b.b;
+                SQLiteDatabase sQLiteDatabase = isVar.b;
                 try {
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("REPLACE INTO stories_counter VALUES(" + j10 + ", 0, " + i10 + ")").stepThis().dispose();
                     break;
                 } catch (Throwable th2) {
-                    hsVar.o(th2, true);
+                    isVar.o(th2, true);
                     return;
                 }
             default:
                 long j11 = this.c;
                 int i11 = this.d;
-                hs hsVar2 = this.b.b;
-                SQLiteDatabase sQLiteDatabase2 = hsVar2.b;
+                is isVar2 = this.b.b;
+                SQLiteDatabase sQLiteDatabase2 = isVar2.b;
                 try {
                     Locale locale2 = Locale.US;
                     sQLiteDatabase2.executeFast("DELETE FROM stories WHERE dialog_id = " + j11 + " AND story_id = " + i11).stepThis().dispose();
                     break;
                 } catch (Throwable th3) {
-                    hsVar2.o(th3, true);
+                    isVar2.o(th3, true);
                 }
         }
     }

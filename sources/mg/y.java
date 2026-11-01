@@ -1,21 +1,21 @@
 package mg;
 
 import java.util.List;
-import org.telegram.messenger.aq;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.bq;
+import org.telegram.messenger.is;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.ll0;
-import org.telegram.ui.mg0;
-import org.telegram.ui.tk0;
+import org.telegram.ui.jl0;
+import org.telegram.ui.kg0;
+import org.telegram.ui.rk0;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements org.telegram.messenger.t1, org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ int a;
@@ -43,14 +43,14 @@ public final /* synthetic */ class y implements org.telegram.messenger.t1, org.t
                 TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.e;
                 TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) this.b;
                 ConnectionsManager connectionsManager = (ConnectionsManager) this.c;
-                q20 q20Var = (q20) this.f;
-                q20 q20Var2 = (q20) this.h;
+                r20 r20Var = (r20) this.f;
+                r20 r20Var2 = (r20) this.h;
                 k2 k2Var = (k2) this.d;
                 tL_inputStorePaymentPremiumGiftCode.currency = ((c5.m) list.get(0)).a().c;
                 tL_inputStorePaymentPremiumGiftCode.amount = (long) (Math.pow(10.0d, org.telegram.messenger.u1.i().h(tL_premiumGiftCodeOption.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumGiftCode;
-                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new e0(q20Var, list, gVar, q20Var2, k2Var, tL_inputStorePaymentPremiumGiftCode, 1));
+                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new e0(r20Var, list, gVar, r20Var2, k2Var, tL_inputStorePaymentPremiumGiftCode, 1));
                 break;
             default:
                 TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.e;
@@ -76,23 +76,23 @@ public final /* synthetic */ class y implements org.telegram.messenger.t1, org.t
                 org.telegram.messenger.c cVar = (org.telegram.messenger.c) this.b;
                 un unVar = (un) this.c;
                 TLRPC.Chat chat = (TLRPC.Chat) this.f;
-                jj jjVar = (jj) this.h;
+                kj kjVar = (kj) this.h;
                 org.telegram.ui.Cells.c2[] c2VarArr = (org.telegram.ui.Cells.c2[]) this.d;
                 if (user != null) {
-                    hs a02 = hs.a0(cVar.a);
-                    a02.a.c(new aq(3, unVar.a(), user.id, a02));
+                    is a02 = is.a0(cVar.a);
+                    a02.a.c(new bq(3, unVar.a(), user.id, a02));
                 } else {
-                    hs a03 = hs.a0(cVar.a);
-                    a03.a.c(new aq(3, unVar.a(), -chat.id, a03));
+                    is a03 = is.a0(cVar.a);
+                    a03.a.c(new bq(3, unVar.a(), -chat.id, a03));
                 }
                 TLRPC.TL_contacts_blockFromReplies tL_contacts_blockFromReplies = new TLRPC.TL_contacts_blockFromReplies();
-                tL_contacts_blockFromReplies.msg_id = jjVar.f1();
+                tL_contacts_blockFromReplies.msg_id = kjVar.f1();
                 tL_contacts_blockFromReplies.delete_message = true;
                 tL_contacts_blockFromReplies.delete_history = true;
                 if (c2VarArr[0].b()) {
                     tL_contacts_blockFromReplies.report_spam = true;
                     if (unVar.getParentActivity() != null) {
-                        unVar.Y7();
+                        unVar.c8();
                         UndoView undoView = unVar.M3;
                         if (undoView != null) {
                             undoView.j(74, 0L, null);
@@ -102,29 +102,29 @@ public final /* synthetic */ class y implements org.telegram.messenger.t1, org.t
                 ConnectionsManager.getInstance(cVar.a).sendRequest(tL_contacts_blockFromReplies, new org.telegram.ui.Components.x1(cVar, 0));
                 break;
             default:
-                tk0 tk0Var = (tk0) this.e;
+                rk0 rk0Var = (rk0) this.e;
                 String str = (String) this.b;
                 String str2 = (String) this.c;
                 String str3 = (String) this.f;
-                mg0 mg0Var = (mg0) this.h;
+                kg0 kg0Var = (kg0) this.h;
                 m4.c cVar2 = (m4.c) this.d;
-                ll0 ll0Var = tk0Var.a;
-                ll0Var.Y[0].setText(str);
-                ll0Var.Y[1].setText(str2);
-                ll0Var.Y[2].setText(str3);
-                ll0Var.Q1(true, true);
-                tk0Var.c(mg0Var, cVar2);
+                jl0 jl0Var = rk0Var.a;
+                jl0Var.Y[0].setText(str);
+                jl0Var.Y[1].setText(str2);
+                jl0Var.Y[2].setText(str3);
+                jl0Var.R1(true, true);
+                rk0Var.c(kg0Var, cVar2);
                 break;
         }
     }
 
-    public /* synthetic */ y(TLRPC.User user, org.telegram.messenger.c cVar, un unVar, TLRPC.Chat chat, jj jjVar, org.telegram.ui.Cells.c2[] c2VarArr, p6 p6Var) {
+    public /* synthetic */ y(TLRPC.User user, org.telegram.messenger.c cVar, un unVar, TLRPC.Chat chat, kj kjVar, org.telegram.ui.Cells.c2[] c2VarArr, p6 p6Var) {
         this.a = 2;
         this.e = user;
         this.b = cVar;
         this.c = unVar;
         this.f = chat;
-        this.h = jjVar;
+        this.h = kjVar;
         this.d = c2VarArr;
     }
 }

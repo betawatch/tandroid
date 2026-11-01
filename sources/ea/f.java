@@ -10,13 +10,13 @@ import android.graphics.drawable.Drawable;
 import kg.j1;
 import kg.k1;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.w0;
+import org.telegram.messenger.wp;
 import org.telegram.ui.ActionBar.t6;
 import x9.v;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f {
     public static f j;
@@ -91,7 +91,7 @@ public final class f {
     }
 
     public Paint e() {
-        if (!vp.r1(d20.s0).A3()) {
+        if (!wp.r1(e20.s0).A3()) {
             return (Paint) this.c;
         }
         if (((Paint) this.d) == null) {

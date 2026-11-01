@@ -7,13 +7,13 @@ import android.text.SpannableStringBuilder;
 import android.view.ActionMode;
 import android.view.Menu;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
+import org.telegram.ui.Components.a01;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.x41;
-import org.telegram.ui.Components.yz0;
+import org.telegram.ui.Components.y41;
 import org.telegram.ui.Components.zz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k3 extends mt {
     public final /* synthetic */ int Y1;
@@ -43,18 +43,18 @@ public final class k3 extends mt {
     public final void o(ActionMode actionMode, Menu menu) {
         if (this.a2 && menu.findItem(R.id.menu_bold) == null) {
             menu.removeItem(android.R.id.shareText);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cd.L0(2131753671, null));
-            spannableStringBuilder.setSpan(new x41(org.telegram.messenger.i0.o()), 0, spannableStringBuilder.length(), 33);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(dd.L0(2131753671, null));
+            spannableStringBuilder.setSpan(new y41(org.telegram.messenger.i0.o()), 0, spannableStringBuilder.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(cd.L0(2131749097, null));
-            spannableStringBuilder2.setSpan(new x41(org.telegram.messenger.i0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(dd.L0(2131749097, null));
+            spannableStringBuilder2.setSpan(new y41(org.telegram.messenger.i0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
-            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(cd.L0(2131744463, null));
-            yz0 yz0Var = new yz0();
-            yz0Var.a |= 8;
-            spannableStringBuilder3.setSpan(new zz0(yz0Var, 0), 0, spannableStringBuilder3.length(), 33);
+            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(dd.L0(2131744463, null));
+            zz0 zz0Var = new zz0();
+            zz0Var.a |= 8;
+            spannableStringBuilder3.setSpan(new a01(zz0Var, 0), 0, spannableStringBuilder3.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 8, spannableStringBuilder3);
-            menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, cd.L0(2131746352, null));
+            menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, dd.L0(2131746352, null));
         }
     }
 

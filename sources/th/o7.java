@@ -36,16 +36,16 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bn;
@@ -56,12 +56,12 @@ import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.mt;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.el0;
+import org.telegram.ui.cl0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
+public final class o7 implements vs, org.telegram.ui.ActionBar.g2, lf.a {
     public static boolean A1;
     public static boolean D1;
     public static boolean x1;
@@ -173,7 +173,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
     public static float B1 = 1.0f;
     public static boolean C1 = true;
     public static final LongSparseArray E1 = new LongSparseArray();
-    public boolean a = tz.b0;
+    public boolean a = uz.b0;
     public boolean b = true;
     public boolean c = false;
     public boolean d = false;
@@ -188,7 +188,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
         this.s0 = l7Var;
         this.x0 = new ArrayList();
         this.H0 = true;
-        this.J0 = new e2.f(null);
+        this.J0 = new e2.f((int[]) null);
         this.M0 = new ArrayList();
         this.Z0 = false;
         this.b1 = new i2(this, 4);
@@ -204,8 +204,8 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
         return (CharSequence) E1.get(j10 + (j10 >> 16) + (storyItem.id << 16), "");
     }
 
-    public static boolean L(jj jjVar) {
-        return z1 != null && (jjVar.D == 23 || jjVar.Z4()) && !A1 && z1.messageId == jjVar.f1() && z1.messageType != 3;
+    public static boolean L(kj kjVar) {
+        return z1 != null && (kjVar.D == 23 || kjVar.Z4()) && !A1 && z1.messageId == kjVar.f1() && z1.messageType != 3;
     }
 
     public static void X(long j10, TL_stories.StoryItem storyItem, Editable editable) {
@@ -251,10 +251,10 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
     }
 
     public static void v(o7 o7Var) {
-        el0 el0Var;
+        cl0 cl0Var;
         mt editField;
         z2 currentPeerView = o7Var.n0.getCurrentPeerView();
-        if (currentPeerView == null || currentPeerView.K1 == null || (((el0Var = currentPeerView.K2) != null && el0Var.getVisibility() == 0) || (editField = currentPeerView.K1.getEditField()) == null)) {
+        if (currentPeerView == null || currentPeerView.K1 == null || (((cl0Var = currentPeerView.K2) != null && cl0Var.getVisibility() == 0) || (editField = currentPeerView.K1.getEditField()) == null)) {
             o7Var.y();
             return;
         }
@@ -340,7 +340,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
             }
             ArrayList arrayList = new ArrayList();
             for (int i10 = 0; i10 < this.O0.i.size(); i10++) {
-                arrayList.add(((jj) this.O0.i.get(i10)).l);
+                arrayList.add(((kj) this.O0.i.get(i10)).l);
             }
             this.x.b(currentPeerView.getListPosition(), this.O0.d, arrayList);
         }
@@ -520,7 +520,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
             l7Var.c.O0(true, true);
         }
         if (this.O0 != null && (currentPeerView = this.n0.getCurrentPeerView()) != null && (selectedPosition = currentPeerView.getSelectedPosition()) >= 0 && selectedPosition < this.O0.i.size()) {
-            this.U0 = ((jj) this.O0.i.get(selectedPosition)).f1();
+            this.U0 = ((kj) this.O0.i.get(selectedPosition)).f1();
         }
         if (this.t0 != null) {
             long currentDialogId = this.n0.getCurrentDialogId();
@@ -585,7 +585,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
         }
         boolean z11 = (org.telegram.messenger.i0.Q1() || this.r1) ? false : true;
         this.b = z11;
-        this.a = tz.b0 && z11;
+        this.a = uz.b0 && z11;
         this.U0 = storyItem == null ? 0 : storyItem.messageId;
         this.N0 = storyItem != null && x4Var == null && peerStories == null;
         this.S0 = false;
@@ -743,8 +743,8 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
             return;
         }
         this.h = i10;
-        if (storyItem.dialogId <= 0 || vp.r1(i10).Z1(Long.valueOf(storyItem.dialogId)) != null) {
-            if (storyItem.dialogId >= 0 || vp.r1(this.h).L0(Long.valueOf(-storyItem.dialogId)) != null) {
+        if (storyItem.dialogId <= 0 || wp.r1(i10).Z1(Long.valueOf(storyItem.dialogId)) != null) {
+            if (storyItem.dialogId >= 0 || wp.r1(this.h).L0(Long.valueOf(-storyItem.dialogId)) != null) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(Long.valueOf(storyItem.dialogId));
                 O(i10, context, storyItem, arrayList, 0, null, null, k7Var, false);
@@ -753,7 +753,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
     }
 
     public final void Q(Context context, int i10, x4 x4Var, n5 n5Var) {
-        this.h = d20.s0;
+        this.h = e20.s0;
         ArrayList arrayList = new ArrayList();
         arrayList.add(Long.valueOf(x4Var.d));
         this.P0 = i10;
@@ -761,10 +761,10 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
     }
 
     public final void R(Context context, long j10, k7 k7Var) {
-        this.h = d20.s0;
+        this.h = e20.s0;
         ArrayList arrayList = new ArrayList();
         arrayList.add(Long.valueOf(j10));
-        e5 O1 = vp.r1(this.h).O1();
+        e5 O1 = wp.r1(this.h).O1();
         int i10 = O1.a;
         TL_stories.PeerStories y3 = O1.y(j10);
         if (y3 != null) {
@@ -779,7 +779,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
             if (y3.stories.isEmpty() && !O1.L(j10)) {
                 O1.g.remove(y3);
                 O1.h.remove(y3);
-                zs.f(i10).k(zs.v5, new Object[0]);
+                at.f(i10).k(at.v5, new Object[0]);
             }
         }
         T(context, null, arrayList, 0, null, null, k7Var, false);
@@ -791,18 +791,18 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
             this.x0.clear();
             return;
         }
-        this.h = d20.s0;
+        this.h = e20.s0;
         ArrayList arrayList2 = new ArrayList();
         arrayList2.add(Long.valueOf(org.telegram.messenger.o5.o(peerStories.peer)));
         T(context, peerStories.stories.get(0), arrayList2, 0, null, peerStories, k7Var, false);
     }
 
     public final void T(Context context, TL_stories.StoryItem storyItem, ArrayList arrayList, int i10, x4 x4Var, TL_stories.PeerStories peerStories, k7 k7Var, boolean z10) {
-        O(d20.s0, context, storyItem, arrayList, i10, x4Var, peerStories, k7Var, z10);
+        O(e20.s0, context, storyItem, arrayList, i10, x4Var, peerStories, k7Var, z10);
     }
 
     public final void U(Context context, TL_stories.StoryItem storyItem, n5 n5Var) {
-        P(d20.s0, context, storyItem, n5Var);
+        P(e20.s0, context, storyItem, n5Var);
     }
 
     public final void V(org.telegram.ui.ActionBar.k2 k2Var) {
@@ -854,7 +854,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
             i10++;
         }
         arrayList.clear();
-        a0.h hVar = vp.r1(this.h).O1().m;
+        a0.h hVar = wp.r1(this.h).O1().m;
         for (int i11 = 0; i11 < hVar.m(); i11++) {
             ((x7) hVar.n(i11)).b(false);
         }
@@ -943,7 +943,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
                 w0Var.w = s0Var;
                 int i10 = s0Var.e;
                 w0Var.x = i10;
-                zs.f(i10).b(w0Var, zs.G2);
+                at.f(i10).b(w0Var, at.G2);
                 w0Var.J = w0Var.h();
                 w0Var.K = w0Var.f();
                 w0Var.M = 1.0f;
@@ -996,7 +996,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
                 view.setBackground(gradientDrawable);
                 w0Var.h.addView(view, w7.b6.c(-1.0f, -1));
                 int L = org.telegram.messenger.i0.L(8.0f);
-                ImageView e = z20.e(context, R.drawable.pip_video_close);
+                ImageView e = a30.e(context, R.drawable.pip_video_close);
                 int i11 = org.telegram.ui.ActionBar.t6.Vg;
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
                 org.telegram.ui.ActionBar.a7.t(e, i11, null, mode);
@@ -1044,7 +1044,7 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
                 animatorSet.addListener(new e00(1));
                 animatorSet.start();
                 w0Var.a();
-                zs.e().k(zs.F2, new Object[0]);
+                at.e().k(at.F2, new Object[0]);
                 jf.f fVar = w0Var.L;
                 if (fVar != null) {
                     fVar.c();
@@ -1136,10 +1136,10 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
         this.n0.D0 = (this.y || this.H0 || this.I0 || this.a1 || this.f1 || this.e0 != 0.0f || this.j1) ? false : true;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         int i12 = 0;
-        if (i10 == zs.x5) {
+        if (i10 == at.x5) {
             if (this.O0 == ((x4) objArr[0])) {
                 H();
                 e7 e7Var = this.n0;
@@ -1151,10 +1151,10 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
                     ArrayList arrayList = new ArrayList();
                     int i13 = 0;
                     while (i12 < this.O0.i.size()) {
-                        if (selectedStory != null && selectedStory.id == ((jj) this.O0.i.get(i12)).l.id) {
+                        if (selectedStory != null && selectedStory.id == ((kj) this.O0.i.get(i12)).l.id) {
                             i13 = i12;
                         }
-                        arrayList.add(((jj) this.O0.i.get(i12)).l);
+                        arrayList.add(((kj) this.O0.i.get(i12)).l);
                         i12++;
                     }
                     this.x.b(i13, this.O0.d, arrayList);
@@ -1164,14 +1164,14 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
             }
             return;
         }
-        if (i10 == zs.v5) {
+        if (i10 == at.v5) {
             k7 k7Var = this.t0;
             if (k7Var instanceof n5) {
                 n5 n5Var = (n5) k7Var;
                 if (!n5Var.r || n5Var.n) {
                     return;
                 }
-                e5 O1 = vp.r1(this.h).O1();
+                e5 O1 = wp.r1(this.h).O1();
                 ArrayList arrayList2 = n5Var.f ? O1.h : O1.g;
                 ArrayList<Long> dialogIds = this.n0.getDialogIds();
                 boolean z10 = false;
@@ -1197,9 +1197,9 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
             }
             return;
         }
-        int i15 = zs.c1;
-        if (i10 != i15 && i10 != zs.d1) {
-            if (i10 == zs.w5) {
+        int i15 = at.c1;
+        if (i10 != i15 && i10 != at.d1) {
+            if (i10 == at.w5) {
                 long longValue = ((Long) objArr[0]).longValue();
                 int intValue = ((Integer) objArr[1]).intValue();
                 TL_stories.StoryItem storyItem = this.T0;
@@ -1661,11 +1661,11 @@ public final class o7 implements us, org.telegram.ui.ActionBar.g2, lf.a {
     public final /* synthetic */ void l(Canvas canvas) {
     }
 
-    @Override // lf.a
-    public final /* synthetic */ void n(Canvas canvas) {
+    @Override // org.telegram.ui.ActionBar.g2
+    public final void n(Runnable runnable) {
     }
 
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void o(Runnable runnable) {
+    @Override // lf.a
+    public final /* synthetic */ void o(Canvas canvas) {
     }
 }

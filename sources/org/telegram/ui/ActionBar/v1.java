@@ -3,10 +3,10 @@ package org.telegram.ui.ActionBar;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.tz;
-import org.telegram.ui.Components.p51;
+import org.telegram.messenger.uz;
+import org.telegram.ui.Components.q51;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v1 implements p6 {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final class v1 implements p6 {
     public final boolean e() {
         switch (this.a) {
         }
-        return tz.H0;
+        return uz.H0;
     }
 
     @Override // org.telegram.ui.ActionBar.p6
@@ -90,7 +90,7 @@ public final class v1 implements p6 {
             case 1:
                 return ((k2) this.b).getThemedColor(i10);
             default:
-                return ((p51) this.b).I(i10);
+                return ((q51) this.b).I(i10);
         }
     }
 

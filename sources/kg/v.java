@@ -23,7 +23,7 @@ import org.telegram.ui.Components.wy;
 import org.telegram.ui.t5;
 import vh.p2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v extends View {
     public final /* synthetic */ LimitPreviewView D;
@@ -268,7 +268,7 @@ public final class v extends View {
         if (limitPreviewView.e0 != null) {
             canvas.restore();
             canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.y, 31);
-            canvas.drawRect(org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(10.0f), getMeasuredWidth() - org.telegram.messenger.i0.L(12.0f), getMeasuredHeight() - org.telegram.messenger.i0.L(10.0f), ((t5) ((org.telegram.ui.y0) limitPreviewView.e0).b).u0(getX(), getY()));
+            canvas.drawRect(org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(10.0f), getMeasuredWidth() - org.telegram.messenger.i0.L(12.0f), getMeasuredHeight() - org.telegram.messenger.i0.L(10.0f), ((t5) ((org.telegram.ui.y0) limitPreviewView.e0).b).v0(getX(), getY()));
             canvas.restore();
         }
     }

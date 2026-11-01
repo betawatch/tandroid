@@ -4,20 +4,20 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class dj extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ boolean b;
     public int c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ org.telegram.messenger.us e;
+    public final /* synthetic */ org.telegram.messenger.vs e;
 
-    public dj(org.telegram.ui.Components.zt0 zt0Var, boolean z10, int i10, org.telegram.ui.Components.ss0 ss0Var) {
-        this.e = zt0Var;
+    public dj(org.telegram.ui.Components.au0 au0Var, boolean z10, int i10, org.telegram.ui.Components.ts0 ts0Var) {
+        this.e = au0Var;
         this.b = z10;
         this.c = i10;
-        this.d = ss0Var;
+        this.d = ts0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -43,52 +43,52 @@ public final class dj extends AnimatorListenerAdapter {
                 break;
             default:
                 int i11 = this.c;
-                org.telegram.ui.Components.zt0 zt0Var = (org.telegram.ui.Components.zt0) this.e;
-                int[] iArr = zt0Var.o1;
-                org.telegram.ui.Components.ss0[] ss0VarArr = zt0Var.m0;
-                zt0Var.q1 = false;
+                org.telegram.ui.Components.au0 au0Var = (org.telegram.ui.Components.au0) this.e;
+                int[] iArr = au0Var.o1;
+                org.telegram.ui.Components.ts0[] ts0VarArr = au0Var.m0;
+                au0Var.q1 = false;
                 boolean z10 = this.b;
                 if (z10) {
-                    int i12 = zt0Var.s1;
+                    int i12 = au0Var.s1;
                     iArr[i11] = i12;
                     if (i11 == 0) {
-                        org.telegram.messenger.tz.B(i12);
-                    } else if (zt0Var.k0(((org.telegram.ui.Components.ss0) this.d).E) >= 5) {
-                        org.telegram.messenger.tz.F(zt0Var.s1);
+                        org.telegram.messenger.uz.B(i12);
+                    } else if (au0Var.l0(((org.telegram.ui.Components.ts0) this.d).E) >= 5) {
+                        org.telegram.messenger.uz.F(au0Var.s1);
                     }
                 }
-                for (int i13 = 0; i13 < ss0VarArr.length; i13++) {
-                    org.telegram.ui.Components.ss0 ss0Var = ss0VarArr[i13];
-                    if (ss0Var != null && ss0Var.h != null && (((i10 = ss0Var.E) == 0 || org.telegram.ui.Components.zt0.x0(i10)) && (adapter = ss0VarArr[i13].h.getAdapter()) != null)) {
+                for (int i13 = 0; i13 < ts0VarArr.length; i13++) {
+                    org.telegram.ui.Components.ts0 ts0Var = ts0VarArr[i13];
+                    if (ts0Var != null && ts0Var.h != null && (((i10 = ts0Var.E) == 0 || org.telegram.ui.Components.au0.y0(i10)) && (adapter = ts0VarArr[i13].h.getAdapter()) != null)) {
                         int b10 = adapter.b();
                         if (i13 == 0) {
-                            zt0Var.v1[0].g(false);
+                            au0Var.v1[0].g(false);
                         }
                         if (z10) {
-                            ss0VarArr[i13].x.y1(iArr[i11]);
-                            ss0VarArr[i13].h.a0();
+                            ts0VarArr[i13].x.y1(iArr[i11]);
+                            ts0VarArr[i13].h.a0();
                             if (adapter.b() == b10) {
-                                org.telegram.messenger.i0.a4(ss0VarArr[i13].h);
+                                org.telegram.messenger.i0.a4(ts0VarArr[i13].h);
                             } else {
                                 adapter.f();
                             }
                         }
-                        ss0VarArr[i13].n.setVisibility(8);
+                        ts0VarArr[i13].n.setVisibility(8);
                     }
                 }
-                if (zt0Var.s >= 0) {
-                    for (int i14 = 0; i14 < ss0VarArr.length; i14++) {
-                        org.telegram.ui.Components.ss0 ss0Var2 = ss0VarArr[i14];
-                        if (ss0Var2.E == zt0Var.r1) {
-                            if (z10 && (m10 = ss0Var2.r.m(zt0Var.s)) != null) {
-                                zt0Var.w = m10.getTop();
+                if (au0Var.s >= 0) {
+                    for (int i14 = 0; i14 < ts0VarArr.length; i14++) {
+                        org.telegram.ui.Components.ts0 ts0Var2 = ts0VarArr[i14];
+                        if (ts0Var2.E == au0Var.r1) {
+                            if (z10 && (m10 = ts0Var2.r.m(au0Var.s)) != null) {
+                                au0Var.w = m10.getTop();
                             }
-                            org.telegram.ui.Components.ss0 ss0Var3 = ss0VarArr[i14];
-                            ss0Var3.x.h1(zt0Var.s, (-ss0Var3.h.getPaddingTop()) + zt0Var.w);
+                            org.telegram.ui.Components.ts0 ts0Var3 = ts0VarArr[i14];
+                            ts0Var3.x.h1(au0Var.s, (-ts0Var3.h.getPaddingTop()) + au0Var.w);
                         }
                     }
                 } else {
-                    zt0Var.e1();
+                    au0Var.f1();
                 }
                 super.onAnimationEnd(animator);
                 break;
@@ -102,7 +102,7 @@ public final class dj extends AnimatorListenerAdapter {
             case 0:
                 super.onAnimationStart(animator);
                 i10 = ((org.telegram.ui.ActionBar.k2) ((un) this.e)).currentAccount;
-                this.c = org.telegram.messenger.zs.f(i10).q(null, this.c, true);
+                this.c = org.telegram.messenger.at.f(i10).q(null, this.c, true);
                 break;
             default:
                 super.onAnimationStart(animator);

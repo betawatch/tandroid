@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -157,7 +157,7 @@ public abstract class g {
                 String str = field.getDeclaringClass().getName() + field.getName();
                 Object obj2 = bundle.get(str);
                 if (obj2 == null) {
-                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "android.support.v4.graphics.drawable.IconCompat"));
+                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "androidx.core.graphics.drawable.IconCompat"));
                 }
                 if (obj2 instanceof Bundle) {
                     field.set(newInstance, f((Bundle) obj2, eVar));

@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.ActionBar.u1, org.telegram.ui.Components.gu0, org.telegram.ui.Components.hk0 {
+public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.ActionBar.u1, org.telegram.ui.Components.hu0, org.telegram.ui.Components.ik0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ y6 b;
 
@@ -28,7 +28,7 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
         org.telegram.messenger.i0.a4(this.b.b);
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public void b(float f7, float f10, int i10, View view) {
         y6 y6Var = this.b;
         ArrayList arrayList = y6Var.f0;
@@ -40,19 +40,19 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
                 int i13 = u6Var.f;
                 if (i13 < 0) {
                     y6Var.L = !y6Var.L;
-                    y6Var.z0(true);
-                    y6Var.x0();
+                    y6Var.A0(true);
+                    y6Var.y0();
                     return;
                 }
                 boolean[] zArr = y6Var.d;
                 if (i13 < 0) {
-                    y6Var.w0(view);
+                    y6Var.x0(view);
                     return;
                 }
                 if (zArr[i13]) {
                     int i14 = 0;
                     for (int i15 = 0; i15 < 10; i15++) {
-                        if (zArr[i15] && y6Var.v0(i15) > 0) {
+                        if (zArr[i15] && y6Var.w0(i15) > 0) {
                             i14++;
                         }
                     }
@@ -76,14 +76,14 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
                             y6Var.b.getClass();
                             int R = RecyclerView.R(childAt);
                             if (R >= 0 && R < arrayList.size() && ((u6) arrayList.get(R)).f < 0) {
-                                ((org.telegram.ui.Cells.c2) childAt).c(y6Var.s0(), true);
+                                ((org.telegram.ui.Cells.c2) childAt).c(y6Var.t0(), true);
                                 break;
                             }
                         }
                         i11++;
                     }
                 }
-                y6Var.x0();
+                y6Var.y0();
                 return;
             }
             if (u6Var.c >= 0) {
@@ -116,7 +116,7 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
                 if (isEmpty) {
                     org.telegram.ui.ActionBar.u5 u5Var = c70Var.a;
                     org.telegram.ui.Components.u8 u8Var = c70Var.b;
-                    u5Var.l(org.telegram.messenger.cd.L0(2131754475, null), false);
+                    u5Var.l(org.telegram.messenger.dd.L0(2131754475, null), false);
                     c70Var.a.setRightPadding(org.telegram.messenger.i0.L(8.0f));
                     u8Var.b(0, k2Var.getCurrentAccount(), null);
                     u8Var.b(1, k2Var.getCurrentAccount(), null);
@@ -127,7 +127,7 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
                     org.telegram.ui.ActionBar.u5 u5Var2 = c70Var.a;
                     org.telegram.ui.Components.u8 u8Var2 = c70Var.b;
                     u5Var2.setRightPadding(org.telegram.messenger.i0.L((Math.max(0, min - 1) * 12) + 64));
-                    c70Var.a.l(org.telegram.messenger.cd.G(d70Var.f0.size(), "ExceptionShort", Integer.valueOf(d70Var.f0.size())), false);
+                    c70Var.a.l(org.telegram.messenger.dd.G(d70Var.f0.size(), "ExceptionShort", Integer.valueOf(d70Var.f0.size())), false);
                     for (int i18 = 0; i18 < min; i18++) {
                         u8Var2.b(i18, k2Var.getCurrentAccount(), k2Var.getMessagesController().d2(((org.telegram.messenger.w2) d70Var.f0.get(i18)).a));
                     }
@@ -142,7 +142,7 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
         }
     }
 
-    @Override // org.telegram.ui.Components.gu0
+    @Override // org.telegram.ui.Components.hu0
     public int c() {
         return this.b.R;
     }
@@ -171,7 +171,7 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
             }
         }
         if (s6Var.c > 0) {
-            y6Var.n0(s6Var, null, null);
+            y6Var.o0(s6Var, null, null);
         }
         y6Var.d0.d();
         j6 j6Var = y6Var.M;
@@ -179,11 +179,11 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
             j6Var.d();
             y6Var.M.f(false);
         }
-        y6Var.z0(true);
-        y6Var.x0();
+        y6Var.A0(true);
+        y6Var.y0();
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ boolean h1(View view) {
         return false;
     }
@@ -193,11 +193,11 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
         switch (this.a) {
             case 0:
                 y6 y6Var = this.b;
-                y6Var.y0();
+                y6Var.z0();
                 y6Var.fragmentView.invalidate();
                 break;
             default:
-                y6.Z(this.b, f7);
+                y6.a0(this.b, f7);
                 break;
         }
     }
@@ -208,7 +208,7 @@ public final /* synthetic */ class y5 implements fe.e, a70, org.telegram.ui.Acti
     private final /* synthetic */ void e(float f7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

@@ -24,10 +24,10 @@ import mg.o0;
 import mg.s0;
 import mg.x0;
 import mg.y0;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.d50;
 import org.telegram.ui.Components.vg;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -492,7 +492,7 @@ public final /* synthetic */ class s implements Runnable {
                     t6.j(drawable2);
                     t6.h(drawable2);
                 }
-                zs.e().k(zs.z4, new Object[0]);
+                at.e().k(at.z4, new Object[0]);
                 return;
         }
     }

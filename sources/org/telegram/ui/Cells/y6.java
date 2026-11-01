@@ -6,13 +6,13 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.text.style.ImageSpan;
-import org.telegram.messenger.cd;
-import org.telegram.ui.Components.t21;
+import org.telegram.messenger.dd;
+import org.telegram.ui.Components.u21;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y6 extends ImageSpan {
-    public static t21 b;
+    public static u21 b;
     public final /* synthetic */ int a = 1;
 
     public /* synthetic */ y6(Drawable drawable) {
@@ -27,7 +27,7 @@ public final class y6 extends ImageSpan {
                 canvas.save();
                 int i15 = paint.getFontMetricsInt().descent;
                 canvas.translate(f7, ((i13 + i15) - ((i15 - r4.ascent) / 2)) - ((drawable.getBounds().bottom - drawable.getBounds().top) / 2));
-                if (cd.X) {
+                if (dd.X) {
                     canvas.scale(-1.0f, 1.0f, drawable.getIntrinsicWidth() / 2, drawable.getIntrinsicHeight() / 2);
                 }
                 drawable.draw(canvas);
@@ -84,10 +84,10 @@ public final class y6 extends ImageSpan {
     */
     public y6() {
         super(r0, 0);
-        t21 t21Var = b;
-        if (t21Var == null) {
-            t21Var = new t21(org.telegram.ui.ActionBar.t6.o2);
-            b = t21Var;
+        u21 u21Var = b;
+        if (u21Var == null) {
+            u21Var = new u21(org.telegram.ui.ActionBar.t6.o2);
+            b = u21Var;
         }
         float textSize = org.telegram.ui.ActionBar.t6.o2.getTextSize() * 0.89f;
         int i10 = (int) (0.02f * textSize);

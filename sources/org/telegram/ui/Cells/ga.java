@@ -10,17 +10,17 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gk0;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.p91;
+import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.n91;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class ga extends tk0 implements us {
+public abstract class ga extends uk0 implements vs {
     public static final byte[] p3 = new byte[1024];
     public boolean e3;
     public final dh.f f3;
@@ -58,8 +58,8 @@ public abstract class ga extends tk0 implements us {
         fa faVar = new fa(this, context);
         this.j3 = faVar;
         setAdapter(faVar);
-        setOnItemClickListener(new gk0() { // from class: org.telegram.ui.Cells.ba
-            @Override // org.telegram.ui.Components.gk0
+        setOnItemClickListener(new hk0() { // from class: org.telegram.ui.Cells.ba
+            @Override // org.telegram.ui.Components.hk0
             public final void f(int i11, View view) {
                 ga gaVar = ga.this;
                 gaVar.getClass();
@@ -102,7 +102,7 @@ public abstract class ga extends tk0 implements us {
             if (tL_theme.document == null) {
                 org.telegram.ui.ActionBar.k2 k2Var = this.o3;
                 if (k2Var != null) {
-                    k2Var.presentFragment(new p91(s6Var, null, true));
+                    k2Var.presentFragment(new n91(s6Var, null, true));
                     return;
                 }
                 return;
@@ -145,10 +145,10 @@ public abstract class ga extends tk0 implements us {
 
     public abstract void D1();
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 != zs.Y1) {
-            if (i10 == zs.Z1) {
+        if (i10 != at.Y1) {
+            if (i10 == at.Z1) {
                 this.g3.remove((String) objArr[0]);
                 return;
             }
@@ -167,21 +167,21 @@ public abstract class ga extends tk0 implements us {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         for (int i10 = 0; i10 < 4; i10++) {
-            zs.f(i10).c(this, zs.Y1);
-            zs.f(i10).c(this, zs.Z1);
+            at.f(i10).c(this, at.Y1);
+            at.f(i10).c(this, at.Z1);
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         for (int i10 = 0; i10 < 4; i10++) {
-            zs.f(i10).n(this, zs.Y1);
-            zs.f(i10).n(this, zs.Z1);
+            at.f(i10).n(this, at.Y1);
+            at.f(i10).n(this, at.Z1);
         }
     }
 
@@ -189,11 +189,11 @@ public abstract class ga extends tk0 implements us {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.e3) {
-            canvas.drawLine(cd.X ? 0.0f : org.telegram.messenger.i0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (cd.X ? org.telegram.messenger.i0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+            canvas.drawLine(dd.X ? 0.0f : org.telegram.messenger.i0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (dd.X ? org.telegram.messenger.i0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (getParent() != null && getParent().getParent() != null) {
             getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));

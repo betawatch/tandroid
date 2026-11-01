@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class g8 extends uu0 {
+public final class g8 extends vu0 {
     public final ac.g f0;
     public final /* synthetic */ o8 g0;
     public boolean h0;
@@ -31,7 +31,7 @@ public final class g8 extends uu0 {
         this.f0 = new ac.g();
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -132,7 +132,7 @@ public final class g8 extends uu0 {
             org.telegram.messenger.i0.E2(o8Var.a);
             org.telegram.messenger.i0.Y2(o8Var.getParentActivity(), o8Var.getClassGuid());
             if (o8Var.U) {
-                o8Var.m0(false, 0.0f);
+                o8Var.n0(false, 0.0f);
                 o8Var.a.setExpanded(false);
                 addView(o8Var.a, 0, w7.b6.c(-1.0f, -1));
             } else {
@@ -168,8 +168,8 @@ public final class g8 extends uu0 {
             } else {
                 i12 = 0;
             }
-            org.telegram.ui.u71 u71Var = o8Var.r;
-            u71Var.setTranslationY((u71Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) o8Var.r.getLayoutParams()).topMargin) - i12);
+            org.telegram.ui.s71 s71Var = o8Var.r;
+            s71Var.setTranslationY((s71Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) o8Var.r.getLayoutParams()).topMargin) - i12);
             ((ViewGroup.MarginLayoutParams) o8Var.r.getLayoutParams()).topMargin = i12;
             boolean z13 = o8Var.L;
             if (!o8Var.U) {
@@ -214,8 +214,8 @@ public final class g8 extends uu0 {
         if (o8Var.N > 0.0f || o8Var.U || i11 <= 0 || o8Var.E <= 0.0f) {
             return;
         }
-        o8Var.h0();
-        o8Var.m0(true, Utilities.i(o8Var.E - (i11 / o8Var.d), 1.0f, 0.0f));
+        o8Var.i0();
+        o8Var.n0(true, Utilities.i(o8Var.E - (i11 / o8Var.d), 1.0f, 0.0f));
         iArr[1] = i11;
     }
 
@@ -225,14 +225,14 @@ public final class g8 extends uu0 {
         if (o8Var.N > 0.0f || o8Var.U || i13 == 0) {
             return;
         }
-        o8Var.h0();
-        o8Var.m0(true, Utilities.i(o8Var.E - (i13 / o8Var.d), 1.0f, 0.0f));
+        o8Var.i0();
+        o8Var.n0(true, Utilities.i(o8Var.E - (i13 / o8Var.d), 1.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
     public final void onNestedScrollAccepted(View view, View view2, int i10) {
         this.f0.a = i10;
-        this.g0.h0();
+        this.g0.i0();
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -245,7 +245,7 @@ public final class g8 extends uu0 {
     public final void onStopNestedScroll(View view) {
         this.f0.a = 0;
         o8 o8Var = this.g0;
-        o8Var.k0(o8Var.E > 0.5f, false, false);
+        o8Var.l0(o8Var.E > 0.5f, false, false);
     }
 
     @Override // android.view.View
@@ -266,7 +266,7 @@ public final class g8 extends uu0 {
                     }
                 } else if (motionEvent.getAction() == 2 && ((z10 = this.h0) || this.i0)) {
                     if (!z10) {
-                        o8Var.m0(true, Utilities.i(((-(this.k0 - motionEvent.getY())) / o8Var.d) + this.j0, 1.0f, 0.0f));
+                        o8Var.n0(true, Utilities.i(((-(this.k0 - motionEvent.getY())) / o8Var.d) + this.j0, 1.0f, 0.0f));
                     } else if (Math.abs(this.k0 - motionEvent.getY()) > org.telegram.messenger.i0.e) {
                         this.h0 = false;
                         this.i0 = true;
@@ -276,7 +276,7 @@ public final class g8 extends uu0 {
                     }
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
                     if (this.i0) {
-                        o8Var.k0(o8Var.E > 0.5f, false, false);
+                        o8Var.l0(o8Var.E > 0.5f, false, false);
                     }
                     this.h0 = false;
                     this.i0 = false;

@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d extends y {
     public final /* synthetic */ l h;
@@ -35,18 +35,18 @@ public final class d extends y {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        uu0 uu0Var = this.h.K0;
-        if (uu0Var != null) {
-            uu0Var.O.add(this);
+        vu0 vu0Var = this.h.K0;
+        if (vu0Var != null) {
+            vu0Var.O.add(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        uu0 uu0Var = this.h.K0;
-        if (uu0Var != null) {
-            uu0Var.O.remove(this);
+        vu0 vu0Var = this.h.K0;
+        if (vu0Var != null) {
+            vu0Var.O.remove(this);
         }
     }
 
@@ -55,7 +55,7 @@ public final class d extends y {
         super.setAlpha(f7);
         l lVar = this.h;
         lVar.invalidate();
-        Runnable runnable = lVar.c1;
+        Runnable runnable = lVar.d1;
         if (runnable != null) {
             runnable.run();
         }

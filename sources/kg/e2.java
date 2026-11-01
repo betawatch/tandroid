@@ -6,11 +6,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.r20;
-import org.telegram.messenger.z20;
-import org.telegram.ui.j10;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.s20;
+import org.telegram.ui.i10;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e2 {
     public long a;
@@ -91,8 +91,8 @@ public final class e2 {
                 if (j11 < 200) {
                     f12 = Utilities.i(1.0f - (j11 / 150.0f), 1.0f, 0.0f);
                     f13 = this.q;
-                    if (f13 >= 1.0f || j10.a != 1.0f) {
-                        float interpolation = org.telegram.messenger.i0.H.getInterpolation(f13) * j10.a;
+                    if (f13 >= 1.0f || i10.a != 1.0f) {
+                        float interpolation = org.telegram.messenger.i0.H.getInterpolation(f13) * i10.a;
                         canvas.scale(interpolation, interpolation, 0.0f, 0.0f);
                     }
                     if (f2Var.f[this.l]) {
@@ -100,8 +100,8 @@ public final class e2 {
                         this.r = min;
                         canvas.scale((float) Math.cos(min * 3.141592653589793d), 1.0f, 0.0f, 0.0f);
                     }
-                    r20 r20Var = f2Var.l;
-                    Paint paint = r20Var == null ? (Paint) r20Var.a(Integer.valueOf(this.b)) : f2Var.i;
+                    s20 s20Var = f2Var.l;
+                    Paint paint = s20Var == null ? (Paint) s20Var.a(Integer.valueOf(this.b)) : f2Var.i;
                     if (f2Var.N) {
                         f14 = f16;
                         f15 = 1.0f;
@@ -127,12 +127,12 @@ public final class e2 {
             f13 = this.q;
             if (f13 >= 1.0f) {
             }
-            float interpolation2 = org.telegram.messenger.i0.H.getInterpolation(f13) * j10.a;
+            float interpolation2 = org.telegram.messenger.i0.H.getInterpolation(f13) * i10.a;
             canvas.scale(interpolation2, interpolation2, 0.0f, 0.0f);
             if (f2Var.f[this.l]) {
             }
-            r20 r20Var2 = f2Var.l;
-            if (r20Var2 == null) {
+            s20 s20Var2 = f2Var.l;
+            if (s20Var2 == null) {
             }
             if (f2Var.N) {
             }
@@ -156,7 +156,7 @@ public final class e2 {
             long j13 = this.o;
             float i14 = 1.0f - Utilities.i((j10 - j13) / Math.max(1L, this.a - j13), 1.0f, 0.0f);
             min2 *= (2.2f * i14 * i14) + 0.15f;
-            this.e = z20.v(f14, f11, org.telegram.messenger.i0.L(5.0f), this.e);
+            this.e = a30.v(f14, f11, org.telegram.messenger.i0.L(5.0f), this.e);
         }
         this.d = (this.j * min2) + this.d;
         this.e = (this.k * min2) + this.e;

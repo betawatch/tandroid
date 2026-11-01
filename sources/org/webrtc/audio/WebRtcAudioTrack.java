@@ -13,7 +13,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 class WebRtcAudioTrack {
     private static final int AUDIO_TRACK_START = 0;
@@ -40,7 +40,7 @@ class WebRtcAudioTrack {
     private boolean useLowLatency;
     private final VolumeLogger volumeLogger;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public class AudioTrackThread extends Thread {
         private LowLatencyAudioBufferManager bufferManager;
         private volatile boolean keepAlive;

@@ -16,25 +16,25 @@ import java.util.Set;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.InflaterInputStream;
 import org.json.JSONObject;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.rk;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.sk;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w0;
-import org.telegram.messenger.wd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.xd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.ex0;
+import org.telegram.ui.Components.hl0;
+import org.telegram.ui.dx0;
 import org.telegram.ui.web.v1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public abstract class p {
     public static boolean i;
@@ -43,7 +43,7 @@ public abstract class p {
     public static final ConcurrentHashMap b = new ConcurrentHashMap();
     public static final HashMap c = new HashMap();
     public static final HashMap d = new HashMap();
-    public static final org.telegram.ui.Components.voip.m0 e = new org.telegram.ui.Components.voip.m0(27);
+    public static final org.telegram.ui.Components.voip.n0 e = new org.telegram.ui.Components.voip.n0(27);
     public static final ArrayList f = new ArrayList();
     public static final ArrayList g = new ArrayList();
     public static final ArrayList h = new ArrayList();
@@ -65,7 +65,7 @@ public abstract class p {
                 arrayList.add(mVar);
             }
         }
-        Collections.sort(arrayList, new ex0(10));
+        Collections.sort(arrayList, new dx0(10));
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             w wVar = ((m) arrayList.get(i10)).u;
             if (i10 >= 4) {
@@ -110,7 +110,7 @@ public abstract class p {
     }
 
     public static boolean D(m mVar) {
-        return mVar.i && !mVar.k && ((org.telegram.messenger.j0) vp.r1(mVar.b).y7.j0.b).c;
+        return mVar.i && !mVar.k && ((org.telegram.messenger.j0) wp.r1(mVar.b).y7.j0.b).c;
     }
 
     public static void a(m mVar) {
@@ -191,7 +191,7 @@ public abstract class p {
             i12 = i11;
         }
         if (i12 <= 0) {
-            i12 = zs.q2;
+            i12 = at.q2;
         }
         return org.telegram.messenger.i0.L(Math.max(50, Math.min(600, i12)));
     }
@@ -210,7 +210,7 @@ public abstract class p {
             if (obj != null) {
                 jSONObject.put("chatType", obj);
             }
-            TLRPC.User f7 = z11 ? d20.i(mVar.b).f() : null;
+            TLRPC.User f7 = z11 ? e20.i(mVar.b).f() : null;
             if (f7 != null) {
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("id", f7.id);
@@ -220,7 +220,7 @@ public abstract class p {
                 if (!TextUtils.isEmpty(f7.last_name)) {
                     jSONObject2.put("lastName", f7.last_name);
                 }
-                String n10 = h20.n(f7);
+                String n10 = i20.n(f7);
                 if (!TextUtils.isEmpty(n10)) {
                     jSONObject2.put("username", n10);
                 }
@@ -280,7 +280,7 @@ public abstract class p {
                     }
                     w wVar = new w(w0.b, mVar.a, mVar.t);
                     try {
-                        str2 = cd.D0().y.toLanguageTag();
+                        str2 = dd.D0().y.toLanguageTag();
                     } catch (Exception unused) {
                         str2 = null;
                     }
@@ -311,8 +311,8 @@ public abstract class p {
             JSONObject jSONObject = (JSONObject) c.get(mVar.a());
             JSONObject optJSONObject = jSONObject != null ? jSONObject.optJSONObject("local") : null;
             String jSONObject2 = (optJSONObject == null || optJSONObject.length() == 0) ? "" : optJSONObject.toString();
-            hs a02 = hs.a0(mVar.b);
-            a02.a.c(new rk(mVar.d, 5, mVar.c, a02, jSONObject2));
+            is a02 = is.a0(mVar.b);
+            a02.a.c(new sk(mVar.d, 5, mVar.c, a02, jSONObject2));
         }
         hashMap.clear();
     }
@@ -459,19 +459,19 @@ public abstract class p {
         }
     }
 
-    public static gl0 p(ArrayList arrayList) {
+    public static hl0 p(ArrayList arrayList) {
         int size = arrayList.size();
-        gl0 gl0Var = null;
+        hl0 hl0Var = null;
         int i10 = 0;
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            gl0 gl0Var2 = (gl0) obj;
-            if (gl0Var == null || gl0Var2.c0 > gl0Var.c0) {
-                gl0Var = gl0Var2;
+            hl0 hl0Var2 = (hl0) obj;
+            if (hl0Var == null || hl0Var2.c0 > hl0Var.c0) {
+                hl0Var = hl0Var2;
             }
         }
-        return gl0Var;
+        return hl0Var;
     }
 
     public static void q(boolean z10) {
@@ -535,7 +535,7 @@ public abstract class p {
     }
 
     public static void t(int i10) {
-        org.telegram.messenger.i0.g3(new wd(i10, 11));
+        org.telegram.messenger.i0.g3(new xd(i10, 11));
     }
 
     public static void u(m mVar, w wVar, long j10, TLRPC.WidgetQueryType widgetQueryType, byte[] bArr) {
@@ -563,11 +563,11 @@ public abstract class p {
             TLRPC.TL_error tL_error = new TLRPC.TL_error();
             tL_error.code = 400;
             tL_error.text = "WIDGET_QUERY_TYPE_UNSUPPORTED";
-            org.telegram.messenger.i0.g3(new v1(2, iVar, tL_error));
+            org.telegram.messenger.i0.g3(new v1(3, iVar, tL_error));
             return;
         }
         TLRPC.TL_messages_getBotWidgetQueryAnswer tL_messages_getBotWidgetQueryAnswer_layer233 = z11 ? new TLRPC.TL_messages_getBotWidgetQueryAnswer_layer233() : new TLRPC.TL_messages_getBotWidgetQueryAnswer();
-        tL_messages_getBotWidgetQueryAnswer_layer233.peer = vp.r1(i10).i1(mVar.c);
+        tL_messages_getBotWidgetQueryAnswer_layer233.peer = wp.r1(i10).i1(mVar.c);
         tL_messages_getBotWidgetQueryAnswer_layer233.msg_id = mVar.d;
         tL_messages_getBotWidgetQueryAnswer_layer233.query_type = widgetQueryType;
         tL_messages_getBotWidgetQueryAnswer_layer233.data = bArr;
@@ -579,9 +579,9 @@ public abstract class p {
         i0 i0Var;
         for (m mVar : a.values()) {
             w wVar = mVar.u;
-            gl0 gl0Var = mVar.x;
-            if (mVar.y != 0 && wVar != null && gl0Var != null && !mVar.E && ((k0Var = wVar.f) == null || (i0Var = k0Var.F) == null || (!i0Var.h && !k0Var.x))) {
-                String k10 = k(mVar.a, wVar, gl0Var.u0());
+            hl0 hl0Var = mVar.x;
+            if (mVar.y != 0 && wVar != null && hl0Var != null && !mVar.E && ((k0Var = wVar.f) == null || (i0Var = k0Var.F) == null || (!i0Var.h && !k0Var.x))) {
+                String k10 = k(mVar.a, wVar, hl0Var.u0());
                 if (k10.equals("placeholder") || k10.startsWith("cache of width")) {
                     return false;
                 }

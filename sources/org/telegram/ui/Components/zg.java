@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class zg extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class zg extends AnimatorListenerAdapter {
                 }
                 int L = z10 ? org.telegram.messenger.i0.L(36.0f) : 0;
                 for (int i10 = 0; i10 < biVar.r2.size(); i10++) {
-                    ((xh.i3) biVar.r2.valueAt(i10)).setMeasureOffsetY(L);
+                    ((xh.j3) biVar.r2.valueAt(i10)).setMeasureOffsetY(L);
                 }
                 if (ghVar.a == animator) {
                     ghVar.a = null;
@@ -59,7 +59,7 @@ public final class zg extends AnimatorListenerAdapter {
                     biVar.y3.setVisibility(0);
                     int L = org.telegram.messenger.i0.L(36.0f);
                     for (int i10 = 0; i10 < biVar.r2.size(); i10++) {
-                        ((xh.i3) biVar.r2.valueAt(i10)).setMeasureOffsetY(L);
+                        ((xh.j3) biVar.r2.valueAt(i10)).setMeasureOffsetY(L);
                     }
                     break;
                 } else {

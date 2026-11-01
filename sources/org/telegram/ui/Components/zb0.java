@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class zb0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -11,8 +11,8 @@ public final class zb0 implements Runnable {
     public int c;
     public final /* synthetic */ Object d;
 
-    public zb0(org.telegram.ui.ly lyVar, int i10, int i11) {
-        this.d = lyVar;
+    public zb0(org.telegram.ui.ky kyVar, int i10, int i11) {
+        this.d = kyVar;
         this.b = i10;
         this.c = i11;
     }
@@ -70,15 +70,15 @@ public final class zb0 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.ly lyVar = (org.telegram.ui.ly) this.d;
+                org.telegram.ui.ky kyVar = (org.telegram.ui.ky) this.d;
                 int i13 = this.b;
                 int i14 = this.c;
-                tk0 tk0Var = lyVar.H;
-                if (lyVar.n) {
+                uk0 uk0Var = kyVar.H;
+                if (kyVar.n) {
                     int i15 = 0;
                     while (true) {
-                        if (i15 < tk0Var.getChildCount()) {
-                            View childAt = tk0Var.getChildAt(i15);
+                        if (i15 < uk0Var.getChildCount()) {
+                            View childAt = uk0Var.getChildAt(i15);
                             if (childAt instanceof org.telegram.ui.Cells.q1) {
                                 q1Var = (org.telegram.ui.Cells.q1) childAt;
                                 String W1 = q1Var.getMessageObject().W1();
@@ -93,8 +93,8 @@ public final class zb0 implements Runnable {
                             q1Var = null;
                         }
                     }
-                    if (q1Var != null && (unVar = lyVar.a) != null) {
-                        unVar.cb(q1Var);
+                    if (q1Var != null && (unVar = kyVar.a) != null) {
+                        unVar.hb(q1Var);
                         String W12 = q1Var.getMessageObject().W1();
                         if (!org.telegram.messenger.l6.a(W12) && !"🍑".equals(W12) && !"⚰".equals(W12) && !q1Var.getMessageObject().W3() && !q1Var.getMessageObject().F2()) {
                             try {
@@ -102,7 +102,7 @@ public final class zb0 implements Runnable {
                             } catch (Exception unused) {
                             }
                         }
-                        lyVar.n(q1Var, i14, false, true);
+                        kyVar.n(q1Var, i14, false, true);
                         break;
                     }
                 }

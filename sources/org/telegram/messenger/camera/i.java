@@ -4,12 +4,12 @@ import android.hardware.Camera;
 import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.b30;
+import org.telegram.messenger.c30;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.ic;
+import org.telegram.messenger.is;
+import org.telegram.messenger.jc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
@@ -20,7 +20,7 @@ import org.telegram.ui.Wallet.k0;
 import org.telegram.ui.Wallet.z1;
 import zf.x0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -110,10 +110,10 @@ public final /* synthetic */ class i implements Runnable {
                         Object[] objArr = new Object[1];
                         objArr[r17] = tonconnectmanifest.name;
                         str = null;
-                        textView.setText(cd.V(null, null, 2131743186, objArr));
+                        textView.setText(dd.V(null, null, 2131743186, objArr));
                         TLRPC.WebDocument webDocument = tonconnectsession3.manifest.icon;
                         if (webDocument != null) {
-                            g9Var.p(ic.p(b30.c(webDocument)), "76_76", null, tonconnectsession3.manifest);
+                            g9Var.p(jc.p(c30.c(webDocument)), "76_76", null, tonconnectsession3.manifest);
                         }
                     } else {
                         str = null;
@@ -121,17 +121,17 @@ public final /* synthetic */ class i implements Runnable {
                     Integer num = tonconnectsession3.manifest_error;
                     if (num == null) {
                         if (!z15) {
-                            textView2.setText(cd.L0((tonconnectsession3.closed || tonconnectsession3.closing) ? 2131743018 : 2131748789, str));
+                            textView2.setText(dd.L0((tonconnectsession3.closed || tonconnectsession3.closing) ? 2131743018 : 2131748789, str));
                             break;
                         } else {
                             e2Var.getClass();
-                            textView2.setText(cd.L0(e2.w(z1Var) ? 2131743187 : 2131743189, str));
+                            textView2.setText(dd.L0(e2.w(z1Var) ? 2131743187 : 2131743189, str));
                             break;
                         }
                     } else {
                         Object[] objArr2 = new Object[1];
                         objArr2[r17] = num;
-                        textView2.setText(cd.a0(str, str, 2131743028, objArr2));
+                        textView2.setText(dd.a0(str, str, 2131743028, objArr2));
                         break;
                     }
                 } else {
@@ -148,7 +148,7 @@ public final /* synthetic */ class i implements Runnable {
                 TLObject tLObject = (TLObject) obj5;
                 TLRPC.User user = (TLRPC.User) obj4;
                 String str3 = (String) obj3;
-                hs hsVar = (hs) obj2;
+                is isVar = (is) obj2;
                 String str4 = (String) obj;
                 t90 t90Var = x0Var.V;
                 if (str2.equals(x0Var.r0)) {
@@ -161,7 +161,7 @@ public final /* synthetic */ class i implements Runnable {
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
                         if (!z11 && tL_messages_botResults.cache_time != 0) {
-                            hsVar.v1(str4, tL_messages_botResults);
+                            isVar.v1(str4, tL_messages_botResults);
                         }
                         x0Var.s0 = tL_messages_botResults.next_offset;
                         if (x0Var.T == null) {
@@ -221,14 +221,14 @@ public final /* synthetic */ class i implements Runnable {
         }
     }
 
-    public /* synthetic */ i(x0 x0Var, String str, boolean z10, TLObject tLObject, TLRPC.User user, String str2, hs hsVar, String str3) {
+    public /* synthetic */ i(x0 x0Var, String str, boolean z10, TLObject tLObject, TLRPC.User user, String str2, is isVar, String str3) {
         this.c = x0Var;
         this.d = str;
         this.b = z10;
         this.e = tLObject;
         this.f = user;
         this.h = str2;
-        this.n = hsVar;
+        this.n = isVar;
         this.r = str3;
     }
 

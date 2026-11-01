@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class ta extends bb {
     private sa button;
@@ -27,7 +27,7 @@ public abstract class ta extends bb {
     public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
         sa saVar = this.button;
         if (saVar != null && view != saVar) {
-            i11 = org.telegram.messenger.z20.D(12.0f, saVar.getMeasuredWidth(), i11);
+            i11 = org.telegram.messenger.a30.D(12.0f, saVar.getMeasuredWidth(), i11);
         }
         super.measureChildWithMargins(view, i10, i11, i12, i13);
         if (view != this.button) {

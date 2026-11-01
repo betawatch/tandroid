@@ -1,136 +1,100 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Rect;
+import android.os.Build;
+import android.util.Property;
+import android.view.View;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class qc1 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tc1 b;
+public final class qc1 extends ScrollView {
+    public final int[] a;
+    public final Rect b;
+    public boolean c;
+    public final /* synthetic */ rc1 d;
 
-    public /* synthetic */ qc1(tc1 tc1Var, int i10) {
-        this.a = i10;
-        this.b = tc1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qc1(rc1 rc1Var, Context context) {
+        super(context);
+        this.d = rc1Var;
+        this.a = new int[2];
+        this.b = new Rect();
+        this.c = true;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        org.telegram.ui.Components.bi0 bi0Var;
-        switch (this.a) {
-            case 0:
-                this.b.getClass();
-                break;
-            case 1:
-                tc1 tc1Var = this.b;
-                if (!tc1Var.M) {
-                    int i10 = tc1Var.O;
-                    if (i10 != 0) {
-                        if (i10 != 1) {
-                            if (i10 == 8 && editable.length() > 0) {
-                                tc1Var.L0(true);
-                                break;
-                            }
-                        } else {
-                            try {
-                                tc1Var.f0[6].P((int) ((Math.min(1.0f, tc1Var.n.getLayout().getLineWidth(0) / tc1Var.n.getWidth()) * 142.0f) + 18.0f));
-                                tc1Var.a.d();
-                                break;
-                            } catch (Exception e) {
-                                org.telegram.messenger.f8.g(e, true);
-                                return;
-                            }
-                        }
-                    } else {
-                        org.telegram.ui.Components.bi0 animatedDrawable = tc1Var.a.getAnimatedDrawable();
-                        if (tc1Var.n.length() <= 0) {
-                            if (animatedDrawable != tc1Var.f0[3] || tc1Var.n.getTransformationMethod() != null) {
-                                org.telegram.ui.Components.bi0[] bi0VarArr = tc1Var.f0;
-                                if (animatedDrawable != bi0VarArr[5]) {
-                                    bi0VarArr[2].P(-1);
-                                    org.telegram.ui.Components.bi0 bi0Var2 = tc1Var.f0[2];
-                                    if (animatedDrawable != bi0Var2) {
-                                        tc1Var.a.setAnimation(bi0Var2);
-                                        tc1Var.f0[2].N(49, false, false);
-                                    }
-                                    tc1Var.a.d();
-                                    break;
-                                }
-                            }
-                            tc1Var.a.setAnimation(tc1Var.f0[4]);
-                            tc1Var.f0[4].T(false, 0.0f);
-                            tc1Var.a.d();
-                            break;
-                        } else if (tc1Var.n.getTransformationMethod() != null) {
-                            org.telegram.ui.Components.bi0[] bi0VarArr2 = tc1Var.f0;
-                            if (animatedDrawable != bi0VarArr2[3]) {
-                                org.telegram.ui.Components.bi0 bi0Var3 = bi0VarArr2[2];
-                                if (animatedDrawable == bi0Var3) {
-                                    if (bi0Var3.a0 < 49) {
-                                        bi0Var3.P(49);
-                                        break;
-                                    }
-                                } else {
-                                    tc1Var.a.setAnimation(bi0Var3);
-                                    tc1Var.f0[2].P(49);
-                                    tc1Var.f0[2].T(false, 0.0f);
-                                    tc1Var.a.d();
-                                    break;
-                                }
-                            }
-                        } else {
-                            org.telegram.ui.Components.bi0[] bi0VarArr3 = tc1Var.f0;
-                            if (animatedDrawable != bi0VarArr3[3] && animatedDrawable != (bi0Var = bi0VarArr3[5])) {
-                                tc1Var.a.setAnimation(bi0Var);
-                                tc1Var.f0[5].T(false, 0.0f);
-                                tc1Var.a.d();
-                                break;
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                tc1 tc1Var2 = this.b;
-                if (tc1Var2.F) {
-                    if (tc1Var2.E.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        org.telegram.messenger.i0.Y3(tc1Var2.E, true, 0.1f, true, true);
-                        break;
-                    } else if (tc1Var2.E.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        org.telegram.messenger.i0.Y3(tc1Var2.E, false, 0.1f, true, true);
-                        break;
-                    }
-                }
-                break;
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        this.c = false;
+        super.onLayout(z10, i10, i11, i12, i13);
+    }
+
+    @Override // android.view.View
+    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
+        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.l lVar2;
+        super.onScrollChanged(i10, i11, i12, i13);
+        rc1 rc1Var = this.d;
+        TextView textView = rc1Var.c;
+        if (textView == null) {
+            return;
+        }
+        int[] iArr = this.a;
+        textView.getLocationOnScreen(iArr);
+        int measuredHeight = rc1Var.c.getMeasuredHeight() + iArr[1];
+        lVar = ((org.telegram.ui.ActionBar.k2) rc1Var).actionBar;
+        boolean z10 = measuredHeight < lVar.getBottom();
+        if (z10 != (rc1Var.c.getTag() == null)) {
+            rc1Var.c.setTag(z10 ? null : 1);
+            AnimatorSet animatorSet = rc1Var.K;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+                rc1Var.K = null;
+            }
+            AnimatorSet animatorSet2 = new AnimatorSet();
+            rc1Var.K = animatorSet2;
+            kg.f0 f0Var = rc1Var.D;
+            float[] fArr = {z10 ? 1.0f : 0.0f};
+            Property property = View.ALPHA;
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(f0Var, (Property<kg.f0, Float>) property, fArr);
+            lVar2 = ((org.telegram.ui.ActionBar.k2) rc1Var).actionBar;
+            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(lVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.u5, Float>) property, z10 ? 1.0f : 0.0f));
+            rc1Var.K.setDuration(150L);
+            rc1Var.K.addListener(new ms0(this, 13));
+            rc1Var.K.start();
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void requestChildFocus(View view, View view2) {
+        if (Build.VERSION.SDK_INT < 29 && view2 != null && !this.c) {
+            scrollToDescendant(view2);
+        }
+        super.requestChildFocus(view, view2);
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    @Override // android.widget.ScrollView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        this.c = true;
+        super.requestLayout();
     }
 
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // android.widget.ScrollView
+    public final void scrollToDescendant(View view) {
+        Rect rect = this.b;
+        view.getDrawingRect(rect);
+        offsetDescendantRectToMyCoords(view, rect);
+        rect.bottom = org.telegram.messenger.i0.L(120.0f) + rect.bottom;
+        int computeScrollDeltaToGetChildRectOnScreen = computeScrollDeltaToGetChildRectOnScreen(rect);
+        if (computeScrollDeltaToGetChildRectOnScreen < 0) {
+            computeScrollDeltaToGetChildRectOnScreen -= (getMeasuredHeight() - view.getMeasuredHeight()) / 2;
+        }
+        if (computeScrollDeltaToGetChildRectOnScreen != 0) {
+            smoothScrollBy(0, computeScrollDeltaToGetChildRectOnScreen);
+        }
     }
 }

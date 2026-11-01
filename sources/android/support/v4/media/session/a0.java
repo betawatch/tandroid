@@ -74,14 +74,14 @@ import javax.crypto.Mac;
 import javax.net.ssl.HttpsURLConnection;
 import k2.b1;
 import m.p3;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ia;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.ja;
 import org.telegram.tgnet.TLObject;
 import p4.f0;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class a0 implements com.google.android.gms.common.api.internal.s, z3.d, j4.b0, OnCompleteListener, n5.b {
     public static int e;
@@ -478,7 +478,7 @@ public final class a0 implements com.google.android.gms.common.api.internal.s, z
             KeyguardManager a11 = androidx.biometric.g0.a(sVar.a);
             return !(a11 == null ? false : androidx.biometric.g0.b(a11)) ? i() : i() == 0 ? 0 : -1;
         }
-        if ((i10 & zs.e4) == 255) {
+        if ((i10 & at.e4) == 255) {
             BiometricManager biometricManager3 = (BiometricManager) this.c;
             if (biometricManager3 != null) {
                 return androidx.biometric.q.a(biometricManager3);
@@ -787,10 +787,10 @@ public final class a0 implements com.google.android.gms.common.api.internal.s, z
         return arrayList;
     }
 
-    public void q(ia iaVar) {
+    public void q(ja jaVar) {
         try {
             i8.g gVar = (i8.g) this.c;
-            h8.b bVar = new h8.b(iaVar);
+            h8.b bVar = new h8.b(jaVar);
             Parcel P0 = gVar.P0();
             s7.b.c(P0, bVar);
             gVar.T0(P0, 9);

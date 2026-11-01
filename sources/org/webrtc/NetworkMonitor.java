@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public class NetworkMonitor {
     private static final String TAG = "NetworkMonitor";
@@ -19,7 +19,7 @@ public class NetworkMonitor {
     private final ArrayList<NetworkObserver> networkObservers;
     private int numObservers;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static class InstanceHolder {
         static final NetworkMonitor instance = new NetworkMonitor();
 
@@ -27,7 +27,7 @@ public class NetworkMonitor {
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface NetworkObserver {
         void onConnectionTypeChanged(NetworkChangeDetector.ConnectionType connectionType);
     }

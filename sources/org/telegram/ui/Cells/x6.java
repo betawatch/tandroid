@@ -2,36 +2,36 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.hp;
+import org.telegram.messenger.ip;
 import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.z41;
-import org.telegram.ui.gy0;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.fy0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class x6 extends z41 {
+public final class x6 extends a51 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        z41.h(new x6());
+        a51.h(new x6());
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
-        Object obj = a51Var.G;
-        if (obj instanceof gy0) {
-            gy0 gy0Var = (gy0) obj;
-            ((z6) view).b(a51Var.l, gy0Var.d, gy0Var.e, z10);
-        } else if (obj instanceof hp) {
-            ((z6) view).a(a51Var.l, ((hp) obj).b, true, z10);
+    @Override // org.telegram.ui.Components.a51
+    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
+        Object obj = b51Var.G;
+        if (obj instanceof fy0) {
+            fy0 fy0Var = (fy0) obj;
+            ((z6) view).b(b51Var.l, fy0Var.d, fy0Var.e, z10);
+        } else if (obj instanceof ip) {
+            ((z6) view).a(b51Var.l, ((ip) obj).b, true, z10);
         }
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final View d(Context context, uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
         return new z6(context);
     }
 }

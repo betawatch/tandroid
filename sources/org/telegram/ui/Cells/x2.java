@@ -5,12 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x2 extends FrameLayout {
     public int a;
@@ -42,18 +42,18 @@ public final class x2 extends FrameLayout {
         TextView textView = this.b;
         TextView textView2 = this.c;
         if (textView2.getVisibility() == 0) {
-            boolean z10 = cd.X;
+            boolean z10 = dd.X;
             d = w7.b6.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? this.f : 61.0f, 0.0f, z10 ? 61.0f : this.f, 0.0f);
         } else {
-            boolean z11 = cd.X;
+            boolean z11 = dd.X;
             d = w7.b6.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 61.0f : this.f, 0.0f, z11 ? this.f : 61.0f, 0.0f);
         }
         textView.setLayoutParams(d);
         RadioButton radioButton = this.d;
         if (textView2.getVisibility() == 0) {
-            d10 = w7.b6.d(22, 22.0f, (cd.X ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            d10 = w7.b6.d(22, 22.0f, (dd.X ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
         } else {
-            d10 = w7.b6.d(22, 22.0f, (cd.X ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            d10 = w7.b6.d(22, 22.0f, (dd.X ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
         }
         radioButton.setLayoutParams(d10);
     }
@@ -61,7 +61,7 @@ public final class x2 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.e) {
-            canvas.drawLine(org.telegram.messenger.i0.L(cd.X ? 0.0f : this.f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.i0.L(cd.X ? this.f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+            canvas.drawLine(org.telegram.messenger.i0.L(dd.X ? 0.0f : this.f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.i0.L(dd.X ? this.f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
         }
     }
 
@@ -75,7 +75,7 @@ public final class x2 extends FrameLayout {
         this.d.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(22.0f), TLObject.FLAG_30));
         if (textView.getVisibility() == 0) {
             textView.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-            L = z20.w(12.0f, textView.getMeasuredWidth(), L);
+            L = a30.w(12.0f, textView.getMeasuredWidth(), L);
         }
         this.b.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }

@@ -3,9 +3,9 @@ package jg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class m1 extends View {
     public int a;
@@ -34,7 +34,7 @@ public final class m1 extends View {
         n1.A1(width, height, min, this.a, canvas);
         if (this.b != 0.0f) {
             n1Var.f3.setColor(this.a);
-            n1Var.f3.setAlpha(zs.e4);
+            n1Var.f3.setAlpha(at.e4);
             canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - org.telegram.messenger.i0.L(2.0f), n1Var.f3);
         }
     }

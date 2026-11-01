@@ -4,25 +4,25 @@ import android.app.Activity;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Components.zf;
-import org.telegram.ui.kh0;
+import org.telegram.ui.ih0;
 import org.telegram.ui.un;
 import vh.o8;
 import vh.t7;
 import vh.y6;
 import vh.z6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h1 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class h1 implements View.OnLongClickListener {
             case 0:
                 return ((n1) obj).length() != 0;
             case 1:
-                return k2.a0((k2) obj, view);
+                return k2.b0((k2) obj, view);
             case 2:
                 t tVar = ((p) obj).a;
                 i4 i4Var = tVar.s;
@@ -53,7 +53,7 @@ public final /* synthetic */ class h1 implements View.OnLongClickListener {
                 bi biVar = tVar.b;
                 d4 d4Var = tVar.r;
                 int i14 = tVar.n;
-                if (!d20.i(i14).q()) {
+                if (!e20.i(i14).q()) {
                     new kg.i1(biVar.W1, tVar.getContext(), tVar.n, 43, true).show();
                     return true;
                 }
@@ -63,67 +63,67 @@ public final /* synthetic */ class h1 implements View.OnLongClickListener {
                         if (!c32.isEmpty()) {
                             org.telegram.ui.ActionBar.k2 k2Var = biVar.W1;
                             un unVar = k2Var instanceof un ? (un) k2Var : null;
-                            kh0 kh0Var = tVar.O;
-                            if (kh0Var != null) {
-                                kh0Var.g(false);
+                            ih0 ih0Var = tVar.O;
+                            if (ih0Var != null) {
+                                ih0Var.g(false);
                                 tVar.O = null;
                             }
-                            kh0 kh0Var2 = new kh0(tVar.getContext(), p6Var);
-                            tVar.O = kh0Var2;
-                            kh0Var2.setOnDismissListener(new ag.x(tVar, i11));
+                            ih0 ih0Var2 = new ih0(tVar.getContext(), p6Var);
+                            tVar.O = ih0Var2;
+                            ih0Var2.setOnDismissListener(new ag.x(tVar, i11));
                             long a12 = biVar.a1();
-                            jj jjVar = unVar != null ? unVar.D5 : null;
+                            kj kjVar = unVar != null ? unVar.D5 : null;
                             TLRPC.TL_message tL_message = new TLRPC.TL_message();
                             tL_message.id = 0;
                             tL_message.out = true;
-                            tL_message.peer_id = vp.r1(i14).y1(a12);
-                            tL_message.from_id = vp.r1(i14).y1(d20.i(i14).e());
+                            tL_message.peer_id = wp.r1(i14).y1(a12);
+                            tL_message.from_id = wp.r1(i14).y1(e20.i(i14).e());
                             tL_message.flags2 |= TLObject.FLAG_13;
                             TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
                             tL_message.rich_message = richMessage;
                             richMessage.blocks = c32;
                             richMessage.photos = d4Var.E2();
                             tL_message.rich_message.documents = d4Var.B2();
-                            if (jjVar != null && !jjVar.p) {
+                            if (kjVar != null && !kjVar.p) {
                                 TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                                 tL_messageReplyHeader.flags |= 16;
-                                tL_messageReplyHeader.reply_to_msg_id = jjVar.f1();
+                                tL_messageReplyHeader.reply_to_msg_id = kjVar.f1();
                                 tL_message.reply_to = tL_messageReplyHeader;
                             }
-                            jj jjVar2 = new jj(i14, tL_message, false, false);
-                            if (jjVar != null && !jjVar.p) {
-                                jjVar2.C = jjVar;
+                            kj kjVar2 = new kj(i14, tL_message, false, false);
+                            if (kjVar != null && !kjVar.p) {
+                                kjVar2.C = kjVar;
                             }
-                            jjVar2.z0 = true;
-                            jjVar2.R2 = Boolean.TRUE;
-                            jjVar2.n0(null);
-                            jjVar2.u1 = true;
-                            tVar.O.p(org.telegram.messenger.m5.j(jjVar2));
+                            kjVar2.z0 = true;
+                            kjVar2.R2 = Boolean.TRUE;
+                            kjVar2.n0(null);
+                            kjVar2.u1 = true;
+                            tVar.O.p(org.telegram.messenger.m5.j(kjVar2));
                             zf sendButton = i4Var.getSendButton();
                             sendButton.setScaleX(1.0f);
                             sendButton.setScaleY(1.0f);
                             zf q6 = tVar.O.q(sendButton, true, new ag.g(tVar, 4));
                             if (q6 != null) {
                                 q6.setBackground(new j2(org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(22.0f), org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Ci, p6Var))));
-                                kh0 kh0Var3 = tVar.O;
+                                ih0 ih0Var3 = tVar.O;
                                 int L = org.telegram.messenger.i0.L(44.0f);
-                                kh0Var3.l0 = true;
-                                kh0Var3.X = L;
+                                ih0Var3.l0 = true;
+                                ih0Var3.X = L;
                             }
                             z60 F = z60.F(tVar, p6Var, sendButton);
-                            boolean z11 = unVar != null && h20.B(unVar.j());
-                            if (unVar != null && unVar.L6()) {
+                            boolean z11 = unVar != null && i20.B(unVar.j());
+                            if (unVar != null && unVar.P6()) {
                                 int i15 = 0;
-                                F.c(R.drawable.msg_calendar2, cd.L0(z11 ? 2131745531 : 2131745876, null), new e(tVar, a12, i15), false);
+                                F.c(R.drawable.msg_calendar2, dd.L0(z11 ? 2131745531 : 2131745876, null), new e(tVar, a12, i15), false);
                                 if (!z11 && a12 > 0) {
-                                    F.c(R.drawable.msg_online, cd.L0(2131745603, null), new f(tVar, i15), false);
+                                    F.c(R.drawable.msg_online, dd.L0(2131745603, null), new f(tVar, i15), false);
                                 }
                             }
                             if (z11) {
                                 z10 = true;
                             } else {
                                 z10 = true;
-                                F.c(R.drawable.input_notify_off, cd.L0(2131745600, null), new f(tVar, 1 == true ? 1 : 0), false);
+                                F.c(R.drawable.input_notify_off, dd.L0(2131745600, null), new f(tVar, 1 == true ? 1 : 0), false);
                             }
                             F.Y();
                             tVar.O.o(F);

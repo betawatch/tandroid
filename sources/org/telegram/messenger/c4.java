@@ -7,9 +7,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.m31;
+import org.telegram.ui.Components.n31;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c4 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -49,10 +49,10 @@ public final /* synthetic */ class c4 implements Runnable {
                 if (tLObject instanceof TLRPC.Updates) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                     if (j10 >= 0) {
-                        userFull = vp.r1(g4Var.currentAccount).a2(j10);
+                        userFull = wp.r1(g4Var.currentAccount).a2(j10);
                         M0 = null;
                     } else {
-                        M0 = vp.r1(g4Var.currentAccount).M0(-j10);
+                        M0 = wp.r1(g4Var.currentAccount).M0(-j10);
                         userFull = null;
                     }
                     if (userFull != null) {
@@ -79,7 +79,7 @@ public final /* synthetic */ class c4 implements Runnable {
                                             userFull.flags |= 16777216;
                                             g4Var.r(j10, wallPaper2);
                                             g4Var.getMessagesStorage().j2(userFull, false);
-                                            zs f7 = zs.f(g4Var.currentAccount);
+                                            at f7 = at.f(g4Var.currentAccount);
                                             Object[] objArr = new Object[2];
                                             objArr[0] = Long.valueOf(j10);
                                             objArr[z10 ? 1 : 0] = userFull;
@@ -90,7 +90,7 @@ public final /* synthetic */ class c4 implements Runnable {
                                             M0.flags2 |= 128;
                                             g4Var.r(j10, wallPaper3);
                                             g4Var.getMessagesStorage().N1(M0, false);
-                                            zs f10 = zs.f(g4Var.currentAccount);
+                                            at f10 = at.f(g4Var.currentAccount);
                                             Object[] objArr2 = new Object[4];
                                             objArr2[0] = M0;
                                             objArr2[z10 ? 1 : 0] = 0;
@@ -108,31 +108,31 @@ public final /* synthetic */ class c4 implements Runnable {
                             z11 = z10;
                         }
                     }
-                    vp.r1(g4Var.currentAccount).K3(updates.updates, updates.users, updates.chats, false, updates.date);
+                    wp.r1(g4Var.currentAccount).K3(updates.updates, updates.users, updates.chats, false, updates.date);
                     if (runnable != null) {
                         runnable.run();
                     }
-                    zs.f(g4Var.currentAccount).k(zs.u5, new Object[0]);
+                    at.f(g4Var.currentAccount).k(at.u5, new Object[0]);
                     return;
                 }
                 return;
             case 1:
-                vp vpVar = (vp) this.d;
+                wp wpVar = (wp) this.d;
                 TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers = (TLRPC.TL_channels_sendAsPeers) this.e;
                 a0.h hVar = (a0.h) this.f;
                 long j11 = this.b;
-                qp qpVar = (qp) this.h;
+                rp rpVar = (rp) this.h;
                 boolean z13 = this.c;
                 if (tL_channels_sendAsPeers == null) {
                     hVar.l(j11);
                     return;
                 }
                 SystemClock.elapsedRealtime();
-                qpVar.a = tL_channels_sendAsPeers;
-                vpVar.getNotificationCenter().k(16, Long.valueOf(j11), tL_channels_sendAsPeers, Boolean.valueOf(z13));
+                rpVar.a = tL_channels_sendAsPeers;
+                wpVar.getNotificationCenter().k(16, Long.valueOf(j11), tL_channels_sendAsPeers, Boolean.valueOf(z13));
                 return;
             case 2:
-                x00 x00Var = (x00) this.d;
+                y00 y00Var = (y00) this.d;
                 TLObject tLObject2 = (TLObject) this.e;
                 boolean z14 = this.c;
                 long j12 = this.b;
@@ -146,7 +146,7 @@ public final /* synthetic */ class c4 implements Runnable {
                         hVar2.k(tL_messages_savedDialogs.messages.get(i10), tL_messages_savedDialogs.messages.get(i10).id);
                         i10++;
                     }
-                    i0.g3(new ei(x00Var, tL_messages_savedDialogs, j12, l4, hVar2, hashSet, runnable2));
+                    i0.g3(new fi(y00Var, tL_messages_savedDialogs, j12, l4, hVar2, hashSet, runnable2));
                     return;
                 }
                 if (tLObject2 != null) {
@@ -156,22 +156,22 @@ public final /* synthetic */ class c4 implements Runnable {
                         hVar3.k(tL_messages_forumTopics.messages.get(i10), tL_messages_forumTopics.messages.get(i10).id);
                         i10++;
                     }
-                    i0.g3(new q00(x00Var, tLObject2, j12, tL_messages_forumTopics, hVar3, runnable2, 0));
+                    i0.g3(new r00(y00Var, tLObject2, j12, tL_messages_forumTopics, hVar3, runnable2, 0));
                     return;
                 }
                 return;
             default:
-                t10 t10Var = (t10) this.d;
+                u10 u10Var = (u10) this.d;
                 HashMap hashMap = (HashMap) this.e;
                 long j13 = this.b;
-                p10 p10Var = (p10) this.f;
+                q10 q10Var = (q10) this.f;
                 boolean z15 = this.c;
                 HashSet hashSet2 = (HashSet) this.h;
-                synchronized (t10Var) {
+                synchronized (u10Var) {
                     try {
                         ArrayList arrayList = (ArrayList) hashMap.get(Long.valueOf(j13));
                         if (arrayList != null) {
-                            arrayList.remove(p10Var);
+                            arrayList.remove(q10Var);
                             if (arrayList.isEmpty()) {
                                 hashMap.remove(Long.valueOf(j13));
                             }
@@ -179,12 +179,12 @@ public final /* synthetic */ class c4 implements Runnable {
                     } finally {
                     }
                 }
-                String str3 = t10Var.getMessagesController().W6;
+                String str3 = u10Var.getMessagesController().W6;
                 if ("alternative".equals(str3) || "system".equals(str3)) {
-                    String str4 = p10Var.e;
-                    while (i10 < p10Var.b.size()) {
+                    String str4 = q10Var.e;
+                    while (i10 < q10Var.b.size()) {
                         String str5 = str4;
-                        m31.J0(((TLRPC.TL_textWithEntities) p10Var.c.get(i10)).text, null, str5, new f10(t10Var, (n20) p10Var.d.get(i10), z15, ((Integer) p10Var.b.get(i10)).intValue(), str4, j13, 0));
+                        n31.J0(((TLRPC.TL_textWithEntities) q10Var.c.get(i10)).text, null, str5, new g10(u10Var, (o20) q10Var.d.get(i10), z15, ((Integer) q10Var.b.get(i10)).intValue(), str4, j13, 0));
                         i10++;
                         str4 = str5;
                     }
@@ -193,32 +193,32 @@ public final /* synthetic */ class c4 implements Runnable {
                 TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
                 if (z15) {
                     tL_messages_translateText.flags |= 2;
-                    tL_messages_translateText.text.addAll(p10Var.c);
+                    tL_messages_translateText.text.addAll(q10Var.c);
                 } else {
                     tL_messages_translateText.flags |= 1;
-                    tL_messages_translateText.peer = t10Var.getMessagesController().i1(j13);
-                    tL_messages_translateText.id = p10Var.b;
+                    tL_messages_translateText.peer = u10Var.getMessagesController().i1(j13);
+                    tL_messages_translateText.id = q10Var.b;
                 }
-                tL_messages_translateText.to_lang = t10.D(p10Var.e);
-                int sendRequest = t10Var.getConnectionsManager().sendRequest(tL_messages_translateText, new b4(t10Var, p10Var, z15, j13, hashSet2, 4));
-                synchronized (t10Var) {
-                    p10Var.h = sendRequest;
+                tL_messages_translateText.to_lang = u10.D(q10Var.e);
+                int sendRequest = u10Var.getConnectionsManager().sendRequest(tL_messages_translateText, new b4(u10Var, q10Var, z15, j13, hashSet2, 4));
+                synchronized (u10Var) {
+                    q10Var.h = sendRequest;
                 }
                 return;
         }
     }
 
-    public /* synthetic */ c4(vp vpVar, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, a0.h hVar, long j10, qp qpVar, boolean z10) {
-        this.d = vpVar;
+    public /* synthetic */ c4(wp wpVar, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, a0.h hVar, long j10, rp rpVar, boolean z10) {
+        this.d = wpVar;
         this.e = tL_channels_sendAsPeers;
         this.f = hVar;
         this.b = j10;
-        this.h = qpVar;
+        this.h = rpVar;
         this.c = z10;
     }
 
-    public /* synthetic */ c4(x00 x00Var, TLObject tLObject, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
-        this.d = x00Var;
+    public /* synthetic */ c4(y00 y00Var, TLObject tLObject, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
+        this.d = y00Var;
         this.e = tLObject;
         this.c = z10;
         this.b = j10;
@@ -226,11 +226,11 @@ public final /* synthetic */ class c4 implements Runnable {
         this.h = runnable;
     }
 
-    public /* synthetic */ c4(t10 t10Var, HashMap hashMap, long j10, p10 p10Var, boolean z10, HashSet hashSet) {
-        this.d = t10Var;
+    public /* synthetic */ c4(u10 u10Var, HashMap hashMap, long j10, q10 q10Var, boolean z10, HashSet hashSet) {
+        this.d = u10Var;
         this.e = hashMap;
         this.b = j10;
-        this.f = p10Var;
+        this.f = q10Var;
         this.c = z10;
         this.h = hashSet;
     }

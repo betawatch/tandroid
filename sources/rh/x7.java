@@ -4,38 +4,38 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.da;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.p51;
 import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.ra;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.xz;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.m10;
+import org.telegram.ui.l10;
 import org.telegram.ui.mk;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class x7 extends ha implements us {
+public final class x7 extends ha implements vs {
     public final long P1;
-    public final m10 Q1;
+    public final l10 Q1;
     public final FrameLayout R1;
     public final xz S1;
     public Runnable T1;
     public final TLRPC.InputPeer U1;
     public final boolean V1;
-    public p51 W1;
+    public q51 W1;
     public boolean X1;
 
     /* JADX WARN: Code restructure failed: missing block: B:54:0x010d, code lost:
@@ -51,14 +51,14 @@ public final class x7 extends ha implements us {
         String str3;
         this.r1 = 0.2f;
         this.T1 = runnable;
-        TLRPC.InputPeer i12 = j11 == 0 ? null : vp.r1(this.a).i1(j11);
+        TLRPC.InputPeer i12 = j11 == 0 ? null : wp.r1(this.a).i1(j11);
         this.U1 = i12;
-        boolean k10 = (i12 == null || !((org.telegram.messenger.j0) vp.r1(e6.y(this.a, false).a).y7.h0.b).c) ? true : org.telegram.messenger.u1.i().k();
+        boolean k10 = (i12 == null || !((org.telegram.messenger.j0) wp.r1(e6.y(this.a, false).a).y7.h0.b).c) ? true : org.telegram.messenger.u1.i().k();
         this.V1 = k10;
         O();
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i11 = this.t0;
-        tk0Var.setPadding(i11, 0, i11, 0);
+        uk0Var.setPadding(i11, 0, i11, 0);
         this.k1.setOnItemClickListener(new ag.y0(this, 14));
         this.k1.r1();
         s4.j jVar = new s4.j();
@@ -69,10 +69,10 @@ public final class x7 extends ha implements us {
         this.k1.setItemAnimator(jVar);
         w0(org.telegram.ui.ActionBar.t6.i5);
         this.P1 = j10;
-        m10 m10Var = new m10(this.a, context, p6Var);
-        TextView textView = (TextView) m10Var.e;
-        this.Q1 = m10Var;
-        ((TextView) m10Var.b).setText(cd.G((int) Math.max(0L, j10 - e6.y(this.a, false).p().amount), "StarsNeededTitle", new Object[0]));
+        l10 l10Var = new l10(this.a, context, p6Var);
+        TextView textView = (TextView) l10Var.e;
+        this.Q1 = l10Var;
+        ((TextView) l10Var.b).setText(dd.G((int) Math.max(0L, j10 - e6.y(this.a, false).p().amount), "StarsNeededTitle", new Object[0]));
         if (i10 == 1) {
             str2 = "StarsNeededTextBuySubscription";
         } else {
@@ -89,7 +89,7 @@ public final class x7 extends ha implements us {
                         } else {
                             str3 = "StarsNeededTextLink_" + str.toLowerCase();
                         }
-                        String M0 = cd.M0(str3);
+                        String M0 = dd.M0(str3);
                     } else {
                         str2 = i10 == 5 ? "StarsNeededTextReactions" : i10 == 6 ? "StarsNeededTextGift" : i10 == 12 ? "StarsNeededTextGiftChannel" : i10 == 13 ? "StarsNeededTextPrivateMessage" : i10 == 10 ? "StarsNeededTextGiftUpgrade" : i10 == 11 ? "StarsNeededTextGiftTransfer" : i10 == 9 ? "StarsNeededBizText" : i10 == 14 ? "StarsNeededTextGiftBuyResale" : i10 == 15 ? "StarsNeededTextSearch" : i10 == 16 ? "StarsNeededRemoveGiftDescription" : i10 == 17 ? "StarsNeededLiveComments" : "StarsNeededText";
                     }
@@ -101,9 +101,9 @@ public final class x7 extends ha implements us {
         if (TextUtils.isEmpty(str3)) {
             textView.setText("");
         } else {
-            String a02 = cd.a0(str3, null, 0, str);
+            String a02 = dd.a0(str3, null, 0, str);
             a02 = (a02 == null || a02.startsWith("LOC_ERR")) ? null : a02;
-            textView.setText(org.telegram.messenger.i0.W2(a02 == null ? cd.M0(str3) : a02));
+            textView.setText(org.telegram.messenger.i0.W2(a02 == null ? dd.M0(str3) : a02));
             textView.setMaxWidth(vh.p2.a(textView.getText(), textView.getPaint()));
         }
         this.l1.setTitle(O0());
@@ -115,9 +115,9 @@ public final class x7 extends ha implements us {
         org.telegram.ui.ActionBar.a7.V(p80Var, org.telegram.ui.ActionBar.t6.B6, p6Var);
         org.telegram.ui.ActionBar.a7.H(p80Var, org.telegram.ui.ActionBar.t6.Uc, p6Var);
         if (k10) {
-            p80Var.setText(org.telegram.messenger.i0.T2(cd.L0(2131744985, null), new ph.x1(this, 26)));
+            p80Var.setText(org.telegram.messenger.i0.T2(dd.L0(2131744985, null), new ph.x1(this, 26)));
         } else {
-            p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131745067, null)));
+            p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131745067, null)));
         }
         p80Var.setGravity(17);
         p80Var.setMaxWidth(vh.p2.a(p80Var.getText(), p80Var.getPaint()));
@@ -126,47 +126,47 @@ public final class x7 extends ha implements us {
         xz xzVar = new xz(getContext());
         this.S1 = xzVar;
         this.b.addView(xzVar, w7.b6.c(-1.0f, -1));
-        p51 p51Var = this.W1;
-        if (p51Var != null) {
-            p51Var.O(false);
+        q51 q51Var = this.W1;
+        if (q51Var != null) {
+            q51Var.O(false);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.z2
     public final void L() {
         super.L();
-        zs.f(this.a).n(this, zs.v3);
-        zs.f(this.a).n(this, zs.y3);
+        at.f(this.a).n(this, at.v3);
+        at.f(this.a).n(this, at.y3);
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(this.k1, getContext(), this.a, 0, true, new qh.d(this, 10), this.I0);
-        this.W1 = p51Var;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(this.k1, getContext(), this.a, 0, true, new qh.d(this, 10), this.I0);
+        this.W1 = q51Var;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        m10 m10Var = this.Q1;
-        if (m10Var == null) {
+        l10 l10Var = this.Q1;
+        if (l10Var == null) {
             return null;
         }
-        return ((TextView) m10Var.b).getText();
+        return ((TextView) l10Var.b).getText();
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
-        if (i10 == zs.v3 || i10 == zs.y3) {
-            p51 p51Var = this.W1;
-            if (p51Var != null) {
-                p51Var.O(true);
+        if (i10 == at.v3 || i10 == at.y3) {
+            q51 q51Var = this.W1;
+            if (q51Var != null) {
+                q51Var.O(true);
             }
             long j10 = e6.y(this.a, false).p().amount;
             TextView textView = (TextView) this.Q1.b;
             long j11 = this.P1;
-            textView.setText(cd.H(',', "StarsNeededTitle", (int) (j11 - j10)));
+            textView.setText(dd.H(',', "StarsNeededTitle", (int) (j11 - j10)));
             da daVar = this.l1;
             if (daVar != null) {
                 daVar.setTitle(O0());
@@ -183,9 +183,9 @@ public final class x7 extends ha implements us {
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
         super.dismiss();
-        m10 m10Var = this.Q1;
-        if (m10Var != null) {
-            ((lg.q) m10Var.c).setPaused(true);
+        l10 l10Var = this.Q1;
+        if (l10Var != null) {
+            ((lg.q) l10Var.c).setPaused(true);
         }
     }
 
@@ -208,12 +208,12 @@ public final class x7 extends ha implements us {
         org.telegram.ui.ActionBar.k2 Q = LaunchActivity.Q();
         if (Q instanceof un) {
             un unVar = (un) Q;
-            if (unVar.J9() && (mkVar = unVar.Z) != null) {
-                mkVar.L();
+            if (unVar.O9() && (mkVar = unVar.Z) != null) {
+                mkVar.K();
             }
         }
         super.show();
-        zs.f(this.a).c(this, zs.v3);
-        zs.f(this.a).c(this, zs.y3);
+        at.f(this.a).c(this, at.v3);
+        at.f(this.a).c(this, at.y3);
     }
 }

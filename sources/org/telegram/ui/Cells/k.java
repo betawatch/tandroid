@@ -8,13 +8,13 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k extends FrameLayout {
     public final org.telegram.ui.Components.e6 a;
@@ -54,7 +54,7 @@ public final class k extends FrameLayout {
     public final void b(long j10) {
         org.telegram.ui.Components.e6 e6Var = this.a;
         if (j10 == 0) {
-            e6Var.t(cd.L0(2131750345, null), true, true);
+            e6Var.t(dd.L0(2131750345, null), true, true);
         } else {
             e6Var.t(j10 > 3600 ? org.telegram.messenger.i0.g0((int) j10, false, false) : org.telegram.messenger.i0.h0((int) j10, false), isAttachedToWindow(), true);
         }
@@ -96,7 +96,7 @@ public final class k extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(zs.C2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(28), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(at.C2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(28), TLObject.FLAG_30));
     }
 
     @Override // android.view.View

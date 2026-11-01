@@ -1,64 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class lm0 extends EditTextBoldCursor {
-    public final w4 G1;
-    public int H1;
-    public final e6 I1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p6 J1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lm0(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        this.J1 = p6Var;
-        this.G1 = new w4(this);
-        e6 e6Var = new e6(false, true, true);
-        this.I1 = e6Var;
-        e6Var.n(0.2f, 160L, gr.h);
-        e6Var.w(org.telegram.messenger.i0.L(15.33f));
-        e6Var.setCallback(this);
-        e6Var.b = 5;
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.G1.a(org.telegram.ui.ActionBar.t6.w0(this.H1 < 0 ? org.telegram.ui.ActionBar.t6.p7 : org.telegram.ui.ActionBar.t6.P5, this.J1), false);
-        e6 e6Var = this.I1;
-        e6Var.u(a2);
-        e6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        e6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(36.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.qt, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        e6 e6Var = this.I1;
-        if (e6Var != null) {
-            this.H1 = 12 - charSequence.length();
-            e6Var.a();
-            String str = "";
-            if (this.H1 <= 4) {
-                str = "" + this.H1;
-            }
-            e6Var.t(str, true, true);
+public final class lm0 extends s4.j {
+    @Override // s4.j, s4.f1
+    public final boolean r(s4.c1 c1Var, ac.g gVar, int i10, int i11, int i12, int i13) {
+        rm0 rm0Var;
+        qm0 qm0Var;
+        View view = c1Var.a;
+        if ((view instanceof rm0) && (qm0Var = (rm0Var = (rm0) view).a) != null) {
+            qm0Var.h = qm0Var.M;
+            qm0Var.f = qm0Var.N;
+            qm0Var.g = qm0Var.O;
+            rm0Var.b.e(true, 0.0f);
+            rm0Var.invalidate();
         }
+        int translationX = i10 + ((int) view.getTranslationX());
+        int translationY = i11 + ((int) view.getTranslationY());
+        R(c1Var);
+        int i14 = i12 - translationX;
+        int i15 = i13 - translationY;
+        if (i14 == 0 && i15 == 0) {
+            v(c1Var);
+            return false;
+        }
+        if (i14 != 0) {
+            view.setTranslationX(-i14);
+        }
+        if (i15 != 0) {
+            view.setTranslationY(-i15);
+        }
+        this.r.add(new s4.i(c1Var, translationX, translationY, i12, i13));
+        return true;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.I1 || super.verifyDrawable(drawable);
+    @Override // s4.f1
+    public final boolean t(s4.c1 c1Var) {
+        return true;
     }
 }

@@ -10,14 +10,14 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import r2.y;
 import ve.p;
 import ve.q;
 import ve.s;
 import w7.e8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d {
     public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(ve.b.class, ve.i.class, ve.h.class, ve.j.class, s.class, ve.n.class, ve.l.class));
@@ -700,13 +700,13 @@ public final class d {
                                                                 case '0':
                                                                 case '1':
                                                                 case '2':
-                                                                case zs.o0 /* 51 */:
-                                                                case zs.p0 /* 52 */:
-                                                                case zs.q0 /* 53 */:
-                                                                case zs.r0 /* 54 */:
-                                                                case zs.s0 /* 55 */:
-                                                                case zs.t0 /* 56 */:
-                                                                case zs.u0 /* 57 */:
+                                                                case at.o0 /* 51 */:
+                                                                case at.p0 /* 52 */:
+                                                                case at.q0 /* 53 */:
+                                                                case at.r0 /* 54 */:
+                                                                case at.s0 /* 55 */:
+                                                                case at.t0 /* 56 */:
+                                                                case at.u0 /* 57 */:
                                                                     i57++;
                                                                     if (i57 > 9) {
                                                                         break;

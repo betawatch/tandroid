@@ -20,11 +20,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -36,13 +36,13 @@ import org.telegram.ui.Cells.z3;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.tk0;
-import org.telegram.ui.m10;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.l10;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v1 extends ha {
     public final vh.d P1;
@@ -88,7 +88,7 @@ public final class v1 extends ha {
         this.h2 = org.telegram.messenger.i0.L(134.0f);
         this.n2 = new androidx.activity.i(this, 29);
         this.t0 = 0;
-        this.i2 = vp.r1(this.a).L0(Long.valueOf(-j10));
+        this.i2 = wp.r1(this.a).L0(Long.valueOf(-j10));
         ((ViewGroup) this.l1.getParent()).removeView(this.l1);
         ViewGroup viewGroup = this.b;
         gr grVar = gr.h;
@@ -112,24 +112,24 @@ public final class v1 extends ha {
         ViewGroup viewGroup3 = this.b;
         int i12 = this.t0;
         viewGroup3.addView(t1Var, b6.f(-2.0f, -1, 55, i12, 0, i12, 0));
-        m10 m10Var = new m10(getContext(), this.I0, (tk0) null);
-        m10Var.setClickable(true);
-        m10Var.setOrientation(1);
-        m10Var.setPadding(org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f));
-        a7.i(i10, m10Var, this.I0);
+        l10 l10Var = new l10(getContext(), this.I0, (uk0) null);
+        l10Var.setClickable(true);
+        l10Var.setOrientation(1);
+        l10Var.setPadding(org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f));
+        a7.i(i10, l10Var, this.I0);
         vh.d dVar = new vh.d(getContext(), this.I0, true);
         this.P1 = dVar;
         dVar.setOnClickListener(new q1(this, 1));
-        m10Var.addView(dVar, b6.r(-1, 48, 87));
+        l10Var.addView(dVar, b6.r(-1, 48, 87));
         ViewGroup viewGroup4 = this.b;
         int i13 = this.t0;
-        viewGroup4.addView(m10Var, b6.f(-2.0f, -1, 87, i13, 0, i13, 0));
+        viewGroup4.addView(l10Var, b6.f(-2.0f, -1, 87, i13, 0, i13, 0));
         ng.i iVar = this.g2;
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         iVar.n = arrayList;
-        iVar.f = tk0Var;
+        iVar.f = uk0Var;
         int i14 = this.t0;
-        tk0Var.setPadding(i14, 0, i14, org.telegram.messenger.i0.L(60.0f));
+        uk0Var.setPadding(i14, 0, i14, org.telegram.messenger.i0.L(60.0f));
         this.k1.j(new ag.u(this, 6));
         this.k1.setOnItemClickListener(new l(this, 1));
         s4.j jVar = new s4.j();
@@ -179,7 +179,7 @@ public final class v1 extends ha {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
+    public final tk0 L0(uk0 uk0Var) {
         ng.i iVar = new ng.i(getContext(), this.I0, true);
         this.g2 = iVar;
         return iVar;
@@ -188,7 +188,7 @@ public final class v1 extends ha {
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
         int i10 = this.j2;
-        return i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : cd.L0(2131753288, null) : cd.L0(2131753603, null) : cd.L0(2131749689, null);
+        return i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : dd.L0(2131753288, null) : dd.L0(2131753603, null) : dd.L0(2131749689, null);
     }
 
     @Override // org.telegram.ui.Components.ha
@@ -245,8 +245,8 @@ public final class v1 extends ha {
         if (i10 == 1) {
             long j10 = chat.id;
             s1 s1Var = new s1(this, z10, 0);
-            vp r12 = vp.r1(d20.s0);
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(d20.s0);
+            wp r12 = wp.r1(e20.s0);
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(e20.s0);
             TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
             tL_channels_getParticipants.channel = r12.g1(j10);
             TLRPC.ChannelParticipantsFilter tL_channelParticipantsRecent = str == null ? new TLRPC.TL_channelParticipantsRecent() : new TLRPC.TL_channelParticipantsSearch();
@@ -265,16 +265,16 @@ public final class v1 extends ha {
                 return;
             }
             s1 s1Var2 = new s1(this, z10, 1);
-            ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(d20.s0);
+            ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(e20.s0);
             TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
-            tL_help_getCountriesList.lang_code = cd.D0().B != null ? cd.D0().B.c() : Locale.getDefault().getCountry();
+            tL_help_getCountriesList.lang_code = dd.D0().B != null ? dd.D0().B.c() : Locale.getDefault().getCountry();
             connectionsManager2.sendRequest(tL_help_getCountriesList, new ag.c(s1Var2, 8));
             return;
         }
         long j11 = chat.id;
         r1 r1Var = new r1(this, 1);
-        vp r13 = vp.r1(d20.s0);
-        ConnectionsManager connectionsManager3 = ConnectionsManager.getInstance(d20.s0);
+        wp r13 = wp.r1(e20.s0);
+        ConnectionsManager connectionsManager3 = ConnectionsManager.getInstance(e20.s0);
         TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
         tL_contacts_search.q = str;
         tL_contacts_search.limit = 50;
@@ -419,20 +419,20 @@ public final class v1 extends ha {
     }
 
     public final void j1(boolean z10) {
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         if (!z10) {
-            tk0Var.v0(0);
+            uk0Var.v0(0);
             return;
         }
         ci.p pVar = new ci.p(getContext(), 2, 0.6f);
         pVar.a = 1;
         pVar.p = org.telegram.messenger.i0.L(38.0f);
-        tk0Var.getLayoutManager().w0(pVar);
+        uk0Var.getLayoutManager().w0(pVar);
     }
 
     public final void k1() {
         int i10 = this.j2;
-        String G = i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : cd.G((int) vp.r1(d20.s0).p0, "BoostingSelectUpToWarningCountriesPlural", new Object[0]) : cd.G((int) k0.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]) : cd.L0(2131753272, null);
+        String G = i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : dd.G((int) wp.r1(e20.s0).p0, "BoostingSelectUpToWarningCountriesPlural", new Object[0]) : dd.G((int) k0.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]) : dd.L0(2131753272, null);
         t tVar = this.m2;
         if (tVar != null) {
             new cc(tVar.c.c, tVar.b).Q(R.raw.chats_infotip, 36, G).k(true);
@@ -443,7 +443,7 @@ public final class v1 extends ha {
         vh.d dVar = this.P1;
         dVar.setShowZero(false);
         int i10 = this.j2;
-        dVar.i(i10 != 1 ? (i10 == 2 || i10 == 3) ? cd.L0(2131745963, null) : "" : cd.L0(2131753289, null), z10, true);
+        dVar.i(i10 != 1 ? (i10 == 2 || i10 == 3) ? dd.L0(2131745963, null) : "" : dd.L0(2131753289, null), z10, true);
         HashSet hashSet = this.W1;
         dVar.c(hashSet.size(), z10);
         dVar.setEnabled(hashSet.size() > 0);
@@ -458,7 +458,7 @@ public final class v1 extends ha {
         arrayList.addAll(arrayList2);
         arrayList2.clear();
         if (this.j2 == 1) {
-            String L0 = cd.L0(2131749561, null);
+            String L0 = dd.L0(2131749561, null);
             ng.h hVar = new ng.h(9, false);
             hVar.i = 1;
             hVar.j = R.drawable.menu_random;
@@ -533,7 +533,7 @@ public final class v1 extends ha {
         hVar6.l = max;
         arrayList2.add(hVar6);
         if (hashSet.size() > 0 && this.j2 != 3) {
-            z3Var.a(cd.L0(2131743656, null), new q1(this, i14));
+            z3Var.a(dd.L0(2131743656, null), new q1(this, i14));
         } else if (z10) {
             z3Var.setRightText(null);
         } else {
@@ -556,12 +556,12 @@ public final class v1 extends ha {
         m1(z10, z11);
         int i10 = 0;
         while (true) {
-            tk0 tk0Var = this.k1;
-            if (i10 >= tk0Var.getChildCount()) {
+            uk0 uk0Var = this.k1;
+            if (i10 >= uk0Var.getChildCount()) {
                 l1(z10);
                 return;
             }
-            View childAt = tk0Var.getChildAt(i10);
+            View childAt = uk0Var.getChildAt(i10);
             if (childAt instanceof qg.k) {
                 int R = RecyclerView.R(childAt) - 1;
                 if (R >= 0) {
@@ -593,15 +593,15 @@ public final class v1 extends ha {
         z3 z3Var = this.R1;
         if (i10 == 1) {
             TLRPC.Chat chat = this.i2;
-            H = cd.H(',', w3.V(chat) ? "Subscribers" : "Members", Math.max(0, this.g2.F(chat) - 1));
+            H = dd.H(',', w3.V(chat) ? "Subscribers" : "Members", Math.max(0, this.g2.F(chat) - 1));
             z3Var.setLayerHeight(32);
         } else if (i10 == 2) {
-            H = cd.G((int) k0.f(), "BoostingSelectUpToGroupChannelPlural", new Object[0]);
+            H = dd.G((int) k0.f(), "BoostingSelectUpToGroupChannelPlural", new Object[0]);
             z3Var.setLayerHeight(32);
         } else if (i10 != 3) {
             H = "";
         } else {
-            H = cd.G((int) vp.r1(d20.s0).p0, "BoostingSelectUpToCountriesPlural", new Object[0]);
+            H = dd.G((int) wp.r1(e20.s0).p0, "BoostingSelectUpToCountriesPlural", new Object[0]);
             z3Var.setLayerHeight(1);
         }
         z3Var.setText(H);

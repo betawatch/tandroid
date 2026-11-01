@@ -4,30 +4,30 @@ import android.os.SystemClock;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nq implements org.telegram.messenger.j20 {
+public final /* synthetic */ class nq implements org.telegram.messenger.k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.messenger.us c;
+    public final /* synthetic */ org.telegram.messenger.vs c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ nq(org.telegram.messenger.us usVar, Object obj, boolean z10, int i10) {
+    public /* synthetic */ nq(org.telegram.messenger.vs vsVar, Object obj, boolean z10, int i10) {
         this.a = i10;
-        this.c = usVar;
+        this.c = vsVar;
         this.d = obj;
         this.b = z10;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         int i10 = this.a;
         boolean z10 = this.b;
         Object obj3 = this.d;
-        org.telegram.messenger.us usVar = this.c;
+        org.telegram.messenger.vs vsVar = this.c;
         switch (i10) {
             case 0:
-                pr prVar = (pr) usVar;
+                pr prVar = (pr) vsVar;
                 org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) obj3;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -44,7 +44,7 @@ public final /* synthetic */ class nq implements org.telegram.messenger.j20 {
                 }
                 break;
             default:
-                qh.m0 m0Var = (qh.m0) usVar;
+                qh.m0 m0Var = (qh.m0) vsVar;
                 TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken = (TLRPC.TL_exportedNoPaidMessagesToken) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 qh.x0 x0Var = m0Var.b;
@@ -71,7 +71,7 @@ public final /* synthetic */ class nq implements org.telegram.messenger.j20 {
                             if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z10) {
                                 if (str != null) {
                                     x0Var.getClass();
-                                    x0Var.d1(R.drawable.msg_warning, org.telegram.messenger.cd.L0(2131751106, null), null);
+                                    x0Var.d1(R.drawable.msg_warning, org.telegram.messenger.dd.L0(2131751106, null), null);
                                     break;
                                 }
                             }
@@ -80,11 +80,11 @@ public final /* synthetic */ class nq implements org.telegram.messenger.j20 {
                         m0Var.f().edit().putBoolean("qrNoPaidPermanent", false).apply();
                         if (!x0Var.v0) {
                             if (str != null) {
-                                x0Var.d1(R.drawable.msg_warning, org.telegram.messenger.cd.L0(2131751106, null), null);
+                                x0Var.d1(R.drawable.msg_warning, org.telegram.messenger.dd.L0(2131751106, null), null);
                                 break;
                             }
                         } else {
-                            x0Var.U0(str != null ? org.telegram.messenger.cd.L0(2131751106, null) : null);
+                            x0Var.U0(str != null ? org.telegram.messenger.dd.L0(2131751106, null) : null);
                             break;
                         }
                     }

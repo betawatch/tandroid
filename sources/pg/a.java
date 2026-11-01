@@ -28,29 +28,29 @@ import java.util.HashMap;
 import java.util.Locale;
 import mg.k0;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.c00;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.d00;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.jc;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.kp;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.lp;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.v5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.vi;
 import org.telegram.messenger.w0;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.ov0;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.r8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a {
     public static final HashMap Y;
@@ -73,7 +73,7 @@ public final class a {
     public int[] Q;
     public int R;
     public y S;
-    public jj T;
+    public kj T;
     public boolean U;
     public ImageReceiver[] a;
     public r8[] b;
@@ -118,8 +118,8 @@ public final class a {
     }
 
     public final boolean a(MotionEvent motionEvent) {
-        jj jjVar = this.T;
-        if (jjVar != null && jjVar.u3()) {
+        kj kjVar = this.T;
+        if (kjVar != null && kjVar.u3()) {
             int x10 = (int) motionEvent.getX();
             int y3 = (int) motionEvent.getY();
             if (motionEvent.getAction() == 0) {
@@ -152,9 +152,9 @@ public final class a {
                 }
                 if (this.X) {
                     this.X = false;
-                    jj jjVar2 = this.T;
-                    if (jjVar2 != null && jjVar2.k != null) {
-                        k0.d(jjVar2, new l(jjVar2, 18), new z0(3));
+                    kj kjVar2 = this.T;
+                    if (kjVar2 != null && kjVar2.k != null) {
+                        k0.d(kjVar2, new l(kjVar2, 18), new z0(3));
                         return false;
                     }
                 }
@@ -175,8 +175,8 @@ public final class a {
         int e;
         int i12;
         Canvas canvas2 = canvas;
-        jj jjVar = this.T;
-        if (jjVar == null || !jjVar.u3()) {
+        kj kjVar = this.T;
+        if (kjVar == null || !kjVar.u3()) {
             return;
         }
         y yVar = this.S;
@@ -296,8 +296,8 @@ public final class a {
                         if (F < 7) {
                             e = t6.w0(t6.r8[F], p6Var);
                         } else {
-                            lp lpVar = vp.r1(d20.s0).r4;
-                            kp d = lpVar == null ? null : lpVar.d(F);
+                            mp mpVar = wp.r1(e20.s0).r4;
+                            lp d = mpVar == null ? null : mpVar.d(F);
                             e = d != null ? d.e(i13, p6Var) : t6.w0(t6.r8[i13], p6Var);
                         }
                     }
@@ -364,8 +364,8 @@ public final class a {
 
     public final void c(boolean z10) {
         y yVar;
-        jj jjVar = this.T;
-        if (jjVar == null || !jjVar.u3() || (yVar = this.S) == null) {
+        kj kjVar = this.T;
+        if (kjVar == null || !kjVar.u3() || (yVar = this.S) == null) {
             return;
         }
         q1 q1Var = this.c;
@@ -386,7 +386,7 @@ public final class a {
     /* JADX WARN: Type inference failed for: r9v3 */
     /* JADX WARN: Type inference failed for: r9v4, types: [int] */
     /* JADX WARN: Type inference failed for: r9v47 */
-    public final void d(int i10, int i11, jj jjVar) {
+    public final void d(int i10, int i11, kj kjVar) {
         float f7;
         boolean z10;
         float f10;
@@ -403,8 +403,8 @@ public final class a {
         this.l = 0;
         this.m = 0;
         this.n = 0.0f;
-        if (jjVar.u3()) {
-            this.T = jjVar;
+        if (kjVar.u3()) {
+            this.T = kjVar;
             float f11 = 12.0f;
             boolean z12 = true;
             if (this.B == null) {
@@ -473,17 +473,17 @@ public final class a {
                     i12++;
                 }
             }
-            TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) jjVar.k.media;
-            String str2 = d20.i(d20.s0).b0;
+            TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) kjVar.k.media;
+            String str2 = e20.i(e20.s0).b0;
             if (str2 == null) {
-                ui.b0(d20.s0).z();
+                vi.b0(e20.s0).z();
                 f7 = 12.0f;
                 z10 = true;
                 f10 = 18.0f;
             } else {
-                TLRPC.TL_messages_stickerSet p02 = ui.b0(d20.s0).p0(str2);
+                TLRPC.TL_messages_stickerSet p02 = vi.b0(e20.s0).p0(str2);
                 if (p02 == null) {
-                    p02 = ui.b0(d20.s0).n0(str2);
+                    p02 = vi.b0(e20.s0).n0(str2);
                 }
                 if (p02 != null) {
                     String str3 = (String) Y.get(Integer.valueOf(tL_messageMediaGiveaway.months));
@@ -574,17 +574,17 @@ public final class a {
                     document = null;
                 }
                 if (document != null) {
-                    c00 d = v5.d(document.thumbs, t6.c7, 0.2f, z11);
+                    d00 d = v5.d(document.thumbs, t6.c7, 0.2f, z11);
                     if (d != null) {
                         d.e = 512;
                         d.f = 512;
                     }
-                    this.d.q0(ic.b(document), "160_160_firstframe", d, "tgs", p02, 1);
+                    this.d.q0(jc.b(document), "160_160_firstframe", d, "tgs", p02, 1);
                 } else {
-                    ui.b0(d20.s0).c1(str2, false, p02 == null ? z10 : false);
+                    vi.b0(e20.s0).c1(str2, false, p02 == null ? z10 : false);
                 }
             }
-            TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = (TLRPC.TL_messageMediaGiveaway) jjVar.k.media;
+            TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = (TLRPC.TL_messageMediaGiveaway) kjVar.k.media;
             this.U = (tL_messageMediaGiveaway2.flags & 32) != 0 ? z10 : false;
             int size4 = tL_messageMediaGiveaway2.channels.size();
             ImageReceiver[] imageReceiverArr2 = this.a;
@@ -613,51 +613,51 @@ public final class a {
             }
             int L = org.telegram.messenger.i0.L(148.0f);
             int Q0 = org.telegram.messenger.i0.Q1() ? org.telegram.messenger.i0.Q0() - org.telegram.messenger.i0.L(80.0f) : i10 - org.telegram.messenger.i0.L(80.0f);
-            vp r12 = vp.r1(d20.s0);
-            boolean l32 = jj.l3(jjVar.k);
-            TLRPC.Message message = jjVar.k;
-            boolean V = w3.V(r12.L0(Long.valueOf(-jj.C1(l32 ? message.fwd_from.from_id : message.peer_id))));
-            SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(cd.L0(2131753393, null));
+            wp r12 = wp.r1(e20.s0);
+            boolean l32 = kj.l3(kjVar.k);
+            TLRPC.Message message = kjVar.k;
+            boolean V = w3.V(r12.L0(Long.valueOf(-kj.C1(l32 ? message.fwd_from.from_id : message.peer_id))));
+            SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(dd.L0(2131753393, null));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(W2);
             spannableStringBuilder.setSpan(new RelativeSizeSpan(1.05f), 0, W2.length(), 33);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             if (this.U) {
-                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.i0.W2(cd.H(',', "BoostingStarsGiveawayMsgInfoPlural1", (int) tL_messageMediaGiveaway2.stars)));
+                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.i0.W2(dd.H(',', "BoostingStarsGiveawayMsgInfoPlural1", (int) tL_messageMediaGiveaway2.stars)));
                 spannableStringBuilder2.append((CharSequence) "\n");
-                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.i0.W2(cd.G(tL_messageMediaGiveaway2.quantity, "BoostingStarsGiveawayMsgInfoPlural2", new Object[0])));
+                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.i0.W2(dd.G(tL_messageMediaGiveaway2.quantity, "BoostingStarsGiveawayMsgInfoPlural2", new Object[0])));
             } else {
-                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.i0.W2(cd.H(',', "BoostingGiveawayMsgInfoPlural1", tL_messageMediaGiveaway2.quantity)));
+                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.i0.W2(dd.H(',', "BoostingGiveawayMsgInfoPlural1", tL_messageMediaGiveaway2.quantity)));
                 spannableStringBuilder2.append((CharSequence) "\n");
-                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.i0.W2(cd.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgInfoPlural2", cd.G(tL_messageMediaGiveaway2.months, "BoldMonths", new Object[0]))));
+                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.i0.W2(dd.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgInfoPlural2", dd.G(tL_messageMediaGiveaway2.months, "BoldMonths", new Object[0]))));
             }
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
             spannableStringBuilder3.append((CharSequence) spannableStringBuilder2);
             spannableStringBuilder3.append((CharSequence) "\n\n");
             spannableStringBuilder3.setSpan(new RelativeSizeSpan(0.4f), spannableStringBuilder3.length() - 1, spannableStringBuilder3.length(), 33);
-            SpannableStringBuilder W22 = org.telegram.messenger.i0.W2(cd.L0(2131753410, "BoostingGiveawayMsgParticipants"));
+            SpannableStringBuilder W22 = org.telegram.messenger.i0.W2(dd.L0(2131753410, "BoostingGiveawayMsgParticipants"));
             spannableStringBuilder3.append((CharSequence) W22);
             spannableStringBuilder3.setSpan(new RelativeSizeSpan(1.05f), spannableStringBuilder2.length() + 2, W22.length() + spannableStringBuilder2.length() + 2, 33);
             spannableStringBuilder3.append((CharSequence) "\n");
             if (tL_messageMediaGiveaway2.only_new_subscribers) {
-                spannableStringBuilder3.append((CharSequence) cd.G(tL_messageMediaGiveaway2.channels.size(), V ? "BoostingGiveawayMsgNewSubsPlural" : "BoostingGiveawayMsgNewSubsGroupPlural", new Object[0]));
+                spannableStringBuilder3.append((CharSequence) dd.G(tL_messageMediaGiveaway2.channels.size(), V ? "BoostingGiveawayMsgNewSubsPlural" : "BoostingGiveawayMsgNewSubsGroupPlural", new Object[0]));
             } else {
-                spannableStringBuilder3.append((CharSequence) cd.G(tL_messageMediaGiveaway2.channels.size(), V ? "BoostingGiveawayMsgAllSubsPlural" : "BoostingGiveawayMsgAllSubsGroupPlural", new Object[0]));
+                spannableStringBuilder3.append((CharSequence) dd.G(tL_messageMediaGiveaway2.channels.size(), V ? "BoostingGiveawayMsgAllSubsPlural" : "BoostingGiveawayMsgAllSubsGroupPlural", new Object[0]));
             }
-            SpannableStringBuilder W23 = org.telegram.messenger.i0.W2(cd.L0(2131753168, "BoostingWinnersDate"));
+            SpannableStringBuilder W23 = org.telegram.messenger.i0.W2(dd.L0(2131753168, "BoostingWinnersDate"));
             SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(W23);
             spannableStringBuilder4.setSpan(new RelativeSizeSpan(1.05f), 0, W23.length(), 33);
             Date date = new Date(tL_messageMediaGiveaway2.until_date * 1000);
-            String format = cd.D0().r0().format(date);
-            String format2 = cd.D0().o0().format(date);
+            String format = dd.D0().r0().format(date);
+            String format2 = dd.D0().o0().format(date);
             spannableStringBuilder4.append((CharSequence) "\n");
-            spannableStringBuilder4.append((CharSequence) cd.a0("formatDateAtTime", null, 2131742808, format, format2));
+            spannableStringBuilder4.append((CharSequence) dd.a0("formatDateAtTime", null, 2131742808, format, format2));
             TextPaint textPaint2 = this.E;
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float L2 = org.telegram.messenger.i0.L(2.0f);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.w = ov0.c(spannableStringBuilder, textPaint2, Q0, alignment, L2, truncateAt, Q0, 10, true);
-            this.y = ov0.c(spannableStringBuilder3, this.E, Q0, alignment, org.telegram.messenger.i0.L(2.0f), truncateAt, Q0, 10, true);
-            this.z = ov0.c(spannableStringBuilder4, this.E, Q0, alignment, org.telegram.messenger.i0.L(3.0f), truncateAt, Q0, 10, true);
+            this.w = pv0.c(spannableStringBuilder, textPaint2, Q0, alignment, L2, truncateAt, Q0, 10, true);
+            this.y = pv0.c(spannableStringBuilder3, this.E, Q0, alignment, org.telegram.messenger.i0.L(2.0f), truncateAt, Q0, 10, true);
+            this.z = pv0.c(spannableStringBuilder4, this.E, Q0, alignment, org.telegram.messenger.i0.L(3.0f), truncateAt, Q0, 10, true);
             int i17 = 0;
             for (int i18 = 0; i18 < this.w.getLineCount(); i18++) {
                 i17 = (int) Math.max(i17, Math.ceil(this.w.getLineWidth(i18)));
@@ -674,10 +674,10 @@ public final class a {
             int i21 = i17;
             String str4 = tL_messageMediaGiveaway2.prize_description;
             if (str4 != null && !str4.isEmpty()) {
-                StaticLayout c10 = ov0.c(k6.m(org.telegram.messenger.i0.W2(cd.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false, null, 0), this.E, i21, Layout.Alignment.ALIGN_CENTER, org.telegram.messenger.i0.L(2.0f), TextUtils.TruncateAt.END, i21, 20, true);
+                StaticLayout c10 = pv0.c(k6.m(org.telegram.messenger.i0.W2(dd.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false, null, 0), this.E, i21, Layout.Alignment.ALIGN_CENTER, org.telegram.messenger.i0.L(2.0f), TextUtils.TruncateAt.END, i21, 20, true);
                 this.x = c10;
                 this.m = org.telegram.messenger.i0.L(22.0f) + c10.getLineBottom(c10.getLineCount() - 1);
-                String L0 = cd.L0(2131753406, null);
+                String L0 = dd.L0(2131753406, null);
                 this.o = L0;
                 this.n = this.F.measureText(L0, 0, L0.length());
             }
@@ -691,7 +691,7 @@ public final class a {
                     i22++;
                     String str6 = str5;
                     String displayCountry = new Locale("", str6).getDisplayCountry(Locale.getDefault());
-                    String E0 = cd.E0(str6);
+                    String E0 = dd.E0(str6);
                     SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
                     if (E0 != null) {
                         spannableStringBuilder5.append((CharSequence) E0).append((CharSequence) " ");
@@ -700,7 +700,7 @@ public final class a {
                     arrayList5.add(spannableStringBuilder5);
                 }
                 if (!arrayList5.isEmpty()) {
-                    this.A = ov0.c(k6.m(org.telegram.messenger.i0.W2(cd.a0("BoostingGiveAwayFromCountries", null, 2131753493, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false, null, 0), this.H, i21, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i21, 10, true);
+                    this.A = pv0.c(k6.m(org.telegram.messenger.i0.W2(dd.a0("BoostingGiveAwayFromCountries", null, 2131753493, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false, null, 0), this.H, i21, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i21, 10, true);
                 }
             }
             int max = Math.max(i11, Math.min(org.telegram.messenger.i0.L(38.0f) + i21, Q0));
@@ -724,7 +724,7 @@ public final class a {
                 if (this.t == null) {
                     this.t = i0.a.f(w0.b, org.telegram.messenger.beta.R.drawable.filled_giveaway_stars);
                 }
-                this.u = cd.E((int) tL_messageMediaGiveaway2.stars, ',');
+                this.u = dd.E((int) tL_messageMediaGiveaway2.stars, ',');
             } else {
                 this.t = null;
                 this.u = "x" + tL_messageMediaGiveaway2.quantity;
@@ -746,7 +746,7 @@ public final class a {
                 Long l10 = arrayList8.get(i24);
                 i24++;
                 Long l11 = l10;
-                if (vp.r1(d20.s0).L0(l11) != null) {
+                if (wp.r1(e20.s0).L0(l11) != null) {
                     arrayList7.add(l11);
                 }
             }
@@ -754,7 +754,7 @@ public final class a {
             for (int i25 = 0; i25 < arrayList7.size(); i25++) {
                 Long l12 = (Long) arrayList7.get(i25);
                 long longValue2 = l12.longValue();
-                TLRPC.Chat L02 = vp.r1(d20.s0).L0(l12);
+                TLRPC.Chat L02 = wp.r1(e20.s0).L0(l12);
                 if (L02 != null) {
                     this.j[i25] = true;
                     this.f[i25] = L02;

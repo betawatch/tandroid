@@ -13,10 +13,10 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ip;
-import org.telegram.messenger.kc;
-import org.telegram.messenger.mc;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.jp;
+import org.telegram.messenger.lc;
+import org.telegram.messenger.nc;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
@@ -29,21 +29,21 @@ import org.telegram.ui.ActionBar.x1;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.hf;
-import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.ik0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ay;
-import org.telegram.ui.b50;
-import org.telegram.ui.dx0;
-import org.telegram.ui.gc1;
+import org.telegram.ui.a50;
+import org.telegram.ui.cx0;
+import org.telegram.ui.ec1;
+import org.telegram.ui.zx;
 import rh.e4;
 import vh.r6;
 import z9.b1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d0 implements mc, u1, hk0, ip, t5.b, gc1, s5.e, qa.a {
+public final /* synthetic */ class d0 implements nc, u1, ik0, jp, t5.b, ec1, s5.e, qa.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -56,9 +56,9 @@ public final /* synthetic */ class d0 implements mc, u1, hk0, ip, t5.b, gc1, s5.
         this.d = obj2;
     }
 
-    @Override // org.telegram.messenger.ip
+    @Override // org.telegram.messenger.jp
     public void a(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        org.telegram.messenger.i0.g3(new hf((dx0) this.c, this.b, tL_chatAdminRights, str, z10, (ay) this.d));
+        org.telegram.messenger.i0.g3(new hf((cx0) this.c, this.b, tL_chatAdminRights, str, z10, (zx) this.d));
     }
 
     @Override // s5.e
@@ -87,9 +87,9 @@ public final /* synthetic */ class d0 implements mc, u1, hk0, ip, t5.b, gc1, s5.
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public void b(float f7, float f10, int i10, View view) {
-        ProfileActivity.j0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
+        ProfileActivity.k0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
     }
 
     @Override // t5.b
@@ -113,15 +113,15 @@ public final /* synthetic */ class d0 implements mc, u1, hk0, ip, t5.b, gc1, s5.
                 if (!dVar.Q) {
                     dVar.setLoading(true);
                     TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
-                    getgroupcallstreamrtmpurl.peer = vp.r1(crVar.a).i1(this.b);
+                    getgroupcallstreamrtmpurl.peer = wp.r1(crVar.a).i1(this.b);
                     getgroupcallstreamrtmpurl.revoke = true;
                     ConnectionsManager.getInstance(crVar.a).sendRequest(getgroupcallstreamrtmpurl, new zq(crVar, dVar, 0));
                     break;
                 }
                 break;
             case 3:
-                b50 b50Var = (b50) this.c;
-                vp.r1(b50Var.k1.a).n(b50Var.k1(), (TLRPC.User) this.d, null, (k2) b50Var.Z1.M().getFragmentStack().get(b50Var.Z1.M().getFragmentStack().size() - 1), new bi.e(b50Var, this.b, 15));
+                a50 a50Var = (a50) this.c;
+                wp.r1(a50Var.k1.a).n(a50Var.k1(), (TLRPC.User) this.d, null, (k2) a50Var.Z1.M().getFragmentStack().get(a50Var.Z1.M().getFragmentStack().size() - 1), new bi.e(a50Var, this.b, 15));
                 break;
             case 8:
                 e4 e4Var = (e4) this.c;
@@ -152,7 +152,7 @@ public final /* synthetic */ class d0 implements mc, u1, hk0, ip, t5.b, gc1, s5.
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ boolean h1(View view) {
         return false;
     }
@@ -162,17 +162,17 @@ public final /* synthetic */ class d0 implements mc, u1, hk0, ip, t5.b, gc1, s5.
         ((u9.a) bVar.get()).d((String) this.c, this.b, (b1) this.d);
     }
 
-    @Override // org.telegram.ui.gc1
+    @Override // org.telegram.ui.ec1
     public void m(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((rh.i) this.c).t0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
+        ((rh.i) this.c).u0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
 
-    @Override // org.telegram.messenger.mc
-    public void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    @Override // org.telegram.messenger.nc
+    public void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         ResultCallback resultCallback = (ResultCallback) this.c;
         long j10 = this.b;
         File file = (File) this.d;
-        kc p5 = imageReceiver.p();
+        lc p5 = imageReceiver.p();
         if (!z10 || p5 == null || p5.c.isRecycled()) {
             return;
         }
@@ -200,15 +200,15 @@ public final /* synthetic */ class d0 implements mc, u1, hk0, ip, t5.b, gc1, s5.
         this.b = j10;
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public /* synthetic */ void j(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.mc
-    public /* synthetic */ void q(int i10, Drawable drawable) {
+    @Override // org.telegram.messenger.nc
+    public /* synthetic */ void s(int i10, Drawable drawable) {
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

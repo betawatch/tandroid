@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f3 implements q0.a {
     public final /* synthetic */ int a;
@@ -36,12 +36,12 @@ public final /* synthetic */ class f3 implements q0.a {
                 }
                 break;
             case 1:
-                ((org.telegram.ui.Components.vi0) obj2).h((List) obj);
+                ((org.telegram.ui.Components.wi0) obj2).h((List) obj);
                 break;
             case 2:
                 TLRPC.User user = (TLRPC.User) obj;
                 pr prVar = ((gr) obj2).b;
-                jr A0 = prVar.A0();
+                jr B0 = prVar.B0();
                 ArrayList arrayList = prVar.E;
                 a0.h hVar = prVar.L;
                 ArrayList arrayList2 = (hVar == null || hVar.m() == 0) ? arrayList : prVar.G;
@@ -69,22 +69,22 @@ public final /* synthetic */ class f3 implements q0.a {
                 if (arrayList2 == arrayList) {
                     Collections.sort(arrayList, new f6(6));
                 }
-                prVar.E0(A0);
+                prVar.F0(B0);
                 break;
             case 3:
                 s3 s3Var = (s3) obj2;
                 int i11 = ((c5.g) obj).a;
-                org.telegram.messenger.i0.g3(new f70(27, s3Var, i11 == 0 ? null : org.telegram.messenger.u1.j(i11)));
+                org.telegram.messenger.i0.g3(new y60(28, s3Var, i11 == 0 ? null : org.telegram.messenger.u1.j(i11)));
                 break;
             case 4:
-                ch0 ch0Var = (ch0) obj2;
+                ah0 ah0Var = (ah0) obj2;
                 if (((c5.g) obj).a == 0) {
-                    org.telegram.messenger.i0.g3(ch0Var);
+                    org.telegram.messenger.i0.g3(ah0Var);
                     break;
                 }
                 break;
             case 5:
-                RectF rectF = ProfileActivity.R6;
+                RectF rectF = ProfileActivity.S6;
                 ((ArrayList) obj2).add((TLRPC.User) obj);
                 break;
             case 6:
@@ -93,17 +93,17 @@ public final /* synthetic */ class f3 implements q0.a {
                 for (int i12 = 0; i12 < profileActivity.t2.participants.participants.size(); i12++) {
                     if (profileActivity.t2.participants.participants.get(i12).user_id == user2.id) {
                         profileActivity.t2.participants.participants.remove(i12);
-                        profileActivity.C5(true, false);
+                        profileActivity.D5(true, false);
                         break;
                     }
                 }
                 break;
             default:
                 View view = ((ProxyListActivity) obj2).b.T((View) obj).a;
-                if (view instanceof cz0) {
-                    cz0 cz0Var = (cz0) view;
-                    cz0Var.setChecked(cz0Var.d == org.telegram.messenger.tz.B1);
-                    cz0Var.b();
+                if (view instanceof bz0) {
+                    bz0 bz0Var = (bz0) view;
+                    bz0Var.setChecked(bz0Var.d == org.telegram.messenger.uz.B1);
+                    bz0Var.b();
                     break;
                 }
                 break;

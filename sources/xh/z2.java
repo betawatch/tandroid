@@ -13,16 +13,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.k6;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
@@ -31,23 +31,23 @@ import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.w6;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.bn;
-import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.p51;
 import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.x41;
-import org.telegram.ui.Components.yy0;
+import org.telegram.ui.Components.y41;
 import org.telegram.ui.Components.z60;
+import org.telegram.ui.Components.zy0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.w5;
-import org.telegram.ui.p10;
-import org.telegram.ui.px0;
+import org.telegram.ui.o10;
+import org.telegram.ui.ox0;
 import org.telegram.ui.vf;
 import rh.h5;
 import rh.h8;
@@ -55,9 +55,9 @@ import rh.l5;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class z2 extends p10 implements us {
+public final class z2 extends o10 implements vs {
     public final long R;
     public FrameLayout S;
     public lg.q T;
@@ -70,37 +70,49 @@ public final class z2 extends p10 implements us {
         this.L = org.telegram.messenger.i0.L(60.0f);
     }
 
-    public static void A0(z2 z2Var, TL_payments.connectedBotStarRef connectedbotstarref) {
+    public static void A0(z2 z2Var, Context context, TLRPC.User user, TL_payments.connectedBotStarRef connectedbotstarref) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, z2Var.resourceProvider);
+        String L0 = dd.L0(2131749017, null);
+        org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
+        x1Var.R = L0;
+        x1Var.T = org.telegram.messenger.i0.W2(dd.a0(null, null, 2131749016, i20.p(user)));
+        alertDialog$Builder.k(dd.L0(2131749015, null), new org.telegram.ui.web.k0(27, z2Var, connectedbotstarref));
+        alertDialog$Builder.h(dd.L0(2131752589, null), null);
+        alertDialog$Builder.d(-1);
+        alertDialog$Builder.p();
+    }
+
+    public static void B0(z2 z2Var, TL_payments.connectedBotStarRef connectedbotstarref) {
         org.telegram.ui.ActionBar.x1 x1Var = new org.telegram.ui.ActionBar.x1(3, z2Var.getParentActivity(), null);
         x1Var.r(200L);
         TL_payments.editConnectedStarRefBot editconnectedstarrefbot = new TL_payments.editConnectedStarRefBot();
         editconnectedstarrefbot.link = connectedbotstarref.url;
-        editconnectedstarrefbot.peer = vp.r1(z2Var.currentAccount).i1(z2Var.R);
+        editconnectedstarrefbot.peer = wp.r1(z2Var.currentAccount).i1(z2Var.R);
         editconnectedstarrefbot.revoked = true;
         z2Var.getConnectionsManager().sendRequest(editconnectedstarrefbot, new h5(10, z2Var, x1Var));
     }
 
-    public static /* synthetic */ void B0(z2 z2Var, Context context, int i10) {
+    public static /* synthetic */ void C0(z2 z2Var, Context context, int i10) {
         ph.o3 o3Var = z2Var.V;
         if (o3Var == null) {
             return;
         }
         Object obj = o3Var.G(i10).G;
         if (obj instanceof TL_payments.starRefProgram) {
-            I0(context, z2Var.currentAccount, (TL_payments.starRefProgram) obj, z2Var.R, z2Var.resourceProvider, false);
+            J0(context, z2Var.currentAccount, (TL_payments.starRefProgram) obj, z2Var.R, z2Var.resourceProvider, false);
         } else if (obj instanceof TL_payments.connectedBotStarRef) {
-            J0(context, z2Var.currentAccount, (TL_payments.connectedBotStarRef) obj, z2Var.R, z2Var.resourceProvider);
+            K0(context, z2Var.currentAccount, (TL_payments.connectedBotStarRef) obj, z2Var.R, z2Var.resourceProvider);
         }
     }
 
-    public static void C0(z2 z2Var, TLObject tLObject, org.telegram.ui.ActionBar.x1 x1Var) {
+    public static void D0(z2 z2Var, TLObject tLObject, org.telegram.ui.ActionBar.x1 x1Var) {
         long j10 = z2Var.R;
         if (tLObject instanceof TL_payments.connectedStarRefBots) {
             TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-            rh.n d = rh.r.g(z2Var.currentAccount).d(j10);
+            rh.o d = rh.r.g(z2Var.currentAccount).d(j10);
             ArrayList arrayList = d.e;
             int i10 = d.a;
-            vp.r1(i10).V3(connectedstarrefbots.users, false);
+            wp.r1(i10).V3(connectedstarrefbots.users, false);
             for (int i11 = 0; i11 < connectedstarrefbots.connected_bots.size(); i11++) {
                 TL_payments.connectedBotStarRef connectedbotstarref = connectedstarrefbots.connected_bots.get(i11);
                 int i12 = 0;
@@ -118,7 +130,7 @@ public final class z2 extends p10 implements us {
                     }
                 }
             }
-            zs.f(i10).k(zs.L3, Long.valueOf(d.b));
+            at.f(i10).k(at.L3, Long.valueOf(d.b));
             d.a();
             rh.p e = rh.r.g(z2Var.currentAccount).e(j10);
             e.c = 0;
@@ -133,18 +145,18 @@ public final class z2 extends p10 implements us {
         x1Var.dismiss();
     }
 
-    public static boolean D0(z2 z2Var, Context context, View view, int i10) {
+    public static boolean E0(z2 z2Var, Context context, View view, int i10) {
         ph.o3 o3Var = z2Var.V;
         if (o3Var != null) {
             Object obj = o3Var.G(i10).G;
             if (obj instanceof TL_payments.connectedBotStarRef) {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
-                TLRPC.User Z1 = vp.r1(z2Var.currentAccount).Z1(Long.valueOf(connectedbotstarref.bot_id));
+                TLRPC.User Z1 = wp.r1(z2Var.currentAccount).Z1(Long.valueOf(connectedbotstarref.bot_id));
                 z60 H = z60.H(z2Var, view);
-                H.l(R.drawable.msg_bot, cd.L0(2131746723, null), new vh.d1(26, z2Var, Z1), Z1.bot_has_main_app);
-                H.l(R.drawable.msg_bot, cd.L0(2131752912, null), new vh.d1(27, z2Var, connectedbotstarref), !Z1.bot_has_main_app);
-                H.c(R.drawable.msg_link2, cd.L0(2131751762, null), new l5(z2Var, connectedbotstarref, Z1, 25), false);
-                H.m(R.drawable.msg_leave, new p2(z2Var, context, Z1, connectedbotstarref, 0), cd.L0(2131749015, null), !connectedbotstarref.revoked, true);
+                H.l(R.drawable.msg_bot, dd.L0(2131746723, null), new vh.r0(27, z2Var, Z1), Z1.bot_has_main_app);
+                H.l(R.drawable.msg_bot, dd.L0(2131752912, null), new vh.r0(28, z2Var, connectedbotstarref), !Z1.bot_has_main_app);
+                H.c(R.drawable.msg_link2, dd.L0(2131751762, null), new l5(z2Var, connectedbotstarref, Z1, 25), false);
+                H.m(R.drawable.msg_leave, new p2(z2Var, context, Z1, connectedbotstarref, 0), dd.L0(2131749015, null), !connectedbotstarref.revoked, true);
                 H.V(5);
                 H.Z();
                 return true;
@@ -162,7 +174,7 @@ public final class z2 extends p10 implements us {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void I0(Context context, int i10, final TL_payments.starRefProgram starrefprogram, long j10, p6 p6Var, boolean z10) {
+    public static void J0(Context context, int i10, final TL_payments.starRefProgram starrefprogram, long j10, p6 p6Var, boolean z10) {
         long[] jArr;
         String str;
         ?? r15;
@@ -175,7 +187,7 @@ public final class z2 extends p10 implements us {
         }
         final org.telegram.ui.ActionBar.z2 k10 = m5.k(1, context, p6Var, false);
         long[] jArr2 = {j10};
-        TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(starrefprogram.bot_id));
+        TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(starrefprogram.bot_id));
         LinearLayout f7 = m5.f(context, 1);
         f7.setPadding(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(20.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(8.0f));
         f7.setClipChildren(false);
@@ -193,7 +205,7 @@ public final class z2 extends p10 implements us {
         r8Var.r(Z1);
         g9Var2.e(Z1, r8Var);
         e6.a(g9Var2);
-        frameLayout2.addView(g9Var2, b6.e(60, 60, zs.E1));
+        frameLayout2.addView(g9Var2, b6.e(60, 60, at.E1));
         if (starrefprogram.daily_revenue_per_user.positive()) {
             FrameLayout frameLayout3 = new FrameLayout(context);
             int L = org.telegram.messenger.i0.L(10.0f);
@@ -217,14 +229,14 @@ public final class z2 extends p10 implements us {
             textView2.setGravity(17);
             StringBuilder sb2 = new StringBuilder("⭐️ ");
             jArr = jArr2;
-            sb2.append((Object) h8.M0(starrefprogram.daily_revenue_per_user, 1.0f, ','));
-            textView2.setText(h8.T0(sb2.toString(), 0.75f, new dq[1]));
+            sb2.append((Object) h8.N0(starrefprogram.daily_revenue_per_user, 1.0f, ','));
+            textView2.setText(h8.U0(sb2.toString(), 0.75f, new dq[1]));
             frameLayout3.addView(textView2, b6.c(15.66f, -2));
             frameLayout2.addView(frameLayout3, b6.d(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, -4.0f));
         } else {
             jArr = jArr2;
         }
-        ImageView e = z20.e(context, R.drawable.msg_arrow_avatar);
+        ImageView e = a30.e(context, R.drawable.msg_arrow_avatar);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         e.setScaleType(scaleType);
         e.setTranslationX(-org.telegram.messenger.i0.L(2.0825f));
@@ -238,7 +250,7 @@ public final class z2 extends p10 implements us {
         frameLayout.addView(frameLayout4, b6.d(60, 60.0f, 21, 0.0f, 0.0f, 5.66f, 0.0f));
         g9 g9Var3 = new g9(context);
         g9Var3.setRoundRadius(org.telegram.messenger.i0.L(30.0f));
-        frameLayout4.addView(g9Var3, b6.e(60, 60, zs.E1));
+        frameLayout4.addView(g9Var3, b6.e(60, 60, at.E1));
         FrameLayout frameLayout5 = new FrameLayout(context);
         int L3 = org.telegram.messenger.i0.L(10.0f);
         int i14 = t6.h5;
@@ -259,7 +271,7 @@ public final class z2 extends p10 implements us {
         textView3.setPadding(org.telegram.messenger.i0.L(5.33f), 0, org.telegram.messenger.i0.L(5.33f), 0);
         textView3.setTextColor(-1);
         textView3.setGravity(17);
-        SpannableString spannableString = new SpannableString("s " + ((Object) i.I0(starrefprogram.commission_permille)));
+        SpannableString spannableString = new SpannableString("s " + ((Object) i.J0(starrefprogram.commission_permille)));
         dq dqVar = new dq(R.drawable.msg_link_1, 0);
         dqVar.H = 0.65f;
         dqVar.I = 0.65f;
@@ -278,7 +290,7 @@ public final class z2 extends p10 implements us {
         a7.V(textView4, i16, p6Var);
         textView4.setTextSize(1, 20.0f);
         textView4.setGravity(17);
-        textView4.setText(cd.L0(2131752494, null));
+        textView4.setText(dd.L0(2131752494, null));
         textView4.setTypeface(org.telegram.messenger.i0.o());
         f7.addView(textView4, b6.k(0.0f, 21.0f, 0.0f, 9.0f, -1, -2));
         LinearLayout linearLayout2 = new LinearLayout(context);
@@ -292,7 +304,7 @@ public final class z2 extends p10 implements us {
         TextView textView5 = new TextView(context);
         textView5.setTextSize(1, 13.0f);
         a7.V(textView5, i16, p6Var);
-        textView5.setText(cd.a0(null, null, 2131752493, o5.l(i10, starrefprogram.bot_id)));
+        textView5.setText(dd.a0(null, null, 2131752493, o5.l(i10, starrefprogram.bot_id)));
         linearLayout2.addView(textView5, b6.t(-2, -2, 16, 11, 0, 0, 0));
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(scaleType);
@@ -308,30 +320,30 @@ public final class z2 extends p10 implements us {
         a7.V(textView6, i16, p6Var);
         textView6.setTextSize(1, 14.0f);
         textView6.setGravity(17);
-        zs.i(textView6);
-        SpannableString spannableString2 = new SpannableString(h8.M0(starrefprogram.daily_revenue_per_user, 0.95f, ','));
-        spannableString2.setSpan(new x41(org.telegram.messenger.i0.o()), 0, spannableString2.length(), 33);
-        textView6.setText(h8.Z0(false, cd.V(null, null, 2131752503, spannableString2), 0.725f, null));
-        TextView f10 = z20.f(f7, textView6, b6.k(0.0f, 10.0f, 0.0f, 20.0f, -1, -2), context);
+        at.i(textView6);
+        SpannableString spannableString2 = new SpannableString(h8.N0(starrefprogram.daily_revenue_per_user, 0.95f, ','));
+        spannableString2.setSpan(new y41(org.telegram.messenger.i0.o()), 0, spannableString2.length(), 33);
+        textView6.setText(h8.a1(false, dd.V(null, null, 2131752503, spannableString2), 0.725f, null));
+        TextView f10 = a30.f(f7, textView6, b6.k(0.0f, 10.0f, 0.0f, 20.0f, -1, -2), context);
         a7.V(f10, i16, p6Var);
         f10.setTextSize(1, 14.0f);
         f10.setGravity(17);
-        zs.i(f10);
-        String p5 = h20.p(Z1);
-        String I0 = i.I0(starrefprogram.commission_permille);
+        at.i(f10);
+        String p5 = i20.p(Z1);
+        String J0 = i.J0(starrefprogram.commission_permille);
         int i19 = starrefprogram.duration_months;
         if (i19 <= 0) {
-            G = cd.L0(2131752501, null);
+            G = dd.L0(2131752501, null);
         } else {
             if (i19 < 12 || i19 % 12 != 0) {
                 str = p5;
                 r15 = 0;
-                G = cd.G(i19, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
+                G = dd.G(i19, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
                 Object[] objArr = new Object[3];
                 objArr[r15] = str;
-                objArr[1] = I0;
+                objArr[1] = J0;
                 objArr[2] = G;
-                f10.setText(k6.m(org.telegram.messenger.i0.W2(cd.a0(null, null, 2131752502, objArr)), f10.getPaint().getFontMetricsInt(), r15, null, r15));
+                f10.setText(k6.m(org.telegram.messenger.i0.W2(dd.a0(null, null, 2131752502, objArr)), f10.getPaint().getFontMetricsInt(), r15, null, r15));
                 f7.addView(f10, b6.k(0.0f, 0.0f, 0.0f, 22.0f, -1, -2));
                 if (j10 < 0) {
                     TextView textView7 = new TextView(context);
@@ -377,10 +389,10 @@ public final class z2 extends p10 implements us {
                     linearLayout = null;
                 }
                 vh.d dVar = new vh.d(context, p6Var, true);
-                dVar.i(cd.L0(2131752508, null), false, true);
+                dVar.i(dd.L0(2131752508, null), false, true);
                 f7.addView(dVar, b6.o(-1, 48));
                 p80 p80Var = new p80(context, p6Var);
-                p80Var.setText(org.telegram.messenger.i0.T2(cd.L0(2131752507, null), new ph.p0(context, 12)));
+                p80Var.setText(org.telegram.messenger.i0.T2(dd.L0(2131752507, null), new ph.p0(context, 12)));
                 p80Var.setGravity(17);
                 p80Var.setTextSize(1, 12.0f);
                 a7.V(p80Var, t6.B6, p6Var);
@@ -407,14 +419,14 @@ public final class z2 extends p10 implements us {
                                 org.telegram.ui.ActionBar.k2 T2 = LaunchActivity.T();
                                 if (T2 != null) {
                                     k10.dismiss();
-                                    T2.presentFragment(ProfileActivity.z4(starrefprogram.bot_id));
+                                    T2.presentFragment(ProfileActivity.A4(starrefprogram.bot_id));
                                     break;
                                 }
                                 break;
                         }
                     }
                 });
-                dVar.setOnClickListener(new yy0(dVar, jArr, i10, starrefprogram, k10, j10, z10, context, p6Var, Z1));
+                dVar.setOnClickListener(new zy0(dVar, jArr, i10, starrefprogram, k10, j10, z10, context, p6Var, Z1));
                 k10.setOnDismissListener(new jg.z(6));
                 i2.g1 g1Var = new i2.g1(jArr, i10, g9Var3, g9Var, textView, 22);
                 g1Var.run();
@@ -444,7 +456,7 @@ public final class z2 extends p10 implements us {
                                 org.telegram.ui.ActionBar.k2 T2 = LaunchActivity.T();
                                 if (T2 != null) {
                                     k10.dismiss();
-                                    T2.presentFragment(ProfileActivity.z4(starrefprogram.bot_id));
+                                    T2.presentFragment(ProfileActivity.A4(starrefprogram.bot_id));
                                     break;
                                 }
                                 break;
@@ -454,23 +466,23 @@ public final class z2 extends p10 implements us {
                 k10.Q(i14);
                 k10.show();
             }
-            G = cd.G(i19 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
+            G = dd.G(i19 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
         }
         str = p5;
         r15 = 0;
         Object[] objArr2 = new Object[3];
         objArr2[r15] = str;
-        objArr2[1] = I0;
+        objArr2[1] = J0;
         objArr2[2] = G;
-        f10.setText(k6.m(org.telegram.messenger.i0.W2(cd.a0(null, null, 2131752502, objArr2)), f10.getPaint().getFontMetricsInt(), r15, null, r15));
+        f10.setText(k6.m(org.telegram.messenger.i0.W2(dd.a0(null, null, 2131752502, objArr2)), f10.getPaint().getFontMetricsInt(), r15, null, r15));
         f7.addView(f10, b6.k(0.0f, 0.0f, 0.0f, 22.0f, -1, -2));
         if (j10 < 0) {
         }
         vh.d dVar2 = new vh.d(context, p6Var, true);
-        dVar2.i(cd.L0(2131752508, null), false, true);
+        dVar2.i(dd.L0(2131752508, null), false, true);
         f7.addView(dVar2, b6.o(-1, 48));
         p80 p80Var2 = new p80(context, p6Var);
-        p80Var2.setText(org.telegram.messenger.i0.T2(cd.L0(2131752507, null), new ph.p0(context, 12)));
+        p80Var2.setText(org.telegram.messenger.i0.T2(dd.L0(2131752507, null), new ph.p0(context, 12)));
         p80Var2.setGravity(17);
         p80Var2.setTextSize(1, 12.0f);
         a7.V(p80Var2, t6.B6, p6Var);
@@ -497,14 +509,14 @@ public final class z2 extends p10 implements us {
                         org.telegram.ui.ActionBar.k2 T2 = LaunchActivity.T();
                         if (T2 != null) {
                             k10.dismiss();
-                            T2.presentFragment(ProfileActivity.z4(starrefprogram.bot_id));
+                            T2.presentFragment(ProfileActivity.A4(starrefprogram.bot_id));
                             break;
                         }
                         break;
                 }
             }
         });
-        dVar2.setOnClickListener(new yy0(dVar2, jArr, i10, starrefprogram, k10, j10, z10, context, p6Var, Z1));
+        dVar2.setOnClickListener(new zy0(dVar2, jArr, i10, starrefprogram, k10, j10, z10, context, p6Var, Z1));
         k10.setOnDismissListener(new jg.z(6));
         i2.g1 g1Var2 = new i2.g1(jArr, i10, g9Var3, g9Var, textView, 22);
         g1Var2.run();
@@ -530,7 +542,7 @@ public final class z2 extends p10 implements us {
                         org.telegram.ui.ActionBar.k2 T2 = LaunchActivity.T();
                         if (T2 != null) {
                             k10.dismiss();
-                            T2.presentFragment(ProfileActivity.z4(starrefprogram.bot_id));
+                            T2.presentFragment(ProfileActivity.A4(starrefprogram.bot_id));
                             break;
                         }
                         break;
@@ -541,7 +553,7 @@ public final class z2 extends p10 implements us {
         k10.show();
     }
 
-    public static org.telegram.ui.ActionBar.z2 J0(Context context, int i10, TL_payments.connectedBotStarRef connectedbotstarref, long j10, p6 p6Var) {
+    public static org.telegram.ui.ActionBar.z2 K0(Context context, int i10, TL_payments.connectedBotStarRef connectedbotstarref, long j10, p6 p6Var) {
         ImageView.ScaleType scaleType;
         LinearLayout linearLayout;
         int i11;
@@ -557,7 +569,7 @@ public final class z2 extends p10 implements us {
             return null;
         }
         org.telegram.ui.ActionBar.z2 k10 = m5.k(1, context, p6Var, false);
-        TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(connectedbotstarref.bot_id));
+        TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(connectedbotstarref.bot_id));
         LinearLayout f7 = m5.f(context, 1);
         f7.setPadding(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(20.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(8.0f));
         f7.setClipChildren(false);
@@ -609,7 +621,7 @@ public final class z2 extends p10 implements us {
             spannableStringBuilder.append((CharSequence) String.valueOf(connectedbotstarref.participants));
             textView.setText(spannableStringBuilder);
             textView.setGravity(17);
-            frameLayout2.addView(textView, b6.d(-1, 19.0f, zs.E1, 1.33f, 1.33f, 1.33f, 1.33f));
+            frameLayout2.addView(textView, b6.d(-1, 19.0f, at.E1, 1.33f, 1.33f, 1.33f, 1.33f));
         } else {
             scaleType = scaleType2;
         }
@@ -619,7 +631,7 @@ public final class z2 extends p10 implements us {
         a7.V(textView2, i14, p6Var);
         textView2.setTextSize(1, 20.0f);
         textView2.setGravity(17);
-        textView2.setText(cd.L0(2131752482, null));
+        textView2.setText(dd.L0(2131752482, null));
         textView2.setTypeface(org.telegram.messenger.i0.o());
         f7.addView(textView2, b6.k(20.0f, 16.0f, 20.0f, 9.33f, -1, -2));
         LinearLayout linearLayout3 = new LinearLayout(context);
@@ -658,51 +670,51 @@ public final class z2 extends p10 implements us {
         textView4.setTextSize(1, 14.0f);
         textView4.setGravity(17);
         if (connectedbotstarref.revoked) {
-            textView4.setText(org.telegram.messenger.i0.W2(cd.L0(2131752484, null)));
+            textView4.setText(org.telegram.messenger.i0.W2(dd.L0(2131752484, null)));
             i11 = i16;
             z2Var = k10;
             linearLayout = linearLayout3;
         } else {
             linearLayout = linearLayout3;
             if (j10 < 0) {
-                String I0 = i.I0(connectedbotstarref.commission_permille);
-                String p5 = h20.p(Z1);
+                String J0 = i.J0(connectedbotstarref.commission_permille);
+                String p5 = i20.p(Z1);
                 int i17 = connectedbotstarref.duration_months;
                 i11 = i16;
                 z2Var = k10;
                 if (i17 <= 0) {
-                    G2 = cd.L0(2131752501, null);
+                    G2 = dd.L0(2131752501, null);
                     c11 = 0;
                 } else if (i17 < 12 || i17 % 12 != 0) {
                     c11 = 0;
-                    G2 = cd.G(i17, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
+                    G2 = dd.G(i17, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
                 } else {
                     c11 = 0;
-                    G2 = cd.G(i17 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
+                    G2 = dd.G(i17 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
                 }
                 Object[] objArr = new Object[3];
-                objArr[c11] = I0;
+                objArr[c11] = J0;
                 objArr[1] = p5;
                 objArr[2] = G2;
                 m5.q(null, null, 2131752485, objArr, textView4);
             } else {
                 i11 = i16;
                 z2Var = k10;
-                String I02 = i.I0(connectedbotstarref.commission_permille);
-                String p9 = h20.p(Z1);
+                String J02 = i.J0(connectedbotstarref.commission_permille);
+                String p9 = i20.p(Z1);
                 int i18 = connectedbotstarref.duration_months;
                 if (i18 <= 0) {
-                    G = cd.L0(2131752501, null);
+                    G = dd.L0(2131752501, null);
                     c10 = 0;
                 } else if (i18 < 12 || i18 % 12 != 0) {
                     c10 = 0;
-                    G = cd.G(i18, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
+                    G = dd.G(i18, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
                 } else {
                     c10 = 0;
-                    G = cd.G(i18 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
+                    G = dd.G(i18 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
                 }
                 Object[] objArr2 = new Object[3];
-                objArr2[c10] = I02;
+                objArr2[c10] = J02;
                 objArr2[1] = p9;
                 objArr2[2] = G;
                 m5.q(null, null, 2131752483, objArr2, textView4);
@@ -732,14 +744,14 @@ public final class z2 extends p10 implements us {
             textView6.setTextSize(1, 13.0f);
             a7.V(textView6, i14, p6Var);
             if (j10 >= 0) {
-                TLRPC.User Z12 = vp.r1(i10).Z1(Long.valueOf(j10));
+                TLRPC.User Z12 = wp.r1(i10).Z1(Long.valueOf(j10));
                 r8Var2.r(Z12);
                 g9Var2.e(Z12, r8Var2);
-                textView6.setText(h20.p(Z12));
+                textView6.setText(i20.p(Z12));
                 i12 = i15;
             } else {
                 i12 = i15;
-                TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-j10));
+                TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-j10));
                 r8Var2.q(L0);
                 g9Var2.e(L0, r8Var2);
                 textView6.setText(L0 == null ? "" : L0.title);
@@ -774,18 +786,18 @@ public final class z2 extends p10 implements us {
         f7.addView(textView7, b6.d(-1, -2.0f, 7, 0.0f, 0.0f, 0.0f, 12.0f));
         vh.d dVar = new vh.d(context, p6Var, true);
         if (connectedbotstarref.revoked) {
-            dVar.i(cd.L0(2131752487, null), false, true);
+            dVar.i(dd.L0(2131752487, null), false, true);
         } else {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             spannableStringBuilder2.append((CharSequence) "c ");
             spannableStringBuilder2.setSpan(new dq(R.drawable.msg_copy_filled, 0), 0, 1, 33);
-            spannableStringBuilder2.append((CharSequence) cd.L0(2131752492, null));
+            spannableStringBuilder2.append((CharSequence) dd.L0(2131752492, null));
             dVar.i(spannableStringBuilder2, false, true);
         }
         f7.addView(dVar, b6.o(-1, 48));
         p80 p80Var = new p80(context, p6Var);
         long j11 = connectedbotstarref.participants;
-        p80Var.setText(j11 <= 0 ? cd.a0(null, null, 2131752490, h20.p(Z1)) : cd.G((int) j11, "ChannelAffiliateProgramLinkOpened", h20.p(Z1)));
+        p80Var.setText(j11 <= 0 ? dd.a0(null, null, 2131752490, i20.p(Z1)) : dd.G((int) j11, "ChannelAffiliateProgramLinkOpened", i20.p(Z1)));
         p80Var.setGravity(17);
         p80Var.setTextSize(1, 12.0f);
         a7.V(p80Var, t6.B6, p6Var);
@@ -793,11 +805,11 @@ public final class z2 extends p10 implements us {
         f7.addView(p80Var, b6.t(-1, -2, 49, 14, 12, 14, 2));
         org.telegram.ui.ActionBar.z2 z2Var2 = z2Var;
         z2Var2.N = f7;
-        px0 px0Var = new px0(connectedbotstarref, z2Var2, p6Var, Z1, 29);
+        ox0 ox0Var = new ox0(connectedbotstarref, z2Var2, p6Var, Z1, 29);
         if (!connectedbotstarref.revoked) {
-            textView7.setOnClickListener(new rh.s(px0Var, 26));
+            textView7.setOnClickListener(new rh.s(ox0Var, 26));
         }
-        s2 s2Var = new s2(connectedbotstarref, i10, z2Var2, context, j10, p6Var, px0Var);
+        s2 s2Var = new s2(connectedbotstarref, i10, z2Var2, context, j10, p6Var, ox0Var);
         org.telegram.ui.ActionBar.z2 z2Var3 = z2Var2;
         dVar.setOnClickListener(s2Var);
         z2Var3.setOnDismissListener(new jg.z(6));
@@ -822,92 +834,80 @@ public final class z2 extends p10 implements us {
         return z2Var3;
     }
 
-    public static void z0(z2 z2Var, Context context, TLRPC.User user, TL_payments.connectedBotStarRef connectedbotstarref) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, z2Var.resourceProvider);
-        String L0 = cd.L0(2131749017, null);
-        org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-        x1Var.R = L0;
-        x1Var.T = org.telegram.messenger.i0.W2(cd.a0(null, null, 2131749016, h20.p(user)));
-        alertDialog$Builder.k(cd.L0(2131749015, null), new org.telegram.ui.web.k0(27, z2Var, connectedbotstarref));
-        alertDialog$Builder.h(cd.L0(2131752589, null), null);
-        alertDialog$Builder.d(-1);
-        alertDialog$Builder.p();
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:22:0x01c2 A[LOOP:0: B:20:0x01bc->B:22:0x01c2, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void H0(ArrayList arrayList, p51 p51Var) {
+    public final void I0(ArrayList arrayList, q51 q51Var) {
         int i10;
         SpannableString spannableString;
         int i11;
         if (getParentActivity() == null) {
             return;
         }
-        bi.t0 t0Var = (bi.t0) n0(getParentActivity());
-        a51 a51Var = new a51(-2);
-        a51Var.c = t0Var;
-        arrayList.add(a51Var);
-        arrayList.add(g.i(R.drawable.menu_feature_reliable, cd.L0(2131752513, null), cd.L0(2131752514, null)));
-        arrayList.add(g.i(R.drawable.menu_feature_transparent, cd.L0(2131752511, null), cd.L0(2131752512, null)));
-        arrayList.add(g.i(R.drawable.menu_feature_simple, cd.L0(2131752509, null), cd.L0(2131752510, null)));
-        arrayList.add(a51.B(1, null));
+        bi.t0 t0Var = (bi.t0) o0(getParentActivity());
+        b51 b51Var = new b51(-2);
+        b51Var.c = t0Var;
+        arrayList.add(b51Var);
+        arrayList.add(g.i(R.drawable.menu_feature_reliable, dd.L0(2131752513, null), dd.L0(2131752514, null)));
+        arrayList.add(g.i(R.drawable.menu_feature_transparent, dd.L0(2131752511, null), dd.L0(2131752512, null)));
+        arrayList.add(g.i(R.drawable.menu_feature_simple, dd.L0(2131752509, null), dd.L0(2131752510, null)));
+        arrayList.add(b51.B(1, null));
         rh.r g10 = rh.r.g(this.currentAccount);
         long j10 = this.R;
-        rh.n d = g10.d(j10);
+        rh.o d = g10.d(j10);
         ArrayList arrayList2 = d.e;
         if (!arrayList2.isEmpty() || d.c > 0) {
-            arrayList.add(a51.u(cd.L0(2131752481, null)));
+            arrayList.add(b51.u(dd.L0(2131752481, null)));
             for (int i12 = 0; i12 < arrayList2.size(); i12++) {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) arrayList2.get(i12);
                 int i13 = v2.b;
-                a51 K = a51.K(v2.class);
+                b51 K = b51.K(v2.class);
                 K.G = connectedbotstarref;
                 K.r = true;
                 arrayList.add(K);
             }
             if (!d.d || d.g) {
-                arrayList.add(a51.p(29));
-                arrayList.add(a51.p(29));
-                arrayList.add(a51.p(29));
+                arrayList.add(b51.p(29));
+                arrayList.add(b51.p(29));
+                arrayList.add(b51.p(29));
             }
-            arrayList.add(a51.B(2, null));
+            arrayList.add(b51.B(2, null));
         }
         rh.p e = rh.r.g(this.currentAccount).e(j10);
         ArrayList arrayList3 = e.e;
         if (!arrayList3.isEmpty() || e.c > 0) {
-            String L0 = cd.L0(2131752480, null);
+            String L0 = dd.L0(2131752480, null);
             int i14 = e.g;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) cd.L0(2131752479, null)).append((CharSequence) " ");
+            spannableStringBuilder.append((CharSequence) dd.L0(2131752479, null)).append((CharSequence) " ");
             if (i14 == 1) {
-                spannableString = new SpannableString(cd.L0(2131752477, null) + "v");
+                spannableString = new SpannableString(dd.L0(2131752477, null) + "v");
             } else if (i14 == 2) {
-                spannableString = new SpannableString(cd.L0(2131752476, null) + "v");
+                spannableString = new SpannableString(dd.L0(2131752476, null) + "v");
             } else if (i14 == 3) {
-                spannableString = new SpannableString(cd.L0(2131752478, null) + "v");
+                spannableString = new SpannableString(dd.L0(2131752478, null) + "v");
             } else {
                 i10 = 0;
                 int i15 = x2.b;
-                a51 K2 = a51.K(x2.class);
+                b51 K2 = b51.K(x2.class);
                 K2.l = L0;
                 K2.m = spannableStringBuilder;
                 arrayList.add(K2);
                 for (i11 = i10; i11 < arrayList3.size(); i11++) {
                     Object obj = arrayList3.get(i11);
                     int i16 = v2.b;
-                    a51 K3 = a51.K(v2.class);
+                    b51 K3 = b51.K(v2.class);
                     K3.G = obj;
                     K3.r = true;
                     arrayList.add(K3);
                 }
                 if (e.d || e.h) {
-                    arrayList.add(a51.p(29));
-                    arrayList.add(a51.p(29));
-                    arrayList.add(a51.p(29));
+                    arrayList.add(b51.p(29));
+                    arrayList.add(b51.p(29));
+                    arrayList.add(b51.p(29));
                 }
-                arrayList.add(a51.B(3, null));
+                arrayList.add(b51.B(3, null));
             }
             dq dqVar = new dq(R.drawable.arrow_more, 0);
             dqVar.f = true;
@@ -918,7 +918,7 @@ public final class z2 extends p10 implements us {
             spannableString.setSpan(new w5(this, i14, rh.r.g(this.currentAccount).e(j10)), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
             int i152 = x2.b;
-            a51 K22 = a51.K(x2.class);
+            b51 K22 = b51.K(x2.class);
             K22.l = L0;
             K22.m = spannableStringBuilder;
             arrayList.add(K22);
@@ -926,15 +926,15 @@ public final class z2 extends p10 implements us {
             }
             if (e.d) {
             }
-            arrayList.add(a51.p(29));
-            arrayList.add(a51.p(29));
-            arrayList.add(a51.p(29));
-            arrayList.add(a51.B(3, null));
+            arrayList.add(b51.p(29));
+            arrayList.add(b51.p(29));
+            arrayList.add(b51.p(29));
+            arrayList.add(b51.B(3, null));
         }
-        arrayList.add(a51.k(this.U));
+        arrayList.add(b51.k(this.U));
     }
 
-    @Override // org.telegram.ui.p10, org.telegram.ui.ActionBar.k2
+    @Override // org.telegram.ui.o10, org.telegram.ui.ActionBar.k2
     public final View createView(Context context) {
         this.G = false;
         this.E = org.telegram.messenger.i0.L(238.0f);
@@ -951,8 +951,8 @@ public final class z2 extends p10 implements us {
         hVar.A = t6.Uk;
         hVar.b();
         this.T.setStarParticlesView(this.e);
-        this.S.addView(this.T, b6.d(zs.U2, 190.0f, 17, 0.0f, 32.0f, 0.0f, 12.0f));
-        i0(cd.L0(2131752472, null), org.telegram.messenger.i0.W2(cd.L0(2131752473, null)), this.S, null);
+        this.S.addView(this.T, b6.d(at.U2, 190.0f, 17, 0.0f, 32.0f, 0.0f, 12.0f));
+        j0(dd.L0(2131752472, null), org.telegram.messenger.i0.W2(dd.L0(2131752473, null)), this.S, null);
         this.c.setOnItemClickListener(new mg.q0(24, this, context));
         this.c.setOnItemLongClickListener(new org.telegram.ui.web.k0(28, this, context));
         s4.j jVar = new s4.j();
@@ -961,17 +961,17 @@ public final class z2 extends p10 implements us {
         jVar.o(gr.h);
         jVar.n(350L);
         this.c.setItemAnimator(jVar);
-        this.c.setOnScrollListener(new bu0(this, 29));
+        this.c.setOnScrollListener(new cu0(this, 29));
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         ph.o3 o3Var;
-        int i12 = zs.L3;
+        int i12 = at.L3;
         long j10 = this.R;
         if (i10 != i12) {
-            if (i10 == zs.K3 && ((Long) objArr[0]).longValue() == j10 && (o3Var = this.V) != null) {
+            if (i10 == at.K3 && ((Long) objArr[0]).longValue() == j10 && (o3Var = this.V) != null) {
                 o3Var.O(true);
                 return;
             }
@@ -986,15 +986,15 @@ public final class z2 extends p10 implements us {
         }
     }
 
-    @Override // org.telegram.ui.p10
-    public final s4.g0 j0() {
+    @Override // org.telegram.ui.o10
+    public final s4.g0 k0() {
         ph.o3 o3Var = new ph.o3(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new n1(this, 1), getResourceProvider(), 5);
         this.V = o3Var;
         return o3Var;
     }
 
-    @Override // org.telegram.ui.p10
-    public final kg.g2 l0() {
+    @Override // org.telegram.ui.o10
+    public final kg.g2 m0() {
         kg.g gVar = new kg.g(getParentActivity(), 5);
         gVar.c();
         return gVar;
@@ -1002,19 +1002,19 @@ public final class z2 extends p10 implements us {
 
     @Override // org.telegram.ui.ActionBar.k2
     public final boolean onFragmentCreate() {
-        zs.f(this.currentAccount).c(this, zs.L3);
-        zs.f(this.currentAccount).c(this, zs.K3);
+        at.f(this.currentAccount).c(this, at.L3);
+        at.f(this.currentAccount).c(this, at.K3);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        zs.f(this.currentAccount).n(this, zs.L3);
-        zs.f(this.currentAccount).n(this, zs.K3);
+        at.f(this.currentAccount).n(this, at.L3);
+        at.f(this.currentAccount).n(this, at.K3);
     }
 
-    @Override // org.telegram.ui.p10, org.telegram.ui.ActionBar.k2
+    @Override // org.telegram.ui.o10, org.telegram.ui.ActionBar.k2
     public final void onPause() {
         super.onPause();
         lg.q qVar = this.T;
@@ -1024,7 +1024,7 @@ public final class z2 extends p10 implements us {
         }
     }
 
-    @Override // org.telegram.ui.p10, org.telegram.ui.ActionBar.k2
+    @Override // org.telegram.ui.o10, org.telegram.ui.ActionBar.k2
     public final void onResume() {
         super.onResume();
         lg.q qVar = this.T;

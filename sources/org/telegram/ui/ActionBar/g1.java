@@ -12,25 +12,25 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.b11;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.e50;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Components.j40;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.x60;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ay;
-import org.telegram.ui.i31;
-import org.telegram.ui.m90;
+import org.telegram.ui.g31;
+import org.telegram.ui.l90;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -70,9 +70,9 @@ public final class g1 extends AnimatorListenerAdapter {
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.d).y.remove((AnimatorSet) this.b);
                 View view = (View) this.c;
                 if (view instanceof b1) {
-                    ei0 ei0Var = ((b1) view).c;
-                    if (ei0Var.getAnimatedDrawable() != null) {
-                        ei0Var.getAnimatedDrawable().start();
+                    fi0 fi0Var = ((b1) view).c;
+                    if (fi0Var.getAnimatedDrawable() != null) {
+                        fi0Var.getAnimatedDrawable().start();
                         break;
                     }
                 }
@@ -121,7 +121,7 @@ public final class g1 extends AnimatorListenerAdapter {
                     chatActivityEnterView.l0.setScaleX(0.0f);
                     chatActivityEnterView.l0.setScaleY(0.0f);
                 }
-                if (chatActivityEnterView.O1 != null && chatActivityEnterView.P && !chatActivityEnterView.O && vp.d1().getInt("voiceoncehint", 0) < 3) {
+                if (chatActivityEnterView.O1 != null && chatActivityEnterView.P && !chatActivityEnterView.O && wp.d1().getInt("voiceoncehint", 0) < 3) {
                     chatActivityEnterView.O1.b();
                     break;
                 }
@@ -138,18 +138,18 @@ public final class g1 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                tk0 tk0Var = (tk0) this.c;
+                uk0 uk0Var = (uk0) this.c;
                 s4.r rVar = (s4.r) this.b;
                 vy vyVar = (vy) this.d;
                 if (animator.equals(vyVar.M0)) {
                     int L0 = rVar.L0();
-                    tk0Var.setTranslationY(0.0f);
-                    if (tk0Var == vyVar.D0) {
-                        tk0Var.setPadding(0, org.telegram.messenger.i0.L(36.0f), 0, org.telegram.messenger.i0.L(44.0f) + vyVar.q2);
-                    } else if (tk0Var == vyVar.h0) {
-                        tk0Var.setPadding(0, vyVar.b1, 0, org.telegram.messenger.i0.L(44.0f) + vyVar.q2);
-                    } else if (tk0Var == vyVar.P) {
-                        tk0Var.setPadding(org.telegram.messenger.i0.L(5.0f), org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(5.0f), org.telegram.messenger.i0.L(44.0f) + vyVar.q2);
+                    uk0Var.setTranslationY(0.0f);
+                    if (uk0Var == vyVar.D0) {
+                        uk0Var.setPadding(0, org.telegram.messenger.i0.L(36.0f), 0, org.telegram.messenger.i0.L(44.0f) + vyVar.q2);
+                    } else if (uk0Var == vyVar.h0) {
+                        uk0Var.setPadding(0, vyVar.b1, 0, org.telegram.messenger.i0.L(44.0f) + vyVar.q2);
+                    } else if (uk0Var == vyVar.P) {
+                        uk0Var.setPadding(org.telegram.messenger.i0.L(5.0f), org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(5.0f), org.telegram.messenger.i0.L(44.0f) + vyVar.q2);
                     }
                     if (L0 != -1) {
                         rVar.h1(L0, 0);
@@ -192,16 +192,16 @@ public final class g1 extends AnimatorListenerAdapter {
                 }
                 break;
             case 8:
-                org.telegram.ui.Components.voip.w wVar2 = (org.telegram.ui.Components.voip.w) this.d;
-                wVar2.N0 = null;
+                org.telegram.ui.Components.voip.x xVar = (org.telegram.ui.Components.voip.x) this.d;
+                xVar.N0 = null;
                 ((org.telegram.ui.Components.voip.r) this.b).E = false;
-                org.telegram.ui.Components.voip.r rVar2 = wVar2.E;
+                org.telegram.ui.Components.voip.r rVar2 = xVar.E;
                 if (rVar2 != null) {
                     if (rVar2.getParent() != null) {
-                        wVar2.removeView(wVar2.E);
+                        xVar.removeView(xVar.E);
                         ((org.telegram.ui.Components.voip.r) this.c).e();
                     }
-                    wVar2.E = null;
+                    xVar.E = null;
                     break;
                 }
                 break;
@@ -211,31 +211,31 @@ public final class g1 extends AnimatorListenerAdapter {
                 launchActivity.z0.invalidate();
                 launchActivity.o0.invalidate();
                 launchActivity.o0.setImageDrawable(null);
-                b11 b11Var = launchActivity.o0;
-                b11Var.c = null;
-                b11Var.a.setShader(null);
-                b11Var.n = null;
-                b11Var.r = null;
+                c11 c11Var = launchActivity.o0;
+                c11Var.c = null;
+                c11Var.a.setShader(null);
+                c11Var.n = null;
+                c11Var.r = null;
                 launchActivity.o0.setVisibility(8);
                 launchActivity.p0.setVisibility(8);
-                ei0 ei0Var2 = (ei0) this.b;
-                if (ei0Var2 != null) {
-                    ei0Var2.setImageDrawable((bi0) this.c);
+                fi0 fi0Var2 = (fi0) this.b;
+                if (fi0Var2 != null) {
+                    fi0Var2.setImageDrawable((ci0) this.c);
                 }
-                zs.e().k(zs.q4, new Object[0]);
-                if (ei0Var2 != null) {
-                    ei0Var2.setVisibility(0);
+                at.e().k(at.q4, new Object[0]);
+                if (fi0Var2 != null) {
+                    fi0Var2.setVisibility(0);
                 }
-                ay.x4 = false;
+                zx.x4 = false;
                 break;
             case 10:
-                i31 i31Var = (i31) this.d;
-                i31Var.s1 = null;
-                i31Var.invalidate();
+                g31 g31Var = (g31) this.d;
+                g31Var.s1 = null;
+                g31Var.invalidate();
                 boolean[] zArr2 = (boolean[]) this.b;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
-                    ((m90) this.c).run();
+                    ((l90) this.c).run();
                     break;
                 }
                 break;

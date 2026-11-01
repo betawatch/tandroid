@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cd implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class cd implements Runnable {
                 tc tcVar = (tc) this.c;
                 int i13 = ChatActivityEnterView.s5;
                 tcVar.run();
-                org.telegram.messenger.js.o(chatActivityEnterView4.Q, chatActivityEnterView4.Q2);
+                org.telegram.messenger.ks.o(chatActivityEnterView4.Q, chatActivityEnterView4.Q2);
                 break;
             case 4:
                 wf wfVar = (wf) this.b;
@@ -76,7 +76,7 @@ public final /* synthetic */ class cd implements Runnable {
                 long audioRightMs = chatActivityEnterView5.h1.getAudioRightMs();
                 if (!B.G1) {
                     if (B.i1 != null) {
-                        B.L1.c(new org.telegram.messenger.m9(B, new org.telegram.messenger.pe(0, org.telegram.messenger.b8.z(1), System.currentTimeMillis() + "_" + org.telegram.messenger.b8.r(null, B.e1)), audioLeftMs, audioRightMs, tfVar, 3));
+                        B.L1.c(new org.telegram.messenger.n9(B, new org.telegram.messenger.qe(0, org.telegram.messenger.b8.z(1), System.currentTimeMillis() + "_" + org.telegram.messenger.b8.r(null, B.e1)), audioLeftMs, audioRightMs, tfVar, 3));
                         break;
                     } else {
                         org.telegram.messenger.i0.g3(tfVar);
@@ -139,17 +139,17 @@ public final /* synthetic */ class cd implements Runnable {
                 tL_attachMenuBot.side_menu_disclaimer_needed = false;
                 tL_attachMenuBot.inactive = false;
                 biVar3.B1(tL_attachMenuBot.bot_id, null, false, true);
-                org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(biVar3.D3);
+                org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(biVar3.D3);
                 TLRPC.TL_attachMenuBots tL_attachMenuBots = b02.b;
                 if (tL_attachMenuBots != null) {
-                    b02.getMessagesStorage().a.c(new org.telegram.messenger.rk(b02.e, 2, b02.a, b02, tL_attachMenuBots));
+                    b02.getMessagesStorage().a.c(new org.telegram.messenger.sk(b02.e, 2, b02.a, b02, tL_attachMenuBots));
                     break;
                 }
                 break;
             case 9:
                 bi biVar4 = (bi) this.b;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = (TLRPC.TL_attachMenuBot) this.c;
-                org.telegram.messenger.ui.b0(biVar4.D3).E0(false, true, null);
+                org.telegram.messenger.vi.b0(biVar4.D3).E0(false, true, null);
                 if (biVar4.s2 == biVar4.r2.get(tL_attachMenuBot2.bot_id)) {
                     biVar4.E1(biVar4.a2);
                     break;
@@ -199,7 +199,7 @@ public final /* synthetic */ class cd implements Runnable {
                 TLRPC.User user = (TLRPC.User) this.c;
                 bi biVar5 = kkVar.b;
                 biVar5.dismiss();
-                biVar5.W1.presentFragment(org.telegram.ui.un.ha(user.id));
+                biVar5.W1.presentFragment(org.telegram.ui.un.ma(user.id));
                 break;
             case 16:
                 org.telegram.messenger.m5.n(null, 2131743227, new cc((kk) this.b, (org.telegram.ui.ActionBar.p6) this.c), R.raw.copy, 36);
@@ -287,11 +287,11 @@ public final /* synthetic */ class cd implements Runnable {
                     crVar2.U1 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(crVar2.U1);
                     crVar2.V1 = spannableStringBuilder;
-                    yz0 yz0Var = new yz0();
-                    yz0Var.a |= 256;
-                    yz0Var.b = 0;
-                    yz0Var.c = spannableStringBuilder.length();
-                    crVar2.V1.setSpan(new zz0(yz0Var, 0), 0, crVar2.V1.length(), 0);
+                    zz0 zz0Var = new zz0();
+                    zz0Var.a |= 256;
+                    zz0Var.b = 0;
+                    zz0Var.c = spannableStringBuilder.length();
+                    crVar2.V1.setSpan(new a01(zz0Var, 0), 0, crVar2.V1.length(), 0);
                     crVar2.W1.O(false);
                     break;
                 }
@@ -310,8 +310,8 @@ public final /* synthetic */ class cd implements Runnable {
                     break;
                 } else {
                     TL_bots.popularAppBots popularappbots = (TL_bots.popularAppBots) tLObject2;
-                    org.telegram.messenger.vp.r1(i14).V3(popularappbots.users, false);
-                    org.telegram.messenger.hs.a0(i14).m1(popularappbots.users, null, false, true);
+                    org.telegram.messenger.wp.r1(i14).V3(popularappbots.users, false);
+                    org.telegram.messenger.is.a0(i14).m1(popularappbots.users, null, false, true);
                     arrayList4.addAll(popularappbots.users);
                     String str3 = popularappbots.next_offset;
                     fsVar.g = str3;
@@ -330,7 +330,7 @@ public final /* synthetic */ class cd implements Runnable {
                             i15 = c3.i0.k(i15, 1, ((TLRPC.User) arrayList4.get(i15)).id, arrayList5);
                             arrayList4 = arrayList4;
                         }
-                        org.telegram.messenger.hs a02 = org.telegram.messenger.hs.a0(i14);
+                        org.telegram.messenger.is a02 = org.telegram.messenger.is.a0(i14);
                         a02.a.c(new org.telegram.messenger.voip.g(fsVar, a02, arrayList5, currentTimeMillis, str5, 3));
                         z10 = false;
                     }

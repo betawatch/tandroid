@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class dj extends FrameLayout {
     public final g9 a;
@@ -32,30 +32,30 @@ public final class dj extends FrameLayout {
         g9 g9Var = new g9(context);
         this.a = g9Var;
         g9Var.setRoundRadius(org.telegram.messenger.i0.L(23.0f));
-        boolean z10 = org.telegram.messenger.cd.X;
+        boolean z10 = org.telegram.messenger.dd.X;
         addView(g9Var, w7.b6.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
         og.c cVar = new og.c(context, 4);
         this.b = cVar;
-        org.telegram.messenger.zs.i(cVar);
+        org.telegram.messenger.at.i(cVar);
         org.telegram.ui.ActionBar.a7.Y(cVar, org.telegram.ui.ActionBar.t6.j5, p6Var);
         cVar.setTypeface(org.telegram.messenger.i0.o());
         cVar.setTextSize(16);
-        cVar.setGravity((org.telegram.messenger.cd.X ? 5 : 3) | 48);
-        boolean z11 = org.telegram.messenger.cd.X;
+        cVar.setGravity((org.telegram.messenger.dd.X ? 5 : 3) | 48);
+        boolean z11 = org.telegram.messenger.dd.X;
         addView(cVar, w7.b6.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
         org.telegram.ui.ActionBar.u5 u5Var = new org.telegram.ui.ActionBar.u5(context);
         this.c = u5Var;
         u5Var.setTextSize(13);
         org.telegram.ui.ActionBar.a7.Y(u5Var, org.telegram.ui.ActionBar.t6.q5, p6Var);
-        u5Var.setGravity((org.telegram.messenger.cd.X ? 5 : 3) | 48);
-        boolean z12 = org.telegram.messenger.cd.X;
+        u5Var.setGravity((org.telegram.messenger.dd.X ? 5 : 3) | 48);
+        boolean z12 = org.telegram.messenger.dd.X;
         addView(u5Var, w7.b6.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
         ep epVar = new ep(21, context, p6Var);
         this.d = epVar;
         epVar.b(-1, org.telegram.ui.ActionBar.t6.d6, org.telegram.ui.ActionBar.t6.k7);
         epVar.setDrawUnchecked(false);
         epVar.setDrawBackgroundAsArc(3);
-        boolean z13 = org.telegram.messenger.cd.X;
+        boolean z13 = org.telegram.messenger.dd.X;
         addView(epVar, w7.b6.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 44.0f, 37.0f, z13 ? 44.0f : 0.0f, 0.0f));
     }
 
@@ -97,7 +97,7 @@ public final class dj extends FrameLayout {
             } else {
                 TLRPC.User user3 = this.f;
                 if (user3 != null) {
-                    this.x = org.telegram.messenger.h20.p(user3);
+                    this.x = org.telegram.messenger.i20.p(user3);
                 } else {
                     this.x = "";
                 }
@@ -122,7 +122,7 @@ public final class dj extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.y) {
-            canvas.drawLine(org.telegram.messenger.cd.X ? 0.0f : org.telegram.messenger.i0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.cd.X ? org.telegram.messenger.i0.L(70.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+            canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(70.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
         }
     }
 
@@ -145,7 +145,7 @@ public final class dj extends FrameLayout {
         TLRPC.User user = this.f;
         if (user != null) {
             if (TextUtils.isEmpty(user.phone)) {
-                this.c.l(org.telegram.messenger.cd.L0(2131747848, null), false);
+                this.c.l(org.telegram.messenger.dd.L0(2131747848, null), false);
             } else if (this.s != this.f && (str = this.w) != null) {
                 this.c.l(str, false);
             } else {

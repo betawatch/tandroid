@@ -5,13 +5,13 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.x41;
+import org.telegram.ui.Components.y41;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p3 {
     public boolean a;
@@ -29,26 +29,26 @@ public final class p3 {
         TLRPC.Message message;
         String str;
         SpannableStringBuilder e = th.w5.e(new Object[0], 2131750875, false);
-        jj messageObject = q1Var.getMessageObject();
+        kj messageObject = q1Var.getMessageObject();
         if (messageObject != null && (message = messageObject.k) != null) {
             TLRPC.MessageMedia messageMedia = message.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaStory) {
-                TLRPC.User Z1 = vp.r1(q1Var.Y5).Z1(Long.valueOf(((TLRPC.TL_messageMediaStory) messageMedia).user_id));
+                TLRPC.User Z1 = wp.r1(q1Var.Y5).Z1(Long.valueOf(((TLRPC.TL_messageMediaStory) messageMedia).user_id));
                 String str2 = Z1 == null ? "DELETED" : Z1.first_name;
                 int Q0 = (int) ((org.telegram.messenger.i0.Q1() ? org.telegram.messenger.i0.Q0() : q1Var.getParentWidth()) * 0.4f);
-                String L0 = cd.L0(2131750517, null);
+                String L0 = dd.L0(2131750517, null);
                 TextPaint textPaint = org.telegram.ui.ActionBar.t6.X2;
                 int ceil = (int) Math.ceil(textPaint.measureText(L0 + " "));
                 if (str2 == null) {
                     str2 = "";
                 }
                 String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.t6.Y2, Q0 - ceil, TextUtils.TruncateAt.END);
-                String L02 = cd.L0(2131750513, null);
+                String L02 = dd.L0(2131750513, null);
                 int indexOf = L02.indexOf("%1$s");
                 String format = String.format(L02, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new x41(org.telegram.messenger.i0.o()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new y41(org.telegram.messenger.i0.o()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;

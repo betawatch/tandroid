@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -18,8 +18,8 @@ public final class a20 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public a20(org.telegram.ui.d71 d71Var, ih.e eVar, org.telegram.ui.Cells.q1 q1Var, org.telegram.ui.mk mkVar, org.telegram.ui.un unVar) {
-        this.f = d71Var;
+    public a20(org.telegram.ui.b71 b71Var, ih.e eVar, org.telegram.ui.Cells.q1 q1Var, org.telegram.ui.mk mkVar, org.telegram.ui.un unVar) {
+        this.f = b71Var;
         this.b = eVar;
         this.c = q1Var;
         this.d = mkVar;
@@ -46,10 +46,10 @@ public final class a20 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                org.telegram.ui.d71 d71Var = (org.telegram.ui.d71) this.f;
-                d71Var.D.e();
+                org.telegram.ui.b71 b71Var = (org.telegram.ui.b71) this.f;
+                b71Var.D.e();
                 ih.e eVar = (ih.e) this.b;
-                ((ArrayList) eVar.c).remove(d71Var);
+                ((ArrayList) eVar.c).remove(b71Var);
                 eVar.a();
                 ((ViewGroup) eVar.d).invalidate();
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.c;
@@ -61,7 +61,7 @@ public final class a20 extends AnimatorListenerAdapter {
                 org.telegram.ui.un unVar = (org.telegram.ui.un) this.e;
                 ((io[]) unVar.b0.b)[0].c.setAlpha(1.0f);
                 ((io[]) unVar.b0.b)[0].d.setAlpha(1.0f);
-                o5.release((View) null, d71Var.H);
+                o5.release((View) null, b71Var.H);
                 break;
         }
     }

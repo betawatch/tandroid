@@ -6,10 +6,10 @@ import e9.l0;
 import e9.n0;
 import e9.x1;
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class a0 implements c3.o {
     public boolean e;
@@ -225,7 +225,7 @@ public final class a0 implements c3.o {
             pVar.q(1);
             return 0;
         }
-        int i17 = m10 & zs.e4;
+        int i17 = m10 & at.e4;
         SparseArray sparseArray = this.b;
         z zVar = (z) sparseArray.get(i17);
         if (!this.e) {
@@ -234,11 +234,11 @@ public final class a0 implements c3.o {
                     iVar = new b("video/mp2p");
                     this.f = true;
                     this.h = pVar.getPosition();
-                } else if ((m10 & zs.B3) == 192) {
+                } else if ((m10 & at.B3) == 192) {
                     iVar = new u(null, 0, "video/mp2p");
                     this.f = true;
                     this.h = pVar.getPosition();
-                } else if ((m10 & zs.P3) == 224) {
+                } else if ((m10 & at.P3) == 224) {
                     iVar = new k(null, "video/mp2p");
                     this.g = true;
                     this.h = pVar.getPosition();

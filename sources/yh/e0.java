@@ -1,238 +1,197 @@
 package yh;
 
-import android.content.Context;
 import android.text.SpannableStringBuilder;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.a4;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.kt;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.nl;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.r9;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.tt;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.x1;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.ActionBar.z4;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.s4;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.u8;
-import org.telegram.ui.Components.ub;
-import org.telegram.ui.Components.vb;
-import org.telegram.ui.yv0;
-import vh.q8;
+import org.telegram.ui.f0;
+import org.telegram.ui.un;
+import org.telegram.ui.vh;
+import org.telegram.ui.zx;
+import v7.u7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class e0 implements zh.e {
-    public final Context a;
-    public final p6 b;
-    public final cc c;
-    public final int d;
-    public final long e;
-    public final TLRPC.Chat f;
-    public d0 h;
-    public kt i;
-    public String k;
-    public int l;
-    public boolean m;
-    public boolean n;
-    public long o;
-    public int p;
-    public x1 q;
-    public int r;
-    public final a0.h g = new a0.h();
-    public ArrayList j = new ArrayList();
-
-    public e0(Context context, p6 p6Var, cc ccVar, int i10, long j10) {
-        this.a = context;
-        this.b = p6Var;
-        this.c = ccVar;
-        this.d = i10;
-        this.e = j10;
-        this.f = vp.r1(i10).L0(Long.valueOf(j10));
-        this.o = vp.r1(i10).f7.getLong(a1.g.l(j10, "community_requests_last_view_time_"), 0L);
+public abstract class e0 {
+    public static SpannableStringBuilder a(kj kjVar, String str, String str2, boolean z10, boolean z11) {
+        TLRPC.Message message = kjVar.k;
+        TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) message.action;
+        boolean z12 = o5.o(message.peer_id) == o5.o(message.from_id);
+        boolean z13 = tL_messageActionChangeCommunity.community_id == 0;
+        if (z12) {
+            if (z13) {
+                return i0.W2(dd.L0(z11 ? 2131751868 : z10 ? 2131751862 : 2131751856, null));
+            }
+            return i0.W2(dd.a0(null, null, z11 ? 2131751870 : z10 ? 2131751864 : 2131751858, str));
+        }
+        if (kjVar.N3()) {
+            if (z13) {
+                return i0.W2(dd.L0(z11 ? 2131751866 : z10 ? 2131751860 : 2131751854, null));
+            }
+            return i0.W2(dd.a0(null, null, z11 ? 2131751867 : z10 ? 2131751861 : 2131751855, str));
+        }
+        if (z13) {
+            return i0.W2(dd.a0(null, null, z11 ? 2131751869 : z10 ? 2131751863 : 2131751857, str2));
+        }
+        return i0.W2(dd.a0(null, null, z11 ? 2131751871 : z10 ? 2131751865 : 2131751859, str2, str));
     }
 
-    public final void a() {
-        this.p = 0;
-        ArrayList arrayList = this.j;
-        if (arrayList == null) {
-            return;
+    public static int b(int i10, long j10) {
+        TLRPC.Chat L0;
+        long j11;
+        TLRPC.User user;
+        TLRPC.ChatFull M0;
+        ArrayList<TL_communities.CommunityPeer> arrayList;
+        if (j10 > 0) {
+            TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(j10));
+            if (Z1 == null) {
+                return 0;
+            }
+            j11 = Z1.linked_community_id;
+            user = Z1;
+            L0 = null;
+        } else {
+            L0 = wp.r1(i10).L0(Long.valueOf(-j10));
+            if (L0 == null) {
+                return 0;
+            }
+            j11 = L0.linked_community_id;
+            user = null;
         }
-        int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (!this.g.d(o5.o(((TL_communities.CommunityPeerRequest) this.j.get(i10)).peer))) {
-                if (r2.date <= this.o) {
-                    return;
-                } else {
-                    this.p++;
+        if (j11 != 0 && (M0 = wp.r1(i10).M0(j11)) != null && (arrayList = M0.linked_peers) != null) {
+            int size = arrayList.size();
+            int i11 = 0;
+            while (i11 < size) {
+                TL_communities.CommunityPeer communityPeer = arrayList.get(i11);
+                i11++;
+                TL_communities.CommunityPeer communityPeer2 = communityPeer;
+                if (o5.o(communityPeer2.peer) == j10) {
+                    return c(L0, user != null ? wp.r1(i10).R0(user.id) : null, user, communityPeer2);
                 }
             }
         }
+        return 0;
     }
 
-    public final void b(u51 u51Var) {
-        if (this.m || this.n || u51Var.e3.N0() + 10 <= u51Var.f3.D.size()) {
-            return;
-        }
-        d();
-    }
-
-    public final void c(ArrayList arrayList) {
-        ArrayList arrayList2 = this.j;
-        if (arrayList2 == null || arrayList2.isEmpty()) {
-            return;
-        }
-        ArrayList arrayList3 = this.j;
-        if (arrayList3 != null && !arrayList3.isEmpty()) {
-            int size = arrayList3.size();
-            int i10 = 0;
-            while (i10 < size) {
-                TL_communities.CommunityPeerRequest communityPeerRequest = (TL_communities.CommunityPeerRequest) arrayList3.get(i10);
-                long o10 = o5.o(communityPeerRequest.peer);
-                a0.h hVar = this.g;
-                if (hVar == null || !hVar.d(o10)) {
-                    TLRPC.User Z1 = vp.r1(this.d).Z1(Long.valueOf(communityPeerRequest.requested_by));
-                    boolean z10 = !communityPeerRequest.visible;
-                    boolean z11 = i10 < size + (-1);
-                    int i11 = zh.g.b;
-                    a51 K = a51.K(zh.g.class);
-                    K.G = new zh.f(o10, Z1, z10);
-                    K.H = this;
-                    K.j = !z11;
-                    arrayList.add(K);
+    public static int c(TLRPC.Chat chat, TLRPC.Dialog dialog, TLRPC.User user, TL_communities.CommunityPeer communityPeer) {
+        if (user != null) {
+            if (dialog == null) {
+                return 2;
+            }
+        } else {
+            if (chat == null) {
+                return 0;
+            }
+            if (!w3.j0(chat)) {
+                if (w3.t0(chat) || communityPeer.can_view_history) {
+                    return 2;
                 }
-                i10++;
+                return (!u7.a(communityPeer.flags, 1) || communityPeer.visible) ? 3 : 4;
             }
         }
-        if (this.n) {
-            return;
-        }
-        arrayList.add(a51.p(29));
+        return 1;
     }
 
-    public final void d() {
-        if (this.m || this.n || !w3.y(27, this.f)) {
-            return;
-        }
-        this.m = true;
-        vp r12 = vp.r1(this.d);
-        String str = this.k;
-        c0 c0Var = new c0(this, 1);
-        TL_communities.TL_communities_getPeerLinkRequests tL_communities_getPeerLinkRequests = new TL_communities.TL_communities_getPeerLinkRequests();
-        tL_communities_getPeerLinkRequests.community = r12.g1(this.e);
-        tL_communities_getPeerLinkRequests.offset = str;
-        tL_communities_getPeerLinkRequests.limit = 100;
-        r12.getConnectionsManager().sendRequestTyped(tL_communities_getPeerLinkRequests, new a3.b(1), new a4(2, r12, c0Var));
-    }
-
-    public final void e() {
-        int i10 = this.d;
-        long currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-        this.o = currentTime;
-        vp.r1(i10).f7.edit().putLong("community_requests_last_view_time_" + this.e, currentTime).apply();
-        a();
-    }
-
-    public final void f(boolean z10, boolean z11) {
-        TextView textView;
-        if (this.q == null && this.r == 0) {
-            int i10 = 0;
-            if (z11) {
-                x1 O = s4.O(this.a, this.b, cd.L0(z10 ? 2131751983 : 2131751935, null), i0.W2(cd.G(this.l, z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), cd.L0(z10 ? 2131754486 : 2131751605, null), new yv0(16, this, z10));
-                O.show();
-                if (z10 || (textView = (TextView) O.d(-1)) == null) {
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void d(k2 k2Var, long j10, int i10) {
+        z4 z4Var;
+        un unVar;
+        int i11;
+        List list = null;
+        if (i0.Q1()) {
+            z4Var = null;
+            unVar = null;
+        } else {
+            z4Var = k2Var.getParentLayout();
+            if (z4Var != null) {
+                List fragmentStack = z4Var.getFragmentStack();
+                i11 = fragmentStack.size() - 2;
+                while (true) {
+                    if (i11 < 0) {
+                        unVar = null;
+                        i11 = -1;
+                        break;
+                    }
+                    k2 k2Var2 = (k2) fragmentStack.get(i11);
+                    if (k2Var2 instanceof un) {
+                        unVar = (un) k2Var2;
+                        if (unVar.a() == j10) {
+                            break;
+                        }
+                    }
+                    i11--;
+                }
+                list = fragmentStack;
+                boolean U = w3.U(k2Var.getCurrentAccount(), j10);
+                if (i11 != -1) {
+                    if (!(k2Var instanceof zx)) {
+                        k2Var.finishFragment();
+                    }
+                    f(cc.X(), i10, U);
                     return;
                 }
-                a7.V(textView, t6.q7, null);
+                for (int size = list.size() - 2; size > i11; size--) {
+                    ((ActionBarLayout) z4Var).c0((k2) list.get(size), false);
+                }
+                k2Var.finishFragment();
+                i0.h3(new vh(i10, unVar, U), 250L);
                 return;
             }
-            kt ktVar = this.i;
-            if (ktVar != null) {
-                ktVar.run();
-            }
-            this.i = null;
-            x1 x1Var = new x1(3, this.a, this.b);
-            this.q = x1Var;
-            x1Var.setOnCancelListener(new eg.k(this, 4));
-            this.q.r(500L);
-            vp r12 = vp.r1(this.d);
-            c0 c0Var = new c0(this, i10);
-            TL_communities.TL_communities_toggleAllPeerLinkRequestApproval tL_communities_toggleAllPeerLinkRequestApproval = new TL_communities.TL_communities_toggleAllPeerLinkRequestApproval();
-            long j10 = this.e;
-            tL_communities_toggleAllPeerLinkRequestApproval.community = r12.g1(j10);
-            tL_communities_toggleAllPeerLinkRequestApproval.reject = !z10;
-            this.r = r12.getConnectionsManager().sendRequestTyped(tL_communities_toggleAllPeerLinkRequestApproval, new a3.b(1), new r9(r12, j10, c0Var, 1));
+            unVar = null;
+        }
+        i11 = -1;
+        boolean U2 = w3.U(k2Var.getCurrentAccount(), j10);
+        if (i11 != -1) {
         }
     }
 
-    public final void g(long j10, boolean z10) {
-        int i10;
-        this.g.k(null, j10);
-        this.l--;
-        a();
-        d0 d0Var = this.h;
-        if (d0Var != null) {
-            d0Var.b();
+    public static void e(x1[] x1VarArr, k2 k2Var, int i10, TLRPC.Chat chat) {
+        if (x1VarArr[0] != null) {
+            return;
         }
-        int i11 = z10 ? 2131751880 : 2131751879;
-        int i12 = this.d;
-        SpannableStringBuilder W2 = i0.W2(cd.a0(null, null, i11, o5.s(i12, j10)));
-        kt ktVar = this.i;
-        if (ktVar != null) {
-            ktVar.run();
-        }
-        this.i = new kt(this, j10, z10, 4);
-        Context context = this.a;
-        p6 p6Var = this.b;
-        vb vbVar = new vb(context, p6Var, false);
-        TLObject d22 = vp.r1(i12).d2(j10);
-        u8 u8Var = vbVar.a;
-        if (d22 != null) {
-            u8Var.setCount(1);
-            u8Var.b(0, d20.s0, d22);
-            i10 = 1;
+        wp r12 = wp.r1(i10);
+        f0 f0Var = new f0(x1VarArr, k2Var, i10, chat, 9);
+        TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
+        tL_channels_getAdminedPublicChannels.for_community_peer = true;
+        int sendRequestTyped = r12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new a3.b(1), new nl(r12, f0Var, 0));
+        ConnectionsManager.getInstance(i10).bindRequestToGuid(sendRequestTyped, k2Var.getClassGuid());
+        x1 x1Var = new x1(3, k2Var.getContext(), null);
+        x1VarArr[0] = x1Var;
+        x1Var.r(500L);
+        x1VarArr[0].setOnCancelListener(new tt(i10, sendRequestTyped, x1VarArr, 1));
+    }
+
+    public static void f(cc ccVar, int i10, boolean z10) {
+        String L0;
+        int i11 = i10 == 2 ? R.raw.timer_toast : R.raw.contact_check;
+        int i12 = i10 == 2 ? 24 : 36;
+        if (i10 == 0) {
+            L0 = dd.L0(2131751943, null);
+        } else if (i10 == 1) {
+            L0 = dd.L0(z10 ? 2131751942 : 2131751941, null);
         } else {
-            i10 = 0;
+            L0 = dd.L0(2131751940, null);
         }
-        u8Var.setTranslationX(i0.L(7.0f));
-        u8Var.setScaleX(1.333f);
-        u8Var.setScaleY(1.333f);
-        u8Var.a(false);
-        p80 p80Var = vbVar.b;
-        p80Var.setSingleLine(false);
-        int i13 = 2;
-        p80Var.setMaxLines(2);
-        p80Var.setTextSize(1, 14.0f);
-        p80Var.setText(W2);
-        if (p80Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            int L = i0.L(74 - ((3 - i10) * 12));
-            if (cd.X) {
-                ((ViewGroup.MarginLayoutParams) p80Var.getLayoutParams()).rightMargin = L;
-            } else {
-                ((ViewGroup.MarginLayoutParams) p80Var.getLayoutParams()).leftMargin = L;
-            }
-        }
-        if (cd.X) {
-            u8Var.setTranslationX(i0.L(32 - ((i10 - 1) * 12)));
-        }
-        ub ubVar = new ub(context, p6Var, true, true);
-        ubVar.e(cd.L0(2131743910, null));
-        ubVar.b = new q8(this, j10, i13);
-        ubVar.c = this.i;
-        vbVar.setButton(ubVar);
-        this.c.b(vbVar, 5000).j();
+        ccVar.G(i11, i12, L0).j();
     }
 }

@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.r8;
 import rf.o;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c extends FrameLayout implements k6 {
     public final p6 a;
@@ -71,9 +71,9 @@ public final class c extends FrameLayout implements k6 {
         if (chat == null) {
             return;
         }
-        TLRPC.ChatFull M0 = vp.r1(i10).M0(chat.id);
+        TLRPC.ChatFull M0 = wp.r1(i10).M0(chat.id);
         setTitle(o5.u(chat));
-        setSubtitle(cd.G(M0 != null ? M0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
+        setSubtitle(dd.G(M0 != null ? M0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
         this.b.e(chat, new r8(chat));
     }
 

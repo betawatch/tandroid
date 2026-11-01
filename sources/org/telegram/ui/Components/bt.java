@@ -15,10 +15,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class bt extends View {
-    public final qz0 a;
+    public final rz0 a;
     public final Drawable b;
     public final ImageReceiver c;
     public final Rect d;
@@ -32,7 +32,7 @@ public class bt extends View {
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
         imageReceiver.J0(org.telegram.messenger.i0.L(22.66f));
-        this.a = new qz0(charSequence, 14.0f, org.telegram.messenger.i0.o());
+        this.a = new rz0(charSequence, 14.0f, org.telegram.messenger.i0.o());
         Drawable f7 = i0.a.f(context, R.drawable.arrow_newchat);
         this.b = f7;
         f7.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
@@ -41,7 +41,7 @@ public class bt extends View {
     public final void a(TLRPC.Photo photo, Object obj) {
         TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(photo.sizes, org.telegram.messenger.i0.L(48.0f), false, null, true);
         TLRPC.PhotoSize w10 = org.telegram.messenger.b8.w(photo.sizes, org.telegram.messenger.i0.L(24.0f), false, w9, false);
-        this.c.r0(org.telegram.messenger.ic.i(w9, photo), "24_24", org.telegram.messenger.ic.i(w10, photo), "24_24", null, 0L, null, obj, 0);
+        this.c.r0(org.telegram.messenger.jc.i(w9, photo), "24_24", org.telegram.messenger.jc.i(w10, photo), "24_24", null, 0L, null, obj, 0);
     }
 
     @Override // android.view.View

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a;
@@ -24,10 +24,10 @@ public final /* synthetic */ class te implements Runnable {
         un unVar = this.b;
         switch (i10) {
             case 0:
-                un.F0(unVar, str);
+                un.n0(unVar, str);
                 break;
             case 1:
-                un.x0(unVar, str);
+                un.z1(unVar, str);
                 break;
             case 2:
                 h4.d(str, unVar.currentAccount, unVar.l1, null, unVar.xa);
@@ -40,30 +40,30 @@ public final /* synthetic */ class te implements Runnable {
                         break;
                     }
                 }
-                unVar.getSendMessagesHelper().r0(org.telegram.messenger.oz.b("/start", unVar.j6, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                unVar.getSendMessagesHelper().r0(org.telegram.messenger.pz.b("/start", unVar.j6, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 4:
-                unVar.Ba(str);
+                unVar.Ga(str);
                 break;
             case 5:
-                unVar.ta(str, false);
+                unVar.ya(str, false);
                 break;
             case 6:
                 gf.f.r(unVar.getParentActivity(), "tel:" + str);
                 break;
             case 7:
                 org.telegram.messenger.i0.g(str);
-                org.telegram.messenger.z20.r(null, 2131747311, org.telegram.ui.Components.cc.a0(unVar));
+                org.telegram.messenger.a30.r(null, 2131747311, org.telegram.ui.Components.cc.a0(unVar));
                 break;
             case 8:
-                un.I0(unVar, str);
+                un.i1(unVar, str);
                 break;
             case 9:
                 gf.f.r(unVar.getParentActivity(), "tel:" + str);
                 break;
             case 10:
                 org.telegram.messenger.i0.g(str);
-                org.telegram.messenger.z20.r(null, 2131747311, org.telegram.ui.Components.cc.a0(unVar));
+                org.telegram.messenger.a30.r(null, 2131747311, org.telegram.ui.Components.cc.a0(unVar));
                 break;
             case 11:
                 unVar.getClass();

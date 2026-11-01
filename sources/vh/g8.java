@@ -10,14 +10,14 @@ import android.graphics.Shader;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.oe0;
 import org.telegram.ui.Components.oh;
 import org.telegram.ui.Components.x60;
-import org.telegram.ui.do0;
+import org.telegram.ui.bo0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g8 extends FrameLayout {
     public float a;
@@ -64,7 +64,7 @@ public final class g8 extends FrameLayout {
                 this.d = linearGradient2;
                 paint.setShader(linearGradient2);
             }
-            paint.setAlpha(zs.e4);
+            paint.setAlpha(at.e4);
             RectF rectF = org.telegram.messenger.i0.P;
             rectF.set(0.0f, 0.0f, getWidth(), org.telegram.messenger.i0.L(84.0f) + f7);
             canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(12.0f), paint);
@@ -96,9 +96,9 @@ public final class g8 extends FrameLayout {
         int i15 = o8Var.T;
         frameLayout3.layout(0, i15, o8Var.S, frameLayout3.getMeasuredHeight() + i15);
         o8Var.l0.layout(0, 0, o8Var.S, o8Var.T);
-        do0 do0Var = o8Var.t0;
-        if (do0Var != null) {
-            do0Var.layout(0, 0, measuredWidth, measuredHeight);
+        bo0 bo0Var = o8Var.t0;
+        if (bo0Var != null) {
+            bo0Var.layout(0, 0, measuredWidth, measuredHeight);
         }
         o8Var.s.c.layout(0, 0, measuredWidth, measuredHeight);
         oh ohVar = o8Var.c1.M;
@@ -136,9 +136,9 @@ public final class g8 extends FrameLayout {
         a(o8Var.m0, o8Var.S, o8Var.U);
         a(o8Var.l0, o8Var.S, o8Var.T);
         a(o8Var.s.c, size, size2);
-        do0 do0Var = o8Var.t0;
-        if (do0Var != null) {
-            a(do0Var, size, size2);
+        bo0 bo0Var = o8Var.t0;
+        if (bo0Var != null) {
+            a(bo0Var, size, size2);
         }
         oh ohVar = o8Var.c1.M;
         if (ohVar != null) {

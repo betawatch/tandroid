@@ -12,7 +12,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class je extends LinearLayout {
     public final LinearLayout a;
@@ -35,7 +35,7 @@ public final class je extends LinearLayout {
         for (int i10 = 0; i10 < 2; i10++) {
             this.b[i10] = new LinearLayout(context);
             this.b[i10].setOrientation(0);
-            this.a.addView(this.b[i10], w7.b6.p(-1, -2, 1.0f, org.telegram.messenger.zs.E1));
+            this.a.addView(this.b[i10], w7.b6.p(-1, -2, 1.0f, org.telegram.messenger.at.E1));
             this.c[i10] = new org.telegram.ui.Components.n5(context);
             this.c[i10].setTypeface(org.telegram.messenger.i0.o());
             this.c[i10].setTextSize(1, 16.0f);
@@ -85,7 +85,7 @@ public final class je extends LinearLayout {
                     int indexOf2 = format.indexOf(46);
                     if (indexOf2 >= 0) {
                         i10 = i11;
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.cd.E((long) Math.floor(ieVar.d / 1.0E9d), ' '));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.E((long) Math.floor(ieVar.d / 1.0E9d), ' '));
                         spannableStringBuilder.append((CharSequence) format.substring(indexOf2));
                     } else {
                         i10 = i11;
@@ -96,11 +96,11 @@ public final class je extends LinearLayout {
                     i10 = i11;
                     if ("XTR".equalsIgnoreCase(str)) {
                         if (i10 == 0) {
-                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.cd.E(ieVar.d, ' '));
+                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.E(ieVar.d, ' '));
                         } else {
-                            spannableStringBuilder.append((CharSequence) rh.h8.L0(ieVar.i, 0.8f, ' '));
+                            spannableStringBuilder.append((CharSequence) rh.h8.M0(ieVar.i, 0.8f, ' '));
                         }
-                        spannableStringBuilder = rh.h8.Z0(false, spannableStringBuilder, 0.7f, null);
+                        spannableStringBuilder = rh.h8.a1(false, spannableStringBuilder, 0.7f, null);
                     } else {
                         spannableStringBuilder.append((CharSequence) Long.toString(ieVar.d));
                     }

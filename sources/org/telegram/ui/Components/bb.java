@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class bb extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public static final o1.h IN_OUT_OFFSET_Y = new wa(0);
@@ -138,7 +138,7 @@ public abstract class bb extends FrameLayout implements org.telegram.ui.ActionBa
     public void dispatchDraw(Canvas canvas) {
         wb wbVar = this.bulletin;
         if (wbVar == null || !wbVar.k) {
-            dispatchDrawImpl(canvas, false, org.telegram.messenger.zs.e4);
+            dispatchDrawImpl(canvas, false, org.telegram.messenger.at.e4);
             return;
         }
         if (this.blurVisibilityDrawable == null) {
@@ -148,7 +148,7 @@ public abstract class bb extends FrameLayout implements org.telegram.ui.ActionBa
         if (bVar.c == null) {
             bVar.a(getMeasuredWidth(), getMeasuredHeight(), 6.0f, org.telegram.messenger.i0.L(10.0f));
         }
-        this.blurVisibilityDrawable.i = w7.u.b((int) org.telegram.messenger.z20.x(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, org.telegram.messenger.zs.e4);
+        this.blurVisibilityDrawable.i = w7.u.b((int) org.telegram.messenger.a30.x(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, org.telegram.messenger.at.e4);
         this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         this.blurVisibilityDrawable.draw(canvas);
     }

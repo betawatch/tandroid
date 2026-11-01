@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -35,10 +35,10 @@ public final /* synthetic */ class z1 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 1:
-                org.telegram.messenger.q20 q20Var = (org.telegram.messenger.q20) this.b;
+                org.telegram.messenger.r20 r20Var = (org.telegram.messenger.r20) this.b;
                 m3 m3Var = (m3) this.c;
                 o3 o3Var = (o3) this.d;
-                q20Var.a(Integer.valueOf(o3Var.getValue() + (m3Var.getValue() * 60)));
+                r20Var.a(Integer.valueOf(o3Var.getValue() + (m3Var.getValue() * 60)));
                 break;
             case 2:
                 org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.b;
@@ -89,10 +89,10 @@ public final /* synthetic */ class z1 implements DialogInterface.OnDismissListen
             default:
                 boolean[] zArr2 = (boolean[]) this.b;
                 boolean[] zArr3 = (boolean[]) this.c;
-                org.telegram.messenger.q20 q20Var2 = (org.telegram.messenger.q20) this.d;
+                org.telegram.messenger.r20 r20Var2 = (org.telegram.messenger.r20) this.d;
                 if (!zArr2[0] && !zArr3[0]) {
                     zArr3[0] = true;
-                    q20Var2.a("USER_DECLINED");
+                    r20Var2.a("USER_DECLINED");
                     break;
                 }
                 break;

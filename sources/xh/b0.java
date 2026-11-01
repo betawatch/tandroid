@@ -10,12 +10,12 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.kp;
 import org.telegram.ui.Components.t5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b0 extends Drawable {
     public final ImageView a;
@@ -29,7 +29,7 @@ public final class b0 extends Drawable {
     public final t5 i;
     public final t5 j;
     public final t5 k;
-    public bi0 l;
+    public ci0 l;
 
     public b0(Context context, ImageView imageView) {
         Paint paint = new Paint(1);
@@ -54,7 +54,7 @@ public final class b0 extends Drawable {
     public final void draw(Canvas canvas) {
         float f7;
         float f10;
-        bi0 bi0Var;
+        ci0 ci0Var;
         Canvas canvas2 = canvas;
         Rect bounds = getBounds();
         int centerX = bounds.centerX();
@@ -114,12 +114,12 @@ public final class b0 extends Drawable {
             f7 = 0.0f;
             f10 = 255.0f;
         }
-        if (d <= f7 || (bi0Var = this.l) == null) {
+        if (d <= f7 || (ci0Var = this.l) == null) {
             return;
         }
-        int i11 = bi0Var.b / 2;
-        int i12 = bi0Var.c / 2;
-        bi0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
+        int i11 = ci0Var.b / 2;
+        int i12 = ci0Var.c / 2;
+        ci0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
         this.l.setAlpha((int) (d * f10));
         this.l.draw(canvas2);
     }

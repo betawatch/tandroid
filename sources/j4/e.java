@@ -5,10 +5,10 @@ import c3.k0;
 import e2.l0;
 import java.util.Arrays;
 import java.util.Collections;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -281,7 +281,7 @@ public final class e implements i {
                             gVar.f0(5);
                             int i38 = gVar.i(3);
                             int i39 = this.p;
-                            byte[] bArr8 = {(byte) (((i37 << 3) & zs.X3) | ((i39 >> 1) & 7)), (byte) (((i38 << 3) & 120) | ((i39 << 7) & 128))};
+                            byte[] bArr8 = {(byte) (((i37 << 3) & at.X3) | ((i39 >> 1) & 7)), (byte) (((i38 << 3) & 120) | ((i39 << 7) & 128))};
                             c3.a n10 = c3.b.n(new a4.g(bArr8, 2), false);
                             b2.w wVar = new b2.w();
                             wVar.a = this.g;

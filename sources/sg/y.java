@@ -4,13 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.oh;
-import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.g3;
-import org.telegram.ui.nb0;
+import org.telegram.ui.mb0;
 import th.o7;
 import th.p1;
 import th.s0;
@@ -24,7 +24,7 @@ import vh.y2;
 import xh.m2;
 import zf.a1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final class y extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 b0 b0Var = (b0) this.c;
-                mj0 mj0Var = b0Var.n;
+                nj0 nj0Var = b0Var.n;
                 b0Var.k();
                 b0Var.l();
                 boolean z10 = this.b;
@@ -68,14 +68,14 @@ public final class y extends AnimatorListenerAdapter {
                     b0Var.k = true;
                     b0Var.a.invalidate();
                 }
-                mj0Var.setCustomEmojiEnterProgress(Utilities.i(b0Var.j, 1.0f, 0.0f));
+                nj0Var.setCustomEmojiEnterProgress(Utilities.i(b0Var.j, 1.0f, 0.0f));
                 if (!z10) {
-                    mj0Var.setImportantForAccessibility(0);
-                    mj0Var.setSkipDraw(false);
+                    nj0Var.setImportantForAccessibility(0);
+                    nj0Var.setSkipDraw(false);
                     b0Var.f();
                     Runtime.getRuntime().gc();
                     int i10 = b0Var.y;
-                    mj0Var.setCustomEmojiReactionsBackground((i10 == 4 || i10 == 5) ? false : true);
+                    nj0Var.setCustomEmojiReactionsBackground((i10 == 4 || i10 == 5) ? false : true);
                 }
                 b0Var.C = false;
                 break;
@@ -86,9 +86,9 @@ public final class y extends AnimatorListenerAdapter {
                 break;
             case 2:
                 p1 p1Var = (p1) this.c;
-                nb0 nb0Var = p1Var.c;
+                mb0 mb0Var = p1Var.c;
                 boolean z11 = this.b;
-                nb0Var.setAlpha(z11 ? 0.0f : 1.0f);
+                mb0Var.setAlpha(z11 ? 0.0f : 1.0f);
                 p1Var.a.setAlpha(z11 ? 0.0f : 0.5f);
                 p1Var.invalidate();
                 break;
@@ -124,7 +124,7 @@ public final class y extends AnimatorListenerAdapter {
                 break;
             case 6:
                 uh.i iVar = (uh.i) this.c;
-                s51 s51Var = iVar.h;
+                t51 t51Var = iVar.h;
                 uh.c cVar = iVar.f;
                 uh.e eVar = iVar.w;
                 iVar.b = false;
@@ -133,11 +133,11 @@ public final class y extends AnimatorListenerAdapter {
                     int i11 = iVar.e;
                     iVar.d = i11;
                     iVar.W.D = i11;
-                    tz.F(i11);
+                    uz.F(i11);
                 }
                 int b10 = eVar.b();
                 if (z13) {
-                    s51Var.y1(iVar.d);
+                    t51Var.y1(iVar.d);
                     cVar.a0();
                     if (eVar.b() == b10) {
                         org.telegram.messenger.i0.a4(cVar);
@@ -151,7 +151,7 @@ public final class y extends AnimatorListenerAdapter {
                     if (z13 && (m10 = iVar.s.m(i12)) != null) {
                         iVar.T = m10.getTop();
                     }
-                    s51Var.h1(iVar.S, (-cVar.getPaddingTop()) + iVar.T);
+                    t51Var.h1(iVar.S, (-cVar.getPaddingTop()) + iVar.T);
                 }
                 super.onAnimationEnd(animator);
                 break;

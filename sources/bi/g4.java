@@ -3,14 +3,14 @@ package bi;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -55,30 +55,30 @@ public final /* synthetic */ class g4 implements View.OnClickListener {
                     z60 G = z60.G(tVar, p6Var, view, true);
                     G.Q = true;
                     z60 J = G.J();
-                    boolean z10 = (vp.r1(i15).p4() || d20.i(i15).q()) ? false : true;
-                    J.c(R.drawable.ic_ab_back, cd.L0(2131753756, null), new j(G, 0), false);
+                    boolean z10 = (wp.r1(i15).p4() || e20.i(i15).q()) ? false : true;
+                    J.c(R.drawable.ic_ab_back, dd.L0(2131753756, null), new j(G, 0), false);
                     J.k();
-                    tVar.S(J, T2, new TL_iv.pageBlockHeading1(), R.drawable.iv_h1, cd.L0(2131754030, null), tz.W0 + 2, G);
-                    tVar.S(J, T2, new TL_iv.pageBlockHeading2(), R.drawable.iv_h2, cd.L0(2131754029, null), tz.W0 + 1, G);
-                    tVar.S(J, T2, new TL_iv.pageBlockHeading3(), R.drawable.iv_h3, cd.L0(2131754028, null), tz.W0, G);
-                    tVar.S(J, T2, new TL_iv.pageBlockHeading4(), R.drawable.iv_h4, cd.L0(2131754027, null), tz.W0 - 1, G);
-                    tVar.S(J, T2, new TL_iv.pageBlockHeading5(), R.drawable.iv_h5, cd.L0(2131754026, null), tz.W0 - 2, G);
-                    tVar.S(J, T2, new TL_iv.pageBlockHeading6(), R.drawable.iv_h6, cd.L0(2131754025, null), tz.W0 - 3, G);
+                    tVar.S(J, T2, new TL_iv.pageBlockHeading1(), R.drawable.iv_h1, dd.L0(2131754030, null), uz.W0 + 2, G);
+                    tVar.S(J, T2, new TL_iv.pageBlockHeading2(), R.drawable.iv_h2, dd.L0(2131754029, null), uz.W0 + 1, G);
+                    tVar.S(J, T2, new TL_iv.pageBlockHeading3(), R.drawable.iv_h3, dd.L0(2131754028, null), uz.W0, G);
+                    tVar.S(J, T2, new TL_iv.pageBlockHeading4(), R.drawable.iv_h4, dd.L0(2131754027, null), uz.W0 - 1, G);
+                    tVar.S(J, T2, new TL_iv.pageBlockHeading5(), R.drawable.iv_h5, dd.L0(2131754026, null), uz.W0 - 2, G);
+                    tVar.S(J, T2, new TL_iv.pageBlockHeading6(), R.drawable.iv_h6, dd.L0(2131754025, null), uz.W0 - 3, G);
                     boolean z11 = T2 != null && d4.F3(T2.b);
                     i2 i2Var = new i2(tVar.getContext(), R.drawable.iv_h1);
                     i2Var.a(z10);
-                    G.j(z11, 0, i2Var, cd.L0(2131754031, null), new k(G, J, 0));
-                    G.j(T2 != null && (T2.b instanceof TL_iv.pageBlockParagraph), R.drawable.iv_text, null, cd.L0(2131753988, null), new h(tVar, T2, 5));
-                    G.j(T2 != null && (T2.b instanceof TL_iv.pageBlockBlockquote), R.drawable.iv_quote, null, cd.L0(2131753996, null), new h(tVar, T2, 6));
+                    G.j(z11, 0, i2Var, dd.L0(2131754031, null), new k(G, J, 0));
+                    G.j(T2 != null && (T2.b instanceof TL_iv.pageBlockParagraph), R.drawable.iv_text, null, dd.L0(2131753988, null), new h(tVar, T2, 5));
+                    G.j(T2 != null && (T2.b instanceof TL_iv.pageBlockBlockquote), R.drawable.iv_quote, null, dd.L0(2131753996, null), new h(tVar, T2, 6));
                     boolean z12 = T2 != null && (T2.b instanceof TL_iv.pageBlockPullquote);
                     i2 i2Var2 = new i2(tVar.getContext(), R.drawable.iv_pullquote);
                     i2Var2.a(z10);
-                    G.j(z12, 0, i2Var2, cd.L0(2131753997, null), new h(tVar, T2, 7));
-                    G.j(T2 != null && (T2.b instanceof TL_iv.pageBlockPreformatted), R.drawable.iv_code, null, cd.L0(2131754055, null), new h(tVar, T2, 8));
+                    G.j(z12, 0, i2Var2, dd.L0(2131753997, null), new h(tVar, T2, 7));
+                    G.j(T2 != null && (T2.b instanceof TL_iv.pageBlockPreformatted), R.drawable.iv_code, null, dd.L0(2131754055, null), new h(tVar, T2, 8));
                     boolean z13 = T2 != null && (T2.b instanceof TL_iv.pageBlockFooter);
                     i2 i2Var3 = new i2(tVar.getContext(), R.drawable.iv_footer);
                     i2Var3.a(z10);
-                    G.j(z13, 0, i2Var3, cd.L0(2131754032, null), new h(tVar, T2, 9));
+                    G.j(z13, 0, i2Var3, dd.L0(2131754032, null), new h(tVar, T2, 9));
                     G.Z();
                     tVar.H = G;
                     break;
@@ -89,17 +89,17 @@ public final /* synthetic */ class g4 implements View.OnClickListener {
                     }
                     final z60 F = z60.F(tVar, p6Var, view);
                     F.Q = true;
-                    F.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, cd.L0(2131753999, null), new h(tVar, T2, 1));
-                    F.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, cd.L0(2131754006, null), new h(tVar, T2, 2));
-                    F.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, cd.L0(2131754003, null), new h(tVar, T2, 3));
-                    F.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, cd.L0(2131754001, null), new h(tVar, T2, 4));
-                    F.j(T2 != null && (T2.b instanceof TL_iv.pageBlockDetails), R.drawable.iv_details, null, cd.L0(2131753987, null), new b(d4Var, 1));
+                    F.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, dd.L0(2131753999, null), new h(tVar, T2, 1));
+                    F.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, dd.L0(2131754006, null), new h(tVar, T2, 2));
+                    F.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, dd.L0(2131754003, null), new h(tVar, T2, 3));
+                    F.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, dd.L0(2131754001, null), new h(tVar, T2, 4));
+                    F.j(T2 != null && (T2.b instanceof TL_iv.pageBlockDetails), R.drawable.iv_details, null, dd.L0(2131753987, null), new b(d4Var, 1));
                     boolean p22 = d4Var.p2();
                     boolean s22 = d4Var.s2();
                     if (p22 || s22) {
                         F.k();
                         if (p22) {
-                            F.c(R.drawable.iv_list_tab, cd.L0(2131754013, null), new Runnable() { // from class: bi.i
+                            F.c(R.drawable.iv_list_tab, dd.L0(2131754013, null), new Runnable() { // from class: bi.i
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i14) {
@@ -116,7 +116,7 @@ public final /* synthetic */ class g4 implements View.OnClickListener {
                             }, false);
                         }
                         if (s22) {
-                            F.c(R.drawable.iv_list_untab, cd.L0(2131753998, null), new Runnable() { // from class: bi.i
+                            F.c(R.drawable.iv_list_untab, dd.L0(2131753998, null), new Runnable() { // from class: bi.i
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i13) {

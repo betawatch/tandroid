@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sm implements Runnable {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class sm implements Runnable {
                 fnVar.a(chat);
                 break;
             case 2:
-                fnVar.a.Aa(chat);
+                fnVar.a.Fa(chat);
                 break;
             default:
-                org.telegram.ui.Components.cc.a0(fnVar.a).Q(R.raw.contact_check, 36, org.telegram.messenger.cd.a0(null, null, 2131742861, chat == null ? "" : chat.title)).k(true);
+                org.telegram.ui.Components.cc.a0(fnVar.a).Q(R.raw.contact_check, 36, org.telegram.messenger.dd.a0(null, null, 2131742861, chat == null ? "" : chat.title)).k(true);
                 break;
         }
     }

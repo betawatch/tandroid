@@ -17,12 +17,12 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import bi.s0;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c extends Drawable implements k6 {
     public final Paint D;
@@ -53,7 +53,7 @@ public final class c extends Drawable implements k6 {
         this.s = paint2;
         s0 s0Var = new s0(this, 10);
         this.D = new Paint(1);
-        this.G = zs.e4;
+        this.G = at.e4;
         this.b = fVar;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         paint2.setFilterBitmap(true);
@@ -63,7 +63,7 @@ public final class c extends Drawable implements k6 {
 
     public static LinearGradient a(int i10, boolean z10) {
         int alpha = Color.alpha(i10);
-        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.b.o(i10, 0), i0.b.o(i10, (alpha * 96) / zs.I4), i0.b.o(i10, (alpha * zs.G2) / zs.I4), i0.b.o(i10, (alpha * zs.I3) / zs.I4)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.b.o(i10, 0), i0.b.o(i10, (alpha * 96) / zs.e4), i0.b.o(i10, (alpha * zs.G2) / zs.e4), i0.b.o(i10, (alpha * zs.I3) / zs.e4), i0.b.o(i10, (alpha * zs.e4) / zs.e4)}, (float[]) null, Shader.TileMode.CLAMP);
+        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.b.o(i10, 0), i0.b.o(i10, (alpha * 96) / at.I4), i0.b.o(i10, (alpha * at.G2) / at.I4), i0.b.o(i10, (alpha * at.I3) / at.I4)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.b.o(i10, 0), i0.b.o(i10, (alpha * 96) / at.e4), i0.b.o(i10, (alpha * at.G2) / at.e4), i0.b.o(i10, (alpha * at.I3) / at.e4), i0.b.o(i10, (alpha * at.e4) / at.e4)}, (float[]) null, Shader.TileMode.CLAMP);
     }
 
     public final void b(int i10, boolean z10) {
@@ -95,7 +95,7 @@ public final class c extends Drawable implements k6 {
             return;
         }
         vg.f fVar = this.b;
-        hi.a u10 = vg.f.u(fVar.f);
+        hi.a u10 = vg.f.u(fVar.r);
         boolean z11 = this.F;
         Matrix matrix = this.c;
         Matrix matrix2 = this.e;

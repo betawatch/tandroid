@@ -1,116 +1,106 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class d40 extends s4.n {
-    public final /* synthetic */ b50 b;
+public final class d40 implements org.telegram.ui.Components.mj0 {
+    public final Path a = new Path();
+    public final Paint b;
+    public final /* synthetic */ a50 c;
 
-    public d40(b50 b50Var) {
-        this.b = b50Var;
+    public d40(a50 a50Var) {
+        this.c = a50Var;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(-14603467);
     }
 
-    @Override // s4.n
-    public final boolean a(int i10, int i11) {
+    @Override // org.telegram.ui.Components.mj0
+    public final boolean A() {
         return true;
     }
 
-    @Override // s4.n
-    public final boolean b(int i10, int i11) {
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        b50 b50Var = this.b;
-        v40 v40Var = b50Var.G1;
-        int i17 = v40Var.x;
-        if (i17 >= 0) {
-            int i18 = b50Var.Y4;
-            if (i10 == i18 && i11 == i17) {
-                return true;
-            }
-            if ((i10 == i18 && i11 != i17) || (i10 != i18 && i11 == i17)) {
-                return false;
-            }
-        }
-        int i19 = v40Var.y;
-        if (i19 >= 0) {
-            int i20 = b50Var.l5;
-            if (i10 == i20 && i11 == i19) {
-                return true;
-            }
-            if ((i10 == i20 && i11 != i19) || (i10 != i20 && i11 == i19)) {
-                return false;
-            }
-        }
-        int i21 = v40Var.D;
-        if (i21 >= 0) {
-            int i22 = b50Var.m5;
-            if (i10 == i22 && i11 == i21) {
-                return true;
-            }
-            if ((i10 == i22 && i11 != i21) || (i10 != i22 && i11 == i21)) {
-                return false;
-            }
-        }
-        int i23 = v40Var.K;
-        if (i23 >= 0) {
-            int i24 = b50Var.X4;
-            if (i10 == i24 && i11 == i23) {
-                return true;
-            }
-            if ((i10 == i24 && i11 != i23) || (i10 != i24 && i11 == i23)) {
-                return false;
-            }
-        }
-        int i25 = v40Var.J;
-        if (i25 >= 0) {
-            int i26 = b50Var.k5;
-            if (i10 == i26 && i11 == i25) {
-                return true;
-            }
-            if ((i10 == i26 && i11 != i25) || (i10 != i26 && i11 == i25)) {
-                return false;
-            }
-        }
-        int i27 = v40Var.I;
-        if (i27 >= 0 && i27 == i11 && i10 == b50Var.j5) {
-            return true;
-        }
-        int i28 = b50Var.z2;
-        if (i10 == i28 - 1 && i11 == v40Var.F - 1) {
-            return true;
-        }
-        if (i10 != i28 - 1 && i11 != v40Var.F - 1) {
-            if (i11 >= v40Var.G && i11 < v40Var.H && i10 >= (i16 = b50Var.h5) && i10 < b50Var.i5) {
-                return ((org.telegram.messenger.v3) b50Var.v2.get(i10 - i16)).equals((org.telegram.messenger.v3) b50Var.h2.get(i11 - b50Var.G1.G));
-            }
-            if (i11 >= v40Var.d && i11 < v40Var.e && i10 >= (i15 = b50Var.Z4) && i10 < b50Var.a5) {
-                TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) b50Var.u2.get(i10 - i15);
-                return org.telegram.messenger.jj.C1(groupCallParticipant.peer) == org.telegram.messenger.jj.C1(((TLRPC.GroupCallParticipant) b50Var.R2.g.get(i11 - b50Var.G1.d)).peer) && (i10 == i11 || groupCallParticipant.lastActiveDate == ((long) groupCallParticipant.active_date));
-            }
-            if (i11 >= v40Var.f && i11 < v40Var.h && i10 >= (i14 = b50Var.b5) && i10 < b50Var.c5) {
-                return ((Long) b50Var.w2.get(i10 - i14)).equals((Long) b50Var.R2.j.get(i11 - b50Var.G1.f));
-            }
-            if (i11 >= v40Var.n && i11 < v40Var.r && i10 >= (i13 = b50Var.d5) && i10 < b50Var.e5) {
-                return ((Long) b50Var.x2.get(i10 - i13)).equals((Long) b50Var.R2.m.get(i11 - b50Var.G1.n));
-            }
-            if (i11 >= v40Var.s && i11 < v40Var.w && i10 >= (i12 = b50Var.f5) && i10 < b50Var.g5) {
-                return ((Long) b50Var.y2.get(i10 - i12)).equals((Long) b50Var.R2.l.get(i11 - b50Var.G1.s));
-            }
-        }
+    @Override // org.telegram.ui.Components.mj0
+    public final boolean f() {
         return false;
     }
 
-    @Override // s4.n
-    public final int d() {
-        return this.b.G1.F;
+    @Override // org.telegram.ui.Components.mj0
+    public final /* synthetic */ boolean h() {
+        return false;
     }
 
-    @Override // s4.n
-    public final int e() {
-        return this.b.z2;
+    @Override // org.telegram.ui.Components.mj0
+    public final void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+        Paint paint = this.b;
+        if (f7 > 0.0f) {
+            canvas.drawRoundRect(rectF, f7, f7, paint);
+        } else {
+            canvas.drawRect(rectF, paint);
+        }
+        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
+            return;
+        }
+        a50 a50Var = this.c;
+        if (a50Var.H4 != null) {
+            canvas.save();
+            if (f7 > 0.0f) {
+                Path path = this.a;
+                path.rewind();
+                path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
+                path.close();
+                canvas.clipPath(path);
+            } else {
+                canvas.clipRect(rectF);
+            }
+            canvas.translate(-a50Var.B1.getX(), -a50Var.B1.getY());
+            float f12 = a50Var.I4;
+            canvas.scale(f12, f12);
+            canvas.drawRenderNode(a50Var.H4);
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mj0
+    public final void x(View view, sg.o0 o0Var, boolean z10, boolean z11) {
+        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
+        String str = o0Var.f;
+        if (str == null) {
+            str = "👍";
+        }
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        tL_textWithEntities.text = str;
+        long j10 = o0Var.g;
+        if (j10 != 0) {
+            tL_messageEntityCustomEmoji.document_id = j10;
+            tL_messageEntityCustomEmoji.offset = 0;
+            tL_messageEntityCustomEmoji.length = str.length();
+            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
+        }
+        a50 a50Var = this.c;
+        a50Var.C1(tL_textWithEntities);
+        f30 f30Var = a50Var.y1;
+        if (f30Var.m()) {
+            f30Var.j();
+        } else {
+            f30Var.d();
+        }
+        sg.b0 reactionsWindow = a50Var.B1.getReactionsWindow();
+        if (reactionsWindow == null || reactionsWindow.q) {
+            return;
+        }
+        a50Var.B1.getReactionsWindow().e();
+        a50Var.B1.n();
+    }
+
+    @Override // org.telegram.ui.Components.mj0
+    public final /* synthetic */ void t() {
     }
 }

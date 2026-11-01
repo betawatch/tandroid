@@ -3,9 +3,9 @@ package org.telegram.ui.Cells;
 import android.graphics.Rect;
 import android.text.Layout;
 import android.text.Spanned;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f9 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,12 +44,12 @@ public final class f9 implements Runnable {
                             m10 = i10 + p5;
                         }
                     }
-                    tk0 tk0Var = w9Var.E;
-                    if (tk0Var != null) {
+                    uk0 uk0Var = w9Var.E;
+                    if (uk0Var != null) {
                         if (!w9Var.O) {
                             m10 = -m10;
                         }
-                        tk0Var.scrollBy(0, m10);
+                        uk0Var.scrollBy(0, m10);
                     }
                     org.telegram.messenger.i0.g3(this);
                     break;
@@ -65,9 +65,9 @@ public final class f9 implements Runnable {
                     r9 r9Var2 = w9Var2.W;
                     int i12 = 1;
                     CharSequence s10 = w9Var2.s(r9Var, true);
-                    tk0 tk0Var2 = w9Var2.E;
-                    if (tk0Var2 != null) {
-                        tk0Var2.I0(false);
+                    uk0 uk0Var2 = w9Var2.E;
+                    if (uk0Var2 != null) {
+                        uk0Var2.I0(false);
                     }
                     int i13 = w9Var2.s;
                     int i14 = w9Var2.t;

@@ -2,17 +2,17 @@ package mg;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x1 implements q20 {
+public final /* synthetic */ class x1 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ i2 b;
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class x1 implements q20 {
         this.b = i2Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
@@ -48,16 +48,16 @@ public final /* synthetic */ class x1 implements q20 {
                 updatebirthday.flags |= 1;
                 updatebirthday.birthday = tL_birthday;
                 i2 i2Var2 = this.b;
-                TLRPC.UserFull a2 = vp.r1(i2Var2.a).a2(d20.i(i2Var2.a).e());
+                TLRPC.UserFull a2 = wp.r1(i2Var2.a).a2(e20.i(i2Var2.a).e());
                 TL_account.TL_birthday tL_birthday2 = a2 != null ? a2.birthday : null;
                 if (a2 != null) {
                     a2.flags2 |= 32;
                     a2.birthday = tL_birthday;
                 }
                 ConnectionsManager.getInstance(i2Var2.a).sendRequest(updatebirthday, new ag.p0(i2Var2, a2, tL_birthday2, 7), 1024);
-                vp.r1(i2Var2.a).l2();
-                vp.r1(i2Var2.a).h4(0L, "BIRTHDAY_SETUP");
-                zs.f(i2Var2.a).k(zs.s1, new Object[0]);
+                wp.r1(i2Var2.a).l2();
+                wp.r1(i2Var2.a).h4(0L, "BIRTHDAY_SETUP");
+                at.f(i2Var2.a).k(at.s1, new Object[0]);
                 i2Var2.o1(true, true);
                 break;
             default:

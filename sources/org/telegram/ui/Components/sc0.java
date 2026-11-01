@@ -11,7 +11,7 @@ import android.view.ViewTreeObserver;
 import android.view.animation.DecelerateInterpolator;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class sc0 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -31,22 +31,22 @@ public final class sc0 implements ViewTreeObserver.OnGlobalLayoutListener {
         float f7;
         int L;
         org.telegram.ui.Cells.a5 a5Var;
-        ei0 ei0Var;
+        fi0 fi0Var;
         AnimatorSet animatorSet;
         zc0 zc0Var = this.d;
         org.telegram.ui.Cells.a5 a5Var2 = zc0Var.e;
         ArrayList arrayList = zc0Var.W;
         int[] iArr = zc0Var.h0;
-        ei0 ei0Var2 = zc0Var.M;
+        fi0 fi0Var2 = zc0Var.M;
         zc0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
         if (zc0Var.P || !zc0Var.isAttachedToWindow()) {
             return;
         }
         zc0Var.setAlpha(1.0f);
         int i10 = 0;
-        ei0Var2.getAnimatedDrawable().N(0, false, false);
-        ei0Var2.getAnimatedDrawable().P(37);
-        ei0Var2.d();
+        fi0Var2.getAnimatedDrawable().N(0, false, false);
+        fi0Var2.getAnimatedDrawable().P(37);
+        fi0Var2.d();
         zc0Var.o(true);
         org.telegram.messenger.i0.h3(new eb0(this, 4), 350L);
         AnimatorSet animatorSet2 = new AnimatorSet();
@@ -66,7 +66,7 @@ public final class sc0 implements ViewTreeObserver.OnGlobalLayoutListener {
         int i20 = 1;
         double sqrt2 = Math.sqrt(i18 + i19);
         int i21 = i16 * i16;
-        ei0 ei0Var3 = ei0Var2;
+        fi0 fi0Var3 = fi0Var2;
         final double max = Math.max(Math.max(Math.max(sqrt, sqrt2), Math.sqrt(i19 + i21)), Math.sqrt(i21 + i15));
         arrayList.clear();
         int childCount = a5Var2.getChildCount();
@@ -99,17 +99,17 @@ public final class sc0 implements ViewTreeObserver.OnGlobalLayoutListener {
                 animatorArr[0] = ofFloat;
                 animatorArr[i24] = ofFloat2;
                 animatorSet.playTogether(animatorArr);
-                ei0Var = ei0Var3;
+                fi0Var = fi0Var3;
                 animatorSet.setDuration(140L);
                 animatorSet.setInterpolator(new DecelerateInterpolator());
             } else {
                 a5Var = a5Var2;
-                ei0Var = ei0Var3;
+                fi0Var = fi0Var3;
                 animatorSet = null;
             }
             AnimatorSet animatorSet3 = new AnimatorSet();
             vc0Var.a = animatorSet3;
-            ei0 ei0Var4 = ei0Var;
+            fi0 fi0Var4 = fi0Var;
             animatorSet3.playTogether(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_X, i22 == -1 ? 0.9f : 0.6f, i22 == -1 ? 1.0f : 1.04f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_Y, i22 != -1 ? 0.6f : 0.9f, i22 == -1 ? 1.0f : 1.04f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f));
             vc0Var.a.addListener(new t60(animatorSet, 7));
             vc0Var.a.setDuration(i22 == -1 ? 232L : 200L);
@@ -118,11 +118,11 @@ public final class sc0 implements ViewTreeObserver.OnGlobalLayoutListener {
             i22++;
             arrayList2 = arrayList3;
             a5Var2 = a5Var;
-            ei0Var3 = ei0Var4;
+            fi0Var3 = fi0Var4;
             i20 = 1;
         }
         ArrayList arrayList4 = arrayList2;
-        ei0 ei0Var5 = ei0Var3;
+        fi0 fi0Var5 = fi0Var3;
         arrayList4.add(ObjectAnimator.ofFloat(zc0Var.w, (Property<fg.i, Float>) View.ALPHA, 0.0f, 1.0f));
         ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
         arrayList4.add(ofFloat3);
@@ -166,10 +166,10 @@ public final class sc0 implements ViewTreeObserver.OnGlobalLayoutListener {
             f7 = i11 / 2.0f;
             L = org.telegram.messenger.i0.L(29.0f);
         } else {
-            f7 = (org.telegram.messenger.tz.r == 0 ? i11 / 2.0f : i11) / 2.0f;
+            f7 = (org.telegram.messenger.uz.r == 0 ? i11 / 2.0f : i11) / 2.0f;
             L = org.telegram.messenger.i0.L(30.0f);
         }
-        animatorSet4.playTogether(ObjectAnimator.ofFloat(ei0Var5, (Property<ei0, Float>) View.TRANSLATION_X, i13 - org.telegram.messenger.i0.L(29.0f), f7 - L), ObjectAnimator.ofFloat(ei0Var5, (Property<ei0, Float>) View.TRANSLATION_Y, i16 - org.telegram.messenger.i0.L(29.0f), zc0Var.L), ObjectAnimator.ofFloat(ei0Var5, (Property<ei0, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(ei0Var5, (Property<ei0, Float>) View.SCALE_Y, 0.5f, 1.0f));
+        animatorSet4.playTogether(ObjectAnimator.ofFloat(fi0Var5, (Property<fi0, Float>) View.TRANSLATION_X, i13 - org.telegram.messenger.i0.L(29.0f), f7 - L), ObjectAnimator.ofFloat(fi0Var5, (Property<fi0, Float>) View.TRANSLATION_Y, i16 - org.telegram.messenger.i0.L(29.0f), zc0Var.L), ObjectAnimator.ofFloat(fi0Var5, (Property<fi0, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(fi0Var5, (Property<fi0, Float>) View.SCALE_Y, 0.5f, 1.0f));
         animatorSet4.setInterpolator(gr.g);
         animatorSet4.start();
     }

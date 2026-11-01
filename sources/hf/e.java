@@ -25,7 +25,7 @@ import s4.t0;
 import s4.u0;
 import s4.z0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e {
     public int a;
@@ -391,16 +391,16 @@ public final class e {
                 if (!g0Var.F(indexOfChild)) {
                     throw new RuntimeException("trying to unhide a view that was not hidden" + view);
                 }
-                g0Var.w(indexOfChild);
+                g0Var.B(indexOfChild);
                 dVar.y(view);
                 q5.d dVar2 = recyclerView.e;
                 c3.g0 g0Var2 = (c3.g0) dVar2.c;
                 int indexOfChild2 = ((RecyclerView) ((t) dVar2.b).b).indexOfChild(view);
-                int B = (indexOfChild2 == -1 || g0Var2.F(indexOfChild2)) ? -1 : indexOfChild2 - g0Var2.B(indexOfChild2);
-                if (B == -1) {
+                int C = (indexOfChild2 == -1 || g0Var2.F(indexOfChild2)) ? -1 : indexOfChild2 - g0Var2.C(indexOfChild2);
+                if (C == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());
                 }
-                recyclerView.e.j(B);
+                recyclerView.e.j(C);
                 i(view);
                 U2.a(8224);
                 c1Var3 = U2;

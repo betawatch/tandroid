@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class co implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final /* synthetic */ class co implements View.OnClickListener {
                 z2Var.dismiss();
                 Activity W = org.telegram.messenger.i0.W(this.b);
                 if (W != null) {
-                    org.telegram.messenger.vp.d1().edit().putBoolean("callmiconstart", epVar.a.q).apply();
-                    org.telegram.ui.Components.voip.m1.g(W, this.c, tL_inputGroupCallSlug, false, null, null);
+                    org.telegram.messenger.wp.d1().edit().putBoolean("callmiconstart", epVar.a.q).apply();
+                    org.telegram.ui.Components.voip.n1.g(W, this.c, tL_inputGroupCallSlug, false, null, null);
                     break;
                 }
                 break;

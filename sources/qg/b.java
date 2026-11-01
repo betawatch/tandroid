@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.k6;
 import org.telegram.tgnet.TLRPC;
@@ -14,7 +14,7 @@ import org.telegram.ui.Components.ep;
 import ph.x1;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b extends og.d {
     public final ep s;
@@ -37,7 +37,7 @@ public final class b extends og.d {
         epVar.setDrawBackgroundAsArc(10);
         addView(epVar);
         epVar.a(false, false);
-        epVar.setLayoutParams(b6.d(24, 24.0f, (cd.X ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+        epVar.setLayoutParams(b6.d(24, 24.0f, (dd.X ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
     @Override // og.d
@@ -60,18 +60,18 @@ public final class b extends og.d {
 
     @Override // og.d
     public final void d() {
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         this.d.setLayoutParams(b6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
-        boolean z11 = cd.X;
+        boolean z11 = dd.X;
         this.e.setLayoutParams(b6.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 52.0f, 0.0f, z11 ? 52.0f : 20.0f, 0.0f));
-        boolean z12 = cd.X;
+        boolean z12 = dd.X;
         this.f.setLayoutParams(b6.d(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
     }
 
     public final void f() {
         TLRPC.TL_help_country tL_help_country = this.w;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        CharSequence o10 = k6.o(cd.E0(tL_help_country.iso2), this.x.getFontMetricsInt(), 0, this.y);
+        CharSequence o10 = k6.o(dd.E0(tL_help_country.iso2), this.x.getFontMetricsInt(), 0, this.y);
         if (o10 != null) {
             spannableStringBuilder.append(o10).append((CharSequence) " ");
             spannableStringBuilder.setSpan(new a(16), o10.length(), o10.length() + 1, 0);
@@ -79,7 +79,7 @@ public final class b extends og.d {
             spannableStringBuilder.append((CharSequence) " ");
             spannableStringBuilder.setSpan(new a(34), 0, 1, 0);
         }
-        String i02 = cd.i0(2131750530, tL_help_country.iso2);
+        String i02 = dd.i0(2131750530, tL_help_country.iso2);
         if (TextUtils.isEmpty(i02)) {
             i02 = tL_help_country.default_name;
         }

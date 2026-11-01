@@ -2,15 +2,15 @@ package bi;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.ff;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ai;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.mg;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class q implements ai {
     public final /* synthetic */ bi a;
@@ -23,7 +23,7 @@ public final class q implements ai {
 
     @Override // org.telegram.ui.Components.ai
     public final void C(mg mgVar) {
-        zs.f(this.b.n).d(mgVar);
+        at.f(this.b.n).d(mgVar);
     }
 
     @Override // org.telegram.ui.Components.ai
@@ -47,12 +47,12 @@ public final class q implements ai {
                     break;
                 }
                 Object obj = selectedPhotos.get(selectedPhotosOrder.get(i13));
-                if (!(obj instanceof ef)) {
+                if (!(obj instanceof ff)) {
                     i13++;
                 } else if (aVar != null) {
-                    d4Var.W1(aVar, (ef) obj);
+                    d4Var.W1(aVar, (ff) obj);
                 } else {
-                    d4Var.i2((ef) obj);
+                    d4Var.i2((ff) obj);
                 }
             }
         }

@@ -7,10 +7,10 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t6 extends Drawable {
     public static float[] k;
@@ -26,7 +26,7 @@ public final class t6 extends Drawable {
     public static final int[] o = new int[2];
     public final Paint a = new Paint(3);
     public float e = -1.0f;
-    public int h = zs.e4;
+    public int h = at.e4;
     public float i = 1.0f;
 
     public t6(int i10, int i11) {

@@ -15,17 +15,17 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.inputmethod.InputMethodManager;
 import java.util.HashSet;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.tu;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.uu;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.a01;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.k80;
 import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.zz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class n1 extends mt implements org.telegram.ui.ActionBar.k6 {
     public long A2;
@@ -65,7 +65,7 @@ public final class n1 extends mt implements org.telegram.ui.ActionBar.k6 {
     /* JADX WARN: Type inference failed for: r0v0, types: [bi.f1] */
     public n1(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
         super(context, p6Var);
-        this.b2 = d20.s0;
+        this.b2 = e20.s0;
         this.o2 = -1;
         this.p2 = true;
         this.q2 = new InputFilter() { // from class: bi.f1
@@ -106,7 +106,7 @@ public final class n1 extends mt implements org.telegram.ui.ActionBar.k6 {
     }
 
     @Override // org.telegram.ui.Components.mt
-    public final g51 A(String str) {
+    public final h51 A(String str) {
         return s6.k(str);
     }
 
@@ -299,10 +299,10 @@ public final class n1 extends mt implements org.telegram.ui.ActionBar.k6 {
         Editable text = getText();
         if (text != null) {
             for (u4 u4Var : (u4[]) text.getSpans(0, text.length(), u4.class)) {
-                tu tuVar = u4Var.b;
-                if (tuVar != null && u4Var.c == this) {
-                    tuVar.h = null;
-                    tuVar.a.a.f(this);
+                uu uuVar = u4Var.b;
+                if (uuVar != null && u4Var.c == this) {
+                    uuVar.h = null;
+                    uuVar.a.a.f(this);
                     u4Var.c = null;
                 }
             }
@@ -328,15 +328,15 @@ public final class n1 extends mt implements org.telegram.ui.ActionBar.k6 {
                 this.l2 = null;
                 if (text instanceof Spanned) {
                     Spanned spanned = (Spanned) text;
-                    zz0[] zz0VarArr = (zz0[]) spanned.getSpans(0, spanned.length(), zz0.class);
-                    int length = zz0VarArr.length;
+                    a01[] a01VarArr = (a01[]) spanned.getSpans(0, spanned.length(), a01.class);
+                    int length = a01VarArr.length;
                     int i11 = 0;
                     while (i11 < length) {
-                        zz0 zz0Var = zz0VarArr[i11];
-                        int i12 = zz0Var.b.a;
+                        a01 a01Var = a01VarArr[i11];
+                        int i12 = a01Var.b.a;
                         if ((65536 & i12) != 0) {
-                            int spanStart = spanned.getSpanStart(zz0Var);
-                            int spanEnd = spanned.getSpanEnd(zz0Var);
+                            int spanStart = spanned.getSpanStart(a01Var);
+                            int spanEnd = spanned.getSpanEnd(a01Var);
                             k80Var = k80Var;
                             if (spanStart >= 0 && spanEnd > spanStart) {
                                 if (k80Var == null) {

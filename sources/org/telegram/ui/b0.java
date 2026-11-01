@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -17,10 +17,10 @@ public final /* synthetic */ class b0 implements RequestDelegate {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ b0(int i10, ch0 ch0Var, org.telegram.ui.ActionBar.k2 k2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+    public /* synthetic */ b0(int i10, ah0 ah0Var, org.telegram.ui.ActionBar.k2 k2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
         this.a = 5;
         this.b = i10;
-        this.c = ch0Var;
+        this.c = ah0Var;
         this.d = k2Var;
         this.e = tL_payments_assignPlayMarketTransaction;
     }
@@ -33,7 +33,7 @@ public final /* synthetic */ class b0 implements RequestDelegate {
         Object obj3 = this.c;
         switch (i10) {
             case 0:
-                org.telegram.messenger.i0.g3(new m4.a1((m60) obj3, (f4) obj2, tL_error, tLObject, this.b, (c1) obj, 4));
+                org.telegram.messenger.i0.g3(new m4.a1((l60) obj3, (f4) obj2, tL_error, tLObject, this.b, (c1) obj, 4));
                 break;
             case 1:
                 SharedPreferences sharedPreferences = (SharedPreferences) obj3;
@@ -50,15 +50,15 @@ public final /* synthetic */ class b0 implements RequestDelegate {
                 org.telegram.messenger.i0.g3(new i2.g1((org.telegram.ui.Components.vr) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 12));
                 break;
             case 3:
-                org.telegram.ui.Components.zt0 zt0Var = (org.telegram.ui.Components.zt0) obj3;
+                org.telegram.ui.Components.au0 au0Var = (org.telegram.ui.Components.au0) obj3;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
                 org.telegram.messenger.i0.g3(new org.telegram.ui.Components.as((org.telegram.ui.ActionBar.x1[]) obj2, 2));
                 int i11 = this.b;
                 if (tL_error != null) {
-                    org.telegram.messenger.i0.g3(new ag.g3(zt0Var, i11, tL_error, tL_messages_editMessage, 25));
+                    org.telegram.messenger.i0.g3(new ag.g3(au0Var, i11, tL_error, tL_messages_editMessage, 25));
                     break;
                 } else {
-                    org.telegram.messenger.vp.r1(i11).L3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.wp.r1(i11).L3((TLRPC.Updates) tLObject, false);
                     break;
                 }
             case 4:
@@ -66,19 +66,19 @@ public final /* synthetic */ class b0 implements RequestDelegate {
                 org.telegram.messenger.i0.h3(new i2.g1((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.x1) obj, 14), 2L);
                 break;
             case 5:
-                ch0 ch0Var = (ch0) obj3;
+                ah0 ah0Var = (ah0) obj3;
                 org.telegram.ui.ActionBar.k2 k2Var2 = (org.telegram.ui.ActionBar.k2) obj2;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
                 boolean z10 = tLObject instanceof TLRPC.Updates;
                 int i12 = this.b;
                 if (!z10) {
                     if (tL_error != null) {
-                        org.telegram.messenger.i0.g3(new org.telegram.ui.Components.c11(i12, tL_error, k2Var2, tL_payments_assignPlayMarketTransaction, 10));
+                        org.telegram.messenger.i0.g3(new org.telegram.ui.Components.d11(i12, tL_error, k2Var2, tL_payments_assignPlayMarketTransaction, 10));
                         break;
                     }
                 } else {
-                    org.telegram.messenger.vp.r1(i12).L3((TLRPC.Updates) tLObject, false);
-                    org.telegram.messenger.i0.g3(ch0Var);
+                    org.telegram.messenger.wp.r1(i12).L3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.i0.g3(ah0Var);
                     break;
                 }
                 break;
@@ -96,7 +96,7 @@ public final /* synthetic */ class b0 implements RequestDelegate {
                     break;
                 }
             default:
-                org.telegram.messenger.i0.g3(new i2.g1(tLObject, (boolean[]) obj3, (org.telegram.messenger.q20) obj2, this.b, (TL_account.updateEmojiStatus) obj, 23));
+                org.telegram.messenger.i0.g3(new i2.g1(tLObject, (boolean[]) obj3, (org.telegram.messenger.r20) obj2, this.b, (TL_account.updateEmojiStatus) obj, 23));
                 break;
         }
     }

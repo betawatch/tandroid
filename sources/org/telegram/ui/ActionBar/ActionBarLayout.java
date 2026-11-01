@@ -43,14 +43,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.rz;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.sz;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.bi;
@@ -59,16 +59,16 @@ import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Components.x8;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hf0;
-import org.telegram.ui.my;
-import org.telegram.ui.pf0;
+import org.telegram.ui.gf0;
+import org.telegram.ui.ly;
+import org.telegram.ui.of0;
+import org.telegram.ui.p70;
 import org.telegram.ui.pn;
-import org.telegram.ui.q70;
 import org.telegram.ui.sn;
 import org.telegram.ui.un;
 import th.o7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements z4, fg.b {
     public static Drawable v1;
@@ -100,7 +100,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
     public final AccelerateDecelerateInterpolator N;
     public int N0;
     public float O;
-    public q70 O0;
+    public p70 O0;
     public boolean P;
     public v4 P0;
     public boolean Q;
@@ -194,7 +194,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         this.d0 = x4Var;
         this.h0 = new ArrayList();
         this.j0 = new ArrayList();
-        this.r0 = new e2.f(null);
+        this.r0 = new e2.f((int[]) null);
         this.W0 = new Rect();
         this.Z0 = -1;
         this.b1 = new Path();
@@ -222,7 +222,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
     /* JADX WARN: Multi-variable type inference failed */
     public static void E(ArrayList arrayList, View view) {
         if (view instanceof fg.b) {
-            arrayList.addAll(((fg.b) view).F());
+            arrayList.addAll(((fg.b) view).G());
         }
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
@@ -357,22 +357,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // fg.b
-    public final List F() {
-        k2 lastFragment = getLastFragment();
-        if (lastFragment == 0) {
-            return Collections.EMPTY_LIST;
-        }
-        ArrayList arrayList = new ArrayList();
-        if (lastFragment instanceof fg.b) {
-            arrayList.addAll(((fg.b) lastFragment).F());
-        }
-        E(arrayList, lastFragment.getFragmentView());
-        return arrayList;
-    }
-
-    public final void G(boolean z10) {
+    public final void F(boolean z10) {
         J();
         M();
         Runnable runnable = this.d;
@@ -399,6 +384,21 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         this.w.setAlpha(1.0f);
         this.w.setScaleX(1.0f);
         this.w.setScaleY(1.0f);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // fg.b
+    public final List G() {
+        k2 lastFragment = getLastFragment();
+        if (lastFragment == 0) {
+            return Collections.EMPTY_LIST;
+        }
+        ArrayList arrayList = new ArrayList();
+        if (lastFragment instanceof fg.b) {
+            arrayList.addAll(((fg.b) lastFragment).G());
+        }
+        E(arrayList, lastFragment.getFragmentView());
+        return arrayList;
     }
 
     public final void H() {
@@ -502,7 +502,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         if (runnable != null) {
             runnable.run();
         }
-        ArrayList arrayList = hc.D().f;
+        ArrayList arrayList = ic.D().f;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             ((org.telegram.ui.Components.s5) arrayList.get(i10)).y0 = 0;
         }
@@ -727,7 +727,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         if (activity.getCurrentFocus() != null && k2Var2.hideKeyboardOnShow() && !z13) {
             org.telegram.messenger.i0.v1(activity.getCurrentFocus());
         }
-        boolean z15 = z13 || (!z11 && vp.d1().getBoolean("view_animations", true));
+        boolean z15 = z13 || (!z11 && wp.d1().getBoolean("view_animations", true));
         if (this.U0.isEmpty()) {
             t3Var = t3Var2;
             k2Var = null;
@@ -1523,7 +1523,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
                 i14 = width - paddingRight;
             }
             if (view != this.s) {
-                int b10 = w7.u.b((i14 * zs.e4) / org.telegram.messenger.i0.L(20.0f), 0, zs.e4);
+                int b10 = w7.u.b((i14 * at.e4) / org.telegram.messenger.i0.L(20.0f), 0, at.e4);
                 if (b10 > 0) {
                     int i15 = v(false) == 0 ? ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).bottomMargin : 0;
                     if (i12 < 31 || this.b) {
@@ -1591,7 +1591,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         boolean shouldOverrideSlideTransition = k2Var.shouldOverrideSlideTransition(false, z10);
         Property property = View.TRANSLATION_X;
         if (z10) {
-            int max = Math.max((int) ((320.0f / this.s.getMeasuredWidth()) * x10), C() ? zs.r5 : 120);
+            int max = Math.max((int) ((320.0f / this.s.getMeasuredWidth()) * x10), C() ? at.r5 : 120);
             if (!shouldOverrideSlideTransition) {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.s, (Property<w, Float>) property, 0.0f);
                 long j10 = max;
@@ -1693,7 +1693,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
 
     /* JADX WARN: Code restructure failed: missing block: B:65:0x00db, code lost:
     
-        r0 = org.telegram.messenger.vp.d1().edit();
+        r0 = org.telegram.messenger.wp.d1().edit();
         r0.putString("theme", r12.m());
         r0.apply();
      */
@@ -1759,7 +1759,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         }
         if (s6Var3.b == null && s6Var3.d == null) {
             if (!z10) {
-                SharedPreferences.Editor edit = vp.d1().edit();
+                SharedPreferences.Editor edit = wp.d1().edit();
                 edit.remove("theme");
                 edit.apply();
             }
@@ -1773,14 +1773,14 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
                 if (t6.I == t6.J) {
                     t6.T = 2000;
                     t6.U = SystemClock.elapsedRealtime();
-                    org.telegram.messenger.i0.h3(new rz(2), 2100L);
+                    org.telegram.messenger.i0.h3(new sz(2), 2100L);
                 }
             }
             t6.I = s6Var3;
             t6.t1(false, false);
             s6Var = s6Var3;
             if (t6.M == null && !t6.Q) {
-                vp.r1(s6Var.E).u4(s6Var, s6Var.k(false), z10, false);
+                wp.r1(s6Var.E).u4(s6Var, s6Var.k(false), z10, false);
             }
             sVar.run();
         }
@@ -1801,7 +1801,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
             e = e7;
             f8.g(e, true);
             if (t6.M == null) {
-                vp.r1(s6Var.E).u4(s6Var, s6Var.k(false), z10, false);
+                wp.r1(s6Var.E).u4(s6Var, s6Var.k(false), z10, false);
             }
             sVar.run();
         }
@@ -1896,7 +1896,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
 
     public k2 getLastFragmentIncludeMainTabs() {
         k2 lastFragment = getLastFragment();
-        return lastFragment instanceof pf0 ? ((pf0) lastFragment).b0() : lastFragment;
+        return lastFragment instanceof of0 ? ((of0) lastFragment).c0() : lastFragment;
     }
 
     @Override // org.telegram.ui.ActionBar.z4
@@ -1937,7 +1937,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         return null;
     }
 
-    public my getSheetFragment() {
+    public ly getSheetFragment() {
         return w();
     }
 
@@ -1990,7 +1990,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
             return false;
         }
         if (this.W && (this.B0 < System.currentTimeMillis() - 1500 || this.h)) {
-            G(true);
+            F(true);
         }
         return this.W;
     }
@@ -2017,7 +2017,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
                 org.telegram.messenger.i0.v1(activity.getCurrentFocus());
             }
             setInnerTranslationX(0.0f);
-            boolean z12 = !z11 && (this.h || this.a0 || (z10 && vp.d1().getBoolean("view_animations", true)));
+            boolean z12 = !z11 && (this.h || this.a0 || (z10 && wp.d1().getBoolean("view_animations", true)));
             k2 k2Var = (k2) sc.e.g(1, this.U0);
             AnimatorSet animatorSet = null;
             k2 k2Var2 = this.U0.size() > 1 ? (k2) sc.e.g(2, this.U0) : null;
@@ -2309,7 +2309,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
             if (childAt.getVisibility() != 8) {
                 i3 i3Var = this.E;
                 if (childAt == i3Var) {
-                    i3Var.setCurrentAccount(d20.s0);
+                    i3Var.setCurrentAccount(e20.s0);
                 }
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                 int measuredWidth = childAt.getMeasuredWidth();
@@ -2319,7 +2319,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
                     i22 = 8388659;
                 }
                 int absoluteGravity = Gravity.getAbsoluteGravity(i22, getLayoutDirection());
-                int i23 = i22 & zs.x1;
+                int i23 = i22 & at.x1;
                 int i24 = absoluteGravity & 7;
                 if (i24 == 1) {
                     i14 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;
@@ -2513,7 +2513,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
     }
 
     public final void p(Canvas canvas, int i10, int i11) {
-        if (v1 == null || !tz.D1) {
+        if (v1 == null || !uz.D1) {
             return;
         }
         int i12 = i10 / 2;
@@ -2525,7 +2525,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
     }
 
     public final void q(Canvas canvas, int i10) {
-        p(canvas, zs.e4, i10);
+        p(canvas, at.e4, i10);
     }
 
     public final void r() {
@@ -2790,7 +2790,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
                 int blue2 = Color.blue(iArr[i13]);
                 int i14 = size;
                 int i15 = i12;
-                int argb = Color.argb(Math.min(zs.e4, (int) (((alpha - r4) * f7) + Color.alpha(iArr[i13]))), Math.min(zs.e4, (int) (((red - red2) * f7) + red2)), Math.min(zs.e4, (int) (((green - green2) * f7) + green2)), Math.min(zs.e4, (int) (((blue - blue2) * f7) + blue2)));
+                int argb = Color.argb(Math.min(at.e4, (int) (((alpha - r4) * f7) + Color.alpha(iArr[i13]))), Math.min(at.e4, (int) (((red - red2) * f7) + red2)), Math.min(at.e4, (int) (((green - green2) * f7) + green2)), Math.min(at.e4, (int) (((blue - blue2) * f7) + blue2)));
                 c7 c7Var = (c7) arrayList2.get(i13);
                 int i16 = c7Var.e;
                 p6 p6Var = c7Var.n;
@@ -2867,7 +2867,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         }
         for (int size = getFragmentStack().size() - 1; size >= 0; size--) {
             k2 k2Var = (k2) getFragmentStack().get(size);
-            if (k2Var != null && !k2Var.isFinishing() && !k2Var.isRemovingFromStack() && hf0.class.isInstance(k2Var)) {
+            if (k2Var != null && !k2Var.isFinishing() && !k2Var.isRemovingFromStack() && gf0.class.isInstance(k2Var)) {
                 return k2Var;
             }
         }
@@ -2882,7 +2882,7 @@ public class ActionBarLayout extends FrameLayout implements z4, fg.b {
         return z10 ? (int) i3Var.G : i3Var.H;
     }
 
-    public final my w() {
+    public final ly w() {
         Activity activity = this.Q0;
         if (activity == null) {
             return null;

@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class de0 extends View {
     public Paint a;
@@ -34,7 +34,7 @@ public final class de0 extends View {
         if (!z10 || (ce0Var = this.r) == null) {
             return;
         }
-        ce0Var.p(((Integer) getTag()).intValue(), getProgress());
+        ce0Var.o(((Integer) getTag()).intValue(), getProgress());
     }
 
     public int getProgress() {
@@ -89,7 +89,7 @@ public final class de0 extends View {
                 this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
                 ce0 ce0Var = this.r;
                 if (ce0Var != null) {
-                    ce0Var.p(((Integer) getTag()).intValue(), getProgress());
+                    ce0Var.o(((Integer) getTag()).intValue(), getProgress());
                 }
                 invalidate();
                 return true;

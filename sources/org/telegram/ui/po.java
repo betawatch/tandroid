@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class po implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class po implements RequestDelegate {
                                         arrayList.add(mVar);
                                         cpVar2.y.addView(mVar, w7.b6.o(-1, 72));
                                     }
-                                    cpVar2.g0();
+                                    cpVar2.h0();
                                     break;
                                 }
                                 break;
@@ -106,7 +106,7 @@ public final /* synthetic */ class po implements RequestDelegate {
                                         arrayList.add(mVar);
                                         cpVar22.y.addView(mVar, w7.b6.o(-1, 72));
                                     }
-                                    cpVar22.g0();
+                                    cpVar22.h0();
                                     break;
                                 }
                                 break;
@@ -129,7 +129,7 @@ public final /* synthetic */ class po implements RequestDelegate {
                 });
                 break;
             default:
-                org.telegram.messenger.i0.g3(new zg(15, this.b, tL_error));
+                org.telegram.messenger.i0.g3(new ch(15, this.b, tL_error));
                 break;
         }
     }

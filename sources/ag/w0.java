@@ -5,28 +5,28 @@ import android.content.Intent;
 import android.net.Uri;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.gp;
+import org.telegram.messenger.hp;
 import org.telegram.messenger.o5;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.o70;
 import org.telegram.ui.Components.u70;
-import org.telegram.ui.b50;
-import org.telegram.ui.dd1;
-import org.telegram.ui.f40;
-import org.telegram.ui.i00;
+import org.telegram.ui.a50;
+import org.telegram.ui.bd1;
+import org.telegram.ui.e40;
+import org.telegram.ui.h00;
 import org.telegram.ui.mk;
 import org.telegram.ui.un;
 import org.telegram.ui.y6;
 import th.e5;
 import th.m5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w0 implements dd1, m4.h1, e2.j, nh.m, org.telegram.ui.ActionBar.u1, rf.l, gp, m5 {
+public final /* synthetic */ class w0 implements bd1, m4.h1, e2.j, nh.m, org.telegram.ui.ActionBar.u1, rf.l, hp, m5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -37,7 +37,7 @@ public final /* synthetic */ class w0 implements dd1, m4.h1, e2.j, nh.m, org.tel
         this.b = z10;
     }
 
-    @Override // org.telegram.messenger.gp
+    @Override // org.telegram.messenger.hp
     public boolean a(TLRPC.TL_error tL_error) {
         u70 u70Var = (u70) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
@@ -69,7 +69,7 @@ public final /* synthetic */ class w0 implements dd1, m4.h1, e2.j, nh.m, org.tel
         }
     }
 
-    @Override // org.telegram.ui.dd1
+    @Override // org.telegram.ui.bd1
     public void e(int i10, ArrayList arrayList) {
         switch (this.a) {
             case 0:
@@ -97,21 +97,21 @@ public final /* synthetic */ class w0 implements dd1, m4.h1, e2.j, nh.m, org.tel
                 x0Var.e.run();
                 break;
             default:
-                i00 i00Var = (i00) this.c;
-                LongSparseIntArray longSparseIntArray = i00Var.H;
-                i00Var.D = i10;
+                h00 h00Var = (h00) this.c;
+                LongSparseIntArray longSparseIntArray = h00Var.H;
+                h00Var.D = i10;
                 if (this.b) {
-                    i00Var.t0(i00Var.F, arrayList, true);
-                    i00Var.F = arrayList;
-                    for (int i12 = 0; i12 < i00Var.F.size(); i12++) {
-                        i00Var.G.remove(i00Var.F.get(i12));
+                    h00Var.u0(h00Var.F, arrayList, true);
+                    h00Var.F = arrayList;
+                    for (int i12 = 0; i12 < h00Var.F.size(); i12++) {
+                        h00Var.G.remove(h00Var.F.get(i12));
                     }
                     ArrayList arrayList4 = new ArrayList();
                     int size = longSparseIntArray.size();
                     for (int i13 = 0; i13 < size; i13++) {
                         long keyAt = longSparseIntArray.keyAt(i13);
                         Long valueOf = Long.valueOf(keyAt);
-                        if (!o5.C(keyAt) && !i00Var.F.contains(valueOf)) {
+                        if (!o5.C(keyAt) && !h00Var.F.contains(valueOf)) {
                             arrayList4.add(valueOf);
                         }
                     }
@@ -120,17 +120,17 @@ public final /* synthetic */ class w0 implements dd1, m4.h1, e2.j, nh.m, org.tel
                         longSparseIntArray.delete(((Long) arrayList4.get(i14)).longValue());
                     }
                 } else {
-                    i00Var.t0(i00Var.G, arrayList, false);
-                    i00Var.G = arrayList;
-                    for (int i15 = 0; i15 < i00Var.G.size(); i15++) {
-                        Long l4 = (Long) i00Var.G.get(i15);
-                        i00Var.F.remove(l4);
+                    h00Var.u0(h00Var.G, arrayList, false);
+                    h00Var.G = arrayList;
+                    for (int i15 = 0; i15 < h00Var.G.size(); i15++) {
+                        Long l4 = (Long) h00Var.G.get(i15);
+                        h00Var.F.remove(l4);
                         longSparseIntArray.delete(l4.longValue());
                     }
                 }
-                i00Var.o0();
-                i00Var.n0(false);
-                i00Var.B0();
+                h00Var.p0();
+                h00Var.o0(false);
+                h00Var.C0();
                 break;
         }
     }
@@ -153,13 +153,13 @@ public final /* synthetic */ class w0 implements dd1, m4.h1, e2.j, nh.m, org.tel
     public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
         switch (this.a) {
             case 5:
-                y6.c0((y6) this.c, this.b);
+                y6.d0((y6) this.c, this.b);
                 break;
             case 6:
             default:
-                b50 b50Var = ((f40) this.c).b;
-                b50Var.R2.A(0, null);
-                b50Var.m1().j(this.b ? 101 : 40, 0L, null);
+                a50 a50Var = ((e40) this.c).b;
+                a50Var.R2.A(0, null);
+                a50Var.m1().j(this.b ? 101 : 40, 0L, null);
                 break;
             case 7:
                 un unVar = (un) this.c;
@@ -201,7 +201,7 @@ public final /* synthetic */ class w0 implements dd1, m4.h1, e2.j, nh.m, org.tel
     public void l(long j10) {
         e6 e6Var = ((org.telegram.ui.Cells.w1) this.c).a.x3;
         if (e6Var != null) {
-            e6Var.t(cd.M((int) j10, this.b), true, true);
+            e6Var.t(dd.M((int) j10, this.b), true, true);
         }
     }
 

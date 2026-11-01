@@ -5,18 +5,18 @@ import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class oi extends lg0 {
+public final class oi extends jg0 {
     public final /* synthetic */ un f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oi(un unVar, Context context, int i10, org.telegram.messenger.jj jjVar) {
+    public oi(un unVar, Context context, int i10, org.telegram.messenger.kj kjVar) {
         super(context);
         this.f = unVar;
         this.a = null;
-        if (!jjVar.h4()) {
-            jjVar.P4();
+        if (!kjVar.h4()) {
+            kjVar.P4();
         }
         org.telegram.ui.Components.zz zzVar = new org.telegram.ui.Components.zz(context, null);
         this.c = zzVar;
@@ -36,8 +36,8 @@ public final class oi extends lg0 {
         p80Var.setMaxLines(1);
         addView(p80Var, w7.b6.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
         TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
-        tL_channels_getMessageAuthor.channel = org.telegram.messenger.vp.r1(i10).g1(-org.telegram.messenger.jj.B0(jjVar.k));
-        tL_channels_getMessageAuthor.id = jjVar.f1();
+        tL_channels_getMessageAuthor.channel = org.telegram.messenger.wp.r1(i10).g1(-org.telegram.messenger.kj.B0(kjVar.k));
+        tL_channels_getMessageAuthor.id = kjVar.f1();
         p80Var.setAlpha(0.0f);
         ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new org.telegram.messenger.voip.g0(this, i10, 3));
         setBackground(org.telegram.ui.ActionBar.t6.a0(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.I5, false), 6, 0));

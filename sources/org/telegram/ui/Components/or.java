@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class or implements Runnable {
     public final /* synthetic */ int a;
@@ -43,12 +43,12 @@ public final /* synthetic */ class or implements Runnable {
                 org.telegram.ui.ActionBar.x1[] x1VarArr = new org.telegram.ui.ActionBar.x1[1];
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context2, p6Var);
                 Object obj = null;
-                String L0 = org.telegram.messenger.cd.L0(2131751959, null);
+                String L0 = org.telegram.messenger.dd.L0(2131751959, null);
                 org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                 x1Var.R = L0;
-                x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.cd.G(arrayList.size(), "CommunityBanWillRemoveFromChats", org.telegram.messenger.o5.s(i11, j10)));
-                alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131747847, null), null);
-                alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
+                x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.dd.G(arrayList.size(), "CommunityBanWillRemoveFromChats", org.telegram.messenger.o5.s(i11, j10)));
+                alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), null);
+                alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, null), null);
                 alertDialog$Builder.o(f7);
                 int size = arrayList.size();
                 int i12 = 0;
@@ -57,8 +57,8 @@ public final /* synthetic */ class or implements Runnable {
                     i12++;
                     Long l10 = l4;
                     long longValue = l10.longValue();
-                    TLRPC.Chat L02 = org.telegram.messenger.vp.r1(i11).L0(l10);
-                    TLRPC.ChatFull M0 = org.telegram.messenger.vp.r1(i11).M0(longValue);
+                    TLRPC.Chat L02 = org.telegram.messenger.wp.r1(i11).L0(l10);
+                    TLRPC.ChatFull M0 = org.telegram.messenger.wp.r1(i11).M0(longValue);
                     if (L02 == null) {
                         obj = null;
                     } else {
@@ -69,7 +69,7 @@ public final /* synthetic */ class or implements Runnable {
                         if (M0 != null) {
                             context = context2;
                             z10 = false;
-                            charSequence = org.telegram.messenger.cd.G(M0.participants_count, "Members", new Object[0]);
+                            charSequence = org.telegram.messenger.dd.G(M0.participants_count, "Members", new Object[0]);
                         } else {
                             context = context2;
                             z10 = false;

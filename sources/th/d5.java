@@ -10,35 +10,35 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.qz;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.v20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.x20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.rz;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.w20;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.y20;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Stories.recorder.StoryUploadingService;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class d5 implements us {
+public final class d5 implements vs {
     public long D;
-    public jj E;
-    public x20 F;
+    public kj E;
+    public y20 F;
     public boolean G;
     public boolean H;
     public boolean I;
     public final long J;
-    public jj K;
+    public kj K;
     public TL_bots.botPreviewMedia L;
     public final /* synthetic */ e5 M;
     public final boolean b;
@@ -77,7 +77,7 @@ public final class d5 implements us {
         }
         TLRPC.InputPeer inputPeer = n5Var.v0;
         if (inputPeer == null || (inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
-            this.J = d20.i(e5Var.a).n;
+            this.J = e20.i(e5Var.a).n;
         } else {
             this.J = org.telegram.messenger.o5.n(inputPeer);
         }
@@ -113,12 +113,12 @@ public final class d5 implements us {
         ArrayList arrayList;
         e5 e5Var = this.M;
         int i10 = e5Var.a;
-        zs.f(i10).n(this, zs.U1);
-        zs.f(i10).n(this, zs.V1);
-        zs.f(i10).n(this, zs.W1);
-        zs.f(i10).n(this, zs.c2);
-        zs.f(i10).n(this, zs.a2);
-        zs.f(i10).n(this, zs.b2);
+        at.f(i10).n(this, at.U1);
+        at.f(i10).n(this, at.V1);
+        at.f(i10).n(this, at.W1);
+        at.f(i10).n(this, at.c2);
+        at.f(i10).n(this, at.a2);
+        at.f(i10).n(this, at.b2);
         boolean z10 = this.I;
         long j10 = this.J;
         if (!z10 && (arrayList = (ArrayList) e5Var.b.f(j10)) != null) {
@@ -208,12 +208,12 @@ public final class d5 implements us {
             }
             this.L = null;
         }
-        zs.f(i10).k(zs.v5, new Object[0]);
+        at.f(i10).k(at.v5, new Object[0]);
         if (n5Var != null && !n5Var.h && !this.d) {
             n5Var.i(false);
             this.d = true;
         }
-        zs.e().k(zs.B5, this.e);
+        at.e().k(at.B5, this.e);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:66:0x0164, code lost:
@@ -315,7 +315,7 @@ public final class d5 implements us {
                             i12++;
                         }
                     } else {
-                        qz.x(this.e, tL_documentAttributeVideo, null);
+                        rz.x(this.e, tL_documentAttributeVideo, null);
                     }
                     tL_inputMediaUploadedDocument.attributes.add(tL_documentAttributeVideo);
                     tL_documentAttributeVideo.supports_streaming = true;
@@ -342,20 +342,20 @@ public final class d5 implements us {
                     inputMedia = tL_inputMediaUploadedDocument;
                 }
             }
-            int i14 = !d20.i(i10).q() ? vp.r1(i10).X4 : vp.r1(i10).W4;
+            int i14 = !e20.i(i10).q() ? wp.r1(i10).X4 : wp.r1(i10).W4;
             z11 = this.b;
             long j10 = this.J;
             if (z11) {
                 if (n5Var.J0 != 0) {
                     TL_bots.addPreviewMedia addpreviewmedia = new TL_bots.addPreviewMedia();
-                    addpreviewmedia.bot = vp.r1(i10).n1(n5Var.J0);
+                    addpreviewmedia.bot = wp.r1(i10).n1(n5Var.J0);
                     addpreviewmedia.media = inputMedia;
                     addpreviewmedia.lang_code = n5Var.K0;
                     tL_stories_sendStory = addpreviewmedia;
                 } else {
                     TL_stories.TL_stories_sendStory tL_stories_sendStory2 = new TL_stories.TL_stories_sendStory();
                     tL_stories_sendStory2.random_id = this.a;
-                    tL_stories_sendStory2.peer = vp.r1(i10).i1(j10);
+                    tL_stories_sendStory2.peer = wp.r1(i10).i1(j10);
                     tL_stories_sendStory2.media = inputMedia;
                     tL_stories_sendStory2.privacy_rules.addAll(arrayList2);
                     tL_stories_sendStory2.pinned = n5Var.G0;
@@ -373,8 +373,8 @@ public final class d5 implements us {
                         if (charSequence2.length() > i14) {
                             charSequenceArr[0] = charSequenceArr[0].subSequence(0, i14);
                         }
-                        if (vp.r1(i10).U4()) {
-                            tL_stories_sendStory2.entities = ui.b0(i10).W(charSequenceArr, true, true);
+                        if (wp.r1(i10).U4()) {
+                            tL_stories_sendStory2.entities = vi.b0(i10).W(charSequenceArr, true, true);
                         } else {
                             tL_stories_sendStory2.entities.clear();
                         }
@@ -385,7 +385,7 @@ public final class d5 implements us {
                     }
                     if (n5Var.n) {
                         tL_stories_sendStory2.flags |= 64;
-                        tL_stories_sendStory2.fwd_from_id = vp.r1(i10).l1(n5Var.q);
+                        tL_stories_sendStory2.fwd_from_id = wp.r1(i10).l1(n5Var.q);
                         tL_stories_sendStory2.fwd_from_story = n5Var.r;
                         tL_stories_sendStory2.fwd_modified = !z10;
                     }
@@ -398,7 +398,7 @@ public final class d5 implements us {
                     }
                     if (n5Var.T0 != null) {
                         for (int i16 = 0; i16 < n5Var.T0.size(); i16++) {
-                            TL_stories.MediaArea mediaArea = ((v20) n5Var.T0.get(i16)).M;
+                            TL_stories.MediaArea mediaArea = ((w20) n5Var.T0.get(i16)).M;
                             if (mediaArea != null) {
                                 tL_stories_sendStory2.media_areas.add(mediaArea);
                             }
@@ -411,7 +411,7 @@ public final class d5 implements us {
                 }
             } else if (n5Var.J0 != 0) {
                 TL_bots.editPreviewMedia editpreviewmedia = new TL_bots.editPreviewMedia();
-                editpreviewmedia.bot = vp.r1(i10).n1(n5Var.J0);
+                editpreviewmedia.bot = wp.r1(i10).n1(n5Var.J0);
                 editpreviewmedia.media = n5Var.L0;
                 editpreviewmedia.new_media = inputMedia;
                 editpreviewmedia.lang_code = n5Var.K0;
@@ -419,7 +419,7 @@ public final class d5 implements us {
             } else {
                 TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
                 tL_stories_editStory.id = n5Var.f;
-                tL_stories_editStory.peer = vp.r1(i10).i1(j10);
+                tL_stories_editStory.peer = wp.r1(i10).i1(j10);
                 tL_stories_editStory.flags |= 16;
                 TLRPC.InputDocument inputDocument2 = n5Var.z;
                 if (inputDocument2 != null) {
@@ -437,8 +437,8 @@ public final class d5 implements us {
                     if (charSequence.length() > i14) {
                         charSequenceArr2[0] = charSequenceArr2[0].subSequence(0, i14);
                     }
-                    if (vp.r1(i10).U4()) {
-                        tL_stories_editStory.entities = ui.b0(i10).W(charSequenceArr2, true, true);
+                    if (wp.r1(i10).U4()) {
+                        tL_stories_editStory.entities = vi.b0(i10).W(charSequenceArr2, true, true);
                     } else {
                         tL_stories_editStory.entities.clear();
                     }
@@ -457,7 +457,7 @@ public final class d5 implements us {
                 }
                 if (n5Var.T0 != null) {
                     for (int i17 = 0; i17 < n5Var.T0.size(); i17++) {
-                        TL_stories.MediaArea mediaArea2 = ((v20) n5Var.T0.get(i17)).M;
+                        TL_stories.MediaArea mediaArea2 = ((w20) n5Var.T0.get(i17)).M;
                         if (mediaArea2 != null) {
                             tL_stories_editStory.media_areas.add(mediaArea2);
                         }
@@ -480,7 +480,7 @@ public final class d5 implements us {
             if (n5Var.E()) {
             }
         }
-        if (!d20.i(i10).q()) {
+        if (!e20.i(i10).q()) {
         }
         z11 = this.b;
         long j102 = this.J;
@@ -496,7 +496,7 @@ public final class d5 implements us {
         if (n5Var.b0) {
             TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
             TLRPC.Document document = this.c.c0;
-            int i10 = vp.D8;
+            int i10 = wp.D8;
             TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
             tL_inputDocument.id = document.id;
             tL_inputDocument.access_hash = document.access_hash;
@@ -510,12 +510,12 @@ public final class d5 implements us {
         vh.u6 u6Var = this.c.E0;
         int i11 = 1;
         this.G = u6Var != null && u6Var.a == 1;
-        zs.f(this.M.a).b(this, zs.U1);
-        zs.f(this.M.a).b(this, zs.V1);
-        zs.f(this.M.a).b(this, zs.W1);
-        zs.f(this.M.a).b(this, zs.c2);
-        zs.f(this.M.a).b(this, zs.a2);
-        zs.f(this.M.a).b(this, zs.b2);
+        at.f(this.M.a).b(this, at.U1);
+        at.f(this.M.a).b(this, at.V1);
+        at.f(this.M.a).b(this, at.W1);
+        at.f(this.M.a).b(this, at.c2);
+        at.f(this.M.a).b(this, at.a2);
+        at.f(this.M.a).b(this, at.b2);
         boolean E = this.c.E();
         this.s = E;
         if (E) {
@@ -524,12 +524,12 @@ public final class d5 implements us {
             String absolutePath = vh.n5.x(this.M.a, true).getAbsolutePath();
             tL_message.attachPath = absolutePath;
             this.e = absolutePath;
-            this.E = new jj(this.M.a, tL_message, null, false, false);
+            this.E = new kj(this.M.a, tL_message, null, false, false);
             this.c.s(new c5(this, i11));
         } else {
             File w9 = vh.n5.w(this.M.a, "jpg");
             this.e = w9.getAbsolutePath();
-            Utilities.i.c(new o0(12, this, w9));
+            Utilities.i.c(new o0(13, this, w9));
         }
         Intent intent = new Intent(org.telegram.messenger.w0.b, (Class<?>) StoryUploadingService.class);
         intent.putExtra("path", this.e);
@@ -541,11 +541,11 @@ public final class d5 implements us {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         e5 e5Var = this.M;
         int i12 = e5Var.a;
-        if (i10 == zs.a2) {
+        if (i10 == at.a2) {
             if (objArr[0] == this.E) {
                 this.e = (String) objArr[1];
                 e();
@@ -553,8 +553,8 @@ public final class d5 implements us {
             }
             return;
         }
-        int i13 = zs.b2;
-        int i14 = zs.A5;
+        int i13 = at.b2;
+        int i14 = at.A5;
         if (i10 == i13) {
             if (objArr[0] == this.E) {
                 String str = (String) objArr[1];
@@ -563,7 +563,7 @@ public final class d5 implements us {
                 float floatValue = ((Float) objArr[4]).floatValue();
                 this.n = floatValue;
                 this.h = (this.r * 0.7f) + (floatValue * 0.3f);
-                zs.f(i12).k(i14, this.e, Float.valueOf(this.h));
+                at.f(i12).k(i14, this.e, Float.valueOf(this.h));
                 if (this.y < 0 && this.n * this.D >= 1000.0f) {
                     this.y = longValue;
                 }
@@ -576,7 +576,7 @@ public final class d5 implements us {
             }
             return;
         }
-        if (i10 == zs.c2) {
+        if (i10 == at.c2) {
             if (objArr[0] == this.E) {
                 if (!this.b) {
                     vh.n5 n5Var = this.c;
@@ -595,7 +595,7 @@ public final class d5 implements us {
             }
             return;
         }
-        if (i10 == zs.U1) {
+        if (i10 == at.U1) {
             String str2 = (String) objArr[0];
             String str3 = this.e;
             if (str3 == null || !str2.equals(str3)) {
@@ -604,21 +604,21 @@ public final class d5 implements us {
             c((TLRPC.InputFile) objArr[1]);
             return;
         }
-        if (i10 == zs.V1) {
+        if (i10 == at.V1) {
             String str4 = (String) objArr[0];
             String str5 = this.e;
             if (str5 == null || !str4.equals(str5)) {
                 return;
             }
-            zs.e().k(zs.P4, 1, cd.L0(2131744478, null));
+            at.e().k(at.P4, 1, dd.L0(2131744478, null));
             b();
             return;
         }
-        if (i10 == zs.W1 && ((String) objArr[0]).equals(this.e)) {
+        if (i10 == at.W1 && ((String) objArr[0]).equals(this.e)) {
             float min = Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue());
             this.r = min;
             this.h = (min * 0.7f) + (this.n * 0.3f);
-            zs.f(i12).k(i14, this.e, Float.valueOf(this.h));
+            at.f(i12).k(i14, this.e, Float.valueOf(this.h));
         }
     }
 
@@ -629,8 +629,8 @@ public final class d5 implements us {
         String str = this.e;
         boolean z10 = !n5Var.K;
         if (this.s) {
-            x20 x20Var = this.F;
-            r6 = Math.max(1, (int) (x20Var != null ? x20Var.q : 0L));
+            y20 y20Var = this.F;
+            r6 = Math.max(1, (int) (y20Var != null ? y20Var.q : 0L));
         }
         G.h0(str, false, z10, r6, n5Var.K ? 33554432 : 16777216, true);
     }

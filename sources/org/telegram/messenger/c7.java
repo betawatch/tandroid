@@ -10,7 +10,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class c7 implements RequestDelegate {
                     TLRPC.TL_upload_reuploadCdnFile tL_upload_reuploadCdnFile = new TLRPC.TL_upload_reuploadCdnFile();
                     tL_upload_reuploadCdnFile.file_token = m7Var.x0;
                     tL_upload_reuploadCdnFile.request_token = ((TLRPC.TL_upload_cdnFileReuploadNeeded) tLObject).request_token;
-                    ConnectionsManager.getInstance(m7Var.R).sendRequest(tL_upload_reuploadCdnFile, new fo(m7Var, i13, l7Var, 1), null, null, 0, m7Var.T, 1, true);
+                    ConnectionsManager.getInstance(m7Var.R).sendRequest(tL_upload_reuploadCdnFile, new go(m7Var, i13, l7Var, 1), null, null, 0, m7Var.T, 1, true);
                     return;
                 }
                 if (tLObject instanceof TLRPC.TL_upload_file) {
@@ -190,17 +190,17 @@ public final /* synthetic */ class c7 implements RequestDelegate {
                 if (tLObject != null) {
                     int i17 = m7Var.b1;
                     if (i17 == 50331648) {
-                        uz.e(m7Var.R).h(tLObject.networkType, 3, tLObject.getObjectSize() + 4);
+                        vz.e(m7Var.R).h(tLObject.networkType, 3, tLObject.getObjectSize() + 4);
                     } else if (i17 == 33554432) {
-                        uz.e(m7Var.R).h(tLObject.networkType, 2, tLObject.getObjectSize() + 4);
+                        vz.e(m7Var.R).h(tLObject.networkType, 2, tLObject.getObjectSize() + 4);
                     } else if (i17 == 16777216) {
-                        uz.e(m7Var.R).h(tLObject.networkType, 4, tLObject.getObjectSize() + 4);
+                        vz.e(m7Var.R).h(tLObject.networkType, 4, tLObject.getObjectSize() + 4);
                     } else if (i17 == 67108864) {
                         String str = m7Var.P0;
                         if (str == null || !(str.toLowerCase().endsWith("mp3") || m7Var.P0.toLowerCase().endsWith("m4a"))) {
-                            uz.e(m7Var.R).h(tLObject.networkType, 5, tLObject.getObjectSize() + 4);
+                            vz.e(m7Var.R).h(tLObject.networkType, 5, tLObject.getObjectSize() + 4);
                         } else {
-                            uz.e(m7Var.R).h(tLObject.networkType, 7, tLObject.getObjectSize() + 4);
+                            vz.e(m7Var.R).h(tLObject.networkType, 7, tLObject.getObjectSize() + 4);
                         }
                     }
                 }
@@ -272,12 +272,12 @@ public final /* synthetic */ class c7 implements RequestDelegate {
                         hVar2.k(user, user.id);
                     }
                     for (int i23 = 0; i23 < messages_messages.messages.size(); i23++) {
-                        jj jjVar = new jj(zVar.s0, messages_messages.messages.get(i23), hVar2, hVar, false, true);
-                        arrayList3.add(jjVar);
-                        jjVar.J5(str2, true);
+                        kj kjVar = new kj(zVar.s0, messages_messages.messages.get(i23), hVar2, hVar, false, true);
+                        arrayList3.add(kjVar);
+                        kjVar.J5(str2, true);
                     }
                 }
-                i0.g3(new bg(zVar, i19, i20, tL_error, str2, tLObject, tL_messages_search, arrayList3, 1));
+                i0.g3(new cg(zVar, i19, i20, tL_error, str2, tLObject, tL_messages_search, arrayList3, 1));
                 return;
             default:
                 zf.z zVar2 = (zf.z) this.d;
@@ -300,9 +300,9 @@ public final /* synthetic */ class c7 implements RequestDelegate {
                         hVar4.k(user2, user2.id);
                     }
                     for (int i29 = 0; i29 < messages_messages2.messages.size(); i29++) {
-                        jj jjVar2 = new jj(zVar2.s0, messages_messages2.messages.get(i29), hVar4, hVar3, false, true);
-                        arrayList4.add(jjVar2);
-                        jjVar2.J5(str3, true);
+                        kj kjVar2 = new kj(zVar2.s0, messages_messages2.messages.get(i29), hVar4, hVar3, false, true);
+                        arrayList4.add(kjVar2);
+                        kjVar2.J5(str3, true);
                     }
                 }
                 HashSet hashSet = new HashSet();
@@ -310,18 +310,18 @@ public final /* synthetic */ class c7 implements RequestDelegate {
                     TLRPC.messages_Messages messages_messages3 = (TLRPC.messages_Messages) tLObject;
                     for (int i30 = 0; i30 < messages_messages3.messages.size(); i30++) {
                         TLRPC.Message message = messages_messages3.messages.get(i30);
-                        long B0 = jj.B0(message);
-                        if (((Integer) (message.out ? vp.r1(i26).P : vp.r1(i26).O).get(Long.valueOf(B0))) == null) {
+                        long B0 = kj.B0(message);
+                        if (((Integer) (message.out ? wp.r1(i26).P : wp.r1(i26).O).get(Long.valueOf(B0))) == null) {
                             hashSet.add(new Pair(Boolean.valueOf(message.out), Long.valueOf(B0)));
                         }
                     }
                 }
-                bg bgVar = new bg(zVar2, i24, i25, tL_error, str3, tLObject, tL_messages_searchGlobal, arrayList4, 2);
+                cg cgVar = new cg(zVar2, i24, i25, tL_error, str3, tLObject, tL_messages_searchGlobal, arrayList4, 2);
                 if (hashSet.isEmpty()) {
-                    i0.g3(bgVar);
+                    i0.g3(cgVar);
                     return;
                 } else {
-                    hs.a0(i26).a.c(new rh.l5(zVar2, hashSet, bgVar, 27));
+                    is.a0(i26).a.c(new rh.l5(zVar2, hashSet, cgVar, 27));
                     return;
                 }
         }

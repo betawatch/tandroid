@@ -29,27 +29,27 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MusicPlayerService;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b6;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bv;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ev;
+import org.telegram.messenger.cv;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jf;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.jv;
+import org.telegram.messenger.fv;
+import org.telegram.messenger.kf;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.kv;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.o5;
 import org.telegram.messenger.s5;
-import org.telegram.messenger.se;
 import org.telegram.messenger.t5;
-import org.telegram.messenger.uz;
+import org.telegram.messenger.te;
 import org.telegram.messenger.v2;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.messenger.wf;
-import org.telegram.messenger.x20;
-import org.telegram.messenger.yd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vz;
+import org.telegram.messenger.xf;
+import org.telegram.messenger.y20;
+import org.telegram.messenger.zd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -64,7 +64,7 @@ import org.telegram.ui.Cells.v7;
 import org.telegram.ui.Cells.x5;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.f51;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.h7;
 import org.telegram.ui.Components.i6;
@@ -74,13 +74,13 @@ import org.telegram.ui.Components.jm;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.w7;
 import org.telegram.ui.Components.wj;
 import org.telegram.ui.Components.wt;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c2 implements Runnable {
     public final /* synthetic */ int a;
@@ -185,7 +185,7 @@ public final class c2 implements Runnable {
             case 3:
                 b6 b6Var = (b6) this.b;
                 b6Var.I.clear();
-                b6Var.getNotificationCenter().k(zs.b5, new Object[0]);
+                b6Var.getNotificationCenter().k(at.b5, new Object[0]);
                 return;
             case 4:
                 MediaController mediaController = (MediaController) this.b;
@@ -245,34 +245,34 @@ public final class c2 implements Runnable {
                     }
                     allocateDirect.position(0);
                     double sqrt = Math.sqrt((d / read) / 2.0d);
-                    mediaController.M1.c(new wf(this, allocateDirect, read != allocateDirect.capacity(), 6));
+                    mediaController.M1.c(new xf(this, allocateDirect, read != allocateDirect.capacity(), 6));
                     mediaController.L1.c(mediaController.N1);
-                    org.telegram.messenger.i0.g3(new se(this, sqrt, 0));
+                    org.telegram.messenger.i0.g3(new te(this, sqrt, 0));
                     return;
                 }
                 return;
             case 5:
                 MediaController B = MediaController.B();
-                jf jfVar = (jf) this.b;
-                jj jjVar = jfVar.a;
-                x20 x20Var = jfVar.b;
-                if (jjVar == null || x20Var == null) {
+                kf kfVar = (kf) this.b;
+                kj kjVar = kfVar.a;
+                y20 y20Var = kfVar.b;
+                if (kjVar == null || y20Var == null) {
                     return;
                 }
-                String str2 = x20Var.o;
-                long j16 = x20Var.p;
-                long j17 = x20Var.a;
-                long j18 = x20Var.c;
-                long j19 = x20Var.b;
-                int i20 = x20Var.k;
-                int i21 = x20Var.l;
-                int i22 = x20Var.g;
-                int i23 = x20Var.h;
-                int i24 = x20Var.i;
-                int i25 = x20Var.n;
-                int i26 = x20Var.m;
-                int i27 = x20Var.j;
-                if (o5.C(jj.B0(jjVar.k)) || x20Var.V) {
+                String str2 = y20Var.o;
+                long j16 = y20Var.p;
+                long j17 = y20Var.a;
+                long j18 = y20Var.c;
+                long j19 = y20Var.b;
+                int i20 = y20Var.k;
+                int i21 = y20Var.l;
+                int i22 = y20Var.g;
+                int i23 = y20Var.h;
+                int i24 = y20Var.i;
+                int i25 = y20Var.n;
+                int i26 = y20Var.m;
+                int i27 = y20Var.j;
+                if (o5.C(kj.B0(kjVar.k)) || y20Var.V) {
                     j10 = j16;
                     z10 = true;
                 } else {
@@ -280,7 +280,7 @@ public final class c2 implements Runnable {
                     z10 = false;
                 }
                 long j20 = j10;
-                File file2 = new File(jjVar.k.attachPath);
+                File file2 = new File(kjVar.k.attachPath);
                 if (file2.exists()) {
                     file2.delete();
                 }
@@ -329,10 +329,10 @@ public final class c2 implements Runnable {
                         j12 = j11;
                     } else if (j17 > 0) {
                         i13 = i12;
-                        j13 = x20Var.v - j17;
+                        j13 = y20Var.v - j17;
                     } else {
                         i13 = i12;
-                        j12 = x20Var.v;
+                        j12 = y20Var.v;
                     }
                     if (i25 != 0) {
                         i25 = 25;
@@ -345,24 +345,24 @@ public final class c2 implements Runnable {
                     } else {
                         i14 = i20;
                     }
-                    if (!x20Var.Z && i25 > 40 && Math.min(i21, i14) <= 480) {
+                    if (!y20Var.Z && i25 > 40 && Math.min(i21, i14) <= 480) {
                         i25 = 30;
                     }
                     int i28 = i25;
-                    boolean z14 = (j18 != -1 && x20Var.H == null && x20Var.G == null && x20Var.B == null && x20Var.A == null && i14 == i23 && i21 == i24 && i22 == 0 && !x20Var.s && j17 == -1 && x20Var.b0.isEmpty()) ? false : true;
+                    boolean z14 = (j18 != -1 && y20Var.H == null && y20Var.G == null && y20Var.B == null && y20Var.A == null && i14 == i23 && i21 == i24 && i22 == 0 && !y20Var.s && j17 == -1 && y20Var.b0.isEmpty()) ? false : true;
                     SharedPreferences sharedPreferences = org.telegram.messenger.w0.b.getSharedPreferences("videoconvert", 0);
                     long currentTimeMillis = System.currentTimeMillis();
                     File file3 = file;
-                    m4.n0 n0Var = new m4.n0(B, x20Var, file3, jfVar);
-                    x20Var.X = true;
+                    m4.n0 n0Var = new m4.n0(B, y20Var, file3, kfVar);
+                    y20Var.X = true;
                     MediaCodecVideoConvertor mediaCodecVideoConvertor = new MediaCodecVideoConvertor();
-                    MediaCodecVideoConvertor.ConvertVideoParams of2 = MediaCodecVideoConvertor.ConvertVideoParams.of(str2, file3, j20, i22, z10, i23, i24, i14, i21, i28, i11, i13, j17, j11, j18, z14, j12, n0Var, x20Var);
-                    of2.soundInfos.addAll(x20Var.b0);
+                    MediaCodecVideoConvertor.ConvertVideoParams of2 = MediaCodecVideoConvertor.ConvertVideoParams.of(str2, file3, j20, i22, z10, i23, i24, i14, i21, i28, i11, i13, j17, j11, j18, z14, j12, n0Var, y20Var);
+                    of2.soundInfos.addAll(y20Var.b0);
                     boolean convertVideo = mediaCodecVideoConvertor.convertVideo(of2);
-                    z11 = x20Var.W;
+                    z11 = y20Var.W;
                     if (!z11) {
                         synchronized (B.b) {
-                            z11 = x20Var.W;
+                            z11 = y20Var.W;
                         }
                     }
                     if (v2.a) {
@@ -372,12 +372,12 @@ public final class c2 implements Runnable {
                     long lastFrameTimestamp = mediaCodecVideoConvertor.getLastFrameTimestamp();
                     long length4 = file3.length();
                     boolean z15 = !convertVideo || z11;
-                    x20 x20Var2 = jfVar.b;
-                    z12 = x20Var2.X;
+                    y20 y20Var2 = kfVar.b;
+                    z12 = y20Var2.X;
                     if (z12) {
-                        x20Var2.X = false;
+                        y20Var2.X = false;
                     }
-                    org.telegram.messenger.i0.g3(new yd(B, z15, true, jfVar, file3, 1.0f, lastFrameTimestamp, z12, length4));
+                    org.telegram.messenger.i0.g3(new zd(B, z15, true, kfVar, file3, 1.0f, lastFrameTimestamp, z12, length4));
                     return;
                 }
                 j13 = j11 - j17;
@@ -389,7 +389,7 @@ public final class c2 implements Runnable {
                 }
                 i14 = i21;
                 i21 = i20;
-                if (!x20Var.Z) {
+                if (!y20Var.Z) {
                     i25 = 30;
                 }
                 int i282 = i25;
@@ -398,13 +398,13 @@ public final class c2 implements Runnable {
                 SharedPreferences sharedPreferences2 = org.telegram.messenger.w0.b.getSharedPreferences("videoconvert", 0);
                 long currentTimeMillis2 = System.currentTimeMillis();
                 File file32 = file;
-                m4.n0 n0Var2 = new m4.n0(B, x20Var, file32, jfVar);
-                x20Var.X = true;
+                m4.n0 n0Var2 = new m4.n0(B, y20Var, file32, kfVar);
+                y20Var.X = true;
                 MediaCodecVideoConvertor mediaCodecVideoConvertor2 = new MediaCodecVideoConvertor();
-                MediaCodecVideoConvertor.ConvertVideoParams of22 = MediaCodecVideoConvertor.ConvertVideoParams.of(str2, file32, j20, i22, z10, i23, i24, i14, i21, i282, i11, i13, j17, j11, j18, z14, j12, n0Var2, x20Var);
-                of22.soundInfos.addAll(x20Var.b0);
+                MediaCodecVideoConvertor.ConvertVideoParams of22 = MediaCodecVideoConvertor.ConvertVideoParams.of(str2, file32, j20, i22, z10, i23, i24, i14, i21, i282, i11, i13, j17, j11, j18, z14, j12, n0Var2, y20Var);
+                of22.soundInfos.addAll(y20Var.b0);
                 boolean convertVideo2 = mediaCodecVideoConvertor2.convertVideo(of22);
-                z11 = x20Var.W;
+                z11 = y20Var.W;
                 if (!z11) {
                 }
                 if (v2.a) {
@@ -414,11 +414,11 @@ public final class c2 implements Runnable {
                 long length42 = file32.length();
                 if (convertVideo2) {
                 }
-                x20 x20Var22 = jfVar.b;
-                z12 = x20Var22.X;
+                y20 y20Var22 = kfVar.b;
+                z12 = y20Var22.X;
                 if (z12) {
                 }
-                org.telegram.messenger.i0.g3(new yd(B, z15, true, jfVar, file32, 1.0f, lastFrameTimestamp2, z12, length42));
+                org.telegram.messenger.i0.g3(new zd(B, z15, true, kfVar, file32, 1.0f, lastFrameTimestamp2, z12, length42));
                 return;
             case 6:
                 MusicPlayerService musicPlayerService = (MusicPlayerService) this.b;
@@ -438,105 +438,105 @@ public final class c2 implements Runnable {
                 org.telegram.messenger.w0.b.sendBroadcast((Intent) this.b);
                 return;
             case 8:
-                bv bvVar = (bv) this.b;
-                OverScroller overScroller = bvVar.m0;
-                if (overScroller == null || bvVar.V == null || !overScroller.computeScrollOffset()) {
+                cv cvVar = (cv) this.b;
+                OverScroller overScroller = cvVar.m0;
+                if (overScroller == null || cvVar.V == null || !overScroller.computeScrollOffset()) {
                     return;
                 }
-                int currX = bvVar.m0.getCurrX();
+                int currX = cvVar.m0.getCurrX();
                 r3 = currX >= 0 ? currX : 0;
-                int i29 = bvVar.c0;
+                int i29 = cvVar.c0;
                 if (r3 > i29) {
                     r3 = i29;
                 }
-                if (r3 != bvVar.d0) {
-                    bvVar.d0 = r3;
-                    bvVar.V.invalidate();
+                if (r3 != cvVar.d0) {
+                    cvVar.d0 = r3;
+                    cvVar.V.invalidate();
                 }
-                if (bvVar.m0.isFinished()) {
+                if (cvVar.m0.isFinished()) {
                     return;
                 }
-                bvVar.V.postOnAnimation(this);
+                cvVar.V.postOnAnimation(this);
                 return;
             case 9:
-                ev evVar = (ev) this.b;
-                OverScroller overScroller2 = evVar.u0;
-                if (overScroller2 == null || evVar.V == null || !overScroller2.computeScrollOffset()) {
+                fv fvVar = (fv) this.b;
+                OverScroller overScroller2 = fvVar.u0;
+                if (overScroller2 == null || fvVar.V == null || !overScroller2.computeScrollOffset()) {
                     return;
                 }
-                int currX2 = evVar.u0.getCurrX();
+                int currX2 = fvVar.u0.getCurrX();
                 r3 = currX2 >= 0 ? currX2 : 0;
-                int i30 = evVar.a0;
+                int i30 = fvVar.a0;
                 if (r3 > i30) {
                     r3 = i30;
                 }
-                if (r3 != evVar.b0) {
-                    evVar.b0 = r3;
-                    evVar.Y(evVar.S, evVar.T, evVar.U);
-                    evVar.V.invalidate();
+                if (r3 != fvVar.b0) {
+                    fvVar.b0 = r3;
+                    fvVar.Y(fvVar.S, fvVar.T, fvVar.U);
+                    fvVar.V.invalidate();
                 }
-                if (evVar.u0.isFinished()) {
+                if (fvVar.u0.isFinished()) {
                     return;
                 }
-                evVar.V.postOnAnimation(this);
+                fvVar.V.postOnAnimation(this);
                 return;
             case 10:
-                jv jvVar = (jv) this.b;
-                OverScroller overScroller3 = jvVar.y0;
-                if (overScroller3 == null || jvVar.V == null || !overScroller3.computeScrollOffset()) {
+                kv kvVar = (kv) this.b;
+                OverScroller overScroller3 = kvVar.y0;
+                if (overScroller3 == null || kvVar.V == null || !overScroller3.computeScrollOffset()) {
                     return;
                 }
-                int currX3 = jvVar.y0.getCurrX();
+                int currX3 = kvVar.y0.getCurrX();
                 r3 = currX3 >= 0 ? currX3 : 0;
-                int i31 = jvVar.h0;
+                int i31 = kvVar.h0;
                 if (r3 > i31) {
                     r3 = i31;
                 }
-                if (r3 != jvVar.i0) {
-                    jvVar.i0 = r3;
-                    jvVar.Y(jvVar.S, jvVar.T, jvVar.U);
-                    jvVar.V.invalidate();
+                if (r3 != kvVar.i0) {
+                    kvVar.i0 = r3;
+                    kvVar.Y(kvVar.S, kvVar.T, kvVar.U);
+                    kvVar.V.invalidate();
                 }
-                if (jvVar.y0.isFinished()) {
+                if (kvVar.y0.isFinished()) {
                     return;
                 }
-                jvVar.V.postOnAnimation(this);
+                kvVar.V.postOnAnimation(this);
                 return;
             case 11:
                 long currentTimeMillis3 = System.currentTimeMillis();
-                uz uzVar = (uz) this.b;
-                if (Math.abs(currentTimeMillis3 - uzVar.b) < 2000) {
+                vz vzVar = (vz) this.b;
+                if (Math.abs(currentTimeMillis3 - vzVar.b) < 2000) {
                     return;
                 }
-                uzVar.b = currentTimeMillis3;
+                vzVar.b = currentTimeMillis3;
                 try {
-                    uzVar.s.b();
+                    vzVar.s.b();
                     int i32 = 0;
                     while (true) {
                         if (i32 >= 3) {
                             int i33 = 0;
                             for (int i34 = 3; i33 < i34; i34 = 3) {
-                                uzVar.s.write(uz.a(uzVar, uzVar.c[i33][7]), 0, 8);
-                                uzVar.s.write(uz.a(uzVar, uzVar.d[i33][7]), 0, 8);
-                                uzVar.s.write(uz.b(uzVar, uzVar.e[i33][7]), 0, 4);
-                                uzVar.s.write(uz.b(uzVar, uzVar.f[i33][7]), 0, 4);
+                                vzVar.s.write(vz.a(vzVar, vzVar.c[i33][7]), 0, 8);
+                                vzVar.s.write(vz.a(vzVar, vzVar.d[i33][7]), 0, 8);
+                                vzVar.s.write(vz.b(vzVar, vzVar.e[i33][7]), 0, 4);
+                                vzVar.s.write(vz.b(vzVar, vzVar.f[i33][7]), 0, 4);
                                 i33++;
                             }
-                            uzVar.r.seek(0L);
-                            RandomAccessFile randomAccessFile = uzVar.r;
-                            rf.x xVar = uzVar.s;
+                            vzVar.r.seek(0L);
+                            RandomAccessFile randomAccessFile = vzVar.r;
+                            rf.x xVar = vzVar.s;
                             randomAccessFile.write(xVar.a, 0, xVar.b);
-                            uzVar.r.getFD().sync();
+                            vzVar.r.getFD().sync();
                             return;
                         }
                         for (int i35 = 0; i35 < 7; i35++) {
-                            uzVar.s.write(uz.a(uzVar, uzVar.c[i32][i35]), 0, 8);
-                            uzVar.s.write(uz.a(uzVar, uzVar.d[i32][i35]), 0, 8);
-                            uzVar.s.write(uz.b(uzVar, uzVar.e[i32][i35]), 0, 4);
-                            uzVar.s.write(uz.b(uzVar, uzVar.f[i32][i35]), 0, 4);
+                            vzVar.s.write(vz.a(vzVar, vzVar.c[i32][i35]), 0, 8);
+                            vzVar.s.write(vz.a(vzVar, vzVar.d[i32][i35]), 0, 8);
+                            vzVar.s.write(vz.b(vzVar, vzVar.e[i32][i35]), 0, 4);
+                            vzVar.s.write(vz.b(vzVar, vzVar.f[i32][i35]), 0, 4);
                         }
-                        uzVar.s.write(uz.b(uzVar, uzVar.n[i32]), 0, 4);
-                        uzVar.s.write(uz.a(uzVar, uzVar.h[i32]), 0, 8);
+                        vzVar.s.write(vz.b(vzVar, vzVar.n[i32]), 0, 4);
+                        vzVar.s.write(vz.a(vzVar, vzVar.h[i32]), 0, 8);
                         i32++;
                     }
                 } catch (Exception unused) {
@@ -613,7 +613,7 @@ public final class c2 implements Runnable {
                 z2Var.L0.d();
                 z2Var.z0.addListener(new r2(z2Var, r3));
                 if (z2Var.K0) {
-                    zs.e().k(98, 512);
+                    at.e().k(98, 512);
                 }
                 z2Var.z0.start();
                 return;
@@ -628,7 +628,7 @@ public final class c2 implements Runnable {
                 q80 q80Var = iVar.x;
                 if (q80Var != null) {
                     CharacterStyle characterStyle = q80Var.i;
-                    final String url = characterStyle instanceof e51 ? ((e51) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+                    final String url = characterStyle instanceof f51 ? ((f51) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
                     try {
                         iVar.performHapticFeedback(0, 2);
                     } catch (Exception unused2) {
@@ -640,7 +640,7 @@ public final class c2 implements Runnable {
                         z2 k10 = m5.k(1, iVar.getContext(), null, false);
                         k10.O = url;
                         k10.P = false;
-                        CharSequence[] charSequenceArr = {cd.L0(2131747833, null), cd.L0(2131751767, null)};
+                        CharSequence[] charSequenceArr = {dd.L0(2131747833, null), dd.L0(2131751767, null)};
                         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i36) {
@@ -758,8 +758,8 @@ public final class c2 implements Runnable {
                 return;
             case 23:
                 w7 w7Var2 = (w7) this.b;
-                u61 u61Var = MediaController.B().i0;
-                long U = u61Var == null ? 0L : u61Var.U();
+                v61 v61Var = MediaController.B().i0;
+                long U = v61Var == null ? 0L : v61Var.U();
                 if (U == 0 || U == -9223372036854775807L) {
                     w7Var2.A2 = System.currentTimeMillis();
                     return;
@@ -775,12 +775,12 @@ public final class c2 implements Runnable {
                     f14 = 0.0f;
                 }
                 w7Var2.y2 = f14;
-                jj jjVar2 = MediaController.B().u0;
-                if (jjVar2 != null && jjVar2.I3()) {
+                kj kjVar2 = MediaController.B().u0;
+                if (kjVar2 != null && kjVar2.I3()) {
                     if (!MediaController.B().H()) {
                         MediaController.B().u0.b0 = w7Var2.y2;
                     }
-                    w7Var2.b1(jjVar2, false);
+                    w7Var2.b1(kjVar2, false);
                 }
                 if (w7Var2.x2 == 1 && w7Var2.z2 > 0 && MediaController.B().H()) {
                     if (j22 > 200 || w7Var2.y2 == 0.0f) {

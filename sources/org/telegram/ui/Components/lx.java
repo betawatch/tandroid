@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lx implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class lx implements View.OnClickListener {
                         TLRPC.StickerSet stickerSet4 = mxVar.x.b;
                         tL_inputStickerSetID2.id = stickerSet4.id;
                         tL_inputStickerSetID2.access_hash = stickerSet4.access_hash;
-                        TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.ui.b0(i12).m0(tL_inputStickerSetID2, true);
+                        TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.vi.b0(i12).m0(tL_inputStickerSetID2, true);
                         if (m0 != null && m0.set != null) {
                             org.telegram.ui.ActionBar.k2 k2Var = vyVar2.Y1;
                             if (k2Var == null) {
@@ -107,8 +107,8 @@ public final /* synthetic */ class lx implements View.OnClickListener {
                             cv.J0(k2Var, m0, true, null, new ho(mxVar, 15));
                             break;
                         } else {
-                            org.telegram.messenger.zs.f(i12).c(mxVar, 64);
-                            org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i12);
+                            org.telegram.messenger.at.f(i12).c(mxVar, 64);
+                            org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(i12);
                             mxVar.s = tL_inputStickerSetID2;
                             b02.m0(tL_inputStickerSetID2, false);
                             break;
@@ -135,7 +135,7 @@ public final /* synthetic */ class lx implements View.OnClickListener {
                         TLRPC.StickerSet stickerSet5 = mxVar.x.b;
                         tL_inputStickerSetID3.id = stickerSet5.id;
                         tL_inputStickerSetID3.access_hash = stickerSet5.access_hash;
-                        TLRPC.TL_messages_stickerSet m02 = org.telegram.messenger.ui.b0(i14).m0(tL_inputStickerSetID3, true);
+                        TLRPC.TL_messages_stickerSet m02 = org.telegram.messenger.vi.b0(i14).m0(tL_inputStickerSetID3, true);
                         if (m02 != null && m02.set != null) {
                             org.telegram.ui.ActionBar.k2 k2Var2 = vyVar3.Y1;
                             if (k2Var2 == null) {
@@ -145,12 +145,12 @@ public final /* synthetic */ class lx implements View.OnClickListener {
                             at atVar = new at(5, mxVar, m02);
                             Pattern pattern = cv.M1;
                             if (k2Var3.getFragmentView() != null) {
-                                org.telegram.messenger.ui.b0(k2Var3.getCurrentAccount()).g2(k2Var3.getFragmentView().getContext(), m02, null, 0, k2Var3, null, true, true, atVar, false);
+                                org.telegram.messenger.vi.b0(k2Var3.getCurrentAccount()).g2(k2Var3.getFragmentView().getContext(), m02, null, 0, k2Var3, null, true, true, atVar, false);
                                 break;
                             }
                         } else {
-                            org.telegram.messenger.zs.f(i14).c(mxVar, 64);
-                            org.telegram.messenger.ui b03 = org.telegram.messenger.ui.b0(i14);
+                            org.telegram.messenger.at.f(i14).c(mxVar, 64);
+                            org.telegram.messenger.vi b03 = org.telegram.messenger.vi.b0(i14);
                             mxVar.w = tL_inputStickerSetID3;
                             b03.m0(tL_inputStickerSetID3, false);
                             break;

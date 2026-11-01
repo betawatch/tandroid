@@ -30,30 +30,30 @@ import li.v0;
 import mg.c2;
 import n2.u;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.a6;
-import org.telegram.messenger.ap;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b6;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bu;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.dw;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.hf;
+import org.telegram.messenger.bp;
+import org.telegram.messenger.cu;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.ew;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.js;
+import org.telegram.messenger.jf;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.nd;
-import org.telegram.messenger.qi;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.sz;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.od;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.tc;
 import org.telegram.messenger.tz;
 import org.telegram.messenger.uz;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.we;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vz;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.xe;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.i5;
@@ -88,16 +88,17 @@ import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
+import org.telegram.ui.Components.a21;
 import org.telegram.ui.Components.an;
 import org.telegram.ui.Components.bn;
-import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.db0;
 import org.telegram.ui.Components.de0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.dn;
-import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.en;
 import org.telegram.ui.Components.ep;
 import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.eu0;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.fn;
 import org.telegram.ui.Components.g9;
@@ -107,23 +108,22 @@ import org.telegram.ui.Components.hn;
 import org.telegram.ui.Components.j50;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.k00;
-import org.telegram.ui.Components.nn0;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.oe0;
+import org.telegram.ui.Components.on0;
 import org.telegram.ui.Components.px;
 import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.rz;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.u30;
 import org.telegram.ui.Components.u71;
 import org.telegram.ui.Components.v71;
-import org.telegram.ui.Components.voip.m1;
-import org.telegram.ui.Components.yu0;
-import org.telegram.ui.Components.z11;
+import org.telegram.ui.Components.voip.n1;
+import org.telegram.ui.Components.w71;
+import org.telegram.ui.Components.zu0;
 import org.telegram.ui.DataAutoDownloadActivity;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
@@ -132,25 +132,25 @@ import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProxyListActivity;
 import org.telegram.ui.Wallet.k0;
-import org.telegram.ui.cz0;
-import org.telegram.ui.es0;
-import org.telegram.ui.f50;
+import org.telegram.ui.bz0;
+import org.telegram.ui.ds0;
+import org.telegram.ui.e50;
+import org.telegram.ui.ho0;
 import org.telegram.ui.jf0;
 import org.telegram.ui.jo0;
 import org.telegram.ui.l01;
-import org.telegram.ui.lo0;
+import org.telegram.ui.pj0;
 import org.telegram.ui.rj0;
-import org.telegram.ui.tj0;
-import org.telegram.ui.tt;
+import org.telegram.ui.st;
 import org.telegram.ui.ud;
+import org.telegram.ui.wn0;
 import org.telegram.ui.xd;
-import org.telegram.ui.yn0;
 import s4.c1;
 import s4.o0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class j extends sk0 {
+public final class j extends tk0 {
     public final /* synthetic */ int c;
     public final Object d;
     public final Object e;
@@ -220,41 +220,41 @@ public final class j extends sk0 {
                             i14 = dataSettingsActivity.clearDraftsRow;
                             if (i10 == i14) {
                                 x9Var.setIcon(0);
-                                x9Var.b(cd.L0(2131746856, null), false);
+                                x9Var.b(dd.L0(2131746856, null), false);
                                 break;
                             }
                         } else {
                             x9Var.setIcon(0);
                             x9Var.setCanDisable(true);
                             a7.V(x9Var.getTextView(), t6.p7, null);
-                            x9Var.b(cd.L0(2131746128, null), false);
+                            x9Var.b(dd.L0(2131746128, null), false);
                             break;
                         }
                     } else {
                         x9Var.setIcon(0);
-                        x9Var.b(cd.L0(2131746616, null), false);
+                        x9Var.b(dd.L0(2131746616, null), false);
                         break;
                     }
                 } else {
                     x9Var.setIcon(0);
-                    int i31 = vp.d1().getInt("VoipDataSaving", m1.c());
+                    int i31 = wp.d1().getInt("VoipDataSaving", n1.c());
                     if (i31 == 0) {
                         str = null;
-                        L0 = cd.L0(2131743821, null);
+                        L0 = dd.L0(2131743821, null);
                     } else if (i31 == 1) {
                         str = null;
-                        L0 = cd.L0(2131743820, null);
+                        L0 = dd.L0(2131743820, null);
                     } else if (i31 == 2) {
                         str = null;
-                        L0 = cd.L0(2131743822, null);
+                        L0 = dd.L0(2131743822, null);
                     } else if (i31 != 3) {
                         L0 = null;
                         str = null;
                     } else {
                         str = null;
-                        L0 = cd.L0(2131743819, null);
+                        L0 = dd.L0(2131743819, null);
                     }
-                    x9Var.c(cd.L0(2131743255, str), L0, dataSettingsActivity.U, true);
+                    x9Var.c(dd.L0(2131743255, str), L0, dataSettingsActivity.U, true);
                     dataSettingsActivity.U = false;
                     break;
                 }
@@ -268,31 +268,31 @@ public final class j extends sk0 {
                                 if (i10 != dataSettingsActivity.y) {
                                     if (i10 != dataSettingsActivity.I) {
                                         if (i10 == dataSettingsActivity.R) {
-                                            p4Var.setText(cd.L0(2131745935, null));
+                                            p4Var.setText(dd.L0(2131745935, null));
                                             break;
                                         }
                                     } else {
-                                        p4Var.setText(cd.L0(2131753764, null));
+                                        p4Var.setText(dd.L0(2131753764, null));
                                         break;
                                     }
                                 } else {
-                                    p4Var.setText(cd.L0(2131744464, null));
+                                    p4Var.setText(dd.L0(2131744464, null));
                                     break;
                                 }
                             } else {
-                                p4Var.setText(cd.L0(2131746626, null));
+                                p4Var.setText(dd.L0(2131746626, null));
                                 break;
                             }
                         } else {
-                            p4Var.setText(cd.L0(2131752596, null));
+                            p4Var.setText(dd.L0(2131752596, null));
                             break;
                         }
                     } else {
-                        p4Var.setText(cd.L0(2131751677, null));
+                        p4Var.setText(dd.L0(2131751677, null));
                         break;
                     }
                 } else {
-                    p4Var.setText(cd.L0(2131753767, null));
+                    p4Var.setText(dd.L0(2131753767, null));
                     break;
                 }
                 break;
@@ -304,35 +304,35 @@ public final class j extends sk0 {
                             if (i10 != dataSettingsActivity.F) {
                                 if (i10 != dataSettingsActivity.J) {
                                     if (i10 == dataSettingsActivity.K) {
-                                        String L04 = cd.L0(2131753763, null);
-                                        int i32 = tz.a;
-                                        t8Var.f(L04, sc.e(1024), false);
+                                        String L04 = dd.L0(2131753763, null);
+                                        int i32 = uz.a;
+                                        t8Var.f(L04, tc.e(1024), false);
                                         break;
                                     }
                                 } else {
-                                    String L05 = cd.L0(2131753765, null);
-                                    int i33 = tz.a;
-                                    t8Var.f(L05, sc.e(2048), true);
+                                    String L05 = dd.L0(2131753765, null);
+                                    int i33 = uz.a;
+                                    t8Var.f(L05, tc.e(2048), true);
                                     break;
                                 }
                             } else {
-                                t8Var.f("(beta only) Stream All Videos", tz.C0, false);
+                                t8Var.f("(beta only) Stream All Videos", uz.C0, false);
                                 break;
                             }
                         } else {
-                            t8Var.f("(beta only) Show MKV as Video", tz.D0, true);
+                            t8Var.f("(beta only) Show MKV as Video", uz.D0, true);
                             break;
                         }
                     }
                 } else {
-                    t8Var.f(cd.L0(2131751145, null), tz.B0, dataSettingsActivity.F != -1);
+                    t8Var.f(dd.L0(2131751145, null), uz.B0, dataSettingsActivity.F != -1);
                     break;
                 }
                 break;
             case 4:
                 b9 b9Var = (b9) view;
                 if (i10 == dataSettingsActivity.H) {
-                    b9Var.setText(cd.L0(2131751159, null));
+                    b9Var.setText(dd.L0(2131751159, null));
                     break;
                 }
                 break;
@@ -340,28 +340,28 @@ public final class j extends sk0 {
                 l5 l5Var = (l5) view;
                 i15 = dataSettingsActivity.saveToGalleryPeerRow;
                 if (i10 == i15) {
-                    L03 = cd.L0(2131745936, null);
-                    dw dwVar = js.f;
+                    L03 = dd.L0(2131745936, null);
+                    ew ewVar = ks.f;
                     i27 = ((k2) dataSettingsActivity).currentAccount;
-                    charSequence2 = dwVar.e(i27);
-                    a2 = js.f.a();
+                    charSequence2 = ewVar.e(i27);
+                    a2 = ks.f.a();
                 } else {
                     i16 = dataSettingsActivity.saveToGalleryGroupsRow;
                     if (i10 == i16) {
-                        L03 = cd.L0(2131745943, null);
-                        dw dwVar2 = js.g;
+                        L03 = dd.L0(2131745943, null);
+                        ew ewVar2 = ks.g;
                         i26 = ((k2) dataSettingsActivity).currentAccount;
-                        charSequence2 = dwVar2.e(i26);
-                        a2 = js.g.a();
+                        charSequence2 = ewVar2.e(i26);
+                        a2 = ks.g.a();
                     } else {
                         i17 = dataSettingsActivity.saveToGalleryChannelsRow;
                         if (i10 == i17) {
-                            CharSequence L06 = cd.L0(2131745945, null);
-                            dw dwVar3 = js.h;
+                            CharSequence L06 = dd.L0(2131745945, null);
+                            ew ewVar3 = ks.h;
                             i25 = ((k2) dataSettingsActivity).currentAccount;
-                            charSequence2 = dwVar3.e(i25);
+                            charSequence2 = ewVar3.e(i25);
                             charSequence = L06;
-                            z10 = js.h.a();
+                            z10 = ks.h.a();
                             z11 = false;
                             a6Var = null;
                             if (a6Var == null) {
@@ -393,16 +393,16 @@ public final class j extends sk0 {
                                     } else {
                                         if (!a6Var.g || i35 == 0) {
                                             z15 = z17;
-                                            sb2.append(cd.L0(2131748214, null));
+                                            sb2.append(dd.L0(2131748214, null));
                                         } else {
                                             if (z17) {
-                                                sb2.append(cd.L0(2131753816, null));
+                                                sb2.append(dd.L0(2131753816, null));
                                             }
                                             if (z18) {
                                                 if (sb2.length() > 0) {
                                                     sb2.append(", ");
                                                 }
-                                                sb2.append(cd.L0(2131753805, null));
+                                                sb2.append(dd.L0(2131753805, null));
                                                 z15 = z17;
                                                 Object[] objArr = new Object[i36];
                                                 objArr[0] = i0.i0(jArr[i36], i36, false);
@@ -414,7 +414,7 @@ public final class j extends sk0 {
                                                 if (sb2.length() > 0) {
                                                     sb2.append(", ");
                                                 }
-                                                sb2.append(cd.L0(2131753837, null));
+                                                sb2.append(dd.L0(2131753837, null));
                                                 sb2.append(String.format(" (%1$s)", i0.i0(jArr[b6.x(8)], true, false)));
                                             }
                                         }
@@ -436,19 +436,19 @@ public final class j extends sk0 {
                             break;
                         } else {
                             if (i10 == dataSettingsActivity.e) {
-                                L02 = cd.L0(2131742910, null);
+                                L02 = dd.L0(2131742910, null);
                                 i23 = ((k2) dataSettingsActivity).currentAccount;
                                 z12 = b6.q(i23).M.g;
                                 i24 = ((k2) dataSettingsActivity).currentAccount;
                                 a6Var = b6.q(i24).n();
                             } else if (i10 == dataSettingsActivity.h) {
-                                L02 = cd.L0(2131742912, null);
+                                L02 = dd.L0(2131742912, null);
                                 i21 = ((k2) dataSettingsActivity).currentAccount;
                                 z12 = b6.q(i21).N.g;
                                 i22 = ((k2) dataSettingsActivity).currentAccount;
                                 a6Var = b6.q(i22).p();
                             } else {
-                                CharSequence L07 = cd.L0(2131742911, null);
+                                CharSequence L07 = dd.L0(2131742911, null);
                                 i18 = ((k2) dataSettingsActivity).currentAccount;
                                 boolean z20 = b6.q(i18).O.g;
                                 i19 = ((k2) dataSettingsActivity).currentAccount;
@@ -488,10 +488,10 @@ public final class j extends sk0 {
                 p8 p8Var = (p8) view;
                 if (i10 == dataSettingsActivity.s) {
                     if (dataSettingsActivity.W) {
-                        p8Var.r(cd.L0(2131744834, null), "", false, R.drawable.msg_filled_storageusage, -11565578, -13276952, false);
+                        p8Var.r(dd.L0(2131744834, null), "", false, R.drawable.msg_filled_storageusage, -11565578, -13276952, false);
                         p8Var.h(45, true, dataSettingsActivity.V);
                     } else {
-                        String L08 = cd.L0(2131744834, null);
+                        String L08 = dd.L0(2131744834, null);
                         long j10 = dataSettingsActivity.X;
                         p8Var.r(L08, j10 <= 0 ? "" : i0.i0(j10, false, false), true, R.drawable.msg_filled_storageusage, -11565578, -13276952, false);
                         p8Var.h(45, false, dataSettingsActivity.V);
@@ -499,16 +499,16 @@ public final class j extends sk0 {
                     dataSettingsActivity.V = false;
                 } else if (i10 == dataSettingsActivity.w) {
                     i28 = ((k2) dataSettingsActivity).currentAccount;
-                    uz e = uz.e(i28);
-                    p8Var.r(cd.L0(2131748312, null), i0.i0(e.g(2, 6) + e.g(1, 6) + e.g(0, 6) + e.f(2, 6) + e.f(1, 6) + e.f(0, 6), false, false), true, R.drawable.msg_filled_datausage, -11154873, -14175180, false);
+                    vz e = vz.e(i28);
+                    p8Var.r(dd.L0(2131748312, null), i0.i0(e.g(2, 6) + e.g(1, 6) + e.g(0, 6) + e.f(2, 6) + e.f(1, 6) + e.f(0, 6), false, false), true, R.drawable.msg_filled_datausage, -11154873, -14175180, false);
                 } else if (i10 == dataSettingsActivity.n) {
                     String absolutePath = ((File) dataSettingsActivity.c.get(0)).getAbsolutePath();
-                    if (!TextUtils.isEmpty(tz.h0)) {
+                    if (!TextUtils.isEmpty(uz.h0)) {
                         int size = dataSettingsActivity.c.size();
                         while (true) {
                             if (i30 < size) {
                                 String absolutePath2 = ((File) dataSettingsActivity.c.get(i30)).getAbsolutePath();
-                                if (absolutePath2.startsWith(tz.h0)) {
+                                if (absolutePath2.startsWith(uz.h0)) {
                                     absolutePath = absolutePath2;
                                 } else {
                                     i30++;
@@ -516,7 +516,7 @@ public final class j extends sk0 {
                             }
                         }
                     }
-                    p8Var.r(cd.L0(2131744838, null), cd.L0((absolutePath == null || absolutePath.contains("/storage/emulated/")) ? 2131749198 : 2131745857, null), true, R.drawable.msg_filled_sdcard, -1007845, -1996271, false);
+                    p8Var.r(dd.L0(2131744838, null), dd.L0((absolutePath == null || absolutePath.contains("/storage/emulated/")) ? 2131749198 : 2131745857, null), true, R.drawable.msg_filled_sdcard, -1007845, -1996271, false);
                 }
                 p8Var.setOffsetFromImage(64);
                 break;
@@ -574,34 +574,34 @@ public final class j extends sk0 {
         if (i38 == 0) {
             p4 p4Var = (p4) view;
             if (i10 == notificationsSettingsActivity.y) {
-                p4Var.setText(cd.L0(2131747925, "NotificationsForChats"));
+                p4Var.setText(dd.L0(2131747925, "NotificationsForChats"));
                 return;
             }
             if (i10 == notificationsSettingsActivity.E) {
-                p4Var.setText(cd.L0(2131749228, "InAppNotifications"));
+                p4Var.setText(dd.L0(2131749228, "InAppNotifications"));
                 return;
             }
             if (i10 == notificationsSettingsActivity.K) {
-                p4Var.setText(cd.L0(2131750886, "Events"));
+                p4Var.setText(dd.L0(2131750886, "Events"));
                 return;
             }
             if (i10 == notificationsSettingsActivity.M) {
-                p4Var.setText(cd.L0(2131747907, "NotificationsOther"));
+                p4Var.setText(dd.L0(2131747907, "NotificationsOther"));
                 return;
             }
             if (i10 == notificationsSettingsActivity.S) {
-                p4Var.setText(cd.L0(2131746135, "Reset"));
+                p4Var.setText(dd.L0(2131746135, "Reset"));
                 return;
             }
             if (i10 == notificationsSettingsActivity.G) {
-                p4Var.setText(cd.L0(2131743305, "VoipNotificationSettings"));
+                p4Var.setText(dd.L0(2131743305, "VoipNotificationSettings"));
                 return;
             } else if (i10 == notificationsSettingsActivity.N) {
-                p4Var.setText(cd.L0(2131753733, "BadgeNumber"));
+                p4Var.setText(dd.L0(2131753733, "BadgeNumber"));
                 return;
             } else {
                 if (i10 == notificationsSettingsActivity.r) {
-                    p4Var.setText(cd.L0(2131745354, "ShowNotificationsFor"));
+                    p4Var.setText(dd.L0(2131745354, "ShowNotificationsFor"));
                     return;
                 }
                 return;
@@ -611,35 +611,35 @@ public final class j extends sk0 {
         if (i38 == 1) {
             t8 t8Var = (t8) view;
             i11 = ((k2) notificationsSettingsActivity).currentAccount;
-            SharedPreferences sharedPreferences = vp.r1(i11).e7;
+            SharedPreferences sharedPreferences = wp.r1(i11).e7;
             i12 = notificationsSettingsActivity.inappSoundRow;
             if (i10 == i12) {
-                t8Var.f(cd.L0(2131749224, null), sharedPreferences.getBoolean("EnableInAppSounds", true), true);
+                t8Var.f(dd.L0(2131749224, null), sharedPreferences.getBoolean("EnableInAppSounds", true), true);
                 return;
             }
             i13 = notificationsSettingsActivity.inappVibrateRow;
             if (i10 == i13) {
-                t8Var.f(cd.L0(2131749223, null), sharedPreferences.getBoolean("EnableInAppVibrate", true), true);
+                t8Var.f(dd.L0(2131749223, null), sharedPreferences.getBoolean("EnableInAppVibrate", true), true);
                 return;
             }
             i14 = notificationsSettingsActivity.inappPreviewRow;
             if (i10 == i14) {
-                t8Var.f(cd.L0(2131749225, null), sharedPreferences.getBoolean("EnableInAppPreview", true), true);
+                t8Var.f(dd.L0(2131749225, null), sharedPreferences.getBoolean("EnableInAppPreview", true), true);
                 return;
             }
             i15 = notificationsSettingsActivity.inappPriorityRow;
             if (i10 == i15) {
-                t8Var.g(cd.L0(2131749227, null), cd.L0(2131749226, null), sharedPreferences.getBoolean("EnableInAppPopup", true), true, false);
+                t8Var.g(dd.L0(2131749227, null), dd.L0(2131749226, null), sharedPreferences.getBoolean("EnableInAppPopup", true), true, false);
                 return;
             }
             i16 = notificationsSettingsActivity.contactJoinedRow;
             if (i10 == i16) {
-                t8Var.f(cd.L0(2131751790, "ContactJoined"), sharedPreferences.getBoolean("EnableContactJoined", true), true);
+                t8Var.f(dd.L0(2131751790, "ContactJoined"), sharedPreferences.getBoolean("EnableContactJoined", true), true);
                 return;
             }
             i17 = notificationsSettingsActivity.pinnedMessageRow;
             if (i10 == i17) {
-                t8Var.f(cd.L0(2131747244, "PinnedMessages"), sharedPreferences.getBoolean("PinnedMessages", true), false);
+                t8Var.f(dd.L0(2131747244, "PinnedMessages"), sharedPreferences.getBoolean("PinnedMessages", true), false);
                 return;
             }
             if (i10 == notificationsSettingsActivity.P) {
@@ -647,40 +647,40 @@ public final class j extends sk0 {
                 return;
             }
             if (i10 == notificationsSettingsActivity.w) {
-                t8Var.g(cd.L0(2131747892, "NotificationsService"), cd.L0(2131747889, "NotificationsServiceInfo"), sharedPreferences.getBoolean("pushService", notificationsSettingsActivity.getMessagesController().B3), true, true);
+                t8Var.g(dd.L0(2131747892, "NotificationsService"), dd.L0(2131747889, "NotificationsServiceInfo"), sharedPreferences.getBoolean("pushService", notificationsSettingsActivity.getMessagesController().B3), true, true);
                 return;
             }
             if (i10 == notificationsSettingsActivity.x) {
-                t8Var.g(cd.L0(2131747891, "NotificationsServiceConnection"), cd.L0(2131747890, "NotificationsServiceConnectionInfo"), sharedPreferences.getBoolean("pushConnection", notificationsSettingsActivity.getMessagesController().C3), true, true);
+                t8Var.g(dd.L0(2131747891, "NotificationsServiceConnection"), dd.L0(2131747890, "NotificationsServiceConnectionInfo"), sharedPreferences.getBoolean("pushConnection", notificationsSettingsActivity.getMessagesController().C3), true, true);
                 return;
             }
             i18 = notificationsSettingsActivity.badgeNumberShowRow;
             if (i10 == i18) {
-                t8Var.f(cd.L0(2131753731, "BadgeNumberShow"), notificationsSettingsActivity.getNotificationsController().R, true);
+                t8Var.f(dd.L0(2131753731, "BadgeNumberShow"), notificationsSettingsActivity.getNotificationsController().R, true);
                 return;
             }
             i19 = notificationsSettingsActivity.badgeNumberMutedRow;
             if (i10 == i19) {
-                t8Var.f(cd.L0(2131753732, "BadgeNumberMutedChats"), notificationsSettingsActivity.getNotificationsController().S, true);
+                t8Var.f(dd.L0(2131753732, "BadgeNumberMutedChats"), notificationsSettingsActivity.getNotificationsController().S, true);
                 return;
             }
             i20 = notificationsSettingsActivity.badgeNumberMessagesRow;
             if (i10 == i20) {
-                t8Var.f(cd.L0(2131753730, "BadgeNumberUnread"), notificationsSettingsActivity.getNotificationsController().T, false);
+                t8Var.f(dd.L0(2131753730, "BadgeNumberUnread"), notificationsSettingsActivity.getNotificationsController().T, false);
                 return;
             }
             i21 = notificationsSettingsActivity.inchatSoundRow;
             if (i10 == i21) {
-                t8Var.f(cd.L0(2131749222, "InChatSound"), sharedPreferences.getBoolean("EnableInChatSound", true), true);
+                t8Var.f(dd.L0(2131749222, "InChatSound"), sharedPreferences.getBoolean("EnableInChatSound", true), true);
                 return;
             }
             if (i10 == notificationsSettingsActivity.H) {
-                t8Var.f(cd.L0(2131743640, "Vibrate"), sharedPreferences.getBoolean("EnableCallVibrate", true), true);
+                t8Var.f(dd.L0(2131743640, "Vibrate"), sharedPreferences.getBoolean("EnableCallVibrate", true), true);
                 return;
             }
             i22 = notificationsSettingsActivity.accountsAllRow;
             if (i10 == i22) {
-                t8Var.f(cd.L0(2131754302, "AllAccounts"), vp.e1().getBoolean("AllAccounts", true), false);
+                t8Var.f(dd.L0(2131754302, "AllAccounts"), wp.e1().getBoolean("AllAccounts", true), false);
                 return;
             }
             return;
@@ -690,7 +690,7 @@ public final class j extends sk0 {
             a9Var.setMultilineDetail(true);
             i23 = notificationsSettingsActivity.resetNotificationsRow;
             if (i10 == i23) {
-                a9Var.a(cd.L0(2131746129, "ResetAllNotifications"), cd.L0(2131743911, "UndoAllCustom"), false);
+                a9Var.a(dd.L0(2131746129, "ResetAllNotifications"), dd.L0(2131743911, "UndoAllCustom"), false);
                 return;
             }
             return;
@@ -702,27 +702,27 @@ public final class j extends sk0 {
                 }
                 b9 b9Var = (b9) view;
                 if (i10 == notificationsSettingsActivity.s) {
-                    b9Var.setText(cd.L0(2131745353, "ShowNotificationsForInfo"));
+                    b9Var.setText(dd.L0(2131745353, "ShowNotificationsForInfo"));
                     return;
                 }
                 return;
             }
             x9 x9Var = (x9) view;
             i37 = ((k2) notificationsSettingsActivity).currentAccount;
-            SharedPreferences sharedPreferences2 = vp.r1(i37).e7;
+            SharedPreferences sharedPreferences2 = wp.r1(i37).e7;
             if (i10 == notificationsSettingsActivity.I) {
-                String string = sharedPreferences2.getString("CallsRingtone", cd.L0(2131751600, "DefaultRingtone"));
+                String string = sharedPreferences2.getString("CallsRingtone", dd.L0(2131751600, "DefaultRingtone"));
                 if (string.equals("NoSound")) {
-                    string = cd.L0(2131748167, "NoSound");
+                    string = dd.L0(2131748167, "NoSound");
                 }
-                x9Var.c(cd.L0(2131743267, "VoipSettingsRingtone"), string, notificationsSettingsActivity.W, false);
+                x9Var.c(dd.L0(2131743267, "VoipSettingsRingtone"), string, notificationsSettingsActivity.W, false);
                 notificationsSettingsActivity.W = false;
                 return;
             }
             if (i10 != notificationsSettingsActivity.H) {
                 if (i10 == notificationsSettingsActivity.Q) {
                     int i40 = sharedPreferences2.getInt("repeat_messages", 60);
-                    x9Var.c(cd.L0(2131746290, "RepeatNotifications"), i40 == 0 ? cd.L0(2131746289, "RepeatNotificationsNever") : i40 < 60 ? cd.G(i40, "Minutes", new Object[0]) : cd.G(i40 / 60, "Hours", new Object[0]), notificationsSettingsActivity.X, false);
+                    x9Var.c(dd.L0(2131746290, "RepeatNotifications"), i40 == 0 ? dd.L0(2131746289, "RepeatNotificationsNever") : i40 < 60 ? dd.G(i40, "Minutes", new Object[0]) : dd.G(i40 / 60, "Hours", new Object[0]), notificationsSettingsActivity.X, false);
                     notificationsSettingsActivity.X = false;
                     return;
                 }
@@ -730,27 +730,27 @@ public final class j extends sk0 {
             }
             int i41 = sharedPreferences2.getInt("vibrate_calls", 0);
             if (i41 == 0) {
-                x9Var.c(cd.L0(2131743640, "Vibrate"), cd.L0(2131743639, "VibrationDefault"), notificationsSettingsActivity.V, true);
+                x9Var.c(dd.L0(2131743640, "Vibrate"), dd.L0(2131743639, "VibrationDefault"), notificationsSettingsActivity.V, true);
             } else if (i41 == 1) {
-                x9Var.c(cd.L0(2131743640, "Vibrate"), cd.L0(2131745384, "Short"), notificationsSettingsActivity.V, true);
+                x9Var.c(dd.L0(2131743640, "Vibrate"), dd.L0(2131745384, "Short"), notificationsSettingsActivity.V, true);
             } else if (i41 == 2) {
-                x9Var.c(cd.L0(2131743640, "Vibrate"), cd.L0(2131743638, "VibrationDisabled"), notificationsSettingsActivity.V, true);
+                x9Var.c(dd.L0(2131743640, "Vibrate"), dd.L0(2131743638, "VibrationDisabled"), notificationsSettingsActivity.V, true);
             } else if (i41 == 3) {
-                x9Var.c(cd.L0(2131743640, "Vibrate"), cd.L0(2131748734, "Long"), notificationsSettingsActivity.V, true);
+                x9Var.c(dd.L0(2131743640, "Vibrate"), dd.L0(2131748734, "Long"), notificationsSettingsActivity.V, true);
             } else if (i41 == 4) {
-                x9Var.c(cd.L0(2131743640, "Vibrate"), cd.L0(2131747837, "OnlyIfSilent"), notificationsSettingsActivity.V, true);
+                x9Var.c(dd.L0(2131743640, "Vibrate"), dd.L0(2131747837, "OnlyIfSilent"), notificationsSettingsActivity.V, true);
             }
             notificationsSettingsActivity.V = false;
             return;
         }
         l5 l5Var = (l5) view;
         i24 = ((k2) notificationsSettingsActivity).currentAccount;
-        SharedPreferences sharedPreferences3 = vp.r1(i24).e7;
+        SharedPreferences sharedPreferences3 = wp.r1(i24).e7;
         i25 = ((k2) notificationsSettingsActivity).currentAccount;
         int currentTime = ConnectionsManager.getInstance(i25).getCurrentTime();
         i26 = notificationsSettingsActivity.privateRow;
         if (i10 == i26) {
-            L0 = cd.L0(2131747894, null);
+            L0 = dd.L0(2131747894, null);
             arrayList = notificationsSettingsActivity.d;
             i30 = sharedPreferences3.getInt("EnableAll2", 0);
             i31 = R.drawable.msg_openprofile;
@@ -760,7 +760,7 @@ public final class j extends sk0 {
                 i28 = notificationsSettingsActivity.storiesRow;
                 int i42 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 if (i10 == i28) {
-                    CharSequence L02 = cd.L0(2131747948, null);
+                    CharSequence L02 = dd.L0(2131747948, null);
                     ArrayList arrayList3 = notificationsSettingsActivity.h;
                     ArrayList arrayList4 = notificationsSettingsActivity.n;
                     if (sharedPreferences3.getBoolean("EnableAllStories", false)) {
@@ -774,14 +774,14 @@ public final class j extends sk0 {
                 } else {
                     i29 = notificationsSettingsActivity.reactionsRow;
                     if (i10 == i29) {
-                        CharSequence L03 = cd.L0(2131747952, null);
+                        CharSequence L03 = dd.L0(2131747952, null);
                         i30 = (sharedPreferences3.getBoolean("EnableReactionsMessages", true) || sharedPreferences3.getBoolean("EnableReactionsStories", true)) ? 0 : Integer.MAX_VALUE;
                         i31 = R.drawable.msg_reactions;
                         charSequence = L03;
                         arrayList2 = null;
                         arrayList = null;
                     } else {
-                        L0 = cd.L0(2131747937, null);
+                        L0 = dd.L0(2131747937, null);
                         arrayList = notificationsSettingsActivity.f;
                         i30 = sharedPreferences3.getInt("EnableChannel2", 0);
                         i31 = R.drawable.msg_channel;
@@ -800,13 +800,13 @@ public final class j extends sk0 {
                     if (arrayList != null && !arrayList.isEmpty()) {
                         i32 = i30 < currentTime ? 1 : i33;
                         if (i32 != 0) {
-                            sb2.append(cd.L0(2131747908, "NotificationsOn"));
+                            sb2.append(dd.L0(2131747908, "NotificationsOn"));
                         } else if (i30 - 31536000 >= currentTime) {
-                            sb2.append(cd.L0(2131747910, "NotificationsOff"));
+                            sb2.append(dd.L0(2131747910, "NotificationsOff"));
                         } else {
                             Object[] objArr = new Object[1];
-                            objArr[i33] = cd.a1(i30);
-                            sb2.append(cd.a0("NotificationsOffUntil", null, 2131747909, objArr));
+                            objArr[i33] = dd.a1(i30);
+                            sb2.append(dd.a0("NotificationsOffUntil", null, 2131747909, objArr));
                         }
                         if (sb2.length() != 0) {
                             sb2.append(", ");
@@ -816,40 +816,40 @@ public final class j extends sk0 {
                         if (i10 == i35 && !sharedPreferences3.contains("EnableAllStories") && arrayList2 != null) {
                             size += arrayList2.size();
                         }
-                        sb2.append(cd.G(size, "Exception", new Object[i33]));
+                        sb2.append(dd.G(size, "Exception", new Object[i33]));
                     } else if (arrayList2 == null || arrayList2.isEmpty()) {
-                        sb2.append(cd.L0(2131744287, "TapToChange"));
+                        sb2.append(dd.L0(2131744287, "TapToChange"));
                     } else {
                         if (i30 > 0) {
-                            sb2.append(cd.L0(2131747910, "NotificationsOff"));
+                            sb2.append(dd.L0(2131747910, "NotificationsOff"));
                         } else {
-                            sb2.append(cd.L0(2131747908, "NotificationsOn"));
+                            sb2.append(dd.L0(2131747908, "NotificationsOn"));
                         }
                         if (!arrayList2.isEmpty() && !sharedPreferences3.contains("EnableAllStories")) {
                             sb2.append(", ");
-                            sb2.append(cd.G(arrayList2.size(), "AutoException", new Object[0]));
+                            sb2.append(dd.G(arrayList2.size(), "AutoException", new Object[0]));
                         }
                     }
                     z10 = i32;
                 } else if (i30 > 0) {
-                    sb2.append(cd.L0(2131747910, "NotificationsOff"));
+                    sb2.append(dd.L0(2131747910, "NotificationsOff"));
                     z10 = i33;
                 } else {
                     if (sharedPreferences3.getBoolean("EnableReactionsMessages", true)) {
-                        sb2.append(cd.L0(2131747951, null));
+                        sb2.append(dd.L0(2131747951, null));
                     }
                     if (sharedPreferences3.getBoolean("EnableReactionsStories", true)) {
                         if (sb2.length() > 0) {
                             sb2.append(", ");
                         }
-                        sb2.append(cd.L0(2131747950, null));
+                        sb2.append(dd.L0(2131747950, null));
                     }
                     z10 = 1;
                 }
                 i36 = notificationsSettingsActivity.reactionsRow;
                 l5Var.b(charSequence, sb2, i31, z10, i39, false, i10 == i36, false);
             }
-            L0 = cd.L0(2131747923, null);
+            L0 = dd.L0(2131747923, null);
             arrayList = notificationsSettingsActivity.e;
             i30 = sharedPreferences3.getInt("EnableGroup2", 0);
             i31 = R.drawable.msg_groups;
@@ -870,51 +870,51 @@ public final class j extends sk0 {
 
     private final void I(c1 c1Var, int i10) {
         boolean P1;
-        lo0 lo0Var = (lo0) this.e;
-        we weVar = lo0Var.J;
-        ArrayList arrayList = lo0Var.n;
-        ArrayList arrayList2 = lo0Var.c;
-        HashMap hashMap = lo0Var.b;
+        jo0 jo0Var = (jo0) this.e;
+        xe xeVar = jo0Var.J;
+        ArrayList arrayList = jo0Var.n;
+        ArrayList arrayList2 = jo0Var.c;
+        HashMap hashMap = jo0Var.b;
         int i11 = c1Var.f;
         View view = c1Var.a;
         if (i11 == 0) {
             v5 v5Var = (v5) view;
-            v5Var.setItemSize(lo0Var.R);
+            v5Var.setItemSize(jo0Var.R);
             g9 imageView = v5Var.getImageView();
             v5Var.setTag(Integer.valueOf(i10));
             imageView.r();
-            if (weVar != null) {
-                ef efVar = (ef) weVar.e.get(i10);
-                v5Var.d(efVar, arrayList2.size() > 1, true, false, false);
-                int i12 = efVar.C;
-                v5Var.b(lo0Var.e ? arrayList2.indexOf(Integer.valueOf(i12)) : -1, hashMap.containsKey(Integer.valueOf(i12)), false);
-                P1 = PhotoViewer.P1(efVar.I);
+            if (xeVar != null) {
+                ff ffVar = (ff) xeVar.e.get(i10);
+                v5Var.d(ffVar, arrayList2.size() > 1, true, false, false);
+                int i12 = ffVar.C;
+                v5Var.b(jo0Var.e ? arrayList2.indexOf(Integer.valueOf(i12)) : -1, hashMap.containsKey(Integer.valueOf(i12)), false);
+                P1 = PhotoViewer.P1(ffVar.I);
             } else {
-                hf hfVar = (hf) lo0Var.f.get(i10);
-                v5Var.e(hfVar);
+                jf jfVar = (jf) jo0Var.f.get(i10);
+                v5Var.e(jfVar);
                 v5Var.getVideoInfoContainer().setVisibility(4);
-                v5Var.b(lo0Var.e ? arrayList2.indexOf(hfVar.B) : -1, hashMap.containsKey(hfVar.B), false);
-                P1 = PhotoViewer.P1(hfVar.g());
+                v5Var.b(jo0Var.e ? arrayList2.indexOf(jfVar.B) : -1, hashMap.containsKey(jfVar.B), false);
+                P1 = PhotoViewer.P1(jfVar.g());
             }
             imageView.getImageReceiver().O0(!P1, true);
-            v5Var.getCheckBox().setVisibility((lo0Var.T != 0 || P1) ? 8 : 0);
+            v5Var.getCheckBox().setVisibility((jo0Var.T != 0 || P1) ? 8 : 0);
             return;
         }
         if (i11 == 1) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             if (layoutParams != null) {
                 layoutParams.width = -1;
-                layoutParams.height = lo0Var.R;
+                layoutParams.height = jo0Var.R;
                 view.setLayoutParams(layoutParams);
                 return;
             }
             return;
         }
         if (i11 == 2) {
-            ef efVar2 = (ef) weVar.e.get(i10);
+            ff ffVar2 = (ff) xeVar.e.get(i10);
             l7 l7Var = (l7) view;
-            l7Var.setPhotoEntry(efVar2);
-            l7Var.b(hashMap.containsKey(Integer.valueOf(efVar2.C)), false);
+            l7Var.setPhotoEntry(ffVar2);
+            l7Var.b(hashMap.containsKey(Integer.valueOf(ffVar2.C)), false);
             l7Var.setTag(Integer.valueOf(i10));
             return;
         }
@@ -925,7 +925,7 @@ public final class j extends sk0 {
         if (i10 < arrayList.size()) {
             p8Var.o(R.drawable.msg_recent, (CharSequence) arrayList.get(i10), false);
         } else {
-            p8Var.o(R.drawable.msg_clear_recent, cd.L0(2131752067, null), false);
+            p8Var.o(R.drawable.msg_clear_recent, dd.L0(2131752067, null), false);
         }
     }
 
@@ -945,11 +945,11 @@ public final class j extends sk0 {
         ((FrameLayout.LayoutParams) b1Var.getLayoutParams()).rightMargin = L2;
         g9Var.r();
         Object obj = photoViewer.d.v().get(photoViewer.d.c().get(i10));
-        if (!(obj instanceof ef)) {
-            if (obj instanceof hf) {
-                hf hfVar = (hf) obj;
-                b6Var.setTag(hfVar);
-                b6Var.setImage(hfVar);
+        if (!(obj instanceof ff)) {
+            if (obj instanceof jf) {
+                jf jfVar = (jf) obj;
+                b6Var.setTag(jfVar);
+                b6Var.setImage(jfVar);
                 b1Var.setVisibility(4);
                 epVar.a.f(-1, true, false);
                 epVar.setVisibility(0);
@@ -957,21 +957,21 @@ public final class j extends sk0 {
             }
             return;
         }
-        ef efVar = (ef) obj;
-        int i11 = efVar.C;
-        String str = efVar.I;
-        b6Var.setTag(efVar);
+        ff ffVar = (ff) obj;
+        int i11 = ffVar.C;
+        String str = ffVar.I;
+        b6Var.setTag(ffVar);
         b1Var.setVisibility(4);
-        String str2 = efVar.c;
+        String str2 = ffVar.c;
         if (str2 != null) {
             g9Var.h(str2, null, context.getResources().getDrawable(R.drawable.nophotos));
         } else if (str != null) {
-            g9Var.s(efVar.J, efVar.K, true);
-            if (!efVar.b || efVar.d()) {
+            g9Var.s(ffVar.J, ffVar.K, true);
+            if (!ffVar.b || ffVar.d()) {
                 g9Var.h("thumb://" + i11 + ":" + str, null, context.getResources().getDrawable(R.drawable.nophotos));
             } else {
                 b1Var.setVisibility(0);
-                b6Var.d.setText(i0.g0(efVar.E, false, false));
+                b6Var.d.setText(i0.g0(ffVar.E, false, false));
                 g9Var.h("vthumb://" + i11 + ":" + str, null, context.getResources().getDrawable(R.drawable.nophotos));
             }
         } else {
@@ -995,18 +995,18 @@ public final class j extends sk0 {
                 a7.V(x9Var.getTextView(), t6.G6, null);
                 i11 = proxyListActivity.proxyAddRow;
                 if (i10 == i11) {
-                    x9Var.b(cd.L0(2131754391, null), proxyListActivity.D != -1);
+                    x9Var.b(dd.L0(2131754391, null), proxyListActivity.D != -1);
                     break;
                 } else if (i10 == proxyListActivity.D) {
                     a7.V(x9Var.getTextView(), t6.p7, null);
-                    x9Var.b(cd.L0(2131751581, null), false);
+                    x9Var.b(dd.L0(2131751581, null), false);
                     break;
                 }
                 break;
             case 2:
                 p4 p4Var = (p4) view;
                 if (i10 == proxyListActivity.h) {
-                    p4Var.setText(cd.L0(2131746620, null));
+                    p4Var.setText(dd.L0(2131746620, null));
                     break;
                 }
                 break;
@@ -1014,40 +1014,40 @@ public final class j extends sk0 {
                 t8 t8Var = (t8) view;
                 i12 = proxyListActivity.useProxyRow;
                 if (i10 == i12) {
-                    t8Var.f(cd.L0(2131743809, null), proxyListActivity.d, proxyListActivity.w != -1);
+                    t8Var.f(dd.L0(2131743809, null), proxyListActivity.d, proxyListActivity.w != -1);
                     break;
                 } else if (i10 == proxyListActivity.w) {
-                    t8Var.f(cd.L0(2131743811, null), tz.a1, true);
+                    t8Var.f(dd.L0(2131743811, null), uz.a1, true);
                     break;
                 }
                 break;
             case 4:
                 b9 b9Var = (b9) view;
                 if (i10 == proxyListActivity.y) {
-                    b9Var.setText(cd.L0(2131746618, null));
+                    b9Var.setText(dd.L0(2131746618, null));
                     break;
                 }
                 break;
             case 5:
-                cz0 cz0Var = (cz0) view;
-                sz szVar = (sz) arrayList2.get(i10 - proxyListActivity.n);
-                cz0Var.setProxy(szVar);
-                cz0Var.setChecked(tz.B1 == szVar);
+                bz0 bz0Var = (bz0) view;
+                tz tzVar = (tz) arrayList2.get(i10 - proxyListActivity.n);
+                bz0Var.setProxy(tzVar);
+                bz0Var.setChecked(uz.B1 == tzVar);
                 boolean contains = arrayList.contains(arrayList2.get(i10 - proxyListActivity.n));
-                cz0Var.h = contains;
-                cz0Var.f.a(contains, false);
-                cz0Var.a(!arrayList.isEmpty(), false);
+                bz0Var.h = contains;
+                bz0Var.f.a(contains, false);
+                bz0Var.a(!arrayList.isEmpty(), false);
                 break;
             case 6:
                 if (i10 == proxyListActivity.x) {
-                    yu0 yu0Var = (yu0) view;
-                    ArrayList arrayList3 = new ArrayList(bu.d);
+                    zu0 zu0Var = (zu0) view;
+                    ArrayList arrayList3 = new ArrayList(cu.d);
                     String[] strArr = new String[arrayList3.size()];
                     for (int i14 = 0; i14 < arrayList3.size(); i14++) {
-                        strArr[i14] = cd.a0(null, null, 2131746617, arrayList3.get(i14));
+                        strArr[i14] = dd.a0(null, null, 2131746617, arrayList3.get(i14));
                     }
-                    yu0Var.setCallback(new z11(25));
-                    yu0Var.b(tz.b1, null, strArr);
+                    zu0Var.setCallback(new a21(25));
+                    zu0Var.b(uz.b1, null, strArr);
                     break;
                 }
                 break;
@@ -1060,44 +1060,44 @@ public final class j extends sk0 {
         boolean d = j50.d(i11);
         int i12 = c1Var.f;
         if (i12 == 0) {
-            ((p4) c1Var.a).setText(i10 == 0 ? cd.L0(2131746005, null) : cd.L0(2131746009, null));
+            ((p4) c1Var.a).setText(i10 == 0 ? dd.L0(2131746005, null) : dd.L0(2131746009, null));
             return;
         }
         if (i12 == 1) {
             t8 t8Var = (t8) c1Var.a;
             t8Var.setEnabled(i10 == 1 || d);
             if (i10 == 1) {
-                t8Var.f(cd.L0(2131746001, null), d, false);
+                t8Var.f(dd.L0(2131746001, null), d, false);
                 return;
             }
-            String L0 = cd.L0(2131746008, null);
+            String L0 = dd.L0(2131746008, null);
             mi.a aVar = mi.e.i;
             aVar.a();
             t8Var.f(L0, aVar.d, false);
             return;
         }
         if (i12 != 2) {
-            ((b9) c1Var.a).setText(i10 == 6 ? cd.L0(2131746004, null) : cd.L0(2131746007, null));
+            ((b9) c1Var.a).setText(i10 == 6 ? dd.L0(2131746004, null) : dd.L0(2131746007, null));
             return;
         }
         x9 x9Var = (x9) c1Var.a;
         x9Var.setEnabled(d);
         if (i10 == 2) {
-            x9Var.c(cd.L0(2131746003, null), a1.g.p(new StringBuilder(), ((v0) mi.e.e.a()).a, "p"), false, true);
+            x9Var.c(dd.L0(2131746003, null), a1.g.p(new StringBuilder(), ((v0) mi.e.e.a()).a, "p"), false, true);
             return;
         }
         if (i10 == 3) {
-            String L02 = cd.L0(2131746013, null);
+            String L02 = dd.L0(2131746013, null);
             r0 r0Var = (r0) mi.e.f.a();
-            x9Var.c(L02, r0Var == r0.a ? cd.L0(2131746012, null) : r0Var == r0.b ? cd.L0(2131746010, null) : cd.L0(2131746011, null), false, true);
+            x9Var.c(L02, r0Var == r0.a ? dd.L0(2131746012, null) : r0Var == r0.b ? dd.L0(2131746010, null) : dd.L0(2131746011, null), false, true);
         } else if (i10 == 4) {
-            x9Var.c(cd.L0(2131746006, null), a1.g.p(new StringBuilder(), ((s0) mi.e.g.a()).a, " FPS"), false, true);
+            x9Var.c(dd.L0(2131746006, null), a1.g.p(new StringBuilder(), ((s0) mi.e.g.a()).a, " FPS"), false, true);
         } else {
-            x9Var.c(cd.L0(2131746014, null), l01.e0(mi.e.h.a()), false, false);
+            x9Var.c(dd.L0(2131746014, null), l01.f0(mi.e.h.a()), false, false);
         }
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(c1 c1Var) {
         int i10;
         int i11;
@@ -1217,8 +1217,8 @@ public final class j extends sk0 {
             case 14:
                 return true;
             case 15:
-                lo0 lo0Var = (lo0) this.e;
-                return lo0Var.J != null || (!TextUtils.isEmpty(lo0Var.w) ? c1Var.b() >= lo0Var.f.size() : c1Var.f != 3);
+                jo0 jo0Var = (jo0) this.e;
+                return jo0Var.J != null || (!TextUtils.isEmpty(jo0Var.w) ? c1Var.b() >= jo0Var.f.size() : c1Var.f != 3);
             case 16:
                 return false;
             case 17:
@@ -1289,11 +1289,11 @@ public final class j extends sk0 {
         if (i10 < i11 || i10 >= proxyListActivity.r) {
             return;
         }
-        sz szVar = (sz) proxyListActivity.F.get(i10 - i11);
-        if (arrayList.contains(szVar)) {
-            arrayList.remove(szVar);
+        tz tzVar = (tz) proxyListActivity.F.get(i10 - i11);
+        if (arrayList.contains(tzVar)) {
+            arrayList.remove(tzVar);
         } else {
-            arrayList.add(szVar);
+            arrayList.add(tzVar);
         }
         h(i10, 1);
         E();
@@ -1316,15 +1316,15 @@ public final class j extends sk0 {
             case 5:
                 return ((oe0) this.e).F;
             case 6:
-                return nd.g() + 1;
+                return od.g() + 1;
             case 7:
-                ArrayList arrayList = ((sx0) this.d).x;
+                ArrayList arrayList = ((tx0) this.d).x;
                 if (arrayList == null) {
                     return 0;
                 }
                 return arrayList.size();
             case 8:
-                return ((v71) this.e).h.size();
+                return ((w71) this.e).h.size();
             case 9:
                 return ((DataAutoDownloadActivity) this.e).y;
             case 10:
@@ -1336,27 +1336,27 @@ public final class j extends sk0 {
             case 13:
                 return ((PasscodeActivity) this.e).P;
             case 14:
-                if (((yn0) this.e).d != null) {
+                if (((wn0) this.e).d != null) {
                     return (int) Math.ceil(r1.size() / r0.f);
                 }
                 return 0;
             case 15:
-                lo0 lo0Var = (lo0) this.e;
-                we weVar = lo0Var.J;
-                if (weVar != null) {
-                    return weVar.e.size();
+                jo0 jo0Var = (jo0) this.e;
+                xe xeVar = jo0Var.J;
+                if (xeVar != null) {
+                    return xeVar.e.size();
                 }
-                if (!lo0Var.f.isEmpty()) {
-                    return lo0Var.f.size() + (!lo0Var.s ? 1 : 0);
+                if (!jo0Var.f.isEmpty()) {
+                    return jo0Var.f.size() + (!jo0Var.s ? 1 : 0);
                 }
-                if (!TextUtils.isEmpty(lo0Var.w) || lo0Var.n.isEmpty()) {
+                if (!TextUtils.isEmpty(jo0Var.w) || jo0Var.n.isEmpty()) {
                     return 0;
                 }
-                return lo0Var.n.size() + 2;
+                return jo0Var.n.size() + 2;
             case 16:
                 PhotoViewer photoViewer = (PhotoViewer) this.e;
-                es0 es0Var = photoViewer.d;
-                if (es0Var == null || es0Var.c() == null) {
+                ds0 ds0Var = photoViewer.d;
+                if (ds0Var == null || ds0Var.c() == null) {
                     return 0;
                 }
                 return photoViewer.d.c().size();
@@ -1381,12 +1381,12 @@ public final class j extends sk0 {
             case 5:
                 return i10;
             case 7:
-                if (((sx0) this.d).x == null) {
+                if (((tx0) this.d).x == null) {
                     return 0L;
                 }
-                return ((qi) r0.get(i10)).a.hashCode();
+                return ((ri) r0.get(i10)).a.hashCode();
             case 8:
-                i11 = ((s71) ((v71) this.e).h.get(i10)).a;
+                i11 = ((t71) ((w71) this.e).h.get(i10)).a;
                 break;
             case 15:
                 return i10;
@@ -1424,7 +1424,7 @@ public final class j extends sk0 {
                 if (i10 < proxyListActivity.n || i10 >= proxyListActivity.r) {
                     return -7L;
                 }
-                return ((sz) proxyListActivity.F.get(i10 - r1)).hashCode();
+                return ((tz) proxyListActivity.F.get(i10 - r1)).hashCode();
             default:
                 return super.c(i10);
         }
@@ -1688,15 +1688,15 @@ public final class j extends sk0 {
             case 14:
                 return 0;
             case 15:
-                lo0 lo0Var = (lo0) this.e;
-                if (lo0Var.Y) {
+                jo0 jo0Var = (jo0) this.e;
+                if (jo0Var.Y) {
                     return 2;
                 }
-                if (lo0Var.J == null) {
-                    if (lo0Var.f.isEmpty()) {
-                        return i10 == lo0Var.n.size() ? 4 : 3;
+                if (jo0Var.J == null) {
+                    if (jo0Var.f.isEmpty()) {
+                        return i10 == jo0Var.n.size() ? 4 : 3;
                     }
-                    if (i10 >= lo0Var.f.size()) {
+                    if (i10 >= jo0Var.f.size()) {
                         return 1;
                     }
                 }
@@ -1751,7 +1751,7 @@ public final class j extends sk0 {
         String G;
         TextView textView;
         Drawable drawable;
-        u71 u71Var;
+        v71 v71Var;
         int i12;
         int i13;
         int i14;
@@ -1814,18 +1814,18 @@ public final class j extends sk0 {
                 int i35 = c1Var.f;
                 View view2 = c1Var.a;
                 if (i35 == 0) {
-                    ((p4) view2).setText(cd.L0(2131753924, null));
+                    ((p4) view2).setText(dd.L0(2131753924, null));
                     break;
                 } else if (i35 == 1) {
-                    ((t8) view2).f(cd.L0(2131753918, null), s02, false);
+                    ((t8) view2).f(dd.L0(2131753918, null), s02, false);
                     break;
                 } else if (i35 == 2) {
                     x9 x9Var = (x9) view2;
                     x9Var.setEnabled(s02);
-                    x9Var.c(cd.L0(2131753922, null), cd.L0(((ki.i) mi.e.c.a()) == ki.i.b ? 2131753920 : 2131753921, null), false, false);
+                    x9Var.c(dd.L0(2131753922, null), dd.L0(((ki.i) mi.e.c.a()) == ki.i.b ? 2131753920 : 2131753921, null), false, false);
                     break;
                 } else {
-                    ((b9) view2).setText(cd.L0(2131753923, null));
+                    ((b9) view2).setText(dd.L0(2131753923, null));
                     break;
                 }
             case 2:
@@ -1842,39 +1842,39 @@ public final class j extends sk0 {
                     p4 p4Var2 = (p4) view3;
                     if (i10 == jnVar.l0) {
                         p4Var2.getTextView().setGravity(19);
-                        p4Var2.setText(cd.L0(z13 ? 2131744079 : 2131747180, null));
+                        p4Var2.setText(dd.L0(z13 ? 2131744079 : 2131747180, null));
                         break;
                     } else if (i10 == jnVar.o0) {
                         p4Var2.getTextView().setGravity(19);
-                        p4Var2.setText(cd.L0(2131754473, null));
+                        p4Var2.setText(dd.L0(2131754473, null));
                         break;
                     } else {
-                        p4Var2.getTextView().setGravity((cd.X ? 5 : 3) | 16);
+                        p4Var2.getTextView().setGravity((dd.X ? 5 : 3) | 16);
                         if (i10 == jnVar.s0) {
                             if (z12) {
-                                p4Var2.setText(cd.L0(2131746462, null));
+                                p4Var2.setText(dd.L0(2131746462, null));
                                 break;
                             } else {
-                                p4Var2.setText(cd.L0(z13 ? 2131744097 : 2131754246, null));
+                                p4Var2.setText(dd.L0(z13 ? 2131744097 : 2131754246, null));
                                 break;
                             }
                         } else if (i10 == jnVar.w0) {
-                            p4Var2.setText(cd.L0(2131745512, null));
+                            p4Var2.setText(dd.L0(2131745512, null));
                             break;
                         }
                     }
                 } else if (i36 == 6) {
                     t8 t8Var = (t8) view3;
                     if (i10 == jnVar.y0) {
-                        t8Var.f(cd.L0(2131744118, null), jnVar.f0, jnVar.z0 != -1);
+                        t8Var.f(dd.L0(2131744118, null), jnVar.f0, jnVar.z0 != -1);
                         t8Var.e(null, true);
                         break;
                     } else if (i10 == jnVar.z0) {
-                        t8Var.f(cd.L0(2131744117, null), jnVar.g0, false);
+                        t8Var.f(dd.L0(2131744117, null), jnVar.g0, false);
                         t8Var.e(null, true);
                         break;
                     } else if (i10 == jnVar.J0) {
-                        t8Var.f(cd.L0(2131747154, null), jnVar.W, false);
+                        t8Var.f(dd.L0(2131747154, null), jnVar.W, false);
                         t8Var.e(null, true);
                         break;
                     }
@@ -1883,7 +1883,7 @@ public final class j extends sk0 {
                     b9Var.setFixedSize(0);
                     new eq(new ColorDrawable(t6.w0(t6.a7, p6Var)), t6.Y0(context, R.drawable.greydivider_bottom, t6.b7)).x = true;
                     if (i10 == jnVar.q0) {
-                        b9Var.setText(cd.L0(2131754472, null));
+                        b9Var.setText(dd.L0(2131754472, null));
                         break;
                     } else if (i10 == jnVar.x0) {
                         b9Var.setFixedSize(12);
@@ -1892,33 +1892,33 @@ public final class j extends sk0 {
                     } else {
                         int i37 = jnVar.J - jnVar.M;
                         if (i37 <= 0) {
-                            b9Var.setText(cd.L0(z13 ? 2131744133 : 2131754469, null));
+                            b9Var.setText(dd.L0(z13 ? 2131744133 : 2131754469, null));
                             break;
                         } else if (z13) {
-                            b9Var.setText(cd.H(',', "TodoNewTaskInfo", i37));
+                            b9Var.setText(dd.H(',', "TodoNewTaskInfo", i37));
                             break;
                         } else if (i10 == jnVar.K0) {
-                            b9Var.setText(cd.L0(2131747153, null));
+                            b9Var.setText(dd.L0(2131747153, null));
                             break;
                         } else {
-                            b9Var.setText(cd.a0(null, null, 2131754470, cd.G(i37, "Option", new Object[0])));
+                            b9Var.setText(dd.a0(null, null, 2131754470, dd.G(i37, "Option", new Object[0])));
                             break;
                         }
                     }
                 } else if (i36 == 3) {
                     p8 p8Var = (p8) view3;
                     if (i10 == jnVar.L0) {
-                        String L02 = cd.L0(2131747160, null);
+                        String L02 = dd.L0(2131747160, null);
                         ArrayList arrayList = jnVar.P0;
                         if (arrayList.isEmpty()) {
-                            G = cd.L0(2131745828, null);
+                            G = dd.L0(2131745828, null);
                             z10 = false;
                         } else if (arrayList.size() == 1) {
                             z10 = false;
-                            G = cd.i0(2131750530, (String) arrayList.get(0));
+                            G = dd.i0(2131750530, (String) arrayList.get(0));
                         } else {
                             z10 = false;
-                            G = cd.G(arrayList.size(), "PollV2AllowedCountriesListManyP", new Object[0]);
+                            G = dd.G(arrayList.size(), "PollV2AllowedCountriesListManyP", new Object[0]);
                         }
                         p8Var.q(L02, G, z10, true);
                         break;
@@ -1935,7 +1935,7 @@ public final class j extends sk0 {
                         drawable3.setColorFilter(new PorterDuffColorFilter(t6.w0(t6.k7, p6Var), mode));
                         jnVar.n1 = drawable2;
                         jnVar.o1 = drawable3;
-                        p8Var.p(cd.L0(z13 ? 2131744093 : 2131754471, null), new eq(drawable2, drawable3), false);
+                        p8Var.p(dd.L0(z13 ? 2131744093 : 2131754471, null), new eq(drawable2, drawable3), false);
                         p8Var.x = 20;
                         p8Var.s = 58;
                         break;
@@ -1947,23 +1947,23 @@ public final class j extends sk0 {
                     c6 c6Var = (c6) view3;
                     c6Var.setDivider(false);
                     if (i10 == jnVar.B0) {
-                        c6Var.a(cd.L0(2131747139, null), cd.L0(2131747138, null), u30.c, R.drawable.filled_poll_view_24, !jnVar.a0);
+                        c6Var.a(dd.L0(2131747139, null), dd.L0(2131747138, null), u30.c, R.drawable.filled_poll_view_24, !jnVar.a0);
                     } else if (i10 == jnVar.F0) {
-                        c6Var.a(cd.L0(2131747164, null), cd.L0(2131747163, null), u30.f, R.drawable.filled_poll_multiple_24, jnVar.b0);
+                        c6Var.a(dd.L0(2131747164, null), dd.L0(2131747163, null), u30.f, R.drawable.filled_poll_multiple_24, jnVar.b0);
                     } else if (i10 == jnVar.D0) {
-                        c6Var.a(cd.L0(2131747162, null), cd.L0(2131747161, null), u30.w, R.drawable.filled_poll_revote_24, jnVar.R);
+                        c6Var.a(dd.L0(2131747162, null), dd.L0(2131747161, null), u30.w, R.drawable.filled_poll_revote_24, jnVar.R);
                     } else if (i10 == jnVar.C0) {
-                        c6Var.a(cd.L0(2131747166, null), cd.L0(2131747165, null), u30.s, R.drawable.filled_poll_add_24, jnVar.T);
+                        c6Var.a(dd.L0(2131747166, null), dd.L0(2131747165, null), u30.s, R.drawable.filled_poll_add_24, jnVar.T);
                     } else if (i10 == jnVar.E0) {
-                        c6Var.a(cd.L0(2131747137, null), cd.L0(2131747136, null), u30.h, R.drawable.filled_poll_shuffle_24, jnVar.S);
+                        c6Var.a(dd.L0(2131747137, null), dd.L0(2131747136, null), u30.h, R.drawable.filled_poll_shuffle_24, jnVar.S);
                     } else if (i10 == jnVar.G0) {
-                        c6Var.a(cd.L0(2131747141, null), cd.L0(2131747140, null), u30.n, R.drawable.filled_poll_correct_24, jnVar.c0);
+                        c6Var.a(dd.L0(2131747141, null), dd.L0(2131747140, null), u30.n, R.drawable.filled_poll_correct_24, jnVar.c0);
                     } else if (i10 == eVar2.a) {
-                        c6Var.a(cd.L0(2131747152, null), cd.L0(2131747151, null), u30.e, R.drawable.filled_location, eVar2.b);
+                        c6Var.a(dd.L0(2131747152, null), dd.L0(2131747151, null), u30.e, R.drawable.filled_location, eVar2.b);
                     } else if (i10 == eVar.a) {
-                        c6Var.a(cd.L0(2131747144, null), cd.L0(2131747143, null), u30.d, R.drawable.msg_folders_groups, eVar.b);
+                        c6Var.a(dd.L0(2131747144, null), dd.L0(2131747143, null), u30.d, R.drawable.msg_folders_groups, eVar.b);
                     } else if (i10 == jnVar.H0) {
-                        c6Var.a(cd.L0(2131747150, null), cd.L0(2131747149, null), u30.r, R.drawable.filled_poll_deadline_24, (jnVar.U == 0 && jnVar.V == 0) ? false : true);
+                        c6Var.a(dd.L0(2131747150, null), dd.L0(2131747149, null), u30.r, R.drawable.filled_poll_deadline_24, (jnVar.U == 0 && jnVar.V == 0) ? false : true);
                         c6Var.setDivider((jnVar.U == 0 && jnVar.V == 0) ? false : true);
                     }
                     if (i10 == jnVar.G0) {
@@ -2018,15 +2018,15 @@ public final class j extends sk0 {
                 ArrayList arrayList3 = uzVar.r1;
                 if (i10 < arrayList3.size()) {
                     a7.t(s2Var.getImageView(), t6.J5, null, PorterDuff.Mode.MULTIPLY);
-                    ap apVar = (ap) arrayList3.get(i10);
+                    bp bpVar = (bp) arrayList3.get(i10);
                     a7.V(s2Var.getTextView(), t6.j5, null);
-                    int i38 = apVar.g;
-                    int i39 = vp.E8;
+                    int i38 = bpVar.g;
+                    int i39 = wp.E8;
                     int i40 = i38 & i39;
-                    s2Var.a(jj.A5(k6.m(apVar.b, s2Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0), apVar.c, s2Var.getTextView().getPaint().getFontMetricsInt(), false), 0, new k00(uzVar.getContext(), i40 == 3 ? R.drawable.msg_openprofile : ((i38 & 64) == 0 || i40 != i39) ? i40 == 8 ? R.drawable.msg_channel : i40 == 4 ? R.drawable.msg_groups : i40 == 1 ? R.drawable.msg_contacts : i40 == 16 ? R.drawable.msg_bots : R.drawable.msg_folders : R.drawable.msg_markunread, apVar.m), false);
+                    s2Var.a(kj.A5(k6.m(bpVar.b, s2Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0), bpVar.c, s2Var.getTextView().getPaint().getFontMetricsInt(), false), 0, new k00(uzVar.getContext(), i40 == 3 ? R.drawable.msg_openprofile : ((i38 & 64) == 0 || i40 != i39) ? i40 == 8 ? R.drawable.msg_channel : i40 == 4 ? R.drawable.msg_groups : i40 == 1 ? R.drawable.msg_contacts : i40 == 16 ? R.drawable.msg_bots : R.drawable.msg_folders : R.drawable.msg_markunread, bpVar.m), false);
                     s2Var.getTextView().setEmojiColor(t6.w0(t6.Ci, uzVar.I0));
                     for (int i41 = 0; i41 < arrayList2.size(); i41++) {
-                        if (!apVar.b(org.telegram.messenger.c.a(uzVar.a), ((Long) arrayList2.get(i41)).longValue())) {
+                        if (!bpVar.b(org.telegram.messenger.c.a(uzVar.a), ((Long) arrayList2.get(i41)).longValue())) {
                             z11 = false;
                         }
                     }
@@ -2043,7 +2043,7 @@ public final class j extends sk0 {
                     a7.y(s2Var.getImageView(), drawable5, t6.k7, null, mode2);
                     eq eqVar = new eq(drawable4, drawable5);
                     a7.V(s2Var.getTextView(), t6.q6, null);
-                    s2Var.a(cd.L0(2131751717, null), 0, eqVar, false);
+                    s2Var.a(dd.L0(2131751717, null), 0, eqVar, false);
                     break;
                 }
             case 5:
@@ -2054,90 +2054,90 @@ public final class j extends sk0 {
                     x5 x5Var = (x5) view4;
                     x5Var.setTag(Integer.valueOf(i10));
                     if (i10 == oe0Var.b) {
-                        x5Var.a(cd.L0(2131751127, null), 0, oe0Var.G);
+                        x5Var.a(dd.L0(2131751127, null), 0, oe0Var.G);
                         break;
                     } else if (i10 == oe0Var.r) {
-                        x5Var.a(cd.L0(2131749311, null), -100, oe0Var.P);
+                        x5Var.a(dd.L0(2131749311, null), -100, oe0Var.P);
                         break;
                     } else if (i10 == oe0Var.d) {
-                        x5Var.a(cd.L0(2131751769, null), -100, oe0Var.I);
+                        x5Var.a(dd.L0(2131751769, null), -100, oe0Var.I);
                         break;
                     } else if (i10 == oe0Var.c) {
-                        x5Var.a(cd.L0(2131750858, null), -100, oe0Var.H);
+                        x5Var.a(dd.L0(2131750858, null), -100, oe0Var.H);
                         break;
                     } else if (i10 == oe0Var.f) {
-                        x5Var.a(cd.L0(2131742975, null), -100, oe0Var.J);
+                        x5Var.a(dd.L0(2131742975, null), -100, oe0Var.J);
                         break;
                     } else if (i10 == oe0Var.e) {
-                        x5Var.a(cd.L0(2131745964, null), -100, oe0Var.K);
+                        x5Var.a(dd.L0(2131745964, null), -100, oe0Var.K);
                         break;
                     } else if (i10 == oe0Var.w) {
-                        x5Var.a(cd.L0(2131743550, null), 0, oe0Var.R);
+                        x5Var.a(dd.L0(2131743550, null), 0, oe0Var.R);
                         break;
                     } else if (i10 == oe0Var.s) {
-                        x5Var.a(cd.L0(2131745483, null), -100, oe0Var.Q);
+                        x5Var.a(dd.L0(2131745483, null), -100, oe0Var.Q);
                         break;
                     } else if (i10 == oe0Var.x) {
-                        x5Var.a(cd.L0(2131749533, null), 0, oe0Var.S);
+                        x5Var.a(dd.L0(2131749533, null), 0, oe0Var.S);
                         break;
                     } else if (i10 == oe0Var.y) {
-                        x5Var.a(cd.L0(2131745385, null), 0, oe0Var.U);
+                        x5Var.a(dd.L0(2131745385, null), 0, oe0Var.U);
                         break;
                     } else if (i10 == oe0Var.h) {
-                        x5Var.a(cd.L0(2131750847, null), 0, oe0Var.L);
+                        x5Var.a(dd.L0(2131750847, null), 0, oe0Var.L);
                         break;
                     } else if (i10 == oe0Var.n) {
-                        x5Var.a(cd.L0(2131745311, null), 0, oe0Var.M);
+                        x5Var.a(dd.L0(2131745311, null), 0, oe0Var.M);
                         break;
                     }
                 } else if (i43 == 1) {
                     w5 w5Var = (w5) view4;
                     w5Var.setTag(Integer.valueOf(i10));
                     if (i10 == oe0Var.D) {
-                        w5Var.a(oe0Var.N, cd.L0(2131744139, null));
+                        w5Var.a(oe0Var.N, dd.L0(2131744139, null));
                         break;
                     } else if (i10 == oe0Var.E) {
-                        w5Var.a(oe0Var.O, cd.L0(2131744140, null));
+                        w5Var.a(oe0Var.O, dd.L0(2131744140, null));
                         break;
                     }
                 }
                 break;
             case 6:
-                du0 du0Var = (du0) obj2;
+                eu0 eu0Var = (eu0) obj2;
                 int i44 = c1Var.f;
                 if (i44 != 0) {
-                    if (i44 == 1 && (textView = du0Var.l1) != null) {
-                        textView.setText(cd.a0("SharingLiveLocationTitle", null, 2131745410, cd.G(nd.g(), "Chats", new Object[0])));
+                    if (i44 == 1 && (textView = eu0Var.l1) != null) {
+                        textView.setText(dd.a0("SharingLiveLocationTitle", null, 2131745410, dd.G(od.g(), "Chats", new Object[0])));
                         break;
                     }
                 } else {
-                    ((v7) c1Var.a).setDialog(du0.J0(i10 - 1));
+                    ((v7) c1Var.a).setDialog(eu0.J0(i10 - 1));
                     break;
                 }
                 break;
             case 7:
-                rx0 rx0Var = (rx0) c1Var.a;
-                sx0 sx0Var = (sx0) obj;
-                ArrayList arrayList4 = sx0Var.x;
-                String str = arrayList4 == null ? null : ((qi) arrayList4.get(i10)).a;
-                int direction = sx0Var.getDirection();
-                rx0Var.a = str;
+                sx0 sx0Var = (sx0) c1Var.a;
+                tx0 tx0Var = (tx0) obj;
+                ArrayList arrayList4 = tx0Var.x;
+                String str = arrayList4 == null ? null : ((ri) arrayList4.get(i10)).a;
+                int direction = tx0Var.getDirection();
+                sx0Var.a = str;
                 if (str == null || !str.startsWith("animated_")) {
-                    rx0Var.setImageDrawable(k6.f(str));
+                    sx0Var.setImageDrawable(k6.f(str));
                 } else {
                     try {
                         long parseLong = Long.parseLong(str.substring(9));
-                        Drawable drawable6 = rx0Var.b;
+                        Drawable drawable6 = sx0Var.b;
                         if (drawable6 instanceof f5) {
                             if (((f5) drawable6).h() != parseLong) {
                             }
                         }
                         drawable = null;
                         try {
-                            rx0Var.setImageDrawable(f5.m(d20.s0, parseLong, null, rx0Var.f.d()));
+                            sx0Var.setImageDrawable(f5.m(e20.s0, parseLong, null, sx0Var.f.d()));
                         } catch (Exception unused) {
-                            rx0Var.setImageDrawable(drawable);
-                            if (rx0Var.d == direction) {
+                            sx0Var.setImageDrawable(drawable);
+                            if (sx0Var.d == direction) {
                                 return;
                             }
                         }
@@ -2145,21 +2145,21 @@ public final class j extends sk0 {
                         drawable = null;
                     }
                 }
-                if (rx0Var.d == direction) {
-                    rx0Var.d = direction;
-                    rx0Var.requestLayout();
+                if (sx0Var.d == direction) {
+                    sx0Var.d = direction;
+                    sx0Var.requestLayout();
                     break;
                 }
                 break;
             case 8:
-                t71 t71Var = (t71) c1Var.a;
-                v71 v71Var = (v71) obj2;
-                s71 s71Var = (s71) v71Var.h.get(i10);
-                t71Var.a = s71Var;
-                t71Var.setContentDescription(s71Var.b);
-                t71Var.setAlpha(1.0f);
-                t71Var.requestLayout();
-                t71Var.setReordering(v71Var.m0 && (u71Var = v71Var.D) != null && ((u) u71Var).G(i10));
+                u71 u71Var = (u71) c1Var.a;
+                w71 w71Var = (w71) obj2;
+                t71 t71Var = (t71) w71Var.h.get(i10);
+                u71Var.a = t71Var;
+                u71Var.setContentDescription(t71Var.b);
+                u71Var.setAlpha(1.0f);
+                u71Var.requestLayout();
+                u71Var.setReordering(w71Var.m0 && (v71Var = w71Var.D) != null && ((u) v71Var).G(i10));
                 break;
             case 9:
                 DataAutoDownloadActivity dataAutoDownloadActivity = (DataAutoDownloadActivity) obj2;
@@ -2172,7 +2172,7 @@ public final class j extends sk0 {
                     i12 = dataAutoDownloadActivity.autoDownloadRow;
                     if (i10 == i12) {
                         t8Var2.setDrawCheckRipple(true);
-                        t8Var2.f(cd.L0(2131753830, null), a6Var.g, false);
+                        t8Var2.f(dd.L0(2131753830, null), a6Var.g, false);
                         t8Var2.setTag(Integer.valueOf(a6Var.g ? t6.f6 : t6.e6));
                         a7.i(a6Var.g ? t6.f6 : t6.e6, t8Var2, null);
                         break;
@@ -2180,35 +2180,35 @@ public final class j extends sk0 {
                 } else if (i46 == 2) {
                     p4 p4Var3 = (p4) view5;
                     if (i10 == dataAutoDownloadActivity.r) {
-                        p4Var3.setText(cd.L0(2131753839, null));
+                        p4Var3.setText(dd.L0(2131753839, null));
                         break;
                     } else if (i10 == dataAutoDownloadActivity.w) {
-                        p4Var3.setText(cd.L0(2131753808, null));
+                        p4Var3.setText(dd.L0(2131753808, null));
                         break;
                     }
                 } else if (i46 == 3) {
-                    dataAutoDownloadActivity.q0((yu0) view5);
+                    dataAutoDownloadActivity.r0((zu0) view5);
                     break;
                 } else if (i46 == 4) {
                     l5 l5Var = (l5) view5;
                     l5Var.setDrawLine(true);
                     i13 = dataAutoDownloadActivity.photosRow;
                     if (i10 == i13) {
-                        L0 = cd.L0(2131753817, null);
+                        L0 = dd.L0(2131753817, null);
                         i16 = 1;
                     } else {
                         i14 = dataAutoDownloadActivity.videosRow;
                         if (i10 == i14) {
-                            L0 = cd.L0(2131753806, null);
+                            L0 = dd.L0(2131753806, null);
                             i16 = 4;
                         } else {
                             i15 = dataAutoDownloadActivity.storiesRow;
                             if (i10 == i15) {
-                                L0 = cd.L0(2131753809, null);
+                                L0 = dd.L0(2131753809, null);
                                 l5Var.setDrawLine(false);
                                 i16 = -1;
                             } else {
-                                L0 = cd.L0(2131753838, null);
+                                L0 = dd.L0(2131753838, null);
                                 i16 = 8;
                             }
                         }
@@ -2237,13 +2237,13 @@ public final class j extends sk0 {
                                         sb2.append(", ");
                                     }
                                     if (i47 == 0) {
-                                        sb2.append(cd.L0(2131753841, null));
+                                        sb2.append(dd.L0(2131753841, null));
                                     } else if (i47 == 1) {
-                                        sb2.append(cd.L0(2131753814, null));
+                                        sb2.append(dd.L0(2131753814, null));
                                     } else if (i47 == 2) {
-                                        sb2.append(cd.L0(2131753835, null));
+                                        sb2.append(dd.L0(2131753835, null));
                                     } else if (i47 == 3) {
-                                        sb2.append(cd.L0(2131753842, null));
+                                        sb2.append(dd.L0(2131753842, null));
                                     }
                                     i20++;
                                 }
@@ -2252,22 +2252,22 @@ public final class j extends sk0 {
                                 sb2.setLength(0);
                                 i22 = dataAutoDownloadActivity.photosRow;
                                 if (i10 == i22) {
-                                    sb2.append(cd.L0(2131753826, null));
+                                    sb2.append(dd.L0(2131753826, null));
                                 } else {
-                                    sb2.append(cd.a0("AutoDownloadUpToOnAllChats", null, 2131753807, i0.i0(j10, false, false)));
+                                    sb2.append(dd.a0("AutoDownloadUpToOnAllChats", null, 2131753807, i0.i0(j10, false, false)));
                                 }
                             } else if (i20 == 0) {
-                                sb2.append(cd.L0(2131753828, null));
+                                sb2.append(dd.L0(2131753828, null));
                             } else {
                                 i21 = dataAutoDownloadActivity.photosRow;
-                                sb2 = i10 == i21 ? new StringBuilder(cd.a0("AutoDownloadOnFor", null, 2131753825, sb2.toString())) : new StringBuilder(cd.a0("AutoDownloadOnUpToFor", null, 2131753820, i0.i0(j10, false, false), sb2.toString()));
+                                sb2 = i10 == i21 ? new StringBuilder(dd.a0("AutoDownloadOnFor", null, 2131753825, sb2.toString())) : new StringBuilder(dd.a0("AutoDownloadOnUpToFor", null, 2131753820, i0.i0(j10, false, false), sb2.toString()));
                             }
                         }
                     } else if (o10.e) {
-                        sb2 = new StringBuilder(cd.a0("AutoDownloadOn", null, 2131753827, sb2.toString()));
+                        sb2 = new StringBuilder(dd.a0("AutoDownloadOn", null, 2131753827, sb2.toString()));
                         i20 = 1;
                     } else {
-                        sb2 = new StringBuilder(cd.a0("AutoDownloadOff", null, 2131753828, sb2.toString()));
+                        sb2 = new StringBuilder(dd.a0("AutoDownloadOff", null, 2131753828, sb2.toString()));
                         i20 = 0;
                     }
                     if (dataAutoDownloadActivity.h) {
@@ -2280,18 +2280,18 @@ public final class j extends sk0 {
                 } else if (i46 == 5) {
                     b9 b9Var2 = (b9) view5;
                     if (i10 == dataAutoDownloadActivity.x) {
-                        b9Var2.setText(cd.L0(2131753843, null));
+                        b9Var2.setText(dd.L0(2131753843, null));
                         b9Var2.setFixedSize(0);
                         b9Var2.setImportantForAccessibility(1);
                         break;
                     } else if (i10 == dataAutoDownloadActivity.n) {
                         if (dataAutoDownloadActivity.r == -1) {
                             if (i45 == 0) {
-                                b9Var2.setText(cd.L0(2131753823, null));
+                                b9Var2.setText(dd.L0(2131753823, null));
                             } else if (i45 == 1) {
-                                b9Var2.setText(cd.L0(2131753818, null));
+                                b9Var2.setText(dd.L0(2131753818, null));
                             } else if (i45 == 2) {
-                                b9Var2.setText(cd.L0(2131753821, null));
+                                b9Var2.setText(dd.L0(2131753821, null));
                             }
                             b9Var2.setImportantForAccessibility(1);
                             break;
@@ -2314,38 +2314,38 @@ public final class j extends sk0 {
                 if (i48 == 0) {
                     p4 p4Var4 = (p4) view6;
                     if (i10 == 0) {
-                        p4Var4.setText(cd.L0(2131754270, null));
+                        p4Var4.setText(dd.L0(2131754270, null));
                         break;
                     }
                 } else if (i48 == 1) {
                     a9 a9Var = (a9) view6;
                     if (i10 == jf0Var.c) {
-                        a9Var.b(R.drawable.msg_contact_add, cd.L0(2131754468, null), cd.L0(2131754467, null), true);
+                        a9Var.b(R.drawable.msg_contact_add, dd.L0(2131754468, null), dd.L0(2131754467, null), true);
                         break;
                     } else if (i10 == jf0Var.d) {
-                        a9Var.b(R.drawable.msg_permissions, cd.L0(2131745538, null), cd.L0(2131745537, null), true);
+                        a9Var.b(R.drawable.msg_permissions, dd.L0(2131745538, null), dd.L0(2131745537, null), true);
                         break;
                     } else if (i10 == jf0Var.e) {
-                        a9Var.b(R.drawable.msg_clearcache, cd.L0(2131752098, null), cd.L0(2131752094, null), true);
+                        a9Var.b(R.drawable.msg_clearcache, dd.L0(2131752098, null), dd.L0(2131752094, null), true);
                         break;
                     } else if (i10 == jf0Var.f) {
-                        a9Var.b(R.drawable.msg_newphone, cd.L0(2131752537, null), cd.L0(2131752536, null), true);
+                        a9Var.b(R.drawable.msg_newphone, dd.L0(2131752537, null), dd.L0(2131752536, null), true);
                         break;
                     } else if (i10 == jf0Var.h) {
-                        a9Var.b(R.drawable.msg_help, cd.L0(2131751783, null), cd.L0(2131751782, null), false);
+                        a9Var.b(R.drawable.msg_help, dd.L0(2131751783, null), dd.L0(2131751782, null), false);
                         break;
                     }
                 } else if (i48 == 3) {
                     x9 x9Var2 = (x9) view6;
                     if (i10 == jf0Var.r) {
                         a7.V(x9Var2.getTextView(), t6.p7, null);
-                        x9Var2.b(cd.L0(2131748752, null), false);
+                        x9Var2.b(dd.L0(2131748752, null), false);
                         break;
                     }
                 } else if (i48 == 4) {
                     b9 b9Var3 = (b9) view6;
                     if (i10 == jf0Var.s) {
-                        b9Var3.setText(cd.L0(2131748753, null));
+                        b9Var3.setText(dd.L0(2131748753, null));
                         break;
                     }
                 }
@@ -2361,13 +2361,13 @@ public final class j extends sk0 {
                     t8 t8Var3 = (t8) view7;
                     i25 = passcodeActivity.fingerprintRow;
                     if (i10 == i25) {
-                        t8Var3.f(cd.L0(2131743898, null), tz.D, false);
+                        t8Var3.f(dd.L0(2131743898, null), uz.D, false);
                         break;
                     } else if (i10 == passcodeActivity.N) {
-                        t8Var3.f(cd.L0(2131745858, null), tz.A, false);
+                        t8Var3.f(dd.L0(2131745858, null), uz.A, false);
                         break;
                     } else if (i10 == passcodeActivity.K) {
-                        String L03 = cd.L0(2131743192, null);
+                        String L03 = dd.L0(2131743192, null);
                         i27 = ((k2) passcodeActivity).currentAccount;
                         if (k0.x(i27).e()) {
                             i28 = ((k2) passcodeActivity).currentAccount;
@@ -2377,7 +2377,7 @@ public final class j extends sk0 {
                         t8Var3.f(L03, z11, false);
                         break;
                     } else if (i10 == passcodeActivity.J) {
-                        String L04 = cd.L0(2131743191, null);
+                        String L04 = dd.L0(2131743191, null);
                         i26 = ((k2) passcodeActivity).currentAccount;
                         t8Var3.f(L04, k0.x(i26).K(), false);
                         break;
@@ -2386,8 +2386,8 @@ public final class j extends sk0 {
                     x9 x9Var3 = (x9) view7;
                     i29 = passcodeActivity.changePasscodeRow;
                     if (i10 == i29) {
-                        x9Var3.b(cd.L0(2131752544, null), true);
-                        if (tz.s.isEmpty()) {
+                        x9Var3.b(dd.L0(2131752544, null), true);
+                        if (uz.s.isEmpty()) {
                             int i50 = t6.E6;
                             x9Var3.setTag(Integer.valueOf(i50));
                             a7.V(x9Var3.getTextView(), i50, null);
@@ -2401,8 +2401,8 @@ public final class j extends sk0 {
                     } else {
                         i30 = passcodeActivity.autoLockRow;
                         if (i10 == i30) {
-                            int i52 = tz.y;
-                            x9Var3.c(cd.L0(2131753800, null), i52 == 0 ? cd.a0("AutoLockDisabled", null, 2131753799, new Object[0]) : i52 < 3600 ? cd.a0("AutoLockInTime", null, 2131753798, cd.G(i52 / 60, "Minutes", new Object[0])) : i52 < 86400 ? cd.a0("AutoLockInTime", null, 2131753798, cd.G((int) Math.ceil((i52 / 60.0f) / 60.0f), "Hours", new Object[0])) : cd.a0("AutoLockInTime", null, 2131753798, cd.G((int) Math.ceil(((i52 / 60.0f) / 60.0f) / 24.0f), "Days", new Object[0])), false, true);
+                            int i52 = uz.y;
+                            x9Var3.c(dd.L0(2131753800, null), i52 == 0 ? dd.a0("AutoLockDisabled", null, 2131753799, new Object[0]) : i52 < 3600 ? dd.a0("AutoLockInTime", null, 2131753798, dd.G(i52 / 60, "Minutes", new Object[0])) : i52 < 86400 ? dd.a0("AutoLockInTime", null, 2131753798, dd.G((int) Math.ceil((i52 / 60.0f) / 60.0f), "Hours", new Object[0])) : dd.a0("AutoLockInTime", null, 2131753798, dd.G((int) Math.ceil(((i52 / 60.0f) / 60.0f) / 24.0f), "Days", new Object[0])), false, true);
                             int i53 = t6.G6;
                             x9Var3.setTag(Integer.valueOf(i53));
                             a7.V(x9Var3.getTextView(), i53, null);
@@ -2410,7 +2410,7 @@ public final class j extends sk0 {
                         } else {
                             i31 = passcodeActivity.disablePasscodeRow;
                             if (i10 == i31) {
-                                x9Var3.b(cd.L0(2131751434, null), false);
+                                x9Var3.b(dd.L0(2131751434, null), false);
                                 int i54 = t6.q7;
                                 x9Var3.setTag(Integer.valueOf(i54));
                                 a7.V(x9Var3.getTextView(), i54, null);
@@ -2421,53 +2421,53 @@ public final class j extends sk0 {
                 } else if (i49 == 2) {
                     b9 b9Var4 = (b9) view7;
                     if (i10 == passcodeActivity.G) {
-                        b9Var4.setText(cd.L0(2131747671, null));
+                        b9Var4.setText(dd.L0(2131747671, null));
                         b9Var4.setBackground(null);
                         b9Var4.getTextView().setGravity(1);
                         break;
                     } else if (i10 == passcodeActivity.H) {
-                        b9Var4.setText(cd.L0(2131753797, null));
-                        b9Var4.getTextView().setGravity(cd.X ? 5 : 3);
+                        b9Var4.setText(dd.L0(2131753797, null));
+                        b9Var4.getTextView().setGravity(dd.X ? 5 : 3);
                         break;
                     } else if (i10 == passcodeActivity.L) {
-                        b9Var4.setText(cd.L0(2131743104, null));
-                        b9Var4.getTextView().setGravity(cd.X ? 5 : 3);
+                        b9Var4.setText(dd.L0(2131743104, null));
+                        b9Var4.getTextView().setGravity(dd.X ? 5 : 3);
                         break;
                     } else if (i10 == passcodeActivity.O) {
-                        b9Var4.setText(cd.L0(2131745859, null));
-                        b9Var4.getTextView().setGravity(cd.X ? 5 : 3);
+                        b9Var4.setText(dd.L0(2131745859, null));
+                        b9Var4.getTextView().setGravity(dd.X ? 5 : 3);
                         break;
                     }
                 } else if (i49 == 3) {
                     p4 p4Var5 = (p4) view7;
                     p4Var5.setHeight(46);
                     if (i10 == passcodeActivity.M) {
-                        p4Var5.setText(cd.L0(2131745860, null));
+                        p4Var5.setText(dd.L0(2131745860, null));
                         break;
                     } else if (i10 == passcodeActivity.I) {
-                        p4Var5.setText(cd.L0(2131743105, null));
+                        p4Var5.setText(dd.L0(2131743105, null));
                         break;
                     }
                 } else if (i49 == 4) {
-                    rj0 rj0Var = (rj0) view7;
-                    rj0Var.a.f(R.raw.utyan_passcode, 100, 100, null);
-                    rj0Var.a.d();
+                    pj0 pj0Var = (pj0) view7;
+                    pj0Var.a.f(R.raw.utyan_passcode, 100, 100, null);
+                    pj0Var.a.d();
                     break;
                 }
                 break;
             case 14:
                 org.telegram.ui.Cells.a6 a6Var2 = (org.telegram.ui.Cells.a6) c1Var.a;
-                yn0 yn0Var = (yn0) obj2;
-                a6Var2.setAlbumsCount(yn0Var.f);
+                wn0 wn0Var = (wn0) obj2;
+                a6Var2.setAlbumsCount(wn0Var.f);
                 while (true) {
-                    int i55 = yn0Var.f;
+                    int i55 = wn0Var.f;
                     if (i33 >= i55) {
                         a6Var2.requestLayout();
                         break;
                     } else {
                         int i56 = (i55 * i10) + i33;
-                        if (i56 < yn0Var.d.size()) {
-                            a6Var2.a(i33, (we) yn0Var.d.get(i56));
+                        if (i56 < wn0Var.d.size()) {
+                            a6Var2.a(i33, (xe) wn0Var.d.get(i56));
                         } else {
                             a6Var2.a(i33, null);
                         }
@@ -2509,13 +2509,13 @@ public final class j extends sk0 {
                 int i12 = c1Var.f;
                 View view = c1Var.a;
                 if (i12 == 5 && !list.isEmpty()) {
-                    cz0 cz0Var = (cz0) view;
-                    if (list.contains(1) && (contains = arrayList.contains(proxyListActivity.F.get(i10 - proxyListActivity.n))) != cz0Var.h) {
-                        cz0Var.h = contains;
-                        cz0Var.f.a(contains, true);
+                    bz0 bz0Var = (bz0) view;
+                    if (list.contains(1) && (contains = arrayList.contains(proxyListActivity.F.get(i10 - proxyListActivity.n))) != bz0Var.h) {
+                        bz0Var.h = contains;
+                        bz0Var.f.a(contains, true);
                     }
                     if (list.contains(2)) {
-                        cz0Var.a(!arrayList.isEmpty(), true);
+                        bz0Var.a(!arrayList.isEmpty(), true);
                         break;
                     }
                 } else if (c1Var.f != 3 || !list.contains(0)) {
@@ -2526,7 +2526,7 @@ public final class j extends sk0 {
                     i11 = proxyListActivity.useProxyRow;
                     if (i10 != i11) {
                         if (i10 == proxyListActivity.w) {
-                            t8Var.setChecked(tz.a1);
+                            t8Var.setChecked(uz.a1);
                             break;
                         }
                     } else {
@@ -2586,16 +2586,16 @@ public final class j extends sk0 {
                     TextPaint textPaint = new TextPaint(1);
                     kVar.h = textPaint;
                     textPaint.setTextSize(i0.L(16.0f));
-                    nn0 nn0Var = new nn0(context);
-                    kVar.a = nn0Var;
-                    nn0Var.setReportChanges(true);
-                    nn0Var.setDelegate(new a6.i(kVar, 22));
-                    nn0Var.setImportantForAccessibility(2);
-                    kVar.addView(nn0Var, w7.b6.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
+                    on0 on0Var = new on0(context);
+                    kVar.a = on0Var;
+                    on0Var.setReportChanges(true);
+                    on0Var.setDelegate(new a6.i(kVar, 22));
+                    on0Var.setImportantForAccessibility(2);
+                    kVar.addView(on0Var, w7.b6.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
                     frameLayout = kVar;
                 }
                 frameLayout.setLayoutParams(new o0(-1, -2));
-                return new ck0(frameLayout);
+                return new dk0(frameLayout);
             case 1:
                 Context context2 = (Context) obj2;
                 if (i10 == 0) {
@@ -2610,7 +2610,7 @@ public final class j extends sk0 {
                     frameLayout2 = new b9(context2);
                 }
                 frameLayout2.setLayoutParams(new o0(-1, -2));
-                return new ck0(frameLayout2);
+                return new dk0(frameLayout2);
             case 2:
                 Context context3 = (Context) obj2;
                 jn jnVar = (jn) obj;
@@ -2701,7 +2701,7 @@ public final class j extends sk0 {
                         i12 = -2;
                         hn hnVar = new hn(this, context4, z12 ? 1 : 0, r42, p6Var7);
                         if (!z10) {
-                            hnVar.setTextRight(zs.W1);
+                            hnVar.setTextRight(at.W1);
                             hnVar.a().setOnClickListener(new ud(24, this, hnVar));
                         }
                         int i18 = t6.o7;
@@ -2791,12 +2791,12 @@ public final class j extends sk0 {
                 }
                 return sc.e.o(view, view, -1, i11);
             case 3:
-                return new ck0(new rz((org.telegram.ui.Components.tz) obj, (Context) obj2));
+                return new dk0(new rz((org.telegram.ui.Components.tz) obj, (Context) obj2));
             case 4:
                 s2 s2Var = new s2(0, (Context) obj2, null);
                 s2Var.setBackground(null);
                 s2Var.setLayoutParams(new o0(-1, -2));
-                return new ck0(s2Var);
+                return new dk0(s2Var);
             case 5:
                 Context context5 = (Context) obj2;
                 if (i10 == 0) {
@@ -2839,28 +2839,28 @@ public final class j extends sk0 {
                     w5Var2.setOnClickListener(new db0(this, i15));
                     w5Var = w5Var2;
                 }
-                return new ck0(w5Var);
+                return new dk0(w5Var);
             case 6:
                 Context context6 = (Context) obj2;
-                du0 du0Var = (du0) obj;
+                eu0 eu0Var = (eu0) obj;
                 if (i10 != 0) {
                     FrameLayout a5Var = new a5(context6, 23);
                     a5Var.setWillNotDraw(false);
-                    du0Var.l1 = new TextView(context6);
-                    a7.V(du0Var.l1, t6.J5, du0Var.I0);
-                    du0Var.l1.setTextSize(1, 14.0f);
-                    du0Var.l1.setGravity(17);
-                    du0Var.l1.setPadding(0, 0, 0, i0.L(8.0f));
-                    a5Var.addView(du0Var.l1, w7.b6.c(40.0f, -1));
+                    eu0Var.l1 = new TextView(context6);
+                    a7.V(eu0Var.l1, t6.J5, eu0Var.I0);
+                    eu0Var.l1.setTextSize(1, 14.0f);
+                    eu0Var.l1.setGravity(17);
+                    eu0Var.l1.setPadding(0, 0, 0, i0.L(8.0f));
+                    a5Var.addView(eu0Var.l1, w7.b6.c(40.0f, -1));
                     frameLayout3 = a5Var;
                 } else {
-                    frameLayout3 = new v7(54, context6, du0Var.I0, false);
+                    frameLayout3 = new v7(54, context6, eu0Var.I0, false);
                 }
-                return new ck0(frameLayout3);
+                return new dk0(frameLayout3);
             case 7:
-                return new ck0(new rx0((sx0) obj, ((sx0) obj2).getContext()));
+                return new dk0(new sx0((tx0) obj, ((tx0) obj2).getContext()));
             case 8:
-                return new ck0(new t71((v71) obj, (Context) obj2));
+                return new dk0(new u71((w71) obj, (Context) obj2));
             case 9:
                 Context context7 = (Context) obj2;
                 if (i10 == 0) {
@@ -2876,9 +2876,9 @@ public final class j extends sk0 {
                 } else if (i10 != 3) {
                     view3 = i10 != 4 ? new b9(context7) : new l5(context7);
                 } else {
-                    yu0 yu0Var = new yu0(context7, null);
-                    yu0Var.setCallback(new tt(this, i16));
-                    view3 = yu0Var;
+                    zu0 zu0Var = new zu0(context7, null);
+                    zu0Var.setCallback(new st(this, i16));
+                    view3 = zu0Var;
                 }
                 return sc.e.o(view3, view3, -1, -2);
             case 10:
@@ -2929,7 +2929,7 @@ public final class j extends sk0 {
                     p6Var4 = ((k2) notificationsSettingsActivity).resourceProvider;
                     p4Var = new x9(0, context10, p6Var4);
                 }
-                return new ck0(p4Var);
+                return new dk0(p4Var);
             case 13:
                 Context context11 = (Context) obj2;
                 if (i10 == 0) {
@@ -2941,15 +2941,15 @@ public final class j extends sk0 {
                 } else if (i10 != 4) {
                     t8Var = new b9(context11);
                 } else {
-                    t8Var = new rj0(context11);
+                    t8Var = new pj0(context11);
                     t8Var.setTag(-33024);
                 }
-                return new ck0(t8Var);
+                return new dk0(t8Var);
             case 14:
                 Context context12 = (Context) obj2;
                 org.telegram.ui.Cells.a6 a6Var = new org.telegram.ui.Cells.a6(context12);
                 a6Var.e = new Paint();
-                a6Var.b = new we[4];
+                a6Var.b = new xe[4];
                 a6Var.a = new y5[4];
                 for (int i19 = 0; i19 < 4; i19++) {
                     a6Var.a[i19] = new y5(a6Var, context12);
@@ -2958,16 +2958,16 @@ public final class j extends sk0 {
                     a6Var.a[i19].setTag(Integer.valueOf(i19));
                     a6Var.a[i19].setOnClickListener(new org.telegram.ui.Cells.a(a6Var, 9));
                 }
-                a6Var.setDelegate(new tj0(this, i17));
-                return new ck0(a6Var);
+                a6Var.setDelegate(new rj0(this, i17));
+                return new dk0(a6Var);
             case 15:
-                lo0 lo0Var = (lo0) obj;
-                boolean z13 = lo0Var.r0;
+                jo0 jo0Var = (jo0) obj;
+                boolean z13 = jo0Var.r0;
                 Context context13 = (Context) obj2;
                 if (i10 == 0) {
                     v5 v5Var = new v5(context13, null);
-                    v5Var.setDelegate(new jo0(this));
-                    v5Var.getCheckFrame().setVisibility(lo0Var.T == 0 ? 0 : 8);
+                    v5Var.setDelegate(new ho0(this));
+                    v5Var.getCheckFrame().setVisibility(jo0Var.T == 0 ? 0 : 8);
                     viewGroup2 = v5Var;
                 } else if (i10 == 1) {
                     ViewGroup frameLayout5 = new FrameLayout(context13);
@@ -2986,12 +2986,12 @@ public final class j extends sk0 {
                     p8 p8Var2 = new p8(23, context13, true);
                     p8Var2.setLayoutParams(new o0(-1, -2));
                     if (z13) {
-                        a7.Y(p8Var2.a, lo0Var.v0, null);
+                        a7.Y(p8Var2.a, jo0Var.v0, null);
                         a7.t(p8Var2.e, t6.fh, null, PorterDuff.Mode.MULTIPLY);
                     }
                     viewGroup2 = p8Var2;
                 }
-                return new ck0(viewGroup2);
+                return new dk0(viewGroup2);
             case 16:
                 Context context14 = (Context) obj2;
                 org.telegram.ui.Cells.b6 b6Var = new org.telegram.ui.Cells.b6(context14);
@@ -3013,7 +3013,7 @@ public final class j extends sk0 {
                 b1Var.setWillNotDraw(false);
                 b1Var.setPadding(i0.L(3.0f), 0, i0.L(3.0f), 0);
                 b6Var.addView(b1Var, w7.b6.e(-1, 16, 83));
-                b1Var.addView(z20.e(context14, R.drawable.ic_video), w7.b6.e(-2, -2, 19));
+                b1Var.addView(a30.e(context14, R.drawable.ic_video), w7.b6.e(-2, -2, 19));
                 TextView textView4 = new TextView(context14);
                 b6Var.d = textView4;
                 textView4.setTextColor(-1);
@@ -3027,8 +3027,8 @@ public final class j extends sk0 {
                 b6Var.addView(epVar2, w7.b6.d(26, 26.0f, 51, 55.0f, 4.0f, 0.0f, 0.0f));
                 epVar2.setVisibility(0);
                 b6Var.setFocusable(true);
-                frameLayout6.setOnClickListener(new f50(this, 21));
-                return new ck0(b6Var);
+                frameLayout6.setOnClickListener(new e50(this, 21));
+                return new dk0(b6Var);
             case 17:
                 Context context15 = (Context) obj2;
                 if (i10 == 0) {
@@ -3045,10 +3045,10 @@ public final class j extends sk0 {
                 } else if (i10 == 4) {
                     c7Var = new b9(context15);
                 } else if (i10 != 6) {
-                    c7Var = new cz0((ProxyListActivity) obj, context15);
+                    c7Var = new bz0((ProxyListActivity) obj, context15);
                     a7.i(t6.d6, c7Var, null);
                 } else {
-                    c7Var = new yu0(context15, null);
+                    c7Var = new zu0(context15, null);
                     a7.i(t6.d6, c7Var, null);
                 }
                 return sc.e.o(c7Var, c7Var, -1, -2);
@@ -3066,12 +3066,12 @@ public final class j extends sk0 {
                     frameLayout4 = new b9(context16);
                 }
                 frameLayout4.setLayoutParams(new o0(-1, -2));
-                return new ck0(frameLayout4);
+                return new dk0(frameLayout4);
             default:
                 Context context17 = (Context) obj2;
                 View v2Var = i10 == 0 ? new v2(context17, false) : new v4(context17);
                 v2Var.setLayoutParams(new o0(-1, -2));
-                return new ck0(v2Var);
+                return new dk0(v2Var);
         }
     }
 
@@ -3094,7 +3094,7 @@ public final class j extends sk0 {
                                 e6 e6Var = (e6) view;
                                 e6Var.setTag(1);
                                 CharSequence charSequence = jnVar.P;
-                                e6Var.n(charSequence != null ? charSequence : "", cd.L0(2131754474, null), false);
+                                e6Var.n(charSequence != null ? charSequence : "", dd.L0(2131754474, null), false);
                                 e6Var.setTag(null);
                                 if (!z10) {
                                     e6Var.e.b(gVar.b(-3), false);
@@ -3108,7 +3108,7 @@ public final class j extends sk0 {
                             e6Var2.setTag(1);
                             e6Var2.a.a(jnVar.b0, false);
                             int i13 = b10 - jnVar.t0;
-                            e6Var2.n(jnVar.K[i13], cd.L0(z10 ? 2131744080 : 2131747790, null), true);
+                            e6Var2.n(jnVar.K[i13], dd.L0(z10 ? 2131744080 : 2131747790, null), true);
                             e6Var2.setTag(null);
                             if (jnVar.k0 == b10) {
                                 EditTextBoldCursor textView = e6Var2.getTextView();
@@ -3126,7 +3126,7 @@ public final class j extends sk0 {
                         e6 e6Var3 = (e6) view;
                         e6Var3.setTag(1);
                         CharSequence charSequence2 = jnVar.O;
-                        e6Var3.n(charSequence2 != null ? charSequence2 : "", cd.L0(2131746464, null), false);
+                        e6Var3.n(charSequence2 != null ? charSequence2 : "", dd.L0(2131746464, null), false);
                         e6Var3.setTag(null);
                         e6Var3.e.b(gVar.b(-2), false);
                         jn.O(jnVar, view, c1Var.b());
@@ -3136,7 +3136,7 @@ public final class j extends sk0 {
                     e6 e6Var4 = (e6) view;
                     e6Var4.setTag(1);
                     CharSequence charSequence3 = jnVar.N;
-                    e6Var4.n(charSequence3 != null ? charSequence3 : "", cd.L0(z10 ? 2131744078 : 2131746463, null), true);
+                    e6Var4.n(charSequence3 != null ? charSequence3 : "", dd.L0(z10 ? 2131744078 : 2131746463, null), true);
                     e6Var4.setTag(null);
                     jn.O(jnVar, view, c1Var.b());
                     break;
@@ -3153,29 +3153,29 @@ public final class j extends sk0 {
                                 if (b11 != dataSettingsActivity.G) {
                                     if (b11 != dataSettingsActivity.J) {
                                         if (b11 == dataSettingsActivity.K) {
-                                            int i14 = tz.a;
-                                            t8Var.setChecked(sc.e(1024));
+                                            int i14 = uz.a;
+                                            t8Var.setChecked(tc.e(1024));
                                             break;
                                         }
                                     } else {
-                                        int i15 = tz.a;
-                                        t8Var.setChecked(sc.e(2048));
+                                        int i15 = uz.a;
+                                        t8Var.setChecked(tc.e(2048));
                                         break;
                                     }
                                 } else {
-                                    t8Var.setChecked(tz.D0);
+                                    t8Var.setChecked(uz.D0);
                                     break;
                                 }
                             } else {
-                                t8Var.setChecked(tz.C0);
+                                t8Var.setChecked(uz.C0);
                                 break;
                             }
                         } else {
-                            t8Var.setChecked(tz.B0);
+                            t8Var.setChecked(uz.B0);
                             break;
                         }
                     } else {
-                        t8Var.setChecked(tz.E0);
+                        t8Var.setChecked(uz.E0);
                         break;
                     }
                 }
@@ -3188,7 +3188,7 @@ public final class j extends sk0 {
                     i10 = proxyListActivity.useProxyRow;
                     if (b12 != i10) {
                         if (b12 == proxyListActivity.w) {
-                            t8Var2.setChecked(tz.a1);
+                            t8Var2.setChecked(uz.a1);
                             break;
                         }
                     } else {
@@ -3239,8 +3239,8 @@ public final class j extends sk0 {
         this.e = arrayList;
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
         q2 q2Var = new q2();
-        q2Var.a = cd.L0(2131744196, null);
-        q2Var.b = cd.L0(2131744188, null);
+        q2Var.a = dd.L0(2131744196, null);
+        q2Var.b = dd.L0(2131744188, null);
         q2Var.c = 0;
         q2Var.d = 0;
         q2Var.e = true;
@@ -3252,8 +3252,8 @@ public final class j extends sk0 {
         q2Var.k = 2;
         arrayList.add(q2Var);
         q2 q2Var2 = new q2();
-        q2Var2.a = cd.L0(2131744195, null);
-        q2Var2.b = cd.L0(2131744187, null);
+        q2Var2.a = dd.L0(2131744195, null);
+        q2Var2.b = dd.L0(2131744187, null);
         q2Var2.c = 1;
         q2Var2.d = 2;
         q2Var2.e = false;
@@ -3265,8 +3265,8 @@ public final class j extends sk0 {
         q2Var2.k = -1;
         arrayList.add(q2Var2);
         q2 q2Var3 = new q2();
-        q2Var3.a = cd.L0(2131744194, null);
-        q2Var3.b = cd.L0(2131744186, null);
+        q2Var3.a = dd.L0(2131744194, null);
+        q2Var3.b = dd.L0(2131744186, null);
         q2Var3.c = 2;
         q2Var3.d = 3;
         q2Var3.e = false;
@@ -3278,8 +3278,8 @@ public final class j extends sk0 {
         q2Var3.k = -1;
         arrayList.add(q2Var3);
         q2 q2Var4 = new q2();
-        q2Var4.a = cd.L0(2131744193, null);
-        q2Var4.b = cd.L0(2131744185, null);
+        q2Var4.a = dd.L0(2131744193, null);
+        q2Var4.b = dd.L0(2131744185, null);
         q2Var4.c = 3;
         q2Var4.d = 0;
         q2Var4.e = false;
@@ -3291,8 +3291,8 @@ public final class j extends sk0 {
         q2Var4.k = -1;
         arrayList.add(q2Var4);
         q2 q2Var5 = new q2();
-        q2Var5.a = cd.L0(2131744192, null);
-        q2Var5.b = cd.L0(2131744184, null);
+        q2Var5.a = dd.L0(2131744192, null);
+        q2Var5.b = dd.L0(2131744184, null);
         q2Var5.c = 4;
         q2Var5.d = 0;
         q2Var5.e = false;
@@ -3304,8 +3304,8 @@ public final class j extends sk0 {
         q2Var5.k = 2;
         arrayList.add(q2Var5);
         q2 q2Var6 = new q2();
-        q2Var6.a = cd.L0(2131744191, null);
-        q2Var6.b = cd.L0(2131744183, null);
+        q2Var6.a = dd.L0(2131744191, null);
+        q2Var6.b = dd.L0(2131744183, null);
         q2Var6.c = 5;
         q2Var6.d = 0;
         q2Var6.e = false;
@@ -3317,8 +3317,8 @@ public final class j extends sk0 {
         q2Var6.k = -1;
         arrayList.add(q2Var6);
         q2 q2Var7 = new q2();
-        q2Var7.a = cd.L0(2131744190, null);
-        q2Var7.b = cd.L0(2131744182, null);
+        q2Var7.a = dd.L0(2131744190, null);
+        q2Var7.b = dd.L0(2131744182, null);
         q2Var7.c = 6;
         q2Var7.d = 0;
         q2Var7.e = false;
@@ -3330,8 +3330,8 @@ public final class j extends sk0 {
         q2Var7.k = -1;
         arrayList.add(q2Var7);
         q2 q2Var8 = new q2();
-        q2Var8.a = cd.L0(2131744189, null);
-        q2Var8.b = cd.L0(2131744181, null);
+        q2Var8.a = dd.L0(2131744189, null);
+        q2Var8.b = dd.L0(2131744181, null);
         q2Var8.c = 0;
         q2Var8.d = 0;
         q2Var8.e = false;

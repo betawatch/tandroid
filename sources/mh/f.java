@@ -4,10 +4,10 @@ import android.view.ViewTreeObserver;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.v3;
 import org.telegram.ui.Components.eb;
-import org.telegram.ui.b50;
-import org.telegram.ui.iw;
+import org.telegram.ui.a50;
+import org.telegram.ui.hw;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -43,16 +43,16 @@ public final class f implements ViewTreeObserver.OnPreDrawListener {
                 jVar.c();
                 break;
             case 1:
-                ((iw) this.c).a.e0[0].a.getViewTreeObserver().removeOnPreDrawListener(this);
+                ((hw) this.c).a.e0[0].a.getViewTreeObserver().removeOnPreDrawListener(this);
                 i0.h3((bi.e) this.b, 100L);
                 break;
             default:
-                b50 b50Var = (b50) this.c;
-                b50Var.H1.getViewTreeObserver().removeOnPreDrawListener(this);
-                b50Var.h4 = null;
-                b50Var.R3.j((v3) this.b);
-                i0.a4(b50Var.d4);
-                b50Var.b.requestLayout();
+                a50 a50Var = (a50) this.c;
+                a50Var.H1.getViewTreeObserver().removeOnPreDrawListener(this);
+                a50Var.h4 = null;
+                a50Var.R3.j((v3) this.b);
+                i0.a4(a50Var.d4);
+                a50Var.b.requestLayout();
                 break;
         }
         return false;

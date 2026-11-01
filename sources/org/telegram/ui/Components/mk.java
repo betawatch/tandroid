@@ -15,9 +15,9 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, zf.b, org.telegram.messenger.bb, org.telegram.messenger.db, org.telegram.messenger.eb, org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, zf.b, org.telegram.messenger.cb, org.telegram.messenger.eb, org.telegram.messenger.fb, org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ bl b;
 
@@ -26,11 +26,11 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
         this.b = blVar;
     }
 
-    @Override // org.telegram.messenger.eb
-    public void a(org.telegram.messenger.fa faVar) {
+    @Override // org.telegram.messenger.fb
+    public void a(org.telegram.messenger.ga gaVar) {
         bl blVar = this.b;
         ImageView imageView = blVar.n;
-        if (faVar.b() instanceof al) {
+        if (gaVar.b() instanceof al) {
             blVar.Q.setVisibility(4);
             if (!blVar.r0) {
                 int i10 = org.telegram.ui.ActionBar.t6.ij;
@@ -41,7 +41,7 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
             yk ykVar = blVar.D;
             ykVar.getClass();
             HashMap hashMap = ykVar.a;
-            al alVar = (al) faVar.b();
+            al alVar = (al) gaVar.b();
             bl blVar2 = ykVar.b;
             al alVar2 = blVar2.f0;
             org.telegram.ui.ActionBar.p6 p6Var = blVar2.a;
@@ -49,17 +49,17 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
                 return;
             }
             blVar2.g0(false);
-            org.telegram.messenger.fa faVar2 = blVar2.e0;
-            if (faVar2 != null) {
-                View view = (View) hashMap.get(faVar2);
+            org.telegram.messenger.ga gaVar2 = blVar2.e0;
+            if (gaVar2 != null) {
+                View view = (View) hashMap.get(gaVar2);
                 if (view != null) {
                     ykVar.removeView(view);
-                    hashMap.remove(faVar2);
+                    hashMap.remove(gaVar2);
                 }
                 blVar2.e0 = null;
             }
             blVar2.f0 = alVar;
-            blVar2.e0 = faVar;
+            blVar2.e0 = gaVar;
             Context context = ykVar.getContext();
             FrameLayout frameLayout = new FrameLayout(context);
             ykVar.addView(frameLayout, w7.b6.c(114.0f, -2));
@@ -79,17 +79,17 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
             textView.setSingleLine(true);
             org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.G6, p6Var);
             textView.setTypeface(org.telegram.messenger.i0.o());
-            textView.setGravity(org.telegram.messenger.cd.X ? 5 : 3);
-            TextView l4 = org.telegram.ui.Cells.f1.l(blVar2.g0, textView, w7.b6.d(-2, -2.0f, (org.telegram.messenger.cd.X ? 5 : 3) | 48, 18.0f, 10.0f, 18.0f, 0.0f), context);
+            textView.setGravity(org.telegram.messenger.dd.X ? 5 : 3);
+            TextView l4 = org.telegram.ui.Cells.f1.l(blVar2.g0, textView, w7.b6.d(-2, -2.0f, (org.telegram.messenger.dd.X ? 5 : 3) | 48, 18.0f, 10.0f, 18.0f, 0.0f), context);
             l4.setTextSize(1, 14.0f);
             l4.setMaxLines(1);
             l4.setEllipsize(truncateAt);
             l4.setSingleLine(true);
             org.telegram.ui.ActionBar.a7.V(l4, org.telegram.ui.ActionBar.t6.A6, p6Var);
-            l4.setGravity(org.telegram.messenger.cd.X ? 5 : 3);
-            blVar2.g0.addView(l4, w7.b6.d(-2, -2.0f, (org.telegram.messenger.cd.X ? 5 : 3) | 48, 18.0f, 32.0f, 18.0f, 0.0f));
+            l4.setGravity(org.telegram.messenger.dd.X ? 5 : 3);
+            blVar2.g0.addView(l4, w7.b6.d(-2, -2.0f, (org.telegram.messenger.dd.X ? 5 : 3) | 48, 18.0f, 32.0f, 18.0f, 0.0f));
             textView.setText(alVar.c.title);
-            l4.setText(org.telegram.messenger.cd.L0(2131744280, null));
+            l4.setText(org.telegram.messenger.dd.L0(2131744280, null));
             FrameLayout frameLayout4 = new FrameLayout(context);
             frameLayout4.setBackground(org.telegram.ui.ActionBar.t6.L(org.telegram.messenger.i0.L(36.0f), org.telegram.ui.Cells.x4.a(alVar.a)));
             frameLayout.addView(frameLayout4, w7.b6.d(36, 36.0f, 81, 0.0f, 0.0f, 0.0f, 4.0f));
@@ -100,8 +100,8 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
             ofFloat.addUpdateListener(new xk(ykVar, frameLayout4));
             ofFloat.setDuration(360L);
             ofFloat.start();
-            hashMap.put(faVar, frameLayout);
-            blVar2.F.c(((t7.u) org.telegram.messenger.w0.k()).newCameraUpdateLatLng(faVar.a()), org.telegram.messenger.zs.X4);
+            hashMap.put(gaVar, frameLayout);
+            blVar2.F.c(((t7.u) org.telegram.messenger.w0.k()).newCameraUpdateLatLng(gaVar.a()), org.telegram.messenger.at.X4);
         }
     }
 
@@ -121,7 +121,7 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
                     for (int i11 = 0; i11 < size2; i11++) {
                         TLRPC.TL_messageMediaVenue tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) arrayList.get(i11);
                         try {
-                            org.telegram.messenger.ab onCreateMarkerOptions = ((t7.u) org.telegram.messenger.w0.k()).onCreateMarkerOptions();
+                            org.telegram.messenger.bb onCreateMarkerOptions = ((t7.u) org.telegram.messenger.w0.k()).onCreateMarkerOptions();
                             TLRPC.GeoPoint geoPoint = tL_messageMediaVenue.geo;
                             l2.f fVar = (l2.f) onCreateMarkerOptions;
                             ((j8.f) fVar.b).a = new LatLng(geoPoint.lat, geoPoint._long);
@@ -133,7 +133,7 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
                             fVar2.c = tL_messageMediaVenue.address;
                             al alVar = new al();
                             alVar.a = i11;
-                            org.telegram.messenger.fa a2 = blVar.F.a(fVar);
+                            org.telegram.messenger.ga a2 = blVar.F.a(fVar);
                             alVar.b = a2;
                             alVar.c = tL_messageMediaVenue;
                             a2.f(alVar);
@@ -153,8 +153,8 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
         }
     }
 
-    @Override // org.telegram.messenger.bb
-    public boolean c(MotionEvent motionEvent, org.telegram.messenger.ja jaVar) {
+    @Override // org.telegram.messenger.cb
+    public boolean c(MotionEvent motionEvent, org.telegram.messenger.ka kaVar) {
         MotionEvent motionEvent2;
         bl blVar = this.b;
         if (blVar.I != 0.0f) {
@@ -164,14 +164,14 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
         } else {
             motionEvent2 = null;
         }
-        boolean booleanValue = jaVar.a(motionEvent).booleanValue();
+        boolean booleanValue = kaVar.a(motionEvent).booleanValue();
         if (motionEvent2 != null) {
             motionEvent2.recycle();
         }
         return booleanValue;
     }
 
-    @Override // org.telegram.messenger.db
+    @Override // org.telegram.messenger.eb
     public void d(int i10) {
         View childAt;
         bl blVar = this.b;
@@ -181,12 +181,12 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
             if (blVar.e0 != null) {
                 blVar.Q.setVisibility(0);
                 yk ykVar = blVar.D;
-                org.telegram.messenger.fa faVar = blVar.e0;
+                org.telegram.messenger.ga gaVar = blVar.e0;
                 HashMap hashMap = ykVar.a;
-                View view = (View) hashMap.get(faVar);
+                View view = (View) hashMap.get(gaVar);
                 if (view != null) {
                     ykVar.removeView(view);
-                    hashMap.remove(faVar);
+                    hashMap.remove(gaVar);
                 }
                 blVar.e0 = null;
                 blVar.f0 = null;
@@ -204,7 +204,7 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
             int top = childAt.getTop();
             if (top < (-L)) {
                 jg.c0 d = blVar.F.d();
-                blVar.H = ((t7.u) org.telegram.messenger.w0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.cb) d.b, d.c);
+                blVar.H = ((t7.u) org.telegram.messenger.w0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.db) d.b, d.c);
                 b1Var.w0(0, top + L, null);
             }
         }
@@ -217,16 +217,16 @@ public final /* synthetic */ class mk implements org.telegram.ui.ActionBar.o0, z
 
     @Override // org.telegram.ui.ActionBar.o0
     public void k(int i10) {
-        org.telegram.messenger.ga gaVar = this.b.F;
-        if (gaVar == null) {
+        org.telegram.messenger.ha haVar = this.b.F;
+        if (haVar == null) {
             return;
         }
         if (i10 == 2) {
-            gaVar.k(0);
+            haVar.k(0);
         } else if (i10 == 3) {
-            gaVar.k(1);
+            haVar.k(1);
         } else if (i10 == 4) {
-            gaVar.k(2);
+            haVar.k(2);
         }
     }
 }

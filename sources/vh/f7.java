@@ -9,10 +9,10 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ff;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.gf;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.SerializedData;
@@ -20,13 +20,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gz;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.r81;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.t81;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.u1, r81, j61, e6, l5 {
+public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.u1, s81, k61, e6, l5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ o8 b;
 
@@ -49,7 +49,7 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
     }
 
     @Override // vh.e6
-    public void a(final u6 u6Var, final boolean z10, final boolean z11, boolean z12, final boolean z13, final TLRPC.InputPeer inputPeer, final int i10, d1 d1Var, final d0 d0Var) {
+    public void a(final u6 u6Var, final boolean z10, final boolean z11, boolean z12, final boolean z13, final TLRPC.InputPeer inputPeer, final int i10, r0 r0Var, final d0 d0Var) {
         switch (this.a) {
             case 9:
                 ArrayList arrayList = u6Var.b;
@@ -64,7 +64,7 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
                     SerializedData serializedData2 = new SerializedData(serializedData.length());
                     serializedData.cleanup();
                     x6.c(serializedData2, u6Var);
-                    vp.r1(i11).f7.edit().putString("story_privacy2", Utilities.f(serializedData2.toByteArray())).apply();
+                    wp.r1(i11).f7.edit().putString("story_privacy2", Utilities.f(serializedData2.toByteArray())).apply();
                     serializedData2.cleanup();
                     n5 n5Var = o8Var.K1;
                     n5Var.G0 = z12;
@@ -92,15 +92,15 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
                             n5Var3.v0 = inputPeer;
                         }
                     }
-                    o8Var.h(new c7(o8Var, d1Var, 0));
+                    o8Var.h(new c7(o8Var, r0Var, 0));
                     break;
                 }
                 break;
             default:
                 String[] strArr = z13 ? new String[0] : new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
                 final o8 o8Var2 = this.b;
-                w7.c6.b(strArr, new q20() { // from class: vh.d7
-                    @Override // org.telegram.messenger.q20
+                w7.c6.b(strArr, new r20() { // from class: vh.d7
+                    @Override // org.telegram.messenger.r20
                     public final void a(Object obj2) {
                         boolean z14;
                         final boolean z15;
@@ -124,7 +124,7 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
                         tL_startLive.noforwards = z14 ^ z11;
                         TLRPC.InputPeer inputPeer2 = inputPeer;
                         tL_startLive.peer = inputPeer2 == null ? new TLRPC.TL_inputPeerSelf() : inputPeer2;
-                        final long e = (inputPeer2 == null || (inputPeer2 instanceof TLRPC.TL_inputPeerSelf)) ? d20.i(i14).e() : org.telegram.messenger.o5.n(inputPeer2);
+                        final long e = (inputPeer2 == null || (inputPeer2 instanceof TLRPC.TL_inputPeerSelf)) ? e20.i(i14).e() : org.telegram.messenger.o5.n(inputPeer2);
                         tL_startLive.privacy_rules.addAll(u6Var.b);
                         tL_startLive.random_id = Utilities.b.nextLong();
                         final boolean z16 = z13;
@@ -143,22 +143,22 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.Components.j61
+    @Override // org.telegram.ui.Components.k61
     public void b(gz gzVar) {
-        ff ffVar;
+        gf gfVar;
         o8 o8Var = this.b;
         if (gzVar == null) {
             o8Var.getClass();
             return;
         }
         n5 n5Var = o8Var.K1;
-        if (n5Var == null || (ffVar = n5Var.a1) == null) {
+        if (n5Var == null || (gfVar = n5Var.a1) == null) {
             return;
         }
-        gzVar.d(new n2.u(ffVar, 10));
+        gzVar.d(new n2.u(gfVar, 10));
     }
 
-    @Override // org.telegram.ui.Components.r81
+    @Override // org.telegram.ui.Components.s81
     public void c(float f7) {
         o8 o8Var = this.b;
         t7 t7Var = o8Var.B0;
@@ -225,7 +225,7 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
                 int i11 = o8Var5.c;
                 n5 n5Var = o8Var5.K1;
                 if (n5Var != null) {
-                    n5Var.D0 = vp.r1(i11).U4();
+                    n5Var.D0 = wp.r1(i11).U4();
                     o8Var5.V1 = !o8Var5.K1.c;
                     o8Var5.h(null);
                     o8Var5.k();
@@ -236,18 +236,18 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
                     n5Var2.C0 = o8Var5.c1.getText();
                     o8Var5.K1 = null;
                     o8Var5.V(n5Var2, true);
-                    s0 s0Var = vp.r1(i11).O1().w;
+                    t0 t0Var = wp.r1(i11).O1().w;
                     if (n5Var2.c) {
-                        s0Var.d(n5Var2);
+                        t0Var.d(n5Var2);
                     } else {
-                        ArrayList arrayList = s0Var.b;
+                        ArrayList arrayList = t0Var.b;
                         if (!n5Var2.u) {
-                            s0Var.e(n5Var2);
+                            t0Var.e(n5Var2);
                             n5Var2.b = Utilities.b.nextLong();
-                            r0 r0Var = new r0(n5Var2);
+                            s0 s0Var = new s0(n5Var2);
                             arrayList.remove(n5Var2);
                             arrayList.add(0, n5Var2);
-                            s0Var.a(r0Var);
+                            t0Var.a(s0Var);
                         }
                     }
                     o8Var5.J(0, true);
@@ -258,7 +258,7 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
                 o8 o8Var6 = this.b;
                 n5 n5Var3 = o8Var6.K1;
                 if (n5Var3 != null && !n5Var3.g && ((!n5Var3.n || n5Var3.u) && n5Var3.c)) {
-                    vp.r1(o8Var6.c).O1().w.c(o8Var6.K1);
+                    wp.r1(o8Var6.c).O1().w.c(o8Var6.K1);
                     o8Var6.K1 = null;
                 }
                 n5 n5Var4 = o8Var6.K1;
@@ -286,10 +286,10 @@ public final /* synthetic */ class f7 implements CameraView.CameraViewDelegate, 
             B = null;
         }
         o8Var.d0(o8Var.f0 == 0 ? B : null);
-        s81 s81Var = o8Var.V0;
-        if (s81Var != null) {
+        t81 t81Var = o8Var.V0;
+        if (t81Var != null) {
             o8Var.T1 = 0.0f;
-            s81Var.b(false, 0.0f);
+            t81Var.b(false, 0.0f);
         }
         o8Var.l0(true);
     }

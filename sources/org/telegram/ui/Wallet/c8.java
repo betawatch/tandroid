@@ -8,12 +8,12 @@ import java.util.Iterator;
 import java.util.Random;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c8 implements Runnable {
     public final /* synthetic */ h8 a;
@@ -97,7 +97,7 @@ public final class c8 implements Runnable {
         float f18;
         u7 u7Var4;
         float f19;
-        bi0 B;
+        ci0 B;
         float f20;
         float f21;
         float f22;
@@ -378,7 +378,7 @@ public final class c8 implements Runnable {
                                     }
                                     B = c2Var.B();
                                     if (B == null && B.k0) {
-                                        bi0 B2 = c2Var.B();
+                                        ci0 B2 = c2Var.B();
                                         int i14 = B2 == null ? 0 : B2.a0;
                                         if (i14 >= 2) {
                                             g8Var2.T = true;
@@ -535,7 +535,7 @@ public final class c8 implements Runnable {
                                                 p2Var.e(true);
                                             }
                                             if (!z18) {
-                                                vp.d1().edit().putBoolean("walletcardstickerhint", true).apply();
+                                                wp.d1().edit().putBoolean("walletcardstickerhint", true).apply();
                                             }
                                             h8Var.f0();
                                         }

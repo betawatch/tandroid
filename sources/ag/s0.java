@@ -2,15 +2,15 @@ package ag;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.is;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s0 {
     public static volatile s0[] e = new s0[4];
@@ -58,8 +58,8 @@ public final class s0 {
             ArrayList arrayList = this.b;
             int indexOf = arrayList.indexOf(c10);
             arrayList.remove(c10);
-            zs.f(this.a).k(zs.J1, new Object[0]);
-            cc.a0(i0Var).U(cd.L0(2131752715, null), true, new o0(this, indexOf, c10, 0), new a3.l0(this, str, c10, 4)).j();
+            at.f(this.a).k(at.J1, new Object[0]);
+            cc.a0(i0Var).U(dd.L0(2131752715, null), true, new o0(this, indexOf, c10, 0), new a3.l0(this, str, c10, 4)).j();
         }
     }
 
@@ -112,7 +112,7 @@ public final class s0 {
             this.c = true;
             int i10 = this.a;
             if (z10) {
-                hs a02 = hs.a0(i10);
+                is a02 = is.a0(i10);
                 a02.a.c(new j0(this, a02, z11, 0));
             } else {
                 ConnectionsManager.getInstance(i10).sendRequest(new TL_account.getBusinessChatLinks(), new m0(this, 0));
@@ -122,7 +122,7 @@ public final class s0 {
 
     public final void f() {
         ArrayList arrayList = new ArrayList(this.b);
-        hs a02 = hs.a0(this.a);
+        is a02 = is.a0(this.a);
         a02.a.c(new r0(a02, arrayList, 0));
     }
 }

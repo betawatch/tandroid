@@ -2,13 +2,13 @@ package org.telegram.ui.Components;
 
 import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ue0 {
-    public final /* synthetic */ org.telegram.ui.mr0 a;
+    public final /* synthetic */ org.telegram.ui.lr0 a;
 
-    public ue0(org.telegram.ui.mr0 mr0Var) {
-        this.a = mr0Var;
+    public ue0(org.telegram.ui.lr0 lr0Var) {
+        this.a = lr0Var;
     }
 
     @JavascriptInterface
@@ -33,24 +33,24 @@ public final class ue0 {
 
     @JavascriptInterface
     public void onPlayerNotifyDuration(int i10) {
-        org.telegram.ui.mr0 mr0Var = this.a;
-        mr0Var.H = i10 * 1000;
-        String str = mr0Var.s;
+        org.telegram.ui.lr0 lr0Var = this.a;
+        lr0Var.H = i10 * 1000;
+        String str = lr0Var.s;
         if (str != null) {
-            ve0.a(mr0Var, str);
-            mr0Var.s = null;
+            ve0.a(lr0Var, str);
+            lr0Var.s = null;
         }
     }
 
     @JavascriptInterface
     public void onPlayerStateChange(String str) {
         int parseInt = Integer.parseInt(str);
-        org.telegram.ui.mr0 mr0Var = this.a;
-        boolean z10 = mr0Var.G;
+        org.telegram.ui.lr0 lr0Var = this.a;
+        boolean z10 = lr0Var.G;
         boolean z11 = false;
         int i10 = 1;
-        mr0Var.G = parseInt == 1 || parseInt == 3;
-        mr0Var.b(z10);
+        lr0Var.G = parseInt == 1 || parseInt == 3;
+        lr0Var.b(z10);
         if (parseInt != 0) {
             if (parseInt == 1) {
                 z11 = true;
@@ -64,7 +64,7 @@ public final class ue0 {
         } else {
             i10 = 4;
         }
-        if (i10 == 3 && mr0Var.h.getVisibility() != 4) {
+        if (i10 == 3 && lr0Var.h.getVisibility() != 4) {
             org.telegram.messenger.i0.h3(new se0(this, 1), 300L);
         }
         org.telegram.messenger.i0.g3(new i2.j0(this, z11, i10, 3));

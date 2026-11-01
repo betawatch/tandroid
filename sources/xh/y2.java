@@ -1,7 +1,7 @@
 package xh;
 
 import android.content.Context;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
@@ -9,7 +9,7 @@ import org.telegram.ui.Cells.p4;
 import org.telegram.ui.Components.p80;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class y2 extends p4 {
     public final p80 r;
@@ -22,6 +22,6 @@ public final class y2 extends p4 {
         a7.V(p80Var, t6.z6, p6Var);
         a7.H(p80Var, t6.L6, p6Var);
         p80Var.setPadding(org.telegram.messenger.i0.L(4.0f), 0, org.telegram.messenger.i0.L(4.0f), 0);
-        addView(p80Var, b6.d(-2, -2.0f, (cd.X ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
+        addView(p80Var, b6.d(-2, -2.0f, (dd.X ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
     }
 }

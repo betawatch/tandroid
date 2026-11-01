@@ -11,17 +11,17 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hc;
 import org.telegram.messenger.ic;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y3 {
     public static final int[] h = {t6.ra, t6.ob, t6.Ci, t6.Be, t6.Ce, t6.De, t6.Ee, t6.Fe};
@@ -119,10 +119,10 @@ public final class y3 {
         return t6.F0(i10);
     }
 
-    public static void o(int i10, long j10, TLRPC.WallPaper wallPaper, q20 q20Var) {
+    public static void o(int i10, long j10, TLRPC.WallPaper wallPaper, r20 r20Var) {
         boolean z10 = wallPaper.pattern;
         org.telegram.messenger.g4 f7 = org.telegram.messenger.g4.f(i10);
-        v3 v3Var = new v3(q20Var, wallPaper, z10 ? 1 : 0, i10, j10);
+        v3 v3Var = new v3(r20Var, wallPaper, z10 ? 1 : 0, i10, j10);
         if (z10) {
             if (z10) {
                 File i11 = org.telegram.messenger.w0.i();
@@ -170,7 +170,7 @@ public final class y3 {
             return sf.d.e(((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift);
         }
         if (chatTheme instanceof TLRPC.TL_chatTheme) {
-            return ui.b0(this.g).T(((TLRPC.TL_chatTheme) this.d).emoticon);
+            return vi.b0(this.g).T(((TLRPC.TL_chatTheme) this.d).emoticon);
         }
         return null;
     }
@@ -359,12 +359,12 @@ public final class y3 {
                     }
                     return;
                 } else {
-                    ic c10 = ic.c(b8.w(document.thumbs, zs.W1, false, null, false), j10.document);
+                    jc c10 = jc.c(b8.w(document.thumbs, at.W1, false, null, false), j10.document);
                     ImageReceiver imageReceiver = new ImageReceiver(null);
                     imageReceiver.z1 = false;
                     imageReceiver.q0(c10, "120_140", null, null, null, 1);
                     imageReceiver.g1 = new org.telegram.messenger.voip.d0(resultCallback, h10, file, 1);
-                    hc.D().M(imageReceiver, null);
+                    ic.D().M(imageReceiver, null);
                     return;
                 }
             }

@@ -5,8 +5,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.t6;
@@ -14,7 +14,7 @@ import org.telegram.ui.Cells.f3;
 import org.telegram.ui.Components.g9;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h extends f3 {
     public final /* synthetic */ m f;
@@ -23,7 +23,7 @@ public final class h extends f3 {
     public h(m mVar, Context context) {
         super(context);
         this.f = mVar;
-        this.a = d20.s0;
+        this.a = e20.s0;
         final int i10 = 1;
         setOrientation(1);
         a7.i(t6.a7, this, null);
@@ -59,7 +59,7 @@ public final class h extends f3 {
             }
         });
         a();
-        d0Var.addView(g9Var, b6.r(zs.O1, zs.O1, 49));
+        d0Var.addView(g9Var, b6.r(at.O1, at.O1, 49));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setGravity(17);

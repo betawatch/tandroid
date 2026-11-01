@@ -20,12 +20,12 @@ import android.graphics.drawable.NinePatchDrawable;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Components.jb0;
 import w7.k9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class c5 extends Drawable {
     public static final jb0[] T = new jb0[3];
@@ -73,7 +73,7 @@ public class c5 extends Drawable {
     public final int[][] E = {new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}};
     public final Path n = new Path();
     public final Paint d = new Paint(1);
-    public int H = zs.e4;
+    public int H = at.e4;
 
     public c5(int i10, boolean z10, boolean z11, p6 p6Var) {
         this.p = p6Var;
@@ -131,14 +131,14 @@ public class c5 extends Drawable {
                 i10 = i11;
             } else {
                 if (this.R > 0.0f) {
-                    i11 = org.telegram.messenger.i0.W1(this.R, b(tz.Y0), Math.min(bounds.width(), bounds.height()) / 2);
-                    b10 = org.telegram.messenger.i0.W1(this.R, b(Math.min(6, tz.Y0)), Math.min(bounds.width(), bounds.height()) / 2);
+                    i11 = org.telegram.messenger.i0.W1(this.R, b(uz.Y0), Math.min(bounds.width(), bounds.height()) / 2);
+                    b10 = org.telegram.messenger.i0.W1(this.R, b(Math.min(6, uz.Y0)), Math.min(bounds.width(), bounds.height()) / 2);
                 } else if (this.l == 2) {
                     i11 = b(6.0f);
                     b10 = b(6.0f);
                 } else {
-                    i11 = b(tz.Y0);
-                    b10 = b(Math.min(6, tz.Y0));
+                    i11 = b(uz.Y0);
+                    b10 = b(Math.min(6, uz.Y0));
                 }
                 i10 = b10;
             }
@@ -203,7 +203,7 @@ public class c5 extends Drawable {
         c5Var.draw(canvas);
         setAlpha((int) (this.K * 255.0f));
         c(canvas, null);
-        setAlpha(zs.e4);
+        setAlpha(at.e4);
     }
 
     public final void e(Canvas canvas, m.c3 c3Var, Paint paint) {
@@ -379,7 +379,7 @@ public class c5 extends Drawable {
         Rect rect = this.o;
         int i13 = this.Q;
         if (i13 == 0) {
-            i13 = this.R > 0.0f ? 0 : b(tz.Y0);
+            i13 = this.R > 0.0f ? 0 : b(uz.Y0);
         }
         boolean z10 = this.s;
         char c10 = (z10 && this.t) ? (char) 3 : z10 ? (char) 2 : this.t ? (char) 1 : (char) 0;
@@ -479,7 +479,7 @@ public class c5 extends Drawable {
     public final int i() {
         int h = h(t6.La);
         if (this.m) {
-            h = i0.b.o(h, Math.min(zs.e4, Color.alpha(h) * 2));
+            h = i0.b.o(h, Math.min(at.e4, Color.alpha(h) * 2));
         }
         return i0.b.k(h, h(t6.ua));
     }
@@ -506,7 +506,7 @@ public class c5 extends Drawable {
         if (this.L || n() || (this.a == null && !this.m && this.J == null)) {
             return null;
         }
-        int b10 = b(tz.Y0);
+        int b10 = b(uz.Y0);
         boolean z10 = this.s;
         boolean z11 = false;
         char c10 = (z10 && this.t) ? (char) 3 : z10 ? (char) 2 : this.t ? (char) 1 : (char) 0;
@@ -583,14 +583,14 @@ public class c5 extends Drawable {
             i10 = i11;
         } else {
             if (this.R > 0.0f) {
-                i11 = org.telegram.messenger.i0.W1(this.R, b(tz.Y0), Math.min(bounds.width(), bounds.height()) / 2);
-                b10 = org.telegram.messenger.i0.W1(this.R, b(Math.min(6, tz.Y0)), Math.min(bounds.width(), bounds.height()) / 2);
+                i11 = org.telegram.messenger.i0.W1(this.R, b(uz.Y0), Math.min(bounds.width(), bounds.height()) / 2);
+                b10 = org.telegram.messenger.i0.W1(this.R, b(Math.min(6, uz.Y0)), Math.min(bounds.width(), bounds.height()) / 2);
             } else if (i12 == 2) {
                 i11 = b(6.0f);
                 b10 = b(6.0f);
             } else {
-                i11 = b(tz.Y0);
-                b10 = b(Math.min(6, tz.Y0));
+                i11 = b(uz.Y0);
+                b10 = b(Math.min(6, uz.Y0));
             }
             i10 = b10;
         }

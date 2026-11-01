@@ -7,25 +7,25 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qz0;
 import org.telegram.ui.Components.r8;
+import org.telegram.ui.Components.rz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c1 {
     public final long a;
     public final float b;
     public final float c;
-    public final bi0 d;
+    public final ci0 d;
     public final Paint e;
     public final ImageReceiver f;
-    public final qz0 g;
+    public final rz0 g;
     public boolean h;
     public final org.telegram.ui.Components.t5 i;
     public final org.telegram.ui.Components.t5 j;
@@ -39,14 +39,14 @@ public final class c1 {
         this.c = Utilities.l(aVar.nextFloat());
         if (z10) {
             int[] iArr = d1Var.f;
-            bi0 bi0Var = new bi0(iArr[aVar.nextInt(iArr.length)], org.telegram.messenger.i0.L(70.0f), org.telegram.messenger.i0.L(70.0f));
-            this.d = bi0Var;
-            bi0Var.R(view);
-            bi0Var.J(true);
-            bi0Var.K(0);
-            bi0Var.start();
+            ci0 ci0Var = new ci0(iArr[aVar.nextInt(iArr.length)], org.telegram.messenger.i0.L(70.0f), org.telegram.messenger.i0.L(70.0f));
+            this.d = ci0Var;
+            ci0Var.R(view);
+            ci0Var.J(true);
+            ci0Var.K(0);
+            ci0Var.start();
         }
-        TLObject d22 = vp.r1(i10).d2(j10);
+        TLObject d22 = wp.r1(i10).d2(j10);
         r8 r8Var = new r8((org.telegram.ui.ActionBar.p6) null);
         r8Var.l(d22);
         ImageReceiver imageReceiver = new ImageReceiver(view);
@@ -64,8 +64,8 @@ public final class c1 {
         dqVar.G = 0.875f;
         spannableStringBuilder.setSpan(dqVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) cd.E(i11, ','));
-        this.g = new qz0(spannableStringBuilder, 10.0f, org.telegram.messenger.i0.o1("fonts/num.otf"));
+        spannableStringBuilder.append((CharSequence) dd.E(i11, ','));
+        this.g = new rz0(spannableStringBuilder, 10.0f, org.telegram.messenger.i0.o1("fonts/num.otf"));
         org.telegram.ui.Components.t5 t5Var = new org.telegram.ui.Components.t5(view, 2000L, new LinearInterpolator());
         this.i = t5Var;
         t5Var.e(true, 0.0f);

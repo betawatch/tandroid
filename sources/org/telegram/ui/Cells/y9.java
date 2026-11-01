@@ -4,14 +4,14 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.kp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.lp;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y9 extends q1 {
     public final GestureDetector hd;
@@ -35,7 +35,7 @@ public final class y9 extends q1 {
     public final void dispatchDraw(Canvas canvas) {
         int w02;
         int w03;
-        jj messageObject = getMessageObject();
+        kj messageObject = getMessageObject();
         org.telegram.ui.Components.w4 w4Var = this.jd;
         org.telegram.ui.Components.w4 w4Var2 = this.id;
         org.telegram.ui.Components.r8 r8Var = this.z7;
@@ -45,8 +45,8 @@ public final class y9 extends q1 {
         } else {
             int i10 = getMessageObject().c1;
             if (i10 >= 14) {
-                lp lpVar = vp.r1(d20.s0).r4;
-                kp d = lpVar != null ? lpVar.d(i10) : null;
+                mp mpVar = wp.r1(e20.s0).r4;
+                lp d = mpVar != null ? mpVar.d(i10) : null;
                 if (d != null) {
                     int f7 = d.f();
                     w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.p8[org.telegram.ui.Components.r8.f(f7)], this.Ob);

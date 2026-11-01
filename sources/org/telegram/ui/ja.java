@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ja extends s4.u {
     public final /* synthetic */ int d;
@@ -55,7 +55,7 @@ public final class ja extends s4.u {
                 c1Var.a.setPressed(false);
                 break;
             case 6:
-                org.telegram.ui.Components.u51 u51Var = (org.telegram.ui.Components.u51) this.e;
+                org.telegram.ui.Components.v51 v51Var = (org.telegram.ui.Components.v51) this.e;
                 super.a(recyclerView, c1Var);
                 View view4 = c1Var.a;
                 view4.setPressed(false);
@@ -66,8 +66,8 @@ public final class ja extends s4.u {
                         h2Var.invalidateSelf();
                     }
                 }
-                if (u51Var.D1()) {
-                    u51Var.I1(c1Var);
+                if (v51Var.D1()) {
+                    v51Var.I1(c1Var);
                     view4.animate().scaleX(0.5f).scaleY(0.5f).setDuration(200L).setInterpolator(org.telegram.ui.Components.gr.h).start();
                     break;
                 }
@@ -89,7 +89,7 @@ public final class ja extends s4.u {
 
     @Override // s4.u
     public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        org.telegram.messenger.fw s10;
+        org.telegram.messenger.gw s10;
         switch (this.d) {
             case 0:
                 if (c1Var.f != 4 || !((la) c1Var.a).G) {
@@ -118,8 +118,8 @@ public final class ja extends s4.u {
                 }
             case 4:
                 int b10 = c1Var.b();
-                org.telegram.ui.Components.gm0 gm0Var = (org.telegram.ui.Components.gm0) this.e;
-                if (b10 >= gm0Var.w && c1Var.b() < gm0Var.x) {
+                org.telegram.ui.Components.hm0 hm0Var = (org.telegram.ui.Components.hm0) this.e;
+                if (b10 >= hm0Var.w && c1Var.b() < hm0Var.x) {
                     break;
                 } else {
                     break;
@@ -127,20 +127,20 @@ public final class ja extends s4.u {
                 break;
             case 5:
                 int l4 = s4.u.l(0, 0);
-                org.telegram.ui.Components.zt0 zt0Var = ((org.telegram.ui.Components.it0) this.e).y;
-                if (zt0Var.E1 && recyclerView.getAdapter() != zt0Var.U && (s10 = s(c1Var)) != null && s10.b) {
+                org.telegram.ui.Components.au0 au0Var = ((org.telegram.ui.Components.jt0) this.e).y;
+                if (au0Var.E1 && recyclerView.getAdapter() != au0Var.U && (s10 = s(c1Var)) != null && s10.b) {
                     break;
                 }
                 break;
             case 6:
-                org.telegram.ui.Components.u51 u51Var = (org.telegram.ui.Components.u51) this.e;
-                if (u51Var.j3 && u51Var.f3.H(c1Var.b()) >= 0) {
+                org.telegram.ui.Components.v51 v51Var = (org.telegram.ui.Components.v51) this.e;
+                if (v51Var.j3 && v51Var.f3.H(c1Var.b()) >= 0) {
                     int i10 = 15;
-                    if (u51Var.e3.o == 0) {
-                        if (!u51Var.i3) {
+                    if (v51Var.e3.o == 0) {
+                        if (!v51Var.i3) {
                             i10 = 12;
                         }
-                    } else if (!u51Var.i3) {
+                    } else if (!v51Var.i3) {
                         i10 = 3;
                     }
                     break;
@@ -149,7 +149,7 @@ public final class ja extends s4.u {
                 }
                 break;
             case 7:
-                if (!((n2.u) ((org.telegram.ui.Components.v71) this.e).D).G(c1Var.b())) {
+                if (!((n2.u) ((org.telegram.ui.Components.w71) this.e).D).G(c1Var.b())) {
                     break;
                 } else {
                     break;
@@ -178,14 +178,14 @@ public final class ja extends s4.u {
     public boolean k() {
         switch (this.d) {
             case 4:
-                return ((org.telegram.ui.Components.gm0) this.e).I.f();
+                return ((org.telegram.ui.Components.hm0) this.e).I.f();
             case 5:
             case 7:
             default:
                 return super.k();
             case 6:
-                org.telegram.ui.Components.u51 u51Var = (org.telegram.ui.Components.u51) this.e;
-                return u51Var.j3 && u51Var.l3;
+                org.telegram.ui.Components.v51 v51Var = (org.telegram.ui.Components.v51) this.e;
+                return v51Var.j3 && v51Var.l3;
             case 8:
                 return true;
             case 9:
@@ -197,18 +197,18 @@ public final class ja extends s4.u {
     public void m(Canvas canvas, RecyclerView recyclerView, s4.c1 c1Var, float f7, float f10, int i10, boolean z10) {
         switch (this.d) {
             case 6:
-                org.telegram.ui.Components.u51 u51Var = (org.telegram.ui.Components.u51) this.e;
-                if (i10 != 2 || z10 || !u51Var.D1()) {
+                org.telegram.ui.Components.v51 v51Var = (org.telegram.ui.Components.v51) this.e;
+                if (i10 != 2 || z10 || !v51Var.D1()) {
                     super.m(canvas, recyclerView, c1Var, f7, f10, i10, z10);
                     if (i10 == 2 && z10) {
-                        u51Var.H1(c1Var);
+                        v51Var.H1(c1Var);
                         break;
                     }
                 }
                 break;
             case 7:
                 super.m(canvas, recyclerView, c1Var, f7, f10, i10, z10);
-                ((org.telegram.ui.Components.v71) this.e).invalidate();
+                ((org.telegram.ui.Components.w71) this.e).invalidate();
                 break;
             default:
                 super.m(canvas, recyclerView, c1Var, f7, f10, i10, z10);
@@ -332,108 +332,108 @@ public final class ja extends s4.u {
                 break;
             case 4:
                 int b19 = c1Var2.b();
-                org.telegram.ui.Components.gm0 gm0Var = (org.telegram.ui.Components.gm0) obj;
-                ArrayList arrayList4 = gm0Var.e;
-                if (b19 >= gm0Var.w && c1Var2.b() < gm0Var.x) {
+                org.telegram.ui.Components.hm0 hm0Var = (org.telegram.ui.Components.hm0) obj;
+                ArrayList arrayList4 = hm0Var.e;
+                if (b19 >= hm0Var.w && c1Var2.b() < hm0Var.x) {
                     int b20 = c1Var.b();
                     int b21 = c1Var2.b();
-                    int i22 = gm0Var.w;
+                    int i22 = hm0Var.w;
                     int i23 = b20 - i22;
                     int i24 = b21 - i22;
                     arrayList4.indexOf(Integer.valueOf(i23));
-                    arrayList4.get(b20 - gm0Var.w);
-                    org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) arrayList4.get(i23);
-                    org.telegram.messenger.jj jjVar2 = (org.telegram.messenger.jj) arrayList4.get(i24);
-                    arrayList4.set(i23, jjVar2);
-                    arrayList4.set(i24, jjVar);
-                    org.telegram.messenger.b6 q6 = org.telegram.messenger.b6.q(gm0Var.d);
+                    arrayList4.get(b20 - hm0Var.w);
+                    org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) arrayList4.get(i23);
+                    org.telegram.messenger.kj kjVar2 = (org.telegram.messenger.kj) arrayList4.get(i24);
+                    arrayList4.set(i23, kjVar2);
+                    arrayList4.set(i24, kjVar);
+                    org.telegram.messenger.b6 q6 = org.telegram.messenger.b6.q(hm0Var.d);
                     ArrayList arrayList5 = q6.G;
-                    int indexOf = arrayList5.indexOf(jjVar);
-                    int indexOf2 = arrayList5.indexOf(jjVar2);
+                    int indexOf = arrayList5.indexOf(kjVar);
+                    int indexOf2 = arrayList5.indexOf(kjVar2);
                     if (indexOf >= 0 && indexOf2 >= 0) {
-                        arrayList5.set(indexOf, jjVar2);
-                        arrayList5.set(indexOf2, jjVar);
+                        arrayList5.set(indexOf, kjVar2);
+                        arrayList5.set(indexOf2, kjVar);
                     }
                     q6.y();
-                    gm0Var.c.j(b20, b21);
+                    hm0Var.c.j(b20, b21);
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.Components.it0 it0Var = (org.telegram.ui.Components.it0) obj;
-                ArrayList arrayList6 = it0Var.f;
-                org.telegram.ui.Components.zt0 zt0Var = it0Var.y;
-                if (zt0Var.E1 && recyclerView.getAdapter() != zt0Var.U) {
-                    org.telegram.messenger.fw s10 = s(c1Var);
-                    org.telegram.messenger.fw s11 = s(c1Var2);
+                org.telegram.ui.Components.jt0 jt0Var = (org.telegram.ui.Components.jt0) obj;
+                ArrayList arrayList6 = jt0Var.f;
+                org.telegram.ui.Components.au0 au0Var = jt0Var.y;
+                if (au0Var.E1 && recyclerView.getAdapter() != au0Var.U) {
+                    org.telegram.messenger.gw s10 = s(c1Var);
+                    org.telegram.messenger.gw s11 = s(c1Var2);
                     if (s10 != null && s11 != null && s10.b && s11.b) {
                         int b22 = c1Var.b();
                         int b23 = c1Var2.b();
                         arrayList6.remove(b22);
                         arrayList6.add(b23, s10);
-                        it0Var.j(b22, b23);
-                        it0Var.h = true;
+                        jt0Var.j(b22, b23);
+                        jt0Var.h = true;
                         break;
                     }
                 }
                 break;
             case 6:
-                org.telegram.ui.Components.u51 u51Var = (org.telegram.ui.Components.u51) obj;
-                org.telegram.ui.Components.p51 p51Var = u51Var.f3;
-                if (p51Var.H(c1Var.b()) < 0 || p51Var.H(c1Var.b()) != p51Var.H(c1Var2.b())) {
+                org.telegram.ui.Components.v51 v51Var = (org.telegram.ui.Components.v51) obj;
+                org.telegram.ui.Components.q51 q51Var = v51Var.f3;
+                if (q51Var.H(c1Var.b()) < 0 || q51Var.H(c1Var.b()) != q51Var.H(c1Var2.b())) {
                     break;
                 } else {
                     int b24 = c1Var.b();
                     int b25 = c1Var2.b();
-                    ArrayList arrayList7 = p51Var.D;
-                    if (p51Var.M != null) {
-                        int H = p51Var.H(b24);
-                        int H2 = p51Var.H(b25);
+                    ArrayList arrayList7 = q51Var.D;
+                    if (q51Var.M != null) {
+                        int H = q51Var.H(b24);
+                        int H2 = q51Var.H(b25);
                         if (H >= 0 && H == H2) {
-                            boolean J = p51Var.J(b24);
-                            boolean J2 = p51Var.J(b25);
-                            arrayList7.add(b25, (org.telegram.ui.Components.a51) arrayList7.remove(b24));
-                            p51Var.j(b24, b25);
-                            if (p51Var.J(b25) != J) {
-                                p51Var.h(b25, 3);
+                            boolean J = q51Var.J(b24);
+                            boolean J2 = q51Var.J(b25);
+                            arrayList7.add(b25, (org.telegram.ui.Components.b51) arrayList7.remove(b24));
+                            q51Var.j(b24, b25);
+                            if (q51Var.J(b25) != J) {
+                                q51Var.h(b25, 3);
                             }
-                            if (p51Var.J(b24) != J2) {
-                                p51Var.h(b24, 3);
+                            if (q51Var.J(b24) != J2) {
+                                q51Var.h(b24, 3);
                             }
-                            if (p51Var.L && (i11 = p51Var.K) != H) {
-                                p51Var.F(i11);
+                            if (q51Var.L && (i11 = q51Var.K) != H) {
+                                q51Var.F(i11);
                             }
-                            p51Var.L = true;
-                            p51Var.K = H;
+                            q51Var.L = true;
+                            q51Var.K = H;
                         }
                     }
-                    u51Var.K1();
+                    v51Var.K1();
                     break;
                 }
                 break;
             case 7:
                 int b26 = c1Var.b();
                 int b27 = c1Var2.b();
-                org.telegram.ui.Components.v71 v71Var = (org.telegram.ui.Components.v71) obj;
-                ArrayList arrayList8 = v71Var.h;
-                if (!((n2.u) v71Var.D).G(b26) || !((n2.u) v71Var.D).G(b27)) {
+                org.telegram.ui.Components.w71 w71Var = (org.telegram.ui.Components.w71) obj;
+                ArrayList arrayList8 = w71Var.h;
+                if (!((n2.u) w71Var.D).G(b26) || !((n2.u) w71Var.D).G(b27)) {
                     break;
                 } else {
                     Pattern pattern = Utilities.a;
                     Object obj2 = arrayList8.get(b26);
                     arrayList8.set(b26, arrayList8.get(b27));
                     arrayList8.set(b27, obj2);
-                    v71Var.y.j(b26, b27);
+                    w71Var.y.j(b26, b27);
                     ArrayList arrayList9 = new ArrayList();
                     int size3 = arrayList8.size();
                     while (i14 < size3) {
                         Object obj3 = arrayList8.get(i14);
                         i14++;
-                        arrayList9.add(Integer.valueOf(((org.telegram.ui.Components.s71) obj3).a));
+                        arrayList9.add(Integer.valueOf(((org.telegram.ui.Components.t71) obj3).a));
                     }
-                    org.telegram.ui.Components.o71 o71Var = ((org.telegram.ui.Components.w71) ((n2.u) v71Var.D).b).L;
-                    if (o71Var != null) {
-                        o71Var.a(arrayList9);
+                    org.telegram.ui.Components.p71 p71Var = ((org.telegram.ui.Components.x71) ((n2.u) w71Var.D).b).L;
+                    if (p71Var != null) {
+                        p71Var.a(arrayList9);
                         break;
                     }
                 }
@@ -442,29 +442,29 @@ public final class ja extends s4.u {
                 if (c1Var.f != c1Var2.f || !r(c1Var.b()) || !r(c1Var2.b())) {
                     break;
                 } else {
-                    ys0 ys0Var = ((at0) obj).b;
+                    xs0 xs0Var = ((zs0) obj).b;
                     int b28 = c1Var.b();
                     int b29 = c1Var2.b();
-                    at0 at0Var = ys0Var.d;
-                    int i25 = at0Var.n0;
+                    zs0 zs0Var = xs0Var.d;
+                    int i25 = zs0Var.n0;
                     int i26 = b28 - i25;
                     int i27 = b29 - i25;
-                    if (i26 >= 0 && i27 >= 0 && i26 < (i12 = at0Var.D) && i27 < i12) {
-                        CharSequence[] charSequenceArr2 = at0Var.w;
+                    if (i26 >= 0 && i27 >= 0 && i26 < (i12 = zs0Var.D) && i27 < i12) {
+                        CharSequence[] charSequenceArr2 = zs0Var.w;
                         CharSequence charSequence2 = charSequenceArr2[i26];
                         charSequenceArr2[i26] = charSequenceArr2[i27];
                         charSequenceArr2[i27] = charSequence2;
-                        int[] iArr = at0Var.r;
+                        int[] iArr = zs0Var.r;
                         if (iArr != null) {
                             int i28 = iArr[i26];
                             iArr[i26] = iArr[i27];
                             iArr[i27] = i28;
                         }
-                        boolean[] zArr2 = at0Var.x;
+                        boolean[] zArr2 = zs0Var.x;
                         boolean z11 = zArr2[i26];
                         zArr2[i26] = zArr2[i27];
                         zArr2[i27] = z11;
-                        ys0Var.j(b28, b29);
+                        xs0Var.j(b28, b29);
                         break;
                     }
                 }
@@ -482,7 +482,7 @@ public final class ja extends s4.u {
                         if (eVar.e instanceof th.q4) {
                             arrayList = new ArrayList();
                             for (int i29 = 0; i29 < eVar.e.i.size(); i29++) {
-                                arrayList.add(Integer.valueOf(((org.telegram.messenger.jj) eVar.e.i.get(i29)).f1()));
+                                arrayList.add(Integer.valueOf(((org.telegram.messenger.kj) eVar.e.i.get(i29)).f1()));
                             }
                         } else {
                             arrayList = new ArrayList(eVar.e.g);
@@ -492,9 +492,9 @@ public final class ja extends s4.u {
                             arrayList10.addAll(arrayList);
                             eVar.r = true;
                         }
-                        org.telegram.messenger.jj jjVar3 = (org.telegram.messenger.jj) eVar.e.i.get(b30);
-                        arrayList.remove(Integer.valueOf(jjVar3.f1()));
-                        arrayList.add(Utilities.j(b31, arrayList.size(), 0), Integer.valueOf(jjVar3.f1()));
+                        org.telegram.messenger.kj kjVar3 = (org.telegram.messenger.kj) eVar.e.i.get(b30);
+                        arrayList.remove(Integer.valueOf(kjVar3.f1()));
+                        arrayList.add(Utilities.j(b31, arrayList.size(), 0), Integer.valueOf(kjVar3.f1()));
                         eVar.e.C(arrayList, false);
                         eVar.j(b30, b31);
                         break;
@@ -518,7 +518,7 @@ public final class ja extends s4.u {
 
     @Override // s4.u
     public void p(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Components.rs0 rs0Var;
+        org.telegram.ui.Components.ss0 ss0Var;
         ArrayList arrayList;
         int i11 = this.d;
         Object obj = this.e;
@@ -526,7 +526,7 @@ public final class ja extends s4.u {
             case 0:
                 oa oaVar = (oa) obj;
                 if (i10 == 0) {
-                    oa.c0(oaVar);
+                    oa.d0(oaVar);
                 } else {
                     oaVar.b.I0(false);
                     c1Var.a.setPressed(true);
@@ -598,10 +598,10 @@ public final class ja extends s4.u {
                 break;
             case 3:
                 org.telegram.ui.Components.jn jnVar = (org.telegram.ui.Components.jn) obj;
-                w71 w71Var = jnVar.s;
+                u71 u71Var = jnVar.s;
                 if (i10 != 0) {
-                    w71Var.setItemAnimator(jnVar.w);
-                    w71Var.I0(false);
+                    u71Var.setItemAnimator(jnVar.w);
+                    u71Var.I0(false);
                     c1Var.a.setPressed(true);
                     org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.h5, c1Var.a, jnVar.a);
                     break;
@@ -609,40 +609,40 @@ public final class ja extends s4.u {
                 break;
             case 4:
                 if (i10 != 0) {
-                    ((org.telegram.ui.Components.gm0) obj).b.I0(false);
+                    ((org.telegram.ui.Components.hm0) obj).b.I0(false);
                     c1Var.a.setPressed(true);
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.Components.it0 it0Var = (org.telegram.ui.Components.it0) obj;
-                org.telegram.ui.Components.uo0 uo0Var = it0Var.n;
-                if (c1Var != null && (rs0Var = it0Var.s) != null) {
-                    rs0Var.d1(false);
+                org.telegram.ui.Components.jt0 jt0Var = (org.telegram.ui.Components.jt0) obj;
+                org.telegram.ui.Components.vo0 vo0Var = jt0Var.n;
+                if (c1Var != null && (ss0Var = jt0Var.s) != null) {
+                    ss0Var.d1(false);
                 }
                 if (i10 == 0) {
-                    org.telegram.messenger.i0.r(uo0Var);
-                    org.telegram.messenger.i0.h3(uo0Var, 300L);
+                    org.telegram.messenger.i0.r(vo0Var);
+                    org.telegram.messenger.i0.h3(vo0Var, 300L);
                     break;
                 }
                 break;
             case 6:
-                org.telegram.ui.Components.u51 u51Var = (org.telegram.ui.Components.u51) obj;
+                org.telegram.ui.Components.v51 v51Var = (org.telegram.ui.Components.v51) obj;
                 if (c1Var != null) {
-                    u51Var.d1(false);
+                    v51Var.d1(false);
                 }
                 if (i10 == 0) {
-                    org.telegram.ui.Components.p51 p51Var = u51Var.f3;
-                    if (p51Var.L) {
-                        p51Var.F(p51Var.K);
+                    org.telegram.ui.Components.q51 q51Var = v51Var.f3;
+                    if (q51Var.L) {
+                        q51Var.F(q51Var.K);
                     }
-                    if (u51Var.k3 != null) {
-                        u51Var.G1();
-                        u51Var.k3 = null;
+                    if (v51Var.k3 != null) {
+                        v51Var.G1();
+                        v51Var.k3 = null;
                         break;
                     }
                 } else {
-                    u51Var.I0(false);
+                    v51Var.I0(false);
                     if (c1Var != null) {
                         View view = c1Var.a;
                         view.setPressed(true);
@@ -654,8 +654,8 @@ public final class ja extends s4.u {
                             }
                         }
                         if (i10 == 2) {
-                            u51Var.k3 = c1Var;
-                            u51Var.J1(c1Var);
+                            v51Var.k3 = c1Var;
+                            v51Var.J1(c1Var);
                             break;
                         }
                     }
@@ -663,7 +663,7 @@ public final class ja extends s4.u {
                 break;
             case 8:
                 if (i10 != 0) {
-                    ((at0) obj).c.I0(false);
+                    ((zs0) obj).c.I0(false);
                     c1Var.a.setPressed(true);
                     break;
                 }
@@ -682,7 +682,7 @@ public final class ja extends s4.u {
                         if (x4Var instanceof th.q4) {
                             arrayList = new ArrayList();
                             for (int i14 = 0; i14 < eVar.e.i.size(); i14++) {
-                                arrayList.add(Integer.valueOf(((org.telegram.messenger.jj) eVar.e.i.get(i14)).f1()));
+                                arrayList.add(Integer.valueOf(((org.telegram.messenger.kj) eVar.e.i.get(i14)).f1()));
                             }
                         } else {
                             arrayList = x4Var.g;
@@ -724,15 +724,15 @@ public final class ja extends s4.u {
     }
 
     public boolean r(int i10) {
-        at0 at0Var = (at0) this.e;
-        return !at0Var.I || i10 - at0Var.n0 >= at0Var.y;
+        zs0 zs0Var = (zs0) this.e;
+        return !zs0Var.I || i10 - zs0Var.n0 >= zs0Var.y;
     }
 
-    public org.telegram.messenger.fw s(s4.c1 c1Var) {
+    public org.telegram.messenger.gw s(s4.c1 c1Var) {
         int b10;
-        org.telegram.ui.Components.it0 it0Var = (org.telegram.ui.Components.it0) this.e;
-        if (c1Var != null && (b10 = c1Var.b()) >= 0 && b10 < it0Var.f.size()) {
-            return (org.telegram.messenger.fw) it0Var.f.get(b10);
+        org.telegram.ui.Components.jt0 jt0Var = (org.telegram.ui.Components.jt0) this.e;
+        if (c1Var != null && (b10 = c1Var.b()) >= 0 && b10 < jt0Var.f.size()) {
+            return (org.telegram.messenger.gw) jt0Var.f.get(b10);
         }
         return null;
     }

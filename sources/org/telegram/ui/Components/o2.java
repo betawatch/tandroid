@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final /* synthetic */ class o2 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.i0.g3(new org.telegram.messenger.n00(tLObject, this.c, (vh.d) this.d, (org.telegram.ui.ActionBar.z2) this.e, this.b, tL_error));
+                org.telegram.messenger.i0.g3(new org.telegram.messenger.o00(tLObject, this.c, (vh.d) this.d, (org.telegram.ui.ActionBar.z2) this.e, this.b, tL_error));
                 break;
             case 1:
-                org.telegram.messenger.i0.g3(new org.telegram.messenger.n00((org.telegram.ui.rg0) this.d, tL_error, tLObject, this.b, this.c, (TLRPC.Chat) this.e, 3));
+                org.telegram.messenger.i0.g3(new org.telegram.messenger.o00((org.telegram.ui.pg0) this.d, tL_error, tLObject, this.b, this.c, (TLRPC.Chat) this.e, 3));
                 break;
             case 2:
                 org.telegram.messenger.i0.g3(new org.telegram.ui.Cells.e1((rh.r) this.d, (rh.q) this.e, this.c, tLObject, this.b, 2));
@@ -52,9 +52,9 @@ public final /* synthetic */ class o2 implements RequestDelegate {
         this.b = j10;
     }
 
-    public /* synthetic */ o2(org.telegram.ui.rg0 rg0Var, long j10, int i10, TLRPC.Chat chat) {
+    public /* synthetic */ o2(org.telegram.ui.pg0 pg0Var, long j10, int i10, TLRPC.Chat chat) {
         this.a = 1;
-        this.d = rg0Var;
+        this.d = pg0Var;
         this.b = j10;
         this.c = i10;
         this.e = chat;

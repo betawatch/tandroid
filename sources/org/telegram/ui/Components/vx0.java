@@ -1,98 +1,306 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class vx0 extends Drawable {
-    public boolean a;
-    public final t5 b;
-    public final Drawable c;
-    public final Drawable d;
-    public int e = org.telegram.messenger.zs.e4;
+public final class vx0 {
+    public final org.telegram.ui.ActionBar.p6 a;
+    public StaticLayout b;
+    public final ArrayList c = new ArrayList(2);
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
 
-    public vx0(org.telegram.ui.Cells.q1 q1Var) {
-        this.b = new t5(q1Var, 420L, gr.h);
-        this.c = q1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
-        this.d = q1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
+    public vx0(org.telegram.ui.ActionBar.p6 p6Var) {
+        this.a = p6Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        Drawable drawable = this.d;
-        drawable.setBounds(bounds);
-        drawable.setAlpha(this.e);
-        drawable.draw(canvas);
-        float d = this.b.d(this.a);
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        float width = getBounds().width();
-        canvas.save();
-        if (d < 0.5f) {
-            float abs = Math.abs(d - 0.5f) + 0.5f;
-            canvas.scale(abs, abs, centerX, centerY);
+    public static void c(StringBuilder sb2, int i10, boolean z10) {
+        if (sb2.length() > 0) {
+            if (z10) {
+                sb2.append(' ');
+                sb2.append(org.telegram.messenger.dd.L0(2131744371, null));
+                sb2.append(' ');
+            } else {
+                sb2.append(", ");
+            }
         }
-        canvas.save();
-        if (d > 0.5f) {
-            float abs2 = Math.abs(d - 0.5f) + 0.5f;
-            float f7 = -abs2;
-            float f10 = width * 0.32f;
-            canvas.scale(f7, f7, getBounds().left + f10, getBounds().bottom - f10);
-            float f11 = 1.0f - abs2;
-            canvas.translate((-width) * f11 * 0.4f, f11 * width * 0.4f);
+        sb2.append(org.telegram.messenger.dd.L0(i10, null));
+    }
+
+    public final int a() {
+        return this.g;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:134:0x01b2, code lost:
+    
+        if (r3 != null) goto L96;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:135:0x01b4, code lost:
+    
+        r3 = r18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x01bb, code lost:
+    
+        if (r6.document != null) goto L100;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x01bd, code lost:
+    
+        r6 = r18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x01c2, code lost:
+    
+        if (r3 == r6) goto L112;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x01c0, code lost:
+    
+        r6 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:141:0x01b7, code lost:
+    
+        r3 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x019c, code lost:
+    
+        if ((r7 == null ? r18 : 0) != (r6.photo == null ? r18 : 0)) goto L77;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x01d3, code lost:
+    
+        if ((r3 != null ? r18 : 0) == (r6 != null ? r18 : 0)) goto L112;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x0130, code lost:
+    
+        if (r3.b == r15.b) goto L50;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x0187, code lost:
+    
+        if (r7.id != r11.id) goto L77;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0189, code lost:
+    
+        r2 = r2 | 8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x019f, code lost:
+    
+        r3 = r3.document;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x01a1, code lost:
+    
+        if (r3 == null) goto L94;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x01a3, code lost:
+    
+        r7 = r6.document;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x01a5, code lost:
+    
+        if (r7 == null) goto L94;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x01ad, code lost:
+    
+        if (r3.id == r7.id) goto L112;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x01ce  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x01d1  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x015b  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x016a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(org.telegram.messenger.kj kjVar) {
+        float f7;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        TLRPC.SuggestedPost suggestedPost;
+        TLRPC.SuggestedPost suggestedPost2;
+        int i14;
+        TLRPC.MessageMedia messageMedia;
+        TLRPC.MessageMedia messageMedia2;
+        TLRPC.Message message;
+        TLRPC.SuggestedPost suggestedPost3 = (kjVar == null || (message = kjVar.k) == null) ? null : message.suggested_post;
+        if (suggestedPost3 == null) {
+            return;
         }
-        Rect bounds2 = getBounds();
-        Drawable drawable2 = this.c;
-        drawable2.setBounds(bounds2);
-        drawable2.setAlpha(this.e);
-        drawable2.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        if (d > 0.5f) {
-            float f12 = -(Math.abs(d - 0.5f) + 0.5f);
-            float f13 = 0.32f * width;
-            canvas.scale(f12, f12, getBounds().right - f13, getBounds().top + f13);
+        sf.a aVar = org.telegram.messenger.pj.b(suggestedPost3).a;
+        org.telegram.ui.ActionBar.p6 p6Var = this.a;
+        Paint d = p6Var != null ? p6Var.d("paintChatActionText3") : null;
+        if (d == null) {
+            d = org.telegram.ui.ActionBar.t6.V0("paintChatActionText3");
         }
-        canvas.rotate(180.0f, centerX, centerY);
-        if (d > 0.5f) {
-            float abs3 = 1.0f - (Math.abs(d - 0.5f) + 0.5f);
-            canvas.translate((-width) * abs3 * 0.4f, width * abs3 * 0.4f);
+        TextPaint textPaint = (TextPaint) d;
+        this.g = org.telegram.messenger.i0.L(14.0f) * 2;
+        ArrayList arrayList = this.c;
+        arrayList.clear();
+        if (aVar != null && !aVar.k()) {
+            arrayList.add(new ux0(new rz0(org.telegram.messenger.dd.L0(2131744374, null), textPaint), new rz0(org.telegram.messenger.dd.g(aVar.f()), textPaint)));
         }
-        drawable2.setBounds(getBounds());
-        drawable2.setAlpha(this.e);
-        drawable2.draw(canvas);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.c.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.c.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.e = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
+        if (suggestedPost3.schedule_date > 0) {
+            arrayList.add(new ux0(new rz0(org.telegram.messenger.dd.L0(2131744373, null), textPaint), new rz0(org.telegram.messenger.dd.g(org.telegram.messenger.dd.x(suggestedPost3.schedule_date, true)), textPaint)));
+        }
+        int size = arrayList.size();
+        float f10 = 0.0f;
+        float f11 = 0.0f;
+        int i15 = 0;
+        while (i15 < size) {
+            Object obj = arrayList.get(i15);
+            i15++;
+            ux0 ux0Var = (ux0) obj;
+            f10 = Math.max(f10, ux0Var.a.k());
+            f11 = Math.max(f11, ux0Var.b.k());
+            int i16 = ((int) ux0Var.a.i()) + this.g;
+            this.g = i16;
+            this.g = org.telegram.messenger.i0.L(7.0f) + i16;
+        }
+        int L = (int) (f11 + f10 + org.telegram.messenger.i0.L(11.0f));
+        int max = Math.max(L, org.telegram.messenger.i0.L(160.0f));
+        String l4 = org.telegram.messenger.o5.l(org.telegram.messenger.e20.s0, kjVar.Z0());
+        org.telegram.messenger.kj kjVar2 = kjVar.C;
+        TLRPC.Message message2 = kjVar2 != null ? kjVar2.k : null;
+        TLRPC.Message message3 = kjVar.k;
+        if (message2 == null || (suggestedPost = message2.suggested_post) == null || message3 == null || (suggestedPost2 = message3.suggested_post) == null) {
+            f7 = 11.0f;
+            i10 = 1;
+            i11 = 0;
+            i12 = 0;
+        } else {
+            f7 = 11.0f;
+            TL_stars.StarsAmount starsAmount = suggestedPost.price;
+            i11 = 0;
+            TL_stars.StarsAmount starsAmount2 = suggestedPost2.price;
+            sf.a l10 = sf.a.l(starsAmount);
+            sf.a l11 = sf.a.l(starsAmount2);
+            if (l10 == l11) {
+                i10 = 1;
+            } else {
+                if (l10 == null || l11 == null) {
+                    i10 = 1;
+                } else {
+                    i10 = 1;
+                    if (l10.a == l11.a) {
+                    }
+                }
+                i14 = 0;
+                i12 = i14 ^ 1;
+                if (suggestedPost.schedule_date != suggestedPost2.schedule_date) {
+                    i12 |= 2;
+                }
+                if (!TextUtils.equals(kjVar.v, kjVar.C.v)) {
+                    i12 |= 4;
+                }
+                if (!TextUtils.equals(kjVar.z, kjVar.C.z)) {
+                    i12 |= 4;
+                }
+                messageMedia = message2.media;
+                messageMedia2 = message3.media;
+                if (messageMedia instanceof TLRPC.TL_messageMediaEmpty) {
+                    messageMedia = null;
+                }
+                if (messageMedia2 instanceof TLRPC.TL_messageMediaEmpty) {
+                    messageMedia2 = null;
+                }
+                if (messageMedia == null && messageMedia2 != null) {
+                    if (messageMedia.getClass() == messageMedia2.getClass()) {
+                        TLRPC.Photo photo = messageMedia.photo;
+                        if (photo == null || (r11 = messageMedia2.photo) == null) {
+                        }
+                    }
+                    i12 |= 8;
+                }
+            }
+            i14 = i10;
+            i12 = i14 ^ 1;
+            if (suggestedPost.schedule_date != suggestedPost2.schedule_date) {
+            }
+            if (!TextUtils.equals(kjVar.v, kjVar.C.v)) {
+            }
+            if (!TextUtils.equals(kjVar.z, kjVar.C.z)) {
+            }
+            messageMedia = message2.media;
+            messageMedia2 = message3.media;
+            if (messageMedia instanceof TLRPC.TL_messageMediaEmpty) {
+            }
+            if (messageMedia2 instanceof TLRPC.TL_messageMediaEmpty) {
+            }
+            if (messageMedia == null) {
+            }
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        if (i12 != 0) {
+            org.telegram.messenger.kj kjVar3 = kjVar.C;
+            if (kjVar3 != null) {
+                org.telegram.messenger.o5.l(org.telegram.messenger.e20.s0, kjVar3.Z0());
+            }
+            StringBuilder sb2 = new StringBuilder();
+            int i17 = i12 & 4;
+            int i18 = i12 & 2;
+            int i19 = i12 & 8;
+            int i20 = i12 & 1;
+            int i21 = (i17 != 0 ? 1 : i11) + (i18 != 0 ? 1 : i11) + (i19 != 0 ? 1 : i11) + (i20 != 0 ? 1 : i11);
+            if (i20 != 0) {
+                c(sb2, 2131744367, i21 == 1 ? 1 : i11);
+                i13 = 1;
+            } else {
+                i13 = i11;
+            }
+            if (i18 != 0) {
+                i13++;
+                c(sb2, 2131744365, i21 == i13 ? 1 : i11);
+            }
+            if (i17 != 0) {
+                i13++;
+                c(sb2, 2131744366, i21 == i13 ? 1 : i11);
+            }
+            if (i19 != 0) {
+                c(sb2, 2131744368, i21 == i13 + 1 ? 1 : i11);
+            }
+            if (kjVar.P3()) {
+                Object[] objArr = new Object[1];
+                objArr[i11] = sb2;
+                spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.a0(null, null, 2131744369, objArr));
+            } else {
+                Object[] objArr2 = new Object[2];
+                objArr2[i11] = l4;
+                objArr2[1] = sb2;
+                spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.a0(null, null, 2131744370, objArr2));
+            }
+        } else if (kjVar.P3()) {
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.L0(2131744364, null));
+        } else {
+            Object[] objArr3 = new Object[i10];
+            objArr3[i11] = l4;
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.a0(null, null, 2131744372, objArr3));
+        }
+        this.b = new StaticLayout(org.telegram.messenger.i0.U2(spannableStringBuilder), textPaint, max, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        int i22 = i11;
+        for (int i23 = i22; i23 < this.b.getLineCount(); i23++) {
+            i22 = (int) Math.max(i22, this.b.getLineWidth(i23));
+        }
+        int height = this.b.getHeight() + this.g;
+        this.g = height;
+        this.g = org.telegram.messenger.i0.L(5.0f) + height;
+        int D = org.telegram.messenger.m5.D(24.0f, 2, Math.max(L, i22));
+        this.h = D;
+        this.d = (D - max) / 2;
+        this.e = (D - L) / 2;
+        this.f = (int) (org.telegram.messenger.i0.L(f7) + r1 + f10);
     }
 }

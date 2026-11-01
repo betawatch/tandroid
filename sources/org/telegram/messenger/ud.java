@@ -1,54 +1,41 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ud implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ int b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ ud(MediaController mediaController, int i10, int i11) {
-        this.a = i11;
-        this.b = mediaController;
-        this.c = i10;
+    public /* synthetic */ ud(int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = i10;
+        this.c = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
         int i11 = this.c;
-        MediaController mediaController = this.b;
+        int i12 = this.b;
         switch (i10) {
             case 0:
-                zs.f(mediaController.g1).k(zs.n2, Integer.valueOf(mediaController.f1), Integer.valueOf(i11 == 2 ? 1 : 0));
+                String[] strArr = MediaController.U1;
+                at.f(i12).k(at.m2, Integer.valueOf(i11));
+                break;
+            case 1:
+                ConnectionsManager.getInstance(i12).cancelRequest(i11, true);
+                break;
+            case 2:
+                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(i12, i11);
+                break;
+            case 3:
+                ConnectionsManager.lambda$onConnectionStateChanged$15(i12, i11);
                 break;
             default:
-                if (i11 == -1) {
-                    if (mediaController.I(mediaController.u0) && !mediaController.H()) {
-                        mediaController.R(mediaController.u0, true);
-                    }
-                    mediaController.U = 0;
-                    mediaController.X = 0;
-                } else if (i11 == 1) {
-                    mediaController.X = 2;
-                    if (mediaController.Y) {
-                        mediaController.Y = false;
-                        if (mediaController.I(mediaController.u0) && mediaController.H()) {
-                            mediaController.S(mediaController.u0);
-                        }
-                    }
-                } else if (i11 == -3) {
-                    mediaController.X = 1;
-                } else if (i11 == -2) {
-                    mediaController.X = 0;
-                    if (mediaController.I(mediaController.u0) && !mediaController.H()) {
-                        mediaController.R(mediaController.u0, true);
-                        mediaController.Y = true;
-                    }
-                } else {
-                    String[] strArr = MediaController.U1;
-                }
-                mediaController.n0();
+                ConnectionsManager.getInstance(i12).cancelRequest(i11, true);
                 break;
         }
     }

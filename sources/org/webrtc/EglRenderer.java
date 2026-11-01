@@ -16,14 +16,14 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.f8;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.bk0;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.zj0;
 import org.webrtc.EglBase;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.GlUtil;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public class EglRenderer implements VideoSink {
     private static final long LOG_INTERVAL_SEC = 4;
@@ -58,7 +58,7 @@ public class EglRenderer implements VideoSink {
     private int rotation;
     private boolean usePresentationTimeStamp;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public class EglSurfaceCreation implements Runnable {
         private final boolean background;
         private Object surface;
@@ -116,17 +116,17 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface ErrorCallback {
         void onGlOutOfMemory();
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface FrameListener {
         void onFrame(Bitmap bitmap);
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static class FrameListenerAndParams {
         public final boolean applyFpsReduction;
         public final RendererCommon.GlDrawer drawer;
@@ -141,7 +141,7 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static class HandlerWithExceptionCallback extends Handler {
         private final Runnable exceptionCallback;
 
@@ -508,7 +508,7 @@ public class EglRenderer implements VideoSink {
                     }
                 });
                 this.renderThreadHandler = handlerWithExceptionCallback;
-                handlerWithExceptionCallback.post(new u41(this, context, iArr, 10));
+                handlerWithExceptionCallback.post(new v41(this, context, iArr, 10));
                 this.renderThreadHandler.post(this.eglSurfaceCreationRunnable);
             } catch (Throwable th2) {
                 throw th2;
@@ -602,7 +602,7 @@ public class EglRenderer implements VideoSink {
                 Handler handler = this.renderThreadHandler;
                 if (handler != null) {
                     handler.removeCallbacks(this.eglSurfaceCreationRunnable);
-                    this.renderThreadHandler.postAtFrontOfQueue(new bk0(this, z10, runnable, 13));
+                    this.renderThreadHandler.postAtFrontOfQueue(new zj0(this, z10, runnable, 13));
                 } else if (runnable != null) {
                     runnable.run();
                 }
@@ -622,7 +622,7 @@ public class EglRenderer implements VideoSink {
                 if (Thread.currentThread() == this.renderThreadHandler.getLooper().getThread()) {
                     throw new RuntimeException("removeFrameListener must not be called on the render thread.");
                 }
-                postToRenderThread(new u41(this, countDownLatch, frameListener, 11));
+                postToRenderThread(new v41(this, countDownLatch, frameListener, 11));
                 ThreadUtils.awaitUninterruptibly(countDownLatch);
             } catch (Throwable th2) {
                 throw th2;

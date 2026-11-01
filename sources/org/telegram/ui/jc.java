@@ -2,16 +2,16 @@ package org.telegram.ui;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class jc implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public boolean b = false;
-    public final /* synthetic */ org.telegram.messenger.us c;
+    public final /* synthetic */ org.telegram.messenger.vs c;
 
-    public /* synthetic */ jc(org.telegram.messenger.us usVar, int i10) {
+    public /* synthetic */ jc(org.telegram.messenger.vs vsVar, int i10) {
         this.a = i10;
-        this.c = usVar;
+        this.c = vsVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -27,19 +27,19 @@ public final class jc implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 1:
-                tn0 tn0Var = (tn0) this.c;
-                tn0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tn0Var.X.invalidate();
-                if (!this.b && tn0Var.Y > 0.5f) {
+                rn0 rn0Var = (rn0) this.c;
+                rn0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rn0Var.X.invalidate();
+                if (!this.b && rn0Var.Y > 0.5f) {
                     this.b = true;
                     break;
                 }
                 break;
             case 2:
-                m91 m91Var = (m91) this.c;
-                m91Var.j2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m91Var.i2.invalidate();
-                if (!this.b && m91Var.j2 > 0.5f) {
+                k91 k91Var = (k91) this.c;
+                k91Var.j2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k91Var.i2.invalidate();
+                if (!this.b && k91Var.j2 > 0.5f) {
                     this.b = true;
                     break;
                 }

@@ -6,7 +6,7 @@ import android.text.InputFilter;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.mt;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class m extends LinearLayout {
     public final mt a;
@@ -42,14 +42,14 @@ public final class m extends LinearLayout {
         a7.m(mtVar, 30, t6.Ke, p6Var);
         a7.m(mtVar, 36, t6.jg, p6Var);
         mtVar.setBackground(null);
-        mtVar.setHint(cd.L0(2131753477, null));
+        mtVar.setHint(dd.L0(2131753477, null));
         mtVar.addTextChangedListener(new a1(this, 6));
         mtVar.setImeOptions(6);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
         a7.V(textView, t6.j5, p6Var);
-        if (!cd.X) {
+        if (!dd.X) {
             addView(textView, b6.t(-2, -2, 16, 20, 0, 0, 0));
             addView(mtVar, b6.t(-1, -2, 16, 36, 0, 20, 0));
         } else {

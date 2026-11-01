@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dl implements q4, ik0, r81 {
+public final /* synthetic */ class dl implements q4, jk0, s81 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
@@ -33,7 +33,7 @@ public final /* synthetic */ class dl implements q4, ik0, r81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r81
+    @Override // org.telegram.ui.Components.s81
     public void c(float f7) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         yl ylVar = chatAttachAlertPhotoLayout.P;
@@ -44,7 +44,7 @@ public final /* synthetic */ class dl implements q4, ik0, r81 {
         chatAttachAlertPhotoLayout.u0(true);
     }
 
-    @Override // org.telegram.ui.Components.ik0
+    @Override // org.telegram.ui.Components.jk0
     public boolean f(int i10, View view) {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
@@ -58,10 +58,10 @@ public final /* synthetic */ class dl implements q4, ik0, r81 {
                 return true;
             }
             if (view instanceof org.telegram.ui.Cells.v5) {
-                xk0 xk0Var = chatAttachAlertPhotoLayout.I;
+                yk0 yk0Var = chatAttachAlertPhotoLayout.I;
                 boolean z11 = !((org.telegram.ui.Cells.v5) view).a();
                 chatAttachAlertPhotoLayout.K = z11;
-                xk0Var.d(i10, view, z11);
+                yk0Var.d(i10, view, z11);
             }
         }
         return false;

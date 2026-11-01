@@ -16,9 +16,9 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ph extends uu0 {
+public final class ph extends vu0 {
     public int f0;
     public final RectF g0;
     public boolean h0;
@@ -34,7 +34,7 @@ public final class ph extends uu0 {
         this.j0 = new nh(this, this);
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float f7;
         int L;
@@ -204,7 +204,7 @@ public final class ph extends uu0 {
                 }
                 canvas.save();
                 fVar.setBounds(0, view.getTop(), getMeasuredWidth(), getMeasuredHeight());
-                canvas.clipPath(fVar.M.k);
+                canvas.clipPath(fVar.P.k);
                 fVar.draw(canvas);
                 boolean drawChild2 = super.drawChild(canvas, view, j10);
                 canvas.restore();
@@ -369,7 +369,7 @@ public final class ph extends uu0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         nh nhVar = this.j0;
@@ -380,7 +380,7 @@ public final class ph extends uu0 {
         biVar.J2.setAdjustPanLayoutHelper(nhVar);
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.j0.d();
@@ -425,7 +425,7 @@ public final class ph extends uu0 {
     /* JADX WARN: Removed duplicated region for block: B:77:0x012b  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0156  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x015f  */
-    @Override // org.telegram.ui.Components.uu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -526,7 +526,7 @@ public final class ph extends uu0 {
                 if (i26 == -1) {
                     i26 = 51;
                 }
-                int i27 = i26 & org.telegram.messenger.zs.x1;
+                int i27 = i26 & org.telegram.messenger.at.x1;
                 int i28 = i26 & 7;
                 if (i28 == 1) {
                     i14 = ((i21 - measuredWidth) / 2) + layoutParams.leftMargin;
@@ -832,7 +832,7 @@ public final class ph extends uu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.uu0
+    @Override // org.telegram.ui.Components.vu0
     public final void H(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
     }
 }

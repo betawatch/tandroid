@@ -13,10 +13,10 @@ import android.view.animation.AnimationUtils;
 import j$.util.function.Consumer$-CC;
 import java.util.function.Consumer;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Consumer {
     public final /* synthetic */ i0 a;
@@ -77,7 +77,7 @@ public final /* synthetic */ class a0 implements Consumer {
             g0 g0Var = i0Var.h;
             if (g0Var != null) {
                 i0Var.e0 = true;
-                i0.b0(g0Var);
+                i0.c0(g0Var);
             }
         }
         if (i0Var.h == null || Float.isNaN(i0Var.K)) {
@@ -164,15 +164,15 @@ public final /* synthetic */ class a0 implements Consumer {
         float scaleY = mVar2.getScaleY() > 0.01f ? mVar2.getScaleY() : 1.0f;
         float width = mVar2.getWidth();
         if (i0Var.V == null) {
-            LinearGradient i02 = i0.i0(false);
-            i0Var.V = i02;
-            paint4.setShader(i02);
+            LinearGradient j02 = i0.j0(false);
+            i0Var.V = j02;
+            paint4.setShader(j02);
             iArr3 = iArr6;
             PorterDuff.Mode mode = PorterDuff.Mode.DST_IN;
             paint4.setXfermode(new PorterDuffXfermode(mode));
-            LinearGradient i03 = i0.i0(true);
-            i0Var.N = i03;
-            paint3.setShader(i03);
+            LinearGradient j03 = i0.j0(true);
+            i0Var.N = j03;
+            paint3.setShader(j03);
             paint3.setXfermode(new PorterDuffXfermode(mode));
             paint6.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         } else {
@@ -198,7 +198,7 @@ public final /* synthetic */ class a0 implements Consumer {
         mVar2.getLocationOnScreen(i0Var.j0);
         float scaleX = (r0[0] - r3[0]) / mVar2.getScaleX();
         rectF3.set((i0Var.a0 / scaleY) + scaleX, (i0Var.b0 / scaleY) + f24, ((qVar.getWidth() - i0Var.a0) / scaleY) + scaleX, ((qVar.getHeight() - i0Var.c0) / scaleY) + f24);
-        paint6.setAlpha(zs.e4);
+        paint6.setAlpha(at.e4);
         canvas3.drawRoundRect(rectF3, rectF3.height() / 2.0f, rectF3.height() / 2.0f, paint6);
         matrix.setScale(1.0f, L - f24);
         matrix.postTranslate(0.0f, f24);

@@ -7,11 +7,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.qz;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.rz;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j5 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class j5 implements Runnable {
                     try {
                         String str3 = document.mime_type;
                         String lowerCase = str3 == null ? "" : str3.toLowerCase();
-                        bitmap = lowerCase.startsWith("image/") ? hc.K(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? qz.r(1, str) : null;
+                        bitmap = lowerCase.startsWith("image/") ? ic.K(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? rz.r(1, str) : null;
                         if (bitmap != null) {
                             try {
                                 ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
@@ -77,7 +77,7 @@ public final /* synthetic */ class j5 implements Runnable {
                                         document.attributes.add(tL_documentAttributeImageSize);
                                     }
                                 }
-                                TLRPC.PhotoSize Z = hc.Z(bitmap, 320.0f, 320.0f, 80, false);
+                                TLRPC.PhotoSize Z = ic.Z(bitmap, 320.0f, 320.0f, 80, false);
                                 if (Z != null) {
                                     document.thumbs.clear();
                                     document.thumbs.add(Z);
@@ -119,9 +119,9 @@ public final /* synthetic */ class j5 implements Runnable {
                     String str5 = options.outMimeType;
                     boolean z10 = str5 != null && (str5.equalsIgnoreCase("image/jpeg") || str5.equalsIgnoreCase("image/jpg"));
                     float Z0 = org.telegram.messenger.i0.Z0(false);
-                    Bitmap K2 = hc.K(str4, null, Z0, Z0, true);
+                    Bitmap K2 = ic.K(str4, null, Z0, Z0, true);
                     if (K2 == null) {
-                        K2 = hc.K(str4, null, 800.0f, 800.0f, true);
+                        K2 = ic.K(str4, null, 800.0f, 800.0f, true);
                     }
                     if (K2 != null) {
                         File file = new File(b8.z(4), "rich_jpeg_" + Math.abs(str4.hashCode()) + ".jpg");

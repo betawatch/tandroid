@@ -1,266 +1,73 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class yr0 implements es0 {
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean A() {
-        return false;
+public final class yr0 extends ImageView {
+    public int a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public org.telegram.ui.Components.v61 e;
+    public final org.telegram.ui.Components.gr f;
+    public ValueAnimator h;
+    public final /* synthetic */ PhotoViewer n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yr0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.n = photoViewer;
+        this.a = 0;
+        this.b = false;
+        this.c = false;
+        this.d = false;
+        this.f = org.telegram.ui.Components.gr.i;
+        setAlpha(0.0f);
     }
 
-    @Override // org.telegram.ui.es0
-    public CharSequence C(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.es0
-    public gs0 E(org.telegram.messenger.jj jjVar, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.es0
-    public int H() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean I() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean K() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean L() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean N() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean O() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean Q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public int R(Object obj) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.es0
-    public int S(int i10) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean T() {
-        return !(this instanceof sl);
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean U() {
-        return !(this instanceof ul);
-    }
-
-    @Override // org.telegram.ui.es0
-    public org.telegram.messenger.jj V() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean Z() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public String b0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.es0
-    public ArrayList c() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.es0
-    public CharSequence c0(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean g() {
-        return !(this instanceof sl);
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public org.telegram.messenger.kc j(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.es0
-    public int k(int i10, org.telegram.messenger.x20 x20Var) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean l() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean r() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean t() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean u() {
-        return !(this instanceof org.telegram.ui.Components.sl);
-    }
-
-    @Override // org.telegram.ui.es0
-    public HashMap v() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ boolean w() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean x(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.es0
-    public int y() {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.es0
-    public boolean z() {
-        return !(this instanceof org.telegram.ui.Components.th);
-    }
-
-    @Override // org.telegram.ui.es0
-    public void B(int i10) {
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ void F(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void M(org.telegram.messenger.x20 x20Var) {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void X(int i10) {
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ void Y(int i10) {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void a0(int i10) {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void e(CharSequence charSequence) {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void D() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void G() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ void J() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ void W() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void d() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ void i() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void n() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void f(String str, String str2, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.es0
-    public void o(int i10, org.telegram.messenger.x20 x20Var, boolean z10, int i11, int i12, boolean z11) {
+    public static void a(yr0 yr0Var) {
+        PhotoViewer photoViewer = yr0Var.n;
+        org.telegram.ui.Components.v61 v61Var = photoViewer.F2;
+        if (v61Var == null || v61Var.U() == -9223372036854775807L) {
+            ValueAnimator valueAnimator = yr0Var.h;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                yr0Var.h = null;
+            }
+            yr0Var.setAlpha(0.0f);
+            return;
+        }
+        long max = Math.max(0L, photoViewer.F2.U() - photoViewer.F2.S());
+        float max2 = 1.0f - Math.max(Math.min(max / 250.0f, 1.0f), 0.0f);
+        if (max2 <= 0.0f) {
+            ValueAnimator valueAnimator2 = yr0Var.h;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+                yr0Var.h = null;
+            }
+            yr0Var.setAlpha(0.0f);
+            return;
+        }
+        if (!photoViewer.F2.d0()) {
+            ValueAnimator valueAnimator3 = yr0Var.h;
+            if (valueAnimator3 != null) {
+                valueAnimator3.cancel();
+                yr0Var.h = null;
+            }
+            yr0Var.setAlpha(max2);
+            return;
+        }
+        if (yr0Var.h == null) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(max2, 1.0f);
+            yr0Var.h = ofFloat;
+            ofFloat.addUpdateListener(new a3(yr0Var, 22));
+            yr0Var.h.setDuration(max);
+            yr0Var.h.setInterpolator(yr0Var.f);
+            yr0Var.h.start();
+            yr0Var.setAlpha(max2);
+        }
     }
 }

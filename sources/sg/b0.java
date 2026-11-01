@@ -14,28 +14,28 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.uz;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.eb0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.iv;
-import org.telegram.ui.Components.iv0;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.wb;
-import org.telegram.ui.d21;
-import org.telegram.ui.g21;
-import org.telegram.ui.k21;
-import org.telegram.ui.s21;
+import org.telegram.ui.b21;
+import org.telegram.ui.e21;
+import org.telegram.ui.i21;
+import org.telegram.ui.q21;
+import org.telegram.ui.t11;
 import org.telegram.ui.un;
-import org.telegram.ui.v11;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final int[] A;
@@ -55,7 +55,7 @@ public final class b0 {
     public boolean k;
     public boolean l;
     public final w m;
-    public final mj0 n;
+    public final nj0 n;
     public final List o;
     public eb0 p;
     public boolean q;
@@ -71,10 +71,10 @@ public final class b0 {
     public final RectF f = new RectF();
     public final RectF i = new RectF();
 
-    public b0(int i10, k2 k2Var, ArrayList arrayList, HashSet hashSet, mj0 mj0Var, p6 p6Var, boolean z10) {
+    public b0(int i10, k2 k2Var, ArrayList arrayList, HashSet hashSet, nj0 nj0Var, p6 p6Var, boolean z10) {
         new Path();
         this.A = new int[2];
-        this.B = new e2.f(null);
+        this.B = new e2.f((int[]) null);
         this.D = new HashSet();
         this.E = new ArrayList();
         int i11 = 0;
@@ -83,7 +83,7 @@ public final class b0 {
         this.o = arrayList;
         this.r = k2Var;
         this.s = p6Var;
-        Context context = k2Var != null ? k2Var.getContext() : mj0Var.getContext();
+        Context context = k2Var != null ? k2Var.getContext() : nj0Var.getContext();
         ph.k kVar = new ph.k(this, context);
         this.c = kVar;
         kVar.setOnClickListener(new rh.s(this, 10));
@@ -92,25 +92,25 @@ public final class b0 {
         a0 a0Var = new a0(this, context);
         this.a = a0Var;
         boolean z12 = z11;
-        w wVar = new w(this, k2Var, context, mj0Var.getWindowType(), i10 != 1, p6Var, mj0Var, k2Var);
+        w wVar = new w(this, k2Var, context, nj0Var.getWindowType(), i10 != 1, p6Var, nj0Var, k2Var);
         this.m = wVar;
         wVar.setOutlineProvider(new x(this));
         wVar.setClipToOutline(true);
-        boolean z13 = mj0Var.g1;
-        boolean z14 = mj0Var.h1;
+        boolean z13 = nj0Var.g1;
+        boolean z14 = nj0Var.h1;
         if (wVar.L1 != z13) {
             wVar.L1 = z13;
             wVar.M1 = z14;
-            g21 g21Var = wVar.h0;
-            if (g21Var != null) {
-                g21Var.invalidate();
+            e21 e21Var = wVar.h0;
+            if (e21Var != null) {
+                e21Var.invalidate();
             }
-            v11 v11Var = wVar.i0;
-            if (v11Var != null) {
-                v11Var.invalidate();
+            t11 t11Var = wVar.i0;
+            if (t11Var != null) {
+                t11Var.invalidate();
             }
         }
-        wVar.setOnLongPressedListener(new r2.y(mj0Var, 7));
+        wVar.setOnLongPressedListener(new r2.y(nj0Var, 7));
         wVar.setOnRecentClearedListener(new oa.d(20));
         wVar.setRecentReactions(arrayList);
         wVar.setSelectedReactions((HashSet<o0>) hashSet);
@@ -128,11 +128,11 @@ public final class b0 {
         float f7 = i13;
         kVar.addView(a0Var, b6.d(-1, -1.0f, i10 == 5 ? 85 : 48, f7, f7, f7, 16.0f));
         kVar.setClipChildren(false);
-        if (i10 == 1 || (mj0Var.getDelegate() != null && mj0Var.getDelegate().A())) {
-            wVar.setBackgroundDelegate(new org.telegram.ui.web.k0(i12, this, mj0Var));
+        if (i10 == 1 || (nj0Var.getDelegate() != null && nj0Var.getDelegate().A())) {
+            wVar.setBackgroundDelegate(new org.telegram.ui.web.k0(i12, this, nj0Var));
         }
         if (z12) {
-            ((ViewGroup) mj0Var.getParent()).addView(kVar);
+            ((ViewGroup) nj0Var.getParent()).addView(kVar);
         } else {
             WindowManager.LayoutParams b10 = b(false);
             WindowManager windowManager = org.telegram.messenger.i0.W(context).getWindowManager();
@@ -140,42 +140,42 @@ public final class b0 {
             org.telegram.messenger.i0.x3(windowManager, kVar, b10);
             windowManager.addView(kVar, b10);
         }
-        this.n = mj0Var;
-        mj0Var.setOnSwitchedToLoopView(new t(this, i11));
-        mj0Var.c1 = true;
-        mj0Var.invalidate();
-        org.telegram.messenger.i0.h3(new rh.o(23, this, mj0Var), 50L);
+        this.n = nj0Var;
+        nj0Var.setOnSwitchedToLoopView(new t(this, i11));
+        nj0Var.c1 = true;
+        nj0Var.invalidate();
+        org.telegram.messenger.i0.h3(new rh.n(24, this, nj0Var), 50L);
         if (i10 != 5) {
-            zs.e().k(zs.j1, 7);
+            at.e().k(at.j1, 7);
         }
     }
 
     public static void a(b0 b0Var, boolean z10) {
         View view;
-        mj0 mj0Var = b0Var.n;
+        nj0 nj0Var = b0Var.n;
         w wVar = b0Var.m;
         if (b0Var.E.isEmpty()) {
             b0Var.h(false);
             e0.a();
             b0Var.B.e();
             wVar.setEnterAnimationInProgress(false);
-            g21 g21Var = wVar.h0;
+            e21 e21Var = wVar.h0;
             if (z10) {
                 wVar.d0.m(false);
-                g21Var.invalidate();
-                ArrayList arrayList = g21Var.h3;
-                g21Var.g1();
+                e21Var.invalidate();
+                ArrayList arrayList = e21Var.h3;
+                e21Var.g1();
                 wVar.f0.b();
                 wVar.sendAccessibilityEvent(32);
-                mj0Var.setImportantForAccessibility(4);
+                nj0Var.setImportantForAccessibility(4);
                 int i10 = 0;
                 while (true) {
-                    if (i10 >= g21Var.getChildCount()) {
+                    if (i10 >= e21Var.getChildCount()) {
                         view = null;
                         break;
                     } else {
-                        if (g21Var.getChildAt(i10) instanceof s21) {
-                            view = g21Var.getChildAt(i10);
+                        if (e21Var.getChildAt(i10) instanceof q21) {
+                            view = e21Var.getChildAt(i10);
                             break;
                         }
                         i10++;
@@ -186,54 +186,54 @@ public final class b0 {
                 } else {
                     wVar.performAccessibilityAction(64, null);
                 }
-                if (mj0Var.getPullingLeftProgress() > 0.0f) {
-                    mj0Var.O0 = false;
-                    ValueAnimator valueAnimator = mj0Var.y0;
+                if (nj0Var.getPullingLeftProgress() > 0.0f) {
+                    nj0Var.O0 = false;
+                    ValueAnimator valueAnimator = nj0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    mj0Var.B0 = 0.0f;
-                    fg.i iVar = mj0Var.S;
+                    nj0Var.B0 = 0.0f;
+                    fg.i iVar = nj0Var.S;
                     if (iVar != null) {
                         iVar.invalidate();
                     }
-                    mj0Var.invalidate();
+                    nj0Var.invalidate();
                 } else {
-                    mj0Var.O0 = true;
-                    ValueAnimator valueAnimator2 = mj0Var.y0;
+                    nj0Var.O0 = true;
+                    ValueAnimator valueAnimator2 = nj0Var.y0;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                     }
-                    mj0Var.B0 = 0.0f;
-                    fg.i iVar2 = mj0Var.S;
+                    nj0Var.B0 = 0.0f;
+                    fg.i iVar2 = nj0Var.S;
                     if (iVar2 != null) {
                         iVar2.invalidate();
                     }
-                    mj0Var.invalidate();
+                    nj0Var.invalidate();
                 }
-                v11 v11Var = wVar.i0;
+                t11 t11Var = wVar.i0;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    k21 k21Var = (k21) arrayList.get(i11);
-                    for (int i12 = 0; i12 < k21Var.O.size(); i12++) {
-                        if (((s21) k21Var.O.get(i12)).b) {
-                            ((s21) k21Var.O.get(i12)).b = false;
-                            ((s21) k21Var.O.get(i12)).invalidate();
-                            k21Var.k();
+                    i21 i21Var = (i21) arrayList.get(i11);
+                    for (int i12 = 0; i12 < i21Var.O.size(); i12++) {
+                        if (((q21) i21Var.O.get(i12)).b) {
+                            ((q21) i21Var.O.get(i12)).b = false;
+                            ((q21) i21Var.O.get(i12)).invalidate();
+                            i21Var.k();
                         }
                     }
                 }
-                g21Var.invalidate();
-                for (int i13 = 0; i13 < v11Var.h3.size(); i13++) {
-                    k21 k21Var2 = (k21) v11Var.h3.get(i13);
-                    for (int i14 = 0; i14 < k21Var2.O.size(); i14++) {
-                        if (((s21) k21Var2.O.get(i14)).b) {
-                            ((s21) k21Var2.O.get(i14)).b = false;
-                            ((s21) k21Var2.O.get(i14)).invalidate();
-                            k21Var2.k();
+                e21Var.invalidate();
+                for (int i13 = 0; i13 < t11Var.h3.size(); i13++) {
+                    i21 i21Var2 = (i21) t11Var.h3.get(i13);
+                    for (int i14 = 0; i14 < i21Var2.O.size(); i14++) {
+                        if (((q21) i21Var2.O.get(i14)).b) {
+                            ((q21) i21Var2.O.get(i14)).b = false;
+                            ((q21) i21Var2.O.get(i14)).invalidate();
+                            i21Var2.k();
                         }
                     }
                 }
-                v11Var.invalidate();
+                t11Var.invalidate();
                 b0Var.i();
                 b0Var.a.invalidate();
             }
@@ -241,8 +241,8 @@ public final class b0 {
     }
 
     public static void g(View view, float f7) {
-        if (view instanceof s21) {
-            ((s21) view).setAnimatedScale(f7);
+        if (view instanceof q21) {
+            ((q21) view).setAnimatedScale(f7);
         } else if (view instanceof iv) {
             view.setScaleX(f7);
             view.setScaleY(f7);
@@ -281,17 +281,17 @@ public final class b0 {
         int[] iArr = this.A;
         a0 a0Var = this.a;
         RectF rectF = this.f;
-        mj0 mj0Var = this.n;
-        rectF.set(mj0Var.x);
-        this.e = mj0Var.D;
+        nj0 nj0Var = this.n;
+        rectF.set(nj0Var.x);
+        this.e = nj0Var.D;
         int[] iArr2 = new int[2];
         if (z10) {
-            mj0Var.getLocationOnScreen(iArr);
+            nj0Var.getLocationOnScreen(iArr);
         }
         kVar.getLocationOnScreen(iArr2);
         int i11 = 0;
-        float topOffset = mj0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - org.telegram.messenger.i0.L(44.0f)) - org.telegram.messenger.i0.L(52.0f)) - (wVar.O0 ? org.telegram.messenger.i0.L(26.0f) : 0));
-        if (mj0Var.F0) {
+        float topOffset = nj0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - org.telegram.messenger.i0.L(44.0f)) - org.telegram.messenger.i0.L(52.0f)) - (wVar.O0 ? org.telegram.messenger.i0.L(26.0f) : 0));
+        if (nj0Var.F0) {
             topOffset = (iArr[1] - iArr2[1]) - org.telegram.messenger.i0.L(12.0f);
         }
         if (a0Var.getMeasuredHeight() + topOffset > kVar.getMeasuredHeight() - org.telegram.messenger.i0.L(32.0f)) {
@@ -327,9 +327,9 @@ public final class b0 {
         float y3 = (iArr[r18] - iArr2[r18]) - a0Var.getY();
         this.h = y3;
         rectF.offset(x10, y3);
-        mj0Var.setCustomEmojiEnterProgress(this.j);
+        nj0Var.setCustomEmojiEnterProgress(this.j);
         if (z10) {
-            this.w = (tz.o() < 2 || !sc.e(8200)) ? false : r18;
+            this.w = (uz.o() < 2 || !tc.e(8200)) ? false : r18;
             this.k = false;
         } else {
             this.w = false;
@@ -354,11 +354,11 @@ public final class b0 {
             valueAnimator = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
         } else {
             float f10 = z10 ? 1.0f : 0.0f;
-            iv0 iv0Var = new iv0();
-            iv0Var.a = 0;
-            iv0Var.b = 0;
-            iv0Var.setFloatValues(new float[]{f7, f10});
-            valueAnimator = iv0Var;
+            jv0 jv0Var = new jv0();
+            jv0Var.a = 0;
+            jv0Var.b = 0;
+            jv0Var.setFloatValues(new float[]{f7, f10});
+            valueAnimator = jv0Var;
         }
         this.x = valueAnimator;
         valueAnimator.addUpdateListener(new jg.o0(10, this, z10));
@@ -371,7 +371,7 @@ public final class b0 {
             this.x.setInterpolator(gr.h);
         } else if (this.w) {
             this.x.setDuration(450L);
-            z20.j(0.5f, this.x);
+            a30.j(0.5f, this.x);
         } else {
             this.x.setDuration(350L);
             this.x.setInterpolator(gr.f);
@@ -379,7 +379,7 @@ public final class b0 {
         a0Var.invalidate();
         h(true);
         if (z10) {
-            mj0Var.setCustomEmojiReactionsBackground(false);
+            nj0Var.setCustomEmojiReactionsBackground(false);
             ValueAnimator valueAnimator3 = this.x;
             Objects.requireNonNull(valueAnimator3);
             v vVar = new v(valueAnimator3, i11);
@@ -391,13 +391,13 @@ public final class b0 {
             }
             e0.c = vVar;
         } else {
-            mj0Var.O0 = true;
-            mj0Var.invalidate();
+            nj0Var.O0 = true;
+            nj0Var.invalidate();
             this.x.setStartDelay(30L);
             this.x.start();
         }
         HashSet hashSet = e0.a;
-        com.google.android.gms.internal.cast.c0 c0Var = hc.D().p;
+        com.google.android.gms.internal.cast.c0 c0Var = ic.D().p;
         if (((CountDownLatch) c0Var.c) == null) {
             z12 = true;
             c0Var.c = new CountDownLatch(1);
@@ -413,18 +413,18 @@ public final class b0 {
         if (this.q) {
             return;
         }
-        mj0 mj0Var = this.n;
-        if (mj0Var != null) {
-            ValueAnimator valueAnimator = mj0Var.y0;
+        nj0 nj0Var = this.n;
+        if (nj0Var != null) {
+            ValueAnimator valueAnimator = nj0Var.y0;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
-            mj0Var.B0 = 0.0f;
-            fg.i iVar = mj0Var.S;
+            nj0Var.B0 = 0.0f;
+            fg.i iVar = nj0Var.S;
             if (iVar != null) {
                 iVar.invalidate();
             }
-            mj0Var.invalidate();
+            nj0Var.invalidate();
         }
         wb.e();
         this.q = true;
@@ -433,7 +433,7 @@ public final class b0 {
         if (this.v) {
             k2 k2Var = this.r;
             if (k2Var instanceof un) {
-                ((un) k2Var).ja(true, true);
+                ((un) k2Var).oa(true, true);
             }
         }
     }
@@ -450,7 +450,7 @@ public final class b0 {
         if (this.v) {
             k2 k2Var = this.r;
             if (k2Var instanceof un) {
-                ((un) k2Var).ja(true, true);
+                ((un) k2Var).oa(true, true);
             }
         }
     }
@@ -458,7 +458,7 @@ public final class b0 {
     public final void f() {
         int i10 = 1;
         if (this.y != 5) {
-            zs.e().k(zs.k1, 7);
+            at.e().k(at.k1, 7);
         }
         org.telegram.messenger.i0.g3(new t(this, i10));
     }
@@ -482,16 +482,16 @@ public final class b0 {
         int i10 = 0;
         while (true) {
             w wVar = this.m;
-            g21 g21Var = wVar.h0;
-            g21 g21Var2 = wVar.h0;
-            if (i10 >= g21Var.getChildCount()) {
+            e21 e21Var = wVar.h0;
+            e21 e21Var2 = wVar.h0;
+            if (i10 >= e21Var.getChildCount()) {
                 return;
             }
-            if (g21Var2.getChildAt(i10) instanceof s21) {
-                s21 s21Var = (s21) g21Var2.getChildAt(i10);
-                if (s21Var.y != null) {
-                    s21Var.b = false;
-                    s21Var.invalidate();
+            if (e21Var2.getChildAt(i10) instanceof q21) {
+                q21 q21Var = (q21) e21Var2.getChildAt(i10);
+                if (q21Var.y != null) {
+                    q21Var.b = false;
+                    q21Var.invalidate();
                 }
             }
             i10++;
@@ -503,21 +503,21 @@ public final class b0 {
         HashSet hashSet;
         w wVar = this.m;
         float y3 = wVar.getY();
-        d21 d21Var = wVar.a0;
-        float y10 = d21Var.getY() + y3;
-        g21 g21Var = wVar.h0;
-        int y11 = (int) (g21Var.getY() + y10);
+        b21 b21Var = wVar.a0;
+        float y10 = b21Var.getY() + y3;
+        e21 e21Var = wVar.h0;
+        int y11 = (int) (e21Var.getY() + y10);
         ArrayList arrayList = null;
         int i10 = 0;
         boolean z11 = false;
         while (true) {
-            int childCount = g21Var.getChildCount();
+            int childCount = e21Var.getChildCount();
             rectF = this.i;
             hashSet = this.D;
             if (i10 >= childCount) {
                 break;
             }
-            View childAt = g21Var.getChildAt(i10);
+            View childAt = e21Var.getChildAt(i10);
             if (!hashSet.contains(childAt)) {
                 float measuredHeight = (childAt.getMeasuredHeight() / 2.0f) + childAt.getTop() + y11;
                 if (measuredHeight >= rectF.bottom || measuredHeight <= rectF.top || f7 == 0.0f) {
@@ -533,7 +533,7 @@ public final class b0 {
             }
             i10++;
         }
-        int y12 = (int) (wVar.d0.getY() + d21Var.getY() + wVar.getY());
+        int y12 = (int) (wVar.d0.getY() + b21Var.getY() + wVar.getY());
         for (int i11 = 0; i11 < wVar.d0.b.getChildCount(); i11++) {
             View childAt2 = wVar.d0.b.getChildAt(i11);
             if (!hashSet.contains(childAt2)) {
@@ -583,15 +583,15 @@ public final class b0 {
 
     public final void l() {
         w wVar = this.m;
-        d21 d21Var = wVar.a0;
-        d21 d21Var2 = wVar.a0;
+        b21 b21Var = wVar.a0;
+        b21 b21Var2 = wVar.a0;
         boolean z10 = this.w;
         a0 a0Var = this.a;
-        d21Var.setTranslationX(z10 ? 0.0f : a0Var.f);
-        d21Var2.setTranslationY(a0Var.h);
-        d21Var2.setPivotX(a0Var.r);
-        d21Var2.setPivotY(a0Var.s);
-        d21Var2.setScaleX(a0Var.n);
-        d21Var2.setScaleY(a0Var.n);
+        b21Var.setTranslationX(z10 ? 0.0f : a0Var.f);
+        b21Var2.setTranslationY(a0Var.h);
+        b21Var2.setPivotX(a0Var.r);
+        b21Var2.setPivotY(a0Var.s);
+        b21Var2.setScaleX(a0Var.n);
+        b21Var2.setScaleY(a0Var.n);
     }
 }

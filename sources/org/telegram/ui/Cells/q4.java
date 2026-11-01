@@ -10,11 +10,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.kq;
 import org.telegram.ui.Components.lq;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final org.telegram.ui.Components.t5 D;
@@ -52,7 +52,7 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.k
         super(context);
         this.c = new org.telegram.ui.Components.r8((org.telegram.ui.ActionBar.p6) null);
         new RectF();
-        this.h = d20.s0;
+        this.h = e20.s0;
         gr grVar = gr.h;
         this.D = new org.telegram.ui.Components.t5(this, 0L, 350L, grVar);
         this.F = new org.telegram.ui.Components.t5(this, 0L, 350L, grVar);
@@ -64,7 +64,7 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.k
         addView(g9Var, w7.b6.d(54, 54.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         ag.j3 j3Var = new ag.j3(context, 3);
         this.b = j3Var;
-        zs.i(j3Var);
+        at.i(j3Var);
         org.telegram.ui.ActionBar.a7.V(j3Var, org.telegram.ui.ActionBar.t6.G6, p6Var);
         j3Var.setTextSize(1, 12.0f);
         j3Var.setMaxLines(1);
@@ -106,19 +106,19 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.k
         int i10 = this.h;
         ag.j3 j3Var = this.b;
         if (E) {
-            TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(j10));
+            TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(j10));
             this.e = Z1;
             if (charSequence != null) {
                 j3Var.setText(charSequence);
             } else if (Z1 != null) {
-                j3Var.setText(h20.j(Z1, true));
+                j3Var.setText(i20.j(Z1, true));
             } else {
                 j3Var.setText("");
             }
             r8Var.r(this.e);
             g9Var.e(this.e, r8Var);
         } else {
-            TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-j10));
             if (charSequence != null) {
                 j3Var.setText(charSequence);
             } else if (L0 != null) {
@@ -136,18 +136,18 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.k
 
     public final void b(int i10) {
         int i11;
-        int i12 = vp.D8;
+        int i12 = wp.D8;
         int i13 = i10 & 4;
         int i14 = this.h;
         if (i13 != 0 && this.e != null) {
-            this.e = vp.r1(i14).Z1(Long.valueOf(this.e.id));
+            this.e = wp.r1(i14).Z1(Long.valueOf(this.e.id));
             this.a.invalidate();
             invalidate();
         }
         if (i10 != 0 && (i10 & 256) == 0 && (i10 & 2048) == 0) {
             return;
         }
-        TLRPC.Dialog dialog = (TLRPC.Dialog) vp.r1(i14).Q.f(this.f);
+        TLRPC.Dialog dialog = (TLRPC.Dialog) wp.r1(i14).Q.f(this.f);
         lq lqVar = this.s;
         if (dialog == null || (i11 = dialog.unread_count) == 0) {
             this.d = 0;
@@ -159,7 +159,7 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.k
     }
 
     public final void c(boolean z10) {
-        TL_account.RequirementToContact H2 = (!this.y || this.e == null) ? null : vp.r1(this.h).H2(this.e.id);
+        TL_account.RequirementToContact H2 = (!this.y || this.e == null) ? null : wp.r1(this.h).H2(this.e.id);
         boolean z11 = H2 instanceof TL_account.requirementToContactPremium;
         if (this.E == z11 && this.G == org.telegram.messenger.o5.k(H2)) {
             return;
@@ -191,7 +191,7 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.k
             if (!this.E && (user = this.e) != null && !user.bot) {
                 TLRPC.UserStatus userStatus = user.status;
                 int i10 = this.h;
-                if ((userStatus != null && userStatus.expires > ConnectionsManager.getInstance(i10).getCurrentTime()) || vp.r1(i10).Z.containsKey(Long.valueOf(this.e.id))) {
+                if ((userStatus != null && userStatus.expires > ConnectionsManager.getInstance(i10).getCurrentTime()) || wp.r1(i10).Z.containsKey(Long.valueOf(this.e.id))) {
                     z10 = true;
                     if (!this.r) {
                         this.n = z10 ? 1.0f : 0.0f;

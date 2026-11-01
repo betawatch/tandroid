@@ -63,13 +63,13 @@ import m.q;
 import m4.f0;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.w0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.jh;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.tm;
 import org.xmlpull.v1.XmlPullParserException;
 import ph.x1;
@@ -100,7 +100,7 @@ import z7.x;
 import z7.xe;
 import z7.y;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class a implements i, t {
     public final /* synthetic */ int a;
@@ -546,7 +546,7 @@ public class a implements i, t {
                                 j11 = -9223372036854775807L;
                             }
                         }
-                        int i12 = i11 + zs.S2;
+                        int i12 = i11 + at.S2;
                         if (i12 <= i10) {
                             long a2 = l8.a(xVar, i11, this.b);
                             if (a2 != j11) {
@@ -638,7 +638,7 @@ public class a implements i, t {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             j0 j0Var = (j0) it.next();
-            l0.W(j0Var.a, new o0(25, jVar, j0Var.b));
+            l0.W(j0Var.a, new o0(26, jVar, j0Var.b));
         }
     }
 
@@ -747,7 +747,7 @@ public class a implements i, t {
                 l1.a(drawable);
             }
             if (typedArray.hasValue(2)) {
-                imageView.setImageTintList(G.v(2));
+                imageView.setImageTintList(G.u(2));
             }
             if (typedArray.hasValue(3)) {
                 imageView.setImageTintMode(l1.b(typedArray.getInt(3, -1), null));
@@ -892,9 +892,9 @@ public class a implements i, t {
         this.b = i10;
     }
 
-    public a(tk0 tk0Var) {
+    public a(uk0 uk0Var) {
         this.a = 17;
-        this.d = tk0Var;
+        this.d = uk0Var;
     }
 
     @Override // j9.t

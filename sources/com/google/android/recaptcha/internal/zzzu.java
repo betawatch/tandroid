@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class zzzu extends zzsn implements zztt {
     private static final zzzu zzb;
@@ -171,10 +171,10 @@ public final class zzzu extends zzsn implements zztt {
             case 29:
                 i10 = 31;
                 break;
-            case zs.T /* 30 */:
+            case at.T /* 30 */:
                 i10 = 32;
                 break;
-            case zs.U /* 31 */:
+            case at.U /* 31 */:
                 i10 = 33;
                 break;
             case 32:

@@ -1,53 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class r51 extends org.telegram.ui.ActionBar.k2 {
-    public ii a;
-    public ag.t2 b;
-    public int c;
-    public int d;
+public final /* synthetic */ class r51 implements org.telegram.messenger.p20, org.telegram.messenger.q20 {
+    public final /* synthetic */ s51 a;
 
-    public r51() {
-        super(null);
-        this.c = -1;
+    @Override // org.telegram.messenger.q20
+    public Boolean a(b51 b51Var, View view, Integer num, Float f7, Float f10) {
+        return Boolean.valueOf(this.a.c0(b51Var, view));
     }
 
-    public abstract void Y(ArrayList arrayList, p51 p51Var);
-
-    public abstract CharSequence Z();
-
-    public abstract void a0(a51 a51Var, View view);
-
-    public abstract boolean b0(a51 a51Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.k2
-    public View createView(Context context) {
-        org.telegram.ui.ar arVar = new org.telegram.ui.ar(this, 9);
-        org.telegram.ui.ActionBar.i5 i5Var = this.simpleActionBar;
-        if (i5Var != null) {
-            i5Var.setBackButtonDrawable(new org.telegram.ui.ActionBar.c2(false));
-            this.simpleActionBar.setTitle(Z());
-            this.simpleActionBar.setActionBarMenuOnItemClick(arVar);
-        } else {
-            this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.c2(false));
-            this.actionBar.setAllowOverlayTitle(true);
-            this.actionBar.setTitle(Z());
-            this.actionBar.setActionBarMenuOnItemClick(arVar);
-        }
-        this.b = new ag.t2(context, null, 1);
-        if (!useSimpleActionBar()) {
-            org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.a7, this.b, null);
-        }
-        ii iiVar = new ii(this, this, new d(this, 22), new q51(this), new q51(this));
-        this.a = iiVar;
-        this.b.addView(iiVar, w7.b6.c(-1.0f, -1));
-        ag.t2 t2Var = this.b;
-        this.fragmentView = t2Var;
-        return t2Var;
+    @Override // org.telegram.messenger.p20
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.b0((b51) obj, (View) obj2);
     }
 }

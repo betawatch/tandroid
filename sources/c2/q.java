@@ -5,9 +5,9 @@ import java.nio.ByteBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class q implements p {
     public int a;
@@ -185,7 +185,7 @@ public final class q implements p {
 
     public int s(short[] sArr, int i10, int i11, int i12) {
         int i13 = i10 * ((r) this.h).b;
-        int i14 = zs.e4;
+        int i14 = at.e4;
         int i15 = 1;
         int i16 = 0;
         int i17 = 0;

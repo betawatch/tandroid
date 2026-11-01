@@ -8,9 +8,9 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.util.StateSet;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class j6 {
     public static final int a = t6.d6;
@@ -34,7 +34,7 @@ public abstract class j6 {
         } else {
             fArr[2] = Math.min(1.0f, Math.max(0.0f, fArr[2] + (t6.I.q() ? 0.1f : -0.1f)));
         }
-        return Color.HSVToColor(zs.L1, b);
+        return Color.HSVToColor(at.L1, b);
     }
 
     public static org.telegram.ui.Cells.y c(i6 i6Var, int i10) {

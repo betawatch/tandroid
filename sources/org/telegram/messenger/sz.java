@@ -1,63 +1,175 @@
 package org.telegram.messenger;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.SerializedData;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.LongSparseArray;
+import java.util.regex.Pattern;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.Components.i01;
+import org.telegram.ui.Components.p21;
+import org.telegram.ui.Components.sz0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class sz {
-    public ji.b a;
-    public long b;
-    public boolean c;
-    public boolean d;
-    public long e;
+public final /* synthetic */ class sz implements Runnable {
+    public final /* synthetic */ int a;
 
-    public sz(ji.b bVar) {
-        this.a = bVar;
+    public /* synthetic */ sz(int i10) {
+        this.a = i10;
     }
 
-    public static sz a(int i10, SerializedData serializedData) {
-        long j10;
-        long j11;
-        ji.a a2 = ji.b.a();
-        String readString = serializedData.readString(false);
-        if (readString == null) {
-            readString = "";
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                int i10 = uz.a;
+                break;
+            case 1:
+                d00.y = null;
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.t6.F(false);
+                break;
+            case 3:
+                int i11 = org.telegram.ui.un.bd;
+                break;
+            case 4:
+                sg.k0.b(true);
+                break;
+            case 5:
+                at e = at.e();
+                Boolean bool = Boolean.TRUE;
+                e.k(at.n4, Boolean.FALSE, bool, bool);
+                break;
+            case 6:
+                org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
+                if (T != null) {
+                    org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2();
+                    i2Var.a = true;
+                    T.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), i2Var);
+                    break;
+                }
+                break;
+            case 7:
+                Pattern pattern = org.telegram.ui.Components.s4.a;
+                break;
+            case 8:
+                i0.r(org.telegram.ui.Components.f5.w);
+                try {
+                    if (org.telegram.ui.Components.f5.r != null) {
+                        for (int i12 = 0; i12 < org.telegram.ui.Components.f5.r.size(); i12++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.f5.r.valueAt(i12);
+                            int i13 = 0;
+                            while (i13 < longSparseArray.size()) {
+                                if (!((org.telegram.ui.Components.f5) longSparseArray.valueAt(i13)).a) {
+                                    longSparseArray.removeAt(i13);
+                                    i13--;
+                                }
+                                i13++;
+                            }
+                        }
+                        break;
+                    }
+                } catch (Exception unused) {
+                    boolean z10 = v2.a;
+                    return;
+                }
+                break;
+            case 9:
+                org.telegram.ui.Components.w7 w7Var = org.telegram.ui.Components.w7.P2;
+                break;
+            case 10:
+                hw.h();
+                break;
+            case 11:
+                LaunchActivity launchActivity = LaunchActivity.I1;
+                if (launchActivity != null && !launchActivity.isFinishing()) {
+                    Intent intent = new Intent("android.intent.action.VIEW_DOWNLOADS");
+                    intent.setFlags(268468224);
+                    LaunchActivity.I1.startActivity(intent);
+                    break;
+                }
+                break;
+            case 12:
+                org.telegram.ui.ActionBar.k2 Q = LaunchActivity.Q();
+                if (Q != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", e20.i(Q.getCurrentAccount()).e());
+                    bundle.putInt("chatMode", 1);
+                    Q.presentFragment(new org.telegram.ui.un(bundle));
+                    break;
+                }
+                break;
+            case 13:
+                MediaController.B().B0(0, 0, false, false);
+                break;
+            case 14:
+                MediaController.B().B0(0, 0, false, false);
+                break;
+            case 15:
+                break;
+            case 16:
+                int i14 = org.telegram.ui.Components.jn.r1;
+                break;
+            case 17:
+                PhotoViewer.v1().H0(false, false);
+                break;
+            case 18:
+                PhotoViewer.v1().H0(false, false);
+                break;
+            case 19:
+                int[] iArr = org.telegram.ui.Components.mt.X1;
+                break;
+            case 20:
+                at.e().k(at.F2, new Object[0]);
+                break;
+            case 21:
+                if (VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute()) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                    break;
+                }
+                break;
+            case 22:
+                at.e().k(98, 512);
+                break;
+            case 23:
+                at.e().k(99, 512);
+                break;
+            case 24:
+                org.telegram.ui.ActionBar.k2 Q2 = LaunchActivity.Q();
+                if (Q2 != null) {
+                    org.telegram.ui.ActionBar.i2 i2Var2 = new org.telegram.ui.ActionBar.i2();
+                    i2Var2.a = true;
+                    Q2.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), i2Var2);
+                    break;
+                }
+                break;
+            case 25:
+                int i15 = sz0.f;
+                break;
+            case 26:
+                SharedPreferences.Editor edit = wp.d1().edit();
+                i01.f = Boolean.TRUE;
+                edit.putBoolean("nothanos", true).apply();
+                break;
+            case 27:
+                SharedPreferences.Editor edit2 = wp.d1().edit();
+                i01.f = Boolean.TRUE;
+                edit2.putBoolean("nothanos", true).apply();
+                break;
+            case 28:
+                int i16 = p21.l0;
+                break;
+            default:
+                hw.h();
+                break;
         }
-        a2.c = readString;
-        a2.b = serializedData.readInt32(false);
-        String readString2 = serializedData.readString(false);
-        if (readString2 == null) {
-            readString2 = "";
-        }
-        a2.d = readString2;
-        String readString3 = serializedData.readString(false);
-        if (readString3 == null) {
-            readString3 = "";
-        }
-        a2.e = readString3;
-        String readString4 = serializedData.readString(false);
-        a2.f = readString4 != null ? readString4 : "";
-        if (i10 >= 2) {
-            j10 = serializedData.readInt64(false);
-            j11 = serializedData.readInt64(false);
-        } else {
-            j10 = 0;
-            j11 = 0;
-        }
-        if (i10 >= 3) {
-            int e = ji.b.e(serializedData.readInt32(false));
-            if (e == 0) {
-                e = 1;
-            }
-            a2.a = e;
-        } else {
-            a2.a = TextUtils.isEmpty(readString4) ? 1 : 2;
-        }
-        sz szVar = new sz(a2.d());
-        szVar.e = j11;
-        szVar.b = j10;
-        szVar.d = j10 > 0;
-        return szVar;
+    }
+
+    private final void a() {
     }
 }

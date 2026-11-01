@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
+public final /* synthetic */ class jo implements org.telegram.messenger.m20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -29,7 +29,7 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.l20
+    @Override // org.telegram.messenger.m20
     public final void a(Object obj, Object obj2, Object obj3) {
         String str;
         String str2;
@@ -55,7 +55,7 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                     d2Var.y.start();
                 }
                 ((org.telegram.ui.Cells.p8) view).setChecked(ooVar.E0);
-                ooVar.t0(false, true);
+                ooVar.u0(false, true);
                 if (ooVar.N0) {
                     return;
                 }
@@ -89,13 +89,13 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                 chat3.forum_tabs = ooVar.G0;
                 chat3.forum_sidebar = ooVar.H0;
                 if (z10 || z11) {
-                    ooVar.u0(z10);
+                    ooVar.v0(z10);
                     return;
                 }
                 return;
             case 1:
                 final org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) this.b;
-                org.telegram.messenger.j20 j20Var = (org.telegram.messenger.j20) this.c;
+                org.telegram.messenger.k20 k20Var = (org.telegram.messenger.k20) this.c;
                 TL_wallet.secretPhraseParts secretphraseparts = (TL_wallet.secretPhraseParts) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (secretphraseparts == null) {
@@ -107,10 +107,10 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                     if (tL_error != null && (str2 = tL_error.text) != null) {
                         str3 = str2;
                     }
-                    j20Var.a(null, str3);
+                    k20Var.a(null, str3);
                     return;
                 }
-                final org.telegram.ui.Wallet.d dVar = new org.telegram.ui.Wallet.d(j20Var, 2);
+                final org.telegram.ui.Wallet.d dVar = new org.telegram.ui.Wallet.d(k20Var, 2);
                 ArrayList<Integer> arrayList = secretphraseparts.dcs;
                 if (arrayList.size() <= 0) {
                     org.telegram.ui.Wallet.k0.j("getSecretPhrase: no secret parts, zero dcs");
@@ -131,8 +131,8 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                     TL_wallet.fetchEncryptedSecretPhrasePart fetchencryptedsecretphrasepart = new TL_wallet.fetchEncryptedSecretPhrasePart();
                     fetchencryptedsecretphrasepart.token = secretphraseparts.token;
                     fetchencryptedsecretphrasepart.public_key = key_to_public_key;
-                    ConnectionsManager.getInstance(k0Var.a).sendRequestTyped(fetchencryptedsecretphrasepart, new a3.b(1), new org.telegram.messenger.j20() { // from class: org.telegram.ui.Wallet.w
-                        @Override // org.telegram.messenger.j20
+                    ConnectionsManager.getInstance(k0Var.a).sendRequestTyped(fetchencryptedsecretphrasepart, new a3.b(1), new org.telegram.messenger.k20() { // from class: org.telegram.ui.Wallet.w
+                        @Override // org.telegram.messenger.k20
                         public final void a(Object obj4, Object obj5) {
                             k0 k0Var2 = k0.this;
                             boolean[] zArr2 = zArr;
@@ -190,20 +190,20 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                 return;
             case 2:
                 org.telegram.ui.Wallet.k0 k0Var2 = (org.telegram.ui.Wallet.k0) this.b;
-                f11 f11Var = (f11) this.c;
+                d01 d01Var = (d01) this.c;
                 TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tL_error2 == null) {
                     k0Var2.l0(walletState);
                     k0Var2.R();
-                    f11Var.a(null);
+                    d01Var.a(null);
                     return;
                 } else {
                     String str4 = tL_error2.text;
                     if (str4 == null) {
                         str4 = "NULL_ERROR";
                     }
-                    f11Var.a(str4);
+                    d01Var.a(str4);
                     return;
                 }
             case 3:
@@ -233,7 +233,7 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                 if (((Boolean) obj2).booleanValue()) {
                     TL_phone.deleteGroupCallParticipantMessages deletegroupcallparticipantmessages = new TL_phone.deleteGroupCallParticipantMessages();
                     deletegroupcallparticipantmessages.call = p1Var.O;
-                    deletegroupcallparticipantmessages.participant = org.telegram.messenger.vp.r1(i11).i1(h0Var.c);
+                    deletegroupcallparticipantmessages.participant = org.telegram.messenger.wp.r1(i11).i1(h0Var.c);
                     deletegroupcallparticipantmessages.report_spam = bool.booleanValue();
                     ConnectionsManager.getInstance(i11).sendRequest(deletegroupcallparticipantmessages, null);
                     long j10 = h0Var.c;
@@ -268,7 +268,7 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                     }
                     if (z12) {
                         ConnectionsManager.getInstance(i11).getCurrentTime();
-                        Collections.sort(arrayList3, new ex0(p1Var, 21));
+                        Collections.sort(arrayList3, new dx0(p1Var, 21));
                         p1Var.n.O(true);
                         p1Var.t();
                     }
@@ -281,10 +281,10 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                 }
                 if (bool2.booleanValue()) {
                     if (p1Var.M >= 0) {
-                        org.telegram.messenger.vp.r1(i11).w(p1Var.M);
+                        org.telegram.messenger.wp.r1(i11).w(p1Var.M);
                         return;
                     } else {
-                        org.telegram.messenger.vp.r1(i11).e0(-p1Var.M, org.telegram.messenger.vp.r1(i11).i1(h0Var.c), true, null);
+                        org.telegram.messenger.wp.r1(i11).e0(-p1Var.M, org.telegram.messenger.wp.r1(i11).i1(h0Var.c), true, null);
                         return;
                     }
                 }
@@ -328,13 +328,13 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                     org.telegram.messenger.i0.r(nVar.h);
                     nVar.a.destroy(true, null);
                     j02.setDraw(false);
-                    nVar.post(new vh.d1(9, nVar, j02));
+                    nVar.post(new vh.r0(10, nVar, j02));
                     return;
                 }
                 return;
             default:
                 xh.n nVar2 = (xh.n) this.b;
-                org.telegram.messenger.j20 j20Var2 = (org.telegram.messenger.j20) this.c;
+                org.telegram.messenger.k20 k20Var2 = (org.telegram.messenger.k20) this.c;
                 Boolean bool3 = (Boolean) obj;
                 androidx.biometric.t tVar = (androidx.biometric.t) obj2;
                 androidx.biometric.u uVar = (androidx.biometric.u) obj3;
@@ -355,7 +355,7 @@ public final /* synthetic */ class jo implements org.telegram.messenger.l20 {
                         bool3 = Boolean.FALSE;
                     }
                 }
-                j20Var2.a(bool3, str8);
+                k20Var2.a(bool3, str8);
                 return;
         }
     }

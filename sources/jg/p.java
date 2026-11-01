@@ -3,13 +3,13 @@ package jg;
 import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import java.io.Serializable;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.zr0;
-import org.telegram.ui.py;
+import org.telegram.ui.Components.as0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.oy;
 import vh.b4;
 import vh.y3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -38,22 +38,22 @@ public final /* synthetic */ class p implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 1:
-                zr0 zr0Var = (zr0) this.c;
-                tk0 tk0Var = (tk0) this.d;
-                zr0Var.e.R1.put(this.b, (Float) valueAnimator.getAnimatedValue());
-                tk0Var.invalidate();
+                as0 as0Var = (as0) this.c;
+                uk0 uk0Var = (uk0) this.d;
+                as0Var.e.R1.put(this.b, (Float) valueAnimator.getAnimatedValue());
+                uk0Var.invalidate();
                 break;
             case 2:
-                py pyVar = (py) this.c;
+                oy oyVar = (oy) this.c;
                 float[] fArr = (float[]) this.d;
-                pyVar.getClass();
+                oyVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 int i10 = 0;
                 while (i10 < 3) {
-                    pyVar.f[i10] = org.telegram.messenger.i0.T1(fArr[i10], i10 == this.b ? 1.0f : 0.0f, floatValue);
+                    oyVar.f[i10] = org.telegram.messenger.i0.T1(fArr[i10], i10 == this.b ? 1.0f : 0.0f, floatValue);
                     i10++;
                 }
-                pyVar.a();
+                oyVar.a();
                 break;
             default:
                 b4 b4Var = (b4) this.c;
@@ -68,10 +68,10 @@ public final /* synthetic */ class p implements ValueAnimator.AnimatorUpdateList
         }
     }
 
-    public /* synthetic */ p(zr0 zr0Var, int i10, tk0 tk0Var) {
+    public /* synthetic */ p(as0 as0Var, int i10, uk0 uk0Var) {
         this.a = 1;
-        this.c = zr0Var;
+        this.c = as0Var;
         this.b = i10;
-        this.d = tk0Var;
+        this.d = uk0Var;
     }
 }

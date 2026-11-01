@@ -3,27 +3,27 @@ package ph;
 import android.content.Context;
 import android.widget.FrameLayout;
 import java.util.List;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.t9;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.u9;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.c7;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c extends ha {
     public static final /* synthetic */ int S1 = 0;
     public final List P1;
-    public final t9 Q1;
-    public p51 R1;
+    public final u9 Q1;
+    public q51 R1;
 
-    public c(Context context, p6 p6Var, t9 t9Var, List list) {
+    public c(Context context, p6 p6Var, u9 u9Var, List list) {
         super(context, null, false, false, 2, p6Var);
-        this.Q1 = t9Var;
+        this.Q1 = u9Var;
         this.P1 = list;
         this.r1 = 0.2f;
         this.C1 = false;
@@ -35,7 +35,7 @@ public final class c extends ha {
         this.k1.setOverScrollMode(2);
         vh.d dVar = new vh.d(context, p6Var, true);
         dVar.setOnClickListener(new ag.g(this, 25));
-        dVar.i(cd.L0(2131747847, null), false, true);
+        dVar.i(dd.L0(2131747847, null), false, true);
         FrameLayout.LayoutParams d = b6.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
         int i10 = d.leftMargin;
         int i11 = this.t0;
@@ -46,11 +46,11 @@ public final class c extends ha {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(this.k1, getContext(), this.a, 0, true, new ag.a(this, 20), this.I0);
-        this.R1 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(this.k1, getContext(), this.a, 0, true, new ag.a(this, 20), this.I0);
+        this.R1 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
@@ -59,6 +59,6 @@ public final class c extends ha {
         if (list == null) {
             return null;
         }
-        return cd.G(list.size(), "Gift2AuctionsAcquiredGifts", new Object[0]);
+        return dd.G(list.size(), "Gift2AuctionsAcquiredGifts", new Object[0]);
     }
 }

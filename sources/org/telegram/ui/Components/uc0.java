@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class uc0 extends FrameLayout {
     public final /* synthetic */ int a = 1;
@@ -198,7 +198,7 @@ public final class uc0 extends FrameLayout {
     public void d(boolean z10) {
         ((ImageView) this.c).setVisibility(z10 ? 0 : 8);
         TextView textView = (TextView) this.d;
-        boolean z11 = org.telegram.messenger.cd.X;
+        boolean z11 = org.telegram.messenger.dd.X;
         textView.setLayoutParams(w7.b6.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
     }
 
@@ -282,10 +282,10 @@ public final class uc0 extends FrameLayout {
         this.b = p6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        org.telegram.messenger.z20.n(textView, 1, 20.0f);
-        textView.setGravity(org.telegram.messenger.cd.X ? 5 : 3);
+        org.telegram.messenger.a30.n(textView, 1, 20.0f);
+        textView.setGravity(org.telegram.messenger.dd.X ? 5 : 3);
         org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.j5, p6Var);
-        boolean z10 = org.telegram.messenger.cd.X;
+        boolean z10 = org.telegram.messenger.dd.X;
         addView(textView, w7.b6.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
@@ -295,7 +295,7 @@ public final class uc0 extends FrameLayout {
         c2Var.a(-1);
         c2Var.b(-1);
         c2Var.k = 220.0f;
-        addView(imageView, w7.b6.d(24, 24.0f, (org.telegram.messenger.cd.X ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, w7.b6.d(24, 24.0f, (org.telegram.messenger.dd.X ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new rh.s(this, 22));
     }
 }

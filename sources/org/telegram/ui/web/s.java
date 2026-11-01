@@ -4,8 +4,8 @@ import ag.m2;
 import android.content.Context;
 import android.os.Bundle;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -15,12 +15,12 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.vq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.aj0;
-import org.telegram.ui.wh0;
+import org.telegram.ui.uh0;
+import org.telegram.ui.yi0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s implements j20 {
+public final /* synthetic */ class s implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ z0 b;
     public final /* synthetic */ x0 c;
@@ -33,10 +33,10 @@ public final /* synthetic */ class s implements j20 {
         this.d = str;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         int i10;
-        wh0 wh0Var;
+        uh0 uh0Var;
         int i11 = this.a;
         String str = this.d;
         x0 x0Var = this.c;
@@ -68,21 +68,21 @@ public final /* synthetic */ class s implements j20 {
                             Boolean bool = tL_requestPeerTypeUser.bot;
                             Boolean bool2 = tL_requestPeerTypeUser.premium;
                             y yVar = new y(z0Var2, zArr, str2, tL_buttonTypeRequestPeer, x0Var2);
-                            wh0 wh0Var2 = wh0.m2;
+                            uh0 uh0Var2 = uh0.m2;
                             k2 Q = LaunchActivity.Q();
                             if (Q == null) {
-                                wh0Var = null;
+                                uh0Var = null;
                             } else {
-                                wh0Var = wh0.m2;
-                                if (wh0Var == null) {
-                                    wh0 wh0Var3 = new wh0(Q, i10, bool, bool2, yVar);
-                                    wh0Var3.show();
-                                    wh0.m2 = wh0Var3;
-                                    wh0Var = wh0Var3;
+                                uh0Var = uh0.m2;
+                                if (uh0Var == null) {
+                                    uh0 uh0Var3 = new uh0(Q, i10, bool, bool2, yVar);
+                                    uh0Var3.show();
+                                    uh0.m2 = uh0Var3;
+                                    uh0Var = uh0Var3;
                                 }
                             }
-                            if (wh0Var != null) {
-                                wh0Var.setOnDismissListener(new aj0(z0Var2, zArr, x0Var2, str2));
+                            if (uh0Var != null) {
+                                uh0Var.setOnDismissListener(new yi0(z0Var2, zArr, x0Var2, str2));
                                 break;
                             }
                         } else {
@@ -133,7 +133,7 @@ public final /* synthetic */ class s implements j20 {
                         break;
                     }
                 } else {
-                    vp.r1(z0Var.M).L3(updates, false);
+                    wp.r1(z0Var.M).L3(updates, false);
                     z0Var.y(x0Var, "requested_chat_sent", z0.A(str, "req_id"));
                     break;
                 }
@@ -152,7 +152,7 @@ public final /* synthetic */ class s implements j20 {
                         break;
                     }
                 } else {
-                    vp.r1(z0Var.M).L3(updates2, false);
+                    wp.r1(z0Var.M).L3(updates2, false);
                     z0Var.y(x0Var, "requested_chat_sent", z0.A(str, "req_id"));
                     break;
                 }

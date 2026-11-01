@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xf implements org.telegram.ui.Components.ui0 {
+public final /* synthetic */ class xf implements org.telegram.ui.Components.vi0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ un b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ org.telegram.messenger.jj d;
+    public final /* synthetic */ org.telegram.messenger.kj d;
 
-    public /* synthetic */ xf(un unVar, boolean z10, org.telegram.messenger.jj jjVar, int i10) {
+    public /* synthetic */ xf(un unVar, boolean z10, org.telegram.messenger.kj kjVar, int i10) {
         this.a = i10;
         this.b = unVar;
         this.c = z10;
-        this.d = jjVar;
+        this.d = kjVar;
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.vi0
     public final void c(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
@@ -33,11 +33,11 @@ public final /* synthetic */ class xf implements org.telegram.ui.Components.ui0 
                         arrayList2.add(d22);
                         final TLRPC.ChannelParticipant[] channelParticipantArr = new TLRPC.ChannelParticipant[1];
                         TLRPC.TL_channels_getParticipant tL_channels_getParticipant = new TLRPC.TL_channels_getParticipant();
-                        tL_channels_getParticipant.channel = org.telegram.messenger.vp.h1(unVar.e);
-                        tL_channels_getParticipant.participant = org.telegram.messenger.vp.j1(d22);
+                        tL_channels_getParticipant.channel = org.telegram.messenger.wp.h1(unVar.e);
+                        tL_channels_getParticipant.participant = org.telegram.messenger.wp.j1(d22);
                         final int i10 = 1;
-                        unVar.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new a3.b(1), new org.telegram.messenger.j20() { // from class: org.telegram.ui.yg
-                            @Override // org.telegram.messenger.j20
+                        unVar.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new a3.b(1), new org.telegram.messenger.k20() { // from class: org.telegram.ui.zg
+                            @Override // org.telegram.messenger.k20
                             public final void a(Object obj, Object obj2) {
                                 TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
                                 switch (i10) {
@@ -51,7 +51,7 @@ public final /* synthetic */ class xf implements org.telegram.ui.Components.ui0 
                                         } else {
                                             unVar2.getClass();
                                         }
-                                        new org.telegram.ui.Components.vr(unVar2, unVar2.e, arrayList, arrayList2, channelParticipantArr2, unVar2.b7, (int) unVar2.b(), unVar2.f4, true, new org.telegram.messenger.rz(3)).show();
+                                        new org.telegram.ui.Components.vr(unVar2, unVar2.e, arrayList, arrayList2, channelParticipantArr2, unVar2.b7, (int) unVar2.b(), unVar2.f4, true, new org.telegram.messenger.sz(3)).show();
                                         break;
                                     default:
                                         un unVar3 = unVar;
@@ -63,12 +63,12 @@ public final /* synthetic */ class xf implements org.telegram.ui.Components.ui0 
                                         } else {
                                             unVar3.getClass();
                                         }
-                                        new org.telegram.ui.Components.vr(unVar3, unVar3.e, arrayList, arrayList2, channelParticipantArr3, unVar3.b7, (int) unVar3.b(), unVar3.f4, true, new org.telegram.messenger.rz(3)).show();
+                                        new org.telegram.ui.Components.vr(unVar3, unVar3.e, arrayList, arrayList2, channelParticipantArr3, unVar3.b7, (int) unVar3.b(), unVar3.f4, true, new org.telegram.messenger.sz(3)).show();
                                         break;
                                 }
                             }
                         });
-                        unVar.I7(true);
+                        unVar.M7(true);
                         break;
                     }
                 }
@@ -84,11 +84,11 @@ public final /* synthetic */ class xf implements org.telegram.ui.Components.ui0 
                     arrayList4.add(d23);
                     final TLRPC.ChannelParticipant[] channelParticipantArr2 = new TLRPC.ChannelParticipant[1];
                     TLRPC.TL_channels_getParticipant tL_channels_getParticipant2 = new TLRPC.TL_channels_getParticipant();
-                    tL_channels_getParticipant2.channel = org.telegram.messenger.vp.h1(unVar2.e);
-                    tL_channels_getParticipant2.participant = org.telegram.messenger.vp.j1(d23);
+                    tL_channels_getParticipant2.channel = org.telegram.messenger.wp.h1(unVar2.e);
+                    tL_channels_getParticipant2.participant = org.telegram.messenger.wp.j1(d23);
                     final int i11 = 0;
-                    unVar2.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant2, new a3.b(1), new org.telegram.messenger.j20() { // from class: org.telegram.ui.yg
-                        @Override // org.telegram.messenger.j20
+                    unVar2.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant2, new a3.b(1), new org.telegram.messenger.k20() { // from class: org.telegram.ui.zg
+                        @Override // org.telegram.messenger.k20
                         public final void a(Object obj, Object obj2) {
                             TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
                             switch (i11) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class xf implements org.telegram.ui.Components.ui0 
                                     } else {
                                         unVar22.getClass();
                                     }
-                                    new org.telegram.ui.Components.vr(unVar22, unVar22.e, arrayList3, arrayList4, channelParticipantArr22, unVar22.b7, (int) unVar22.b(), unVar22.f4, true, new org.telegram.messenger.rz(3)).show();
+                                    new org.telegram.ui.Components.vr(unVar22, unVar22.e, arrayList3, arrayList4, channelParticipantArr22, unVar22.b7, (int) unVar22.b(), unVar22.f4, true, new org.telegram.messenger.sz(3)).show();
                                     break;
                                 default:
                                     un unVar3 = unVar2;
@@ -114,12 +114,12 @@ public final /* synthetic */ class xf implements org.telegram.ui.Components.ui0 
                                     } else {
                                         unVar3.getClass();
                                     }
-                                    new org.telegram.ui.Components.vr(unVar3, unVar3.e, arrayList3, arrayList4, channelParticipantArr3, unVar3.b7, (int) unVar3.b(), unVar3.f4, true, new org.telegram.messenger.rz(3)).show();
+                                    new org.telegram.ui.Components.vr(unVar3, unVar3.e, arrayList3, arrayList4, channelParticipantArr3, unVar3.b7, (int) unVar3.b(), unVar3.f4, true, new org.telegram.messenger.sz(3)).show();
                                     break;
                             }
                         }
                     });
-                    unVar2.I7(true);
+                    unVar2.M7(true);
                     break;
                 }
                 break;

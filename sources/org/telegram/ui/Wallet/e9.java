@@ -1,13 +1,13 @@
 package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.ii;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e9 implements j20 {
+public final /* synthetic */ class e9 implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ r9 b;
 
@@ -16,11 +16,11 @@ public final /* synthetic */ class e9 implements j20 {
         this.b = r9Var;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                r9.f0(this.b, (TL_wallet.walletUserAddress) obj);
+                r9.g0(this.b, (TL_wallet.walletUserAddress) obj);
                 break;
             case 1:
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
@@ -28,7 +28,7 @@ public final /* synthetic */ class e9 implements j20 {
                 r9Var.getClass();
                 if (wallettransaction != null) {
                     r9Var.e0 = wallettransaction.fee;
-                    r9Var.C0();
+                    r9Var.D0();
                     break;
                 }
                 break;
@@ -45,8 +45,8 @@ public final /* synthetic */ class e9 implements j20 {
                     if (iiVar != null) {
                         iiVar.f3.O(true);
                     }
-                    r9Var2.B0();
-                    r9Var2.s0();
+                    r9Var2.C0();
+                    r9Var2.t0();
                     w8 w8Var = r9Var2.w;
                     if (w8Var != null) {
                         w8Var.a(r9Var2.h, r9Var2.f);
@@ -63,7 +63,7 @@ public final /* synthetic */ class e9 implements j20 {
                 r9Var3.h0 = ((Boolean) obj2).booleanValue();
                 r9Var3.P.setText(r9Var3.g0);
                 r9Var3.P.setVisibility(TextUtils.isEmpty(r9Var3.g0) ? 8 : 0);
-                r9Var3.D0();
+                r9Var3.E0();
                 break;
             default:
                 r9 r9Var4 = this.b;
@@ -71,7 +71,7 @@ public final /* synthetic */ class e9 implements j20 {
                 r9Var4.h0 = ((Boolean) obj2).booleanValue();
                 r9Var4.P.setText(r9Var4.g0);
                 r9Var4.P.setVisibility(TextUtils.isEmpty(r9Var4.g0) ? 8 : 0);
-                r9Var4.D0();
+                r9Var4.E0();
                 break;
         }
     }

@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d9 extends FrameLayout {
     public TextView a;
@@ -63,34 +63,34 @@ public final class d9 extends FrameLayout {
         TextView textView2 = this.a;
         int i10 = this.r;
         boolean z10 = this.n;
-        boolean z11 = cd.X;
+        boolean z11 = dd.X;
         if (z10 == z11) {
             return;
         }
         this.n = z11;
         textView2.setGravity((z11 ? 5 : 3) | 16);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView2.getLayoutParams();
-        boolean z12 = cd.X;
+        boolean z12 = dd.X;
         layoutParams.gravity = (z12 ? 5 : 3) | 48;
         layoutParams.leftMargin = org.telegram.messenger.i0.L(z12 ? i10 : 64.0f);
-        layoutParams.rightMargin = org.telegram.messenger.i0.L(cd.X ? 64.0f : i10);
+        layoutParams.rightMargin = org.telegram.messenger.i0.L(dd.X ? 64.0f : i10);
         textView2.setLayoutParams(layoutParams);
-        textView.setGravity(cd.X ? 5 : 3);
+        textView.setGravity(dd.X ? 5 : 3);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) textView.getLayoutParams();
-        boolean z13 = cd.X;
+        boolean z13 = dd.X;
         layoutParams2.gravity = (z13 ? 5 : 3) | 48;
         layoutParams2.leftMargin = org.telegram.messenger.i0.L(z13 ? i10 : 64.0f);
-        layoutParams2.rightMargin = org.telegram.messenger.i0.L(cd.X ? 64.0f : i10);
+        layoutParams2.rightMargin = org.telegram.messenger.i0.L(dd.X ? 64.0f : i10);
         textView.setLayoutParams(layoutParams2);
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) radioButton.getLayoutParams();
-        layoutParams3.gravity = (cd.X ? 5 : 3) | 16;
+        layoutParams3.gravity = (dd.X ? 5 : 3) | 16;
         radioButton.setLayoutParams(layoutParams3);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.d) {
-            canvas.drawLine(cd.X ? 0.0f : org.telegram.messenger.i0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (cd.X ? org.telegram.messenger.i0.L(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+            canvas.drawLine(dd.X ? 0.0f : org.telegram.messenger.i0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (dd.X ? org.telegram.messenger.i0.L(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
         }
     }
 
@@ -101,7 +101,7 @@ public final class d9 extends FrameLayout {
         accessibilityNodeInfo.setCheckable(true);
         RadioButton radioButton = this.c;
         accessibilityNodeInfo.setChecked(radioButton.f);
-        accessibilityNodeInfo.setContentDescription(cd.L0(radioButton.f ? 2131747908 : 2131747910, null));
+        accessibilityNodeInfo.setContentDescription(dd.L0(radioButton.f ? 2131747908 : 2131747910, null));
         StringBuilder sb2 = new StringBuilder();
         sb2.append(this.a.getText());
         if (!TextUtils.isEmpty(textView.getText())) {

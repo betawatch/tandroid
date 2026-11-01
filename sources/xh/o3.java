@@ -1,29 +1,25 @@
 package xh;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes.dex */
-public final /* synthetic */ class o3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p3 b;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.ui.LaunchActivity;
 
-    public /* synthetic */ o3(p3 p3Var, int i10) {
-        this.a = i10;
-        this.b = p3Var;
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes.dex */
+public final class o3 extends org.telegram.ui.ActionBar.k2 {
+    @Override // org.telegram.ui.ActionBar.k2
+    public final Context getContext() {
+        return org.telegram.messenger.i0.W(LaunchActivity.I1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                p3 p3Var = this.b;
-                if (p3Var.x) {
-                    p3Var.d();
-                    break;
-                }
-                break;
-            default:
-                this.b.invalidateSelf();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.k2
+    public final int getCurrentAccount() {
+        return this.currentAccount;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2, org.telegram.ui.Components.s40
+    public final Activity getParentActivity() {
+        Activity W = org.telegram.messenger.i0.W(org.telegram.messenger.w0.b);
+        return W == null ? LaunchActivity.I1 : W;
     }
 }

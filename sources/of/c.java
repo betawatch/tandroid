@@ -7,19 +7,19 @@ import java.util.Arrays;
 import java.util.HashSet;
 import mh.k;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.v2;
 import org.telegram.messenger.w0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile long g;
@@ -34,7 +34,7 @@ public final class c {
 
     public c(int i10) {
         this.c = i10;
-        this.a = d20.i(i10).n;
+        this.a = e20.i(i10).n;
         SharedPreferences d = d();
         try {
             g = d.getLong("hash", 0L);
@@ -169,7 +169,7 @@ public final class c {
             if (i10 >= arrayList.size()) {
                 edit.putInt("count", i11);
                 edit.apply();
-                zs.f(this.c).k(zs.e5, new Object[0]);
+                at.f(this.c).k(at.e5, new Object[0]);
                 return;
             }
             if (!((b) arrayList.get(i10)).d) {

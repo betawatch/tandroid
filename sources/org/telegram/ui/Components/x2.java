@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x2 implements org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ int a;
@@ -31,10 +31,10 @@ public final /* synthetic */ class x2 implements org.telegram.ui.ActionBar.u1 {
             case 0:
                 org.telegram.ui.ActionBar.k2 k2Var = this.b;
                 int currentAccount = k2Var.getCurrentAccount();
-                SharedPreferences sharedPreferences = org.telegram.messenger.vp.r1(currentAccount).f7;
+                SharedPreferences sharedPreferences = org.telegram.messenger.wp.r1(currentAccount).f7;
                 long b12 = org.telegram.messenger.i0.b1(sharedPreferences, "support_id2", 0L);
                 if (b12 != 0) {
-                    user = org.telegram.messenger.vp.r1(currentAccount).Z1(Long.valueOf(b12));
+                    user = org.telegram.messenger.wp.r1(currentAccount).Z1(Long.valueOf(b12));
                     if (user == null && (string = sharedPreferences.getString("support_user", null)) != null) {
                         try {
                             byte[] decode = Base64.decode(string, 0);
@@ -52,7 +52,7 @@ public final /* synthetic */ class x2 implements org.telegram.ui.ActionBar.u1 {
                         }
                     }
                     if (user == null) {
-                        org.telegram.messenger.vp.r1(currentAccount).U3(user, true, false);
+                        org.telegram.messenger.wp.r1(currentAccount).U3(user, true, false);
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", user.id);
                         k2Var.presentFragment(new org.telegram.ui.un(bundle));
@@ -71,7 +71,7 @@ public final /* synthetic */ class x2 implements org.telegram.ui.ActionBar.u1 {
                 break;
             default:
                 org.telegram.ui.ActionBar.k2 k2Var2 = this.b;
-                org.telegram.messenger.vp.r1(k2Var2.getCurrentAccount()).v3("spambot", k2Var2, 1, null);
+                org.telegram.messenger.wp.r1(k2Var2.getCurrentAccount()).v3("spambot", k2Var2, 1, null);
                 break;
         }
     }

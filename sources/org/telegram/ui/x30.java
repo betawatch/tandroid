@@ -1,29 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class x30 extends org.telegram.ui.Components.op0 {
-    public final /* synthetic */ b50 R2;
+public final class x30 extends org.telegram.ui.ActionBar.l {
+    public final /* synthetic */ org.telegram.ui.Components.ip F1;
+    public final /* synthetic */ a50 G1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x30(b50 b50Var, Context context, String str, String str2, String str3, String str4) {
-        super(context, null, str, str2, false, str3, str4, true);
-        this.R2 = b50Var;
+    public x30(a50 a50Var, LaunchActivity launchActivity, org.telegram.ui.Components.ip ipVar) {
+        super(launchActivity, null);
+        this.G1 = a50Var;
+        this.F1 = ipVar;
     }
 
-    @Override // org.telegram.ui.Components.op0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = hVar.m();
-            b50 b50Var = this.R2;
-            if (m10 == 1) {
-                b50Var.m1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 41);
-            } else {
-                b50Var.m1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
-            }
+    @Override // org.telegram.ui.ActionBar.l, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
+            canvas.save();
+            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - org.telegram.messenger.i0.L(1.0f));
+            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
+            org.telegram.ui.Components.ip ipVar = this.F1;
+            ipVar.f = alpha;
+            ipVar.draw(canvas);
+            canvas.restore();
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        if (getAlpha() != f7) {
+            super.setAlpha(f7);
+            this.G1.b.invalidate();
         }
     }
 }

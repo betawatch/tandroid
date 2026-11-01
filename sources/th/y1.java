@@ -3,11 +3,11 @@ package th;
 import android.content.Intent;
 import java.util.ArrayList;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.qz;
+import org.telegram.messenger.rz;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.nj;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y1 implements nj {
     public final /* synthetic */ z2 a;
@@ -17,7 +17,7 @@ public final class y1 implements nj {
     }
 
     @Override // org.telegram.ui.Components.nj
-    public final void A() {
+    public final void B() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
             intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
@@ -33,7 +33,7 @@ public final class y1 implements nj {
     }
 
     @Override // org.telegram.ui.Components.nj
-    public final void m(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j10, boolean z11, long j11) {
+    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j10, boolean z11, long j11) {
         org.telegram.messenger.c accountInstance;
         z2 z2Var = this.a;
         TL_stories.StoryItem storyItem = z2Var.x1.a;
@@ -41,15 +41,15 @@ public final class y1 implements nj {
             return;
         }
         accountInstance = z2Var.getAccountInstance();
-        qz.V(i10, z2Var.k1, 0L, j11, 0L, null, str, null, arrayList, arrayList, null, null, null, null, null, accountInstance, null, null, null, null, null, storyItem, null, z10, false);
+        rz.V(i10, z2Var.k1, 0L, j11, 0L, null, str, null, arrayList, arrayList, null, null, null, null, null, accountInstance, null, null, null, null, null, storyItem, null, z10, false);
         z2Var.i0(j11 <= 0);
     }
 
     @Override // org.telegram.ui.Components.nj
-    public final /* synthetic */ void S() {
+    public final /* synthetic */ void T() {
     }
 
     @Override // org.telegram.ui.Components.nj
-    public final /* synthetic */ void o(ArrayList arrayList, boolean z10, int i10, long j10) {
+    public final /* synthetic */ void p(ArrayList arrayList, boolean z10, int i10, long j10) {
     }
 }

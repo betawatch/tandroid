@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class mk extends ChatActivityEnterView {
     public int t5;
@@ -15,8 +15,8 @@ public final class mk extends ChatActivityEnterView {
     public final /* synthetic */ un w5;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mk(un unVar, Activity activity, org.telegram.ui.Components.uu0 uu0Var, un unVar2, boolean z10, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(activity, uu0Var, unVar2, z10, p6Var);
+    public mk(un unVar, Activity activity, org.telegram.ui.Components.vu0 vu0Var, un unVar2, boolean z10, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(activity, vu0Var, unVar2, z10, p6Var);
         this.w5 = unVar;
     }
 
@@ -64,7 +64,7 @@ public final class mk extends ChatActivityEnterView {
         un unVar = this.w5;
         lVar = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
         final int i10 = 0;
-        if (lVar.u() || unVar.M9()) {
+        if (lVar.u() || unVar.R9()) {
             ValueAnimator valueAnimator = unVar.J9;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -112,8 +112,8 @@ public final class mk extends ChatActivityEnterView {
                             mkVar.setAnimatedTop((int) floatValue);
                             View view2 = mkVar.G1;
                             if (view2 == null || view2.getVisibility() != 0) {
-                                unVar2.A9();
-                                unVar2.C9();
+                                unVar2.F9();
+                                unVar2.H9();
                             } else {
                                 mkVar.G1.setTranslationY(((1.0f - mkVar.getTopViewEnterProgress()) * mkVar.G1.getLayoutParams().height) + floatValue);
                             }
@@ -132,8 +132,8 @@ public final class mk extends ChatActivityEnterView {
             if (!unVar.H9) {
                 unVar.I9.start();
             }
-            unVar.A9();
-            unVar.C9();
+            unVar.F9();
+            unVar.H9();
             unVar.c0 = 0;
         } else if (this.t5 != unVar.l1.getMeasuredHeight()) {
             unVar.c0 = 0;
@@ -160,8 +160,8 @@ public final class mk extends ChatActivityEnterView {
                             mkVar.setAnimatedTop((int) floatValue);
                             View view2 = mkVar.G1;
                             if (view2 == null || view2.getVisibility() != 0) {
-                                unVar2.A9();
-                                unVar2.C9();
+                                unVar2.F9();
+                                unVar2.H9();
                             } else {
                                 mkVar.G1.setTranslationY(((1.0f - mkVar.getTopViewEnterProgress()) * mkVar.G1.getLayoutParams().height) + floatValue);
                             }
@@ -199,10 +199,10 @@ public final class mk extends ChatActivityEnterView {
     public final void m0(boolean z10) {
         super.m0(z10);
         un unVar = this.w5;
-        mf mfVar = unVar.Ib;
-        if (mfVar != null) {
-            org.telegram.messenger.i0.g3(mfVar);
-            unVar.Ib = null;
+        nf nfVar = unVar.Jb;
+        if (nfVar != null) {
+            org.telegram.messenger.i0.g3(nfVar);
+            unVar.Jb = null;
         }
     }
 
@@ -226,10 +226,10 @@ public final class mk extends ChatActivityEnterView {
     public final void setVisibility(int i10) {
         super.setVisibility(i10);
         un unVar = this.w5;
-        j6.m mVar = unVar.Xc;
+        j6.m mVar = unVar.Yc;
         boolean z10 = false;
         boolean z11 = i10 == 0;
-        if (getMeasuredWidth() > 0 && !unVar.Nc) {
+        if (getMeasuredWidth() > 0 && !unVar.Oc) {
             z10 = true;
         }
         mVar.h(1, z11, z10);
@@ -237,6 +237,6 @@ public final class mk extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final void y0(float f7) {
-        this.w5.y7();
+        this.w5.C7();
     }
 }

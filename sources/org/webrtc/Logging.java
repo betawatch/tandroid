@@ -5,10 +5,10 @@ import java.io.StringWriter;
 import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
@@ -16,7 +16,7 @@ public class Logging {
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
@@ -25,7 +25,7 @@ public class Logging {
         LS_NONE
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     @Deprecated
     public enum TraceLevel {
         TRACE_NONE(0),
@@ -34,7 +34,7 @@ public class Logging {
         TRACE_ERROR(4),
         TRACE_CRITICAL(8),
         TRACE_APICALL(16),
-        TRACE_DEFAULT(zs.e4),
+        TRACE_DEFAULT(at.e4),
         TRACE_MODULECALL(32),
         TRACE_MEMORY(256),
         TRACE_TIMER(512),

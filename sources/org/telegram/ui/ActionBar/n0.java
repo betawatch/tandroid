@@ -10,21 +10,21 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.TextView;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.dc0;
 import org.telegram.ui.Components.g10;
 import org.telegram.ui.Components.h10;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.s20;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.cp;
-import org.telegram.ui.iw;
-import org.telegram.ui.ld0;
+import org.telegram.ui.hw;
+import org.telegram.ui.kd0;
 import org.telegram.ui.wo;
-import org.telegram.ui.zy;
+import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n0 extends EditTextBoldCursor {
     public final /* synthetic */ int G1;
@@ -41,7 +41,7 @@ public final class n0 extends EditTextBoldCursor {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.G1) {
             case 5:
-                ((hm0) this.H1).getClass();
+                ((im0) this.H1).getClass();
                 break;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -53,7 +53,7 @@ public final class n0 extends EditTextBoldCursor {
             case 8:
                 li.k kVar = (li.k) this.H1;
                 if (length() != 0) {
-                    canvas.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), zs.e4, 31);
+                    canvas.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), at.e4, 31);
                     super.onDraw(canvas);
                     RectF rectF = org.telegram.messenger.i0.P;
                     rectF.set(getScrollX(), 0.0f, org.telegram.messenger.i0.L(12.0f) + getScrollX(), getHeight());
@@ -156,7 +156,7 @@ public final class n0 extends EditTextBoldCursor {
                 zf.e0 e0Var2 = (zf.e0) i0.a.g(1, h10Var.F);
                 g10 g10Var = h10Var.H;
                 if (g10Var != null) {
-                    ((iw) g10Var).h(e0Var2);
+                    ((hw) g10Var).h(e0Var2);
                 }
                 h10Var.f(e0Var2);
                 return true;
@@ -186,8 +186,8 @@ public final class n0 extends EditTextBoldCursor {
         switch (this.G1) {
             case 6:
                 if (i10 == 16908322 || i10 == 16908337) {
-                    ((ld0) this.H1).D = true;
-                    postDelayed(new zy(this, 24), 1000L);
+                    ((kd0) this.H1).D = true;
+                    postDelayed(new yy(this, 24), 1000L);
                 }
                 break;
         }
@@ -208,7 +208,7 @@ public final class n0 extends EditTextBoldCursor {
             case 5:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((hm0) this.H1).getClass();
+                        ((im0) this.H1).getClass();
                     }
                     break;
                 }
@@ -233,7 +233,7 @@ public final class n0 extends EditTextBoldCursor {
                     hVar.f = null;
                 }
                 if (motionEvent.getAction() == 0 && !org.telegram.messenger.i0.J3(this)) {
-                    hVar.fullScroll(zs.O1);
+                    hVar.fullScroll(at.O1);
                     clearFocus();
                     requestFocus();
                 }
@@ -257,7 +257,7 @@ public final class n0 extends EditTextBoldCursor {
                     t6Var.f = null;
                 }
                 if (motionEvent.getAction() == 0 && !org.telegram.messenger.i0.J3(this)) {
-                    t6Var.fullScroll(zs.O1);
+                    t6Var.fullScroll(at.O1);
                     clearFocus();
                     requestFocus();
                 }

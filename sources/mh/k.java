@@ -27,22 +27,22 @@ import kg.i1;
 import o2.q;
 import oh.p;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
 import org.telegram.messenger.voip.p0;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
@@ -58,15 +58,15 @@ import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.i5;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.in0;
-import org.telegram.ui.Components.ro0;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.ug0;
+import org.telegram.ui.Components.jn0;
+import org.telegram.ui.Components.so0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.vg0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.g01;
 import org.telegram.ui.n;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class k implements Runnable {
                             arrayList3.add(bVar2);
                         }
                         edit.apply();
-                        zs.f(cVar2.c).k(zs.e5, new Object[0]);
+                        at.f(cVar2.c).k(at.e5, new Object[0]);
                         SharedPreferences.Editor edit2 = cVar2.d().edit();
                         long j10 = tL_savedRingtones.hash;
                         of.c.g = j10;
@@ -210,13 +210,13 @@ public final /* synthetic */ class k implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
                 int i17 = dVar2.a;
                 if (tL_error.text.equals("RINGTONE_DURATION_TOO_LONG")) {
-                    zs.e().k(zs.P4, 4, cd.a0("TooLongError", null, 2131744066, new Object[0]), cd.a0("ErrorRingtoneDurationTooLong", null, 2131751105, Integer.valueOf(vp.r1(i17).l4)));
+                    at.e().k(at.P4, 4, dd.a0("TooLongError", null, 2131744066, new Object[0]), dd.a0("ErrorRingtoneDurationTooLong", null, 2131751105, Integer.valueOf(wp.r1(i17).l4)));
                     break;
                 } else if (tL_error.text.equals("RINGTONE_SIZE_TOO_BIG")) {
-                    zs.e().k(zs.P4, 4, cd.a0("TooLargeError", null, 2131744067, new Object[0]), cd.a0("ErrorRingtoneSizeTooBig", null, 2131751103, Integer.valueOf(vp.r1(i17).m4 / 1024)));
+                    at.e().k(at.P4, 4, dd.a0("TooLargeError", null, 2131744067, new Object[0]), dd.a0("ErrorRingtoneSizeTooBig", null, 2131751103, Integer.valueOf(wp.r1(i17).m4 / 1024)));
                     break;
                 } else {
-                    zs.e().k(zs.P4, 4, cd.a0("InvalidFormatError", null, 2131749191, new Object[0]), cd.L0(2131751104, null));
+                    at.e().k(at.P4, 4, dd.a0("InvalidFormatError", null, 2131749191, new Object[0]), dd.L0(2131751104, null));
                     break;
                 }
             case 7:
@@ -237,24 +237,24 @@ public final /* synthetic */ class k implements Runnable {
                     boolean z10 = point.x > point.y;
                     if (user.photo != null && !z10) {
                         if (qVar2.s == null) {
-                            p pVar = new p(qVar2, k2Var.getParentActivity(), (tk0) i5Var.getParent(), k2Var.getResourceProvider(), qVar2.a);
+                            p pVar = new p(qVar2, k2Var.getParentActivity(), (uk0) i5Var.getParent(), k2Var.getResourceProvider(), qVar2.a);
                             qVar2.s = pVar;
                             TLRPC.TL_chatInviteImporter tL_chatInviteImporter = qVar2.r;
                             g9 avatarImageView = i5Var.getAvatarImageView();
                             TextView textView = pVar.e;
-                            ug0 ug0Var = pVar.h;
+                            vg0 vg0Var = pVar.h;
                             pVar.r = tL_chatInviteImporter;
                             pVar.w = avatarImageView;
-                            TLRPC.User Z1 = vp.r1(i18).Z1(Long.valueOf(tL_chatInviteImporter.user_id));
-                            ic m10 = ic.m(i18, 0, Z1);
-                            ic m11 = ic.m(i18, 1, Z1);
-                            if (vp.r1(i18).a2(tL_chatInviteImporter.user_id) == null) {
-                                vp.r1(i18).e3(Z1, false, 0);
+                            TLRPC.User Z1 = wp.r1(i18).Z1(Long.valueOf(tL_chatInviteImporter.user_id));
+                            jc m10 = jc.m(i18, 0, Z1);
+                            jc m11 = jc.m(i18, 1, Z1);
+                            if (wp.r1(i18).a2(tL_chatInviteImporter.user_id) == null) {
+                                wp.r1(i18).e3(Z1, false, 0);
                             }
-                            ug0Var.setParentAvatarImage(avatarImageView);
-                            ug0Var.M(tL_chatInviteImporter.user_id, true);
-                            ug0Var.H(null, m10, m11, true);
-                            pVar.d.setText(h20.p((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id)));
+                            vg0Var.setParentAvatarImage(avatarImageView);
+                            vg0Var.M(tL_chatInviteImporter.user_id, true);
+                            vg0Var.H(null, m10, m11, true);
+                            pVar.d.setText(i20.p((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id)));
                             textView.setText(tL_chatInviteImporter.about);
                             textView.setVisibility(TextUtils.isEmpty(tL_chatInviteImporter.about) ? 8 : 0);
                             pVar.D.requestLayout();
@@ -281,10 +281,10 @@ public final /* synthetic */ class k implements Runnable {
                 ((VideoAds) this.b).lambda$load$0((TLObject) this.c);
                 break;
             case 11:
-                ((VideoAds) this.b).lambda$show$16((q20) this.c);
+                ((VideoAds) this.b).lambda$show$16((r20) this.c);
                 break;
             case 12:
-                g01.d1((Context) this.b, null, false, (ro0) this.c, null);
+                g01.d1((Context) this.b, null, false, (so0) this.c, null);
                 break;
             case 13:
                 ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
@@ -311,26 +311,26 @@ public final /* synthetic */ class k implements Runnable {
                 ((AudioManager) this.b).setCommunicationDevice((AudioDeviceInfo) this.c);
                 break;
             case 21:
-                ((VoipAudioManager) this.b).lambda$isBluetoothAndSpeakerOnAsync$4((j20) this.c);
+                ((VoipAudioManager) this.b).lambda$isBluetoothAndSpeakerOnAsync$4((k20) this.c);
                 break;
             case 22:
                 org.telegram.ui.ActionBar.l lVar2 = (org.telegram.ui.ActionBar.l) this.b;
-                boolean canScrollVertically = ((in0) this.c).canScrollVertically(-1);
+                boolean canScrollVertically = ((jn0) this.c).canScrollVertically(-1);
                 boolean z11 = !canScrollVertically;
-                if (lVar2.B1 != z11) {
-                    ValueAnimator valueAnimator = lVar2.D1;
+                if (lVar2.C1 != z11) {
+                    ValueAnimator valueAnimator = lVar2.E1;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    float f7 = lVar2.C1;
-                    lVar2.B1 = z11;
+                    float f7 = lVar2.D1;
+                    lVar2.C1 = z11;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, canScrollVertically ? 0.0f : 1.0f);
-                    lVar2.D1 = ofFloat;
+                    lVar2.E1 = ofFloat;
                     ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(lVar2, i10));
-                    lVar2.D1.addListener(new org.telegram.ui.ActionBar.c(lVar2, z11, i13));
-                    lVar2.D1.setDuration(320L);
-                    lVar2.D1.setInterpolator(gr.h);
-                    lVar2.D1.start();
+                    lVar2.E1.addListener(new org.telegram.ui.ActionBar.c(lVar2, z11, i13));
+                    lVar2.E1.setDuration(320L);
+                    lVar2.E1.setInterpolator(gr.h);
+                    lVar2.E1.start();
                     break;
                 }
                 break;
@@ -338,20 +338,20 @@ public final /* synthetic */ class k implements Runnable {
                 org.telegram.ui.ActionBar.l lVar3 = (org.telegram.ui.ActionBar.l) this.b;
                 boolean canScrollVertically2 = ((RecyclerView) this.c).canScrollVertically(-1);
                 boolean z12 = !canScrollVertically2;
-                if (lVar3.B1 != z12) {
-                    ValueAnimator valueAnimator2 = lVar3.D1;
+                if (lVar3.C1 != z12) {
+                    ValueAnimator valueAnimator2 = lVar3.E1;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                     }
-                    float f10 = lVar3.C1;
-                    lVar3.B1 = z12;
+                    float f10 = lVar3.D1;
+                    lVar3.C1 = z12;
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, canScrollVertically2 ? 0.0f : 1.0f);
-                    lVar3.D1 = ofFloat2;
+                    lVar3.E1 = ofFloat2;
                     ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(lVar3, i12));
-                    lVar3.D1.addListener(new org.telegram.ui.ActionBar.c(lVar3, z12, r13));
-                    lVar3.D1.setDuration(320L);
-                    lVar3.D1.setInterpolator(gr.h);
-                    lVar3.D1.start();
+                    lVar3.E1.addListener(new org.telegram.ui.ActionBar.c(lVar3, z12, r13));
+                    lVar3.E1.setDuration(320L);
+                    lVar3.E1.setInterpolator(gr.h);
+                    lVar3.E1.start();
                     break;
                 }
                 break;
@@ -415,7 +415,7 @@ public final /* synthetic */ class k implements Runnable {
                 o6 o6Var2 = (o6) this.b;
                 n6 n6Var = (n6) this.c;
                 TLRPC.TL_wallPaper tL_wallPaper = n6Var.a;
-                b8.G(d20.s0);
+                b8.G(e20.s0);
                 File K = b8.K(tL_wallPaper.document, null, true, true);
                 ArrayList arrayList5 = n6Var.b;
                 int size4 = arrayList5.size();
@@ -442,7 +442,7 @@ public final /* synthetic */ class k implements Runnable {
                 i0.g3(new fg.d(s6Var, i13));
                 break;
             default:
-                ((n) this.b).b0((TLRPC.TL_messages_archivedStickers) this.c);
+                ((n) this.b).c0((TLRPC.TL_messages_archivedStickers) this.c);
                 break;
         }
     }

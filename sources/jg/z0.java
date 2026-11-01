@@ -3,13 +3,13 @@ package jg;
 import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z0 extends j {
     public final y0 q0;
@@ -63,16 +63,16 @@ public final class z0 extends j {
     }
 
     @Override // jg.j
-    public oj0 getSelectionBounds() {
+    public pj0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new oj0();
+            return new pj0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.i0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.i0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = z20.x(L, 2.0f, getPositionX(), scaleX);
-        return new oj0(x10, z20.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
+        float x10 = a30.x(L, 2.0f, getPositionX(), scaleX);
+        return new pj0(x10, a30.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
     }
 
     @Override // jg.j

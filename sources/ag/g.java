@@ -10,11 +10,11 @@ import bi.d4;
 import bi.w4;
 import bi.y4;
 import bi.z3;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -29,12 +29,12 @@ import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.kh0;
-import org.telegram.ui.lg;
-import org.telegram.ui.ud1;
+import org.telegram.ui.ih0;
+import org.telegram.ui.nf;
+import org.telegram.ui.sd1;
 import rh.h8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,17 +61,17 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 int i13 = jVar.a;
                 boolean z10 = jVar.r;
                 jVar.r = !z10;
-                jVar.h.c(cd.L0(!z10 ? 2131753701 : 2131753698, null), true, true);
+                jVar.h.c(dd.L0(!z10 ? 2131753701 : 2131753698, null), true, true);
                 f6Var.a();
-                f6Var.c(cd.L0(jVar.r ? 2131753699 : 2131753700, null), true, true);
+                f6Var.c(dd.L0(jVar.r ? 2131753699 : 2131753700, null), true, true);
                 if (jVar.r) {
                     jVar.x |= 1;
                 } else {
                     jVar.x &= -2;
                 }
-                vp.r1(i13).e7.edit().putInt("dialog_botflags" + jVar.s, jVar.x).apply();
+                wp.r1(i13).e7.edit().putInt("dialog_botflags" + jVar.s, jVar.x).apply();
                 TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
-                toggleconnectedbotpaused.peer = vp.r1(i13).i1(jVar.s);
+                toggleconnectedbotpaused.peer = wp.r1(i13).i1(jVar.s);
                 toggleconnectedbotpaused.paused = jVar.r;
                 ConnectionsManager.getInstance(i13).sendRequest(toggleconnectedbotpaused, null);
                 break;
@@ -92,9 +92,9 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 4:
                 bi.t tVar = (bi.t) obj;
                 tVar.J(true, 0, 0, 0L, false);
-                kh0 kh0Var = tVar.O;
-                if (kh0Var != null) {
-                    kh0Var.g(true);
+                ih0 ih0Var = tVar.O;
+                if (ih0Var != null) {
+                    ih0Var.g(true);
                     tVar.O = null;
                     break;
                 }
@@ -133,7 +133,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 ((ig.u) obj).dismiss();
                 break;
             case 8:
-                ((lg) obj).run();
+                ((nf) obj).run();
                 break;
             case 9:
                 ((o0) obj).run();
@@ -145,8 +145,8 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 ((p80) obj).performClick();
                 break;
             case 12:
-                PremiumPreviewFragment.t0();
-                PremiumPreviewFragment.o0(((kg.v1) obj).l2, null, "profile", null);
+                PremiumPreviewFragment.u0();
+                PremiumPreviewFragment.p0(((kg.v1) obj).l2, null, "profile", null);
                 break;
             case 13:
                 final mg.c1 c1Var = (mg.c1) obj;
@@ -154,8 +154,8 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 if (!aVar3.a.Q) {
                     aVar3.b(true);
                     String str = c1Var.J2;
-                    q20 q20Var = new q20() { // from class: mg.b1
-                        @Override // org.telegram.messenger.q20
+                    r20 r20Var = new r20() { // from class: mg.b1
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj2) {
                             switch (i11) {
                                 case 0:
@@ -172,8 +172,8 @@ public final /* synthetic */ class g implements View.OnClickListener {
                             }
                         }
                     };
-                    q20 q20Var2 = new q20() { // from class: mg.b1
-                        @Override // org.telegram.messenger.q20
+                    r20 r20Var2 = new r20() { // from class: mg.b1
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj2) {
                             switch (i12) {
                                 case 0:
@@ -190,10 +190,10 @@ public final /* synthetic */ class g implements View.OnClickListener {
                             }
                         }
                     };
-                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(d20.s0);
+                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(e20.s0);
                     TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
                     tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new mg.b0(q20Var2, q20Var, i11), 2);
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new mg.b0(r20Var2, r20Var, i11), 2);
                     break;
                 }
                 break;
@@ -226,7 +226,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 18:
                 org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) obj;
                 z2Var.getClass();
-                z2Var.N(((Integer) view.getTag()).intValue());
+                z2Var.M(((Integer) view.getTag()).intValue());
                 break;
             case 19:
                 l5 l5Var = (l5) obj;
@@ -255,25 +255,25 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 rVar.N.animate().alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setDuration(180L).start();
                 break;
             case 21:
-                org.telegram.ui.Components.voip.e0 e0Var = (org.telegram.ui.Components.voip.e0) obj;
-                if (!e0Var.a) {
-                    if (e0Var.y != 0 || !e0Var.D) {
-                        e0Var.b(false, true);
+                org.telegram.ui.Components.voip.f0 f0Var = (org.telegram.ui.Components.voip.f0) obj;
+                if (!f0Var.a) {
+                    if (f0Var.y != 0 || !f0Var.D) {
+                        f0Var.b(false, true);
                         break;
                     } else {
-                        ((Activity) e0Var.getContext()).startActivityForResult(((MediaProjectionManager) e0Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) f0Var.getContext()).startActivityForResult(((MediaProjectionManager) f0Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
                 break;
             case 22:
-                ud1 ud1Var = (ud1) obj;
-                if (!ud1Var.a) {
-                    if (ud1Var.x != 0) {
-                        ud1Var.a(false, true);
+                sd1 sd1Var = (sd1) obj;
+                if (!sd1Var.a) {
+                    if (sd1Var.x != 0) {
+                        sd1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) ud1Var.getContext()).startActivityForResult(((MediaProjectionManager) ud1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) sd1Var.getContext()).startActivityForResult(((MediaProjectionManager) sd1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -287,19 +287,19 @@ public final /* synthetic */ class g implements View.OnClickListener {
                         action.addFlags(TLObject.FLAG_28);
                     }
                     context.startActivity(action);
-                    org.telegram.ui.Components.voip.s0.b();
+                    org.telegram.ui.Components.voip.t0.b();
                     break;
                 }
                 break;
             case 24:
                 org.telegram.ui.web.j jVar2 = (org.telegram.ui.web.j) obj;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(jVar2.getContext());
-                String L0 = cd.L0(2131742940, null);
+                String L0 = dd.L0(2131742940, null);
                 org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                 x1Var.R = L0;
-                x1Var.T = cd.L0(2131742941, null);
-                alertDialog$Builder.k(cd.L0(2131747847, null), new org.telegram.ui.web.a(jVar2));
-                alertDialog$Builder.h(cd.L0(2131752589, null), null);
+                x1Var.T = dd.L0(2131742941, null);
+                alertDialog$Builder.k(dd.L0(2131747847, null), new org.telegram.ui.web.a(jVar2));
+                alertDialog$Builder.h(dd.L0(2131752589, null), null);
                 alertDialog$Builder.p();
                 break;
             case 25:

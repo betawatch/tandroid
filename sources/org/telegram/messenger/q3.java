@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,19 +28,19 @@ public final /* synthetic */ class q3 implements RequestDelegate {
                 i0.g3(new bi.n4((u3) this.c, this.b, tLObject, (TL_phone.getGroupParticipants) this.d, 7));
                 break;
             case 1:
-                i0.g3(new bi.n4((ui) this.c, tL_error, tLObject, (String) this.d, this.b));
+                i0.g3(new bi.n4((vi) this.c, tL_error, tLObject, (String) this.d, this.b));
                 break;
             case 2:
-                i0.g3(new bi.n4((ui) this.c, tLObject, (SharedPreferences) this.d, this.b, 14));
+                i0.g3(new bi.n4((vi) this.c, tLObject, (SharedPreferences) this.d, this.b, 14));
                 break;
             case 3:
-                vp vpVar = (vp) this.c;
+                wp wpVar = (wp) this.c;
                 TLRPC.TL_contacts_getBlocked tL_contacts_getBlocked = (TLRPC.TL_contacts_getBlocked) this.d;
-                vpVar.getClass();
-                i0.g3(new bi.n4(vpVar, tLObject, this.b, tL_contacts_getBlocked, 16));
+                wpVar.getClass();
+                i0.g3(new bi.n4(wpVar, tLObject, this.b, tL_contacts_getBlocked, 16));
                 break;
             default:
-                i0.g3(new bi.n4((yo) this.c, (int[]) this.d, tLObject, this.b, 18));
+                i0.g3(new bi.n4((zo) this.c, (int[]) this.d, tLObject, this.b, 18));
                 break;
         }
     }

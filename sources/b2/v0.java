@@ -4,11 +4,11 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.webrtc.MediaStreamTrack;
 import v7.r6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class v0 {
     public static final ArrayList a = new ArrayList();
@@ -208,34 +208,34 @@ public abstract class v0 {
         }
         switch (i10) {
             case 96:
-            case zs.i1 /* 97 */:
-            case zs.j1 /* 98 */:
-            case zs.k1 /* 99 */:
-            case zs.l1 /* 100 */:
+            case at.i1 /* 97 */:
+            case at.j1 /* 98 */:
+            case at.k1 /* 99 */:
+            case at.l1 /* 100 */:
             case 101:
                 return "video/mpeg2";
-            case zs.n1 /* 102 */:
-            case zs.o1 /* 103 */:
-            case zs.p1 /* 104 */:
+            case at.n1 /* 102 */:
+            case at.o1 /* 103 */:
+            case at.p1 /* 104 */:
                 return "audio/mp4a-latm";
-            case zs.q1 /* 105 */:
-            case zs.s1 /* 107 */:
+            case at.q1 /* 105 */:
+            case at.s1 /* 107 */:
                 return "audio/mpeg";
-            case zs.r1 /* 106 */:
+            case at.r1 /* 106 */:
                 return "video/mpeg";
-            case zs.t1 /* 108 */:
+            case at.t1 /* 108 */:
                 return "image/jpeg";
             default:
                 switch (i10) {
-                    case zs.z2 /* 169 */:
-                    case zs.C2 /* 172 */:
+                    case at.z2 /* 169 */:
+                    case at.C2 /* 172 */:
                         return "audio/vnd.dts";
-                    case zs.A2 /* 170 */:
-                    case zs.B2 /* 171 */:
+                    case at.A2 /* 170 */:
+                    case at.B2 /* 171 */:
                         return "audio/vnd.dts.hd";
-                    case zs.D2 /* 173 */:
+                    case at.D2 /* 173 */:
                         return "audio/opus";
-                    case zs.E2 /* 174 */:
+                    case at.E2 /* 174 */:
                         return "audio/ac4";
                     default:
                         return null;

@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import k2.k0;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.oi;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.pi;
+import org.telegram.messenger.vi;
 import org.telegram.ui.Components.cp;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -131,12 +131,12 @@ public final class g implements Runnable {
                     ((cp) arrayList.get(i10)).a.m(this.b);
                     i10++;
                 }
-                i0.g3(new oi(i11, this, arrayList));
+                i0.g3(new pi(i11, this, arrayList));
                 return;
             case 6:
                 ArrayList arrayList2 = (ArrayList) this.d;
                 while (i10 < arrayList2.size()) {
-                    if (!((String) this.c).equals(((jj) arrayList2.get(i10)).S0())) {
+                    if (!((String) this.c).equals(((kj) arrayList2.get(i10)).S0())) {
                         arrayList2.remove(i10);
                         i10--;
                     }
@@ -161,9 +161,9 @@ public final class g implements Runnable {
         this.b = i10;
     }
 
-    public g(ui uiVar, ArrayList arrayList, int i10) {
+    public g(vi viVar, ArrayList arrayList, int i10) {
         this.a = 5;
-        this.c = uiVar;
+        this.c = viVar;
         this.d = arrayList;
         this.b = i10;
     }

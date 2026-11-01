@@ -12,10 +12,10 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.LinearLayout;
 import java.util.WeakHashMap;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class w1 extends ViewGroup {
     public int D;
@@ -59,7 +59,7 @@ public abstract class w1 extends ViewGroup {
         this.h = typedArray.getFloat(4, -1.0f);
         this.b = typedArray.getInt(3, -1);
         this.n = typedArray.getBoolean(7, false);
-        setDividerDrawable(G.w(5));
+        setDividerDrawable(G.v(5));
         this.D = typedArray.getInt(8, 0);
         this.E = typedArray.getDimensionPixelSize(6, 0);
         G.I();
@@ -125,7 +125,7 @@ public abstract class w1 extends ViewGroup {
             throw new RuntimeException("mBaselineAlignedChildIndex of LinearLayout points to a View that doesn't know how to get its baseline.");
         }
         int i12 = this.c;
-        if (this.d == 1 && (i10 = this.e & zs.x1) != 48) {
+        if (this.d == 1 && (i10 = this.e & at.x1) != 48) {
             if (i10 == 16) {
                 i12 = i0.a.u(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
             } else if (i10 == 80) {
@@ -286,7 +286,7 @@ public abstract class w1 extends ViewGroup {
             int paddingRight2 = (i24 - paddingLeft) - getPaddingRight();
             int virtualChildCount = getVirtualChildCount();
             int i25 = this.e;
-            int i26 = i25 & zs.x1;
+            int i26 = i25 & at.x1;
             int i27 = 8388615 & i25;
             int paddingTop = i26 != 16 ? i26 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : i0.a.u(i13 - i11, this.f, 2, getPaddingTop());
             int i28 = 0;
@@ -323,7 +323,7 @@ public abstract class w1 extends ViewGroup {
         int virtualChildCount2 = getVirtualChildCount();
         int i32 = this.e;
         int i33 = 8388615 & i32;
-        int i34 = i32 & zs.x1;
+        int i34 = i32 & at.x1;
         boolean z11 = this.a;
         int[] iArr = this.r;
         int[] iArr2 = this.s;
@@ -364,7 +364,7 @@ public abstract class w1 extends ViewGroup {
                             if (i20 < 0) {
                                 i20 = i34;
                             }
-                            i21 = i20 & zs.x1;
+                            i21 = i20 & at.x1;
                             i22 = i35;
                             if (i21 != 16) {
                                 u11 = (i0.a.u(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) v1Var2).topMargin) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
@@ -395,7 +395,7 @@ public abstract class w1 extends ViewGroup {
                     i20 = ((LinearLayout.LayoutParams) v1Var2).gravity;
                     if (i20 < 0) {
                     }
-                    i21 = i20 & zs.x1;
+                    i21 = i20 & at.x1;
                     i22 = i35;
                     if (i21 != 16) {
                     }
@@ -854,7 +854,7 @@ public abstract class w1 extends ViewGroup {
                                     if (i77 < 0) {
                                         i77 = w1Var.e;
                                     }
-                                    int i78 = (((i77 & zs.x1) >> 4) & (-2)) >> 1;
+                                    int i78 = (((i77 & at.x1) >> 4) & (-2)) >> 1;
                                     iArr2[i78] = Math.max(iArr2[i78], baseline2);
                                     iArr[i78] = Math.max(iArr[i78], measuredHeight3 - baseline2);
                                 }
@@ -1049,7 +1049,7 @@ public abstract class w1 extends ViewGroup {
                                 if (i93 < 0) {
                                     i93 = w1Var.e;
                                 }
-                                int i94 = (((i93 & zs.x1) >> 4) & (-2)) >> 1;
+                                int i94 = (((i93 & at.x1) >> 4) & (-2)) >> 1;
                                 iArr5[i94] = Math.max(iArr5[i94], baseline);
                                 iArr6[i94] = Math.max(iArr6[i94], measuredHeight4 - baseline);
                             }
@@ -1155,7 +1155,7 @@ public abstract class w1 extends ViewGroup {
             if ((8388615 & i10) == 0) {
                 i10 |= 8388611;
             }
-            if ((i10 & zs.x1) == 0) {
+            if ((i10 & at.x1) == 0) {
                 i10 |= 48;
             }
             this.e = i10;
@@ -1191,9 +1191,9 @@ public abstract class w1 extends ViewGroup {
     }
 
     public void setVerticalGravity(int i10) {
-        int i11 = i10 & zs.x1;
+        int i11 = i10 & at.x1;
         int i12 = this.e;
-        if ((i12 & zs.x1) != i11) {
+        if ((i12 & at.x1) != i11) {
             this.e = i11 | (i12 & (-113));
             requestLayout();
         }

@@ -22,11 +22,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class vr extends ha {
     public static final /* synthetic */ int z2 = 0;
-    public p51 P1;
+    public q51 P1;
     public final TLRPC.Chat Q1;
     public final TLRPC.Chat R1;
     public final boolean S1;
@@ -152,9 +152,9 @@ public final class vr extends ha {
         O();
         this.F1 = true;
         this.s2 = z10;
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i13 = this.t0;
-        tk0Var.setPadding(i13, this.x1, i13, org.telegram.messenger.i0.L(63.0f));
+        uk0Var.setPadding(i13, this.x1, i13, org.telegram.messenger.i0.L(63.0f));
         this.k1.setClipToPadding(false);
         this.k1.setOnItemClickListener(new pr(this, 3));
         this.F1 = true;
@@ -167,7 +167,7 @@ public final class vr extends ha {
         this.k1.r1();
         vh.d dVar = new vh.d(getContext(), this.I0, true);
         dVar.f();
-        dVar.setText(org.telegram.messenger.cd.L0(2131751514, null));
+        dVar.setText(org.telegram.messenger.dd.L0(2131751514, null));
         int i14 = 9;
         dVar.setOnClickListener(new h0(this, i14));
         this.b.addView(dVar, w7.b6.f(48.0f, -1, 87, org.telegram.messenger.i0.L(10.0f) + this.t0, 0, org.telegram.messenger.i0.L(10.0f) + this.t0, org.telegram.messenger.i0.L(10.0f)));
@@ -245,7 +245,7 @@ public final class vr extends ha {
         if (tL_chatBannedRights3.send_reactions) {
             tL_chatBannedRights4.send_reactions = true;
         }
-        org.telegram.messenger.vp.r1(this.a);
+        org.telegram.messenger.wp.r1(this.a);
         this.a2 = new ur(this, 0, arrayList2);
         this.b2 = new ur(this, 1, arrayList2);
         this.c2 = new ur(this, 3, arrayList2);
@@ -253,12 +253,12 @@ public final class vr extends ha {
         this.r2 = z11;
         this.Z1 = org.telegram.messenger.w3.p0(chat);
         if (chat.linked_community_id != 0) {
-            this.R1 = org.telegram.messenger.vp.r1(this.a).L0(Long.valueOf(chat.linked_community_id));
+            this.R1 = org.telegram.messenger.wp.r1(this.a).L0(Long.valueOf(chat.linked_community_id));
         }
         if (org.telegram.messenger.w3.y(2, this.R1) && org.telegram.messenger.w3.y(27, this.R1) && z11) {
             long d = org.telegram.messenger.o5.d((TLObject) arrayList2.get(0));
             this.i2 = d;
-            org.telegram.messenger.vp r12 = org.telegram.messenger.vp.r1(this.a);
+            org.telegram.messenger.wp r12 = org.telegram.messenger.wp.r1(this.a);
             long j11 = this.R1.id;
             nr nrVar = new nr(this, i12);
             TL_communities.TL_communities_getParticipantJoinedChats tL_communities_getParticipantJoinedChats = new TL_communities.TL_communities_getParticipantJoinedChats();
@@ -338,7 +338,7 @@ public final class vr extends ha {
                     i16++;
                 }
             }
-            this.p2 = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new k2.f(i14)).collect(Collectors.toCollection(new org.telegram.messenger.qk(1)));
+            this.p2 = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new k2.f(i14)).collect(Collectors.toCollection(new org.telegram.messenger.rk(1)));
             ur urVar = new ur(this, 2, arrayList2);
             this.d2 = urVar;
             boolean[] zArr = this.e2;
@@ -373,18 +373,18 @@ public final class vr extends ha {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(tk0Var, getContext(), this.a, this.o1.getClassGuid(), true, new nr(this, 0), this.I0);
-        this.P1 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(uk0Var, getContext(), this.a, this.o1.getClassGuid(), true, new nr(this, 0), this.I0);
+        this.P1 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
         boolean[] zArr;
         if (this.s2) {
-            return this.u2 ? org.telegram.messenger.cd.L0(2131751524, null) : this.v2 ? org.telegram.messenger.cd.L0(2131751506, null) : org.telegram.messenger.cd.G(1, "DeleteReactionOptionsTitle", new Object[0]);
+            return this.u2 ? org.telegram.messenger.dd.L0(2131751524, null) : this.v2 ? org.telegram.messenger.dd.L0(2131751506, null) : org.telegram.messenger.dd.G(1, "DeleteReactionOptionsTitle", new Object[0]);
         }
         ArrayList arrayList = this.T1;
         int[] iArr = {arrayList != null ? arrayList.size() : 0};
@@ -401,12 +401,12 @@ public final class vr extends ha {
                 i10++;
             }
         }
-        return org.telegram.messenger.cd.G(iArr[0], "DeleteOptionsTitle", new Object[0]);
+        return org.telegram.messenger.dd.G(iArr[0], "DeleteOptionsTitle", new Object[0]);
     }
 
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
-        SharedPreferences.Editor edit = org.telegram.messenger.vp.r1(this.a).f7.edit();
+        SharedPreferences.Editor edit = org.telegram.messenger.wp.r1(this.a).f7.edit();
         edit.putBoolean("delete_report", this.a2.a());
         edit.putBoolean("delete_deleteAll", this.b2.a());
         edit.putBoolean("delete_ban", !this.Y1 && this.d2.a());
@@ -417,9 +417,9 @@ public final class vr extends ha {
     @Override // org.telegram.ui.ActionBar.z2
     public final void e0() {
         Rect rect = org.telegram.messenger.i0.Q;
-        tk0 tk0Var = this.k1;
-        rect.set(0, 0, tk0Var.getMeasuredWidth(), tk0Var.getMeasuredHeight() - org.telegram.messenger.i0.L(34.0f));
-        tk0Var.setClipBounds(rect);
+        uk0 uk0Var = this.k1;
+        rect.set(0, 0, uk0Var.getMeasuredWidth(), uk0Var.getMeasuredHeight() - org.telegram.messenger.i0.L(34.0f));
+        uk0Var.setClipBounds(rect);
     }
 
     public final boolean e1() {
@@ -433,7 +433,7 @@ public final class vr extends ha {
         int i11 = urVar.a;
         if (e) {
             if (!urVar.d()) {
-                a51 z10 = a51.z(i11, urVar.b);
+                b51 z10 = b51.z(i11, urVar.b);
                 z10.L(urVar.i > 0);
                 arrayList.add(z10);
                 return;
@@ -444,14 +444,14 @@ public final class vr extends ha {
                 i12 = urVar.e != null ? urVar.h : i10;
             }
             String valueOf = String.valueOf(i12);
-            a51 a51Var = new a51(36);
-            a51Var.d = i11;
-            a51Var.l = str;
-            a51Var.o = valueOf;
-            a51Var.L(urVar.i > 0);
-            a51Var.f = urVar.f;
-            a51Var.D = new org.telegram.ui.ud(29, this, urVar);
-            arrayList.add(a51Var);
+            b51 b51Var = new b51(36);
+            b51Var.d = i11;
+            b51Var.l = str;
+            b51Var.o = valueOf;
+            b51Var.L(urVar.i > 0);
+            b51Var.f = urVar.f;
+            b51Var.D = new org.telegram.ui.ud(29, this, urVar);
+            arrayList.add(b51Var);
             if (urVar.f) {
                 return;
             }
@@ -459,12 +459,12 @@ public final class vr extends ha {
                 boolean[] zArr = urVar.e;
                 if (zArr == null || zArr[i13]) {
                     TLObject tLObject = (TLObject) urVar.c.get(i13);
-                    a51 a51Var2 = new a51(37);
-                    a51Var2.d = (i11 << 24) | i13;
-                    a51Var2.G = tLObject;
-                    a51Var2.L(urVar.d[i13]);
-                    a51Var2.i = 1;
-                    arrayList.add(a51Var2);
+                    b51 b51Var2 = new b51(37);
+                    b51Var2.d = (i11 << 24) | i13;
+                    b51Var2.G = tLObject;
+                    b51Var2.L(urVar.d[i13]);
+                    b51Var2.i = 1;
+                    arrayList.add(b51Var2);
                 }
             }
         }
@@ -485,9 +485,9 @@ public final class vr extends ha {
         int[] iArr = {i10};
         for (int i11 = 0; i11 < urVar.g; i11++) {
             TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
-            tL_messages_search.peer = org.telegram.messenger.vp.k1(this.Q1);
+            tL_messages_search.peer = org.telegram.messenger.wp.k1(this.Q1);
             tL_messages_search.q = "";
-            TLRPC.InputPeer j12 = org.telegram.messenger.vp.j1((TLObject) urVar.c.get(i11));
+            TLRPC.InputPeer j12 = org.telegram.messenger.wp.j1((TLObject) urVar.c.get(i11));
             tL_messages_search.from_id = j12;
             tL_messages_search.flags |= 1;
             tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
@@ -542,12 +542,12 @@ public final class vr extends ha {
             org.telegram.ui.ActionBar.x1[] x1VarArr = new org.telegram.ui.ActionBar.x1[1];
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, p6Var);
             int i14 = 0;
-            String L0 = org.telegram.messenger.cd.L0(2131751955, null);
+            String L0 = org.telegram.messenger.dd.L0(2131751955, null);
             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
             x1Var.R = L0;
-            x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.cd.G(arrayList.size(), "CommunityBanWarningMessage", org.telegram.messenger.o5.s(i13, j10)));
-            alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131753729, null), new t(orVar, 6));
-            alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
+            x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.dd.G(arrayList.size(), "CommunityBanWarningMessage", org.telegram.messenger.o5.s(i13, j10)));
+            alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131753729, null), new t(orVar, 6));
+            alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, null), null);
             alertDialog$Builder.o(f7);
             int size = arrayList.size();
             int i15 = 0;
@@ -558,8 +558,8 @@ public final class vr extends ha {
                 ?? r15 = f7;
                 org.telegram.ui.ActionBar.x1[] x1VarArr2 = x1VarArr;
                 long longValue = l10.longValue();
-                TLRPC.Chat L02 = org.telegram.messenger.vp.r1(i13).L0(l10);
-                TLRPC.ChatFull M0 = org.telegram.messenger.vp.r1(i13).M0(longValue);
+                TLRPC.Chat L02 = org.telegram.messenger.wp.r1(i13).L0(l10);
+                TLRPC.ChatFull M0 = org.telegram.messenger.wp.r1(i13).M0(longValue);
                 if (L02 == null) {
                     f7 = r15;
                     x1VarArr = x1VarArr2;
@@ -573,7 +573,7 @@ public final class vr extends ha {
                         int i18 = i14;
                         i11 = i15;
                         r19 = i18;
-                        str = org.telegram.messenger.cd.G(i17, "Members", new Object[i18]);
+                        str = org.telegram.messenger.dd.G(i17, "Members", new Object[i18]);
                     } else {
                         r19 = i14;
                         i11 = i15;
@@ -611,7 +611,7 @@ public final class vr extends ha {
         ur urVar = this.a2;
         String str2 = "";
         if (urVar.i > 0) {
-            str2 = "" + org.telegram.messenger.cd.G(urVar.i, "UsersReported", new Object[0]);
+            str2 = "" + org.telegram.messenger.dd.G(urVar.i, "UsersReported", new Object[0]);
         }
         ur urVar2 = this.d2;
         if (urVar2.i > 0) {
@@ -620,11 +620,11 @@ public final class vr extends ha {
             }
             if (this.Y1) {
                 StringBuilder t10 = a1.g.t(str2);
-                t10.append(org.telegram.messenger.cd.G(urVar2.i, "UsersRestricted", new Object[0]));
+                t10.append(org.telegram.messenger.dd.G(urVar2.i, "UsersRestricted", new Object[0]));
                 str2 = t10.toString();
             } else {
                 StringBuilder t11 = a1.g.t(str2);
-                t11.append(org.telegram.messenger.cd.G(urVar2.i, "UsersBanned", new Object[0]));
+                t11.append(org.telegram.messenger.dd.G(urVar2.i, "UsersBanned", new Object[0]));
                 str2 = t11.toString();
             }
         }
@@ -636,17 +636,17 @@ public final class vr extends ha {
         if (isEmpty) {
             org.telegram.messenger.m5.n(null, z13 ? 2131746396 : 2131748475, cc.a0(k2Var), i19, 36);
         } else {
-            cc.a0(k2Var).I(i19, org.telegram.messenger.cd.L0(z13 ? 2131746396 : 2131748475, null), str2).j();
+            cc.a0(k2Var).I(i19, org.telegram.messenger.dd.L0(z13 ? 2131746396 : 2131748475, null), str2).j();
         }
         if (j10 != 0 && this.h2) {
-            org.telegram.messenger.vp r12 = org.telegram.messenger.vp.r1(this.a);
+            org.telegram.messenger.wp r12 = org.telegram.messenger.wp.r1(this.a);
             long j11 = this.R1.id;
             org.telegram.messenger.z1 z1Var = new org.telegram.messenger.z1(3);
             TL_communities.TL_communities_toggleParticipantBanned tL_communities_toggleParticipantBanned = new TL_communities.TL_communities_toggleParticipantBanned();
             tL_communities_toggleParticipantBanned.community = r12.g1(j11);
             tL_communities_toggleParticipantBanned.participant = r12.i1(j10);
             tL_communities_toggleParticipantBanned.unban = false;
-            r12.getConnectionsManager().sendRequestTyped(tL_communities_toggleParticipantBanned, new a3.b(1), new org.telegram.messenger.q9(r12, j11, z1Var));
+            r12.getConnectionsManager().sendRequestTyped(tL_communities_toggleParticipantBanned, new a3.b(1), new org.telegram.messenger.r9(r12, j11, z1Var));
         }
         ArrayList arrayList2 = this.T1;
         final int i20 = 0;
@@ -676,18 +676,18 @@ public final class vr extends ha {
 
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) obj;
+                org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) obj;
                 switch (i20) {
                     case 0:
                         long j12 = this.b.U1;
-                        TLRPC.Peer peer = jjVar.k.peer_id;
+                        TLRPC.Peer peer = kjVar.k.peer_id;
                         if ((peer == null || peer.chat_id == (-j12)) && j12 != 0) {
                         }
                         break;
                     case 1:
                         vr vrVar = this.b;
                         vrVar.getClass();
-                        TLRPC.Peer peer2 = jjVar.k.peer_id;
+                        TLRPC.Peer peer2 = kjVar.k.peer_id;
                         if (peer2 != null) {
                             long j13 = peer2.chat_id;
                             long j14 = vrVar.U1;
@@ -698,7 +698,7 @@ public final class vr extends ha {
                     default:
                         vr vrVar2 = this.b;
                         vrVar2.getClass();
-                        TLRPC.Peer peer3 = jjVar.k.peer_id;
+                        TLRPC.Peer peer3 = kjVar.k.peer_id;
                         if (peer3 == null || peer3.chat_id == (-vrVar2.U1)) {
                         }
                         break;
@@ -707,7 +707,7 @@ public final class vr extends ha {
             }
         }).map(new k2.f(i21));
         final int i22 = 1;
-        ArrayList arrayList3 = (ArrayList) map.collect(Collectors.toCollection(new org.telegram.messenger.qk(1)));
+        ArrayList arrayList3 = (ArrayList) map.collect(Collectors.toCollection(new org.telegram.messenger.rk(1)));
         ArrayList arrayList4 = (ArrayList) Collection.-EL.stream(arrayList2).filter(new Predicate(this) { // from class: org.telegram.ui.Components.qr
             public final /* synthetic */ vr b;
 
@@ -733,18 +733,18 @@ public final class vr extends ha {
 
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) obj;
+                org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) obj;
                 switch (i22) {
                     case 0:
                         long j12 = this.b.U1;
-                        TLRPC.Peer peer = jjVar.k.peer_id;
+                        TLRPC.Peer peer = kjVar.k.peer_id;
                         if ((peer == null || peer.chat_id == (-j12)) && j12 != 0) {
                         }
                         break;
                     case 1:
                         vr vrVar = this.b;
                         vrVar.getClass();
-                        TLRPC.Peer peer2 = jjVar.k.peer_id;
+                        TLRPC.Peer peer2 = kjVar.k.peer_id;
                         if (peer2 != null) {
                             long j13 = peer2.chat_id;
                             long j14 = vrVar.U1;
@@ -755,22 +755,22 @@ public final class vr extends ha {
                     default:
                         vr vrVar2 = this.b;
                         vrVar2.getClass();
-                        TLRPC.Peer peer3 = jjVar.k.peer_id;
+                        TLRPC.Peer peer3 = kjVar.k.peer_id;
                         if (peer3 == null || peer3.chat_id == (-vrVar2.U1)) {
                         }
                         break;
                 }
                 return false;
             }
-        }).map(new k2.f(i21)).collect(Collectors.toCollection(new org.telegram.messenger.qk(1)));
+        }).map(new k2.f(i21)).collect(Collectors.toCollection(new org.telegram.messenger.rk(1)));
         TLRPC.Chat chat = this.Q1;
         ur urVar3 = this.b2;
         if (!z12) {
             if (!arrayList3.isEmpty()) {
-                org.telegram.messenger.vp.r1(this.a).Z(arrayList3, null, null, -chat.id, this.V1, false, this.W1);
+                org.telegram.messenger.wp.r1(this.a).Z(arrayList3, null, null, -chat.id, this.V1, false, this.W1);
             }
             if (!arrayList4.isEmpty()) {
-                org.telegram.messenger.vp.r1(this.a).Z(arrayList4, null, null, this.U1, this.V1, true, this.W1);
+                org.telegram.messenger.wp.r1(this.a).Z(arrayList4, null, null, this.U1, this.V1, true, this.W1);
             }
         } else if (!this.v2) {
             urVar3.b(new androidx.car.app.utils.a(this, arrayList3, arrayList4, 22));
@@ -809,18 +809,18 @@ public final class vr extends ha {
 
                     @Override // java.util.function.Predicate
                     public final boolean test(Object obj) {
-                        org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) obj;
+                        org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) obj;
                         switch (i10) {
                             case 0:
                                 long j12 = this.b.U1;
-                                TLRPC.Peer peer = jjVar.k.peer_id;
+                                TLRPC.Peer peer = kjVar.k.peer_id;
                                 if ((peer == null || peer.chat_id == (-j12)) && j12 != 0) {
                                 }
                                 break;
                             case 1:
                                 vr vrVar = this.b;
                                 vrVar.getClass();
-                                TLRPC.Peer peer2 = jjVar.k.peer_id;
+                                TLRPC.Peer peer2 = kjVar.k.peer_id;
                                 if (peer2 != null) {
                                     long j13 = peer2.chat_id;
                                     long j14 = vrVar.U1;
@@ -831,27 +831,27 @@ public final class vr extends ha {
                             default:
                                 vr vrVar2 = this.b;
                                 vrVar2.getClass();
-                                TLRPC.Peer peer3 = jjVar.k.peer_id;
+                                TLRPC.Peer peer3 = kjVar.k.peer_id;
                                 if (peer3 == null || peer3.chat_id == (-vrVar2.U1)) {
                                 }
                                 break;
                         }
                         return false;
                     }
-                }).filter(new rr(1, tLObject)).map(new k2.f(i21)).collect(Collectors.toCollection(new org.telegram.messenger.qk(1)));
+                }).filter(new rr(1, tLObject)).map(new k2.f(i21)).collect(Collectors.toCollection(new org.telegram.messenger.rk(1)));
                 if (z12 && (tLObject instanceof TLRPC.User) && arrayList5.size() == 1) {
                     TLRPC.TL_messages_reportReaction tL_messages_reportReaction = new TLRPC.TL_messages_reportReaction();
-                    tL_messages_reportReaction.peer = org.telegram.messenger.vp.k1(chat);
-                    tL_messages_reportReaction.user_id = org.telegram.messenger.vp.r1(this.a).p1((TLRPC.User) tLObject);
+                    tL_messages_reportReaction.peer = org.telegram.messenger.wp.k1(chat);
+                    tL_messages_reportReaction.user_id = org.telegram.messenger.wp.r1(this.a).p1((TLRPC.User) tLObject);
                     tL_messages_reportReaction.id = arrayList5.get(0).intValue();
                     ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_reportReaction, null);
                 } else {
                     TLRPC.TL_channels_reportSpam tL_channels_reportSpam = new TLRPC.TL_channels_reportSpam();
-                    tL_channels_reportSpam.channel = org.telegram.messenger.vp.h1(chat);
+                    tL_channels_reportSpam.channel = org.telegram.messenger.wp.h1(chat);
                     if (tLObject instanceof TLRPC.User) {
-                        tL_channels_reportSpam.participant = org.telegram.messenger.vp.m1((TLRPC.User) tLObject);
+                        tL_channels_reportSpam.participant = org.telegram.messenger.wp.m1((TLRPC.User) tLObject);
                     } else if (tLObject instanceof TLRPC.Chat) {
-                        tL_channels_reportSpam.participant = org.telegram.messenger.vp.k1((TLRPC.Chat) tLObject);
+                        tL_channels_reportSpam.participant = org.telegram.messenger.wp.k1((TLRPC.Chat) tLObject);
                     }
                     tL_channels_reportSpam.id = arrayList5;
                     ConnectionsManager.getInstance(this.a).sendRequest(tL_channels_reportSpam, null);

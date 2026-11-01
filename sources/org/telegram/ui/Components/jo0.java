@@ -1,40 +1,75 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jo0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ op0 b;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowInsets;
 
-    public /* synthetic */ jo0(op0 op0Var, int i10) {
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class jo0 implements ei.n, r0.m, org.telegram.ui.ActionBar.i1, ei.o {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pp0 b;
+
+    public /* synthetic */ jo0(pp0 pp0Var, int i10) {
         this.a = i10;
-        this.b = op0Var;
+        this.b = pp0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // r0.m
+    public r0.j1 R0(View view, r0.j1 j1Var) {
+        WindowInsets g10 = j1Var.g();
+        pp0 pp0Var = this.b;
+        pp0Var.t0(g10);
+        i0.c f7 = j1Var.a.f(519);
+        if (!pp0Var.y2.equals(f7)) {
+            pp0Var.y2 = f7;
+            pp0Var.c.requestLayout();
+        }
+        return r0.j1.b;
+    }
+
+    @Override // ei.o
+    public int c() {
+        pp0 pp0Var = this.b;
+        pp0Var.getClass();
+        return org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, pp0Var.I0);
+    }
+
+    @Override // ei.n
+    public void j(int i10) {
+        pp0 pp0Var = this.b;
+        tg.f fVar = pp0Var.G2;
+        if (Build.VERSION.SDK_INT < 31 || fVar == null) {
+            return;
+        }
+        if (v7.u7.a(i10, 4)) {
+            fVar.h(pp0Var.X0.e());
+        }
+        fVar.e(pp0Var.L2, pp0Var.b.getWidth(), pp0Var.b.getHeight());
+    }
+
+    @Override // org.telegram.ui.ActionBar.i1
+    public void p(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.k1 k1Var;
+        org.telegram.ui.ActionBar.k1 k1Var2;
         switch (this.a) {
-            case 0:
-                op0 op0Var = this.b;
-                op0Var.s2 = true;
-                h10 h10Var = op0Var.q2;
-                h10Var.r.setText("");
-                org.telegram.messenger.i0.J3(h10Var.r);
-                break;
-            default:
-                org.telegram.messenger.rz rzVar = new org.telegram.messenger.rz(24);
-                op0 op0Var2 = this.b;
-                if (!op0Var2.d) {
-                    rzVar.run();
-                    break;
-                } else {
-                    h10 h10Var2 = op0Var2.q2;
-                    if (h10Var2 != null) {
-                        org.telegram.messenger.i0.v1(h10Var2.r);
-                    }
-                    org.telegram.messenger.i0.h3(rzVar, 300L);
+            case 2:
+                pp0 pp0Var = this.b;
+                pp0Var.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (k1Var = pp0Var.B2) != null && k1Var.isShowing()) {
+                    pp0Var.B2.d(true);
                     break;
                 }
+                break;
+            default:
+                pp0 pp0Var2 = this.b;
+                pp0Var2.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (k1Var2 = pp0Var2.B2) != null && k1Var2.isShowing()) {
+                    pp0Var2.B2.d(true);
+                    break;
+                }
+                break;
         }
     }
 }

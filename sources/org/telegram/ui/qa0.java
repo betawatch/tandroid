@@ -1,64 +1,82 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qa0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ua0 b;
-    public final /* synthetic */ String c;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_update;
 
-    public /* synthetic */ qa0(ua0 ua0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ua0Var;
-        this.c = str;
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes3.dex */
+public final class qa0 extends u50 {
+    public qa0(ta0 ta0Var, Bundle bundle) {
+        super(bundle);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ua0 ua0Var = this.b;
-                if (ua0Var.a()) {
-                    ua0Var.w(this.c);
-                    break;
+    public static void z0(qa0 qa0Var, TLObject tLObject, HashSet hashSet, TLRPC.TL_error tL_error) {
+        int i10 = 0;
+        if (!(tLObject instanceof TLRPC.Updates)) {
+            if (!(tLObject instanceof TL_phone.groupCall)) {
+                if (tL_error != null) {
+                    ta0.d().f0(tL_error, false);
+                    return;
                 }
-                break;
-            case 1:
-                this.b.w(this.c);
-                break;
-            case 2:
-                ua0 ua0Var2 = this.b;
-                ua0Var2.getClass();
-                String str = this.c;
-                if ("disable".equalsIgnoreCase(str)) {
-                    ua0Var2.x("turnPasswordOffRow");
-                }
-                if ("change".equalsIgnoreCase(str)) {
-                    ua0Var2.x("changePasswordRow");
-                }
-                if ("change-email".equalsIgnoreCase(str)) {
-                    ua0Var2.x("emailRow");
-                    break;
-                }
-                break;
-            default:
-                ua0 ua0Var3 = this.b;
-                ua0Var3.getClass();
-                String str2 = this.c;
-                if ("disable".equalsIgnoreCase(str2)) {
-                    ua0Var3.x("disablePasscodeRow");
-                }
-                if ("change".equalsIgnoreCase(str2)) {
-                    ua0Var3.x("changePasscodeRow");
-                }
-                if ("auto-lock".equalsIgnoreCase(str2)) {
-                    ua0Var3.x("autoLockRow");
-                }
-                if ("fingerprint".equalsIgnoreCase(str2)) {
-                    ua0Var3.x("fingerprintRow");
-                    break;
-                }
-                break;
+                return;
+            }
+            TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
+            org.telegram.messenger.wp.r1(qa0Var.currentAccount).V3(groupcall.users, false);
+            org.telegram.messenger.wp.r1(qa0Var.currentAccount).P3(groupcall.chats, false);
+            if (LaunchActivity.I1 == null) {
+                return;
+            }
+            TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
+            TLRPC.GroupCall groupCall = groupcall.call;
+            tL_inputGroupCall.id = groupCall.id;
+            tL_inputGroupCall.access_hash = groupCall.access_hash;
+            org.telegram.ui.Components.voip.n1.g(LaunchActivity.I1, qa0Var.currentAccount, tL_inputGroupCall, false, groupCall, hashSet);
+            return;
         }
+        TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+        org.telegram.messenger.wp.r1(qa0Var.currentAccount).V3(updates.users, false);
+        org.telegram.messenger.wp.r1(qa0Var.currentAccount).P3(updates.chats, false);
+        ArrayList z02 = org.telegram.messenger.wp.z0(updates, TL_update.TL_updateGroupCall.class);
+        int size = z02.size();
+        TLRPC.GroupCall groupCall2 = null;
+        while (i10 < size) {
+            Object obj = z02.get(i10);
+            i10++;
+            groupCall2 = ((TL_update.TL_updateGroupCall) obj).call;
+        }
+        if (LaunchActivity.I1 == null || groupCall2 == null) {
+            return;
+        }
+        TLRPC.TL_inputGroupCall tL_inputGroupCall2 = new TLRPC.TL_inputGroupCall();
+        tL_inputGroupCall2.id = groupCall2.id;
+        tL_inputGroupCall2.access_hash = groupCall2.access_hash;
+        org.telegram.ui.Components.voip.n1.g(LaunchActivity.I1, qa0Var.currentAccount, tL_inputGroupCall2, false, groupCall2, hashSet);
+    }
+
+    @Override // org.telegram.ui.u50
+    public final void s0(HashSet hashSet) {
+        if (hashSet.size() == 1) {
+            TLRPC.User Z1 = getMessagesController().Z1((Long) hashSet.iterator().next());
+            TLRPC.UserFull a2 = getMessagesController().a2(Z1.id);
+            if (a2 == null) {
+                TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
+                tL_users_getFullUser.id = getMessagesController().n1(Z1.id);
+                getConnectionsManager().sendRequest(tL_users_getFullUser, new org.telegram.ui.Components.t20(19, this, Z1));
+                return;
+            }
+            org.telegram.ui.Components.voip.n1.m(Z1, false, a2.video_calls_available, getParentActivity(), a2, getAccountInstance());
+        } else {
+            TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
+            createconferencecall.random_id = Utilities.b.nextInt();
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new org.telegram.ui.Components.t20(20, this, hashSet));
+        }
+        finishFragment();
     }
 }

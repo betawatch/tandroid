@@ -1,11 +1,12 @@
 package hi;
 
 import android.graphics.Canvas;
+import android.graphics.RectF;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final class d implements a, tg.a {
+public final class d implements a, tg.a, fi.a {
     public final a a;
     public final a b;
     public final je.b c = new je.b();
@@ -16,21 +17,65 @@ public final class d implements a, tg.a {
         this.b = aVar2;
     }
 
+    public static fi.a i(a aVar) {
+        if (aVar instanceof fi.a) {
+            fi.a aVar2 = (fi.a) aVar;
+            if (aVar2.h()) {
+                return aVar2;
+            }
+        }
+        return null;
+    }
+
+    @Override // fi.a
+    public final int a() {
+        return j().a();
+    }
+
     @Override // tg.a
-    public final vg.f a() {
-        vg.f fVar = new vg.f(this);
-        this.c.add(fVar);
+    public final vg.f b() {
+        vg.f fVar = new vg.f(this, this, this);
+        c(fVar);
         return fVar;
     }
 
-    public final void b(float f7) {
-        if (this.d != f7) {
-            this.d = f7;
-            Iterator it = this.c.iterator();
-            while (it.hasNext()) {
-                vg.f fVar = (vg.f) it.next();
-                fVar.updateColors();
-                fVar.invalidateSelf();
+    @Override // tg.a
+    public final void c(vg.f fVar) {
+        this.c.add(fVar);
+    }
+
+    @Override // fi.a
+    public final void d(float f7, float f10, int i10, Canvas canvas, RectF rectF) {
+        float f11;
+        float f12;
+        int i11;
+        Canvas canvas2;
+        RectF rectF2;
+        if (this.d < 1.0f) {
+            f11 = f7;
+            f12 = f10;
+            i11 = i10;
+            canvas2 = canvas;
+            rectF2 = rectF;
+            i(this.a).d(f11, f12, i11, canvas2, rectF2);
+        } else {
+            f11 = f7;
+            f12 = f10;
+            i11 = i10;
+            canvas2 = canvas;
+            rectF2 = rectF;
+        }
+        float f13 = this.d;
+        if (f13 > 0.0f) {
+            if (f13 < 1.0f) {
+                canvas2.saveLayerAlpha(null, (int) (f13 * 255.0f));
+            }
+            RectF rectF3 = rectF2;
+            Canvas canvas3 = canvas2;
+            int i12 = i11;
+            i(this.b).d(f11, f12, i12, canvas3, rectF3);
+            if (this.d < 1.0f) {
+                canvas3.restore();
             }
         }
     }
@@ -69,6 +114,39 @@ public final class d implements a, tg.a {
             this.b.e(canvas3, f21, f20, f19, f18);
             if (this.d < 1.0f) {
                 canvas3.restore();
+            }
+        }
+    }
+
+    @Override // fi.a
+    public final int f() {
+        return j().f();
+    }
+
+    @Override // fi.a
+    public final int g() {
+        return j().g();
+    }
+
+    @Override // fi.a
+    public final boolean h() {
+        return (i(this.a) == null || i(this.b) == null) ? false : true;
+    }
+
+    public final fi.a j() {
+        fi.a i10 = i(this.a);
+        fi.a i11 = i(this.b);
+        return i10.f() <= i11.f() ? i10 : i11;
+    }
+
+    public final void k(float f7) {
+        if (this.d != f7) {
+            this.d = f7;
+            Iterator it = this.c.iterator();
+            while (it.hasNext()) {
+                vg.f fVar = (vg.f) it.next();
+                fVar.updateColors();
+                fVar.invalidateSelf();
             }
         }
     }

@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
-    public final m60 a;
+    public final l60 a;
     public final f4 b;
     public z2 c;
     public z2 d;
@@ -23,17 +23,17 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
     public int h;
     public TL_iv.pageBlockBlockquote n;
 
-    public b1(Context context, m60 m60Var, f4 f4Var) {
+    public b1(Context context, l60 l60Var, f4 f4Var) {
         super(context);
-        this.a = m60Var;
+        this.a = l60Var;
         this.b = f4Var;
     }
 
     @Override // org.telegram.ui.c3
     public int getBoundLeft() {
         int i10;
-        m60 m60Var = this.a;
-        m60Var.getClass();
+        l60 l60Var = this.a;
+        l60Var.getClass();
         float f7 = 18;
         int L = org.telegram.messenger.i0.L(f7);
         z2 z2Var = this.c;
@@ -49,15 +49,15 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
         if (i10 == Integer.MAX_VALUE) {
             return -1;
         }
-        m60Var.getClass();
+        l60Var.getClass();
         return i10 - org.telegram.messenger.i0.L(f7);
     }
 
     @Override // org.telegram.ui.c3
     public int getBoundRight() {
         int i10;
-        m60 m60Var = this.a;
-        m60Var.getClass();
+        l60 l60Var = this.a;
+        l60Var.getClass();
         float f7 = 18;
         int L = org.telegram.messenger.i0.L(f7);
         z2 z2Var = this.c;
@@ -73,7 +73,7 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
         if (i10 == Integer.MIN_VALUE) {
             return -1;
         }
-        m60Var.getClass();
+        l60Var.getClass();
         return org.telegram.messenger.i0.L(f7) + i10;
     }
 
@@ -82,10 +82,10 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
         int m10;
         int L;
         z2 z2Var = this.d;
-        m60 m60Var = this.a;
+        l60 l60Var = this.a;
         if (z2Var != null) {
             m10 = z2Var.m() + z2Var.s;
-            m60Var.getClass();
+            l60Var.getClass();
             L = org.telegram.messenger.i0.L(18);
         } else {
             z2 z2Var2 = this.c;
@@ -93,14 +93,14 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
                 return -1;
             }
             m10 = z2Var2.m() + z2Var2.s;
-            m60Var.getClass();
+            l60Var.getClass();
             L = org.telegram.messenger.i0.L(18);
         }
         return L + m10;
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.z20.a(this);
+        return org.telegram.messenger.a30.a(this);
     }
 
     @Override // org.telegram.ui.Cells.j9
@@ -147,12 +147,12 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
             return;
         }
         z2 z2Var = this.c;
-        m60 m60Var = this.a;
+        l60 l60Var = this.a;
         int i10 = 0;
         if (z2Var != null) {
             canvas.save();
             canvas.translate(this.f, this.h);
-            h4.t(m60Var, canvas, this, 0);
+            h4.t(l60Var, canvas, this, 0);
             this.c.d(canvas, this);
             canvas.restore();
             i10 = 1;
@@ -160,21 +160,21 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
         if (this.d != null) {
             canvas.save();
             canvas.translate(this.f, this.e);
-            h4.t(m60Var, canvas, this, i10);
+            h4.t(l60Var, canvas, this, i10);
             this.d.d(canvas, this);
             canvas.restore();
         }
         f4 f4Var = this.b;
         if (f4Var == null || !f4Var.G) {
-            m60Var.getClass();
+            l60Var.getClass();
             float L = org.telegram.messenger.i0.L((this.n.level * 14) + 18);
             float L2 = org.telegram.messenger.i0.L(6.0f);
-            m60Var.getClass();
+            l60Var.getClass();
             canvas.drawRect(L, L2, org.telegram.messenger.i0.L((this.n.level * 14) + 20), getMeasuredHeight() - org.telegram.messenger.i0.L(6.0f), h4.r1);
         } else {
             canvas.drawRect(getMeasuredWidth() - org.telegram.messenger.i0.L(20.0f), org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(2.0f) + r2, getMeasuredHeight() - org.telegram.messenger.i0.L(6.0f), h4.r1);
         }
-        h4.s(canvas, m60Var, this.n, getMeasuredHeight());
+        h4.s(canvas, l60Var, this.n, getMeasuredHeight());
     }
 
     @Override // android.view.View
@@ -189,12 +189,12 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         z2 z2Var = this.c;
         f4 f4Var = this.b;
-        m60 m60Var = this.a;
-        if (z2Var != null && (h10 = h4.h(m60Var, f4Var, z2Var)) != null) {
+        l60 l60Var = this.a;
+        if (z2Var != null && (h10 = h4.h(l60Var, f4Var, z2Var)) != null) {
             spannableStringBuilder.append(h10);
         }
         z2 z2Var2 = this.d;
-        if (z2Var2 != null && (h = h4.h(m60Var, f4Var, z2Var2)) != null) {
+        if (z2Var2 != null && (h = h4.h(l60Var, f4Var, z2Var2)) != null) {
             if (spannableStringBuilder.length() > 0) {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
@@ -203,7 +203,7 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
         if (spannableStringBuilder.length() == 0) {
             return;
         }
-        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) org.telegram.messenger.cd.L0(2131754873, null));
+        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) org.telegram.messenger.dd.L0(2131754873, null));
         accessibilityNodeInfo.setText(spannableStringBuilder);
     }
 
@@ -212,12 +212,12 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
         int i12;
         int i13;
         int size = View.MeasureSpec.getSize(i10);
-        m60 m60Var = this.a;
-        m60Var.getClass();
+        l60 l60Var = this.a;
+        l60Var.getClass();
         float f7 = 8;
         this.h = org.telegram.messenger.i0.L(f7);
         if (this.n != null) {
-            m60Var.getClass();
+            l60Var.getClass();
             int L = size - org.telegram.messenger.i0.L(50);
             if (this.n.level > 0) {
                 L -= org.telegram.messenger.i0.L(r2 * 14);
@@ -227,7 +227,7 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
             z2 o10 = h4.o(this.a, this, null, pageblockblockquote.text, i14, this.h, pageblockblockquote, this.b);
             this.c = o10;
             if (o10 != null) {
-                m60Var.getClass();
+                l60Var.getClass();
                 i13 = this.c.d.getHeight() + org.telegram.messenger.i0.L(f7);
             } else {
                 i13 = 0;
@@ -238,29 +238,29 @@ public final class b1 extends View implements org.telegram.ui.Cells.j9, c3 {
             if (i15 > 0) {
                 if (f4Var == null || !f4Var.G) {
                     int L2 = org.telegram.messenger.i0.L(i15 * 14);
-                    m60Var.getClass();
+                    l60Var.getClass();
                     this.f = org.telegram.messenger.i0.L(32) + L2;
                 } else {
                     this.f = org.telegram.messenger.i0.L((i15 * 14) + 14);
                 }
             } else if (f4Var == null || !f4Var.G) {
-                m60Var.getClass();
+                l60Var.getClass();
                 this.f = org.telegram.messenger.i0.L(32);
             } else {
                 this.f = org.telegram.messenger.i0.L(14.0f);
             }
-            m60Var.getClass();
+            l60Var.getClass();
             int L3 = org.telegram.messenger.i0.L(f7) + i12;
             this.e = L3;
             TL_iv.pageBlockBlockquote pageblockblockquote2 = this.n;
             z2 o11 = h4.o(this.a, this, null, pageblockblockquote2.caption, i14, L3, pageblockblockquote2, this.b);
             this.d = o11;
             if (o11 != null) {
-                m60Var.getClass();
+                l60Var.getClass();
                 i12 += this.d.d.getHeight() + org.telegram.messenger.i0.L(f7);
             }
             if (i12 != 0) {
-                m60Var.getClass();
+                l60Var.getClass();
                 i12 += org.telegram.messenger.i0.L(f7);
             }
             z2 z2Var = this.c;

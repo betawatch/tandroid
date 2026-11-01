@@ -6,15 +6,15 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class z1 extends tk0 implements us, t0 {
+public abstract class z1 extends uk0 implements vs, t0 {
     public final ArrayList e3;
     public final s4.a0 f3;
     public boolean g3;
@@ -53,9 +53,9 @@ public abstract class z1 extends tk0 implements us, t0 {
         setClipChildren(false);
         setOnScrollListener(new ag.u(b1Var, 4));
         setOnItemClickListener(new ag.y0(b1Var, 7));
-        ui.b0(i10).o1();
+        vi.b0(i10).o1();
         arrayList.clear();
-        arrayList.addAll(ui.b0(i10).B0);
+        arrayList.addAll(vi.b0(i10).B0);
         getAdapter().f();
         invalidate();
     }
@@ -68,18 +68,18 @@ public abstract class z1 extends tk0 implements us, t0 {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.l5) {
+        if (i10 == at.l5) {
             ArrayList arrayList = this.e3;
             arrayList.clear();
-            arrayList.addAll(ui.b0(this.i3).B0);
+            arrayList.addAll(vi.b0(this.i3).B0);
             getAdapter().f();
             invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.t3) {
             ArrayList arrayList = this.n3;
@@ -120,25 +120,25 @@ public abstract class z1 extends tk0 implements us, t0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        zs.f(this.i3).c(this, zs.l5);
+        at.f(this.i3).c(this, at.l5);
         A1();
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        zs.f(this.i3).n(this, zs.l5);
+        at.f(this.i3).n(this, at.l5);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.g3 && !this.e3.isEmpty() && getChildCount() > 0) {
@@ -155,7 +155,7 @@ public abstract class z1 extends tk0 implements us, t0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (View.MeasureSpec.getSize(i11) > View.MeasureSpec.getSize(i10)) {
             this.r3 = View.MeasureSpec.getSize(i10);

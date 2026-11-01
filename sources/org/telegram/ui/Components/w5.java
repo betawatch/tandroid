@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class w5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final class w5 extends AnimatorListenerAdapter {
                 g9Var.setAlpha(1.0f);
                 break;
             case 4:
-                o8 o8Var = (o8) ((org.telegram.messenger.h9) this.b).j1;
+                o8 o8Var = (o8) ((org.telegram.messenger.i9) this.b).j1;
                 o8Var.f = false;
                 o8Var.e.setVisibility(8);
                 break;
@@ -170,9 +170,9 @@ public final class w5 extends AnimatorListenerAdapter {
                 break;
             case 16:
                 dp dpVar = (dp) this.b;
-                b11 b11Var = dpVar.H1;
-                if (b11Var != null) {
-                    if (b11Var.getParent() != null) {
+                c11 c11Var = dpVar.H1;
+                if (c11Var != null) {
+                    if (c11Var.getParent() != null) {
                         ((ViewGroup) dpVar.H1.getParent()).removeView(dpVar.H1);
                     }
                     dpVar.H1 = null;
@@ -181,13 +181,13 @@ public final class w5 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 17:
-                b11 b11Var2 = (b11) this.b;
-                b11Var2.c = null;
-                b11Var2.a.setShader(null);
-                b11Var2.n = null;
-                b11Var2.r = null;
-                b11Var2.setImageDrawable(null);
-                org.telegram.messenger.i0.E2(b11Var2);
+                c11 c11Var2 = (c11) this.b;
+                c11Var2.c = null;
+                c11Var2.a.setShader(null);
+                c11Var2.n = null;
+                c11Var2.r = null;
+                c11Var2.setImageDrawable(null);
+                org.telegram.messenger.i0.E2(c11Var2);
                 break;
             case 18:
                 CheckBox checkBox = (CheckBox) this.b;

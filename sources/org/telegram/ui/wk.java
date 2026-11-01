@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class wk extends org.telegram.ui.Components.rm0 {
+public final class wk extends org.telegram.ui.Components.sm0 {
     public final /* synthetic */ un I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,39 +14,39 @@ public final class wk extends org.telegram.ui.Components.rm0 {
         this.I = unVar;
     }
 
-    @Override // org.telegram.ui.Components.rm0
+    @Override // org.telegram.ui.Components.sm0
     public final void b(boolean z10) {
         un unVar = this.I;
-        unVar.B7();
-        unVar.z7();
-        dl dlVar = unVar.wb;
+        unVar.F7();
+        unVar.D7();
+        dl dlVar = unVar.xb;
         if (dlVar != null) {
             dlVar.setTranslationY(unVar.P9 + getCurrentHeight());
         }
         if (z10) {
             unVar.W9 = true;
-            unVar.Dc();
+            unVar.Ic();
         }
     }
 
-    @Override // org.telegram.ui.Components.rm0
+    @Override // org.telegram.ui.Components.sm0
     public final boolean f(sg.o0 o0Var) {
         int i10;
         un unVar = this.I;
         unVar.E3 = o0Var;
         unVar.F3 = o0Var != null;
         if (o0Var == null) {
-            org.telegram.messenger.ui mediaDataController = unVar.getMediaDataController();
+            org.telegram.messenger.vi mediaDataController = unVar.getMediaDataController();
             mediaDataController.Y0.clear();
             mediaDataController.Z0.clear();
             mediaDataController.a1.clear();
-            unVar.Cb(false);
-            unVar.Zc(0, 0, -1);
+            unVar.Hb(false);
+            unVar.ed(0, 0, -1);
         }
-        unVar.cd();
-        unVar.Pc();
+        unVar.hd();
+        unVar.Uc();
         unVar.H3 = unVar.j0.getSearchField().getText().toString();
-        org.telegram.messenger.ui mediaDataController2 = unVar.getMediaDataController();
+        org.telegram.messenger.vi mediaDataController2 = unVar.getMediaDataController();
         String str = unVar.H3;
         long j10 = unVar.j6;
         long j11 = unVar.b7;
@@ -56,7 +56,7 @@ public final class wk extends org.telegram.ui.Components.rm0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.rm0
+    @Override // org.telegram.ui.Components.sm0
     public final void h(boolean z10) {
         super.h(z10);
         un unVar = this.I;

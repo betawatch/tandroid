@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i5 extends FrameLayout {
     public final org.telegram.ui.Components.r8 a;
@@ -29,28 +29,28 @@ public final class i5 extends FrameLayout {
         org.telegram.ui.ActionBar.u5 u5Var2 = new org.telegram.ui.ActionBar.u5(getContext());
         this.d = u5Var2;
         g9Var.setRoundRadius(org.telegram.messenger.i0.L(23.0f));
-        addView(g9Var, w7.b6.d(46, 46.0f, cd.X ? 5 : 3, 12.0f, 8.0f, 12.0f, 0.0f));
-        u5Var.setGravity(cd.X ? 5 : 3);
+        addView(g9Var, w7.b6.d(46, 46.0f, dd.X ? 5 : 3, 12.0f, 8.0f, 12.0f, 0.0f));
+        u5Var.setGravity(dd.X ? 5 : 3);
         final int i10 = 1;
         u5Var.setMaxLines(1);
         org.telegram.ui.ActionBar.a7.Y(u5Var, org.telegram.ui.ActionBar.t6.G6, null);
         u5Var.setTextSize(17);
         u5Var.setTypeface(org.telegram.messenger.i0.o());
-        boolean z11 = cd.X;
+        boolean z11 = dd.X;
         addView(u5Var, w7.b6.d(-1, -2.0f, 48, z11 ? 12.0f : 74.0f, 12.0f, z11 ? 74.0f : 12.0f, 0.0f));
-        u5Var2.setGravity(cd.X ? 5 : 3);
+        u5Var2.setGravity(dd.X ? 5 : 3);
         u5Var2.setMaxLines(1);
         org.telegram.ui.ActionBar.a7.Y(u5Var2, org.telegram.ui.ActionBar.t6.y6, null);
         u5Var2.setTextSize(14);
-        boolean z12 = cd.X;
+        boolean z12 = dd.X;
         addView(u5Var2, w7.b6.d(-1, -2.0f, 48, z12 ? 12.0f : 74.0f, 36.0f, z12 ? 74.0f : 12.0f, 0.0f));
         int L = org.telegram.messenger.i0.L(17.0f);
         TextView textView = new TextView(getContext());
         textView.setBackground(org.telegram.ui.ActionBar.j6.f(org.telegram.ui.ActionBar.t6.Ci, 16.0f));
-        textView.setGravity((cd.X ? 5 : 3) | 16);
+        textView.setGravity((dd.X ? 5 : 3) | 16);
         textView.setMaxLines(1);
         textView.setPadding(L, 0, L, 0);
-        textView.setText(cd.L0(z10 ? 2131754378 : 2131754373, null));
+        textView.setText(dd.L0(z10 ? 2131754378 : 2131754373, null));
         org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.Gi, null);
         textView.setTextSize(14.0f);
         textView.setTypeface(org.telegram.messenger.i0.o());
@@ -95,16 +95,16 @@ public final class i5 extends FrameLayout {
                 }
             }
         });
-        boolean z13 = cd.X;
+        boolean z13 = dd.X;
         addView(textView, w7.b6.d(-2, 32.0f, z13 ? 5 : 3, z13 ? 0.0f : 73.0f, 62.0f, z13 ? 73.0f : 0.0f, 0.0f));
         float measureText = textView.getPaint().measureText(textView.getText().toString()) + (L * 2);
         TextView textView2 = new TextView(getContext());
         int L2 = org.telegram.messenger.i0.L(16.0f);
         textView2.setBackground(org.telegram.ui.ActionBar.t6.k0(L2, L2, L2, L2, 0, org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.i6, false), -16777216));
-        textView2.setGravity((cd.X ? 5 : 3) | 16);
+        textView2.setGravity((dd.X ? 5 : 3) | 16);
         textView2.setMaxLines(1);
         textView2.setPadding(L, 0, L, 0);
-        textView2.setText(cd.L0(2131751370, null));
+        textView2.setText(dd.L0(2131751370, null));
         org.telegram.ui.ActionBar.a7.V(textView2, org.telegram.ui.ActionBar.t6.n6, null);
         textView2.setTextSize(14.0f);
         textView2.setTypeface(org.telegram.messenger.i0.o());
@@ -149,10 +149,10 @@ public final class i5 extends FrameLayout {
                 }
             }
         });
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, org.telegram.messenger.i0.L(32.0f), cd.X ? 5 : 3);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, org.telegram.messenger.i0.L(32.0f), dd.X ? 5 : 3);
         layoutParams.topMargin = org.telegram.messenger.i0.L(62.0f);
-        layoutParams.leftMargin = cd.X ? 0 : (int) (org.telegram.messenger.i0.L(79.0f) + measureText);
-        layoutParams.rightMargin = cd.X ? (int) (measureText + org.telegram.messenger.i0.L(79.0f)) : 0;
+        layoutParams.leftMargin = dd.X ? 0 : (int) (org.telegram.messenger.i0.L(79.0f) + measureText);
+        layoutParams.rightMargin = dd.X ? (int) (measureText + org.telegram.messenger.i0.L(79.0f)) : 0;
         addView(textView2, layoutParams);
     }
 
@@ -172,7 +172,7 @@ public final class i5 extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.f) {
-            canvas.drawLine(cd.X ? 0.0f : org.telegram.messenger.i0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (cd.X ? org.telegram.messenger.i0.L(72.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+            canvas.drawLine(dd.X ? 0.0f : org.telegram.messenger.i0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (dd.X ? org.telegram.messenger.i0.L(72.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
         }
     }
 

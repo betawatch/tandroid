@@ -17,16 +17,16 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Components.za0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d3 extends Dialog {
     public float D;
@@ -71,26 +71,26 @@ public final class d3 extends Dialog {
         frameLayout.setBackgroundColor(-14737633);
         a3Var.addView(frameLayout, b6.e(-1, 56, 55));
         TextView textView = new TextView(context);
-        textView.setText(cd.L0(2131744652, null));
+        textView.setText(dd.L0(2131744652, null));
         textView.setTextColor(-1);
         sc.e.t(textView, 1, 18.0f);
         TextView l4 = org.telegram.ui.Cells.f1.l(frameLayout, textView, b6.d(-1, -2.0f, 55, 18.0f, 8.33f, 18.0f, 0.0f), context);
-        l4.setText(cd.L0(2131744653, null));
+        l4.setText(dd.L0(2131744653, null));
         l4.setTextColor(-8421505);
         l4.setTextSize(1, 14.0f);
         frameLayout.addView(l4, b6.d(-1, -2.0f, 55, 18.0f, 31.0f, 18.0f, 0.0f));
         a3 a3Var2 = new a3(this, context, 1);
         this.d = a3Var2;
-        a3Var.addView(a3Var2, b6.d(-1, -1.0f, zs.E1, 0.0f, 56.0f, 0.0f, 0.0f));
+        a3Var.addView(a3Var2, b6.d(-1, -1.0f, at.E1, 0.0f, 56.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        a3Var2.addView(imageView, b6.e(-1, -1, zs.E1));
+        a3Var2.addView(imageView, b6.e(-1, -1, at.E1));
         b3 b3Var = new b3(this, context, org.telegram.messenger.i0.p);
         this.f = b3Var;
         a3Var2.addView(b3Var, b6.e(-2, -2, 17));
         z60 F = z60.F(l0Var, bVar, l0Var);
-        za0 za0Var = new za0(getContext(), R.raw.position_below, cd.L0(2131744663, null), R.raw.position_above, cd.L0(2131744662, null), bVar);
+        za0 za0Var = new za0(getContext(), R.raw.position_below, dd.L0(2131744663, null), R.raw.position_above, dd.L0(2131744662, null), bVar);
         this.x = za0Var;
         za0Var.setOnClickListener(new View.OnClickListener(this) { // from class: jg.y2
             public final /* synthetic */ d3 b;
@@ -122,7 +122,7 @@ public final class d3 extends Dialog {
             }
         });
         F.q(za0Var);
-        za0 za0Var2 = new za0(context, R.raw.media_shrink, cd.L0(2131748909, null), R.raw.media_enlarge, cd.L0(2131748908, null), bVar);
+        za0 za0Var2 = new za0(context, R.raw.media_shrink, dd.L0(2131748909, null), R.raw.media_enlarge, dd.L0(2131748908, null), bVar);
         this.y = za0Var2;
         za0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: jg.y2
             public final /* synthetic */ d3 b;
@@ -155,8 +155,8 @@ public final class d3 extends Dialog {
         });
         F.q(za0Var2);
         F.k();
-        F.c(R.drawable.msg_select, cd.L0(2131754218, null), new x2(this, 2), false);
-        F.c(R.drawable.msg_delete, cd.L0(2131751362, null), new x2(this, i12), true);
+        F.c(R.drawable.msg_select, dd.L0(2131754218, null), new x2(this, 2), false);
+        F.c(R.drawable.msg_delete, dd.L0(2131751362, null), new x2(this, i12), true);
         z2Var.addView(F.A, b6.p(-2, -2, 0.0f, 85));
         l0Var.setFitsSystemWindows(true);
         l0Var.setOnApplyWindowInsetsListener(new c3(this));
@@ -207,7 +207,7 @@ public final class d3 extends Dialog {
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.height = -1;
-        attributes.gravity = zs.E1;
+        attributes.gravity = at.E1;
         attributes.dimAmount = 0.0f;
         int i10 = attributes.flags & (-3);
         attributes.softInputMode = 16;

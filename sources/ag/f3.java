@@ -15,26 +15,26 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a5;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.e9;
-import org.telegram.messenger.eu;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.fu;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.nd;
-import org.telegram.messenger.rz;
-import org.telegram.messenger.sc;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.od;
 import org.telegram.messenger.support.JobIntentService;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.sz;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f3 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,8 +59,8 @@ public final /* synthetic */ class f3 implements Runnable {
                 i3[] i3VarArr = i3.g;
                 return;
             case 1:
-                tz.D1 = !tz.D1;
-                org.telegram.messenger.w0.b.getSharedPreferences("mainconfig", 0).edit().putBoolean("drawActionBarShadow", tz.D1);
+                uz.D1 = !uz.D1;
+                org.telegram.messenger.w0.b.getSharedPreferences("mainconfig", 0).edit().putBoolean("drawActionBarShadow", uz.D1);
                 org.telegram.messenger.i0.c0(LaunchActivity.I1.z0.getRootView(), new z0(i10));
                 return;
             case 2:
@@ -104,7 +104,7 @@ public final /* synthetic */ class f3 implements Runnable {
                 }
                 return;
             case 6:
-                zs.f(d20.s0).m(zs.s3, new Object[0]);
+                at.f(e20.s0).m(at.s3, new Object[0]);
                 return;
             case 7:
                 float[] fArr = kg.k2.U;
@@ -114,10 +114,10 @@ public final /* synthetic */ class f3 implements Runnable {
                 return;
             case 9:
                 int i13 = AppStartReceiver.a;
-                tz.t();
-                if (tz.s.length() > 0) {
-                    tz.x = true;
-                    tz.y();
+                uz.t();
+                if (uz.s.length() > 0) {
+                    uz.x = true;
+                    uz.y();
                 }
                 org.telegram.messenger.w0.x();
                 return;
@@ -145,16 +145,16 @@ public final /* synthetic */ class f3 implements Runnable {
                 org.telegram.messenger.w0.x();
                 return;
             case 12:
-                if (((eu) org.telegram.messenger.w0.l()).hasServices()) {
-                    ((eu) org.telegram.messenger.w0.l()).onRequestPushToken();
+                if (((fu) org.telegram.messenger.w0.l()).hasServices()) {
+                    ((fu) org.telegram.messenger.w0.l()).onRequestPushToken();
                     return;
                 }
                 if (org.telegram.messenger.v2.a) {
-                    ((eu) org.telegram.messenger.w0.l()).getClass();
+                    ((fu) org.telegram.messenger.w0.l()).getClass();
                     f8.b("No valid Google Play Services APK found.");
                 }
-                tz.h = "__NO_GOOGLE_PLAY_SERVICES__";
-                ((eu) org.telegram.messenger.w0.l()).getClass();
+                uz.h = "__NO_GOOGLE_PLAY_SERVICES__";
+                ((fu) org.telegram.messenger.w0.l()).getClass();
                 PushListenerController.sendRegistrationToServer(2, null);
                 return;
             case 13:
@@ -162,7 +162,7 @@ public final /* synthetic */ class f3 implements Runnable {
             case 14:
                 break;
             case 15:
-                zs.e().k(zs.i4, new Object[0]);
+                at.e().k(at.i4, new Object[0]);
                 return;
             case 16:
                 KeepAliveJob.a();
@@ -184,7 +184,7 @@ public final /* synthetic */ class f3 implements Runnable {
                     return;
                 }
             case 18:
-                sc.d(false);
+                tc.d(false);
                 return;
             case 19:
                 int i14 = -1;
@@ -196,28 +196,28 @@ public final /* synthetic */ class f3 implements Runnable {
                 } catch (Throwable th2) {
                     f8.g(th2, true);
                 }
-                sc.l = SystemClock.elapsedRealtime();
-                sc.m = false;
+                tc.l = SystemClock.elapsedRealtime();
+                tc.m = false;
                 if (i14 < 0 || i14 > 100) {
                     return;
                 }
-                sc.l = SystemClock.elapsedRealtime();
-                if (sc.k == i14) {
+                tc.l = SystemClock.elapsedRealtime();
+                if (tc.k == i14) {
                     return;
                 }
-                sc.k = i14;
+                tc.k = i14;
                 org.telegram.messenger.i0.g3(new f3(18));
                 return;
             case 20:
-                zs.e().k(zs.x4, new Object[0]);
+                at.e().k(at.x4, new Object[0]);
                 return;
             case 21:
-                zs.e().k(zs.E4, new Object[0]);
+                at.e().k(at.E4, new Object[0]);
                 return;
             case 22:
                 int i15 = LocationSharingService.d;
                 while (i12 < 4) {
-                    nd.f(i12).t();
+                    od.f(i12).t();
                     i12++;
                 }
                 return;
@@ -237,10 +237,10 @@ public final /* synthetic */ class f3 implements Runnable {
                 t6.F(false);
                 return;
             case 26:
-                zs.e().k(zs.d4, new Object[0]);
+                at.e().k(at.d4, new Object[0]);
                 return;
             case 27:
-                tz.y();
+                uz.y();
                 return;
             case 28:
                 try {
@@ -272,24 +272,24 @@ public final /* synthetic */ class f3 implements Runnable {
                     return;
                 }
             default:
-                if (tz.b || (Q = LaunchActivity.Q()) == null || Q.getParentActivity() == null) {
+                if (uz.b || (Q = LaunchActivity.Q()) == null || Q.getParentActivity() == null) {
                     return;
                 }
-                tz.h0 = null;
-                tz.y();
-                hc.D().i(new rz(i12));
-                tz.b = true;
+                uz.h0 = null;
+                uz.y();
+                ic.D().i(new sz(i12));
+                uz.b = true;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(Q.getParentActivity());
-                alertDialog$Builder.a.R = cd.L0(2131745855, null);
-                alertDialog$Builder.a.S = cd.L0(2131745854, null);
-                alertDialog$Builder.k(cd.L0(2131751356, null), new e9(25));
+                alertDialog$Builder.a.R = dd.L0(2131745855, null);
+                alertDialog$Builder.a.S = dd.L0(2131745854, null);
+                alertDialog$Builder.k(dd.L0(2131751356, null), new e9(25));
                 org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                 x1Var.setCanceledOnTouchOutside(false);
                 x1Var.show();
                 return;
         }
         while (i12 < 4) {
-            if (d20.i(i12).p()) {
+            if (e20.i(i12).p()) {
                 ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 Utilities.e.c(new a5(i5.r(i12), i11));
             }

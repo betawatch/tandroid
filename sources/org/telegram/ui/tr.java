@@ -6,19 +6,19 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class tr {
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
     public final LinearLayout b;
-    public final yo0 c;
+    public final wo0 c;
 
-    public tr(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.yf0 yf0Var, yo0 yo0Var) {
-        this.c = yo0Var;
+    public tr(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.yf0 yf0Var, wo0 wo0Var) {
+        this.c = wo0Var;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, contextThemeWrapper, null);
         this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
-        org.telegram.ui.ActionBar.b1 c10 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, org.telegram.messenger.cd.L0(2131753756, null), false, null);
+        org.telegram.ui.ActionBar.b1 c10 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, org.telegram.messenger.dd.L0(2131753756, null), false, null);
         c10.setOnClickListener(new sr(yf0Var, 0));
         c10.d(-328966, -328966);
         c10.setSelectorColor(268435455);
@@ -27,7 +27,7 @@ public final class tr {
         a5Var.setBackgroundColor(-15198184);
         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(a5Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) a5Var.getLayoutParams();
-        if (org.telegram.messenger.cd.X) {
+        if (org.telegram.messenger.dd.X) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;

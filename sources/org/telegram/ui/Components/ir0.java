@@ -1,62 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import java.util.ArrayList;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ir0 extends org.telegram.ui.un {
-    public boolean jd;
-    public final /* synthetic */ int kd;
-    public final /* synthetic */ zt0 ld;
+public final class ir0 extends s4.m0 {
+    public final /* synthetic */ br0 a;
+    public final /* synthetic */ au0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ir0(zt0 zt0Var, Bundle bundle, int i10) {
-        super(bundle);
-        this.ld = zt0Var;
-        this.kd = i10;
-        this.jd = true;
+    public ir0(au0 au0Var, br0 br0Var) {
+        this.b = au0Var;
+        this.a = br0Var;
     }
 
-    @Override // org.telegram.ui.un, org.telegram.ui.ActionBar.k2
-    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
-        zt0 zt0Var = this.ld;
-        lt0 lt0Var = zt0Var.U;
-        if (this.jd) {
-            if (this.j0 != null) {
-                Ba("");
-                this.j0.P(lt0Var.x, false);
+    @Override // s4.m0
+    public final void c(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        br0 br0Var = this.a;
+        if (br0Var.h.getAdapter() == this.b.Q) {
+            int R = RecyclerView.R(view);
+            rect.left = 0;
+            rect.bottom = 0;
+            cr0 cr0Var = br0Var.x;
+            cr0Var.B1();
+            if (R <= cr0Var.U) {
+                rect.top = 0;
+            } else {
+                rect.top = org.telegram.messenger.i0.L(2.0f);
             }
-            org.telegram.ui.wk wkVar = this.C1;
-            if (wkVar != null) {
-                wkVar.e(lt0Var.y, false);
-            }
-            org.telegram.messenger.ui mediaDataController = zt0Var.x1.getMediaDataController();
-            int classGuid = getClassGuid();
-            sg.o0 o0Var = lt0Var.y;
-            String str = lt0Var.x;
-            ArrayList arrayList = lt0Var.n;
-            ArrayList arrayList2 = lt0Var.h;
-            int i10 = lt0Var.w;
-            boolean z12 = lt0Var.s;
-            mediaDataController.Q0 = o0Var;
-            mediaDataController.d1 = str;
-            boolean[] zArr = mediaDataController.X0;
-            zArr[0] = z12;
-            zArr[1] = true;
-            ArrayList arrayList3 = mediaDataController.Z0;
-            arrayList3.clear();
-            arrayList3.addAll(arrayList2);
-            mediaDataController.a1.clear();
-            mediaDataController.a1.addAll(arrayList);
-            mediaDataController.k2();
-            int[] iArr = mediaDataController.W0;
-            iArr[0] = i10;
-            iArr[1] = 0;
-            mediaDataController.e1 = this.kd;
-            mediaDataController.getNotificationCenter().k(org.telegram.messenger.zs.H0, Integer.valueOf(classGuid), 0, Integer.valueOf(mediaDataController.c0()), Long.valueOf(mediaDataController.getUserConfig().e()), Integer.valueOf(mediaDataController.e1), Integer.valueOf(mediaDataController.j0()), Boolean.TRUE);
-            this.jd = false;
+            rect.right = br0Var.x.E1(R) ? 0 : org.telegram.messenger.i0.L(2.0f);
+            return;
         }
-        super.onTransitionAnimationStart(z10, z11);
+        if (!(view instanceof org.telegram.ui.Cells.s7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
+        }
+        org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) view;
+        br0Var.h.getClass();
+        int R2 = RecyclerView.R(s7Var);
+        int i10 = br0Var.x.J;
+        s7Var.a0 = R2 < i10;
+        int i11 = R2 % i10;
+        s7Var.V = i11 == 0;
+        s7Var.W = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

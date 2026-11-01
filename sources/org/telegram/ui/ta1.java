@@ -1,52 +1,25 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ta1 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pb1 b;
+public final class ta1 implements View.OnClickListener {
+    public final /* synthetic */ nb1 a;
 
-    public /* synthetic */ ta1(pb1 pb1Var, int i10) {
-        this.a = i10;
-        this.b = pb1Var;
+    public ta1(nb1 nb1Var) {
+        this.a = nb1Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        boolean z10;
-        pb1 pb1Var;
-        tg.f fVar;
-        switch (this.a) {
-            case 0:
-                pb1 pb1Var2 = this.b;
-                int L0 = pb1Var2.F.L0();
-                if (L0 != -1) {
-                    s4.c1 K = recyclerView.K(L0);
-                    int top = K != null ? K.a.getTop() : 0;
-                    if (L0 == 0) {
-                        int i12 = 0 - top;
-                        z10 = top < 0;
-                        Math.abs(i12);
-                    } else {
-                        z10 = L0 > 0;
-                    }
-                    pb1Var2.J0(z10 || !pb1Var2.K, true);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.B0();
-                break;
-            default:
-                if (Build.VERSION.SDK_INT >= 31 && (fVar = (pb1Var = this.b).g1) != null) {
-                    fVar.f(i10, i11);
-                    pb1Var.A0();
-                    break;
-                }
-                break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        nb1 nb1Var = this.a;
+        if (nb1Var.M == 1) {
+            org.telegram.ui.Components.s4.i0(nb1Var, -nb1Var.a, null, nb1Var.g(), null, false, nb1Var.J, new ra(this, 5), nb1Var.getResourceProvider());
+            return;
         }
+        nb1Var.getMessagesController().m(nb1Var.a, nb1Var.getUserConfig().f(), 0, null, nb1Var, false, new la1(nb1Var, 2), new ma1(nb1Var), null);
+        org.telegram.messenger.at.e().k(org.telegram.messenger.at.I4, new Object[0]);
+        nb1Var.S0(false);
     }
 }

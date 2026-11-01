@@ -5,7 +5,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class jr extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -53,14 +53,14 @@ public final class jr extends GestureDetector.SimpleOnGestureListener {
                 }
                 return false;
             case 2:
-                xh.h3 h3Var = (xh.h3) viewGroup;
-                if (h3Var.d || !h3Var.M) {
+                xh.i3 i3Var = (xh.i3) viewGroup;
+                if (i3Var.d || !i3Var.M) {
                     return false;
                 }
-                if (h3Var.J && !h3Var.L) {
+                if (i3Var.J && !i3Var.L) {
                     return false;
                 }
-                if (h3Var.N && !h3Var.b(false)) {
+                if (i3Var.N && !i3Var.b(false)) {
                     return false;
                 }
                 float x10 = motionEvent.getX();
@@ -72,30 +72,30 @@ public final class jr extends GestureDetector.SimpleOnGestureListener {
                 float f12 = y10 - y3;
                 float sqrt = (float) Math.sqrt((f12 * f12) + (f11 * f11));
                 float eventTime = motionEvent2.getEventTime() - motionEvent.getEventTime();
-                if (f10 >= org.telegram.messenger.i0.L(650.0f) && ((sqrt > org.telegram.messenger.i0.L(200.0f) || eventTime > 250.0f) && ((v0Var = h3Var.y) == null || v0Var.getScrollY() == 0))) {
-                    h3Var.x = true;
-                    float f13 = h3Var.r;
-                    if (f13 < h3Var.H && !h3Var.J) {
-                        h3Var.e(0.0f);
-                    } else if (h3Var.J && h3Var.L && (h3Var.Q == (-h3Var.f) + h3Var.e || (f13 <= (-r9) && f10 < org.telegram.messenger.i0.L(1200.0f)))) {
-                        h3Var.e((-h3Var.f) + h3Var.e);
+                if (f10 >= org.telegram.messenger.i0.L(650.0f) && ((sqrt > org.telegram.messenger.i0.L(200.0f) || eventTime > 250.0f) && ((v0Var = i3Var.y) == null || v0Var.getScrollY() == 0))) {
+                    i3Var.x = true;
+                    float f13 = i3Var.r;
+                    if (f13 < i3Var.H && !i3Var.J) {
+                        i3Var.e(0.0f);
+                    } else if (i3Var.J && i3Var.L && (i3Var.Q == (-i3Var.f) + i3Var.e || (f13 <= (-r9) && f10 < org.telegram.messenger.i0.L(1200.0f)))) {
+                        i3Var.e((-i3Var.f) + i3Var.e);
                     } else {
-                        xh.g3 g3Var = h3Var.F;
-                        if (g3Var != null) {
-                            g3Var.a(false);
+                        xh.h3 h3Var = i3Var.F;
+                        if (h3Var != null) {
+                            h3Var.a(false);
                         }
                     }
                 } else {
                     if (f10 > -700.0f) {
                         return false;
                     }
-                    float f14 = h3Var.r;
-                    float f15 = (-h3Var.f) + h3Var.e;
+                    float f14 = i3Var.r;
+                    float f15 = (-i3Var.f) + i3Var.e;
                     if (f14 <= f15) {
                         return false;
                     }
-                    h3Var.x = true;
-                    h3Var.e(f15);
+                    i3Var.x = true;
+                    i3Var.e(f15);
                 }
                 return true;
             default:
@@ -164,37 +164,37 @@ public final class jr extends GestureDetector.SimpleOnGestureListener {
                 }
                 return yf0Var.e;
             default:
-                xh.h3 h3Var = (xh.h3) this.c;
-                if (h3Var.S) {
+                xh.i3 i3Var = (xh.i3) this.c;
+                if (i3Var.S) {
                     f11 = f10;
                 } else {
-                    float f13 = h3Var.R + f10;
-                    h3Var.R = f13;
+                    float f13 = i3Var.R + f10;
+                    i3Var.R = f13;
                     float abs2 = Math.abs(f13);
-                    float f14 = h3Var.T;
+                    float f14 = i3Var.T;
                     if (abs2 > f14) {
-                        h3Var.S = true;
-                        float f15 = h3Var.R;
+                        i3Var.S = true;
+                        float f15 = i3Var.R;
                         f11 = f15 > 0.0f ? f15 - f14 : f15 + f14;
                     } else {
                         f11 = 0.0f;
                     }
                 }
-                if (!h3Var.c && !h3Var.d && h3Var.M) {
-                    if (!h3Var.N || h3Var.r != (-h3Var.f) + h3Var.e || h3Var.b(false)) {
-                        if (!((Boolean) h3Var.I.l(null)).booleanValue() || h3Var.r != (-h3Var.f) + h3Var.e) {
+                if (!i3Var.c && !i3Var.d && i3Var.M) {
+                    if (!i3Var.N || i3Var.r != (-i3Var.f) + i3Var.e || i3Var.b(false)) {
+                        if (!((Boolean) i3Var.I.l(null)).booleanValue() || i3Var.r != (-i3Var.f) + i3Var.e) {
                             float abs3 = Math.abs(f11);
                             float f16 = this.b;
-                            if (abs3 >= f16 && Math.abs(f11) * 1.5f >= Math.abs(f7) && (h3Var.r != (-h3Var.f) + h3Var.e || (v0Var = h3Var.y) == null || (f11 < 0.0f && v0Var.getScrollY() == 0))) {
-                                h3Var.c = true;
+                            if (abs3 >= f16 && Math.abs(f11) * 1.5f >= Math.abs(f7) && (i3Var.r != (-i3Var.f) + i3Var.e || (v0Var = i3Var.y) == null || (f11 < 0.0f && v0Var.getScrollY() == 0))) {
+                                i3Var.c = true;
                                 MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                                for (int i11 = 0; i11 < h3Var.getChildCount(); i11++) {
-                                    h3Var.getChildAt(i11).dispatchTouchEvent(obtain2);
+                                for (int i11 = 0; i11 < i3Var.getChildCount(); i11++) {
+                                    i3Var.getChildAt(i11).dispatchTouchEvent(obtain2);
                                 }
                                 obtain2.recycle();
                                 return true;
                             }
-                            org.telegram.ui.web.v0 v0Var2 = h3Var.y;
+                            org.telegram.ui.web.v0 v0Var2 = i3Var.y;
                             if (v0Var2 != null) {
                                 break;
                             }
@@ -202,40 +202,40 @@ public final class jr extends GestureDetector.SimpleOnGestureListener {
                                 break;
                             }
                         } else {
-                            h3Var.d = true;
+                            i3Var.d = true;
                         }
                     }
                 }
-                if (h3Var.c) {
+                if (i3Var.c) {
                     if (f11 < 0.0f) {
-                        float f17 = h3Var.r;
-                        if (f17 > (-h3Var.f) + h3Var.e) {
-                            h3Var.r = f17 - f11;
+                        float f17 = i3Var.r;
+                        if (f17 > (-i3Var.f) + i3Var.e) {
+                            i3Var.r = f17 - f11;
                         } else {
-                            if (h3Var.y != null) {
+                            if (i3Var.y != null) {
                                 float scrollY = r6.getScrollY() + f11;
-                                h3Var.y.setScrollY((int) w7.u.a(scrollY, 0.0f, Math.max(r2.getContentHeight(), h3Var.y.getHeight()) - h3Var.e));
+                                i3Var.y.setScrollY((int) w7.u.a(scrollY, 0.0f, Math.max(r2.getContentHeight(), i3Var.y.getHeight()) - i3Var.e));
                                 if (scrollY < 0.0f) {
-                                    h3Var.r -= scrollY;
+                                    i3Var.r -= scrollY;
                                 }
                             } else {
-                                h3Var.r = f17 - f11;
+                                i3Var.r = f17 - f11;
                             }
                         }
                     } else if (f11 > 0.0f) {
-                        float f18 = h3Var.r - f11;
-                        h3Var.r = f18;
-                        if (h3Var.y != null && f18 < (-h3Var.f) + h3Var.e) {
-                            float scrollY2 = r2.getScrollY() - ((h3Var.r + h3Var.f) - h3Var.e);
-                            h3Var.y.setScrollY((int) w7.u.a(scrollY2, 0.0f, Math.max(r5.getContentHeight(), h3Var.y.getHeight()) - h3Var.e));
+                        float f18 = i3Var.r - f11;
+                        i3Var.r = f18;
+                        if (i3Var.y != null && f18 < (-i3Var.f) + i3Var.e) {
+                            float scrollY2 = r2.getScrollY() - ((i3Var.r + i3Var.f) - i3Var.e);
+                            i3Var.y.setScrollY((int) w7.u.a(scrollY2, 0.0f, Math.max(r5.getContentHeight(), i3Var.y.getHeight()) - i3Var.e));
                         }
                     }
-                    float a2 = w7.u.a(h3Var.r, (-h3Var.f) + h3Var.e, (h3Var.getHeight() - h3Var.f) + h3Var.e);
-                    h3Var.r = a2;
-                    if (h3Var.J && !h3Var.L) {
-                        h3Var.r = Math.min(a2, (-h3Var.f) + h3Var.e);
+                    float a2 = w7.u.a(i3Var.r, (-i3Var.f) + i3Var.e, (i3Var.getHeight() - i3Var.f) + i3Var.e);
+                    i3Var.r = a2;
+                    if (i3Var.J && !i3Var.L) {
+                        i3Var.r = Math.min(a2, (-i3Var.f) + i3Var.e);
                     }
-                    h3Var.c();
+                    i3Var.c();
                 }
                 return true;
         }

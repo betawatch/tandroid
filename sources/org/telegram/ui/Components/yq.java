@@ -7,7 +7,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yq extends ha {
     public final i70 P1;
@@ -25,7 +25,7 @@ public final class yq extends ha {
         super(k2Var, false);
         boolean z10;
         String a02;
-        TLRPC.Chat L0 = org.telegram.messenger.vp.r1(this.a).L0(Long.valueOf(-j10));
+        TLRPC.Chat L0 = org.telegram.messenger.wp.r1(this.a).L0(Long.valueOf(-j10));
         this.X1 = k2Var;
         this.Y1 = j10;
         this.r1 = 0.26f;
@@ -47,7 +47,7 @@ public final class yq extends ha {
         textView.setSingleLine(true);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.i0.o());
-        textView.setText(W ? org.telegram.messenger.cd.a0(null, null, 2131743481, new Object[0]) : org.telegram.messenger.cd.a0(null, null, 2131743350, new Object[0]));
+        textView.setText(W ? org.telegram.messenger.dd.a0(null, null, 2131743481, new Object[0]) : org.telegram.messenger.dd.a0(null, null, 2131743350, new Object[0]));
         org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.Gi, null);
         int L = org.telegram.messenger.i0.L(8.0f);
         int i11 = org.telegram.ui.ActionBar.t6.Ci;
@@ -68,10 +68,10 @@ public final class yq extends ha {
         textView2.setTypeface(org.telegram.messenger.i0.o());
         if (W) {
             z10 = false;
-            a02 = org.telegram.messenger.cd.a0(null, null, 2131743488, new Object[0]);
+            a02 = org.telegram.messenger.dd.a0(null, null, 2131743488, new Object[0]);
         } else {
             z10 = false;
-            a02 = org.telegram.messenger.cd.a0(null, null, 2131743367, new Object[0]);
+            a02 = org.telegram.messenger.dd.a0(null, null, 2131743367, new Object[0]);
         }
         textView2.setText(a02);
         textView2.setLetterSpacing(0.025f);
@@ -96,12 +96,12 @@ public final class yq extends ha {
                 switch (i13) {
                     case 0:
                         yq yqVar = this.b;
-                        yqVar.W1 = org.telegram.messenger.vp.r1(yqVar.a).i1(org.telegram.messenger.jj.C1(yqVar.V1));
+                        yqVar.W1 = org.telegram.messenger.wp.r1(yqVar.a).i1(org.telegram.messenger.kj.C1(yqVar.V1));
                         yqVar.dismiss();
                         break;
                     default:
                         yq yqVar2 = this.b;
-                        yqVar2.W1 = org.telegram.messenger.vp.r1(yqVar2.a).i1(org.telegram.messenger.jj.C1(yqVar2.V1));
+                        yqVar2.W1 = org.telegram.messenger.wp.r1(yqVar2.a).i1(org.telegram.messenger.kj.C1(yqVar2.V1));
                         yqVar2.U1 = true;
                         yqVar2.dismiss();
                         break;
@@ -120,21 +120,21 @@ public final class yq extends ha {
                 switch (i10) {
                     case 0:
                         yq yqVar = this.b;
-                        yqVar.W1 = org.telegram.messenger.vp.r1(yqVar.a).i1(org.telegram.messenger.jj.C1(yqVar.V1));
+                        yqVar.W1 = org.telegram.messenger.wp.r1(yqVar.a).i1(org.telegram.messenger.kj.C1(yqVar.V1));
                         yqVar.dismiss();
                         break;
                     default:
                         yq yqVar2 = this.b;
-                        yqVar2.W1 = org.telegram.messenger.vp.r1(yqVar2.a).i1(org.telegram.messenger.jj.C1(yqVar2.V1));
+                        yqVar2.W1 = org.telegram.messenger.wp.r1(yqVar2.a).i1(org.telegram.messenger.kj.C1(yqVar2.V1));
                         yqVar2.U1 = true;
                         yqVar2.dismiss();
                         break;
                 }
             }
         });
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i14 = this.t0;
-        tk0Var.setPadding(i14, 0, i14, org.telegram.messenger.i0.L(120.0f));
+        uk0Var.setPadding(i14, 0, i14, org.telegram.messenger.i0.L(120.0f));
         this.k1.setOnItemClickListener(new k(this, 4));
         O();
         b1();
@@ -150,12 +150,12 @@ public final class yq extends ha {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
+    public final tk0 L0(uk0 uk0Var) {
         return new xq(this);
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return this.T1 ? org.telegram.messenger.cd.L0(2131744921, null) : org.telegram.messenger.cd.L0(2131744918, null);
+        return this.T1 ? org.telegram.messenger.dd.L0(2131744921, null) : org.telegram.messenger.dd.L0(2131744918, null);
     }
 }

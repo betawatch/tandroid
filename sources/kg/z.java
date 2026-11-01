@@ -2,14 +2,14 @@ package kg;
 
 import ag.g3;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.w3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -50,13 +50,13 @@ public final /* synthetic */ class z implements RequestDelegate {
                         } else {
                             TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i11);
                             int currentTime = (ConnectionsManager.getInstance(q0Var2.a).getCurrentTime() - tL_messages_inactiveChats.dates.get(i11).intValue()) / 86400;
-                            String G = currentTime < 30 ? cd.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? cd.G(currentTime / 30, "Months", new Object[0]) : cd.G(currentTime / 365, "Years", new Object[0]);
+                            String G = currentTime < 30 ? dd.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? dd.G(currentTime / 30, "Months", new Object[0]) : dd.G(currentTime / 365, "Years", new Object[0]);
                             if (w3.n0(chat)) {
-                                arrayList.add(cd.a0("InactiveChatSignature", null, 2131749220, cd.G(chat.participants_count, "Members", new Object[0]), G));
+                                arrayList.add(dd.a0("InactiveChatSignature", null, 2131749220, dd.G(chat.participants_count, "Members", new Object[0]), G));
                             } else if (w3.T(chat)) {
-                                arrayList.add(cd.a0("InactiveChannelSignature", null, 2131749221, G));
+                                arrayList.add(dd.a0("InactiveChannelSignature", null, 2131749221, G));
                             } else {
-                                arrayList.add(cd.a0("InactiveChatSignature", null, 2131749220, cd.G(chat.participants_count, "Members", new Object[0]), G));
+                                arrayList.add(dd.a0("InactiveChatSignature", null, 2131749220, dd.G(chat.participants_count, "Members", new Object[0]), G));
                             }
                             i11++;
                         }

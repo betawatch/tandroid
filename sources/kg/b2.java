@@ -3,14 +3,14 @@ package kg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
-import org.telegram.messenger.sc;
+import org.telegram.messenger.tc;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.p8;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import rh.s8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b2 extends p8 {
     public final s8 W;
@@ -26,7 +26,7 @@ public final class b2 extends p8 {
 
     @Override // org.telegram.ui.Cells.p8, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        boolean e = sc.e(131072);
+        boolean e = tc.e(131072);
         gg.c cVar = this.b0;
         if (e) {
             s8 s8Var = this.W;
@@ -48,9 +48,9 @@ public final class b2 extends p8 {
     @Override // org.telegram.ui.Cells.p8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        ei0 ei0Var = this.e;
-        float width = (ei0Var.getWidth() / 2.0f) + ei0Var.getX();
-        float height = ((ei0Var.getHeight() / 2.0f) + (ei0Var.getY() + ei0Var.getPaddingTop())) - org.telegram.messenger.i0.L(3.0f);
+        fi0 fi0Var = this.e;
+        float width = (fi0Var.getWidth() / 2.0f) + fi0Var.getX();
+        float height = ((fi0Var.getHeight() / 2.0f) + (fi0Var.getY() + fi0Var.getPaddingTop())) - org.telegram.messenger.i0.L(3.0f);
         RectF rectF = org.telegram.messenger.i0.P;
         rectF.set(width - org.telegram.messenger.i0.L(16.0f), height - org.telegram.messenger.i0.L(16.0f), width + org.telegram.messenger.i0.L(16.0f), height + org.telegram.messenger.i0.L(16.0f));
         this.W.g(rectF);

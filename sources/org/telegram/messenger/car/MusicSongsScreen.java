@@ -3,22 +3,22 @@ package org.telegram.messenger.car;
 import androidx.car.app.l;
 import androidx.lifecycle.e;
 import androidx.lifecycle.t;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vs;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public class MusicSongsScreen extends l implements e, us {
+public class MusicSongsScreen extends l implements e, vs {
     @Override // androidx.lifecycle.e
     public final void a(t tVar) {
-        zs.e().c(this, zs.h2);
-        zs.e().c(this, zs.g2);
-        zs.e().c(this, zs.c4);
+        at.e().c(this, at.h2);
+        at.e().c(this, at.g2);
+        at.e().c(this, at.c4);
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 != zs.c4) {
+        if (i10 != at.c4) {
             throw null;
         }
         throw null;
@@ -26,9 +26,9 @@ public class MusicSongsScreen extends l implements e, us {
 
     @Override // androidx.lifecycle.e
     public final void e(t tVar) {
-        zs.e().n(this, zs.h2);
-        zs.e().n(this, zs.g2);
-        zs.e().n(this, zs.c4);
+        at.e().n(this, at.h2);
+        at.e().n(this, at.g2);
+        at.e().n(this, at.c4);
     }
 
     @Override // androidx.lifecycle.e

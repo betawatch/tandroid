@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -23,9 +23,9 @@ import org.telegram.ui.Components.qa;
 import org.telegram.ui.Components.ra;
 import org.telegram.ui.Components.wb;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z6 implements q20 {
+public final /* synthetic */ class z6 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ o8 b;
 
@@ -34,7 +34,7 @@ public final /* synthetic */ class z6 implements q20 {
         this.b = o8Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         boolean z10;
         z8 z8Var;
@@ -66,7 +66,7 @@ public final /* synthetic */ class z6 implements q20 {
                 n5 n5Var2 = (n5) obj;
                 o8Var.V(n5Var2, false);
                 int i13 = o8Var.c;
-                th.e5 O1 = vp.r1(i13).O1();
+                th.e5 O1 = wp.r1(i13).O1();
                 a0.h hVar = O1.e;
                 int i14 = O1.a;
                 ArrayList arrayList = O1.h;
@@ -85,7 +85,7 @@ public final /* synthetic */ class z6 implements q20 {
                     O1.d(j10, d5Var, O1.b, false);
                 }
                 O1.d(j10, d5Var, O1.c, true);
-                if (j10 != d20.i(i14).n) {
+                if (j10 != e20.i(i14).n) {
                     int i15 = 0;
                     while (true) {
                         if (i15 >= arrayList2.size()) {
@@ -112,16 +112,16 @@ public final /* synthetic */ class z6 implements q20 {
                     }
                     if (!z10) {
                         TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
-                        tL_peerStories.peer = vp.r1(i14).y1(j10);
+                        tL_peerStories.peer = wp.r1(i14).y1(j10);
                         O1.e0(j10, tL_peerStories);
                         arrayList2.add(0, tL_peerStories);
                         O1.R(j10);
                     }
                 }
                 d5Var.d();
-                zs.f(i14).k(zs.v5, new Object[0]);
+                at.f(i14).k(at.v5, new Object[0]);
                 if (n5Var2.c && !n5Var2.g) {
-                    vp.r1(i13).O1().w.c(n5Var2);
+                    wp.r1(i13).O1().w.c(n5Var2);
                 }
                 if (n5Var2.e1 != 0) {
                     ConnectionsManager.getInstance(n5Var2.a).cancelRequest(n5Var2.e1, true);
@@ -144,7 +144,7 @@ public final /* synthetic */ class z6 implements q20 {
                 n5 n5Var3 = o8Var.K1;
                 if (n5Var3 != null) {
                     n5Var3.I0 = num.intValue();
-                    vp.d1().edit().putInt("story_period", num.intValue()).apply();
+                    wp.d1().edit().putInt("story_period", num.intValue()).apply();
                     break;
                 }
                 break;
@@ -161,7 +161,7 @@ public final /* synthetic */ class z6 implements q20 {
                     raVar.getWindow().setAttributes(raVar.b);
                 }
                 qaVar.setTouchable(true);
-                new cc(qaVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.i0.R2(cd.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.t6.Uc, 0, new y6(o8Var, 27), bVar)).k(true);
+                new cc(qaVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.i0.R2(dd.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.t6.Uc, 0, new y6(o8Var, 27), bVar)).k(true);
                 break;
             case 6:
                 Boolean bool = (Boolean) obj;
@@ -177,7 +177,7 @@ public final /* synthetic */ class z6 implements q20 {
                 }
                 o8Var.X0.x(2, bool.booleanValue());
                 o8Var.Y0.clearAnimation();
-                z20.l(o8Var.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                a30.l(o8Var.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
                 wb wbVar = wb.w;
                 if (wbVar != null && wbVar.a == 2) {
                     wbVar.l();
@@ -212,7 +212,7 @@ public final /* synthetic */ class z6 implements q20 {
             case 9:
                 o8Var.O = true;
                 o8Var.p(true);
-                org.telegram.messenger.i0.h3(new mg.g0((q20) obj, i11), 210L);
+                org.telegram.messenger.i0.h3(new mg.g0((r20) obj, i11), 210L);
                 break;
             case 10:
                 Integer num2 = (Integer) obj;

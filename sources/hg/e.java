@@ -4,15 +4,15 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.Cells.d8;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class e extends tk0 {
+public abstract class e extends uk0 {
     public boolean e3;
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.tk0
+    @Override // org.telegram.ui.Components.uk0
     public final void J0(Canvas canvas, RectF rectF, long j10) {
         super.J0(canvas, rectF, j10);
         int childCount = getChildCount();
@@ -34,7 +34,7 @@ public abstract class e extends tk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         this.e3 = false;
         for (int i10 = 0; i10 < getChildCount(); i10++) {

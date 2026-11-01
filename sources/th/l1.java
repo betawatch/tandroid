@@ -1,12 +1,12 @@
 package th;
 
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l1 implements q20 {
+public final /* synthetic */ class l1 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ z2 b;
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class l1 implements q20 {
         this.b = z2Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
@@ -23,7 +23,7 @@ public final /* synthetic */ class l1 implements q20 {
                 z2 z2Var = this.b;
                 if (tL_premium_boostsStatus != null) {
                     z2Var.s3 = tL_premium_boostsStatus;
-                    vp.r1(z2Var.l2).G0().b(z2Var.k1, tL_premium_boostsStatus, new rh.e3(2, z2Var, tL_premium_boostsStatus));
+                    wp.r1(z2Var.l2).G0().b(z2Var.k1, tL_premium_boostsStatus, new rh.q2(3, z2Var, tL_premium_boostsStatus));
                     break;
                 } else {
                     o7 o7Var = z2Var.s0;

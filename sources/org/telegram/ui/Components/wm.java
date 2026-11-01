@@ -4,14 +4,14 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class wm implements vx {
-    public final /* synthetic */ org.telegram.messenger.q20 a;
+    public final /* synthetic */ org.telegram.messenger.r20 a;
     public final /* synthetic */ ag.v b;
 
-    public wm(org.telegram.messenger.q20 q20Var, ag.v vVar) {
-        this.a = q20Var;
+    public wm(org.telegram.messenger.r20 r20Var, ag.v vVar) {
+        this.a = r20Var;
         this.b = vVar;
     }
 
@@ -56,7 +56,7 @@ public final class wm implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.fj fjVar, boolean z10, int i10) {
+    public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.gj gjVar, boolean z10, int i10) {
         this.a.a(new jh.j(obj, document));
         this.b.a(true);
     }
@@ -90,7 +90,7 @@ public final class wm implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void o(w41 w41Var) {
+    public final /* synthetic */ void o(x41 x41Var) {
     }
 
     @Override // org.telegram.ui.Components.vx

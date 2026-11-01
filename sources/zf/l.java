@@ -5,13 +5,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.r9;
-import org.telegram.ui.wx;
+import org.telegram.ui.vx;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public boolean a;
@@ -45,7 +45,7 @@ public final class l extends FrameLayout {
         m mVar = this.b;
         int size = mVar.M.size();
         int i14 = mVar.r;
-        boolean z10 = i14 == 0 && mVar.h == 0 && vp.r1(mVar.F).Q.f(2305843009213693952L | ((long) 1)) != null;
+        boolean z10 = i14 == 0 && mVar.h == 0 && wp.r1(mVar.F).Q.f(2305843009213693952L | ((long) 1)) != null;
         View view = (View) getParent();
         int i15 = view instanceof r9 ? ((r9) view).e3 : 0;
         boolean z11 = mVar.J;
@@ -73,12 +73,12 @@ public final class l extends FrameLayout {
                     size2 = (org.telegram.messenger.i0.q.y - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.i0.m;
                 }
                 int i17 = size2 - i15;
-                int L = org.telegram.messenger.i0.L(tz.p1 ? 76.0f : 70.0f);
+                int L = org.telegram.messenger.i0.L(uz.p1 ? 76.0f : 70.0f);
                 int i18 = 0;
                 for (int i19 = 0; i19 < size; i19++) {
                     if (((k) mVar.M.get(i19)).a == 0) {
                         if (((k) mVar.M.get(i19)).f && !z11) {
-                            i18 += org.telegram.messenger.i0.L(tz.p1 ? 86.0f : 91.0f);
+                            i18 += org.telegram.messenger.i0.L(uz.p1 ? 86.0f : 91.0f);
                         }
                         i18 += L;
                     } else {
@@ -99,8 +99,8 @@ public final class l extends FrameLayout {
                         i12 -= org.telegram.messenger.i0.m;
                         if (!z11 && !mVar.S) {
                             i12 -= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
-                            if (getParent() instanceof wx) {
-                                i13 = ((wx) getParent()).z3;
+                            if (getParent() instanceof vx) {
+                                i13 = ((vx) getParent()).z3;
                                 i12 -= i13;
                             }
                         }
@@ -113,8 +113,8 @@ public final class l extends FrameLayout {
                             i12 -= org.telegram.messenger.i0.m;
                             if (!z11 && !mVar.S) {
                                 i12 -= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
-                                if (getParent() instanceof wx) {
-                                    i13 = ((wx) getParent()).z3;
+                                if (getParent() instanceof vx) {
+                                    i13 = ((vx) getParent()).z3;
                                     i12 -= i13;
                                 }
                             }

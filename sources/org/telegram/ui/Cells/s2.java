@@ -4,14 +4,14 @@ import android.text.TextUtils;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.x00;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.y00;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s2 {
     public long a;
@@ -38,7 +38,7 @@ public final class s2 {
 
     /* JADX WARN: Code restructure failed: missing block: B:50:0x010c, code lost:
     
-        if (org.telegram.messenger.vp.r1(r2).r7.e(-r1.H0) != false) goto L58;
+        if (org.telegram.messenger.wp.r1(r2).r7.e(-r1.H0) != false) goto L58;
      */
     /* JADX WARN: Code restructure failed: missing block: B:60:0x014b, code lost:
     
@@ -83,7 +83,7 @@ public final class s2 {
         int topicId4;
         v2 v2Var = this.q;
         int i11 = v2Var.F0;
-        TLRPC.Dialog dialog = (TLRPC.Dialog) vp.r1(i11).Q.f(v2Var.H0);
+        TLRPC.Dialog dialog = (TLRPC.Dialog) wp.r1(i11).Q.f(v2Var.H0);
         if (dialog == null) {
             if (v2Var.j1 == 3) {
                 long j11 = this.a;
@@ -95,12 +95,12 @@ public final class s2 {
             }
             return false;
         }
-        jj jjVar = v2Var.f1;
-        int hashCode = jjVar == null ? 0 : v2Var.f1.hashCode() + jjVar.f1();
+        kj kjVar = v2Var.f1;
+        int hashCode = kjVar == null ? 0 : v2Var.f1.hashCode() + kjVar.f1();
         long j13 = dialog.read_inbox_max_id + (dialog.read_outbox_max_id << 8) + ((dialog.unread_count + (dialog.unread_mark ? -1 : 0)) << 16) + (dialog.unread_reactions_count > 0 ? 262144 : 0) + (dialog.unread_mentions_count > 0 ? TLObject.FLAG_19 : 0) + (dialog.unread_poll_votes_count > 0 ? TLObject.FLAG_21 : 0);
         if (v2Var.X()) {
-            vp.r1(i11).r7.h(-v2Var.H0);
-            int[] iArr = x00.n;
+            wp.r1(i11).r7.h(-v2Var.H0);
+            int[] iArr = y00.n;
             if (iArr[2] > 0) {
                 j13 |= 1048576;
             }
@@ -109,17 +109,17 @@ public final class s2 {
             }
         }
         if (!v2Var.X() && (v2Var.N0 || v2Var.P)) {
-            vp r12 = vp.r1(i11);
+            wp r12 = wp.r1(i11);
             long j14 = v2Var.H0;
             topicId3 = v2Var.getTopicId();
             if (!TextUtils.isEmpty(r12.C1(j14, topicId3, true))) {
-                vp r13 = vp.r1(i11);
+                wp r13 = wp.r1(i11);
                 long j15 = v2Var.H0;
                 topicId4 = v2Var.getTopicId();
                 num = r13.D1(j15, topicId4);
                 int measuredWidth = v2Var.getMeasuredWidth() + (v2Var.getMeasuredHeight() << 16);
                 if (v2Var.X()) {
-                    ArrayList l4 = vp.r1(i11).r7.l(-v2Var.H0);
+                    ArrayList l4 = wp.r1(i11).r7.l(-v2Var.H0);
                     i10 = l4 == null ? -1 : l4.size();
                     if (i10 == -1) {
                     }
@@ -127,14 +127,14 @@ public final class s2 {
                         j10 = j13;
                         z10 = false;
                         if (v2Var.N0) {
-                            z11 = ui.b0(i11).S(v2Var.H0, 0L) != null;
-                            R = !z11 ? ui.b0(i11).R(v2Var.H0, 0L) : null;
+                            z11 = vi.b0(i11).S(v2Var.H0, 0L) != null;
+                            R = !z11 ? vi.b0(i11).R(v2Var.H0, 0L) : null;
                             if (R == null) {
                             }
                             TLRPC.Chat chat = v2Var.g2;
                             if (chat == null) {
                             }
-                            B = vp.r1(i11).t7.B(v2Var.H0);
+                            B = wp.r1(i11).t7.B(v2Var.H0);
                             if (this.h != measuredWidth) {
                             }
                             if (this.a != v2Var.H0) {
@@ -161,7 +161,7 @@ public final class s2 {
                         TLRPC.Chat chat2 = v2Var.g2;
                         if (chat2 == null) {
                         }
-                        B = vp.r1(i11).t7.B(v2Var.H0);
+                        B = wp.r1(i11).t7.B(v2Var.H0);
                         if (this.h != measuredWidth) {
                         }
                         if (this.a != v2Var.H0) {
@@ -181,7 +181,7 @@ public final class s2 {
                         this.c = B;
                         return true;
                     }
-                    ui b02 = ui.b0(i11);
+                    vi b02 = vi.b0(i11);
                     long j16 = v2Var.H0;
                     topicId = v2Var.getTopicId();
                     z10 = false;
@@ -190,7 +190,7 @@ public final class s2 {
                         j10 = j13;
                         R = null;
                     } else {
-                        ui b03 = ui.b0(i11);
+                        vi b03 = vi.b0(i11);
                         long j17 = v2Var.H0;
                         topicId2 = v2Var.getTopicId();
                         j10 = j13;
@@ -207,7 +207,7 @@ public final class s2 {
                     }
                     TLRPC.Chat chat22 = v2Var.g2;
                     z12 = (chat22 == null && chat22.call_active && chat22.call_not_empty) ? true : z10;
-                    B = vp.r1(i11).t7.B(v2Var.H0);
+                    B = wp.r1(i11).t7.B(v2Var.H0);
                     if (this.h != measuredWidth && this.b == hashCode && this.c == B && this.a == v2Var.H0 && this.d == dialog.isFolder && this.e == j10 && Objects.equals(this.g, num) && this.i == i10 && r52 == this.f && this.j == v2Var.A3 && this.k == z12 && v2Var.k2 == z11) {
                         return z10;
                     }

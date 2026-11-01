@@ -1,48 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class l51 extends FrameLayout {
-    public int a;
-    public boolean b;
+public final class l51 extends LinkMovementMethod {
+    public final /* synthetic */ UndoView a;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = this.a;
-        View view = getParent() instanceof View ? (View) getParent() : null;
-        if (this.b && view != null) {
-            i12 = view.getPaddingBottom() + view.getPaddingTop() + i12;
-        }
-        if (view != null && view.getMeasuredHeight() > 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i12, TLObject.FLAG_30));
-            return;
-        }
-        if (View.MeasureSpec.getMode(i11) != 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11) - i12, TLObject.FLAG_30));
-            return;
-        }
-        int size = View.MeasureSpec.getSize(i11);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30);
-        measureChildren(makeMeasureSpec, i11);
-        int i13 = 0;
-        for (int i14 = 0; i14 < getChildCount(); i14++) {
-            i13 = Math.max(i13, getChildAt(i14).getMeasuredHeight());
-        }
-        if (size > 0) {
-            i13 = Math.min(i13, size - i12);
-        }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30));
+    public l51(UndoView undoView) {
+        this.a = undoView;
     }
 
-    public void setMinusHeight(int i10) {
-        this.a = i10;
-    }
-
-    public void setMinusPadding(boolean z10) {
-        this.b = z10;
+    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
+    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
+        CharacterStyle[] characterStyleArr;
+        try {
+            if (motionEvent.getAction() != 0 || ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) != null && characterStyleArr.length != 0)) {
+                if (motionEvent.getAction() != 1) {
+                    return super.onTouchEvent(textView, spannable, motionEvent);
+                }
+                CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
+                if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
+                    this.a.b(characterStyleArr2[0]);
+                }
+                Selection.removeSelection(spannable);
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
+            return false;
+        }
     }
 }

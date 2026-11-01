@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.ui.Components.ew;
-import org.telegram.ui.Components.mk0;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.nk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class x extends m0 implements p0 {
     public int E;
@@ -46,7 +46,7 @@ public class x extends m0 implements p0 {
     public final ArrayList F = new ArrayList();
     public final ew I = new ew(this, 26);
     public View M = null;
-    public final mk0 P = new mk0(this);
+    public final nk0 P = new nk0(this);
 
     public x(u uVar) {
         this.y = uVar;
@@ -163,17 +163,17 @@ public class x extends m0 implements p0 {
         }
     }
 
-    public final void h(tk0 tk0Var) {
+    public final void h(uk0 uk0Var) {
         RecyclerView recyclerView = this.H;
-        if (recyclerView == tk0Var) {
+        if (recyclerView == uk0Var) {
             return;
         }
-        mk0 mk0Var = this.P;
+        nk0 nk0Var = this.P;
         if (recyclerView != null) {
             recyclerView.q0(this);
             RecyclerView recyclerView2 = this.H;
-            recyclerView2.E.remove(mk0Var);
-            if (recyclerView2.F == mk0Var) {
+            recyclerView2.E.remove(nk0Var);
+            if (recyclerView2.F == nk0Var) {
                 recyclerView2.F = null;
             }
             ArrayList arrayList = this.H.P;
@@ -205,14 +205,14 @@ public class x extends m0 implements p0 {
                 this.N = null;
             }
         }
-        this.H = tk0Var;
-        if (tk0Var != null) {
-            tk0Var.getResources();
+        this.H = uk0Var;
+        if (uk0Var != null) {
+            uk0Var.getResources();
             this.f = org.telegram.messenger.i0.L(120.0f);
             this.h = org.telegram.messenger.i0.L(800.0f);
             this.G = ViewConfiguration.get(this.H.getContext()).getScaledTouchSlop();
             this.H.i(this);
-            this.H.E.add(mk0Var);
+            this.H.E.add(nk0Var);
             RecyclerView recyclerView3 = this.H;
             if (recyclerView3.P == null) {
                 recyclerView3.P = new ArrayList();

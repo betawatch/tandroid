@@ -5,12 +5,12 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.g9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a8 extends LinearLayout {
     public final int a;
@@ -42,14 +42,14 @@ public final class a8 extends LinearLayout {
         org.telegram.ui.ActionBar.a7.Y(u5Var, i11, p6Var);
         u5Var.setTextSize(16);
         u5Var.setTypeface(org.telegram.messenger.i0.o());
-        zs.i(u5Var);
+        at.i(u5Var);
         linearLayout.addView(u5Var, w7.b6.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
         TextView textView = new TextView(context);
         this.e = textView;
         org.telegram.ui.ActionBar.a7.V(textView, i11, p6Var);
         textView.setTextSize(1, 13.0f);
         textView.setVisibility(8);
-        TextView f7 = z20.f(linearLayout, textView, w7.b6.k(0.0f, 0.0f, 0.0f, 1.0f, -1, -2), context);
+        TextView f7 = a30.f(linearLayout, textView, w7.b6.k(0.0f, 0.0f, 0.0f, 1.0f, -1, -2), context);
         this.f = f7;
         int i12 = org.telegram.ui.ActionBar.t6.z6;
         org.telegram.ui.ActionBar.a7.V(f7, i12, p6Var);
@@ -62,7 +62,7 @@ public final class a8 extends LinearLayout {
         this.h = textView2;
         org.telegram.messenger.m5.m(textView2, i11, p6Var, 1, 16.0f);
         textView2.setGravity(5);
-        TextView f10 = z20.f(linearLayout2, textView2, w7.b6.t(-1, -2, 5, 0, 0, 0, 1), context);
+        TextView f10 = a30.f(linearLayout2, textView2, w7.b6.t(-1, -2, 5, 0, 0, 0, 1), context);
         this.n = f10;
         org.telegram.ui.ActionBar.a7.V(f10, i12, p6Var);
         f10.setTextSize(1, 13.0f);

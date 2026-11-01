@@ -1,113 +1,311 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.io.File;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class lq0 extends s4.y0 {
-    public final float k;
-    public final LinearInterpolator i = new LinearInterpolator();
-    public final DecelerateInterpolator j = new DecelerateInterpolator(1.5f);
-    public int l = 0;
-    public int m = 0;
+public final class lq0 implements ht {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ org.telegram.messenger.y20 b;
+    public final /* synthetic */ org.telegram.messenger.ff c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ boolean g;
+    public final /* synthetic */ PhotoViewer h;
 
-    public lq0(Context context) {
-        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
+    public lq0(PhotoViewer photoViewer, String str, org.telegram.messenger.y20 y20Var, org.telegram.messenger.ff ffVar, boolean z10, int i10, int i11, boolean z11) {
+        this.h = photoViewer;
+        this.a = str;
+        this.b = y20Var;
+        this.c = ffVar;
+        this.d = z10;
+        this.e = i10;
+        this.f = i11;
+        this.g = z11;
     }
 
-    @Override // s4.y0
-    public final PointF a(int i10) {
-        s4.n0 n0Var = this.c;
-        if (n0Var instanceof s4.a0) {
-            return ((s4.a0) n0Var).E0(i10);
-        }
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean B() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean C(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ org.telegram.ui.Components.z60 D(fg.i iVar) {
         return null;
     }
 
-    @Override // s4.y0
-    public final void d(int i10, int i11, s4.x0 x0Var) {
-        if (this.b.y.r() == 0) {
-            h();
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ String F(boolean z10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean H() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final boolean I() {
+        return this.h.t7 != null;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean M(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final void N(CharSequence charSequence, String str, org.telegram.ui.Components.vg vgVar) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.w7 = true;
+        R();
+        photoViewer.p5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.x1(), this.c.c, vgVar, null);
+    }
+
+    @Override // org.telegram.ui.ht
+    public final void O(String str) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.w7 = true;
+        R();
+        photoViewer.p5.p(this.a, this.b, str, null, true, 0L, null, null, photoViewer.x1(), this.c.c, null, null);
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ Boolean P(TLRPC.Document document) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean Q() {
+        return true;
+    }
+
+    public final void R() {
+        kt p5 = kt.p();
+        ImageReceiver imageReceiver = p5.A;
+        org.telegram.messenger.ff ffVar = this.c;
+        if (ffVar.c != null) {
+            try {
+                new File(ffVar.c).delete();
+            } catch (Exception e) {
+                org.telegram.messenger.f8.g(e, true);
+            }
+            ffVar.c = null;
+        }
+        Bitmap createBitmap = Bitmap.createBitmap(512, 512, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        if (imageReceiver != null) {
+            imageReceiver.setAlpha(1.0f);
+            imageReceiver.y0(0.0f, 0.0f, createBitmap.getWidth(), createBitmap.getHeight());
+            imageReceiver.h(canvas, null);
+        }
+        if (p5.C != null) {
+            canvas.save();
+            canvas.scale(createBitmap.getWidth() / p5.C.getWidth(), createBitmap.getHeight() / p5.C.getHeight());
+            p5.C.setAlpha(1.0f);
+            Path path = new Path();
+            path.rewind();
+            RectF rectF = org.telegram.messenger.i0.P;
+            rectF.set(0.0f, 0.0f, p5.C.getWidth(), p5.C.getHeight());
+            path.addRoundRect(rectF, p5.C.getWidth() / 8.0f, p5.C.getHeight() / 8.0f, Path.Direction.CW);
+            canvas.clipPath(path);
+            p5.C.draw(canvas);
+            canvas.restore();
+        }
+        Drawable[] drawableArr = PhotoViewer.U8;
+        PhotoViewer photoViewer = this.h;
+        TLRPC.PhotoSize a02 = org.telegram.messenger.ic.a0(createBitmap, photoViewer.i1(), 512.0f, 512.0f, 83);
+        org.telegram.messenger.b8.G(photoViewer.T);
+        ffVar.c = org.telegram.messenger.b8.K(a02, null, true, true).toString();
+    }
+
+    @Override // org.telegram.ui.ht
+    public final long a() {
+        return this.h.E5;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean e(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean f() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ TLRPC.PollAnswer g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean h() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ boolean k(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final void m(String str) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.w7 = true;
+        R();
+        photoViewer.p5.p(this.a, this.b, str, null, false, 0L, null, null, photoViewer.x1(), this.c.c, null, photoViewer.x7);
+    }
+
+    @Override // org.telegram.ui.ht
+    public final boolean o() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final void u(TLRPC.StickerSet stickerSet, String str) {
+        PhotoViewer photoViewer = this.h;
+        photoViewer.w7 = true;
+        R();
+        photoViewer.p5.p(this.a, this.b, str, null, false, 0L, stickerSet, photoViewer.t7, photoViewer.x1(), this.c.c, null, null);
+    }
+
+    @Override // org.telegram.ui.ht
+    public final boolean w() {
+        PhotoViewer photoViewer = this.h;
+        ds0 ds0Var = photoViewer.d;
+        if (ds0Var != null) {
+            return (ds0Var.Q() && photoViewer.l4 == null) ? false : true;
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final void x(String str) {
+        PhotoViewer photoViewer = this.h;
+        ds0 ds0Var = photoViewer.d;
+        if (ds0Var == null) {
             return;
         }
-        int i12 = this.l;
-        int i13 = i12 - i10;
-        if (i12 * i13 <= 0) {
-            i13 = 0;
-        }
-        this.l = i13;
-        int i14 = this.m;
-        int i15 = i14 - i11;
-        int i16 = i14 * i15 > 0 ? i15 : 0;
-        this.m = i16;
-        if (i13 == 0 && i16 == 0) {
-            PointF a2 = a(this.a);
-            if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
-                x0Var.d = this.a;
-                h();
-            } else {
-                s4.y0.b(a2);
-                this.l = (int) (a2.x * 10000.0f);
-                this.m = (int) (a2.y * 10000.0f);
-                x0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
-            }
-        }
-    }
-
-    @Override // s4.y0
-    public final void f() {
-        this.m = 0;
-        this.l = 0;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x003c, code lost:
-    
-        if (r4 < 0) goto L16;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
-    @Override // s4.y0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, s4.x0 x0Var) {
-        int i10;
-        int max;
-        s4.n0 n0Var = this.c;
-        if (n0Var != null && n0Var.d()) {
-            s4.o0 o0Var = (s4.o0) view.getLayoutParams();
-            int x10 = s4.n0.x(view) - ((ViewGroup.MarginLayoutParams) o0Var).leftMargin;
-            int y3 = s4.n0.y(view) + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin;
-            int D = n0Var.D();
-            int E = n0Var.m - n0Var.E();
-            if (x10 <= D || y3 >= E) {
-                int i11 = y3 - x10;
-                int i12 = (E - D) - i11;
-                int i13 = i11 + i12;
-                i10 = i12 - x10;
-                if (i10 <= 0) {
-                    i10 = i13 - y3;
-                }
-                max = Math.max(org.telegram.messenger.zs.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d));
-                if (max <= 0) {
-                    x0Var.b(-i10, 0, Math.max(400, max), this.j);
-                    return;
-                }
+        boolean Q = ds0Var.Q();
+        org.telegram.messenger.ff ffVar = this.c;
+        if (Q) {
+            if (photoViewer.l4 == null) {
                 return;
             }
+            photoViewer.w7 = true;
+            R();
+            photoViewer.p5.p(this.a, this.b, str, null, false, photoViewer.l4.a(), null, null, photoViewer.x1(), ffVar.c, null, null);
+            return;
         }
-        i10 = 0;
-        max = Math.max(org.telegram.messenger.zs.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d));
-        if (max <= 0) {
-        }
+        photoViewer.w7 = true;
+        R();
+        ffVar.h = this.a;
+        photoViewer.d.o(photoViewer.P4, this.b, this.d, this.e, this.f, this.g);
+        org.telegram.messenger.at.f(org.telegram.messenger.e20.s0).m(org.telegram.messenger.at.s3, Boolean.TRUE);
     }
 
-    @Override // s4.y0
-    public final void e() {
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ org.telegram.messenger.kj y() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final boolean z() {
+        return this.h.x7 != null;
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void A(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void E(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void G(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void i(org.telegram.messenger.kz kzVar) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void n(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void p(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void t(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void J() {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void K() {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void L(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void v(TLObject tLObject, Object obj) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void r(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.ht
+    public final /* synthetic */ void l(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
     }
 }

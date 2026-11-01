@@ -19,11 +19,11 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.yf0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public boolean D;
@@ -72,7 +72,7 @@ public final class s5 extends FrameLayout {
         this.w = new Paint(1);
         Paint paint = new Paint();
         this.x = paint;
-        this.N = new e2.f(null);
+        this.N = new e2.f((int[]) null);
         this.O = new RectF();
         this.P = new RectF();
         this.Q = new RectF();
@@ -114,6 +114,11 @@ public final class s5 extends FrameLayout {
         } catch (Exception unused) {
             return 1.0f;
         }
+    }
+
+    private int getContentTop() {
+        int i10 = (int) this.O.top;
+        return Math.max(Math.min(i10, 0), i10 - this.d.getMenuRise());
     }
 
     private void setAnimating(boolean z10) {
@@ -336,10 +341,10 @@ public final class s5 extends FrameLayout {
             c10 = 1;
             float T15 = org.telegram.messenger.i0.T1(g10, g(uVar, true), this.a);
             float T16 = org.telegram.messenger.i0.T1(g(this.d.getButtonsGlassColorProvider(), false), g(uVar, false), this.a);
-            vg.e eVar = fVar2.M;
+            vg.e eVar = fVar2.P;
             eVar.i = T15;
             eVar.j = T16;
-            fVar2.L = null;
+            fVar2.O = null;
             if (l12 > 0.0f) {
                 this.h.s(f19, f19, min, min, false);
             } else {
@@ -558,16 +563,14 @@ public final class s5 extends FrameLayout {
             this.f.layout(max, i14 - measuredHeight, measuredWidth + max, i14);
         } else {
             int i15 = (int) rectF.right;
-            int i16 = (int) rectF.top;
+            int contentTop = getContentTop();
             int max2 = Math.max(org.telegram.messenger.i0.L(8.0f), i15 - measuredWidth);
-            this.f.layout(max2, i16, measuredWidth + max2, measuredHeight + i16);
+            this.f.layout(max2, contentTop, measuredWidth + max2, measuredHeight + contentTop);
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        float L;
-        int i12;
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size, size2);
@@ -576,16 +579,7 @@ public final class s5 extends FrameLayout {
             return;
         }
         b();
-        boolean z10 = this.s;
-        RectF rectF = this.O;
-        if (z10) {
-            L = rectF.bottom - org.telegram.messenger.i0.m;
-            i12 = org.telegram.messenger.i0.L(16.0f);
-        } else {
-            L = (size2 - rectF.top) - org.telegram.messenger.i0.L(16.0f);
-            i12 = org.telegram.messenger.i0.n;
-        }
-        this.f.measure(z20.c(16.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.max(org.telegram.messenger.i0.L(48.0f), (int) (L - i12)), TLObject.FLAG_31));
+        this.f.measure(a30.c(16.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.max(org.telegram.messenger.i0.L(48.0f), this.s ? (int) ((this.O.bottom - org.telegram.messenger.i0.m) - org.telegram.messenger.i0.L(16.0f)) : ((size2 - getContentTop()) - org.telegram.messenger.i0.L(16.0f)) - org.telegram.messenger.i0.n), TLObject.FLAG_31));
     }
 
     public void setOnClosed(Runnable runnable) {

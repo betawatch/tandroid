@@ -1,31 +1,31 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements q20 {
+public final /* synthetic */ class g1 implements r20 {
     public final /* synthetic */ a2 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ vh.d c;
     public final /* synthetic */ vh.d d;
     public final /* synthetic */ e2 e;
-    public final /* synthetic */ y2 f;
+    public final /* synthetic */ z2 f;
     public final /* synthetic */ boolean[] g;
     public final /* synthetic */ org.telegram.ui.ActionBar.p6 h;
 
-    public /* synthetic */ g1(a2 a2Var, boolean[] zArr, vh.d dVar, vh.d dVar2, e2 e2Var, y2 y2Var, boolean[] zArr2, org.telegram.ui.ActionBar.p6 p6Var) {
+    public /* synthetic */ g1(a2 a2Var, boolean[] zArr, vh.d dVar, vh.d dVar2, e2 e2Var, z2 z2Var, boolean[] zArr2, org.telegram.ui.ActionBar.p6 p6Var) {
         this.a = a2Var;
         this.b = zArr;
         this.c = dVar;
         this.d = dVar2;
         this.e = e2Var;
-        this.f = y2Var;
+        this.f = z2Var;
         this.g = zArr2;
         this.h = p6Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         Boolean bool = (Boolean) obj;
         a2 a2Var = this.a;

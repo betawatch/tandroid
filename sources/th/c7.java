@@ -16,20 +16,20 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.fi0;
+import org.telegram.ui.Components.gi0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.uu0;
-import org.telegram.ui.dg0;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.vu0;
+import org.telegram.ui.bg0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class c7 extends uu0 {
+public final class c7 extends vu0 {
     public float f0;
     public float g0;
     public float h0;
@@ -67,7 +67,7 @@ public final class c7 extends uu0 {
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v6 */
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -106,7 +106,7 @@ public final class c7 extends uu0 {
         t5 t5Var3;
         int i12;
         z2 H;
-        fi0 fi0Var;
+        gi0 gi0Var;
         boolean z11;
         float f23;
         o7 o7Var = this.r0;
@@ -371,7 +371,7 @@ public final class c7 extends uu0 {
                                     f20 = f19;
                                 } else {
                                     if (l7Var != null && (t5Var2 = l7Var.m) != null && t5Var2.w) {
-                                        canvas.saveLayerAlpha(rectF11.left - org.telegram.messenger.i0.L(4.0f), rectF11.top - org.telegram.messenger.i0.L(4.0f), rectF11.right + org.telegram.messenger.i0.L(4.0f), rectF11.bottom + org.telegram.messenger.i0.L(4.0f), zs.e4, 31);
+                                        canvas.saveLayerAlpha(rectF11.left - org.telegram.messenger.i0.L(4.0f), rectF11.top - org.telegram.messenger.i0.L(4.0f), rectF11.right + org.telegram.messenger.i0.L(4.0f), rectF11.bottom + org.telegram.messenger.i0.L(4.0f), at.e4, 31);
                                     }
                                     d2Var2.getImageReceiver().A0(rectF11);
                                     d2Var2.getImageReceiver().J0((int) org.telegram.messenger.i0.T1(rectF11.width() / 2.0f, ((l7Var == null || l7Var.b == null) ? null : Integer.valueOf((int) (l7Var.b.W0[0] * ((!l7Var.n || (view = l7Var.a) == null || view.getParent() == null) ? 1.0f : ((ViewGroup) l7Var.a.getParent()).getScaleY())))) != null ? r4.intValue() : rectF11.width() / 2.0f, 1.0f - o7Var.U));
@@ -470,13 +470,13 @@ public final class c7 extends uu0 {
                             o7Var.d = false;
                             o7.x1 = true;
                             o7Var.b0 = o7Var.W;
-                            if (l7Var.d != null && (H = o7Var.H()) != null && (fi0Var = H.X0.d) != null) {
-                                fi0 fi0Var2 = l7Var.d;
-                                fi0Var.c = fi0Var2.c;
-                                fi0Var.f = fi0Var2.f;
-                                fi0Var.b = fi0Var2.b;
-                                fi0Var.a = System.currentTimeMillis();
-                                fi0Var.c();
+                            if (l7Var.d != null && (H = o7Var.H()) != null && (gi0Var = H.X0.d) != null) {
+                                gi0 gi0Var2 = l7Var.d;
+                                gi0Var.c = gi0Var2.c;
+                                gi0Var.f = gi0Var2.f;
+                                gi0Var.b = gi0Var2.b;
+                                gi0Var.a = System.currentTimeMillis();
+                                gi0Var.c();
                             }
                             o7Var.E = true;
                             float[] fArr3 = new float[i11];
@@ -593,7 +593,7 @@ public final class c7 extends uu0 {
         boolean z11;
         e7 e7Var;
         int i10;
-        mj0 mj0Var;
+        nj0 nj0Var;
         o7 o7Var = this.r0;
         float[] fArr = o7Var.o0;
         z2 currentPeerView = o7Var.n0.getCurrentPeerView();
@@ -611,7 +611,7 @@ public final class c7 extends uu0 {
         }
         float f7 = 0.0f;
         int i11 = 0;
-        if (o7Var.p1 && currentPeerView != null && (mj0Var = currentPeerView.a3) != null) {
+        if (o7Var.p1 && currentPeerView != null && (nj0Var = currentPeerView.a3) != null) {
             float f10 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f7 += view.getX();
@@ -623,14 +623,14 @@ public final class c7 extends uu0 {
                 return true;
             }
             Rect rect = org.telegram.messenger.i0.Q;
-            mj0Var.getHitRect(rect);
+            nj0Var.getHitRect(rect);
             rect.offset((int) f7, (int) f10);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.Z0(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            mj0Var.dispatchTouchEvent(motionEvent);
+            nj0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -658,7 +658,7 @@ public final class c7 extends uu0 {
         if (motionEvent.getAction() == 0) {
             o7Var.a0 = false;
             if (currentPeerView != null) {
-                dg0 dg0Var = currentPeerView.h0;
+                bg0 bg0Var = currentPeerView.h0;
                 t6 t6Var = currentPeerView.l0;
                 g2 g2Var = currentPeerView.L0;
                 vh.p2 p2Var = currentPeerView.o0;
@@ -666,7 +666,7 @@ public final class c7 extends uu0 {
                     currentPeerView.o0.e(true);
                 }
                 vh.p2 p2Var2 = currentPeerView.p0;
-                if (p2Var2 != null && p2Var2.V && dg0Var != null && !p2Var2.r0.contains(motionEvent.getX() - (currentPeerView.p0.getX() + (g2Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.p0.getY() + (g2Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(dg0Var, motionEvent)) {
+                if (p2Var2 != null && p2Var2.V && bg0Var != null && !p2Var2.r0.contains(motionEvent.getX() - (currentPeerView.p0.getX() + (g2Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.p0.getY() + (g2Var.getY() + currentPeerView.getY()))) && !currentPeerView.F0(bg0Var, motionEvent)) {
                     currentPeerView.p0.e(true);
                 }
             }
@@ -751,7 +751,7 @@ public final class c7 extends uu0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         o7 o7Var = this.r0;
@@ -760,23 +760,23 @@ public final class c7 extends uu0 {
             org.telegram.messenger.i0.Z2(k2Var.getParentActivity(), k2Var.getClassGuid());
         }
         setTag(R.id.bulletin_delegate_tag, new b7(this));
-        zs.f(o7Var.h).c(o7Var, zs.x5);
-        zs.f(o7Var.h).c(o7Var, zs.v5);
-        zs.f(o7Var.h).c(o7Var, zs.d1);
-        zs.f(o7Var.h).c(o7Var, zs.c1);
-        zs.f(o7Var.h).c(o7Var, zs.w5);
+        at.f(o7Var.h).c(o7Var, at.x5);
+        at.f(o7Var.h).c(o7Var, at.v5);
+        at.f(o7Var.h).c(o7Var, at.d1);
+        at.f(o7Var.h).c(o7Var, at.c1);
+        at.f(o7Var.h).c(o7Var, at.w5);
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
         o7 o7Var = this.r0;
-        zs.f(o7Var.h).n(o7Var, zs.x5);
-        zs.f(o7Var.h).n(o7Var, zs.v5);
-        zs.f(o7Var.h).n(o7Var, zs.d1);
-        zs.f(o7Var.h).n(o7Var, zs.c1);
-        zs.f(o7Var.h).n(o7Var, zs.w5);
+        at.f(o7Var.h).n(o7Var, at.x5);
+        at.f(o7Var.h).n(o7Var, at.v5);
+        at.f(o7Var.h).n(o7Var, at.d1);
+        at.f(o7Var.h).n(o7Var, at.c1);
+        at.f(o7Var.h).n(o7Var, at.w5);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:129:0x0188  */
@@ -830,7 +830,7 @@ public final class c7 extends uu0 {
             if (o7Var.a1 && o7Var.k0 && !o7Var.f1 && !o7Var.j0 && (t0Var = o7Var.G0) != null && ((n7) t0Var.c) != null && (currentPeerView2 = o7Var.n0.getCurrentPeerView()) != null && (y2Var = currentPeerView2.x1) != null && y2Var.b == null && y2Var.e) {
                 long j10 = currentPeerView2.A2;
                 if (j10 <= 0 && (storyItem = y2Var.a) != null && (messageMedia = storyItem.media) != null && (document = messageMedia.document) != null) {
-                    j10 = (long) (jj.H0(document) * 1000.0d);
+                    j10 = (long) (kj.H0(document) * 1000.0d);
                 }
                 if (j10 > 0) {
                     float x11 = motionEvent.getX();

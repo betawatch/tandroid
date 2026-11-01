@@ -1,100 +1,55 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.Property;
-import android.view.View;
-import android.widget.ScrollView;
+import android.text.SpannableStringBuilder;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class sc1 extends ScrollView {
-    public final int[] a;
-    public final Rect b;
-    public boolean c;
-    public final /* synthetic */ tc1 d;
+public final class sc1 extends FrameLayout {
+    public final /* synthetic */ int a = 0;
+    public final Object b;
+
+    public sc1(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context);
+        LinearLayout linearLayout = new LinearLayout(context);
+        addView(linearLayout, w7.b6.e(-1, -2, 80));
+        linearLayout.setOrientation(1);
+        TextView textView = new TextView(context);
+        org.telegram.ui.ActionBar.a7.W(textView, org.telegram.ui.ActionBar.a7.h(org.telegram.ui.ActionBar.t6.G6, 100), p6Var);
+        textView.setTextSize(1, 13.0f);
+        org.telegram.messenger.m5.l(textView, 17, null, 2131743881);
+        linearLayout.addView(textView, w7.b6.t(-1, -2, 0, 16, 17, 17, 16));
+        kg.x0 x0Var = new kg.x0(context, p6Var, false);
+        this.b = x0Var;
+        String L0 = org.telegram.messenger.dd.L0(2131743882, null);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) "d ").setSpan(new org.telegram.ui.Components.dq(0, context.getDrawable(R.drawable.msg_premium_normal)), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) L0);
+        x0Var.f.setText(spannableStringBuilder);
+        linearLayout.addView(x0Var, w7.b6.t(-1, 48, 0, 16, 0, 16, 16));
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i10, i11);
+                ((ViewGroup.MarginLayoutParams) ((rc1) this.b).L.getLayoutParams()).topMargin = org.telegram.messenger.i0.L(16.0f) + org.telegram.messenger.i0.m;
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sc1(tc1 tc1Var, Context context) {
+    public sc1(rc1 rc1Var, Context context) {
         super(context);
-        this.d = tc1Var;
-        this.a = new int[2];
-        this.b = new Rect();
-        this.c = true;
-    }
-
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        this.c = false;
-        super.onLayout(z10, i10, i11, i12, i13);
-    }
-
-    @Override // android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        super.onScrollChanged(i10, i11, i12, i13);
-        tc1 tc1Var = this.d;
-        TextView textView = tc1Var.c;
-        if (textView == null) {
-            return;
-        }
-        int[] iArr = this.a;
-        textView.getLocationOnScreen(iArr);
-        int measuredHeight = tc1Var.c.getMeasuredHeight() + iArr[1];
-        lVar = ((org.telegram.ui.ActionBar.k2) tc1Var).actionBar;
-        boolean z10 = measuredHeight < lVar.getBottom();
-        if (z10 != (tc1Var.c.getTag() == null)) {
-            tc1Var.c.setTag(z10 ? null : 1);
-            AnimatorSet animatorSet = tc1Var.K;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-                tc1Var.K = null;
-            }
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            tc1Var.K = animatorSet2;
-            kg.f0 f0Var = tc1Var.D;
-            float[] fArr = {z10 ? 1.0f : 0.0f};
-            Property property = View.ALPHA;
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(f0Var, (Property<kg.f0, Float>) property, fArr);
-            lVar2 = ((org.telegram.ui.ActionBar.k2) tc1Var).actionBar;
-            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(lVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.u5, Float>) property, z10 ? 1.0f : 0.0f));
-            tc1Var.K.setDuration(150L);
-            tc1Var.K.addListener(new ns0(this, 13));
-            tc1Var.K.start();
-        }
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
-        if (Build.VERSION.SDK_INT < 29 && view2 != null && !this.c) {
-            scrollToDescendant(view2);
-        }
-        super.requestChildFocus(view, view2);
-    }
-
-    @Override // android.widget.ScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        this.c = true;
-        super.requestLayout();
-    }
-
-    @Override // android.widget.ScrollView
-    public final void scrollToDescendant(View view) {
-        Rect rect = this.b;
-        view.getDrawingRect(rect);
-        offsetDescendantRectToMyCoords(view, rect);
-        rect.bottom = org.telegram.messenger.i0.L(120.0f) + rect.bottom;
-        int computeScrollDeltaToGetChildRectOnScreen = computeScrollDeltaToGetChildRectOnScreen(rect);
-        if (computeScrollDeltaToGetChildRectOnScreen < 0) {
-            computeScrollDeltaToGetChildRectOnScreen -= (getMeasuredHeight() - view.getMeasuredHeight()) / 2;
-        }
-        if (computeScrollDeltaToGetChildRectOnScreen != 0) {
-            smoothScrollBy(0, computeScrollDeltaToGetChildRectOnScreen);
-        }
+        this.b = rc1Var;
     }
 }

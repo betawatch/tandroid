@@ -5,40 +5,40 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.ku0;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.vk0;
-import org.telegram.ui.Components.w71;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vs;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.lu0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.x71;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class g8 extends LinearLayout implements us {
+public final class g8 extends LinearLayout implements vs {
     public final int a;
-    public final w71 b;
+    public final x71 b;
     public final f8 c;
     public final FrameLayout d;
-    public final ku0 e;
+    public final lu0 e;
     public final long f;
 
-    public g8(Context context, int i10, boolean z10, long j10, int i11, org.telegram.ui.ActionBar.p6 p6Var, ku0 ku0Var) {
+    public g8(Context context, int i10, boolean z10, long j10, int i11, org.telegram.ui.ActionBar.p6 p6Var, lu0 lu0Var) {
         super(context);
-        this.e = ku0Var;
+        this.e = lu0Var;
         this.a = i10;
         this.f = j10;
         setOrientation(1);
-        w71 w71Var = ku0Var == null ? new w71(context, null) : new vk0(context, p6Var, ku0Var);
-        this.b = w71Var;
+        x71 x71Var = lu0Var == null ? new x71(context, null) : new wk0(context, p6Var, lu0Var);
+        this.b = x71Var;
         f8 f8Var = new f8(context, i10, z10, j10, i11, p6Var);
         this.c = f8Var;
-        f8Var.g = ku0Var == null ? null : (vk0) w71Var;
-        w71Var.setAdapter(f8Var);
-        View n10 = w71Var.n(ku0Var == null ? 3 : -2, true);
+        f8Var.g = lu0Var == null ? null : (wk0) x71Var;
+        x71Var.setAdapter(f8Var);
+        View n10 = x71Var.n(lu0Var == null ? 3 : -2, true);
         View view = new View(context);
         org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d7, view, p6Var);
-        if (ku0Var == null) {
+        if (lu0Var == null) {
             this.d = null;
             addView(n10, w7.b6.o(-1, 48));
             addView(view, new LinearLayout.LayoutParams(w7.b6.z(-1.0f), w7.b6.z(1.0f / org.telegram.messenger.i0.p)));
@@ -51,66 +51,66 @@ public final class g8 extends LinearLayout implements us {
             frameLayout.setPadding(org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f));
             frameLayout.addView(n10, w7.b6.e(-1, 48, 48));
         }
-        addView(w71Var, w7.b6.o(-1, -1));
+        addView(x71Var, w7.b6.o(-1, -1));
     }
 
     public final void a(boolean z10) {
         f8 f8Var = this.c;
-        w71 w71Var = this.b;
-        ku0 ku0Var = this.e;
-        if (ku0Var == null) {
+        x71 x71Var = this.b;
+        lu0 lu0Var = this.e;
+        if (lu0Var == null) {
             f8Var.i();
-            w71Var.o(z10);
+            x71Var.o(z10);
             return;
         }
         ArrayList arrayList = f8Var.i;
         ArrayList arrayList2 = f8Var.i;
         int i10 = 0;
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            i10 |= 1 << ((a51) arrayList.get(i11)).z;
+            i10 |= 1 << ((b51) arrayList.get(i11)).z;
         }
-        View currentView = w71Var.getCurrentView();
+        View currentView = x71Var.getCurrentView();
         int i12 = currentView instanceof e8 ? ((e8) currentView).d : 0;
         f8Var.i();
         int i13 = 0;
         for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-            i13 |= 1 << ((a51) arrayList2.get(i14)).z;
+            i13 |= 1 << ((b51) arrayList2.get(i14)).z;
         }
         if (i10 == i13) {
             if (z10) {
                 return;
             }
-            w71Var.o(false);
+            x71Var.o(false);
             return;
         }
-        w71Var.onTouchEvent(null);
+        x71Var.onTouchEvent(null);
         int i15 = 0;
         while (true) {
             if (i15 >= arrayList2.size()) {
                 i15 = 0;
                 break;
-            } else if (((a51) arrayList2.get(i15)).z == i12) {
+            } else if (((b51) arrayList2.get(i15)).z == i12) {
                 break;
             } else {
                 i15++;
             }
         }
-        w71Var.setPosition(i15);
-        w71Var.J();
-        w71Var.o(false);
-        ku0Var.p();
+        x71Var.setPosition(i15);
+        x71Var.J();
+        x71Var.o(false);
+        lu0Var.p();
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = zs.z3;
+        int i12 = at.z3;
         long j10 = this.f;
-        if ((i10 == i12 && j10 == 0) || (i10 == zs.D3 && j10 != 0 && ((Long) objArr[0]).longValue() == j10)) {
+        if ((i10 == i12 && j10 == 0) || (i10 == at.D3 && j10 != 0 && ((Long) objArr[0]).longValue() == j10)) {
             a(true);
         }
     }
 
-    public tk0 getCurrentListView() {
+    public uk0 getCurrentListView() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof e8) {
             return ((e8) currentView).a;
@@ -122,20 +122,20 @@ public final class g8 extends LinearLayout implements us {
         return this.d;
     }
 
-    public w71 getViewPager() {
+    public x71 getViewPager() {
         return this.b;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         a(false);
-        zs.f(this.a).c(this, this.f == 0 ? zs.z3 : zs.D3);
+        at.f(this.a).c(this, this.f == 0 ? at.z3 : at.D3);
         super.onAttachedToWindow();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        zs.f(this.a).n(this, this.f == 0 ? zs.z3 : zs.D3);
+        at.f(this.a).n(this, this.f == 0 ? at.z3 : at.D3);
         super.onDetachedFromWindow();
     }
 
@@ -146,9 +146,9 @@ public final class g8 extends LinearLayout implements us {
                 return;
             }
             f8Var.h = rVar;
-            w71 w71Var = this.b;
-            rVar.c(w71Var);
-            for (View view : w71Var.getViewPages()) {
+            x71 x71Var = this.b;
+            rVar.c(x71Var);
+            for (View view : x71Var.getViewPages()) {
                 if (view instanceof e8) {
                     rVar.b(((e8) view).a);
                 }

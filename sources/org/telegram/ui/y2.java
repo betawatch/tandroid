@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y2 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class y2 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        h4Var.X(((org.telegram.ui.Components.uz0) h4Var.b.i).b);
+                        h4Var.X(((org.telegram.ui.Components.vz0) h4Var.b.i).b);
                         h4Var.b = null;
                         h4Var.d = null;
                         View view = h4Var.f;
@@ -96,7 +96,7 @@ public final class y2 implements Runnable {
                                     h4Var.C0.setPadding(org.telegram.messenger.i0.L(20.0f), 0, org.telegram.messenger.i0.L(20.0f), 0);
                                     h4Var.C0.setTextSize(1, 15.0f);
                                     h4Var.C0.setTypeface(org.telegram.messenger.i0.o());
-                                    h4Var.C0.setText(org.telegram.messenger.cd.L0(2131751767, null).toUpperCase());
+                                    h4Var.C0.setText(org.telegram.messenger.dd.L0(2131751767, null).toUpperCase());
                                     h4Var.C0.setOnClickListener(new q(h4Var, 5));
                                     h4Var.B0.addView(h4Var.C0, w7.b6.c(48.0f, -2));
                                     org.telegram.ui.ActionBar.k1 k1Var2 = new org.telegram.ui.ActionBar.k1(h4Var.B0, -2, -2);

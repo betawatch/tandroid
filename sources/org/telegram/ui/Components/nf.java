@@ -6,7 +6,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class nf implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -17,7 +17,7 @@ public final class nf implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.messenger.jj threadMessage;
+        org.telegram.messenger.kj threadMessage;
         ChatActivityEnterView chatActivityEnterView = this.a;
         ee eeVar = chatActivityEnterView.H3;
         Activity activity = chatActivityEnterView.O2;
@@ -47,11 +47,11 @@ public final class nf implements Runnable {
             MediaController B = MediaController.B();
             int i10 = chatActivityEnterView.Q;
             long j10 = chatActivityEnterView.Q2;
-            org.telegram.messenger.jj jjVar = chatActivityEnterView.T2;
+            org.telegram.messenger.kj kjVar = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
             int i11 = chatActivityEnterView.G2;
             org.telegram.ui.un unVar = chatActivityEnterView.P2;
-            B.x0(i10, j10, jjVar, threadMessage, P0, i11, true, unVar != null ? unVar.P8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+            B.x0(i10, j10, kjVar, threadMessage, P0, i11, true, unVar != null ? unVar.T8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
             chatActivityEnterView.F2 = true;
             chatActivityEnterView.K1(0, true);
             bg bgVar = chatActivityEnterView.Y0;
@@ -83,7 +83,7 @@ public final class nf implements Runnable {
             } else {
                 strArr[0] = "android.permission.RECORD_AUDIO";
             }
-            activity.requestPermissions(strArr, org.telegram.messenger.zs.g2);
+            activity.requestPermissions(strArr, org.telegram.messenger.at.g2);
             return;
         }
         if (CameraController.getInstance().isCameraInitied()) {

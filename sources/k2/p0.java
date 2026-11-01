@@ -3,10 +3,10 @@ package k2;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class p0 extends c2.n {
     public int[] i;
@@ -52,7 +52,7 @@ public final class p0 extends c2.n {
                         int i12 = ((((b10 << 24) & (-16777216)) | ((b11 << 16) & 16711680)) | ((byteBuffer.get(u10) << 8) & 65280)) >> 8;
                         t6.h((i12 & (-16777216)) == 0 || (i12 & (-8388608)) == -8388608, "Value out of range of 24-bit integer: %s", Integer.toHexString(i12));
                         t6.f(l4.remaining() >= 3);
-                        l4.put((byte) (l4.order() == byteOrder ? (i12 & 16711680) >> 16 : i12 & zs.e4)).put((byte) ((i12 & 65280) >> 8)).put((byte) (l4.order() == byteOrder ? i12 & zs.e4 : (i12 & 16711680) >> 16));
+                        l4.put((byte) (l4.order() == byteOrder ? (i12 & 16711680) >> 16 : i12 & at.e4)).put((byte) ((i12 & 65280) >> 8)).put((byte) (l4.order() == byteOrder ? i12 & at.e4 : (i12 & 16711680) >> 16));
                     } else {
                         l4.putFloat(byteBuffer.getFloat(u10));
                     }

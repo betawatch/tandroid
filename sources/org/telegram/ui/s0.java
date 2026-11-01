@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s0 extends org.telegram.ui.Components.h6 {
     public final /* synthetic */ int b;
@@ -18,16 +18,16 @@ public final class s0 extends org.telegram.ui.Components.h6 {
                 ((ArticleViewer$WindowView) obj).setInnerTranslationX(f7);
                 break;
             case 1:
-                un.ad = (int) f7;
+                un.bd = (int) f7;
                 break;
             case 2:
                 ((org.telegram.ui.Cells.q1) obj).setTimeAlpha(f7);
                 break;
             case 3:
-                ((org.telegram.messenger.fj) obj).d = f7;
+                ((org.telegram.messenger.gj) obj).d = f7;
                 break;
             case 4:
-                ((jx0) obj).setCrossfadeProgress(f7);
+                ((ix0) obj).setCrossfadeProgress(f7);
                 break;
             case 5:
                 ((SecretMediaViewer) obj).setVideoCrossfadeAlpha(f7);
@@ -54,10 +54,10 @@ public final class s0 extends org.telegram.ui.Components.h6 {
                         float f11 = 1.0f - (0.1f * f10);
                         secretMediaViewer.Q.setScaleX(f11);
                         secretMediaViewer.Q.setScaleY(f11);
-                        org.telegram.ui.Components.w61 w61Var = secretMediaViewer.O;
-                        if (w61Var.y != f10) {
-                            w61Var.y = f10;
-                            w61Var.v.invalidate();
+                        org.telegram.ui.Components.x61 x61Var = secretMediaViewer.O;
+                        if (x61Var.y != f10) {
+                            x61Var.y = f10;
+                            x61Var.v.invalidate();
                             break;
                         }
                     }
@@ -72,13 +72,13 @@ public final class s0 extends org.telegram.ui.Components.h6 {
             case 0:
                 return Float.valueOf(((ArticleViewer$WindowView) obj).getInnerTranslationX());
             case 1:
-                return Float.valueOf(un.ad);
+                return Float.valueOf(un.bd);
             case 2:
                 return Float.valueOf(((org.telegram.ui.Cells.q1) obj).getTimeAlpha());
             case 3:
-                return Float.valueOf(((org.telegram.messenger.fj) obj).d);
+                return Float.valueOf(((org.telegram.messenger.gj) obj).d);
             case 4:
-                return Float.valueOf(((jx0) obj).S);
+                return Float.valueOf(((ix0) obj).S);
             case 5:
                 return Float.valueOf(((SecretMediaViewer) obj).getVideoCrossfadeAlpha());
             case 6:

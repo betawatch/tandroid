@@ -8,16 +8,16 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.t2;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.jd1;
+import org.telegram.ui.hd1;
 import rf.x;
 import rh.e6;
 import rh.h8;
@@ -27,7 +27,7 @@ import th.w0;
 import xh.m2;
 import zh.h;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class a implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        k2 b02;
+        k2 c02;
         int i10 = 1;
         switch (this.a) {
             case 0:
@@ -67,10 +67,10 @@ public final /* synthetic */ class a implements Runnable {
                 break;
             case 2:
                 k2 T = LaunchActivity.T();
-                if ((T instanceof jd1) && (b02 = ((jd1) T).b0()) != null) {
-                    T = b02;
+                if ((T instanceof hd1) && (c02 = ((hd1) T).c0()) != null) {
+                    T = c02;
                 }
-                wb Q = (T != null ? cc.a0(T) : cc.X()).Q(R.raw.ic_delete, 36, cd.L0(2131750225, null));
+                wb Q = (T != null ? cc.a0(T) : cc.X()).Q(R.raw.ic_delete, 36, dd.L0(2131750225, null));
                 Q.t = true;
                 Q.j();
                 break;
@@ -88,12 +88,12 @@ public final /* synthetic */ class a implements Runnable {
                 e6[][] e6VarArr = e6.S;
                 break;
             case 6:
-                zs.e().k(99, 512);
+                at.e().k(99, 512);
                 break;
             case 7:
                 break;
             case 8:
-                zs.e().k(zs.F2, new Object[0]);
+                at.e().k(at.F2, new Object[0]);
                 break;
             case 9:
                 w0.b();
@@ -127,7 +127,7 @@ public final /* synthetic */ class a implements Runnable {
             case 15:
                 break;
             case 16:
-                vp.d1().edit().putInt("storydualhint", vp.d1().getInt("storydualhint", 0) + 1).apply();
+                wp.d1().edit().putInt("storydualhint", wp.d1().getInt("storydualhint", 0) + 1).apply();
                 break;
             case 17:
                 HashSet hashSet = m2.a1;

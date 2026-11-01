@@ -28,13 +28,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.Components.iu0;
-import org.telegram.ui.Components.mu0;
+import org.telegram.ui.Components.ju0;
 import org.telegram.ui.Components.nu0;
+import org.telegram.ui.Components.ou0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x6 implements iu0, s5.e, r9.d, qa.a, NativeInstance.AudioLevelsCallback, mu0, nu0, org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class x6 implements ju0, s5.e, r9.d, qa.a, NativeInstance.AudioLevelsCallback, nu0, ou0, org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ x6(int i10) {
@@ -473,7 +473,7 @@ public final /* synthetic */ class x6 implements iu0, s5.e, r9.d, qa.a, NativeIn
         }
     }
 
-    @Override // org.telegram.ui.Components.nu0
+    @Override // org.telegram.ui.Components.ou0
     public void b(Object obj, float f7) {
         th.w0 w0Var = (th.w0) obj;
         switch (this.a) {
@@ -492,12 +492,12 @@ public final /* synthetic */ class x6 implements iu0, s5.e, r9.d, qa.a, NativeIn
         }
     }
 
-    @Override // org.telegram.ui.Components.iu0
+    @Override // org.telegram.ui.Components.ju0
     public /* synthetic */ float f(RecyclerView recyclerView) {
         return org.telegram.ui.Cells.f1.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.mu0
+    @Override // org.telegram.ui.Components.nu0
     public float get(Object obj) {
         th.w0 w0Var = (th.w0) obj;
         switch (this.a) {
@@ -522,13 +522,13 @@ public final /* synthetic */ class x6 implements iu0, s5.e, r9.d, qa.a, NativeIn
         throw new ClassCastException();
     }
 
-    @Override // org.telegram.ui.Components.iu0
+    @Override // org.telegram.ui.Components.ju0
     public RecyclerView j(View view) {
         return ((e8) view).a;
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public /* synthetic */ void p(RecyclerView recyclerView) {
+    @Override // org.telegram.ui.Components.ju0
+    public /* synthetic */ void q(RecyclerView recyclerView) {
         org.telegram.ui.Cells.f1.b(recyclerView);
     }
 

@@ -30,7 +30,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import k2.a1;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.web.v1;
@@ -38,7 +38,7 @@ import u2.g0;
 import v7.e8;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class r extends i2.b {
     public static final byte[] Y0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -390,7 +390,7 @@ public abstract class r extends i2.b {
                             int position = byteBuffer2.position();
                             int limit = byteBuffer2.limit();
                             int i16 = limit - position;
-                            int i17 = (i16 + zs.e4) / zs.e4;
+                            int i17 = (i16 + at.e4) / at.e4;
                             int i18 = i17 + 27 + i16;
                             if (a1Var.b == 2) {
                                 i10 = bArr != null ? bArr.length + 28 : 47;
@@ -588,10 +588,10 @@ public abstract class r extends i2.b {
             int i10 = this.u0;
             h2.h hVar = this.N;
             if (i10 < 0) {
-                int h = lVar.h();
-                this.u0 = h;
-                if (h >= 0) {
-                    hVar.c = lVar.getInputBuffer(h);
+                int g10 = lVar.g();
+                this.u0 = g10;
+                if (g10 >= 0) {
+                    hVar.c = lVar.getInputBuffer(g10);
                     hVar.clear();
                 }
             }
@@ -638,7 +638,7 @@ public abstract class r extends i2.b {
             hf.b bVar = this.c;
             bVar.L();
             try {
-                lVar.f(new v1(25, this, bVar));
+                lVar.h(new v1(26, this, bVar));
                 int i12 = this.T.get();
                 if (i12 == -3) {
                     if (k()) {

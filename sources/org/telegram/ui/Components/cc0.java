@@ -12,9 +12,9 @@ import android.view.animation.DecelerateInterpolator;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
+public final class cc0 extends qj0 implements org.telegram.messenger.z5 {
     public static final Paint H;
     public static final Paint I;
     public static final TextPaint J;
@@ -36,7 +36,7 @@ public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
     public float f;
     public boolean h;
     public View n;
-    public org.telegram.messenger.jj r;
+    public org.telegram.messenger.kj r;
     public int s;
     public boolean w;
     public boolean x;
@@ -76,12 +76,12 @@ public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
     }
 
     @Override // org.telegram.messenger.z5
-    public final void C(boolean z10) {
+    public final void D(boolean z10) {
         a();
     }
 
     @Override // org.telegram.messenger.z5
-    public final void M(String str) {
+    public final void N(String str) {
         b(true, 1.0f);
         a();
     }
@@ -93,12 +93,12 @@ public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
     */
     public final void a() {
         String r10;
-        org.telegram.messenger.jj jjVar = this.r;
-        if (jjVar != null) {
-            TLRPC.Message message = jjVar.k;
+        org.telegram.messenger.kj kjVar = this.r;
+        if (kjVar != null) {
+            TLRPC.Message message = kjVar.k;
             if (message.media != null) {
                 if (TextUtils.isEmpty(message.attachPath) || !new File(this.r.k.attachPath).exists()) {
-                    org.telegram.messenger.b8.G(org.telegram.messenger.d20.s0);
+                    org.telegram.messenger.b8.G(org.telegram.messenger.e20.s0);
                     if (!org.telegram.messenger.b8.N(this.r.k, false, true).exists()) {
                         r10 = org.telegram.messenger.b8.r(null, this.r.F0());
                         this.x = false;
@@ -113,7 +113,7 @@ public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
                             this.w = T;
                             if (T) {
                                 this.h = true;
-                                Float w9 = org.telegram.messenger.hc.D().w(r10);
+                                Float w9 = org.telegram.messenger.ic.D().w(r10);
                                 if (w9 == null) {
                                     w9 = Float.valueOf(0.0f);
                                 }
@@ -168,8 +168,8 @@ public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
         canvas.save();
         canvas.translate(bounds.left, bounds.top);
         canvas.drawRect(0.0f, 0.0f, width, height, H);
-        int y3 = org.telegram.messenger.z20.y(240.0f, height, 2);
-        int y10 = org.telegram.messenger.z20.y(48.0f, width, 2);
+        int y3 = org.telegram.messenger.a30.y(240.0f, height, 2);
+        int y10 = org.telegram.messenger.a30.y(48.0f, width, 2);
         Drawable drawable = this.y;
         drawable.setBounds(y10, y3, org.telegram.messenger.i0.L(48.0f) + y10, org.telegram.messenger.i0.L(48.0f) + y3);
         drawable.draw(canvas);
@@ -177,11 +177,11 @@ public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
         canvas.drawText(this.E, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, org.telegram.messenger.i0.L(96.0f) + y3, K);
         canvas.drawText(this.F, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, org.telegram.messenger.i0.L(125.0f) + y3, L);
         if (this.x) {
-            upperCase = org.telegram.messenger.cd.L0(2131747822, null);
+            upperCase = org.telegram.messenger.dd.L0(2131747822, null);
             textPaint = O;
             L2 = 0;
         } else {
-            upperCase = this.w ? org.telegram.messenger.cd.L0(2131752589, null).toUpperCase() : org.telegram.messenger.cd.L0(2131744284, null);
+            upperCase = this.w ? org.telegram.messenger.dd.L0(2131752589, null).toUpperCase() : org.telegram.messenger.dd.L0(2131744284, null);
             L2 = org.telegram.messenger.i0.L(28.0f);
             textPaint = M;
         }
@@ -190,7 +190,7 @@ public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
             if (this.G != null) {
                 canvas.drawText(this.G, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, org.telegram.messenger.i0.L(210.0f) + y3, N);
             }
-            int y11 = org.telegram.messenger.z20.y(240.0f, width, 2);
+            int y11 = org.telegram.messenger.a30.y(240.0f, width, 2);
             int L3 = org.telegram.messenger.i0.L(232.0f) + y3;
             Paint paint = I;
             paint.setColor(-10327179);
@@ -298,6 +298,6 @@ public final class cc0 extends pj0 implements org.telegram.messenger.z5 {
     }
 
     @Override // org.telegram.messenger.z5
-    public final void n(long j10, long j11) {
+    public final void o(long j10, long j11) {
     }
 }

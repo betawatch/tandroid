@@ -3,13 +3,13 @@ package ph;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.text.Editable;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b4 extends org.telegram.ui.Cells.j3 {
     public final /* synthetic */ vg.f E;
@@ -17,8 +17,8 @@ public final class b4 extends org.telegram.ui.Cells.j3 {
     public final /* synthetic */ g4 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b4(g4 g4Var, Context context, uu0 uu0Var, String str, int i10, p6 p6Var, vg.f fVar, int i11) {
-        super(context, uu0Var, str, true, i10, p6Var);
+    public b4(g4 g4Var, Context context, vu0 vu0Var, String str, int i10, p6 p6Var, vg.f fVar, int i11) {
+        super(context, vu0Var, str, true, i10, p6Var);
         this.G = g4Var;
         this.E = fVar;
         this.F = i11;
@@ -28,7 +28,7 @@ public final class b4 extends org.telegram.ui.Cells.j3 {
     public final void b(Editable editable) {
         TLRPC.TL_textWithEntities tL_textWithEntities;
         g4 g4Var = this.G;
-        jj jjVar = g4Var.e2;
+        kj kjVar = g4Var.e2;
         TLRPC.MessageAction messageAction = g4Var.d2;
         if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
             tL_textWithEntities = new TLRPC.TL_textWithEntities();
@@ -48,10 +48,10 @@ public final class b4 extends org.telegram.ui.Cells.j3 {
             tL_messageActionGiftPremium.message = tL_textWithEntities;
         }
         CharSequence[] charSequenceArr = {g4Var.l2.getText()};
-        tL_textWithEntities.entities = ui.b0(this.F).W(charSequenceArr, true, true);
+        tL_textWithEntities.entities = vi.b0(this.F).W(charSequenceArr, true, true);
         tL_textWithEntities.text = charSequenceArr[0].toString();
-        jjVar.K5();
-        g4Var.c2.f0(jjVar, true);
+        kjVar.K5();
+        g4Var.c2.f0(kjVar, true);
         g4Var.m2.O(true);
         g4Var.g1(true);
     }

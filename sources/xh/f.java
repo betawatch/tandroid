@@ -10,8 +10,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.w6;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f extends FrameLayout {
     public final p6 a;
@@ -49,9 +49,9 @@ public final class f extends FrameLayout {
         addView(linearLayout, d10);
         TextView textView = new TextView(context);
         this.e = textView;
-        z20.n(textView, 1, 15.0f);
+        a30.n(textView, 1, 15.0f);
         a7.V(textView, t6.G6, p6Var);
-        TextView f7 = z20.f(linearLayout, textView, b6.t(-1, -2, 55, 0, 0, 0, 0), context);
+        TextView f7 = a30.f(linearLayout, textView, b6.t(-1, -2, 55, 0, 0, 0, 0), context);
         this.f = f7;
         f7.setTextSize(1, 14.0f);
         a7.V(f7, t6.z6, p6Var);

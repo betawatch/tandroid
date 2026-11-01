@@ -9,11 +9,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.ConnectionsManager;
 import wb.h;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -103,7 +103,7 @@ public abstract class b {
                     if (i10 != -1) {
                         throw new l("Invalid byte sequence");
                     }
-                    aVar.b(((i10 >> 8) * zs.W2) + (i10 & zs.e4), 13);
+                    aVar.b(((i10 >> 8) * at.W2) + (i10 & at.e4), 13);
                     i11 += 2;
                 } else {
                     i17 = 49472;
@@ -380,7 +380,7 @@ public abstract class b {
             }
             int e7 = i44 - aVar.e();
             for (int i47 = 0; i47 < e7; i47++) {
-                aVar.b((i47 & 1) == 0 ? zs.L3 : 17, i21);
+                aVar.b((i47 & 1) == 0 ? at.L3 : 17, i21);
             }
             if (aVar.b != i15) {
                 throw new l("Bits size does not equal capacity");

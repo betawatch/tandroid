@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rq implements Runnable {
     public final /* synthetic */ int D;
@@ -73,11 +73,11 @@ public final /* synthetic */ class rq implements Runnable {
         final org.telegram.ui.Cells.b9 b9Var = this.r;
         final org.telegram.ui.ActionBar.p6 p6Var = this.s;
         if (length < 4 || sb2.length() > 32) {
-            b9Var.setText(org.telegram.messenger.cd.L0(sb2.length() < 4 ? 2131743680 : 2131743681, null));
+            b9Var.setText(org.telegram.messenger.dd.L0(sb2.length() < 4 ? 2131743680 : 2131743681, null));
             org.telegram.ui.ActionBar.a7.V(b9Var.getTextView(), org.telegram.ui.ActionBar.t6.q7, p6Var);
             return;
         }
-        b9Var.setText(org.telegram.messenger.cd.L0(2131743692, null));
+        b9Var.setText(org.telegram.messenger.dd.L0(2131743692, null));
         org.telegram.ui.ActionBar.a7.V(b9Var.getTextView(), org.telegram.ui.ActionBar.t6.B6, p6Var);
         final int[] iArr = this.w;
         final int i10 = iArr[0];
@@ -115,8 +115,8 @@ public final /* synthetic */ class rq implements Runnable {
                 final org.telegram.ui.ActionBar.p6 p6Var2 = p6Var;
                 final org.telegram.ui.Cells.b9 b9Var2 = b9Var;
                 final org.telegram.ui.ActionBar.z2 z2Var2 = z2Var;
-                iArr4[0] = connectionsManager.sendRequestTyped(checkusername, bVar, new org.telegram.messenger.j20() { // from class: org.telegram.ui.Components.oq
-                    @Override // org.telegram.messenger.j20
+                iArr4[0] = connectionsManager.sendRequestTyped(checkusername, bVar, new org.telegram.messenger.k20() { // from class: org.telegram.ui.Components.oq
+                    @Override // org.telegram.messenger.k20
                     public final void a(Object obj, Object obj2) {
                         TLRPC.Bool bool = (TLRPC.Bool) obj;
                         TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -142,7 +142,7 @@ public final /* synthetic */ class rq implements Runnable {
                         qq qqVar3 = qqVar2;
                         org.telegram.ui.ActionBar.p6 p6Var3 = p6Var2;
                         CharSequence d = vq.d(i15, str2, treeSet3, str3, qqVar3, p6Var3);
-                        CharSequence L0 = d != null ? d : org.telegram.messenger.cd.L0(2131751728, null);
+                        CharSequence L0 = d != null ? d : org.telegram.messenger.dd.L0(2131751728, null);
                         org.telegram.ui.Cells.b9 b9Var3 = b9Var2;
                         b9Var3.setText(L0);
                         org.telegram.ui.ActionBar.a7.V(b9Var3.getTextView(), org.telegram.ui.ActionBar.t6.q7, p6Var3);

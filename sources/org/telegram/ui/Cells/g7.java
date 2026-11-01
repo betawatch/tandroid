@@ -12,15 +12,15 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g7 extends Drawable {
     public final Paint a;
-    public final bi0 b;
+    public final ci0 b;
     public final Drawable c;
     public final org.telegram.ui.ActionBar.p6 d;
     public int e;
@@ -30,7 +30,7 @@ public final class g7 extends Drawable {
     public g7(Context context, View view, boolean z10, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
         Paint paint = new Paint(1);
         this.a = paint;
-        this.g = zs.e4;
+        this.g = at.e4;
         this.d = p6Var;
         this.e = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Vk, p6Var);
         this.f = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Wk, p6Var);
@@ -42,10 +42,10 @@ public final class g7 extends Drawable {
             f7.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             return;
         }
-        bi0 bi0Var = new bi0(R.raw.story_repost, org.telegram.messenger.i0.L(42.0f), org.telegram.messenger.i0.L(42.0f), true, null);
-        this.b = bi0Var;
-        bi0Var.R(view);
-        org.telegram.messenger.i0.h3(new o0(bi0Var, 1), 450L);
+        ci0 ci0Var = new ci0(R.raw.story_repost, org.telegram.messenger.i0.L(42.0f), org.telegram.messenger.i0.L(42.0f), true, null);
+        this.b = ci0Var;
+        ci0Var.R(view);
+        org.telegram.messenger.i0.h3(new o0(ci0Var, 1), 450L);
         this.c = null;
     }
 

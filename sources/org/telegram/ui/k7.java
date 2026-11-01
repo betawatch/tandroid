@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k7 extends FrameLayout {
     public final org.telegram.ui.Components.ep a;
@@ -35,7 +35,7 @@ public final class k7 extends FrameLayout {
         textView.setTextSize(1, 16.0f);
         textView.setGravity(5);
         org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.n6, null);
-        if (org.telegram.messenger.cd.X) {
+        if (org.telegram.messenger.dd.X) {
             addView(epVar, w7.b6.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
             addView(view, w7.b6.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
             addView(frameLayout, w7.b6.d(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
@@ -52,7 +52,7 @@ public final class k7 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.d) {
-            if (org.telegram.messenger.cd.X) {
+            if (org.telegram.messenger.dd.X) {
                 canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - org.telegram.messenger.i0.L(48.0f), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
             } else {
                 canvas.drawLine(getMeasuredWidth() - org.telegram.messenger.i0.L(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);

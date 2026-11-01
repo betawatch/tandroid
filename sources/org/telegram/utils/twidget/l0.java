@@ -6,12 +6,12 @@ import android.text.TextPaint;
 import java.util.Locale;
 import org.json.JSONObject;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.hl0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public abstract class l0 {
     public static final int[] a = {t6.ra, t6.Sc, t6.be, t6.Uc, t6.Kd};
@@ -106,20 +106,20 @@ public abstract class l0 {
                 i10 = (i10 * 31) + (p6Var != null ? p6Var.j(i12) : t6.im.get(i12));
             }
         }
-        int w02 = (((t6.w0(t6.p7, p6Var) + ((t6.w0(t6.Gi, p6Var) + ((t6.w0(t6.Ci, p6Var) + (i10 * 31)) * 31)) * 31)) * 31) + tz.W0) * 31;
+        int w02 = (((t6.w0(t6.p7, p6Var) + ((t6.w0(t6.Gi, p6Var) + ((t6.w0(t6.Ci, p6Var) + (i10 * 31)) * 31)) * 31)) * 31) + uz.W0) * 31;
         TextPaint textPaint = t6.o2;
-        return gl0.i0() + ((w02 + (textPaint != null ? Float.floatToIntBits(textPaint.getTextSize()) : 0)) * 31);
+        return hl0.i0() + ((w02 + (textPaint != null ? Float.floatToIntBits(textPaint.getTextSize()) : 0)) * 31);
     }
 
     public static JSONObject f() {
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("fontSize", tz.W0);
+        jSONObject.put("fontSize", uz.W0);
         TextPaint textPaint = t6.o2;
         if (textPaint != null && textPaint.getTextSize() > 0.0f) {
             Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
             jSONObject.put("lineHeight", Math.round(Math.max(1.0f, Math.min(3.0f, ((fontMetrics.descent - fontMetrics.ascent) + fontMetrics.leading) / textPaint.getTextSize())) * 100.0f) / 100.0d);
         }
-        jSONObject.put("padding", "8px " + Math.round(gl0.i0() / org.telegram.messenger.i0.p) + "px");
+        jSONObject.put("padding", "8px " + Math.round(hl0.i0() / org.telegram.messenger.i0.p) + "px");
         return jSONObject;
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.widget.FrameLayout;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class jm extends org.telegram.ui.ActionBar.m1 {
     public final /* synthetic */ km x;
@@ -60,7 +60,7 @@ public final class jm extends org.telegram.ui.ActionBar.m1 {
             if (vVar == null || !vVar.isShowing()) {
                 lVar = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
                 lVar.setTranslationY(f7);
-                dl dlVar = unVar.wb;
+                dl dlVar = unVar.xb;
                 if (dlVar != null) {
                     dlVar.setTranslationY(unVar.P9 + (unVar.C1 != null ? r2.getCurrentHeight() : 0));
                 }
@@ -90,22 +90,22 @@ public final class jm extends org.telegram.ui.ActionBar.m1 {
                     q9Var.d.invalidate();
                 }
                 unVar.setFragmentPanTranslationOffset(i10);
-                unVar.A9();
-                unVar.C9();
+                unVar.F9();
+                unVar.H9();
             } else {
                 kmVar.setNonNoveTranslation(f7);
             }
             unVar.z0.invalidate();
             org.telegram.ui.Components.wb wbVar = org.telegram.ui.Components.wb.w;
-            if (wbVar != null && unVar.uc != null) {
+            if (wbVar != null && unVar.vc != null) {
                 wbVar.l();
             }
             if (org.telegram.messenger.i0.Q1() && (unVar.getParentActivity() instanceof LaunchActivity)) {
                 org.telegram.ui.ActionBar.k2 lastFragment = ((LaunchActivity) unVar.getParentActivity()).M().getLastFragment();
-                if (lastFragment instanceof ay) {
-                    ay ayVar = (ay) lastFragment;
-                    ayVar.v1 = f7;
-                    ayVar.j5();
+                if (lastFragment instanceof zx) {
+                    zx zxVar = (zx) lastFragment;
+                    zxVar.v1 = f7;
+                    zxVar.k5();
                 }
             }
             org.telegram.ui.Components.q30 q30Var = unVar.G2;

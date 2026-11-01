@@ -13,12 +13,12 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import kg.f2;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.p80;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s extends FrameLayout {
     public final kg.h a;
@@ -54,7 +54,7 @@ public final class s extends FrameLayout {
         hVar2.z = i10;
         hVar2.A = t6.zk;
         hVar2.b();
-        f7.addView(hVar, b6.r(zs.q2, zs.q2, 1));
+        f7.addView(hVar, b6.r(at.q2, at.q2, 1));
         p pVar = new p(this, context);
         this.b = pVar;
         this.h = new Paint[20];
@@ -69,7 +69,7 @@ public final class s extends FrameLayout {
         hVar.setStarParticlesView(pVar);
         TextView textView = new TextView(context);
         this.c = textView;
-        z20.n(textView, 1, 22.0f);
+        a30.n(textView, 1, 22.0f);
         int i11 = t6.G6;
         a7.V(textView, i11, p6Var);
         textView.setGravity(1);
@@ -86,7 +86,7 @@ public final class s extends FrameLayout {
         p80Var.setImportantForAccessibility(2);
         f7.addView(p80Var, b6.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
         setClipChildren(false);
-        addView(pVar, b6.e(-1, zs.J3, 48));
+        addView(pVar, b6.e(-1, at.J3, 48));
         addView(f7);
         setWillNotDraw(false);
     }
@@ -142,8 +142,8 @@ public final class s extends FrameLayout {
         int i10 = t6.a7;
         p6 p6Var = this.e;
         a7.i(i10, this, p6Var);
-        this.c.setText(cd.a0("BoostingBoostsViaGifts", null, 2131753562, new Object[0]));
-        String a02 = cd.a0(null, null, w3.V(chat) ? 2131753510 : 2131753505, new Object[0]);
+        this.c.setText(dd.a0("BoostingBoostsViaGifts", null, 2131753562, new Object[0]));
+        String a02 = dd.a0(null, null, w3.V(chat) ? 2131753510 : 2131753505, new Object[0]);
         p80 p80Var = this.d;
         p80Var.setText(a02);
         a7.V(p80Var, t6.r5, p6Var);

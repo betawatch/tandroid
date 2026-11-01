@@ -12,23 +12,23 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c00;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.jz;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.d00;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.kz;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class d8 extends FrameLayout implements us, hg.d {
+public class d8 extends FrameLayout implements vs, hg.d {
     public static final AccelerateInterpolator N = new AccelerateInterpolator(0.5f);
     public boolean D;
     public final int E;
@@ -43,7 +43,7 @@ public class d8 extends FrameLayout implements us, hg.d {
     public final c8 a;
     public final kg.l1 b;
     public TLRPC.Document c;
-    public jz d;
+    public kz d;
     public Object e;
     public String f;
     public final TextView h;
@@ -57,7 +57,7 @@ public class d8 extends FrameLayout implements us, hg.d {
     public d8(Context context, org.telegram.ui.ActionBar.p6 p6Var, boolean z10) {
         super(context);
         this.n = 1.0f;
-        this.E = d20.s0;
+        this.E = e20.s0;
         this.H = 1.0f;
         this.M = p6Var;
         this.F = z10;
@@ -178,14 +178,14 @@ public class d8 extends FrameLayout implements us, hg.d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(TLRPC.Document document, jz jzVar, Object obj, String str, boolean z10, boolean z11) {
+    public final void d(TLRPC.Document document, kz kzVar, Object obj, String str, boolean z10, boolean z11) {
         boolean z12;
         boolean z13;
         int[] iArr;
         TextView textView;
         int i10;
         this.f = str;
-        this.G = jj.X3(document);
+        this.G = kj.X3(document);
         this.L = false;
         c8 c8Var = this.a;
         c8Var.o1 = null;
@@ -207,18 +207,18 @@ public class d8 extends FrameLayout implements us, hg.d {
             l1Var.invalidate();
         }
         TextView textView2 = this.h;
-        if (jzVar != null) {
-            this.d = jzVar;
-            if (jzVar.c) {
+        if (kzVar != null) {
+            this.d = kzVar;
+            if (kzVar.c) {
                 i10 = 4;
                 iArr = null;
                 textView = textView2;
-                c8Var.r0(ic.g(jzVar.a), "80_80", null, null, org.telegram.messenger.v5.b(org.telegram.ui.ActionBar.t6.i5), 0L, jzVar.e ? "tgs" : null, 0, 1);
+                c8Var.r0(jc.g(kzVar.a), "80_80", null, null, org.telegram.messenger.v5.b(org.telegram.ui.ActionBar.t6.i5), 0L, kzVar.e ? "tgs" : null, 0, 1);
             } else {
                 iArr = null;
                 textView = textView2;
                 i10 = 4;
-                c8Var.r0(null, null, null, null, org.telegram.messenger.v5.b(org.telegram.ui.ActionBar.t6.i5), 0L, jzVar.e ? "tgs" : null, 0, 1);
+                c8Var.r0(null, null, null, null, org.telegram.messenger.v5.b(org.telegram.ui.ActionBar.t6.i5), 0L, kzVar.e ? "tgs" : null, 0, 1);
             }
             if (str != null) {
                 TextView textView3 = textView;
@@ -235,12 +235,12 @@ public class d8 extends FrameLayout implements us, hg.d {
             int i12 = z14 ? org.telegram.ui.ActionBar.t6.c7 : org.telegram.ui.ActionBar.t6.a7;
             float f7 = z14 ? 0.2f : 1.0f;
             org.telegram.ui.ActionBar.p6 p6Var = this.M;
-            c00 f10 = org.telegram.messenger.v5.f(document, i12, f7, p6Var);
+            d00 f10 = org.telegram.messenger.v5.f(document, i12, f7, p6Var);
             String str2 = z14 ? "66_66_pcache_compress" : "66_66";
-            if (jj.C4(document)) {
+            if (kj.C4(document)) {
                 c8Var.o1 = org.telegram.ui.ActionBar.t6.o0(p6Var);
             }
-            if (jj.p(document)) {
+            if (kj.p(document)) {
                 if (z14) {
                     z13 = true;
                     this.L = true;
@@ -248,27 +248,27 @@ public class d8 extends FrameLayout implements us, hg.d {
                     z13 = true;
                 }
                 if (f10 != null) {
-                    c8Var.u0(ic.b(document), str2, ic.c(w9, document), null, null, null, f10, 0L, null, this.e, 1);
+                    c8Var.u0(jc.b(document), str2, jc.c(w9, document), null, null, null, f10, 0L, null, this.e, 1);
                     z12 = z13;
                 } else if (w9 != null) {
                     z12 = z13;
-                    c8Var.t0(ic.b(document), str2, ic.c(w9, document), null, null, this.e, 1);
+                    c8Var.t0(jc.b(document), str2, jc.c(w9, document), null, null, this.e, 1);
                 } else {
                     z12 = z13;
-                    c8Var.q0(ic.b(document), str2, null, null, this.e, 1);
+                    c8Var.q0(jc.b(document), str2, null, null, this.e, 1);
                 }
             } else {
                 z12 = true;
                 if (f10 != null) {
                     if (w9 != null) {
-                        c8Var.q0(ic.c(w9, document), str2, f10, "webp", this.e, 1);
+                        c8Var.q0(jc.c(w9, document), str2, f10, "webp", this.e, 1);
                     } else {
-                        c8Var.q0(ic.b(document), str2, f10, "webp", this.e, 1);
+                        c8Var.q0(jc.b(document), str2, f10, "webp", this.e, 1);
                     }
                 } else if (w9 != null) {
-                    c8Var.q0(ic.c(w9, document), str2, null, "webp", this.e, 1);
+                    c8Var.q0(jc.c(w9, document), str2, null, "webp", this.e, 1);
                 } else {
-                    c8Var.q0(ic.b(document), str2, null, "webp", this.e, 1);
+                    c8Var.q0(jc.b(document), str2, null, "webp", this.e, 1);
                 }
             }
             if (str != null) {
@@ -290,7 +290,7 @@ public class d8 extends FrameLayout implements us, hg.d {
                         i13++;
                     }
                 }
-                String str4 = (String) ui.b0(this.E).c0.f(this.c.id);
+                String str4 = (String) vi.b0(this.E).c0.f(this.c.id);
                 if (str4 == null) {
                     str4 = "";
                 }
@@ -317,9 +317,9 @@ public class d8 extends FrameLayout implements us, hg.d {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.f5) {
+        if (i10 == at.f5) {
             e(true);
         }
     }
@@ -340,7 +340,7 @@ public class d8 extends FrameLayout implements us, hg.d {
         }
         kg.l1 l1Var = this.b;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) l1Var.getLayoutParams();
-        if (d20.i(this.E).q()) {
+        if (e20.i(this.E).q()) {
             int L = org.telegram.messenger.i0.L(16.0f);
             layoutParams.width = L;
             layoutParams.height = L;
@@ -357,7 +357,7 @@ public class d8 extends FrameLayout implements us, hg.d {
             layoutParams.bottomMargin = org.telegram.messenger.i0.L(8.0f);
             l1Var.setPadding(org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f));
         }
-        l1Var.setLocked(!d20.i(r4).q());
+        l1Var.setLocked(!e20.i(r4).q());
         org.telegram.messenger.i0.Y3(l1Var, this.I, 0.9f, true, z10);
         invalidate();
     }
@@ -374,29 +374,29 @@ public class d8 extends FrameLayout implements us, hg.d {
         return this.e;
     }
 
-    public fj getSendAnimationData() {
+    public gj getSendAnimationData() {
         c8 c8Var = this.a;
         if (!c8Var.L()) {
             return null;
         }
-        fj fjVar = new fj();
+        gj gjVar = new gj();
         getLocationInWindow(new int[2]);
-        fjVar.a = c8Var.r() + r2[0];
-        fjVar.b = c8Var.s() + r2[1];
-        fjVar.c = c8Var.M0;
-        return fjVar;
+        gjVar.a = c8Var.r() + r2[0];
+        gjVar.b = c8Var.s() + r2[1];
+        gjVar.c = c8Var.M0;
+        return gjVar;
     }
 
     public TLRPC.Document getSticker() {
         return this.c;
     }
 
-    public jz getStickerPath() {
-        jz jzVar = this.d;
-        if (jzVar == null || !jzVar.c) {
+    public kz getStickerPath() {
+        kz kzVar = this.d;
+        if (kzVar == null || !kzVar.c) {
             return null;
         }
-        return jzVar;
+        return kzVar;
     }
 
     @Override // android.view.View
@@ -420,20 +420,20 @@ public class d8 extends FrameLayout implements us, hg.d {
             c8Var.H0(this);
         }
         c8Var.P();
-        zs.f(this.E).c(this, zs.f5);
+        at.f(this.E).c(this, at.f5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.a.R();
-        zs.f(this.E).n(this, zs.f5);
+        at.f(this.E).n(this, at.f5);
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        String L0 = cd.L0(2131753936, null);
+        String L0 = dd.L0(2131753936, null);
         if (this.c != null) {
             int i10 = 0;
             while (true) {
@@ -468,8 +468,8 @@ public class d8 extends FrameLayout implements us, hg.d {
         invalidate();
     }
 
-    public void setSticker(jz jzVar) {
-        String str = jzVar.b;
-        d(null, jzVar, null, str, str != null, false);
+    public void setSticker(kz kzVar) {
+        String str = kzVar.b;
+        d(null, kzVar, null, str, str != null, false);
     }
 }

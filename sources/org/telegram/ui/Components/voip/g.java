@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g {
     public final Paint a;
@@ -30,7 +30,7 @@ public final class g {
     public gg.c p;
 
     public g() {
-        this(64, zs.i3, zs.q2);
+        this(64, at.i3, at.q2);
     }
 
     public final void a(float f7, Canvas canvas, RectF rectF, View view) {
@@ -51,7 +51,7 @@ public final class g {
         int[] iArr = {0, i0.b.o(i10, i11), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(i10, zs.i3), 0}, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(i10, at.i3), 0}, (float[]) null, tileMode);
         this.a.setShader(this.b);
         this.c.setShader(this.d);
     }
@@ -91,7 +91,7 @@ public final class g {
     }
 
     public g(int i10, int i11) {
-        this(i10, i11, zs.q2);
+        this(i10, i11, at.q2);
     }
 
     public g(int i10, int i11, int i12) {

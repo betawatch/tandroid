@@ -13,10 +13,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.ui.Components.bl0;
+import org.telegram.messenger.dd;
+import org.telegram.ui.Components.cl0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p3 extends FrameLayout {
     public final LinearLayout a;
@@ -29,7 +29,7 @@ public final class p3 extends FrameLayout {
     public final RectF n;
     public float r;
     public int s;
-    public final bl0 w;
+    public final cl0 w;
     public ValueAnimator x;
     public final /* synthetic */ y3 y;
 
@@ -51,7 +51,7 @@ public final class p3 extends FrameLayout {
         linearLayout.setOrientation(0);
         TextView textView = new TextView(context);
         this.c = textView;
-        textView.setText(cd.L0(2131754286, null));
+        textView.setText(dd.L0(2131754286, null));
         int i13 = org.telegram.ui.ActionBar.t6.j5;
         org.telegram.ui.ActionBar.a7.V(textView, i13, bVar);
         textView.setTextSize(1, 14.0f);
@@ -59,7 +59,7 @@ public final class p3 extends FrameLayout {
         textView.setPadding(org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(4.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
-        textView2.setText(cd.L0(2131751780, null));
+        textView2.setText(dd.L0(2131751780, null));
         org.telegram.ui.ActionBar.a7.V(textView2, i13, bVar);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.i0.o());
@@ -75,13 +75,13 @@ public final class p3 extends FrameLayout {
         linearLayout2.setBackground(d02);
         org.telegram.ui.ActionBar.a7.k(linearLayout2, d02, N, null, bVar);
         linearLayout2.setOrientation(0);
-        bl0 bl0Var = new bl0(getContext());
-        this.w = bl0Var;
-        bl0Var.r = true;
-        bl0Var.a(R.drawable.menu_views_reactions3, false);
+        cl0 cl0Var = new cl0(getContext());
+        this.w = cl0Var;
+        cl0Var.r = true;
+        cl0Var.a(R.drawable.menu_views_reactions3, false);
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setImageDrawable(bl0Var);
+        imageView.setImageDrawable(cl0Var);
         imageView.setPadding(org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f));
         linearLayout2.addView(imageView, w7.b6.o(26, 26));
         ImageView imageView2 = new ImageView(getContext());

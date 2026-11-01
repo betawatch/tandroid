@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u9 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -32,8 +32,8 @@ public final class u9 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 1:
-                qz0 qz0Var = (qz0) obj2;
-                qz0Var.k = o5.update(qz0Var.l, (View) obj, qz0Var.k, qz0Var.b);
+                rz0 rz0Var = (rz0) obj2;
+                rz0Var.k = o5.update(rz0Var.l, (View) obj, rz0Var.k, rz0Var.b);
                 break;
             default:
                 org.telegram.ui.Wallet.d4 d4Var = (org.telegram.ui.Wallet.d4) obj2;
@@ -45,7 +45,7 @@ public final class u9 implements View.OnAttachStateChangeListener {
                 int i11 = d4Var.v0;
                 if (-1 != i11) {
                     if (i11 >= 0) {
-                        org.telegram.messenger.zs.f(i11).n(d4Var.x0, 67);
+                        org.telegram.messenger.at.f(i11).n(d4Var.x0, 67);
                     }
                     d4Var.v0 = -1;
                     break;
@@ -73,7 +73,7 @@ public final class u9 implements View.OnAttachStateChangeListener {
                 paint.setShader(null);
                 break;
             case 1:
-                o5.release((View) this.b, ((qz0) this.c).k);
+                o5.release((View) this.b, ((rz0) this.c).k);
                 break;
             default:
                 org.telegram.ui.Wallet.d4 d4Var = (org.telegram.ui.Wallet.d4) this.c;
@@ -104,7 +104,7 @@ public final class u9 implements View.OnAttachStateChangeListener {
                 int i10 = d4Var.v0;
                 if (-1 != i10) {
                     if (i10 >= 0) {
-                        org.telegram.messenger.zs.f(i10).n(d4Var.x0, 67);
+                        org.telegram.messenger.at.f(i10).n(d4Var.x0, 67);
                     }
                     d4Var.v0 = -1;
                 }

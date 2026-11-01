@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class eh implements TextWatcher {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final class eh implements TextWatcher {
                         i10 = -9999;
                     }
                     long j10 = i10;
-                    f6Var2.c(org.telegram.messenger.cd.E(j10, ','), f6Var2.getVisibility() == 0, true);
+                    f6Var2.c(org.telegram.messenger.dd.E(j10, ','), f6Var2.getVisibility() == 0, true);
                     if (f6Var2.getVisibility() != 0) {
                         f6Var2.setVisibility(0);
                         f6Var2.setAlpha(0.0f);
@@ -73,7 +73,7 @@ public final class eh implements TextWatcher {
                         org.telegram.ui.ActionBar.a7.Z(f6Var2, org.telegram.ui.ActionBar.t6.y6, biVar.I0);
                         z10 = true;
                     }
-                    f6Var.c(org.telegram.messenger.cd.E(j10, ','), false, true);
+                    f6Var.c(org.telegram.messenger.dd.E(j10, ','), false, true);
                     f6Var.setAlpha(1.0f);
                 }
                 if (biVar.O2 != z10) {
@@ -153,11 +153,11 @@ public final class eh implements TextWatcher {
                             z10 = true;
                         }
                         if (a7Var.y && a7Var.r && a7Var.D == -1) {
-                            ei0 ei0Var = a7Var.h;
-                            if (ei0Var == null) {
-                                a7Var.d0 = org.telegram.messenger.z20.z(a7Var.d0, z10 ? -160.0f : 160.0f, 360.0f, -360.0f);
+                            fi0 fi0Var = a7Var.h;
+                            if (fi0Var == null) {
+                                a7Var.d0 = org.telegram.messenger.a30.z(a7Var.d0, z10 ? -160.0f : 160.0f, 360.0f, -360.0f);
                                 break;
-                            } else if (!ei0Var.b()) {
+                            } else if (!fi0Var.b()) {
                                 a7Var.h.setProgress(0.0f);
                                 a7Var.h.d();
                                 break;

@@ -1,14 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ws implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ lt b;
+    public final /* synthetic */ kt b;
 
-    public /* synthetic */ ws(lt ltVar, int i10) {
+    public /* synthetic */ ws(kt ktVar, int i10) {
         this.a = i10;
-        this.b = ltVar;
+        this.b = ktVar;
     }
 
     @Override // java.lang.Runnable
@@ -18,13 +18,13 @@ public final /* synthetic */ class ws implements Runnable {
                 this.b.c0 = null;
                 break;
             case 1:
-                lt ltVar = this.b;
-                ltVar.A.w0(null);
-                org.telegram.ui.Components.lc0 lc0Var = ltVar.C;
+                kt ktVar = this.b;
+                ktVar.A.w0(null);
+                org.telegram.ui.Components.lc0 lc0Var = ktVar.C;
                 if (lc0Var != null) {
                     lc0Var.a();
-                    ltVar.z.removeView(ltVar.C);
-                    ltVar.C = null;
+                    ktVar.z.removeView(ktVar.C);
+                    ktVar.C = null;
                     break;
                 }
                 break;

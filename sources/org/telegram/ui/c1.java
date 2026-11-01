@@ -24,14 +24,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c1 extends FrameLayout implements org.telegram.ui.Cells.j9, org.telegram.ui.ActionBar.k6 {
     public AnimatorSet D;
     public final int E;
     public TL_iv.pageBlockChannel F;
     public int a;
-    public final m60 b;
+    public final l60 b;
     public final f4 c;
     public final org.telegram.ui.Components.iq d;
     public final TextView e;
@@ -44,11 +44,11 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.j9, o
     public int x;
     public final Paint y;
 
-    public c1(Context context, m60 m60Var, f4 f4Var, int i10) {
+    public c1(Context context, l60 l60Var, f4 f4Var, int i10) {
         super(context);
         this.s = org.telegram.messenger.i0.L(18.0f);
         this.w = org.telegram.messenger.i0.L(11.0f);
-        this.b = m60Var;
+        this.b = l60Var;
         this.c = f4Var;
         setWillNotDraw(false);
         this.y = new Paint();
@@ -57,10 +57,10 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.j9, o
         this.e = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.i0.o());
-        textView.setText(org.telegram.messenger.cd.L0(2131752397, null));
+        textView.setText(org.telegram.messenger.dd.L0(2131752397, null));
         textView.setGravity(19);
         addView(textView, w7.b6.e(-2, 39, 53));
-        textView.setOnClickListener(new ag.t0(24, this, m60Var));
+        textView.setOnClickListener(new ag.t0(24, this, l60Var));
         ImageView imageView = new ImageView(context);
         this.f = imageView;
         imageView.setImageResource(R.drawable.list_check);
@@ -202,7 +202,7 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.j9, o
             String str = pageblockchannel.channel.title;
             int L = (size - org.telegram.messenger.i0.L(52.0f)) - this.r;
             TL_iv.pageBlockChannel pageblockchannel2 = this.F;
-            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.ov0.a;
+            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.pv0.a;
             this.n = h4.n(this.b, this, str, null, L, this.w, pageblockchannel2, alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL, 1, this.c);
             int i12 = this.s;
             f4 f4Var = this.c;
@@ -233,10 +233,10 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.j9, o
         ImageView imageView = this.f;
         Paint paint = this.y;
         TextView textView = this.e;
-        m60 m60Var = this.b;
+        l60 l60Var = this.b;
         if (i10 == 0) {
             int i11 = org.telegram.ui.ActionBar.t6.M6;
-            h4 h4Var = (h4) m60Var;
+            h4 h4Var = (h4) l60Var;
             h4Var.getClass();
             int x02 = org.telegram.ui.ActionBar.t6.x0(null, i11, false);
             int red = Color.red(x02);
@@ -253,19 +253,19 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.j9, o
             paint.setColor(2130706432);
             imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         }
-        TLRPC.Chat L0 = org.telegram.messenger.vp.r1(((h4) m60Var).X).L0(Long.valueOf(pageblockchannel.channel.id));
+        TLRPC.Chat L0 = org.telegram.messenger.wp.r1(((h4) l60Var).X).L0(Long.valueOf(pageblockchannel.channel.id));
         if (L0 == null || L0.min) {
             TLRPC.Chat chat = pageblockchannel.channel;
-            if (!m60Var.r && org.telegram.messenger.w3.t0(chat)) {
-                m60Var.r = true;
-                int i12 = ((h4) m60Var).X;
+            if (!l60Var.r && org.telegram.messenger.w3.t0(chat)) {
+                l60Var.r = true;
+                int i12 = ((h4) l60Var).X;
                 TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                 tL_contacts_resolveUsername.username = chat.username;
-                ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new b0(m60Var, this.c, i12, this, 0));
+                ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new b0(l60Var, this.c, i12, this, 0));
             }
             a(1, false);
         } else {
-            m60Var.n = L0;
+            l60Var.n = L0;
             if (!L0.left || L0.kicked) {
                 a(4, false);
             } else {

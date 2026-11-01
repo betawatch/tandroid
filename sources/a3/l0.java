@@ -39,14 +39,14 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 import m4.t1;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.me;
+import org.telegram.messenger.ne;
 import org.telegram.messenger.x0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
@@ -60,7 +60,7 @@ import org.telegram.ui.LaunchActivity;
 import s4.c1;
 import v7.p8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -221,7 +221,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 if (arrayList.contains(tL_businessChatLink)) {
                     arrayList.remove(tL_businessChatLink);
-                    zs.f(s0Var.a).k(zs.J1, new Object[0]);
+                    at.f(s0Var.a).k(at.J1, new Object[0]);
                 }
                 s0Var.f();
                 return;
@@ -242,7 +242,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 tL_connectedBot.recipients = tL_businessBotRecipients;
                 k2 T = LaunchActivity.T();
                 if (T != null) {
-                    cc.a0(T).Q(R.raw.contact_check, 36, cd.a0(null, null, 2131752784, h20.p(j1Var.Q1))).j();
+                    cc.a0(T).Q(R.raw.contact_check, 36, dd.a0(null, null, 2131752784, i20.p(j1Var.Q1))).j();
                     return;
                 }
                 return;
@@ -263,7 +263,7 @@ public final /* synthetic */ class l0 implements Runnable {
                     return;
                 }
             case 7:
-                h2.Y((h2) this.b, (TLRPC.TL_error) this.c, (TLObject) this.d);
+                h2.Z((h2) this.b, (TLRPC.TL_error) this.c, (TLObject) this.d);
                 return;
             case 8:
                 n3 n3Var = (n3) this.b;
@@ -276,7 +276,7 @@ public final /* synthetic */ class l0 implements Runnable {
                     SerializedData serializedData = new SerializedData(tLObject5.getObjectSize());
                     tLObject5.serializeToStream(serializedData);
                     sharedPreferences.edit().putString("timezones", Utilities.f(serializedData.toByteArray())).apply();
-                    zs.f(n3Var.a).k(zs.r3, new Object[0]);
+                    at.f(n3Var.a).k(at.r3, new Object[0]);
                 }
                 n3Var.c = true;
                 n3Var.b = false;
@@ -545,7 +545,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 synchronized (((e0.h) cVar.c).f) {
                     ((HashMap) ((e0.h) cVar.c).g).put(Long.valueOf(j12), file2);
                 }
-                ((Handler) ((e0.h) cVar.c).d).post(new x0(cVar, j12, (me) cVar.b, file2, 1));
+                ((Handler) ((e0.h) cVar.c).d).post(new x0(cVar, j12, (ne) cVar.b, file2, 1));
                 return;
         }
     }

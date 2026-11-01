@@ -24,7 +24,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
 import org.xml.sax.helpers.DefaultHandler;
@@ -35,7 +35,7 @@ import org.xmlpull.v1.XmlSerializer;
 import v7.r6;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements y2.n {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -1609,25 +1609,25 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                                                             }
                                                                                                                                             i20 = -1;
                                                                                                                                             break;
-                                                                                                                                        case zs.o0 /* 51 */:
+                                                                                                                                        case at.o0 /* 51 */:
                                                                                                                                             if (str116.equals("3")) {
                                                                                                                                                 i20 = 2;
                                                                                                                                                 break;
                                                                                                                                             }
                                                                                                                                             i20 = -1;
                                                                                                                                             break;
-                                                                                                                                        case zs.p0 /* 52 */:
+                                                                                                                                        case at.p0 /* 52 */:
                                                                                                                                             if (str116.equals("4")) {
                                                                                                                                                 i20 = 3;
                                                                                                                                                 break;
                                                                                                                                             }
                                                                                                                                             i20 = -1;
                                                                                                                                             break;
-                                                                                                                                        case zs.q0 /* 53 */:
+                                                                                                                                        case at.q0 /* 53 */:
                                                                                                                                         default:
                                                                                                                                             i20 = -1;
                                                                                                                                             break;
-                                                                                                                                        case zs.r0 /* 54 */:
+                                                                                                                                        case at.r0 /* 54 */:
                                                                                                                                             if (str116.equals("6")) {
                                                                                                                                                 i20 = 4;
                                                                                                                                                 break;

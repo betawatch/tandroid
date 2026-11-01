@@ -8,14 +8,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class he0 extends View {
     public int a;
     public boolean b;
     public boolean c;
     public float d;
-    public oj0 e;
+    public pj0 e;
     public Paint f;
     public Paint h;
     public Paint n;
@@ -31,8 +31,8 @@ public final class he0 extends View {
             if (this.a != 0) {
                 return;
             }
-            oj0 oj0Var = this.e;
-            this.a = (int) Math.floor(c3.i0.B(x10, oj0Var.a, oj0Var.c / 5.0f, 1.0f));
+            pj0 pj0Var = this.e;
+            this.a = (int) Math.floor(c3.i0.B(x10, pj0Var.a, pj0Var.c / 5.0f, 1.0f));
             return;
         }
         if (i10 != 2) {
@@ -48,15 +48,15 @@ public final class he0 extends View {
         me0 me0Var = i11 != 0 ? i11 != 1 ? i11 != 2 ? i11 != 3 ? null : (me0) cVar.e : (me0) cVar.d : (me0) cVar.c : (me0) cVar.b;
         int i12 = this.a;
         if (i12 == 1) {
-            me0Var.a = org.telegram.messenger.z20.z(me0Var.a, min, 100.0f, 0.0f);
+            me0Var.a = org.telegram.messenger.a30.z(me0Var.a, min, 100.0f, 0.0f);
         } else if (i12 == 2) {
-            me0Var.b = org.telegram.messenger.z20.z(me0Var.b, min, 100.0f, 0.0f);
+            me0Var.b = org.telegram.messenger.a30.z(me0Var.b, min, 100.0f, 0.0f);
         } else if (i12 == 3) {
-            me0Var.c = org.telegram.messenger.z20.z(me0Var.c, min, 100.0f, 0.0f);
+            me0Var.c = org.telegram.messenger.a30.z(me0Var.c, min, 100.0f, 0.0f);
         } else if (i12 == 4) {
-            me0Var.d = org.telegram.messenger.z20.z(me0Var.d, min, 100.0f, 0.0f);
+            me0Var.d = org.telegram.messenger.a30.z(me0Var.d, min, 100.0f, 0.0f);
         } else if (i12 == 5) {
-            me0Var.e = org.telegram.messenger.z20.z(me0Var.e, min, 100.0f, 0.0f);
+            me0Var.e = org.telegram.messenger.a30.z(me0Var.e, min, 100.0f, 0.0f);
         }
         invalidate();
         ge0 ge0Var = this.w;
@@ -80,18 +80,18 @@ public final class he0 extends View {
         Path path = this.s;
         Paint paint = this.n;
         e2.c cVar = this.x;
-        oj0 oj0Var = this.e;
-        float f7 = oj0Var.c / 5.0f;
+        pj0 pj0Var = this.e;
+        float f7 = pj0Var.c / 5.0f;
         for (int i11 = 0; i11 < 4; i11++) {
-            float f10 = oj0Var.a;
+            float f10 = pj0Var.a;
             float f11 = i11 * f7;
             float f12 = f10 + f7 + f11;
-            float f13 = oj0Var.b;
-            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + oj0Var.d, this.f);
+            float f13 = pj0Var.b;
+            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + pj0Var.d, this.f);
         }
-        float f14 = oj0Var.a;
-        float f15 = oj0Var.b;
-        canvas.drawLine(f14, f15 + oj0Var.d, f14 + oj0Var.c, f15, this.h);
+        float f14 = pj0Var.a;
+        float f15 = pj0Var.b;
+        canvas.drawLine(f14, f15 + pj0Var.d, f14 + pj0Var.c, f15, this.h);
         int i12 = cVar.a;
         int i13 = 3;
         int i14 = 2;
@@ -131,7 +131,7 @@ public final class he0 extends View {
                 i10 = i14;
                 format = String.format(Locale.US, "%.2f", Float.valueOf(me0Var.e / 100.0f));
             }
-            canvas.drawText(format, (i15 * f7) + c3.i0.B(f7, textPaint.measureText(format), 2.0f, oj0Var.a), (oj0Var.b + oj0Var.d) - org.telegram.messenger.i0.L(4.0f), textPaint);
+            canvas.drawText(format, (i15 * f7) + c3.i0.B(f7, textPaint.measureText(format), 2.0f, pj0Var.a), (pj0Var.b + pj0Var.d) - org.telegram.messenger.i0.L(4.0f), textPaint);
             i15++;
             i14 = i10;
             i13 = 3;
@@ -142,10 +142,10 @@ public final class he0 extends View {
         for (int i16 = 0; i16 < a2.length / 2; i16++) {
             if (i16 == 0) {
                 int i17 = i16 * 2;
-                path.moveTo((a2[i17] * oj0Var.c) + oj0Var.a, ((1.0f - a2[i17 + 1]) * oj0Var.d) + oj0Var.b);
+                path.moveTo((a2[i17] * pj0Var.c) + pj0Var.a, ((1.0f - a2[i17 + 1]) * pj0Var.d) + pj0Var.b);
             } else {
                 int i18 = i16 * 2;
-                path.lineTo((a2[i18] * oj0Var.c) + oj0Var.a, ((1.0f - a2[i18 + 1]) * oj0Var.d) + oj0Var.b);
+                path.lineTo((a2[i18] * pj0Var.c) + pj0Var.a, ((1.0f - a2[i18 + 1]) * pj0Var.d) + pj0Var.b);
             }
         }
         canvas.drawPath(path, paint);
@@ -186,11 +186,11 @@ public final class he0 extends View {
                 float x10 = motionEvent.getX();
                 float y3 = motionEvent.getY();
                 this.d = y3;
-                oj0 oj0Var = this.e;
-                float f7 = oj0Var.a;
-                if (x10 >= f7 && x10 <= f7 + oj0Var.c) {
-                    float f10 = oj0Var.b;
-                    if (y3 >= f10 && y3 <= f10 + oj0Var.d) {
+                pj0 pj0Var = this.e;
+                float f7 = pj0Var.a;
+                if (x10 >= f7 && x10 <= f7 + pj0Var.c) {
+                    float f10 = pj0Var.b;
+                    if (y3 >= f10 && y3 <= f10 + pj0Var.d) {
                         this.b = true;
                     }
                 }

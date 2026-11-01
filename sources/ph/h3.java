@@ -3,18 +3,18 @@ package ph;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ul0;
+import org.telegram.ui.sl0;
 import rh.w5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h3 implements w5 {
     public final int a;
     public final long b;
-    public final q20 c;
+    public final r20 c;
     public int e;
     public long i;
     public String q;
@@ -35,10 +35,10 @@ public final class h3 implements w5 {
     public boolean u = false;
     public int v = -1;
 
-    public h3(int i10, long j10, q20 q20Var) {
+    public h3(int i10, long j10, r20 r20Var) {
         this.a = i10;
         this.b = j10;
-        this.c = q20Var;
+        this.c = r20Var;
     }
 
     @Override // rh.w5
@@ -156,7 +156,7 @@ public final class h3 implements w5 {
                     }
                 }
             }
-            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new ul0(22, this, getresalestargifts));
+            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new sl0(22, this, getresalestargifts));
         }
     }
 
@@ -170,9 +170,9 @@ public final class h3 implements w5 {
         this.q = null;
         this.d.clear();
         g(true);
-        q20 q20Var = this.c;
-        if (q20Var != null) {
-            q20Var.a(Boolean.TRUE);
+        r20 r20Var = this.c;
+        if (r20Var != null) {
+            r20Var.a(Boolean.TRUE);
         }
     }
 

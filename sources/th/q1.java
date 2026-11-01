@@ -3,9 +3,9 @@ package th;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.widget.ImageView;
-import org.telegram.ui.dg0;
+import org.telegram.ui.bg0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class q1 extends AnimatorListenerAdapter {
             default:
                 z2 z2Var2 = this.c;
                 t6 t6Var = z2Var2.l0;
-                dg0 dg0Var = z2Var2.h0;
+                bg0 bg0Var = z2Var2.h0;
                 ImageView imageView = z2Var2.g0;
                 ImageView imageView2 = z2Var2.f0;
                 w2 w2Var = z2Var2.X0;
@@ -44,8 +44,8 @@ public final class q1 extends AnimatorListenerAdapter {
                 imageView2.setAlpha(1.0f - z2Var2.N3);
                 imageView.setTranslationY((-org.telegram.messenger.i0.L(8.0f)) * z2Var2.N3);
                 imageView.setAlpha(1.0f - z2Var2.N3);
-                dg0Var.setTranslationY((-org.telegram.messenger.i0.L(8.0f)) * z2Var2.N3);
-                dg0Var.setAlpha((1.0f - z2Var2.N3) * z2Var2.N2);
+                bg0Var.setTranslationY((-org.telegram.messenger.i0.L(8.0f)) * z2Var2.N3);
+                bg0Var.setAlpha((1.0f - z2Var2.N3) * z2Var2.N2);
                 b2 b2Var = z2Var2.F1;
                 if (b2Var != null) {
                     b2Var.setTranslationY(org.telegram.messenger.i0.L(8.0f) * z2Var2.N3);

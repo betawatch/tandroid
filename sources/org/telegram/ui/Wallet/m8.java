@@ -1,12 +1,12 @@
 package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m8 implements j20 {
+public final /* synthetic */ class m8 implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ t8 b;
     public final /* synthetic */ gf.e c;
@@ -19,7 +19,7 @@ public final /* synthetic */ class m8 implements j20 {
         this.d = k0Var;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -35,8 +35,8 @@ public final /* synthetic */ class m8 implements j20 {
                     if (!h0Var.d()) {
                         arrayList.addAll(h0Var.f());
                     }
-                    a9Var.Z();
-                    a9Var.f = new k3(15, t8Var, this.d);
+                    a9Var.a0();
+                    a9Var.f = new m2(16, t8Var, this.d);
                     t8Var.presentFragment(a9Var);
                     break;
                 } else {
@@ -62,7 +62,7 @@ public final /* synthetic */ class m8 implements j20 {
                         if (!h0Var2.d()) {
                             arrayList2.addAll(h0Var2.f());
                         }
-                        a9Var2.Z();
+                        a9Var2.a0();
                         a9Var2.f = new g(t8Var2, this.d, f0Var, 21);
                         t8Var2.presentFragment(a9Var2);
                         break;

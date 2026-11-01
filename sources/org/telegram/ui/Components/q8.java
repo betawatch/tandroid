@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class q8 extends FrameLayout {
     public final p8 D;
@@ -29,7 +29,7 @@ public abstract class q8 extends FrameLayout {
 
     public q8(Context context) {
         super(context);
-        int i10 = org.telegram.messenger.d20.s0;
+        int i10 = org.telegram.messenger.e20.s0;
         this.r = i10;
         this.s = 0;
         this.w = 0;
@@ -61,19 +61,19 @@ public abstract class q8 extends FrameLayout {
         org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.J7, null);
         textView.setTypeface(org.telegram.messenger.i0.o());
         textView.setGravity(17);
-        textView.setText(org.telegram.messenger.cd.L0(2131743823, null));
+        textView.setText(org.telegram.messenger.dd.L0(2131743823, null));
         addView(textView, w7.b6.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
     }
 
     public static TLRPC.TL_emojiList a(int i10) {
-        TLRPC.TL_emojiList tL_emojiList = org.telegram.messenger.ui.b0(i10).K1;
+        TLRPC.TL_emojiList tL_emojiList = org.telegram.messenger.vi.b0(i10).K1;
         if (tL_emojiList != null && !tL_emojiList.document_id.isEmpty()) {
             return tL_emojiList;
         }
-        ArrayList s02 = org.telegram.messenger.ui.b0(i10).s0(5);
+        ArrayList s02 = org.telegram.messenger.vi.b0(i10).s0(5);
         TLRPC.TL_emojiList tL_emojiList2 = new TLRPC.TL_emojiList();
         if (s02.isEmpty()) {
-            ArrayList arrayList = org.telegram.messenger.ui.b0(i10).s0[1];
+            ArrayList arrayList = org.telegram.messenger.vi.b0(i10).s0[1];
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
                 TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList.get(i11);
                 TLRPC.Document document = stickerSetCovered.cover;
@@ -125,7 +125,7 @@ public abstract class q8 extends FrameLayout {
         }
         float f7 = this.x;
         if (f7 == 1.0f) {
-            this.e.c.setAlpha(org.telegram.messenger.zs.e4);
+            this.e.c.setAlpha(org.telegram.messenger.at.e4);
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
             this.c.setAlpha(1.0f);
             this.c.setScaleX(1.0f);
@@ -133,7 +133,7 @@ public abstract class q8 extends FrameLayout {
             this.d.setAlpha(0.0f);
         } else {
             float interpolation = gr.f.getInterpolation(f7);
-            this.e.c.setAlpha(org.telegram.messenger.zs.e4);
+            this.e.c.setAlpha(org.telegram.messenger.at.e4);
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
             this.f.c.setAlpha((int) (255.0f * interpolation));
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.f.c);

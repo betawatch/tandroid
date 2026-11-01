@@ -13,7 +13,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class w8 extends Drawable {
     public final View a;
@@ -24,7 +24,7 @@ public final class w8 extends Drawable {
     public final float g;
     public final fe.k c = new fe.k(new n2.u(this, 9), gr.h, 380);
     public final ArrayList h = new ArrayList();
-    public int i = org.telegram.messenger.zs.e4;
+    public int i = org.telegram.messenger.at.e4;
 
     public w8(int i10, View view, int i11, int i12, float f7) {
         this.b = i10;
@@ -158,7 +158,7 @@ public final class w8 extends Drawable {
             r8 r8Var = v8Var2.b;
             if (v8Var2.c != o10) {
                 v8Var2.c = o10;
-                TLObject d22 = org.telegram.messenger.vp.r1(this.b).d2(o10);
+                TLObject d22 = org.telegram.messenger.wp.r1(this.b).d2(o10);
                 if (d22 != null) {
                     r8Var.p(d22);
                     imageReceiver.i0(d22, r8Var, null);

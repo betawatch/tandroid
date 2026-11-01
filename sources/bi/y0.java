@@ -8,15 +8,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class y0 extends FrameLayout implements org.telegram.ui.ActionBar.k6, j9 {
     public final org.telegram.ui.ActionBar.p6 a;
@@ -44,8 +44,8 @@ public final class y0 extends FrameLayout implements org.telegram.ui.ActionBar.k
         n1 n1Var = new n1(context, p6Var);
         this.d = n1Var;
         n1Var.setAllowNewlines(false);
-        n1Var.setTextSize(1, tz.W0);
-        n1Var.setHint(cd.L0(2131754018, null));
+        n1Var.setTextSize(1, uz.W0);
+        n1Var.setHint(dd.L0(2131754018, null));
         n1Var.setPadding(0, org.telegram.messenger.i0.L(14.0f), 0, org.telegram.messenger.i0.L(12.66f));
         n1Var.setListener(new v0(this));
         n1Var.setDelegate(new a1.c(this, 8));

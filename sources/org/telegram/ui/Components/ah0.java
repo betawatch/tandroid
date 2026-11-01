@@ -1,9 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class ah0 extends View {
-    public static final org.telegram.messenger.s5 a = new org.telegram.messenger.s5("profileBlurQueue", true);
+public final class ah0 {
+    public Canvas a;
+    public Bitmap b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+
+    public final void a() {
+        this.c = true;
+        if (this.e) {
+            return;
+        }
+        this.d = true;
+        this.b.recycle();
+    }
 }

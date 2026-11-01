@@ -5,7 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 class VolumeLogger {
     private static final String TAG = "VolumeLogger";
@@ -14,7 +14,7 @@ class VolumeLogger {
     private final AudioManager audioManager;
     private Timer timer;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public class LogVolumeTask extends TimerTask {
         private final int maxRingVolume;
         private final int maxVoiceCallVolume;

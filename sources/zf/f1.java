@@ -7,14 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Timer;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f5;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.i5;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.ve;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.we;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.k6;
 import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Cells.z3;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.l00;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.tk0;
 import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class f1 extends sk0 {
+public abstract class f1 extends tk0 {
     public boolean D;
     public int E;
     public int F;
@@ -49,7 +49,7 @@ public abstract class f1 extends sk0 {
     public boolean x;
     public long y;
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2 || i10 == 3;
@@ -107,7 +107,7 @@ public abstract class f1 extends sk0 {
         }
         Timer timer2 = new Timer();
         this.n = timer2;
-        timer2.schedule(new ve(3, this, str), 200L, 300L);
+        timer2.schedule(new we(3, this, str), 200L, 300L);
     }
 
     @Override // s4.g0
@@ -156,13 +156,13 @@ public abstract class f1 extends sk0 {
             if (i11 == 1) {
                 z3 z3Var = (z3) view;
                 if (i10 == this.J) {
-                    z3Var.setText(cd.L0(2131749117, null));
+                    z3Var.setText(dd.L0(2131749117, null));
                     return;
                 } else if (E(i10) == null) {
-                    z3Var.setText(cd.L0(2131749544, null));
+                    z3Var.setText(dd.L0(2131749544, null));
                     return;
                 } else {
-                    z3Var.setText(cd.L0(2131747299, null));
+                    z3Var.setText(dd.L0(2131747299, null));
                     return;
                 }
             }
@@ -177,14 +177,14 @@ public abstract class f1 extends sk0 {
             String str2 = (String) E(i10);
             p8 p8Var = (p8) view;
             p8Var.g(-1, t6.o6);
-            p8Var.k(cd.a0(null, null, 2131754452, af.b.c().b("+" + str2)), false);
+            p8Var.k(dd.a0(null, null, 2131754452, af.b.c().b("+" + str2)), false);
             return;
         }
         TLObject tLObject = (TLObject) E(i10);
         if (tLObject != null) {
             if (tLObject instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) tLObject;
-                str = h20.n(user);
+                str = i20.n(user);
                 if (str != null && this.I != null && !str.toLowerCase().contains(this.I.toLowerCase()) && user.usernames != null) {
                     for (int i12 = 0; i12 < user.usernames.size(); i12++) {
                         TLRPC.TL_username tL_username = user.usernames.get(i12);
@@ -212,7 +212,7 @@ public abstract class f1 extends sk0 {
                     charSequence = null;
                     k6 k6Var = (k6) view;
                     if (z10) {
-                        charSequence = cd.L0(2131745918, null);
+                        charSequence = dd.L0(2131745918, null);
                     }
                     k6Var.z(tLObject, null, charSequence, charSequence2, false, z10);
                     k6Var.y(this.h.h(j10) >= 0, false);
@@ -286,6 +286,6 @@ public abstract class f1 extends sk0 {
             a7.i(t6.d6, zzVar, null);
             view = zzVar;
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

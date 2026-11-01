@@ -1,43 +1,65 @@
 package org.telegram.ui;
 
-import android.content.ComponentName;
-import android.content.Context;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public enum ba0 {
-    h("DefaultIcon", R.drawable.icon_background_sa, R.mipmap.icon_foreground_sa, 2131754237, false),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF39("VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, 2131754233, false),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF59("AquaIcon", R.drawable.icon_4_background_sa, R.mipmap.icon_foreground_sa, 2131754239, false),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF79("PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, 2131754235, true),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF99("TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, 2131754234, true),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF119("NoxIcon", R.mipmap.icon_2_background_sa, R.mipmap.icon_foreground_sa, 2131754236, true);
+public final /* synthetic */ class ba0 implements org.telegram.ui.Components.q4, org.telegram.ui.ActionBar.u1, org.telegram.ui.Components.yu0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ la0 b;
 
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final boolean e;
-    public ComponentName f;
-
-    ba0(String str, int i10, int i11, int i12, boolean z10) {
-        this.a = str;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = z10;
+    public /* synthetic */ ba0(la0 la0Var, int i10) {
+        this.a = i10;
+        this.b = la0Var;
     }
 
-    public final ComponentName a(Context context) {
-        if (this.f == null) {
-            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+    @Override // org.telegram.ui.Components.q4
+    public void K(int i10, int i11, boolean z10) {
+        this.b.a0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        la0 la0Var = this.b;
+        la0Var.S.a(la0Var.e);
+        la0Var.finishFragment();
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public void m(int i10) {
+        switch (this.a) {
+            case 2:
+                la0 la0Var = this.b;
+                if (i10 >= la0Var.O.size()) {
+                    la0Var.x.setText("");
+                    break;
+                } else {
+                    la0Var.x.setText(org.telegram.messenger.dd.s(la0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
+                    break;
+                }
+            default:
+                la0 la0Var2 = this.b;
+                la0Var2.F.clearFocus();
+                la0Var2.N = true;
+                ArrayList arrayList = la0Var2.Q;
+                if (i10 < arrayList.size()) {
+                    la0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
+                } else {
+                    la0Var2.F.setText("");
+                }
+                la0Var2.N = false;
+                break;
         }
-        return this.f;
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public /* synthetic */ void r() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

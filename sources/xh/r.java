@@ -12,8 +12,8 @@ import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.w4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class r extends FrameLayout {
     public final Paint a;
@@ -34,7 +34,7 @@ public abstract class r extends FrameLayout {
     public a5.a e;
     public final p[] f;
     public p h;
-    public q20 n;
+    public r20 n;
     public Runnable r;
 
     public r(Context context, p6 p6Var) {
@@ -272,12 +272,12 @@ public abstract class r extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), z20.B(109.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), a30.B(109.0f, 1, TLObject.FLAG_30));
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        q20 q20Var;
+        r20 r20Var;
         if (motionEvent.getAction() == 0) {
             p a2 = a(motionEvent.getX(), motionEvent.getY());
             this.h = a2;
@@ -290,8 +290,8 @@ public abstract class r extends FrameLayout {
             if (motionEvent.getAction() == 1) {
                 p a10 = a(motionEvent.getX(), motionEvent.getY());
                 p pVar = this.h;
-                if (a10 == pVar && (q20Var = this.n) != null) {
-                    q20Var.a(Boolean.valueOf(pVar == this.f[0]));
+                if (a10 == pVar && (r20Var = this.n) != null) {
+                    r20Var.a(Boolean.valueOf(pVar == this.f[0]));
                 }
             }
             this.h.j.c(false);
@@ -301,8 +301,8 @@ public abstract class r extends FrameLayout {
         return this.h != null;
     }
 
-    public void setOnButtonClickListener(q20 q20Var) {
-        this.n = q20Var;
+    public void setOnButtonClickListener(r20 r20Var) {
+        this.n = r20Var;
     }
 
     public void setOnResizeListener(Runnable runnable) {

@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class l1 extends View implements Drawable.Callback, org.telegram.ui.Cells.j9 {
-    public final m60 a;
+    public final l60 a;
     public final f4 b;
     public z2 c;
     public int d;
@@ -23,9 +23,9 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
     public final AnimatedArrowDrawable f;
     public TL_iv.pageBlockDetails h;
 
-    public l1(Context context, m60 m60Var, f4 f4Var) {
+    public l1(Context context, l60 l60Var, f4 f4Var) {
         super(context);
-        this.a = m60Var;
+        this.a = l60Var;
         this.b = f4Var;
         this.f = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.y6, false), true);
     }
@@ -67,15 +67,15 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
             return;
         }
         canvas.save();
-        m60 m60Var = this.a;
-        m60Var.getClass();
+        l60 l60Var = this.a;
+        l60Var.getClass();
         canvas.translate(org.telegram.messenger.i0.L(18), ((getMeasuredHeight() - org.telegram.messenger.i0.L(13.0f)) - 1) / 2);
         this.f.draw(canvas);
         canvas.restore();
         if (this.c != null) {
             canvas.save();
             canvas.translate(this.d, this.e);
-            h4.t(m60Var, canvas, this, 0);
+            h4.t(l60Var, canvas, this, 0);
             this.c.d(canvas, this);
             canvas.restore();
         }
@@ -94,9 +94,9 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
         if (z2Var != null && (h = h4.h(this.a, this.b, z2Var)) != null) {
             spannableStringBuilder.append(h).append((CharSequence) ", ");
         }
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.cd.L0(2131754869, null)).append((CharSequence) ", ");
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.L0(2131754869, null)).append((CharSequence) ", ");
         TL_iv.pageBlockDetails pageblockdetails = this.h;
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.cd.L0((pageblockdetails == null || !pageblockdetails.open) ? 2131754870 : 2131754866, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.L0((pageblockdetails == null || !pageblockdetails.open) ? 2131754870 : 2131754866, null));
         accessibilityNodeInfo.setText(spannableStringBuilder);
     }
 
@@ -109,12 +109,12 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
         TL_iv.pageBlockDetails pageblockdetails = this.h;
         if (pageblockdetails != null) {
             TL_iv.RichText richText = pageblockdetails.title;
-            m60 m60Var = this.a;
-            m60Var.getClass();
+            l60 l60Var = this.a;
+            l60Var.getClass();
             int L2 = size - org.telegram.messenger.i0.L(54);
             TL_iv.pageBlockDetails pageblockdetails2 = this.h;
             f4 f4Var = this.b;
-            z2 n10 = h4.n(m60Var, this, null, richText, L2, 0, pageblockdetails2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ov0.a(), 0, this.b);
+            z2 n10 = h4.n(l60Var, this, null, richText, L2, 0, pageblockdetails2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.pv0.a(), 0, this.b);
             this.c = n10;
             if (n10 != null) {
                 L = Math.max(L, this.c.d.getHeight() + org.telegram.messenger.i0.L(21.0f));

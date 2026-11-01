@@ -1,34 +1,38 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class gg0 extends org.telegram.ui.Components.op0 {
-    public final /* synthetic */ hg0 R2;
+public final class gg0 implements org.telegram.ui.Components.i80 {
+    public final /* synthetic */ org.telegram.ui.Components.j80 a;
+    public final /* synthetic */ hg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gg0(hg0 hg0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, null, str, false, str2, false, p6Var);
-        this.R2 = hg0Var;
+    public gg0(hg0 hg0Var, org.telegram.ui.Components.j80 j80Var) {
+        this.b = hg0Var;
+        this.a = j80Var;
     }
 
-    @Override // org.telegram.ui.Components.op0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String a02;
-        kg0 kg0Var = this.R2.K;
-        if (z10) {
-            if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.cd.a0(null, null, 2131749197, org.telegram.messenger.cd.G(i10, "Chats", new Object[0]));
-            } else {
-                long j10 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j10 == 0 || j10 == kg0Var.getUserConfig().e()) ? org.telegram.messenger.cd.L0(2131749195, null) : org.telegram.messenger.cd.a0(null, null, 2131749194, kg0Var.getMessagesController().A1(j10, true));
-            }
-            org.telegram.ui.Components.wb Q = org.telegram.ui.Components.cc.a0(kg0Var).Q(R.raw.forward, 36, org.telegram.messenger.i0.W2(a02));
-            Q.r = false;
-            Q.k(true);
-        }
+    @Override // org.telegram.ui.Components.i80
+    public final void d() {
+        ig0.b0(this.b.d);
+    }
+
+    @Override // org.telegram.ui.Components.i80
+    public final void g() {
+        hg0 hg0Var = this.b;
+        ig0 ig0Var = hg0Var.d;
+        Context context = this.a.getContext();
+        ig0 ig0Var2 = hg0Var.d;
+        ig0Var.l0 = new org.telegram.ui.Components.c60(context, ig0Var2.e, ig0Var2.d, ig0Var2.k0, ig0Var2, ig0Var2.n, true, ig0Var2.h);
+        hg0Var.d.l0.show();
+    }
+
+    @Override // org.telegram.ui.Components.i80
+    public final /* synthetic */ void b() {
+    }
+
+    @Override // org.telegram.ui.Components.i80
+    public final /* synthetic */ void n() {
     }
 }

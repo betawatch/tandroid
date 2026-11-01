@@ -17,9 +17,9 @@ import android.view.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class t extends Binder implements d {
     public static final /* synthetic */ int b = 0;
@@ -428,7 +428,7 @@ public final class t extends Binder implements d {
                     t7.s.b(parcel2, (Parcelable) u02.get(i12));
                 }
                 return true;
-            case zs.T /* 30 */:
+            case at.T /* 30 */:
                 CharSequence H = H();
                 parcel2.writeNoException();
                 if (H == null) {
@@ -438,7 +438,7 @@ public final class t extends Binder implements d {
                 parcel2.writeInt(1);
                 TextUtils.writeToParcel(H, parcel2, 1);
                 return true;
-            case zs.U /* 31 */:
+            case at.U /* 31 */:
                 Bundle extras = getExtras();
                 parcel2.writeNoException();
                 t7.s.b(parcel2, extras);
@@ -524,7 +524,7 @@ public final class t extends Binder implements d {
                 parcel2.writeNoException();
                 t7.s.b(parcel2, M);
                 return true;
-            case zs.o0 /* 51 */:
+            case at.o0 /* 51 */:
                 e0((RatingCompat) t7.s.a(parcel, RatingCompat.CREATOR), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;

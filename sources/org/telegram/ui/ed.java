@@ -4,7 +4,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ed implements Runnable {
     public final /* synthetic */ int a;
@@ -61,19 +61,19 @@ public final /* synthetic */ class ed implements Runnable {
                                 org.telegram.messenger.f8.g(e, true);
                             }
                         }
-                        kdVar.l0(false);
+                        kdVar.m0(false);
                         kdVar.s0 = false;
                         kdVar.a.performClick();
                     }
-                    kdVar.j0(false, true);
+                    kdVar.k0(false, true);
                     kdVar.n.setImageDrawable(null);
                     break;
                 } else {
                     TLRPC.FileLocation fileLocation = photoSize2.location;
                     kdVar.D = fileLocation;
                     kdVar.E = photoSize.location;
-                    kdVar.f.j(org.telegram.messenger.ic.e(fileLocation), "50_50", kdVar.w, null);
-                    kdVar.j0(true, false);
+                    kdVar.f.j(org.telegram.messenger.jc.e(fileLocation), "50_50", kdVar.w, null);
+                    kdVar.k0(true, false);
                     break;
                 }
             case 1:
@@ -130,32 +130,32 @@ public final /* synthetic */ class ed implements Runnable {
                         ooVar.N0 = false;
                         ooVar.a.performClick();
                     }
-                    ooVar.r0(false, true);
+                    ooVar.s0(false, true);
                     break;
                 } else {
                     ag.d2 d2Var = ooVar.e;
-                    org.telegram.messenger.ic e10 = org.telegram.messenger.ic.e(fileLocation2);
+                    org.telegram.messenger.jc e10 = org.telegram.messenger.jc.e(fileLocation2);
                     org.telegram.ui.Components.r8 r8Var = ooVar.r;
                     Object obj = ooVar.C0;
                     if (obj == null) {
                         obj = ooVar.w0;
                     }
                     d2Var.j(e10, "50_50", r8Var, obj);
-                    ooVar.b0.o(R.drawable.msg_addphoto, org.telegram.messenger.cd.L0(2131752213, "ChatSetNewPhoto"), true);
+                    ooVar.b0.o(R.drawable.msg_addphoto, org.telegram.messenger.dd.L0(2131752213, "ChatSetNewPhoto"), true);
                     if (ooVar.R0 == null) {
-                        ooVar.R0 = new org.telegram.ui.Components.bi0(R.raw.camera_outline, org.telegram.messenger.i0.L(50.0f), org.telegram.messenger.i0.L(50.0f), false, null);
+                        ooVar.R0 = new org.telegram.ui.Components.ci0(R.raw.camera_outline, org.telegram.messenger.i0.L(50.0f), org.telegram.messenger.i0.L(50.0f), false, null);
                     }
                     ooVar.b0.e.setTranslationX(-org.telegram.messenger.i0.L(8.0f));
                     ooVar.b0.e.setAnimation(ooVar.R0);
-                    ooVar.r0(true, false);
+                    ooVar.s0(true, false);
                     break;
                 }
                 break;
             case 2:
-                j40 j40Var = (j40) a40Var;
-                long j11 = j40Var.e;
-                b50 b50Var = j40Var.f;
-                org.telegram.messenger.c cVar = b50Var.k1;
+                i40 i40Var = (i40) a40Var;
+                long j11 = i40Var.e;
+                a50 a50Var = i40Var.f;
+                org.telegram.messenger.c cVar = a50Var.k1;
                 TLRPC.InputFile inputFile5 = this.c;
                 TLRPC.InputFile inputFile6 = this.d;
                 TLRPC.VideoSize videoSize3 = this.e;
@@ -163,7 +163,7 @@ public final /* synthetic */ class ed implements Runnable {
                     double d11 = this.h;
                     String str2 = this.n;
                     if (j11 <= 0) {
-                        org.telegram.messenger.vp.r1(cVar.a).B(-j11, null, inputFile5, inputFile6, videoSize3, d11, str2, photoSize2.location, photoSize.location, new zy(j40Var, 7));
+                        org.telegram.messenger.wp.r1(cVar.a).B(-j11, null, inputFile5, inputFile6, videoSize3, d11, str2, photoSize2.location, photoSize.location, new yy(i40Var, 7));
                         break;
                     } else {
                         TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto2 = new TLRPC.TL_photos_uploadProfilePhoto();
@@ -181,46 +181,46 @@ public final /* synthetic */ class ed implements Runnable {
                             tL_photos_uploadProfilePhoto2.video_emoji_markup = videoSize3;
                             tL_photos_uploadProfilePhoto2.flags |= 16;
                         }
-                        ConnectionsManager.getInstance(cVar.a).sendRequest(tL_photos_uploadProfilePhoto2, new org.telegram.ui.Components.t20(13, j40Var, str2));
+                        ConnectionsManager.getInstance(cVar.a).sendRequest(tL_photos_uploadProfilePhoto2, new org.telegram.ui.Components.t20(13, i40Var, str2));
                         break;
                     }
                 } else {
-                    j40Var.c = photoSize2.location;
+                    i40Var.c = photoSize2.location;
                     TLRPC.FileLocation fileLocation3 = photoSize.location;
-                    j40Var.b = fileLocation3;
-                    org.telegram.messenger.ic e11 = org.telegram.messenger.ic.e(fileLocation3);
-                    j40Var.d = e11;
-                    b50Var.i1.A(e11, org.telegram.messenger.ic.e(j40Var.c));
-                    org.telegram.messenger.i0.a4(b50Var.H1);
+                    i40Var.b = fileLocation3;
+                    org.telegram.messenger.jc e11 = org.telegram.messenger.jc.e(fileLocation3);
+                    i40Var.d = e11;
+                    a50Var.i1.A(e11, org.telegram.messenger.jc.e(i40Var.c));
+                    org.telegram.messenger.i0.a4(a50Var.H1);
                     break;
                 }
             case 3:
-                c60 c60Var = (c60) a40Var;
+                b60 b60Var = (b60) a40Var;
                 if (inputFile2 != null || inputFile != null || videoSize != null) {
-                    c60Var.F = inputFile2;
-                    c60Var.G = inputFile;
-                    c60Var.H = videoSize;
-                    c60Var.I = str;
-                    c60Var.J = d;
-                    if (c60Var.L) {
-                        c60Var.getMessagesController().U(c60Var.c.getText().toString(), c60Var.K, null, c60Var.P, c60Var.S, c60Var.U, c60Var.T, c60Var.W, c60Var);
+                    b60Var.F = inputFile2;
+                    b60Var.G = inputFile;
+                    b60Var.H = videoSize;
+                    b60Var.I = str;
+                    b60Var.J = d;
+                    if (b60Var.L) {
+                        b60Var.getMessagesController().U(b60Var.c.getText().toString(), b60Var.K, null, b60Var.P, b60Var.S, b60Var.U, b60Var.T, b60Var.W, b60Var);
                     }
-                    c60Var.d0(false, true);
-                    c60Var.f.setImageDrawable(null);
+                    b60Var.e0(false, true);
+                    b60Var.f.setImageDrawable(null);
                     break;
                 } else {
                     TLRPC.FileLocation fileLocation4 = photoSize2.location;
-                    c60Var.D = fileLocation4;
-                    c60Var.E = photoSize.location;
-                    c60Var.d.j(org.telegram.messenger.ic.e(fileLocation4), "50_50", c60Var.r, null);
-                    c60Var.d0(true, false);
+                    b60Var.D = fileLocation4;
+                    b60Var.E = photoSize.location;
+                    b60Var.d.j(org.telegram.messenger.jc.e(fileLocation4), "50_50", b60Var.r, null);
+                    b60Var.e0(true, false);
                     break;
                 }
             case 4:
-                ProfileActivity.i0((ProfileActivity) a40Var, this.c, this.d, this.e, this.h, this.n, this.b, this.f);
+                ProfileActivity.j0((ProfileActivity) a40Var, this.c, this.d, this.e, this.h, this.n, this.b, this.f);
                 break;
             case 5:
-                e51.d0((e51) a40Var, this.c, this.d, this.e, this.h, this.n, this.b, this.f);
+                c51.e0((c51) a40Var, this.c, this.d, this.e, this.h, this.n, this.b, this.f);
                 break;
             default:
                 yh.l lVar = (yh.l) a40Var;
@@ -230,11 +230,11 @@ public final /* synthetic */ class ed implements Runnable {
                 TLRPC.InputFile inputFile8 = this.d;
                 TLRPC.VideoSize videoSize4 = this.e;
                 if (inputFile7 == null && inputFile8 == null && videoSize4 == null) {
-                    lVar.x.j(org.telegram.messenger.ic.e(fileLocation5), "50_50", lVar.E, lVar.I);
-                    lVar.e0(true, false);
+                    lVar.x.j(org.telegram.messenger.jc.e(fileLocation5), "50_50", lVar.E, lVar.I);
+                    lVar.f0(true, false);
                 } else {
                     lVar.getMessagesController().B(lVar.c, null, inputFile7, inputFile8, videoSize4, this.h, this.n, photoSize2.location, photoSize.location, null);
-                    lVar.e0(false, true);
+                    lVar.f0(false, true);
                 }
                 lVar.e.f3.O(true);
                 break;

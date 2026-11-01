@@ -6,20 +6,20 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.ly;
+import org.telegram.ui.ky;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
@@ -37,7 +37,7 @@ public final class d {
     public long l;
 
     public static d a(f5 f5Var, boolean z10, boolean z11) {
-        int i10 = d20.s0;
+        int i10 = e20.s0;
         d dVar = new d();
         dVar.b = new Rect();
         dVar.c = new ArrayList();
@@ -48,7 +48,7 @@ public final class d {
         dVar.h = i10;
         dVar.i = z11;
         dVar.e = System.currentTimeMillis();
-        if (z11 && sc.e(4112)) {
+        if (z11 && tc.e(4112)) {
             ImageReceiver imageReceiver = new ImageReceiver(null);
             dVar.j = imageReceiver;
             if (z10) {
@@ -128,7 +128,7 @@ public final class d {
                     f5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f7 * 255.0f));
                     f5Var.setBounds((int) (T1 - f11), (int) (T12 - f11), (int) (T1 + f11), (int) (T12 + f11));
                     f5Var.draw(canvas);
-                    f5Var.setAlpha(zs.e4);
+                    f5Var.setAlpha(at.e4);
                     canvas.restore();
                     if (((c) arrayList.get(i11)).h < 1.0f) {
                         arrayList.remove(i11);
@@ -146,7 +146,7 @@ public final class d {
             f5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f7 * 255.0f));
             f5Var.setBounds((int) (T1 - f112), (int) (T12 - f112), (int) (T1 + f112), (int) (T12 + f112));
             f5Var.draw(canvas);
-            f5Var.setAlpha(zs.e4);
+            f5Var.setAlpha(at.e4);
             canvas.restore();
             if (((c) arrayList.get(i11)).h < 1.0f) {
             }
@@ -199,8 +199,8 @@ public final class d {
         imageReceiver.P();
         TLRPC.Document document2 = f5Var.e;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = null;
-        String V = jj.V(document2, null, null);
-        if (V == null || (tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(i10).r.get(V)) == null || (document = tL_availableReaction.around_animation) == null) {
+        String V = kj.V(document2, null, null);
+        if (V == null || (tL_availableReaction = (TLRPC.TL_availableReaction) vi.b0(i10).r.get(V)) == null || (document = tL_availableReaction.around_animation) == null) {
             z10 = true;
             z11 = false;
         } else {
@@ -209,12 +209,12 @@ public final class d {
                 int i11 = m;
                 m = i11 + 1;
                 imageReceiver.v1 = a1.g.p(sb2, i11, " ");
-                int f7 = ly.f();
+                int f7 = ky.f();
                 TLRPC.Document document3 = tL_availableReaction.around_animation;
                 z10 = true;
-                imageReceiver.q0(ic.b(tL_availableReaction.around_animation), f7 + "_" + f7 + "_pcache_compress", null, null, document3, 0);
+                imageReceiver.q0(jc.b(tL_availableReaction.around_animation), f7 + "_" + f7 + "_pcache_compress", null, null, document3, 0);
             } else {
-                ic b10 = ic.b(document);
+                jc b10 = jc.b(document);
                 String a2 = k0.a();
                 TLRPC.Document document4 = tL_availableReaction.around_animation;
                 z10 = true;
@@ -223,9 +223,9 @@ public final class d {
             z11 = z10;
         }
         if (!z11) {
-            String str = d20.i(i10).d0;
-            if (str != null && (tL_messages_stickerSet = ui.b0(i10).p0(str)) == null) {
-                tL_messages_stickerSet = ui.b0(i10).n0(str);
+            String str = e20.i(i10).d0;
+            if (str != null && (tL_messages_stickerSet = vi.b0(i10).p0(str)) == null) {
+                tL_messages_stickerSet = vi.b0(i10).n0(str);
             }
             if (tL_messages_stickerSet != null) {
                 if (this.k < 0) {
@@ -236,16 +236,16 @@ public final class d {
                     int i12 = m;
                     m = i12 + 1;
                     imageReceiver.v1 = a1.g.p(sb3, i12, " ");
-                    int f10 = ly.f();
-                    imageReceiver.q0(ic.b(tL_messages_stickerSet.documents.get(this.k)), f10 + "_" + f10 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
+                    int f10 = ky.f();
+                    imageReceiver.q0(jc.b(tL_messages_stickerSet.documents.get(this.k)), f10 + "_" + f10 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 } else {
-                    imageReceiver.q0(ic.b(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
+                    imageReceiver.q0(jc.b(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 }
                 z11 = z10;
             }
         }
         if (!z11) {
-            imageReceiver.w0(new bi0(R.raw.custom_emoji_reaction, org.telegram.messenger.i0.L(60.0f), org.telegram.messenger.i0.L(60.0f), false, null));
+            imageReceiver.w0(new ci0(R.raw.custom_emoji_reaction, org.telegram.messenger.i0.L(60.0f), org.telegram.messenger.i0.L(60.0f), false, null));
             return;
         }
         if (imageReceiver.B() != null) {

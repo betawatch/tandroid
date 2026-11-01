@@ -15,25 +15,25 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import mg.i0;
 import mg.p;
-import org.telegram.messenger.bs;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.ad;
+import org.telegram.messenger.as;
 import org.telegram.messenger.cs;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.ds;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.gp;
-import org.telegram.messenger.gs;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.hs;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.mm;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.nm;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.oz;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.qz;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.pz;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.rz;
 import org.telegram.messenger.w2;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.zc;
-import org.telegram.messenger.zr;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
@@ -49,21 +49,20 @@ import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.u;
 import org.telegram.ui.Components.g0;
-import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.ik0;
 import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.q4;
-import org.telegram.ui.Components.ui0;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.vj0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ay;
 import org.telegram.ui.b4;
 import org.telegram.ui.b5;
 import org.telegram.ui.cp;
+import org.telegram.ui.ec1;
 import org.telegram.ui.f4;
 import org.telegram.ui.fn;
-import org.telegram.ui.gc1;
 import org.telegram.ui.h0;
 import org.telegram.ui.h4;
 import org.telegram.ui.iq;
@@ -73,27 +72,28 @@ import org.telegram.ui.ki;
 import org.telegram.ui.l1;
 import org.telegram.ui.l3;
 import org.telegram.ui.mp;
+import org.telegram.ui.nb1;
 import org.telegram.ui.nj;
 import org.telegram.ui.o3;
 import org.telegram.ui.oo;
 import org.telegram.ui.p4;
 import org.telegram.ui.pb;
-import org.telegram.ui.pb1;
 import org.telegram.ui.po;
 import org.telegram.ui.qp;
-import org.telegram.ui.rv;
+import org.telegram.ui.qv;
 import org.telegram.ui.sb;
 import org.telegram.ui.sn;
 import org.telegram.ui.t4;
+import org.telegram.ui.tx;
 import org.telegram.ui.un;
-import org.telegram.ui.ux;
 import org.telegram.ui.v3;
 import org.telegram.ui.w5;
 import org.telegram.ui.x5;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, uj0, ui0, zr, ResultCallback, cs, gc1 {
+public final /* synthetic */ class d implements tx, u, ik0, u1, t4, q4, hp, qc, vj0, vi0, as, ResultCallback, ds, ec1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -104,8 +104,8 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean G() {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean H() {
         switch (this.a) {
         }
         return false;
@@ -117,41 +117,41 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
             case 8:
                 un unVar = (un) this.b;
                 Uri uri = (Uri) this.c;
-                unVar.v8();
-                qz.Y(unVar.getAccountInstance(), uri, unVar.j6, unVar.D5, unVar.l4, null, unVar.F5, z10, i10, unVar.P8());
+                unVar.z8();
+                rz.Y(unVar.getAccountInstance(), uri, unVar.j6, unVar.D5, unVar.l4, null, unVar.F5, z10, i10, unVar.T8());
                 break;
             case 9:
             default:
                 fn fnVar = (fn) this.b;
-                jj jjVar = (jj) this.c;
+                kj kjVar = (kj) this.c;
                 if (z10) {
-                    fnVar.a.getMessagesController().v(jjVar.k.id, i10, o5.o(jjVar.k.peer_id), null, false);
+                    fnVar.a.getMessagesController().v(kjVar.k.id, i10, o5.o(kjVar.k.peer_id), null, false);
                     break;
                 }
                 break;
             case 10:
                 un unVar2 = (un) this.b;
-                unVar2.getSendMessagesHelper().r0(oz.b((String) this.c, unVar2.j6, unVar2.D5, unVar2.l4, null, false, null, null, null, z10, i10, 0, null, false));
+                unVar2.getSendMessagesHelper().r0(pz.b((String) this.c, unVar2.j6, unVar2.D5, unVar2.l4, null, false, null, null, null, z10, i10, 0, null, false));
                 unVar2.Z.setFieldText("");
-                unVar2.r9(false);
+                unVar2.w9(false);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean N(ay ayVar) {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean O(zx zxVar) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.messenger.gp
+    @Override // org.telegram.messenger.hp
     public boolean a(TLRPC.TL_error tL_error) {
-        un.R0((un) this.b, (Context) this.c, tL_error);
+        un.L0((un) this.b, (Context) this.c, tL_error);
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public void b(float f7, float f10, int i10, View view) {
         h4 h4Var = (h4) this.b;
         l3 l3Var = (l3) this.c;
@@ -169,17 +169,17 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                 o3 o3Var = (o3) view;
                 if (h4Var.H0 == 0) {
                     if ((!o3Var.c || f7 >= view.getMeasuredWidth() / 2) && !o3Var.d) {
-                        TLObject e22 = vp.r1(h4Var.X).e2("previews");
+                        TLObject e22 = wp.r1(h4Var.X).e2("previews");
                         if (e22 instanceof TLRPC.TL_user) {
                             h4Var.N(adapter.E.id, (TLRPC.User) e22);
                             return;
                         }
-                        int i11 = d20.s0;
+                        int i11 = e20.s0;
                         long j10 = adapter.E.id;
                         h4Var.Z(true);
                         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                         tL_contacts_resolveUsername.username = "previews";
-                        h4Var.H0 = ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new mm(h4Var, i11, j10));
+                        h4Var.H0 = ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new nm(h4Var, i11, j10));
                         return;
                     }
                     return;
@@ -195,7 +195,7 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                 x10 = ((v3) x10).b;
             }
             if (x10 instanceof TL_iv.pageBlockChannel) {
-                vp.r1(h4Var.X).v3(w3.K(((TL_iv.pageBlockChannel) x10).channel, false), h4Var.M, 2, null);
+                wp.r1(h4Var.X).v3(w3.K(((TL_iv.pageBlockChannel) x10).channel, false), h4Var.M, 2, null);
                 h4Var.m(false, true);
                 return;
             }
@@ -232,10 +232,10 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         }
     }
 
-    @Override // org.telegram.ui.Components.ui0
+    @Override // org.telegram.ui.Components.vi0
     public void c(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
         ki kiVar = (ki) this.b;
-        jj jjVar = (jj) this.c;
+        kj kjVar = (kj) this.c;
         un unVar = kiVar.p;
         Bundle bundle = new Bundle();
         if (j10 > 0) {
@@ -243,10 +243,10 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         } else {
             bundle.putLong("chat_id", -j10);
         }
-        bundle.putInt("report_reaction_message_id", jjVar.f1());
+        bundle.putInt("report_reaction_message_id", kjVar.f1());
         bundle.putLong("report_reaction_from_dialog_id", unVar.j6);
         unVar.presentFragment(new ProfileActivity(bundle, null));
-        unVar.I7(true);
+        unVar.M7(true);
     }
 
     @Override // org.telegram.ui.t4
@@ -272,13 +272,13 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         }
     }
 
-    @Override // org.telegram.ui.Components.uj0
+    @Override // org.telegram.ui.Components.vj0
     public void g() {
         un unVar = (un) this.b;
         r rVar = (r) this.c;
         unVar.getClass();
         rVar.g();
-        unVar.C9();
+        unVar.H9();
     }
 
     @Override // org.telegram.ui.ActionBar.u1
@@ -289,19 +289,19 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                 View view = (View) this.c;
                 p4Var.getClass();
                 x1Var.dismiss();
-                p4Var.a0(view, true);
+                p4Var.b0(view, true);
                 break;
             case 5:
                 gf.f.n(((sb) this.b).getParentActivity(), (String) this.c, true);
                 break;
             case 7:
-                kd.Z((kd) this.b, (TLRPC.Chat) this.c);
+                kd.a0((kd) this.b, (TLRPC.Chat) this.c);
                 break;
             case 18:
                 cp cpVar = (cp) this.b;
                 TLRPC.Chat chat = (TLRPC.Chat) this.c;
                 TLRPC.TL_channels_updateUsername tL_channels_updateUsername = new TLRPC.TL_channels_updateUsername();
-                tL_channels_updateUsername.channel = vp.h1(chat);
+                tL_channels_updateUsername.channel = wp.h1(chat);
                 tL_channels_updateUsername.username = "";
                 cpVar.getConnectionsManager().sendRequest(tL_channels_updateUsername, new po(cpVar, 0), 64);
                 break;
@@ -320,9 +320,9 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
             case 24:
                 TLRPC.TL_langPackLanguage tL_langPackLanguage = (TLRPC.TL_langPackLanguage) this.b;
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
-                zc F0 = cd.D0().F0(tL_langPackLanguage.official ? "remote_" + tL_langPackLanguage.lang_code : "unofficial_" + tL_langPackLanguage.lang_code);
+                ad F0 = dd.D0().F0(tL_langPackLanguage.official ? "remote_" + tL_langPackLanguage.lang_code : "unofficial_" + tL_langPackLanguage.lang_code);
                 if (F0 == null) {
-                    F0 = new zc();
+                    F0 = new ad();
                     F0.a = tL_langPackLanguage.native_name;
                     F0.b = tL_langPackLanguage.name;
                     F0.c = tL_langPackLanguage.lang_code;
@@ -335,30 +335,30 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                         F0.d = "unofficial";
                     }
                 }
-                cd.D0().c(F0, true, false, false, true, d20.s0, null);
+                dd.D0().c(F0, true, false, false, true, e20.s0, null);
                 launchActivity.y0(true);
                 break;
             case 25:
-                rv rvVar = (rv) this.b;
+                qv qvVar = (qv) this.b;
                 boolean[] zArr = (boolean[]) this.c;
                 boolean z10 = zArr[0];
                 boolean z11 = zArr[1];
-                ay ayVar = (ay) rvVar.b;
-                ArrayList arrayList = (ArrayList) rvVar.c;
-                ayVar.getClass();
+                zx zxVar = (zx) qvVar.b;
+                ArrayList arrayList = (ArrayList) qvVar.c;
+                zxVar.getClass();
                 int size = arrayList.size();
                 for (int i11 = 0; i11 < size; i11++) {
                     Long l4 = (Long) arrayList.get(i11);
                     long longValue = l4.longValue();
                     if (z10) {
-                        ayVar.getMessagesController().l4(longValue, ayVar.getMessagesController().Z1(l4), null, null, false);
+                        zxVar.getMessagesController().l4(longValue, zxVar.getMessagesController().Z1(l4), null, null, false);
                     }
                     if (z11) {
-                        ayVar.getMessagesController().X(0, longValue, true);
+                        zxVar.getMessagesController().X(0, longValue, true);
                     }
-                    ayVar.getMessagesController().w(longValue);
+                    zxVar.getMessagesController().w(longValue);
                 }
-                ayVar.m4(false);
+                zxVar.n4(false);
                 break;
             case 26:
                 e0 e0Var = (e0) this.b;
@@ -368,9 +368,9 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                 break;
             case 27:
                 int[] iArr = (int[]) this.b;
-                bs bsVar = (bs) this.c;
+                cs csVar = (cs) this.c;
                 int i12 = iArr[0];
-                bsVar.a(i12 == 0 ? 900 : i12 == 1 ? 3600 : i12 == 2 ? 28800 : ConnectionsManager.DEFAULT_DATACENTER_ID);
+                csVar.a(i12 == 0 ? 900 : i12 == 1 ? 3600 : i12 == 2 ? 28800 : ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
             case 28:
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
@@ -392,12 +392,12 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ boolean h1(View view) {
         return false;
     }
 
-    @Override // org.telegram.messenger.zr
+    @Override // org.telegram.messenger.as
     public void i(boolean z10) {
         nj njVar = (nj) this.b;
         long j10 = ((TLRPC.User) this.c).id;
@@ -406,12 +406,12 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         if (j10 != j11) {
             return;
         }
-        unVar.Ga(j11, false);
+        unVar.La(j11, false);
     }
 
-    @Override // org.telegram.ui.gc1
+    @Override // org.telegram.ui.ec1
     public void m(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((iq) this.b).t0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
+        ((iq) this.b).u0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -438,8 +438,8 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         l.a(this, th2);
     }
 
-    @Override // org.telegram.messenger.pc
-    public void q(Exception exc) {
+    @Override // org.telegram.messenger.qc
+    public void p(Exception exc) {
         AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
         AtomicReference atomicReference = (AtomicReference) this.c;
         f8.d("mlkit: failed to detect language in message");
@@ -450,7 +450,7 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         }
     }
 
-    @Override // org.telegram.messenger.cs
+    @Override // org.telegram.messenger.ds
     public void run(long j10) {
         switch (this.a) {
             case 17:
@@ -475,7 +475,7 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                     chat.forum_tabs = ooVar.G0;
                     chat.forum_sidebar = ooVar.H0;
                     if (z10 || z11) {
-                        ooVar.u0(z10);
+                        ooVar.v0(z10);
                         break;
                     }
                 }
@@ -506,31 +506,31 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                     break;
                 } else {
                     qpVar2.getMessagesController().Y4(j10, false);
-                    qpVar2.c0(qpVar2.getMessagesController().L0(Long.valueOf(j10)), k2Var);
+                    qpVar2.d0(qpVar2.getMessagesController().L0(Long.valueOf(j10)), k2Var);
                     break;
                 }
         }
     }
 
-    @Override // org.telegram.ui.ux
-    public boolean y(ay ayVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, pb1 pb1Var) {
+    @Override // org.telegram.ui.tx
+    public boolean z(zx zxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, nb1 nb1Var) {
         switch (this.a) {
             case 0:
                 f fVar = (f) this.b;
                 String str = (String) this.c;
                 long j10 = 0;
                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                    j10 = ((gs) arrayList.get(i12)).a;
-                    fVar.e.getSendMessagesHelper().r0(oz.b(str, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                    j10 = ((hs) arrayList.get(i12)).a;
+                    fVar.e.getSendMessagesHelper().r0(pz.b(str, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
                 }
-                ayVar.finishFragment();
+                zxVar.finishFragment();
                 p.h(j10);
                 break;
             default:
                 x5 x5Var = (x5) this.b;
-                ay ayVar2 = (ay) this.c;
+                zx zxVar2 = (zx) this.c;
                 ArrayList arrayList2 = x5Var.c;
-                ayVar2.finishFragment();
+                zxVar2.finishFragment();
                 w2 w2Var = null;
                 int i13 = 0;
                 int i14 = 0;
@@ -538,7 +538,7 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                     boolean z12 = true;
                     if (i14 >= arrayList.size()) {
                         x5Var.getMessagesController().s7.h(x5Var.e, x5Var.d);
-                        x5Var.Y();
+                        x5Var.Z();
                         if (w2Var != null) {
                             int i15 = 0;
                             while (true) {
@@ -559,7 +559,7 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                         while (true) {
                             if (i16 >= x5Var.d.size()) {
                                 z12 = false;
-                            } else if (((w2) x5Var.d.get(i16)).a == ((gs) arrayList.get(i14)).a) {
+                            } else if (((w2) x5Var.d.get(i16)).a == ((hs) arrayList.get(i14)).a) {
                                 w2Var = (w2) x5Var.d.get(i16);
                             } else {
                                 i16++;
@@ -568,7 +568,7 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
                         if (!z12) {
                             int i17 = x5Var.getMessagesController().s7.c(x5Var.e) == 2 ? 3 : 2;
                             ArrayList arrayList3 = x5Var.d;
-                            w2 w2Var2 = new w2(((gs) arrayList.get(i14)).a, i17);
+                            w2 w2Var2 = new w2(((hs) arrayList.get(i14)).a, i17);
                             arrayList3.add(w2Var2);
                             w2Var = w2Var2;
                         }
@@ -597,7 +597,7 @@ public final /* synthetic */ class d implements ux, u, hk0, u1, t4, q4, gp, pc, 
         this.c = user;
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

@@ -1,125 +1,166 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import java.util.Set;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.media.AudioRecord;
+import android.os.PowerManager;
+import android.telephony.TelephonyManager;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rd implements Runnable {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a;
     public final /* synthetic */ MediaController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ oj h;
-    public final /* synthetic */ jj n;
-    public final /* synthetic */ jj r;
-    public final /* synthetic */ TL_stories.StoryItem s;
-    public final /* synthetic */ Object w;
 
-    public /* synthetic */ rd(MediaController mediaController, int i10, int i11, long j10, long j11, oj ojVar, jj jjVar, jj jjVar2, TL_stories.StoryItem storyItem, sw swVar) {
+    public /* synthetic */ rd(MediaController mediaController, int i10) {
+        this.a = i10;
         this.b = mediaController;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
-        this.f = j11;
-        this.h = ojVar;
-        this.n = jjVar;
-        this.r = jjVar2;
-        this.s = storyItem;
-        this.w = swVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        String absolutePath;
-        int i10 = this.a;
-        Object obj = this.w;
-        switch (i10) {
+        int i10 = 0;
+        switch (this.a) {
             case 0:
-                pi piVar = (pi) obj;
-                long j10 = this.e;
-                long j11 = this.f;
-                oj ojVar = this.h;
-                jj jjVar = this.r;
-                TL_stories.StoryItem storyItem = this.s;
-                MediaController.j0(true);
                 MediaController mediaController = this.b;
-                mediaController.A1 = 0;
-                TLRPC.TL_document tL_document = new TLRPC.TL_document();
-                mediaController.e1 = tL_document;
-                mediaController.f1 = this.c;
-                tL_document.dc_id = TLObject.FLAG_31;
-                tL_document.id = piVar.e;
-                int i11 = this.d;
-                tL_document.user_id = d20.i(i11).e();
-                TLRPC.TL_document tL_document2 = mediaController.e1;
-                tL_document2.mime_type = "audio/ogg";
-                tL_document2.file_reference = new byte[0];
-                tz.y();
-                mediaController.i1 = new ne(piVar.a);
-                b8.z(4).mkdirs();
-                File file = mediaController.i1;
-                Set set = c1.a;
-                if (file != null && (absolutePath = file.getAbsolutePath()) != null) {
-                    c1.a.add(absolutePath);
-                }
+                String[] strArr = MediaController.U1;
                 try {
-                    mediaController.c1 = true;
-                    mediaController.j1 = piVar.d;
-                    mediaController.k1 = piVar.c;
-                    mediaController.u1 = piVar.b;
-                    mediaController.t1 = piVar.f;
-                    mediaController.l1 = j10;
-                    mediaController.n1 = j11;
-                    mediaController.o1 = ojVar;
-                    jj jjVar2 = this.n;
-                    mediaController.m1 = jjVar2 == null ? 0L : jj.c2(mediaController.g1, jjVar2.k, false, false);
-                    mediaController.g1 = i11;
-                    mediaController.p1 = jjVar;
-                    mediaController.q1 = jjVar2;
-                    mediaController.r1 = storyItem;
-                    mediaController.s1 = mediaController.s1;
-                    TLRPC.TL_document tL_document3 = mediaController.e1;
-                    File file2 = mediaController.i1;
-                    i0.g3(new cn(mediaController, file2, tL_document3, file2.exists() ? MediaController.getWaveform(file2.getAbsolutePath()) : null, piVar, 5));
+                    mediaController.z1 = 48000;
+                    int minBufferSize = AudioRecord.getMinBufferSize(48000, 16, 2);
+                    if (minBufferSize <= 0) {
+                        minBufferSize = 1280;
+                    }
+                    mediaController.y1 = minBufferSize;
+                    while (i10 < 5) {
+                        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(mediaController.y1);
+                        allocateDirect.order(ByteOrder.nativeOrder());
+                        mediaController.w1.add(allocateDirect);
+                        i10++;
+                    }
                     break;
                 } catch (Exception e) {
                     f8.g(e, true);
-                    mediaController.e1 = null;
-                    c1.b(mediaController.i1);
-                    mediaController.i1.delete();
-                    mediaController.i1 = null;
-                    try {
-                        mediaController.d1.release();
-                        mediaController.d1 = null;
-                    } catch (Exception e7) {
-                        f8.g(e7, true);
-                    }
-                    MediaController.j0(false);
-                    i0.g3(new dd(mediaController, i11, j10, 1));
                     return;
                 }
+            case 1:
+                MediaController mediaController2 = this.b;
+                String[] strArr2 = MediaController.U1;
+                try {
+                    mediaController2.p0 = wp.d1().getFloat("playbackSpeed", 1.0f);
+                    mediaController2.q0 = wp.d1().getFloat("musicPlaybackSpeed", 1.0f);
+                    mediaController2.r0 = wp.d1().getFloat("fastPlaybackSpeed", 1.8f);
+                    mediaController2.s0 = wp.d1().getFloat("fastMusicPlaybackSpeed", 1.8f);
+                    SensorManager sensorManager = (SensorManager) w0.b.getSystemService("sensor");
+                    mediaController2.c = sensorManager;
+                    mediaController2.h = sensorManager.getDefaultSensor(10);
+                    Sensor defaultSensor = mediaController2.c.getDefaultSensor(9);
+                    mediaController2.n = defaultSensor;
+                    if (mediaController2.h == null || defaultSensor == null) {
+                        if (v2.a) {
+                            f8.b("gravity or linear sensor not found");
+                        }
+                        mediaController2.f = mediaController2.c.getDefaultSensor(1);
+                        mediaController2.h = null;
+                        mediaController2.n = null;
+                    }
+                    mediaController2.e = mediaController2.c.getDefaultSensor(8);
+                    mediaController2.d = ((PowerManager) w0.b.getSystemService("power")).newWakeLock(32, "telegram:proximity_lock");
+                } catch (Exception e7) {
+                    f8.g(e7, true);
+                }
+                try {
+                    ue ueVar = new ue(mediaController2);
+                    TelephonyManager telephonyManager = (TelephonyManager) w0.b.getSystemService("phone");
+                    if (telephonyManager != null) {
+                        telephonyManager.listen(ueVar, 32);
+                        break;
+                    }
+                } catch (Exception e10) {
+                    f8.g(e10, true);
+                    return;
+                }
+                break;
+            case 2:
+                MediaController mediaController3 = this.b;
+                String[] strArr3 = MediaController.U1;
+                while (i10 < 4) {
+                    at.f(i10).b(mediaController3, at.Y1);
+                    at.f(i10).b(mediaController3, at.R1);
+                    at.f(i10).b(mediaController3, 1);
+                    at.f(i10).b(mediaController3, 7);
+                    at.f(i10).b(mediaController3, 41);
+                    at.f(i10).b(mediaController3, 73);
+                    at.f(i10).b(mediaController3, 32);
+                    at.f(i10).b(mediaController3, at.T3);
+                    at.e().b(mediaController3, at.H4);
+                    i10++;
+                }
+                break;
+            case 3:
+                MediaController mediaController4 = this.b;
+                Sensor sensor = mediaController4.n;
+                if (sensor != null) {
+                    mediaController4.c.registerListener(mediaController4, sensor, 30000);
+                }
+                Sensor sensor2 = mediaController4.h;
+                if (sensor2 != null) {
+                    mediaController4.c.registerListener(mediaController4, sensor2, 30000);
+                }
+                Sensor sensor3 = mediaController4.f;
+                if (sensor3 != null) {
+                    mediaController4.c.registerListener(mediaController4, sensor3, 30000);
+                }
+                mediaController4.c.registerListener(mediaController4, mediaController4.e, 3);
+                break;
+            case 4:
+                MediaController mediaController5 = this.b;
+                String[] strArr4 = MediaController.U1;
+                mediaController5.q(true, true, false, false);
+                break;
+            case 5:
+                MediaController mediaController6 = this.b;
+                Sensor sensor4 = mediaController6.h;
+                if (sensor4 != null) {
+                    mediaController6.c.unregisterListener(mediaController6, sensor4);
+                }
+                Sensor sensor5 = mediaController6.n;
+                if (sensor5 != null) {
+                    mediaController6.c.unregisterListener(mediaController6, sensor5);
+                }
+                Sensor sensor6 = mediaController6.f;
+                if (sensor6 != null) {
+                    mediaController6.c.unregisterListener(mediaController6, sensor6);
+                }
+                mediaController6.c.unregisterListener(mediaController6, mediaController6.e);
+                break;
+            case 6:
+                MediaController.d(this.b);
+                break;
+            case 7:
+                MediaController mediaController7 = this.b;
+                mediaController7.K1 = null;
+                at.f(mediaController7.g1).k(at.m2, Integer.valueOf(mediaController7.f1));
+                break;
+            case 8:
+                MediaController mediaController8 = this.b;
+                String[] strArr5 = MediaController.U1;
+                mediaController8.Y(true);
+                mediaController8.d1 = new AudioRecord(0, mediaController8.z1, 16, 2, mediaController8.y1);
+                System.currentTimeMillis();
+                mediaController8.k1 = 0;
+                mediaController8.u1 = 0L;
+                mediaController8.x1.rewind();
+                mediaController8.d1.startRecording();
+                mediaController8.L1.c(mediaController8.N1);
+                at.f(mediaController8.g1).k(at.p2, new Object[0]);
+                break;
             default:
-                MediaController.b(this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, (sw) obj);
+                MediaController mediaController9 = this.b;
+                String[] strArr6 = MediaController.U1;
+                mediaController9.q(true, true, false, false);
                 break;
         }
-    }
-
-    public /* synthetic */ rd(MediaController mediaController, int i10, pi piVar, int i11, long j10, long j11, oj ojVar, jj jjVar, jj jjVar2, TL_stories.StoryItem storyItem) {
-        this.b = mediaController;
-        this.c = i10;
-        this.w = piVar;
-        this.d = i11;
-        this.e = j10;
-        this.f = j11;
-        this.h = ojVar;
-        this.n = jjVar;
-        this.r = jjVar2;
-        this.s = storyItem;
     }
 }

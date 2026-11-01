@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b11 extends FrameLayout {
     public float a;
@@ -30,7 +30,7 @@ public final class b11 extends FrameLayout {
         this.f = iVar;
         o1.j jVar = new o1.j(iVar);
         jVar.m = org.telegram.ui.Cells.f1.p(0.0f, 750.0f, 1.0f);
-        jVar.b(new jc0(this, 5));
+        jVar.b(new ic0(this, 5));
         this.h = jVar;
         this.n = new s0("progress", 7);
         setWillNotDraw(false);
@@ -65,9 +65,9 @@ public final class b11 extends FrameLayout {
         ((FrameLayout.LayoutParams) secretMediaViewer.Q.getLayoutParams()).rightMargin = org.telegram.messenger.i0.L(12.0f);
         this.d = false;
         super.onMeasure(i10, i11);
-        uq0 uq0Var = secretMediaViewer.D;
-        if (uq0Var != null) {
-            j10 = uq0Var.U();
+        sq0 sq0Var = secretMediaViewer.D;
+        if (sq0Var != null) {
+            j10 = sq0Var.U();
         }
         j10 = 0;
         int ceil = (int) Math.ceil(secretMediaViewer.Q.getPaint().measureText(String.format(Locale.ROOT, "%1$s / %1$s", (j10 / 1000) / 60 > 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Long.valueOf(r5 / 60), Long.valueOf(r5 % 60), Long.valueOf(r12 % 60)) : String.format(Locale.ROOT, "%02d:%02d", Long.valueOf(r5), Long.valueOf(r12 % 60)))));
@@ -83,12 +83,12 @@ public final class b11 extends FrameLayout {
                 this.e = ceil;
             }
         }
-        org.telegram.ui.Components.w61 w61Var = secretMediaViewer.O;
+        org.telegram.ui.Components.x61 x61Var = secretMediaViewer.O;
         int z10 = org.telegram.messenger.m5.z(16.0f, getMeasuredWidth(), ceil);
         int measuredHeight = getMeasuredHeight();
-        w61Var.h = z10;
-        w61Var.i = measuredHeight;
-        View view = w61Var.v;
+        x61Var.h = z10;
+        x61Var.i = measuredHeight;
+        View view = x61Var.v;
         if (view != null) {
             view.invalidate();
         }

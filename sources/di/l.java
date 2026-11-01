@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public abstract class l {
     public static int c;
@@ -42,7 +42,7 @@ public abstract class l {
             int i13 = b10[i11 + 1];
             int i14 = b10[i11 + 2];
             if (i12 >= 0 && i13 <= i10 && i12 < i13) {
-                int i15 = i14 & zs.e4;
+                int i15 = i14 & at.e4;
                 if (i15 != 0) {
                     spannable.setSpan(new e(i15), i12, i13, 33);
                 }

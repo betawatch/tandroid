@@ -18,9 +18,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ny extends sk0 {
+public final class ny extends tk0 {
     public final Context c;
     public int d;
     public final SparseArray e = new SparseArray();
@@ -36,9 +36,9 @@ public final class ny extends sk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
-        return c1Var.a instanceof tk0;
+        return c1Var.a instanceof uk0;
     }
 
     public final int E(Object obj) {
@@ -144,8 +144,8 @@ public final class ny extends sk0 {
                 i10 = i17;
             } else {
                 if (i17 == -4) {
-                    org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i13);
-                    SharedPreferences sharedPreferences = org.telegram.messenger.vp.r1(i13).g7;
+                    org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(i13);
+                    SharedPreferences sharedPreferences = org.telegram.messenger.wp.r1(i13).g7;
                     ArrayList arrayList3 = b02.s0[i14];
                     if (vyVar2.m1.isEmpty()) {
                         i10 = i17;
@@ -367,7 +367,7 @@ public final class ny extends sk0 {
                 o3Var.setHeight(org.telegram.messenger.i0.L(8.0f));
                 return;
             } else {
-                int A = org.telegram.messenger.z20.A(82.0f, (int) Math.ceil(arrayList.size() / this.d), vyVar.h.getHeight());
+                int A = org.telegram.messenger.a30.A(82.0f, (int) Math.ceil(arrayList.size() / this.d), vyVar.h.getHeight());
                 o3Var.setHeight(A > 0 ? A : 1);
                 return;
             }
@@ -381,7 +381,7 @@ public final class ny extends sk0 {
                 if (i12 != 5) {
                     return;
                 }
-                ((org.telegram.ui.Cells.n8) view).b(org.telegram.messenger.cd.L0(org.telegram.messenger.ui.b0(i11).r0 ? 2131750833 : 2131750834, null), R.drawable.msg_close, org.telegram.messenger.cd.L0(2131754898, null), 0, 0);
+                ((org.telegram.ui.Cells.n8) view).b(org.telegram.messenger.dd.L0(org.telegram.messenger.vi.b0(i11).r0 ? 2131750833 : 2131750834, null), R.drawable.msg_close, org.telegram.messenger.dd.L0(2131754898, null), 0, 0);
                 return;
             }
         }
@@ -389,8 +389,8 @@ public final class ny extends sk0 {
         n8Var.setHeaderOnClick(null);
         if (i10 == vyVar.f1) {
             int i15 = (vyVar.g1 && vyVar.h1 == null) ? 0 : vyVar.h1 != null ? R.drawable.msg_mini_customize : R.drawable.msg_close;
-            TLRPC.Chat L0 = vyVar.J1 != null ? org.telegram.messenger.vp.r1(i11).L0(Long.valueOf(vyVar.J1.id)) : null;
-            n8Var.a(i15, org.telegram.messenger.cd.a0("CurrentGroupStickers", null, 2131751695, L0 != null ? L0.title : "Group Stickers"));
+            TLRPC.Chat L0 = vyVar.J1 != null ? org.telegram.messenger.wp.r1(i11).L0(Long.valueOf(vyVar.J1.id)) : null;
+            n8Var.a(i15, org.telegram.messenger.dd.a0("CurrentGroupStickers", null, 2131751695, L0 != null ? L0.title : "Group Stickers"));
             return;
         }
         Object obj2 = sparseArray.get(i10);
@@ -444,11 +444,11 @@ public final class ny extends sk0 {
             return;
         }
         if (obj2 == vyVar.j1) {
-            n8Var.b(org.telegram.messenger.cd.L0(2131746379, null), R.drawable.msg_close, org.telegram.messenger.cd.L0(2131752063, null), 0, 0);
+            n8Var.b(org.telegram.messenger.dd.L0(2131746379, null), R.drawable.msg_close, org.telegram.messenger.dd.L0(2131752063, null), 0, 0);
         } else if (obj2 == vyVar.k1) {
-            n8Var.a(0, org.telegram.messenger.cd.L0(2131750842, null));
+            n8Var.a(0, org.telegram.messenger.dd.L0(2131750842, null));
         } else if (obj2 == vyVar.l1) {
-            n8Var.a(0, org.telegram.messenger.cd.L0(2131746962, null));
+            n8Var.a(0, org.telegram.messenger.dd.L0(2131746962, null));
         }
     }
 
@@ -486,7 +486,7 @@ public final class ny extends sk0 {
                 textView2.setGravity(17);
                 org.telegram.messenger.m5.m(textView2, org.telegram.ui.ActionBar.t6.Gi, null, 1, 14.0f);
                 textView2.setBackground(org.telegram.ui.ActionBar.j6.f(org.telegram.ui.ActionBar.t6.Ci, 4.0f));
-                textView2.setText(org.telegram.messenger.cd.L0(2131752116, null).toUpperCase());
+                textView2.setText(org.telegram.messenger.dd.L0(2131752116, null).toUpperCase());
                 l8Var.addView(textView2, w7.b6.t(-2, 28, 51, 17, 10, 14, 8));
                 l8Var.setAddOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ky
                     public final /* synthetic */ ny b;
@@ -508,9 +508,9 @@ public final class ny extends sk0 {
                                 break;
                             case 1:
                                 vy vyVar3 = this.b.w;
-                                ArrayList arrayList = org.telegram.messenger.ui.b0(vyVar3.c1).s0[0];
+                                ArrayList arrayList = org.telegram.messenger.vi.b0(vyVar3.c1).s0[0];
                                 if (!arrayList.isEmpty()) {
-                                    org.telegram.messenger.vp.r1(vyVar3.c1).g7.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    org.telegram.messenger.wp.r1(vyVar3.c1).g7.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
                                     ny nyVar = vyVar3.y0;
                                     if (nyVar != null) {
                                         nyVar.p(1, 2);
@@ -522,7 +522,7 @@ public final class ny extends sk0 {
                             default:
                                 org.telegram.ui.ActionBar.k2 k2Var = this.b.w.Y1;
                                 if (k2Var instanceof org.telegram.ui.un) {
-                                    ((org.telegram.ui.un) k2Var).oa();
+                                    ((org.telegram.ui.un) k2Var).ta();
                                     break;
                                 }
                                 break;
@@ -559,9 +559,9 @@ public final class ny extends sk0 {
                                 break;
                             case 1:
                                 vy vyVar3 = this.b.w;
-                                ArrayList arrayList = org.telegram.messenger.ui.b0(vyVar3.c1).s0[0];
+                                ArrayList arrayList = org.telegram.messenger.vi.b0(vyVar3.c1).s0[0];
                                 if (!arrayList.isEmpty()) {
-                                    org.telegram.messenger.vp.r1(vyVar3.c1).g7.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    org.telegram.messenger.wp.r1(vyVar3.c1).g7.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
                                     ny nyVar = vyVar3.y0;
                                     if (nyVar != null) {
                                         nyVar.p(1, 2);
@@ -573,7 +573,7 @@ public final class ny extends sk0 {
                             default:
                                 org.telegram.ui.ActionBar.k2 k2Var = this.b.w.Y1;
                                 if (k2Var instanceof org.telegram.ui.un) {
-                                    ((org.telegram.ui.un) k2Var).oa();
+                                    ((org.telegram.ui.un) k2Var).ta();
                                     break;
                                 }
                                 break;
@@ -626,9 +626,9 @@ public final class ny extends sk0 {
                                 break;
                             case 1:
                                 vy vyVar3 = this.b.w;
-                                ArrayList arrayList = org.telegram.messenger.ui.b0(vyVar3.c1).s0[0];
+                                ArrayList arrayList = org.telegram.messenger.vi.b0(vyVar3.c1).s0[0];
                                 if (!arrayList.isEmpty()) {
-                                    org.telegram.messenger.vp.r1(vyVar3.c1).g7.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    org.telegram.messenger.wp.r1(vyVar3.c1).g7.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
                                     ny nyVar = vyVar3.y0;
                                     if (nyVar != null) {
                                         nyVar.p(1, 2);
@@ -640,7 +640,7 @@ public final class ny extends sk0 {
                             default:
                                 org.telegram.ui.ActionBar.k2 k2Var = this.b.w.Y1;
                                 if (k2Var instanceof org.telegram.ui.un) {
-                                    ((org.telegram.ui.un) k2Var).oa();
+                                    ((org.telegram.ui.un) k2Var).ta();
                                     break;
                                 }
                                 break;
@@ -654,12 +654,12 @@ public final class ny extends sk0 {
                 TextView textView3 = new TextView(context);
                 textView3.setGravity(17);
                 org.telegram.messenger.m5.m(textView3, i13, p6Var, 1, 11.0f);
-                textView3.setText(org.telegram.messenger.cd.L0(2131751753, null));
+                textView3.setText(org.telegram.messenger.dd.L0(2131751753, null));
                 linearLayout.addView(textView3, w7.b6.t(-1, -2, 17, 0, 3, 0, 0));
-                frameLayout.addView(linearLayout, w7.b6.d(-1, -1.0f, org.telegram.messenger.zs.E1, 8.0f, 8.0f, 8.0f, 8.0f));
+                frameLayout.addView(linearLayout, w7.b6.d(-1, -1.0f, org.telegram.messenger.at.E1, 8.0f, 8.0f, 8.0f, 8.0f));
                 view = frameLayout;
                 break;
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

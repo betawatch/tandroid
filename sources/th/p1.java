@@ -7,9 +7,9 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.nb0;
+import org.telegram.ui.mb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p1 extends j0 {
     public final /* synthetic */ o7 h0;
@@ -73,10 +73,10 @@ public final class p1 extends j0 {
                 valueAnimator.cancel();
                 this.e0 = null;
             }
-            nb0 nb0Var = this.c;
-            nb0Var.invalidate();
+            mb0 mb0Var = this.c;
+            mb0Var.invalidate();
             if (z11) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(nb0Var.getAlpha(), z10 ? 0.0f : 1.0f);
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(mb0Var.getAlpha(), z10 ? 0.0f : 1.0f);
                 this.e0 = ofFloat;
                 ofFloat.addUpdateListener(new qh.e0(this, 12));
                 this.e0.addListener(new sg.y(2, this, z10));
@@ -85,7 +85,7 @@ public final class p1 extends j0 {
                 this.e0.start();
             } else {
                 this.a.setAlpha(z10 ? 0.0f : 0.5f);
-                nb0Var.setAlpha(z10 ? 0.0f : 1.0f);
+                mb0Var.setAlpha(z10 ? 0.0f : 1.0f);
             }
             invalidate();
         }

@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e5 extends ReplacementSpan {
     public final Paint a;
@@ -45,9 +45,9 @@ public final class e5 extends ReplacementSpan {
     public final void c(long j10) {
         int i10 = this.e;
         if (j10 >= 0) {
-            e(org.telegram.messenger.vp.r1(i10).Z1(Long.valueOf(j10)));
+            e(org.telegram.messenger.wp.r1(i10).Z1(Long.valueOf(j10)));
         } else {
-            b(org.telegram.messenger.vp.r1(i10).L0(Long.valueOf(-j10)));
+            b(org.telegram.messenger.wp.r1(i10).L0(Long.valueOf(-j10)));
         }
     }
 
@@ -113,7 +113,7 @@ public final class e5 extends ReplacementSpan {
     public e5(float f7, int i10, View view) {
         this.h = true;
         this.n = new d5(this, 0);
-        this.s = org.telegram.messenger.zs.e4;
+        this.s = org.telegram.messenger.at.e4;
         this.w = true;
         this.e = i10;
         ImageReceiver imageReceiver = new ImageReceiver(view);

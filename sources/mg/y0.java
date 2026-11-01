@@ -4,21 +4,21 @@ import ag.m2;
 import android.content.Intent;
 import android.net.Uri;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y0 extends ha {
     public final TLRPC.TL_payments_checkedGiftCode P1;
@@ -87,15 +87,15 @@ public final class y0 extends ha {
         }
         m2 m2Var = new m2(atomicBoolean, k2Var, str, eVar, 1);
         k kVar = new k(atomicBoolean, eVar, 1);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(d20.s0);
-        vp r12 = vp.r1(d20.s0);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(e20.s0);
+        wp r12 = wp.r1(e20.s0);
         TLRPC.TL_payments_checkGiftCode tL_payments_checkGiftCode = new TLRPC.TL_payments_checkGiftCode();
         tL_payments_checkGiftCode.slug = str;
         connectionsManager.sendRequest(tL_payments_checkGiftCode, new ag.p0(r12, m2Var, kVar, 4));
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
+    public final tk0 L0(uk0 uk0Var) {
         x0 x0Var = new x0(this, this.I0);
         this.R1 = x0Var;
         return x0Var;
@@ -103,11 +103,11 @@ public final class y0 extends ha {
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return this.Q1 ? cd.L0(2131753500, null) : cd.L0(2131753173, null);
+        return this.Q1 ? dd.L0(2131753500, null) : dd.L0(2131753173, null);
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final void U0(uu0 uu0Var) {
+    public final void U0(vu0 vu0Var) {
         wb.a(this.c, new u(1));
     }
 }

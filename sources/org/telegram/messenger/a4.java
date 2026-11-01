@@ -7,9 +7,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a4 implements j20 {
+public final /* synthetic */ class a4 implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -20,7 +20,7 @@ public final /* synthetic */ class a4 implements j20 {
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         boolean z10;
         switch (this.a) {
@@ -36,10 +36,10 @@ public final /* synthetic */ class a4 implements j20 {
                     ArrayList arrayList = new ArrayList();
                     if (chatThemes instanceof TL_account.Tl_chatThemes) {
                         TL_account.Tl_chatThemes tl_chatThemes = (TL_account.Tl_chatThemes) chatThemes;
-                        hs messagesStorage = g4Var.getMessagesStorage();
+                        is messagesStorage = g4Var.getMessagesStorage();
                         ArrayList<TLRPC.ChatTheme> arrayList2 = tl_chatThemes.themes;
                         messagesStorage.getClass();
-                        messagesStorage.I(new hr(2, messagesStorage, arrayList2));
+                        messagesStorage.I(new ir(2, messagesStorage, arrayList2));
                         g4Var.getMessagesStorage().m1(tl_chatThemes.users, tl_chatThemes.chats, true, true);
                         g4Var.getMessagesController().V3(tl_chatThemes.users, false);
                         g4Var.getMessagesController().P3(tl_chatThemes.chats, false);
@@ -63,7 +63,7 @@ public final /* synthetic */ class a4 implements j20 {
                             y3Var.n(1, null);
                             arrayList4.add(y3Var);
                         }
-                        i0.g3(new cn(g4Var, tl_chatThemes, arrayList4, arrayList, apVar, 1));
+                        i0.g3(new dn(g4Var, tl_chatThemes, arrayList4, arrayList, apVar, 1));
                         break;
                     } else if (chatThemes instanceof TL_account.TL_chatThemesNotModified) {
                         i0.g3(new e4(21, g4Var, apVar));
@@ -72,44 +72,44 @@ public final /* synthetic */ class a4 implements j20 {
                 }
                 break;
             case 1:
-                final x9 x9Var = (x9) this.b;
-                final j20 j20Var = (j20) this.c;
+                final y9 y9Var = (y9) this.b;
+                final k20 k20Var = (k20) this.c;
                 final TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState = (TL_payments.TL_StarGiftAuctionState) obj;
                 final TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                LongSparseArray longSparseArray = x9Var.e;
+                LongSparseArray longSparseArray = y9Var.e;
                 if (tL_StarGiftAuctionState != null) {
-                    x9Var.getMessagesController().V3(tL_StarGiftAuctionState.users, false);
-                    x9Var.getMessagesController().P3(tL_StarGiftAuctionState.chats, false);
+                    y9Var.getMessagesController().V3(tL_StarGiftAuctionState.users, false);
+                    y9Var.getMessagesController().P3(tL_StarGiftAuctionState.chats, false);
                 }
                 if (tL_StarGiftAuctionState != null && !((Boolean) longSparseArray.get(tL_StarGiftAuctionState.gift.id, Boolean.FALSE)).booleanValue()) {
                     longSparseArray.put(tL_StarGiftAuctionState.gift.id, Boolean.TRUE);
-                    x9Var.j(tL_StarGiftAuctionState.gift.id, new q20() { // from class: org.telegram.messenger.p9
-                        @Override // org.telegram.messenger.q20
+                    y9Var.j(tL_StarGiftAuctionState.gift.id, new r20() { // from class: org.telegram.messenger.q9
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj3) {
-                            x9 x9Var2 = x9.this;
-                            x9Var2.getClass();
+                            y9 y9Var2 = y9.this;
+                            y9Var2.getClass();
                             TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState2 = tL_StarGiftAuctionState;
-                            x9Var2.d(tL_StarGiftAuctionState2.gift.id).c = (ArrayList) obj3;
-                            x9Var2.f(tL_StarGiftAuctionState2.gift.id, tL_StarGiftAuctionState2);
-                            j20Var.a(tL_StarGiftAuctionState2, tL_error2);
+                            y9Var2.d(tL_StarGiftAuctionState2.gift.id).c = (ArrayList) obj3;
+                            y9Var2.f(tL_StarGiftAuctionState2.gift.id, tL_StarGiftAuctionState2);
+                            k20Var.a(tL_StarGiftAuctionState2, tL_error2);
                         }
                     });
                     break;
                 } else {
                     if (tL_StarGiftAuctionState != null) {
-                        x9Var.f(tL_StarGiftAuctionState.gift.id, tL_StarGiftAuctionState);
+                        y9Var.f(tL_StarGiftAuctionState.gift.id, tL_StarGiftAuctionState);
                     }
-                    j20Var.a(tL_StarGiftAuctionState, tL_error2);
+                    k20Var.a(tL_StarGiftAuctionState, tL_error2);
                     break;
                 }
             case 2:
-                vp vpVar = (vp) this.b;
-                yh.c0 c0Var = (yh.c0) this.c;
+                wp wpVar = (wp) this.b;
+                yh.b0 b0Var = (yh.b0) this.c;
                 TL_communities.PeerLinkRequests peerLinkRequests = (TL_communities.PeerLinkRequests) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 if (peerLinkRequests != null) {
-                    vpVar.P3(peerLinkRequests.chats, false);
-                    vpVar.V3(peerLinkRequests.users, false);
+                    wpVar.P3(peerLinkRequests.chats, false);
+                    wpVar.V3(peerLinkRequests.users, false);
                     ArrayList<TL_communities.CommunityPeerRequest> arrayList5 = peerLinkRequests.requests;
                     int size2 = arrayList5.size();
                     int i12 = 0;
@@ -117,34 +117,34 @@ public final /* synthetic */ class a4 implements j20 {
                         TL_communities.CommunityPeerRequest communityPeerRequest = arrayList5.get(i12);
                         i12++;
                         long j10 = -o5.o(communityPeerRequest.peer);
-                        if (vpVar.M0(j10) == null) {
-                            vpVar.T2(0, j10, true);
+                        if (wpVar.M0(j10) == null) {
+                            wpVar.T2(0, j10, true);
                         }
                     }
-                    c0Var.a(peerLinkRequests, null);
+                    b0Var.a(peerLinkRequests, null);
                     break;
                 } else {
-                    c0Var.a(null, tL_error3);
+                    b0Var.a(null, tL_error3);
                     break;
                 }
             case 3:
-                vp vpVar2 = (vp) this.b;
+                wp wpVar2 = (wp) this.b;
                 vh.m6 m6Var = (vh.m6) this.c;
                 TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) obj;
                 if (messages_chats != null) {
-                    vpVar2.P3(messages_chats.chats, false);
-                    vpVar2.R7 = messages_chats.chats;
+                    wpVar2.P3(messages_chats.chats, false);
+                    wpVar2.R7 = messages_chats.chats;
                 }
                 m6Var.a(messages_chats != null ? messages_chats.chats : null);
                 break;
             case 4:
-                vp vpVar3 = (vp) this.b;
+                wp wpVar3 = (wp) this.b;
                 org.telegram.ui.Components.nr nrVar = (org.telegram.ui.Components.nr) this.c;
                 TL_communities.ParticipantJoinedChats participantJoinedChats = (TL_communities.ParticipantJoinedChats) obj;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
                 if (participantJoinedChats != null) {
-                    vpVar3.P3(participantJoinedChats.chats, false);
-                    vpVar3.V3(participantJoinedChats.users, false);
+                    wpVar3.P3(participantJoinedChats.chats, false);
+                    wpVar3.V3(participantJoinedChats.users, false);
                     ArrayList<Long> arrayList6 = participantJoinedChats.creator_chat_ids;
                     int size3 = arrayList6.size();
                     int i13 = 0;
@@ -152,8 +152,8 @@ public final /* synthetic */ class a4 implements j20 {
                         Long l4 = arrayList6.get(i13);
                         i13++;
                         long longValue = l4.longValue();
-                        if (vpVar3.M0(longValue) == null) {
-                            vpVar3.T2(0, longValue, true);
+                        if (wpVar3.M0(longValue) == null) {
+                            wpVar3.T2(0, longValue, true);
                         }
                     }
                 }
@@ -161,30 +161,30 @@ public final /* synthetic */ class a4 implements j20 {
                 break;
             case 5:
                 org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) this.b;
-                j20 j20Var2 = (j20) this.c;
+                k20 k20Var2 = (k20) this.c;
                 TL_account.Passkey passkey = (TL_account.Passkey) obj;
                 TLRPC.TL_error tL_error5 = (TLRPC.TL_error) obj2;
                 x1Var.dismiss();
                 if (tL_error5 != null) {
-                    j20Var2.a(null, tL_error5.text);
+                    k20Var2.a(null, tL_error5.text);
                     break;
                 } else {
-                    j20Var2.a(passkey, null);
+                    k20Var2.a(passkey, null);
                     break;
                 }
             default:
-                z10 z10Var = (z10) this.b;
-                w10 w10Var = (w10) this.c;
+                a20 a20Var = (a20) this.b;
+                x10 x10Var = (x10) this.c;
                 TLRPC.TL_error tL_error6 = (TLRPC.TL_error) obj2;
-                a20 a20Var = z10Var.i;
+                b20 b20Var = a20Var.i;
                 if ((((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue) && tL_error6 == null) {
                     z10 = true;
                 } else {
-                    a20Var.getClass();
+                    b20Var.getClass();
                     z10 = false;
                 }
-                w10Var.a(Boolean.valueOf(z10));
-                a20Var.getClass();
+                x10Var.a(Boolean.valueOf(z10));
+                b20Var.getClass();
                 break;
         }
     }

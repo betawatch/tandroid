@@ -12,17 +12,17 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x4 extends FrameLayout {
     public static zz y;
@@ -49,7 +49,7 @@ public final class x4 extends FrameLayout {
         this.d = L;
         g9Var.setBackground(L);
         g9Var.u(org.telegram.messenger.i0.L(30.0f), org.telegram.messenger.i0.L(30.0f));
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         addView(g9Var, w7.b6.d(42, 42.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 15.0f, 11.0f, z10 ? 15.0f : 0.0f, 0.0f));
         org.telegram.ui.Components.f6 f6Var = new org.telegram.ui.Components.f6(context, true, true, true);
         this.a = f6Var;
@@ -60,10 +60,10 @@ public final class x4 extends FrameLayout {
         f6Var.setEllipsizeByGradient(true);
         org.telegram.ui.ActionBar.a7.Z(f6Var, org.telegram.ui.ActionBar.t6.G6, p6Var);
         f6Var.setTypeface(org.telegram.messenger.i0.o());
-        f6Var.setGravity(cd.X ? 5 : 3);
+        f6Var.setGravity(dd.X ? 5 : 3);
         f6Var.getDrawable().M = org.telegram.messenger.i0.q.x;
-        zs.i(f6Var);
-        boolean z11 = cd.X;
+        at.i(f6Var);
+        boolean z11 = dd.X;
         addView(f6Var, w7.b6.d(-1, 22.0f, (z11 ? 5 : 3) | 48, z11 ? 16 : 73, 10.0f, z11 ? 73 : 16, 0.0f));
         org.telegram.ui.Components.f6 f6Var2 = new org.telegram.ui.Components.f6(context, true, true, true);
         this.b = f6Var2;
@@ -72,8 +72,8 @@ public final class x4 extends FrameLayout {
         f6Var2.setTextSize(org.telegram.messenger.i0.L(14.0f));
         f6Var2.setEllipsizeByGradient(true);
         org.telegram.ui.ActionBar.a7.Z(f6Var2, org.telegram.ui.ActionBar.t6.A6, p6Var);
-        f6Var2.setGravity(cd.X ? 5 : 3);
-        boolean z12 = cd.X;
+        f6Var2.setGravity(dd.X ? 5 : 3);
+        boolean z12 = dd.X;
         addView(f6Var2, w7.b6.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 16 : 73, 35.0f, z12 ? 73 : 16, 0.0f));
         g9Var.setAlpha(this.w);
         f6Var.setAlpha(this.w);
@@ -117,11 +117,11 @@ public final class x4 extends FrameLayout {
                 this.s = tL_messageMediaVenue.title;
                 this.n = charSequence;
             }
-            f6Var.c(charSequence, this.h && !cd.X && z11, true);
+            f6Var.c(charSequence, this.h && !dd.X && z11, true);
         }
         org.telegram.ui.Components.f6 f6Var2 = this.b;
         if (tL_messageMediaVenue != null) {
-            f6Var2.c(tL_messageMediaVenue.address, this.h && !cd.X && z11, true);
+            f6Var2.c(tL_messageMediaVenue.address, this.h && !dd.X && z11, true);
         }
         int a2 = a(i10);
         org.telegram.ui.Components.g9 g9Var = this.c;
@@ -230,7 +230,7 @@ public final class x4 extends FrameLayout {
         y.updateColors();
         y.f();
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.w) * 255.0f), 31);
-        canvas.translate(org.telegram.messenger.i0.L(2.0f), z20.y(56.0f, getMeasuredHeight(), 2));
+        canvas.translate(org.telegram.messenger.i0.L(2.0f), a30.y(56.0f, getMeasuredHeight(), 2));
         y.draw(canvas);
         canvas.restore();
         super.onDraw(canvas);
@@ -239,7 +239,7 @@ public final class x4 extends FrameLayout {
             if (d == null) {
                 d = org.telegram.ui.ActionBar.t6.k0;
             }
-            canvas.drawLine(cd.X ? 0.0f : org.telegram.messenger.i0.L(72.0f), getHeight() - 1, cd.X ? getWidth() - org.telegram.messenger.i0.L(72.0f) : getWidth(), getHeight() - 1, d);
+            canvas.drawLine(dd.X ? 0.0f : org.telegram.messenger.i0.L(72.0f), getHeight() - 1, dd.X ? getWidth() - org.telegram.messenger.i0.L(72.0f) : getWidth(), getHeight() - 1, d);
         }
     }
 

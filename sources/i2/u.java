@@ -11,21 +11,21 @@ import java.util.Collections;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.is;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.vi;
 import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Components.fo;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.ua0;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.yn;
 import org.telegram.ui.un;
 import org.webrtc.SurfaceTextureHelper;
@@ -33,7 +33,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import rh.l5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class u implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        u61 u61Var;
+        v61 v61Var;
         switch (this.a) {
             case 0:
                 i0 i0Var = (i0) this.d;
@@ -65,9 +65,9 @@ public final /* synthetic */ class u implements Runnable {
                 break;
             case 2:
                 MediaController mediaController = (MediaController) ((c5.x) this.d).c;
-                if (this.b == mediaController.k0 && this.c == 4 && (u61Var = mediaController.j0) != null) {
+                if (this.b == mediaController.k0 && this.c == 4 && (v61Var = mediaController.j0) != null) {
                     try {
-                        u61Var.m0();
+                        v61Var.m0();
                         mediaController.j0 = null;
                         break;
                     } catch (Exception e) {
@@ -77,7 +77,7 @@ public final /* synthetic */ class u implements Runnable {
                 }
                 break;
             case 3:
-                ((ui) this.d).Y[this.b] = this.c;
+                ((vi) this.d).Y[this.b] = this.c;
                 break;
             case 4:
                 PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
@@ -100,7 +100,7 @@ public final /* synthetic */ class u implements Runnable {
             case 9:
                 k2 k2Var = (k2) this.d;
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", d20.i(this.b).e());
+                bundle.putLong("user_id", e20.i(this.b).e());
                 bundle.putInt("message_id", this.c);
                 k2Var.presentFragment(new un(bundle));
                 break;
@@ -108,16 +108,16 @@ public final /* synthetic */ class u implements Runnable {
                 fo foVar = (fo) this.d;
                 int i13 = this.b;
                 if (i13 != 0) {
-                    SharedPreferences sharedPreferences = vp.r1(this.c).e7;
+                    SharedPreferences sharedPreferences = wp.r1(this.c).e7;
                     sharedPreferences.edit().putInt("last_selected_mute_until_time", i13).putInt("last_selected_mute_until_time2", sharedPreferences.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                foVar.E(i13);
+                foVar.y(i13);
                 break;
             case 11:
                 yn ynVar = (yn) this.d;
                 int i14 = this.b;
                 if (i14 != 0) {
-                    SharedPreferences sharedPreferences2 = vp.r1(this.c).e7;
+                    SharedPreferences sharedPreferences2 = wp.r1(this.c).e7;
                     sharedPreferences2.edit().putInt("last_selected_mute_until_time", i14).putInt("last_selected_mute_until_time2", sharedPreferences2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
                 ynVar.a(Integer.valueOf(i14));
@@ -144,12 +144,12 @@ public final /* synthetic */ class u implements Runnable {
                 }
                 break;
             case 13:
-                org.telegram.ui.Components.voip.s0 s0Var = ((org.telegram.ui.Components.voip.r0) this.d).a;
-                jf.f fVar = s0Var.O;
+                org.telegram.ui.Components.voip.t0 t0Var = ((org.telegram.ui.Components.voip.s0) this.d).a;
+                jf.f fVar = t0Var.O;
                 if (fVar != null) {
                     fVar.d(this.b, this.c);
                 }
-                s0Var.a(false);
+                t0Var.a(false);
                 break;
             case 14:
                 ((SurfaceTextureHelper) this.d).lambda$setTextureSize$2(this.b, this.c);
@@ -164,7 +164,7 @@ public final /* synthetic */ class u implements Runnable {
                 int i17 = this.b;
                 zf.x xVar = (zf.x) this.d;
                 try {
-                    SQLiteCursor queryFinalized = hs.a0(i17).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
+                    SQLiteCursor queryFinalized = is.a0(i17).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = new ArrayList();
                     ArrayList arrayList3 = new ArrayList();
@@ -210,7 +210,7 @@ public final /* synthetic */ class u implements Runnable {
                     ArrayList arrayList5 = new ArrayList();
                     if (!arrayList3.isEmpty()) {
                         ArrayList arrayList6 = new ArrayList();
-                        hs.a0(i17).V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
+                        is.a0(i17).V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
                         for (int i20 = 0; i20 < arrayList6.size(); i20++) {
                             zf.y yVar3 = (zf.y) hVar.f(o5.F(((TLRPC.EncryptedChat) arrayList6.get(i20)).id));
                             if (yVar3 != null) {
@@ -220,7 +220,7 @@ public final /* synthetic */ class u implements Runnable {
                     }
                     if (!arrayList2.isEmpty()) {
                         ArrayList arrayList7 = new ArrayList();
-                        hs.a0(i17).Q(TextUtils.join(",", arrayList2), arrayList7);
+                        is.a0(i17).Q(TextUtils.join(",", arrayList2), arrayList7);
                         for (int i21 = 0; i21 < arrayList7.size(); i21++) {
                             TLRPC.Chat chat = (TLRPC.Chat) arrayList7.get(i21);
                             long j11 = -chat.id;
@@ -239,7 +239,7 @@ public final /* synthetic */ class u implements Runnable {
                         }
                     }
                     if (!arrayList.isEmpty()) {
-                        hs.a0(i17).n0(arrayList, arrayList5, false);
+                        is.a0(i17).n0(arrayList, arrayList5, false);
                         for (int i22 = 0; i22 < arrayList5.size(); i22++) {
                             TLRPC.User user = (TLRPC.User) arrayList5.get(i22);
                             zf.y yVar6 = (zf.y) hVar.f(user.id);

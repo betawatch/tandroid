@@ -14,9 +14,9 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class q4 extends View implements org.telegram.ui.Components.qg0 {
+public abstract class q4 extends View implements org.telegram.ui.Components.rg0 {
     public final GradientDrawable[] D;
     public final boolean[] E;
     public final float[] F;
@@ -29,7 +29,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.qg0 
     public int M;
     public float N;
     public int O;
-    public org.telegram.ui.Components.ug0 P;
+    public org.telegram.ui.Components.vg0 P;
     public final TextPaint Q;
     public float R;
     public int S;
@@ -110,24 +110,24 @@ public abstract class q4 extends View implements org.telegram.ui.Components.qg0 
         return this.T;
     }
 
-    @Override // org.telegram.ui.Components.qg0
+    @Override // org.telegram.ui.Components.rg0
     public final void a() {
         Arrays.fill(this.E, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.qg0
+    @Override // org.telegram.ui.Components.rg0
     public final void b(boolean z10) {
         this.E[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.qg0
+    @Override // org.telegram.ui.Components.rg0
     public final void d() {
         invalidate();
     }
 
-    public org.telegram.ui.Components.ug0 getProfileGalleryView() {
+    public org.telegram.ui.Components.vg0 getProfileGalleryView() {
         return this.P;
     }
 
@@ -216,7 +216,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.qg0 
                 paint6.setAlpha((int) (this.G * 85.0f));
                 paint5.setAlpha((int) (this.G * 255.0f));
             }
-            int y3 = org.telegram.messenger.z20.y((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.i0.L(10.0f), realCount);
+            int y3 = org.telegram.messenger.a30.y((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.i0.L(10.0f), realCount);
             int L = org.telegram.messenger.i0.L(8.0f);
             int i15 = 0;
             z10 = false;
@@ -265,7 +265,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.qg0 
                     if (i15 != this.M) {
                         this.H[i15] = 0.75f;
                     } else if (this.b == 3) {
-                        paint6.setAlpha((int) (org.telegram.messenger.i0.W1(org.telegram.ui.Components.gr.j.getInterpolation(this.H[i15]), i11, org.telegram.messenger.zs.e4) * this.G));
+                        paint6.setAlpha((int) (org.telegram.messenger.i0.W1(org.telegram.ui.Components.gr.j.getInterpolation(this.H[i15]), i11, org.telegram.messenger.at.e4) * this.G));
                     }
                     canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f), i15 != this.M ? paint3 : paint6);
                     i15++;
@@ -454,11 +454,11 @@ public abstract class q4 extends View implements org.telegram.ui.Components.qg0 
         gradientDrawableArr[1].setBounds(i10 - i14, 0, i10, i11);
     }
 
-    public void setProfileGalleryView(org.telegram.ui.Components.ug0 ug0Var) {
-        this.P = ug0Var;
+    public void setProfileGalleryView(org.telegram.ui.Components.vg0 vg0Var) {
+        this.P = vg0Var;
     }
 
-    @Override // org.telegram.ui.Components.qg0
+    @Override // org.telegram.ui.Components.rg0
     public void c() {
     }
 }

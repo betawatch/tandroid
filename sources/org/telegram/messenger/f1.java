@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class f1 {
     protected final int currentAccount;
@@ -45,47 +45,47 @@ public abstract class f1 {
         return w8.n(this.parentAccountInstance.a);
     }
 
-    public final nd getLocationController() {
-        return nd.f(this.parentAccountInstance.a);
+    public final od getLocationController() {
+        return od.f(this.parentAccountInstance.a);
     }
 
-    public final ui getMediaDataController() {
-        return ui.b0(this.parentAccountInstance.a);
+    public final vi getMediaDataController() {
+        return vi.b0(this.parentAccountInstance.a);
     }
 
-    public final vi getMemberRequestsController() {
-        return vi.b(this.parentAccountInstance.a);
+    public final wi getMemberRequestsController() {
+        return wi.b(this.parentAccountInstance.a);
     }
 
-    public final vp getMessagesController() {
-        return vp.r1(this.parentAccountInstance.a);
+    public final wp getMessagesController() {
+        return wp.r1(this.parentAccountInstance.a);
     }
 
-    public final hs getMessagesStorage() {
-        return hs.a0(this.parentAccountInstance.a);
+    public final is getMessagesStorage() {
+        return is.a0(this.parentAccountInstance.a);
     }
 
-    public final zs getNotificationCenter() {
-        return zs.f(this.parentAccountInstance.a);
+    public final at getNotificationCenter() {
+        return at.f(this.parentAccountInstance.a);
     }
 
-    public final ot getNotificationsController() {
-        return ot.t(this.parentAccountInstance.a);
+    public final pt getNotificationsController() {
+        return pt.t(this.parentAccountInstance.a);
     }
 
-    public final ow getSecretChatHelper() {
-        return ow.i(this.parentAccountInstance.a);
+    public final pw getSecretChatHelper() {
+        return pw.i(this.parentAccountInstance.a);
     }
 
-    public final qz getSendMessagesHelper() {
-        return qz.C(this.parentAccountInstance.a);
+    public final rz getSendMessagesHelper() {
+        return rz.C(this.parentAccountInstance.a);
     }
 
-    public final uz getStatsController() {
-        return uz.e(this.parentAccountInstance.a);
+    public final vz getStatsController() {
+        return vz.e(this.parentAccountInstance.a);
     }
 
-    public final d20 getUserConfig() {
-        return d20.i(this.parentAccountInstance.a);
+    public final e20 getUserConfig() {
+        return e20.i(this.parentAccountInstance.a);
     }
 }

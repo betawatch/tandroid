@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -54,8 +54,8 @@ public final /* synthetic */ class z implements Runnable {
                 h4Var.Z(false);
                 if (tLObject != null) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
-                    org.telegram.messenger.vp.r1(i11).V3(tL_contacts_resolvedPeer.users, false);
-                    org.telegram.messenger.hs.a0(i11).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
+                    org.telegram.messenger.wp.r1(i11).V3(tL_contacts_resolvedPeer.users, false);
+                    org.telegram.messenger.is.a0(i11).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
                     if (tL_contacts_resolvedPeer.users.isEmpty()) {
                         return;
                     }
@@ -67,7 +67,7 @@ public final /* synthetic */ class z implements Runnable {
                 ((n6) obj2).a(Float.valueOf(((int[]) obj)[0] / i11), Boolean.valueOf(System.currentTimeMillis() - j10 > 250));
                 return;
             case 2:
-                RectF rectF = ProfileActivity.R6;
+                RectF rectF = ProfileActivity.S6;
                 ((ProfileActivity) obj2).getMessagesController().O1().b(i11, j10, (ArrayList) obj);
                 return;
             case 3:
@@ -102,19 +102,19 @@ public final /* synthetic */ class z implements Runnable {
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 long j11 = this.c;
                 tonconnectgetpending.session_id = Long.valueOf(j11);
-                e2Var.f.sendRequestTyped(tonconnectgetpending, new a3.b(1), new org.telegram.ui.Wallet.o1(e2Var, (j70) obj, j11, this.b, 0));
+                e2Var.f.sendRequestTyped(tonconnectgetpending, new a3.b(1), new org.telegram.ui.Wallet.o1(e2Var, (i70) obj, j11, this.b, 0));
                 return;
             case 5:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.p6) obj);
-                String L0 = org.telegram.messenger.cd.L0(2131743099, null);
+                String L0 = org.telegram.messenger.dd.L0(2131743099, null);
                 org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                 x1Var.R = L0;
-                x1Var.T = org.telegram.messenger.i0.V2(org.telegram.messenger.cd.V(null, null, 2131743097, org.telegram.ui.Wallet.k0.x(i11).m(j10, true)));
+                x1Var.T = org.telegram.messenger.i0.V2(org.telegram.messenger.dd.V(null, null, 2131743097, org.telegram.ui.Wallet.k0.x(i11).m(j10, true)));
                 i0.a.w(null, 2131743089, alertDialog$Builder, null);
                 return;
             case 6:
                 ArrayList arrayList = (ArrayList) obj;
-                SQLiteDatabase sQLiteDatabase = ((org.telegram.messenger.hs) obj2).b;
+                SQLiteDatabase sQLiteDatabase = ((org.telegram.messenger.is) obj2).b;
                 try {
                     try {
                         sQLiteDatabase.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
@@ -162,7 +162,7 @@ public final /* synthetic */ class z implements Runnable {
                 if (T == null) {
                     return;
                 }
-                T.presentFragment(un.ha(j10));
+                T.presentFragment(un.ma(j10));
                 return;
         }
     }
@@ -175,11 +175,11 @@ public final /* synthetic */ class z implements Runnable {
         this.e = arrayList;
     }
 
-    public /* synthetic */ z(org.telegram.ui.Wallet.e2 e2Var, long j10, j70 j70Var, int i10) {
+    public /* synthetic */ z(org.telegram.ui.Wallet.e2 e2Var, long j10, i70 i70Var, int i10) {
         this.a = 4;
         this.d = e2Var;
         this.c = j10;
-        this.e = j70Var;
+        this.e = i70Var;
         this.b = i10;
     }
 }

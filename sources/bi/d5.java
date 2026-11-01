@@ -5,20 +5,20 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.content.DialogInterface;
 import android.view.View;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hv;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.iv;
+import org.telegram.ui.Components.as0;
 import org.telegram.ui.Components.d50;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.hp;
 import org.telegram.ui.Components.mx;
-import org.telegram.ui.Components.pg0;
+import org.telegram.ui.Components.qg0;
 import org.telegram.ui.Components.r7;
-import org.telegram.ui.Components.wj0;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.xj0;
 import org.telegram.ui.uq;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class d5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -73,10 +73,10 @@ public final class d5 extends AnimatorListenerAdapter {
                 f5Var.invalidate();
                 break;
             case 1:
-                hv hvVar = (hv) obj;
-                hvVar.a0 = i11;
-                hvVar.b0 = 0.0f;
-                View view = hvVar.V;
+                iv ivVar = (iv) obj;
+                ivVar.a0 = i11;
+                ivVar.b0 = 0.0f;
+                View view = ivVar.V;
                 if (view != null) {
                     view.invalidate();
                     break;
@@ -102,7 +102,7 @@ public final class d5 extends AnimatorListenerAdapter {
                     }
                     org.telegram.messenger.i0.g3(new lg.s(this, 21));
                 }
-                zs.e().k(99, 512);
+                at.e().k(99, 512);
                 break;
             case 4:
                 org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) obj;
@@ -141,29 +141,29 @@ public final class d5 extends AnimatorListenerAdapter {
                 }
                 break;
             case 10:
-                pg0 pg0Var = (pg0) obj;
-                pg0Var.H = null;
-                pg0Var.P.d1.delete(i11);
+                qg0 qg0Var = (qg0) obj;
+                qg0Var.H = null;
+                qg0Var.P.d1.delete(i11);
                 break;
             case 11:
                 uq uqVar = (uq) obj;
-                ((wj0) uqVar.d).b.remove(i11);
-                wj0 wj0Var = (wj0) uqVar.d;
-                wj0Var.d = true;
-                wj0Var.a.invalidate();
+                ((xj0) uqVar.d).b.remove(i11);
+                xj0 xj0Var = (xj0) uqVar.d;
+                xj0Var.d = true;
+                xj0Var.a.invalidate();
                 break;
             case 12:
-                zr0 zr0Var = (zr0) obj;
-                zr0Var.e.R1.remove(i11);
-                zr0Var.a.invalidate();
+                as0 as0Var = (as0) obj;
+                as0Var.e.R1.remove(i11);
+                as0Var.a.invalidate();
                 break;
             case 13:
-                org.telegram.ui.Components.voip.l0 l0Var = (org.telegram.ui.Components.voip.l0) obj;
-                l0Var.y = -1;
-                l0Var.w = i11;
-                l0Var.s = 0.0f;
-                l0Var.U = null;
-                l0Var.e();
+                org.telegram.ui.Components.voip.m0 m0Var = (org.telegram.ui.Components.voip.m0) obj;
+                m0Var.y = -1;
+                m0Var.w = i11;
+                m0Var.s = 0.0f;
+                m0Var.U = null;
+                m0Var.e();
                 break;
             case 14:
                 xh.m2 m2Var = (xh.m2) obj;
@@ -178,13 +178,13 @@ public final class d5 extends AnimatorListenerAdapter {
                 m2Var.K();
                 break;
             default:
-                xh.i3 i3Var = (xh.i3) obj;
-                xh.e2 e2Var = i3Var.n;
+                xh.j3 j3Var = (xh.j3) obj;
+                xh.e2 e2Var = j3Var.n;
                 if (e2Var.getWebView() != null) {
                     e2Var.getWebView().setScrollY(i11);
                 }
-                if (animator == i3Var.r) {
-                    i3Var.r = null;
+                if (animator == j3Var.r) {
+                    j3Var.r = null;
                     break;
                 }
                 break;

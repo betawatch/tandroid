@@ -10,26 +10,26 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.l00;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.s9;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wb;
-import org.telegram.ui.do0;
+import org.telegram.ui.bo0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e8 extends p {
     public final Path Q1;
     public final /* synthetic */ o8 R1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e8(o8 o8Var, Activity activity, FrameLayout frameLayout, uu0 uu0Var, FrameLayout frameLayout2, th.b bVar, s9 s9Var) {
-        super(activity, frameLayout, uu0Var, frameLayout2, bVar, s9Var);
+    public e8(o8 o8Var, Activity activity, FrameLayout frameLayout, vu0 vu0Var, FrameLayout frameLayout2, th.b bVar, s9 s9Var) {
+        super(activity, frameLayout, vu0Var, frameLayout2, bVar, s9Var);
         this.R1 = o8Var;
         this.Q1 = new Path();
     }
@@ -37,11 +37,11 @@ public final class e8 extends p {
     @Override // vh.k
     public final boolean e() {
         wb wbVar;
-        if (vp.r1(this.U).A3() || ((wbVar = wb.w) != null && wbVar.a == 2)) {
+        if (wp.r1(this.U).A3() || ((wbVar = wb.w) != null && wbVar.a == 2)) {
             return false;
         }
-        int i10 = vp.r1(this.U).X4;
-        SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(cd.G(Math.round(i10 / vp.r1(this.U).W4), "CaptionPremiumSubtitle", i0.a.i(i10, "")));
+        int i10 = wp.r1(this.U).X4;
+        SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(dd.G(Math.round(i10 / wp.r1(this.U).W4), "CaptionPremiumSubtitle", i0.a.i(i10, "")));
         int indexOf = W2.toString().indexOf("__");
         if (indexOf >= 0) {
             W2.replace(indexOf, indexOf + 2, (CharSequence) "");
@@ -52,7 +52,7 @@ public final class e8 extends p {
                 W2.setSpan(new dh.a(this, 11), indexOf, indexOf2, 33);
             }
         }
-        wb I = new cc(this.R1.l0, this.a).I(R.raw.caption_limit, cd.L0(2131752556, null), W2);
+        wb I = new cc(this.R1.l0, this.a).I(R.raw.caption_limit, dd.L0(2131752556, null), W2);
         I.a = 2;
         I.j = 5000;
         I.k(false);
@@ -110,7 +110,7 @@ public final class e8 extends p {
                 for (int i10 = 0; i10 < o8Var.v1.A0.getChildCount(); i10++) {
                     View childAt = o8Var.v1.A0.getChildAt(i10);
                     if (childAt instanceof jg.j) {
-                        oj0 selectionBounds = ((jg.j) childAt).getSelectionBounds();
+                        pj0 selectionBounds = ((jg.j) childAt).getSelectionBounds();
                         RectF rectF = org.telegram.messenger.i0.P;
                         float f11 = selectionBounds.a;
                         float f12 = selectionBounds.b;
@@ -127,9 +127,9 @@ public final class e8 extends p {
 
     @Override // vh.k
     public final void n() {
-        do0 do0Var = this.R1.t0;
-        if (do0Var != null) {
-            do0Var.invalidate();
+        bo0 bo0Var = this.R1.t0;
+        if (bo0Var != null) {
+            bo0Var.invalidate();
         }
     }
 
@@ -140,7 +140,7 @@ public final class e8 extends p {
         o8 o8Var = this.R1;
         f4 f4Var = o8Var.b1;
         if (!o8Var.N1 && !z10) {
-            th.e5 O1 = vp.r1(this.U).O1();
+            th.e5 O1 = wp.r1(this.U).O1();
             int A = o8Var.A();
             j4.w o10 = O1.o();
             if (o10 == null || !o10.a(O1.a, A) || ((n5Var = o8Var.K1) != null && n5Var.g)) {

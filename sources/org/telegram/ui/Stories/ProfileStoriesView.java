@@ -21,31 +21,31 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.kp;
 import org.telegram.messenger.lp;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.vs;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.fi0;
+import org.telegram.ui.Components.gi0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.u10;
-import org.telegram.ui.ex0;
-import org.telegram.ui.jx0;
-import org.telegram.ui.mw0;
+import org.telegram.ui.dx0;
+import org.telegram.ui.ix0;
+import org.telegram.ui.lw0;
 import qh.e0;
 import r2.y;
 import sg.r;
@@ -58,11 +58,11 @@ import th.u5;
 import th.w5;
 import w7.z8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class ProfileStoriesView extends View implements us {
+public class ProfileStoriesView extends View implements vs {
     public static final /* synthetic */ int s0 = 0;
-    public fi0 D;
+    public gi0 D;
     public boolean E;
     public boolean F;
     public float G;
@@ -95,7 +95,7 @@ public class ProfileStoriesView extends View implements us {
     public final View f;
     public float f0;
     public float g0;
-    public final jx0 h;
+    public final ix0 h;
     public float h0;
     public float i0;
     public float j0;
@@ -114,7 +114,7 @@ public class ProfileStoriesView extends View implements us {
     public final ArrayList x;
     public boolean y;
 
-    public ProfileStoriesView(Context context, int i10, long j10, boolean z10, View view, jx0 jx0Var, p6 p6Var) {
+    public ProfileStoriesView(Context context, int i10, long j10, boolean z10, View view, ix0 ix0Var, p6 p6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
@@ -144,16 +144,16 @@ public class ProfileStoriesView extends View implements us {
         this.e0 = new Path();
         this.l0 = new t5(this, 0L, 350L, grVar);
         this.m0 = new t5(this, 0L, 350L, grVar);
-        mw0 mw0Var = (mw0) this;
-        this.n0 = new y(mw0Var, 8);
-        this.o0 = new b3(mw0Var, 0);
+        lw0 lw0Var = (lw0) this;
+        this.n0 = new y(lw0Var, 8);
+        this.o0 = new b3(lw0Var, 0);
         this.c = i10;
         this.d = j10;
         this.e = z10;
         this.f = view;
-        this.h = jx0Var;
-        jx0Var.getImageReceiver().E1 = new b3(mw0Var, 1);
-        this.M = vp.r1(i10).O1();
+        this.h = ix0Var;
+        ix0Var.getImageReceiver().E1 = new b3(lw0Var, 1);
+        this.M = wp.r1(i10).O1();
         paint.setColor(1526726655);
         paint.getAlpha();
         paint.setStrokeWidth(i0.N(1.5f));
@@ -232,7 +232,7 @@ public class ProfileStoriesView extends View implements us {
     }
 
     public final void b(float f7, float f10, Canvas canvas, Paint paint, RectF rectF) {
-        if (!w3.b0(d20.s0, this.d)) {
+        if (!w3.b0(e20.s0, this.d)) {
             canvas.drawArc(rectF, f7, f10, false, paint);
             return;
         }
@@ -321,9 +321,9 @@ public class ProfileStoriesView extends View implements us {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.v5) {
+        if (i10 == at.v5) {
             f(true, true);
         }
     }
@@ -411,7 +411,7 @@ public class ProfileStoriesView extends View implements us {
                 c3Var3.i = c3Var3.g.e(false, c3Var3.c);
                 c3Var3.k = c3Var3.f.d(c3Var3.d);
                 if (i13 > 0 && ((c3) arrayList.get(i13 - 1)).i > c3Var3.i) {
-                    Collections.sort(arrayList, new ex0(23));
+                    Collections.sort(arrayList, new dx0(23));
                     break;
                 }
             } else {
@@ -441,7 +441,7 @@ public class ProfileStoriesView extends View implements us {
         profileStoriesView5.K = null;
         t5 t5Var2 = profileStoriesView5.U;
         t5 t5Var3 = profileStoriesView5.T;
-        jx0 jx0Var = profileStoriesView5.h;
+        ix0 ix0Var = profileStoriesView5.h;
         u5 u5Var5 = profileStoriesView5.L;
         RectF rectF8 = profileStoriesView5.Q;
         if (T12 > 0.0f) {
@@ -450,13 +450,13 @@ public class ProfileStoriesView extends View implements us {
             rectF8.inset(-i0.N(3.775f), -i0.N(3.775f));
             paint = u5Var5.a(rectF8);
             if (profileStoriesView5.D == null) {
-                fi0 fi0Var = new fi0(profileStoriesView5);
-                profileStoriesView5.D = fi0Var;
+                gi0 gi0Var = new gi0(profileStoriesView5);
+                profileStoriesView5.D = gi0Var;
                 u5Var = u5Var5;
                 f10 = e;
                 arrayList2 = arrayList;
-                fi0Var.d(null, true, false);
-                profileStoriesView5.D.u = w3.b0(d20.s0, j11);
+                gi0Var.d(null, true, false);
+                profileStoriesView5.D.u = w3.b0(e20.s0, j11);
             } else {
                 u5Var = u5Var5;
                 f10 = e;
@@ -483,13 +483,13 @@ public class ProfileStoriesView extends View implements us {
             int alpha = paint.getAlpha();
             paint.setAlpha((int) (alpha * i14 * T12));
             paint.setStrokeWidth(i0.N(2.33f));
-            fi0 fi0Var2 = profileStoriesView5.D;
-            fi0Var2.t = paint;
+            gi0 gi0Var2 = profileStoriesView5.D;
+            gi0Var2.t = paint;
             f7 = i12;
             j10 = j11;
-            fi0Var2.f((int) rectF8.left, (int) rectF8.top, (int) rectF8.right, (int) rectF8.bottom);
+            gi0Var2.f((int) rectF8.left, (int) rectF8.top, (int) rectF8.right, (int) rectF8.bottom);
             profileStoriesView5.D.e(true, Utilities.i(f19, 1.0f, 0.0f));
-            if (jx0Var.Q) {
+            if (ix0Var.Q) {
                 profileStoriesView5.D.a(canvas4);
             }
             paint.setAlpha(alpha);
@@ -552,7 +552,7 @@ public class ProfileStoriesView extends View implements us {
                 Paint paint9 = w5.d.c;
                 paint9.setStrokeWidth(i0.L(2.0f));
                 paint9.setAlpha((int) (f14 * 255.0f));
-                if (w3.b0(d20.s0, j10)) {
+                if (w3.b0(e20.s0, j10)) {
                     float height = rectF8.height() * 0.32f;
                     canvas4.drawRoundRect(rectF8, height, height, paint9);
                 } else {
@@ -599,7 +599,7 @@ public class ProfileStoriesView extends View implements us {
                     RectF rectF11 = i0.P;
                     rectF11.set(rectF10);
                     rectF11.inset(-i0.L(12.0f), -i0.L(12.0f));
-                    canvas4.saveLayerAlpha(rectF11, zs.e4, 31);
+                    canvas4.saveLayerAlpha(rectF11, at.e4, 31);
                     float B = c3.i0.B(profileStoriesView5.W, 1.0f, 2.5f, 1.0f);
                     if (B != 1.0f) {
                         canvas4.save();
@@ -741,7 +741,7 @@ public class ProfileStoriesView extends View implements us {
                 profileStoriesView5 = profileStoriesView3;
                 canvas4 = canvas2;
                 if (z13) {
-                    w5.k(f14, profileStoriesView5.I, canvas4, rectF2, jx0Var.getImageReceiver().Q0);
+                    w5.k(f14, profileStoriesView5.I, canvas4, rectF2, ix0Var.getImageReceiver().Q0);
                     canvas4.restore();
                 }
             }
@@ -944,13 +944,13 @@ public class ProfileStoriesView extends View implements us {
             return;
         }
         int i18 = this.c;
-        long e = d20.i(i18).e();
+        long e = e20.i(i18).e();
         long j10 = this.d;
         int i19 = 0;
         boolean z13 = j10 == e;
         int currentTime = ConnectionsManager.getInstance(i18).getCurrentTime();
-        TL_stories.PeerStories z14 = vp.r1(i18).O1().z(j10);
-        TL_stories.PeerStories y3 = vp.r1(i18).O1().y(j10);
+        TL_stories.PeerStories z14 = wp.r1(i18).O1().z(j10);
+        TL_stories.PeerStories y3 = wp.r1(i18).O1().y(j10);
         TL_stories.PeerStories peerStories = j10 == 0 ? null : z14;
         int max = z14 != null ? Math.max(0, z14.max_read_id) : 0;
         if (y3 != null) {
@@ -1177,8 +1177,8 @@ public class ProfileStoriesView extends View implements us {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.a0 = ofFloat;
             ofFloat.addUpdateListener(new a3(i21, this, zArr));
-            this.a0.addListener(new iw0(18, (Object) this, (Object) zArr));
-            z20.j(3.0f, this.a0);
+            this.a0.addListener(new jw0(18, (Object) this, (Object) zArr));
+            a30.j(3.0f, this.a0);
             this.a0.setDuration(400L);
             this.a0.setStartDelay(120L);
             this.a0.start();
@@ -1186,19 +1186,19 @@ public class ProfileStoriesView extends View implements us {
         this.s = i37;
         if (i37 > 0) {
             z12 = false;
-            str = cd.G(i37, "Stories", new Object[0]);
+            str = dd.G(i37, "Stories", new Object[0]);
         } else {
             z12 = false;
             str = "";
         }
-        this.n.t(str, (!z10 || cd.X) ? z12 : true, true);
+        this.n.t(str, (!z10 || dd.X) ? z12 : true, true);
         u5 u5Var = this.L;
         if (j10 >= 0) {
-            TLRPC.User Z1 = vp.r1(i18).Z1(Long.valueOf(j10));
+            TLRPC.User Z1 = wp.r1(i18).Z1(Long.valueOf(j10));
             if (Z1 != null) {
                 TLRPC.EmojiStatus emojiStatus = Z1.emoji_status;
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
-                    u5Var.c(kp.a(emojiStatus), z10);
+                    u5Var.c(lp.a(emojiStatus), z10);
                 }
             }
             if (Z1 != null) {
@@ -1206,19 +1206,19 @@ public class ProfileStoriesView extends View implements us {
                 TLRPC.PeerColor peerColor = Z1.profile_color;
                 if (peerColor != null) {
                     i14 = peerColor.color;
-                    lp lpVar = vp.r1(u5Var.a).s4;
-                    u5Var.c(lpVar != null ? null : lpVar.d(i14), z10);
+                    mp mpVar = wp.r1(u5Var.a).s4;
+                    u5Var.c(mpVar != null ? null : mpVar.d(i14), z10);
                 }
             }
             i14 = -1;
-            lp lpVar2 = vp.r1(u5Var.a).s4;
-            u5Var.c(lpVar2 != null ? null : lpVar2.d(i14), z10);
+            mp mpVar2 = wp.r1(u5Var.a).s4;
+            u5Var.c(mpVar2 != null ? null : mpVar2.d(i14), z10);
         } else {
-            TLRPC.Chat L0 = vp.r1(i18).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = wp.r1(i18).L0(Long.valueOf(-j10));
             if (L0 != null) {
                 TLRPC.EmojiStatus emojiStatus2 = L0.emoji_status;
                 if (emojiStatus2 instanceof TLRPC.TL_emojiStatusCollectible) {
-                    u5Var.c(kp.a(emojiStatus2), z10);
+                    u5Var.c(lp.a(emojiStatus2), z10);
                 }
             }
             if (L0 != null) {
@@ -1226,13 +1226,13 @@ public class ProfileStoriesView extends View implements us {
                 TLRPC.PeerColor peerColor2 = L0.profile_color;
                 if (peerColor2 != null) {
                     i13 = peerColor2.color;
-                    lp lpVar3 = vp.r1(u5Var.a).s4;
-                    u5Var.c(lpVar3 != null ? null : lpVar3.d(i13), z10);
+                    mp mpVar3 = wp.r1(u5Var.a).s4;
+                    u5Var.c(mpVar3 != null ? null : mpVar3.d(i13), z10);
                 }
             }
             i13 = -1;
-            lp lpVar32 = vp.r1(u5Var.a).s4;
-            u5Var.c(lpVar32 != null ? null : lpVar32.d(i13), z10);
+            mp mpVar32 = wp.r1(u5Var.a).s4;
+            u5Var.c(mpVar32 != null ? null : mpVar32.d(i13), z10);
         }
         invalidate();
     }
@@ -1249,7 +1249,7 @@ public class ProfileStoriesView extends View implements us {
         while (true) {
             ArrayList arrayList = this.x;
             if (i10 >= arrayList.size()) {
-                zs.f(this.c).c(this, zs.v5);
+                at.f(this.c).c(this, at.v5);
                 return;
             } else {
                 ((c3) arrayList.get(i10)).b.P();
@@ -1266,7 +1266,7 @@ public class ProfileStoriesView extends View implements us {
         while (true) {
             ArrayList arrayList = this.x;
             if (i10 >= arrayList.size()) {
-                zs.f(this.c).n(this, zs.v5);
+                at.f(this.c).n(this, at.v5);
                 return;
             } else {
                 ((c3) arrayList.get(i10)).b.R();

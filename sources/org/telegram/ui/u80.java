@@ -1,99 +1,58 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
+import android.content.Context;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u80 implements Runnable {
-    public final /* synthetic */ LaunchActivity a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ TLRPC.User d;
-    public final /* synthetic */ TLRPC.TL_messages_botApp e;
-    public final /* synthetic */ AtomicBoolean f;
-    public final /* synthetic */ String h;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ boolean w;
+public final /* synthetic */ class u80 implements org.telegram.messenger.r20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ u80(LaunchActivity launchActivity, org.telegram.ui.ActionBar.k2 k2Var, int i10, TLRPC.User user, TLRPC.TL_messages_botApp tL_messages_botApp, AtomicBoolean atomicBoolean, String str, boolean z10, boolean z11, boolean z12, boolean z13) {
-        this.a = launchActivity;
-        this.b = k2Var;
-        this.c = i10;
-        this.d = user;
-        this.e = tL_messages_botApp;
-        this.f = atomicBoolean;
-        this.h = str;
-        this.n = z10;
-        this.r = z11;
-        this.s = z12;
-        this.w = z13;
+    public /* synthetic */ u80(LaunchActivity launchActivity, int i10) {
+        this.a = i10;
+        this.b = launchActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TLRPC.TL_attachMenuBot tL_attachMenuBot;
-        Pattern pattern = LaunchActivity.D1;
-        org.telegram.ui.ActionBar.k2 k2Var = this.b;
-        if (k2Var == null || !LaunchActivity.E1) {
-            return;
-        }
-        LaunchActivity launchActivity = this.a;
-        if (launchActivity.isFinishing() || launchActivity.isDestroyed()) {
-            return;
-        }
-        TLRPC.User user = this.d;
-        long j10 = user.id;
-        TLRPC.TL_messages_botApp tL_messages_botApp = this.e;
-        TLRPC.BotApp botApp = tL_messages_botApp.app;
-        boolean z10 = this.f.get();
-        int i10 = this.c;
-        String str = this.h;
-        boolean z11 = this.n;
-        boolean z12 = this.r;
-        xh.s3 b10 = xh.s3.b(i10, j10, j10, null, null, 3, 0, 0L, botApp, z10, str, user, 0, z11, z12);
-        if (launchActivity.O() == null || launchActivity.O().m(b10) == null) {
-            org.telegram.messenger.js.o(launchActivity.O, user.id);
-            xh.m2 m2Var = new xh.m2(launchActivity, k2Var.getResourceProvider());
-            xh.e2 e2Var = m2Var.D;
-            if (e2Var != null) {
-                e2Var.setWasOpenedByLinkIntent(this.s);
-            }
-            m2Var.B(!z11);
-            if (z12) {
-                m2Var.C(true, false, m2Var.f0);
-            }
-            m2Var.B0 = false;
-            m2Var.l0 = launchActivity;
-            m2Var.x(k2Var, b10);
-            m2Var.show();
-            if (tL_messages_botApp.inactive || this.w) {
-                TLRPC.User Z1 = org.telegram.messenger.vp.r1(m2Var.H).Z1(Long.valueOf(m2Var.I));
-                ArrayList<TLRPC.TL_attachMenuBot> arrayList = org.telegram.messenger.ui.b0(m2Var.H).b.bots;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= size) {
-                        tL_attachMenuBot = null;
-                        break;
-                    }
-                    TLRPC.TL_attachMenuBot tL_attachMenuBot2 = arrayList.get(i11);
-                    i11++;
-                    tL_attachMenuBot = tL_attachMenuBot2;
-                    if (tL_attachMenuBot.bot_id == m2Var.I) {
-                        break;
-                    }
+    @Override // org.telegram.messenger.r20
+    public final void a(Object obj) {
+        org.telegram.ui.ActionBar.k2 lastFragment;
+        int i10 = this.a;
+        LaunchActivity launchActivity = this.b;
+        switch (i10) {
+            case 0:
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                if (launchActivity.q0 != null && booleanValue && org.telegram.messenger.tc.c() < 100 && (lastFragment = launchActivity.q0.getLastFragment()) != null && !(lastFragment instanceof ab0)) {
+                    int b10 = org.telegram.messenger.tc.b();
+                    org.telegram.ui.Components.cc a02 = org.telegram.ui.Components.cc.a0(lastFragment);
+                    org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(b10 / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.t6.Y5));
+                    String L0 = org.telegram.messenger.dd.L0(2131748726, null);
+                    String a03 = org.telegram.messenger.dd.a0("LowPowerEnabledSubtitle", null, 2131748727, String.format("%d%%", Integer.valueOf(b10)));
+                    String L02 = org.telegram.messenger.dd.L0(2131751436, null);
+                    p70 p70Var = new p70(launchActivity, 11);
+                    a02.getClass();
+                    Context W = a02.W();
+                    org.telegram.ui.ActionBar.p6 p6Var = a02.c;
+                    org.telegram.ui.Components.tb tbVar = new org.telegram.ui.Components.tb(W, p6Var);
+                    tbVar.a.setImageDrawable(i9Var);
+                    tbVar.b.setText(L0);
+                    tbVar.c.setText(a03);
+                    org.telegram.ui.Components.ub ubVar = new org.telegram.ui.Components.ub(a02.W(), p6Var, true);
+                    ubVar.e(L02);
+                    ubVar.b = p70Var;
+                    tbVar.setButton(ubVar);
+                    org.telegram.ui.Components.wb b11 = a02.b(tbVar, 2750);
+                    b11.j = 5000;
+                    b11.j();
+                    break;
                 }
-                if (tL_attachMenuBot == null) {
-                    return;
-                }
-                boolean z13 = tL_attachMenuBot.show_in_side_menu;
-                org.telegram.messenger.i0.h3(new vh.d1(25, m2Var, (z13 && tL_attachMenuBot.show_in_attach_menu) ? org.telegram.messenger.cd.a0(null, null, 2131753138, Z1.first_name) : z13 ? org.telegram.messenger.cd.a0(null, null, 2131753137, Z1.first_name) : org.telegram.messenger.cd.a0(null, null, 2131753139, Z1.first_name)), 200L);
-            }
+                break;
+            default:
+                TLRPC.User user = (TLRPC.User) obj;
+                Pattern pattern = LaunchActivity.D1;
+                org.telegram.messenger.wp.r1(launchActivity.O).u3(null, user, null, 0, null, false, false);
+                break;
         }
     }
 }

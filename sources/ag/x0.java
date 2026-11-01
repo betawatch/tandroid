@@ -4,20 +4,20 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x0 {
     public final Context a;
@@ -46,10 +46,10 @@ public final class x0 {
         this.c = k2Var.getResourceProvider();
     }
 
-    public final void a(ArrayList arrayList, p51 p51Var, boolean z10) {
+    public final void a(ArrayList arrayList, q51 q51Var, boolean z10) {
         String str;
         String str2;
-        p51Var.V();
+        q51Var.V();
         int d = d();
         str = "";
         if (!this.h) {
@@ -80,7 +80,7 @@ public final class x0 {
             if (!arrayList2.isEmpty()) {
                 if (TextUtils.isEmpty(str2)) {
                     StringBuilder t10 = a1.g.t(str2);
-                    t10.append(cd.H(',', "Chats", arrayList2.size()));
+                    t10.append(dd.H(',', "Chats", arrayList2.size()));
                     str2 = t10.toString();
                 } else {
                     StringBuilder i10 = sc.e.i(str2, " + ");
@@ -89,9 +89,9 @@ public final class x0 {
                 }
             }
             if (TextUtils.isEmpty(str2)) {
-                str2 = cd.L0(2131752777, null);
+                str2 = dd.L0(2131752777, null);
             }
-            a51 f7 = a51.f(cd.L0(2131752778, null), str2, 101);
+            b51 f7 = b51.f(dd.L0(2131752778, null), str2, 101);
             f7.g = z10;
             arrayList.add(f7);
         }
@@ -124,7 +124,7 @@ public final class x0 {
             if (!arrayList3.isEmpty()) {
                 if (TextUtils.isEmpty(str)) {
                     StringBuilder t11 = a1.g.t(str);
-                    t11.append(cd.H(',', "Chats", arrayList3.size()));
+                    t11.append(dd.H(',', "Chats", arrayList3.size()));
                     str = t11.toString();
                 } else {
                     StringBuilder i11 = sc.e.i(str, " + ");
@@ -133,13 +133,13 @@ public final class x0 {
                 }
             }
             if (TextUtils.isEmpty(str)) {
-                str = cd.L0(2131752779, null);
+                str = dd.L0(2131752779, null);
             }
-            a51 f10 = a51.f(cd.L0(2131752780, null), str, zs.o1);
+            b51 f10 = b51.f(dd.L0(2131752780, null), str, at.o1);
             f10.g = z10;
             arrayList.add(f10);
         }
-        p51Var.U();
+        q51Var.U();
     }
 
     public final TL_account.TL_inputBusinessBotRecipients b() {
@@ -155,7 +155,7 @@ public final class x0 {
         ArrayList arrayList = this.k;
         ArrayList arrayList2 = z10 ? arrayList : this.j;
         if (!arrayList2.isEmpty()) {
-            vp r12 = vp.r1(d20.s0);
+            wp r12 = wp.r1(e20.s0);
             tL_inputBusinessBotRecipients.flags |= 16;
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 Long l4 = (Long) arrayList2.get(i10);
@@ -164,7 +164,7 @@ public final class x0 {
             }
         }
         if (!this.h) {
-            vp r13 = vp.r1(d20.s0);
+            wp r13 = wp.r1(e20.s0);
             tL_inputBusinessBotRecipients.flags |= 64;
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
                 Long l10 = (Long) arrayList.get(i11);
@@ -188,7 +188,7 @@ public final class x0 {
         ArrayList arrayList = this.k;
         ArrayList arrayList2 = z10 ? arrayList : this.j;
         if (!arrayList2.isEmpty()) {
-            vp r12 = vp.r1(d20.s0);
+            wp r12 = wp.r1(e20.s0);
             tL_businessBotRecipients.flags |= 16;
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 Long l4 = (Long) arrayList2.get(i10);
@@ -198,7 +198,7 @@ public final class x0 {
             }
         }
         if (!this.h) {
-            vp r13 = vp.r1(d20.s0);
+            wp r13 = wp.r1(e20.s0);
             tL_businessBotRecipients.flags |= 64;
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
                 Long l10 = (Long) arrayList.get(i11);
@@ -226,7 +226,7 @@ public final class x0 {
         tL_inputBusinessRecipients.exclude_selected = z10;
         ArrayList arrayList = z10 ? this.k : this.j;
         if (!arrayList.isEmpty()) {
-            vp r12 = vp.r1(d20.s0);
+            wp r12 = wp.r1(e20.s0);
             tL_inputBusinessRecipients.flags |= 16;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 Long l4 = (Long) arrayList.get(i10);
@@ -249,7 +249,7 @@ public final class x0 {
         tL_businessRecipients.exclude_selected = z10;
         ArrayList arrayList = z10 ? this.k : this.j;
         if (!arrayList.isEmpty()) {
-            vp r12 = vp.r1(d20.s0);
+            wp r12 = wp.r1(e20.s0);
             tL_businessRecipients.flags |= 16;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 Long l4 = (Long) arrayList.get(i10);
@@ -290,8 +290,8 @@ public final class x0 {
         return false;
     }
 
-    public final boolean h(a51 a51Var) {
-        int i10 = a51Var.d;
+    public final boolean h(b51 b51Var) {
+        int i10 = b51Var.d;
         org.telegram.ui.ActionBar.k2 k2Var = this.d;
         int i11 = 0;
         if (i10 == 101 || i10 == 103) {
@@ -325,18 +325,18 @@ public final class x0 {
             runnable.run();
             return true;
         }
-        if (a51Var.a != 11) {
+        if (b51Var.a != 11) {
             return false;
         }
-        boolean z11 = a51Var.w;
-        String A1 = vp.r1(this.b).A1(a51Var.x, false);
+        boolean z11 = b51Var.w;
+        String A1 = wp.r1(this.b).A1(b51Var.x, false);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.a, this.c);
-        String L0 = cd.L0(!z11 ? 2131752686 : 2131752684, null);
+        String L0 = dd.L0(!z11 ? 2131752686 : 2131752684, null);
         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
         x1Var.R = L0;
-        x1Var.T = cd.a0(null, null, !z11 ? 2131752687 : 2131752685, A1);
-        alertDialog$Builder.k(cd.L0(2131746336, null), new v0(this, z11, a51Var, i11));
-        alertDialog$Builder.h(cd.L0(2131752589, null), null);
+        x1Var.T = dd.a0(null, null, !z11 ? 2131752687 : 2131752685, A1);
+        alertDialog$Builder.k(dd.L0(2131746336, null), new v0(this, z11, b51Var, i11));
+        alertDialog$Builder.h(dd.L0(2131752589, null), null);
         if (k2Var != null) {
             k2Var.showDialog(x1Var);
             return true;
@@ -420,16 +420,16 @@ public final class x0 {
         arrayList2.addAll(this.l.exclude_users);
     }
 
-    public final boolean k(u51 u51Var) {
+    public final boolean k(v51 v51Var) {
         if (this.h || !this.j.isEmpty() || this.f != 0) {
             return true;
         }
         org.telegram.messenger.t2.D.a();
-        View B1 = u51Var.B1(101);
+        View B1 = v51Var.B1(101);
         int i10 = -this.m;
         this.m = i10;
         org.telegram.messenger.i0.F3(i10, B1, null);
-        u51Var.y0(u51Var.A1(101));
+        v51Var.y0(v51Var.A1(101));
         return false;
     }
 

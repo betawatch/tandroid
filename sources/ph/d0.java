@@ -11,17 +11,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.t9;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.w9;
+import org.telegram.messenger.u9;
+import org.telegram.messenger.wp;
 import org.telegram.messenger.x9;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.y9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -34,18 +34,18 @@ import org.telegram.ui.ActionBar.w5;
 import org.telegram.ui.ActionBar.w6;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.p51;
 import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
-import org.telegram.ui.st0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.rt0;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class d0 extends ha implements w9 {
+public final class d0 extends ha implements x9 {
     public static final /* synthetic */ int Y1 = 0;
     public final long P1;
     public final x Q1;
@@ -53,8 +53,8 @@ public final class d0 extends ha implements w9 {
     public final y S1;
     public final TextView T1;
     public final a0 U1;
-    public t9 V1;
-    public p51 W1;
+    public u9 V1;
+    public q51 W1;
     public int X1;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -92,12 +92,12 @@ public final class d0 extends ha implements w9 {
         d.leftMargin = i10 + i11;
         d.rightMargin += i11;
         this.b.addView(dVar, d);
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i12 = this.t0;
-        tk0Var.setPadding(i12, 0, i12, org.telegram.messenger.i0.L(64.0f));
+        uk0Var.setPadding(i12, 0, i12, org.telegram.messenger.i0.L(64.0f));
         this.W1.O(false);
-        int i13 = z10 ? zs.x3 : 208;
-        this.V1 = x9.c(this.a).l(j11, this);
+        int i13 = z10 ? at.x3 : 208;
+        this.V1 = y9.c(this.a).l(j11, this);
         int i14 = 22;
         y yVar = new y(this, context, p6Var, new w5(this, 25), new bh.c(i14), new bh.c(i14), new bh.c(i14), new bh.c(i14), new bh.c(i14), new bh.c(i14), i13);
         this.S1 = yVar;
@@ -109,23 +109,23 @@ public final class d0 extends ha implements w9 {
         g9Var.setRoundRadius(org.telegram.messenger.i0.L(45.0f));
         xVar.addView(g9Var, b6.d(90, 90.0f, 49, 0.0f, 42.0f, 0.0f, 0.0f));
         if (j10 == 0) {
-            TLRPC.User Z1 = vp.r1(this.a).Z1(Long.valueOf(d20.i(this.a).e()));
+            TLRPC.User Z1 = wp.r1(this.a).Z1(Long.valueOf(e20.i(this.a).e()));
             r8Var = new r8(0, Z1);
             chat = Z1;
         } else if (j10 > 0) {
-            TLRPC.User Z12 = vp.r1(this.a).Z1(Long.valueOf(j10));
+            TLRPC.User Z12 = wp.r1(this.a).Z1(Long.valueOf(j10));
             r8Var = new r8(0, Z12);
             chat = Z12;
         } else {
-            TLRPC.Chat L0 = vp.r1(this.a).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = wp.r1(this.a).L0(Long.valueOf(-j10));
             r8Var = new r8(L0);
             chat = L0;
         }
         g9Var.e(chat, r8Var);
         TextView textView = new TextView(context);
         this.T1 = textView;
-        z20.n(textView, 1, 21.0f);
-        textView.setText(o5.t(j10 != 0 ? j10 : d20.i(this.a).e()));
+        a30.n(textView, 1, 21.0f);
+        textView.setText(o5.t(j10 != 0 ? j10 : e20.i(this.a).e()));
         textView.setGravity(17);
         textView.setTextColor(-1);
         textView.setPadding(0, 0, org.telegram.messenger.i0.L(36.0f), 0);
@@ -139,12 +139,12 @@ public final class d0 extends ha implements w9 {
         textView2.setGravity(17);
         textView2.setTextColor(-1342177281);
         if (z10) {
-            textView2.setText(cd.L0(2131749817, null));
+            textView2.setText(dd.L0(2131749817, null));
             context2 = context;
             r12 = 0;
             p6Var2 = p6Var;
         } else {
-            textView2.setText(org.telegram.messenger.i0.H2(cd.L0(2131750358, null), false, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.0f)));
+            textView2.setText(org.telegram.messenger.i0.H2(dd.L0(2131750358, null), false, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.0f)));
             r12 = 0;
             context2 = context;
             p6Var2 = p6Var;
@@ -165,7 +165,7 @@ public final class d0 extends ha implements w9 {
         zVar.J.setVisibility(8);
         zVar.e.g(r12);
         zVar.setRibbonTextOneOf(this.V1.d.availability_total);
-        linearLayout2.addView(zVar, b6.l(0.0f, zs.B1, zs.B1));
+        linearLayout2.addView(zVar, b6.l(0.0f, at.B1, at.B1));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.ic_ab_back);
         imageView.setScaleX(-1.0f);
@@ -181,12 +181,12 @@ public final class d0 extends ha implements w9 {
         a0Var.J.setVisibility(8);
         a0Var.e.g(r12);
         a0Var.setRibbonTextOneOf(this.V1.d.availability_total);
-        a0Var.setRibbonText(cd.L0(2131750328, r12));
-        linearLayout2.addView(a0Var, b6.l(0.0f, zs.B1, zs.B1));
+        a0Var.setRibbonText(dd.L0(2131750328, r12));
+        linearLayout2.addView(a0Var, b6.l(0.0f, at.B1, at.B1));
         TextView textView3 = new TextView(context);
         textView3.setTextSize(1, 13.0f);
         textView3.setGravity(17);
-        textView3.setText(cd.L0(2131749840, r12));
+        textView3.setText(dd.L0(2131749840, r12));
         int i15 = t6.y6;
         a7.V(textView3, i15, p6Var3);
         float i16 = Utilities.i(starGift.availability_remains / starGift.availability_total, 1.0f, 0.0f);
@@ -210,13 +210,13 @@ public final class d0 extends ha implements w9 {
         textView4.setGravity(19);
         textView4.setTypeface(org.telegram.messenger.i0.o());
         a7.V(textView4, i18, p6Var3);
-        textView4.setText(cd.H(',', "Gift2AvailabilityLeft", starGift.availability_remains));
+        textView4.setText(dd.H(',', "Gift2AvailabilityLeft", starGift.availability_remains));
         TextView l4 = org.telegram.ui.Cells.f1.l(frameLayout, textView4, b6.d(-1, -1.0f, 3, 11.0f, 0.0f, 11.0f, 0.0f), context);
         l4.setTextSize(1, 13.0f);
         l4.setGravity(21);
         l4.setTypeface(org.telegram.messenger.i0.o());
         a7.V(l4, i18, p6Var3);
-        l4.setText(cd.H(',', "Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
+        l4.setText(dd.H(',', "Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
         frameLayout.addView(l4, b6.d(-1, -1.0f, 5, 11.0f, 0.0f, 11.0f, 0.0f));
         View b0Var = new b0(context, i16);
         int L2 = org.telegram.messenger.i0.L(14.0f);
@@ -225,33 +225,33 @@ public final class d0 extends ha implements w9 {
         w6 N = a7.N(i19);
         b0Var.setBackground(d03);
         a7.k(b0Var, d03, N, null, p6Var3);
-        frameLayout.addView(b0Var, b6.e(-1, -1, zs.E1));
+        frameLayout.addView(b0Var, b6.e(-1, -1, at.E1));
         c0 c0Var = new c0(context, i16);
         c0Var.setWillNotDraw(false);
-        frameLayout.addView(c0Var, b6.e(-1, -1, zs.E1));
+        frameLayout.addView(c0Var, b6.e(-1, -1, at.E1));
         TextView textView5 = new TextView(context);
         textView5.setTextSize(1, 13.0f);
         textView5.setGravity(19);
         textView5.setTypeface(org.telegram.messenger.i0.o());
         textView5.setTextColor(-1);
-        textView5.setText(cd.H(',', "Gift2AvailabilityLeft", starGift.availability_remains));
+        textView5.setText(dd.H(',', "Gift2AvailabilityLeft", starGift.availability_remains));
         c0Var.addView(textView5, b6.d(-1, -1.0f, 3, 11.0f, 0.0f, 11.0f, 0.0f));
         TextView textView6 = new TextView(context);
         textView6.setTextSize(1, 13.0f);
         textView6.setGravity(21);
         textView6.setTypeface(org.telegram.messenger.i0.o());
         textView6.setTextColor(-1);
-        textView6.setText(cd.H(',', "Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
+        textView6.setText(dd.H(',', "Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
         c0Var.addView(textView6, b6.d(-1, -1.0f, 5, 11.0f, 0.0f, 11.0f, 0.0f));
-        t9 t9Var = this.V1;
-        if (t9Var == null || t9Var.f == null) {
+        u9 u9Var = this.V1;
+        if (u9Var == null || u9Var.f == null) {
             p80Var = null;
         } else {
             p80Var = new p80(context, null);
             p80Var.setTextSize(1, 13.0f);
             p80Var.setGravity(17);
             a7.V(p80Var, i15, p6Var3);
-            p80Var.setText(org.telegram.messenger.i0.V2(cd.V(null, null, 2131750367, cd.E(starGift.availability_total, ','), Integer.valueOf(this.V1.f.total_rounds), Integer.valueOf(starGift.gifts_per_round), org.telegram.messenger.i0.H2(org.telegram.messenger.i0.T2(cd.L0(2131750366, null), new q(context, p6Var3, starGift, 1)), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.0f)))));
+            p80Var.setText(org.telegram.messenger.i0.V2(dd.V(null, null, 2131750367, dd.E(starGift.availability_total, ','), Integer.valueOf(this.V1.f.total_rounds), Integer.valueOf(starGift.gifts_per_round), org.telegram.messenger.i0.H2(org.telegram.messenger.i0.T2(dd.L0(2131750366, null), new q(context, p6Var3, starGift, 1)), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.0f)))));
             a7.H(p80Var, t6.J6, p6Var3);
         }
         if (!z10) {
@@ -262,18 +262,18 @@ public final class d0 extends ha implements w9 {
                 linearLayout.addView(p80Var, b6.k(40.0f, 0.0f, 40.0f, 32.0f, -1, -2));
             }
             int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
-            t9 t9Var2 = this.V1;
-            if (t9Var2 == null || !t9Var2.g(currentTime)) {
-                dVar.i(cd.L0(2131750354, null), false, true);
+            u9 u9Var2 = this.V1;
+            if (u9Var2 == null || !u9Var2.g(currentTime)) {
+                dVar.i(dd.L0(2131750354, null), false, true);
             } else {
-                dVar.i(cd.L0(2131750349, null), false, true);
+                dVar.i(dd.L0(2131750349, null), false, true);
             }
-            t9 t9Var3 = this.V1;
-            if (t9Var3 != null && t9Var3.f != null) {
-                if (t9Var3.g(currentTime)) {
-                    dVar.g(cd.a0(null, null, 2131750344, cd.c0(this.V1.f.start_date - currentTime)), false);
+            u9 u9Var3 = this.V1;
+            if (u9Var3 != null && u9Var3.f != null) {
+                if (u9Var3.g(currentTime)) {
+                    dVar.g(dd.a0(null, null, 2131750344, dd.c0(this.V1.f.start_date - currentTime)), false);
                 } else {
-                    dVar.g(cd.a0(null, null, 2131750330, cd.c0(this.V1.f.end_date - currentTime)), false);
+                    dVar.g(dd.a0(null, null, 2131750330, dd.c0(this.V1.f.end_date - currentTime)), false);
                 }
             }
             dVar.setOnClickListener(new n(this, j10, context, p6Var3, runnable, 1));
@@ -283,52 +283,52 @@ public final class d0 extends ha implements w9 {
             TextView textView7 = new TextView(context);
             textView7.setTypeface(org.telegram.messenger.i0.o());
             textView7.setGravity(17);
-            textView7.setText(cd.a0(null, null, 2131749818, starGift.title));
+            textView7.setText(dd.a0(null, null, 2131749818, starGift.title));
             textView7.setTextSize(1, 20.0f);
             a7.V(textView7, i18, p6Var3);
             linearLayout.addView(textView7, b6.t(-1, -2, 17, 20, 14, 20, 6));
             TextView textView8 = new TextView(context);
             textView8.setGravity(17);
-            textView8.setText(cd.L0(2131749816, null));
+            textView8.setText(dd.L0(2131749816, null));
             textView8.setTextSize(1, 14.0f);
             a7.V(textView8, i18, p6Var3);
             linearLayout.addView(textView8, b6.t(-1, -2, 17, 20, 0, 20, 16));
-            st0 st0Var = new st0(context, p6Var3);
-            st0Var.a.l(cd.L0(2131749824, null), false);
-            st0Var.b.setText(cd.L0(2131749823, null));
-            st0Var.d.setVisibility(8);
-            ImageView imageView2 = st0Var.c;
+            rt0 rt0Var = new rt0(context, p6Var3);
+            rt0Var.a.l(dd.L0(2131749824, null), false);
+            rt0Var.b.setText(dd.L0(2131749823, null));
+            rt0Var.d.setVisibility(8);
+            ImageView imageView2 = rt0Var.c;
             imageView2.setImageResource(R.drawable.msg_emoji_gem);
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
             a7.t(imageView2, i18, p6Var3, mode);
-            linearLayout.addView(st0Var, b6.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
-            st0 st0Var2 = new st0(context, p6Var3);
-            st0Var2.a.l(cd.L0(2131749822, null), false);
-            st0Var2.b.setText(cd.L0(2131749821, null));
-            st0Var2.d.setVisibility(8);
-            ImageView imageView3 = st0Var2.c;
+            linearLayout.addView(rt0Var, b6.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
+            rt0 rt0Var2 = new rt0(context, p6Var3);
+            rt0Var2.a.l(dd.L0(2131749822, null), false);
+            rt0Var2.b.setText(dd.L0(2131749821, null));
+            rt0Var2.d.setVisibility(8);
+            ImageView imageView3 = rt0Var2.c;
             imageView3.setImageResource(R.drawable.menu_feature_cover_24);
             a7.t(imageView3, i18, p6Var3, mode);
-            linearLayout.addView(st0Var2, b6.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
-            st0 st0Var3 = new st0(context, p6Var3);
-            st0Var3.a.l(cd.L0(2131749820, null), false);
-            st0Var3.b.setText(cd.L0(2131749819, null));
-            st0Var3.d.setVisibility(8);
-            ImageView imageView4 = st0Var3.c;
+            linearLayout.addView(rt0Var2, b6.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
+            rt0 rt0Var3 = new rt0(context, p6Var3);
+            rt0Var3.a.l(dd.L0(2131749820, null), false);
+            rt0Var3.b.setText(dd.L0(2131749819, null));
+            rt0Var3.d.setVisibility(8);
+            ImageView imageView4 = rt0Var3.c;
             imageView4.setImageResource(R.drawable.menu_verification);
             a7.t(imageView4, i18, p6Var3, mode);
-            linearLayout.addView(st0Var3, b6.k(6.0f, 0.0f, 6.0f, 14.0f, -1, -2));
+            linearLayout.addView(rt0Var3, b6.k(6.0f, 0.0f, 6.0f, 14.0f, -1, -2));
         }
-        dVar.i(rh.e4.g2(cd.L0(2131743913, null)), false, true);
+        dVar.i(rh.e4.g2(dd.L0(2131743913, null)), false, true);
         dVar.setOnClickListener(new ag.g(this, 26));
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(this.k1, getContext(), this.a, 0, true, new ag.a(this, 24), this.I0);
-        this.W1 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(this.k1, getContext(), this.a, 0, true, new ag.a(this, 24), this.I0);
+        this.W1 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
@@ -336,14 +336,14 @@ public final class d0 extends ha implements w9 {
         return "";
     }
 
-    @Override // org.telegram.messenger.w9
-    public final void c(t9 t9Var) {
-        this.V1 = t9Var;
+    @Override // org.telegram.messenger.x9
+    public final void c(u9 u9Var) {
+        this.V1 = u9Var;
     }
 
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
-        x9.c(this.a).n(this.P1, this);
+        y9.c(this.a).n(this.P1, this);
         super.dismiss();
     }
 

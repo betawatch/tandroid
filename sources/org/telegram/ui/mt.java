@@ -1,31 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mt implements org.telegram.messenger.us {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class mt {
+    public String a;
+    public String b;
+    public String c;
+    public String d;
 
-    public /* synthetic */ mt(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && mt.class == obj.getClass()) {
+            mt mtVar = (mt) obj;
+            if (Objects.equals(this.a, mtVar.a) && Objects.equals(this.c, mtVar.c)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // org.telegram.messenger.us
-    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) this.b;
-                if (i10 == 259) {
-                    x9Var.getTextView().invalidate();
-                    break;
-                }
-                break;
-            default:
-                ((org.telegram.ui.ActionBar.q2) this.b).invalidate();
-                break;
-        }
+    public final int hashCode() {
+        return Objects.hash(this.a, this.c);
     }
 }

@@ -4,15 +4,15 @@ import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.os.Build;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class VoipAudioManager {
     private Boolean isSpeakerphoneOn;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static final class InstanceHolder {
         static final VoipAudioManager instance = new VoipAudioManager();
 
@@ -44,13 +44,13 @@ public class VoipAudioManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$isBluetoothAndSpeakerOnAsync$3(j20 j20Var, boolean z10, boolean z11) {
-        j20Var.a(Boolean.valueOf(z10), Boolean.valueOf(z11));
+    public static /* synthetic */ void lambda$isBluetoothAndSpeakerOnAsync$3(k20 k20Var, boolean z10, boolean z11) {
+        k20Var.a(Boolean.valueOf(z10), Boolean.valueOf(z11));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$isBluetoothAndSpeakerOnAsync$4(j20 j20Var) {
-        org.telegram.messenger.i0.g3(new e2.m0(j20Var, isBluetoothOn(), getAudioManager().isSpeakerphoneOn(), 3));
+    public /* synthetic */ void lambda$isBluetoothAndSpeakerOnAsync$4(k20 k20Var) {
+        org.telegram.messenger.i0.g3(new e2.m0(k20Var, isBluetoothOn(), getAudioManager().isSpeakerphoneOn(), 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -72,8 +72,8 @@ public class VoipAudioManager {
         return null;
     }
 
-    public void isBluetoothAndSpeakerOnAsync(j20 j20Var) {
-        Utilities.e.c(new mh.k(21, this, j20Var));
+    public void isBluetoothAndSpeakerOnAsync(k20 k20Var) {
+        Utilities.e.c(new mh.k(21, this, k20Var));
     }
 
     public boolean isBluetoothOn() {

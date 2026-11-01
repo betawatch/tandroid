@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class j implements Closeable {
     public static final Logger h = Logger.getLogger(j.class.getName());
@@ -110,7 +110,7 @@ public final class j implements Closeable {
         sb2.append(this.e);
         sb2.append(", element lengths=[");
         try {
-            a(new u(sb2, 8));
+            a(new u(sb2, 9));
         } catch (IOException e) {
             h.log(Level.WARNING, "read error", (Throwable) e);
         }

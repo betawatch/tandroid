@@ -2,10 +2,10 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class rb extends w7.d6 {
-    public org.telegram.messenger.jj a;
+    public org.telegram.messenger.kj a;
     public int b = 0;
     public boolean c = true;
     public int d = 0;
@@ -18,10 +18,10 @@ public final class rb extends w7.d6 {
 
     @Override // w7.d6
     public final void a() {
-        org.telegram.messenger.jj jjVar = this.a;
+        org.telegram.messenger.kj kjVar = this.a;
         sb sbVar = this.f;
-        if (jjVar != null) {
-            int indexOf = sbVar.o0.indexOf(jjVar) + sbVar.E.f;
+        if (kjVar != null) {
+            int indexOf = sbVar.o0.indexOf(kjVar) + sbVar.E.f;
             if (indexOf >= 0) {
                 sbVar.y.i1(indexOf, this.e, false);
             }
@@ -30,8 +30,8 @@ public final class rb extends w7.d6 {
         }
         this.a = null;
         sbVar.V = true;
-        sbVar.h1();
-        org.telegram.messenger.i0.g3(new rr0(this, 21));
+        sbVar.i1();
+        org.telegram.messenger.i0.g3(new qr0(this, 21));
     }
 
     @Override // w7.d6

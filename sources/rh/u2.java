@@ -1,384 +1,154 @@
 package rh;
 
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.RectF;
+import android.opengl.Matrix;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.lang.reflect.Array;
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.messenger.zs;
+import java.util.ArrayList;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.ms0;
+import org.telegram.ui.ox0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class u2 extends FrameLayout {
-    public final float[] D;
-    public float E;
-    public int F;
-    public ValueAnimator G;
-    public t2 H;
-    public final ph.x1 I;
-    public final View[] a;
-    public final Matrix b;
-    public final float[] c;
-    public float d;
-    public float e;
-    public boolean f;
-    public final float[][] h;
-    public final float[] n;
-    public final float[] r;
-    public final Integer[] s;
-    public final HashSet w;
-    public final HashMap x;
-    public final HashMap y;
+public final class u2 {
+    public final v2 a;
+    public ox0 d;
+    public int f;
+    public int g;
+    public float j;
+    public float k;
+    public final ArrayList b = new ArrayList();
+    public int c = 0;
+    public boolean e = false;
+    public final float[] h = new float[16];
+    public float[] i = new float[16];
+    public boolean l = false;
 
-    public u2(Context context, View[] viewArr) {
-        super(context);
-        this.b = new Matrix();
-        float[] fArr = new float[16];
-        this.c = fArr;
-        this.d = 0.0f;
-        this.e = 0.0f;
-        this.f = true;
-        this.h = new float[][]{new float[]{-1.0f, 0.0f, 0.0f, 0.0f}, new float[]{1.0f, 0.0f, 0.0f, 0.0f}, new float[]{0.0f, 1.0f, 0.0f, 0.0f}, new float[]{0.0f, -1.0f, 0.0f, 0.0f}, new float[]{0.0f, 0.0f, -1.0f, 0.0f}, new float[]{0.0f, 0.0f, 1.0f, 0.0f}};
-        this.n = new float[4];
-        this.r = new float[6];
-        this.s = new Integer[]{0, 1, 2, 3, 4, 5};
-        this.w = new HashSet();
-        this.x = new HashMap();
-        this.y = new HashMap();
-        this.D = new float[6];
-        this.F = -1;
-        this.I = new ph.x1(this, 18);
-        setClipToOutline(false);
-        setClipToPadding(false);
-        android.opengl.Matrix.setIdentityM(fArr, 0);
-        this.a = viewArr;
-        for (View view : viewArr) {
-            addView(view, w7.b6.e(zs.t1, zs.t1, 17));
-        }
+    public u2(v2 v2Var) {
+        this.a = v2Var;
     }
 
-    public static void b(float f7, float f10, float f11, float[] fArr) {
-        double d = f11;
-        float cos = (float) Math.cos(d);
-        float sin = (float) Math.sin(d);
-        float f12 = 1.0f - cos;
-        float f13 = f12 * f7;
-        fArr[0] = (f13 * f7) + cos;
-        float f14 = f13 * f10;
-        float f15 = sin * 0.0f;
-        fArr[4] = f14 - f15;
-        float f16 = f13 * 0.0f;
-        float f17 = sin * f10;
-        fArr[8] = f16 + f17;
-        fArr[12] = 0.0f;
-        fArr[1] = f14 + f15;
-        float f18 = f12 * f10;
-        fArr[5] = (f10 * f18) + cos;
-        float f19 = f18 * 0.0f;
-        float f20 = sin * f7;
-        fArr[9] = f19 - f20;
-        fArr[13] = 0.0f;
-        fArr[2] = f16 - f17;
-        fArr[6] = f19 + f20;
-        fArr[10] = c3.i0.u(f12, 0.0f, 0.0f, cos);
-        fArr[14] = 0.0f;
-        fArr[3] = 0.0f;
-        fArr[7] = 0.0f;
-        fArr[11] = 0.0f;
-        fArr[15] = 1.0f;
+    public final void a(int i10) {
+        this.b.add(new t2(3, 0.0f, 0.0f, i10, -1, 0.0f, null, null));
     }
 
-    public static void c(float[] fArr, float[] fArr2, float[] fArr3) {
-        float f7 = fArr[1];
-        float f10 = fArr2[2];
-        float f11 = fArr[2];
-        fArr3[0] = (f7 * f10) - (fArr2[1] * f11);
-        float f12 = fArr2[0];
-        float f13 = fArr[0];
-        fArr3[1] = (f11 * f12) - (f10 * f13);
-        fArr3[2] = (f13 * fArr2[1]) - (fArr[1] * f12);
-    }
-
-    public static void d(float[] fArr, float[] fArr2, float[] fArr3) {
-        float[] fArr4 = new float[16];
-        android.opengl.Matrix.multiplyMM(fArr4, 0, fArr, 0, fArr2, 0);
-        System.arraycopy(fArr4, 0, fArr3, 0, 16);
-    }
-
-    public static void e(float[] fArr) {
-        float f7 = fArr[0];
-        float f10 = fArr[1];
-        float f11 = fArr[2];
-        float f12 = f11 * f11;
-        float sqrt = (float) Math.sqrt(f12 + (f10 * f10) + (f7 * f7));
-        if (sqrt > 0.0f) {
-            fArr[0] = fArr[0] / sqrt;
-            fArr[1] = fArr[1] / sqrt;
-            fArr[2] = fArr[2] / sqrt;
-        }
-    }
-
-    public final void a() {
-        if (Math.abs(this.d) > 1.0E-4f || Math.abs(this.e) > 1.0E-4f) {
-            float[] fArr = new float[16];
-            b(1.0f, 0.0f, this.d, fArr);
-            float[] fArr2 = this.c;
-            d(fArr, fArr2, fArr2);
-            b(0.0f, 1.0f, this.e, fArr);
-            d(fArr, fArr2, fArr2);
-            if (this.f) {
-                this.d *= 0.96f;
-                this.e *= 0.96f;
-            }
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        RectF rectF;
-        boolean z10;
-        boolean z11;
-        float f7;
-        char c10;
-        float f10;
-        int i10;
-        int i11;
-        int indexOfChild = indexOfChild(view);
-        if (indexOfChild >= 6) {
-            z10 = this.F == indexOfChild;
-            rectF = (RectF) this.y.get(Integer.valueOf(indexOfChild));
-            Integer num = (Integer) this.x.get(Integer.valueOf(indexOfChild));
-            if (num != null) {
-                indexOfChild = num.intValue();
-            }
-            if (view instanceof y2) {
-                y2 y2Var = (y2) view;
-                float f11 = 1.0f - (z10 ? this.E : 1.0f);
-                y2Var.d.setAlpha(f11);
-                y2Var.e.setAlpha(f11);
-                if (!z10 || this.E >= 1.0f) {
-                    this.a[indexOfChild].setVisibility(8);
+    public final void b() {
+        ox0 ox0Var;
+        boolean z10 = this.e;
+        v2 v2Var = this.a;
+        if (!z10) {
+            int i10 = this.c;
+            ArrayList arrayList = this.b;
+            if (i10 < arrayList.size()) {
+                t2 t2Var = (t2) arrayList.get(this.c);
+                this.c++;
+                int i11 = t2Var.a;
+                int i12 = t2Var.e;
+                float f7 = t2Var.b;
+                int i13 = t2Var.d;
+                int c10 = m1.j.c(i11);
+                if (c10 == 0) {
+                    Runnable runnable = t2Var.h;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    b();
+                    return;
                 }
-            }
-            z11 = true;
-        } else {
-            rectF = null;
-            z10 = false;
-            z11 = false;
-        }
-        float[][] fArr = this.h;
-        android.opengl.Matrix.multiplyMV(this.n, 0, this.c, 0, fArr[indexOfChild], 0);
-        float f12 = this.n[2];
-        if (f12 < 0.001f) {
-            return false;
-        }
-        view.setAlpha(Math.min(1.0f, f12 / 0.3f));
-        float width = view.getWidth() / 2.0f;
-        if (z11 && (view instanceof y2)) {
-            f7 = 1.0f;
-            c10 = 6;
-            f10 = ((z10 ? this.E : 1.0f) * org.telegram.messenger.i0.L(2.0f)) + org.telegram.messenger.i0.L(-6.0f);
-        } else {
-            f7 = 1.0f;
-            c10 = 6;
-            f10 = 0.0f;
-        }
-        float L = org.telegram.messenger.i0.L(108.0f) / 2.0f;
-        float width2 = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float[] fArr2 = new float[4];
-        float[] fArr3 = new float[4];
-        float[] fArr4 = new float[4];
-        System.arraycopy(fArr[indexOfChild], 0, fArr2, 0, 4);
-        if (indexOfChild == 0) {
-            i10 = 3;
-            fArr3[0] = 0.0f;
-            fArr3[1] = 0.0f;
-            fArr3[2] = f7;
-            fArr4[0] = 0.0f;
-            fArr4[1] = -1.0f;
-            fArr4[2] = 0.0f;
-        } else if (indexOfChild == 1) {
-            i10 = 3;
-            fArr3[0] = 0.0f;
-            fArr3[1] = 0.0f;
-            fArr3[2] = -1.0f;
-            fArr4[0] = 0.0f;
-            fArr4[1] = -1.0f;
-            fArr4[2] = 0.0f;
-        } else if (indexOfChild == 2) {
-            i10 = 3;
-            fArr3[0] = f7;
-            fArr3[1] = 0.0f;
-            fArr3[2] = 0.0f;
-            fArr4[0] = 0.0f;
-            fArr4[1] = 0.0f;
-            fArr4[2] = f7;
-        } else if (indexOfChild == 3) {
-            i10 = 3;
-            fArr3[0] = f7;
-            fArr3[1] = 0.0f;
-            fArr3[2] = 0.0f;
-            fArr4[0] = 0.0f;
-            fArr4[1] = 0.0f;
-            fArr4[2] = -1.0f;
-        } else if (indexOfChild != 4) {
-            i10 = 3;
-            if (indexOfChild == 5) {
-                fArr3[0] = f7;
-                fArr3[1] = 0.0f;
-                fArr3[2] = 0.0f;
-                fArr4[0] = 0.0f;
-                fArr4[1] = -1.0f;
-                fArr4[2] = 0.0f;
-            }
-        } else {
-            i10 = 3;
-            fArr3[0] = -1.0f;
-            fArr3[1] = 0.0f;
-            fArr3[2] = 0.0f;
-            fArr4[0] = 0.0f;
-            fArr4[1] = -1.0f;
-            fArr4[2] = 0.0f;
-        }
-        fArr3[i10] = 0.0f;
-        fArr4[i10] = 0.0f;
-        float f13 = this.D[indexOfChild];
-        if (f13 != 0.0f) {
-            double radians = (float) Math.toRadians(f13);
-            float cos = (float) Math.cos(radians);
-            float sin = (float) Math.sin(radians);
-            float f14 = fArr3[0];
-            float f15 = fArr4[0];
-            float f16 = fArr3[1];
-            float f17 = fArr4[1];
-            float f18 = fArr3[2];
-            float f19 = fArr4[2];
-            fArr3[0] = (f15 * sin) + (f14 * cos);
-            fArr3[1] = (f17 * sin) + (f16 * cos);
-            fArr3[2] = (f19 * sin) + (f18 * cos);
-            fArr4[0] = (f15 * cos) + ((-f14) * sin);
-            fArr4[1] = (f17 * cos) + ((-f16) * sin);
-            fArr4[2] = (f19 * cos) + ((-f18) * sin);
-            i11 = 4;
-        } else {
-            i11 = 4;
-        }
-        float[] fArr5 = new float[i11];
-        float[] fArr6 = new float[i11];
-        float[] fArr7 = new float[i11];
-        android.opengl.Matrix.multiplyMV(fArr5, 0, this.c, 0, fArr2, 0);
-        float[] fArr8 = fArr5;
-        android.opengl.Matrix.multiplyMV(fArr6, 0, this.c, 0, fArr3, 0);
-        float[] fArr9 = fArr6;
-        android.opengl.Matrix.multiplyMV(fArr7, 0, this.c, 0, fArr4, 0);
-        float f20 = 64.0f * L;
-        int i12 = 2;
-        int i13 = 1;
-        float[][] fArr10 = (float[][]) Array.newInstance((Class<?>) Float.TYPE, 4, i10);
-        int i14 = 0;
-        for (int i15 = 4; i14 < i15; i15 = 4) {
-            float f21 = (i14 == i13 || i14 == i12) ? f7 : -1.0f;
-            float f22 = (i14 == 0 || i14 == i13) ? f7 : -1.0f;
-            float[] fArr11 = fArr10[i14];
-            float[] fArr12 = fArr8;
-            float[] fArr13 = fArr9;
-            fArr11[0] = c3.i0.C(fArr7[0], f22, (fArr9[0] * f21) + fArr8[0], L);
-            fArr11[1] = c3.i0.C(fArr7[1], f22, (fArr13[1] * f21) + fArr12[1], L);
-            fArr11[2] = c3.i0.C(fArr7[2], f22, (fArr13[2] * f21) + fArr12[2], L);
-            i14++;
-            fArr9 = fArr13;
-            fArr8 = fArr12;
-            i12 = 2;
-            i13 = 1;
-        }
-        int i16 = i12;
-        float[] fArr14 = new float[8];
-        int i17 = 0;
-        while (i17 < 4) {
-            float[] fArr15 = fArr10[i17];
-            float f23 = f20 / (f20 - fArr15[i16]);
-            int i18 = i17 * 2;
-            fArr14[i18] = (fArr15[0] * f23) + width2;
-            fArr14[i18 + 1] = (fArr15[1] * f23) + height;
-            i17++;
-            i16 = 2;
-        }
-        float f24 = (width2 - width) - f10;
-        float f25 = (height - width) - f10;
-        float f26 = width2 + width + f10;
-        float f27 = height + width + f10;
-        float[] fArr16 = new float[8];
-        fArr16[0] = f24;
-        fArr16[1] = f25;
-        fArr16[2] = f26;
-        fArr16[i10] = f25;
-        fArr16[4] = f26;
-        fArr16[5] = f27;
-        fArr16[c10] = f24;
-        fArr16[7] = f27;
-        if (z10 && rectF != null) {
-            float f28 = rectF.left;
-            float f29 = rectF.top;
-            float f30 = rectF.right;
-            float f31 = rectF.bottom;
-            float[] fArr17 = new float[8];
-            fArr17[0] = f28;
-            fArr17[1] = f29;
-            fArr17[2] = f30;
-            fArr17[i10] = f29;
-            fArr17[4] = f30;
-            fArr17[5] = f31;
-            fArr17[c10] = f28;
-            fArr17[7] = f31;
-            org.telegram.messenger.i0.a2(fArr17, fArr14, this.E, fArr14);
-        }
-        Matrix matrix = this.b;
-        matrix.reset();
-        matrix.setPolyToPoly(fArr16, 0, fArr14, 0, 4);
-        canvas.save();
-        canvas.concat(matrix);
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
-    }
-
-    public final void f(int i10, FrameLayout frameLayout) {
-        if (i10 == -1) {
-            i10 = 5;
-        }
-        org.telegram.messenger.i0.E2(frameLayout);
-        int childCount = getChildCount();
-        addView(frameLayout, w7.b6.e(64, 64, 17));
-        this.w.add(Integer.valueOf(i10));
-        this.x.put(Integer.valueOf(childCount), Integer.valueOf(i10));
-    }
-
-    @Override // android.view.ViewGroup
-    public final int getChildDrawingOrder(int i10, int i11) {
-        if (i11 < 6) {
-            Integer[] numArr = this.s;
-            if (i11 < numArr.length) {
-                return numArr[i11].intValue();
+                if (c10 == 1) {
+                    v2Var.d = (t2Var.c * 0.01f) + v2Var.d;
+                    v2Var.e = (f7 * 0.01f) + v2Var.e;
+                    this.f = 1;
+                    this.g = 1;
+                    return;
+                }
+                if (c10 == 2) {
+                    this.f = i13;
+                    this.g = i13;
+                    return;
+                }
+                int i14 = 3;
+                if (c10 == 3) {
+                    System.arraycopy(v2Var.c, 0, this.h, 0, 16);
+                    float f10 = t2Var.f;
+                    float[] fArr = new float[16];
+                    Matrix.setIdentityM(fArr, 0);
+                    if (f10 != 0.0f) {
+                        Matrix.rotateM(fArr, 0, -f10, 0.0f, 0.0f, 1.0f);
+                    }
+                    if (i12 == 0) {
+                        Matrix.rotateM(fArr, 0, 90.0f, 0.0f, 1.0f, 0.0f);
+                    } else if (i12 == 1) {
+                        Matrix.rotateM(fArr, 0, -90.0f, 0.0f, 1.0f, 0.0f);
+                    } else if (i12 == 2) {
+                        Matrix.rotateM(fArr, 0, 90.0f, 1.0f, 0.0f, 0.0f);
+                    } else if (i12 == 3) {
+                        Matrix.rotateM(fArr, 0, -90.0f, 1.0f, 0.0f, 0.0f);
+                    } else if (i12 == 4) {
+                        Matrix.rotateM(fArr, 0, 180.0f, 0.0f, 1.0f, 0.0f);
+                    }
+                    this.i = fArr;
+                    this.g = i13;
+                    this.f = i13;
+                    this.j = v2Var.d;
+                    this.k = v2Var.e;
+                    return;
+                }
+                if (c10 != 4) {
+                    if (c10 != 5) {
+                        return;
+                    }
+                    v2Var.f = f7 > 0.0f;
+                    b();
+                    return;
+                }
+                this.l = true;
+                View view = t2Var.g;
+                ValueAnimator valueAnimator = v2Var.G;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    v2Var.G = null;
+                }
+                RectF rectF = new RectF();
+                rectF.left = view.getX() - v2Var.getX();
+                rectF.top = view.getY() - v2Var.getY();
+                rectF.right = rectF.left + view.getWidth();
+                rectF.bottom = rectF.top + view.getHeight();
+                org.telegram.messenger.i0.E2(view);
+                int childCount = v2Var.getChildCount();
+                v2Var.addView(view, w7.b6.e(64, 64, 17));
+                v2Var.w.add(Integer.valueOf(i12));
+                v2Var.x.put(Integer.valueOf(childCount), Integer.valueOf(i12));
+                v2Var.y.put(Integer.valueOf(childCount), rectF);
+                v2Var.F = childCount;
+                v2Var.E = 0.0f;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                v2Var.G = ofFloat;
+                ofFloat.addUpdateListener(new qh.e0(v2Var, i14));
+                v2Var.G.addListener(new ms0(v2Var, 26));
+                v2Var.G.setDuration(i13 * 16);
+                v2Var.G.setInterpolator(gr.h);
+                v2Var.G.start();
+                return;
             }
         }
-        return i11;
+        v2Var.H = null;
+        if (this.e || (ox0Var = this.d) == null) {
+            return;
+        }
+        ox0Var.run();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.messenger.i0.h3(this.I, 16L);
+    public final void c(float f7, float f10) {
+        this.b.add(new t2(2, f7, f10, 0, -1, 0.0f, null, null));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.i0.r(this.I);
+    public final void d(boolean z10) {
+        this.b.add(new t2(6, z10 ? 1.0f : -1.0f, 0.0f, 0, -1, 0.0f, null, null));
+    }
+
+    public final void e(z2 z2Var, int i10, float f7) {
+        this.b.add(new t2(5, 0.0f, 0.0f, 32, i10, f7, z2Var, null));
     }
 }

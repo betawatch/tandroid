@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ta implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -30,10 +30,10 @@ public final /* synthetic */ class ta implements RequestDelegate {
                         public final void run() {
                             switch (i10) {
                                 case 0:
-                                    sb.Y(sbVar, tL_channels_adminLogResults);
+                                    sb.Z(sbVar, tL_channels_adminLogResults);
                                     break;
                                 default:
-                                    sb.c0(sbVar, tL_channels_adminLogResults);
+                                    sb.d0(sbVar, tL_channels_adminLogResults);
                                     break;
                             }
                         }
@@ -69,10 +69,10 @@ public final /* synthetic */ class ta implements RequestDelegate {
                         public final void run() {
                             switch (i12) {
                                 case 0:
-                                    sb.Y(sbVar3, tL_channels_adminLogResults2);
+                                    sb.Z(sbVar3, tL_channels_adminLogResults2);
                                     break;
                                 default:
-                                    sb.c0(sbVar3, tL_channels_adminLogResults2);
+                                    sb.d0(sbVar3, tL_channels_adminLogResults2);
                                     break;
                             }
                         }

@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.telegram.ui.web.v1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public interface l {
     void a(int i10, int i11, int i12, long j10);
@@ -22,11 +22,11 @@ public interface l {
 
     void e();
 
-    void f(v1 v1Var);
+    void f(int i10, long j10);
 
     void flush();
 
-    void g(int i10, long j10);
+    int g();
 
     ByteBuffer getInputBuffer(int i10);
 
@@ -34,7 +34,7 @@ public interface l {
 
     MediaFormat getOutputFormat();
 
-    int h();
+    void h(v1 v1Var);
 
     int i(MediaCodec.BufferInfo bufferInfo);
 

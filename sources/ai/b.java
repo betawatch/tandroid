@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.g0;
@@ -33,7 +33,7 @@ import sc.e;
 import th.c0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b extends LinearLayout {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final class b extends LinearLayout {
                     canvas.save();
                     canvas.clipPath(path);
                     if (((s8) this.b) == null) {
-                        this.b = new s8(1, zs.Z3);
+                        this.b = new s8(1, at.Z3);
                     }
                     ((s8) this.b).f(0, 0, getWidth(), getHeight());
                     s8 s8Var = (s8) this.b;
@@ -173,7 +173,7 @@ public final class b extends LinearLayout {
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
         a7.y(this, mutate, i11, p6Var, PorterDuff.Mode.MULTIPLY);
         view.setBackground(mutate);
-        if (cd.X) {
+        if (dd.X) {
             addView(view, b6.t(16, 16, 16, 11, 0, 3, 0));
             addView(f6Var, b6.t(-2, 16, 16, 0, 0, ((ImageView) this.b) != null ? 3 : 11, 0));
             View view2 = (ImageView) this.b;
@@ -217,10 +217,10 @@ public final class b extends LinearLayout {
                 frameLayout.setClipToPadding(false);
                 o7 o7Var = new o7(context, 70, 0, 1);
                 frameLayout.addView(o7Var, b6.c(-1.0f, -1));
-                org.telegram.ui.Wallet.a7 a7Var = new org.telegram.ui.Wallet.a7(zs.A2, context, false);
+                org.telegram.ui.Wallet.a7 a7Var = new org.telegram.ui.Wallet.a7(at.A2, context, false);
                 this.b = a7Var;
                 a7Var.setStarParticlesView(o7Var);
-                frameLayout.addView(a7Var, b6.d(zs.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                frameLayout.addView(a7Var, b6.d(at.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
                 a7Var.setPaused(false);
                 addView(frameLayout, b6.c(180.0f, -1));
                 TextView textView = new TextView(context);

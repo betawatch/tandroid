@@ -14,10 +14,10 @@ import org.telegram.messenger.f8;
 import org.telegram.messenger.t2;
 import org.telegram.messenger.v2;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.qu0;
 import w7.z8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a0 {
     public static final gr B = new gr(0.0d, 0.5d, 0.0d, 1.0d);
@@ -650,15 +650,15 @@ public final class a0 {
             if (z10 && (b1Var = c1Var.a) != null) {
                 b1Var.t();
             }
-            pu0 pu0Var = c1Var.getPainting().g;
+            qu0 qu0Var = c1Var.getPainting().g;
             u0 u0Var = this.g;
             float a2 = z8.a((float) u0Var.a, (float) u0Var.b, 0.0f, 0.0f);
             u0 u0Var2 = this.g;
-            float max = Math.max(a2, z8.a((float) u0Var2.a, (float) u0Var2.b, pu0Var.a, 0.0f));
+            float max = Math.max(a2, z8.a((float) u0Var2.a, (float) u0Var2.b, qu0Var.a, 0.0f));
             u0 u0Var3 = this.g;
-            float a10 = z8.a((float) u0Var3.a, (float) u0Var3.b, 0.0f, pu0Var.b);
+            float a10 = z8.a((float) u0Var3.a, (float) u0Var3.b, 0.0f, qu0Var.b);
             u0 u0Var4 = this.g;
-            final float max2 = Math.max(max, Math.max(a10, z8.a((float) u0Var4.a, (float) u0Var4.b, pu0Var.a, pu0Var.b))) / 0.84f;
+            final float max2 = Math.max(max, Math.max(a10, z8.a((float) u0Var4.a, (float) u0Var4.b, qu0Var.a, qu0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();

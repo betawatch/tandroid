@@ -14,16 +14,16 @@ import android.widget.TextView;
 import java.util.List;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.ac0;
-import org.telegram.ui.Components.fo0;
+import org.telegram.ui.Components.go0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.n21;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.o21;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Wallet.n5;
 import org.telegram.ui.Wallet.r9;
 import vh.b4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d0 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -31,12 +31,12 @@ public final class d0 extends LinearLayout {
     public Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(Activity activity, org.telegram.ui.Components.voip.x0 x0Var) {
+    public d0(Activity activity, org.telegram.ui.Components.voip.y0 y0Var) {
         super(activity);
         this.a = 6;
         this.b = new RectF();
-        this.c = x0Var;
-        x0Var.a(this);
+        this.c = y0Var;
+        y0Var.a(this);
     }
 
     public static boolean a(View view, View view2) {
@@ -54,19 +54,19 @@ public final class d0 extends LinearLayout {
         switch (this.a) {
             case 4:
                 super.dispatchDraw(canvas);
-                ((qz0) this.b).e(canvas, ((ac0) this.c).getX() - org.telegram.messenger.i0.L(50.0f), getHeight() / 2.0f);
+                ((rz0) this.b).e(canvas, ((ac0) this.c).getX() - org.telegram.messenger.i0.L(50.0f), getHeight() / 2.0f);
                 break;
             case 5:
                 canvas.save();
                 t5 t5Var = (t5) this.b;
-                n21 n21Var = (n21) this.c;
-                float d = t5Var.d(n21Var.y);
+                o21 o21Var = (o21) this.c;
+                float d = t5Var.d(o21Var.y);
                 if (d > 0.0f) {
-                    if (n21Var.c == null) {
-                        n21Var.c = new fo0(this);
+                    if (o21Var.c == null) {
+                        o21Var.c = new go0(this);
                     }
                     canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-                    n21Var.c.a(canvas, d);
+                    o21Var.c.a(canvas, d);
                     canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
                 }
                 super.dispatchDraw(canvas);
@@ -75,9 +75,9 @@ public final class d0 extends LinearLayout {
             case 6:
                 RectF rectF = (RectF) this.b;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                org.telegram.ui.Components.voip.x0 x0Var = (org.telegram.ui.Components.voip.x0) this.c;
-                x0Var.d(getX(), getY());
-                canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(20.0f), org.telegram.messenger.i0.L(20.0f), x0Var.b());
+                org.telegram.ui.Components.voip.y0 y0Var = (org.telegram.ui.Components.voip.y0) this.c;
+                y0Var.d(getX(), getY());
+                canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(20.0f), org.telegram.messenger.i0.L(20.0f), y0Var.b());
                 super.dispatchDraw(canvas);
                 break;
             default:
@@ -270,10 +270,10 @@ public final class d0 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(n21 n21Var, Context context) {
+    public d0(o21 o21Var, Context context) {
         super(context);
         this.a = 5;
-        this.c = n21Var;
+        this.c = o21Var;
         this.b = new t5(this, 360L, gr.h);
     }
 
@@ -306,10 +306,10 @@ public final class d0 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(Context context, qz0 qz0Var, ac0 ac0Var) {
+    public d0(Context context, rz0 rz0Var, ac0 ac0Var) {
         super(context);
         this.a = 4;
-        this.b = qz0Var;
+        this.b = rz0Var;
         this.c = ac0Var;
     }
 }

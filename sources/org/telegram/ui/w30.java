@@ -1,37 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class w30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b50 b;
+public final class w30 extends org.telegram.ui.Components.pp0 {
+    public final /* synthetic */ a50 R2;
 
-    public /* synthetic */ w30(b50 b50Var, int i10) {
-        this.a = i10;
-        this.b = b50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w30(a50 a50Var, Context context, String str, String str2, String str3, String str4) {
+        super(context, null, str, str2, false, str3, str4, true);
+        this.R2 = a50Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                b50 b50Var = this.b;
-                b50Var.M1.setVisibility(4);
-                b50Var.N1.setVisibility(4);
-                b50Var.L1.setVisibility(4);
-                break;
-            case 1:
-                this.b.Y1 = null;
-                break;
-            default:
-                b50 b50Var2 = this.b;
-                b50Var2.Y2 = null;
-                b50Var2.X2.setColor(b50Var2.K3 == 3 ? -1163700 : -12761513);
-                b50Var2.W2.invalidate();
-                break;
+    @Override // org.telegram.ui.Components.pp0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = hVar.m();
+            a50 a50Var = this.R2;
+            if (m10 == 1) {
+                a50Var.m1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 41);
+            } else {
+                a50Var.m1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
+            }
         }
     }
 }

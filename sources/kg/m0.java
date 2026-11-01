@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u5;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class m0 extends FrameLayout {
     public final ImageView a;
@@ -32,13 +32,13 @@ public final class m0 extends FrameLayout {
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         a7.t(imageView, t6.zk, p6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView, b6.d(24, 24.0f, (cd.X ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+        addView(imageView, b6.d(24, 24.0f, (dd.X ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
         u5 u5Var = new u5(context);
         this.b = u5Var;
         u5Var.setWidthWrapContent(true);
         a7.Y(u5Var, t6.j5, p6Var);
         u5Var.setTextSize(14);
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         addView(u5Var, b6.d(-2, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f));
         u5 u5Var2 = new u5(context);
         this.d = u5Var2;

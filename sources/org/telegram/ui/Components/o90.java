@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o90 extends oh.q {
     public final /* synthetic */ int E = 1;
@@ -20,7 +20,7 @@ public final class o90 extends oh.q {
         switch (this.E) {
             case 0:
                 oh.c cVar = (oh.c) this.F;
-                dw0 dw0Var = cVar.N1;
+                ew0 ew0Var = cVar.N1;
                 if (!this.e.isEmpty()) {
                     if (!z11) {
                         super.f(str, z10, z11);
@@ -29,8 +29,8 @@ public final class o90 extends oh.q {
                         cVar.s1.J.setText("");
                         break;
                     }
-                } else if (dw0Var.getVisibility() != 4) {
-                    dw0Var.setVisibility(4);
+                } else if (ew0Var.getVisibility() != 4) {
+                    ew0Var.setVisibility(4);
                     break;
                 }
                 break;

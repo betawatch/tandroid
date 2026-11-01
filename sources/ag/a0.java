@@ -3,12 +3,12 @@ package ag;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.fs;
+import org.telegram.messenger.gs;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.r4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -65,13 +65,13 @@ public final /* synthetic */ class a0 implements TextView.OnEditorActionListener
                 break;
             default:
                 r4 r4Var = (r4) this.e;
-                fs fsVar = (fs) this.f;
+                gs gsVar = (gs) this.f;
                 if (i10 == 6) {
                     String obj2 = r4Var.getText().toString();
                     if (obj2.length() > this.b) {
                         org.telegram.messenger.i0.E3(r4Var);
                     } else {
-                        fsVar.a(obj2);
+                        gsVar.a(obj2);
                         org.telegram.ui.ActionBar.x1 x1Var2 = this.c[0];
                         if (x1Var2 != null) {
                             x1Var2.dismiss();

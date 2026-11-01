@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
     public static final gr x0 = new gr(0.0f, 0.5f, 0.5f, 1.0f);
@@ -43,8 +43,8 @@ public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
     public int Q;
     public int R;
     public int S;
-    public final zl0 T;
-    public final zl0 U;
+    public final am0 T;
+    public final am0 U;
     public int V;
     public vb0 W;
     public boolean a;
@@ -77,7 +77,7 @@ public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
     public final boolean s;
     public final org.telegram.ui.ActionBar.p6 s0;
     public boolean t0;
-    public org.telegram.messenger.r20 u0;
+    public org.telegram.messenger.s20 u0;
     public Integer v0;
     public final int w;
     public int w0;
@@ -122,9 +122,9 @@ public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
         }
         this.V = 0;
         if (z10) {
-            this.T.d(-this.Q, org.telegram.messenger.zs.X4);
+            this.T.d(-this.Q, org.telegram.messenger.at.X4);
         } else {
-            this.T.d(this.Q, org.telegram.messenger.zs.X4);
+            this.T.d(this.Q, org.telegram.messenger.at.X4);
         }
         invalidate();
     }
@@ -176,25 +176,25 @@ public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
 
     @Override // android.view.View
     public final void computeScroll() {
-        zl0 zl0Var = this.T;
-        if (zl0Var.q) {
-            zl0Var = this.U;
-            if (zl0Var.q) {
+        am0 am0Var = this.T;
+        if (am0Var.q) {
+            am0Var = this.U;
+            if (am0Var.q) {
                 return;
             }
         }
-        zl0Var.b();
-        int i10 = zl0Var.k;
+        am0Var.b();
+        int i10 = am0Var.k;
         if (this.V == 0) {
-            this.V = zl0Var.c;
+            this.V = am0Var.c;
         }
         scrollBy(0, i10 - this.V);
         this.V = i10;
-        if (!zl0Var.q) {
+        if (!am0Var.q) {
             invalidate();
             return;
         }
-        if (zl0Var == this.T) {
+        if (am0Var == this.T) {
             if (!c()) {
                 n();
             }
@@ -355,9 +355,9 @@ public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
         return this.h0;
     }
 
-    public final boolean h(zl0 zl0Var) {
-        zl0Var.q = true;
-        int i10 = zl0Var.e - zl0Var.k;
+    public final boolean h(am0 am0Var) {
+        am0Var.q = true;
+        int i10 = am0Var.e - am0Var.k;
         int i11 = this.R - ((this.S + i10) % this.Q);
         if (i11 == 0) {
             return false;
@@ -596,17 +596,17 @@ public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
             ((ac0) zb0Var2.d).postDelayed(zb0Var2, ViewConfiguration.getTapTimeout());
         }
         getParent().requestDisallowInterceptTouchEvent(true);
-        zl0 zl0Var = this.T;
-        if (!zl0Var.q) {
-            zl0Var.q = true;
+        am0 am0Var = this.T;
+        if (!am0Var.q) {
+            am0Var.q = true;
             this.U.q = true;
             i(0);
             return true;
         }
-        zl0 zl0Var2 = this.U;
-        if (!zl0Var2.q) {
-            zl0Var.q = true;
-            zl0Var2.q = true;
+        am0 am0Var2 = this.U;
+        if (!am0Var2.q) {
+            am0Var.q = true;
+            am0Var2.q = true;
             return true;
         }
         float f10 = this.a0;
@@ -815,8 +815,8 @@ public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
         setWrapSelectorWheel(this.i0);
     }
 
-    public void setContentDescriptionCallback(org.telegram.messenger.r20 r20Var) {
-        this.u0 = r20Var;
+    public void setContentDescriptionCallback(org.telegram.messenger.s20 s20Var) {
+        this.u0 = s20Var;
     }
 
     public void setDisplayedValues(String[] strArr) {
@@ -1042,8 +1042,8 @@ public class ac0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
         paint2.setTypeface(this.e.getTypeface());
         paint2.setColor(this.e.getTextColors().getColorForState(LinearLayout.ENABLED_STATE_SET, -1));
         this.P = paint2;
-        this.T = new zl0(getContext(), null);
-        this.U = new zl0(getContext(), new DecelerateInterpolator(2.5f));
+        this.T = new am0(getContext(), null);
+        this.U = new am0(getContext(), new DecelerateInterpolator(2.5f));
         n();
         setImportantForAccessibility(1);
         setAccessibilityDelegate(new ub0(this));

@@ -22,11 +22,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.UUID;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -1450,7 +1450,7 @@ public final class h implements c3.o {
                                 sVar2.g = new int[i44];
                             }
                             if (sVar2.h.length < i45) {
-                                int i46 = (i45 * zs.J1) / 100;
+                                int i46 = (i45 * at.J1) / 100;
                                 sVar2.h = new int[i46];
                                 sVar2.i = new long[i46];
                                 sVar2.j = new boolean[i46];
@@ -1692,7 +1692,7 @@ public final class h implements c3.o {
                                         }
                                         xVar12.O(1);
                                         int A3 = xVar12.A();
-                                        int i63 = (A3 & zs.P3) >> 4;
+                                        int i63 = (A3 & at.P3) >> 4;
                                         int i64 = A3 & 15;
                                         boolean z22 = xVar12.A() == 1;
                                         if (z22) {

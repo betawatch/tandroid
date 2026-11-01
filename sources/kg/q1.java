@@ -9,24 +9,24 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.x4;
 import org.telegram.ui.Components.cv;
-import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.mx;
 import org.telegram.ui.Components.o90;
-import org.telegram.ui.Components.tk0;
 import org.telegram.ui.Components.tt;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.ut;
 import org.telegram.ui.Components.yu;
 import org.telegram.ui.Components.zz;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.t60;
+import org.telegram.ui.s60;
 import ph.g4;
 import rh.e4;
 import th.j3;
@@ -36,7 +36,7 @@ import vh.b4;
 import vh.q3;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q1 extends org.telegram.ui.ActionBar.k2 {
     public final /* synthetic */ int a;
@@ -60,15 +60,15 @@ public final class q1 extends org.telegram.ui.ActionBar.k2 {
                 return view;
             case 6:
                 this.actionBar.setAllowOverlayTitle(true);
-                this.actionBar.setActionBarMenuOnItemClick(new t60(this, 7));
+                this.actionBar.setActionBarMenuOnItemClick(new s60(this, 7));
                 this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
                 org.telegram.ui.ActionBar.l lVar = this.actionBar;
                 o90 o90Var = (o90) this.b;
-                lVar.setTitle(cd.L0(o90Var.a ? 2131744462 : 2131748650, null));
+                lVar.setTitle(dd.L0(o90Var.a ? 2131744462 : 2131748650, null));
                 org.telegram.ui.ActionBar.t0 a2 = this.actionBar.p().a(0, R.drawable.outline_header_search);
                 a2.N();
                 a2.H = new l3(this, 16);
-                a2.setSearchFieldHint(cd.L0(2131745853, null));
+                a2.setSearchFieldHint(dd.L0(2131745853, null));
                 a2.setVisibility(8);
                 org.telegram.ui.ActionBar.k2 k2Var = o90Var.g;
                 if (o90Var.m == null) {
@@ -78,17 +78,17 @@ public final class q1 extends org.telegram.ui.ActionBar.k2 {
                     zz b10 = o90Var.b();
                     o90Var.q = b10;
                     o90Var.m.addView(b10, -1, -1);
-                    dw0 c10 = o90Var.c();
+                    ew0 c10 = o90Var.c();
                     o90Var.o = c10;
                     o90Var.m.addView(c10, -1, -1);
-                    dw0 a10 = o90Var.a();
+                    ew0 a10 = o90Var.a();
                     o90Var.n = a10;
                     o90Var.m.addView(a10, b6.c(-1.0f, -1));
                     k2Var.getParentActivity();
                     s4.a0 a0Var = new s4.a0();
-                    tk0 tk0Var = new tk0(k2Var.getParentActivity(), null);
-                    o90Var.p = tk0Var;
-                    tk0Var.setAdapter(o90Var.f);
+                    uk0 uk0Var = new uk0(k2Var.getParentActivity(), null);
+                    o90Var.p = uk0Var;
+                    uk0Var.setAdapter(o90Var.f);
                     o90Var.p.r1();
                     o90Var.p.setLayoutManager(a0Var);
                     o90Var.p.setOnItemClickListener(new ag.y0(o90Var, 9));
@@ -104,9 +104,9 @@ public final class q1 extends org.telegram.ui.ActionBar.k2 {
                 }
                 FrameLayout frameLayout2 = o90Var.m;
                 org.telegram.ui.ActionBar.l lVar2 = this.actionBar;
-                tk0 tk0Var2 = o90Var.p;
+                uk0 uk0Var2 = o90Var.p;
                 lVar2.getClass();
-                lVar2.B(tk0Var2, t6.a7, t6.s8);
+                lVar2.B(uk0Var2, t6.a7, t6.s8);
                 o90Var.e();
                 this.fragmentView = frameLayout2;
                 return frameLayout2;

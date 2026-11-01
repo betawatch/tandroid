@@ -5,7 +5,7 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.w6;
 import org.telegram.ui.Components.dq;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z2 extends TextView {
     public final dq a;
@@ -57,13 +57,13 @@ public final class z2 extends TextView {
         if (g3Var == g3.b) {
             dqVar = new dq(R.drawable.mini_gift_sorting_date, 0);
             spannableStringBuilder.setSpan(dqVar, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) cd.L0(2131746159, null));
+            spannableStringBuilder.append((CharSequence) dd.L0(2131746159, null));
         } else {
             if (g3Var != g3.a) {
                 if (g3Var == g3.c) {
                     dqVar = new dq(R.drawable.mini_gift_sorting_num, 0);
                     spannableStringBuilder.setSpan(dqVar, 0, 1, 33);
-                    spannableStringBuilder.append((CharSequence) cd.L0(2131746157, null));
+                    spannableStringBuilder.append((CharSequence) dd.L0(2131746157, null));
                 }
                 if (dqVar2 != null) {
                     float L = org.telegram.messenger.i0.L(1.0f);
@@ -74,7 +74,7 @@ public final class z2 extends TextView {
             }
             dqVar = new dq(R.drawable.mini_gift_sorting_price, 0);
             spannableStringBuilder.setSpan(dqVar, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) cd.L0(2131746155, null));
+            spannableStringBuilder.append((CharSequence) dd.L0(2131746155, null));
         }
         dqVar2 = dqVar;
         if (dqVar2 != null) {

@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.m81;
+import org.telegram.ui.Components.n81;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,8 +46,8 @@ public final /* synthetic */ class a1 implements Runnable {
         int i12;
         long j11;
         long j12;
-        m81 m81Var;
-        m81 m81Var2;
+        n81 n81Var;
+        n81 n81Var2;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         long j13 = 0;
@@ -68,8 +68,8 @@ public final /* synthetic */ class a1 implements Runnable {
                 while (true) {
                     int i16 = 4;
                     if (i15 < 4) {
-                        if (d20.i(i15).p()) {
-                            y2 y2Var = d20.i(i15).getMessagesController().s7;
+                        if (e20.i(i15).p()) {
+                            y2 y2Var = e20.i(i15).getMessagesController().s7;
                             arrayList.add(y2Var);
                             if (y2Var.e().size() > 0) {
                                 z10 = true;
@@ -83,7 +83,7 @@ public final /* synthetic */ class a1 implements Runnable {
                         long j14 = Long.MAX_VALUE;
                         while (i17 < 4) {
                             long j15 = j13;
-                            int i18 = tz.q().getInt(i0.a.i(i17, "keep_media_type_"), y2.b(i17));
+                            int i18 = uz.q().getInt(i0.a.i(i17, "keep_media_type_"), y2.b(i17));
                             iArr[i17] = i18;
                             if (i18 != 2) {
                                 z11 = false;
@@ -99,7 +99,7 @@ public final /* synthetic */ class a1 implements Runnable {
                         if (z10) {
                             z11 = false;
                         }
-                        SparseArray l4 = hc.D().l();
+                        SparseArray l4 = ic.D().l();
                         long j17 = j16;
                         int i19 = 0;
                         int i20 = 0;
@@ -170,7 +170,7 @@ public final /* synthetic */ class a1 implements Runnable {
                             i16 = 4;
                         }
                         int i27 = i13;
-                        int i28 = tz.q().getInt("cache_limit", ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        int i28 = uz.q().getInt("cache_limit", ConnectionsManager.DEFAULT_DATACENTER_ID);
                         if (i28 != Integer.MAX_VALUE) {
                             long j19 = i28 == i27 ? 314572800L : i28 * 1048576000;
                             long j20 = j16;
@@ -215,7 +215,7 @@ public final /* synthetic */ class a1 implements Runnable {
                                                         f8.g(th3, true);
                                                     }
                                                 }
-                                                vp.d1().edit().putInt("lastKeepMediaCheckTime", tz.H).apply();
+                                                wp.d1().edit().putInt("lastKeepMediaCheckTime", uz.H).apply();
                                                 if (v2.a) {
                                                     f8.b("checkKeepMedia task end time " + (System.currentTimeMillis() - currentTimeMillis) + " auto deleted info: files " + i20 + " size " + i0.i0(j17, false, false) + "   deleted by size limit info: files " + i10 + " size " + i0.i0(j10, false, false) + " unknownTimeFiles " + i11);
                                                     return;
@@ -232,7 +232,7 @@ public final /* synthetic */ class a1 implements Runnable {
                                 file = new File(file2, "acache");
                                 if (file.exists()) {
                                 }
-                                vp.d1().edit().putInt("lastKeepMediaCheckTime", tz.H).apply();
+                                wp.d1().edit().putInt("lastKeepMediaCheckTime", uz.H).apply();
                                 if (v2.a) {
                                 }
                             }
@@ -243,7 +243,7 @@ public final /* synthetic */ class a1 implements Runnable {
                         file = new File(file2, "acache");
                         if (file.exists()) {
                         }
-                        vp.d1().edit().putInt("lastKeepMediaCheckTime", tz.H).apply();
+                        wp.d1().edit().putInt("lastKeepMediaCheckTime", uz.H).apply();
                         if (v2.a) {
                         }
                     }
@@ -290,7 +290,7 @@ public final /* synthetic */ class a1 implements Runnable {
                     }
                 }
                 if (i35 == 2) {
-                    hc.D().j();
+                    ic.D().j();
                     return;
                 }
                 return;
@@ -298,7 +298,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 FilesMigrationService filesMigrationService = (FilesMigrationService) this.c;
                 int i37 = this.b;
                 boolean z13 = FilesMigrationService.c;
-                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(zs.Y4, c9.b.a(filesMigrationService, ot.j0).setContentTitle(cd.L0(2131748445, null)).setContentText(i37 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i37, false).build());
+                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(at.Y4, f9.a(filesMigrationService, pt.j0).setContentTitle(dd.L0(2131748445, null)).setContentText(i37 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i37, false).build());
                 return;
             case 3:
                 org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) this.c;
@@ -312,9 +312,9 @@ public final /* synthetic */ class a1 implements Runnable {
                     return;
                 }
             case 4:
-                te teVar = (te) this.c;
+                ue ueVar = (ue) this.c;
                 int i39 = this.b;
-                MediaController mediaController = teVar.a;
+                MediaController mediaController = ueVar.a;
                 if (i39 == 1) {
                     if (mediaController.I(mediaController.u0) && !mediaController.H()) {
                         mediaController.R(mediaController.u0, true);
@@ -322,10 +322,10 @@ public final /* synthetic */ class a1 implements Runnable {
                         mediaController.B0(2, 0, false, false);
                     }
                     org.telegram.ui.Components.hu huVar = org.telegram.ui.Components.hu.J1;
-                    if (huVar != null && (m81Var2 = huVar.j1) != null && m81Var2.x) {
-                        m81Var2.a.g0();
-                        m81Var2.n();
-                        m81Var2.f0.d(true, true);
+                    if (huVar != null && (n81Var2 = huVar.j1) != null && n81Var2.x) {
+                        n81Var2.a.g0();
+                        n81Var2.n();
+                        n81Var2.f0.d(true, true);
                     }
                     mediaController.W = true;
                     return;
@@ -336,10 +336,10 @@ public final /* synthetic */ class a1 implements Runnable {
                 }
                 if (i39 == 2) {
                     org.telegram.ui.Components.hu huVar2 = org.telegram.ui.Components.hu.J1;
-                    if (huVar2 != null && (m81Var = huVar2.j1) != null && m81Var.x) {
-                        m81Var.a.g0();
-                        m81Var.n();
-                        m81Var.f0.d(true, true);
+                    if (huVar2 != null && (n81Var = huVar2.j1) != null && n81Var.x) {
+                        n81Var.a.g0();
+                        n81Var.n();
+                        n81Var.f0.d(true, true);
                     }
                     mediaController.W = true;
                     return;
@@ -349,7 +349,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 int i40 = this.b;
                 TLRPC.TL_help_appConfig tL_help_appConfig = (TLRPC.TL_help_appConfig) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase = hs.a0(i40).b;
+                    SQLiteDatabase sQLiteDatabase = is.a0(i40).b;
                     if (sQLiteDatabase != null) {
                         sQLiteDatabase.executeFast("DELETE FROM app_config").stepThis().dispose();
                         if (tL_help_appConfig != null) {
@@ -374,7 +374,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 int i41 = this.b;
                 TLRPC.messages_AvailableEffects messages_availableeffects = (TLRPC.messages_AvailableEffects) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = hs.a0(i41).b;
+                    SQLiteDatabase sQLiteDatabase2 = is.a0(i41).b;
                     if (sQLiteDatabase2 != null) {
                         sQLiteDatabase2.executeFast("DELETE FROM effects").stepThis().dispose();
                         if (messages_availableeffects != null) {
@@ -397,25 +397,25 @@ public final /* synthetic */ class a1 implements Runnable {
                 }
             case 7:
                 int i42 = this.b;
-                j20 j20Var = (j20) this.c;
+                k20 k20Var = (k20) this.c;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase3 = hs.a0(i42).b;
+                        SQLiteDatabase sQLiteDatabase3 = is.a0(i42).b;
                         if (sQLiteDatabase3 != null) {
                             sQLiteCursor = sQLiteDatabase3.queryFinalized("SELECT data FROM web_browser_settings", new Object[0]);
                             try {
                                 TL_account.WebBrowserSettings webBrowserSettings = sQLiteCursor.next() ? (TL_account.WebBrowserSettings) sQLiteCursor.tlObjectValue(0, new e9(17), true) : null;
                                 if (webBrowserSettings instanceof TL_account.TL_webBrowserSettings) {
                                     TL_account.TL_webBrowserSettings tL_webBrowserSettings = (TL_account.TL_webBrowserSettings) webBrowserSettings;
-                                    j20Var.a(Long.valueOf(tL_webBrowserSettings.hash), tL_webBrowserSettings);
+                                    k20Var.a(Long.valueOf(tL_webBrowserSettings.hash), tL_webBrowserSettings);
                                 } else {
-                                    j20Var.a(0L, null);
+                                    k20Var.a(0L, null);
                                 }
                                 sQLiteCursor3 = sQLiteCursor;
                             } catch (Exception e16) {
                                 e = e16;
                                 f8.g(e, true);
-                                j20Var.a(0L, null);
+                                k20Var.a(0L, null);
                                 if (sQLiteCursor != null) {
                                     sQLiteCursor.dispose();
                                     return;
@@ -449,7 +449,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 int i43 = this.b;
                 TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = (TL_account.TL_webBrowserSettings) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase4 = hs.a0(i43).b;
+                    SQLiteDatabase sQLiteDatabase4 = is.a0(i43).b;
                     if (sQLiteDatabase4 != null) {
                         sQLiteDatabase4.executeFast("DELETE FROM web_browser_settings").stepThis().dispose();
                         if (tL_webBrowserSettings2 != null) {
@@ -468,7 +468,7 @@ public final /* synthetic */ class a1 implements Runnable {
                     return;
                 }
             case 9:
-                ((org.telegram.ui.sg) this.c).a(this.b);
+                ((org.telegram.ui.tg) this.c).a(this.b);
                 return;
             case 10:
                 PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
@@ -481,11 +481,11 @@ public final /* synthetic */ class a1 implements Runnable {
                 c cVar = (c) this.c;
                 try {
                     if (i44 == 1) {
-                        zs.e().k(zs.P4, 1, cd.L0(2131743858, null));
+                        at.e().k(at.P4, 1, dd.L0(2131743858, null));
                     } else if (i44 != 2) {
                         return;
                     } else {
-                        zs.f(cVar.a).k(zs.i5, 6);
+                        at.f(cVar.a).k(at.i5, 6);
                     }
                     return;
                 } catch (Exception e19) {
@@ -493,7 +493,7 @@ public final /* synthetic */ class a1 implements Runnable {
                     return;
                 }
             default:
-                Utilities.u(this.b + 1, (q20[]) this.c);
+                Utilities.u(this.b + 1, (r20[]) this.c);
                 return;
         }
     }

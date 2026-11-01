@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.location.Location;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lk implements Runnable {
     public final /* synthetic */ int a;
@@ -38,10 +38,10 @@ public final /* synthetic */ class lk implements Runnable {
                 bl blVar2 = this.b;
                 zf.h0 h0Var = blVar2.M;
                 if (!blVar2.q0) {
-                    org.telegram.messenger.ga gaVar = blVar2.F;
-                    if (gaVar != null && (location = blVar2.o0) != null) {
-                        location.setLatitude(((org.telegram.messenger.cb) gaVar.d().b).a);
-                        blVar2.o0.setLongitude(((org.telegram.messenger.cb) blVar2.F.d().b).b);
+                    org.telegram.messenger.ha haVar = blVar2.F;
+                    if (haVar != null && (location = blVar2.o0) != null) {
+                        location.setLatitude(((org.telegram.messenger.db) haVar.d().b).a);
+                        blVar2.o0.setLongitude(((org.telegram.messenger.db) blVar2.F.d().b).b);
                     }
                     h0Var.M(blVar2.o0);
                     h0Var.I();

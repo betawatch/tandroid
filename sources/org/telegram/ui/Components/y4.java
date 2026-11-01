@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y4 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class y4 implements Runnable {
                 ArrayList arrayList = this.c;
                 b5 b5Var = this.b;
                 int i10 = b5Var.e;
-                org.telegram.messenger.hs a02 = org.telegram.messenger.hs.a0(i10);
+                org.telegram.messenger.is a02 = org.telegram.messenger.is.a0(i10);
                 SQLiteDatabase sQLiteDatabase = a02.b;
                 if (sQLiteDatabase != null) {
                     try {
@@ -72,7 +72,7 @@ public final /* synthetic */ class y4 implements Runnable {
                                 ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new ag.k0(23, b5Var, arrayList3));
                             }
                         } else {
-                            org.telegram.messenger.zs.f(i10).d(new z4(b5Var, arrayList2, hashSet, 0));
+                            org.telegram.messenger.at.f(i10).d(new z4(b5Var, arrayList2, hashSet, 0));
                         }
                         queryFinalized.dispose();
                         break;
@@ -85,7 +85,7 @@ public final /* synthetic */ class y4 implements Runnable {
             default:
                 ArrayList arrayList4 = this.c;
                 try {
-                    SQLitePreparedStatement executeFast = org.telegram.messenger.hs.a0(this.b.e).b.executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
+                    SQLitePreparedStatement executeFast = org.telegram.messenger.is.a0(this.b.e).b.executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
                     for (int i11 = 0; i11 < arrayList4.size(); i11++) {
                         if (arrayList4.get(i11) instanceof TLRPC.Document) {
                             TLRPC.Document document = (TLRPC.Document) arrayList4.get(i11);

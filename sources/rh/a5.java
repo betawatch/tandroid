@@ -1,18 +1,18 @@
 package rh;
 
 import android.content.Context;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a5 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ e6 b;
-    public final /* synthetic */ j20 c;
+    public final /* synthetic */ k20 c;
     public final /* synthetic */ Context d;
     public final /* synthetic */ org.telegram.ui.ActionBar.p6 e;
     public final /* synthetic */ long f;
@@ -21,9 +21,9 @@ public final /* synthetic */ class a5 implements RequestDelegate {
     public final /* synthetic */ TLObject i;
     public final /* synthetic */ TLObject j;
 
-    public /* synthetic */ a5(e6 e6Var, j20 j20Var, Context context, org.telegram.ui.ActionBar.p6 p6Var, long j10, String str, long j11, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+    public /* synthetic */ a5(e6 e6Var, k20 k20Var, Context context, org.telegram.ui.ActionBar.p6 p6Var, long j10, String str, long j11, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
         this.b = e6Var;
-        this.c = j20Var;
+        this.c = k20Var;
         this.d = context;
         this.e = p6Var;
         this.f = j10;
@@ -45,9 +45,9 @@ public final /* synthetic */ class a5 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ a5(e6 e6Var, j20 j20Var, Context context, org.telegram.ui.ActionBar.p6 p6Var, long j10, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j11) {
+    public /* synthetic */ a5(e6 e6Var, k20 k20Var, Context context, org.telegram.ui.ActionBar.p6 p6Var, long j10, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j11) {
         this.b = e6Var;
-        this.c = j20Var;
+        this.c = k20Var;
         this.d = context;
         this.e = p6Var;
         this.f = j10;

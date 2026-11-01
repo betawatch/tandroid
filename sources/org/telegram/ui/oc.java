@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class oc extends org.telegram.ui.Components.sk0 {
+public final class oc extends org.telegram.ui.Components.tk0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ org.telegram.ui.ActionBar.p6 d;
     public final /* synthetic */ int e;
@@ -19,18 +19,18 @@ public final class oc extends org.telegram.ui.Components.sk0 {
         this.e = i10;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
 
     @Override // s4.g0
     public final int b() {
-        org.telegram.messenger.lp lpVar = org.telegram.messenger.vp.r1(this.e).r4;
-        if (lpVar == null) {
+        org.telegram.messenger.mp mpVar = org.telegram.messenger.wp.r1(this.e).r4;
+        if (mpVar == null) {
             return 0;
         }
-        return lpVar.c.size();
+        return mpVar.c.size();
     }
 
     @Override // s4.g0
@@ -41,18 +41,18 @@ public final class oc extends org.telegram.ui.Components.sk0 {
         pcVar.s = z10;
         pcVar.w.f(z10, true);
         pcVar.invalidate();
-        org.telegram.messenger.lp lpVar = org.telegram.messenger.vp.r1(this.e).r4;
-        if (lpVar != null) {
-            ArrayList arrayList = lpVar.c;
+        org.telegram.messenger.mp mpVar = org.telegram.messenger.wp.r1(this.e).r4;
+        if (mpVar != null) {
+            ArrayList arrayList = mpVar.c;
             if (i10 < 0 || i10 >= arrayList.size()) {
                 return;
             }
-            pcVar.a((org.telegram.messenger.kp) arrayList.get(i10));
+            pcVar.a((org.telegram.messenger.lp) arrayList.get(i10));
         }
     }
 
     @Override // s4.g0
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.ck0(new pc(this.f, this.c));
+        return new org.telegram.ui.Components.dk0(new pc(this.f, this.c));
     }
 }

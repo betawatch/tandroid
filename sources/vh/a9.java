@@ -15,11 +15,11 @@ import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ob0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class a9 extends View implements y1 {
     public final Path a;
@@ -94,7 +94,7 @@ public class a9 extends View implements y1 {
             canvas.restore();
         }
         if (d > 0.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
             canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, org.telegram.messenger.i0.L(16.0f) * d, this.b);
             canvas.save();
             Bitmap bitmap = this.h;

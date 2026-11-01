@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import u2.d1;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] S1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1622,7 +1622,7 @@ public final class n extends r2.r {
     public final void M0(r2.l lVar, int i10, long j10) {
         Surface surface;
         Trace.beginSection("releaseOutputBuffer");
-        lVar.g(i10, j10);
+        lVar.f(i10, j10);
         Trace.endSection();
         this.O0.e++;
         this.z1 = 0;

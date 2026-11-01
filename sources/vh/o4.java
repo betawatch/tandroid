@@ -6,11 +6,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.wp;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o4 {
     public final z6 c;
@@ -20,11 +20,11 @@ public final class o4 {
     public final AtomicReference a = new AtomicReference();
     public final AtomicBoolean b = new AtomicBoolean(false);
     public final l4 h = new l4(this, 0);
-    public final String e = vp.r1(d20.s0).U2;
+    public final String e = wp.r1(e20.s0).U2;
 
     public o4(Context context, z6 z6Var) {
         this.c = z6Var;
-        Utilities.e.c(new d1(7, this, context));
+        Utilities.e.c(new r0(8, this, context));
     }
 
     public final void a(CameraView cameraView) {
@@ -40,7 +40,7 @@ public final class o4 {
         if (this.d == null) {
             return 750L;
         }
-        int o10 = tz.o();
+        int o10 = uz.o();
         if (o10 != 1) {
             return o10 != 2 ? 800L : 80L;
         }

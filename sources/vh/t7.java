@@ -2,11 +2,11 @@ package vh;
 
 import android.content.Context;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class t7 extends u0 {
+public final class t7 extends v0 {
     public final /* synthetic */ o8 b0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,16 +23,16 @@ public final class t7 extends u0 {
         }
     }
 
-    @Override // vh.u0, org.telegram.messenger.camera.CameraView
+    @Override // vh.v0, org.telegram.messenger.camera.CameraView
     public final void toggleDual() {
         super.toggleDual();
         o8 o8Var = this.b0;
         o8Var.F0.setValue(isDual());
-        o8Var.F0.setContentDescription(cd.L0(isDual() ? 2131754886 : 2131754887, null));
+        o8Var.F0.setContentDescription(dd.L0(isDual() ? 2131754886 : 2131754887, null));
         o8Var.d0(o8Var.B());
     }
 
-    @Override // vh.u0
+    @Override // vh.v0
     public final void u(boolean z10) {
         o8 o8Var = this.b0;
         o8Var.o1.b(o8Var.c1.getText());

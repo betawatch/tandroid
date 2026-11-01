@@ -11,23 +11,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.io.File;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c00;
-import org.telegram.messenger.cd;
 import org.telegram.messenger.d00;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e00;
 import org.telegram.messenger.m5;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.Components.q20;
-import org.telegram.ui.b40;
-import org.telegram.ui.eu0;
-import org.telegram.ui.m91;
-import org.telegram.ui.s60;
+import org.telegram.ui.a40;
+import org.telegram.ui.du0;
+import org.telegram.ui.k91;
+import org.telegram.ui.r60;
 import vh.p2;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e1 extends z4.a {
     public final /* synthetic */ int c;
@@ -65,13 +65,13 @@ public final class e1 extends z4.a {
             case 0:
                 return ((i1) this.d).k1.size();
             case 1:
-                return ((b40) this.d).l1.length;
+                return ((a40) this.d).l1.length;
             case 2:
-                return ((org.telegram.ui.Components.voip.e0) this.d).f.length;
+                return ((org.telegram.ui.Components.voip.f0) this.d).f.length;
             case 3:
-                return ((s60) this.d).F.length;
+                return ((r60) this.d).F.length;
             default:
-                return ((m91) this.d).b != 0 ? 1 : 2;
+                return ((k91) this.d).b != 0 ? 1 : 2;
         }
     }
 
@@ -102,10 +102,10 @@ public final class e1 extends z4.a {
                 h1 h1Var = new h1(i1Var, i1Var.getContext(), i10);
                 gVar.addView(h1Var);
                 h1Var.a = i10;
-                eu0 eu0Var = (eu0) i1Var.k1.get(i10);
-                int i14 = eu0Var.a;
-                String str = eu0Var.d;
-                CharSequence charSequence = eu0Var.c;
+                du0 du0Var = (du0) i1Var.k1.get(i10);
+                int i14 = du0Var.a;
+                String str = du0Var.d;
+                CharSequence charSequence = du0Var.c;
                 TextView textView = h1Var.b;
                 p80 p80Var = h1Var.c;
                 if (i14 == 0 || i14 == 14 || i14 == 28) {
@@ -115,41 +115,41 @@ public final class e1 extends z4.a {
                 } else if (i1Var.v1) {
                     int i15 = i1Var.u1;
                     if (i15 == 4) {
-                        textView.setText(cd.L0(2131754353, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131754352, null)));
+                        textView.setText(dd.L0(2131754353, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131754352, null)));
                     } else if (i15 == 3) {
-                        textView.setText(cd.L0(2131747007, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131747005, null)));
+                        textView.setText(dd.L0(2131747007, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131747005, null)));
                     } else if (i15 == 24) {
-                        textView.setText(cd.L0(2131746987, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131746985, null)));
+                        textView.setText(dd.L0(2131746987, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131746985, null)));
                     } else if (i15 == 10) {
-                        textView.setText(cd.L0(2131747035, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131747033, null)));
+                        textView.setText(dd.L0(2131747035, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131747033, null)));
                     } else if (i15 == 2) {
-                        textView.setText(cd.L0(2131747027, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131747025, null)));
+                        textView.setText(dd.L0(2131747027, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131747025, null)));
                     } else if (i15 == 9) {
-                        textView.setText(cd.L0(2131747040, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131747038, null)));
+                        textView.setText(dd.L0(2131747040, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131747038, null)));
                     } else if (i15 == 8) {
-                        textView.setText(cd.L0(2131746977, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131746975, null)));
+                        textView.setText(dd.L0(2131746977, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131746975, null)));
                     } else if (i15 == 13) {
-                        textView.setText(cd.L0(2131746981, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131746980, null)));
+                        textView.setText(dd.L0(2131746981, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131746980, null)));
                     } else if (i15 == 38) {
-                        textView.setText(cd.L0(2131747024, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131747023, null)));
+                        textView.setText(dd.L0(2131747024, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131747023, null)));
                     } else if (i15 == 22) {
-                        textView.setText(cd.L0(2131746974, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131746973, null)));
+                        textView.setText(dd.L0(2131746974, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131746973, null)));
                     } else if (i15 == 23) {
-                        textView.setText(cd.L0(2131747000, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131746999, null)));
+                        textView.setText(dd.L0(2131747000, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131746999, null)));
                     } else if (i15 == 41) {
-                        textView.setText(cd.L0(2131746993, null));
-                        p80Var.setText(org.telegram.messenger.i0.W2(cd.L0(2131746992, null)));
+                        textView.setText(dd.L0(2131746993, null));
+                        p80Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131746992, null)));
                     } else {
                         textView.setText(charSequence);
                         p80Var.setText(org.telegram.messenger.i0.W2(str));
@@ -162,7 +162,7 @@ public final class e1 extends z4.a {
                 }
                 p80Var.setMaxWidth(p2.a(p80Var.getText(), p80Var.getPaint()));
                 h1Var.requestLayout();
-                boolean z10 = eu0Var.a == 40;
+                boolean z10 = du0Var.a == 40;
                 if (z10 && h1Var.d == null) {
                     LinearLayout linearLayout = new LinearLayout(h1Var.getContext());
                     h1Var.d = linearLayout;
@@ -170,14 +170,14 @@ public final class e1 extends z4.a {
                     Context context = h1Var.getContext();
                     int i16 = i1.F1;
                     xh.h hVar = new xh.h(context, i1Var.I0, true);
-                    hVar.a(R.drawable.menu_feature_unique, cd.L0(2131749583, null), cd.L0(2131749584, null));
+                    hVar.a(R.drawable.menu_feature_unique, dd.L0(2131749583, null), dd.L0(2131749584, null));
                     h1Var.d.addView(r2[0], b6.o(-1, -2));
                     xh.h hVar2 = new xh.h(h1Var.getContext(), i1Var.I0, true);
-                    hVar2.a(R.drawable.menu_feature_tradable, cd.L0(2131749581, null), cd.L0(2131749582, null));
+                    hVar2.a(R.drawable.menu_feature_tradable, dd.L0(2131749581, null), dd.L0(2131749582, null));
                     h1Var.d.addView(r2[1], b6.o(-1, -2));
                     xh.h hVar3 = new xh.h(h1Var.getContext(), i1Var.I0, true);
                     xh.h[] hVarArr = {hVar, hVar2, hVar3};
-                    hVar3.a(R.drawable.menu_wear, cd.L0(2131749579, null), cd.L0(2131749580, null));
+                    hVar3.a(R.drawable.menu_wear, dd.L0(2131749579, null), dd.L0(2131749580, null));
                     h1Var.d.addView(hVarArr[2], b6.o(-1, -2));
                     h1Var.addView(h1Var.d, b6.k(0.0f, -4.0f, 0.0f, 0.0f, -1, -2));
                 }
@@ -188,7 +188,7 @@ public final class e1 extends z4.a {
                 ((ViewGroup.MarginLayoutParams) p80Var.getLayoutParams()).topMargin = org.telegram.messenger.i0.L(z10 ? 6.0f : 10.0f);
                 return h1Var;
             case 1:
-                q20 q20Var = new q20(this, ((b40) obj).getContext(), i10, i13);
+                q20 q20Var = new q20(this, ((a40) obj).getContext(), i10, i13);
                 q20Var.setOnClickListener(new bh.f(this, i10, r4));
                 q20Var.setFocusable(true);
                 q20Var.setTag(Integer.valueOf(i10));
@@ -196,13 +196,13 @@ public final class e1 extends z4.a {
                 q20Var.setScaleType(ImageView.ScaleType.FIT_XY);
                 q20Var.setLayoutParams(new ViewGroup.LayoutParams(org.telegram.messenger.i0.L(200.0f), -1));
                 if (i10 == 0) {
-                    q20Var.setContentDescription(cd.L0(2131743278, null));
+                    q20Var.setContentDescription(dd.L0(2131743278, null));
                 } else if (i10 == 1) {
-                    q20Var.setContentDescription(cd.L0(2131743276, null));
+                    q20Var.setContentDescription(dd.L0(2131743276, null));
                 } else {
-                    q20Var.setContentDescription(cd.L0(2131743277, null));
+                    q20Var.setContentDescription(dd.L0(2131743277, null));
                 }
-                c00 i17 = d00.i(org.telegram.messenger.i0.y2(null, i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
+                d00 i17 = e00.i(org.telegram.messenger.i0.y2(null, i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
                 i17.s = false;
                 q20Var.setImageDrawable(i17);
                 if (q20Var.getParent() != null) {
@@ -211,17 +211,17 @@ public final class e1 extends z4.a {
                 gVar.addView(q20Var, 0);
                 return q20Var;
             case 2:
-                org.telegram.ui.Components.voip.e0 e0Var = (org.telegram.ui.Components.voip.e0) obj;
-                boolean z11 = e0Var.D;
+                org.telegram.ui.Components.voip.f0 f0Var = (org.telegram.ui.Components.voip.f0) obj;
+                boolean z11 = f0Var.D;
                 if (z11 && i10 == 0) {
-                    ?? frameLayout = new FrameLayout(e0Var.getContext());
+                    ?? frameLayout = new FrameLayout(f0Var.getContext());
                     frameLayout.setBackground(new jb0(true, -14602694, -13935795, -14395293, -14203560));
-                    ImageView imageView2 = new ImageView(e0Var.getContext());
+                    ImageView imageView2 = new ImageView(f0Var.getContext());
                     imageView2.setScaleType(ImageView.ScaleType.CENTER);
                     imageView2.setImageResource(R.drawable.screencast_big);
                     frameLayout.addView(imageView2, b6.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
-                    TextView textView2 = new TextView(e0Var.getContext());
-                    textView2.setText(cd.L0(2131743249, null));
+                    TextView textView2 = new TextView(f0Var.getContext());
+                    textView2.setText(dd.L0(2131743249, null));
                     textView2.setGravity(17);
                     textView2.setLineSpacing(org.telegram.messenger.i0.L(2.0f), 1.0f);
                     textView2.setTextColor(-1);
@@ -230,7 +230,7 @@ public final class e1 extends z4.a {
                     frameLayout.addView(textView2, b6.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
                     imageView = frameLayout;
                 } else {
-                    ImageView imageView3 = new ImageView(e0Var.getContext());
+                    ImageView imageView3 = new ImageView(f0Var.getContext());
                     imageView3.setTag(Integer.valueOf(i10));
                     try {
                         File h = org.telegram.messenger.w0.h();
@@ -258,10 +258,10 @@ public final class e1 extends z4.a {
                 return imageView;
             case 3:
                 TextView textView3 = new TextView(gVar.getContext());
-                s60 s60Var = (s60) obj;
-                textView3.setTag(s60Var.a);
+                r60 r60Var = (r60) obj;
+                textView3.setTag(r60Var.a);
                 TextView textView4 = new TextView(gVar.getContext());
-                textView4.setTag(s60Var.b);
+                textView4.setTag(r60Var.b);
                 fg.i iVar = new fg.i(gVar.getContext(), textView3, textView4);
                 int i18 = t6.G6;
                 m5.m(textView3, i18, null, 1, 26.0f);
@@ -273,12 +273,12 @@ public final class e1 extends z4.a {
                 textView4.setGravity(17);
                 iVar.addView(textView4, b6.d(-1, -2.0f, 51, 16.0f, 286.0f, 16.0f, 0.0f));
                 gVar.addView(iVar, 0);
-                textView3.setText(s60Var.F[i10]);
-                textView4.setText(org.telegram.messenger.i0.W2(s60Var.G[i10]));
+                textView3.setText(r60Var.F[i10]);
+                textView4.setText(org.telegram.messenger.i0.W2(r60Var.G[i10]));
                 return iVar;
             default:
-                m91 m91Var = (m91) obj;
-                View view = i10 == 0 ? m91Var.u0 : m91Var.n0;
+                k91 k91Var = (k91) obj;
+                View view = i10 == 0 ? k91Var.u0 : k91Var.n0;
                 gVar.addView(view);
                 return view;
         }
@@ -309,9 +309,9 @@ public final class e1 extends z4.a {
     public void h(int i10) {
         switch (this.c) {
             case 3:
-                s60 s60Var = (s60) this.d;
-                s60Var.e.setCurrentPage(i10);
-                s60Var.H = i10;
+                r60 r60Var = (r60) this.d;
+                r60Var.e.setCurrentPage(i10);
+                r60Var.H = i10;
                 break;
         }
     }

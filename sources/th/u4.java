@@ -1,8 +1,8 @@
 package th;
 
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u4 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,12 +19,12 @@ public final /* synthetic */ class u4 implements Runnable {
         x4 x4Var = this.b;
         switch (i10) {
             case 0:
-                zs.f(x4Var.c).k(zs.x5, x4Var);
+                at.f(x4Var.c).k(at.x5, x4Var);
                 break;
             case 1:
                 x4Var.u = false;
                 x4Var.w = true;
-                zs.f(x4Var.c).k(zs.x5, x4Var, Boolean.FALSE);
+                at.f(x4Var.c).k(at.x5, x4Var, Boolean.FALSE);
                 break;
             case 2:
                 x4Var.z = false;

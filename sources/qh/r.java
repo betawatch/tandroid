@@ -12,28 +12,28 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import jg.h1;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bu0;
 import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.wj0;
+import org.telegram.ui.v11;
 import org.telegram.ui.web.v1;
-import org.telegram.ui.x11;
 import ph.x1;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class r extends FrameLayout implements us {
+public abstract class r extends FrameLayout implements vs {
     public static final long[] K = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
     public static final PorterDuffColorFilter L = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
     public TLRPC.TL_messages_stickerSet D;
@@ -48,7 +48,7 @@ public abstract class r extends FrameLayout implements us {
     public final m c;
     public final s4.r d;
     public final k e;
-    public final vj0 f;
+    public final wj0 f;
     public final q h;
     public final ArrayList n;
     public int r;
@@ -69,16 +69,16 @@ public abstract class r extends FrameLayout implements us {
         this.H = new HashSet();
         this.a = i10;
         this.b = f0Var;
-        this.x = d20.i(i10).q();
+        this.x = e20.i(i10).q();
         m mVar = new m(context, null);
         this.c = mVar;
         s4.r rVar = new s4.r(this.r);
         this.d = rVar;
         rVar.O = new h1(g0Var, 14);
         mVar.setLayoutManager(rVar);
-        vj0 vj0Var = new vj0(mVar, rVar);
-        this.f = vj0Var;
-        vj0Var.i = new x11(g0Var, 1);
+        wj0 wj0Var = new wj0(mVar, rVar);
+        this.f = wj0Var;
+        wj0Var.i = new v11(g0Var, 1);
         mVar.setAdapter(kVar);
         mVar.setSelectorDrawableColor(0);
         mVar.setOnItemClickListener(new ag.y0(f0Var, 11));
@@ -86,7 +86,7 @@ public abstract class r extends FrameLayout implements us {
         mVar.setOverScrollMode(2);
         mVar.setVerticalScrollBarEnabled(false);
         mVar.setClipToPadding(false);
-        mVar.j(new bu0(g0Var, 15));
+        mVar.j(new cu0(g0Var, 15));
         addView(mVar, b6.c(-1.0f, -1));
         q qVar = new q(g0Var, context);
         this.h = qVar;
@@ -106,13 +106,13 @@ public abstract class r extends FrameLayout implements us {
     }
 
     public static boolean d(Drawable drawable) {
-        return (drawable instanceof f5) && jj.C4(((f5) drawable).e);
+        return (drawable instanceof f5) && kj.C4(((f5) drawable).e);
     }
 
     public final ArrayList a() {
         if (this.I == null) {
             this.I = new ArrayList();
-            for (String str : vp.r1(this.a).f7.getString("qrAppliedEmoji", "").split(",")) {
+            for (String str : wp.r1(this.a).f7.getString("qrAppliedEmoji", "").split(",")) {
                 try {
                     if (!str.isEmpty()) {
                         this.I.add(Long.valueOf(Long.parseLong(str)));
@@ -145,9 +145,9 @@ public abstract class r extends FrameLayout implements us {
         return 0;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.x0 && objArr.length > 0) {
+        if (i10 == at.x0 && objArr.length > 0) {
             Object obj = objArr[0];
             if ((obj instanceof Integer) && ((Integer) obj).intValue() != 5) {
                 return;
@@ -172,7 +172,7 @@ public abstract class r extends FrameLayout implements us {
         HashSet hashSet2;
         ArrayList<TLRPC.Document> arrayList4;
         int i11 = this.a;
-        ui b02 = ui.b0(i11);
+        vi b02 = vi.b0(i11);
         ArrayList<o> arrayList5 = this.n;
         arrayList5.clear();
         ArrayList arrayList6 = new ArrayList();
@@ -211,7 +211,7 @@ public abstract class r extends FrameLayout implements us {
             this.E = true;
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-            TLRPC.TL_messages_stickerSet l02 = ui.b0(i11).l0(tL_inputStickerSetShortName, null, false, true, new ph.h1(this, i15));
+            TLRPC.TL_messages_stickerSet l02 = vi.b0(i11).l0(tL_inputStickerSetShortName, null, false, true, new ph.h1(this, i15));
             if (l02 != null && (arrayList4 = l02.documents) != null && !arrayList4.isEmpty()) {
                 this.D = l02;
             }
@@ -268,7 +268,7 @@ public abstract class r extends FrameLayout implements us {
                     f5.g(i11).b(j12, new c5() { // from class: qh.h
                         @Override // org.telegram.ui.Components.c5
                         public final void a(TLRPC.Document document7) {
-                            org.telegram.messenger.i0.g3(new v1(12, r.this, document7));
+                            org.telegram.messenger.i0.g3(new v1(13, r.this, document7));
                         }
                     });
                 }
@@ -281,7 +281,7 @@ public abstract class r extends FrameLayout implements us {
             str2 = "application/x-tgsticker";
         }
         if (!arrayList9.isEmpty()) {
-            arrayList5.add(new o(0, cd.L0(2131746512, null), arrayList9));
+            arrayList5.add(new o(0, dd.L0(2131746512, null), arrayList9));
         }
         ArrayList arrayList10 = new ArrayList();
         HashSet hashSet4 = new HashSet();
@@ -356,7 +356,7 @@ public abstract class r extends FrameLayout implements us {
             i10 = 1;
         } else {
             i10 = 1;
-            arrayList5.add(new o(1, cd.L0(2131746376, null), arrayList10));
+            arrayList5.add(new o(1, dd.L0(2131746376, null), arrayList10));
         }
         arrayList5.addAll(arrayList6);
         int size6 = arrayList5.size();
@@ -398,8 +398,8 @@ public abstract class r extends FrameLayout implements us {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i10 = this.a;
-        zs.f(i10).c(this, zs.x0);
-        zs.f(i10).c(this, zs.B0);
+        at.f(i10).c(this, at.x0);
+        at.f(i10).c(this, at.B0);
         e();
     }
 
@@ -407,8 +407,8 @@ public abstract class r extends FrameLayout implements us {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         int i10 = this.a;
-        zs.f(i10).n(this, zs.x0);
-        zs.f(i10).n(this, zs.B0);
+        at.f(i10).n(this, at.x0);
+        at.f(i10).n(this, at.B0);
     }
 
     @Override // android.view.View

@@ -1,26 +1,27 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class p0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ s0 a;
+public final class p0 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ t0 a;
 
-    public p0(s0 s0Var) {
-        this.a = s0Var;
+    public p0(t0 t0Var) {
+        this.a = t0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        s0 s0Var = this.a;
-        s0Var.b.removeViewImmediate(s0Var.d);
-        s0Var.f.d.release();
-        s0Var.w = null;
-        s0Var.x = true;
-        s0Var.y = false;
-        s0Var.J = null;
-        s0Var.H = false;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        t0 t0Var = this.a;
+        com.google.android.gms.internal.cast.o oVar = t0Var.Y;
+        if (oVar != null) {
+            oVar.run();
+            t0Var.Y = null;
+        }
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

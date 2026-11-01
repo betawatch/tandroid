@@ -10,7 +10,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tc implements Runnable {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class tc implements Runnable {
             case 9:
                 org.telegram.ui.un unVar2 = chatActivityEnterView.P2;
                 if (unVar2 == null || unVar2.isLastFragment()) {
-                    chatActivityEnterView.L();
+                    chatActivityEnterView.K();
                 }
                 chatActivityEnterView.N4 = null;
                 break;
@@ -141,7 +141,7 @@ public final /* synthetic */ class tc implements Runnable {
                 chatActivityEnterView.J0();
                 break;
             case 15:
-                cc.a0(chatActivityEnterView.P2).T(org.telegram.messenger.cd.L0(2131752711, null)).j();
+                cc.a0(chatActivityEnterView.P2).T(org.telegram.messenger.dd.L0(2131752711, null)).j();
                 break;
             case 16:
                 se seVar2 = chatActivityEnterView.E0;
@@ -183,7 +183,7 @@ public final /* synthetic */ class tc implements Runnable {
                 org.telegram.ui.un unVar3 = chatActivityEnterView.P2;
                 TL_iv.RichMessage richMessage = chatActivityEnterView.E1;
                 if (richMessage != null && chatActivityEnterView.E0 != null && unVar3 != null) {
-                    org.telegram.messenger.vp.r1(chatActivityEnterView.Q);
+                    org.telegram.messenger.wp.r1(chatActivityEnterView.Q);
                     boolean z11 = org.telegram.messenger.v2.a;
                     bi.k2 k2Var = new bi.k2(richMessage);
                     k2Var.e = true;
@@ -243,20 +243,20 @@ public final /* synthetic */ class tc implements Runnable {
                 String str = chatActivityEnterView.i0;
                 String str2 = chatActivityEnterView.j0;
                 org.telegram.ui.un unVar5 = chatActivityEnterView.P2;
-                xh.s3 b10 = xh.s3.b(i19, j10, j10, str, str2, 2, 0, unVar5 == null ? 0L : unVar5.a9(), null, false, null, null, 0, false, false);
+                xh.t3 b10 = xh.t3.b(i19, j10, j10, str, str2, 2, 0, unVar5 == null ? 0L : unVar5.e9(), null, false, null, null, 0, false, false);
                 LaunchActivity launchActivity = LaunchActivity.I1;
-                if (launchActivity != null && launchActivity.O() != null && LaunchActivity.I1.O().m(b10) != null) {
+                if (launchActivity != null && launchActivity.N() != null && LaunchActivity.I1.N().m(b10) != null) {
                     xh.w wVar2 = chatActivityEnterView.l0;
                     if (wVar2 != null) {
                         wVar2.setOpened(false);
                         break;
                     }
-                } else if (!org.telegram.ui.ua0.q(chatActivityEnterView.j0)) {
-                    TLRPC.User Z1 = org.telegram.messenger.vp.r1(chatActivityEnterView.Q).Z1(Long.valueOf(chatActivityEnterView.Q2));
-                    String E1 = org.telegram.messenger.vp.r1(chatActivityEnterView.Q).E1(Z1 != null ? Z1.restriction_reason : null);
+                } else if (!org.telegram.ui.ta0.q(chatActivityEnterView.j0)) {
+                    TLRPC.User Z1 = org.telegram.messenger.wp.r1(chatActivityEnterView.Q).Z1(Long.valueOf(chatActivityEnterView.Q2));
+                    String E1 = org.telegram.messenger.wp.r1(chatActivityEnterView.Q).E1(Z1 != null ? Z1.restriction_reason : null);
                     if (!TextUtils.isEmpty(E1)) {
-                        org.telegram.messenger.vp.r1(chatActivityEnterView.Q);
-                        org.telegram.messenger.vp.O4(E1, unVar5);
+                        org.telegram.messenger.wp.r1(chatActivityEnterView.Q);
+                        org.telegram.messenger.wp.O4(E1, unVar5);
                         break;
                     } else {
                         xh.m2 m2Var = new xh.m2(chatActivityEnterView.getContext(), chatActivityEnterView.W3);

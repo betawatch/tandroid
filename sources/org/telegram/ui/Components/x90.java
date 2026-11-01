@@ -5,9 +5,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class x90 extends tk0 {
+public final class x90 extends uk0 {
     public boolean e3;
     public boolean f3;
     public int g3;
@@ -29,13 +29,13 @@ public final class x90 extends tk0 {
         y90Var.b();
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         y90 y90Var = this.i3;
         zf.x0 x0Var = y90Var.f;
         zf.c1 c1Var = y90Var.e;
         if (!y90Var.c.t ? this.f3 || c1Var == null || c1Var.e == null || !c1Var.f || motionEvent.getY() >= c1Var.e.getBottom() : this.f3 || c1Var == null || c1Var.e == null || !c1Var.f || motionEvent.getY() <= c1Var.e.getTop()) {
-            boolean z10 = !this.e3 && org.telegram.ui.lt.p().q(motionEvent, y90Var.b, null, this.n2);
+            boolean z10 = !this.e3 && org.telegram.ui.kt.p().q(motionEvent, y90Var.b, null, this.n2);
             if (((x0Var.N() && motionEvent.getAction() == 0) || motionEvent.getAction() == 2) && x0Var.N()) {
                 if (x0Var.n0 == null) {
                     mw mwVar = new mw(x0Var, x0Var.f, x0Var.n, x0Var.r, 1);
@@ -51,7 +51,7 @@ public final class x90 extends tk0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         int i15 = i12 - i10;
@@ -83,16 +83,16 @@ public final class x90 extends tk0 {
         this.g3 = i15;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i11);
         y90 y90Var = this.i3;
         zf.c1 c1Var = y90Var.e;
         if (c1Var != null) {
             c1Var.d = Integer.valueOf(size);
-            org.telegram.ui.do0 do0Var = c1Var.e;
-            if (do0Var != null) {
-                do0Var.requestLayout();
+            org.telegram.ui.bo0 bo0Var = c1Var.e;
+            if (bo0Var != null) {
+                bo0Var.requestLayout();
             }
         }
         float min = (int) Math.min(org.telegram.messenger.i0.L(126.0f), org.telegram.messenger.i0.q.y * 0.22f);
@@ -100,7 +100,7 @@ public final class x90 extends tk0 {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size + ((int) min), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         y90 y90Var = this.i3;
         zf.c1 c1Var = y90Var.e;
@@ -114,7 +114,7 @@ public final class x90 extends tk0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.i3.G) {
             return;
@@ -122,7 +122,7 @@ public final class x90 extends tk0 {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.tk0, android.view.View
+    @Override // org.telegram.ui.Components.uk0, android.view.View
     public void setTranslationY(float f7) {
         super.setTranslationY(f7);
         y90 y90Var = this.i3;

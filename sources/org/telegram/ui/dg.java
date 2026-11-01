@@ -1,102 +1,229 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.SpannableStringBuilder;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.provider.MediaStore;
 import java.util.ArrayList;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import rh.n;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg implements org.telegram.messenger.q20 {
+public final /* synthetic */ class dg implements org.telegram.ui.Components.q4, org.telegram.ui.ActionBar.u1, t5.b, org.telegram.ui.Components.a40, s9.h, vh.l5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ dg(Object obj, long j10, long j11, int i10) {
+    public /* synthetic */ dg(Object obj, long j10, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.d = obj;
+        this.c = obj;
         this.b = j10;
-        this.c = j11;
+        this.d = obj2;
+        this.e = obj3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0089 A[LOOP:1: B:19:0x0085->B:21:0x0089, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00bd  */
-    @Override // org.telegram.messenger.q20
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj) {
-        org.telegram.ui.ActionBar.p6 p6Var;
-        SpannableStringBuilder spannableStringBuilder;
-        int size;
-        int i10;
-        int i11 = this.a;
-        Object obj2 = this.d;
-        switch (i11) {
-            case 0:
-                un.T0((un) obj2, this.b, this.c, (Long) obj);
-                break;
+    @Override // org.telegram.ui.Components.q4
+    public void K(int i10, int i11, boolean z10) {
+        un.l1((un) this.c, (ArrayList) this.d, this.b, (org.telegram.ui.Components.ol0) this.e, z10, i10);
+    }
+
+    @Override // org.telegram.ui.Components.a40
+    public void V(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
+        un unVar = (un) this.c;
+        TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
+        TLRPC.FileLocation[] fileLocationArr2 = (TLRPC.FileLocation[]) this.e;
+        if (inputFile == null && inputFile2 == null && videoSize == null) {
+            fileLocationArr[0] = photoSize2.location;
+            fileLocationArr2[0] = photoSize.location;
+            return;
+        }
+        TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
+        if (inputFile != null) {
+            tL_photos_uploadProfilePhoto.file = inputFile;
+            tL_photos_uploadProfilePhoto.flags |= 1;
+        }
+        if (inputFile2 != null) {
+            tL_photos_uploadProfilePhoto.video = inputFile2;
+            int i10 = tL_photos_uploadProfilePhoto.flags;
+            tL_photos_uploadProfilePhoto.video_start_ts = d;
+            tL_photos_uploadProfilePhoto.flags = i10 | 6;
+        }
+        if (videoSize != null) {
+            tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize;
+            tL_photos_uploadProfilePhoto.flags |= 16;
+        }
+        unVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new org.telegram.messenger.voip.c(unVar, fileLocationArr, str, fileLocationArr2, this.b));
+    }
+
+    @Override // s9.h
+    public ScheduledFuture a(final s9.g gVar) {
+        switch (this.a) {
+            case 6:
+                s9.f fVar = (s9.f) this.c;
+                Runnable runnable = (Runnable) this.d;
+                return fVar.b.schedule(new s9.d(fVar, runnable, gVar, 1), this.b, (TimeUnit) this.e);
+            default:
+                final s9.f fVar2 = (s9.f) this.c;
+                final Callable callable = (Callable) this.d;
+                return fVar2.b.schedule(new Callable() { // from class: s9.e
+                    @Override // java.util.concurrent.Callable
+                    public final Object call() {
+                        return f.this.a.submit(new n(20, callable, gVar));
+                    }
+                }, this.b, (TimeUnit) this.e);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.a40
+    public /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // t5.b
+    public Object g() {
+        ea.d dVar = (ea.d) this.c;
+        Iterable iterable = (Iterable) this.d;
+        l5.i iVar = (l5.i) this.e;
+        s5.g gVar = (s5.g) ((s5.d) dVar.c);
+        gVar.getClass();
+        if (iterable.iterator().hasNext()) {
+            String str = "UPDATE events SET num_attempts = num_attempts + 1 WHERE _id in " + s5.g.g(iterable);
+            SQLiteDatabase a2 = gVar.a();
+            a2.beginTransaction();
+            try {
+                a2.compileStatement(str).execute();
+                Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE num_attempts >= 16 GROUP BY transport_name", null);
+                while (rawQuery.moveToNext()) {
+                    try {
+                        gVar.e(rawQuery.getInt(0), o5.c.f, rawQuery.getString(1));
+                    } catch (Throwable th2) {
+                        rawQuery.close();
+                        throw th2;
+                    }
+                }
+                rawQuery.close();
+                a2.compileStatement("DELETE FROM events WHERE num_attempts >= 16").execute();
+                a2.setTransactionSuccessful();
+            } finally {
+                a2.endTransaction();
+            }
+        }
+        gVar.c(new m4.x0(((u5.a) dVar.g).g() + this.b, iVar));
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.a40
+    public /* synthetic */ fs0 getCloseIntoObject() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.a40
+    public /* synthetic */ String getInitialSearchString() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        switch (this.a) {
             case 1:
-                nj njVar = (nj) obj2;
-                Long l4 = (Long) obj;
-                un unVar = njVar.b;
-                if (unVar.getParentActivity() != null) {
-                    Activity parentActivity = unVar.getParentActivity();
-                    String L0 = org.telegram.messenger.cd.L0(2131746306, null);
-                    int i12 = org.telegram.messenger.w3.p0(unVar.e) ? 2131746310 : 2131746311;
-                    long j10 = this.b;
-                    SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0(null, null, i12, org.telegram.messenger.o5.t(j10)));
-                    String H = l4.longValue() > 0 ? org.telegram.messenger.cd.H(',', "RemoveMessageFeeRefund", (int) l4.longValue()) : null;
-                    String L02 = org.telegram.messenger.cd.L0(2131751817, null);
-                    jh jhVar = new jh(njVar, j10, this.c, l4, 1);
-                    p6Var = ((org.telegram.ui.ActionBar.k2) unVar).resourceProvider;
-                    org.telegram.ui.Components.s4.h0(parentActivity, L0, W2, H, L02, jhVar, p6Var, true);
+                org.telegram.messenger.u3 u3Var = (org.telegram.messenger.u3) this.c;
+                org.telegram.ui.Cells.c2[] c2VarArr = (org.telegram.ui.Cells.c2[]) this.d;
+                Runnable runnable = (Runnable) this.e;
+                boolean z10 = false;
+                org.telegram.ui.Cells.c2 c2Var = c2VarArr[0];
+                if (c2Var != null && c2Var.b()) {
+                    z10 = true;
+                }
+                a50.y1(u3Var, z10, this.b, runnable);
+                break;
+            case 2:
+                cx0 cx0Var = (cx0) this.c;
+                zx zxVar = (zx) this.d;
+                TLRPC.User user = (TLRPC.User) this.e;
+                ProfileActivity profileActivity = cx0Var.b;
+                profileActivity.M1 = true;
+                Bundle g10 = a1.g.g("scrollToTopOnResume", true);
+                long j10 = -this.b;
+                g10.putLong("chat_id", j10);
+                if (profileActivity.getMessagesController().E(g10, zxVar, null, null)) {
+                    un unVar = new un(g10);
+                    profileActivity.getNotificationCenter().n(profileActivity, 4);
+                    profileActivity.getNotificationCenter().k(4, new Object[0]);
+                    profileActivity.getMessagesController().m(j10, user, 0, null, unVar, true, null, null, null);
+                    profileActivity.presentFragment(unVar, true);
                     break;
                 }
                 break;
             default:
-                rh.a3 a3Var = (rh.a3) obj2;
-                ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.Components.n5 n5Var = a3Var.E;
-                if (this.b == this.c) {
-                    a3Var.d0 = arrayList;
-                    n5Var.animate().alpha(a3Var.s ? 0.0f : a3Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.gr.h).setDuration(420L).start();
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                        if ((arrayList.get(i13) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i13)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
-                            arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i13));
-                            if (arrayList2.size() >= 3) {
-                                spannableStringBuilder = new SpannableStringBuilder();
-                                size = arrayList2.size();
-                                i10 = 0;
-                                while (i10 < size) {
-                                    Object obj3 = arrayList2.get(i10);
-                                    i10++;
-                                    spannableStringBuilder.append((CharSequence) "x");
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.o5(((TL_stars.starGiftAttributeModel) obj3).document, n5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                                    spannableStringBuilder.append((CharSequence) " ");
-                                }
-                                if (spannableStringBuilder.length() > 0) {
-                                    spannableStringBuilder.append((CharSequence) " ");
-                                }
-                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.H2(org.telegram.messenger.cd.L0(2131749763, null), false, org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f)));
-                                n5Var.setText(spannableStringBuilder);
-                                break;
-                            }
-                        }
-                    }
-                    spannableStringBuilder = new SpannableStringBuilder();
-                    size = arrayList2.size();
-                    i10 = 0;
-                    while (i10 < size) {
-                    }
-                    if (spannableStringBuilder.length() > 0) {
-                    }
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.H2(org.telegram.messenger.cd.L0(2131749763, null), false, org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f)));
-                    n5Var.setText(spannableStringBuilder);
-                }
+                rh.e4 e4Var = (rh.e4) this.c;
+                TL_stars.starGiftDepositPayload[] stargiftdepositpayloadArr = (TL_stars.starGiftDepositPayload[]) this.d;
+                mg.i2 i2Var = (mg.i2) this.e;
+                e4Var.getClass();
+                e4Var.r1(this.b, stargiftdepositpayloadArr[0], x1Var.h(i10, true, true), i2Var);
                 break;
         }
+    }
+
+    @Override // vh.l5
+    public Bitmap i(BitmapFactory.Options options) {
+        vh.k4 k4Var = (vh.k4) this.c;
+        vh.n5 n5Var = (vh.n5) this.d;
+        long j10 = this.b;
+        String str = (String) this.e;
+        if (!n5Var.K) {
+            return BitmapFactory.decodeFile(str, options);
+        }
+        String str2 = n5Var.N;
+        if (str2 != null) {
+            return BitmapFactory.decodeFile(str2, options);
+        }
+        try {
+            return MediaStore.Video.Thumbnails.getThumbnail(k4Var.getContext().getContentResolver(), j10, 1, options);
+        } catch (Throwable unused) {
+            k4Var.invalidate();
+            return null;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.a40
+    public /* synthetic */ boolean y() {
+        return false;
+    }
+
+    public /* synthetic */ dg(Object obj, Object obj2, long j10, Object obj3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j10;
+        this.e = obj3;
+    }
+
+    public /* synthetic */ dg(Object obj, Object obj2, Object obj3, long j10, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j10;
+    }
+
+    @Override // org.telegram.ui.Components.a40
+    public /* synthetic */ void I(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.a40
+    public /* synthetic */ void U() {
+    }
+
+    @Override // org.telegram.ui.Components.a40
+    public /* synthetic */ void P(boolean z10, boolean z11) {
     }
 }

@@ -33,22 +33,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocketFactory;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.is;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.js;
+import org.telegram.messenger.wp;
 import org.telegram.ui.ActionBar.k2;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.voip.m0;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.voip.n0;
 import org.telegram.ui.k9;
 import org.telegram.ui.t9;
 import ph.h1;
 import v7.p8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements e2.d, s61, t9, r2.u, f0 {
+public final /* synthetic */ class x implements e2.d, t61, t9, r2.u, f0 {
     public final /* synthetic */ int a;
     public int b;
     public Object c;
@@ -63,9 +63,9 @@ public final /* synthetic */ class x implements e2.d, s61, t9, r2.u, f0 {
     public void L(String str) {
         String b10 = gf.f.b(str);
         if (TextUtils.isEmpty(b10)) {
-            i0.g3(new m0(29));
+            i0.g3(new n0(29));
         } else {
-            vp.r1(this.b).c2().a(b10, null, new h1((k2) this.c, 5));
+            wp.r1(this.b).c2().a(b10, null, new h1((k2) this.c, 5));
         }
     }
 
@@ -306,7 +306,7 @@ public final /* synthetic */ class x implements e2.d, s61, t9, r2.u, f0 {
                     ((hb.a) this.c).getClass();
                     lc.t tVar = new lc.t(z10 ? SSLSocketFactory.getDefault() : SocketFactory.getDefault(), new lc.a(str2, i11), i10, null, null);
                     tVar.d = 1;
-                    tVar.e = zs.Z3;
+                    tVar.e = at.Z3;
                     tVar.f = true;
                     if (port >= 0) {
                         str2 = str2 + ":" + port;
@@ -391,16 +391,16 @@ public final /* synthetic */ class x implements e2.d, s61, t9, r2.u, f0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onStateChanged(boolean z10, int i10) {
         i0.g3(new i2.u(this, this.b, i10, 2));
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -531,7 +531,7 @@ public final /* synthetic */ class x implements e2.d, s61, t9, r2.u, f0 {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onRenderedFirstFrame() {
     }
 
@@ -611,18 +611,18 @@ public final /* synthetic */ class x implements e2.d, s61, t9, r2.u, f0 {
     }
 
     @Override // org.telegram.ui.t9
-    public /* synthetic */ void X0(is isVar) {
+    public /* synthetic */ void X0(js jsVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -638,11 +638,11 @@ public final /* synthetic */ class x implements e2.d, s61, t9, r2.u, f0 {
         this.b = (z10 || z11 || z12) ? 1 : 0;
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public void onError(u61 u61Var, Exception exc) {
+    @Override // org.telegram.ui.Components.t61
+    public void onError(v61 v61Var, Exception exc) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

@@ -4,31 +4,31 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.FrameLayout;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.ga;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.yy;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Components.zz;
-import org.telegram.ui.rv0;
+import org.telegram.ui.qv0;
 import rh.v5;
 import w7.b6;
 import w7.b9;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class t3 extends ha implements us {
+public final class t3 extends ha implements vs {
     public final int P1;
     public final v5 Q1;
     public final HashSet R1;
@@ -38,7 +38,7 @@ public final class t3 extends ha implements us {
     public z60 V1;
     public final hi.c W1;
     public final hi.c X1;
-    public p51 Y1;
+    public q51 Y1;
     public i0.c Z1;
     public boolean a2;
     public int b2;
@@ -60,12 +60,12 @@ public final class t3 extends ha implements us {
         hi.c cVar = new hi.c();
         this.W1 = cVar;
         cVar.a(t6.w0(t6.d6, this.I0));
-        tg.b bVar = new tg.b(cVar);
+        tg.b bVar = new tg.b(cVar, cVar, cVar);
         hi.c cVar2 = new hi.c();
         this.X1 = cVar2;
         int i11 = t6.a7;
         cVar2.a(t6.w0(i11, this.I0));
-        tg.b bVar2 = new tg.b(cVar2);
+        tg.b bVar2 = new tg.b(cVar2, cVar2, cVar2);
         this.C1 = false;
         this.B1 = org.telegram.messenger.i0.L(12.0f);
         v0(t6.w0(i11, this.I0));
@@ -75,7 +75,7 @@ public final class t3 extends ha implements us {
         this.l1.setActionBarMenuOnItemClick(new s3(this, this.l1.p().a(1, R.drawable.ic_ab_other), j10));
         vh.d dVar = new vh.d(getContext(), this.I0, true);
         this.U1 = dVar;
-        dVar.i(cd.L0(2131750259, null), false, true);
+        dVar.i(dd.L0(2131750259, null), false, true);
         dVar.setEnabled(false);
         dVar.setStateListAnimator(null);
         dVar.f();
@@ -86,7 +86,7 @@ public final class t3 extends ha implements us {
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setPadding(org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f));
         frameLayout2.addView(dVar, b6.c(-1.0f, -1));
-        frameLayout2.setOnClickListener(new rv0(22, this, o2Var));
+        frameLayout2.setOnClickListener(new qv0(22, this, o2Var));
         vg.f c10 = bVar.c(frameLayout2, null, false);
         c10.o(b9.j(this.I0));
         c10.q(org.telegram.messenger.i0.L(28.0f));
@@ -96,7 +96,7 @@ public final class t3 extends ha implements us {
         frameLayout.addView(frameLayout2, b6.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
         tg.c cVar3 = new tg.c(bVar2.c(frameLayout, null, false));
         cVar3.b(org.telegram.messenger.i0.L(40.0f), true);
-        cVar3.G = zs.x3;
+        cVar3.G = at.x3;
         frameLayout.setBackground(cVar3);
         this.b.addView(frameLayout, b6.e(-1, -2, 80));
         getContext();
@@ -110,7 +110,7 @@ public final class t3 extends ha implements us {
         this.k1.setSelectorDrawableColor(0);
         this.k1.setLayoutManager(yyVar);
         this.k1.setOnItemClickListener(new ag.y0(this, 10));
-        this.k1.j(new bu0(this, i13));
+        this.k1.j(new cu0(this, i13));
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
@@ -118,21 +118,21 @@ public final class t3 extends ha implements us {
         jVar.n(350L);
         this.k1.setItemAnimator(jVar);
         this.Y1.O(true);
-        zs.f(this.a).c(this, zs.G3);
+        at.f(this.a).c(this, at.G3);
         d1();
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(tk0Var, getContext(), this.a, 0, false, new ag.a(this, 29), this.I0);
-        this.Y1 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(uk0Var, getContext(), this.a, 0, false, new ag.a(this, 29), this.I0);
+        this.Y1 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return cd.L0(2131750258, null);
+        return dd.L0(2131750258, null);
     }
 
     @Override // org.telegram.ui.ActionBar.z2
@@ -150,13 +150,13 @@ public final class t3 extends ha implements us {
         this.T1.setPadding(i10 + i11, 0, cVar.c + i11, cVar.d);
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        p51 p51Var;
-        if (i10 != zs.G3 || (p51Var = this.Y1) == null) {
+        q51 q51Var;
+        if (i10 != at.G3 || (q51Var = this.Y1) == null) {
             return;
         }
-        p51Var.O(true);
+        q51Var.O(true);
         if (e1()) {
             this.Q1.b();
         }
@@ -164,15 +164,15 @@ public final class t3 extends ha implements us {
 
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
-        zs.f(this.a).n(this, zs.G3);
+        at.f(this.a).n(this, at.G3);
         super.dismiss();
     }
 
     public final boolean e1() {
-        tk0 tk0Var = this.k1;
-        if (tk0Var != null && tk0Var.G) {
-            for (int i10 = 0; i10 < tk0Var.getChildCount(); i10++) {
-                if (tk0Var.getChildAt(i10) instanceof zz) {
+        uk0 uk0Var = this.k1;
+        if (uk0Var != null && uk0Var.G) {
+            for (int i10 = 0; i10 < uk0Var.getChildCount(); i10++) {
+                if (uk0Var.getChildAt(i10) instanceof zz) {
                     return true;
                 }
             }

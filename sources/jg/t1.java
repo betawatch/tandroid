@@ -10,23 +10,23 @@ import android.widget.ImageView;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.bi0;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.fg;
+import org.telegram.ui.Components.fi0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class t1 extends FrameLayout implements us {
+public final class t1 extends FrameLayout implements vs {
     public static final List x = Arrays.asList(new q1(0, 1, 20, 0), new q1(0, 2, 20, 40), new q1(1, 0, 0, 20), new q1(1, 2, 60, 40), new q1(2, 0, 40, 20), new q1(2, 1, 40, 60));
     public int a;
-    public final ei0 b;
+    public final fi0 b;
     public final ImageView c;
     public final ImageView d;
     public final View e;
@@ -74,17 +74,17 @@ public final class t1 extends FrameLayout implements us {
             }
         });
         addView(view, b6.d(24, 24.0f, 48, 0.0f, 0.0f, 16.0f, 0.0f));
-        ei0 ei0Var = new ei0(context);
-        this.b = ei0Var;
-        ei0Var.f(R.raw.photo_text_allign, 24, 24, null);
-        bi0 animatedDrawable = ei0Var.getAnimatedDrawable();
+        fi0 fi0Var = new fi0(context);
+        this.b = fi0Var;
+        fi0Var.f(R.raw.photo_text_allign, 24, 24, null);
+        ci0 animatedDrawable = fi0Var.getAnimatedDrawable();
         final int i11 = 1;
         animatedDrawable.h = true;
         animatedDrawable.P(20);
         animatedDrawable.M(20);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        ei0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        ei0Var.setOnClickListener(new View.OnClickListener(this) { // from class: jg.p1
+        fi0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        fi0Var.setOnClickListener(new View.OnClickListener(this) { // from class: jg.p1
             public final /* synthetic */ t1 b;
 
             {
@@ -113,8 +113,8 @@ public final class t1 extends FrameLayout implements us {
                 }
             }
         });
-        ei0Var.setPadding(org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f));
-        addView(ei0Var, b6.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
+        fi0Var.setPadding(org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f));
+        addView(fi0Var, b6.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_text_outlined);
@@ -252,9 +252,9 @@ public final class t1 extends FrameLayout implements us {
         int i11 = this.a;
         this.a = i10;
         List list = x;
-        ei0 ei0Var = this.b;
+        fi0 fi0Var = this.b;
         if (i11 == i10) {
-            bi0 animatedDrawable = ei0Var.getAnimatedDrawable();
+            ci0 animatedDrawable = fi0Var.getAnimatedDrawable();
             q1 q1Var = (q1) list.get(0);
             Iterator it = list.iterator();
             while (true) {
@@ -287,7 +287,7 @@ public final class t1 extends FrameLayout implements us {
                 break;
             }
         }
-        bi0 animatedDrawable2 = ei0Var.getAnimatedDrawable();
+        ci0 animatedDrawable2 = fi0Var.getAnimatedDrawable();
         animatedDrawable2.M(q1Var3.c);
         animatedDrawable2.P(q1Var3.d);
         animatedDrawable2.start();
@@ -296,10 +296,10 @@ public final class t1 extends FrameLayout implements us {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         String str;
-        if (i10 != zs.C5 || (str = this.w) == null) {
+        if (i10 != at.C5 || (str = this.w) == null) {
             return;
         }
         setTypeface(str);
@@ -335,13 +335,13 @@ public final class t1 extends FrameLayout implements us {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        zs.e().c(this, zs.C5);
+        at.e().c(this, at.C5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        zs.e().n(this, zs.C5);
+        at.e().n(this, at.C5);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -398,7 +398,7 @@ public final class t1 extends FrameLayout implements us {
                 s1Var.setTypeface(h0Var.d());
                 String str2 = h0Var.c;
                 if (str2 == null) {
-                    str2 = cd.M0(h0Var.b);
+                    str2 = dd.M0(h0Var.b);
                 }
                 s1Var.setText(str2);
                 return;

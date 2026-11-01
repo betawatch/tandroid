@@ -8,7 +8,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class n5 {
     public static void a(SQLiteDatabase sQLiteDatabase, String str) {
@@ -33,7 +33,7 @@ public abstract class n5 {
         return false;
     }
 
-    public static int c(hs hsVar, SQLiteDatabase sQLiteDatabase, int i10) {
+    public static int c(is isVar, SQLiteDatabase sQLiteDatabase, int i10) {
         char c10;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
@@ -48,7 +48,7 @@ public abstract class n5 {
         SQLiteCursor sQLiteCursor7;
         SQLiteCursor sQLiteCursor8;
         SQLiteDatabase sQLiteDatabase2 = sQLiteDatabase;
-        r5 r5Var = hsVar.a;
+        r5 r5Var = isVar.a;
         int i12 = 4;
         int i13 = i10;
         if (i13 < 4) {
@@ -57,7 +57,7 @@ public abstract class n5 {
             m5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS user_phones_v6(uid INTEGER, phone TEXT, sphone TEXT, deleted INTEGER, PRIMARY KEY (uid, phone))", "CREATE INDEX IF NOT EXISTS sphone_deleted_idx_user_phones ON user_phones_v6(sphone, deleted);", "CREATE INDEX IF NOT EXISTS mid_idx_randoms ON randoms(mid);", "CREATE TABLE IF NOT EXISTS sent_files_v2(uid TEXT, type INTEGER, data BLOB, PRIMARY KEY (uid, type))");
             m5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS download_queue(uid INTEGER, type INTEGER, date INTEGER, data BLOB, PRIMARY KEY (uid, type));", "CREATE INDEX IF NOT EXISTS type_date_idx_download_queue ON download_queue(type, date);", "CREATE TABLE IF NOT EXISTS dialog_settings(did INTEGER PRIMARY KEY, flags INTEGER);", "CREATE INDEX IF NOT EXISTS unread_count_idx_dialogs ON dialogs(unread_count);");
             sQLiteDatabase2.executeFast("UPDATE messages SET send_state = 2 WHERE mid < 0 AND send_state = 1").stepThis().dispose();
-            r5Var.c(new br(hsVar, 0));
+            r5Var.c(new cr(isVar, 0));
             sQLiteDatabase2.executeFast("PRAGMA user_version = 4").stepThis().dispose();
             i13 = 4;
         }
@@ -242,7 +242,7 @@ public abstract class n5 {
             i13 = 40;
         }
         if (i13 == 40) {
-            r5Var.c(new br(hsVar, 0));
+            r5Var.c(new cr(isVar, 0));
             sQLiteDatabase2.executeFast("PRAGMA user_version = 41").stepThis().dispose();
             i13 = 41;
         }
@@ -682,7 +682,7 @@ public abstract class n5 {
                             TLRPC.Message TLdeserialize2 = TLRPC.Message.TLdeserialize(byteBufferValue6, byteBufferValue6.readInt32(false), false);
                             if (TLdeserialize2 != null) {
                                 i11 = intValue28;
-                                TLdeserialize2.readAttachPath(byteBufferValue6, hsVar.getUserConfig().n);
+                                TLdeserialize2.readAttachPath(byteBufferValue6, isVar.getUserConfig().n);
                                 if (TLdeserialize2.params == null) {
                                     HashMap<String, String> hashMap = new HashMap<>();
                                     TLdeserialize2.params = hashMap;
@@ -938,7 +938,7 @@ public abstract class n5 {
         }
         if (i13 == 101) {
             m5.v(sQLiteDatabase2, "ALTER TABLE messages_v2 ADD COLUMN group_id INTEGER default NULL", "ALTER TABLE dialogs ADD COLUMN last_mid_group INTEGER default NULL", "CREATE INDEX IF NOT EXISTS uid_mid_groupid_messages_v2 ON messages_v2(uid, mid, group_id);", "PRAGMA user_version = 102");
-            i13 = zs.n1;
+            i13 = at.n1;
         }
         if (i13 == 102) {
             m5.v(sQLiteDatabase2, "CREATE TABLE messages_holes_topics(uid INTEGER, topic_id INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, start));", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes ON messages_holes_topics(uid, topic_id, end);", "CREATE TABLE messages_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, read_state INTEGER, send_state INTEGER, date INTEGER, data BLOB, out INTEGER, ttl INTEGER, media INTEGER, replydata BLOB, imp INTEGER, mention INTEGER, forwards INTEGER, replies_data BLOB, thread_reply_id INTEGER, is_channel INTEGER, reply_to_message_id INTEGER, custom_params BLOB, PRIMARY KEY(mid, topic_id, uid))", "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_topics ON messages_topics(uid, mid, read_state, out);");
@@ -946,68 +946,68 @@ public abstract class n5 {
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_topics ON messages_topics(uid, mention, read_state);", "CREATE INDEX IF NOT EXISTS is_channel_idx_messages_topics ON messages_topics(mid, is_channel);", "CREATE INDEX IF NOT EXISTS reply_to_idx_messages_topics ON messages_topics(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS mid_uid_messages_topics ON messages_topics(mid, uid);");
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS mid_uid_topic_id_messages_topics ON messages_topics(mid, topic_id, uid);", "CREATE TABLE media_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid, topic_id, type))", "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_topics ON media_topics(uid, topic_id, mid, type, date);", "CREATE TABLE media_holes_topics(uid INTEGER, topic_id INTEGER, type INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, type, start));");
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_end_media_holes_topics ON media_holes_topics(uid, topic_id, type, end);", "CREATE TABLE topics(did INTEGER, topic_id INTEGER, data BLOB, top_message INTEGER, topic_message BLOB, unread_count INTEGER, max_read_id INTEGER, unread_mentions INTEGER, unread_reactions INTEGER, PRIMARY KEY(did, topic_id));", "CREATE INDEX IF NOT EXISTS did_top_message_topics ON topics(did, top_message);", "PRAGMA user_version = 103");
-            i13 = zs.o1;
+            i13 = at.o1;
         }
         if (i13 == 103) {
             m5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS media_counts_topics(uid INTEGER, topic_id INTEGER, type INTEGER, count INTEGER, old INTEGER, PRIMARY KEY(uid, topic_id, type))", "CREATE TABLE IF NOT EXISTS reaction_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))", "CREATE INDEX IF NOT EXISTS reaction_mentions_topics_did ON reaction_mentions_topics(dialog_id, topic_id);", "PRAGMA user_version = 104");
-            i13 = zs.p1;
+            i13 = at.p1;
         }
         if (i13 == 104) {
             m5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN read_outbox INTEGER default 0", "PRAGMA user_version = 105");
-            i13 = zs.q1;
+            i13 = at.q1;
         }
         if (i13 == 105) {
             m5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN pinned INTEGER default 0", "PRAGMA user_version = 106");
-            i13 = zs.r1;
+            i13 = at.r1;
         }
         if (i13 == 106) {
             m5.v(sQLiteDatabase2, "DROP INDEX IF EXISTS uid_mid_read_out_idx_messages_topics", "DROP INDEX IF EXISTS uid_mention_idx_messages_topics", "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_topics ON messages_topics(uid, topic_id, mid, read_state, out);", "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_topics ON messages_topics(uid, topic_id, mention, read_state);");
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_topic_id_messages_topics ON messages_topics(uid, topic_id);", "CREATE INDEX IF NOT EXISTS uid_topic_id_date_mid_messages_topics ON messages_topics(uid, topic_id, date, mid);", "CREATE INDEX IF NOT EXISTS uid_topic_id_mid_messages_topics ON messages_topics(uid, topic_id, mid);", "CREATE INDEX IF NOT EXISTS did_topics ON topics(did);");
             m5.s(sQLiteDatabase2, "PRAGMA user_version = 107");
-            i13 = zs.s1;
+            i13 = at.s1;
         }
         if (i13 == 107) {
             m5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN total_messages_count INTEGER default 0", "PRAGMA user_version = 108");
-            i13 = zs.t1;
+            i13 = at.t1;
         }
         if (i13 == 108) {
             m5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN hidden INTEGER default 0", "PRAGMA user_version = 109");
-            i13 = zs.u1;
+            i13 = at.u1;
         }
         if (i13 == 109) {
             m5.t(sQLiteDatabase2, "ALTER TABLE dialogs ADD COLUMN ttl_period INTEGER default 0", "PRAGMA user_version = 110");
-            i13 = zs.v1;
+            i13 = at.v1;
         }
         if (i13 == 110) {
             m5.t(sQLiteDatabase2, "CREATE TABLE stickersets(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER);", "PRAGMA user_version = 111");
-            i13 = zs.w1;
+            i13 = at.w1;
         }
         if (i13 == 111) {
             m5.t(sQLiteDatabase2, "CREATE TABLE emoji_groups(type INTEGER PRIMARY KEY, data BLOB)", "PRAGMA user_version = 112");
-            i13 = zs.x1;
+            i13 = at.x1;
         }
         if (i13 == 112) {
             m5.t(sQLiteDatabase2, "CREATE TABLE app_config(data BLOB)", "PRAGMA user_version = 113");
-            i13 = zs.y1;
+            i13 = at.y1;
         }
         if (i13 == 113) {
-            hsVar.s1();
+            isVar.s1();
             sQLiteDatabase2.executeFast("PRAGMA user_version = 114").stepThis().dispose();
-            i13 = zs.z1;
+            i13 = at.z1;
         }
         if (i13 == 114) {
             m5.u(sQLiteDatabase2, "CREATE TABLE bot_keyboard_topics(uid INTEGER, tid INTEGER, mid INTEGER, info BLOB, PRIMARY KEY(uid, tid))", "CREATE INDEX IF NOT EXISTS bot_keyboard_topics_idx_mid_v2 ON bot_keyboard_topics(mid, uid, tid);", "PRAGMA user_version = 115");
-            i13 = zs.A1;
+            i13 = at.A1;
         }
         if (i13 == 115) {
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_v2 ON messages_v2(reply_to_message_id, mid);", "CREATE INDEX IF NOT EXISTS idx_to_reply_scheduled_messages_v2 ON scheduled_messages_v2(reply_to_message_id, mid);", "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_topics ON messages_topics(reply_to_message_id, mid);", "PRAGMA user_version = 117");
-            i13 = zs.C1;
+            i13 = at.C1;
         }
         if (i13 == 116 || i13 == 117 || i13 == 118) {
             m5.v(sQLiteDatabase2, "DROP TABLE IF EXISTS stories", "DROP TABLE IF EXISTS stories_counter", "CREATE TABLE stories (dialog_id INTEGER, story_id INTEGER, data BLOB, local_path TEXT, local_thumb_path TEXT, PRIMARY KEY (dialog_id, story_id));", "CREATE TABLE stories_counter (dialog_id INTEGER PRIMARY KEY, count INTEGER, max_read INTEGER);");
             sQLiteDatabase2.executeFast("PRAGMA user_version = 119").stepThis().dispose();
-            hsVar.getMessagesController().O1().q();
-            i13 = zs.E1;
+            isVar.getMessagesController().O1().q();
+            i13 = at.E1;
         }
         if (i13 == 119) {
             m5.u(sQLiteDatabase2, "ALTER TABLE messages_v2 ADD COLUMN reply_to_story_id INTEGER default 0", "ALTER TABLE messages_topics ADD COLUMN reply_to_story_id INTEGER default 0", "PRAGMA user_version = 120");
@@ -1015,31 +1015,31 @@ public abstract class n5 {
         }
         if (i13 == 120) {
             m5.u(sQLiteDatabase2, "CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, PRIMARY KEY(dialog_id, story_id));", "CREATE TABLE archived_stories (story_id INTEGER PRIMARY KEY, data BLOB);", "PRAGMA user_version = 121");
-            i13 = zs.F1;
+            i13 = at.F1;
         }
         if (i13 == 121) {
             m5.t(sQLiteDatabase2, "CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB);", "PRAGMA user_version = 122");
-            i13 = zs.G1;
+            i13 = at.G1;
         }
         if (i13 == 122) {
             m5.t(sQLiteDatabase2, "ALTER TABLE chat_settings_v2 ADD COLUMN participants_count INTEGER default 0", "PRAGMA user_version = 123");
-            i13 = zs.H1;
+            i13 = at.H1;
         }
         if (i13 == 123) {
             m5.t(sQLiteDatabase2, "CREATE TABLE story_pushes (uid INTEGER PRIMARY KEY, minId INTEGER, maxId INTEGER, date INTEGER, localName TEXT);", "PRAGMA user_version = 124");
-            i13 = zs.I1;
+            i13 = at.I1;
         }
         if (i13 == 124) {
             m5.u(sQLiteDatabase2, "DROP TABLE IF EXISTS story_pushes;", "CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, PRIMARY KEY(uid, sid));", "PRAGMA user_version = 125");
-            i13 = zs.J1;
+            i13 = at.J1;
         }
         if (i13 == 125) {
             m5.t(sQLiteDatabase2, "ALTER TABLE story_pushes ADD COLUMN flags INTEGER default 0", "PRAGMA user_version = 126");
-            i13 = zs.K1;
+            i13 = at.K1;
         }
         if (i13 == 126) {
             m5.t(sQLiteDatabase2, "ALTER TABLE story_pushes ADD COLUMN expire_date INTEGER default 0", "PRAGMA user_version = 127");
-            i13 = zs.L1;
+            i13 = at.L1;
         }
         if (i13 == 127) {
             m5.t(sQLiteDatabase2, "ALTER TABLE stories ADD COLUMN custom_params BLOB default NULL", "PRAGMA user_version = 128");
@@ -1047,19 +1047,19 @@ public abstract class n5 {
         }
         if (i13 == 128) {
             m5.t(sQLiteDatabase2, "ALTER TABLE story_drafts ADD COLUMN type INTEGER default 0", "PRAGMA user_version = 129");
-            i13 = zs.N1;
+            i13 = at.N1;
         }
         if (i13 == 129) {
             m5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS stickers_featured_emoji_index ON stickers_featured(emoji);", "PRAGMA user_version = 130");
-            i13 = zs.O1;
+            i13 = at.O1;
         }
         if (i13 == 130) {
             m5.u(sQLiteDatabase2, "DROP TABLE archived_stories", "ALTER TABLE profile_stories ADD COLUMN type INTEGER default 0", "PRAGMA user_version = 131");
-            i13 = zs.P1;
+            i13 = at.P1;
         }
         if (i13 == 131) {
             m5.u(sQLiteDatabase2, "ALTER TABLE stories DROP COLUMN local_path", "ALTER TABLE stories DROP COLUMN local_thumb_path", "PRAGMA user_version = 132");
-            i13 = zs.Q1;
+            i13 = at.Q1;
         }
         if (i13 == 132) {
             m5.t(sQLiteDatabase2, "CREATE TABLE unconfirmed_auth (data BLOB);", "PRAGMA user_version = 133");
@@ -1071,184 +1071,184 @@ public abstract class n5 {
         }
         if (i13 == 134) {
             m5.v(sQLiteDatabase2, "DROP TABLE user_photos", "CREATE TABLE dialog_photos(uid INTEGER, id INTEGER, num INTEGER, data BLOB, PRIMARY KEY (uid, id))", "CREATE TABLE dialog_photos_count(uid INTEGER PRIMARY KEY, count INTEGER)", "PRAGMA user_version = 135");
-            i13 = zs.R1;
+            i13 = at.R1;
         }
         if (i13 == 135) {
             w0.m();
             sQLiteDatabase2.executeFast("CREATE TABLE stickersets2(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER, date INTEGER);").stepThis().dispose();
             sQLiteDatabase2.executeFast("CREATE INDEX IF NOT EXISTS stickersets2_id_index ON stickersets2(id);").stepThis().dispose();
             sQLiteDatabase2.executeFast("PRAGMA user_version = 136").stepThis().dispose();
-            i13 = zs.S1;
+            i13 = at.S1;
         }
         if (i13 == 136) {
             m5.v(sQLiteDatabase2, "CREATE TABLE saved_dialogs(did INTEGER PRIMARY KEY, date INTEGER, last_mid INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, last_mid_group INTEGER, count INTEGER)", "CREATE INDEX IF NOT EXISTS date_idx_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_dialogs ON saved_dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS folder_id_idx_dialogs ON saved_dialogs(folder_id);");
             m5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS flags_idx_dialogs ON saved_dialogs(flags);", "PRAGMA user_version = 137");
-            i13 = zs.T1;
+            i13 = at.T1;
         }
         if (i13 == 137) {
             m5.t(sQLiteDatabase2, "ALTER TABLE unread_push_messages ADD COLUMN is_reaction INTEGER default 0", "PRAGMA user_version = 138");
-            i13 = zs.U1;
+            i13 = at.U1;
         }
         if (i13 == 138 || i13 == 139 || i13 == 140 || i13 == 141) {
             m5.v(sQLiteDatabase2, "DROP TABLE IF EXISTS tag_message_id;", "CREATE TABLE tag_message_id(mid INTEGER, topic_id INTEGER, tag INTEGER, text TEXT);", "CREATE INDEX IF NOT EXISTS tag_idx_tag_message_id ON tag_message_id(tag);", "CREATE INDEX IF NOT EXISTS tag_text_idx_tag_message_id ON tag_message_id(tag, text COLLATE NOCASE);");
             m5.u(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS tag_topic_idx_tag_message_id ON tag_message_id(topic_id, tag);", "CREATE INDEX IF NOT EXISTS tag_topic_text_idx_tag_message_id ON tag_message_id(topic_id, tag, text COLLATE NOCASE);", "PRAGMA user_version = 142");
-            i13 = zs.Y1;
+            i13 = at.Y1;
         }
         if (i13 == 142) {
             m5.u(sQLiteDatabase2, "DROP TABLE IF EXISTS saved_reaction_tags;", "CREATE TABLE saved_reaction_tags (topic_id INTEGER PRIMARY KEY, data BLOB);", "PRAGMA user_version = 143");
-            i13 = zs.Z1;
+            i13 = at.Z1;
         }
         if (i13 == 143) {
             m5.t(sQLiteDatabase2, "ALTER TABLE dialog_filter ADD COLUMN color INTEGER default -1", "PRAGMA user_version = 144");
-            i13 = zs.a2;
+            i13 = at.a2;
         }
         if (i13 == 144) {
             m5.s(sQLiteDatabase2, "PRAGMA user_version = 145");
-            i13 = zs.b2;
+            i13 = at.b2;
         }
         if (i13 == 145) {
             m5.t(sQLiteDatabase2, "CREATE TABLE business_replies(topic_id INTEGER PRIMARY KEY, name TEXT, order_value INTEGER);", "PRAGMA user_version = 146");
-            i13 = zs.c2;
+            i13 = at.c2;
         }
         if (i13 == 146) {
             m5.v(sQLiteDatabase2, "CREATE TABLE quick_replies_messages(mid INTEGER, topic_id INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, topic_id))", "CREATE INDEX IF NOT EXISTS send_state_idx_quick_replies_messages ON quick_replies_messages(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS topic_date_idx_quick_replies_messages ON quick_replies_messages(topic_id, date);", "CREATE INDEX IF NOT EXISTS reply_to_idx_quick_replies_messages ON quick_replies_messages(mid, reply_to_message_id);");
             m5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS idx_to_reply_quick_replies_messages ON quick_replies_messages(reply_to_message_id, mid);", "PRAGMA user_version = 147");
-            i13 = zs.d2;
+            i13 = at.d2;
         }
         if (i13 == 147) {
             m5.t(sQLiteDatabase2, "ALTER TABLE business_replies ADD COLUMN count INTEGER default 0", "PRAGMA user_version = 148");
-            i13 = zs.e2;
+            i13 = at.e2;
         }
         if (i13 == 148) {
             m5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN edit_date INTEGER default 0", "PRAGMA user_version = 149");
-            i13 = zs.f2;
+            i13 = at.f2;
         }
         if (i13 == 149) {
             m5.u(sQLiteDatabase2, "ALTER TABLE stickersets2 ADD COLUMN short_name TEXT;", "CREATE INDEX IF NOT EXISTS stickersets2_id_short_name ON stickersets2(id, short_name);", "PRAGMA user_version = 150");
-            i13 = zs.g2;
+            i13 = at.g2;
         }
         if (i13 == 150) {
             m5.t(sQLiteDatabase2, "CREATE TABLE business_links(data BLOB, order_value INTEGER);", "PRAGMA user_version = 151");
-            i13 = zs.h2;
+            i13 = at.h2;
         }
         if (i13 == 151) {
             m5.t(sQLiteDatabase2, "ALTER TABLE profile_stories ADD COLUMN seen INTEGER default 0;", "PRAGMA user_version = 152");
-            i13 = zs.i2;
+            i13 = at.i2;
         }
         if (i13 == 152) {
             m5.t(sQLiteDatabase2, "ALTER TABLE profile_stories ADD COLUMN pin INTEGER default 0;", "PRAGMA user_version = 153");
-            i13 = zs.j2;
+            i13 = at.j2;
         }
         if (i13 == 153) {
             m5.t(sQLiteDatabase2, "CREATE TABLE effects(data BLOB)", "PRAGMA user_version = 154");
-            i13 = zs.k2;
+            i13 = at.k2;
         }
         if (i13 == 154) {
             m5.t(sQLiteDatabase2, "CREATE TABLE fact_checks(hash INTEGER PRIMARY KEY, data BLOB, expires INTEGER);", "PRAGMA user_version = 155");
-            i13 = zs.l2;
+            i13 = at.l2;
         }
         if (i13 == 155) {
             m5.t(sQLiteDatabase2, "CREATE TABLE popular_bots(uid INTEGER PRIMARY KEY, time INTEGER, offset TEXT);", "PRAGMA user_version = 156");
-            i13 = zs.m2;
+            i13 = at.m2;
         }
         if (i13 == 156 || i13 == 157) {
             m5.t(sQLiteDatabase2, "CREATE TABLE star_gifts2(id INTEGER PRIMARY KEY, data BLOB, hash INTEGER, time INTEGER);", "PRAGMA user_version = 158");
-            i13 = zs.o2;
+            i13 = at.o2;
         }
         if (i13 == 158) {
             m5.u(sQLiteDatabase2, "DELETE FROM star_gifts2", "ALTER TABLE star_gifts2 ADD COLUMN pos INTEGER default 0;", "PRAGMA user_version = 159");
-            i13 = zs.p2;
+            i13 = at.p2;
         }
         if (i13 == 159) {
             m5.t(sQLiteDatabase2, "ALTER TABLE dialog_filter ADD COLUMN entities BLOB", "PRAGMA user_version = 160");
-            i13 = zs.q2;
+            i13 = at.q2;
         }
         if (i13 == 160) {
             m5.t(sQLiteDatabase2, "ALTER TABLE dialog_filter ADD COLUMN noanimate INTEGER", "PRAGMA user_version = 161");
-            i13 = zs.r2;
+            i13 = at.r2;
         }
         if (i13 == 161) {
             m5.u(sQLiteDatabase2, "DELETE FROM popular_bots", "ALTER TABLE popular_bots ADD COLUMN pos INTEGER", "PRAGMA user_version = 162");
-            i13 = zs.s2;
+            i13 = at.s2;
         }
         if (i13 == 162) {
             m5.v(sQLiteDatabase2, "DROP TABLE saved_dialogs", "CREATE TABLE saved_dialogs(did INTEGER, date INTEGER, last_mid INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, last_mid_group INTEGER, count INTEGER, forumChatId INTEGER, PRIMARY KEY (did, forumChatId))", "CREATE INDEX IF NOT EXISTS date_idx_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_dialogs ON saved_dialogs(last_mid);");
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS folder_id_idx_dialogs ON saved_dialogs(folder_id);", "CREATE INDEX IF NOT EXISTS flags_idx_dialogs ON saved_dialogs(flags);", "CREATE INDEX IF NOT EXISTS forum_idx_dialogs ON saved_dialogs(forumChatId);", "PRAGMA user_version = 163");
-            i13 = zs.t2;
+            i13 = at.t2;
         }
         if (i13 == 163) {
             m5.v(sQLiteDatabase2, "DROP TABLE saved_dialogs", "CREATE TABLE saved_dialogs(did INTEGER, date INTEGER, last_mid INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, last_mid_group INTEGER, count INTEGER, forumChatId INTEGER, unread_count INTEGER, max_read_id INTEGER, read_outbox INTEGER, PRIMARY KEY (did, forumChatId))", "CREATE INDEX IF NOT EXISTS date_idx_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_dialogs ON saved_dialogs(last_mid);");
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS folder_id_idx_dialogs ON saved_dialogs(folder_id);", "CREATE INDEX IF NOT EXISTS flags_idx_dialogs ON saved_dialogs(flags);", "CREATE INDEX IF NOT EXISTS forum_idx_dialogs ON saved_dialogs(forumChatId);", "PRAGMA user_version = 164");
-            i13 = zs.u2;
+            i13 = at.u2;
         }
         if (i13 == 164) {
             m5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN nopaid_messages_exception INTEGER default 0;", "PRAGMA user_version = 165");
-            i13 = zs.v2;
+            i13 = at.v2;
         }
         if (i13 == 165) {
             m5.u(sQLiteDatabase2, "CREATE TABLE profile_stories_albums (dialog_id INTEGER, album_id INTEGER, order_index INTEGER, data BLOB, PRIMARY KEY(dialog_id, album_id));", "CREATE TABLE profile_stories_albums_links (dialog_id INTEGER, album_id INTEGER, story_id INTEGER, order_index INTEGER, PRIMARY KEY (dialog_id, album_id, story_id));", "PRAGMA user_version = 166");
-            i13 = zs.w2;
+            i13 = at.w2;
         }
         if (i13 == 166) {
             m5.u(sQLiteDatabase2, "DROP TABLE profile_stories", "CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, type INTEGER, seen INTEGER, pin INTEGER, PRIMARY KEY(dialog_id, story_id, type));", "PRAGMA user_version = 167");
-            i13 = zs.x2;
+            i13 = at.x2;
         }
         if (i13 == 167) {
             m5.t(sQLiteDatabase2, "CREATE TABLE gift_themes (slug TEXT PRIMARY KEY, data BLOB);", "PRAGMA user_version = 168");
-            i13 = zs.y2;
+            i13 = at.y2;
         }
         if (i13 == 168) {
             m5.t(sQLiteDatabase2, "ALTER TABLE dialogs ADD COLUMN unread_poll_votes INTEGER default 0", "PRAGMA user_version = 169");
-            i13 = zs.z2;
+            i13 = at.z2;
         }
         if (i13 == 169) {
             m5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN unread_poll_votes INTEGER default 0", "PRAGMA user_version = 170");
-            i13 = zs.A2;
+            i13 = at.A2;
         }
         if (i13 == 170) {
             m5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS poll_votes_mentions(message_id INTEGER, state INTEGER, dialog_id INTEGER, PRIMARY KEY(message_id, dialog_id))", "CREATE INDEX IF NOT EXISTS poll_votes_mentions_did ON poll_votes_mentions(dialog_id);", "CREATE TABLE IF NOT EXISTS poll_votes_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))", "CREATE INDEX IF NOT EXISTS poll_votes_mentions_topics_did ON poll_votes_mentions_topics(dialog_id, topic_id);");
             m5.s(sQLiteDatabase2, "PRAGMA user_version = 171");
-            i13 = zs.B2;
+            i13 = at.B2;
         }
         if (i13 == 171) {
             m5.u(sQLiteDatabase2, "DROP TABLE story_pushes", "CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, flags INTEGER, expire_date INTEGER, live INTEGER, PRIMARY KEY(uid, sid));", "PRAGMA user_version = 172");
-            i13 = zs.C2;
+            i13 = at.C2;
         }
         if (i13 == 172) {
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_end_messages_holes_4_dialogs ON messages_holes(uid, end);", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes_4_topics ON messages_holes_topics(uid, topic_id, end);", "CREATE INDEX IF NOT EXISTS date_idx_4_saved_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS date_idx_4_dialogs ON dialogs(date);");
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS last_mid_idx_4_saved_dialogs ON saved_dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS last_mid_idx_4_dialogs ON dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS folder_id_idx_4_saved_dialogs ON saved_dialogs(folder_id);", "CREATE INDEX IF NOT EXISTS folder_id_idx_4_dialogs ON dialogs(folder_id);");
             m5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS flags_idx_4_saved_dialogs ON saved_dialogs(flags);", "CREATE INDEX IF NOT EXISTS flags_idx_4_dialogs ON dialogs(flags);", "DROP INDEX IF EXISTS uid_end_messages_holes;", "DROP INDEX IF EXISTS date_idx_dialogs;");
             m5.v(sQLiteDatabase2, "DROP INDEX IF EXISTS last_mid_idx_dialogs;", "DROP INDEX IF EXISTS folder_id_idx_dialogs;", "DROP INDEX IF EXISTS flags_idx_dialogs;", "PRAGMA user_version = 173");
-            i13 = zs.D2;
+            i13 = at.D2;
         }
         if (i13 == 173) {
             m5.t(sQLiteDatabase2, "CREATE TABLE web_browser_settings(data BLOB)", "PRAGMA user_version = 174");
-            i13 = zs.E2;
+            i13 = at.E2;
         }
         if (i13 == 174) {
             m5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_type_date_mid_idx_media_v4 ON media_v4(uid, type, date DESC, mid DESC);", "PRAGMA user_version = 175");
-            i13 = zs.F2;
+            i13 = at.F2;
         }
         if (i13 == 175) {
             m5.u(sQLiteDatabase2, "CREATE TABLE ephemeral_messages (id INTEGER, dialog_id INTEGER, topic_id INTEGER, date INTEGER, data BLOB, PRIMARY KEY(dialog_id, id));", "CREATE INDEX IF NOT EXISTS ephemeral_messages_date_idx ON ephemeral_messages(date);", "PRAGMA user_version = 176");
-            i13 = zs.G2;
+            i13 = at.G2;
         }
         if (i13 == 176) {
             m5.v(sQLiteDatabase2, "CREATE TABLE welcome_messages(mid INTEGER, dialog_id INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, dialog_id))", "CREATE INDEX IF NOT EXISTS send_state_idx_welcome_messages ON welcome_messages(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS dialog_date_idx_welcome_messages ON welcome_messages(dialog_id, date);", "CREATE INDEX IF NOT EXISTS reply_to_idx_welcome_messages ON welcome_messages(mid, reply_to_message_id);");
             m5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS idx_to_reply_welcome_messages ON welcome_messages(reply_to_message_id, mid);", "PRAGMA user_version = 177");
-            i13 = zs.H2;
+            i13 = at.H2;
         }
         if (i13 == 177) {
             m5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS media_v4_music_browse_idx ON media_v4(uid, date DESC, mid DESC) WHERE type = 4 AND mid > 0 AND uid != 0;", "PRAGMA user_version = 178");
-            i13 = zs.I2;
+            i13 = at.I2;
         }
         if (i13 == 178) {
             m5.t(sQLiteDatabase2, "DELETE FROM downloading_documents", "PRAGMA user_version = 179");
-            i13 = zs.J2;
+            i13 = at.J2;
         }
         if (i13 == 179) {
             m5.u(sQLiteDatabase2, "CREATE TABLE widget_state(uid INTEGER, mid INTEGER, local TEXT, PRIMARY KEY(uid, mid));", "CREATE TABLE widget_heights(uid INTEGER, mid INTEGER, width INTEGER, height INTEGER, date INTEGER, PRIMARY KEY(uid, mid, width));", "PRAGMA user_version = 180");
-            i13 = zs.K2;
+            i13 = at.K2;
         }
         if (i13 != 180) {
             return i13;
@@ -1261,6 +1261,6 @@ public abstract class n5 {
             m5.s(sQLiteDatabase2, "ALTER TABLE widget_heights ADD COLUMN anchor INTEGER default 0");
         }
         m5.s(sQLiteDatabase2, "PRAGMA user_version = 181");
-        return zs.L2;
+        return at.L2;
     }
 }

@@ -1,263 +1,194 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.tgnet.tl.TL_update;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ul0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class ul0 implements TextWatcher {
+    public boolean a;
+    public String b;
+    public boolean c;
+    public int d;
+    public int e;
+    public boolean f;
+    public final char[] h = {',', '.', 1643, 12289, 11841, 65040, 65041, 65104, 65105, 65292, 65380, 699};
+    public final /* synthetic */ qm0 n;
 
-    public /* synthetic */ ul0(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public ul0(qm0 qm0Var) {
+        this.n = qm0Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01bf  */
-    @Override // org.telegram.tgnet.RequestDelegate
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        String str;
-        String str2;
-        String str3;
-        JSONException jSONException;
-        cg.b g02;
-        long[] jArr;
-        int i10 = this.a;
-        int i11 = 4;
-        int i12 = 18;
-        int i13 = 2;
-        int i14 = 0;
-        int i15 = 1;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (i10) {
-            case 0:
-                sm0 sm0Var = (sm0) obj2;
-                TLRPC.TL_payments_sendPaymentForm tL_payments_sendPaymentForm = (TLRPC.TL_payments_sendPaymentForm) obj;
-                if (tLObject == null) {
-                    k10 k10Var = sm0Var.e1;
-                    if (k10Var == null || !((Boolean) k10Var.a(tL_error)).booleanValue()) {
-                        org.telegram.messenger.i0.g3(new qd0(sm0Var, tL_error, tL_payments_sendPaymentForm, false, 18));
-                        break;
-                    }
-                } else if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
-                    if (tLObject instanceof TLRPC.TL_payments_paymentVerificationNeeded) {
-                        org.telegram.messenger.i0.g3(new pl0(sm0Var, tLObject, i15));
-                        break;
-                    }
-                } else {
-                    org.telegram.messenger.q20 q20Var = sm0Var.c1;
-                    if (q20Var == null) {
-                        TLRPC.Updates updates = ((TLRPC.TL_payments_paymentResult) tLObject).updates;
-                        TLRPC.Message[] messageArr = new TLRPC.Message[1];
-                        int size = updates.updates.size();
-                        int i16 = 0;
-                        while (true) {
-                            if (i16 < size) {
-                                TLRPC.Update update = updates.updates.get(i16);
-                                if (update instanceof TL_update.TL_updateNewMessage) {
-                                    messageArr[0] = ((TL_update.TL_updateNewMessage) update).message;
-                                } else if (update instanceof TL_update.TL_updateNewChannelMessage) {
-                                    messageArr[0] = ((TL_update.TL_updateNewChannelMessage) update).message;
-                                } else {
-                                    i16++;
-                                }
-                            }
-                        }
-                        sm0Var.getMessagesController().L3(updates, false);
-                        org.telegram.messenger.i0.g3(new uf0(i12, sm0Var, messageArr));
-                        break;
-                    } else {
-                        q20Var.a((TLRPC.TL_payments_paymentResult) tLObject);
-                        break;
-                    }
-                }
+    public final int a(String str) {
+        int i10 = 0;
+        while (true) {
+            char[] cArr = this.h;
+            if (i10 >= cArr.length) {
+                return -1;
+            }
+            int indexOf = str.indexOf(cArr[i10]);
+            if (indexOf >= 0) {
+                return indexOf;
+            }
+            i10++;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10;
+        qm0 qm0Var = this.n;
+        if (qm0Var.m0) {
+            return;
+        }
+        Long l4 = qm0Var.H0;
+        long longValue = l4 != null ? l4.longValue() : 0L;
+        String str = this.b;
+        if (str == null) {
+            str = org.telegram.messenger.dd.n(editable.toString());
+        }
+        int a2 = a(str);
+        boolean z10 = a2 >= 0;
+        String str2 = qm0Var.C0.invoice.currency;
+        str2.getClass();
+        i10 = 10;
+        switch (str2) {
+            case "BHD":
+            case "IQD":
+            case "JOD":
+            case "KWD":
+            case "LYD":
+            case "OMR":
+            case "TND":
+                i10 = 1000;
                 break;
-            case 1:
-                org.telegram.messenger.i0.g3(new w50((sm0) obj2, tLObject, tL_error, (TL_account.getTmpPassword) obj, 16));
+            case "BIF":
+            case "BYR":
+            case "CLP":
+            case "CVE":
+            case "DJF":
+            case "GNF":
+            case "ISK":
+            case "JPY":
+            case "KMF":
+            case "KRW":
+            case "MGA":
+            case "PYG":
+            case "RWF":
+            case "UGX":
+            case "UYI":
+            case "VND":
+            case "VUV":
+            case "XAF":
+            case "XOF":
+            case "XPF":
+                i10 = 1;
                 break;
-            case 2:
-                org.telegram.messenger.i0.g3(new w50((rt0) obj2, tL_error, tLObject, (TL_stars.updatePaidMessagesPrice) obj, 21));
+            case "CLF":
+                i10 = 10000;
                 break;
-            case 3:
-                org.telegram.messenger.i0.g3(new w50((PrivacyControlActivity) obj2, tL_error, tLObject, (boolean[]) obj, 22));
-                break;
-            case 4:
-                org.telegram.messenger.i0.g3(new et0(6, (PrivacySettingsActivity) obj2, (org.telegram.ui.Cells.t8) obj));
-                break;
-            case 5:
-                RectF rectF = ProfileActivity.R6;
-                org.telegram.messenger.i0.g3(new w50((ProfileActivity) obj2, tLObject, tL_error, (int[]) obj, 25));
-                break;
-            case 6:
-                RectF rectF2 = ProfileActivity.R6;
-                org.telegram.messenger.i0.g3(new w50((ProfileActivity) obj2, tL_error, tLObject, (String) obj, 28));
-                break;
-            case 7:
-                RectF rectF3 = ProfileActivity.R6;
-                org.telegram.messenger.i0.g3(new w50((ProfileActivity) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 27));
-                break;
-            case 8:
-                org.telegram.messenger.i0.g3(new px0((qx0) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 0));
-                break;
-            case 9:
-                org.telegram.messenger.i0.g3(new k41((l41) obj2, tL_error, (TLRPC.TL_authorization) obj, i14));
-                break;
-            case 10:
-                org.telegram.messenger.i0.g3(new k41((m41) obj2, tL_error, (TLRPC.TL_authorization) obj, i15));
-                break;
-            case 11:
-                org.telegram.messenger.i0.g3(new px0(obj2, (Object) tLObject, tL_error, obj, 3));
-                break;
-            case 12:
-                org.telegram.messenger.i0.g3(new t11(i13, (e51) obj2, (TLRPC.TL_attachMenuBot) obj));
-                break;
-            case 13:
-                org.telegram.messenger.i0.g3(new px0(obj2, tL_error, (Object) tLObject, obj, 4));
-                break;
-            case 14:
-                g61 g61Var = (g61) obj2;
-                org.telegram.messenger.i20 i20Var = (org.telegram.messenger.i20) obj;
-                int i17 = g61Var.i;
-                String str4 = null;
-                if (tL_error == null) {
-                    if (tLObject instanceof TL_stats.TL_statsGraph) {
-                        try {
-                            g02 = u61.g0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), i17, g61Var.m);
-                        } catch (JSONException e) {
-                            jSONException = e;
-                            str3 = null;
-                        }
-                        try {
-                            str4 = ((TL_stats.TL_statsGraph) tLObject).zoom_token;
-                            if (i17 == 4 && (jArr = g02.a) != null && jArr.length > 0) {
-                                long j10 = jArr[jArr.length - 1];
-                                g61Var.e = new cg.e(g02, j10);
-                                g61Var.c = j10;
-                            }
-                            str3 = str4;
-                            str4 = g02;
-                        } catch (JSONException e7) {
-                            jSONException = e7;
-                            str3 = str4;
-                            str4 = g02;
-                            jSONException.printStackTrace();
-                            if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                            }
-                            str = str4;
-                            str2 = str3;
-                            org.telegram.messenger.i0.g3(new px0(g61Var, str, str2, i20Var, 6));
-                            return;
-                        }
-                    } else {
-                        str3 = null;
-                    }
-                    if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                        g61Var.l = false;
-                        g61Var.a = true;
-                        g61Var.b = ((TL_stats.TL_statsGraphError) tLObject).error;
-                    }
-                    str = str4;
-                    str2 = str3;
-                } else {
-                    str = null;
-                    str2 = null;
-                }
-                org.telegram.messenger.i0.g3(new px0(g61Var, str, str2, i20Var, 6));
-                break;
-            case 15:
-                org.telegram.messenger.i0.g3(new k41((p91) obj2, (String) obj, tL_error));
-                break;
-            case 16:
-                p91 p91Var = (p91) obj2;
-                TL_account.updateTheme updatetheme = (TL_account.updateTheme) obj;
-                if (!(tLObject instanceof TLRPC.TL_theme)) {
-                    org.telegram.messenger.i0.g3(new k41(p91Var, tL_error, updatetheme, i11));
-                    break;
-                } else {
-                    org.telegram.messenger.i0.g3(new t11(9, p91Var, (TLRPC.TL_theme) tLObject));
-                    break;
-                }
-            case 17:
-                org.telegram.messenger.i0.g3(new k41((lb1) obj2, (String) obj, tLObject, 8));
-                break;
-            case 18:
-                org.telegram.messenger.i0.g3(new px0((tc1) obj2, tLObject, (String) obj, tL_error, 9));
-                break;
-            case 19:
-                tc1 tc1Var = (tc1) obj2;
-                byte[] bArr = (byte[]) obj;
-                if (tL_error != null) {
-                    org.telegram.messenger.i0.g3(new pc1(tc1Var, tL_error, 3));
-                    break;
-                } else {
-                    org.telegram.messenger.i0.g3(new nc1(tc1Var, bArr, i15));
-                    break;
-                }
-            case 20:
-                org.telegram.messenger.i0.g3(new org.telegram.ui.Wallet.k3(i12, (ke1) obj2, (int[]) obj));
-                break;
-            case 21:
-                org.telegram.messenger.i0.g3(new org.telegram.ui.Components.u41((org.telegram.ui.Components.vq0) obj2, tL_error, (org.telegram.ui.ActionBar.k2) obj, 13));
-                break;
-            case 22:
-                org.telegram.messenger.i0.g3(new org.telegram.ui.Components.u41((ph.h3) obj2, tLObject, (TL_stars.getResaleStarGifts) obj, false, 16));
-                break;
-            case 23:
-                org.telegram.messenger.i0.g3(new org.telegram.ui.Components.u41((rh.i) obj2, tLObject, (Context) obj, false, 19));
-                break;
-            case 24:
-                org.telegram.messenger.i0.g3(new px0((rh.h) obj2, tLObject, (String) obj, tL_error, 15));
-                break;
-            case 25:
-                rh.e4 e4Var = (rh.e4) obj2;
-                org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) obj;
-                if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
-                    TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
-                    org.telegram.messenger.vp.r1(e4Var.a).V3(tL_payments_uniqueStarGift.users, false);
-                    org.telegram.messenger.vp.r1(e4Var.a).P3(tL_payments_uniqueStarGift.chats, false);
-                    if (tL_payments_uniqueStarGift.gift instanceof TL_stars.TL_starGiftUnique) {
-                        org.telegram.messenger.i0.g3(new rh.o(i15, e4Var, tL_payments_uniqueStarGift));
-                        break;
-                    }
-                }
-                org.telegram.messenger.i0.g3(new rh.o(i13, x1Var, tL_error));
-                break;
-            case 26:
-                org.telegram.messenger.i0.g3(new px0((rh.e4) obj2, tLObject, (org.telegram.ui.Components.u41) obj, tL_error, 19));
-                break;
-            case 27:
-                rh.e4 e4Var2 = (rh.e4) obj2;
-                TL_stars.InputSavedStarGift inputSavedStarGift = (TL_stars.InputSavedStarGift) obj;
-                if (tLObject instanceof TLRPC.Updates) {
-                    TLRPC.Updates updates2 = (TLRPC.Updates) tLObject;
-                    org.telegram.messenger.vp.r1(e4Var2.a).V3(updates2.users, false);
-                    org.telegram.messenger.vp.r1(e4Var2.a).P3(updates2.chats, false);
-                }
-                org.telegram.messenger.i0.g3(new px0((Object) e4Var2, tL_error, (Object) tLObject, (Object) inputSavedStarGift, 20));
-                break;
-            case 28:
-                org.telegram.messenger.i0.g3(new org.telegram.ui.Components.u41(tLObject, (f0) obj2, (String) obj));
+            case "MRO":
                 break;
             default:
-                org.telegram.messenger.i0.g3(new org.telegram.ui.Components.u41((rh.e6) obj2, tLObject, tL_error, (org.telegram.messenger.q20) obj));
+                i10 = 100;
                 break;
         }
+        String substring = a2 >= 0 ? str.substring(0, a2) : str;
+        String str3 = "";
+        String substring2 = a2 >= 0 ? str.substring(a2 + 1) : "";
+        long longValue2 = Utilities.A(af.b.d(substring, false)).longValue() * i10;
+        long longValue3 = Utilities.A(af.b.d(substring2, false)).longValue();
+        String l10 = a1.g.l(longValue3, "");
+        String str4 = "" + (i10 - 1);
+        if (a2 > 0 && l10.length() > str4.length()) {
+            longValue3 = Utilities.A(this.e - a2 < l10.length() ? l10.substring(0, str4.length()) : l10.substring(l10.length() - str4.length())).longValue();
+        }
+        Long valueOf = Long.valueOf(longValue2 + longValue3);
+        qm0Var.H0 = valueOf;
+        if (qm0Var.C0.invoice.max_tip_amount != 0) {
+            long longValue4 = valueOf.longValue();
+            long j10 = qm0Var.C0.invoice.max_tip_amount;
+            if (longValue4 > j10) {
+                qm0Var.H0 = Long.valueOf(j10);
+            }
+        }
+        int selectionStart = qm0Var.f[0].getSelectionStart();
+        qm0Var.m0 = true;
+        if (qm0Var.H0.longValue() == 0) {
+            qm0Var.f[0].setText("");
+        } else {
+            EditTextBoldCursor editTextBoldCursor = qm0Var.f[0];
+            str3 = org.telegram.messenger.dd.D0().q(qm0Var.H0.longValue(), false, z10, true, qm0Var.C0.invoice.currency);
+            editTextBoldCursor.setText(str3);
+        }
+        if (longValue < qm0Var.H0.longValue() && longValue != 0 && this.a && selectionStart >= 0) {
+            EditTextBoldCursor editTextBoldCursor2 = qm0Var.f[0];
+            editTextBoldCursor2.setSelection(Math.min(selectionStart, editTextBoldCursor2.length()));
+        } else if (this.c && this.d != qm0Var.f[0].length()) {
+            EditTextBoldCursor editTextBoldCursor3 = qm0Var.f[0];
+            editTextBoldCursor3.setSelection(Math.max(0, Math.min(selectionStart, editTextBoldCursor3.length())));
+        } else if (this.f || !z10 || a2 < 0) {
+            EditTextBoldCursor editTextBoldCursor4 = qm0Var.f[0];
+            editTextBoldCursor4.setSelection(editTextBoldCursor4.length());
+        } else {
+            int a10 = a(str3);
+            if (a10 > 0) {
+                qm0Var.f[0].setSelection(a10 + 1);
+            } else {
+                EditTextBoldCursor editTextBoldCursor5 = qm0Var.f[0];
+                editTextBoldCursor5.setSelection(editTextBoldCursor5.length());
+            }
+        }
+        this.f = z10;
+        qm0Var.R0();
+        this.b = null;
+        qm0Var.m0 = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        if (this.n.m0) {
+            return;
+        }
+        this.a = !TextUtils.isEmpty(charSequence);
+        this.b = null;
+        this.d = charSequence == null ? 0 : charSequence.length();
+        this.e = i10;
+        boolean z10 = i11 == 1 && i12 == 0;
+        this.c = z10;
+        if (!z10) {
+            return;
+        }
+        String n10 = org.telegram.messenger.dd.n(charSequence);
+        char charAt = n10.charAt(i10);
+        int a2 = a(n10);
+        String substring = a2 >= 0 ? n10.substring(a2 + 1) : "";
+        long longValue = Utilities.A(af.b.d(substring, false)).longValue();
+        if ((charAt >= '0' && charAt <= '9') || (substring.length() != 0 && longValue == 0)) {
+            if (a2 <= 0 || i10 <= a2 || longValue != 0) {
+                return;
+            }
+            this.b = n10.substring(0, a2 - 1);
+            return;
+        }
+        while (true) {
+            int i13 = i10 - 1;
+            if (i13 < 0) {
+                return;
+            }
+            char charAt2 = n10.charAt(i13);
+            if (charAt2 >= '0' && charAt2 <= '9') {
+                this.b = n10.substring(0, i13) + n10.substring(i10);
+                return;
+            }
+            i10 = i13;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

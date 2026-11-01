@@ -11,11 +11,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -26,15 +26,15 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.a5;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.LaunchActivity;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t1 extends org.telegram.ui.ActionBar.k2 {
     public static final int U = -1;
@@ -77,7 +77,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
     public boolean T;
     public l5 a;
     public s1 b;
-    public u51 c;
+    public v51 c;
     public zf.m1 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -102,7 +102,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
         this.R = false;
     }
 
-    public static void Y(t1 t1Var, TLRPC.TL_error tL_error, TLObject tLObject, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
+    public static void Z(t1 t1Var, TLRPC.TL_error tL_error, TLObject tLObject, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
         org.telegram.ui.ActionBar.k2 T;
         if (tL_error != null) {
             t1Var.a.b(false);
@@ -121,7 +121,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
         iArr[0] = i10;
         if (i10 == arrayList.size()) {
             k.a(t1Var.currentAccount).b();
-            vp messagesController = t1Var.getMessagesController();
+            wp messagesController = t1Var.getMessagesController();
             messagesController.r1.clear();
             messagesController.w1.clear();
             t1Var.finishFragment();
@@ -129,26 +129,26 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 if (user == null || (T = LaunchActivity.T()) == null) {
                     return;
                 }
-                cc.a0(T).Q(R.raw.contact_check, 36, cd.a0(null, null, 2131752784, h20.p(user))).j();
+                cc.a0(T).Q(R.raw.contact_check, 36, dd.a0(null, null, 2131752784, i20.p(user))).j();
                 return;
             }
             org.telegram.ui.ActionBar.k2 T2 = LaunchActivity.T();
             if (T2 != null) {
-                cc.a0(T2).Q(R.raw.contact_check, 36, cd.a0(null, null, 2131752817, h20.p(user))).j();
+                cc.a0(T2).Q(R.raw.contact_check, 36, dd.a0(null, null, 2131752817, i20.p(user))).j();
             }
         }
     }
 
-    public static void a0(final t1 t1Var, a51 a51Var, final View view) {
-        if (a51Var.g && !t1Var.w.h(a51Var)) {
-            int i10 = a51Var.d;
+    public static void b0(final t1 t1Var, b51 b51Var, final View view) {
+        if (b51Var.g && !t1Var.w.h(b51Var)) {
+            int i10 = b51Var.d;
             final int i11 = 1;
             if (i10 == U) {
                 x0 x0Var = t1Var.w;
                 t1Var.I = true;
                 x0Var.h = true;
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             final int i12 = 0;
@@ -157,17 +157,17 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 t1Var.I = false;
                 x0Var2.h = false;
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             if (i10 == W) {
                 t1Var.M = null;
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
-            if (a51Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) t1Var.N.get(a51Var.x);
+            if (b51Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) t1Var.N.get(b51Var.x);
                 if (user == null) {
                     return;
                 }
@@ -175,15 +175,15 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                     t1Var.M = user;
                     org.telegram.messenger.i0.v1(t1Var.f);
                     t1Var.c.f3.O(true);
-                    t1Var.c0(true);
+                    t1Var.d0(true);
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, t1Var.getParentActivity(), t1Var.resourceProvider);
-                String L0 = cd.L0(2131752809, null);
+                String L0 = dd.L0(2131752809, null);
                 org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                 x1Var.R = L0;
-                x1Var.T = org.telegram.messenger.i0.W2(cd.L0(2131752810, null));
-                alertDialog$Builder.k(cd.L0(2131747847, null), null);
+                x1Var.T = org.telegram.messenger.i0.W2(dd.L0(2131752810, null));
+                alertDialog$Builder.k(dd.L0(2131747847, null), null);
                 t1Var.showDialog(x1Var);
                 return;
             }
@@ -206,7 +206,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 tL_businessBotRights.reply = z11;
                 ((org.telegram.ui.Cells.c2) view).c(z11, true);
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             if (i10 == a0) {
@@ -215,7 +215,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 tL_businessBotRights2.read_messages = z12;
                 ((org.telegram.ui.Cells.c2) view).c(z12, true);
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             if (i10 == b0) {
@@ -224,7 +224,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 tL_businessBotRights3.delete_sent_messages = z13;
                 ((org.telegram.ui.Cells.c2) view).c(z13, true);
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             if (i10 == c0) {
@@ -233,7 +233,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 tL_businessBotRights4.delete_received_messages = z14;
                 ((org.telegram.ui.Cells.c2) view).c(z14, true);
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             if (i10 == d0) {
@@ -249,7 +249,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 tL_businessBotRights5.edit_name = z16;
                 ((org.telegram.ui.Cells.c2) view).c(z16, true);
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             if (i10 == f0) {
@@ -258,7 +258,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 tL_businessBotRights6.edit_bio = z17;
                 ((org.telegram.ui.Cells.c2) view).c(z17, true);
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             if (i10 == g0) {
@@ -267,12 +267,12 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 tL_businessBotRights7.edit_profile_photo = z18;
                 ((org.telegram.ui.Cells.c2) view).c(z18, true);
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 return;
             }
             if (i10 == h0) {
                 final int i14 = 5;
-                t1Var.b0(i10, !t1Var.J.edit_username, new Runnable(t1Var) { // from class: ag.k1
+                t1Var.c0(i10, !t1Var.J.edit_username, new Runnable(t1Var) { // from class: ag.k1
                     public final /* synthetic */ t1 b;
 
                     {
@@ -291,7 +291,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights8.view_gifts = z19;
                                 c2Var.c(z19, true);
                                 t1Var2.c.f3.O(true);
-                                t1Var2.c0(true);
+                                t1Var2.d0(true);
                                 break;
                             case 1:
                                 t1 t1Var3 = this.b;
@@ -302,7 +302,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights9.sell_gifts = z20;
                                 c2Var2.c(z20, true);
                                 t1Var3.c.f3.O(true);
-                                t1Var3.c0(true);
+                                t1Var3.d0(true);
                                 break;
                             case 2:
                                 t1 t1Var4 = this.b;
@@ -313,7 +313,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights10.change_gift_settings = z21;
                                 c2Var3.c(z21, true);
                                 t1Var4.c.f3.O(true);
-                                t1Var4.c0(true);
+                                t1Var4.d0(true);
                                 break;
                             case 3:
                                 t1 t1Var5 = this.b;
@@ -324,7 +324,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
                                 c2Var4.c(z22, true);
                                 t1Var5.c.f3.O(true);
-                                t1Var5.c0(true);
+                                t1Var5.d0(true);
                                 break;
                             case 4:
                                 t1 t1Var6 = this.b;
@@ -335,7 +335,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights12.transfer_stars = z23;
                                 c2Var5.c(z23, true);
                                 t1Var6.c.f3.O(true);
-                                t1Var6.c0(true);
+                                t1Var6.d0(true);
                                 break;
                             default:
                                 t1 t1Var7 = this.b;
@@ -346,7 +346,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights13.edit_username = z24;
                                 c2Var6.c(z24, true);
                                 t1Var7.c.f3.O(true);
-                                t1Var7.c0(true);
+                                t1Var7.d0(true);
                                 break;
                         }
                     }
@@ -361,7 +361,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 return;
             }
             if (i10 == j0) {
-                t1Var.b0(i10, !t1Var.J.view_gifts, new Runnable(t1Var) { // from class: ag.k1
+                t1Var.c0(i10, !t1Var.J.view_gifts, new Runnable(t1Var) { // from class: ag.k1
                     public final /* synthetic */ t1 b;
 
                     {
@@ -380,7 +380,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights8.view_gifts = z192;
                                 c2Var.c(z192, true);
                                 t1Var2.c.f3.O(true);
-                                t1Var2.c0(true);
+                                t1Var2.d0(true);
                                 break;
                             case 1:
                                 t1 t1Var3 = this.b;
@@ -391,7 +391,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights9.sell_gifts = z20;
                                 c2Var2.c(z20, true);
                                 t1Var3.c.f3.O(true);
-                                t1Var3.c0(true);
+                                t1Var3.d0(true);
                                 break;
                             case 2:
                                 t1 t1Var4 = this.b;
@@ -402,7 +402,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights10.change_gift_settings = z21;
                                 c2Var3.c(z21, true);
                                 t1Var4.c.f3.O(true);
-                                t1Var4.c0(true);
+                                t1Var4.d0(true);
                                 break;
                             case 3:
                                 t1 t1Var5 = this.b;
@@ -413,7 +413,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
                                 c2Var4.c(z22, true);
                                 t1Var5.c.f3.O(true);
-                                t1Var5.c0(true);
+                                t1Var5.d0(true);
                                 break;
                             case 4:
                                 t1 t1Var6 = this.b;
@@ -424,7 +424,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights12.transfer_stars = z23;
                                 c2Var5.c(z23, true);
                                 t1Var6.c.f3.O(true);
-                                t1Var6.c0(true);
+                                t1Var6.d0(true);
                                 break;
                             default:
                                 t1 t1Var7 = this.b;
@@ -435,7 +435,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights13.edit_username = z24;
                                 c2Var6.c(z24, true);
                                 t1Var7.c.f3.O(true);
-                                t1Var7.c0(true);
+                                t1Var7.d0(true);
                                 break;
                         }
                     }
@@ -443,7 +443,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                 return;
             }
             if (i10 == k0) {
-                t1Var.b0(i10, !t1Var.J.sell_gifts, new Runnable(t1Var) { // from class: ag.k1
+                t1Var.c0(i10, !t1Var.J.sell_gifts, new Runnable(t1Var) { // from class: ag.k1
                     public final /* synthetic */ t1 b;
 
                     {
@@ -462,7 +462,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights8.view_gifts = z192;
                                 c2Var.c(z192, true);
                                 t1Var2.c.f3.O(true);
-                                t1Var2.c0(true);
+                                t1Var2.d0(true);
                                 break;
                             case 1:
                                 t1 t1Var3 = this.b;
@@ -473,7 +473,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights9.sell_gifts = z20;
                                 c2Var2.c(z20, true);
                                 t1Var3.c.f3.O(true);
-                                t1Var3.c0(true);
+                                t1Var3.d0(true);
                                 break;
                             case 2:
                                 t1 t1Var4 = this.b;
@@ -484,7 +484,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights10.change_gift_settings = z21;
                                 c2Var3.c(z21, true);
                                 t1Var4.c.f3.O(true);
-                                t1Var4.c0(true);
+                                t1Var4.d0(true);
                                 break;
                             case 3:
                                 t1 t1Var5 = this.b;
@@ -495,7 +495,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
                                 c2Var4.c(z22, true);
                                 t1Var5.c.f3.O(true);
-                                t1Var5.c0(true);
+                                t1Var5.d0(true);
                                 break;
                             case 4:
                                 t1 t1Var6 = this.b;
@@ -506,7 +506,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights12.transfer_stars = z23;
                                 c2Var5.c(z23, true);
                                 t1Var6.c.f3.O(true);
-                                t1Var6.c0(true);
+                                t1Var6.d0(true);
                                 break;
                             default:
                                 t1 t1Var7 = this.b;
@@ -517,7 +517,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights13.edit_username = z24;
                                 c2Var6.c(z24, true);
                                 t1Var7.c.f3.O(true);
-                                t1Var7.c0(true);
+                                t1Var7.d0(true);
                                 break;
                         }
                     }
@@ -526,7 +526,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
             }
             if (i10 == l0) {
                 final int i15 = 2;
-                t1Var.b0(i10, !t1Var.J.change_gift_settings, new Runnable(t1Var) { // from class: ag.k1
+                t1Var.c0(i10, !t1Var.J.change_gift_settings, new Runnable(t1Var) { // from class: ag.k1
                     public final /* synthetic */ t1 b;
 
                     {
@@ -545,7 +545,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights8.view_gifts = z192;
                                 c2Var.c(z192, true);
                                 t1Var2.c.f3.O(true);
-                                t1Var2.c0(true);
+                                t1Var2.d0(true);
                                 break;
                             case 1:
                                 t1 t1Var3 = this.b;
@@ -556,7 +556,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights9.sell_gifts = z20;
                                 c2Var2.c(z20, true);
                                 t1Var3.c.f3.O(true);
-                                t1Var3.c0(true);
+                                t1Var3.d0(true);
                                 break;
                             case 2:
                                 t1 t1Var4 = this.b;
@@ -567,7 +567,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights10.change_gift_settings = z21;
                                 c2Var3.c(z21, true);
                                 t1Var4.c.f3.O(true);
-                                t1Var4.c0(true);
+                                t1Var4.d0(true);
                                 break;
                             case 3:
                                 t1 t1Var5 = this.b;
@@ -578,7 +578,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
                                 c2Var4.c(z22, true);
                                 t1Var5.c.f3.O(true);
-                                t1Var5.c0(true);
+                                t1Var5.d0(true);
                                 break;
                             case 4:
                                 t1 t1Var6 = this.b;
@@ -589,7 +589,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights12.transfer_stars = z23;
                                 c2Var5.c(z23, true);
                                 t1Var6.c.f3.O(true);
-                                t1Var6.c0(true);
+                                t1Var6.d0(true);
                                 break;
                             default:
                                 t1 t1Var7 = this.b;
@@ -600,7 +600,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights13.edit_username = z24;
                                 c2Var6.c(z24, true);
                                 t1Var7.c.f3.O(true);
-                                t1Var7.c0(true);
+                                t1Var7.d0(true);
                                 break;
                         }
                     }
@@ -609,7 +609,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
             }
             if (i10 == m0) {
                 final int i16 = 3;
-                t1Var.b0(i10, !t1Var.J.transfer_and_upgrade_gifts, new Runnable(t1Var) { // from class: ag.k1
+                t1Var.c0(i10, !t1Var.J.transfer_and_upgrade_gifts, new Runnable(t1Var) { // from class: ag.k1
                     public final /* synthetic */ t1 b;
 
                     {
@@ -628,7 +628,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights8.view_gifts = z192;
                                 c2Var.c(z192, true);
                                 t1Var2.c.f3.O(true);
-                                t1Var2.c0(true);
+                                t1Var2.d0(true);
                                 break;
                             case 1:
                                 t1 t1Var3 = this.b;
@@ -639,7 +639,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights9.sell_gifts = z20;
                                 c2Var2.c(z20, true);
                                 t1Var3.c.f3.O(true);
-                                t1Var3.c0(true);
+                                t1Var3.d0(true);
                                 break;
                             case 2:
                                 t1 t1Var4 = this.b;
@@ -650,7 +650,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights10.change_gift_settings = z21;
                                 c2Var3.c(z21, true);
                                 t1Var4.c.f3.O(true);
-                                t1Var4.c0(true);
+                                t1Var4.d0(true);
                                 break;
                             case 3:
                                 t1 t1Var5 = this.b;
@@ -661,7 +661,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
                                 c2Var4.c(z22, true);
                                 t1Var5.c.f3.O(true);
-                                t1Var5.c0(true);
+                                t1Var5.d0(true);
                                 break;
                             case 4:
                                 t1 t1Var6 = this.b;
@@ -672,7 +672,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights12.transfer_stars = z23;
                                 c2Var5.c(z23, true);
                                 t1Var6.c.f3.O(true);
-                                t1Var6.c0(true);
+                                t1Var6.d0(true);
                                 break;
                             default:
                                 t1 t1Var7 = this.b;
@@ -683,14 +683,14 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights13.edit_username = z24;
                                 c2Var6.c(z24, true);
                                 t1Var7.c.f3.O(true);
-                                t1Var7.c0(true);
+                                t1Var7.d0(true);
                                 break;
                         }
                     }
                 });
             } else if (i10 == n0) {
                 final int i17 = 4;
-                t1Var.b0(i10, !t1Var.J.transfer_stars, new Runnable(t1Var) { // from class: ag.k1
+                t1Var.c0(i10, !t1Var.J.transfer_stars, new Runnable(t1Var) { // from class: ag.k1
                     public final /* synthetic */ t1 b;
 
                     {
@@ -709,7 +709,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights8.view_gifts = z192;
                                 c2Var.c(z192, true);
                                 t1Var2.c.f3.O(true);
-                                t1Var2.c0(true);
+                                t1Var2.d0(true);
                                 break;
                             case 1:
                                 t1 t1Var3 = this.b;
@@ -720,7 +720,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights9.sell_gifts = z20;
                                 c2Var2.c(z20, true);
                                 t1Var3.c.f3.O(true);
-                                t1Var3.c0(true);
+                                t1Var3.d0(true);
                                 break;
                             case 2:
                                 t1 t1Var4 = this.b;
@@ -731,7 +731,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights10.change_gift_settings = z21;
                                 c2Var3.c(z21, true);
                                 t1Var4.c.f3.O(true);
-                                t1Var4.c0(true);
+                                t1Var4.d0(true);
                                 break;
                             case 3:
                                 t1 t1Var5 = this.b;
@@ -742,7 +742,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
                                 c2Var4.c(z22, true);
                                 t1Var5.c.f3.O(true);
-                                t1Var5.c0(true);
+                                t1Var5.d0(true);
                                 break;
                             case 4:
                                 t1 t1Var6 = this.b;
@@ -753,7 +753,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights12.transfer_stars = z23;
                                 c2Var5.c(z23, true);
                                 t1Var6.c.f3.O(true);
-                                t1Var6.c0(true);
+                                t1Var6.d0(true);
                                 break;
                             default:
                                 t1 t1Var7 = this.b;
@@ -764,28 +764,28 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
                                 tL_businessBotRights13.edit_username = z24;
                                 c2Var6.c(z24, true);
                                 t1Var7.c.f3.O(true);
-                                t1Var7.c0(true);
+                                t1Var7.d0(true);
                                 break;
                         }
                     }
                 });
             } else if (i10 == o0) {
-                t1Var.b0(i10, !t1Var.J.manage_stories, new l1(t1Var, i12));
+                t1Var.c0(i10, !t1Var.J.manage_stories, new l1(t1Var, i12));
             }
         }
     }
 
-    public final void b0(int i10, boolean z10, final Runnable runnable) {
+    public final void c0(int i10, boolean z10, final Runnable runnable) {
         final int i11 = 1;
         final int i12 = 0;
         if (!this.K && i10 == h0 && z10) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String L0 = cd.L0(2131752787, null);
+            String L0 = dd.L0(2131752787, null);
             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
             x1Var.R = L0;
-            x1Var.T = org.telegram.messenger.i0.W2(cd.a0(null, null, 2131752788, h20.n(this.M)));
-            alertDialog$Builder.h(cd.L0(2131752589, null), null);
-            alertDialog$Builder.k(cd.L0(2131754284, null), new org.telegram.ui.ActionBar.u1(this) { // from class: ag.q1
+            x1Var.T = org.telegram.messenger.i0.W2(dd.a0(null, null, 2131752788, i20.n(this.M)));
+            alertDialog$Builder.h(dd.L0(2131752589, null), null);
+            alertDialog$Builder.k(dd.L0(2131754284, null), new org.telegram.ui.ActionBar.u1(this) { // from class: ag.q1
                 public final /* synthetic */ t1 b;
 
                 {
@@ -815,12 +815,12 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-        String L02 = cd.L0(2131752787, null);
+        String L02 = dd.L0(2131752787, null);
         org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder2.a;
         x1Var2.R = L02;
-        x1Var2.T = org.telegram.messenger.i0.W2(cd.a0(null, null, 2131752801, h20.n(this.M)));
-        alertDialog$Builder2.h(cd.L0(2131752589, null), null);
-        alertDialog$Builder2.k(cd.L0(2131754284, null), new org.telegram.ui.ActionBar.u1(this) { // from class: ag.q1
+        x1Var2.T = org.telegram.messenger.i0.W2(dd.a0(null, null, 2131752801, i20.n(this.M)));
+        alertDialog$Builder2.h(dd.L0(2131752589, null), null);
+        alertDialog$Builder2.k(dd.L0(2131754284, null), new org.telegram.ui.ActionBar.u1(this) { // from class: ag.q1
             public final /* synthetic */ t1 b;
 
             {
@@ -845,23 +845,16 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
         alertDialog$Builder2.p();
     }
 
-    public final void c0(boolean z10) {
-        if (this.a == null) {
-            return;
-        }
-        this.a.a(d0(), z10);
-    }
-
     @Override // org.telegram.ui.ActionBar.k2
     public final View createView(Context context) {
         int i10 = 1;
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(cd.L0(2131752783, null));
+        this.simpleActionBar.setTitle(dd.L0(2131752783, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new e(this, 2));
-        this.a = this.simpleActionBar.n(cd.L0(2131745963, null));
+        this.a = this.simpleActionBar.n(dd.L0(2131745963, null));
         int i11 = 0;
-        c0(false);
+        d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         new LinearLayout(getParentActivity()).setOrientation(0);
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
@@ -877,10 +870,10 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
         this.f.setPadding(0, 0, 0, 0);
         this.f.setSingleLine(true);
         int i13 = 3;
-        this.f.setGravity((cd.X ? 5 : 3) | 48);
+        this.f.setGravity((dd.X ? 5 : 3) | 48);
         this.f.setInputType(180224);
         this.f.setImeOptions(6);
-        this.f.setHint(cd.L0(2131752816, null));
+        this.f.setHint(dd.L0(2131752816, null));
         a7.w(this.f, i12, null);
         this.f.setCursorSize(org.telegram.messenger.i0.L(19.0f));
         this.f.setCursorWidth(1.5f);
@@ -898,14 +891,14 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
         FrameLayout frameLayout4 = this.e;
         View view2 = this.h;
         float f7 = 1.0f / org.telegram.messenger.i0.p;
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         frameLayout4.addView(view2, b6.d(-1, f7, 87, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f));
         a5 a5Var = new a5(context, 1);
         this.n = a5Var;
         a7.i(i14, a5Var, getResourceProvider());
         TextView textView = new TextView(context);
         this.r = textView;
-        textView.setText(cd.L0(2131752811, null));
+        textView.setText(dd.L0(2131752811, null));
         this.r.setTextSize(1, 14.0f);
         TextView textView2 = this.r;
         int i15 = t6.z6;
@@ -926,18 +919,25 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
         this.w = x0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         x0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        u51 u51Var = new u51(this, new a(this, i13), new o1(this, i13), null);
-        this.c = u51Var;
-        u51Var.r1();
+        v51 v51Var = new v51(this, new a(this, i13), new o1(this, i13), null);
+        this.c = v51Var;
+        v51Var.r1();
         this.c.setSectionsDrawBackground(true);
-        u51 u51Var2 = this.c;
-        u51Var2.f3.r = false;
-        frameLayout.addView(u51Var2, b6.c(-1.0f, -1));
+        v51 v51Var2 = this.c;
+        v51Var2.f3.r = false;
+        frameLayout.addView(v51Var2, b6.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
-    public final boolean d0() {
+    public final void d0(boolean z10) {
+        if (this.a == null) {
+            return;
+        }
+        this.a.a(e0(), z10);
+    }
+
+    public final boolean e0() {
         x0 x0Var;
         if (this.T) {
             TLRPC.User user = this.M;
@@ -952,13 +952,13 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
         return false;
     }
 
-    public final void e0() {
+    public final void f0() {
         TLRPC.User user;
         TL_account.TL_connectedBot tL_connectedBot;
         if (this.a.y.f) {
             return;
         }
-        if (!d0()) {
+        if (!e0()) {
             finishFragment();
             return;
         }
@@ -999,7 +999,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
         }
     }
 
-    public final void f0() {
+    public final void g0() {
         boolean z10 = this.x;
         boolean e = this.d.e();
         boolean z11 = true;
@@ -1017,7 +1017,7 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
     }
 
     @Override // org.telegram.ui.ActionBar.k2
-    public final tk0 getListViewForSimpleGlass() {
+    public final uk0 getListViewForSimpleGlass() {
         return this.c;
     }
 
@@ -1029,30 +1029,30 @@ public final class t1 extends org.telegram.ui.ActionBar.k2 {
     @Override // org.telegram.ui.ActionBar.k2
     public final boolean onBackPressed(boolean z10) {
         int i10 = 0;
-        if (d0()) {
+        if (e0()) {
             if (z10) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-                String L0 = cd.L0(2131743860, null);
+                String L0 = dd.L0(2131743860, null);
                 org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                 x1Var.R = L0;
-                x1Var.T = cd.L0(2131752786, null);
-                alertDialog$Builder.k(cd.L0(2131754216, null), new o1(this, i10));
-                alertDialog$Builder.h(cd.L0(2131747596, null), new o1(this, 1));
+                x1Var.T = dd.L0(2131752786, null);
+                alertDialog$Builder.k(dd.L0(2131754216, null), new o1(this, i10));
+                alertDialog$Builder.h(dd.L0(2131747596, null), new o1(this, 1));
                 showDialog(x1Var);
                 return false;
             }
         } else {
-            if (this.M != null || d0() || (this.d.d.isEmpty() && this.d.e.isEmpty())) {
+            if (this.M != null || e0() || (this.d.d.isEmpty() && this.d.e.isEmpty())) {
                 return super.onBackPressed(z10);
             }
             if (z10) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity());
-                String L02 = cd.L0(2131752812, null);
+                String L02 = dd.L0(2131752812, null);
                 org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder2.a;
                 x1Var2.R = L02;
-                x1Var2.T = cd.L0(2131752813, null);
-                alertDialog$Builder2.k(cd.L0(2131752814, null), new o1(this, 2));
-                alertDialog$Builder2.h(cd.L0(2131752589, null), null);
+                x1Var2.T = dd.L0(2131752813, null);
+                alertDialog$Builder2.k(dd.L0(2131752814, null), new o1(this, 2));
+                alertDialog$Builder2.h(dd.L0(2131752589, null), null);
                 showDialog(x1Var2);
             }
         }

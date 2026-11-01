@@ -1,8 +1,8 @@
 package vb;
 
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g extends d {
     public final byte[] c;
@@ -19,7 +19,7 @@ public final class g extends d {
         byte[] bArr = new byte[i12];
         for (int i13 = 0; i13 < i12; i13++) {
             int i14 = iArr[i13];
-            bArr[i13] = (byte) (((((i14 >> 16) & zs.e4) + ((i14 >> 7) & 510)) + (i14 & zs.e4)) / 4);
+            bArr[i13] = (byte) (((((i14 >> 16) & at.e4) + ((i14 >> 7) & 510)) + (i14 & at.e4)) / 4);
         }
         this.c = bArr;
         this.d = i10;

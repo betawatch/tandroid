@@ -13,18 +13,18 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vs;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.ou0;
+import org.telegram.ui.Components.pu0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class w0 implements us, lf.a {
-    public static final ou0 X = new ou0(new rh.x6(25), new rh.x6(26));
-    public static final ou0 Y = new ou0(new rh.x6(27), new rh.x6(28));
+public final class w0 implements vs, lf.a {
+    public static final pu0 X = new pu0(new rh.x6(25), new rh.x6(26));
+    public static final pu0 Y = new pu0(new rh.x6(27), new rh.x6(28));
     public static final w0 Z;
     public m2.t D;
     public boolean E;
@@ -132,7 +132,7 @@ public final class w0 implements us, lf.a {
         if (this.S) {
             this.S = false;
             org.telegram.messenger.i0.h3(new r5.a(8), 100L);
-            zs.f(this.x).n(this, zs.G2);
+            at.f(this.x).n(this, at.G2);
             ValueAnimator valueAnimator = this.I;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -155,11 +155,11 @@ public final class w0 implements us, lf.a {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.D2) {
+        if (i10 == at.D2) {
             b();
-        } else if (i10 == zs.w2) {
+        } else if (i10 == at.w2) {
             a();
         }
     }
@@ -260,6 +260,6 @@ public final class w0 implements us, lf.a {
     }
 
     @Override // lf.a
-    public final /* synthetic */ void n(Canvas canvas) {
+    public final /* synthetic */ void o(Canvas canvas) {
     }
 }

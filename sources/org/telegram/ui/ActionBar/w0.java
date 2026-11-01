@@ -1,15 +1,15 @@
 package org.telegram.ui.ActionBar;
 
 import android.view.ViewGroup;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.kj;
 import org.telegram.ui.Components.a00;
-import org.telegram.ui.Components.kn0;
-import org.telegram.ui.Components.mn0;
+import org.telegram.ui.Components.ln0;
 import org.telegram.ui.Components.nn0;
-import org.telegram.ui.Components.qn0;
+import org.telegram.ui.Components.on0;
+import org.telegram.ui.Components.rn0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class w0 extends a00 {
     public final /* synthetic */ int e;
@@ -22,20 +22,20 @@ public final class w0 extends a00 {
         this.f = viewGroup;
     }
 
-    @Override // org.telegram.ui.Components.ln0
+    @Override // org.telegram.ui.Components.mn0
     public CharSequence d() {
         int i10 = this.e;
         ViewGroup viewGroup = this.f;
         switch (i10) {
             case 0:
-                return jh.g.a(((x0) viewGroup).getSpeed()) + "x  " + cd.L0(2131754759, null);
+                return jh.g.a(((x0) viewGroup).getSpeed()) + "x  " + dd.L0(2131754759, null);
             case 1:
             default:
                 return super.d();
             case 2:
-                mn0 mn0Var = ((nn0) viewGroup).y;
-                if (mn0Var != null) {
-                    return mn0Var.getContentDescription();
+                nn0 nn0Var = ((on0) viewGroup).y;
+                if (nn0Var != null) {
+                    return nn0Var.getContentDescription();
                 }
                 return null;
         }
@@ -50,7 +50,7 @@ public final class w0 extends a00 {
             default:
                 return super.h();
             case 2:
-                int p02 = ((nn0) this.f).y.p0();
+                int p02 = ((on0) this.f).y.p0();
                 if (p02 > 0) {
                     return 1.0f / p02;
                 }
@@ -92,25 +92,25 @@ public final class w0 extends a00 {
                 if (q1Var.O5.I3()) {
                     f7 = i1Var.b;
                     i10 = i1Var.f;
-                    i11 = kn0.E;
+                    i11 = ln0.E;
                 } else {
-                    if (!jj.R4(q1Var.O5.k)) {
+                    if (!kj.R4(q1Var.O5.k)) {
                         if (q1Var.O5.h4()) {
                             return q1Var.O5.b0;
                         }
                         return 0.0f;
                     }
                     if (q1Var.A4) {
-                        qn0 qn0Var = q1Var.C4;
-                        return qn0Var.a / qn0Var.g;
+                        rn0 rn0Var = q1Var.C4;
+                        return rn0Var.a / rn0Var.g;
                     }
                     f7 = i1Var.b;
                     i10 = i1Var.f;
-                    i11 = kn0.E;
+                    i11 = ln0.E;
                 }
                 return f7 / (i10 - i11);
             default:
-                return ((nn0) this.f).getProgress();
+                return ((on0) this.f).getProgress();
         }
     }
 
@@ -122,20 +122,20 @@ public final class w0 extends a00 {
                 break;
             case 1:
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.f;
-                qn0 qn0Var = q1Var.C4;
+                rn0 rn0Var = q1Var.C4;
                 org.telegram.ui.Cells.i1 i1Var = q1Var.B4;
                 if (q1Var.O5.I3()) {
                     i1Var.h(f7);
-                } else if (jj.R4(q1Var.O5.k)) {
+                } else if (kj.R4(q1Var.O5.k)) {
                     if (q1Var.A4) {
-                        qn0Var.g(false, f7);
+                        rn0Var.g(false, f7);
                     } else {
                         i1Var.h(f7);
                     }
                 } else if (q1Var.O5.h4()) {
                     if (q1Var.A4) {
-                        if (qn0Var != null) {
-                            qn0Var.g(false, f7);
+                        if (rn0Var != null) {
+                            rn0Var.g(false, f7);
                         }
                     } else if (i1Var != null) {
                         i1Var.h(f7);
@@ -146,19 +146,19 @@ public final class w0 extends a00 {
                 q1Var.invalidate();
                 break;
             default:
-                nn0 nn0Var = (nn0) this.f;
-                nn0Var.x = true;
-                nn0Var.setProgress(f7);
-                nn0Var.f(true, f7);
-                nn0Var.x = false;
+                on0 on0Var = (on0) this.f;
+                on0Var.x = true;
+                on0Var.setProgress(f7);
+                on0Var.f(true, f7);
+                on0Var.x = false;
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0(nn0 nn0Var, boolean z10) {
+    public w0(on0 on0Var, boolean z10) {
         super(z10);
         this.e = 2;
-        this.f = nn0Var;
+        this.f = on0Var;
     }
 }

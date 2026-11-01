@@ -19,12 +19,12 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ScheduledFuture;
-import org.telegram.messenger.o20;
+import org.telegram.messenger.p20;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.iu0;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.ju0;
 import rh.e8;
 import rh.g8;
 import x2.l;
@@ -33,12 +33,12 @@ import xa.v;
 import xa.x;
 import xh.i;
 import xh.o;
-import xh.r3;
+import xh.s3;
 import z3.h;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements iu0, l, Continuation, OnSuccessListener, OnCompleteListener, u1, o20, j {
+public final /* synthetic */ class b implements ju0, l, Continuation, OnSuccessListener, OnCompleteListener, u1, p20, j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -77,7 +77,7 @@ public final /* synthetic */ class b implements iu0, l, Continuation, OnSuccessL
         return t10.f();
     }
 
-    @Override // org.telegram.ui.Components.iu0
+    @Override // org.telegram.ui.Components.ju0
     public /* synthetic */ float f(RecyclerView recyclerView) {
         return f1.c(recyclerView);
     }
@@ -100,20 +100,20 @@ public final /* synthetic */ class b implements iu0, l, Continuation, OnSuccessL
         }
     }
 
-    @Override // org.telegram.ui.Components.iu0
+    @Override // org.telegram.ui.Components.ju0
     public RecyclerView j(View view) {
         ((g8) this.b).getClass();
         return ((e8) view).a;
     }
 
-    @Override // org.telegram.messenger.o20
+    @Override // org.telegram.messenger.p20
     public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         switch (this.a) {
             case 10:
-                o.Z((o) this.b, (a51) obj);
+                o.a0((o) this.b, (b51) obj);
                 break;
             default:
-                ((r3) this.b).Z((a51) obj);
+                ((s3) this.b).a0((b51) obj);
                 break;
         }
     }
@@ -149,8 +149,8 @@ public final /* synthetic */ class b implements iu0, l, Continuation, OnSuccessL
         sVar.h(0L);
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public /* synthetic */ void p(RecyclerView recyclerView) {
+    @Override // org.telegram.ui.Components.ju0
+    public /* synthetic */ void q(RecyclerView recyclerView) {
         f1.b(recyclerView);
     }
 

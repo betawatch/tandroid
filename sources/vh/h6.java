@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h6 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class h6 implements View.OnClickListener {
                     ArrayList arrayList2 = w6Var.k1;
                     HashMap hashMap3 = w6Var.p1;
                     ArrayList arrayList3 = w6Var.o1;
-                    vp r12 = vp.r1(i14);
+                    wp r12 = wp.r1(i14);
                     int i15 = r6Var.a;
                     if (i15 == 5) {
                         j6 j6Var = w6Var.M1;
@@ -94,7 +94,7 @@ public final /* synthetic */ class h6 implements View.OnClickListener {
                         if (i15 == 6) {
                             HashSet R0 = w6.R0(arrayList, hashMap);
                             dVar.setLoading(true);
-                            th.e5 O1 = vp.r1(w6Var.a).O1();
+                            th.e5 O1 = wp.r1(w6Var.a).O1();
                             i6 i6Var = new i6(r6Var, i12);
                             int i17 = O1.a;
                             TLRPC.TL_contacts_setBlocked tL_contacts_setBlocked = new TLRPC.TL_contacts_setBlocked();
@@ -110,7 +110,7 @@ public final /* synthetic */ class h6 implements View.OnClickListener {
                             Iterator it = R0.iterator();
                             while (it.hasNext()) {
                                 Long l4 = (Long) it.next();
-                                TLRPC.InputPeer i18 = vp.r1(i17).i1(l4.longValue());
+                                TLRPC.InputPeer i18 = wp.r1(i17).i1(l4.longValue());
                                 if (!(i18 instanceof TLRPC.TL_inputPeerEmpty)) {
                                     hashSet.add(l4);
                                     tL_contacts_setBlocked.id.add(i18);

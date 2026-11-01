@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class x1 implements RequestDelegate {
     public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.i0.g3(new vh.d1(24, this.b, tL_error));
+                org.telegram.messenger.i0.g3(new vh.r0(25, this.b, tL_error));
                 break;
             case 1:
                 final int i10 = 1;
@@ -31,9 +31,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 0:
                                 m2 m2Var2 = m2Var;
                                 if (tL_error == null) {
-                                    s3 s3Var = m2Var2.w0;
-                                    if (s3Var != null) {
-                                        s3Var.a(tLObject);
+                                    t3 t3Var = m2Var2.w0;
+                                    if (t3Var != null) {
+                                        t3Var.a(tLObject);
                                         m2Var2.s();
                                         break;
                                     }
@@ -45,9 +45,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 1:
                                 m2 m2Var3 = m2Var;
                                 if (tL_error == null) {
-                                    s3 s3Var2 = m2Var3.w0;
-                                    if (s3Var2 != null) {
-                                        s3Var2.a(tLObject);
+                                    t3 t3Var2 = m2Var3.w0;
+                                    if (t3Var2 != null) {
+                                        t3Var2.a(tLObject);
                                         m2Var3.s();
                                         break;
                                     }
@@ -59,9 +59,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 2:
                                 m2 m2Var4 = m2Var;
                                 if (tL_error == null) {
-                                    s3 s3Var3 = m2Var4.w0;
-                                    if (s3Var3 != null) {
-                                        s3Var3.a(tLObject);
+                                    t3 t3Var3 = m2Var4.w0;
+                                    if (t3Var3 != null) {
+                                        t3Var3.a(tLObject);
                                         m2Var4.s();
                                         break;
                                     }
@@ -73,9 +73,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 3:
                                 m2 m2Var5 = m2Var;
                                 if (tL_error == null) {
-                                    s3 s3Var4 = m2Var5.w0;
-                                    if (s3Var4 != null) {
-                                        s3Var4.a(tLObject);
+                                    t3 t3Var4 = m2Var5.w0;
+                                    if (t3Var4 != null) {
+                                        t3Var4.a(tLObject);
                                         m2Var5.s();
                                         break;
                                     }
@@ -87,9 +87,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             default:
                                 m2 m2Var6 = m2Var;
                                 if (tL_error == null) {
-                                    s3 s3Var5 = m2Var6.w0;
-                                    if (s3Var5 != null) {
-                                        s3Var5.a(tLObject);
+                                    t3 t3Var5 = m2Var6.w0;
+                                    if (t3Var5 != null) {
+                                        t3Var5.a(tLObject);
                                         m2Var6.s();
                                         break;
                                     }
@@ -112,9 +112,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 0:
                                 m2 m2Var22 = m2Var2;
                                 if (tL_error == null) {
-                                    s3 s3Var = m2Var22.w0;
-                                    if (s3Var != null) {
-                                        s3Var.a(tLObject);
+                                    t3 t3Var = m2Var22.w0;
+                                    if (t3Var != null) {
+                                        t3Var.a(tLObject);
                                         m2Var22.s();
                                         break;
                                     }
@@ -126,9 +126,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 1:
                                 m2 m2Var3 = m2Var2;
                                 if (tL_error == null) {
-                                    s3 s3Var2 = m2Var3.w0;
-                                    if (s3Var2 != null) {
-                                        s3Var2.a(tLObject);
+                                    t3 t3Var2 = m2Var3.w0;
+                                    if (t3Var2 != null) {
+                                        t3Var2.a(tLObject);
                                         m2Var3.s();
                                         break;
                                     }
@@ -140,9 +140,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 2:
                                 m2 m2Var4 = m2Var2;
                                 if (tL_error == null) {
-                                    s3 s3Var3 = m2Var4.w0;
-                                    if (s3Var3 != null) {
-                                        s3Var3.a(tLObject);
+                                    t3 t3Var3 = m2Var4.w0;
+                                    if (t3Var3 != null) {
+                                        t3Var3.a(tLObject);
                                         m2Var4.s();
                                         break;
                                     }
@@ -154,9 +154,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 3:
                                 m2 m2Var5 = m2Var2;
                                 if (tL_error == null) {
-                                    s3 s3Var4 = m2Var5.w0;
-                                    if (s3Var4 != null) {
-                                        s3Var4.a(tLObject);
+                                    t3 t3Var4 = m2Var5.w0;
+                                    if (t3Var4 != null) {
+                                        t3Var4.a(tLObject);
                                         m2Var5.s();
                                         break;
                                     }
@@ -168,9 +168,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             default:
                                 m2 m2Var6 = m2Var2;
                                 if (tL_error == null) {
-                                    s3 s3Var5 = m2Var6.w0;
-                                    if (s3Var5 != null) {
-                                        s3Var5.a(tLObject);
+                                    t3 t3Var5 = m2Var6.w0;
+                                    if (t3Var5 != null) {
+                                        t3Var5.a(tLObject);
                                         m2Var6.s();
                                         break;
                                     }
@@ -193,9 +193,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 0:
                                 m2 m2Var22 = m2Var3;
                                 if (tL_error == null) {
-                                    s3 s3Var = m2Var22.w0;
-                                    if (s3Var != null) {
-                                        s3Var.a(tLObject);
+                                    t3 t3Var = m2Var22.w0;
+                                    if (t3Var != null) {
+                                        t3Var.a(tLObject);
                                         m2Var22.s();
                                         break;
                                     }
@@ -207,9 +207,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 1:
                                 m2 m2Var32 = m2Var3;
                                 if (tL_error == null) {
-                                    s3 s3Var2 = m2Var32.w0;
-                                    if (s3Var2 != null) {
-                                        s3Var2.a(tLObject);
+                                    t3 t3Var2 = m2Var32.w0;
+                                    if (t3Var2 != null) {
+                                        t3Var2.a(tLObject);
                                         m2Var32.s();
                                         break;
                                     }
@@ -221,9 +221,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 2:
                                 m2 m2Var4 = m2Var3;
                                 if (tL_error == null) {
-                                    s3 s3Var3 = m2Var4.w0;
-                                    if (s3Var3 != null) {
-                                        s3Var3.a(tLObject);
+                                    t3 t3Var3 = m2Var4.w0;
+                                    if (t3Var3 != null) {
+                                        t3Var3.a(tLObject);
                                         m2Var4.s();
                                         break;
                                     }
@@ -235,9 +235,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 3:
                                 m2 m2Var5 = m2Var3;
                                 if (tL_error == null) {
-                                    s3 s3Var4 = m2Var5.w0;
-                                    if (s3Var4 != null) {
-                                        s3Var4.a(tLObject);
+                                    t3 t3Var4 = m2Var5.w0;
+                                    if (t3Var4 != null) {
+                                        t3Var4.a(tLObject);
                                         m2Var5.s();
                                         break;
                                     }
@@ -249,9 +249,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             default:
                                 m2 m2Var6 = m2Var3;
                                 if (tL_error == null) {
-                                    s3 s3Var5 = m2Var6.w0;
-                                    if (s3Var5 != null) {
-                                        s3Var5.a(tLObject);
+                                    t3 t3Var5 = m2Var6.w0;
+                                    if (t3Var5 != null) {
+                                        t3Var5.a(tLObject);
                                         m2Var6.s();
                                         break;
                                     }
@@ -274,9 +274,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 0:
                                 m2 m2Var22 = m2Var4;
                                 if (tL_error == null) {
-                                    s3 s3Var = m2Var22.w0;
-                                    if (s3Var != null) {
-                                        s3Var.a(tLObject);
+                                    t3 t3Var = m2Var22.w0;
+                                    if (t3Var != null) {
+                                        t3Var.a(tLObject);
                                         m2Var22.s();
                                         break;
                                     }
@@ -288,9 +288,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 1:
                                 m2 m2Var32 = m2Var4;
                                 if (tL_error == null) {
-                                    s3 s3Var2 = m2Var32.w0;
-                                    if (s3Var2 != null) {
-                                        s3Var2.a(tLObject);
+                                    t3 t3Var2 = m2Var32.w0;
+                                    if (t3Var2 != null) {
+                                        t3Var2.a(tLObject);
                                         m2Var32.s();
                                         break;
                                     }
@@ -302,9 +302,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 2:
                                 m2 m2Var42 = m2Var4;
                                 if (tL_error == null) {
-                                    s3 s3Var3 = m2Var42.w0;
-                                    if (s3Var3 != null) {
-                                        s3Var3.a(tLObject);
+                                    t3 t3Var3 = m2Var42.w0;
+                                    if (t3Var3 != null) {
+                                        t3Var3.a(tLObject);
                                         m2Var42.s();
                                         break;
                                     }
@@ -316,9 +316,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 3:
                                 m2 m2Var5 = m2Var4;
                                 if (tL_error == null) {
-                                    s3 s3Var4 = m2Var5.w0;
-                                    if (s3Var4 != null) {
-                                        s3Var4.a(tLObject);
+                                    t3 t3Var4 = m2Var5.w0;
+                                    if (t3Var4 != null) {
+                                        t3Var4.a(tLObject);
                                         m2Var5.s();
                                         break;
                                     }
@@ -330,9 +330,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             default:
                                 m2 m2Var6 = m2Var4;
                                 if (tL_error == null) {
-                                    s3 s3Var5 = m2Var6.w0;
-                                    if (s3Var5 != null) {
-                                        s3Var5.a(tLObject);
+                                    t3 t3Var5 = m2Var6.w0;
+                                    if (t3Var5 != null) {
+                                        t3Var5.a(tLObject);
                                         m2Var6.s();
                                         break;
                                     }
@@ -355,9 +355,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 0:
                                 m2 m2Var22 = m2Var5;
                                 if (tL_error == null) {
-                                    s3 s3Var = m2Var22.w0;
-                                    if (s3Var != null) {
-                                        s3Var.a(tLObject);
+                                    t3 t3Var = m2Var22.w0;
+                                    if (t3Var != null) {
+                                        t3Var.a(tLObject);
                                         m2Var22.s();
                                         break;
                                     }
@@ -369,9 +369,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 1:
                                 m2 m2Var32 = m2Var5;
                                 if (tL_error == null) {
-                                    s3 s3Var2 = m2Var32.w0;
-                                    if (s3Var2 != null) {
-                                        s3Var2.a(tLObject);
+                                    t3 t3Var2 = m2Var32.w0;
+                                    if (t3Var2 != null) {
+                                        t3Var2.a(tLObject);
                                         m2Var32.s();
                                         break;
                                     }
@@ -383,9 +383,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 2:
                                 m2 m2Var42 = m2Var5;
                                 if (tL_error == null) {
-                                    s3 s3Var3 = m2Var42.w0;
-                                    if (s3Var3 != null) {
-                                        s3Var3.a(tLObject);
+                                    t3 t3Var3 = m2Var42.w0;
+                                    if (t3Var3 != null) {
+                                        t3Var3.a(tLObject);
                                         m2Var42.s();
                                         break;
                                     }
@@ -397,9 +397,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             case 3:
                                 m2 m2Var52 = m2Var5;
                                 if (tL_error == null) {
-                                    s3 s3Var4 = m2Var52.w0;
-                                    if (s3Var4 != null) {
-                                        s3Var4.a(tLObject);
+                                    t3 t3Var4 = m2Var52.w0;
+                                    if (t3Var4 != null) {
+                                        t3Var4.a(tLObject);
                                         m2Var52.s();
                                         break;
                                     }
@@ -411,9 +411,9 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                             default:
                                 m2 m2Var6 = m2Var5;
                                 if (tL_error == null) {
-                                    s3 s3Var5 = m2Var6.w0;
-                                    if (s3Var5 != null) {
-                                        s3Var5.a(tLObject);
+                                    t3 t3Var5 = m2Var6.w0;
+                                    if (t3Var5 != null) {
+                                        t3Var5.a(tLObject);
                                         m2Var6.s();
                                         break;
                                     }

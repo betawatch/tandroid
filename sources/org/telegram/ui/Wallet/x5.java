@@ -8,10 +8,10 @@ import android.widget.Scroller;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.ul;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x5 extends s4.q0 {
     public RecyclerView a;
@@ -47,10 +47,10 @@ public final class x5 extends s4.q0 {
                 s4.g1 g1Var = new s4.g1(this, this.a.getContext());
                 if (this.c != null && this.f && Math.abs(i11) >= org.telegram.messenger.i0.L(600.0f)) {
                     b6 b6Var = this.j;
-                    if (b6Var.y0()) {
+                    if (b6Var.z0()) {
                         int i13 = i11 > 0 ? 1 : -1;
-                        u51 x02 = b6Var.x0();
-                        if (this.c.canScrollVertically(i13) && (i13 >= 0 || x02 == null || !x02.canScrollVertically(-1))) {
+                        v51 y02 = b6Var.y0();
+                        if (this.c.canScrollVertically(i13) && (i13 >= 0 || y02 == null || !y02.canScrollVertically(-1))) {
                             i12 = i13 > 0 ? layoutManager.B() - 1 : 0;
                             if (i12 != -1) {
                                 g1Var.a = i12;
@@ -114,12 +114,12 @@ public final class x5 extends s4.q0 {
             return null;
         }
         b6 b6Var = this.j;
-        u51 x02 = b6Var.x0();
-        if ((x02 != null && x02.getScrollState() != 0) || !this.d) {
+        v51 y02 = b6Var.y0();
+        if ((y02 != null && y02.getScrollState() != 0) || !this.d) {
             return null;
         }
         this.d = false;
-        if (!b6Var.y0()) {
+        if (!b6Var.z0()) {
             return null;
         }
         View m10 = n0Var.m(0);

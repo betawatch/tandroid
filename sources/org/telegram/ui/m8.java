@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -39,10 +39,10 @@ public final /* synthetic */ class m8 implements RequestDelegate {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                j9.a0(j9Var, x1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
+                                j9.b0(j9Var, x1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
                                 break;
                             default:
-                                j9.b0(j9Var, x1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
+                                j9.c0(j9Var, x1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
                                 break;
                         }
                     }
@@ -60,10 +60,10 @@ public final /* synthetic */ class m8 implements RequestDelegate {
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                j9.a0(j9Var2, x1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
+                                j9.b0(j9Var2, x1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
                                 break;
                             default:
-                                j9.b0(j9Var2, x1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
+                                j9.c0(j9Var2, x1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
                                 break;
                         }
                     }

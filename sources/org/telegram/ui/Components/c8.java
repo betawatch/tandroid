@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c8 implements org.telegram.ui.ActionBar.u1, bq {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class c8 implements org.telegram.ui.ActionBar.u1, b
                 k8 a2 = k8Var.a();
                 o8Var.Y = a2;
                 o8Var.a.b(a2, true);
-                o8Var.r0();
+                o8Var.s0();
             }
             o8Var.Y.c = i10;
         } else if (i11 == 1) {
@@ -31,7 +31,7 @@ public final /* synthetic */ class c8 implements org.telegram.ui.ActionBar.u1, b
                 k8 a10 = k8Var2.a();
                 o8Var.Y = a10;
                 o8Var.a.b(a10, true);
-                o8Var.r0();
+                o8Var.s0();
             }
             o8Var.Y.d = i10;
         } else if (i11 == 2) {
@@ -41,7 +41,7 @@ public final /* synthetic */ class c8 implements org.telegram.ui.ActionBar.u1, b
                 k8 a11 = k8Var3.a();
                 o8Var.Y = a11;
                 o8Var.a.b(a11, true);
-                o8Var.r0();
+                o8Var.s0();
             }
             o8Var.Y.e = i10;
         } else if (i11 == 3) {
@@ -51,11 +51,11 @@ public final /* synthetic */ class c8 implements org.telegram.ui.ActionBar.u1, b
                 k8 a12 = k8Var4.a();
                 o8Var.Y = a12;
                 o8Var.a.b(a12, true);
-                o8Var.r0();
+                o8Var.s0();
             }
             o8Var.Y.f = i10;
         }
-        org.telegram.messenger.zs.e().k(org.telegram.messenger.zs.r4, new Object[0]);
+        org.telegram.messenger.at.e().k(org.telegram.messenger.at.r4, new Object[0]);
         o8Var.a.invalidate();
     }
 

@@ -12,9 +12,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class v7 extends sk0 {
+public final class v7 extends tk0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public String e;
@@ -27,7 +27,7 @@ public final class v7 extends sk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return (this.n.l2 && c1Var.b() == 0) ? false : true;
     }
@@ -164,7 +164,7 @@ public final class v7 extends sk0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void t(s4.c1 c1Var, int i10) {
-        org.telegram.messenger.jj jjVar;
+        org.telegram.messenger.kj kjVar;
         boolean z10;
         w7 w7Var = this.n;
         if (w7Var.l2) {
@@ -177,23 +177,23 @@ public final class v7 extends sk0 {
         org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) c1Var.a;
         int i11 = 1;
         if (w7Var.m1) {
-            jjVar = (org.telegram.messenger.jj) this.d.get(i10);
-        } else if (w7Var.m2 == null ? !org.telegram.messenger.tz.O0 : org.telegram.messenger.tz.O0) {
+            kjVar = (org.telegram.messenger.kj) this.d.get(i10);
+        } else if (w7Var.m2 == null ? !org.telegram.messenger.uz.O0 : org.telegram.messenger.uz.O0) {
             ArrayList arrayList = w7Var.n2;
-            jjVar = (org.telegram.messenger.jj) arrayList.get((arrayList.size() - i10) - 1);
+            kjVar = (org.telegram.messenger.kj) arrayList.get((arrayList.size() - i10) - 1);
         } else {
-            jjVar = (org.telegram.messenger.jj) w7Var.n2.get(i10);
+            kjVar = (org.telegram.messenger.kj) w7Var.n2.get(i10);
         }
-        if (jjVar != null) {
-            jjVar.J5(this.e, true);
+        if (kjVar != null) {
+            kjVar.J5(this.e, true);
         }
         org.telegram.ui.ActionBar.d1 d1Var = w7Var.O0() ? new org.telegram.ui.ActionBar.d1(i11, this, wVar) : null;
         org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.h5, wVar, w7Var.I0);
         boolean O0 = w7Var.O0();
-        ag.i iVar = (w7Var.O0() || w7Var.p2 || jjVar.f1() <= 0) ? null : new ag.i(this, wVar, jjVar, 9);
+        ag.i iVar = (w7Var.O0() || w7Var.p2 || kjVar.f1() <= 0) ? null : new ag.i(this, wVar, kjVar, 9);
         RadialProgress2 radialProgress2 = wVar.H;
         ImageView imageView = wVar.w;
-        wVar.x = jjVar;
+        wVar.x = kjVar;
         if (wVar.y != z10) {
             wVar.invalidate();
         }
@@ -202,12 +202,12 @@ public final class v7 extends sk0 {
         imageView.setVisibility((O0 || iVar != null) ? 0 : 8);
         imageView.setOnClickListener(iVar);
         imageView.setOnTouchListener(d1Var);
-        TLRPC.Document F0 = jjVar.F0();
+        TLRPC.Document F0 = kjVar.F0();
         TLRPC.PhotoSize w9 = F0 != null ? org.telegram.messenger.b8.w(F0.thumbs, 90, false, null, false) : null;
         if ((w9 instanceof TLRPC.TL_photoSize) || (w9 instanceof TLRPC.TL_photoSizeProgressive)) {
-            radialProgress2.i(w9, F0, jjVar);
+            radialProgress2.i(w9, F0, kjVar);
         } else {
-            String u02 = jjVar.u0(true);
+            String u02 = kjVar.u0(true);
             if (TextUtils.isEmpty(u02)) {
                 radialProgress2.i(null, null, null);
             } else {
@@ -222,10 +222,10 @@ public final class v7 extends sk0 {
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
         Context context = this.c;
         if (i10 != 1) {
-            return new ck0(new org.telegram.ui.Cells.w(MediaController.B().C0 == null ? 0 : 1, context, this.n.I0));
+            return new dk0(new org.telegram.ui.Cells.w(MediaController.B().C0 == null ? 0 : 1, context, this.n.I0));
         }
         bn bnVar = new bn(context, 6);
         bnVar.setTag(-33024);
-        return new ck0(bnVar);
+        return new dk0(bnVar);
     }
 }

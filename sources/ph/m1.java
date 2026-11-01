@@ -1,21 +1,21 @@
 package ph;
 
 import java.util.ArrayList;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.vq0;
+import org.telegram.ui.Components.wq0;
 import rh.u5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vq0 b;
+    public final /* synthetic */ wq0 b;
 
-    public /* synthetic */ m1(vq0 vq0Var, int i10) {
+    public /* synthetic */ m1(wq0 wq0Var, int i10) {
         this.a = i10;
-        this.b = vq0Var;
+        this.b = wq0Var;
     }
 
     @Override // java.lang.Runnable
@@ -26,7 +26,7 @@ public final /* synthetic */ class m1 implements Runnable {
                 u5Var.getClass();
                 TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
                 int i10 = u5Var.a;
-                reorderstargiftcollections.peer = vp.r1(i10).i1(u5Var.b);
+                reorderstargiftcollections.peer = wp.r1(i10).i1(u5Var.b);
                 ArrayList arrayList = u5Var.e;
                 int size = arrayList.size();
                 int i11 = 0;

@@ -1,245 +1,193 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
-import android.util.SparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m31;
-import org.telegram.ui.Components.o21;
-import org.telegram.ui.Components.z60;
-import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bh implements Runnable {
+public final /* synthetic */ class bh implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ f1 e;
 
-    public /* synthetic */ bh(Object obj, TLRPC.TL_error tL_error, Object obj2, Object obj3, boolean z10, long j10, Object obj4, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.e = tL_error;
-        this.f = obj2;
-        this.h = obj3;
-        this.b = z10;
-        this.c = j10;
-        this.n = obj4;
+    public /* synthetic */ bh(f1 f1Var, int i10, String str, String str2, int i11) {
+        this.a = i11;
+        this.e = f1Var;
+        this.b = i10;
+        this.c = str;
+        this.d = str2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0185  */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0079, code lost:
+    
+        r1 = false;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00b8  */
+    @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        ArrayList arrayList3;
-        ArrayList arrayList4;
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        boolean z10;
+        long j10;
+        boolean z11;
+        wp wpVar;
         String str;
-        ArrayList arrayList5;
+        String str2;
         switch (this.a) {
             case 0:
-                boolean z10 = true;
-                ui uiVar = (ui) this.d;
-                ArrayList arrayList6 = (ArrayList) this.e;
-                boolean z11 = this.b;
-                ArrayList arrayList7 = (ArrayList) this.f;
-                ArrayList arrayList8 = (ArrayList) this.h;
-                a0.h hVar = (a0.h) this.n;
-                long j10 = this.c;
-                uiVar.getMessagesController().V3(arrayList6, z11);
-                uiVar.getMessagesController().P3(arrayList7, z11);
-                int size = arrayList8.size();
-                boolean z12 = false;
-                int i10 = 0;
-                while (i10 < size) {
-                    jj jjVar = (jj) arrayList8.get(i10);
-                    SparseArray sparseArray = (SparseArray) hVar.f(jj.B0(jjVar.k));
-                    if (sparseArray != null && (arrayList = (ArrayList) sparseArray.get(jjVar.f1())) != null) {
-                        int i11 = 0;
-                        while (i11 < arrayList.size()) {
-                            jj jjVar2 = (jj) arrayList.get(i11);
-                            jjVar2.C = jjVar;
-                            jjVar2.m();
-                            TLRPC.MessageAction messageAction = jjVar2.k.action;
-                            if (messageAction instanceof TLRPC.TL_messageActionPinMessage) {
-                                jjVar2.q0(null, null);
-                            } else if (messageAction instanceof TLRPC.TL_messageActionGameScore) {
-                                jjVar2.m0(null);
-                            } else if (messageAction instanceof TLRPC.TL_messageActionPaymentSent) {
-                                jjVar2.p0(null, false);
-                            } else if (messageAction instanceof TLRPC.TL_messageActionPaymentSentMe) {
-                                jjVar2.p0(null, z10);
-                            }
-                            i11++;
-                            z10 = true;
-                        }
-                        z12 = true;
-                    }
-                    i10++;
-                    z10 = true;
-                }
-                if (z12) {
-                    uiVar.getNotificationCenter().k(55, Long.valueOf(j10), arrayList8, hVar);
-                    return;
-                }
-                return;
-            case 1:
-                vi viVar = (vi) this.d;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
-                TLObject tLObject = (TLObject) this.f;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.h;
-                boolean z13 = this.b;
-                long j11 = this.c;
-                oh.g gVar = (oh.g) this.n;
-                viVar.getClass();
-                if (tL_error == null) {
-                    TLRPC.TL_messages_chatInviteImporters tL_messages_chatInviteImporters = (TLRPC.TL_messages_chatInviteImporters) tLObject;
-                    if (tL_chatInviteImporter == null && z13) {
-                        viVar.a.put(j11, tL_messages_chatInviteImporters);
-                    }
-                }
-                gVar.run(tLObject, tL_error);
-                return;
-            case 2:
-                t10 t10Var = (t10) this.d;
-                p10 p10Var = (p10) this.e;
-                TLObject tLObject2 = (TLObject) this.f;
-                boolean z14 = this.b;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
-                long j12 = this.c;
-                HashSet hashSet = (HashSet) this.n;
-                synchronized (t10Var) {
-                    arrayList2 = p10Var.b;
-                    arrayList3 = p10Var.d;
-                    arrayList4 = p10Var.c;
-                    str = p10Var.e;
-                }
-                if (tLObject2 instanceof TLRPC.TL_messages_translateResult) {
-                    ArrayList<TLRPC.TL_textWithEntities> arrayList9 = ((TLRPC.TL_messages_translateResult) tLObject2).result;
-                    int min = Math.min(arrayList3.size(), arrayList9.size());
-                    for (int i12 = 0; i12 < min; i12++) {
-                        ((n20) arrayList3.get(i12)).a(Boolean.valueOf(z14), (Integer) arrayList2.get(i12), m31.P0((TLRPC.TL_textWithEntities) arrayList4.get(i12), arrayList9.get(i12)), str);
-                    }
+                vi viVar = (vi) this.e;
+                String str3 = this.d;
+                if (tLObject == null) {
+                    i0.g3(new kh(viVar, str3, 1));
+                    break;
                 } else {
-                    if (tL_error2 == null || !"TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error2.text)) {
-                        arrayList5 = arrayList2;
-                        if (tL_error2 == null || !"TO_LANG_INVALID".equals(tL_error2.text)) {
-                            if (tL_error2 != null && "QUOTA_EXCEEDED".equals(tL_error2.text)) {
-                                zs.e().k(zs.P4, 1, cd.L0(2131743972, null));
-                            }
-                            for (int i13 = 0; i13 < arrayList3.size(); i13++) {
-                                ((n20) arrayList3.get(i13)).a(Boolean.valueOf(z14), (Integer) arrayList5.get(i13), null, p10Var.e);
-                            }
-                        } else {
-                            t10Var.K(j12, false);
-                            zs.e().k(zs.P4, 1, cd.L0(2131743971, null));
-                        }
-                        synchronized (t10Var) {
-                            for (int i14 = 0; i14 < arrayList5.size(); i14++) {
-                                try {
-                                    hashSet.remove(arrayList5.get(i14));
-                                } catch (Throwable th2) {
-                                    throw th2;
-                                }
-                            }
-                        }
-                        return;
+                    TLRPC.TL_emojiKeywordsDifference tL_emojiKeywordsDifference = (TLRPC.TL_emojiKeywordsDifference) tLObject;
+                    if (this.b != -1 && !tL_emojiKeywordsDifference.lang_code.equals(this.c)) {
+                        viVar.getMessagesStorage().a.c(new kh(viVar, str3, 0));
+                        break;
+                    } else {
+                        viVar.getMessagesStorage().a.c(new lg((f1) viVar, (TLObject) tL_emojiKeywordsDifference, str3, 3));
+                        i0.g3(new fg(viVar, 9));
+                        break;
                     }
-                    int i15 = 0;
-                    while (i15 < arrayList2.size()) {
-                        int intValue = ((Integer) arrayList2.get(i15)).intValue();
-                        ArrayList arrayList10 = arrayList2;
-                        String str2 = str;
-                        m31.J0(((TLRPC.TL_textWithEntities) arrayList4.get(i15)).text, null, str2, new f10(t10Var, (n20) arrayList3.get(i15), z14, intValue, str2, j12, 1));
-                        i15++;
-                        arrayList2 = arrayList10;
-                        str = str2;
-                        arrayList3 = arrayList3;
-                    }
-                }
-                arrayList5 = arrayList2;
-                synchronized (t10Var) {
                 }
                 break;
-            case 3:
-                final o21 o21Var = (o21) this.d;
-                boolean z15 = this.b;
-                org.telegram.ui.ActionBar.b1 b1Var = (org.telegram.ui.ActionBar.b1) this.e;
-                final z60 z60Var = (z60) this.f;
-                final long j13 = this.c;
-                final TLRPC.User user = (TLRPC.User) this.h;
-                final TLRPC.Chat chat = (TLRPC.Chat) this.n;
-                final boolean z16 = !z15;
-                b1Var.setVisibility(0);
-                b1Var.setText(cd.L0(!z15 ? 2131743937 : 2131753726, null));
-                b1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.a21
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        o21 o21Var2 = o21.this;
-                        int i16 = o21Var2.n;
-                        z60Var.u();
-                        boolean z17 = z16;
-                        TLRPC.User user2 = user;
-                        if (!z17) {
-                            org.telegram.messenger.vp.r1(i16).g0(j13, user2, null, false, false);
-                            return;
-                        }
-                        TLRPC.TL_channels_editBanned tL_channels_editBanned = new TLRPC.TL_channels_editBanned();
-                        tL_channels_editBanned.participant = org.telegram.messenger.vp.m1(user2);
-                        tL_channels_editBanned.channel = org.telegram.messenger.vp.h1(chat);
-                        tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
-                        ConnectionsManager.getInstance(i16).sendRequest(tL_channels_editBanned, new x1(o21Var2, 14));
-                    }
-                });
-                return;
             default:
-                rh.i.c0((rh.i) this.d, (TLRPC.TL_error) this.e, (TwoStepVerificationActivity) this.f, (Activity) this.h, this.b, this.c, (TLObject) this.n);
-                return;
+                wp wpVar2 = (wp) this.e;
+                int i10 = wpVar2.w2;
+                int i11 = this.b;
+                if (i11 == i10) {
+                    if (tLObject instanceof TLRPC.TL_help_promoDataEmpty) {
+                        wpVar2.t2 = ((TLRPC.TL_help_promoDataEmpty) tLObject).expires;
+                        z10 = true;
+                    } else if (tLObject instanceof TLRPC.TL_help_promoData) {
+                        TLRPC.TL_help_promoData tL_help_promoData = (TLRPC.TL_help_promoData) tLObject;
+                        TLRPC.Peer peer = tL_help_promoData.peer;
+                        if (peer == null) {
+                            j10 = 0;
+                        } else {
+                            j10 = peer.user_id;
+                            if (j10 == 0) {
+                                long j11 = peer.chat_id;
+                                if (j11 != 0) {
+                                    j10 = -j11;
+                                    int i12 = 0;
+                                    while (true) {
+                                        if (i12 >= tL_help_promoData.chats.size()) {
+                                            wpVar = wpVar2;
+                                            break;
+                                        } else {
+                                            TLRPC.Chat chat = tL_help_promoData.chats.get(i12);
+                                            wpVar = wpVar2;
+                                            if (chat.id != tL_help_promoData.peer.chat_id) {
+                                                i12++;
+                                                wpVar2 = wpVar;
+                                            } else if (chat.kicked || chat.restricted) {
+                                                z11 = true;
+                                            }
+                                        }
+                                    }
+                                    wpVar2 = wpVar;
+                                } else {
+                                    j10 = -peer.channel_id;
+                                    int i13 = 0;
+                                    while (true) {
+                                        if (i13 < tL_help_promoData.chats.size()) {
+                                            TLRPC.Chat chat2 = tL_help_promoData.chats.get(i13);
+                                            if (chat2.id != tL_help_promoData.peer.channel_id) {
+                                                i13++;
+                                            } else if (chat2.kicked || chat2.restricted) {
+                                                wpVar2 = wpVar2;
+                                                z11 = true;
+                                            }
+                                        }
+                                    }
+                                    wpVar2 = wpVar2;
+                                }
+                                wpVar2.z2 = j10;
+                                if (!tL_help_promoData.proxy) {
+                                    wpVar2.A2 = 0;
+                                } else if (TextUtils.isEmpty(tL_help_promoData.psa_type)) {
+                                    wpVar2.A2 = 2;
+                                } else {
+                                    wpVar2.A2 = 1;
+                                    wpVar2.C2 = tL_help_promoData.psa_type;
+                                }
+                                wpVar2.D2 = sc.e.A(this.c, this.d);
+                                wpVar2.B2 = tL_help_promoData.psa_message;
+                                wpVar2.t2 = tL_help_promoData.expires;
+                                SharedPreferences.Editor edit = wp.d1().edit();
+                                edit.putLong("proxy_dialog", wpVar2.z2);
+                                edit.putString("proxyDialogAddress", wpVar2.D2);
+                                edit.putInt("promo_dialog_type", wpVar2.A2);
+                                str = wpVar2.B2;
+                                if (str == null) {
+                                    edit.putString("promo_psa_message", str);
+                                } else {
+                                    edit.remove("promo_psa_message");
+                                }
+                                str2 = wpVar2.C2;
+                                if (str2 == null) {
+                                    edit.putString("promo_psa_type", str2);
+                                } else {
+                                    edit.remove("promo_psa_type");
+                                }
+                                edit.putInt("nextPromoInfoCheckTime", wpVar2.t2);
+                                edit.commit();
+                                if (!z11) {
+                                    i0.g3(new sk(wpVar2, j10, tL_help_promoData, i11, 4));
+                                }
+                                z10 = z11;
+                            }
+                        }
+                        z11 = false;
+                        wpVar2.z2 = j10;
+                        if (!tL_help_promoData.proxy) {
+                        }
+                        wpVar2.D2 = sc.e.A(this.c, this.d);
+                        wpVar2.B2 = tL_help_promoData.psa_message;
+                        wpVar2.t2 = tL_help_promoData.expires;
+                        SharedPreferences.Editor edit2 = wp.d1().edit();
+                        edit2.putLong("proxy_dialog", wpVar2.z2);
+                        edit2.putString("proxyDialogAddress", wpVar2.D2);
+                        edit2.putInt("promo_dialog_type", wpVar2.A2);
+                        str = wpVar2.B2;
+                        if (str == null) {
+                        }
+                        str2 = wpVar2.C2;
+                        if (str2 == null) {
+                        }
+                        edit2.putInt("nextPromoInfoCheckTime", wpVar2.t2);
+                        edit2.commit();
+                        if (!z11) {
+                        }
+                        z10 = z11;
+                    } else {
+                        wpVar2.t2 = wpVar2.getConnectionsManager().getCurrentTime() + 3600;
+                        z10 = true;
+                    }
+                    if (z10) {
+                        wpVar2.z2 = 0L;
+                        wp.d1().edit().putLong("proxy_dialog", wpVar2.z2).remove("proxyDialogAddress").putInt("nextPromoInfoCheckTime", wpVar2.t2).commit();
+                        wpVar2.v2 = 0;
+                        wpVar2.u2 = false;
+                        i0.g3(new fo(wpVar2, 8));
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    public /* synthetic */ bh(ui uiVar, ArrayList arrayList, boolean z10, ArrayList arrayList2, ArrayList arrayList3, a0.h hVar, long j10) {
-        this.a = 0;
-        this.d = uiVar;
-        this.e = arrayList;
-        this.b = z10;
-        this.f = arrayList2;
-        this.h = arrayList3;
-        this.n = hVar;
-        this.c = j10;
-    }
-
-    public /* synthetic */ bh(t10 t10Var, p10 p10Var, TLObject tLObject, boolean z10, TLRPC.TL_error tL_error, long j10, HashSet hashSet) {
-        this.a = 2;
-        this.d = t10Var;
-        this.e = p10Var;
-        this.f = tLObject;
-        this.b = z10;
-        this.h = tL_error;
-        this.c = j10;
-        this.n = hashSet;
-    }
-
-    public /* synthetic */ bh(o21 o21Var, boolean z10, org.telegram.ui.ActionBar.b1 b1Var, z60 z60Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
-        this.a = 3;
-        this.d = o21Var;
-        this.b = z10;
-        this.e = b1Var;
-        this.f = z60Var;
-        this.c = j10;
-        this.h = user;
-        this.n = chat;
     }
 }

@@ -15,7 +15,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class t80 extends Drawable {
     public Rect A;
@@ -190,7 +190,7 @@ public class t80 extends Drawable {
                 }
                 rectF.set(bounds);
                 rectF.inset(-paint2.getStrokeWidth(), -paint2.getStrokeWidth());
-                canvas.saveLayerAlpha(rectF, org.telegram.messenger.zs.e4, 31);
+                canvas.saveLayerAlpha(rectF, org.telegram.messenger.at.e4, 31);
                 z10 = true;
                 if (this.D) {
                     int max2 = Math.max(org.telegram.messenger.i0.L(f15), bounds.width() / 3);
@@ -217,7 +217,7 @@ public class t80 extends Drawable {
                         }
                         rectF.set(bounds);
                         rectF.inset(-paint2.getStrokeWidth(), -paint2.getStrokeWidth());
-                        canvas.saveLayerAlpha(rectF, org.telegram.messenger.zs.e4, 31);
+                        canvas.saveLayerAlpha(rectF, org.telegram.messenger.at.e4, 31);
                         z12 = z11;
                     }
                 }

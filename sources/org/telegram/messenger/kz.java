@@ -1,22 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class kz implements RequestDelegate {
-    public final /* synthetic */ TLRPC.TL_stickers_createStickerSet a;
-    public final /* synthetic */ lz b;
+public final class kz {
+    public String a;
+    public String b;
+    public boolean c;
+    public String d;
+    public boolean e;
+    public TLRPC.TL_inputStickerSetItem f;
+    public y20 g;
 
-    public kz(lz lzVar, TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet) {
-        this.b = lzVar;
-        this.a = tL_stickers_createStickerSet;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        i0.g3(new ul(this, tL_error, this.a, tLObject, 26));
+    public final void a(int i10, TLRPC.InputFile inputFile, Runnable runnable) {
+        TLRPC.TL_messages_uploadMedia tL_messages_uploadMedia = new TLRPC.TL_messages_uploadMedia();
+        tL_messages_uploadMedia.peer = new TLRPC.TL_inputPeerSelf();
+        TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument = new TLRPC.TL_inputMediaUploadedDocument();
+        tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument;
+        tL_inputMediaUploadedDocument.file = inputFile;
+        tL_inputMediaUploadedDocument.mime_type = this.d;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_uploadMedia, new jz(this, runnable), 2);
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class xj extends ci.o {
     public Runnable W;
@@ -16,7 +16,7 @@ public final class xj extends ci.o {
     public final void F() {
         un unVar = this.X;
         if (unVar.aa == -1) {
-            unVar.aa = unVar.getNotificationCenter().q(un.gd, unVar.aa, false);
+            unVar.aa = unVar.getNotificationCenter().q(un.hd, unVar.aa, false);
         }
     }
 
@@ -36,7 +36,7 @@ public final class xj extends ci.o {
     @Override // ci.o
     public final void W() {
         un unVar = this.X;
-        unVar.aa = unVar.getNotificationCenter().q(un.gd, unVar.aa, false);
+        unVar.aa = unVar.getNotificationCenter().q(un.hd, unVar.aa, false);
         Runnable runnable = this.W;
         if (runnable != null) {
             org.telegram.messenger.i0.r(runnable);

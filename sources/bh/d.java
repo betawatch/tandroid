@@ -70,31 +70,31 @@ import k2.m0;
 import m.p3;
 import n6.l;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ab;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hc;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.ia;
-import org.telegram.messenger.za;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.ja;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i3;
 import org.telegram.ui.ActionBar.k2;
-import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.mn0;
+import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.nn0;
+import org.telegram.ui.Components.on0;
 import org.telegram.ui.Components.s9;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.SaveToGallerySettingsActivity;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.n01;
 import org.telegram.ui.p01;
-import org.telegram.ui.se1;
-import org.telegram.ui.yn0;
+import org.telegram.ui.qe1;
+import org.telegram.ui.wn0;
 import r9.p;
 import r9.r;
 import r9.s;
@@ -102,9 +102,9 @@ import vh.b4;
 import vh.d0;
 import z9.s0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
+public final class d implements fe.e, z3.d, ab, nn0, n5.b, r9.b, mj0 {
     public Object a;
     public Object b;
     public Object c;
@@ -164,7 +164,7 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public boolean A() {
         return true;
     }
@@ -229,10 +229,10 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
                 return;
             }
         }
-        yn0 yn0Var = new yn0(2, false, false, null);
-        yn0Var.y = false;
-        yn0Var.V = new m0(this);
-        k2Var.presentFragment(yn0Var);
+        wn0 wn0Var = new wn0(2, false, false, null);
+        wn0Var.y = false;
+        wn0Var.V = new m0(this);
+        k2Var.presentFragment(wn0Var);
     }
 
     public String H() {
@@ -719,7 +719,7 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         throw new ad.d("Attempting to request an undeclared dependency Provider<" + rVar + ">.");
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ boolean f() {
         return true;
     }
@@ -734,12 +734,12 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         return new q5.b((Executor) ((zc.a) this.a).get(), (m5.d) ((zc.a) this.b).get(), (q5.d) ((q5.d) this.c).get(), (s5.d) ((zc.a) this.d).get(), (t5.c) ((zc.a) this.e).get());
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ boolean h() {
         return false;
     }
@@ -760,13 +760,13 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         throw new ad.d("Attempting to request an undeclared dependency Deferred<" + rVar + ">.");
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public void k(boolean z10, float f7) {
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = ((n01) this.e).d;
         p01 p01Var = (p01) this.d;
         p01 p01Var2 = (p01) this.b;
         p01 p01Var3 = (p01) this.c;
-        boolean isAttachedToWindow = ((nn0) this.a).isAttachedToWindow();
+        boolean isAttachedToWindow = ((on0) this.a).isAttachedToWindow();
         long j10 = f7 > 0.7f ? (long) ((4089446400L * ((f7 - 0.7f) / 0.3f)) + 104857600) : (long) ((104333312 * (f7 / 0.7f)) + 524288.0f);
         if (f7 >= 1.0f) {
             p01Var2.e(false, isAttachedToWindow);
@@ -779,15 +779,15 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
             p01Var.e(false, isAttachedToWindow);
             i0.Y3(p01Var3, false, 0.8f, true, isAttachedToWindow);
         } else {
-            p01Var3.c(cd.a0("UpToFileSize", null, 2131743849, i0.i0(j10, true, false)), false, true);
+            p01Var3.c(dd.a0("UpToFileSize", null, 2131743849, i0.i0(j10, true, false)), false, true);
             p01Var2.e(false, isAttachedToWindow);
             p01Var3.e(true, isAttachedToWindow);
             p01Var.e(false, isAttachedToWindow);
             i0.Y3(p01Var3, true, 0.8f, true, isAttachedToWindow);
         }
         if (z10) {
-            saveToGallerySettingsActivity.b0().c = j10;
-            saveToGallerySettingsActivity.c0();
+            saveToGallerySettingsActivity.c0().c = j10;
+            saveToGallerySettingsActivity.d0();
         }
     }
 
@@ -796,33 +796,33 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         byte[] bArr2 = (byte[]) this.a;
         SecureRandom secureRandom = new SecureRandom();
         BigInteger bigInteger = new BigInteger(2048, secureRandom);
-        BigInteger bigInteger2 = se1.b;
-        BigInteger bigInteger3 = se1.a;
+        BigInteger bigInteger2 = qe1.b;
+        BigInteger bigInteger3 = qe1.a;
         BigInteger modPow = bigInteger2.modPow(bigInteger, bigInteger3);
         BigInteger bigInteger4 = BigInteger.ONE;
         if (modPow.compareTo(bigInteger4) <= 0 || modPow.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
             throw new IllegalStateException("our pubkey invalid (extremely unlikely)");
         }
-        byte[] a2 = se1.a(modPow);
+        byte[] a2 = qe1.a(modPow);
         BigInteger bigInteger5 = new BigInteger(1, bArr);
         if (bigInteger5.compareTo(bigInteger4) <= 0 || bigInteger5.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
             throw new IllegalArgumentException("peer pubkey out of range");
         }
-        byte[] a10 = se1.a(bigInteger5.modPow(bigInteger, bigInteger3));
+        byte[] a10 = qe1.a(bigInteger5.modPow(bigInteger, bigInteger3));
         byte[] bArr3 = new byte[16];
         secureRandom.nextBytes(bArr3);
-        byte[] b10 = se1.b(new byte[][]{a10, bArr2, bArr3});
-        byte[] b11 = se1.b(new byte[][]{a10, bArr});
+        byte[] b10 = qe1.b(new byte[][]{a10, bArr2, bArr3});
+        byte[] b11 = qe1.b(new byte[][]{a10, bArr});
         this.d = b10;
         String[] strArr = {"👋", "👍", "👎", "👌", "👊", "🤟", "\u1faf5", "👏", "🤝", "✍", "💪", "👀", "👅", "🥶", "🤡", "💀", "👽", "😈", "😎", "🤠", "🤩", "😍", "🤯", "🦄", "🐶", "🐷", "🐔", "🐥", "🦊", "🐙", "🐸", "🐳", "🦉", "🦆", "🐢", "🦖", "🐵", "🐝", "🦁", "🐧", "🦋", "🐬", "🦀", "🐌", "🦠", "🐠", "🌵", "💐", "💐", "🎄", "🍄", "🍔", "🍕", "☕", "🍩", "🍪", "🎂", "🍫", "🍭", "🍎", "🥥", "🍒", "🌶", "🥒", "🥦", "🍇", "🍋", "🍓", "🍌", "🍍", "🍆", "🌽", "🍺", "🍷", "🍾", "🍦", "🍰", "🍞", "🍖", "🌭", "🧊", "🍳", "⭐", "☁", "🚀", "🎈", "💎", "💡", "🔑", "❄", "🔎", "👠", "👕", "👗", "👖", "👙", "👜", "👓", "🎀", "💄", "💍", "♠", "❤", "♦", "♣", "🌈", "🌊", "🎃", "👻", "🎁", "🔮", "🎥", "💿", "💻", "📡", "🔉", "⏳", "🔒", "🚗", "🔱", "🔗", "🎲", "🎮", "⚽", "🎳", "🏁", "🏆", "🎸", "💣", "🚽", "🎹", "🎤", "🎨", "🔫", "💊", "💰", "📦", "📅", "📚", "❗", "❓", "💯", "💦", "💤", "🌍", "🏝", "🚂", "🛢", "🛹", "🚢", "✈", "🛎", "🧳", "🌖", "🌞", "🔥", "🏓", "🎰", "🧸", "\u1faa9", "🎭", "👑", "🎩", "🧢", "🔈", "🔋", "🕯", "✏", "💼", "📌", "✂", "🗑", "🛡", "⚙", "🧲", "\u1fa8f", "⚖", "🧪", "🚪", "\u1fae7", "🛒", "🪑", "🗿", "🏁", "🏴\u200d☠", "📊", "🥁", "🎧", "🎵", "🧩", "⛳", "🥇", "🥈", "🥈", "🌪", "⛺", "🧭", "\u1fac6", "🧠", "💋"};
         ArrayList arrayList = new ArrayList(4);
         for (int i10 = 0; i10 < 4; i10++) {
             int i11 = i10 * 8;
-            arrayList.add(strArr[(int) (((b11[i11 + 7] & 255) | ((((((((b11[i11] & 127) << 56) | ((b11[i11 + 1] & 255) << 48)) | ((b11[i11 + 2] & 255) << 40)) | ((b11[i11 + 3] & 255) << 32)) | ((b11[i11 + 4] & 255) << 24)) | ((b11[i11 + 5] & 255) << 16)) | ((b11[i11 + 6] & 255) << 8))) % zs.e3)]);
+            arrayList.add(strArr[(int) (((b11[i11 + 7] & 255) | ((((((((b11[i11] & 127) << 56) | ((b11[i11 + 1] & 255) << 48)) | ((b11[i11 + 2] & 255) << 40)) | ((b11[i11 + 3] & 255) << 32)) | ((b11[i11 + 4] & 255) << 24)) | ((b11[i11 + 5] & 255) << 16)) | ((b11[i11 + 6] & 255) << 8))) % at.e3)]);
         }
         this.e = arrayList;
-        f8.b("wear-auth: built answer; session " + se1.d(bArr2) + " emojis=" + ((ArrayList) this.e));
-        byte[] bArr4 = new byte[zs.L4];
+        f8.b("wear-auth: built answer; session " + qe1.d(bArr2) + " emojis=" + ((ArrayList) this.e));
+        byte[] bArr4 = new byte[at.L4];
         System.arraycopy(bArr2, 0, bArr4, 0, 16);
         System.arraycopy(bArr3, 0, bArr4, 16, 16);
         System.arraycopy(a2, 0, bArr4, 32, 256);
@@ -969,7 +969,7 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         return arrayList2;
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public /* synthetic */ int p0() {
         return 0;
     }
@@ -986,7 +986,7 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         Paint paint;
         s9 s9Var;
@@ -1045,19 +1045,19 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
 
     public void w(q0.a aVar) {
         fg.i iVar = (fg.i) this.a;
-        ia iaVar = new ia(this, aVar);
+        ja jaVar = new ja(this, aVar);
         iVar.getClass();
         l.d("getMapAsync() must be called on the main thread");
         p3 p3Var = (p3) iVar.b;
         a0 a0Var = (a0) p3Var.b;
         if (a0Var != null) {
-            a0Var.q(iaVar);
+            a0Var.q(jaVar);
         } else {
-            ((ArrayList) p3Var.h).add(iaVar);
+            ((ArrayList) p3Var.h).add(jaVar);
         }
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public void x(View view, sg.o0 o0Var, boolean z10, boolean z11) {
         b4 b4Var = (b4) this.e;
         h2 h2Var = b4Var.J1;
@@ -1078,7 +1078,7 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
     */
     public void y(int i10, int i11, Intent intent) {
         FileOutputStream fileOutputStream;
-        b81 b81Var = (b81) this.d;
+        c81 c81Var = (c81) this.d;
         if (i11 == -1) {
             FileOutputStream fileOutputStream2 = null;
             if (i10 != 10) {
@@ -1088,9 +1088,9 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
                 try {
                     this.e = new File(b8.z(4), Utilities.b.nextInt() + ".jpg");
                     Point c12 = i0.c1();
-                    Bitmap K = hc.K(null, intent.getData(), (float) c12.x, (float) c12.y, true);
+                    Bitmap K = ic.K(null, intent.getData(), (float) c12.x, (float) c12.y, true);
                     K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream((File) this.e));
-                    b81Var.b((File) this.e, K, false);
+                    c81Var.b((File) this.e, K, false);
                     return;
                 } catch (Exception e) {
                     f8.g(e, true);
@@ -1101,12 +1101,12 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
             try {
                 this.e = new File(b8.z(4), Utilities.b.nextInt() + ".jpg");
                 Point c13 = i0.c1();
-                Bitmap K2 = hc.K((String) this.a, null, (float) c13.x, (float) c13.y, true);
+                Bitmap K2 = ic.K((String) this.a, null, (float) c13.x, (float) c13.y, true);
                 fileOutputStream = new FileOutputStream((File) this.e);
                 try {
                     try {
                         K2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
-                        b81Var.b((File) this.e, K2, false);
+                        c81Var.b((File) this.e, K2, false);
                     } catch (Exception e7) {
                         e = e7;
                         f8.g(e, true);
@@ -1184,10 +1184,10 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         this.b = jArr;
     }
 
-    public d(Activity activity, WallpapersListActivity wallpapersListActivity, b81 b81Var) {
+    public d(Activity activity, WallpapersListActivity wallpapersListActivity, c81 c81Var) {
         this.b = activity;
         this.c = wallpapersListActivity;
-        this.d = b81Var;
+        this.d = c81Var;
     }
 
     public d(e eVar) {
@@ -1205,11 +1205,11 @@ public final class d implements fe.e, z3.d, za, mn0, n5.b, r9.b, lj0 {
         this.a = i3Var;
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public void C() {
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ void t() {
     }
 

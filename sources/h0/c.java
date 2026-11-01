@@ -11,13 +11,13 @@ import android.util.TypedValue;
 import android.util.Xml;
 import c3.i0;
 import java.lang.reflect.Array;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import w7.u;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -139,7 +139,7 @@ public abstract class c {
                         float f13 = 100.0f;
                         c10 = (f11 >= 0.0f || f11 > 100.0f) ? (char) 0 : c11;
                         if (f7 == 1.0f || c10 != 0) {
-                            int b10 = u.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, zs.e4);
+                            int b10 = u.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, at.e4);
                             if (c10 == 0) {
                                 a a2 = a.a(color);
                                 float f14 = a2.a;
@@ -290,7 +290,7 @@ public abstract class c {
                 }
                 if (f7 == 1.0f) {
                 }
-                int b102 = u.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, zs.e4);
+                int b102 = u.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, at.e4);
                 if (c10 == 0) {
                 }
                 color = (16777215 & color) | (b102 << 24);

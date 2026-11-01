@@ -6,19 +6,20 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.is;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dp0;
+import org.telegram.ui.Components.ep0;
 import org.telegram.ui.wd;
+import xh.e3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class m1 {
     public l1 a;
@@ -37,7 +38,7 @@ public class m1 {
     public final a0.h h = new a0.h();
     public final a0.h i = new a0.h();
     public final ArrayList j = new ArrayList();
-    public final int m = d20.s0;
+    public final int m = e20.s0;
     public boolean p = true;
     public boolean s = false;
 
@@ -75,7 +76,7 @@ public class m1 {
             z10 = true;
         }
         if (z10) {
-            hs.a0(this.m).a.c(new yh.o(7, this, this.q));
+            is.a0(this.m).a.c(new e3(8, this, this.q));
         }
     }
 
@@ -88,7 +89,7 @@ public class m1 {
     public final void c() {
         this.q = new ArrayList();
         this.r = new HashMap();
-        hs.a0(this.m).a.c(new j1(this, 0));
+        is.a0(this.m).a.c(new j1(this, 0));
     }
 
     public boolean d(TLObject tLObject) {
@@ -116,8 +117,8 @@ public class m1 {
                 if (obj instanceof y) {
                     obj = ((y) obj).a;
                 }
-                if (obj instanceof dp0) {
-                    obj = ((dp0) obj).b;
+                if (obj instanceof ep0) {
+                    obj = ((ep0) obj).b;
                 }
                 boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;
@@ -224,7 +225,7 @@ public class m1 {
                 tL_channels_getParticipants.filter.q = str;
                 tL_channels_getParticipants.limit = 50;
                 tL_channels_getParticipants.offset = 0;
-                tL_channels_getParticipants.channel = vp.r1(i12).g1(j10);
+                tL_channels_getParticipants.channel = wp.r1(i12).g1(j10);
                 z17 = z13;
                 arrayList6.add(new Pair(tL_channels_getParticipants, new wd(this, str, z17, 8)));
             } else {
@@ -254,7 +255,7 @@ public class m1 {
                     size = arrayList7.size();
                     z20 = false;
                     for (i14 = 0; i14 < size; i14++) {
-                        TLRPC.User Z1 = vp.r1(i12).Z1(Long.valueOf(((TLRPC.TL_contact) arrayList7.get(i14)).user_id));
+                        TLRPC.User Z1 = wp.r1(i12).Z1(Long.valueOf(((TLRPC.TL_contact) arrayList7.get(i14)).user_id));
                         if (Z1 != null && (str2 = Z1.phone) != null && str2.startsWith(d)) {
                             if (!z20) {
                                 z20 = Z1.phone.length() == d.length() ? z16 : false;
@@ -417,9 +418,9 @@ public class m1 {
                         arrayList13.clear();
                         hVar7.b();
                         arrayList12.clear();
-                        vp.r1(i17).P3(tL_contacts_found2.chats, false);
-                        vp.r1(i17).V3(tL_contacts_found2.users, false);
-                        hs.a0(i17).m1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
+                        wp.r1(i17).P3(tL_contacts_found2.chats, false);
+                        wp.r1(i17).V3(tL_contacts_found2.users, false);
+                        is.a0(i17).m1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
                         a0.h hVar8 = new a0.h();
                         a0.h hVar9 = new a0.h();
                         for (int i18 = 0; i18 < tL_contacts_found2.chats.size(); i18++) {

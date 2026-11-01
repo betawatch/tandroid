@@ -8,21 +8,21 @@ import android.view.TextureView;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class rj implements org.telegram.ui.ActionBar.q0, os0, org.telegram.ui.Components.h50, gm, xn0 {
+public final class rj implements org.telegram.ui.ActionBar.q0, ns0, org.telegram.ui.Components.h50, gm, vn0 {
     public final /* synthetic */ un a;
 
     public /* synthetic */ rj(un unVar) {
         this.a = unVar;
     }
 
-    @Override // org.telegram.ui.os0
-    public void H0(org.telegram.messenger.jj jjVar) {
+    @Override // org.telegram.ui.ns0
+    public void H0(org.telegram.messenger.kj kjVar) {
         un unVar = this.a;
         unVar.z0.I0(true);
         unVar.z0.C0();
-        if (MediaController.B().I(jjVar)) {
+        if (MediaController.B().I(kjVar)) {
             unVar.l1.removeView(unVar.H8);
             unVar.H8 = null;
             unVar.K8 = null;
@@ -31,23 +31,23 @@ public final class rj implements org.telegram.ui.ActionBar.q0, os0, org.telegram
         for (int i10 = 0; i10 < unVar.z0.getChildCount(); i10++) {
             if (unVar.z0.getChildAt(i10) instanceof org.telegram.ui.Cells.q1) {
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) unVar.z0.getChildAt(i10);
-                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().f1() == jjVar.f1()) {
+                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().f1() == kjVar.f1()) {
                     q1Var.getPhotoImage().O0(false, true);
                 }
             }
         }
     }
 
-    @Override // org.telegram.ui.os0
-    public void I(org.telegram.messenger.jj jjVar) {
-        if (jjVar == null) {
+    @Override // org.telegram.ui.ns0
+    public void I(org.telegram.messenger.kj kjVar) {
+        if (kjVar == null) {
             return;
         }
-        if (MediaController.B().I(jjVar)) {
+        if (MediaController.B().I(kjVar)) {
             for (int i10 = 0; i10 < this.a.z0.getChildCount(); i10++) {
                 if (this.a.z0.getChildAt(i10) instanceof org.telegram.ui.Cells.q1) {
                     org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.a.z0.getChildAt(i10);
-                    if (q1Var.getMessageObject() != null && q1Var.getMessageObject().f1() == jjVar.f1()) {
+                    if (q1Var.getMessageObject() != null && q1Var.getMessageObject().f1() == kjVar.f1()) {
                         org.telegram.ui.Components.s5 m10 = q1Var.getPhotoImage().m();
                         if (m10.b0) {
                             m10.stop();
@@ -69,7 +69,7 @@ public final class rj implements org.telegram.ui.ActionBar.q0, os0, org.telegram
                     }
                 }
             }
-            this.a.V7(true);
+            this.a.Z7(true);
             MediaController B = MediaController.B();
             un unVar = this.a;
             B.p0(unVar.K8, unVar.J8, unVar.H8, true);
@@ -79,10 +79,10 @@ public final class rj implements org.telegram.ui.ActionBar.q0, os0, org.telegram
 
     @Override // org.telegram.ui.gm
     public void T0(int i10) {
-        this.a.k(i10, 0, true, 0, true, 0);
+        this.a.l(i10, 0, true, 0, true, 0);
     }
 
-    @Override // org.telegram.ui.xn0
+    @Override // org.telegram.ui.vn0
     public void V() {
         try {
             Intent intent = new Intent();
@@ -101,20 +101,20 @@ public final class rj implements org.telegram.ui.ActionBar.q0, os0, org.telegram
 
     @Override // org.telegram.ui.ActionBar.q0
     public void e() {
-        org.telegram.ui.Components.nl0.d(new ye(this.a, 2));
+        org.telegram.ui.Components.ol0.d(new xe(this.a, 2));
     }
 
-    @Override // org.telegram.ui.os0
+    @Override // org.telegram.ui.ns0
     public TextureView k0() {
         return this.a.K8;
     }
 
     @Override // org.telegram.ui.gm
     public void v0(String str) {
-        this.a.ta(str, false);
+        this.a.ya(str, false);
     }
 
-    @Override // org.telegram.ui.xn0
+    @Override // org.telegram.ui.vn0
     public void b(ArrayList arrayList) {
     }
 

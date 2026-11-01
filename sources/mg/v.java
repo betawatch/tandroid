@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.k2;
@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.z2;
 import org.telegram.ui.Components.wb;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v extends z2 {
     public static v l1;
@@ -44,7 +44,7 @@ public final class v extends z2 {
         v1Var.m2 = new t(this, w0Var, p6Var);
         v1Var.k2 = new q(this, 1);
         if (!z10) {
-            vp.r1(this.a).O1().U();
+            wp.r1(this.a).O1().U();
         }
         wb.a(this.c, new u(0));
     }
@@ -102,12 +102,12 @@ public final class v extends z2 {
         p1 p1Var = new p1(v1Var, 0);
         p1 p1Var2 = new p1(v1Var, 6);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, p6Var);
-        String L0 = cd.L0(2131743860, "UnsavedChanges");
+        String L0 = dd.L0(2131743860, "UnsavedChanges");
         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
         x1Var.R = L0;
-        x1Var.T = i11 != 1 ? i11 != 2 ? i11 != 3 ? "" : cd.L0(2131753596, "BoostingApplyChangesCountries") : cd.L0(2131753597, "BoostingApplyChangesChannels") : cd.L0(2131753595, "BoostingApplyChangesUsers");
-        alertDialog$Builder.k(cd.L0(2131754216, "ApplyTheme"), new l(p1Var, i10));
-        alertDialog$Builder.h(cd.L0(2131751407, "Discard"), new ig.c0(p1Var2, 27));
+        x1Var.T = i11 != 1 ? i11 != 2 ? i11 != 3 ? "" : dd.L0(2131753596, "BoostingApplyChangesCountries") : dd.L0(2131753597, "BoostingApplyChangesChannels") : dd.L0(2131753595, "BoostingApplyChangesUsers");
+        alertDialog$Builder.k(dd.L0(2131754216, "ApplyTheme"), new l(p1Var, i10));
+        alertDialog$Builder.h(dd.L0(2131751407, "Discard"), new ig.c0(p1Var2, 27));
         alertDialog$Builder.p();
     }
 }

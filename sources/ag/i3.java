@@ -3,16 +3,16 @@ package ag;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i3 {
     public static volatile i3[] g = new i3[4];
@@ -79,7 +79,7 @@ public final class i3 {
         }
         if (h3Var != null) {
             arrayList.remove(h3Var);
-            zs.f(this.a).k(zs.F1, new Object[0]);
+            at.f(this.a).k(at.F1, new Object[0]);
         }
     }
 
@@ -162,8 +162,8 @@ public final class i3 {
         this.e = true;
         int i12 = this.a;
         if (z10) {
-            hs a02 = hs.a0(i12);
-            a02.a.c(new a3(this, a02, d20.i(i12).e(), runnable, 0));
+            is a02 = is.a0(i12);
+            a02.a.c(new a3(this, a02, e20.i(i12).e(), runnable, 0));
             return;
         }
         TLRPC.TL_messages_getQuickReplies tL_messages_getQuickReplies = new TLRPC.TL_messages_getQuickReplies();
@@ -178,7 +178,7 @@ public final class i3 {
                 return;
             }
             h3 h3Var = (h3) arrayList.get(i14);
-            long p5 = ui.p(tL_messages_getQuickReplies.hash, h3Var.a);
+            long p5 = vi.p(tL_messages_getQuickReplies.hash, h3Var.a);
             tL_messages_getQuickReplies.hash = p5;
             String str = h3Var.b;
             if (str == null) {
@@ -241,16 +241,16 @@ public final class i3 {
             }
             int i17 = i11;
             int i18 = i14;
-            long p9 = ui.p(p5, j15);
+            long p9 = vi.p(p5, j15);
             tL_messages_getQuickReplies.hash = p9;
-            long p10 = ui.p(p9, h3Var.e == null ? j10 : r6.f1());
+            long p10 = vi.p(p9, h3Var.e == null ? j10 : r6.f1());
             tL_messages_getQuickReplies.hash = p10;
-            jj jjVar = h3Var.e;
-            if (jjVar == null || (message = jjVar.k) == null || (message.flags & 32768) == 0) {
+            kj kjVar = h3Var.e;
+            if (kjVar == null || (message = kjVar.k) == null || (message.flags & 32768) == 0) {
                 j14 = j10;
-                tL_messages_getQuickReplies.hash = ui.p(p10, j14);
+                tL_messages_getQuickReplies.hash = vi.p(p10, j14);
             } else {
-                tL_messages_getQuickReplies.hash = ui.p(p10, message.edit_date);
+                tL_messages_getQuickReplies.hash = vi.p(p10, message.edit_date);
                 j14 = j10;
             }
             i14 = i18 + 1;
@@ -289,11 +289,11 @@ public final class i3 {
                                 c10.b = tL_quickReply.shortcut;
                                 c10.f = tL_quickReply.count;
                                 c10.d = tL_quickReply.top_message;
-                                jj jjVar = c10.e;
-                                if (jjVar != null && jjVar.f1() != tL_quickReply.top_message) {
+                                kj kjVar = c10.e;
+                                if (kjVar != null && kjVar.f1() != tL_quickReply.top_message) {
                                     c10.e = null;
-                                    long e = d20.i(i12).e();
-                                    hs a02 = hs.a0(i12);
+                                    long e = e20.i(i12).e();
+                                    is a02 = is.a0(i12);
                                     a02.a.c(new a3(i3Var, a02, c10, e, 1));
                                     break;
                                 }
@@ -310,7 +310,7 @@ public final class i3 {
                                 i3Var.a(h3Var2.b);
                             }
                             i3Var.l();
-                            zs.f(i12).k(zs.F1, new Object[0]);
+                            at.f(i12).k(at.F1, new Object[0]);
                             break;
                         case 1:
                             i3 i3Var2 = this.b;
@@ -320,10 +320,10 @@ public final class i3 {
                                 i3Var2.b.remove(c11);
                                 i3Var2.a(c11.b);
                                 int i15 = c11.a;
-                                hs a03 = hs.a0(i14);
+                                is a03 = is.a0(i14);
                                 a03.a.c(new d3(a03, i15, 0));
                                 i3Var2.l();
-                                zs.f(i14).k(zs.F1, new Object[0]);
+                                at.f(i14).k(at.F1, new Object[0]);
                                 break;
                             }
                             break;
@@ -339,15 +339,15 @@ public final class i3 {
                                     i3Var3.b.remove(c12);
                                 }
                                 ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
-                                jj jjVar2 = c12.e;
-                                if (!arrayList2.contains(Integer.valueOf(jjVar2 != null ? jjVar2.f1() : c12.d)) && c12.e != null) {
+                                kj kjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(kjVar2 != null ? kjVar2.f1() : c12.d)) && c12.e != null) {
                                     i3Var3.l();
-                                    zs.f(i16).k(zs.F1, new Object[0]);
+                                    at.f(i16).k(at.F1, new Object[0]);
                                     break;
                                 } else {
                                     c12.e = null;
-                                    long e7 = d20.i(i16).e();
-                                    hs a04 = hs.a0(i16);
+                                    long e7 = e20.i(i16).e();
+                                    is a04 = is.a0(i16);
                                     a04.a.c(new a3(i3Var3, a04, c12, e7, 1));
                                     break;
                                 }
@@ -379,15 +379,15 @@ public final class i3 {
                                 h3Var.f = tL_quickReply2.count;
                                 h3Var.c = i17;
                                 h3Var.d = tL_quickReply2.top_message;
-                                jj jjVar3 = h3Var.e;
-                                if (jjVar3 != null && jjVar3.f1() != tL_quickReply2.top_message) {
+                                kj kjVar3 = h3Var.e;
+                                if (kjVar3 != null && kjVar3.f1() != tL_quickReply2.top_message) {
                                     h3Var.e = null;
                                 }
                                 arrayList4.add(h3Var);
                                 i3Var4.a(h3Var.b);
                             }
                             i3Var4.l();
-                            zs.f(i3Var4.a).k(zs.F1, new Object[0]);
+                            at.f(i3Var4.a).k(at.F1, new Object[0]);
                             break;
                     }
                 }
@@ -417,11 +417,11 @@ public final class i3 {
                                 c10.b = tL_quickReply.shortcut;
                                 c10.f = tL_quickReply.count;
                                 c10.d = tL_quickReply.top_message;
-                                jj jjVar = c10.e;
-                                if (jjVar != null && jjVar.f1() != tL_quickReply.top_message) {
+                                kj kjVar = c10.e;
+                                if (kjVar != null && kjVar.f1() != tL_quickReply.top_message) {
                                     c10.e = null;
-                                    long e = d20.i(i122).e();
-                                    hs a02 = hs.a0(i122);
+                                    long e = e20.i(i122).e();
+                                    is a02 = is.a0(i122);
                                     a02.a.c(new a3(i3Var, a02, c10, e, 1));
                                     break;
                                 }
@@ -438,7 +438,7 @@ public final class i3 {
                                 i3Var.a(h3Var2.b);
                             }
                             i3Var.l();
-                            zs.f(i122).k(zs.F1, new Object[0]);
+                            at.f(i122).k(at.F1, new Object[0]);
                             break;
                         case 1:
                             i3 i3Var2 = this.b;
@@ -448,10 +448,10 @@ public final class i3 {
                                 i3Var2.b.remove(c11);
                                 i3Var2.a(c11.b);
                                 int i15 = c11.a;
-                                hs a03 = hs.a0(i14);
+                                is a03 = is.a0(i14);
                                 a03.a.c(new d3(a03, i15, 0));
                                 i3Var2.l();
-                                zs.f(i14).k(zs.F1, new Object[0]);
+                                at.f(i14).k(at.F1, new Object[0]);
                                 break;
                             }
                             break;
@@ -467,15 +467,15 @@ public final class i3 {
                                     i3Var3.b.remove(c12);
                                 }
                                 ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
-                                jj jjVar2 = c12.e;
-                                if (!arrayList2.contains(Integer.valueOf(jjVar2 != null ? jjVar2.f1() : c12.d)) && c12.e != null) {
+                                kj kjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(kjVar2 != null ? kjVar2.f1() : c12.d)) && c12.e != null) {
                                     i3Var3.l();
-                                    zs.f(i16).k(zs.F1, new Object[0]);
+                                    at.f(i16).k(at.F1, new Object[0]);
                                     break;
                                 } else {
                                     c12.e = null;
-                                    long e7 = d20.i(i16).e();
-                                    hs a04 = hs.a0(i16);
+                                    long e7 = e20.i(i16).e();
+                                    is a04 = is.a0(i16);
                                     a04.a.c(new a3(i3Var3, a04, c12, e7, 1));
                                     break;
                                 }
@@ -507,15 +507,15 @@ public final class i3 {
                                 h3Var.f = tL_quickReply2.count;
                                 h3Var.c = i17;
                                 h3Var.d = tL_quickReply2.top_message;
-                                jj jjVar3 = h3Var.e;
-                                if (jjVar3 != null && jjVar3.f1() != tL_quickReply2.top_message) {
+                                kj kjVar3 = h3Var.e;
+                                if (kjVar3 != null && kjVar3.f1() != tL_quickReply2.top_message) {
                                     h3Var.e = null;
                                 }
                                 arrayList4.add(h3Var);
                                 i3Var4.a(h3Var.b);
                             }
                             i3Var4.l();
-                            zs.f(i3Var4.a).k(zs.F1, new Object[0]);
+                            at.f(i3Var4.a).k(at.F1, new Object[0]);
                             break;
                     }
                 }
@@ -545,11 +545,11 @@ public final class i3 {
                                 c10.b = tL_quickReply.shortcut;
                                 c10.f = tL_quickReply.count;
                                 c10.d = tL_quickReply.top_message;
-                                jj jjVar = c10.e;
-                                if (jjVar != null && jjVar.f1() != tL_quickReply.top_message) {
+                                kj kjVar = c10.e;
+                                if (kjVar != null && kjVar.f1() != tL_quickReply.top_message) {
                                     c10.e = null;
-                                    long e = d20.i(i122).e();
-                                    hs a02 = hs.a0(i122);
+                                    long e = e20.i(i122).e();
+                                    is a02 = is.a0(i122);
                                     a02.a.c(new a3(i3Var, a02, c10, e, 1));
                                     break;
                                 }
@@ -566,7 +566,7 @@ public final class i3 {
                                 i3Var.a(h3Var2.b);
                             }
                             i3Var.l();
-                            zs.f(i122).k(zs.F1, new Object[0]);
+                            at.f(i122).k(at.F1, new Object[0]);
                             break;
                         case 1:
                             i3 i3Var2 = this.b;
@@ -576,10 +576,10 @@ public final class i3 {
                                 i3Var2.b.remove(c11);
                                 i3Var2.a(c11.b);
                                 int i15 = c11.a;
-                                hs a03 = hs.a0(i14);
+                                is a03 = is.a0(i14);
                                 a03.a.c(new d3(a03, i15, 0));
                                 i3Var2.l();
-                                zs.f(i14).k(zs.F1, new Object[0]);
+                                at.f(i14).k(at.F1, new Object[0]);
                                 break;
                             }
                             break;
@@ -595,15 +595,15 @@ public final class i3 {
                                     i3Var3.b.remove(c12);
                                 }
                                 ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
-                                jj jjVar2 = c12.e;
-                                if (!arrayList2.contains(Integer.valueOf(jjVar2 != null ? jjVar2.f1() : c12.d)) && c12.e != null) {
+                                kj kjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(kjVar2 != null ? kjVar2.f1() : c12.d)) && c12.e != null) {
                                     i3Var3.l();
-                                    zs.f(i16).k(zs.F1, new Object[0]);
+                                    at.f(i16).k(at.F1, new Object[0]);
                                     break;
                                 } else {
                                     c12.e = null;
-                                    long e7 = d20.i(i16).e();
-                                    hs a04 = hs.a0(i16);
+                                    long e7 = e20.i(i16).e();
+                                    is a04 = is.a0(i16);
                                     a04.a.c(new a3(i3Var3, a04, c12, e7, 1));
                                     break;
                                 }
@@ -635,15 +635,15 @@ public final class i3 {
                                 h3Var.f = tL_quickReply2.count;
                                 h3Var.c = i17;
                                 h3Var.d = tL_quickReply2.top_message;
-                                jj jjVar3 = h3Var.e;
-                                if (jjVar3 != null && jjVar3.f1() != tL_quickReply2.top_message) {
+                                kj kjVar3 = h3Var.e;
+                                if (kjVar3 != null && kjVar3.f1() != tL_quickReply2.top_message) {
                                     h3Var.e = null;
                                 }
                                 arrayList4.add(h3Var);
                                 i3Var4.a(h3Var.b);
                             }
                             i3Var4.l();
-                            zs.f(i3Var4.a).k(zs.F1, new Object[0]);
+                            at.f(i3Var4.a).k(at.F1, new Object[0]);
                             break;
                     }
                 }
@@ -675,11 +675,11 @@ public final class i3 {
                             c10.b = tL_quickReply.shortcut;
                             c10.f = tL_quickReply.count;
                             c10.d = tL_quickReply.top_message;
-                            jj jjVar = c10.e;
-                            if (jjVar != null && jjVar.f1() != tL_quickReply.top_message) {
+                            kj kjVar = c10.e;
+                            if (kjVar != null && kjVar.f1() != tL_quickReply.top_message) {
                                 c10.e = null;
-                                long e = d20.i(i122).e();
-                                hs a02 = hs.a0(i122);
+                                long e = e20.i(i122).e();
+                                is a02 = is.a0(i122);
                                 a02.a.c(new a3(i3Var, a02, c10, e, 1));
                                 break;
                             }
@@ -696,7 +696,7 @@ public final class i3 {
                             i3Var.a(h3Var2.b);
                         }
                         i3Var.l();
-                        zs.f(i122).k(zs.F1, new Object[0]);
+                        at.f(i122).k(at.F1, new Object[0]);
                         break;
                     case 1:
                         i3 i3Var2 = this.b;
@@ -706,10 +706,10 @@ public final class i3 {
                             i3Var2.b.remove(c11);
                             i3Var2.a(c11.b);
                             int i15 = c11.a;
-                            hs a03 = hs.a0(i142);
+                            is a03 = is.a0(i142);
                             a03.a.c(new d3(a03, i15, 0));
                             i3Var2.l();
-                            zs.f(i142).k(zs.F1, new Object[0]);
+                            at.f(i142).k(at.F1, new Object[0]);
                             break;
                         }
                         break;
@@ -725,15 +725,15 @@ public final class i3 {
                                 i3Var3.b.remove(c12);
                             }
                             ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
-                            jj jjVar2 = c12.e;
-                            if (!arrayList2.contains(Integer.valueOf(jjVar2 != null ? jjVar2.f1() : c12.d)) && c12.e != null) {
+                            kj kjVar2 = c12.e;
+                            if (!arrayList2.contains(Integer.valueOf(kjVar2 != null ? kjVar2.f1() : c12.d)) && c12.e != null) {
                                 i3Var3.l();
-                                zs.f(i16).k(zs.F1, new Object[0]);
+                                at.f(i16).k(at.F1, new Object[0]);
                                 break;
                             } else {
                                 c12.e = null;
-                                long e7 = d20.i(i16).e();
-                                hs a04 = hs.a0(i16);
+                                long e7 = e20.i(i16).e();
+                                is a04 = is.a0(i16);
                                 a04.a.c(new a3(i3Var3, a04, c12, e7, 1));
                                 break;
                             }
@@ -765,15 +765,15 @@ public final class i3 {
                             h3Var.f = tL_quickReply2.count;
                             h3Var.c = i17;
                             h3Var.d = tL_quickReply2.top_message;
-                            jj jjVar3 = h3Var.e;
-                            if (jjVar3 != null && jjVar3.f1() != tL_quickReply2.top_message) {
+                            kj kjVar3 = h3Var.e;
+                            if (kjVar3 != null && kjVar3.f1() != tL_quickReply2.top_message) {
                                 h3Var.e = null;
                             }
                             arrayList4.add(h3Var);
                             i3Var4.a(h3Var.b);
                         }
                         i3Var4.l();
-                        zs.f(i3Var4.a).k(zs.F1, new Object[0]);
+                        at.f(i3Var4.a).k(at.F1, new Object[0]);
                         break;
                 }
             }
@@ -793,11 +793,11 @@ public final class i3 {
         int i11 = this.a;
         ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editQuickReplyShortcut, new c3(2));
         l();
-        zs.f(i11).k(zs.F1, new Object[0]);
+        at.f(i11).k(at.F1, new Object[0]);
     }
 
     public final void l() {
-        hs a02 = hs.a0(this.a);
+        is a02 = is.a0(this.a);
         a02.a.c(new a1.f(13, this, a02));
     }
 }

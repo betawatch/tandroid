@@ -9,14 +9,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class xy extends FrameLayout {
     public static final /* synthetic */ int h = 0;
     public final org.telegram.ui.ActionBar.p6 a;
     public final TextView b;
     public final View c;
-    public final ei0 d;
+    public final fi0 d;
     public boolean e;
     public int f;
 
@@ -32,12 +32,12 @@ public final class xy extends FrameLayout {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        ei0 ei0Var = new ei0(context);
-        this.d = ei0Var;
-        ei0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        ei0Var.setImportantForAccessibility(2);
-        ei0Var.setVisibility(8);
-        linearLayout.addView(ei0Var, w7.b6.t(org.telegram.messenger.zs.g2, org.telegram.messenger.zs.g2, 17, 0, 0, 0, 20));
+        fi0 fi0Var = new fi0(context);
+        this.d = fi0Var;
+        fi0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        fi0Var.setImportantForAccessibility(2);
+        fi0Var.setVisibility(8);
+        linearLayout.addView(fi0Var, w7.b6.t(org.telegram.messenger.at.g2, org.telegram.messenger.at.g2, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
@@ -52,11 +52,11 @@ public final class xy extends FrameLayout {
 
     public final void a(int i10, int i11, int i12) {
         int i13 = i10 != 0 ? 0 : 8;
-        ei0 ei0Var = this.d;
-        ei0Var.setVisibility(i13);
+        fi0 fi0Var = this.d;
+        fi0Var.setVisibility(i13);
         if (i10 != 0) {
-            ei0Var.f(i10, i11, i12, null);
-            ei0Var.d();
+            fi0Var.f(i10, i11, i12, null);
+            fi0Var.d();
         }
     }
 

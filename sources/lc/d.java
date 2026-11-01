@@ -1,9 +1,9 @@
 package lc;
 
 import e2.j0;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final int[] a = {16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15};
@@ -66,19 +66,19 @@ public abstract class d {
             char charAt = str.charAt(i10);
             if (charAt != '\t' && charAt != ' ' && charAt != '\"' && charAt != ',' && charAt != '/' && charAt != '{' && charAt != '}' && charAt != '(' && charAt != ')') {
                 switch (charAt) {
-                    case zs.v0 /* 58 */:
-                    case zs.w0 /* 59 */:
-                    case zs.x0 /* 60 */:
-                    case zs.y0 /* 61 */:
-                    case zs.z0 /* 62 */:
-                    case zs.A0 /* 63 */:
+                    case at.v0 /* 58 */:
+                    case at.w0 /* 59 */:
+                    case at.x0 /* 60 */:
+                    case at.y0 /* 61 */:
+                    case at.z0 /* 62 */:
+                    case at.A0 /* 63 */:
                     case '@':
                         break;
                     default:
                         switch (charAt) {
-                            case zs.c1 /* 91 */:
-                            case zs.d1 /* 92 */:
-                            case zs.e1 /* 93 */:
+                            case at.c1 /* 91 */:
+                            case at.d1 /* 92 */:
+                            case at.e1 /* 93 */:
                                 break;
                             default:
                         }
@@ -188,15 +188,15 @@ public abstract class d {
                 i12 = i10;
                 return xVar.p(iArr, i11) + i12;
             case 14:
-                i12 = zs.N1;
+                i12 = at.N1;
                 i11 = 6;
                 return xVar.p(iArr, i11) + i12;
             case 15:
-                i12 = zs.X2;
+                i12 = at.X2;
                 i11 = 6;
                 return xVar.p(iArr, i11) + i12;
             case 16:
-                i12 = zs.g4;
+                i12 = at.g4;
                 i11 = 7;
                 return xVar.p(iArr, i11) + i12;
             case 17:
@@ -257,7 +257,7 @@ public abstract class d {
     }
 
     public static void e(c5.x xVar, int[] iArr, j0[] j0VarArr) {
-        int p5 = xVar.p(iArr, 5) + zs.g4;
+        int p5 = xVar.p(iArr, 5) + at.g4;
         int p9 = xVar.p(iArr, 5) + 1;
         int p10 = xVar.p(iArr, 4) + 4;
         int[] iArr2 = new int[19];
@@ -279,93 +279,93 @@ public abstract class d {
         int i11;
         int i12 = 1;
         switch (i10) {
-            case zs.g4 /* 257 */:
-            case zs.h4 /* 258 */:
-            case zs.i4 /* 259 */:
-            case zs.j4 /* 260 */:
-            case zs.k4 /* 261 */:
-            case zs.l4 /* 262 */:
-            case zs.m4 /* 263 */:
-            case zs.n4 /* 264 */:
+            case at.g4 /* 257 */:
+            case at.h4 /* 258 */:
+            case at.i4 /* 259 */:
+            case at.j4 /* 260 */:
+            case at.k4 /* 261 */:
+            case at.l4 /* 262 */:
+            case at.m4 /* 263 */:
+            case at.n4 /* 264 */:
                 return i10 - 254;
-            case zs.o4 /* 265 */:
+            case at.o4 /* 265 */:
                 i11 = 11;
                 return xVar.p(iArr, i12) + i11;
-            case zs.p4 /* 266 */:
+            case at.p4 /* 266 */:
                 i11 = 13;
                 return xVar.p(iArr, i12) + i11;
-            case zs.q4 /* 267 */:
+            case at.q4 /* 267 */:
                 i11 = 15;
                 return xVar.p(iArr, i12) + i11;
-            case zs.r4 /* 268 */:
+            case at.r4 /* 268 */:
                 i11 = 17;
                 return xVar.p(iArr, i12) + i11;
-            case zs.s4 /* 269 */:
+            case at.s4 /* 269 */:
                 i11 = 19;
                 i12 = 2;
                 return xVar.p(iArr, i12) + i11;
-            case zs.t4 /* 270 */:
+            case at.t4 /* 270 */:
                 i11 = 23;
                 i12 = 2;
                 return xVar.p(iArr, i12) + i11;
-            case zs.u4 /* 271 */:
+            case at.u4 /* 271 */:
                 i11 = 27;
                 i12 = 2;
                 return xVar.p(iArr, i12) + i11;
-            case zs.v4 /* 272 */:
+            case at.v4 /* 272 */:
                 i11 = 31;
                 i12 = 2;
                 return xVar.p(iArr, i12) + i11;
-            case zs.w4 /* 273 */:
+            case at.w4 /* 273 */:
                 i11 = 35;
                 i12 = 3;
                 return xVar.p(iArr, i12) + i11;
-            case zs.x4 /* 274 */:
+            case at.x4 /* 274 */:
                 i11 = 43;
                 i12 = 3;
                 return xVar.p(iArr, i12) + i11;
-            case zs.y4 /* 275 */:
+            case at.y4 /* 275 */:
                 i11 = 51;
                 i12 = 3;
                 return xVar.p(iArr, i12) + i11;
-            case zs.z4 /* 276 */:
+            case at.z4 /* 276 */:
                 i11 = 59;
                 i12 = 3;
                 return xVar.p(iArr, i12) + i11;
-            case zs.A4 /* 277 */:
+            case at.A4 /* 277 */:
                 i11 = 67;
                 i12 = 4;
                 return xVar.p(iArr, i12) + i11;
-            case zs.B4 /* 278 */:
+            case at.B4 /* 278 */:
                 i11 = 83;
                 i12 = 4;
                 return xVar.p(iArr, i12) + i11;
-            case zs.C4 /* 279 */:
+            case at.C4 /* 279 */:
                 i11 = 99;
                 i12 = 4;
                 return xVar.p(iArr, i12) + i11;
-            case zs.D4 /* 280 */:
-                i11 = zs.A1;
+            case at.D4 /* 280 */:
+                i11 = at.A1;
                 i12 = 4;
                 return xVar.p(iArr, i12) + i11;
-            case zs.E4 /* 281 */:
-                i11 = zs.P1;
+            case at.E4 /* 281 */:
+                i11 = at.P1;
                 i12 = 5;
                 return xVar.p(iArr, i12) + i11;
-            case zs.F4 /* 282 */:
-                i11 = zs.t2;
+            case at.F4 /* 282 */:
+                i11 = at.t2;
                 i12 = 5;
                 return xVar.p(iArr, i12) + i11;
-            case zs.G4 /* 283 */:
-                i11 = zs.Z2;
+            case at.G4 /* 283 */:
+                i11 = at.Z2;
                 i12 = 5;
                 return xVar.p(iArr, i12) + i11;
-            case zs.H4 /* 284 */:
+            case at.H4 /* 284 */:
                 i11 = 227;
                 i12 = 5;
                 return xVar.p(iArr, i12) + i11;
-            case zs.I4 /* 285 */:
-                return zs.h4;
+            case at.I4 /* 285 */:
+                return at.h4;
             default:
                 throw new j6.l(String.format("[%s] Bad literal/length code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(i10), Integer.valueOf(iArr[0])));
         }

@@ -1,187 +1,444 @@
 package org.telegram.messenger;
 
-import j$.util.concurrent.ConcurrentHashMap;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.text.TextUtils;
+import java.io.File;
 import java.util.ArrayList;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lo implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ f1 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ lo(f1 f1Var, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ lo(f1 f1Var, Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+        this.a = i10;
         this.b = f1Var;
-        this.c = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.f = obj4;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x016d  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00cb  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0268  */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i10;
-        int i11;
-        int size;
-        int i12;
-        TLRPC.Chat chat;
-        vp vpVar;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        TLRPC.Message message;
-        int i13;
-        TLRPC.Chat chat2;
-        TLRPC.Chat chat3;
-        ArrayList arrayList3;
-        switch (this.a) {
+        String str;
+        TLRPC.Document document;
+        TLRPC.Photo photo;
+        int i10 = this.a;
+        String str2 = "";
+        final int i11 = 0;
+        final int i12 = 1;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        f1 f1Var = this.b;
+        switch (i10) {
             case 0:
-                vp vpVar2 = (vp) this.b;
-                ConcurrentHashMap concurrentHashMap = vpVar2.P;
-                ConcurrentHashMap concurrentHashMap2 = vpVar2.O;
-                Integer num = 0;
-                if (tLObject != null) {
-                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
-                    ArrayList arrayList4 = new ArrayList(tL_messages_peerDialogs.dialogs);
-                    vpVar2.v0(tL_messages_peerDialogs);
-                    TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
-                    tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
-                    tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
-                    tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
-                    tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
-                    a0.h hVar = new a0.h();
-                    a0.h hVar2 = new a0.h();
-                    a0.h hVar3 = new a0.h();
-                    int i14 = 0;
-                    while (i14 < tL_messages_peerDialogs.users.size()) {
-                        TLRPC.User user = tL_messages_peerDialogs.users.get(i14);
-                        hVar2.k(user, user.id);
-                        i14++;
-                        num = num;
-                    }
-                    Integer num2 = num;
-                    for (int i15 = 0; i15 < tL_messages_peerDialogs.chats.size(); i15++) {
-                        TLRPC.Chat chat4 = tL_messages_peerDialogs.chats.get(i15);
-                        hVar3.k(chat4, chat4.id);
-                    }
-                    ArrayList arrayList5 = new ArrayList();
-                    int i16 = 0;
-                    while (i16 < tL_messages_peerDialogs.messages.size()) {
-                        TLRPC.Message message2 = tL_messages_peerDialogs.messages.get(i16);
-                        TLRPC.Peer peer = message2.peer_id;
-                        int i17 = i16;
-                        TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs2 = tL_messages_peerDialogs;
-                        long j10 = peer.channel_id;
-                        if (j10 != 0) {
-                            TLRPC.Chat chat5 = (TLRPC.Chat) hVar3.f(j10);
-                            if (chat5 != null && chat5.left) {
-                            }
-                            jj jjVar = new jj(vpVar2.currentAccount, message2, hVar2, hVar3, false, false);
-                            arrayList5.add(jjVar);
-                            long B0 = jj.B0(jjVar.k);
-                            arrayList3 = (ArrayList) hVar.f(B0);
-                            if (arrayList3 == null) {
-                                arrayList3 = new ArrayList();
-                            }
-                            arrayList3.add(jjVar);
-                            hVar.k(arrayList3, B0);
-                        } else {
-                            long j11 = peer.chat_id;
-                            if (j11 != 0 && (chat3 = (TLRPC.Chat) hVar3.f(j11)) != null && chat3.migrated_to != null) {
-                            }
-                            jj jjVar2 = new jj(vpVar2.currentAccount, message2, hVar2, hVar3, false, false);
-                            arrayList5.add(jjVar2);
-                            long B02 = jj.B0(jjVar2.k);
-                            arrayList3 = (ArrayList) hVar.f(B02);
-                            if (arrayList3 == null) {
-                            }
-                            arrayList3.add(jjVar2);
-                            hVar.k(arrayList3, B02);
+                final wp wpVar = (wp) f1Var;
+                TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) obj4;
+                final org.telegram.ui.ActionBar.s6 s6Var = (org.telegram.ui.ActionBar.s6) obj3;
+                TLRPC.TL_inputThemeSettings tL_inputThemeSettings = (TLRPC.TL_inputThemeSettings) obj2;
+                final org.telegram.ui.ActionBar.r6 r6Var = (org.telegram.ui.ActionBar.r6) obj;
+                String n10 = tL_theme != null ? tL_theme.title : s6Var.n();
+                int lastIndexOf = n10.lastIndexOf(".attheme");
+                if (lastIndexOf > 0) {
+                    n10 = n10.substring(0, lastIndexOf);
+                }
+                if (tLObject == null) {
+                    i0.g3(new lg(wpVar, s6Var, r6Var, 6));
+                    break;
+                } else {
+                    TLRPC.Document document2 = (TLRPC.Document) tLObject;
+                    TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                    tL_inputDocument.access_hash = document2.access_hash;
+                    tL_inputDocument.id = document2.id;
+                    tL_inputDocument.file_reference = document2.file_reference;
+                    if (tL_theme != null && tL_theme.creator) {
+                        TL_account.updateTheme updatetheme = new TL_account.updateTheme();
+                        TLRPC.TL_inputTheme tL_inputTheme = new TLRPC.TL_inputTheme();
+                        tL_inputTheme.id = tL_theme.id;
+                        tL_inputTheme.access_hash = tL_theme.access_hash;
+                        updatetheme.theme = tL_inputTheme;
+                        updatetheme.slug = tL_theme.slug;
+                        int i13 = updatetheme.flags;
+                        updatetheme.title = n10;
+                        updatetheme.document = tL_inputDocument;
+                        updatetheme.flags = i13 | 7;
+                        if (tL_inputThemeSettings != null) {
+                            updatetheme.settings = tL_inputThemeSettings;
+                            updatetheme.flags = i13 | 15;
                         }
-                        i16 = i17 + 1;
-                        tL_messages_peerDialogs = tL_messages_peerDialogs2;
-                    }
-                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs3 = tL_messages_peerDialogs;
-                    boolean z10 = true;
-                    if (!arrayList4.isEmpty()) {
-                        i10 = 0;
-                        if (arrayList4.get(0) instanceof TLRPC.TL_dialogFolder) {
-                            i11 = 1;
-                            size = arrayList4.size();
-                            i12 = i10;
-                            while (i12 < size) {
-                                TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList4.get(i12);
-                                dialog.pinned = z10;
-                                o5.x(dialog);
-                                if (!o5.y(dialog) ? !o5.z(dialog.id) || (chat = (TLRPC.Chat) hVar3.f(-dialog.id)) == null || chat.migrated_to == null : (chat2 = (TLRPC.Chat) hVar3.f(-dialog.id)) == null || !chat2.left) {
-                                    if (dialog.last_message_date == 0 && (arrayList2 = (ArrayList) hVar.f(dialog.id)) != null) {
-                                        int i18 = TLObject.FLAG_31;
-                                        for (int i19 = 0; i19 < arrayList2.size(); i19++) {
-                                            jj jjVar3 = (jj) arrayList2.get(i19);
-                                            if (jjVar3 != null && (message = jjVar3.k) != null && (i13 = message.date) > i18) {
-                                                i18 = i13;
+                        updatetheme.format = "android";
+                        wpVar.getConnectionsManager().sendRequest(updatetheme, new RequestDelegate() { // from class: org.telegram.messenger.kl
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error2) {
+                                switch (i12) {
+                                    case 0:
+                                        final int i14 = 1;
+                                        final wp wpVar2 = wpVar;
+                                        final org.telegram.ui.ActionBar.s6 s6Var2 = s6Var;
+                                        final org.telegram.ui.ActionBar.r6 r6Var2 = r6Var;
+                                        i0.g3(new Runnable() { // from class: org.telegram.messenger.cm
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                int i15 = i14;
+                                                org.telegram.ui.ActionBar.r6 r6Var3 = r6Var2;
+                                                org.telegram.ui.ActionBar.s6 s6Var3 = s6Var2;
+                                                TLObject tLObject3 = tLObject2;
+                                                wp wpVar3 = wpVar2;
+                                                switch (i15) {
+                                                    case 0:
+                                                        if (!(tLObject3 instanceof TLRPC.TL_theme)) {
+                                                            wpVar3.getNotificationCenter().k(at.N2, s6Var3, r6Var3);
+                                                            break;
+                                                        } else {
+                                                            org.telegram.ui.ActionBar.t6.I1(s6Var3, r6Var3, (TLRPC.TL_theme) tLObject3, wpVar3.currentAccount, false);
+                                                            wpVar3.getNotificationCenter().k(at.M2, s6Var3, r6Var3);
+                                                            break;
+                                                        }
+                                                    default:
+                                                        if (!(tLObject3 instanceof TLRPC.TL_theme)) {
+                                                            wpVar3.getNotificationCenter().k(at.N2, s6Var3, r6Var3);
+                                                            break;
+                                                        } else {
+                                                            org.telegram.ui.ActionBar.t6.I1(s6Var3, r6Var3, (TLRPC.TL_theme) tLObject3, wpVar3.currentAccount, false);
+                                                            wpVar3.j2(s6Var3, r6Var3, s6Var3 == org.telegram.ui.ActionBar.t6.J);
+                                                            wpVar3.getNotificationCenter().k(at.M2, s6Var3, r6Var3);
+                                                            break;
+                                                        }
+                                                }
                                             }
-                                        }
-                                        if (i18 > Integer.MIN_VALUE) {
-                                            dialog.last_message_date = i18;
-                                        }
-                                    }
-                                    Integer num3 = (Integer) concurrentHashMap2.get(Long.valueOf(dialog.id));
-                                    if (num3 == null) {
-                                        num3 = num2;
-                                    }
-                                    vpVar = vpVar2;
-                                    arrayList = arrayList4;
-                                    concurrentHashMap2.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num3.intValue(), dialog.read_inbox_max_id)));
-                                    Integer num4 = (Integer) concurrentHashMap.get(Long.valueOf(dialog.id));
-                                    if (num4 == null) {
-                                        num4 = num2;
-                                    }
-                                    concurrentHashMap.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num4.intValue(), dialog.read_outbox_max_id)));
-                                } else {
-                                    vpVar = vpVar2;
-                                    arrayList = arrayList4;
+                                        });
+                                        break;
+                                    default:
+                                        final int i15 = 0;
+                                        final wp wpVar3 = wpVar;
+                                        final org.telegram.ui.ActionBar.s6 s6Var3 = s6Var;
+                                        final org.telegram.ui.ActionBar.r6 r6Var3 = r6Var;
+                                        i0.g3(new Runnable() { // from class: org.telegram.messenger.cm
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                int i152 = i15;
+                                                org.telegram.ui.ActionBar.r6 r6Var32 = r6Var3;
+                                                org.telegram.ui.ActionBar.s6 s6Var32 = s6Var3;
+                                                TLObject tLObject3 = tLObject2;
+                                                wp wpVar32 = wpVar3;
+                                                switch (i152) {
+                                                    case 0:
+                                                        if (!(tLObject3 instanceof TLRPC.TL_theme)) {
+                                                            wpVar32.getNotificationCenter().k(at.N2, s6Var32, r6Var32);
+                                                            break;
+                                                        } else {
+                                                            org.telegram.ui.ActionBar.t6.I1(s6Var32, r6Var32, (TLRPC.TL_theme) tLObject3, wpVar32.currentAccount, false);
+                                                            wpVar32.getNotificationCenter().k(at.M2, s6Var32, r6Var32);
+                                                            break;
+                                                        }
+                                                    default:
+                                                        if (!(tLObject3 instanceof TLRPC.TL_theme)) {
+                                                            wpVar32.getNotificationCenter().k(at.N2, s6Var32, r6Var32);
+                                                            break;
+                                                        } else {
+                                                            org.telegram.ui.ActionBar.t6.I1(s6Var32, r6Var32, (TLRPC.TL_theme) tLObject3, wpVar32.currentAccount, false);
+                                                            wpVar32.j2(s6Var32, r6Var32, s6Var32 == org.telegram.ui.ActionBar.t6.J);
+                                                            wpVar32.getNotificationCenter().k(at.M2, s6Var32, r6Var32);
+                                                            break;
+                                                        }
+                                                }
+                                            }
+                                        });
+                                        break;
                                 }
-                                i12++;
-                                vpVar2 = vpVar;
-                                arrayList4 = arrayList;
-                                z10 = true;
                             }
-                            vpVar2.getMessagesStorage().a.c(new rj(vpVar2, this.c, arrayList4, i11, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
-                            break;
-                        }
+                        });
+                        break;
                     } else {
-                        i10 = 0;
+                        TL_account.createTheme createtheme = new TL_account.createTheme();
+                        createtheme.document = tL_inputDocument;
+                        createtheme.flags = 4 | createtheme.flags;
+                        if (tL_theme != null && !TextUtils.isEmpty(tL_theme.slug)) {
+                            str2 = tL_theme.slug;
+                        }
+                        createtheme.slug = str2;
+                        createtheme.title = n10;
+                        if (tL_inputThemeSettings != null) {
+                            createtheme.settings = tL_inputThemeSettings;
+                            createtheme.flags |= 8;
+                        }
+                        wpVar.getConnectionsManager().sendRequest(createtheme, new RequestDelegate() { // from class: org.telegram.messenger.kl
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error2) {
+                                switch (i11) {
+                                    case 0:
+                                        final int i14 = 1;
+                                        final wp wpVar2 = wpVar;
+                                        final org.telegram.ui.ActionBar.s6 s6Var2 = s6Var;
+                                        final org.telegram.ui.ActionBar.r6 r6Var2 = r6Var;
+                                        i0.g3(new Runnable() { // from class: org.telegram.messenger.cm
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                int i152 = i14;
+                                                org.telegram.ui.ActionBar.r6 r6Var32 = r6Var2;
+                                                org.telegram.ui.ActionBar.s6 s6Var32 = s6Var2;
+                                                TLObject tLObject3 = tLObject2;
+                                                wp wpVar32 = wpVar2;
+                                                switch (i152) {
+                                                    case 0:
+                                                        if (!(tLObject3 instanceof TLRPC.TL_theme)) {
+                                                            wpVar32.getNotificationCenter().k(at.N2, s6Var32, r6Var32);
+                                                            break;
+                                                        } else {
+                                                            org.telegram.ui.ActionBar.t6.I1(s6Var32, r6Var32, (TLRPC.TL_theme) tLObject3, wpVar32.currentAccount, false);
+                                                            wpVar32.getNotificationCenter().k(at.M2, s6Var32, r6Var32);
+                                                            break;
+                                                        }
+                                                    default:
+                                                        if (!(tLObject3 instanceof TLRPC.TL_theme)) {
+                                                            wpVar32.getNotificationCenter().k(at.N2, s6Var32, r6Var32);
+                                                            break;
+                                                        } else {
+                                                            org.telegram.ui.ActionBar.t6.I1(s6Var32, r6Var32, (TLRPC.TL_theme) tLObject3, wpVar32.currentAccount, false);
+                                                            wpVar32.j2(s6Var32, r6Var32, s6Var32 == org.telegram.ui.ActionBar.t6.J);
+                                                            wpVar32.getNotificationCenter().k(at.M2, s6Var32, r6Var32);
+                                                            break;
+                                                        }
+                                                }
+                                            }
+                                        });
+                                        break;
+                                    default:
+                                        final int i15 = 0;
+                                        final wp wpVar3 = wpVar;
+                                        final org.telegram.ui.ActionBar.s6 s6Var3 = s6Var;
+                                        final org.telegram.ui.ActionBar.r6 r6Var3 = r6Var;
+                                        i0.g3(new Runnable() { // from class: org.telegram.messenger.cm
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                int i152 = i15;
+                                                org.telegram.ui.ActionBar.r6 r6Var32 = r6Var3;
+                                                org.telegram.ui.ActionBar.s6 s6Var32 = s6Var3;
+                                                TLObject tLObject3 = tLObject2;
+                                                wp wpVar32 = wpVar3;
+                                                switch (i152) {
+                                                    case 0:
+                                                        if (!(tLObject3 instanceof TLRPC.TL_theme)) {
+                                                            wpVar32.getNotificationCenter().k(at.N2, s6Var32, r6Var32);
+                                                            break;
+                                                        } else {
+                                                            org.telegram.ui.ActionBar.t6.I1(s6Var32, r6Var32, (TLRPC.TL_theme) tLObject3, wpVar32.currentAccount, false);
+                                                            wpVar32.getNotificationCenter().k(at.M2, s6Var32, r6Var32);
+                                                            break;
+                                                        }
+                                                    default:
+                                                        if (!(tLObject3 instanceof TLRPC.TL_theme)) {
+                                                            wpVar32.getNotificationCenter().k(at.N2, s6Var32, r6Var32);
+                                                            break;
+                                                        } else {
+                                                            org.telegram.ui.ActionBar.t6.I1(s6Var32, r6Var32, (TLRPC.TL_theme) tLObject3, wpVar32.currentAccount, false);
+                                                            wpVar32.j2(s6Var32, r6Var32, s6Var32 == org.telegram.ui.ActionBar.t6.J);
+                                                            wpVar32.getNotificationCenter().k(at.M2, s6Var32, r6Var32);
+                                                            break;
+                                                        }
+                                                }
+                                            }
+                                        });
+                                        break;
+                                }
+                            }
+                        });
+                        break;
                     }
-                    i11 = i10;
-                    size = arrayList4.size();
-                    i12 = i10;
-                    while (i12 < size) {
-                    }
-                    vpVar2.getMessagesStorage().a.c(new rj(vpVar2, this.c, arrayList4, i11, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
                 }
                 break;
             case 1:
-                i0.g3(new o7((vp) this.b, tLObject, this.c, 12));
-                break;
-            case 2:
-                vp vpVar3 = (vp) this.b;
-                if (tL_error == null) {
-                    vpVar3.getMessagesStorage().a.c(new o7(vpVar3, (TLRPC.messages_Dialogs) tLObject, this.c, 14));
-                    break;
-                } else {
-                    i0.g3(new zj(vpVar3, 24));
+                wp wpVar2 = (wp) f1Var;
+                org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) obj4;
+                gf.e eVar = (gf.e) obj3;
+                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) obj2;
+                Bundle bundle = (Bundle) obj;
+                if (tLObject != null) {
+                    i0.g3(new fk(wpVar2, x1Var, eVar, tLObject, k2Var, bundle, 5));
                     break;
                 }
+                break;
+            case 2:
+                pw pwVar = (pw) f1Var;
+                Context context = (Context) obj4;
+                org.telegram.ui.ActionBar.x1 x1Var2 = (org.telegram.ui.ActionBar.x1) obj3;
+                byte[] bArr = (byte[]) obj2;
+                TLRPC.User user = (TLRPC.User) obj;
+                if (tL_error != null) {
+                    pwVar.f.clear();
+                    i0.g3(new mw(pwVar, context, x1Var2, i12));
+                    break;
+                } else {
+                    i0.g3(new fk(pwVar, context, x1Var2, tLObject, bArr, user, 8));
+                    break;
+                }
+            case 3:
+                pw pwVar2 = (pw) f1Var;
+                TLRPC.DecryptedMessage decryptedMessage = (TLRPC.DecryptedMessage) obj4;
+                TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) obj3;
+                TLRPC.Message message = (TLRPC.Message) obj2;
+                kj kjVar = (kj) obj;
+                if (tL_error == null && (decryptedMessage.action instanceof TLRPC.TL_decryptedMessageActionNotifyLayer)) {
+                    TLRPC.EncryptedChat Z0 = pwVar2.getMessagesController().Z0(Integer.valueOf(encryptedChat.id));
+                    TLRPC.EncryptedChat encryptedChat2 = Z0 == null ? encryptedChat : Z0;
+                    if (encryptedChat2.key_hash == null) {
+                        byte[] bArr2 = encryptedChat2.auth_key;
+                        Typeface typeface = i0.a;
+                        byte[] bArr3 = new byte[16];
+                        System.arraycopy(Utilities.n(bArr2), 0, bArr3, 0, 16);
+                        encryptedChat2.key_hash = bArr3;
+                    }
+                    if (encryptedChat2.key_hash.length == 16) {
+                        try {
+                            str = "";
+                            try {
+                                byte[] o10 = Utilities.o(r0.length, encryptedChat.auth_key);
+                                byte[] bArr4 = new byte[36];
+                                System.arraycopy(encryptedChat.key_hash, 0, bArr4, 0, 16);
+                                System.arraycopy(o10, 0, bArr4, 16, 20);
+                                encryptedChat2.key_hash = bArr4;
+                                pwVar2.getMessagesStorage().V1(encryptedChat2);
+                            } catch (Throwable th2) {
+                                th = th2;
+                                f8.g(th, true);
+                                pwVar2.a.remove(Integer.valueOf(encryptedChat2.id));
+                                int i14 = encryptedChat2.layer;
+                                Typeface typeface2 = i0.a;
+                                encryptedChat2.layer = (i14 & (-65536)) | at.h2;
+                                is messagesStorage = pwVar2.getMessagesStorage();
+                                messagesStorage.a.c(new lq(messagesStorage, encryptedChat2, 2));
+                                if (tL_error == null) {
+                                }
+                            }
+                        } catch (Throwable th3) {
+                            th = th3;
+                            str = "";
+                        }
+                    } else {
+                        str = "";
+                    }
+                    pwVar2.a.remove(Integer.valueOf(encryptedChat2.id));
+                    int i142 = encryptedChat2.layer;
+                    Typeface typeface22 = i0.a;
+                    encryptedChat2.layer = (i142 & (-65536)) | at.h2;
+                    is messagesStorage2 = pwVar2.getMessagesStorage();
+                    messagesStorage2.a.c(new lq(messagesStorage2, encryptedChat2, 2));
+                } else {
+                    str = "";
+                }
+                if (tL_error == null) {
+                    pwVar2.getMessagesStorage().N0(0, message);
+                    i0.g3(new ir(15, pwVar2, message));
+                    break;
+                } else {
+                    String str3 = message.attachPath;
+                    TLRPC.messages_SentEncryptedMessage messages_sentencryptedmessage = (TLRPC.messages_SentEncryptedMessage) tLObject;
+                    TLRPC.MessageAction messageAction = message.action;
+                    if (messageAction instanceof TLRPC.TL_messageEncryptedAction) {
+                        TLRPC.DecryptedMessageAction decryptedMessageAction = messageAction.encryptedAction;
+                        if ((decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionScreenshotMessages) || (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionSetMessageTTL)) {
+                            message.date = messages_sentencryptedmessage.date;
+                        }
+                    }
+                    if (kjVar != null) {
+                        TLRPC.EncryptedFile encryptedFile = messages_sentencryptedmessage.file;
+                        if (encryptedFile instanceof TLRPC.TL_encryptedFile) {
+                            TLRPC.Message message2 = kjVar.k;
+                            TLRPC.MessageMedia messageMedia = message2.media;
+                            if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && (photo = messageMedia.photo) != null) {
+                                TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) i0.a.g(1, photo.sizes);
+                                String str4 = photoSize.location.volume_id + "_" + photoSize.location.local_id;
+                                TLRPC.TL_fileEncryptedLocation tL_fileEncryptedLocation = new TLRPC.TL_fileEncryptedLocation();
+                                photoSize.location = tL_fileEncryptedLocation;
+                                TLRPC.DecryptedMessageMedia decryptedMessageMedia = decryptedMessage.media;
+                                tL_fileEncryptedLocation.key = decryptedMessageMedia.key;
+                                tL_fileEncryptedLocation.iv = decryptedMessageMedia.iv;
+                                tL_fileEncryptedLocation.dc_id = encryptedFile.dc_id;
+                                tL_fileEncryptedLocation.volume_id = encryptedFile.id;
+                                tL_fileEncryptedLocation.secret = encryptedFile.access_hash;
+                                tL_fileEncryptedLocation.local_id = encryptedFile.key_fingerprint;
+                                String str5 = photoSize.location.volume_id + "_" + photoSize.location.local_id;
+                                File file = new File(b8.z(4), sc.e.A(str4, ".jpg"));
+                                pwVar2.getFileLoader().getClass();
+                                file.renameTo(b8.I(photoSize));
+                                ic.D().R(str4, str5, jc.i(photoSize, message2.media.photo), true);
+                                ArrayList arrayList = new ArrayList();
+                                arrayList.add(message2);
+                                pwVar2.getMessagesStorage().j1(arrayList, false, true, false, 0, false, 0, 0L);
+                            } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (document = messageMedia.document) != null) {
+                                messageMedia.document = new TLRPC.TL_documentEncrypted();
+                                TLRPC.Document document3 = message2.media.document;
+                                document3.id = encryptedFile.id;
+                                document3.access_hash = encryptedFile.access_hash;
+                                document3.date = document.date;
+                                document3.attributes = document.attributes;
+                                document3.mime_type = document.mime_type;
+                                document3.size = encryptedFile.size;
+                                TLRPC.DecryptedMessageMedia decryptedMessageMedia2 = decryptedMessage.media;
+                                document3.key = decryptedMessageMedia2.key;
+                                document3.iv = decryptedMessageMedia2.iv;
+                                ArrayList<TLRPC.PhotoSize> arrayList2 = document.thumbs;
+                                document3.thumbs = arrayList2;
+                                document3.dc_id = encryptedFile.dc_id;
+                                if (arrayList2.isEmpty()) {
+                                    TLRPC.TL_photoSizeEmpty tL_photoSizeEmpty = new TLRPC.TL_photoSizeEmpty();
+                                    tL_photoSizeEmpty.type = "s";
+                                    message2.media.document.thumbs.add(tL_photoSizeEmpty);
+                                }
+                                String str6 = message2.attachPath;
+                                if (str6 != null && str6.startsWith(b8.z(4).getAbsolutePath())) {
+                                    File file2 = new File(message2.attachPath);
+                                    b8 fileLoader = pwVar2.getFileLoader();
+                                    TLRPC.Document document4 = message2.media.document;
+                                    fileLoader.getClass();
+                                    if (file2.renameTo(b8.I(document4))) {
+                                        kjVar.x0 = kjVar.w0;
+                                        kjVar.w0 = false;
+                                        message2.attachPath = str;
+                                    }
+                                }
+                                ArrayList arrayList3 = new ArrayList();
+                                arrayList3.add(message2);
+                                pwVar2.getMessagesStorage().j1(arrayList3, false, true, false, 0, false, 0, 0L);
+                            }
+                            i11 = kjVar.p1();
+                        }
+                    }
+                    pwVar2.getMessagesStorage().a.c(new dg(pwVar2, message, messages_sentencryptedmessage, i11, 17));
+                    break;
+                }
+                break;
             default:
-                i0.g3(new cg((i5) this.b, tL_error, tLObject, this.c, 4));
+                i0.g3(new fk((rz) f1Var, tLObject, (TLRPC.InputMedia) obj4, (dz) obj3, (String) obj2, (kj) obj));
                 break;
         }
+    }
+
+    public /* synthetic */ lo(pw pwVar, TLRPC.DecryptedMessage decryptedMessage, TLRPC.EncryptedChat encryptedChat, TLRPC.Message message, kj kjVar, String str) {
+        this.a = 3;
+        this.b = pwVar;
+        this.c = decryptedMessage;
+        this.d = encryptedChat;
+        this.e = message;
+        this.f = kjVar;
     }
 }

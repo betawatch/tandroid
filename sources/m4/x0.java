@@ -10,17 +10,17 @@ import android.util.Pair;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.kc;
-import org.telegram.messenger.mc;
-import org.telegram.messenger.md;
+import org.telegram.messenger.as;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.is;
+import org.telegram.messenger.lc;
+import org.telegram.messenger.nc;
+import org.telegram.messenger.nd;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.oz;
-import org.telegram.messenger.qz;
+import org.telegram.messenger.pz;
+import org.telegram.messenger.rz;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zr;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.RequestDelegateTimestamp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -29,29 +29,29 @@ import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.x1;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.an0;
 import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.o21;
+import org.telegram.ui.Components.p21;
 import org.telegram.ui.Components.pe;
 import org.telegram.ui.Components.q4;
-import org.telegram.ui.Components.q61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.uh;
-import org.telegram.ui.Components.zm0;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ay;
-import org.telegram.ui.bb1;
-import org.telegram.ui.mx;
-import org.telegram.ui.q50;
-import org.telegram.ui.tb0;
+import org.telegram.ui.lx;
+import org.telegram.ui.p50;
+import org.telegram.ui.sb0;
 import org.telegram.ui.un;
-import org.telegram.ui.ya1;
+import org.telegram.ui.wa1;
+import org.telegram.ui.za1;
+import org.telegram.ui.zx;
 import vh.j6;
 import vh.q8;
 import vh.r6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x0 implements h1, mc, q4, tb0, zr, g2.g, org.telegram.ui.ActionBar.u1, q50, s5.e, RequestDelegateTimestamp, fs {
+public final /* synthetic */ class x0 implements h1, nc, q4, sb0, as, g2.g, org.telegram.ui.ActionBar.u1, p50, s5.e, RequestDelegateTimestamp, gs {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -85,10 +85,10 @@ public final /* synthetic */ class x0 implements h1, mc, q4, tb0, zr, g2.g, org.
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public void a(String str) {
         r6 r6Var = (r6) this.c;
-        vp.r1(r6Var.W.a).O1().r(this.b, str, new j6(r6Var, 2));
+        wp.r1(r6Var.W.a).O1().r(this.b, str, new j6(r6Var, 2));
     }
 
     @Override // s5.e
@@ -109,21 +109,21 @@ public final /* synthetic */ class x0 implements h1, mc, q4, tb0, zr, g2.g, org.
 
     @Override // g2.g
     public g2.h createDataSource() {
-        return new q61(((u61) this.c).h.createDataSource(), this.b);
+        return new r61(((v61) this.c).h.createDataSource(), this.b);
     }
 
-    @Override // org.telegram.ui.tb0
+    @Override // org.telegram.ui.sb0
     public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         int i12 = this.a;
         Object obj = this.c;
         switch (i12) {
             case 3:
                 float[] fArr = FragmentContextView.W0;
-                qz.C(((md) obj).h.I1).r0(oz.d(messageMedia, this.b, null, null, null, null, true, 0));
+                rz.C(((nd) obj).h.I1).r0(pz.d(messageMedia, this.b, null, null, null, null, true, 0));
                 break;
             default:
                 Pattern pattern = LaunchActivity.D1;
-                qz.C(((int[]) obj)[0]).r0(oz.d(messageMedia, this.b, null, null, null, null, true, 0));
+                rz.C(((int[]) obj)[0]).r0(pz.d(messageMedia, this.b, null, null, null, null, true, 0));
                 break;
         }
     }
@@ -133,10 +133,10 @@ public final /* synthetic */ class x0 implements h1, mc, q4, tb0, zr, g2.g, org.
         return f0Var.q(wVar, e9.n0.y((b2.p0) this.c), 0, this.b);
     }
 
-    @Override // org.telegram.ui.q50
+    @Override // org.telegram.ui.p50
     public void g(int i10, ArrayList arrayList) {
-        bb1 bb1Var = (bb1) this.c;
-        k2 k2Var = bb1Var.b;
+        za1 za1Var = (za1) this.c;
+        k2 k2Var = za1Var.b;
         int size = arrayList.size();
         int[] iArr = new int[1];
         TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
@@ -144,10 +144,10 @@ public final /* synthetic */ class x0 implements h1, mc, q4, tb0, zr, g2.g, org.
         int i11 = 0;
         while (i11 < size) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i11);
-            vp messagesController = k2Var.getMessagesController();
+            wp messagesController = k2Var.getMessagesController();
             f3 f3Var = new f3(13);
             long j10 = this.b;
-            messagesController.m(j10, user, i10, null, k2Var, false, f3Var, null, new ya1(bb1Var, tL_messages_invitedUsers, iArr, size, arrayList, j10));
+            messagesController.m(j10, user, i10, null, k2Var, false, f3Var, null, new wa1(za1Var, tL_messages_invitedUsers, iArr, size, arrayList, j10));
             i11++;
             size = size;
             iArr = iArr;
@@ -159,38 +159,38 @@ public final /* synthetic */ class x0 implements h1, mc, q4, tb0, zr, g2.g, org.
     public void h(x1 x1Var, int i10) {
         switch (this.a) {
             case 6:
-                zm0 zm0Var = ((ay) this.c).C0.d0;
-                a0.h hVar = zm0Var.x0;
+                an0 an0Var = ((zx) this.c).C0.d0;
+                a0.h hVar = an0Var.x0;
                 long j10 = this.b;
                 zf.y yVar = (zf.y) hVar.f(j10);
                 if (yVar != null) {
-                    zm0Var.x0.l(j10);
-                    zm0Var.t0.remove(yVar);
-                    zm0Var.v0.remove(yVar);
-                    zm0Var.u0.remove(yVar);
-                    zm0Var.f();
-                    hs.a0(zm0Var.s0).a.c(new q8(zm0Var, j10, 3));
+                    an0Var.x0.l(j10);
+                    an0Var.t0.remove(yVar);
+                    an0Var.v0.remove(yVar);
+                    an0Var.u0.remove(yVar);
+                    an0Var.f();
+                    is.a0(an0Var.s0).a.c(new q8(an0Var, j10, 3));
                     break;
                 }
                 break;
             default:
-                ((mx) this.c).a.getMediaDataController().N1(this.b);
+                ((lx) this.c).a.getMediaDataController().N1(this.b);
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.zr
+    @Override // org.telegram.messenger.as
     public void i(boolean z10) {
-        un unVar = ((o21) this.c).y;
+        un unVar = ((p21) this.c).s;
         if (c3.i0.t(unVar)) {
-            unVar.Ga(this.b, false);
+            unVar.La(this.b, false);
         }
     }
 
-    @Override // org.telegram.messenger.mc
-    public void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    @Override // org.telegram.messenger.nc
+    public void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         ng.d dVar = (ng.d) this.c;
-        kc p5 = imageReceiver.p();
+        lc p5 = imageReceiver.p();
         if (!z10 || p5 == null) {
             return;
         }
@@ -220,7 +220,7 @@ public final /* synthetic */ class x0 implements h1, mc, q4, tb0, zr, g2.g, org.
             if (s0Var.G == null && !groupcallstreamchannels.channels.isEmpty()) {
                 TLRPC.TL_groupCallParticipant tL_groupCallParticipant = new TLRPC.TL_groupCallParticipant();
                 s0Var.G = tL_groupCallParticipant;
-                tL_groupCallParticipant.peer = vp.r1(s0Var.e).y1(s0Var.b);
+                tL_groupCallParticipant.peer = wp.r1(s0Var.e).y1(s0Var.b);
                 s0Var.G.video = new TLRPC.TL_groupCallParticipantVideo();
                 TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = new TLRPC.TL_groupCallParticipantVideoSourceGroup();
                 tL_groupCallParticipantVideoSourceGroup.semantics = "SIM";
@@ -254,15 +254,15 @@ public final /* synthetic */ class x0 implements h1, mc, q4, tb0, zr, g2.g, org.
         this.b = j10;
     }
 
-    @Override // org.telegram.ui.q50
+    @Override // org.telegram.ui.p50
     public /* synthetic */ void e(TLRPC.User user) {
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public /* synthetic */ void j(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.mc
-    public /* synthetic */ void q(int i10, Drawable drawable) {
+    @Override // org.telegram.messenger.nc
+    public /* synthetic */ void s(int i10, Drawable drawable) {
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class hi implements org.telegram.ui.Components.a8 {
     public final /* synthetic */ un a;
@@ -19,7 +19,7 @@ public final class hi implements org.telegram.ui.Components.a8 {
         if (unVar.q8 == null && unVar.p8 == null) {
             return;
         }
-        unVar.Y7();
+        unVar.c8();
         UndoView undoView = unVar.M3;
         if (undoView == null) {
             return;

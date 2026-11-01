@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.ic;
+import org.telegram.messenger.jc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class i5 {
     public static ColorMatrixColorFilter f;
@@ -89,7 +89,7 @@ public final class i5 {
         if (!wVar4.b) {
             if (wVar4.e != null) {
                 imageReceiver.G0(wVar4.l, wVar4.m, true);
-                imageReceiver.q0(ic.g(this.e.e), i11, null, null, null, 0);
+                imageReceiver.q0(jc.g(this.e.e), i11, null, null, null, 0);
                 return;
             } else {
                 if (!wVar4.b() || (photo = this.e.g) == null) {
@@ -99,13 +99,13 @@ public final class i5 {
                 TLRPC.PhotoSize w9 = b8.w(photo.sizes, org.telegram.messenger.i0.Z0(false), false, null, false);
                 TLRPC.PhotoSize w10 = b8.w(this.e.g.sizes, 100, false, null, false);
                 imageReceiver.G0(0, 0, false);
-                imageReceiver.r0(ic.i(w9, this.e.g), i11, ic.i(w10, this.e.g), i11, null, 0L, null, this.e.g, 0);
+                imageReceiver.r0(jc.i(w9, this.e.g), i11, jc.i(w10, this.e.g), i11, null, 0L, null, this.e.g, 0);
                 return;
             }
         }
         if (wVar4.e != null) {
             imageReceiver.G0(0, 0, false);
-            imageReceiver.u0(ic.o(this.e.e), "g", null, i11, null, i11, null, 0L, null, null, 0);
+            imageReceiver.u0(jc.o(this.e.e), "g", null, i11, null, i11, null, 0L, null, null, 0);
             return;
         }
         if (!wVar4.b() || (document = this.e.h) == null) {
@@ -142,7 +142,7 @@ public final class i5 {
             }
         }
         imageReceiver.G0(0, 0, false);
-        imageReceiver.u0(ic.b(this.e.h), "g", ic.c(photoSize, this.e.h), i11, ic.c(photoSize2, this.e.h), i11, null, 0L, null, this.e.h, 0);
+        imageReceiver.u0(jc.b(this.e.h), "g", jc.c(photoSize, this.e.h), i11, jc.c(photoSize2, this.e.h), i11, null, 0L, null, this.e.h, 0);
     }
 
     public final boolean b() {

@@ -12,17 +12,17 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.fi0;
+import org.telegram.messenger.at;
+import org.telegram.ui.Components.gi0;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class w2 extends FrameLayout {
     public final ag.d2 a;
     public final og.c b;
     public final TextView[] c;
-    public fi0 d;
+    public gi0 d;
     public final y2 e;
     public Paint f;
     public float h;
@@ -46,7 +46,7 @@ public final class w2 extends FrameLayout {
         cVar.setMaxLines(1);
         cVar.setEllipsizeByGradient(org.telegram.messenger.i0.L(4.0f));
         cVar.setPivotX(0.0f);
-        zs.i(cVar);
+        at.i(cVar);
         addView(cVar, w7.b6.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
         for (int i10 = 0; i10 < 2; i10++) {
             this.c[i10] = new TextView(context);
@@ -87,12 +87,12 @@ public final class w2 extends FrameLayout {
             }
             z11 = false;
         }
-        fi0 fi0Var = this.d;
+        gi0 gi0Var = this.d;
         ag.d2 d2Var = this.a;
-        if (fi0Var == null) {
-            fi0 fi0Var2 = new fi0(d2Var);
-            this.d = fi0Var2;
-            fi0Var2.d(null, true, false);
+        if (gi0Var == null) {
+            gi0 gi0Var2 = new gi0(d2Var);
+            this.d = gi0Var2;
+            gi0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = d2Var.getImageReceiver();
@@ -106,9 +106,9 @@ public final class w2 extends FrameLayout {
             if (f7 != 1.0f) {
                 Paint t10 = w5.t(imageReceiver, false);
                 t10.setAlpha((int) (this.h * 255.0f));
-                fi0 fi0Var3 = this.d;
-                fi0Var3.t = t10;
-                fi0Var3.a(canvas);
+                gi0 gi0Var3 = this.d;
+                gi0Var3.t = t10;
+                gi0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -119,9 +119,9 @@ public final class w2 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f7 * this.h));
-            fi0 fi0Var4 = this.d;
-            fi0Var4.t = this.f;
-            fi0Var4.a(canvas);
+            gi0 gi0Var4 = this.d;
+            gi0Var4.t = this.f;
+            gi0Var4.a(canvas);
         }
     }
 

@@ -4,9 +4,9 @@ import java.util.Iterator;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o00 implements org.telegram.ui.ActionBar.o0, fe.l, org.telegram.ui.ActionBar.u1, cu0 {
+public final /* synthetic */ class o00 implements org.telegram.ui.ActionBar.o0, fe.l, org.telegram.ui.ActionBar.u1, du0 {
     public final /* synthetic */ FragmentContextView a;
 
     public /* synthetic */ o00(FragmentContextView fragmentContextView) {
@@ -34,22 +34,22 @@ public final /* synthetic */ class o00 implements org.telegram.ui.ActionBar.o0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.cu0
-    public void d(org.telegram.messenger.md mdVar) {
+    @Override // org.telegram.ui.Components.du0
+    public void d(org.telegram.messenger.nd ndVar) {
         float[] fArr = FragmentContextView.W0;
-        this.a.k(mdVar);
+        this.a.k(ndVar);
     }
 
     @Override // org.telegram.ui.ActionBar.u1
     public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
         FragmentContextView fragmentContextView = this.a;
         org.telegram.ui.ActionBar.k2 k2Var = fragmentContextView.h;
-        if (!(k2Var instanceof org.telegram.ui.ay)) {
-            org.telegram.messenger.nd.f(k2Var.getCurrentAccount()).k(fragmentContextView.n.a());
+        if (!(k2Var instanceof org.telegram.ui.zx)) {
+            org.telegram.messenger.od.f(k2Var.getCurrentAccount()).k(fragmentContextView.n.a());
             return;
         }
         for (int i11 = 0; i11 < 4; i11++) {
-            Utilities.d.c(new org.telegram.messenger.ed(org.telegram.messenger.nd.f(i11), 6));
+            Utilities.d.c(new org.telegram.messenger.fd(org.telegram.messenger.od.f(i11), 6));
         }
     }
 

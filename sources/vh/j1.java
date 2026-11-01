@@ -3,7 +3,7 @@ package vh;
 import android.content.Context;
 import org.telegram.ui.Components.mv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j1 extends mv {
     public final /* synthetic */ l1 g0;
@@ -20,7 +20,7 @@ public final class j1 extends mv {
         int paddingTop;
         o1 o1Var;
         l1 l1Var = this.g0;
-        b1 b1Var = l1Var.b;
+        c1 c1Var = l1Var.b;
         k1 k1Var = l1Var.c;
         p1 p1Var = l1Var.f;
         int i12 = 0;
@@ -29,7 +29,7 @@ public final class j1 extends mv {
         }
         if (p1Var != null && (o1Var = p1Var.h) != null) {
             if (o1Var.getSelectedCategory() != null) {
-                b1.z1(b1Var, 0, 0);
+                c1.z1(c1Var, 0, 0);
                 p1Var.h.I1(null);
             }
             p1Var.h.G1();
@@ -52,13 +52,13 @@ public final class j1 extends mv {
         if (i11 >= 0) {
             float f7 = l1Var.n;
             if (f7 >= 0.0f) {
-                paddingTop = b1Var.getPaddingTop();
+                paddingTop = c1Var.getPaddingTop();
             } else {
                 f7 = l1Var.b();
                 l1Var.n = f7;
-                paddingTop = b1Var.getPaddingTop();
+                paddingTop = c1Var.getPaddingTop();
             }
-            b1.z1(b1Var, i11, ((int) (f7 + paddingTop)) - org.telegram.messenger.i0.L(102.0f));
+            c1.z1(c1Var, i11, ((int) (f7 + paddingTop)) - org.telegram.messenger.i0.L(102.0f));
         }
         return true;
     }

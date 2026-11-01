@@ -1,210 +1,152 @@
 package org.telegram.messenger;
 
-import android.text.TextUtils;
-import android.util.SparseArray;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class er implements Runnable {
-    public final /* synthetic */ hs a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f1 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ er(hs hsVar, int i10, ArrayList arrayList, int i11, int i12, int i13) {
-        this.a = hsVar;
-        this.b = i10;
-        this.c = arrayList;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+    public /* synthetic */ er(f1 f1Var, long j10, List list, boolean z10, int i10, int i11) {
+        this.a = i11;
+        this.b = f1Var;
+        this.c = j10;
+        this.f = list;
+        this.d = z10;
+        this.e = i10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0199  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x019e  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01a3  */
-    /* JADX WARN: Removed duplicated region for block: B:61:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x01ac  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01b6  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00f7  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        SQLitePreparedStatement sQLitePreparedStatement;
-        boolean z10;
         SQLiteCursor sQLiteCursor;
-        SQLiteDatabase sQLiteDatabase;
-        SQLiteDatabase sQLiteDatabase2;
         SQLiteCursor queryFinalized;
-        long j10;
-        hs hsVar = this.a;
-        int i10 = this.b;
-        int i11 = this.d;
-        int i12 = this.f;
-        try {
-            long F = o5.F(i10);
-            SparseArray sparseArray = new SparseArray();
-            ArrayList arrayList = new ArrayList();
-            StringBuilder sb2 = new StringBuilder();
-            ArrayList arrayList2 = this.c;
-            int i13 = this.e;
-            int i14 = 0;
-            if (arrayList2 == null) {
-                SQLiteDatabase sQLiteDatabase3 = hsVar.b;
-                Locale locale = Locale.US;
-                queryFinalized = sQLiteDatabase3.queryFinalized("SELECT mid, ttl FROM messages_v2 WHERE uid = " + F + " AND out = " + i11 + " AND read_state > 0 AND ttl > 0 AND date <= " + i13 + " AND send_state = 0 AND media != 1", new Object[0]);
-            } else {
-                String join = TextUtils.join(",", arrayList2);
-                SQLiteDatabase sQLiteDatabase4 = hsVar.b;
-                Locale locale2 = Locale.US;
-                queryFinalized = sQLiteDatabase4.queryFinalized("SELECT m.mid, m.ttl FROM messages_v2 as m INNER JOIN randoms_v2 as r ON m.mid = r.mid AND m.uid = r.uid WHERE r.random_id IN (" + join + ")", new Object[0]);
-            }
-            int i15 = Integer.MAX_VALUE;
-            while (queryFinalized.next()) {
+        int i10;
+        SQLitePreparedStatement executeFast;
+        switch (this.a) {
+            case 0:
+                is isVar = (is) this.b;
+                String str = (String) this.f;
+                int i11 = this.e;
+                String str2 = "SELECT ";
+                boolean z10 = this.d;
+                long j10 = this.c;
+                SQLitePreparedStatement sQLitePreparedStatement = null;
                 try {
-                    int intValue = queryFinalized.intValue(1);
-                    int intValue2 = queryFinalized.intValue(i14);
-                    if (arrayList2 != null) {
-                        arrayList.add(Integer.valueOf(intValue2));
+                    if (z10) {
+                        try {
+                            SQLiteDatabase sQLiteDatabase = isVar.b;
+                            StringBuilder sb2 = new StringBuilder();
+                            Locale locale = Locale.US;
+                            sb2.append("SELECT " + str + " FROM dialogs WHERE did = ");
+                            sb2.append(j10);
+                            queryFinalized = sQLiteDatabase.queryFinalized(sb2.toString(), new Object[0]);
+                            try {
+                                r9 = queryFinalized.next() ? Math.max(0, queryFinalized.intValue(0)) : 0;
+                                queryFinalized.dispose();
+                            } catch (SQLiteException e) {
+                                e = e;
+                                e.printStackTrace();
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                                if (queryFinalized == null) {
+                                    queryFinalized.dispose();
+                                    return;
+                                }
+                                return;
+                            }
+                        } catch (SQLiteException e7) {
+                            e = e7;
+                            queryFinalized = null;
+                        } catch (Throwable th2) {
+                            th = th2;
+                            sQLiteCursor = 0;
+                            if (sQLitePreparedStatement != null) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            if (sQLiteCursor != 0) {
+                                sQLiteCursor.dispose();
+                            }
+                            throw th;
+                        }
                     }
-                    if (intValue > 0) {
-                        int max = Math.max(i13, i12) + intValue;
-                        i15 = Math.min(i15, max);
-                        ArrayList arrayList3 = (ArrayList) sparseArray.get(max);
-                        if (arrayList3 == null) {
-                            arrayList3 = new ArrayList();
-                            sparseArray.put(max, arrayList3);
-                        }
-                        if (sb2.length() != 0) {
-                            sb2.append(",");
-                        }
-                        sb2.append(intValue2);
-                        arrayList3.add(Integer.valueOf(intValue2));
-                    }
-                    i14 = 0;
-                } catch (Exception e) {
-                    e = e;
-                    sQLiteCursor = queryFinalized;
-                    z10 = true;
-                    sQLitePreparedStatement = null;
-                    try {
-                        hsVar.o(e, z10);
-                        sQLiteDatabase2 = hsVar.b;
-                        if (sQLiteDatabase2 != null) {
-                        }
-                        if (sQLitePreparedStatement != null) {
-                        }
-                        if (sQLiteCursor == null) {
-                        }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        sQLiteDatabase = hsVar.b;
-                        if (sQLiteDatabase != null) {
-                            sQLiteDatabase.commitTransaction();
-                        }
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                        }
-                        if (sQLiteCursor != null) {
-                            sQLiteCursor.dispose();
-                        }
-                        throw th;
-                    }
+                    i10 = r9 + i11;
+                    SQLiteDatabase sQLiteDatabase2 = isVar.getMessagesStorage().b;
+                    Locale locale2 = Locale.US;
+                    executeFast = sQLiteDatabase2.executeFast("UPDATE dialogs SET " + str + " = ? WHERE did = ?");
                 } catch (Throwable th3) {
                     th = th3;
-                    sQLiteCursor = queryFinalized;
-                    sQLitePreparedStatement = null;
-                    sQLiteDatabase = hsVar.b;
-                    if (sQLiteDatabase != null) {
-                    }
+                    sQLiteCursor = str2;
+                }
+                try {
+                    executeFast.bindInteger(1, i10);
+                    executeFast.bindLong(2, j10);
+                    executeFast.step();
+                    executeFast.dispose();
+                    return;
+                } catch (SQLiteException e10) {
+                    e = e10;
+                    queryFinalized = null;
+                    sQLitePreparedStatement = executeFast;
+                    e.printStackTrace();
                     if (sQLitePreparedStatement != null) {
                     }
-                    if (sQLiteCursor != null) {
+                    if (queryFinalized == null) {
+                    }
+                } catch (Throwable th4) {
+                    th = th4;
+                    sQLiteCursor = 0;
+                    sQLitePreparedStatement = executeFast;
+                    if (sQLitePreparedStatement != null) {
+                    }
+                    if (sQLiteCursor != 0) {
                     }
                     throw th;
                 }
-            }
-            queryFinalized.dispose();
-            if (arrayList2 != null) {
-                j10 = F;
-                i0.g3(new tr(hsVar, j10, arrayList, 8));
-            } else {
-                j10 = F;
-            }
-            if (sparseArray.size() != 0) {
-                hsVar.b.beginTransaction();
-                SQLitePreparedStatement executeFast = hsVar.b.executeFast("REPLACE INTO enc_tasks_v4 VALUES(?, ?, ?, ?)");
-                for (int i16 = 0; i16 < sparseArray.size(); i16++) {
-                    try {
-                        int keyAt = sparseArray.keyAt(i16);
-                        ArrayList arrayList4 = (ArrayList) sparseArray.get(keyAt);
-                        for (int i17 = 0; i17 < arrayList4.size(); i17++) {
-                            executeFast.requery();
-                            executeFast.bindInteger(1, ((Integer) arrayList4.get(i17)).intValue());
-                            executeFast.bindLong(2, j10);
-                            executeFast.bindInteger(3, keyAt);
-                            executeFast.bindInteger(4, 0);
-                            executeFast.step();
-                        }
-                    } catch (Exception e7) {
-                        e = e7;
-                        sQLitePreparedStatement = executeFast;
-                        z10 = true;
-                        sQLiteCursor = null;
-                        hsVar.o(e, z10);
-                        sQLiteDatabase2 = hsVar.b;
-                        if (sQLiteDatabase2 != null) {
-                            sQLiteDatabase2.commitTransaction();
-                        }
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                        }
-                        if (sQLiteCursor == null) {
-                            sQLiteCursor.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        sQLitePreparedStatement = executeFast;
-                        sQLiteCursor = null;
-                        sQLiteDatabase = hsVar.b;
-                        if (sQLiteDatabase != null) {
-                        }
-                        if (sQLitePreparedStatement != null) {
-                        }
-                        if (sQLiteCursor != null) {
-                        }
-                        throw th;
-                    }
+            case 1:
+                ((is) this.b).D1(this.c, (List) this.f, this.d, true, this.e);
+                return;
+            default:
+                y00 y00Var = (y00) this.b;
+                ArrayList arrayList = (ArrayList) this.f;
+                boolean z11 = v2.a;
+                long j11 = this.c;
+                if (z11) {
+                    i0.a.p(arrayList == null ? 0 : arrayList.size(), a1.g.s(j11, "loaded from cache ", " topics_count="));
                 }
-                executeFast.dispose();
-                hsVar.b.commitTransaction();
-                SQLiteDatabase sQLiteDatabase5 = hsVar.b;
-                Locale locale3 = Locale.US;
-                sQLiteDatabase5.executeFast("UPDATE messages_v2 SET ttl = 0 WHERE mid IN(" + sb2.toString() + ") AND uid = " + j10).stepThis().dispose();
-                hsVar.getMessagesController().n0(i15, j10, sparseArray);
-            }
-            SQLiteDatabase sQLiteDatabase6 = hsVar.b;
-            if (sQLiteDatabase6 != null) {
-                sQLiteDatabase6.commitTransaction();
-            }
-        } catch (Exception e10) {
-            e = e10;
-            z10 = true;
-            sQLitePreparedStatement = null;
-        } catch (Throwable th5) {
-            th = th5;
-            sQLitePreparedStatement = null;
+                y00Var.c.put(j11, 0);
+                y00Var.u(j11, arrayList, null, this.d, this.e, -1);
+                y00Var.y(j11, true);
+                return;
         }
+    }
+
+    public /* synthetic */ er(is isVar, boolean z10, String str, long j10, int i10, String str2) {
+        this.a = 0;
+        this.b = isVar;
+        this.d = z10;
+        this.f = str;
+        this.c = j10;
+        this.e = i10;
     }
 }

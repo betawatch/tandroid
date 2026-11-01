@@ -25,13 +25,13 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ez;
-import org.telegram.ui.Components.q81;
+import org.telegram.ui.Components.r81;
 import org.telegram.ui.Wallet.x0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 final class WidgetSandboxBackend implements z, c {
     private static final long MEMORY_BUDGET = 33554432;
@@ -67,7 +67,7 @@ final class WidgetSandboxBackend implements z, c {
         long j11 = (j10 * 8) + this.imageBytes;
         for (Map.Entry<Integer, d> entry : this.canvases.entrySet()) {
             if (entry.getKey().intValue() != i10) {
-                j11 += entry.getValue().m == null ? 0L : r4.getWidth() * r3.m.getHeight() * 8;
+                j11 += entry.getValue().o == null ? 0L : r4.getWidth() * r3.o.getHeight() * 8;
             }
         }
         if (j11 > MEMORY_BUDGET) {
@@ -154,7 +154,7 @@ final class WidgetSandboxBackend implements z, c {
                         try {
                             a2.translate(-i13, -i12);
                             a2.scale(f7, f7);
-                            this.painter.g(a2, jSONArray2, this, f7);
+                            this.painter.f(a2, jSONArray2, this, f7);
                             fVar.e();
                             sVar = new s(fVar, (int) optLong2);
                         } catch (Throwable th2) {
@@ -297,18 +297,18 @@ final class WidgetSandboxBackend implements z, c {
         }
         synchronized (dVar) {
             try {
-                Bitmap bitmap = dVar.m;
+                Bitmap bitmap = dVar.o;
                 if (bitmap == null) {
                     return null;
                 }
-                if (dVar.q == dVar.p) {
-                    if (dVar.n == null) {
+                if (dVar.s == dVar.r) {
+                    if (dVar.p == null) {
                     }
-                    return dVar.n;
+                    return dVar.p;
                 }
-                dVar.n = bitmap.copy(Bitmap.Config.ARGB_8888, false);
-                dVar.q = dVar.p;
-                return dVar.n;
+                dVar.p = bitmap.copy(Bitmap.Config.ARGB_8888, false);
+                dVar.s = dVar.r;
+                return dVar.p;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -321,7 +321,7 @@ final class WidgetSandboxBackend implements z, c {
         if (dVar == null) {
             return null;
         }
-        return dVar.m;
+        return dVar.o;
     }
 
     public byte[] canvasRead(int i10, int i11, int i12, int i13, int i14) {
@@ -335,16 +335,16 @@ final class WidgetSandboxBackend implements z, c {
             return new byte[i13 * i14 * 4];
         }
         byte[] bArr = new byte[Math.max(i14, 0) * Math.max(i13, 0) * 4];
-        if (dVar.m != null) {
+        if (dVar.o != null) {
             int max = Math.max(0, i15);
             int max2 = Math.max(0, i12);
-            int min = Math.min(dVar.m.getWidth(), i15 + i13);
-            int min2 = Math.min(dVar.m.getHeight(), i14 + i12);
+            int min = Math.min(dVar.o.getWidth(), i15 + i13);
+            int min2 = Math.min(dVar.o.getHeight(), i14 + i12);
             if (min > max && min2 > max2) {
                 int i16 = min - max;
                 int i17 = min2 - max2;
                 int[] iArr = new int[i16 * i17];
-                dVar.m.getPixels(iArr, 0, i16, max, max2, i16, i17);
+                dVar.o.getPixels(iArr, 0, i16, max, max2, i16, i17);
                 int i18 = max2;
                 while (i18 < min2) {
                     int i19 = max;
@@ -372,13 +372,13 @@ final class WidgetSandboxBackend implements z, c {
         if (remove != null) {
             synchronized (remove) {
                 try {
-                    Bitmap bitmap = remove.m;
+                    Bitmap bitmap = remove.o;
                     if (bitmap != null) {
                         bitmap.recycle();
                     }
-                    remove.m = null;
                     remove.o = null;
-                    remove.n = null;
+                    remove.q = null;
+                    remove.p = null;
                 } catch (Throwable th2) {
                     throw th2;
                 }
@@ -386,12 +386,11 @@ final class WidgetSandboxBackend implements z, c {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0066 A[Catch: all -> 0x0045, TryCatch #0 {all -> 0x0045, blocks: (B:10:0x0032, B:12:0x0036, B:14:0x003c, B:18:0x0060, B:20:0x0066, B:22:0x006c, B:24:0x006f, B:27:0x0072, B:32:0x0047, B:34:0x004b, B:35:0x004e), top: B:9:0x0032 }] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x005f A[Catch: all -> 0x003b, LOOP:0: B:17:0x005a->B:19:0x005f, LOOP_END, TryCatch #0 {all -> 0x003b, blocks: (B:9:0x0028, B:11:0x002c, B:13:0x0032, B:16:0x0055, B:17:0x005a, B:19:0x005f, B:21:0x0063, B:26:0x003d, B:28:0x0041, B:29:0x0044), top: B:8:0x0028 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void canvasRun(int i10, int i11, int i12, byte[] bArr) {
-        int i13;
+    public void canvasRun(int i10, int i11, int i12, int[] iArr) {
         assertWorker();
         if (i11 <= 0 || i12 <= 0) {
             canvasRelease(i10);
@@ -403,32 +402,34 @@ final class WidgetSandboxBackend implements z, c {
             dVar = new d(i10);
             this.canvases.put(Integer.valueOf(i10), dVar);
         }
-        JSONArray jSONArray = new JSONArray(text(bArr));
         synchronized (dVar) {
             try {
-                Bitmap bitmap = dVar.m;
+                Bitmap bitmap = dVar.o;
                 if (bitmap != null) {
                     if (bitmap.getWidth() == i11) {
-                        if (dVar.m.getHeight() != i12) {
+                        if (dVar.o.getHeight() != i12) {
                         }
-                        for (i13 = 0; i13 < jSONArray.length(); i13++) {
-                            JSONObject optJSONObject = jSONArray.optJSONObject(i13);
-                            if (optJSONObject != null) {
-                                dVar.d(optJSONObject, this);
-                            }
+                        dVar.t = iArr;
+                        dVar.u = 0;
+                        while (dVar.u < iArr.length) {
+                            dVar.g(this);
                         }
-                        dVar.p++;
+                        dVar.t = null;
+                        dVar.r++;
                     }
                 }
-                Bitmap bitmap2 = dVar.m;
+                Bitmap bitmap2 = dVar.o;
                 if (bitmap2 != null) {
                     bitmap2.recycle();
                 }
-                dVar.m = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
-                dVar.o = new Canvas(dVar.m);
-                while (i13 < jSONArray.length()) {
+                dVar.o = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
+                dVar.q = new Canvas(dVar.o);
+                dVar.t = iArr;
+                dVar.u = 0;
+                while (dVar.u < iArr.length) {
                 }
-                dVar.p++;
+                dVar.t = null;
+                dVar.r++;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -437,7 +438,7 @@ final class WidgetSandboxBackend implements z, c {
 
     public float[] createFont(byte[] bArr, float f7, int i10, boolean z10, byte[] bArr2) {
         assertWorker();
-        Paint paint = new Paint(zs.N1);
+        Paint paint = new Paint(at.N1);
         paint.setTextSize(f7);
         paint.setTypeface(typeface(text(bArr), i10, z10));
         String featureSettings = featureSettings(text(bArr2));
@@ -829,7 +830,7 @@ final class WidgetSandboxBackend implements z, c {
                 Canvas a2 = gVar.a();
                 try {
                     a2.scale(f7, f7);
-                    this.painter.g(a2, jSONArray, this, f7);
+                    this.painter.f(a2, jSONArray, this, f7);
                     gVar.e();
                     j0[] layers = layers(jSONObject, f7);
                     k0 k0Var = this.owner;
@@ -882,7 +883,7 @@ final class WidgetSandboxBackend implements z, c {
                 public final void run() {
                     w wVar;
                     w wVar2;
-                    q81 q81Var;
+                    r81 r81Var;
                     switch (i11) {
                         case 0:
                             k0 k0Var2 = k0Var;
@@ -918,9 +919,9 @@ final class WidgetSandboxBackend implements z, c {
                         default:
                             k0 k0Var4 = k0Var;
                             String str3 = text;
-                            if (!k0Var4.u && (wVar2 = k0Var4.J) != null && (q81Var = wVar2.h) != null) {
-                                if (q81Var.F || (q81Var.w && q81Var.E)) {
-                                    q81Var.a.f(str3);
+                            if (!k0Var4.u && (wVar2 = k0Var4.J) != null && (r81Var = wVar2.h) != null) {
+                                if (r81Var.F || (r81Var.w && r81Var.E)) {
+                                    r81Var.a.f(str3);
                                     break;
                                 }
                             }
@@ -948,7 +949,7 @@ final class WidgetSandboxBackend implements z, c {
                 public final void run() {
                     w wVar;
                     w wVar2;
-                    q81 q81Var;
+                    r81 r81Var;
                     switch (i12) {
                         case 0:
                             k0 k0Var2 = k0Var;
@@ -984,9 +985,9 @@ final class WidgetSandboxBackend implements z, c {
                         default:
                             k0 k0Var4 = k0Var;
                             String str3 = text;
-                            if (!k0Var4.u && (wVar2 = k0Var4.J) != null && (q81Var = wVar2.h) != null) {
-                                if (q81Var.F || (q81Var.w && q81Var.E)) {
-                                    q81Var.a.f(str3);
+                            if (!k0Var4.u && (wVar2 = k0Var4.J) != null && (r81Var = wVar2.h) != null) {
+                                if (r81Var.F || (r81Var.w && r81Var.E)) {
+                                    r81Var.a.f(str3);
                                     break;
                                 }
                             }
@@ -1035,7 +1036,7 @@ final class WidgetSandboxBackend implements z, c {
                         public final void run() {
                             w wVar;
                             w wVar2;
-                            q81 q81Var;
+                            r81 r81Var;
                             switch (i14) {
                                 case 0:
                                     k0 k0Var2 = k0Var;
@@ -1071,9 +1072,9 @@ final class WidgetSandboxBackend implements z, c {
                                 default:
                                     k0 k0Var4 = k0Var;
                                     String str3 = text;
-                                    if (!k0Var4.u && (wVar2 = k0Var4.J) != null && (q81Var = wVar2.h) != null) {
-                                        if (q81Var.F || (q81Var.w && q81Var.E)) {
-                                            q81Var.a.f(str3);
+                                    if (!k0Var4.u && (wVar2 = k0Var4.J) != null && (r81Var = wVar2.h) != null) {
+                                        if (r81Var.F || (r81Var.w && r81Var.E)) {
+                                            r81Var.a.f(str3);
                                             break;
                                         }
                                     }

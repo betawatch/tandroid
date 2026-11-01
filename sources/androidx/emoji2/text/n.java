@@ -5,18 +5,18 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import mg.c2;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.t5;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.u10;
-import org.telegram.ui.Components.voip.t1;
+import org.telegram.ui.Components.voip.u1;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.s2;
 import th.w5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class n implements Runnable {
     public final /* synthetic */ int a;
@@ -82,16 +82,16 @@ public final class n implements Runnable {
             case 6:
                 return;
             case 7:
-                t1 t1Var = t1.V;
-                if (t1Var != null) {
-                    i0.r(t1Var.b.f.N);
+                u1 u1Var = u1.V;
+                if (u1Var != null) {
+                    i0.r(u1Var.b.f.N);
                     return;
                 }
                 return;
             default:
                 Math.abs(Utilities.b.nextInt() % 3);
                 u10[] u10VarArr = w5.a;
-                zs.f(d20.s0).k(2, 0);
+                at.f(e20.s0).k(2, 0);
                 i0.h3(w5.o, 1000L);
                 LaunchActivity.Q().getFragmentView();
                 return;

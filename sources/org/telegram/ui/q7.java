@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q7 extends g7 {
     public final /* synthetic */ t7 n;
@@ -32,7 +32,7 @@ public final class q7 extends g7 {
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             tL_message.from_id = tL_peerUser;
             TLRPC.Peer peer = tL_message.peer_id;
-            long e = org.telegram.messenger.d20.i(t7Var.e.getCurrentAccount()).e();
+            long e = org.telegram.messenger.e20.i(t7Var.e.getCurrentAccount()).e();
             tL_peerUser.user_id = e;
             peer.user_id = e;
             tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -69,9 +69,9 @@ public final class q7 extends g7 {
             TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
             tL_documentAttributeFilename.file_name = aVar.a.getName();
             tL_message.media.document.attributes.add(tL_documentAttributeFilename);
-            org.telegram.messenger.jj jjVar = new org.telegram.messenger.jj(t7Var.e.getCurrentAccount(), tL_message, false, false);
-            aVar.f = jjVar;
-            jjVar.x0 = true;
+            org.telegram.messenger.kj kjVar = new org.telegram.messenger.kj(t7Var.e.getCurrentAccount(), tL_message, false, false);
+            aVar.f = kjVar;
+            kjVar.x0 = true;
         }
         k7Var2.f(aVar.f, z11);
         boolean z12 = aVar.e.a;
@@ -95,6 +95,6 @@ public final class q7 extends g7 {
         p7 p7Var = new p7(this, viewGroup.getContext(), k7Var);
         p7Var.setCheckForButtonPress(true);
         k7Var.b.addView(p7Var);
-        return new org.telegram.ui.Components.ck0(k7Var);
+        return new org.telegram.ui.Components.dk0(k7Var);
     }
 }

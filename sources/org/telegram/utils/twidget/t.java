@@ -6,8 +6,8 @@ import android.view.View;
 import com.google.firebase.components.ComponentRegistrar;
 import com.google.firebase.installations.FirebaseInstallationsRegistrar;
 import java.util.List;
-import org.telegram.messenger.l9;
-import org.telegram.messenger.p20;
+import org.telegram.messenger.m9;
+import org.telegram.messenger.q20;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -16,15 +16,15 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.x1;
 import org.telegram.ui.ActionBar.x6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.tc1;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.rc1;
 import ph.q3;
 import rh.d6;
 import rh.e4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t implements u1, p20, l9, q3.g, androidx.car.app.utils.c, r9.e, qa.a, r9.d, Vector.TLDeserializer, x6, y6 {
+public final /* synthetic */ class t implements u1, q20, m9, q3.g, androidx.car.app.utils.c, r9.e, qa.a, r9.d, Vector.TLDeserializer, x6, y6 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ t(int i10) {
@@ -46,8 +46,8 @@ public final /* synthetic */ class t implements u1, p20, l9, q3.g, androidx.car.
         return lambda$getComponents$0;
     }
 
-    @Override // org.telegram.messenger.p20
-    public Boolean a(a51 a51Var, View view, Integer num, Float f7, Float f10) {
+    @Override // org.telegram.messenger.q20
+    public Boolean a(b51 b51Var, View view, Integer num, Float f7, Float f10) {
         switch (this.a) {
         }
         return Boolean.FALSE;
@@ -96,12 +96,12 @@ public final /* synthetic */ class t implements u1, p20, l9, q3.g, androidx.car.
                 int i11 = e4.s3;
                 break;
             default:
-                e4.c2(new tc1(6, null));
+                e4.c2(new rc1(6, null));
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
         int i10 = q3.c2;
         return 0;

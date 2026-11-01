@@ -13,7 +13,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class ve0 extends FrameLayout {
     public TLRPC.WebPage D;
@@ -39,9 +39,9 @@ public abstract class ve0 extends FrameLayout {
     public String x;
     public boolean y;
 
-    public static void a(org.telegram.ui.mr0 mr0Var, String str) {
-        int videoDuration = mr0Var.getVideoDuration() / 1000;
-        ArrayList arrayList = mr0Var.w;
+    public static void a(org.telegram.ui.lr0 lr0Var, String str) {
+        int videoDuration = lr0Var.getVideoDuration() / 1000;
+        ArrayList arrayList = lr0Var.w;
         arrayList.clear();
         if (videoDuration <= 15) {
             return;
@@ -113,7 +113,7 @@ public abstract class ve0 extends FrameLayout {
     }
 
     public final boolean e() {
-        boolean z10 = this.y && "inapp".equals(org.telegram.messenger.vp.r1(this.a).A3);
+        boolean z10 = this.y && "inapp".equals(org.telegram.messenger.wp.r1(this.a).A3);
         if (!z10 && !Settings.canDrawOverlays(getContext())) {
             s4.A((Activity) getContext(), null, false);
             return false;

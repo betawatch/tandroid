@@ -9,11 +9,11 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.ff;
 import org.telegram.ui.Components.bm;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r5 extends org.telegram.ui.Components.g9 {
     public final Paint G;
@@ -32,7 +32,7 @@ public final class r5 extends org.telegram.ui.Components.g9 {
     @Override // org.telegram.ui.Components.g9, android.view.View
     public final void onDraw(Canvas canvas) {
         Bitmap bitmap;
-        ef efVar;
+        ff ffVar;
         Drawable drawable;
         org.telegram.ui.Components.f5 f5Var = this.e;
         ImageReceiver imageReceiver = f5Var != null ? f5Var.k : this.a;
@@ -89,7 +89,7 @@ public final class r5 extends org.telegram.ui.Components.g9 {
         }
         if (v5Var.s) {
             t5 t5Var = v5Var.U;
-            if ((t5Var == null || !((bm) ((org.telegram.ui.Components.t) t5Var).b).s) && (efVar = v5Var.G) != null && efVar.d()) {
+            if ((t5Var == null || !((bm) ((org.telegram.ui.Components.t) t5Var).b).s) && (ffVar = v5Var.G) != null && ffVar.d()) {
                 if (v5Var.G.i()) {
                     if (this.J == null) {
                         this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();
@@ -111,7 +111,7 @@ public final class r5 extends org.telegram.ui.Components.g9 {
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         v5 v5Var = this.K;
-        ef efVar = v5Var.G;
-        v5Var.h(efVar != null && efVar.M);
+        ff ffVar = v5Var.G;
+        v5Var.h(ffVar != null && ffVar.M);
     }
 }

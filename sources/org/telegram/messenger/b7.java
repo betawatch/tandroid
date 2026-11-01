@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b7 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class b7 implements Runnable {
                             l7 l7Var = (l7) m7Var3.G0.get(i11);
                             if (l7Var.a != 0) {
                                 l7Var.j = true;
-                                l7Var.l = new mg(l7Var, iArr, b7Var, 20);
+                                l7Var.l = new ng(l7Var, iArr, b7Var, 20);
                                 iArr[0] = iArr[0] + 1;
                                 f8.b("cancelRequests cancel " + l7Var.a + " with callback");
                                 ConnectionsManager.getInstance(m7Var3.R).cancelRequest(l7Var.a, true, new f7(l7Var, 1));

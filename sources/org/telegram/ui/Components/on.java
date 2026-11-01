@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.pb1;
+import org.telegram.ui.nb1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class on extends g9 {
     public final org.telegram.ui.Cells.o6 G;
@@ -47,7 +47,7 @@ public final class on extends g9 {
             j10 = unVar.a();
         } else {
             org.telegram.ui.ActionBar.k2 k2Var = this.H;
-            j10 = k2Var instanceof pb1 ? -((pb1) k2Var).a : 0L;
+            j10 = k2Var instanceof nb1 ? -((nb1) k2Var).a : 0L;
         }
         th.w5.h(j10, canvas, this.a, o6Var);
     }
@@ -58,8 +58,8 @@ public final class on extends g9 {
         if (!this.I || !getImageReceiver().L()) {
             accessibilityNodeInfo.setVisibleToUser(false);
         } else {
-            accessibilityNodeInfo.setText(org.telegram.messenger.cd.L0(2131754798, null));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.cd.L0(2131747833, null)));
+            accessibilityNodeInfo.setText(org.telegram.messenger.dd.L0(2131754798, null));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.dd.L0(2131747833, null)));
         }
     }
 

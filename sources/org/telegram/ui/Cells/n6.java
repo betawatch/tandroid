@@ -5,12 +5,12 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n6 extends FrameLayout {
     public final TextView a;
@@ -25,23 +25,23 @@ public final class n6 extends FrameLayout {
         this.c = radioButton;
         radioButton.setSize(org.telegram.messenger.i0.L(20.0f));
         org.telegram.ui.ActionBar.a7.P(radioButton, org.telegram.ui.ActionBar.t6.D5, org.telegram.ui.ActionBar.t6.E5, p6Var);
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         addView(radioButton, w7.b6.d(22, 22.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 18, 14.0f, z10 ? 18 : 0, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
         org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.j5, p6Var);
-        z20.o(textView, 1, 16.0f, 1, 1);
+        a30.o(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
-        textView.setGravity((cd.X ? 5 : 3) | 16);
-        boolean z11 = cd.X;
+        textView.setGravity((dd.X ? 5 : 3) | 16);
+        boolean z11 = dd.X;
         addView(textView, w7.b6.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 51, 13.0f, z11 ? 51 : 21, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         org.telegram.ui.ActionBar.a7.V(textView2, org.telegram.ui.ActionBar.t6.y6, p6Var);
         textView2.setTextSize(1, 14.0f);
-        textView2.setGravity((cd.X ? 5 : 3) | 16);
+        textView2.setGravity((dd.X ? 5 : 3) | 16);
         textView2.setVisibility(8);
-        boolean z12 = cd.X;
+        boolean z12 = dd.X;
         addView(textView2, w7.b6.d(-2, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 21 : 51, 37.0f, z12 ? 51 : 21, 0.0f));
     }
 

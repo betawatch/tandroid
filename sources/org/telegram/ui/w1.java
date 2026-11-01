@@ -14,14 +14,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 {
     public CheckBoxBase D;
-    public final m60 a;
+    public final l60 a;
     public final f4 b;
     public z2 c;
-    public org.telegram.ui.Components.ck0 d;
+    public org.telegram.ui.Components.dk0 d;
     public int e;
     public int f;
     public int h;
@@ -32,9 +32,9 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
     public x3 x;
     public boolean y;
 
-    public w1(Context context, m60 m60Var, f4 f4Var) {
+    public w1(Context context, l60 l60Var, f4 f4Var) {
         super(context);
-        this.a = m60Var;
+        this.a = l60Var;
         this.b = f4Var;
         setWillNotDraw(false);
     }
@@ -44,17 +44,17 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
         if ((x3Var != null ? x3Var.i : null) == null) {
             return 0;
         }
-        m60 m60Var = this.a;
+        l60 l60Var = this.a;
         f4 f4Var = this.b;
         if (f4Var == null || !f4Var.G) {
-            m60Var.getClass();
+            l60Var.getClass();
             return org.telegram.messenger.m5.D(12.0f, this.x.c.f, (org.telegram.messenger.i0.L(15) + this.x.c.c) - ((int) Math.ceil(r0.d.getLineWidth(0))));
         }
         int measuredWidth = getMeasuredWidth();
-        m60Var.getClass();
+        l60Var.getClass();
         int L = measuredWidth - org.telegram.messenger.i0.L(15);
         y3 y3Var = this.x.c;
-        return org.telegram.messenger.z20.A(12.0f, y3Var.f, L - y3Var.c);
+        return org.telegram.messenger.a30.A(12.0f, y3Var.f, L - y3Var.c);
     }
 
     @Override // org.telegram.ui.c3
@@ -71,9 +71,9 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
         if (z2Var != null) {
             min = Math.min(min, (z2Var.k() + z2Var.s) - L);
         }
-        org.telegram.ui.Components.ck0 ck0Var = this.d;
-        if (ck0Var != null) {
-            KeyEvent.Callback callback = ck0Var.a;
+        org.telegram.ui.Components.dk0 dk0Var = this.d;
+        if (dk0Var != null) {
+            KeyEvent.Callback callback = dk0Var.a;
             if ((callback instanceof c3) && (boundLeft = ((c3) callback).getBoundLeft()) != -1) {
                 min = Math.min(min, this.n + boundLeft);
             }
@@ -95,9 +95,9 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
         if (z2Var != null) {
             max = Math.max(max, z2Var.l() + z2Var.s + L);
         }
-        org.telegram.ui.Components.ck0 ck0Var = this.d;
-        if (ck0Var != null) {
-            KeyEvent.Callback callback = ck0Var.a;
+        org.telegram.ui.Components.dk0 dk0Var = this.d;
+        if (dk0Var != null) {
+            KeyEvent.Callback callback = dk0Var.a;
             if ((callback instanceof c3) && (boundRight = ((c3) callback).getBoundRight()) != -1) {
                 max = Math.max(max, this.n + boundRight);
             }
@@ -114,9 +114,9 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
         int i10;
         z2 z2Var = this.c;
         if (z2Var == null) {
-            org.telegram.ui.Components.ck0 ck0Var = this.d;
-            if (ck0Var != null) {
-                KeyEvent.Callback callback = ck0Var.a;
+            org.telegram.ui.Components.dk0 dk0Var = this.d;
+            if (dk0Var != null) {
+                KeyEvent.Callback callback = dk0Var.a;
                 if ((callback instanceof c3) && (lastLineBoundRight = ((c3) callback).getLastLineBoundRight()) != -1) {
                     i10 = this.n;
                 }
@@ -130,14 +130,14 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.z20.a(this);
+        return org.telegram.messenger.a30.a(this);
     }
 
     @Override // org.telegram.ui.Cells.j9
     public final void h(ArrayList arrayList) {
-        org.telegram.ui.Components.ck0 ck0Var = this.d;
-        if (ck0Var != null) {
-            KeyEvent.Callback callback = ck0Var.a;
+        org.telegram.ui.Components.dk0 dk0Var = this.d;
+        if (dk0Var != null) {
+            KeyEvent.Callback callback = dk0Var.a;
             if (callback instanceof org.telegram.ui.Cells.j9) {
                 ((org.telegram.ui.Cells.j9) callback).h(arrayList);
             }
@@ -151,9 +151,9 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
     @Override // android.view.View, org.telegram.ui.Cells.r9
     public final void invalidate() {
         super.invalidate();
-        org.telegram.ui.Components.ck0 ck0Var = this.d;
-        if (ck0Var != null) {
-            ck0Var.a.invalidate();
+        org.telegram.ui.Components.dk0 dk0Var = this.d;
+        if (dk0Var != null) {
+            dk0Var.a.invalidate();
         }
     }
 
@@ -182,20 +182,20 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
         }
         int measuredWidth = getMeasuredWidth();
         z2 z2Var = this.x.i;
-        m60 m60Var = this.a;
+        l60 l60Var = this.a;
         if (z2Var != null) {
             canvas.save();
             f4 f4Var = this.b;
             if (f4Var == null || !f4Var.G) {
-                m60Var.getClass();
+                l60Var.getClass();
                 int L = org.telegram.messenger.i0.L(15);
                 x3 x3Var = this.x;
                 canvas.translate(org.telegram.messenger.m5.D(12.0f, this.x.c.f, (L + x3Var.c.c) - ((int) Math.ceil(x3Var.i.d.getLineWidth(0)))), (this.f + this.h) - (this.y ? org.telegram.messenger.i0.L(1.0f) : 0));
             } else {
-                m60Var.getClass();
+                l60Var.getClass();
                 int L2 = measuredWidth - org.telegram.messenger.i0.L(15);
                 y3 y3Var = this.x.c;
-                canvas.translate(org.telegram.messenger.z20.A(12.0f, y3Var.f, L2 - y3Var.c), (this.f + this.h) - (this.y ? org.telegram.messenger.i0.L(1.0f) : 0));
+                canvas.translate(org.telegram.messenger.a30.A(12.0f, y3Var.f, L2 - y3Var.c), (this.f + this.h) - (this.y ? org.telegram.messenger.i0.L(1.0f) : 0));
             }
             this.x.i.d(canvas, this);
             canvas.restore();
@@ -208,7 +208,7 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
         if (this.c != null) {
             canvas.save();
             canvas.translate(this.e, this.f);
-            h4.t(m60Var, canvas, this, 0);
+            h4.t(l60Var, canvas, this, 0);
             this.c.d(canvas, this);
             canvas.restore();
         }
@@ -228,9 +228,9 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        org.telegram.ui.Components.ck0 ck0Var = this.d;
-        if (ck0Var != null) {
-            View view = ck0Var.a;
+        org.telegram.ui.Components.dk0 dk0Var = this.d;
+        if (dk0Var != null) {
+            View view = dk0Var.a;
             int i14 = this.n;
             view.layout(i14, this.r, view.getMeasuredWidth() + i14, this.d.a.getMeasuredHeight() + this.r);
         }
@@ -239,8 +239,8 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
-        m60 m60Var;
-        m60 m60Var2;
+        l60 l60Var;
+        l60 l60Var2;
         int i13;
         int L;
         int L2;
@@ -257,10 +257,10 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
         if (x3Var != null) {
             this.c = null;
             int i18 = x3Var.j;
-            m60 m60Var3 = this.a;
+            l60 l60Var3 = this.a;
             int i19 = 0;
             if (i18 == 0 && x3Var.c.f == 0) {
-                m60Var3.getClass();
+                l60Var3.getClass();
                 i12 = org.telegram.messenger.i0.L(10);
             } else {
                 i12 = 0;
@@ -268,11 +268,11 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
             this.f = i12;
             this.h = 0;
             y3 y3Var = this.x.c;
-            if (y3Var.d == size && y3Var.e == org.telegram.messenger.tz.Z0) {
-                m60Var = m60Var3;
+            if (y3Var.d == size && y3Var.e == org.telegram.messenger.uz.Z0) {
+                l60Var = l60Var3;
             } else {
                 y3Var.d = size;
-                y3Var.e = org.telegram.messenger.tz.Z0;
+                y3Var.e = org.telegram.messenger.uz.Z0;
                 y3Var.c = 0;
                 int size2 = y3Var.b.size();
                 boolean z10 = true;
@@ -285,22 +285,22 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
                             x3Var2.i = null;
                         } else {
                             String str2 = x3Var2.f;
-                            m60Var3.getClass();
-                            m60 m60Var4 = m60Var3;
-                            m60Var2 = m60Var4;
-                            x3Var2.i = h4.o(m60Var4, this, str2, null, size - org.telegram.messenger.i0.L(54), this.f, this.x, this.b);
+                            l60Var3.getClass();
+                            l60 l60Var4 = l60Var3;
+                            l60Var2 = l60Var4;
+                            x3Var2.i = h4.o(l60Var4, this, str2, null, size - org.telegram.messenger.i0.L(54), this.f, this.x, this.b);
                             y3 y3Var2 = this.x.c;
                             y3Var2.c = Math.max(y3Var2.c, (int) Math.ceil(r2.d.getLineWidth(0)));
                             z10 = false;
                             i20++;
-                            m60Var3 = m60Var2;
+                            l60Var3 = l60Var2;
                         }
                     }
-                    m60Var2 = m60Var3;
+                    l60Var2 = l60Var3;
                     i20++;
-                    m60Var3 = m60Var2;
+                    l60Var3 = l60Var2;
                 }
-                m60Var = m60Var3;
+                l60Var = l60Var3;
                 if (h4.o1 != null && !z10) {
                     y3 y3Var3 = this.x.c;
                     y3Var3.c = Math.max(y3Var3.c, (int) Math.ceil(r2.measureText("00.")));
@@ -310,7 +310,7 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
             this.y = !x3Var3.c.a.ordered;
             if (x3Var3.a) {
                 if (this.D == null) {
-                    m60Var.getClass();
+                    l60Var.getClass();
                     CheckBoxBase checkBoxBase = new CheckBoxBase(20, this, null);
                     this.D = checkBoxBase;
                     checkBoxBase.h(org.telegram.ui.ActionBar.t6.Vl, org.telegram.ui.ActionBar.t6.z5, org.telegram.ui.ActionBar.t6.k7);
@@ -324,15 +324,15 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
             }
             f4 f4Var = this.b;
             if (f4Var == null || !f4Var.G) {
-                m60Var.getClass();
+                l60Var.getClass();
                 int L3 = org.telegram.messenger.i0.L((this.D == null ? 0 : 26) + 24);
                 y3 y3Var4 = this.x.c;
                 this.e = org.telegram.messenger.m5.D(12.0f, y3Var4.f, L3 + y3Var4.c);
             } else {
-                m60Var.getClass();
+                l60Var.getClass();
                 this.e = org.telegram.messenger.i0.L((this.D == null ? 0 : 26) + 18);
             }
-            m60Var.getClass();
+            l60Var.getClass();
             float f7 = 18;
             int L4 = (size - org.telegram.messenger.i0.L(f7)) - this.e;
             if (f4Var != null && f4Var.G) {
@@ -344,7 +344,7 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
             int i21 = L4;
             TL_iv.RichText richText = x3Var4.e;
             if (richText != null) {
-                z2 n10 = h4.n(this.a, this, null, richText, i21, 0, x3Var4, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ov0.a(), 0, this.b);
+                z2 n10 = h4.n(this.a, this, null, richText, i21, 0, x3Var4, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.pv0.a(), 0, this.b);
                 this.c = n10;
                 if (n10 != null && n10.d.getLineCount() > 0) {
                     z2 z2Var3 = this.x.i;
@@ -363,9 +363,9 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
                     this.n = i22;
                     int i23 = this.f;
                     this.r = i23;
-                    org.telegram.ui.Components.ck0 ck0Var = this.d;
-                    if (ck0Var != null) {
-                        View view = ck0Var.a;
+                    org.telegram.ui.Components.dk0 dk0Var = this.d;
+                    if (dk0Var != null) {
+                        View view = dk0Var.a;
                         if (view instanceof a2) {
                             float f10 = 8;
                             this.r = i23 - org.telegram.messenger.i0.L(f10);
@@ -441,8 +441,8 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
                 z2Var4.s = this.e;
                 z2Var4.w = this.f;
             }
-            org.telegram.ui.Components.ck0 ck0Var2 = this.d;
-            if (ck0Var2 != null && (ck0Var2.a instanceof org.telegram.ui.Cells.j9) && (k9Var = ((h4) m60Var).P0) != null) {
+            org.telegram.ui.Components.dk0 dk0Var2 = this.d;
+            if (dk0Var2 != null && (dk0Var2.a instanceof org.telegram.ui.Cells.j9) && (k9Var = ((h4) l60Var).P0) != null) {
                 ArrayList arrayList = k9Var.A0;
                 arrayList.clear();
                 ((org.telegram.ui.Cells.j9) this.d.a).h(arrayList);
@@ -475,9 +475,9 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
         f4 f4Var = this.b;
         if (x3Var2 != x3Var) {
             this.x = x3Var;
-            org.telegram.ui.Components.ck0 ck0Var = this.d;
-            if (ck0Var != null) {
-                removeView(ck0Var.a);
+            org.telegram.ui.Components.dk0 dk0Var = this.d;
+            if (dk0Var != null) {
+                removeView(dk0Var.a);
                 this.d = null;
             }
             TL_iv.PageBlock pageBlock = this.x.d;
@@ -485,7 +485,7 @@ public final class w1 extends ViewGroup implements org.telegram.ui.Cells.j9, c3 
                 int I = f4.I(pageBlock);
                 this.w = I;
                 s4.c1 w9 = f4Var.w(this, I);
-                this.d = (org.telegram.ui.Components.ck0) w9;
+                this.d = (org.telegram.ui.Components.dk0) w9;
                 addView(w9.a);
             }
         }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.EditText;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class od implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -26,17 +26,17 @@ public final /* synthetic */ class od implements View.OnFocusChangeListener {
                 ydVar.b(f7, f7, true);
                 break;
             case 1:
-                ay ayVar = (ay) obj;
+                zx zxVar = (zx) obj;
                 if (z10) {
-                    ayVar.Y.b(true);
+                    zxVar.Y.b(true);
                     break;
                 }
                 break;
             case 2:
-                hf0 hf0Var = ((wc0) obj).W;
+                gf0 gf0Var = ((vc0) obj).W;
                 if (z10) {
-                    hf0Var.c.setEditText((EditText) view);
-                    hf0Var.c.setDispatchBackWhenEmpty(true);
+                    gf0Var.c.setEditText((EditText) view);
+                    gf0Var.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
@@ -46,38 +46,38 @@ public final /* synthetic */ class od implements View.OnFocusChangeListener {
                 ec0Var.b(f7, f7, true);
                 break;
             case 4:
-                org.telegram.ui.Components.ec0 ec0Var2 = ((ed0) obj).y;
+                org.telegram.ui.Components.ec0 ec0Var2 = ((dd0) obj).y;
                 f7 = z10 ? 1.0f : 0.0f;
                 ec0Var2.b(f7, f7, true);
                 break;
             case 5:
-                org.telegram.ui.Components.ec0 ec0Var3 = ((ld0) obj).b;
+                org.telegram.ui.Components.ec0 ec0Var3 = ((kd0) obj).b;
                 f7 = z10 ? 1.0f : 0.0f;
                 ec0Var3.b(f7, f7, true);
                 break;
             case 6:
-                hf0 hf0Var2 = ((od0) obj).D;
+                gf0 gf0Var2 = ((nd0) obj).D;
                 if (z10) {
-                    hf0Var2.c.setEditText((EditText) view);
-                    hf0Var2.c.setDispatchBackWhenEmpty(true);
+                    gf0Var2.c.setEditText((EditText) view);
+                    gf0Var2.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 7:
-                org.telegram.ui.Components.ec0 ec0Var4 = ((zd0) obj).a;
+                org.telegram.ui.Components.ec0 ec0Var4 = ((yd0) obj).a;
                 f7 = z10 ? 1.0f : 0.0f;
                 ec0Var4.b(f7, f7, true);
                 break;
             case 8:
-                hf0 hf0Var3 = ((me0) obj).u0;
+                gf0 gf0Var3 = ((le0) obj).u0;
                 if (z10) {
-                    hf0Var3.c.setEditText((EditText) view);
-                    hf0Var3.c.setDispatchBackWhenEmpty(true);
+                    gf0Var3.c.setEditText((EditText) view);
+                    gf0Var3.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 9:
-                org.telegram.ui.Components.ec0 ec0Var5 = ((gf0) obj).e;
+                org.telegram.ui.Components.ec0 ec0Var5 = ((ff0) obj).e;
                 f7 = z10 ? 1.0f : 0.0f;
                 ec0Var5.b(f7, f7, true);
                 break;
@@ -87,12 +87,12 @@ public final /* synthetic */ class od implements View.OnFocusChangeListener {
                 ec0Var6.b(f7, f7, true);
                 break;
             case 11:
-                p91 p91Var = (p91) obj;
+                n91 n91Var = (n91) obj;
                 if (!z10) {
-                    p91Var.d.setText(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.L0(2131744210, null)));
+                    n91Var.d.setText(org.telegram.messenger.i0.W2(org.telegram.messenger.dd.L0(2131744210, null)));
                     break;
                 } else {
-                    p91Var.d.setText(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.L0(2131744209, null)));
+                    n91Var.d.setText(org.telegram.messenger.i0.W2(org.telegram.messenger.dd.L0(2131744209, null)));
                     break;
                 }
             default:

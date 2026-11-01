@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k9 extends View {
     public Bitmap a;
@@ -49,7 +49,7 @@ public final class k9 extends View {
                 if (j9Var != null) {
                     View view = ((fe.a) j9Var).a;
                     view.setEnabled(i10 > 0);
-                    ((TextView) view).setText(org.telegram.messenger.cd.L0(i10 < 4 ? 2131748267 : 2131745657, null).toUpperCase());
+                    ((TextView) view).setText(org.telegram.messenger.dd.L0(i10 < 4 ? 2131748267 : 2131745657, null).toUpperCase());
                 }
                 invalidate();
                 return true;

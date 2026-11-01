@@ -1,249 +1,605 @@
 package org.telegram.messenger;
 
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_iv;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.view.animation.OvershootInterpolator;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.f51;
+import org.telegram.ui.Components.t80;
+import org.telegram.ui.Components.zz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class su extends qu {
-    public final ru[] W;
-    public final int X;
-    public int Y;
-    public ru Z;
-    public ru a0;
-    public final ge.b b0;
+public final class su {
+    public static final Paint C;
+    public final int B;
+    public final vv a;
+    public final boolean b;
+    public final TL_keyboard.PageButton c;
+    public int d;
+    public int e;
+    public final boolean f;
+    public final boolean h;
+    public final Drawable i;
+    public final int j;
+    public final int k;
+    public final int l;
+    public final PorterDuffColorFilter m;
+    public PorterDuffColorFilter n;
+    public int o;
+    public final wv p;
+    public final boolean q;
+    public final boolean r;
+    public final boolean s;
+    public final Runnable t;
+    public boolean u;
+    public float v;
+    public ValueAnimator w;
+    public t80 x;
+    public boolean y;
+    public final Paint g = new Paint(1);
+    public final RectF z = new RectF();
+    public final RectF A = new RectF();
 
-    public su(vv vvVar, Rect rect, int i10, TL_iv.pageBlockButtonRow pageblockbuttonrow) {
-        super(vvVar, rect, i10);
-        this.Y = -1;
-        this.b0 = new ge.b(new l2.f(this, 11));
-        this.W = new ru[pageblockbuttonrow.buttons.size()];
-        int size = pageblockbuttonrow.buttons.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            ru[] ruVarArr = this.W;
-            TL_keyboard.PageButton pageButton = pageblockbuttonrow.buttons.get(i11);
-            ruVarArr[i11] = new ru(vvVar, i10, vvVar.l(pageButton.text, vv.R(16, 13)), pageButton, pageButton.type, pageButton.style, sf.c.c(pageButton, TL_keyboard.TL_inlineButtonTypeDisabled.class), false, false, false, false, null, new ms(this, 6));
-        }
-        if (pageblockbuttonrow.align_left) {
-            this.X = 1;
-        } else if (pageblockbuttonrow.align_center) {
-            this.X = 3;
-        } else if (pageblockbuttonrow.align_right) {
-            this.X = 2;
-        } else {
-            this.X = 4;
-        }
-        k0(j0());
+    static {
+        PorterDuffXfermode porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT);
+        Paint paint = new Paint();
+        C = paint;
+        paint.setXfermode(porterDuffXfermode);
     }
 
-    public static ru h0(su suVar, float f7, float f10) {
-        suVar.l0();
-        ru[] ruVarArr = suVar.W;
-        int L = ruVarArr.length == 0 ? i0.L(suVar.a.M + 18) : ruVarArr[0].c();
-        float H = (suVar.H() - L) / 2.0f;
-        if (f10 < H || f10 > H + L) {
-            return null;
-        }
-        for (ru ruVar : ruVarArr) {
-            if (f7 >= ruVar.d && f7 <= r1 + ruVar.e) {
-                return ruVar;
-            }
-        }
-        return null;
-    }
-
-    public static void i0(su suVar, ru ruVar) {
-        ru ruVar2 = suVar.Z;
-        if (ruVar2 == ruVar) {
-            return;
-        }
-        if (ruVar2 != null) {
-            ruVar2.m(false);
-        }
-        suVar.Z = ruVar;
-        if (ruVar != null) {
-            ruVar.m(true);
-        }
-    }
-
-    @Override // org.telegram.messenger.qu
-    public final int H() {
-        ru[] ruVarArr = this.W;
-        int L = ruVarArr.length == 0 ? i0.L(this.a.M + 18) : ruVarArr[0].c();
-        Rect rect = this.b;
-        return i0.L(4.333f) + rect.top + L + rect.bottom;
-    }
-
-    @Override // org.telegram.messenger.qu
-    public final int J() {
-        Rect rect = this.b;
-        return j0() + rect.left + rect.right;
-    }
-
-    @Override // org.telegram.messenger.qu
-    public final boolean P() {
-        return this.a0 != null;
-    }
-
-    @Override // org.telegram.messenger.qu
-    public final void S() {
-        for (ru ruVar : this.W) {
-            ruVar.a.i(this.V);
-        }
-    }
-
-    @Override // org.telegram.messenger.qu
-    public final void U() {
-        for (ru ruVar : this.W) {
-            ruVar.a.f(this.V);
-        }
-    }
-
-    @Override // org.telegram.messenger.qu
-    public final boolean X(MotionEvent motionEvent) {
-        View view = this.V;
-        if (view == null) {
-            return false;
-        }
-        return this.b0.a(view, motionEvent);
-    }
-
-    public final int j0() {
-        ru[] ruVarArr = this.W;
-        int length = ruVarArr.length;
-        if (length == 0) {
-            return 0;
-        }
-        int L = (length - 1) * i0.L(7.0f);
-        for (ru ruVar : ruVarArr) {
-            L += ruVar.h();
-        }
-        return Math.min(this.c, L);
-    }
-
-    public final void k0(int i10) {
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x00f6, code lost:
+    
+        if (org.telegram.ui.ta0.q(((org.telegram.tgnet.tl.TL_keyboard.TL_inlineButtonTypeUrl) r21).url) != false) goto L43;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x016c  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0173  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x020d  */
+    /* JADX WARN: Removed duplicated region for block: B:63:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x019c  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00de  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public su(wv wvVar, int i10, SpannableStringBuilder spannableStringBuilder, TL_keyboard.PageButton pageButton, TL_keyboard.InlineButtonType inlineButtonType, TL_keyboard.RichButtonStyle richButtonStyle, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, Boolean bool, Runnable runnable) {
+        org.telegram.ui.ActionBar.l6 l6Var;
+        org.telegram.ui.ActionBar.l6 l6Var2;
         int i11;
-        boolean z10;
+        boolean z15;
         int i12;
         int i13;
-        int i14;
-        int i15;
-        this.Y = i10;
-        ru[] ruVarArr = this.W;
-        int length = ruVarArr.length;
-        if (length == 0) {
-            return;
-        }
-        int L = i0.L(7.0f);
-        int i16 = 1;
-        int i17 = (length - 1) * L;
-        int max = Math.max(0, i10 - i17);
-        int i18 = 0;
-        for (ru ruVar : ruVarArr) {
-            int h = ruVar.h();
-            ruVar.e = h;
-            i18 += h;
-        }
-        int i19 = this.X;
-        if (i18 > max) {
-            int i20 = 0;
-            for (ru ruVar2 : ruVarArr) {
-                i20 += ruVar2.e - ruVar2.e();
+        int w02;
+        Drawable drawable;
+        int w03;
+        this.p = wvVar;
+        this.B = Math.max(1, i10);
+        this.t = runnable;
+        this.c = pageButton;
+        this.b = z10;
+        this.q = z11;
+        this.r = z12;
+        this.f = z14;
+        this.s = z13;
+        boolean booleanValue = bool != null ? bool.booleanValue() : wvVar.E();
+        if (richButtonStyle != null) {
+            org.telegram.ui.ActionBar.l6 l6Var3 = org.telegram.ui.ActionBar.l6.h;
+            if (richButtonStyle.bg_primary) {
+                l6Var = org.telegram.ui.ActionBar.l6.n;
+            } else if (richButtonStyle.bg_danger) {
+                l6Var = org.telegram.ui.ActionBar.l6.r;
+            } else if (richButtonStyle.bg_success) {
+                l6Var = org.telegram.ui.ActionBar.l6.s;
             }
-            if (i20 <= 0) {
-                for (ru ruVar3 : ruVarArr) {
-                    ruVar3.e = ruVar3.e();
+            l6Var2 = org.telegram.ui.ActionBar.l6.h;
+            if (l6Var == l6Var2 && z14) {
+                l6Var = org.telegram.ui.ActionBar.l6.w;
+            }
+            org.telegram.ui.Components.l00 l00Var = new org.telegram.ui.Components.l00(!booleanValue ? l6Var.f : l6Var.c, null);
+            l00Var.c = !z10 ? 0.5f : 1.0f;
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
+            if (z13) {
+                spannableStringBuilder2.setSpan(l00Var, 0, spannableStringBuilder2.length(), 33);
+            } else {
+                spannableStringBuilder2.setSpan(new f51("", (zz0) null), 0, spannableStringBuilder2.length(), 33);
+            }
+            i0.M2(spannableStringBuilder2);
+            Math.max(1, i0.L(2.0f) + ((int) Math.ceil(Layout.getDesiredWidth(spannableStringBuilder2, wvVar.w))));
+            vv vvVar = new vv(wvVar, spannableStringBuilder2, 100000, Layout.Alignment.ALIGN_CENTER);
+            this.a = vvVar;
+            vvVar.r = true;
+            vvVar.w = true;
+            if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy) {
+                if (!(inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrlAuth)) {
+                    if (!(inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl)) {
+                        if (!(inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeWebView)) {
+                            i11 = inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeSwitchInline ? R.drawable.mini_inline_switch_16 : inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeBuy ? R.drawable.bot_card : inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? R.drawable.mini_inline_profile_16 : 0;
+                        }
+                    }
+                    i11 = R.drawable.bot_webview;
+                }
+                i11 = R.drawable.mini_inline_arrow_16;
+            } else {
+                i11 = R.drawable.mini_inline_copy_16;
+            }
+            if (i11 != 0) {
+                this.i = i0.a.f(w0.b, i11);
+            }
+            this.e = h();
+            org.telegram.ui.ActionBar.p6 p6Var = wvVar.D;
+            boolean a2 = p6Var == null ? p6Var.a() : org.telegram.ui.ActionBar.t6.I.q();
+            if (booleanValue && a2) {
+                w03 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.rb, wvVar.D);
+                int w04 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.sb, wvVar.D);
+                int w05 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.tb, wvVar.D);
+                if (w03 == 0 || w04 != 0 || w05 != 0) {
+                    z15 = true;
+                    if (z15 && l6Var != org.telegram.ui.ActionBar.l6.n) {
+                        l6Var = l6Var2;
+                    }
+                    i12 = !booleanValue ? l6Var.d : l6Var.a;
+                    i13 = !booleanValue ? l6Var.e : l6Var.b;
+                    int i14 = !booleanValue ? l6Var.f : l6Var.c;
+                    int w06 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+                    this.h = false;
+                    if (z15 || l6Var != org.telegram.ui.ActionBar.l6.n) {
+                        if (!org.telegram.ui.ActionBar.t6.f1(i12) || l6Var == org.telegram.ui.ActionBar.l6.n) {
+                            this.j = org.telegram.ui.ActionBar.t6.w0(i12, wvVar.D);
+                            if (org.telegram.ui.ActionBar.t6.f1(i13)) {
+                                this.k = i0.b.f(0.1f, this.j, w06);
+                            } else {
+                                this.k = org.telegram.ui.ActionBar.t6.w0(i13, wvVar.D);
+                            }
+                        } else {
+                            this.j = org.telegram.ui.ActionBar.t6.r1(l6Var == l6Var2 ? 0.08f : 0.1f, org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D));
+                            this.k = org.telegram.ui.ActionBar.t6.r1(0.16f, org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D));
+                        }
+                    } else {
+                        int w07 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+                        this.k = w07;
+                        this.j = w07;
+                        this.h = true;
+                    }
+                    w02 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+                    w02 = z10 ? org.telegram.ui.ActionBar.t6.r1(0.5f, w02) : w02;
+                    if (w02 == this.l || this.m == null) {
+                        this.l = w02;
+                        this.m = new PorterDuffColorFilter(this.l, PorterDuff.Mode.SRC_IN);
+                    }
+                    l00Var.b = i14;
+                    runnable.run();
+                    drawable = this.i;
+                    if (drawable == null) {
+                        drawable.setColorFilter(new PorterDuffColorFilter(this.l, PorterDuff.Mode.MULTIPLY));
+                        return;
+                    }
+                    return;
+                }
+            }
+            z15 = false;
+            if (z15) {
+                l6Var = l6Var2;
+            }
+            if (!booleanValue) {
+            }
+            if (!booleanValue) {
+            }
+            if (!booleanValue) {
+            }
+            int w062 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+            this.h = false;
+            if (z15) {
+            }
+            if (org.telegram.ui.ActionBar.t6.f1(i12)) {
+            }
+            this.j = org.telegram.ui.ActionBar.t6.w0(i12, wvVar.D);
+            if (org.telegram.ui.ActionBar.t6.f1(i13)) {
+            }
+            w02 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+            if (z10) {
+            }
+            if (w02 == this.l) {
+            }
+            this.l = w02;
+            this.m = new PorterDuffColorFilter(this.l, PorterDuff.Mode.SRC_IN);
+            l00Var.b = i14;
+            runnable.run();
+            drawable = this.i;
+            if (drawable == null) {
+            }
+        }
+        l6Var = org.telegram.ui.ActionBar.l6.h;
+        l6Var2 = org.telegram.ui.ActionBar.l6.h;
+        if (l6Var == l6Var2) {
+            l6Var = org.telegram.ui.ActionBar.l6.w;
+        }
+        org.telegram.ui.Components.l00 l00Var2 = new org.telegram.ui.Components.l00(!booleanValue ? l6Var.f : l6Var.c, null);
+        l00Var2.c = !z10 ? 0.5f : 1.0f;
+        SpannableStringBuilder spannableStringBuilder22 = new SpannableStringBuilder(spannableStringBuilder);
+        if (z13) {
+        }
+        i0.M2(spannableStringBuilder22);
+        Math.max(1, i0.L(2.0f) + ((int) Math.ceil(Layout.getDesiredWidth(spannableStringBuilder22, wvVar.w))));
+        vv vvVar2 = new vv(wvVar, spannableStringBuilder22, 100000, Layout.Alignment.ALIGN_CENTER);
+        this.a = vvVar2;
+        vvVar2.r = true;
+        vvVar2.w = true;
+        if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy) {
+        }
+        if (i11 != 0) {
+        }
+        this.e = h();
+        org.telegram.ui.ActionBar.p6 p6Var2 = wvVar.D;
+        if (p6Var2 == null) {
+        }
+        if (booleanValue) {
+            w03 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.rb, wvVar.D);
+            int w042 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.sb, wvVar.D);
+            int w052 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.tb, wvVar.D);
+            if (w03 == 0) {
+            }
+            z15 = true;
+            if (z15) {
+            }
+            if (!booleanValue) {
+            }
+            if (!booleanValue) {
+            }
+            if (!booleanValue) {
+            }
+            int w0622 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+            this.h = false;
+            if (z15) {
+            }
+            if (org.telegram.ui.ActionBar.t6.f1(i12)) {
+            }
+            this.j = org.telegram.ui.ActionBar.t6.w0(i12, wvVar.D);
+            if (org.telegram.ui.ActionBar.t6.f1(i13)) {
+            }
+            w02 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+            if (z10) {
+            }
+            if (w02 == this.l) {
+            }
+            this.l = w02;
+            this.m = new PorterDuffColorFilter(this.l, PorterDuff.Mode.SRC_IN);
+            l00Var2.b = i14;
+            runnable.run();
+            drawable = this.i;
+            if (drawable == null) {
+            }
+        }
+        z15 = false;
+        if (z15) {
+        }
+        if (!booleanValue) {
+        }
+        if (!booleanValue) {
+        }
+        if (!booleanValue) {
+        }
+        int w06222 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+        this.h = false;
+        if (z15) {
+        }
+        if (org.telegram.ui.ActionBar.t6.f1(i12)) {
+        }
+        this.j = org.telegram.ui.ActionBar.t6.w0(i12, wvVar.D);
+        if (org.telegram.ui.ActionBar.t6.f1(i13)) {
+        }
+        w02 = org.telegram.ui.ActionBar.t6.w0(i14, wvVar.D);
+        if (z10) {
+        }
+        if (w02 == this.l) {
+        }
+        this.l = w02;
+        this.m = new PorterDuffColorFilter(this.l, PorterDuff.Mode.SRC_IN);
+        l00Var2.b = i14;
+        runnable.run();
+        drawable = this.i;
+        if (drawable == null) {
+        }
+    }
+
+    public final void a(Canvas canvas) {
+        Canvas canvas2;
+        float f7;
+        int i10;
+        if (this.u) {
+            float f10 = this.v;
+            if (f10 != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / i0.r) / 100.0f) + f10;
+                this.v = min;
+                this.v = Utilities.i(min, 1.0f, 0.0f);
+                this.t.run();
+            }
+        }
+        boolean z10 = this.f;
+        float f11 = z10 ? 0.09f : 0.04f;
+        float f12 = ((1.0f - this.v) * f11) + (1.0f - f11);
+        canvas.save();
+        if (f12 != 1.0f) {
+            canvas.scale(f12, f12, this.e / 2.0f, c() / 2.0f);
+        }
+        boolean z11 = this.h;
+        boolean z12 = this.s;
+        boolean z13 = z11 && !z12;
+        if (z13) {
+            canvas.saveLayer(0.0f, 0.0f, this.e, c(), null);
+        } else {
+            int i11 = this.u ? this.k : this.j;
+            Paint paint = this.g;
+            paint.setColor(i11);
+            if (!z12) {
+                canvas.drawRoundRect(0.0f, 0.0f, this.e, c(), c() / 2.0f, c() / 2.0f, paint);
+            }
+            b(canvas);
+        }
+        canvas.save();
+        int i12 = i();
+        int j10 = j();
+        boolean z14 = k() > Math.max(1, j() - i());
+        if (z14) {
+            canvas2 = canvas;
+            canvas2.saveLayer(i12, -i0.L(10.0f), j10, i0.L(10.0f) + c(), null);
+        } else {
+            canvas2 = canvas;
+        }
+        canvas2.clipRect(i12, -i0.L(10.0f), j10, i0.L(10.0f) + c());
+        canvas2.save();
+        vv vvVar = this.a;
+        StaticLayout staticLayout = vvVar.b;
+        ArrayList arrayList = vvVar.x;
+        StaticLayout staticLayout2 = vvVar.b;
+        int i13 = vvVar.f;
+        int lineBaseline = (staticLayout == null || staticLayout.getLineCount() <= 0) ? -1 : staticLayout.getLineBaseline(0);
+        boolean z15 = vvVar.s > 0;
+        if (z15) {
+            canvas2.translate(l() - i13, (c() - staticLayout2.getHeight()) / 2.0f);
+        } else if (lineBaseline <= 0) {
+            canvas2.translate(l() - i13, ((c() - staticLayout2.getHeight()) / 2.0f) - i0.L(1.0f));
+        } else if (z10) {
+            canvas2.translate(l() - i13, (-lineBaseline) + ((c() * 43) / 56));
+        } else {
+            canvas2.translate(l() - i13, (-lineBaseline) + ((c() * 65) / at.n1));
+        }
+        vvVar.d(canvas2, vvVar.S);
+        wv wvVar = this.p;
+        if (wvVar.F()) {
+            canvas2.translate(0.0f, i0.L(z15 ? 0.0f : z12 ? 0.66f : 2.0f));
+            if (z12) {
+                int i14 = staticLayout2.getPaint().linkColor;
+                if (this.o != i14 || this.n == null) {
+                    this.o = i14;
+                    this.n = new PorterDuffColorFilter(i14, PorterDuff.Mode.SRC_IN);
+                }
+                f7 = 2.0f;
+                i10 = j10;
+                org.telegram.ui.Components.o5.drawAnimatedEmojis(canvas2, vvVar.b, vvVar.E, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f, this.n);
+                canvas2 = canvas;
+            } else {
+                f7 = 2.0f;
+                i10 = j10;
+                canvas2 = canvas;
+                org.telegram.ui.Components.o5.drawAnimatedEmojis(canvas2, vvVar.b, vvVar.E, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f, this.m);
+            }
+        } else {
+            f7 = 2.0f;
+            i10 = j10;
+        }
+        canvas2.restore();
+        if (z14) {
+            float c10 = c();
+            RectF rectF = this.A;
+            rectF.set(i10 - i0.L(8.0f), 0.0f, i10, c10);
+            wvVar.z.o(canvas2, rectF, 2, 1.0f);
+            canvas2.restore();
+        }
+        canvas2.restore();
+        Drawable drawable = this.i;
+        if (drawable != null) {
+            rf.o.d(drawable, this.e - i0.L(12.33f), i0.L(z10 ? 9.33f : 11.66f), 17);
+            drawable.draw(canvas2);
+        }
+        if (z13) {
+            int i15 = this.u ? this.k : this.j;
+            Paint paint2 = C;
+            paint2.setColor(i15);
+            canvas2.drawRoundRect(0.0f, 0.0f, this.e, c(), c() / f7, c() / f7, paint2);
+            canvas.restore();
+            b(canvas);
+        }
+        canvas.restore();
+    }
+
+    public final void b(Canvas canvas) {
+        org.telegram.ui.Cells.q1 q1Var;
+        TL_keyboard.PageButton pageButton = this.c;
+        boolean z10 = (pageButton == null || (q1Var = this.p.E) == null || !q1Var.N0(pageButton)) ? false : true;
+        boolean z11 = this.y;
+        Runnable runnable = this.t;
+        if (z11 != z10) {
+            this.y = z10;
+            if (z10) {
+                t80 t80Var = this.x;
+                if (t80Var == null) {
+                    t80 t80Var2 = new t80();
+                    this.x = t80Var2;
+                    t80Var2.D = true;
+                    t80Var2.x.setStrokeWidth(i0.N(1.25f));
+                } else {
+                    t80Var.b = -1L;
+                    t80Var.c = -1L;
                 }
             } else {
-                int min = Math.min(i18 - max, i20);
-                int i21 = 0;
-                int i22 = 0;
-                while (i21 < ruVarArr.length) {
-                    ru ruVar4 = ruVarArr[i21];
-                    int e = ruVar4.e - ruVar4.e();
-                    if (i21 == ruVarArr.length - i16) {
-                        i15 = min - i22;
-                        i13 = i16;
-                        i14 = min;
-                    } else {
-                        i13 = i16;
-                        i14 = min;
-                        i15 = (int) ((min * e) / i20);
-                    }
-                    int min2 = Math.min(i15, e);
-                    ruVar4.e -= min2;
-                    i22 += min2;
-                    i21++;
-                    i16 = i13;
-                    min = i14;
+                t80 t80Var3 = this.x;
+                if (t80Var3 != null) {
+                    t80Var3.a();
                 }
             }
-            i11 = i16;
+            runnable.run();
+        }
+        t80 t80Var4 = this.x;
+        if (t80Var4 != null) {
+            if (z10 || t80Var4.d()) {
+                float strokeWidth = this.x.x.getStrokeWidth();
+                float f7 = this.e;
+                float c10 = c();
+                RectF rectF = this.z;
+                rectF.set(0.0f, 0.0f, f7, c10);
+                float f10 = strokeWidth / 2.0f;
+                rectF.inset(f10, f10);
+                this.x.i((c() / 2.0f) - f10);
+                this.x.e(rectF);
+                this.x.g(org.telegram.ui.ActionBar.t6.r1(0.07f, this.l), org.telegram.ui.ActionBar.t6.r1(0.175f, this.l), org.telegram.ui.ActionBar.t6.r1(0.175f, this.l), org.telegram.ui.ActionBar.t6.r1(0.42f, this.l));
+                this.x.setAlpha(at.e4);
+                this.x.draw(canvas);
+                runnable.run();
+            }
+        }
+    }
+
+    public final int c() {
+        boolean z10 = this.f;
+        wv wvVar = this.p;
+        return i0.L(z10 ? wvVar.M * 1.166666f : wvVar.M + 18);
+    }
+
+    public final int d() {
+        if (this.i == null) {
+            return 0;
+        }
+        return (i0.L(11.66f) / 2) + i0.L(12.33f);
+    }
+
+    public final int e() {
+        return Math.min(h(), d() + c());
+    }
+
+    public final int f() {
+        if (this.s) {
+            return 0;
+        }
+        boolean z10 = this.q;
+        boolean z11 = this.f;
+        if (z10 && z11) {
+            return i0.L(4.0f);
+        }
+        if (z11) {
+            return i0.L(7.0f);
+        }
+        return i0.L(this.i != null ? 26.0f : 20.0f);
+    }
+
+    public final int g() {
+        if (this.s) {
+            return 0;
+        }
+        boolean z10 = this.r;
+        boolean z11 = this.f;
+        Drawable drawable = this.i;
+        if (z10 && z11) {
+            return i0.L((drawable != null ? 14 : 0) + 4);
+        }
+        if (z11) {
+            return i0.L((drawable != null ? 14 : 0) + 7);
+        }
+        return i0.L(drawable != null ? 26.0f : 20.0f);
+    }
+
+    public final int h() {
+        return Math.min(this.B, g() + f() + k());
+    }
+
+    public final int i() {
+        if (this.s) {
+            return 0;
+        }
+        return this.f ? f() : i0.L(8.0f);
+    }
+
+    public final int j() {
+        int i10;
+        int max;
+        if (this.s) {
+            return this.e;
+        }
+        if (this.f) {
+            i10 = this.e;
+            max = g();
         } else {
-            i11 = 1;
-            if (i19 == 4) {
-                boolean[] zArr = new boolean[ruVarArr.length];
-                int length2 = ruVarArr.length;
-                for (boolean z11 = true; z11 && length2 > 0; z11 = z10) {
-                    int i23 = max / length2;
-                    z10 = false;
-                    for (int i24 = 0; i24 < ruVarArr.length; i24++) {
-                        if (!zArr[i24] && (i12 = ruVarArr[i24].e) > i23) {
-                            zArr[i24] = true;
-                            max -= i12;
-                            length2--;
-                            z10 = true;
-                        }
-                    }
-                }
-                if (length2 > 0) {
-                    int i25 = max / length2;
-                    int i26 = max - (length2 * i25);
-                    for (int i27 = 0; i27 < ruVarArr.length; i27++) {
-                        if (!zArr[i27]) {
-                            int i28 = i26 - 1;
-                            ruVarArr[i27].e = (i26 > 0 ? 1 : 0) + i25;
-                            i26 = i28;
-                        }
-                    }
-                }
-            }
+            i10 = this.e;
+            max = Math.max(i0.L(8.0f), d());
         }
-        for (ru ruVar5 : ruVarArr) {
-            i17 += ruVar5.e;
-        }
-        int c10 = m1.j.c(i19);
-        int i29 = c10 != i11 ? c10 != 2 ? 0 : (i10 - i17) / 2 : i10 - i17;
-        for (ru ruVar6 : ruVarArr) {
-            ruVar6.d = i29;
-            i29 += ruVar6.e + L;
-        }
+        return i10 - max;
     }
 
-    public final void l0() {
+    public final int k() {
         vv vvVar = this.a;
-        int i10 = vvVar.C;
-        int i11 = vvVar.S;
-        int i12 = ((i10 + i11) + vvVar.T) - (i11 * 2);
-        Rect rect = this.b;
-        int max = Math.max(0, (i12 - rect.left) - rect.right);
-        if (this.Y != max) {
-            k0(max);
-        }
+        return vvVar.h - vvVar.f;
     }
 
-    @Override // org.telegram.messenger.qu
-    public final void q(Canvas canvas) {
-        l0();
-        for (ru ruVar : this.W) {
-            canvas.save();
-            canvas.translate(ruVar.d, Math.round((H() - ruVar.c()) / 2.0f));
-            ruVar.a(canvas);
-            canvas.restore();
+    public final float l() {
+        return this.f ? f() : k() > Math.max(1, j() - i()) ? i() : this.i == null ? (this.e - k()) / 2.0f : Math.max(Math.min((this.e - k()) / 2.0f, (this.e - d()) - k()), i0.L(8.0f));
+    }
+
+    public final void m(boolean z10) {
+        if (this.u == z10) {
+            return;
+        }
+        this.u = z10;
+        this.t.run();
+        if (z10) {
+            ValueAnimator valueAnimator = this.w;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.w.cancel();
+                this.w = null;
+                return;
+            }
+            return;
+        }
+        float f7 = this.v;
+        if (f7 != 0.0f) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
+            this.w = ofFloat;
+            ofFloat.addUpdateListener(new g(this, 1));
+            this.w.addListener(new bg.e(this, 18));
+            ValueAnimator valueAnimator2 = this.w;
+            boolean z11 = this.f;
+            valueAnimator2.setInterpolator(new OvershootInterpolator(z11 ? 3.5f : 2.0f));
+            this.w.setDuration(z11 ? 420L : 350L);
+            this.w.start();
         }
     }
 }

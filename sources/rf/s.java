@@ -3,17 +3,17 @@ package rf;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.f1;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class s extends f1 {
     public static volatile s[] a = new s[4];
@@ -93,7 +93,7 @@ public final class s extends f1 {
             tL_messageReplyHeader.flags |= 2;
             tL_message.flags |= 8;
         }
-        jj.B0(tL_message);
+        kj.B0(tL_message);
         return tL_message;
     }
 
@@ -102,7 +102,7 @@ public final class s extends f1 {
         tL_ephemeralMessage.out = message.out;
         tL_ephemeralMessage.invert_media = message.invert_media;
         tL_ephemeralMessage.noforwards = message.noforwards;
-        tL_ephemeralMessage.id = jj.S(message.id);
+        tL_ephemeralMessage.id = kj.S(message.id);
         tL_ephemeralMessage.from_id = message.from_id;
         tL_ephemeralMessage.peer_id = message.peer_id;
         tL_ephemeralMessage.receiver_id = message.ephemeralReceiverBotId;
@@ -144,7 +144,7 @@ public final class s extends f1 {
         return sVar;
     }
 
-    public final boolean a(TLObject tLObject, List list, q20 q20Var) {
+    public final boolean a(TLObject tLObject, List list, r20 r20Var) {
         TLRPC.ChatFull M0;
         TLRPC.ChatFull M02;
         if (list == null || list.isEmpty() || (tLObject instanceof TL_ephemeral.TL_sendMessage)) {
@@ -174,16 +174,16 @@ public final class s extends f1 {
                 if (z10) {
                     TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = (TLRPC.TL_inputReplyToMessage) inputReplyTo;
                     inputReplyTo2 = inputReplyTo;
-                    if (jj.f3(tL_inputReplyToMessage.reply_to_msg_id)) {
+                    if (kj.f3(tL_inputReplyToMessage.reply_to_msg_id)) {
                         TLRPC.TL_inputReplyToEphemeralMessage tL_inputReplyToEphemeralMessage = new TLRPC.TL_inputReplyToEphemeralMessage();
-                        tL_inputReplyToEphemeralMessage.id = jj.S(tL_inputReplyToMessage.reply_to_msg_id);
+                        tL_inputReplyToEphemeralMessage.id = kj.S(tL_inputReplyToMessage.reply_to_msg_id);
                         inputReplyTo2 = tL_inputReplyToEphemeralMessage;
                     }
                 }
                 tL_sendMessage.reply_to = inputReplyTo2;
                 tL_sendMessage.rich_message = tL_messages_sendMessage.rich_message;
                 tL_sendMessage.invert_media = tL_messages_sendMessage.invert_media;
-                q20Var.a(tL_sendMessage);
+                r20Var.a(tL_sendMessage);
                 return false;
             }
             long n10 = o5.n(tL_messages_sendMessage.peer);
@@ -191,7 +191,7 @@ public final class s extends f1 {
                 long f7 = f(tL_messages_sendMessage.message, M02.bot_info);
                 if (f7 != 0) {
                     tL_messages_sendMessage.ephemeralReceiverBotId = f7;
-                    return a(tLObject, list, q20Var);
+                    return a(tLObject, list, r20Var);
                 }
             }
         }
@@ -219,15 +219,15 @@ public final class s extends f1 {
                 if (z11) {
                     TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage2 = (TLRPC.TL_inputReplyToMessage) inputReplyTo3;
                     inputReplyTo4 = inputReplyTo3;
-                    if (jj.f3(tL_inputReplyToMessage2.reply_to_msg_id)) {
+                    if (kj.f3(tL_inputReplyToMessage2.reply_to_msg_id)) {
                         TLRPC.TL_inputReplyToEphemeralMessage tL_inputReplyToEphemeralMessage2 = new TLRPC.TL_inputReplyToEphemeralMessage();
-                        tL_inputReplyToEphemeralMessage2.id = jj.S(tL_inputReplyToMessage2.reply_to_msg_id);
+                        tL_inputReplyToEphemeralMessage2.id = kj.S(tL_inputReplyToMessage2.reply_to_msg_id);
                         inputReplyTo4 = tL_inputReplyToEphemeralMessage2;
                     }
                 }
                 tL_sendMessage2.reply_to = inputReplyTo4;
                 tL_sendMessage2.invert_media = tL_messages_sendMedia.invert_media;
-                q20Var.a(tL_sendMessage2);
+                r20Var.a(tL_sendMessage2);
                 return false;
             }
             long n11 = o5.n(tL_messages_sendMedia.peer);
@@ -235,7 +235,7 @@ public final class s extends f1 {
                 long f10 = f(tL_messages_sendMedia.message, M0.bot_info);
                 if (f10 != 0) {
                     tL_messages_sendMedia.ephemeralReceiverBotId = f10;
-                    return a(tLObject, list, q20Var);
+                    return a(tLObject, list, r20Var);
                 }
             }
         }
@@ -269,7 +269,7 @@ public final class s extends f1 {
             if (str2 != null) {
                 for (int i10 = 0; i10 < hVar.m(); i10++) {
                     TL_bots.BotInfo botInfo = (TL_bots.BotInfo) hVar.n(i10);
-                    if (h20.r(str2, getMessagesController().Z1(Long.valueOf(botInfo.user_id)))) {
+                    if (i20.r(str2, getMessagesController().Z1(Long.valueOf(botInfo.user_id)))) {
                         ArrayList<TLRPC.BotCommand> arrayList = botInfo.commands;
                         int size = arrayList.size();
                         int i11 = 0;

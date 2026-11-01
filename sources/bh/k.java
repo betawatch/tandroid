@@ -5,7 +5,7 @@ import android.support.v4.media.session.a0;
 import android.widget.FrameLayout;
 import b2.r1;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.gr;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.lq;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k extends FrameLayout implements fe.e {
     public static final int[] s = {R.drawable.msg_input_attach2, R.drawable.pagedown, R.drawable.mentionbutton, R.drawable.reactionbutton, R.drawable.menu_poll_notify, R.drawable.pagedown, R.drawable.pagedown};
@@ -29,7 +29,7 @@ public final class k extends FrameLayout implements fe.e {
 
     public k(Context context, p6 p6Var, wg.b bVar, tg.b bVar2) {
         super(context);
-        this.a = new String[]{cd.L0(2131753953, null), cd.L0(2131754815, null), cd.L0(2131754842, null), cd.L0(2131754790, null), cd.L0(2131754804, null), cd.L0(2131754778, null), cd.L0(2131754779, null)};
+        this.a = new String[]{dd.L0(2131753953, null), dd.L0(2131754815, null), dd.L0(2131754842, null), dd.L0(2131754790, null), dd.L0(2131754804, null), dd.L0(2131754778, null), dd.L0(2131754779, null)};
         this.e = new a0[7];
         this.f = new r1[7];
         this.r = 83;

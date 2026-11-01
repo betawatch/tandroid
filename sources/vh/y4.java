@@ -1,11 +1,11 @@
 package vh;
 
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y4 extends z4 {
     public final /* synthetic */ TLRPC.Chat b;
@@ -18,7 +18,7 @@ public final class y4 extends z4 {
 
     @Override // vh.z4
     public final String a() {
-        return cd.L0(2131754819, null);
+        return dd.L0(2131754819, null);
     }
 
     @Override // vh.z4
@@ -28,7 +28,7 @@ public final class y4 extends z4 {
 
     @Override // vh.z4
     public final void c(org.telegram.ui.ActionBar.k2 k2Var) {
-        k2Var.presentFragment(un.ha(-this.b.id));
+        k2Var.presentFragment(un.ma(-this.b.id));
     }
 
     @Override // vh.z4

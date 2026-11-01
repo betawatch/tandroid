@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u1, fe.l, ik0, ei.o, wg.c, ei.n, org.telegram.ui.ActionBar.o0, in, q4, ji {
+public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u1, fe.l, jk0, ei.o, wg.c, ei.n, org.telegram.ui.ActionBar.o0, in, q4, ji {
     public final /* synthetic */ int a;
     public final /* synthetic */ bi b;
 
@@ -107,10 +107,10 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
         ArrayList arrayList2;
         long j11;
         final long j12;
-        final org.telegram.messenger.jj jjVar;
-        final org.telegram.messenger.jj jjVar2;
+        final org.telegram.messenger.kj kjVar;
+        final org.telegram.messenger.kj kjVar2;
         org.telegram.ui.un unVar;
-        org.telegram.messenger.oj ojVar;
+        org.telegram.messenger.pj pjVar;
         long j13;
         int i11;
         int i12;
@@ -122,22 +122,22 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
             case 13:
                 org.telegram.ui.un unVar2 = (org.telegram.ui.un) biVar.W1;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
-                if (unVar2.n7()) {
-                    org.telegram.messenger.oz c10 = org.telegram.messenger.oz.c(null, null, null, null, null, null, null, null, null, null, unVar2.j6, null, unVar2.D5, unVar2.l4, null, true, null, null, null, null, z10, i10, 0, 0, null, null, false, false);
+                if (unVar2.r7()) {
+                    org.telegram.messenger.pz c10 = org.telegram.messenger.pz.c(null, null, null, null, null, null, null, null, null, null, unVar2.j6, null, unVar2.D5, unVar2.l4, null, true, null, null, null, null, z10, i10, 0, 0, null, null, false, false);
                     c10.l = tL_messageMediaToDo;
-                    c10.K = unVar2.P8();
+                    c10.K = unVar2.T8();
                     c10.Q = j10;
-                    c10.R = unVar2.a9();
+                    c10.R = unVar2.e9();
                     c10.T = unVar2.w5;
                     unVar2.getSendMessagesHelper().r0(c10);
-                    unVar2.F6();
+                    unVar2.I6();
                     break;
                 }
                 break;
             default:
                 org.telegram.ui.un unVar3 = (org.telegram.ui.un) biVar.W1;
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageMedia;
-                if (unVar3.n7()) {
+                if (unVar3.r7()) {
                     long nextLong = Utilities.b.nextLong();
                     if (editable != null) {
                         CharSequence[] charSequenceArr = {editable};
@@ -151,13 +151,13 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
                     final ih.i iVar = new ih.i(gVar, tL_messageMediaPoll, nextLong, str, arrayList2, arrayList);
                     final org.telegram.messenger.c accountInstance = unVar3.getAccountInstance();
                     long j14 = unVar3.j6;
-                    org.telegram.messenger.jj jjVar3 = unVar3.D5;
-                    org.telegram.messenger.jj jjVar4 = unVar3.l4;
+                    org.telegram.messenger.kj kjVar3 = unVar3.D5;
+                    org.telegram.messenger.kj kjVar4 = unVar3.l4;
                     final org.telegram.ui.kn knVar = unVar3.B5;
-                    final org.telegram.messenger.sw P8 = unVar3.P8();
-                    final long a92 = unVar3.a9();
-                    final org.telegram.messenger.oj ojVar2 = unVar3.w5;
-                    org.telegram.messenger.r5 r5Var = org.telegram.messenger.qz.I;
+                    final org.telegram.messenger.tw T8 = unVar3.T8();
+                    final long e92 = unVar3.e9();
+                    final org.telegram.messenger.pj pjVar2 = unVar3.w5;
+                    org.telegram.messenger.r5 r5Var = org.telegram.messenger.rz.I;
                     if (gVar != null) {
                         final ArrayList arrayList3 = new ArrayList();
                         ArrayList arrayList4 = new ArrayList();
@@ -168,7 +168,7 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
                         ArrayList arrayList8 = new ArrayList();
                         ArrayList arrayList9 = new ArrayList();
                         ArrayList arrayList10 = new ArrayList();
-                        jjVar = jjVar3;
+                        kjVar = kjVar3;
                         final int[] iArr = new int[1];
                         SparseArray sparseArray = gVar.a;
                         int size = sparseArray.size();
@@ -176,16 +176,16 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
                         while (i16 < size) {
                             int i17 = size;
                             ih.f fVar = (ih.f) sparseArray.valueAt(i16);
-                            org.telegram.messenger.jj jjVar5 = jjVar4;
+                            org.telegram.messenger.kj kjVar5 = kjVar4;
                             int keyAt = sparseArray.keyAt(i16);
                             SparseArray sparseArray2 = sparseArray;
                             if (fVar instanceof jh.i) {
                                 arrayList9.add(((jh.i) fVar).b);
                                 arrayList10.add(Integer.valueOf(keyAt));
                             } else if (fVar instanceof jh.d) {
-                                org.telegram.messenger.pz pzVar = ((jh.d) fVar).c;
-                                pzVar.B = keyAt;
-                                arrayList3.add(pzVar);
+                                org.telegram.messenger.qz qzVar = ((jh.d) fVar).c;
+                                qzVar.B = keyAt;
+                                arrayList3.add(qzVar);
                             } else if (fVar instanceof jh.c) {
                                 jh.c cVar = (jh.c) fVar;
                                 String str2 = cVar.b;
@@ -204,9 +204,9 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
                             i16++;
                             size = i17;
                             sparseArray = sparseArray2;
-                            jjVar4 = jjVar5;
+                            kjVar4 = kjVar5;
                         }
-                        jjVar2 = jjVar4;
+                        kjVar2 = kjVar4;
                         if (arrayList3.isEmpty()) {
                             i11 = 0;
                         } else {
@@ -230,72 +230,72 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
                         int i18 = i12;
                         unVar = unVar3;
                         accountInstance = accountInstance;
-                        final org.telegram.messenger.px pxVar = new org.telegram.messenger.px(arrayList4, arrayList7, accountInstance, arrayList5, j12, jjVar, jjVar2, knVar, z10, i10, P8, j10, a92, ojVar2, iVar, arrayList6, arrayList8);
-                        P8 = P8;
-                        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.qx
+                        final org.telegram.messenger.qx qxVar = new org.telegram.messenger.qx(arrayList4, arrayList7, accountInstance, arrayList5, j12, kjVar, kjVar2, knVar, z10, i10, T8, j10, e92, pjVar2, iVar, arrayList6, arrayList8);
+                        T8 = T8;
+                        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.rx
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ArrayList arrayList11 = arrayList3;
                                 boolean isEmpty = arrayList11.isEmpty();
-                                px pxVar2 = pxVar;
+                                qx qxVar2 = qxVar;
                                 if (isEmpty) {
-                                    pxVar2.run();
+                                    qxVar2.run();
                                     return;
                                 }
                                 int[] iArr2 = iArr;
                                 int i19 = iArr2[0] - 1;
                                 iArr2[0] = i19;
-                                qz.X(accountInstance, arrayList11, j12, jjVar, jjVar2, null, knVar, false, true, null, null, z10, i10, 0, false, null, P8, 0L, false, j10, a92, ojVar2, iVar, i19 > 0);
-                                qz.I.c(new ms(pxVar2, 12));
+                                rz.X(accountInstance, arrayList11, j12, kjVar, kjVar2, null, knVar, false, true, null, null, z10, i10, 0, false, null, T8, 0L, false, j10, e92, pjVar2, iVar, i19 > 0);
+                                rz.I.c(new ns(qxVar2, 12));
                             }
                         };
                         iVar = iVar;
                         if (!arrayList9.isEmpty()) {
                             int i19 = iArr[0] - i18;
                             iArr[0] = i19;
-                            j13 = a92;
-                            ojVar = ojVar2;
-                            org.telegram.messenger.ax axVar = new org.telegram.messenger.ax(iVar, arrayList9, j12, accountInstance, "", i19 > 0 ? i18 : 0, arrayList10, null, jjVar, jjVar2, z10, i10, 0, null, P8, 0L, false, j10, runnable);
+                            j13 = e92;
+                            pjVar = pjVar2;
+                            org.telegram.messenger.bx bxVar = new org.telegram.messenger.bx(iVar, arrayList9, j12, accountInstance, "", i19 > 0 ? i18 : 0, arrayList10, null, kjVar, kjVar2, z10, i10, 0, null, T8, 0L, false, j10, runnable);
                             iVar = iVar;
                             accountInstance = accountInstance;
-                            P8 = P8;
+                            T8 = T8;
                             j11 = j10;
-                            new Thread(axVar).start();
+                            new Thread(bxVar).start();
                             break;
                         } else {
                             j11 = j10;
-                            j13 = a92;
-                            ojVar = ojVar2;
+                            j13 = e92;
+                            pjVar = pjVar2;
                             runnable.run();
                             break;
                         }
                     } else {
                         j11 = j10;
                         j12 = j14;
-                        jjVar = jjVar3;
-                        jjVar2 = jjVar4;
+                        kjVar = kjVar3;
+                        kjVar2 = kjVar4;
                         unVar = unVar3;
-                        ojVar = ojVar2;
-                        j13 = a92;
+                        pjVar = pjVar2;
+                        j13 = e92;
                     }
-                    org.telegram.messenger.oz c11 = org.telegram.messenger.oz.c(null, null, null, null, null, null, null, null, iVar.a, null, j12, null, jjVar, jjVar2, null, true, null, null, null, null, z10, i10, 0, 0, null, null, false, false);
+                    org.telegram.messenger.pz c11 = org.telegram.messenger.pz.c(null, null, null, null, null, null, null, null, iVar.a, null, j12, null, kjVar, kjVar2, null, true, null, null, null, null, z10, i10, 0, 0, null, null, false, false);
                     c11.b = iVar.d;
                     c11.L = true;
                     c11.w = iVar.e;
-                    c11.K = P8;
+                    c11.K = T8;
                     c11.Q = j11;
                     c11.R = j13;
-                    c11.T = ojVar;
+                    c11.T = pjVar;
                     c11.j = iVar;
-                    org.telegram.messenger.qz.C(accountInstance.a).r0(c11);
-                    unVar.F6();
+                    org.telegram.messenger.rz.C(accountInstance.a).r0(c11);
+                    unVar.I6();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ik0
+    @Override // org.telegram.ui.Components.jk0
     public boolean f(int i10, View view) {
         TLRPC.User user;
         if (!(view instanceof vh)) {
@@ -314,7 +314,7 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
     public int g(org.telegram.ui.ActionBar.p6 p6Var, boolean z10) {
         switch (this.a) {
             case 5:
-                float f7 = org.telegram.messenger.sc.e(262144) ? 0.85f : 0.76f;
+                float f7 = org.telegram.messenger.tc.e(262144) ? 0.85f : 0.76f;
                 int w02 = org.telegram.ui.ActionBar.t6.w0(z10 ? org.telegram.ui.ActionBar.t6.a7 : org.telegram.ui.ActionBar.t6.i5, p6Var);
                 int w03 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, p6Var);
                 bi biVar = this.b;
@@ -387,18 +387,18 @@ public final /* synthetic */ class ig implements wk, org.telegram.ui.ActionBar.u
             return;
         }
         org.telegram.ui.un unVar = (org.telegram.ui.un) k2Var;
-        if (unVar.n7()) {
-            unVar.u8(charSequence, null);
+        if (unVar.r7()) {
+            unVar.y8(charSequence, null);
             org.telegram.messenger.c accountInstance = unVar.getAccountInstance();
             CharSequence charSequence2 = charSequence != null ? charSequence : null;
             long j12 = unVar.j6;
-            org.telegram.messenger.jj jjVar = unVar.D5;
-            org.telegram.messenger.jj jjVar2 = unVar.l4;
-            org.telegram.messenger.jj jjVar3 = unVar.F5;
-            org.telegram.messenger.sw P8 = unVar.P8();
-            org.telegram.messenger.r5 r5Var = org.telegram.messenger.qz.I;
-            new Thread(new org.telegram.messenger.ax(null, arrayList, j12, accountInstance, charSequence2, false, null, jjVar3, jjVar, jjVar2, z10, i10, i11, null, P8, j10, z11, j11, null)).start();
-            unVar.F6();
+            org.telegram.messenger.kj kjVar = unVar.D5;
+            org.telegram.messenger.kj kjVar2 = unVar.l4;
+            org.telegram.messenger.kj kjVar3 = unVar.F5;
+            org.telegram.messenger.tw T8 = unVar.T8();
+            org.telegram.messenger.r5 r5Var = org.telegram.messenger.rz.I;
+            new Thread(new org.telegram.messenger.bx(null, arrayList, j12, accountInstance, charSequence2, false, null, kjVar3, kjVar, kjVar2, z10, i10, i11, null, T8, j10, z11, j11, null)).start();
+            unVar.I6();
         }
     }
 

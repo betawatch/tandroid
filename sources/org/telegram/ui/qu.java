@@ -1,39 +1,23 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qu implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+public final class qu extends org.telegram.ui.Components.pp0 {
+    public final /* synthetic */ ru R2;
 
-    public /* synthetic */ qu(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qu(ru ruVar, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.R2 = ruVar;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        switch (this.a) {
-            case 0:
-                int i11 = 2 - i10;
-                if (i11 != this.b) {
-                    org.telegram.messenger.tz.w(i11);
-                    break;
-                } else {
-                    org.telegram.messenger.tz.w(-1);
-                    break;
-                }
-            default:
-                int i12 = 2 - i10;
-                if (i12 != this.b) {
-                    org.telegram.messenger.tz.w(i12);
-                    break;
-                } else {
-                    org.telegram.messenger.tz.w(-1);
-                    break;
-                }
+    @Override // org.telegram.ui.Components.pp0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            org.telegram.messenger.i0.h3(new org.telegram.ui.Components.voip.u(this, hVar, i10), 250L);
         }
     }
 }

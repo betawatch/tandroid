@@ -6,26 +6,26 @@ import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.el0;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.cl0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class v extends sk0 {
+public final class v extends tk0 {
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -81,16 +81,16 @@ public final class v extends sk0 {
         u uVar = new u(context);
         uVar.setOrientation(0);
         uVar.setPadding(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(8.0f));
-        el0 el0Var = new el0(context, 5);
-        uVar.b = el0Var;
-        zs.i(el0Var);
-        el0Var.setTextSize(1, 16.0f);
+        cl0 cl0Var = new cl0(context, 5);
+        uVar.b = cl0Var;
+        at.i(cl0Var);
+        cl0Var.setTextSize(1, 16.0f);
         int i11 = t6.G6;
-        a7.V(el0Var, i11, null);
-        el0Var.setTag(Integer.valueOf(i11));
-        el0Var.setMaxLines(2);
-        el0Var.setEllipsize(TextUtils.TruncateAt.END);
-        uVar.addView(el0Var, b6.q(-1, -2, 1.0f, 16, 0, 0, org.telegram.messenger.i0.L(8.0f), 0));
+        a7.V(cl0Var, i11, null);
+        cl0Var.setTag(Integer.valueOf(i11));
+        cl0Var.setMaxLines(2);
+        cl0Var.setEllipsize(TextUtils.TruncateAt.END);
+        uVar.addView(cl0Var, b6.q(-1, -2, 1.0f, 16, 0, 0, org.telegram.messenger.i0.L(8.0f), 0));
         TextView textView = new TextView(context);
         uVar.a = textView;
         textView.setTextSize(1, 14.0f);
@@ -99,6 +99,6 @@ public final class v extends sk0 {
         textView.setTag(Integer.valueOf(i12));
         uVar.addView(textView, b6.p(-2, -2, 0.0f, 16));
         uVar.setLayoutParams(new s4.o0(-1, -2));
-        return new ck0(uVar);
+        return new dk0(uVar);
     }
 }

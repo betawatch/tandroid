@@ -8,19 +8,19 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.q20;
-import org.telegram.ui.f11;
+import org.telegram.messenger.r20;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class c1 extends AsyncTask {
     public final /* synthetic */ int a = 1;
     public final HashMap b = new HashMap();
     public Exception c;
-    public final q20 d;
+    public final r20 d;
 
-    public c1(q20 q20Var) {
-        this.d = q20Var;
+    public c1(r20 r20Var) {
+        this.d = r20Var;
     }
 
     @Override // android.os.AsyncTask
@@ -86,26 +86,26 @@ public final class c1 extends AsyncTask {
         switch (this.a) {
             case 0:
                 Bitmap bitmap = (Bitmap) obj;
-                f11 f11Var = (f11) this.d;
-                if (f11Var != null) {
+                d01 d01Var = (d01) this.d;
+                if (d01Var != null) {
                     if (this.c != null) {
-                        f11Var.a(null);
+                        d01Var.a(null);
                         break;
                     } else {
-                        f11Var.a(bitmap);
+                        d01Var.a(bitmap);
                         break;
                     }
                 }
                 break;
             default:
                 String str = (String) obj;
-                q20 q20Var = this.d;
-                if (q20Var != null) {
+                r20 r20Var = this.d;
+                if (r20Var != null) {
                     if (this.c != null) {
-                        q20Var.a(null);
+                        r20Var.a(null);
                         break;
                     } else {
-                        q20Var.a(str);
+                        r20Var.a(str);
                         break;
                     }
                 }
@@ -113,7 +113,7 @@ public final class c1 extends AsyncTask {
         }
     }
 
-    public c1(f11 f11Var) {
-        this.d = f11Var;
+    public c1(d01 d01Var) {
+        this.d = d01Var;
     }
 }

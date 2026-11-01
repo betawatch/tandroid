@@ -14,14 +14,14 @@ import android.view.View;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.s20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class t6 extends ScrollView implements org.telegram.ui.ActionBar.k6 {
     public final org.telegram.ui.Components.t5 D;
@@ -41,7 +41,7 @@ public abstract class t6 extends ScrollView implements org.telegram.ui.ActionBar
     public s20 f;
     public final i6 h;
     public boolean n;
-    public q20 r;
+    public r20 r;
     public final org.telegram.ui.Components.t5 s;
     public final LinearGradient w;
     public final Paint x;
@@ -88,7 +88,7 @@ public abstract class t6 extends ScrollView implements org.telegram.ui.ActionBar
         org.telegram.ui.ActionBar.a7.m(n0Var, 30, i10, p6Var);
         org.telegram.ui.ActionBar.a7.m(n0Var, 36, i10, p6Var);
         n0Var.setCursorWidth(1.5f);
-        n0Var.setInputType(n0Var.getInputType() | zs.G2);
+        n0Var.setInputType(n0Var.getInputType() | at.G2);
         n0Var.setSingleLine(true);
         n0Var.setBackgroundDrawable(null);
         n0Var.setVerticalScrollBarEnabled(false);
@@ -97,17 +97,17 @@ public abstract class t6 extends ScrollView implements org.telegram.ui.ActionBar
         n0Var.setPadding(0, 0, 0, 0);
         n0Var.setImeOptions(268435462);
         int i11 = 3;
-        n0Var.setGravity((cd.X ? 5 : 3) | 16);
+        n0Var.setGravity((dd.X ? 5 : 3) | 16);
         gVar.addView(n0Var);
-        n0Var.setHintText(cd.L0(2131745853, null));
-        this.c = (int) n0Var.getPaint().measureText(cd.L0(2131745853, null));
+        n0Var.setHintText(dd.L0(2131745853, null));
+        this.c = (int) n0Var.getPaint().measureText(dd.L0(2131745853, null));
         n0Var.addTextChangedListener(new rh.h0(this, i11));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float scrollY = getScrollY();
-        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, zs.e4, 31);
+        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, at.e4, 31);
         super.dispatchDraw(canvas);
         canvas.save();
         float d = this.s.d(canScrollVertically(-1));
@@ -155,8 +155,8 @@ public abstract class t6 extends ScrollView implements org.telegram.ui.ActionBar
         }
     }
 
-    public void setOnSearchTextChange(q20 q20Var) {
-        this.r = q20Var;
+    public void setOnSearchTextChange(r20 r20Var) {
+        this.r = r20Var;
     }
 
     public void setText(CharSequence charSequence) {

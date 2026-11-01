@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class l3 {
     public final org.telegram.ui.un a;
@@ -46,21 +46,21 @@ public final class l3 {
         ArrayList arrayList3 = l3Var.d;
         arrayList3.clear();
         while (i13 < i14) {
-            jj jjVar = (jj) L.get(i13);
-            if (unVar.l4 != jjVar && jjVar.f1() > 0 && ((jjVar.k.action == null || jjVar.z()) && j10 - jjVar.E > 15000)) {
-                jjVar.E = j10;
-                arrayList.add(jjVar);
+            kj kjVar = (kj) L.get(i13);
+            if (unVar.l4 != kjVar && kjVar.f1() > 0 && ((kjVar.k.action == null || kjVar.z()) && j10 - kjVar.E > 15000)) {
+                kjVar.E = j10;
+                arrayList.add(kjVar);
             }
-            if (unVar.l4 != jjVar && jjVar.f1() > 0 && ((jjVar.r2() || ((messageMedia = jjVar.k.media) != null && (messageMedia instanceof TLRPC.TL_messageMediaPaidMedia) && !messageMedia.extended_media.isEmpty() && (jjVar.k.media.extended_media.get(0) instanceof TLRPC.TL_messageExtendedMediaPreview))) && j10 - jjVar.F > 30000)) {
-                jjVar.F = j10;
-                arrayList2.add(jjVar);
+            if (unVar.l4 != kjVar && kjVar.f1() > 0 && ((kjVar.r2() || ((messageMedia = kjVar.k.media) != null && (messageMedia instanceof TLRPC.TL_messageMediaPaidMedia) && !messageMedia.extended_media.isEmpty() && (kjVar.k.media.extended_media.get(0) instanceof TLRPC.TL_messageExtendedMediaPreview))) && j10 - kjVar.F > 30000)) {
+                kjVar.F = j10;
+                arrayList2.add(kjVar);
             }
-            int i15 = jjVar.D;
-            if (i15 == 23 || i15 == 24 || jjVar.k.replyStory != null) {
-                TL_stories.StoryItem storyItem2 = (i15 == 23 || i15 == 24) ? jjVar.k.media.storyItem : jjVar.k.replyStory;
+            int i15 = kjVar.D;
+            if (i15 == 23 || i15 == 24 || kjVar.k.replyStory != null) {
+                TL_stories.StoryItem storyItem2 = (i15 == 23 || i15 == 24) ? kjVar.k.media.storyItem : kjVar.k.replyStory;
                 if (storyItem2 != null && !(storyItem2 instanceof TL_stories.TL_storyItemDeleted) && j10 - storyItem2.lastUpdateTime > 300000) {
                     storyItem2.lastUpdateTime = j10;
-                    arrayList3.add(jjVar);
+                    arrayList3.add(kjVar);
                 }
             }
             i13++;
@@ -70,7 +70,7 @@ public final class l3 {
             TLRPC.TL_messages_getMessagesReactions tL_messages_getMessagesReactions = new TLRPC.TL_messages_getMessagesReactions();
             tL_messages_getMessagesReactions.peer = unVar.getMessagesController().i1(a2);
             for (int i16 = 0; i16 < arrayList.size(); i16++) {
-                tL_messages_getMessagesReactions.id.add(Integer.valueOf(((jj) arrayList.get(i16)).f1()));
+                tL_messages_getMessagesReactions.id.add(Integer.valueOf(((kj) arrayList.get(i16)).f1()));
             }
             final int i17 = 1;
             Integer valueOf = Integer.valueOf(unVar.getConnectionsManager().sendRequest(tL_messages_getMessagesReactions, new RequestDelegate(l3Var) { // from class: org.telegram.messenger.j3
@@ -122,7 +122,7 @@ public final class l3 {
             TLRPC.TL_messages_getExtendedMedia tL_messages_getExtendedMedia = new TLRPC.TL_messages_getExtendedMedia();
             tL_messages_getExtendedMedia.peer = unVar.getMessagesController().i1(a10);
             for (int i18 = 0; i18 < arrayList2.size(); i18++) {
-                tL_messages_getExtendedMedia.id.add(Integer.valueOf(((jj) arrayList2.get(i18)).f1()));
+                tL_messages_getExtendedMedia.id.add(Integer.valueOf(((kj) arrayList2.get(i18)).f1()));
             }
             final int i19 = 0;
             arrayList5.add(Integer.valueOf(unVar.getConnectionsManager().sendRequest(tL_messages_getExtendedMedia, new RequestDelegate(l3Var) { // from class: org.telegram.messenger.j3
@@ -171,16 +171,16 @@ public final class l3 {
         int i20 = 0;
         while (i20 < arrayList3.size()) {
             TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-            jj jjVar2 = (jj) arrayList3.get(i20);
+            kj kjVar2 = (kj) arrayList3.get(i20);
             new TL_stories.TL_storyItem();
-            int i21 = jjVar2.D;
+            int i21 = kjVar2.D;
             if (i21 == 23 || i21 == 24) {
-                TLRPC.MessageMedia messageMedia2 = jjVar2.k.media;
+                TLRPC.MessageMedia messageMedia2 = kjVar2.k.media;
                 TL_stories.StoryItem storyItem3 = messageMedia2.storyItem;
                 storyItem3.dialogId = messageMedia2.user_id;
                 storyItem = storyItem3;
             } else {
-                TLRPC.Message message = jjVar2.k;
+                TLRPC.Message message = kjVar2.k;
                 TLRPC.MessageReplyHeader messageReplyHeader = message.reply_to;
                 if (messageReplyHeader != null) {
                     storyItem = message.replyStory;
@@ -193,7 +193,7 @@ public final class l3 {
             long j11 = storyItem.dialogId;
             tL_stories_getStoriesByID.peer = unVar.getMessagesController().i1(j11);
             tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem.id));
-            arrayList5.add(Integer.valueOf(unVar.getConnectionsManager().sendRequest(tL_stories_getStoriesByID, new k3(storyItem.id, 0, j11, l3Var, jjVar2))));
+            arrayList5.add(Integer.valueOf(unVar.getConnectionsManager().sendRequest(tL_stories_getStoriesByID, new k3(storyItem.id, 0, j11, l3Var, kjVar2))));
             i20++;
             l3Var = this;
         }

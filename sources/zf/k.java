@@ -2,13 +2,13 @@ package zf;
 
 import j$.util.Objects;
 import java.util.HashMap;
-import org.telegram.messenger.ap;
+import org.telegram.messenger.bp;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k extends hg.b {
     public final TLRPC.Dialog c;
@@ -111,11 +111,11 @@ public final class k extends hg.b {
             if (i14 != 7 && i14 != 8) {
                 this.g = dialog.pinned;
             } else {
-                ap apVar = vp.r1(i15).M[mVar.h == 8 ? (char) 1 : (char) 0];
-                this.g = apVar != null && apVar.j.indexOfKey(dialog.id) >= 0;
+                bp bpVar = wp.r1(i15).M[mVar.h == 8 ? (char) 1 : (char) 0];
+                this.g = bpVar != null && bpVar.j.indexOfKey(dialog.id) >= 0;
             }
             this.h = dialog.isFolder;
-            this.f = vp.r1(i15).s2(dialog.id);
+            this.f = wp.r1(i15).s2(dialog.id);
         }
     }
 

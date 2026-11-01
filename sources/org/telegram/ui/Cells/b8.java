@@ -6,12 +6,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b8 extends FrameLayout {
     public org.telegram.ui.Components.g9 a;
@@ -70,18 +70,18 @@ public final class b8 extends FrameLayout {
         return this.c;
     }
 
-    public fj getSendAnimationData() {
+    public gj getSendAnimationData() {
         org.telegram.ui.Components.g9 g9Var = this.a;
         ImageReceiver imageReceiver = g9Var.getImageReceiver();
         if (!imageReceiver.L()) {
             return null;
         }
-        fj fjVar = new fj();
+        gj gjVar = new gj();
         g9Var.getLocationInWindow(new int[2]);
-        fjVar.a = imageReceiver.r() + r3[0];
-        fjVar.b = imageReceiver.s() + r3[1];
-        fjVar.c = imageReceiver.M0;
-        return fjVar;
+        gjVar.a = imageReceiver.r() + r3[0];
+        gjVar.b = imageReceiver.s() + r3[1];
+        gjVar.c = imageReceiver.M0;
+        return gjVar;
     }
 
     public TLRPC.Document getSticker() {
@@ -104,10 +104,10 @@ public final class b8 extends FrameLayout {
         }
         if (str != null) {
             StringBuilder i11 = sc.e.i(str, " ");
-            i11.append(cd.L0(2131753936, null));
+            i11.append(dd.L0(2131753936, null));
             accessibilityNodeInfo.setText(i11.toString());
         } else {
-            accessibilityNodeInfo.setText(cd.L0(2131753936, null));
+            accessibilityNodeInfo.setText(dd.L0(2131753936, null));
         }
         accessibilityNodeInfo.setEnabled(true);
     }

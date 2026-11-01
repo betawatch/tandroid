@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class g90 {
     public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
@@ -122,14 +122,14 @@ public abstract class g90 {
                 }
                 c10 = 65535;
                 break;
-            case org.telegram.messenger.zs.p1 /* 104 */:
+            case org.telegram.messenger.at.p1 /* 104 */:
                 if (lowerCase.equals("h")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case org.telegram.messenger.zs.u1 /* 109 */:
+            case org.telegram.messenger.at.u1 /* 109 */:
                 if (lowerCase.equals("m")) {
                     c10 = 2;
                     break;
@@ -314,7 +314,7 @@ public abstract class g90 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static TLRPC.TL_webPage g(org.telegram.messenger.jj jjVar) {
+    public static TLRPC.TL_webPage g(org.telegram.messenger.kj kjVar) {
         String str;
         TLRPC.Document F0;
         File i10;
@@ -323,8 +323,8 @@ public abstract class g90 {
         boolean z10;
         int i12;
         str = "";
-        if (j(jjVar)) {
-            if (jjVar.k != null && (F02 = jjVar.F0()) != null && (i11 = i(jjVar)) != null && i11.length() <= 2097152) {
+        if (j(kjVar)) {
+            if (kjVar.k != null && (F02 = kjVar.F0()) != null && (i11 = i(kjVar)) != null && i11.length() <= 2097152) {
                 TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = (TLRPC.TL_documentAttributeFilename) org.telegram.messenger.i0.V(TLRPC.TL_documentAttributeFilename.class, F02.attributes);
                 String str2 = tL_documentAttributeFilename != null ? tL_documentAttributeFilename.file_name : null;
                 TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
@@ -447,7 +447,7 @@ public abstract class g90 {
                     return null;
                 }
             }
-        } else if (jjVar.k != null && (F0 = jjVar.F0()) != null && (i10 = i(jjVar)) != null && i10.length() <= 65536) {
+        } else if (kjVar.k != null && (F0 = kjVar.F0()) != null && (i10 = i(kjVar)) != null && i10.length() <= 65536) {
             TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename2 = (TLRPC.TL_documentAttributeFilename) org.telegram.messenger.i0.V(TLRPC.TL_documentAttributeFilename.class, F0.attributes);
             String str3 = tL_documentAttributeFilename2 != null ? tL_documentAttributeFilename2.file_name : null;
             TLRPC.TL_webPage tL_webPage2 = new TLRPC.TL_webPage();
@@ -501,17 +501,17 @@ public abstract class g90 {
         return charAt == '+' ? 1 : 2;
     }
 
-    public static File i(org.telegram.messenger.jj jjVar) {
-        TLRPC.Message message = jjVar.k;
-        int i10 = jjVar.I1;
-        File file = !TextUtils.isEmpty(message.attachPath) ? new File(jjVar.k.attachPath) : null;
+    public static File i(org.telegram.messenger.kj kjVar) {
+        TLRPC.Message message = kjVar.k;
+        int i10 = kjVar.I1;
+        File file = !TextUtils.isEmpty(message.attachPath) ? new File(kjVar.k.attachPath) : null;
         if (file == null || !file.exists()) {
             org.telegram.messenger.b8.G(i10);
-            file = org.telegram.messenger.b8.N(jjVar.k, false, true);
+            file = org.telegram.messenger.b8.N(kjVar.k, false, true);
         }
         if (file == null || !file.exists()) {
             org.telegram.messenger.b8.G(i10);
-            file = org.telegram.messenger.b8.N(jjVar.k, true, true);
+            file = org.telegram.messenger.b8.N(kjVar.k, true, true);
         }
         if (file == null || !file.exists()) {
             return null;
@@ -519,12 +519,12 @@ public abstract class g90 {
         return file;
     }
 
-    public static boolean j(org.telegram.messenger.jj jjVar) {
-        String Q0 = jjVar.Q0();
+    public static boolean j(org.telegram.messenger.kj kjVar) {
+        String Q0 = kjVar.Q0();
         if ("diff".equalsIgnoreCase(Q0) || "patch".equalsIgnoreCase(Q0)) {
             return true;
         }
-        String u12 = jjVar.u1();
+        String u12 = kjVar.u1();
         if (u12 == null) {
             return false;
         }
@@ -752,28 +752,28 @@ public abstract class g90 {
                                     }
                                     c10 = 65535;
                                     break;
-                                case org.telegram.messenger.zs.j1 /* 98 */:
+                                case org.telegram.messenger.at.j1 /* 98 */:
                                     if (lowerCase.equals("b")) {
                                         c10 = 2;
                                         break;
                                     }
                                     c10 = 65535;
                                     break;
-                                case org.telegram.messenger.zs.q1 /* 105 */:
+                                case org.telegram.messenger.at.q1 /* 105 */:
                                     if (lowerCase.equals("i")) {
                                         c10 = 3;
                                         break;
                                     }
                                     c10 = 65535;
                                     break;
-                                case org.telegram.messenger.zs.A1 /* 115 */:
+                                case org.telegram.messenger.at.A1 /* 115 */:
                                     if (lowerCase.equals("s")) {
                                         c10 = 4;
                                         break;
                                     }
                                     c10 = 65535;
                                     break;
-                                case org.telegram.messenger.zs.C1 /* 117 */:
+                                case org.telegram.messenger.at.C1 /* 117 */:
                                     if (lowerCase.equals("u")) {
                                         c10 = 5;
                                         break;
@@ -1042,7 +1042,7 @@ public abstract class g90 {
         c90Var.y();
         if (!linkedHashMap.isEmpty()) {
             TL_iv.pageBlockDetails pageblockdetails = new TL_iv.pageBlockDetails();
-            String L0 = org.telegram.messenger.cd.L0(2131749200, null);
+            String L0 = org.telegram.messenger.dd.L0(2131749200, null);
             TL_iv.textBold textbold = new TL_iv.textBold();
             textbold.text = n(L0);
             pageblockdetails.title = textbold;

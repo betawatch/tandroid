@@ -6,8 +6,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.tp;
 import org.telegram.ui.un;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout {
     public float D;
@@ -62,7 +62,7 @@ public final class j extends FrameLayout {
         f6Var.getDrawable().r(true, false);
         f6Var.setTypeface(org.telegram.messenger.i0.o());
         f6Var.setTextSize(org.telegram.messenger.i0.L(14.0f));
-        f6Var.setText(h20.p(Z1));
+        f6Var.setText(i20.p(Z1));
         a7.Z(f6Var, t6.G6, p6Var);
         f6Var.setEllipsizeByGradient(true);
         linearLayout.addView(f6Var, b6.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
@@ -71,7 +71,7 @@ public final class j extends FrameLayout {
         f6Var2.n = false;
         f6Var2.getDrawable().r(true, false);
         f6Var2.setTextSize(org.telegram.messenger.i0.L(13.0f));
-        f6Var2.setText(cd.L0(2131753700, null));
+        f6Var2.setText(dd.L0(2131753700, null));
         a7.Z(f6Var2, t6.Ue, p6Var);
         f6Var2.setEllipsizeByGradient(true);
         linearLayout.addView(f6Var2, b6.o(-1, 17));
@@ -96,7 +96,7 @@ public final class j extends FrameLayout {
         tpVar.setPadding(org.telegram.messenger.i0.L(13.0f), 0, org.telegram.messenger.i0.L(13.0f), 0);
         tpVar.setOnClickListener(new g(this, i10));
         tpVar.setOnWidthUpdatedListener(new h(this, i10));
-        tpVar.setText(cd.L0(this.r ? 2131753701 : 2131753698, null));
+        tpVar.setText(dd.L0(this.r ? 2131753701 : 2131753698, null));
         addView(tpVar, b6.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         this.n = imageView;

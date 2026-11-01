@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class nf0 extends tk0 {
+public final class nf0 extends uk0 {
     public final rf.w e3;
     public long f3;
     public final /* synthetic */ tf0 g3;
@@ -18,12 +18,12 @@ public final class nf0 extends tk0 {
         this.e3 = new rf.w(8);
     }
 
-    @Override // org.telegram.ui.Components.tk0
+    @Override // org.telegram.ui.Components.uk0
     public final boolean E0(float f7) {
         return f7 >= ((float) (this.g3.v1 + org.telegram.messenger.i0.m));
     }
 
-    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float f7;
         tf0 tf0Var = this.g3;

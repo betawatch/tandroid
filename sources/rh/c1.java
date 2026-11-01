@@ -1,15 +1,15 @@
 package rh;
 
 import android.content.Context;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.vm0;
+import org.telegram.ui.tm0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c1 implements q20 {
+public final /* synthetic */ class c1 implements r20 {
     public final /* synthetic */ e4 a;
     public final /* synthetic */ ph.k0 b;
     public final /* synthetic */ sf.b c;
@@ -28,7 +28,7 @@ public final /* synthetic */ class c1 implements q20 {
         this.g = z10;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) obj;
         final e4 e4Var = this.a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class c1 implements q20 {
         if (tL_payments_paymentFormStarGift == null) {
             return;
         }
-        d3 d3Var = new d3(this.c, tL_payments_paymentFormStarGift);
+        e3 e3Var = new e3(this.c, tL_payments_paymentFormStarGift);
         Context context = e4Var.getContext();
         org.telegram.ui.ActionBar.p6 p6Var = e4Var.I0;
         int i10 = e4Var.a;
@@ -50,18 +50,18 @@ public final /* synthetic */ class c1 implements q20 {
         final long j10 = this.e;
         final TLRPC.TL_textWithEntities tL_textWithEntities = this.f;
         final boolean z10 = this.g;
-        new g3(context, p6Var, tL_starGiftUnique, d3Var, i10, j10, z12, false, new j20() { // from class: rh.l1
-            @Override // org.telegram.messenger.j20
+        new g3(context, p6Var, tL_starGiftUnique, e3Var, i10, j10, z12, false, new k20() { // from class: rh.l1
+            @Override // org.telegram.messenger.k20
             public final void a(Object obj2, Object obj3) {
-                d3 d3Var2 = (d3) obj2;
+                e3 e3Var2 = (e3) obj2;
                 gf.e eVar = (gf.e) obj3;
                 eVar.d();
                 e4 e4Var2 = e4.this;
-                e6 x10 = e6.x(e4Var2.a, d3Var2.a);
-                TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift2 = d3Var2.b;
+                e6 x10 = e6.x(e4Var2.a, e3Var2.a);
+                TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift2 = e3Var2.b;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = tL_starGiftUnique;
                 long j11 = j10;
-                x10.h(tL_payments_paymentFormStarGift2, tL_starGiftUnique2, j11, tL_textWithEntities, z10, new vm0(e4Var2, eVar, tL_starGiftUnique2, j11, k0Var, 1));
+                x10.h(tL_payments_paymentFormStarGift2, tL_starGiftUnique2, j11, tL_textWithEntities, z10, new tm0(e4Var2, eVar, tL_starGiftUnique2, j11, k0Var, 1));
             }
         }).b();
     }

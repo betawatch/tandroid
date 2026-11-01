@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final class s9 extends AnimatorListenerAdapter {
                 break;
             case 1:
                 org.telegram.ui.Cells.i iVar = (org.telegram.ui.Cells.i) this.b;
-                ((sx0) iVar).e0.e.c.r = false;
+                ((rx0) iVar).e0.e.c.r = false;
                 FrameLayout frameLayout = iVar.J;
                 if (frameLayout.getBackground() == null) {
                     frameLayout.setBackground(iVar.K);
@@ -58,9 +58,9 @@ public final class s9 extends AnimatorListenerAdapter {
             case 2:
                 org.telegram.ui.Cells.v vVar = (org.telegram.ui.Cells.v) this.b;
                 Button button = vVar.n;
-                org.telegram.ui.Components.ch0 ch0Var = vVar.f;
-                if (button != ch0Var) {
-                    ch0Var.setVisibility(4);
+                org.telegram.ui.Components.dh0 dh0Var = vVar.f;
+                if (button != dh0Var) {
+                    dh0Var.setVisibility(4);
                     break;
                 } else {
                     vVar.e.setVisibility(4);
@@ -228,63 +228,63 @@ public final class s9 extends AnimatorListenerAdapter {
                 break;
             case 23:
                 super.onAnimationEnd(animator);
-                org.telegram.ui.Components.voip.e0 e0Var = (org.telegram.ui.Components.voip.e0) this.b;
-                if (e0Var.getParent() != null) {
-                    ((ViewGroup) e0Var.getParent()).removeView(e0Var);
+                org.telegram.ui.Components.voip.f0 f0Var = (org.telegram.ui.Components.voip.f0) this.b;
+                if (f0Var.getParent() != null) {
+                    ((ViewGroup) f0Var.getParent()).removeView(f0Var);
                     break;
                 }
                 break;
             case 24:
-                ud1 ud1Var = (ud1) this.b;
-                if (!ud1Var.a) {
-                    ud1Var.V.w.S = true;
-                    ud1Var.V.w.invalidate();
+                sd1 sd1Var = (sd1) this.b;
+                if (!sd1Var.a) {
+                    sd1Var.V.w.S = true;
+                    sd1Var.V.w.invalidate();
                     break;
                 }
                 break;
             case 25:
-                org.telegram.ui.Components.voip.x0 x0Var = (org.telegram.ui.Components.voip.x0) this.b;
-                x0Var.i = false;
-                x0Var.l.setAlpha(35);
-                x0Var.k.setAlpha(org.telegram.messenger.zs.n1);
-                x0Var.j.setAlpha(35);
-                x0Var.c();
+                org.telegram.ui.Components.voip.y0 y0Var = (org.telegram.ui.Components.voip.y0) this.b;
+                y0Var.i = false;
+                y0Var.l.setAlpha(35);
+                y0Var.k.setAlpha(org.telegram.messenger.at.n1);
+                y0Var.j.setAlpha(35);
+                y0Var.c();
                 break;
             case 26:
-                org.telegram.ui.Components.voip.b1 b1Var = ((org.telegram.ui.Components.voip.z0) this.b).c;
-                b1Var.O = false;
-                b1Var.requestLayout();
+                org.telegram.ui.Components.voip.c1 c1Var = ((org.telegram.ui.Components.voip.a1) this.b).c;
+                c1Var.O = false;
+                c1Var.requestLayout();
                 break;
             case 27:
-                org.telegram.ui.Components.voip.y1 y1Var = (org.telegram.ui.Components.voip.y1) this.b;
-                y1Var.N = 0.0f;
-                y1Var.O = 0.0f;
-                org.telegram.ui.Components.voip.x1 x1Var = y1Var.d;
-                x1Var.setScaleX(y1Var.T);
-                x1Var.setScaleY(y1Var.T);
-                TextureView textureView = y1Var.e;
+                org.telegram.ui.Components.voip.z1 z1Var = (org.telegram.ui.Components.voip.z1) this.b;
+                z1Var.N = 0.0f;
+                z1Var.O = 0.0f;
+                org.telegram.ui.Components.voip.y1 y1Var = z1Var.d;
+                y1Var.setScaleX(z1Var.T);
+                y1Var.setScaleY(z1Var.T);
+                TextureView textureView = z1Var.e;
                 if (textureView != null) {
-                    textureView.setScaleX(y1Var.U);
-                    textureView.setScaleY(y1Var.U);
+                    textureView.setScaleX(z1Var.U);
+                    textureView.setScaleY(z1Var.U);
                 }
-                y1Var.setTranslationY(0.0f);
-                y1Var.setTranslationX(0.0f);
-                y1Var.W = y1Var.V;
-                y1Var.b0 = null;
+                z1Var.setTranslationY(0.0f);
+                z1Var.setTranslationX(0.0f);
+                z1Var.W = z1Var.V;
+                z1Var.b0 = null;
                 break;
             case 28:
-                org.telegram.ui.Components.voip.b2 b2Var = (org.telegram.ui.Components.voip.b2) this.b;
-                b2Var.Q = b2Var.P ? 1.0f : 0.0f;
-                b2Var.a(b2Var.R, b2Var.S);
+                org.telegram.ui.Components.voip.c2 c2Var2 = (org.telegram.ui.Components.voip.c2) this.b;
+                c2Var2.Q = c2Var2.P ? 1.0f : 0.0f;
+                c2Var2.a(c2Var2.R, c2Var2.S);
                 break;
             default:
-                ((org.telegram.ui.Components.voip.c2) this.b).c.e();
-                org.telegram.messenger.i0.P3(((org.telegram.ui.Components.voip.c2) this.b).a);
-                if (((org.telegram.ui.Components.voip.c2) this.b).getParent() != null) {
-                    WindowManager windowManager = (WindowManager) ((org.telegram.ui.Components.voip.c2) this.b).a.getSystemService("window");
-                    ((org.telegram.ui.Components.voip.c2) this.b).setVisibility(8);
+                ((org.telegram.ui.Components.voip.d2) this.b).c.e();
+                org.telegram.messenger.i0.P3(((org.telegram.ui.Components.voip.d2) this.b).a);
+                if (((org.telegram.ui.Components.voip.d2) this.b).getParent() != null) {
+                    WindowManager windowManager = (WindowManager) ((org.telegram.ui.Components.voip.d2) this.b).a.getSystemService("window");
+                    ((org.telegram.ui.Components.voip.d2) this.b).setVisibility(8);
                     try {
-                        windowManager.removeView((org.telegram.ui.Components.voip.c2) this.b);
+                        windowManager.removeView((org.telegram.ui.Components.voip.d2) this.b);
                     } catch (Exception unused) {
                     }
                     OrientationHelper.cameraRotationDisabled = false;
@@ -298,7 +298,7 @@ public final class s9 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 1:
-                ((sx0) ((org.telegram.ui.Cells.i) this.b)).e0.e.c.r = true;
+                ((rx0) ((org.telegram.ui.Cells.i) this.b)).e0.e.c.r = true;
                 break;
             default:
                 super.onAnimationStart(animator);

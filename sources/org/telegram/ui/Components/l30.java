@@ -8,28 +8,28 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class l30 extends FrameLayout {
     public final int a;
     public final org.telegram.ui.ActionBar.p6 b;
     public ArrayList c;
     public final FrameLayout d;
-    public final u51 e;
-    public final p51 f;
-    public org.telegram.messenger.q20 h;
+    public final v51 e;
+    public final q51 f;
+    public org.telegram.messenger.r20 h;
 
     public l30(int i10, Activity activity, org.telegram.ui.ActionBar.p6 p6Var) {
         super(activity);
         this.a = i10;
         this.b = p6Var;
-        u51 u51Var = new u51(activity, i10, 0, false, new d(this, 15), new k30(this), new k30(this), p6Var);
-        this.e = u51Var;
-        u51Var.setClipToPadding(false);
-        p51 p51Var = (p51) u51Var.getAdapter();
-        this.f = p51Var;
-        p51Var.r = false;
-        addView(u51Var, -1, -1);
+        v51 v51Var = new v51(activity, i10, 0, false, new d(this, 15), new k30(this), new k30(this), p6Var);
+        this.e = v51Var;
+        v51Var.setClipToPadding(false);
+        q51 q51Var = (q51) v51Var.getAdapter();
+        this.f = q51Var;
+        q51Var.r = false;
+        addView(v51Var, -1, -1);
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         ImageView imageView = new ImageView(activity);
@@ -40,15 +40,15 @@ public final class l30 extends FrameLayout {
         frameLayout.addView(imageView, w7.b6.e(56, 56, 49));
         TextView textView = new TextView(activity);
         org.telegram.ui.ActionBar.a7.V(textView, i11, p6Var);
-        textView.setText(org.telegram.messenger.cd.L0(2131749362, null));
+        textView.setText(org.telegram.messenger.dd.L0(2131749362, null));
         textView.setGravity(17);
         frameLayout.addView(textView, w7.b6.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
-        addView(frameLayout, w7.b6.e(org.telegram.messenger.zs.n3, -2, 17));
-        u51Var.setEmptyView(frameLayout);
+        addView(frameLayout, w7.b6.e(org.telegram.messenger.at.n3, -2, 17));
+        v51Var.setEmptyView(frameLayout);
     }
 
-    public void setOnHashtagClickListener(org.telegram.messenger.q20 q20Var) {
-        this.h = q20Var;
+    public void setOnHashtagClickListener(org.telegram.messenger.r20 r20Var) {
+        this.h = r20Var;
     }
 
     public void setOnScrollListener(s4.s0 s0Var) {

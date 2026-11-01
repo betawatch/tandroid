@@ -17,9 +17,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
+public final /* synthetic */ class ll implements org.telegram.messenger.r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
 
     /* JADX WARN: Removed duplicated region for block: B:126:0x0432  */
     /* JADX WARN: Removed duplicated region for block: B:129:0x0434  */
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -70,9 +70,9 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                             int i12 = i10;
                             int i13 = ChatAttachAlertPhotoLayout.u1;
                             ChatAttachAlertPhotoLayout.u1 = i13 - 1;
-                            org.telegram.messenger.ef efVar = new org.telegram.messenger.ef(i13, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i12, i11);
-                            efVar.L = true;
-                            chatAttachAlertPhotoLayout.k0(efVar, z10, false);
+                            org.telegram.messenger.ff ffVar = new org.telegram.messenger.ff(i13, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i12, i11);
+                            ffVar.L = true;
+                            chatAttachAlertPhotoLayout.k0(ffVar, z10, false);
                             return;
                         }
                     } catch (Exception unused2) {
@@ -81,9 +81,9 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                     int i122 = i10;
                     int i132 = ChatAttachAlertPhotoLayout.u1;
                     ChatAttachAlertPhotoLayout.u1 = i132 - 1;
-                    org.telegram.messenger.ef efVar2 = new org.telegram.messenger.ef(i132, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i122, i11);
-                    efVar2.L = true;
-                    chatAttachAlertPhotoLayout.k0(efVar2, z10, false);
+                    org.telegram.messenger.ff ffVar2 = new org.telegram.messenger.ff(i132, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i122, i11);
+                    ffVar2.L = true;
+                    chatAttachAlertPhotoLayout.k0(ffVar2, z10, false);
                 }
                 break;
             case 1:
@@ -116,14 +116,14 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
             case 2:
                 PhotoViewer photoViewer = (PhotoViewer) this.c;
                 boolean z12 = this.b;
-                org.telegram.messenger.ze zeVar = (org.telegram.messenger.ze) this.d;
+                org.telegram.messenger.af afVar = (org.telegram.messenger.af) this.d;
                 jg.s2 s2Var = (jg.s2) obj;
                 jg.v2 v2Var = photoViewer.p5;
                 if (!v2Var.D || (s2VarArr = v2Var.H) == null || s2VarArr.length <= 0) {
                     photoViewer.t5.setCutOutState(true);
                     photoViewer.a3(false, true);
                 } else {
-                    h01 thanosEffect = photoViewer.p5.getThanosEffect();
+                    i01 thanosEffect = photoViewer.p5.getThanosEffect();
                     jg.v2 v2Var2 = photoViewer.p5;
                     v2Var2.L = true;
                     v2Var2.E = s2Var;
@@ -131,9 +131,9 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                     int i15 = photoViewer.C4.U;
                     jg.s2 s2Var2 = v2Var2.E;
                     Bitmap b10 = s2Var2 == null ? v2Var2.I : (!z12 || n10 == null) ? s2Var2.b() : v2Var2.e(n10);
-                    org.telegram.messenger.ef efVar3 = (org.telegram.messenger.ef) photoViewer.g7.get(photoViewer.P4);
+                    org.telegram.messenger.ff ffVar3 = (org.telegram.messenger.ff) photoViewer.g7.get(photoViewer.P4);
                     if (thanosEffect == null) {
-                        Utilities.i.c(new org.telegram.ui.bp0(photoViewer, b10, 0));
+                        Utilities.i.c(new org.telegram.ui.zo0(photoViewer, b10, 0));
                         photoViewer.p5.f();
                         photoViewer.e0.invalidate();
                         break;
@@ -141,9 +141,9 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                         jg.v2 v2Var3 = photoViewer.p5;
                         int i16 = photoViewer.C4.U;
                         v2Var3.getClass();
-                        String str = efVar3.i;
+                        String str = ffVar3.i;
                         Bitmap decodeFile = str != null ? BitmapFactory.decodeFile(str) : v2Var3.getSourceBitmap();
-                        Bitmap decodeFile2 = BitmapFactory.decodeFile(efVar3.j);
+                        Bitmap decodeFile2 = BitmapFactory.decodeFile(ffVar3.j);
                         int width = decodeFile.getWidth();
                         int height = decodeFile.getHeight();
                         Bitmap.Config config = Bitmap.Config.ARGB_8888;
@@ -168,7 +168,7 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                             bitmap2 = null;
                             f7 = 2.0f;
                         } else {
-                            if (s2Var3.c == 0 || !efVar3.u) {
+                            if (s2Var3.c == 0 || !ffVar3.u) {
                                 bitmap = createBitmap;
                                 f7 = 2.0f;
                                 canvas.drawBitmap(s2Var3.a(), (Rect) null, rect, paint);
@@ -186,7 +186,7 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                             }
                             if (decodeFile2 != null) {
                                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                if (s2Var3.c == 0 || efVar3.u) {
+                                if (s2Var3.c == 0 || ffVar3.u) {
                                     canvas.drawBitmap(decodeFile2, (Rect) null, rect, paint);
                                 } else {
                                     Matrix matrix2 = new Matrix();
@@ -202,18 +202,18 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                             bitmap2 = bitmap;
                         }
                         if (bitmap2 == null) {
-                            Utilities.i.c(new org.telegram.ui.bp0(photoViewer, b10, 1));
+                            Utilities.i.c(new org.telegram.ui.zo0(photoViewer, b10, 1));
                             photoViewer.p5.f();
                             photoViewer.e0.invalidate();
                             break;
                         } else {
-                            org.telegram.messenger.ye yeVar = zeVar.A;
-                            if (yeVar != null) {
+                            org.telegram.messenger.ze zeVar = afVar.A;
+                            if (zeVar != null) {
                                 ImageReceiver imageReceiver = photoViewer.C4;
-                                bitmap2 = PhotoViewer.J0(bitmap2, yeVar, new int[]{imageReceiver.U, imageReceiver.V}, true);
+                                bitmap2 = PhotoViewer.J0(bitmap2, zeVar, new int[]{imageReceiver.U, imageReceiver.V}, true);
                             }
                             if (bitmap2 == null) {
-                                Utilities.i.c(new org.telegram.ui.bp0(photoViewer, b10, 2));
+                                Utilities.i.c(new org.telegram.ui.zo0(photoViewer, b10, 2));
                                 photoViewer.p5.f();
                                 photoViewer.e0.invalidate();
                                 break;
@@ -221,7 +221,7 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                                 Matrix matrix3 = new Matrix();
                                 int width2 = bitmap2.getWidth();
                                 int height4 = bitmap2.getHeight();
-                                if (!efVar3.w && (photoViewer.C4.U / 90) % 2 != 0) {
+                                if (!ffVar3.w && (photoViewer.C4.U / 90) % 2 != 0) {
                                     width2 = bitmap2.getHeight();
                                     height4 = bitmap2.getWidth();
                                 }
@@ -230,7 +230,7 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                                 float min = Math.min(photoViewer.m1(photoViewer.u4) / f14, photoViewer.k1() / f15);
                                 float f16 = f14 * min;
                                 float f17 = f15 * min;
-                                if ((photoViewer.C4.U == 0 || efVar3.w) && photoViewer.b6 == 0.0f) {
+                                if ((photoViewer.C4.U == 0 || ffVar3.w) && photoViewer.b6 == 0.0f) {
                                     f10 = f16;
                                     f11 = f17;
                                     f12 = 0.0f;
@@ -245,7 +245,7 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                                     Bitmap createBitmap2 = Bitmap.createBitmap(i17, i17, config);
                                     Canvas canvas2 = new Canvas(createBitmap2);
                                     canvas2.save();
-                                    canvas2.rotate((efVar3.w ? 0 : photoViewer.C4.U) + photoViewer.b6, sqrt, sqrt);
+                                    canvas2.rotate((ffVar3.w ? 0 : photoViewer.C4.U) + photoViewer.b6, sqrt, sqrt);
                                     canvas2.drawBitmap(bitmap2, (f20 - width3) / f7, (f20 - height5) / f7, (Paint) null);
                                     bitmap2.recycle();
                                     float f21 = f16 / f7;
@@ -261,18 +261,18 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                                 matrix3.postScale(f23, f23, f10 / f7, f11 / f7);
                                 matrix3.postTranslate(photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.m1(photoViewer.u4) - f16) / f7)), photoViewer.Y5 + f12 + Math.max(0, (int) ((photoViewer.k1() - f17) / f7)));
                                 photoViewer.p5.V = true;
-                                Utilities.i.c(new org.telegram.ui.bp0(photoViewer, b10, 3));
-                                org.telegram.ui.qo0 qo0Var = new org.telegram.ui.qo0(photoViewer, 13);
-                                org.telegram.ui.qd0 qd0Var = new org.telegram.ui.qd0(photoViewer, b10, qo0Var, 21);
-                                org.telegram.ui.Components.voip.m0 m0Var = new org.telegram.ui.Components.voip.m0(13);
-                                f01 f01Var = thanosEffect.a;
-                                if (f01Var != null) {
-                                    f01Var.c(matrix3, bitmap2, qd0Var, m0Var);
+                                Utilities.i.c(new org.telegram.ui.zo0(photoViewer, b10, 3));
+                                org.telegram.ui.oo0 oo0Var = new org.telegram.ui.oo0(photoViewer, 13);
+                                org.telegram.ui.pd0 pd0Var = new org.telegram.ui.pd0(photoViewer, b10, oo0Var, 21);
+                                org.telegram.ui.Components.voip.n0 n0Var = new org.telegram.ui.Components.voip.n0(13);
+                                g01 g01Var = thanosEffect.a;
+                                if (g01Var != null) {
+                                    g01Var.c(matrix3, bitmap2, pd0Var, n0Var);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new g01(matrix3, bitmap2, qd0Var, m0Var));
+                                    thanosEffect.c.add(new h01(matrix3, bitmap2, pd0Var, n0Var));
                                 }
-                                org.telegram.messenger.i0.h3(qo0Var, 1200L);
+                                org.telegram.messenger.i0.h3(oo0Var, 1200L);
                             }
                         }
                     }
@@ -289,18 +289,18 @@ public final /* synthetic */ class ll implements org.telegram.messenger.q20 {
                     runnable2.run();
                     break;
                 } else {
-                    bw0.F3.c(org.telegram.messenger.d20.s0, str2, new org.telegram.ui.r11(linkedHashSet, runnable2, 1));
+                    cw0.F3.c(org.telegram.messenger.e20.s0, str2, new org.telegram.ui.q11(linkedHashSet, runnable2, 1));
                     break;
                 }
             default:
                 boolean z14 = this.b;
                 org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) this.c;
-                org.telegram.messenger.q20 q20Var = (org.telegram.messenger.q20) this.d;
+                org.telegram.messenger.r20 r20Var = (org.telegram.messenger.r20) this.d;
                 vh.k9 k9Var = (vh.k9) obj;
                 if (z14) {
                     x1Var.c(350L);
                 }
-                q20Var.a(k9Var);
+                r20Var.a(k9Var);
                 break;
         }
     }

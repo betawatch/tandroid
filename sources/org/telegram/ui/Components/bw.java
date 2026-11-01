@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class bw extends hg.e {
     public boolean f3;
@@ -17,7 +17,7 @@ public final class bw extends hg.e {
         this.g3 = vyVar;
     }
 
-    @Override // hg.e, org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    @Override // hg.e, org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         this.g3.n2.g();
@@ -43,19 +43,19 @@ public final class bw extends hg.e {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         vy vyVar = this.g3;
         if (vyVar.f) {
             return false;
         }
-        org.telegram.ui.lt p5 = org.telegram.ui.lt.p();
+        org.telegram.ui.kt p5 = org.telegram.ui.kt.p();
         bw bwVar = vyVar.D0;
         vyVar.getMeasuredHeight();
         return super.onInterceptTouchEvent(motionEvent) || p5.q(motionEvent, bwVar, vyVar.g2, this.n2);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         vy vyVar = this.g3;
         if (vyVar.I0 && vyVar.y0.b() > 0) {
@@ -68,7 +68,7 @@ public final class bw extends hg.e {
         vyVar.q(true);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.f3) {
             return;

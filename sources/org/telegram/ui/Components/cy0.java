@@ -2,30 +2,51 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class cy0 extends gy0 {
-    public int d;
+public final class cy0 {
+    public final /* synthetic */ int a;
 
-    @Override // org.telegram.ui.Components.gy0
-    public final int a(py0 py0Var, iy0 iy0Var, by0 by0Var, int i10, boolean z10) {
-        return Math.max(0, this.a - by0Var.a(iy0Var, i10));
+    public /* synthetic */ cy0(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.gy0
-    public final void b(int i10, int i11) {
-        super.b(i10, i11);
-        this.d = Math.max(this.d, i10 + i11);
+    public final int a(jy0 jy0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return TLObject.FLAG_31;
+            default:
+                return TLObject.FLAG_31;
+        }
     }
 
-    @Override // org.telegram.ui.Components.gy0
-    public final void c() {
-        super.c();
-        this.d = TLObject.FLAG_31;
+    public final int b(jy0 jy0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return 0;
+            default:
+                return 0;
+        }
     }
 
-    @Override // org.telegram.ui.Components.gy0
-    public final int d(boolean z10) {
-        return Math.max(super.d(z10), this.d);
+    public int c(int i10, int i11) {
+        switch (this.a) {
+            case 4:
+                return i11;
+            default:
+                return i10;
+        }
     }
 }

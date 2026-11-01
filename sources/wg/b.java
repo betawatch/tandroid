@@ -2,13 +2,13 @@ package wg;
 
 import android.graphics.Color;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.sc;
+import org.telegram.messenger.tc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class b implements a {
     public final p6 a;
@@ -22,7 +22,7 @@ public class b implements a {
     public int r;
 
     public b(int i10, p6 p6Var) {
-        this(p6Var, i10, sc.e(262144) ? 0.85f : 0.76f);
+        this(p6Var, i10, tc.e(262144) ? 0.85f : 0.76f);
     }
 
     @Override // wg.a

@@ -5,7 +5,7 @@ import android.text.Editable;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.ii;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s extends org.telegram.ui.Cells.m3 {
     public final /* synthetic */ int E;
@@ -52,12 +52,12 @@ public final class s extends org.telegram.ui.Cells.m3 {
             case 0:
                 w wVar = this.F;
                 wVar.n.d(wVar.s.getText().toString(), wVar.w.getText().toString());
-                wVar.i0(true);
+                wVar.j0(true);
                 break;
             default:
                 w wVar2 = this.F;
                 wVar2.n.d(wVar2.s.getText().toString(), wVar2.w.getText().toString());
-                wVar2.i0(true);
+                wVar2.j0(true);
                 break;
         }
     }

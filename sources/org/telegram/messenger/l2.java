@@ -16,9 +16,9 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class l2 extends View {
     public final RectF D;
@@ -34,10 +34,10 @@ public final class l2 extends View {
     public final org.telegram.ui.Components.t5 N;
     public boolean O;
     public final org.telegram.ui.Components.t5 P;
-    public final qz0 Q;
-    public final qz0 R;
+    public final rz0 Q;
+    public final rz0 R;
     public final li.k S;
-    public qz0 T;
+    public rz0 T;
     public Drawable U;
     public Drawable V;
     public RenderNode W;
@@ -98,8 +98,8 @@ public final class l2 extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.Q = new qz0(cd.L0(2131753063, null), 13.0f, i0.o());
-        this.R = new qz0(cd.L0(2131753062, null), 13.0f, i0.o());
+        this.Q = new rz0(dd.L0(2131753063, null), 13.0f, i0.o());
+        this.R = new rz0(dd.L0(2131753062, null), 13.0f, i0.o());
         paint2.setPathEffect(new CornerPathEffect(i0.L(1.0f)));
         path.rewind();
         path.moveTo(-i0.N(1.33f), i0.N(0.16f));
@@ -170,13 +170,13 @@ public final class l2 extends View {
         float d = this.L.d(this.K);
         float d10 = this.N.d(this.M);
         float L7 = (rectF2.left - i0.L(18.0f)) - (rectF.left + i0.L(38.0f));
-        qz0 qz0Var = this.T;
-        if (qz0Var == null) {
+        rz0 rz0Var = this.T;
+        if (rz0Var == null) {
             f7 = 18.0f;
             L = 0.0f;
         } else {
             f7 = 18.0f;
-            L = qz0Var.c + i0.L(this.U != null ? 30.0f : 12.0f);
+            L = rz0Var.c + i0.L(this.U != null ? 30.0f : 12.0f);
         }
         float min = Math.min(L7, L);
         float T1 = i0.T1(i0.T1(this.R.c, this.Q.c, d) + i0.L(12.0f), min, d10);
@@ -237,17 +237,17 @@ public final class l2 extends View {
         }
         canvas.restore();
         Canvas canvas2 = canvas;
-        canvas2.saveLayerAlpha((rectF5.left + i0.L(30.0f)) - i0.L(10.0f), rectF5.top, rectF5.right, rectF5.bottom, zs.e4, 31);
+        canvas2.saveLayerAlpha((rectF5.left + i0.L(30.0f)) - i0.L(10.0f), rectF5.top, rectF5.right, rectF5.bottom, at.e4, 31);
         if (d10 <= 0.0f || this.T == null) {
             f10 = d10;
             f11 = 1.0f;
         } else {
             canvas2.save();
             canvas2.translate(sc.e.z(1.0f, d10, min, rectF5.left + i0.L(30.0f)), rectF5.centerY());
-            qz0 qz0Var2 = this.T;
-            qz0Var2.p = ((rectF5.right - i0.L(this.U != null ? 30.0f : 12.0f)) - (rectF5.left + i0.L(30.0f))) + 2.0f;
+            rz0 rz0Var2 = this.T;
+            rz0Var2.p = ((rectF5.right - i0.L(this.U != null ? 30.0f : 12.0f)) - (rectF5.left + i0.L(30.0f))) + 2.0f;
             f11 = 1.0f;
-            qz0Var2.c(0.0f, 0.0f, d10, -1, canvas);
+            rz0Var2.c(0.0f, 0.0f, d10, -1, canvas);
             f10 = d10;
             canvas2 = canvas;
             canvas2.translate(this.T.k() + i0.L(5.0f), 0.0f);

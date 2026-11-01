@@ -13,7 +13,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o2 extends FrameLayout implements org.telegram.ui.Cells.j9, org.telegram.ui.ActionBar.k6 {
     public final /* synthetic */ h4 D;
@@ -131,7 +131,7 @@ public final class o2 extends FrameLayout implements org.telegram.ui.Cells.j9, o
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.cd.L0(2131754856, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.dd.L0(2131754856, null));
         if (this.f != null) {
             sb2.append(", ");
             sb2.append(this.f.d.getText());
@@ -186,7 +186,7 @@ public final class o2 extends FrameLayout implements org.telegram.ui.Cells.j9, o
             TL_iv.pageBlockSlideshow pageblockslideshow2 = this.e;
             TL_iv.RichText richText2 = pageblockslideshow2.caption.credit;
             if (this.y.G) {
-                alignment = org.telegram.ui.Components.ov0.a();
+                alignment = org.telegram.ui.Components.pv0.a();
             }
             z2 n11 = h4.n(h4Var, this, null, richText2, L2, 0, pageblockslideshow2, alignment, 0, this.y);
             this.h = n11;

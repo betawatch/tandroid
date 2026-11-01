@@ -3,12 +3,12 @@ package org.telegram.messenger;
 import com.android.billingclient.api.Purchase;
 import java.lang.reflect.Field;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dk0;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements dk0, c5.h {
+public final /* synthetic */ class j implements ek0, c5.h {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -40,16 +40,16 @@ public final /* synthetic */ class j implements dk0, c5.h {
         }
     }
 
-    @Override // org.telegram.ui.Components.dk0
+    @Override // org.telegram.ui.Components.ek0
     public int run() {
         org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.a;
         String str = (String) this.b;
-        tk0 tk0Var = (tk0) this.c;
+        uk0 uk0Var = (uk0) this.c;
         int i10 = -1;
         try {
             Field declaredField = k2Var.getClass().getDeclaredField(str);
             declaredField.setAccessible(true);
-            s4.a0 a0Var = (s4.a0) tk0Var.getLayoutManager();
+            s4.a0 a0Var = (s4.a0) uk0Var.getLayoutManager();
             i10 = declaredField.getInt(k2Var);
             a0Var.h1(i10, i0.L(60.0f));
             declaredField.setAccessible(false);

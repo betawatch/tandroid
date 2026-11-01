@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
 import lc.s;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.p2;
 import r0.h0;
@@ -39,7 +39,7 @@ import th.q;
 import th.z2;
 import th.z5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final s t0;
@@ -954,7 +954,7 @@ public class g extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction() & zs.e4;
+        int action = motionEvent.getAction() & at.e4;
         if (action == 3 || action == 1) {
             v();
             return false;
@@ -1071,7 +1071,7 @@ public class g extends ViewGroup {
                 if (dVar.a) {
                     int i20 = dVar.b;
                     int i21 = i20 & 7;
-                    int i22 = i20 & zs.x1;
+                    int i22 = i20 & at.x1;
                     if (i21 != 1) {
                         if (i21 == 3) {
                             i14 = childAt.getMeasuredWidth() + paddingLeft;
@@ -1186,7 +1186,7 @@ public class g extends ViewGroup {
             if (childAt.getVisibility() != 8 && (dVar2 = (d) childAt.getLayoutParams()) != null && dVar2.a) {
                 int i15 = dVar2.b;
                 int i16 = i15 & 7;
-                int i17 = i15 & zs.x1;
+                int i17 = i15 & at.x1;
                 boolean z11 = i17 == 48 || i17 == 80;
                 if (i16 != 3 && i16 != 5) {
                     z10 = false;
@@ -1304,7 +1304,7 @@ public class g extends ViewGroup {
                 this.W = VelocityTracker.obtain();
             }
             this.W.addMovement(motionEvent);
-            int action = motionEvent.getAction() & zs.e4;
+            int action = motionEvent.getAction() & at.e4;
             if (action == 0) {
                 this.r.abortAnimation();
                 this.K = false;

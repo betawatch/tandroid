@@ -6,14 +6,14 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.b30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c00;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.us;
+import org.telegram.messenger.c30;
+import org.telegram.messenger.d00;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.jc;
 import org.telegram.messenger.v5;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -21,19 +21,19 @@ import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.l5;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.v51;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
+public final class f2 extends org.telegram.ui.ActionBar.k2 implements vs {
     public boolean D;
     public int E;
     public boolean F;
-    public u51 a;
+    public v51 a;
     public l5 b;
     public boolean c;
     public FrameLayout d;
@@ -52,13 +52,13 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
         this.E = -4;
     }
 
-    public final void Y(boolean z10) {
+    public final void Z(boolean z10) {
         if (this.b == null) {
             return;
         }
-        this.b.a(Z(), z10);
-        u51 u51Var = this.a;
-        if (u51Var == null || u51Var.f3 == null) {
+        this.b.a(a0(), z10);
+        v51 v51Var = this.a;
+        if (v51Var == null || v51Var.f3 == null) {
             return;
         }
         if (this.F != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
@@ -66,7 +66,7 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
         }
     }
 
-    public final boolean Z() {
+    public final boolean a0() {
         TLRPC.GeoPoint geoPoint;
         if (((this.x == null && TextUtils.isEmpty(this.y)) ? false : true) != (this.w != null)) {
             return true;
@@ -88,13 +88,13 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
         return geoPoint2 != null && (tL_businessLocation2 == null || (geoPoint = tL_businessLocation2.geo_point) == null || !((geoPoint instanceof TLRPC.TL_geoPointEmpty) || (geoPoint2.lat == geoPoint.lat && geoPoint2._long == geoPoint._long)));
     }
 
-    public final void a0() {
+    public final void b0() {
         if (this.b.y.f) {
             return;
         }
         boolean z10 = this.x == null && TextUtils.isEmpty(this.y);
         if (!z10) {
-            if (!Z()) {
+            if (!a0()) {
                 finishFragment();
                 return;
             }
@@ -145,8 +145,8 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
         getMessagesStorage().j2(a2, false);
     }
 
-    public final void b0() {
-        p51 p51Var;
+    public final void c0() {
+        q51 q51Var;
         if (this.s) {
             return;
         }
@@ -172,44 +172,23 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
             a2Var2.setSelection(a2Var2.getText().length());
             this.c = false;
         }
-        c0();
-        u51 u51Var = this.a;
-        if (u51Var != null && (p51Var = u51Var.f3) != null) {
-            p51Var.O(true);
+        d0();
+        v51 v51Var = this.a;
+        if (v51Var != null && (q51Var = v51Var.f3) != null) {
+            q51Var.O(true);
         }
         this.s = true;
-    }
-
-    public final void c0() {
-        d2 d2Var;
-        e2 e2Var = this.h;
-        if (e2Var == null || (d2Var = this.r) == null) {
-            return;
-        }
-        if (this.x == null) {
-            d2Var.setImageBitmap(null);
-            return;
-        }
-        e2Var.setAlpha(0.0f);
-        this.h.setTranslationY(-org.telegram.messenger.i0.L(12.0f));
-        int measuredWidth = this.r.getMeasuredWidth() <= 0 ? org.telegram.messenger.i0.q.x : this.r.getMeasuredWidth();
-        float f7 = org.telegram.messenger.i0.p;
-        int i10 = (int) (measuredWidth / f7);
-        int min = Math.min(2, (int) Math.ceil(f7));
-        d2 d2Var2 = this.r;
-        TLRPC.GeoPoint geoPoint = this.x;
-        d2Var2.p(ic.p(b30.a(geoPoint.lat, geoPoint._long, 0L, min * i10, min * zs.P3, 15, min)), a1.g.k(i10, "_240"), this.n, null);
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(cd.L0(2131752698, null));
+        this.simpleActionBar.setTitle(dd.L0(2131752698, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new e(this, 4));
-        this.b = this.simpleActionBar.n(cd.L0(2131745963, null));
+        this.b = this.simpleActionBar.n(dd.L0(2131745963, null));
         int i10 = 0;
-        Y(false);
+        Z(false);
         FrameLayout frameLayout = new FrameLayout(context);
         a2 a2Var = new a2(this, getParentActivity());
         this.e = a2Var;
@@ -223,9 +202,9 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
         this.e.setMaxLines(5);
         this.e.setSingleLine(false);
         this.e.setPadding(0, 0, org.telegram.messenger.i0.L(42.0f), 0);
-        this.e.setGravity((cd.X ? 5 : 3) | 48);
+        this.e.setGravity((dd.X ? 5 : 3) | 48);
         this.e.setInputType(180225);
-        this.e.setHint(cd.L0(2131752697, null));
+        this.e.setHint(dd.L0(2131752697, null));
         a7.w(this.e, i11, null);
         this.e.setCursorSize(org.telegram.messenger.i0.L(19.0f));
         this.e.setCursorWidth(1.5f);
@@ -246,7 +225,7 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
             this.c = false;
         }
         this.r = new d2(this, context, i10);
-        c00 c10 = v5.c(0.2f, t6.Dc);
+        d00 c10 = v5.c(0.2f, t6.Dc);
         p6 resourceProvider = getResourceProvider();
         c10.m = i11;
         c10.o = resourceProvider;
@@ -261,28 +240,49 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
         this.f = frameLayout4;
         frameLayout4.addView(this.r, b6.c(-1.0f, -1));
         this.f.addView(this.h, b6.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
-        c0();
-        u51 u51Var = new u51(this, new a(this, i12), new y1(this, i10), null);
-        this.a = u51Var;
-        u51Var.r1();
+        d0();
+        v51 v51Var = new v51(this, new a(this, i12), new y1(this, i10), null);
+        this.a = v51Var;
+        v51Var.r1();
         this.a.setSectionsDrawBackground(true);
-        u51 u51Var2 = this.a;
-        u51Var2.f3.r = false;
-        frameLayout.addView(u51Var2, b6.c(-1.0f, -1));
-        b0();
+        v51 v51Var2 = this.a;
+        v51Var2.f3.r = false;
+        frameLayout.addView(v51Var2, b6.c(-1.0f, -1));
+        c0();
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
-    @Override // org.telegram.messenger.us
+    public final void d0() {
+        d2 d2Var;
+        e2 e2Var = this.h;
+        if (e2Var == null || (d2Var = this.r) == null) {
+            return;
+        }
+        if (this.x == null) {
+            d2Var.setImageBitmap(null);
+            return;
+        }
+        e2Var.setAlpha(0.0f);
+        this.h.setTranslationY(-org.telegram.messenger.i0.L(12.0f));
+        int measuredWidth = this.r.getMeasuredWidth() <= 0 ? org.telegram.messenger.i0.q.x : this.r.getMeasuredWidth();
+        float f7 = org.telegram.messenger.i0.p;
+        int i10 = (int) (measuredWidth / f7);
+        int min = Math.min(2, (int) Math.ceil(f7));
+        d2 d2Var2 = this.r;
+        TLRPC.GeoPoint geoPoint = this.x;
+        d2Var2.p(jc.p(c30.a(geoPoint.lat, geoPoint._long, 0L, min * i10, min * at.P3, 15, min)), a1.g.k(i10, "_240"), this.n, null);
+    }
+
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.E0) {
-            b0();
+        if (i10 == at.E0) {
+            c0();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.k2
-    public final tk0 getListViewForSimpleGlass() {
+    public final uk0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -293,24 +293,24 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
 
     @Override // org.telegram.ui.ActionBar.k2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        return !Z();
+        return !a0();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final boolean onBackPressed(boolean z10) {
         int i10 = 1;
         boolean z11 = this.x == null && TextUtils.isEmpty(this.y);
-        if (!Z() || z11) {
+        if (!a0() || z11) {
             return super.onBackPressed(z10);
         }
         if (z10) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String L0 = cd.L0(2131743860, null);
+            String L0 = dd.L0(2131743860, null);
             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
             x1Var.R = L0;
-            x1Var.T = cd.L0(2131752690, null);
-            alertDialog$Builder.k(cd.L0(2131754216, null), new y1(this, i10));
-            alertDialog$Builder.h(cd.L0(2131747596, null), new y1(this, 2));
+            x1Var.T = dd.L0(2131752690, null);
+            alertDialog$Builder.k(dd.L0(2131754216, null), new y1(this, i10));
+            alertDialog$Builder.h(dd.L0(2131747596, null), new y1(this, 2));
             showDialog(x1Var);
         }
         return false;
@@ -318,13 +318,13 @@ public final class f2 extends org.telegram.ui.ActionBar.k2 implements us {
 
     @Override // org.telegram.ui.ActionBar.k2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, zs.E0);
+        getNotificationCenter().c(this, at.E0);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, zs.E0);
+        getNotificationCenter().n(this, at.E0);
         super.onFragmentDestroy();
     }
 

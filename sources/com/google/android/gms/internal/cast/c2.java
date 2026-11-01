@@ -4,9 +4,9 @@ import android.content.SharedPreferences;
 import android.os.Looper;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c2 {
     public static final g6.b i = new g6.b("FeatureUsageAnalytics", null);
@@ -107,9 +107,9 @@ public final class c2 {
                 return c1.T;
             case 29:
                 return c1.U;
-            case zs.T /* 30 */:
+            case at.T /* 30 */:
                 return c1.V;
-            case zs.U /* 31 */:
+            case at.U /* 31 */:
                 return c1.W;
             case 32:
                 return c1.X;
@@ -149,15 +149,15 @@ public final class c2 {
                 return c1.o0;
             case 50:
                 return c1.p0;
-            case zs.o0 /* 51 */:
+            case at.o0 /* 51 */:
                 return c1.q0;
-            case zs.p0 /* 52 */:
+            case at.p0 /* 52 */:
                 return c1.r0;
-            case zs.q0 /* 53 */:
+            case at.q0 /* 53 */:
                 return c1.s0;
-            case zs.r0 /* 54 */:
+            case at.r0 /* 54 */:
                 return c1.t0;
-            case zs.s0 /* 55 */:
+            case at.s0 /* 55 */:
                 return c1.u0;
             default:
                 return null;

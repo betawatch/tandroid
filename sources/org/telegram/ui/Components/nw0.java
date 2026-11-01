@@ -1,51 +1,39 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nw0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ org.telegram.messenger.q20 c;
+    public final /* synthetic */ dx0 b;
 
-    public /* synthetic */ nw0(TLObject tLObject, org.telegram.messenger.q20 q20Var, int i10) {
+    public /* synthetic */ nw0(dx0 dx0Var, int i10) {
         this.a = i10;
-        this.b = tLObject;
-        this.c = q20Var;
+        this.b = dx0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z10;
         switch (this.a) {
             case 0:
-                TLObject tLObject = this.b;
-                if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
-                    z10 = true;
-                    org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).I1(tL_messages_stickerSet, true);
-                    if (!org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).B0(tL_messages_stickerSet.set.id, true)) {
-                        org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).f2(null, tL_messages_stickerSet, 2, null, false, false);
-                    }
-                } else {
-                    z10 = false;
-                }
-                this.c.a(Boolean.valueOf(z10));
+                this.b.k1.f();
+                break;
+            case 1:
+                this.b.k1.f();
+                break;
+            case 2:
+                dx0 dx0Var = this.b;
+                dx0Var.dismiss();
+                org.telegram.messenger.vi.b0(dx0Var.a).f2(dx0Var.getContext(), dx0Var.J1, 1, dx0Var.C1, false, false);
+                break;
+            case 3:
+                dx0 dx0Var2 = this.b;
+                org.telegram.messenger.wp.r1(dx0Var2.a).v3("stickers", dx0Var2.C1, 1, null);
                 break;
             default:
-                TLObject tLObject2 = this.b;
-                boolean z11 = tLObject2 instanceof TL_account.paidMessagesRevenue;
-                org.telegram.messenger.q20 q20Var = this.c;
-                if (!z11) {
-                    q20Var.a(0L);
-                    break;
-                } else {
-                    q20Var.a(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject2).stars_amount));
-                    break;
-                }
+                dx0 dx0Var3 = this.b;
+                dx0Var3.dismiss();
+                org.telegram.messenger.vi.b0(dx0Var3.a).f2(dx0Var3.getContext(), dx0Var3.J1, 1, dx0Var3.C1, false, false);
+                break;
         }
     }
 }

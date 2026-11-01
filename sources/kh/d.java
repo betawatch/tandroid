@@ -7,26 +7,26 @@ import org.telegram.messenger.i0;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.fi0;
+import org.telegram.ui.Components.gi0;
 import org.telegram.ui.Components.gr;
 import rf.o;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d extends c {
     public final e6 d;
-    public final fi0 e;
+    public final gi0 e;
     public final fe.b f;
     public float h;
 
     public d(View view, p6 p6Var) {
         super(p6Var);
-        fi0 fi0Var = new fi0(view);
-        this.e = fi0Var;
-        fi0Var.d(null, true, false);
-        fi0Var.v = 650.0f;
-        fi0Var.e(false, 0.69f);
-        fi0Var.p.setStrokeWidth(i0.L(1.5f));
+        gi0 gi0Var = new gi0(view);
+        this.e = gi0Var;
+        gi0Var.d(null, true, false);
+        gi0Var.v = 650.0f;
+        gi0Var.e(false, 0.69f);
+        gi0Var.p.setStrokeWidth(i0.L(1.5f));
         this.f = new fe.b(view, gr.h, 260L);
         e6 e6Var = new e6(true, false, false);
         this.d = e6Var;

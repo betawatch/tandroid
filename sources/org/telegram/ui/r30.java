@@ -1,31 +1,15 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
+import android.content.Context;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class r30 implements os0 {
-    public final /* synthetic */ b50 a;
+public final class r30 extends org.telegram.ui.Components.voip.f0 {
+    public final /* synthetic */ a50 E;
 
-    public r30(b50 b50Var) {
-        this.a = b50Var;
-    }
-
-    @Override // org.telegram.ui.os0
-    public final void H0(org.telegram.messenger.jj jjVar) {
-        b50 b50Var = this.a;
-        b50Var.H1.I0(true);
-        b50Var.T3.f.K0(org.telegram.messenger.i0.L(13.0f), org.telegram.messenger.i0.L(13.0f), 0, 0);
-        b50Var.b.invalidate();
-    }
-
-    @Override // org.telegram.ui.os0
-    public final void I(org.telegram.messenger.jj jjVar) {
-        this.a.b.invalidate();
-    }
-
-    @Override // org.telegram.ui.os0
-    public final /* synthetic */ TextureView k0() {
-        return null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r30(a50 a50Var, Context context, boolean z10) {
+        super(context, z10);
+        this.E = a50Var;
     }
 }

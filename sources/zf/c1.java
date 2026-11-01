@@ -1,20 +1,20 @@
 package zf;
 
 import android.view.ViewGroup;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.do0;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.bo0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class c1 extends sk0 {
+public final class c1 extends tk0 {
     public x0 c;
     public Integer d;
-    public do0 e;
+    public bo0 e;
     public boolean f;
     public int h;
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         if (c1Var.b() == 0) {
             return false;
@@ -50,8 +50,8 @@ public final class c1 extends sk0 {
         if (i10 != -983904) {
             return this.c.w(viewGroup, i10);
         }
-        do0 do0Var = new do0(this, viewGroup.getContext(), 15);
-        this.e = do0Var;
-        return new ck0(do0Var);
+        bo0 bo0Var = new bo0(this, viewGroup.getContext(), 15);
+        this.e = bo0Var;
+        return new dk0(bo0Var);
     }
 }

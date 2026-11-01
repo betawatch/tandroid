@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class bi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class bi extends AnimatorListenerAdapter {
             case 0:
                 un unVar = this.b;
                 unVar.Xa = 0.0f;
-                unVar.A9();
+                unVar.F9();
                 break;
             case 1:
                 un unVar2 = this.b;
@@ -37,7 +37,7 @@ public final class bi extends AnimatorListenerAdapter {
                 float L = org.telegram.messenger.i0.L(30.0f);
                 un unVar3 = this.b;
                 unVar3.T9 = L;
-                unVar3.A9();
+                unVar3.F9();
                 break;
             case 3:
                 un unVar4 = this.b;
@@ -71,7 +71,7 @@ public final class bi extends AnimatorListenerAdapter {
                 un unVar7 = this.b;
                 if (animator.equals(unVar7.v3)) {
                     unVar7.w3 = 1.0f;
-                    unVar7.Fc();
+                    unVar7.Kc();
                     unVar7.v3 = null;
                     break;
                 }
@@ -80,7 +80,7 @@ public final class bi extends AnimatorListenerAdapter {
                 un unVar8 = this.b;
                 if (animator.equals(unVar8.v3)) {
                     unVar8.w3 = 0.0f;
-                    unVar8.Fc();
+                    unVar8.Kc();
                     unVar8.v3 = null;
                     break;
                 }
@@ -93,7 +93,7 @@ public final class bi extends AnimatorListenerAdapter {
                 unVar9.Xa = 1.0f;
                 unVar9.Z.setVisibility(4);
                 unVar9.c1.setVisibility(4);
-                unVar9.A9();
+                unVar9.F9();
                 break;
         }
     }

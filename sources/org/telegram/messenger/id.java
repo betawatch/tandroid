@@ -1,33 +1,40 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes.dex */
-public final /* synthetic */ class id implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nd b;
-    public final /* synthetic */ Integer c;
+import android.location.Location;
 
-    public /* synthetic */ id(nd ndVar, Integer num, int i10) {
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class id implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ od b;
+
+    public /* synthetic */ id(od odVar, int i10) {
         this.a = i10;
-        this.b = ndVar;
-        this.c = num;
+        this.b = odVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = 1;
-        Integer num = this.c;
-        nd ndVar = this.b;
-        switch (i10) {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
             case 0:
-                if (!ndVar.b.isEmpty()) {
-                    i0.g3(new id(ndVar, num, i11));
-                    break;
-                }
+                this.b.m((Location) obj);
                 break;
             default:
-                ndVar.getNotificationCenter().k(76, num);
+                od odVar = this.b;
+                Integer num = (Integer) obj;
+                odVar.getClass();
+                int intValue = num.intValue();
+                boolean z10 = true;
+                if (intValue == 0) {
+                    Utilities.d.c(new d20(3, odVar, z10));
+                    break;
+                } else if (intValue == 1) {
+                    Utilities.d.c(new jd(odVar, num, 0));
+                    break;
+                } else if (intValue == 2) {
+                    Utilities.d.c(new fd(odVar, 4));
+                    break;
+                }
                 break;
         }
     }

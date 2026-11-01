@@ -1,40 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class p20 implements Runnable {
-    public final /* synthetic */ b50 a;
+public final class p20 extends org.telegram.ui.Components.r7 {
+    public final /* synthetic */ Activity D;
+    public final /* synthetic */ a50 E;
 
-    public p20(b50 b50Var) {
-        this.a = b50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p20(a50 a50Var, LaunchActivity launchActivity, Activity activity) {
+        super(launchActivity);
+        this.E = a50Var;
+        this.D = activity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        b50 b50Var = this.a;
-        org.telegram.ui.ActionBar.u5 u5Var = b50Var.L1;
-        h40 h40Var = b50Var.M1;
-        if (h40Var == null || b50Var.I) {
-            return;
-        }
-        org.telegram.messenger.u3 u3Var = b50Var.R2;
-        int i10 = u3Var != null ? u3Var.b.schedule_date : b50Var.b4;
-        if (i10 == 0) {
-            return;
-        }
-        int currentTime = i10 - ConnectionsManager.getInstance(b50Var.k1.a).getCurrentTime();
-        if (currentTime >= 86400) {
-            h40Var.l(org.telegram.messenger.cd.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]), false);
-        } else {
-            h40Var.l(org.telegram.messenger.i0.j0(Math.abs(currentTime)), false);
-            if (currentTime < 0 && u5Var.getTag() == null) {
-                u5Var.setTag(1);
-                u5Var.l(org.telegram.messenger.cd.L0(2131743467, null), false);
-            }
-        }
-        b50Var.N1.l(org.telegram.messenger.cd.W(3, i10, true), false);
-        org.telegram.messenger.i0.h3(b50Var.n4, 1000L);
+    @Override // org.telegram.ui.Components.r7
+    public final TextView a() {
+        TextView textView = new TextView(this.D);
+        org.telegram.messenger.m5.m(textView, org.telegram.ui.ActionBar.t6.Vg, null, 1, 20.0f);
+        textView.setGravity(51);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setOnClickListener(new vu(9, this, textView));
+        return textView;
     }
 }

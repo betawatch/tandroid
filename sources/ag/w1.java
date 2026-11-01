@@ -3,23 +3,23 @@ package ag;
 import android.location.Address;
 import android.location.Geocoder;
 import java.util.List;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.yb0;
+import org.telegram.ui.xb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ f2 b;
-    public final /* synthetic */ yb0 c;
+    public final /* synthetic */ xb0 c;
     public final /* synthetic */ org.telegram.ui.ActionBar.x1 d;
 
-    public /* synthetic */ w1(f2 f2Var, org.telegram.ui.ActionBar.x1 x1Var, yb0 yb0Var) {
+    public /* synthetic */ w1(f2 f2Var, org.telegram.ui.ActionBar.x1 x1Var, xb0 xb0Var) {
         this.b = f2Var;
         this.d = x1Var;
-        this.c = yb0Var;
+        this.c = xb0Var;
     }
 
     @Override // java.lang.Runnable
@@ -33,9 +33,9 @@ public final /* synthetic */ class w1 implements Runnable {
                 break;
             default:
                 f2 f2Var2 = this.b;
-                yb0 yb0Var = this.c;
+                xb0 xb0Var = this.c;
                 try {
-                    List<Address> fromLocationName = new Geocoder(f2Var2.getParentActivity(), cd.D0().y).getFromLocationName(f2Var2.y, 1);
+                    List<Address> fromLocationName = new Geocoder(f2Var2.getParentActivity(), dd.D0().y).getFromLocationName(f2Var2.y, 1);
                     if (!fromLocationName.isEmpty()) {
                         Address address = fromLocationName.get(0);
                         TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
@@ -44,19 +44,19 @@ public final /* synthetic */ class w1 implements Runnable {
                         tL_channelLocation.geo_point = tL_geoPoint;
                         tL_geoPoint.lat = address.getLatitude();
                         tL_channelLocation.geo_point._long = address.getLongitude();
-                        yb0Var.I0 = tL_channelLocation;
+                        xb0Var.I0 = tL_channelLocation;
                     }
                 } catch (Exception e) {
                     f8.g(e, true);
                 }
-                org.telegram.messenger.i0.g3(new w1(f2Var2, this.d, yb0Var));
+                org.telegram.messenger.i0.g3(new w1(f2Var2, this.d, xb0Var));
                 break;
         }
     }
 
-    public /* synthetic */ w1(f2 f2Var, yb0 yb0Var, org.telegram.ui.ActionBar.x1 x1Var) {
+    public /* synthetic */ w1(f2 f2Var, xb0 xb0Var, org.telegram.ui.ActionBar.x1 x1Var) {
         this.b = f2Var;
-        this.c = yb0Var;
+        this.c = xb0Var;
         this.d = x1Var;
     }
 }

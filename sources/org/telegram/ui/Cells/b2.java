@@ -7,10 +7,10 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.l00;
 import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.x41;
+import org.telegram.ui.Components.y41;
 import org.telegram.ui.kd;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b2 extends p80 {
     public final /* synthetic */ int L;
@@ -91,10 +91,10 @@ public final class b2 extends p80 {
                         charSequence.replace(indexOf, indexOf + 1, " ");
                         charSequence.setSpan(new l00(org.telegram.ui.ActionBar.t6.p7, ((org.telegram.ui.na) this.M).e.getResourceProvider()), 0, indexOf, 33);
                     }
-                    x41[] x41VarArr = (x41[]) charSequence.getSpans(0, charSequence.length(), x41.class);
-                    for (int i10 = 0; i10 < x41VarArr.length; i10++) {
-                        charSequence.setSpan(new dh.a(this, 3), charSequence.getSpanStart(x41VarArr[i10]), charSequence.getSpanEnd(x41VarArr[i10]), 33);
-                        charSequence.removeSpan(x41VarArr[i10]);
+                    y41[] y41VarArr = (y41[]) charSequence.getSpans(0, charSequence.length(), y41.class);
+                    for (int i10 = 0; i10 < y41VarArr.length; i10++) {
+                        charSequence.setSpan(new dh.a(this, 3), charSequence.getSpanStart(y41VarArr[i10]), charSequence.getSpanEnd(y41VarArr[i10]), 33);
+                        charSequence.removeSpan(y41VarArr[i10]);
                     }
                 }
                 super.setText(charSequence, bufferType);
@@ -108,12 +108,12 @@ public final class b2 extends p80 {
                         charSequence.replace(indexOf2, indexOf2 + 1, " ");
                         charSequence.setSpan(new l00(org.telegram.ui.ActionBar.t6.p7, kdVar.getResourceProvider()), 0, indexOf2, 33);
                     }
-                    x41[] x41VarArr2 = (x41[]) charSequence.getSpans(0, charSequence.length(), x41.class);
+                    y41[] y41VarArr2 = (y41[]) charSequence.getSpans(0, charSequence.length(), y41.class);
                     EditTextBoldCursor editTextBoldCursor = kdVar.y;
                     String obj = (editTextBoldCursor == null || editTextBoldCursor.getText() == null) ? "" : kdVar.y.getText().toString();
-                    for (int i11 = 0; i11 < x41VarArr2.length; i11++) {
-                        charSequence.setSpan(new h(4, (Object) this, obj), charSequence.getSpanStart(x41VarArr2[i11]), charSequence.getSpanEnd(x41VarArr2[i11]), 33);
-                        charSequence.removeSpan(x41VarArr2[i11]);
+                    for (int i11 = 0; i11 < y41VarArr2.length; i11++) {
+                        charSequence.setSpan(new h(4, (Object) this, obj), charSequence.getSpanStart(y41VarArr2[i11]), charSequence.getSpanEnd(y41VarArr2[i11]), 33);
+                        charSequence.removeSpan(y41VarArr2[i11]);
                     }
                 }
                 super.setText(charSequence, bufferType);

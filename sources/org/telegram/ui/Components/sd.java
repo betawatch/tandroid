@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class sd implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final class sd implements View.OnClickListener {
                     }
                     chatActivityEnterView.e0.a(chatActivityEnterView.g2, true);
                     chatActivityEnterView.I1.setImageDrawable(chatActivityEnterView.e0);
-                    org.telegram.messenger.vp.r1(chatActivityEnterView.Q).e7.edit().putBoolean("silent_" + chatActivityEnterView.Q2, chatActivityEnterView.g2).commit();
-                    org.telegram.messenger.ot.t(chatActivityEnterView.Q).c0(chatActivityEnterView.Q2, unVar == null ? 0L : unVar.b(), true);
-                    unVar.Y7();
+                    org.telegram.messenger.wp.r1(chatActivityEnterView.Q).e7.edit().putBoolean("silent_" + chatActivityEnterView.Q2, chatActivityEnterView.g2).commit();
+                    org.telegram.messenger.pt.t(chatActivityEnterView.Q).c0(chatActivityEnterView.Q2, unVar == null ? 0L : unVar.b(), true);
+                    unVar.c8();
                     UndoView undoView = unVar.M3;
                     if (undoView != null) {
                         undoView.j(!chatActivityEnterView.g2 ? 54 : 55, 0L, null);
@@ -60,17 +60,17 @@ public final class sd implements View.OnClickListener {
                         str = "AccDescrChanSilentOff";
                         i10 = 2131754907;
                     }
-                    imageView.setContentDescription(org.telegram.messenger.cd.L0(i10, str));
+                    imageView.setContentDescription(org.telegram.messenger.dd.L0(i10, str));
                     chatActivityEnterView.F1(true);
                     break;
                 }
                 break;
             default:
-                if (org.telegram.ui.ay.x4) {
+                if (org.telegram.ui.zx.x4) {
                     break;
                 } else {
                     int x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.a7, false);
-                    org.telegram.ui.ay.x4 = true;
+                    org.telegram.ui.zx.x4 = true;
                     SharedPreferences sharedPreferences = org.telegram.messenger.w0.b.getSharedPreferences("themeconfig", 0);
                     String str2 = "Blue";
                     String string = sharedPreferences.getString("lastDayTheme", "Blue");
@@ -90,14 +90,14 @@ public final class sd implements View.OnClickListener {
                         boolean q6 = org.telegram.ui.ActionBar.t6.I.q();
                         boolean z10 = !q6;
                         org.telegram.ui.ActionBar.s6 Q0 = q6 ? org.telegram.ui.ActionBar.t6.Q0(str3) : org.telegram.ui.ActionBar.t6.Q0(str2);
-                        bi0 bi0Var = ((org.telegram.ui.vu) this.d).d;
-                        bi0Var.P(q6 ? bi0Var.e[0] - 1 : 0);
-                        ((org.telegram.ui.vu) this.d).e.getImageView().d();
-                        int[] iArr = {(((org.telegram.ui.vu) this.d).e.getImageView().getMeasuredWidth() / 2) + r3, org.telegram.messenger.m5.C(3.0f, ((org.telegram.ui.vu) this.d).e.getImageView().getMeasuredHeight() / 2, r3)};
-                        ((org.telegram.ui.vu) this.d).e.getImageView().getLocationInWindow(iArr);
+                        ci0 ci0Var = ((org.telegram.ui.uu) this.d).d;
+                        ci0Var.P(q6 ? ci0Var.e[0] - 1 : 0);
+                        ((org.telegram.ui.uu) this.d).e.getImageView().d();
+                        int[] iArr = {(((org.telegram.ui.uu) this.d).e.getImageView().getMeasuredWidth() / 2) + r3, org.telegram.messenger.m5.C(3.0f, ((org.telegram.ui.uu) this.d).e.getImageView().getMeasuredHeight() / 2, r3)};
+                        ((org.telegram.ui.uu) this.d).e.getImageView().getLocationInWindow(iArr);
                         int i11 = iArr[0];
                         int i12 = iArr[1];
-                        org.telegram.messenger.zs.e().k(org.telegram.messenger.zs.t4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((org.telegram.ui.vu) this.d).e.getImageView(), ((org.telegram.ui.vu) this.d).e, new ig.o0(this, (Context) this.b, x02, z10, (org.telegram.ui.ActionBar.k2) this.c, 5));
+                        org.telegram.messenger.at.e().k(org.telegram.messenger.at.t4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((org.telegram.ui.uu) this.d).e.getImageView(), ((org.telegram.ui.uu) this.d).e, new ig.o0(this, (Context) this.b, x02, z10, (org.telegram.ui.ActionBar.k2) this.c, 5));
                         break;
                     }
                     str2 = string;
@@ -105,14 +105,14 @@ public final class sd implements View.OnClickListener {
                     boolean z102 = !q62;
                     if (q62) {
                     }
-                    bi0 bi0Var2 = ((org.telegram.ui.vu) this.d).d;
-                    bi0Var2.P(q62 ? bi0Var2.e[0] - 1 : 0);
-                    ((org.telegram.ui.vu) this.d).e.getImageView().d();
-                    int[] iArr2 = {(((org.telegram.ui.vu) this.d).e.getImageView().getMeasuredWidth() / 2) + i11, org.telegram.messenger.m5.C(3.0f, ((org.telegram.ui.vu) this.d).e.getImageView().getMeasuredHeight() / 2, i12)};
-                    ((org.telegram.ui.vu) this.d).e.getImageView().getLocationInWindow(iArr2);
+                    ci0 ci0Var2 = ((org.telegram.ui.uu) this.d).d;
+                    ci0Var2.P(q62 ? ci0Var2.e[0] - 1 : 0);
+                    ((org.telegram.ui.uu) this.d).e.getImageView().d();
+                    int[] iArr2 = {(((org.telegram.ui.uu) this.d).e.getImageView().getMeasuredWidth() / 2) + i11, org.telegram.messenger.m5.C(3.0f, ((org.telegram.ui.uu) this.d).e.getImageView().getMeasuredHeight() / 2, i12)};
+                    ((org.telegram.ui.uu) this.d).e.getImageView().getLocationInWindow(iArr2);
                     int i112 = iArr2[0];
                     int i122 = iArr2[1];
-                    org.telegram.messenger.zs.e().k(org.telegram.messenger.zs.t4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((org.telegram.ui.vu) this.d).e.getImageView(), ((org.telegram.ui.vu) this.d).e, new ig.o0(this, (Context) this.b, x02, z102, (org.telegram.ui.ActionBar.k2) this.c, 5));
+                    org.telegram.messenger.at.e().k(org.telegram.messenger.at.t4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((org.telegram.ui.uu) this.d).e.getImageView(), ((org.telegram.ui.uu) this.d).e, new ig.o0(this, (Context) this.b, x02, z102, (org.telegram.ui.ActionBar.k2) this.c, 5));
                 }
                 break;
         }

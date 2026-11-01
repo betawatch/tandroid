@@ -22,14 +22,14 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d00;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.e00;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r {
     public static final String[] e0 = {"models/star.binobj"};
@@ -266,7 +266,7 @@ public final class r {
                 GLES20.glBindTexture(3553, this.o);
                 int i32 = this.b0;
                 if (i32 == 0 || i32 == 2) {
-                    bitmap2 = d00.d(R.raw.start_texture, zs.P3, zs.P3, -1);
+                    bitmap2 = e00.d(R.raw.start_texture, at.P3, at.P3, -1);
                 } else {
                     try {
                         if (i32 == 1) {
@@ -327,11 +327,11 @@ public final class r {
                 fArr = null;
                 fArr2 = null;
                 e.printStackTrace();
-                this.i[i22] = z20.g(ByteBuffer.allocateDirect(fArr3.length * 4));
+                this.i[i22] = a30.g(ByteBuffer.allocateDirect(fArr3.length * 4));
                 this.i[i22].put(fArr3).position(0);
-                this.j[i22] = z20.g(ByteBuffer.allocateDirect(fArr2.length * 4));
+                this.j[i22] = a30.g(ByteBuffer.allocateDirect(fArr2.length * 4));
                 this.j[i22].put(fArr2).position(0);
-                this.k[i22] = z20.g(ByteBuffer.allocateDirect(fArr.length * 4));
+                this.k[i22] = a30.g(ByteBuffer.allocateDirect(fArr.length * 4));
                 this.k[i22].put(fArr).position(0);
                 this.y[i22] = fArr3.length;
                 i22++;
@@ -428,11 +428,11 @@ public final class r {
                         } catch (IOException e10) {
                             e = e10;
                             e.printStackTrace();
-                            this.i[i22] = z20.g(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.i[i22] = a30.g(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.i[i22].put(fArr3).position(0);
-                            this.j[i22] = z20.g(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.j[i22] = a30.g(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.j[i22].put(fArr2).position(0);
-                            this.k[i22] = z20.g(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.k[i22] = a30.g(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.k[i22].put(fArr).position(0);
                             this.y[i22] = fArr3.length;
                             i22++;
@@ -442,11 +442,11 @@ public final class r {
                             i19 = 3;
                             i21 = 0;
                         }
-                        this.i[i22] = z20.g(ByteBuffer.allocateDirect(fArr3.length * 4));
+                        this.i[i22] = a30.g(ByteBuffer.allocateDirect(fArr3.length * 4));
                         this.i[i22].put(fArr3).position(0);
-                        this.j[i22] = z20.g(ByteBuffer.allocateDirect(fArr2.length * 4));
+                        this.j[i22] = a30.g(ByteBuffer.allocateDirect(fArr2.length * 4));
                         this.j[i22].put(fArr2).position(0);
-                        this.k[i22] = z20.g(ByteBuffer.allocateDirect(fArr.length * 4));
+                        this.k[i22] = a30.g(ByteBuffer.allocateDirect(fArr.length * 4));
                         this.k[i22].put(fArr).position(0);
                         this.y[i22] = fArr3.length;
                         i22++;

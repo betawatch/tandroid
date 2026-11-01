@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x30 implements ai {
     public final /* synthetic */ b40 a;
@@ -32,7 +32,7 @@ public final class x30 implements ai {
             return;
         }
         if (i10 != 8 && i10 != 7) {
-            biVar.N(i10);
+            biVar.M(i10);
             if (i10 == 0) {
                 b40Var.l();
                 return;
@@ -45,51 +45,51 @@ public final class x30 implements ai {
         boolean z14 = false;
         for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
             Object obj = selectedPhotos.get(selectedPhotosOrder.get(i13));
-            org.telegram.messenger.pz pzVar = new org.telegram.messenger.pz();
-            arrayList.add(pzVar);
-            if (obj instanceof org.telegram.messenger.ef) {
-                org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) obj;
-                String str = efVar.h;
+            org.telegram.messenger.qz qzVar = new org.telegram.messenger.qz();
+            arrayList.add(qzVar);
+            if (obj instanceof org.telegram.messenger.ff) {
+                org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) obj;
+                String str = ffVar.h;
                 if (str != null) {
-                    pzVar.c = str;
+                    qzVar.c = str;
                 } else {
-                    pzVar.c = efVar.I;
+                    qzVar.c = ffVar.I;
                 }
-                pzVar.e = efVar.c;
-                pzVar.f = efVar.g;
-                pzVar.k = efVar.s;
-                pzVar.p = efVar.d();
-                pzVar.o = efVar.b;
-                pzVar.z = efVar.m;
-                pzVar.q = true;
-                CharSequence charSequence = efVar.a;
-                pzVar.d = charSequence != null ? charSequence.toString() : null;
-                pzVar.i = efVar.n;
-                pzVar.j = efVar.r;
-                pzVar.h = efVar.x;
-                TLRPC.VideoSize videoSize = efVar.S;
-                pzVar.v = videoSize;
+                qzVar.e = ffVar.c;
+                qzVar.f = ffVar.g;
+                qzVar.k = ffVar.s;
+                qzVar.p = ffVar.d();
+                qzVar.o = ffVar.b;
+                qzVar.z = ffVar.m;
+                qzVar.q = true;
+                CharSequence charSequence = ffVar.a;
+                qzVar.d = charSequence != null ? charSequence.toString() : null;
+                qzVar.i = ffVar.n;
+                qzVar.j = ffVar.r;
+                qzVar.h = ffVar.x;
+                TLRPC.VideoSize videoSize = ffVar.S;
+                qzVar.v = videoSize;
                 z14 = videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup;
-            } else if (obj instanceof org.telegram.messenger.hf) {
-                org.telegram.messenger.hf hfVar = (org.telegram.messenger.hf) obj;
-                String str2 = hfVar.h;
+            } else if (obj instanceof org.telegram.messenger.jf) {
+                org.telegram.messenger.jf jfVar = (org.telegram.messenger.jf) obj;
+                String str2 = jfVar.h;
                 if (str2 != null) {
-                    pzVar.c = str2;
+                    qzVar.c = str2;
                 } else {
-                    pzVar.l = hfVar;
+                    qzVar.l = jfVar;
                 }
-                pzVar.e = hfVar.c;
-                pzVar.f = hfVar.g;
-                pzVar.k = hfVar.s;
-                CharSequence charSequence2 = hfVar.I;
-                pzVar.d = charSequence2 != null ? charSequence2.toString() : null;
-                pzVar.i = hfVar.n;
-                pzVar.j = hfVar.r;
-                pzVar.h = hfVar.x;
-                TLRPC.BotInlineResult botInlineResult = hfVar.N;
-                if (botInlineResult != null && hfVar.H == 1) {
-                    pzVar.m = botInlineResult;
-                    pzVar.n = hfVar.O;
+                qzVar.e = jfVar.c;
+                qzVar.f = jfVar.g;
+                qzVar.k = jfVar.s;
+                CharSequence charSequence2 = jfVar.I;
+                qzVar.d = charSequence2 != null ? charSequence2.toString() : null;
+                qzVar.i = jfVar.n;
+                qzVar.j = jfVar.r;
+                qzVar.h = jfVar.x;
+                TLRPC.BotInlineResult botInlineResult = jfVar.N;
+                if (botInlineResult != null && jfVar.H == 1) {
+                    qzVar.m = botInlineResult;
+                    qzVar.n = jfVar.O;
                 }
                 System.currentTimeMillis();
             }

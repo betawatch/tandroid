@@ -27,7 +27,7 @@ import org.telegram.messenger.AnimatedFileDrawableStream;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s5 extends BitmapDrawable implements Animatable, rf.c {
     public static final float[] V0 = new float[8];
@@ -117,8 +117,8 @@ public final class s5 extends BitmapDrawable implements Animatable, rf.c {
     public int y0;
     public final rf.e z0;
 
-    public s5(File file, boolean z10, long j10, int i10, TLRPC.Document document, org.telegram.messenger.ic icVar, Object obj, long j11, int i11, boolean z11) {
-        this(file, z10, j10, i10, document, icVar, obj, j11, i11, z11, 0, 0, null, document != null ? 1 : 0, true);
+    public s5(File file, boolean z10, long j10, int i10, TLRPC.Document document, org.telegram.messenger.jc jcVar, Object obj, long j11, int i11, boolean z11) {
+        this(file, z10, j10, i10, document, jcVar, obj, j11, i11, z11, 0, 0, null, document != null ? 1 : 0, true);
     }
 
     public final void A(boolean z10) {
@@ -818,7 +818,7 @@ public final class s5 extends BitmapDrawable implements Animatable, rf.c {
         }
         if (this.D0 != null) {
             rf.e.c();
-            bi0.T0.cancelRunnable(this.D0);
+            ci0.T0.cancelRunnable(this.D0);
             this.D0 = null;
         }
         if (this.e == null) {
@@ -997,7 +997,7 @@ public final class s5 extends BitmapDrawable implements Animatable, rf.c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public s5(File file, boolean z10, long j10, int i10, TLRPC.Document document, org.telegram.messenger.ic icVar, Object obj, long j11, int i11, boolean z11, int i12, int i13, b2.r1 r1Var, int i14, boolean z12) {
+    public s5(File file, boolean z10, long j10, int i10, TLRPC.Document document, org.telegram.messenger.jc jcVar, Object obj, long j11, int i11, boolean z11, int i12, int i13, b2.r1 r1Var, int i14, boolean z12) {
         ?? r12;
         ?? r13;
         long j12;
@@ -1028,7 +1028,7 @@ public final class s5 extends BitmapDrawable implements Animatable, rf.c {
         this.I0 = new q5(this, 8);
         this.S0 = new r5(this, 0);
         this.G = file;
-        this.b = org.telegram.messenger.tz.o() >= 1;
+        this.b = org.telegram.messenger.uz.o() >= 1;
         this.H = j10;
         this.I = i10;
         this.J = i11;
@@ -1039,11 +1039,11 @@ public final class s5 extends BitmapDrawable implements Animatable, rf.c {
         this.l0 = z13;
         this.o0 = document;
         getPaint().setFlags(3);
-        if (j10 == 0 || (document == null && icVar == null)) {
+        if (j10 == 0 || (document == null && jcVar == null)) {
             r12 = 1;
         } else {
             r12 = 1;
-            this.u0 = new AnimatedFileDrawableStream(document, icVar, obj, i11, z11, i10, i14);
+            this.u0 = new AnimatedFileDrawableStream(document, jcVar, obj, i11, z11, i10, i14);
         }
         rf.e eVar = null;
         if (!z10 || z13) {

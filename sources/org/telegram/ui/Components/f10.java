@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f10 extends FrameLayout implements fe.e, org.telegram.ui.ActionBar.k6 {
     public int D;
@@ -19,7 +19,7 @@ public final class f10 extends FrameLayout implements fe.e, org.telegram.ui.Acti
     public boolean H;
     public final fe.b a;
     public final fe.b b;
-    public final ei0 c;
+    public final fi0 c;
     public final RadialProgressView d;
     public final org.telegram.ui.ActionBar.p6 e;
     public ArrayList f;
@@ -36,11 +36,11 @@ public final class f10 extends FrameLayout implements fe.e, org.telegram.ui.Acti
     }
 
     public static FrameLayout.LayoutParams b() {
-        return w7.b6.d(48, 48.0f, (org.telegram.messenger.cd.X ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
+        return w7.b6.d(48, 48.0f, (org.telegram.messenger.dd.X ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static FrameLayout.LayoutParams c() {
-        return w7.b6.d(48, 48.0f, (org.telegram.messenger.cd.X ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
+        return w7.b6.d(48, 48.0f, (org.telegram.messenger.dd.X ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static void d(View view, float f7) {
@@ -126,8 +126,8 @@ public final class f10 extends FrameLayout implements fe.e, org.telegram.ui.Acti
     @Override // org.telegram.ui.ActionBar.k6
     public final void updateColors() {
         RadialProgressView radialProgressView;
-        ei0 ei0Var = this.c;
-        if (ei0Var == null || (radialProgressView = this.d) == null) {
+        fi0 fi0Var = this.c;
+        if (fi0Var == null || (radialProgressView = this.d) == null) {
             return;
         }
         boolean z10 = this.w != null && getBackground() == this.w;
@@ -139,7 +139,7 @@ public final class f10 extends FrameLayout implements fe.e, org.telegram.ui.Acti
             if (w02 != this.x || !this.y) {
                 this.x = w02;
                 this.y = true;
-                ei0Var.setColorFilter(w02, PorterDuff.Mode.SRC_IN);
+                fi0Var.setColorFilter(w02, PorterDuff.Mode.SRC_IN);
             }
             radialProgressView.setProgressColor(org.telegram.ui.ActionBar.t6.w0(i10, p6Var));
             int w03 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Ci, p6Var);
@@ -167,7 +167,7 @@ public final class f10 extends FrameLayout implements fe.e, org.telegram.ui.Acti
         if (w05 != this.x || !this.y) {
             this.x = w05;
             this.y = true;
-            ei0Var.setColorFilter(w05, PorterDuff.Mode.SRC_IN);
+            fi0Var.setColorFilter(w05, PorterDuff.Mode.SRC_IN);
         }
         radialProgressView.setProgressColor(org.telegram.ui.ActionBar.t6.w0(i11, p6Var));
         hi.c cVar = this.n;
@@ -230,10 +230,10 @@ public final class f10 extends FrameLayout implements fe.e, org.telegram.ui.Acti
         this.b = new fe.b(1, this, grVar, 380L, false);
         this.e = p6Var;
         this.h = z10;
-        ei0 ei0Var = new ei0(context);
-        this.c = ei0Var;
-        ei0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ei0Var, w7.b6.c(-1.0f, -1));
+        fi0 fi0Var = new fi0(context);
+        this.c = fi0Var;
+        fi0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(fi0Var, w7.b6.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(org.telegram.messenger.i0.L(18.0f));
@@ -250,16 +250,16 @@ public final class f10 extends FrameLayout implements fe.e, org.telegram.ui.Acti
             this.s = e10Var;
             hi.c cVar = new hi.c();
             this.n = cVar;
-            vg.f fVar = new vg.f(cVar);
+            vg.f fVar = new vg.f(cVar, cVar, cVar);
             this.r = fVar;
             fVar.o(e10Var);
             float N = org.telegram.messenger.i0.N(0.4f);
             float N2 = org.telegram.messenger.i0.N(0.4f);
-            vg.e eVar = fVar.M;
+            vg.e eVar = fVar.P;
             eVar.i = N;
             eVar.j = N2;
-            fVar.L = null;
-            org.telegram.messenger.z20.u(fVar, org.telegram.messenger.i0.L(18.0f), 5.66f);
+            fVar.O = null;
+            org.telegram.messenger.a30.u(fVar, org.telegram.messenger.i0.L(18.0f), 5.66f);
         }
         updateColors();
     }

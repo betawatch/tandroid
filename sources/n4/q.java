@@ -66,8 +66,8 @@ import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.er0;
-import org.telegram.ui.qo0;
+import org.telegram.ui.cr0;
+import org.telegram.ui.oo0;
 import r0.h0;
 import r0.k0;
 import v7.p8;
@@ -75,7 +75,7 @@ import v7.r6;
 import v7.t6;
 import w7.m9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class q implements OnCompleteListener, b4, d9.k, f6.a, fa.a, g6.n, z3.m, c3.i, b1, e2.d {
     public Object a;
@@ -442,7 +442,7 @@ public final class q implements OnCompleteListener, b4, d9.k, f6.a, fa.a, g6.n, 
 
     @Override // ig.b1
     public void d() {
-        ((qo0) this.a).run();
+        ((oo0) this.a).run();
     }
 
     @Override // bi.b4
@@ -471,7 +471,7 @@ public final class q implements OnCompleteListener, b4, d9.k, f6.a, fa.a, g6.n, 
 
     @Override // ig.b1
     public void g() {
-        t0 t0Var = ((er0) this.b).G0;
+        t0 t0Var = ((cr0) this.b).G0;
         if (t0Var != null) {
             t0Var.invalidate();
         }
@@ -501,21 +501,21 @@ public final class q implements OnCompleteListener, b4, d9.k, f6.a, fa.a, g6.n, 
 
     @Override // ig.b1
     public void j() {
-        er0 er0Var = (er0) this.b;
-        if (er0Var.T0) {
-            er0Var.T0 = false;
+        cr0 cr0Var = (cr0) this.b;
+        if (cr0Var.T0) {
+            cr0Var.T0 = false;
         } else {
-            er0Var.c1.b(1);
-            er0Var.z((ig.h) ig.h.a.get(0));
+            cr0Var.c1.b(1);
+            cr0Var.z((ig.h) ig.h.a.get(0));
         }
     }
 
     @Override // ig.b1
     public boolean k() {
-        er0 er0Var = (er0) this.b;
-        boolean z10 = er0Var.B0 == null;
+        cr0 cr0Var = (cr0) this.b;
+        boolean z10 = cr0Var.B0 == null;
         if (!z10) {
-            er0Var.q0(null, true);
+            cr0Var.q0(null, true);
         }
         return z10;
     }
@@ -551,9 +551,9 @@ public final class q implements OnCompleteListener, b4, d9.k, f6.a, fa.a, g6.n, 
 
     @Override // ig.b1
     public void n() {
-        er0 er0Var = (er0) this.b;
-        er0Var.o0.a.B();
-        er0Var.U0.setViewHidden(false);
+        cr0 cr0Var = (cr0) this.b;
+        cr0Var.o0.a.B();
+        cr0Var.U0.setViewHidden(false);
     }
 
     @Override // z3.m
@@ -628,11 +628,11 @@ public final class q implements OnCompleteListener, b4, d9.k, f6.a, fa.a, g6.n, 
 
     @Override // ig.b1
     public void t() {
-        er0 er0Var = (er0) this.b;
-        if (er0Var.B0 != null) {
-            er0Var.q0(null, true);
+        cr0 cr0Var = (cr0) this.b;
+        if (cr0Var.B0 != null) {
+            cr0Var.q0(null, true);
         }
-        er0Var.U0.setViewHidden(true);
+        cr0Var.U0.setViewHidden(true);
     }
 
     @Override // bi.b4

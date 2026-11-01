@@ -13,7 +13,7 @@ import c3.i0;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class e {
     public static final ColorMatrixColorFilter v = new ColorMatrixColorFilter(new ColorMatrix());
@@ -64,11 +64,14 @@ public final class e {
                 RectF rectF2 = i0.b(i10) ? cVar.d : cVar.c;
                 int i13 = i0.b(i10) ? cVar.p : cVar.o;
                 canvas.save();
-                float f11 = i11;
-                canvas.translate((rectF2.left - f7) / f11, (rectF2.top - f10) / f11);
+                float f11 = i11 * 2;
+                RectF rectF3 = cVar.a;
+                float f12 = i11;
+                canvas.clipRect(((rectF3.left - f11) - f7) / f12, ((rectF3.top - f11) - f10) / f12, ((rectF3.right + f11) - f7) / f12, ((rectF3.bottom + f11) - f10) / f12);
+                canvas.translate((rectF2.left - f7) / f12, (rectF2.top - f10) / f12);
                 if (i13 != i11) {
-                    float f12 = i13 / f11;
-                    canvas.scale(f12, f12);
+                    float f13 = i13 / f12;
+                    canvas.scale(f13, f13);
                 }
                 canvas.drawRenderNode(cVar.a(i10));
                 canvas.restore();

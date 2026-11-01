@@ -6,9 +6,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0, org.telegram.messenger.cs {
+public final /* synthetic */ class pr implements org.telegram.messenger.u20, ik0, org.telegram.messenger.ds {
     public final /* synthetic */ int a;
     public final /* synthetic */ vr b;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x002e  */
     /* JADX WARN: Removed duplicated region for block: B:153:0x019e  */
-    @Override // org.telegram.messenger.t20
+    @Override // org.telegram.messenger.u20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -32,19 +32,19 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
                 TLRPC.Chat chat = vrVar.Q1;
                 if (vrVar.u2) {
                     if (tLObject instanceof TLRPC.User) {
-                        org.telegram.messenger.vp.r1(vrVar.a).k0(chat, (TLRPC.User) tLObject, null, 0);
+                        org.telegram.messenger.wp.r1(vrVar.a).k0(chat, (TLRPC.User) tLObject, null, 0);
                     } else if (tLObject instanceof TLRPC.Chat) {
-                        org.telegram.messenger.vp.r1(vrVar.a).k0(chat, null, (TLRPC.Chat) tLObject, 0);
+                        org.telegram.messenger.wp.r1(vrVar.a).k0(chat, null, (TLRPC.Chat) tLObject, 0);
                     }
                 }
                 if (vrVar.v2) {
                     if (!(tLObject instanceof TLRPC.User)) {
                         if (tLObject instanceof TLRPC.Chat) {
-                            org.telegram.messenger.vp.r1(vrVar.a).j0(chat, null, (TLRPC.Chat) tLObject);
+                            org.telegram.messenger.wp.r1(vrVar.a).j0(chat, null, (TLRPC.Chat) tLObject);
                             break;
                         }
                     } else {
-                        org.telegram.messenger.vp.r1(vrVar.a).j0(chat, (TLRPC.User) tLObject, null);
+                        org.telegram.messenger.wp.r1(vrVar.a).j0(chat, (TLRPC.User) tLObject, null);
                         break;
                     }
                 }
@@ -54,11 +54,11 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
                 TLRPC.Chat chat2 = vrVar2.Q1;
                 if (!(tLObject instanceof TLRPC.User)) {
                     if (tLObject instanceof TLRPC.Chat) {
-                        org.telegram.messenger.vp.r1(vrVar2.a).k0(chat2, null, (TLRPC.Chat) tLObject, 0);
+                        org.telegram.messenger.wp.r1(vrVar2.a).k0(chat2, null, (TLRPC.Chat) tLObject, 0);
                         break;
                     }
                 } else {
-                    org.telegram.messenger.vp.r1(vrVar2.a).k0(chat2, (TLRPC.User) tLObject, null, 0);
+                    org.telegram.messenger.wp.r1(vrVar2.a).k0(chat2, (TLRPC.User) tLObject, null, 0);
                     break;
                 }
                 break;
@@ -67,11 +67,11 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
                 TLRPC.Chat chat3 = vrVar3.Q1;
                 if (!(tLObject instanceof TLRPC.User)) {
                     if (tLObject instanceof TLRPC.Chat) {
-                        org.telegram.messenger.vp.r1(vrVar3.a).j0(chat3, null, (TLRPC.Chat) tLObject);
+                        org.telegram.messenger.wp.r1(vrVar3.a).j0(chat3, null, (TLRPC.Chat) tLObject);
                         break;
                     }
                 } else {
-                    org.telegram.messenger.vp.r1(vrVar3.a).j0(chat3, (TLRPC.User) tLObject, null);
+                    org.telegram.messenger.wp.r1(vrVar3.a).j0(chat3, (TLRPC.User) tLObject, null);
                     break;
                 }
                 break;
@@ -121,20 +121,20 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
                             }
                             if (!(tLObject instanceof TLRPC.User)) {
                                 if (tLObject instanceof TLRPC.Chat) {
-                                    org.telegram.messenger.vp.r1(vrVar4.a).J4(j10, null, (TLRPC.Chat) tLObject, tL_chatBannedRights, false, vrVar4.o1, null);
+                                    org.telegram.messenger.wp.r1(vrVar4.a).J4(j10, null, (TLRPC.Chat) tLObject, tL_chatBannedRights, false, vrVar4.o1, null);
                                     break;
                                 }
                             } else {
-                                org.telegram.messenger.vp.r1(vrVar4.a).J4(j10, (TLRPC.User) tLObject, null, tL_chatBannedRights, false, vrVar4.o1, null);
+                                org.telegram.messenger.wp.r1(vrVar4.a).J4(j10, (TLRPC.User) tLObject, null, tL_chatBannedRights, false, vrVar4.o1, null);
                                 break;
                             }
                         } else if (!(tLObject instanceof TLRPC.User)) {
                             if (tLObject instanceof TLRPC.Chat) {
-                                org.telegram.messenger.vp.r1(vrVar4.a).g0(j10, null, (TLRPC.Chat) tLObject, false, false);
+                                org.telegram.messenger.wp.r1(vrVar4.a).g0(j10, null, (TLRPC.Chat) tLObject, false, false);
                                 break;
                             }
                         } else {
-                            org.telegram.messenger.vp.r1(vrVar4.a).g0(j10, (TLRPC.User) tLObject, null, false, false);
+                            org.telegram.messenger.wp.r1(vrVar4.a).g0(j10, (TLRPC.User) tLObject, null, false, false);
                             break;
                         }
                     }
@@ -146,11 +146,11 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public void b(float f7, float f10, int i10, View view) {
         boolean z10;
         vr vrVar = this.b;
-        a51 G = vrVar.P1.G(i10 - 1);
+        b51 G = vrVar.P1.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -194,11 +194,11 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
             if (i12 == 39) {
                 if (G.t) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(vrVar.getContext());
-                    String L0 = org.telegram.messenger.cd.L0(2131743745, null);
+                    String L0 = org.telegram.messenger.dd.L0(2131743745, null);
                     org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                     x1Var.R = L0;
-                    x1Var.T = org.telegram.messenger.cd.L0(2131743744, null);
-                    alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131747847, null), null);
+                    x1Var.T = org.telegram.messenger.dd.L0(2131743744, null);
+                    alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), null);
                     x1Var.show();
                     return;
                 }
@@ -275,11 +275,11 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
         if (i12 == 35) {
             if (G.t) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(vrVar.getContext());
-                String L02 = org.telegram.messenger.cd.L0(2131743745, null);
+                String L02 = org.telegram.messenger.dd.L0(2131743745, null);
                 org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder2.a;
                 x1Var2.R = L02;
-                x1Var2.T = org.telegram.messenger.cd.L0(2131743744, null);
-                alertDialog$Builder2.k(org.telegram.messenger.cd.L0(2131747847, null), null);
+                x1Var2.T = org.telegram.messenger.dd.L0(2131743744, null);
+                alertDialog$Builder2.k(org.telegram.messenger.dd.L0(2131747847, null), null);
                 x1Var2.show();
                 return;
             }
@@ -322,7 +322,7 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
                                 if (i15 >= vrVar.P1.D.size()) {
                                     break;
                                 }
-                                a51 G2 = vrVar.P1.G(i15);
+                                b51 G2 = vrVar.P1.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     s4.c1 K = vrVar.k1.K(i15 + 1);
                                     if (K != null) {
@@ -361,12 +361,12 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ boolean h1(View view) {
         return false;
     }
 
-    @Override // org.telegram.messenger.cs
+    @Override // org.telegram.messenger.ds
     public void run(long j10) {
         switch (this.a) {
             case 5:
@@ -374,7 +374,7 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
                 vrVar.getClass();
                 org.telegram.ui.ActionBar.k2 Q = LaunchActivity.Q();
                 if (Q != null) {
-                    Q.presentFragment(org.telegram.ui.un.ha(j10));
+                    Q.presentFragment(org.telegram.ui.un.ma(j10));
                 }
                 vrVar.dismiss();
                 break;
@@ -383,14 +383,14 @@ public final /* synthetic */ class pr implements org.telegram.messenger.t20, hk0
                 vrVar2.getClass();
                 org.telegram.ui.ActionBar.k2 Q2 = LaunchActivity.Q();
                 if (Q2 != null) {
-                    Q2.presentFragment(org.telegram.ui.un.ha(j10));
+                    Q2.presentFragment(org.telegram.ui.un.ma(j10));
                 }
                 vrVar2.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

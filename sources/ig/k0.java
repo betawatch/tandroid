@@ -16,28 +16,28 @@ import m.c3;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.is;
 import org.telegram.messenger.k6;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ll;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.dv0;
-import org.telegram.ui.i31;
+import org.telegram.ui.cv0;
+import org.telegram.ui.g31;
 import th.e5;
 import th.r5;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class k0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        q20 q20Var;
+        r20 r20Var;
         int i10 = this.a;
         boolean z10 = this.c;
         boolean z11 = this.b;
@@ -78,8 +78,8 @@ public final /* synthetic */ class k0 implements Runnable {
                 Bitmap[] bitmapArr = (Bitmap[]) obj2;
                 CountDownLatch countDownLatch = (CountDownLatch) obj;
                 q0 q0Var = ((a1) obj3).D.c;
-                pu0 pu0Var = q0Var.g;
-                n4.q h = q0Var.h(new RectF(0.0f, 0.0f, pu0Var.a, pu0Var.b), false, z11, z10);
+                qu0 qu0Var = q0Var.g;
+                n4.q h = q0Var.h(new RectF(0.0f, 0.0f, qu0Var.a, qu0Var.b), false, z11, z10);
                 if (h != null) {
                     bitmapArr[0] = (Bitmap) h.a;
                 }
@@ -116,15 +116,15 @@ public final /* synthetic */ class k0 implements Runnable {
                 f0Var.p(wVar);
                 break;
             case 3:
-                ProfileActivity.Y((ProfileActivity) obj3, (TLRPC.User) obj2, (String) obj, z11, z10);
+                ProfileActivity.Z((ProfileActivity) obj3, (TLRPC.User) obj2, (String) obj, z11, z10);
                 break;
             case 4:
-                final i31 i31Var = (i31) obj3;
+                final g31 g31Var = (g31) obj3;
                 final String str = (String) obj2;
                 String[] strArr = (String[]) obj;
                 final LinkedHashSet linkedHashSet = new LinkedHashSet();
                 final LinkedHashSet linkedHashSet2 = new LinkedHashSet();
-                final HashMap hashMap = ui.b0(i31Var.V).r;
+                final HashMap hashMap = vi.b0(g31Var.V).r;
                 final ArrayList arrayList = new ArrayList();
                 final ArrayList arrayList2 = new ArrayList();
                 boolean d = k6.d(str);
@@ -133,10 +133,10 @@ public final /* synthetic */ class k0 implements Runnable {
                 final ArrayList arrayList4 = new ArrayList();
                 final boolean z12 = this.b;
                 final boolean z13 = this.c;
-                q20 q20Var2 = new q20() { // from class: org.telegram.ui.o11
-                    @Override // org.telegram.messenger.q20
+                r20 r20Var2 = new r20() { // from class: org.telegram.ui.n11
+                    @Override // org.telegram.messenger.r20
                     public final void a(Object obj4) {
-                        final i31 i31Var2 = i31.this;
+                        final g31 g31Var2 = g31.this;
                         final String str2 = str;
                         final boolean z14 = z12;
                         final ArrayList arrayList5 = arrayList;
@@ -147,73 +147,73 @@ public final /* synthetic */ class k0 implements Runnable {
                         final ArrayList arrayList7 = arrayList4;
                         final ArrayList arrayList8 = arrayList3;
                         final boolean z15 = z13;
-                        org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.s11
+                        org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.r11
                             @Override // java.lang.Runnable
                             public final void run() {
-                                i31 i31Var3 = i31.this;
-                                k11 k11Var = i31Var3.J1;
-                                if (k11Var != null) {
-                                    org.telegram.messenger.i0.r(k11Var);
-                                    i31Var3.J1 = null;
+                                g31 g31Var3 = g31.this;
+                                j11 j11Var = g31Var3.J1;
+                                if (j11Var != null) {
+                                    org.telegram.messenger.i0.r(j11Var);
+                                    g31Var3.J1 = null;
                                 }
-                                String str3 = i31Var3.A1;
+                                String str3 = g31Var3.A1;
                                 String str4 = str2;
                                 if (str4 != str3) {
                                     return;
                                 }
-                                i31Var3.z1 = true;
-                                i31Var3.z(true, z14);
-                                a21 a21Var = i31Var3.f0;
-                                if (a21Var != null) {
-                                    a21Var.d(true);
+                                g31Var3.z1 = true;
+                                g31Var3.z(true, z14);
+                                y11 y11Var = g31Var3.f0;
+                                if (y11Var != null) {
+                                    y11Var.d(true);
                                 }
-                                ArrayList arrayList9 = i31Var3.B1;
+                                ArrayList arrayList9 = g31Var3.B1;
                                 if (arrayList9 == null) {
-                                    i31Var3.B1 = new ArrayList();
+                                    g31Var3.B1 = new ArrayList();
                                 } else {
                                     arrayList9.clear();
                                 }
-                                ArrayList arrayList10 = i31Var3.E1;
+                                ArrayList arrayList10 = g31Var3.E1;
                                 if (arrayList10 == null) {
-                                    i31Var3.E1 = new ArrayList();
+                                    g31Var3.E1 = new ArrayList();
                                 } else {
                                     arrayList10.clear();
                                 }
-                                ArrayList arrayList11 = i31Var3.D1;
+                                ArrayList arrayList11 = g31Var3.D1;
                                 if (arrayList11 == null) {
-                                    i31Var3.D1 = new ArrayList();
+                                    g31Var3.D1 = new ArrayList();
                                 } else {
                                     arrayList11.clear();
                                 }
-                                ArrayList arrayList12 = i31Var3.C1;
+                                ArrayList arrayList12 = g31Var3.C1;
                                 if (arrayList12 == null) {
-                                    i31Var3.C1 = new ArrayList();
+                                    g31Var3.C1 = new ArrayList();
                                 } else {
                                     arrayList12.clear();
                                 }
                                 int i12 = 0;
-                                i31Var3.i0.v0(0);
-                                int i13 = i31Var3.W;
+                                g31Var3.i0.v0(0);
+                                int i13 = g31Var3.W;
                                 if (i13 == 1 || i13 == 14 || i13 == 11 || i13 == 2) {
                                     ArrayList arrayList13 = arrayList5;
                                     if (arrayList13.isEmpty()) {
                                         TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hashMap3.get(str4);
                                         if (tL_availableReaction != null) {
-                                            i31Var3.B1.add(sg.o0.c(tL_availableReaction));
+                                            g31Var3.B1.add(sg.o0.c(tL_availableReaction));
                                         }
                                     } else {
-                                        i31Var3.B1.addAll(arrayList13);
+                                        g31Var3.B1.addAll(arrayList13);
                                     }
                                     ArrayList arrayList14 = arrayList6;
                                     if (!arrayList14.isEmpty()) {
-                                        i31Var3.C1.addAll(arrayList14);
+                                        g31Var3.C1.addAll(arrayList14);
                                     }
                                 }
                                 Iterator it = linkedHashSet3.iterator();
                                 while (it.hasNext()) {
                                     Long l4 = (Long) it.next();
                                     l4.getClass();
-                                    ArrayList arrayList15 = i31Var3.B1;
+                                    ArrayList arrayList15 = g31Var3.B1;
                                     sg.o0 o0Var = new sg.o0();
                                     long longValue = l4.longValue();
                                     o0Var.g = longValue;
@@ -222,59 +222,59 @@ public final /* synthetic */ class k0 implements Runnable {
                                 }
                                 Iterator it2 = linkedHashSet4.iterator();
                                 while (it2.hasNext()) {
-                                    i31Var3.B1.add(sg.o0.b((String) it2.next()));
+                                    g31Var3.B1.add(sg.o0.b((String) it2.next()));
                                 }
-                                i31Var3.E1.addAll(arrayList7);
+                                g31Var3.E1.addAll(arrayList7);
                                 ArrayList arrayList16 = arrayList8;
                                 int size = arrayList16.size();
                                 while (i12 < size) {
                                     Object obj5 = arrayList16.get(i12);
                                     i12++;
-                                    i31Var3.D1.addAll((ArrayList) obj5);
+                                    g31Var3.D1.addAll((ArrayList) obj5);
                                 }
-                                i31Var3.q0.E(true ^ z15);
+                                g31Var3.q0.E(true ^ z15);
                             }
                         });
                     }
                 };
-                int i12 = i31Var.W;
+                int i12 = g31Var.W;
                 if (i12 == 13) {
                     final int i13 = 0;
-                    Utilities.u(0, new q20() { // from class: org.telegram.ui.p11
-                        @Override // org.telegram.messenger.q20
+                    Utilities.u(0, new r20() { // from class: org.telegram.ui.o11
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj4) {
                             switch (i13) {
                                 case 0:
-                                    i31 i31Var2 = i31Var;
-                                    org.telegram.messenger.ui.b0(i31Var2.V).V(i31.b2, str, false, new ep0(11, linkedHashSet2, (Runnable) obj4), false, false, false, false, 0);
+                                    g31 g31Var2 = g31Var;
+                                    org.telegram.messenger.vi.b0(g31Var2.V).V(g31.b2, str, false, new cp0(11, linkedHashSet2, (Runnable) obj4), false, false, false, false, 0);
                                     break;
                                 default:
-                                    i31 i31Var3 = i31Var;
+                                    g31 g31Var3 = g31Var;
                                     String str2 = str;
-                                    org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i31Var3.V);
-                                    r11 r11Var = new r11(linkedHashSet2, (Runnable) obj4, 0);
+                                    org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(g31Var3.V);
+                                    q11 q11Var = new q11(linkedHashSet2, (Runnable) obj4, 0);
                                     if (str2 != null) {
-                                        Utilities.g.c(new org.telegram.messenger.ul(str2, b02.s0(5), b02.s0[1], r11Var, 16));
+                                        Utilities.g.c(new org.telegram.messenger.vl(str2, b02.s0(5), b02.s0[1], q11Var, 16));
                                         break;
                                     } else {
-                                        r11Var.a(new ArrayList());
+                                        q11Var.a(new ArrayList());
                                         break;
                                     }
                             }
                         }
-                    }, q20Var2);
+                    }, r20Var2);
                     break;
                 } else if (i12 == 14) {
                     if (d) {
                         final int i14 = 0;
-                        q20Var = new q20() { // from class: org.telegram.ui.q11
-                            @Override // org.telegram.messenger.q20
+                        r20Var = new r20() { // from class: org.telegram.ui.p11
+                            @Override // org.telegram.messenger.r20
                             public final void a(Object obj4) {
                                 switch (i14) {
                                     case 0:
                                         String str2 = str;
                                         Runnable runnable2 = (Runnable) obj4;
-                                        TLRPC.messages_AvailableEffects E0 = org.telegram.messenger.vp.r1(i31Var.V).E0();
+                                        TLRPC.messages_AvailableEffects E0 = org.telegram.messenger.wp.r1(g31Var.V).E0();
                                         if (E0 != null) {
                                             for (int i15 = 0; i15 < E0.effects.size(); i15++) {
                                                 try {
@@ -289,22 +289,22 @@ public final /* synthetic */ class k0 implements Runnable {
                                         runnable2.run();
                                         break;
                                     default:
-                                        i31 i31Var2 = i31Var;
-                                        org.telegram.messenger.ui.b0(i31Var2.V).V(i31.b2, str, false, new a1.d(i31Var2, arrayList2, arrayList, (Runnable) obj4, 14), false, false, false, false, 0);
+                                        g31 g31Var2 = g31Var;
+                                        org.telegram.messenger.vi.b0(g31Var2.V).V(g31.b2, str, false, new a1.d(g31Var2, arrayList2, arrayList, (Runnable) obj4, 14), false, false, false, false, 0);
                                         break;
                                 }
                             }
                         };
                     } else {
                         final int i15 = 1;
-                        q20Var = new q20() { // from class: org.telegram.ui.q11
-                            @Override // org.telegram.messenger.q20
+                        r20Var = new r20() { // from class: org.telegram.ui.p11
+                            @Override // org.telegram.messenger.r20
                             public final void a(Object obj4) {
                                 switch (i15) {
                                     case 0:
                                         String str2 = str;
                                         Runnable runnable2 = (Runnable) obj4;
-                                        TLRPC.messages_AvailableEffects E0 = org.telegram.messenger.vp.r1(i31Var.V).E0();
+                                        TLRPC.messages_AvailableEffects E0 = org.telegram.messenger.wp.r1(g31Var.V).E0();
                                         if (E0 != null) {
                                             for (int i152 = 0; i152 < E0.effects.size(); i152++) {
                                                 try {
@@ -319,40 +319,40 @@ public final /* synthetic */ class k0 implements Runnable {
                                         runnable2.run();
                                         break;
                                     default:
-                                        i31 i31Var2 = i31Var;
-                                        org.telegram.messenger.ui.b0(i31Var2.V).V(i31.b2, str, false, new a1.d(i31Var2, arrayList2, arrayList, (Runnable) obj4, 14), false, false, false, false, 0);
+                                        g31 g31Var2 = g31Var;
+                                        org.telegram.messenger.vi.b0(g31Var2.V).V(g31.b2, str, false, new a1.d(g31Var2, arrayList2, arrayList, (Runnable) obj4, 14), false, false, false, false, 0);
                                         break;
                                 }
                             }
                         };
                     }
-                    Utilities.u(0, q20Var, q20Var2);
+                    Utilities.u(0, r20Var, r20Var2);
                     break;
                 } else {
                     final int i16 = 1;
-                    Utilities.u(0, new ll(d, str, linkedHashSet, 3), new q20() { // from class: org.telegram.ui.p11
-                        @Override // org.telegram.messenger.q20
+                    Utilities.u(0, new ll(d, str, linkedHashSet, 3), new r20() { // from class: org.telegram.ui.o11
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj4) {
                             switch (i16) {
                                 case 0:
-                                    i31 i31Var2 = i31Var;
-                                    org.telegram.messenger.ui.b0(i31Var2.V).V(i31.b2, str, false, new ep0(11, linkedHashSet, (Runnable) obj4), false, false, false, false, 0);
+                                    g31 g31Var2 = g31Var;
+                                    org.telegram.messenger.vi.b0(g31Var2.V).V(g31.b2, str, false, new cp0(11, linkedHashSet, (Runnable) obj4), false, false, false, false, 0);
                                     break;
                                 default:
-                                    i31 i31Var3 = i31Var;
+                                    g31 g31Var3 = g31Var;
                                     String str2 = str;
-                                    org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i31Var3.V);
-                                    r11 r11Var = new r11(linkedHashSet, (Runnable) obj4, 0);
+                                    org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(g31Var3.V);
+                                    q11 q11Var = new q11(linkedHashSet, (Runnable) obj4, 0);
                                     if (str2 != null) {
-                                        Utilities.g.c(new org.telegram.messenger.ul(str2, b02.s0(5), b02.s0[1], r11Var, 16));
+                                        Utilities.g.c(new org.telegram.messenger.vl(str2, b02.s0(5), b02.s0[1], q11Var, 16));
                                         break;
                                     } else {
-                                        r11Var.a(new ArrayList());
+                                        q11Var.a(new ArrayList());
                                         break;
                                     }
                             }
                         }
-                    }, new m2(i31Var, strArr, str, linkedHashSet, 12), new dv0(i31Var, d, linkedHashSet, str, hashMap, arrayList), new m2(i31Var, str, arrayList3, hashMap2, 13), new org.telegram.ui.w(i31Var, str, arrayList4, 12), q20Var2);
+                    }, new m2(g31Var, strArr, str, linkedHashSet, 12), new cv0(g31Var, d, linkedHashSet, str, hashMap, arrayList), new m2(g31Var, str, arrayList3, hashMap2, 13), new org.telegram.ui.w(g31Var, str, arrayList4, 12), r20Var2);
                     break;
                 }
             case 5:
@@ -369,7 +369,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 f8.b("StoriesController loaded stories from server state=" + tL_stories_getAllStories.state + " more=" + tL_stories_getAllStories.next + "  " + tLObject);
                 if (tLObject instanceof TL_stories.TL_stories_allStories) {
                     TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) tLObject;
-                    hs.a0(i17).m1(tL_stories_allStories.users, null, true, true);
+                    is.a0(i17).m1(tL_stories_allStories.users, null, true, true);
                     if (z11) {
                         e5Var.v = tL_stories_allStories.count;
                         e5Var.z = tL_stories_allStories.has_more;
@@ -394,7 +394,7 @@ public final /* synthetic */ class k0 implements Runnable {
                         sharedPreferences.edit().putString("last_stories_state", e5Var.o).apply();
                     }
                     if (z11 ? e5Var.z : e5Var.p) {
-                        zs.f(i17).k(zs.v5, new Object[0]);
+                        at.f(i17).k(at.v5, new Object[0]);
                         break;
                     }
                 }
@@ -404,8 +404,8 @@ public final /* synthetic */ class k0 implements Runnable {
                 ArrayList arrayList5 = (ArrayList) obj2;
                 r5.a aVar = (r5.a) obj;
                 int i18 = r5Var.a;
-                hs hsVar = r5Var.b;
-                SQLiteDatabase sQLiteDatabase = hsVar.b;
+                is isVar = r5Var.b;
+                SQLiteDatabase sQLiteDatabase = isVar.b;
                 for (int i19 = 0; i19 < arrayList5.size(); i19++) {
                     TL_stories.PeerStories peerStories = (TL_stories.PeerStories) arrayList5.get(i19);
                     long o10 = o5.o(peerStories.peer);
@@ -430,18 +430,18 @@ public final /* synthetic */ class k0 implements Runnable {
                         while (queryFinalized.next()) {
                             long longValue = queryFinalized.longValue(0);
                             if (longValue > 0) {
-                                TLRPC.User Z1 = vp.r1(i18).Z1(Long.valueOf(longValue));
+                                TLRPC.User Z1 = wp.r1(i18).Z1(Long.valueOf(longValue));
                                 if (Z1 == null) {
-                                    Z1 = hs.a0(i18).j0(longValue);
+                                    Z1 = is.a0(i18).j0(longValue);
                                 }
                                 if (Z1 == null || (Z1.stories_hidden == z10 && !arrayList7.contains(Long.valueOf(longValue)))) {
                                     arrayList7.add(Long.valueOf(longValue));
                                 }
                             } else {
                                 long j10 = -longValue;
-                                TLRPC.Chat L0 = vp.r1(i18).L0(Long.valueOf(j10));
+                                TLRPC.Chat L0 = wp.r1(i18).L0(Long.valueOf(j10));
                                 if (L0 == null) {
-                                    L0 = hs.a0(i18).O(j10);
+                                    L0 = is.a0(i18).O(j10);
                                 }
                                 if (L0 == null || (L0.stories_hidden == z10 && !arrayList7.contains(Long.valueOf(longValue)))) {
                                     arrayList7.add(Long.valueOf(longValue));
@@ -454,7 +454,7 @@ public final /* synthetic */ class k0 implements Runnable {
                         Locale locale = Locale.US;
                         sQLiteDatabase.executeFast("DELETE FROM stories WHERE dialog_id IN(" + TextUtils.join(",", arrayList7) + ")").stepThis().dispose();
                     } catch (Throwable th2) {
-                        hsVar.o(th2, true);
+                        isVar.o(th2, true);
                     }
                 }
                 for (int i21 = 0; i21 < arrayList5.size(); i21++) {

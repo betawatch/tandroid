@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class hn extends org.telegram.ui.Cells.e6 {
     public final /* synthetic */ fg.j F;
@@ -24,9 +24,9 @@ public final class hn extends org.telegram.ui.Cells.e6 {
     @Override // org.telegram.ui.Cells.e6
     public final boolean e() {
         jn jnVar = (jn) this.F.e;
-        org.telegram.ui.w71 w71Var = jnVar.s;
-        View F = w71Var.F(this);
-        s4.c1 T = F == null ? null : w71Var.T(F);
+        org.telegram.ui.u71 u71Var = jnVar.s;
+        View F = u71Var.F(this);
+        s4.c1 T = F == null ? null : u71Var.T(F);
         if (T != null) {
             int b10 = T.b();
             int i10 = jnVar.M;
@@ -41,9 +41,9 @@ public final class hn extends org.telegram.ui.Cells.e6 {
     public final boolean f(org.telegram.ui.Cells.e6 e6Var) {
         int b10;
         jn jnVar = (jn) this.F.e;
-        org.telegram.ui.w71 w71Var = jnVar.s;
-        View F = w71Var.F(e6Var);
-        s4.c1 T = F == null ? null : w71Var.T(F);
+        org.telegram.ui.u71 u71Var = jnVar.s;
+        View F = u71Var.F(e6Var);
+        s4.c1 T = F == null ? null : u71Var.T(F);
         if (T == null || (b10 = T.b()) == -1) {
             return false;
         }
@@ -58,7 +58,7 @@ public final class hn extends org.telegram.ui.Cells.e6 {
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.un.t8(menu, ((org.telegram.ui.un) jnVar.b.W1).h, false, true, true, true);
+            org.telegram.ui.un.x8(menu, ((org.telegram.ui.un) jnVar.b.W1).h, false, true, true, true);
         }
     }
 
@@ -79,9 +79,9 @@ public final class hn extends org.telegram.ui.Cells.e6 {
             }
         }
         super.h(e6Var, z10);
-        org.telegram.ui.w71 w71Var = jnVar.s;
-        View F = w71Var.F(e6Var);
-        s4.c1 T = F == null ? null : w71Var.T(F);
+        org.telegram.ui.u71 u71Var = jnVar.s;
+        View F = u71Var.F(e6Var);
+        s4.c1 T = F == null ? null : u71Var.T(F);
         if (T != null && (b10 = T.b()) != -1) {
             jnVar.L[b10 - jnVar.t0] = z10;
         }

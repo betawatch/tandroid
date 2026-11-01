@@ -5,15 +5,15 @@ import android.graphics.Typeface;
 import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.List;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.l9;
+import org.telegram.messenger.m9;
 import org.telegram.messenger.v2;
 import org.telegram.ui.ActionBar.x1;
 import org.telegram.ui.Components.wb0;
 import v7.p8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v0 implements g1, h1, e2.j, org.telegram.ui.ActionBar.u1, wb0, n2.l, d9.k, l9, OnSuccessListener {
+public final /* synthetic */ class v0 implements g1, h1, e2.j, org.telegram.ui.ActionBar.u1, wb0, n2.l, d9.k, m9, OnSuccessListener {
     public final /* synthetic */ int a;
 
     public /* synthetic */ v0(int i10) {
@@ -118,7 +118,7 @@ public final /* synthetic */ class v0 implements g1, h1, e2.j, org.telegram.ui.A
         }
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
         Integer num = (Integer) obj;
         switch (this.a) {

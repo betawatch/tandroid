@@ -8,9 +8,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.vg;
+import org.telegram.ui.dg;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f implements ScheduledExecutorService, AutoCloseable {
     public final ExecutorService a;
@@ -58,7 +58,7 @@ public final class f implements ScheduledExecutorService, AutoCloseable {
 
     @Override // java.util.concurrent.ScheduledExecutorService
     public final ScheduledFuture schedule(Runnable runnable, long j10, TimeUnit timeUnit) {
-        return new i(new vg(this, runnable, j10, timeUnit, 6));
+        return new i(new dg(this, runnable, j10, timeUnit, 6));
     }
 
     @Override // java.util.concurrent.ScheduledExecutorService
@@ -98,7 +98,7 @@ public final class f implements ScheduledExecutorService, AutoCloseable {
 
     @Override // java.util.concurrent.ScheduledExecutorService
     public final ScheduledFuture schedule(Callable callable, long j10, TimeUnit timeUnit) {
-        return new i(new vg(this, callable, j10, timeUnit, 7));
+        return new i(new dg(this, callable, j10, timeUnit, 7));
     }
 
     @Override // java.util.concurrent.ExecutorService

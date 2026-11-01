@@ -1,290 +1,84 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
+import android.graphics.RectF;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ox0 implements org.telegram.ui.jt {
-    public final /* synthetic */ sx0 a;
+public final class ox0 {
+    public final int a;
+    public final org.telegram.ui.Cells.s0 b;
+    public final org.telegram.ui.ActionBar.p6 c;
+    public final ci0 d;
+    public TL_account.TL_birthday e;
+    public rz0 f;
+    public rz0[] g;
+    public rz0[] h;
+    public boolean i;
+    public rz0 j;
+    public final RectF k = new RectF();
+    public final Paint l = new Paint(1);
+    public final dc m;
 
-    public ox0(sx0 sx0Var) {
-        this.a = sx0Var;
+    public ox0(int i10, org.telegram.ui.Cells.s0 s0Var, org.telegram.ui.ActionBar.p6 p6Var) {
+        this.a = i10;
+        this.b = s0Var;
+        this.c = p6Var;
+        ci0 ci0Var = new ci0(R.raw.cake, org.telegram.messenger.i0.L(66.0f), org.telegram.messenger.i0.L(66.0f), true, null);
+        this.d = ci0Var;
+        ci0Var.H(false);
+        this.m = new dc(s0Var);
     }
 
-    @Override // org.telegram.ui.jt
-    public final void A(TLRPC.Document document) {
-        sx0 sx0Var = this.a;
-        qx0 qx0Var = sx0Var.c;
-        if (qx0Var == null) {
-            return;
+    public final void a(Canvas canvas) {
+        int L = org.telegram.messenger.i0.L(66.0f);
+        org.telegram.ui.Cells.s0 s0Var = this.b;
+        int width = (s0Var.getWidth() - L) / 2;
+        int L2 = org.telegram.messenger.i0.L(13.0f) + L;
+        ci0 ci0Var = this.d;
+        ci0Var.setBounds(width, org.telegram.messenger.i0.L(13.0f), width + L, L2);
+        ci0Var.draw(canvas);
+        this.f.c((s0Var.getWidth() - this.f.k()) / 2.0f, org.telegram.messenger.i0.L(19.0f) + L, 1.0f, -1, canvas);
+        int i10 = (int) (this.f.i() + org.telegram.messenger.i0.L(19.0f) + L + org.telegram.messenger.i0.L(17.0f));
+        int i11 = 0;
+        for (int i12 = 0; i12 < this.g.length; i12++) {
+            i11 = (int) (Math.max(this.g[i12].k(), this.h[i12].k()) + org.telegram.messenger.i0.L(9.0f) + org.telegram.messenger.i0.L(9.0f) + i11);
         }
-        org.telegram.ui.ActionBar.k2 parentFragment = qx0Var.getParentFragment();
-        if (parentFragment instanceof org.telegram.ui.un) {
-            ((org.telegram.ui.un) parentFragment).sb(document);
-            sx0Var.c.setFieldText("");
+        int width2 = (s0Var.getWidth() - i11) / 2;
+        int i13 = 0;
+        while (i13 < this.g.length) {
+            float max = Math.max(this.g[i13].k(), this.h[i13].k()) + org.telegram.messenger.i0.L(9.0f) + org.telegram.messenger.i0.L(9.0f);
+            float f7 = width2;
+            float f10 = (max / 2.0f) + f7;
+            int i14 = (int) (f7 + max);
+            rz0 rz0Var = this.g[i13];
+            rz0Var.c(f10 - (rz0Var.k() / 2.0f), i10, 0.75f, -1, canvas);
+            rz0 rz0Var2 = this.h[i13];
+            rz0Var2.c(f10 - (rz0Var2.k() / 2.0f), org.telegram.messenger.i0.L(16.0f) + i10, 1.0f, -1, canvas);
+            i13++;
+            width2 = i14;
         }
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean B() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final boolean C(TLRPC.Document document) {
-        if (this.a.D) {
-            return false;
-        }
-        return org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).q();
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ z60 D(fg.i iVar) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ String F(boolean z10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final void G(TLRPC.Document document) {
-        qx0 qx0Var;
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(org.telegram.messenger.jj.U(document));
-        valueOf.setSpan(new o5(document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
-        if (!org.telegram.messenger.i0.g(valueOf) || (qx0Var = this.a.c) == null) {
-            return;
-        }
-        org.telegram.messenger.z20.r(null, 2131751185, cc.a0(qx0Var.getParentFragment()));
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean H() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean I() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean M(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final Boolean P(TLRPC.Document document) {
-        TLRPC.User f7;
-        if (this.a.E || !org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).q() || (f7 = org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).f()) == null) {
-            return null;
-        }
-        Long h = org.telegram.messenger.h20.h(f7);
-        return Boolean.valueOf(document != null && (h == null || h.longValue() != document.id));
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean Q() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final boolean c() {
-        qx0 qx0Var = this.a.c;
-        if (qx0Var == null) {
-            return false;
-        }
-        org.telegram.ui.ActionBar.k2 parentFragment = qx0Var.getParentFragment();
-        if (parentFragment instanceof org.telegram.ui.un) {
-            return ((org.telegram.ui.un) parentFragment).c();
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ TLRPC.PollAnswer g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final boolean h() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final boolean k(int i10) {
-        qx0 qx0Var = this.a.c;
-        if (qx0Var == null) {
-            return false;
-        }
-        org.telegram.ui.ActionBar.k2 parentFragment = qx0Var.getParentFragment();
-        if (parentFragment instanceof org.telegram.ui.un) {
-            org.telegram.ui.un unVar = (org.telegram.ui.un) parentFragment;
-            if (unVar.M6()) {
-                if (org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).q()) {
-                    return true;
-                }
-                if (unVar.j() != null && org.telegram.messenger.h20.B(unVar.j())) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean o() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final void t(TLRPC.Document document) {
-        TLRPC.EmojiStatus emojiStatus;
-        sx0 sx0Var = this.a;
-        org.telegram.ui.ActionBar.p6 p6Var = sx0Var.b;
-        if (document == null) {
-            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
-        } else {
-            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-            tL_emojiStatus.document_id = document.id;
-            emojiStatus = tL_emojiStatus;
-        }
-        TLRPC.User f7 = org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).f();
-        Object tL_emojiStatusEmpty = f7 == null ? new TLRPC.TL_emojiStatusEmpty() : f7.emoji_status;
-        org.telegram.messenger.vp.r1(sx0Var.a).e5(emojiStatus, null);
-        gi0 gi0Var = new gi0(14, this, tL_emojiStatusEmpty);
-        qx0 qx0Var = sx0Var.c;
-        org.telegram.ui.ActionBar.k2 parentFragment = qx0Var == null ? null : qx0Var.getParentFragment();
-        if (parentFragment != null) {
-            if (document != null) {
-                cc.a0(parentFragment).r(document, org.telegram.messenger.cd.L0(2131745562, null), org.telegram.messenger.cd.L0(2131743910, null), gi0Var).j();
-                return;
-            }
-            ob obVar = new ob(sx0Var.getContext(), p6Var);
-            obVar.b.setText(org.telegram.messenger.cd.L0(2131746302, null));
-            obVar.a.setImageResource(R.drawable.msg_settings_premium);
-            ub ubVar = new ub(sx0Var.getContext(), p6Var, true);
-            ubVar.b = gi0Var;
-            obVar.setButton(ubVar);
-            wb.g(parentFragment, obVar, 1500).j();
+        if (this.i) {
+            int L3 = org.telegram.messenger.i0.L(38.0f) + i10;
+            canvas.save();
+            float k10 = this.j.k() + org.telegram.messenger.i0.L(26.0f);
+            float L4 = org.telegram.messenger.i0.L(30.0f);
+            float f11 = L3;
+            RectF rectF = this.k;
+            rectF.set((s0Var.getWidth() - k10) / 2.0f, f11, (s0Var.getWidth() + k10) / 2.0f, f11 + L4);
+            float a2 = this.m.a(0.1f);
+            canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
+            float f12 = L4 / 2.0f;
+            canvas.drawRoundRect(rectF, f12, f12, this.l);
+            this.j.c(rectF.left + org.telegram.messenger.i0.L(13.0f), rectF.centerY(), 1.0f, -1, canvas);
+            canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean w() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ org.telegram.messenger.jj y() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ boolean z() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void E(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void O(String str) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void i(org.telegram.messenger.jz jzVar) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void m(String str) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void n(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void p(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void x(String str) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void J() {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final void L(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void u(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void v(TLObject tLObject, Object obj) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void N(CharSequence charSequence, String str, vg vgVar) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void r(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.jt
-    public final /* synthetic */ void l(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
+    public final void b() {
+        ((org.telegram.ui.ActionBar.z2) s4.l(this.b.getContext(), org.telegram.messenger.dd.L0(2131751673, null), org.telegram.messenger.dd.L0(2131751672, null), this.e, new r2(this, 11), null, true, false, this.c).b).show();
     }
 }

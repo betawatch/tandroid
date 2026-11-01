@@ -13,18 +13,18 @@ import android.util.SparseArray;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c00;
 import org.telegram.messenger.d00;
+import org.telegram.messenger.e00;
 import org.telegram.messenger.i0;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a extends Drawable {
-    public static c00 j;
+    public static d00 j;
     public static final int[] k = {7322096, 16766590, 13338331, 9367192, 16749490, 16478047};
     public static final SparseArray l;
-    public final c00 a;
+    public final d00 a;
     public LinearGradient b;
     public int e;
     public final Paint f;
@@ -47,9 +47,9 @@ public final class a extends Drawable {
 
     public a(int i10) {
         if (j == null) {
-            j = d00.h(R.raw.topic_bubble, -1);
+            j = e00.h(R.raw.topic_bubble, -1);
         }
-        c00 clone = j.clone();
+        d00 clone = j.clone();
         SparseArray sparseArray = clone.r;
         this.a = clone;
         ArrayList arrayList = clone.a;
@@ -105,9 +105,9 @@ public final class a extends Drawable {
         matrix.setScale(1.0f, getBounds().height() / 100.0f);
         this.b.setLocalMatrix(matrix);
         Rect bounds = getBounds();
-        c00 c00Var = this.a;
-        c00Var.setBounds(bounds);
-        c00Var.draw(canvas);
+        d00 d00Var = this.a;
+        d00Var.setBounds(bounds);
+        d00Var.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable

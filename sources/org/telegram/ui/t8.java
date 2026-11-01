@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                 boolean z10 = tLObject instanceof TLRPC.Updates;
                 int i11 = this.b;
                 if (z10) {
-                    org.telegram.messenger.vp.r1(i11).L3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.wp.r1(i11).L3((TLRPC.Updates) tLObject, false);
                 }
                 TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
                 exportgroupcallinvite.call = inputGroupCall;
@@ -79,10 +79,10 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                 }
             case 2:
                 ArrayList arrayList2 = ExternalActionActivity.y;
-                org.telegram.messenger.i0.g3(new org.telegram.messenger.ce((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.x1) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
+                org.telegram.messenger.i0.g3(new org.telegram.messenger.de((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.x1) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
                 break;
             default:
-                org.telegram.messenger.i0.g3(new t70((se0) obj6, tLObject, tL_error, (c5.i) obj5, this.b, (c5.m) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));
+                org.telegram.messenger.i0.g3(new s70((re0) obj6, tLObject, tL_error, (c5.i) obj5, this.b, (c5.m) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
         }
     }

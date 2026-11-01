@@ -16,9 +16,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class qy extends sk0 {
+public final class qy extends tk0 {
     public boolean D;
     public int L;
     public int M;
@@ -58,7 +58,7 @@ public final class qy extends sk0 {
         qxVar.setOnTouchListener(new m.c2(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 7;
     }
@@ -134,7 +134,7 @@ public final class qy extends sk0 {
                 sparseArray2.put(i16, "packs");
                 int i17 = this.y;
                 this.y = i17 + 1;
-                sparseArray2.put(i17, org.telegram.messenger.cd.G(this.e.count, "Stickers", new Object[0]));
+                sparseArray2.put(i17, org.telegram.messenger.dd.G(this.e.count, "Stickers", new Object[0]));
                 i13 = 3;
             } else {
                 i13 = 1;
@@ -153,7 +153,7 @@ public final class qy extends sk0 {
                 sparseArray2.put(i20, document);
                 ArrayList arrayList2 = arrayList;
                 int i22 = i18;
-                TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.ui.b0(i14).o0(org.telegram.messenger.ui.q0(document));
+                TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.vi.b0(i14).o0(org.telegram.messenger.vi.q0(document));
                 if (o02 != null) {
                     sparseArray4.put(i20, o02);
                 }
@@ -191,7 +191,7 @@ public final class qy extends sk0 {
             } else {
                 int i26 = this.y;
                 this.y = i26 + 1;
-                sparseArray2.put(i26, org.telegram.messenger.cd.L0(2131744892, null));
+                sparseArray2.put(i26, org.telegram.messenger.dd.L0(2131744892, null));
                 int i27 = i10 + 1;
                 int size3 = this.I.size();
                 int i28 = 0;
@@ -218,7 +218,7 @@ public final class qy extends sk0 {
                         sparseArray2.put(i33, document2);
                         String str4 = str;
                         int i36 = i27;
-                        TLRPC.TL_messages_stickerSet o03 = org.telegram.messenger.ui.b0(i30).o0(org.telegram.messenger.ui.q0(document2));
+                        TLRPC.TL_messages_stickerSet o03 = org.telegram.messenger.vi.b0(i30).o0(org.telegram.messenger.vi.q0(document2));
                         if (o03 != null) {
                             sparseArray4.put(i33, o03);
                         }
@@ -251,7 +251,7 @@ public final class qy extends sk0 {
             if (z11) {
                 int i39 = this.y;
                 this.y = i39 + 1;
-                sparseArray2.put(i39, org.telegram.messenger.cd.L0(2131744893, null));
+                sparseArray2.put(i39, org.telegram.messenger.dd.L0(2131744893, null));
                 int i40 = i10 + 1;
                 String str5 = (String) this.H.get(this.K);
                 if (str5 != null) {
@@ -264,7 +264,7 @@ public final class qy extends sk0 {
                     int i44 = (i41 / nyVar.d) + i40;
                     TLRPC.Document document3 = (TLRPC.Document) this.K.get(i42);
                     sparseArray2.put(i43, document3);
-                    TLRPC.TL_messages_stickerSet o04 = org.telegram.messenger.ui.b0(i11).o0(org.telegram.messenger.ui.q0(document3));
+                    TLRPC.TL_messages_stickerSet o04 = org.telegram.messenger.vi.b0(i11).o0(org.telegram.messenger.vi.q0(document3));
                     if (o04 != null) {
                         sparseArray4.put(i43, o04);
                     }
@@ -329,7 +329,7 @@ public final class qy extends sk0 {
                 o3Var.setHeight(org.telegram.messenger.i0.L(8.0f));
                 return;
             } else {
-                int A = org.telegram.messenger.z20.A(82.0f, (int) Math.ceil(num.intValue() / vyVar.y0.d), vyVar.h.getHeight());
+                int A = org.telegram.messenger.a30.A(82.0f, (int) Math.ceil(num.intValue() / vyVar.y0.d), vyVar.h.getHeight());
                 o3Var.setHeight(A > 0 ? A : 1);
                 return;
             }
@@ -427,7 +427,7 @@ public final class qy extends sk0 {
                 imageView.setTranslationY(-org.telegram.messenger.i0.L(24.0f));
                 l0Var.addView(imageView, w7.b6.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                 TextView textView = new TextView(context);
-                textView.setText(org.telegram.messenger.cd.L0(2131748165, null));
+                textView.setText(org.telegram.messenger.dd.L0(2131748165, null));
                 textView.setTextSize(1, 16.0f);
                 org.telegram.ui.ActionBar.a7.V(textView, i12, p6Var);
                 l0Var.addView(textView, w7.b6.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
@@ -444,6 +444,6 @@ public final class qy extends sk0 {
                 view.setLayoutParams(new s4.o0(-1, org.telegram.messenger.i0.L(68.0f)));
                 break;
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

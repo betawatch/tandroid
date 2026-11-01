@@ -13,11 +13,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Components.op0 a;
+    public org.telegram.ui.Components.pp0 a;
 
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
@@ -56,10 +56,10 @@ public class ShareActivity extends Activity {
         TLdeserialize.readAttachPath(serializedData, 0L);
         serializedData.cleanup();
         String string2 = sharedPreferences.getString(queryParameter + "_link", null);
-        org.telegram.messenger.jj jjVar = new org.telegram.messenger.jj(org.telegram.messenger.d20.s0, TLdeserialize, false, true);
-        jjVar.k.with_my_score = true;
+        org.telegram.messenger.kj kjVar = new org.telegram.messenger.kj(org.telegram.messenger.e20.s0, TLdeserialize, false, true);
+        kjVar.k.with_my_score = true;
         try {
-            org.telegram.ui.Components.op0 N0 = org.telegram.ui.Components.op0.N0(this, jjVar, null, false, string2);
+            org.telegram.ui.Components.pp0 N0 = org.telegram.ui.Components.pp0.N0(this, kjVar, null, false, string2);
             this.a = N0;
             N0.setCanceledOnTouchOutside(true);
             this.a.setOnDismissListener(new q5(this, 15));
@@ -74,8 +74,8 @@ public class ShareActivity extends Activity {
     public final void onPause() {
         super.onPause();
         try {
-            org.telegram.ui.Components.op0 op0Var = this.a;
-            if (op0Var == null || !op0Var.isShowing()) {
+            org.telegram.ui.Components.pp0 pp0Var = this.a;
+            if (pp0Var == null || !pp0Var.isShowing()) {
                 return;
             }
             this.a.dismiss();

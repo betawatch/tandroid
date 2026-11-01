@@ -8,17 +8,17 @@ import java.util.Arrays;
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class t {
     public final SocketFactory a;
     public final a b;
     public final int c;
     public int d = 1;
-    public int e = zs.Z3;
+    public int e = at.Z3;
     public boolean f;
     public Socket g;
 

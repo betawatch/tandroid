@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class j70 extends sk0 {
+public final class j70 extends tk0 {
     public final Context c;
     public final /* synthetic */ k70 d;
 
@@ -17,7 +17,7 @@ public final class j70 extends sk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -38,16 +38,16 @@ public final class j70 extends sk0 {
         String str;
         View view = c1Var.a;
         k70 k70Var = this.d;
-        long C1 = org.telegram.messenger.jj.C1((TLRPC.Peer) k70Var.p1.get(i10));
+        long C1 = org.telegram.messenger.kj.C1((TLRPC.Peer) k70Var.p1.get(i10));
         if (C1 > 0) {
-            L0 = org.telegram.messenger.vp.r1(k70Var.a).Z1(Long.valueOf(C1));
-            str = org.telegram.messenger.cd.L0(2131743375, null);
+            L0 = org.telegram.messenger.wp.r1(k70Var.a).Z1(Long.valueOf(C1));
+            str = org.telegram.messenger.dd.L0(2131743375, null);
         } else {
-            L0 = org.telegram.messenger.vp.r1(k70Var.a).L0(Long.valueOf(-C1));
+            L0 = org.telegram.messenger.wp.r1(k70Var.a).L0(Long.valueOf(-C1));
             str = null;
         }
         if (k70Var.s1 == 0) {
-            ((org.telegram.ui.Cells.h7) view).c(C1, C1 == org.telegram.messenger.jj.C1(k70Var.t1), null);
+            ((org.telegram.ui.Cells.h7) view).c(C1, C1 == org.telegram.messenger.kj.C1(k70Var.t1), null);
         } else {
             ((org.telegram.ui.Cells.j4) view).e(L0, null, str, i10 != b() - 1);
         }
@@ -63,13 +63,13 @@ public final class j70 extends sk0 {
         } else {
             j4Var = new org.telegram.ui.Cells.j4(2, 0, this.c, null, false, k70Var.s1 == 2);
         }
-        return new ck0(j4Var);
+        return new dk0(j4Var);
     }
 
     @Override // s4.g0
     public final void y(s4.c1 c1Var) {
         c1Var.b();
-        long C1 = org.telegram.messenger.jj.C1(this.d.t1);
+        long C1 = org.telegram.messenger.kj.C1(this.d.t1);
         View view = c1Var.a;
         if (!(view instanceof org.telegram.ui.Cells.j4)) {
             org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) view;

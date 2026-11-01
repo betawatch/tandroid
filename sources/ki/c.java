@@ -3,10 +3,10 @@ package ki;
 import android.os.Handler;
 import java.io.File;
 import java.util.HashMap;
-import org.telegram.messenger.me;
+import org.telegram.messenger.ne;
 import org.telegram.messenger.x0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class c implements Runnable {
                     file = (File) ((HashMap) ((e0.h) cVar3.c).g).remove(Long.valueOf(j12));
                 }
                 if (file != null) {
-                    ((Handler) ((e0.h) cVar3.c).d).post(new x0(cVar3, j12, (me) cVar3.b, file, 0));
+                    ((Handler) ((e0.h) cVar3.c).d).post(new x0(cVar3, j12, (ne) cVar3.b, file, 0));
                     return;
                 }
                 return;

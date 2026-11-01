@@ -1,9 +1,9 @@
 package rh;
 
 import android.view.View;
-import org.telegram.messenger.ml;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.nl;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
@@ -11,12 +11,12 @@ import org.telegram.ui.Components.dd;
 import org.telegram.ui.Components.e30;
 import org.telegram.ui.Components.uc0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.m10;
-import org.telegram.ui.mf;
-import org.telegram.ui.px0;
+import org.telegram.ui.l10;
+import org.telegram.ui.nf;
+import org.telegram.ui.ox0;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class s implements View.OnClickListener {
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         org.telegram.ui.ActionBar.k2 Q;
-        q20 q20Var;
+        r20 r20Var;
         switch (this.a) {
             case 0:
                 ((e30) this.b).dismiss();
@@ -69,7 +69,7 @@ public final /* synthetic */ class s implements View.OnClickListener {
                 ((l6) this.b).run();
                 break;
             case 9:
-                if (((w7) ((m10) this.b).d).f > 0 && (Q = LaunchActivity.Q()) != null) {
+                if (((w7) ((l10) this.b).d).f > 0 && (Q = LaunchActivity.Q()) != null) {
                     org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2();
                     i2Var.a = true;
                     Q.showAsSheet(new h8(), i2Var);
@@ -128,8 +128,8 @@ public final /* synthetic */ class s implements View.OnClickListener {
                 break;
             case 21:
                 vh.f4 f4Var = ((vh.e4) this.b).y;
-                if (f4Var.r && (q20Var = f4Var.f) != null) {
-                    q20Var.a(5);
+                if (f4Var.r && (r20Var = f4Var.f) != null) {
+                    r20Var.a(5);
                     break;
                 }
                 break;
@@ -141,16 +141,16 @@ public final /* synthetic */ class s implements View.OnClickListener {
                 }
                 break;
             case 23:
-                ((mf) this.b).run();
+                ((nf) this.b).run();
                 break;
             case 24:
-                ((mf) this.b).run();
+                ((nf) this.b).run();
                 break;
             case 25:
                 ChatActivityEnterView.e(((dd) ((xh.j0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
                 break;
             case 26:
-                ((px0) this.b).run();
+                ((ox0) this.b).run();
                 break;
             case 27:
                 yh.l lVar = (yh.l) this.b;
@@ -169,22 +169,22 @@ public final /* synthetic */ class s implements View.OnClickListener {
                 lVar.finishFragment();
                 break;
             case 28:
-                ((yh.v) this.b).n.k1.E(0);
+                ((yh.u) this.b).n.k1.E(0);
                 break;
             default:
-                yh.a0 a0Var = ((yh.w) this.b).r;
-                if (!org.telegram.messenger.w3.w(27, a0Var.m1)) {
-                    a0Var.dismiss();
+                yh.z zVar = ((yh.v) this.b).r;
+                if (!org.telegram.messenger.w3.w(27, zVar.m1)) {
+                    zVar.dismiss();
                     break;
                 } else {
-                    vh.d dVar = a0Var.o1;
+                    vh.d dVar = zVar.o1;
                     if (!dVar.Q) {
                         dVar.setLoading(true);
-                        vp r12 = vp.r1(a0Var.a);
-                        yh.r rVar = new yh.r(a0Var, 2);
+                        wp r12 = wp.r1(zVar.a);
+                        yh.q qVar = new yh.q(zVar, 2);
                         TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
                         tL_channels_getAdminedPublicChannels.for_community_peer = true;
-                        r12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new a3.b(1), new ml(r12, rVar, 0));
+                        r12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new a3.b(1), new nl(r12, qVar, 0));
                         break;
                     }
                 }

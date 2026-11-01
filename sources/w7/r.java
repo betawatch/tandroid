@@ -15,7 +15,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class r {
     public static int a(MediaExtractor mediaExtractor) {
@@ -157,7 +157,7 @@ public abstract class r {
                 if (dequeueOutputBuffer2 == -2) {
                     MediaFormat outputFormat = mediaCodec2.getOutputFormat();
                     i17 = li.o.f(outputFormat);
-                    a1Var.s(outputFormat);
+                    a1Var.w(outputFormat);
                 } else if (dequeueOutputBuffer2 >= 0) {
                     ByteBuffer outputBuffer = mediaCodec2.getOutputBuffer(dequeueOutputBuffer2);
                     int i18 = bufferInfo2.flags;

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class wa extends o1.h {
     public final /* synthetic */ int a;
@@ -15,9 +15,9 @@ public final class wa extends o1.h {
             case 0:
                 return ((bb) obj).inOutOffset;
             case 1:
-                return ((org.telegram.ui.rf0) obj).N;
+                return ((org.telegram.ui.qf0) obj).N;
             default:
-                return ((org.telegram.ui.rf0) obj).M;
+                return ((org.telegram.ui.qf0) obj).M;
         }
     }
 
@@ -28,14 +28,14 @@ public final class wa extends o1.h {
                 ((bb) obj).setInOutOffset(f7);
                 break;
             case 1:
-                org.telegram.ui.rf0 rf0Var = (org.telegram.ui.rf0) obj;
-                rf0Var.N = f7;
-                rf0Var.invalidate();
+                org.telegram.ui.qf0 qf0Var = (org.telegram.ui.qf0) obj;
+                qf0Var.N = f7;
+                qf0Var.invalidate();
                 break;
             default:
-                org.telegram.ui.rf0 rf0Var2 = (org.telegram.ui.rf0) obj;
-                rf0Var2.M = f7;
-                rf0Var2.invalidate();
+                org.telegram.ui.qf0 qf0Var2 = (org.telegram.ui.qf0) obj;
+                qf0Var2.M = f7;
+                qf0Var2.invalidate();
                 break;
         }
     }

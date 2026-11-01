@@ -5,10 +5,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Calendar;
-import org.telegram.messenger.bs;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ek;
-import org.telegram.messenger.qz;
+import org.telegram.messenger.cs;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.fk;
+import org.telegram.messenger.rz;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -16,9 +16,9 @@ import org.telegram.ui.ActionBar.z2;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a4;
 import org.telegram.ui.Components.ac0;
-import org.telegram.ui.Components.cx0;
+import org.telegram.ui.Components.dx0;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.q4;
 import org.telegram.ui.Components.r8;
 import org.telegram.ui.Components.s3;
@@ -26,10 +26,10 @@ import org.telegram.ui.Components.s4;
 import org.telegram.ui.Components.t3;
 import org.telegram.ui.Components.z3;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.ep0;
-import org.telegram.ui.y11;
+import org.telegram.ui.cp0;
+import org.telegram.ui.w11;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 z3 z3Var = (z3) this.e;
                 a4 a4Var = (a4) this.f;
                 Calendar calendar2 = (Calendar) this.c;
-                ep0 ep0Var = (ep0) this.h;
+                cp0 cp0Var = (cp0) this.h;
                 l2.f fVar2 = (l2.f) this.d;
                 boolean g10 = s4.g(null, null, 0L, 0L, 0, ac0Var2, z3Var, a4Var);
                 calendar2.setTimeInMillis(System.currentTimeMillis());
@@ -83,9 +83,9 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     calendar2.set(14, 0);
                 }
                 int timeInMillis = (int) (calendar2.getTimeInMillis() / 1000);
-                y11 y11Var = (y11) ep0Var.b;
-                ((boolean[]) ep0Var.c)[0] = true;
-                y11Var.e(Integer.valueOf(timeInMillis));
+                w11 w11Var = (w11) cp0Var.b;
+                ((boolean[]) cp0Var.c)[0] = true;
+                w11Var.e(Integer.valueOf(timeInMillis));
                 ((z2) fVar2.b).x0.run();
                 break;
             case 2:
@@ -112,7 +112,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 ac0 ac0Var5 = (ac0) this.e;
                 ac0 ac0Var6 = (ac0) this.f;
                 Calendar calendar4 = (Calendar) this.c;
-                bs bsVar = (bs) this.h;
+                cs csVar = (cs) this.h;
                 l2.f fVar4 = (l2.f) this.d;
                 s4.b(ac0Var4, ac0Var5, ac0Var6);
                 calendar4.set(1, ac0Var6.getValue());
@@ -121,11 +121,11 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 calendar4.set(12, 0);
                 calendar4.set(11, 0);
                 calendar4.set(13, 0);
-                bsVar.a((int) (calendar4.getTimeInMillis() / 1000));
+                csVar.a((int) (calendar4.getTimeInMillis() / 1000));
                 ((z2) fVar4.b).x0.run();
                 break;
             case 4:
-                cx0 cx0Var = (cx0) this.c;
+                dx0 dx0Var = (dx0) this.c;
                 int[] iArr = (int[]) this.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.e;
                 TextView textView = (TextView) this.f;
@@ -136,7 +136,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     if (i10 != 0) {
                         if (i10 == 2) {
                             iArr[0] = 3;
-                            if (!cx0Var.h2) {
+                            if (!dx0Var.h2) {
                                 org.telegram.messenger.i0.E3(editTextBoldCursor);
                                 try {
                                     editTextBoldCursor.performHapticFeedback(3, 2);
@@ -144,28 +144,28 @@ public final /* synthetic */ class f implements View.OnClickListener {
                                 }
                             }
                             org.telegram.messenger.i0.v1(editTextBoldCursor);
-                            qz C = qz.C(cx0Var.a);
-                            String str = cx0Var.i2;
-                            String str2 = cx0Var.f2;
-                            String str3 = cx0Var.R1;
-                            ArrayList arrayList = cx0Var.P1;
-                            lw0 lw0Var = new lw0(cx0Var);
+                            rz C = rz.C(dx0Var.a);
+                            String str = dx0Var.i2;
+                            String str2 = dx0Var.f2;
+                            String str3 = dx0Var.R1;
+                            ArrayList arrayList = dx0Var.P1;
+                            mw0 mw0Var = new mw0(dx0Var);
                             if (C.F.get(str2) != null) {
-                                lw0Var.a(null);
+                                mw0Var.a(null);
                             } else {
-                                new Thread(new ek((Object) C, str, str2, (Object) str3, (Object) arrayList, (Object) lw0Var, 9)).start();
+                                new Thread(new fk((Object) C, str, str2, (Object) str3, (Object) arrayList, (Object) mw0Var, 9)).start();
                             }
                             alertDialog$Builder.a.N0.run();
-                            cx0Var.dismiss();
+                            dx0Var.dismiss();
                             break;
                         }
                     } else {
                         iArr[0] = 1;
                         TLRPC.TL_stickers_suggestShortName tL_stickers_suggestShortName = new TLRPC.TL_stickers_suggestShortName();
                         String obj = editTextBoldCursor.getText().toString();
-                        cx0Var.i2 = obj;
+                        dx0Var.i2 = obj;
                         tL_stickers_suggestShortName.title = obj;
-                        ConnectionsManager.getInstance(cx0Var.a).sendRequest(tL_stickers_suggestShortName, new z(cx0Var, editTextBoldCursor, textView, textView2, iArr, 7));
+                        ConnectionsManager.getInstance(dx0Var.a).sendRequest(tL_stickers_suggestShortName, new z(dx0Var, editTextBoldCursor, textView, textView2, iArr, 7));
                         break;
                     }
                 }
@@ -183,7 +183,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 while (i11 < size) {
                     int i12 = i11 + 1;
                     int intValue = ((Integer) arrayList2.get(i11)).intValue();
-                    TLRPC.User f7 = d20.i(intValue).f();
+                    TLRPC.User f7 = e20.i(intValue).f();
                     if (f7 != null) {
                         F.e(intValue, iArr2[0] == intValue, new i2.g1(iArr2, intValue, r8Var, f7, g9Var, 19));
                     }

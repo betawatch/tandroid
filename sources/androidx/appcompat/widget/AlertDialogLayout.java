@@ -10,12 +10,12 @@ import android.widget.LinearLayout;
 import java.util.WeakHashMap;
 import m.v1;
 import m.w1;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import r0.h0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends w1 {
     public AlertDialogLayout(Context context) {
@@ -53,7 +53,7 @@ public class AlertDialogLayout extends w1 {
         int measuredHeight = getMeasuredHeight();
         int childCount = getChildCount();
         int gravity = getGravity();
-        int i17 = gravity & zs.x1;
+        int i17 = gravity & at.x1;
         int i18 = gravity & 8388615;
         int paddingTop = i17 != 16 ? i17 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - measuredHeight : (((i13 - i11) - measuredHeight) / 2) + getPaddingTop();
         Drawable dividerDrawable = getDividerDrawable();

@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y6 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -24,9 +24,9 @@ public final /* synthetic */ class y6 implements View.OnClickListener {
     public final /* synthetic */ Context r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ y6(y8 y8Var, jj jjVar, un unVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.p6 p6Var, long j10, TLRPC.Chat chat) {
+    public /* synthetic */ y6(y8 y8Var, kj kjVar, un unVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.p6 p6Var, long j10, TLRPC.Chat chat) {
         this.f = y8Var;
-        this.h = jjVar;
+        this.h = kjVar;
         this.n = unVar;
         this.b = i10;
         this.c = z10;
@@ -61,16 +61,16 @@ public final /* synthetic */ class y6 implements View.OnClickListener {
                 break;
             default:
                 y8 y8Var = (y8) this.f;
-                jj jjVar = (jj) this.h;
+                kj kjVar = (kj) this.h;
                 un unVar = (un) this.n;
                 TLRPC.Chat chat = (TLRPC.Chat) this.s;
                 if (!y8Var.K1) {
                     long value = y8Var.p1.getValue();
-                    if ((y8Var.I1 != null || (jjVar != null && unVar != null)) && y8Var.O1 == null) {
+                    if ((y8Var.I1 != null || (kjVar != null && unVar != null)) && y8Var.O1 == null) {
                         int i11 = this.b;
-                        if (!vp.r1(i11).u2()) {
+                        if (!wp.r1(i11).u2()) {
                             e6 y10 = e6.y(i11, false);
-                            org.telegram.messenger.voip.g gVar = new org.telegram.messenger.voip.g(y8Var, value, y10, jjVar, unVar, 17);
+                            org.telegram.messenger.voip.g gVar = new org.telegram.messenger.voip.g(y8Var, value, y10, kjVar, unVar, 17);
                             if (y10.e && y10.p().amount < value) {
                                 boolean z10 = this.c;
                                 Context context = this.r;

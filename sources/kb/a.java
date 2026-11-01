@@ -39,9 +39,9 @@ import m2.t;
 import n2.o;
 import n2.p;
 import org.json.JSONObject;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.hj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.s2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -67,12 +67,12 @@ import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.tf;
 import org.telegram.ui.Components.ya;
 import org.telegram.ui.Components.za;
-import org.telegram.ui.qs0;
+import org.telegram.ui.ps0;
 import r2.u;
 import r9.d;
 import y2.n;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1, q0, u, uf.a, vf.a, Continuation, y6.d {
     public final /* synthetic */ int a;
@@ -201,7 +201,7 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean A1(q1 q1Var, jj jjVar) {
+    public /* synthetic */ boolean A1(q1 q1Var, kj kjVar) {
         return false;
     }
 
@@ -226,7 +226,7 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ qs0 H1() {
+    public /* synthetic */ ps0 H1() {
         return null;
     }
 
@@ -329,8 +329,8 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean S0(jj jjVar) {
-        return f1.a(jjVar);
+    public /* synthetic */ boolean S0(kj kjVar) {
+        return f1.a(kjVar);
     }
 
     @Override // r2.u
@@ -606,7 +606,7 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean w0(jj jjVar) {
+    public /* synthetic */ boolean w0(kj kjVar) {
         return true;
     }
 
@@ -719,7 +719,7 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void J(gj gjVar) {
+    public /* synthetic */ void J(hj hjVar) {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -735,7 +735,7 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void O(jj jjVar) {
+    public /* synthetic */ void O(kj kjVar) {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -803,7 +803,7 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void v1(jj jjVar) {
+    public /* synthetic */ void v1(kj kjVar) {
     }
 
     @Override // org.telegram.ui.Cells.q0
@@ -827,7 +827,7 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void F1(q1 q1Var, c20 c20Var) {
+    public /* synthetic */ void F1(q1 q1Var, d20 d20Var) {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -975,7 +975,7 @@ public class a implements ai, q, e, g, d, OnFailureListener, n, x, n2.q, ab, l1,
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void z1(jj jjVar, String str, String str2, String str3, String str4, int i10, int i11) {
+    public /* synthetic */ void z1(kj kjVar, String str, String str2, String str3, String str4, int i10, int i11) {
     }
 
     @Override // org.telegram.ui.Components.ai

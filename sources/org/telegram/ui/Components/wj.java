@@ -17,9 +17,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class wj extends ok0 {
+public final class wj extends pk0 {
     public zf.e0 D;
     public long E;
     public long F;
@@ -36,7 +36,7 @@ public final class wj extends ok0 {
     public cd x;
     public long y;
     public ArrayList s = new ArrayList();
-    public final org.telegram.ui.s00 H = new org.telegram.ui.s00(0, 0);
+    public final org.telegram.ui.r00 H = new org.telegram.ui.r00(0, 0);
     public final ArrayList L = new ArrayList();
     public final ArrayList M = new ArrayList();
     public final ArrayList N = new ArrayList();
@@ -44,7 +44,7 @@ public final class wj extends ok0 {
     public final ArrayList P = new ArrayList();
     public final HashMap Q = new HashMap();
     public final ArrayList R = new ArrayList();
-    public final e2.f U = new e2.f(null);
+    public final e2.f U = new e2.f((int[]) null);
     public final mg.c2 W = new mg.c2(this, 25);
 
     public wj(xj xjVar, Context context) {
@@ -52,18 +52,18 @@ public final class wj extends ok0 {
         this.r = context;
     }
 
-    @Override // org.telegram.ui.Components.ak0
+    @Override // org.telegram.ui.Components.bk0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ak0
-    public final void G(tk0 tk0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.bk0
+    public final void G(uk0 uk0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.pk0
     public final int M(int i10) {
         if (i10 == 0) {
             return this.s.size();
@@ -85,7 +85,7 @@ public final class wj extends ok0 {
         return size + i12;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.pk0
     public final Object O(int i10, int i11) {
         ArrayList arrayList;
         if (i10 == 0) {
@@ -106,7 +106,7 @@ public final class wj extends ok0 {
         return arrayList.get(i13);
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.pk0
     public final int P(int i10, int i11) {
         if (i10 == 0) {
             return 1;
@@ -121,7 +121,7 @@ public final class wj extends ok0 {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.pk0
     public final int R() {
         ArrayList arrayList = this.P;
         if (arrayList.isEmpty()) {
@@ -130,7 +130,7 @@ public final class wj extends ok0 {
         return arrayList.size() + (!this.V ? 1 : 0) + 2;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.pk0
     public final View T(int i10, View view) {
         org.telegram.ui.Cells.z3 z3Var = (org.telegram.ui.Cells.z3) view;
         if (z3Var == null) {
@@ -148,19 +148,19 @@ public final class wj extends ok0 {
         if (i11 < arrayList.size()) {
             z3Var.setAlpha(1.0f);
             if (((ArrayList) this.Q.get((String) arrayList.get(i11))) != null) {
-                z3Var.setText((i11 != 0 || this.s.isEmpty()) ? org.telegram.messenger.cd.e0(((org.telegram.messenger.jj) r1.get(0)).k.date, false) : org.telegram.messenger.cd.L0(2131749544, null));
+                z3Var.setText((i11 != 0 || this.s.isEmpty()) ? org.telegram.messenger.dd.e0(((org.telegram.messenger.kj) r1.get(0)).k.date, false) : org.telegram.messenger.dd.L0(2131749544, null));
             }
         }
         return view;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.pk0
     public final boolean V(int i10, int i11, s4.c1 c1Var) {
         int i12 = c1Var.f;
         return i12 == 1 || i12 == 4;
     }
 
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.pk0
     public final void W(int i10, int i11, s4.c1 c1Var) {
         int i12 = i11;
         int i13 = c1Var.f;
@@ -176,7 +176,7 @@ public final class wj extends ok0 {
             if (((ArrayList) hashMap.get((String) arrayList.get(i14))) == null) {
                 return;
             }
-            ((org.telegram.ui.Cells.z3) view).setText((i14 != 0 || this.s.isEmpty()) ? org.telegram.messenger.cd.e0(((org.telegram.messenger.jj) r3.get(0)).k.date, false) : org.telegram.messenger.cd.L0(2131749544, null));
+            ((org.telegram.ui.Cells.z3) view).setText((i14 != 0 || this.s.isEmpty()) ? org.telegram.messenger.dd.e0(((org.telegram.messenger.kj) r3.get(0)).k.date, false) : org.telegram.messenger.dd.L0(2131749544, null));
             return;
         }
         if (i13 == 1 || i13 == 4) {
@@ -207,13 +207,13 @@ public final class wj extends ok0 {
             if (arrayList2 == null) {
                 return;
             }
-            org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) arrayList2.get(i12);
-            boolean z11 = l7Var.getMessage() != null && l7Var.getMessage().f1() == jjVar.f1();
+            org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) arrayList2.get(i12);
+            boolean z11 = l7Var.getMessage() != null && l7Var.getMessage().f1() == kjVar.f1();
             if (i12 != arrayList2.size() - 1 || (i16 == arrayList.size() - 1 && this.S)) {
                 z10 = true;
             }
-            l7Var.c(jjVar, z10);
-            l7Var.getViewTreeObserver().addOnPreDrawListener(new vj(this, l7Var, jjVar, z11, 0));
+            l7Var.c(kjVar, z10);
+            l7Var.getViewTreeObserver().addOnPreDrawListener(new vj(this, l7Var, kjVar, z11, 0));
         }
     }
 
@@ -326,7 +326,7 @@ public final class wj extends ok0 {
         }
         final int i10 = 1 + this.T;
         this.T = i10;
-        final org.telegram.messenger.c a2 = org.telegram.messenger.c.a(org.telegram.messenger.d20.s0);
+        final org.telegram.messenger.c a2 = org.telegram.messenger.c.a(org.telegram.messenger.e20.s0);
         ?? r02 = new Runnable() { // from class: org.telegram.ui.Components.rj
             /* JADX WARN: Multi-variable type inference failed */
             @Override // java.lang.Runnable
@@ -351,7 +351,7 @@ public final class wj extends ok0 {
                     tL_messages_search.q = str4;
                     tL_messages_search.limit = 20;
                     tL_messages_search.filter = wjVar.D.e;
-                    tL_messages_search.peer = org.telegram.messenger.vp.r1(i12).i1(j15);
+                    tL_messages_search.peer = org.telegram.messenger.wp.r1(i12).i1(j15);
                     if (j16 > 0) {
                         tL_messages_search.min_date = (int) (j16 / 1000);
                     }
@@ -359,7 +359,7 @@ public final class wj extends ok0 {
                         tL_messages_search.max_date = (int) (j17 / 1000);
                     }
                     if (z13 && str4.equals(wjVar.J) && !arrayList6.isEmpty()) {
-                        tL_messages_search.offset_id = ((org.telegram.messenger.jj) i0.a.g(1, arrayList6)).f1();
+                        tL_messages_search.offset_id = ((org.telegram.messenger.kj) i0.a.g(1, arrayList6)).f1();
                     } else {
                         tL_messages_search.offset_id = 0;
                     }
@@ -375,7 +375,7 @@ public final class wj extends ok0 {
                         ArrayList arrayList7 = new ArrayList();
                         i11 = 20;
                         j13 = j16;
-                        org.telegram.messenger.hs.a0(i12).M0(0, str4, arrayList7, new ArrayList(), new ArrayList(), null, -1);
+                        org.telegram.messenger.is.a0(i12).M0(0, str4, arrayList7, new ArrayList(), new ArrayList(), null, -1);
                         arrayList4 = arrayList7;
                     }
                     TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = new TLRPC.TL_messages_searchGlobal();
@@ -389,20 +389,20 @@ public final class wj extends ok0 {
                         tL_messages_searchGlobal2.max_date = (int) (j17 / 1000);
                     }
                     if (z13 && str4.equals(wjVar.J) && !arrayList6.isEmpty()) {
-                        org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) i0.a.g(1, arrayList6);
-                        tL_messages_searchGlobal2.offset_id = jjVar.f1();
+                        org.telegram.messenger.kj kjVar2 = (org.telegram.messenger.kj) i0.a.g(1, arrayList6);
+                        tL_messages_searchGlobal2.offset_id = kjVar2.f1();
                         tL_messages_searchGlobal2.offset_rate = wjVar.G;
-                        TLRPC.Peer peer = jjVar.k.peer_id;
+                        TLRPC.Peer peer = kjVar2.k.peer_id;
                         long j18 = peer.channel_id;
                         if (j18 == 0) {
                             j18 = peer.chat_id;
                             if (j18 == 0) {
                                 j14 = peer.user_id;
-                                tL_messages_searchGlobal2.offset_peer = org.telegram.messenger.vp.r1(i12).i1(j14);
+                                tL_messages_searchGlobal2.offset_peer = org.telegram.messenger.wp.r1(i12).i1(j14);
                             }
                         }
                         j14 = -j18;
-                        tL_messages_searchGlobal2.offset_peer = org.telegram.messenger.vp.r1(i12).i1(j14);
+                        tL_messages_searchGlobal2.offset_peer = org.telegram.messenger.wp.r1(i12).i1(j14);
                     } else {
                         tL_messages_searchGlobal2.offset_rate = 0;
                         tL_messages_searchGlobal2.offset_id = 0;
@@ -428,9 +428,9 @@ public final class wj extends ok0 {
                             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                             int size = messages_messages.messages.size();
                             for (int i14 = 0; i14 < size; i14++) {
-                                org.telegram.messenger.jj jjVar2 = new org.telegram.messenger.jj(cVar2.a, messages_messages.messages.get(i14), false, true);
-                                jjVar2.J5(str5, true);
-                                arrayList9.add(jjVar2);
+                                org.telegram.messenger.kj kjVar3 = new org.telegram.messenger.kj(cVar2.a, messages_messages.messages.get(i14), false, true);
+                                kjVar3.J5(str5, true);
+                                arrayList9.add(kjVar3);
                             }
                         }
                         org.telegram.messenger.i0.g3(new tj(wj.this, i13, tL_error, tLObject, cVar2, z13, str5, arrayList9, j15, j19, arrayList5, arrayList8));
@@ -545,7 +545,7 @@ public final class wj extends ok0 {
         xjVar.I.start();
     }
 
-    @Override // org.telegram.ui.Components.ok0, s4.g0
+    @Override // org.telegram.ui.Components.pk0, s4.g0
     public final void f() {
         X(false);
         this.X.W();

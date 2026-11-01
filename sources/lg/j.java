@@ -2,9 +2,10 @@ package lg;
 
 import android.animation.ValueAnimator;
 import c3.i0;
-import org.telegram.ui.be1;
+import org.telegram.ui.Components.voip.x;
+import org.telegram.ui.zd1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -34,21 +35,21 @@ public final /* synthetic */ class j implements ValueAnimator.AnimatorUpdateList
                 hVar.i = floatValue * this.d;
                 break;
             case 1:
-                org.telegram.ui.Components.voip.w wVar = (org.telegram.ui.Components.voip.w) this.e;
-                wVar.getClass();
+                x xVar = (x) this.e;
+                xVar.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wVar.y0 = i0.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                wVar.r0 = this.c * floatValue2;
-                wVar.s0 = this.d * floatValue2;
-                wVar.invalidate();
+                xVar.y0 = i0.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                xVar.r0 = this.c * floatValue2;
+                xVar.s0 = this.d * floatValue2;
+                xVar.invalidate();
                 break;
             default:
-                be1 be1Var = (be1) this.e;
+                zd1 zd1Var = (zd1) this.e;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                be1Var.f1 = i0.z(1.0f, floatValue3, 1.0f, this.b * floatValue3);
-                be1Var.Y0 = this.c * floatValue3;
-                be1Var.Z0 = this.d * floatValue3;
-                be1Var.s.invalidate();
+                zd1Var.f1 = i0.z(1.0f, floatValue3, 1.0f, this.b * floatValue3);
+                zd1Var.Y0 = this.c * floatValue3;
+                zd1Var.Z0 = this.d * floatValue3;
+                zd1Var.s.invalidate();
                 break;
         }
     }

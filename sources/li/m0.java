@@ -5,8 +5,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.qz;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.rz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.LaunchActivity;
 import rh.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -179,19 +179,19 @@ public final /* synthetic */ class m0 implements Runnable {
                     th = th5;
                 }
             case 1:
-                qz qzVar = (qz) this.e;
+                rz rzVar = (rz) this.e;
                 boolean z12 = this.b;
                 TLRPC.Message message = (TLRPC.Message) this.f;
                 ArrayList arrayList = (ArrayList) this.h;
                 boolean z13 = this.c;
                 ArrayList arrayList2 = (ArrayList) this.n;
                 int i12 = this.d;
-                qzVar.getClass();
-                qzVar.getMessagesController().b0(arrayList, null, null, message.dialog_id, false, z13 ? 1 : 0, false, 0L, null, 0, !z13 && z12, (!z12 || message == null) ? 0 : message.id);
-                qzVar.getMessagesController().i5(z12 ? 1 : 0, message.dialog_id, arrayList2);
-                qzVar.getMediaDataController().w0(message.dialog_id);
-                qzVar.d0(i12);
-                qzVar.i0(i12, z13);
+                rzVar.getClass();
+                rzVar.getMessagesController().b0(arrayList, null, null, message.dialog_id, false, z13 ? 1 : 0, false, 0L, null, 0, !z13 && z12, (!z12 || message == null) ? 0 : message.id);
+                rzVar.getMessagesController().i5(z12 ? 1 : 0, message.dialog_id, arrayList2);
+                rzVar.getMediaDataController().w0(message.dialog_id);
+                rzVar.d0(i12);
+                rzVar.i0(i12, z13);
                 return;
             default:
                 vh.d dVar = (vh.d) this.e;
@@ -209,7 +209,7 @@ public final /* synthetic */ class m0 implements Runnable {
                 e6.y(i13, false).R();
                 k2 T = LaunchActivity.T();
                 if (T != null) {
-                    cc.a0(T).V(Collections.singletonList(tLObject), cd.L0(2131745015, null), org.telegram.messenger.i0.W2((!z14 || TextUtils.isEmpty(starsSubscription.title)) ? (!z15 || TextUtils.isEmpty(starsSubscription.title)) ? cd.a0(null, null, 2131745014, cd.u(starsSubscription.until_date, false)) : cd.a0(null, null, 2131745017, cd.u(starsSubscription.until_date, false), starsSubscription.title) : cd.a0(null, null, 2131745018, cd.u(starsSubscription.until_date, false), starsSubscription.title)), null).k(false);
+                    cc.a0(T).V(Collections.singletonList(tLObject), dd.L0(2131745015, null), org.telegram.messenger.i0.W2((!z14 || TextUtils.isEmpty(starsSubscription.title)) ? (!z15 || TextUtils.isEmpty(starsSubscription.title)) ? dd.a0(null, null, 2131745014, dd.u(starsSubscription.until_date, false)) : dd.a0(null, null, 2131745017, dd.u(starsSubscription.until_date, false), starsSubscription.title) : dd.a0(null, null, 2131745018, dd.u(starsSubscription.until_date, false), starsSubscription.title)), null).k(false);
                     return;
                 }
                 return;
@@ -226,8 +226,8 @@ public final /* synthetic */ class m0 implements Runnable {
         this.n = t0Var;
     }
 
-    public /* synthetic */ m0(qz qzVar, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i10) {
-        this.e = qzVar;
+    public /* synthetic */ m0(rz rzVar, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i10) {
+        this.e = rzVar;
         this.b = z10;
         this.f = message;
         this.h = arrayList;

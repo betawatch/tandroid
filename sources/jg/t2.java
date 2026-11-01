@@ -3,13 +3,13 @@ package jg;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.x20;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.y20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t2 {
     public String a;
@@ -24,13 +24,13 @@ public final class t2 {
     public TLRPC.StickerSet j;
     public TLRPC.Document k;
     public String l;
-    public j20 m;
-    public q20 n;
+    public k20 m;
+    public r20 n;
     public boolean o;
     public ArrayList p;
     public ArrayList q;
-    public jj r;
-    public x20 s;
+    public kj r;
+    public y20 s;
     public float t;
     public float u;
 

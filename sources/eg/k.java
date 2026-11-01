@@ -4,10 +4,10 @@ import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Wallet.x0;
 import org.telegram.ui.web.HttpGetFileTask;
-import vh.d1;
-import yh.e0;
+import vh.r0;
+import yh.d0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class k implements DialogInterface.OnCancelListener
                 ((q) this.b).I = false;
                 break;
             case 1:
-                ((d1) this.b).run();
+                ((r0) this.b).run();
                 break;
             case 2:
                 ((x0) this.b).run();
@@ -34,10 +34,10 @@ public final /* synthetic */ class k implements DialogInterface.OnCancelListener
                 ((HttpGetFileTask) this.b).cancel(true);
                 break;
             default:
-                e0 e0Var = (e0) this.b;
-                ConnectionsManager.getInstance(e0Var.d).cancelRequest(e0Var.r, true);
-                e0Var.q = null;
-                e0Var.r = 0;
+                d0 d0Var = (d0) this.b;
+                ConnectionsManager.getInstance(d0Var.d).cancelRequest(d0Var.r, true);
+                d0Var.q = null;
+                d0Var.r = 0;
                 break;
         }
     }

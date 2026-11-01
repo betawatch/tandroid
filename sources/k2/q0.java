@@ -8,9 +8,9 @@ import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.os.Build;
 import android.util.Rational;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class q0 {
     public final Object a;
@@ -34,7 +34,7 @@ public final class q0 {
             }
         } else {
             double d = i11 / i10;
-            Rational rational = d < 0.45d ? new Rational(45, 100) : d > 2.35d ? new Rational(zs.K3, 100) : new Rational(point.x, point.y);
+            Rational rational = d < 0.45d ? new Rational(45, 100) : d > 2.35d ? new Rational(at.K3, 100) : new Rational(point.x, point.y);
             builder.setAspectRatio(rational);
             if (Build.VERSION.SDK_INT >= 33) {
                 builder.setExpandedAspectRatio(rational);

@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yp extends EditTextBoldCursor {
     public final /* synthetic */ int G1;
@@ -63,7 +63,7 @@ public final class yp extends EditTextBoldCursor {
         iy iyVar;
         View view;
         s4.a0 a0Var;
-        tk0 tk0Var;
+        uk0 uk0Var;
         ?? r16;
         yp ypVar2;
         int i11;
@@ -111,10 +111,10 @@ public final class yp extends EditTextBoldCursor {
                             ypVar = ypVar3;
                             i10 = 2;
                         } else {
-                            tk0 tk0Var2 = vyVar.D0;
-                            tk0 tk0Var3 = vyVar.P;
+                            uk0 uk0Var2 = vyVar.D0;
+                            uk0 uk0Var3 = vyVar.P;
                             zx zxVar = vyVar.j0;
-                            tk0 tk0Var4 = vyVar.h0;
+                            uk0 uk0Var4 = vyVar.h0;
                             AnimatorSet animatorSet = vyVar.M0;
                             if (animatorSet != null) {
                                 animatorSet.cancel();
@@ -130,20 +130,20 @@ public final class yp extends EditTextBoldCursor {
                                     view = vyVar.I;
                                     r16 = z11;
                                     a0Var = vyVar.Q;
-                                    tk0Var = tk0Var3;
+                                    uk0Var = uk0Var3;
                                 } else {
                                     boolean z12 = z11;
                                     if (i16 == i14) {
                                         iyVar = vyVar.o0;
                                         view = vyVar.p0;
                                         a0Var = vyVar.i0;
-                                        tk0Var = tk0Var4;
+                                        uk0Var = uk0Var4;
                                         r16 = z12;
                                     } else {
                                         iyVar = vyVar.G0;
                                         view = vyVar.B0;
                                         a0Var = vyVar.E0;
-                                        tk0Var = tk0Var2;
+                                        uk0Var = uk0Var2;
                                         r16 = z12;
                                     }
                                 }
@@ -160,7 +160,7 @@ public final class yp extends EditTextBoldCursor {
                                         float f7 = i16 == i15 ? 0.0f : -org.telegram.messenger.i0.L(36.0f);
                                         float[] fArr = new float[1];
                                         fArr[r16] = f7;
-                                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(tk0Var, (Property<tk0, Float>) property, fArr);
+                                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(uk0Var, (Property<uk0, Float>) property, fArr);
                                         float[] fArr2 = new float[1];
                                         fArr2[r16] = org.telegram.messenger.i0.L(0.0f);
                                         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(iyVar, (Property<iy, Float>) property, fArr2);
@@ -176,7 +176,7 @@ public final class yp extends EditTextBoldCursor {
                                         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr3);
                                         float[] fArr4 = new float[1];
                                         fArr4[r16] = -org.telegram.messenger.i0.L(36.0f);
-                                        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(tk0Var, (Property<tk0, Float>) property, fArr4);
+                                        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(uk0Var, (Property<uk0, Float>) property, fArr4);
                                         float[] fArr5 = new float[1];
                                         fArr5[r16] = org.telegram.messenger.i0.L(0.0f);
                                         ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(iyVar, (Property<iy, Float>) property, fArr5);
@@ -188,7 +188,7 @@ public final class yp extends EditTextBoldCursor {
                                     }
                                     vyVar.M0.setDuration(220L);
                                     vyVar.M0.setInterpolator(gr.f);
-                                    vyVar.M0.addListener(new bg.f(22, vyVar, tk0Var));
+                                    vyVar.M0.addListener(new bg.f(22, vyVar, uk0Var));
                                     vyVar.M0.start();
                                     z10 = r16;
                                     i11 = 2;
@@ -199,24 +199,24 @@ public final class yp extends EditTextBoldCursor {
                                     if (view != null && i16 != 2) {
                                         view.setTranslationY(-org.telegram.messenger.i0.L(40.0f));
                                     }
-                                    if (tk0Var == tk0Var2) {
+                                    if (uk0Var == uk0Var2) {
                                         int i18 = r16;
-                                        tk0Var.setPadding(i18, i18, i18, vyVar.q2);
+                                        uk0Var.setPadding(i18, i18, i18, vyVar.q2);
                                     } else {
                                         int i19 = r16;
-                                        if (tk0Var == tk0Var3) {
-                                            tk0Var.setPadding(org.telegram.messenger.i0.L(5.0f), i19, org.telegram.messenger.i0.L(5.0f), vyVar.q2);
-                                        } else if (tk0Var == tk0Var4) {
-                                            tk0Var.setPadding(i19, vyVar.b1, i19, vyVar.q2);
+                                        if (uk0Var == uk0Var3) {
+                                            uk0Var.setPadding(org.telegram.messenger.i0.L(5.0f), i19, org.telegram.messenger.i0.L(5.0f), vyVar.q2);
+                                        } else if (uk0Var == uk0Var4) {
+                                            uk0Var.setPadding(i19, vyVar.b1, i19, vyVar.q2);
                                         }
                                     }
-                                    if (tk0Var == tk0Var4) {
+                                    if (uk0Var == uk0Var4) {
                                         boolean z13 = vyVar.n0.y.size() > 0;
                                         zxVar.K = z13;
                                         if (z13) {
                                             zxVar.G("", true);
-                                            if (tk0Var4.getAdapter() != zxVar) {
-                                                tk0Var4.setAdapter(zxVar);
+                                            if (uk0Var4.getAdapter() != zxVar) {
+                                                uk0Var4.setAdapter(zxVar);
                                             }
                                         }
                                     }

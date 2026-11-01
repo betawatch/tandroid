@@ -19,14 +19,14 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
@@ -36,12 +36,12 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.s20;
 import org.telegram.ui.Components.t5;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class h extends ScrollView implements k6 {
     public final t5 D;
@@ -58,7 +58,7 @@ public abstract class h extends ScrollView implements k6 {
     public final ArrayList e;
     public s20 f;
     public boolean h;
-    public q20 n;
+    public r20 n;
     public int r;
     public final t5 s;
     public final LinearGradient w;
@@ -107,7 +107,7 @@ public abstract class h extends ScrollView implements k6 {
         a7.m(n0Var, 30, i10, p6Var);
         a7.m(n0Var, 36, i10, p6Var);
         n0Var.setCursorWidth(1.5f);
-        n0Var.setInputType(n0Var.getInputType() | zs.G2);
+        n0Var.setInputType(n0Var.getInputType() | at.G2);
         n0Var.setSingleLine(true);
         n0Var.setBackgroundDrawable(null);
         n0Var.setVerticalScrollBarEnabled(false);
@@ -115,10 +115,10 @@ public abstract class h extends ScrollView implements k6 {
         n0Var.setTextIsSelectable(false);
         n0Var.setPadding(0, 0, 0, 0);
         n0Var.setImeOptions(268435462);
-        n0Var.setGravity((cd.X ? 5 : 3) | 16);
+        n0Var.setGravity((dd.X ? 5 : 3) | 16);
         gVar.addView(n0Var);
-        n0Var.setHintText(cd.L0(2131745853, null));
-        this.c = (int) n0Var.getPaint().measureText(cd.L0(2131745853, null));
+        n0Var.setHintText(dd.L0(2131745853, null));
+        this.c = (int) n0Var.getPaint().measureText(dd.L0(2131745853, null));
         n0Var.addTextChangedListener(new a1(this, 27));
     }
 
@@ -145,7 +145,7 @@ public abstract class h extends ScrollView implements k6 {
             gVar.c = false;
             AnimatorSet animatorSet = new AnimatorSet();
             gVar.b = animatorSet;
-            animatorSet.addListener(new iw0(13, (Object) gVar, (Object) s20Var));
+            animatorSet.addListener(new jw0(13, (Object) gVar, (Object) s20Var));
             ArrayList arrayList = gVar.h;
             arrayList.clear();
             arrayList.add(s20Var);
@@ -170,10 +170,10 @@ public abstract class h extends ScrollView implements k6 {
         Property property;
         Property property2;
         Property property3;
-        vp vpVar;
+        wp wpVar;
         Object obj;
         ArrayList arrayList3 = arrayList;
-        vp r12 = vp.r1(d20.s0);
+        wp r12 = wp.r1(e20.s0);
         ArrayList arrayList4 = new ArrayList();
         ArrayList arrayList5 = new ArrayList();
         int i11 = 0;
@@ -203,17 +203,17 @@ public abstract class h extends ScrollView implements k6 {
                             Object obj2 = arrayList3.get(i13);
                             i13++;
                             TLRPC.TL_help_country tL_help_country = (TLRPC.TL_help_country) obj2;
-                            vpVar = r12;
+                            wpVar = r12;
                             if (tL_help_country.default_name.hashCode() == longValue) {
                                 obj = tL_help_country;
                                 break;
                             } else {
                                 arrayList3 = arrayList;
-                                r12 = vpVar;
+                                r12 = wpVar;
                             }
                         }
                     }
-                    vpVar = r12;
+                    wpVar = r12;
                     obj = Z1;
                     if (obj != null) {
                         s20 s20Var2 = new s20(getContext(), obj, null, true, this.a);
@@ -222,14 +222,14 @@ public abstract class h extends ScrollView implements k6 {
                     }
                 } else {
                     if (((s20) arrayList2.get(i12)).getUid() == longValue) {
-                        vpVar = r12;
+                        wpVar = r12;
                         break;
                     }
                     i12++;
                 }
             }
             arrayList3 = arrayList;
-            r12 = vpVar;
+            r12 = wpVar;
         }
         if (!arrayList4.isEmpty() || !arrayList5.isEmpty()) {
             g gVar = this.d;
@@ -301,7 +301,7 @@ public abstract class h extends ScrollView implements k6 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float scrollY = getScrollY();
-        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, zs.e4, 31);
+        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, at.e4, 31);
         super.dispatchDraw(canvas);
         canvas.save();
         float d = this.s.d(canScrollVertically(-1));
@@ -353,8 +353,8 @@ public abstract class h extends ScrollView implements k6 {
         }
     }
 
-    public void setOnSearchTextChange(q20 q20Var) {
-        this.n = q20Var;
+    public void setOnSearchTextChange(r20 r20Var) {
+        this.n = r20Var;
     }
 
     public void setText(CharSequence charSequence) {

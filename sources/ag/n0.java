@@ -11,21 +11,21 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.v20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.w20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -37,19 +37,18 @@ import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.tw0;
+import org.telegram.ui.Components.uw0;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Components.zx;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.af;
-import org.telegram.ui.ay;
+import org.telegram.ui.kt;
 import org.telegram.ui.le;
-import org.telegram.ui.lt;
-import org.telegram.ui.ox;
-import org.telegram.ui.sm0;
-import org.telegram.ui.tc1;
+import org.telegram.ui.nx;
+import org.telegram.ui.qm0;
+import org.telegram.ui.rc1;
 import org.telegram.ui.un;
 import org.telegram.ui.wd;
 import org.telegram.ui.zd;
@@ -57,7 +56,7 @@ import rh.l5;
 import vh.n5;
 import vh.o8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -113,9 +112,9 @@ public final /* synthetic */ class n0 implements Runnable {
                 arrayList4.clear();
                 arrayList4.addAll(arrayList);
                 int i18 = s0Var.a;
-                vp.r1(i18).V3(arrayList2, true);
-                vp.r1(i18).P3(arrayList3, true);
-                zs.f(i18).k(zs.F1, new Object[0]);
+                wp.r1(i18).V3(arrayList2, true);
+                wp.r1(i18).P3(arrayList3, true);
+                at.f(i18).k(at.F1, new Object[0]);
                 s0Var.c = false;
                 s0Var.e(false, z12);
                 return;
@@ -265,8 +264,8 @@ public final /* synthetic */ class n0 implements Runnable {
                 if (tL_error == null) {
                     TL_account.Password password = (TL_account.Password) tLObject;
                     twoStepVerificationActivity.I = password;
-                    TwoStepVerificationActivity.q0(password);
-                    leVar.F(z15, twoStepVerificationActivity.p0(), twoStepVerificationActivity);
+                    TwoStepVerificationActivity.r0(password);
+                    leVar.F(z15, twoStepVerificationActivity.q0(), twoStepVerificationActivity);
                     return;
                 }
                 return;
@@ -326,7 +325,7 @@ public final /* synthetic */ class n0 implements Runnable {
                 TextView textView = (TextView) this.f;
                 ClipboardManager clipboardManager = (ClipboardManager) mtVar.getContext().getSystemService("clipboard");
                 boolean z19 = z18 && (TextUtils.isEmpty(zdVar.getText()) || TextUtils.equals(zdVar.getText().toString(), str3)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                z20.m(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), gr.h, 300L);
+                a30.m(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), gr.h, 300L);
                 return;
             case 9:
                 dy dyVar = (dy) this.c;
@@ -359,7 +358,7 @@ public final /* synthetic */ class n0 implements Runnable {
                 un unVar2 = (un) this.f;
                 boolean z21 = this.b;
                 File w9 = n5.w(k2Var2.getCurrentAccount(), "webp");
-                int o11 = tz.o();
+                int o11 = uz.o();
                 float f7 = 512;
                 float f10 = o11 != 0 ? o11 != 2 ? 2560 : 3840 : 1280;
                 double d10 = (f10 * f7) / f7;
@@ -375,31 +374,31 @@ public final /* synthetic */ class n0 implements Runnable {
                 }
                 createBitmap.recycle();
                 ArrayList arrayList5 = new ArrayList();
-                ef efVar = new ef(0, w9.getAbsolutePath(), 0, false, 0, 0);
-                arrayList5.add(efVar);
-                v20 v20Var = new v20();
-                v20Var.a = (byte) 0;
-                v20Var.C = tL_messages_stickerSet;
-                b8.G(d20.s0);
-                v20Var.j = b8.K(document, null, true, true).getAbsolutePath();
-                v20Var.c = 0.5f - ((Math.min(512, 512) / f7) / 2.0f);
-                v20Var.d = 0.5f - ((Math.min(512, 512) / f7) / 2.0f);
-                v20Var.f = Math.min(512, 512) / f7;
-                v20Var.g = Math.min(512, 512) / f7;
+                ff ffVar = new ff(0, w9.getAbsolutePath(), 0, false, 0, 0);
+                arrayList5.add(ffVar);
+                w20 w20Var = new w20();
+                w20Var.a = (byte) 0;
+                w20Var.C = tL_messages_stickerSet;
+                b8.G(e20.s0);
+                w20Var.j = b8.K(document, null, true, true).getAbsolutePath();
+                w20Var.c = 0.5f - ((Math.min(512, 512) / f7) / 2.0f);
+                w20Var.d = 0.5f - ((Math.min(512, 512) / f7) / 2.0f);
+                w20Var.f = Math.min(512, 512) / f7;
+                w20Var.g = Math.min(512, 512) / f7;
                 int floor = (int) Math.floor(f11 * 0.5d);
-                v20Var.q = floor;
-                v20Var.r = floor;
-                v20Var.v = 2.0f;
-                v20Var.B = document;
-                if (jj.K2(document, true) || jj.O4(document)) {
-                    v20Var.b = (byte) ((jj.K2(document, true) ? (byte) 1 : (byte) 4) | v20Var.b);
+                w20Var.q = floor;
+                w20Var.r = floor;
+                w20Var.v = 2.0f;
+                w20Var.B = document;
+                if (kj.K2(document, true) || kj.O4(document)) {
+                    w20Var.b = (byte) ((kj.K2(document, true) ? (byte) 1 : (byte) 4) | w20Var.b);
                 }
                 ArrayList arrayList6 = new ArrayList();
-                efVar.p = arrayList6;
-                arrayList6.add(v20Var);
-                efVar.t = 3000L;
-                if (jj.K2(document, true)) {
-                    b8.G(d20.s0);
+                ffVar.p = arrayList6;
+                arrayList6.add(w20Var);
+                ffVar.t = 3000L;
+                if (kj.K2(document, true)) {
+                    b8.G(e20.s0);
                     File K = b8.K(document, null, true, true);
                     if (K != null) {
                         try {
@@ -413,41 +412,41 @@ public final /* synthetic */ class n0 implements Runnable {
                             } else {
                                 d = 0.0d;
                             }
-                            efVar.t = (long) (d * 1000.0d);
+                            ffVar.t = (long) (d * 1000.0d);
                         } catch (Exception e11) {
                             f8.g(e11, true);
                         }
                     }
-                } else if (jj.O4(document)) {
-                    efVar.t = (long) (jj.H0(document) * 1000.0d);
+                } else if (kj.O4(document)) {
+                    ffVar.t = (long) (kj.H0(document) * 1000.0d);
                 }
                 PhotoViewer.v1().N2(k2Var2.getParentActivity(), null, k2Var2.getResourceProvider());
-                PhotoViewer.v1().j2(arrayList5, 0, 11, false, new tw0(), unVar2);
+                PhotoViewer.v1().j2(arrayList5, 0, 11, false, new uw0(), unVar2);
                 PhotoViewer.v1().Z0(document, z21 ? document : null, true, null);
-                lt.p().T = z21 ? tL_messages_stickerSet : null;
+                kt.p().T = z21 ? tL_messages_stickerSet : null;
                 return;
             case 11:
-                ox oxVar = (ox) this.c;
+                nx nxVar = (nx) this.c;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.d;
                 TLObject tLObject4 = (TLObject) this.e;
                 String str6 = (String) this.f;
                 boolean z22 = this.b;
-                ay ayVar = oxVar.a;
+                org.telegram.ui.zx zxVar2 = nxVar.a;
                 if (tL_error2 == null) {
-                    TLRPC.User Z1 = ayVar.getMessagesController().Z1(Long.valueOf(ayVar.getUserConfig().e()));
+                    TLRPC.User Z1 = zxVar2.getMessagesController().Z1(Long.valueOf(zxVar2.getUserConfig().e()));
                     if (Z1 == null) {
-                        Z1 = ayVar.getUserConfig().f();
+                        Z1 = zxVar2.getUserConfig().f();
                         if (Z1 == null) {
                             return;
                         } else {
-                            ayVar.getMessagesController().U3(Z1, false, false);
+                            zxVar2.getMessagesController().U3(Z1, false, false);
                         }
                     } else {
-                        ayVar.getUserConfig().w(Z1);
+                        zxVar2.getUserConfig().w(Z1);
                     }
                     TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject4;
                     ArrayList<TLRPC.PhotoSize> arrayList7 = tL_photos_photo.photo.sizes;
-                    TLRPC.PhotoSize w10 = b8.w(arrayList7, zs.g2, false, null, false);
+                    TLRPC.PhotoSize w10 = b8.w(arrayList7, at.g2, false, null, false);
                     TLRPC.PhotoSize w11 = b8.w(arrayList7, 800, false, null, false);
                     TLRPC.VideoSize x10 = tL_photos_photo.photo.video_sizes.isEmpty() ? null : b8.x(1000, tL_photos_photo.photo.video_sizes);
                     TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
@@ -459,92 +458,92 @@ public final /* synthetic */ class n0 implements Runnable {
                     if (w11 != null) {
                         tL_userProfilePhoto.photo_big = w11.location;
                     }
-                    if (w10 == null || ayVar.b4 == null) {
+                    if (w10 == null || zxVar2.b4 == null) {
                         z11 = true;
                     } else {
-                        i15 = ((org.telegram.ui.ActionBar.k2) ayVar).currentAccount;
+                        i15 = ((org.telegram.ui.ActionBar.k2) zxVar2).currentAccount;
                         b8.G(i15);
                         File K2 = b8.K(w10, null, true, true);
-                        i16 = ((org.telegram.ui.ActionBar.k2) ayVar).currentAccount;
+                        i16 = ((org.telegram.ui.ActionBar.k2) zxVar2).currentAccount;
                         b8.G(i16);
-                        b8.K(ayVar.b4, null, true, true).renameTo(K2);
+                        b8.K(zxVar2.b4, null, true, true).renameTo(K2);
                         StringBuilder sb2 = new StringBuilder();
-                        sb2.append(ayVar.b4.volume_id);
+                        sb2.append(zxVar2.b4.volume_id);
                         sb2.append("_");
-                        String p5 = a1.g.p(sb2, ayVar.b4.local_id, "@50_50");
+                        String p5 = a1.g.p(sb2, zxVar2.b4.local_id, "@50_50");
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(w10.location.volume_id);
                         sb3.append("_");
                         String p9 = a1.g.p(sb3, w10.location.local_id, "@50_50");
-                        hc D = hc.D();
-                        i17 = ((org.telegram.ui.ActionBar.k2) ayVar).currentAccount;
+                        ic D = ic.D();
+                        i17 = ((org.telegram.ui.ActionBar.k2) zxVar2).currentAccount;
                         z11 = true;
-                        D.S(p5, p9, ic.m(i17, 1, Z1));
+                        D.S(p5, p9, jc.m(i17, 1, Z1));
                     }
                     if (x10 != null && str6 != null) {
-                        i14 = ((org.telegram.ui.ActionBar.k2) ayVar).currentAccount;
+                        i14 = ((org.telegram.ui.ActionBar.k2) zxVar2).currentAccount;
                         b8.G(i14);
                         new File(str6).renameTo(b8.K(x10, "mp4", z11, z11));
-                    } else if (w11 != null && ayVar.c4 != null) {
-                        i12 = ((org.telegram.ui.ActionBar.k2) ayVar).currentAccount;
+                    } else if (w11 != null && zxVar2.c4 != null) {
+                        i12 = ((org.telegram.ui.ActionBar.k2) zxVar2).currentAccount;
                         b8.G(i12);
                         File K3 = b8.K(w11, null, true, true);
-                        i13 = ((org.telegram.ui.ActionBar.k2) ayVar).currentAccount;
+                        i13 = ((org.telegram.ui.ActionBar.k2) zxVar2).currentAccount;
                         b8.G(i13);
-                        b8.K(ayVar.c4, null, true, true).renameTo(K3);
+                        b8.K(zxVar2.c4, null, true, true).renameTo(K3);
                     }
-                    ayVar.getMessagesController().T0(Z1.id);
+                    zxVar2.getMessagesController().T0(Z1.id);
                     ArrayList arrayList8 = new ArrayList();
                     arrayList8.add(Z1);
                     i10 = 0;
-                    ayVar.getMessagesStorage().m1(arrayList8, null, false, true);
-                    TLRPC.UserFull a22 = ayVar.getMessagesController().a2(ayVar.getUserConfig().e());
+                    zxVar2.getMessagesStorage().m1(arrayList8, null, false, true);
+                    TLRPC.UserFull a22 = zxVar2.getMessagesController().a2(zxVar2.getUserConfig().e());
                     if (a22 != null) {
                         a22.profile_photo = tL_photos_photo.photo;
-                        ayVar.getMessagesStorage().j2(a22, false);
+                        zxVar2.getMessagesStorage().j2(a22, false);
                     }
                     fileLocation = null;
                 } else {
                     i10 = 0;
                     fileLocation = null;
                 }
-                ayVar.b4 = fileLocation;
-                ayVar.c4 = fileLocation;
-                zs notificationCenter = ayVar.getNotificationCenter();
+                zxVar2.b4 = fileLocation;
+                zxVar2.c4 = fileLocation;
+                at notificationCenter = zxVar2.getNotificationCenter();
                 Object[] objArr = new Object[1];
-                objArr[i10] = Integer.valueOf(vp.D8);
+                objArr[i10] = Integer.valueOf(wp.D8);
                 notificationCenter.k(2, objArr);
-                ayVar.getNotificationCenter().k(46, new Object[i10]);
-                ayVar.getUserConfig().v(true);
-                i11 = ((org.telegram.ui.ActionBar.k2) ayVar).currentAccount;
-                vp.r1(i11).h4(0L, "USERPIC_SETUP");
-                ayVar.f5();
-                wb wbVar = ayVar.d4;
+                zxVar2.getNotificationCenter().k(46, new Object[i10]);
+                zxVar2.getUserConfig().v(true);
+                i11 = ((org.telegram.ui.ActionBar.k2) zxVar2).currentAccount;
+                wp.r1(i11).h4(0L, "USERPIC_SETUP");
+                zxVar2.g5();
+                wb wbVar = zxVar2.d4;
                 if (wbVar != null) {
                     nb nbVar = (nb) wbVar.e;
-                    nbVar.d.c(cd.L0(z22 ? 2131742818 : 2131742820, null), true, true);
+                    nbVar.d.c(dd.L0(z22 ? 2131742818 : 2131742820, null), true, true);
                     nbVar.setProgress(1.0f);
                     sa button = nbVar.getButton();
                     button.setScaleX(0.6f);
                     button.setScaleY(0.6f);
                     button.setAlpha(0.0f);
                     button.setVisibility(0);
-                    z20.m(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), gr.h, 360L);
-                    wb wbVar2 = ayVar.d4;
+                    a30.m(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), gr.h, 360L);
+                    wb wbVar2 = zxVar2.d4;
                     wbVar2.j = 5000;
                     wbVar2.i(false);
-                    ayVar.d4.i(true);
+                    zxVar2.d4.i(true);
                     return;
                 }
                 return;
             case 12:
-                sm0.e0((sm0) this.c, this.b, (String) this.d, (String) this.e, (TL_account.updatePasswordSettings) this.f);
+                qm0.f0((qm0) this.c, this.b, (String) this.d, (String) this.e, (TL_account.updatePasswordSettings) this.f);
                 return;
             case 13:
-                sm0.m0((sm0) this.c, (TLRPC.TL_error) this.d, this.b, (TLObject) this.e, (String) this.f);
+                qm0.n0((qm0) this.c, (TLRPC.TL_error) this.d, this.b, (TLObject) this.e, (String) this.f);
                 return;
             case 14:
-                tc1.Y((tc1) this.c, (TLObject) this.d, this.b, (String) this.e, (TL_account.passwordInputSettings) this.f);
+                rc1.Z((rc1) this.c, (TLObject) this.d, this.b, (String) this.e, (TL_account.passwordInputSettings) this.f);
                 return;
             case 15:
                 vh.e1 e1Var = (vh.e1) this.c;

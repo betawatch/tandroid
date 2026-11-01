@@ -11,13 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.p80;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d3 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final LinearLayout a;
@@ -45,7 +45,7 @@ public final class d3 extends FrameLayout implements org.telegram.ui.ActionBar.k
         LinearLayout linearLayout = new LinearLayout(context);
         this.b = linearLayout;
         linearLayout.setOrientation(1);
-        linearLayout.setPadding(cd.X ? org.telegram.messenger.i0.L(24.0f) : 0, 0, cd.X ? 0 : org.telegram.messenger.i0.L(24.0f), 0);
+        linearLayout.setPadding(dd.X ? org.telegram.messenger.i0.L(24.0f) : 0, 0, dd.X ? 0 : org.telegram.messenger.i0.L(24.0f), 0);
         org.telegram.ui.Components.n5 n5Var = new org.telegram.ui.Components.n5(context);
         this.c = n5Var;
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -53,19 +53,19 @@ public final class d3 extends FrameLayout implements org.telegram.ui.ActionBar.k
         n5Var.setTextSize(1, 14.0f);
         n5Var.setTypeface(org.telegram.messenger.i0.o());
         n5Var.setMaxLines(5);
-        linearLayout.addView(n5Var, w7.b6.p(-2, -2, 0.0f, (cd.X ? 5 : 3) | 48));
+        linearLayout.addView(n5Var, w7.b6.p(-2, -2, 0.0f, (dd.X ? 5 : 3) | 48));
         p80 p80Var = new p80(context, null);
         this.d = p80Var;
         p80Var.setTextSize(1, 13.0f);
         p80Var.setEllipsize(truncateAt);
         p80Var.setMaxLines(5);
         linearLayout.addView(p80Var, w7.b6.p(-1, -2, 0.0f, 48));
-        zs.i(n5Var);
-        zs.i(p80Var);
+        at.i(n5Var);
+        at.i(p80Var);
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.a = linearLayout2;
         linearLayout2.setOrientation(0);
-        if (cd.X) {
+        if (dd.X) {
             linearLayout2.addView(linearLayout, w7.b6.d(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
             linearLayout2.addView(u8Var, w7.b6.d(0, -1.0f, 16, 0.0f, 0.0f, -2.0f, 0.0f));
             linearLayout2.addView(g9Var, w7.b6.d(36, 36.0f, 21, 0.0f, 0.0f, -2.0f, 0.0f));
@@ -80,12 +80,12 @@ public final class d3 extends FrameLayout implements org.telegram.ui.ActionBar.k
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.arrow_newchat);
-        addView(imageView, w7.b6.d(16, 16.0f, (cd.X ? 3 : 5) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(imageView, w7.b6.d(16, 16.0f, (dd.X ? 3 : 5) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setImageResource(R.drawable.msg_close);
         imageView2.setPadding(org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f));
-        addView(imageView2, w7.b6.d(36, 36.0f, (cd.X ? 3 : 5) | 16, -4.0f, 0.0f, -4.0f, 0.0f));
+        addView(imageView2, w7.b6.d(36, 36.0f, (dd.X ? 3 : 5) | 16, -4.0f, 0.0f, -4.0f, 0.0f));
         imageView2.setVisibility(8);
         setClipToPadding(false);
         setClipChildren(false);
@@ -134,7 +134,7 @@ public final class d3 extends FrameLayout implements org.telegram.ui.ActionBar.k
         this.e.setVisibility(z10 ? 0 : 8);
         this.f.setVisibility(8);
         int L = z10 ? org.telegram.messenger.i0.L(24.0f) : 0;
-        boolean z12 = cd.X;
+        boolean z12 = dd.X;
         int i11 = z12 ? L : 0;
         if (z12) {
             L = 0;

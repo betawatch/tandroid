@@ -2,9 +2,9 @@ package rh;
 
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        q20 q20Var;
+        r20 r20Var;
         switch (this.a) {
             case 0:
                 ((s0) this.c).a(this.b);
@@ -37,8 +37,8 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 break;
             default:
                 vh.f4 f4Var = ((vh.d4) this.c).b;
-                if (f4Var.r && (q20Var = f4Var.f) != null) {
-                    q20Var.a(Integer.valueOf(this.b));
+                if (f4Var.r && (r20Var = f4Var.f) != null) {
+                    r20Var.a(Integer.valueOf(this.b));
                     break;
                 }
                 break;

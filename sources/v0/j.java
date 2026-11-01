@@ -8,20 +8,20 @@ import android.credentials.GetCredentialResponse;
 import android.os.Bundle;
 import android.os.OutcomeReceiver;
 import android.util.Log;
-import org.telegram.messenger.yt;
+import org.telegram.messenger.zt;
 import r2.y;
 import w7.f8;
 import w7.g8;
 import w7.l9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class j implements OutcomeReceiver {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ h b;
 
-    public j(yt ytVar, k kVar) {
-        this.b = ytVar;
+    public j(zt ztVar, k kVar) {
+        this.b = ztVar;
     }
 
     public final void onError(Throwable th2) {
@@ -39,10 +39,10 @@ public final class j implements OutcomeReceiver {
                 GetCredentialException error2 = (GetCredentialException) th2;
                 kotlin.jvm.internal.i.e(error2, "error");
                 Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
-                yt ytVar = (yt) this.b;
+                zt ztVar = (zt) this.b;
                 String type2 = error2.getType();
                 kotlin.jvm.internal.i.d(type2, "getType(...)");
-                ytVar.g(l9.b(error2.getMessage(), type2));
+                ztVar.g(l9.b(error2.getMessage(), type2));
                 break;
         }
     }
@@ -62,14 +62,14 @@ public final class j implements OutcomeReceiver {
                 GetCredentialResponse response2 = (GetCredentialResponse) obj;
                 kotlin.jvm.internal.i.e(response2, "response");
                 Log.i("CredManProvService", "GetCredentialResponse returned from framework");
-                yt ytVar = (yt) this.b;
+                zt ztVar = (zt) this.b;
                 Credential credential = response2.getCredential();
                 kotlin.jvm.internal.i.d(credential, "getCredential(...)");
                 String type = credential.getType();
                 kotlin.jvm.internal.i.d(type, "getType(...)");
                 Bundle data2 = credential.getData();
                 kotlin.jvm.internal.i.d(data2, "getData(...)");
-                ytVar.onResult(new n(g8.a(type, data2)));
+                ztVar.onResult(new n(g8.a(type, data2)));
                 break;
         }
     }

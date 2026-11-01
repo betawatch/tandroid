@@ -12,11 +12,11 @@ import i2.i0;
 import j$.util.Objects;
 import jf.g;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.w0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e implements kf.b {
     public f d;
@@ -86,15 +86,15 @@ public final class e implements kf.b {
         final a aVar = fVar.g;
         Objects.requireNonNull(aVar);
         final int i10 = 0;
-        this.d = new f(measuredWidth, measuredHeight, new q20() { // from class: lf.d
-            @Override // org.telegram.messenger.q20
+        this.d = new f(measuredWidth, measuredHeight, new r20() { // from class: lf.d
+            @Override // org.telegram.messenger.r20
             public final void a(Object obj) {
                 switch (i10) {
                     case 0:
                         aVar.l((Canvas) obj);
                         break;
                     default:
-                        aVar.n((Canvas) obj);
+                        aVar.o((Canvas) obj);
                         break;
                 }
             }
@@ -102,15 +102,15 @@ public final class e implements kf.b {
         final a aVar2 = fVar.g;
         Objects.requireNonNull(aVar2);
         final int i11 = 1;
-        this.e = new f(measuredWidth, measuredHeight, new q20() { // from class: lf.d
-            @Override // org.telegram.messenger.q20
+        this.e = new f(measuredWidth, measuredHeight, new r20() { // from class: lf.d
+            @Override // org.telegram.messenger.r20
             public final void a(Object obj) {
                 switch (i11) {
                     case 0:
                         aVar2.l((Canvas) obj);
                         break;
                     default:
-                        aVar2.n((Canvas) obj);
+                        aVar2.o((Canvas) obj);
                         break;
                 }
             }

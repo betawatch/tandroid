@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p5 extends FrameLayout {
     public View a;
@@ -35,6 +35,6 @@ public final class p5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        this.e.S0();
+        this.e.T0();
     }
 }

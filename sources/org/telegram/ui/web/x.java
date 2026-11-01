@@ -23,12 +23,12 @@ import java.util.HashMap;
 import org.json.JSONObject;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -39,10 +39,10 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.u80;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dg0;
+import org.telegram.ui.bg0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -107,14 +107,14 @@ public final /* synthetic */ class x implements Runnable {
                     break;
                 } else {
                     Context context = z0Var2.getContext();
-                    String p5 = h20.p(z0Var2.U);
+                    String p5 = i20.p(z0Var2.U);
                     final m2 m2Var = new m2(z0Var2, x0Var, str5, str6, 15);
                     HashMap hashMap = xh.f0.g;
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                    String L0 = cd.L0(2131753095, null);
+                    String L0 = dd.L0(2131753095, null);
                     org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                     x1Var.R = L0;
-                    x1Var.T = org.telegram.messenger.i0.W2(cd.a0(null, null, 2131753096, p5));
+                    x1Var.T = org.telegram.messenger.i0.W2(dd.a0(null, null, 2131753096, p5));
                     LinearLayout linearLayout = new LinearLayout(context);
                     linearLayout.setPadding(org.telegram.messenger.i0.L(22.0f), 0, org.telegram.messenger.i0.L(22.0f), 0);
                     linearLayout.setOrientation(0);
@@ -156,7 +156,7 @@ public final /* synthetic */ class x implements Runnable {
                     linearLayout.addView(linearLayout2, b6.t(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.o(linearLayout);
                     final boolean[] zArr = new boolean[1];
-                    alertDialog$Builder.h(cd.L0(2131752589, null), new org.telegram.ui.ActionBar.u1() { // from class: xh.x
+                    alertDialog$Builder.h(dd.L0(2131752589, null), new org.telegram.ui.ActionBar.u1() { // from class: xh.x
                         @Override // org.telegram.ui.ActionBar.u1
                         public final void h(org.telegram.ui.ActionBar.x1 x1Var2, int i15) {
                             switch (i12) {
@@ -179,7 +179,7 @@ public final /* synthetic */ class x implements Runnable {
                             }
                         }
                     });
-                    alertDialog$Builder.k(cd.L0(2131753097, null), new org.telegram.ui.ActionBar.u1() { // from class: xh.x
+                    alertDialog$Builder.k(dd.L0(2131753097, null), new org.telegram.ui.ActionBar.u1() { // from class: xh.x
                         @Override // org.telegram.ui.ActionBar.u1
                         public final void h(org.telegram.ui.ActionBar.x1 x1Var2, int i15) {
                             switch (i11) {
@@ -228,7 +228,7 @@ public final /* synthetic */ class x implements Runnable {
                 if (tLObject2 != null) {
                     strArr[0] = "allowed";
                     if (tLObject2 instanceof TLRPC.Updates) {
-                        vp.r1(z0Var4.M).L3((TLRPC.Updates) tLObject2, false);
+                        wp.r1(z0Var4.M).L3((TLRPC.Updates) tLObject2, false);
                     }
                 }
                 if (tL_error != null) {
@@ -246,7 +246,7 @@ public final /* synthetic */ class x implements Runnable {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str9));
                     request.setMimeType(str10);
                     request.addRequestHeader("User-Agent", str11);
-                    request.setDescription(cd.L0(2131742954, null));
+                    request.setDescription(dd.L0(2131742954, null));
                     request.setTitle(str12);
                     request.setNotificationVisibility(1);
                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, str12);
@@ -256,7 +256,7 @@ public final /* synthetic */ class x implements Runnable {
                     }
                     z0 z0Var5 = v0Var.Q;
                     if (z0Var5 != null) {
-                        new cc(z0Var5, z0Var5.e).Q(R.raw.ic_download, 36, org.telegram.messenger.i0.W2(cd.a0(null, null, 2131742953, str12))).k(true);
+                        new cc(z0Var5, z0Var5.e).Q(R.raw.ic_download, 36, org.telegram.messenger.i0.W2(dd.a0(null, null, 2131742953, str12))).k(true);
                         break;
                     }
                 } catch (Exception e) {
@@ -316,7 +316,7 @@ public final /* synthetic */ class x implements Runnable {
                                     if (bArr == null) {
                                     }
                                     launchActivity2.r1 = new ag.l(botWebViewContainer$WebViewProxy, 27);
-                                    launchActivity2.startActivityForResult(Intent.createChooser(intent, cd.L0(2131745477, null)), 521);
+                                    launchActivity2.startActivityForResult(Intent.createChooser(intent, dd.L0(2131745477, null)), 521);
                                     return;
                                 }
                             } catch (Exception e11) {
@@ -392,7 +392,7 @@ public final /* synthetic */ class x implements Runnable {
                                 intent2.setType("text/plain");
                             }
                             launchActivity2.r1 = new ag.l(botWebViewContainer$WebViewProxy, 27);
-                            launchActivity2.startActivityForResult(Intent.createChooser(intent2, cd.L0(2131745477, null)), 521);
+                            launchActivity2.startActivityForResult(Intent.createChooser(intent2, dd.L0(2131745477, null)), 521);
                         }
                     }
                 }
@@ -400,7 +400,7 @@ public final /* synthetic */ class x implements Runnable {
             default:
                 boolean[] zArr2 = (boolean[]) obj5;
                 WebView webView = (WebView) obj4;
-                dg0 dg0Var = (dg0) obj3;
+                bg0 bg0Var = (bg0) obj3;
                 String str16 = (String) obj2;
                 q1 q1Var = (q1) obj;
                 if (!zArr2[0]) {
@@ -409,7 +409,7 @@ public final /* synthetic */ class x implements Runnable {
                     webView.onPause();
                     webView.destroy();
                     org.telegram.messenger.i0.E2(webView);
-                    org.telegram.messenger.i0.E2(dg0Var);
+                    org.telegram.messenger.i0.E2(bg0Var);
                     try {
                         jSONObject = new JSONObject(str16);
                     } catch (Exception e14) {

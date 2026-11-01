@@ -1,13 +1,13 @@
 package mg;
 
 import ag.f3;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.ActionBar.z2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class l1 implements Runnable {
         switch (this.a) {
             case 0:
                 this.b.dismiss();
-                zs.f(d20.s0).k(zs.T2, new Object[0]);
+                at.f(e20.s0).k(at.T2, new Object[0]);
                 org.telegram.messenger.i0.h3(new f3(8), 220L);
                 break;
             case 1:

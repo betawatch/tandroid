@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class li extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final org.telegram.ui.ActionBar.p6 a;
@@ -25,14 +25,14 @@ public final class li extends FrameLayout implements org.telegram.ui.ActionBar.k
         linearLayout.setOrientation(1);
         addView(linearLayout, w7.b6.r(-1, -2, 17));
         g9 g9Var = new g9(context);
-        g9Var.setImageDrawable(new bi0(R.raw.utyan_empty, org.telegram.messenger.i0.L(120.0f), org.telegram.messenger.i0.L(120.0f)));
+        g9Var.setImageDrawable(new ci0(R.raw.utyan_empty, org.telegram.messenger.i0.L(120.0f), org.telegram.messenger.i0.L(120.0f)));
         linearLayout.addView(g9Var, w7.b6.t(120, 120, 17, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.i0.o());
         textView.setGravity(17);
-        TextView f7 = org.telegram.messenger.z20.f(linearLayout, textView, w7.b6.t(-1, -2, 17, 32, 12, 32, 8), context);
+        TextView f7 = org.telegram.messenger.a30.f(linearLayout, textView, w7.b6.t(-1, -2, 17, 32, 12, 32, 8), context);
         this.c = f7;
         f7.setTextSize(1, 14.0f);
         f7.setGravity(17);

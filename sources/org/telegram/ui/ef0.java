@@ -1,94 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ef0 extends AnimatedPhoneNumberEditText {
-    public final /* synthetic */ int V1;
-    public final /* synthetic */ gf0 W1;
+public final /* synthetic */ class ef0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ ve0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ef0(gf0 gf0Var, Context context, int i10) {
-        super(context);
-        this.V1 = i10;
-        this.W1 = gf0Var;
+    public /* synthetic */ ef0(int i10, e eVar, ve0 ve0Var) {
+        this.a = i10;
+        this.b = eVar;
+        this.c = ve0Var;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onFocusChanged(boolean z10, int i10, Rect rect) {
-        int i11 = this.V1;
-        float f7 = 1.0f;
-        gf0 gf0Var = this.W1;
-        switch (i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        ve0 ve0Var = this.c;
+        e eVar = this.b;
+        switch (i10) {
             case 0:
-                super.onFocusChanged(z10, i10, rect);
-                org.telegram.ui.Components.ec0 ec0Var = gf0Var.f;
-                if (!z10 && !gf0Var.b.isFocused()) {
-                    f7 = 0.0f;
-                }
-                ec0Var.b(f7, f7, true);
-                if (z10) {
-                    gf0Var.a0.c.setEditText(this);
-                    break;
-                }
+                int i11 = ve0.F;
+                ve0Var.a();
+                org.telegram.messenger.i0.h3(new ef0(1, eVar, ve0Var), 150L);
                 break;
             default:
-                super.onFocusChanged(z10, i10, rect);
-                hf0 hf0Var = gf0Var.a0;
-                org.telegram.ui.Components.ec0 ec0Var2 = gf0Var.f;
-                if (!z10 && !gf0Var.a.isFocused()) {
-                    f7 = 0.0f;
-                }
-                ec0Var2.b(f7, f7, true);
-                if (!z10) {
-                    if (gf0Var.E == 2) {
-                        gf0Var.setCountryButtonText(null);
-                        break;
-                    }
-                } else {
-                    hf0Var.c.setEditText(this);
-                    hf0Var.c.setDispatchBackWhenEmpty(true);
-                    if (gf0Var.E == 2) {
-                        gf0Var.setCountryButtonText(org.telegram.messenger.cd.L0(2131742884, null));
-                        break;
-                    }
-                }
+                ff0 ff0Var = (ff0) eVar.b;
+                ff0Var.h(null);
+                RadialProgressView radialProgressView = ff0Var.a0.N.d;
+                RadialProgressView radialProgressView2 = ve0Var.h.d;
+                radialProgressView.getClass();
+                radialProgressView.a = radialProgressView2.a;
+                radialProgressView.b = radialProgressView2.b;
+                radialProgressView.H = radialProgressView2.H;
+                radialProgressView.I = radialProgressView2.I;
+                radialProgressView.J = radialProgressView2.J;
+                radialProgressView.c = radialProgressView2.c;
+                radialProgressView.n = radialProgressView2.n;
+                radialProgressView.e = radialProgressView2.e;
+                radialProgressView.D = radialProgressView2.D;
+                radialProgressView.F = radialProgressView2.F;
+                radialProgressView.G = radialProgressView2.G;
+                radialProgressView.d = radialProgressView2.d;
+                radialProgressView.E = radialProgressView2.E;
+                radialProgressView.b(85L);
                 break;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
-    public boolean onKeyDown(int i10, KeyEvent keyEvent) {
-        switch (this.V1) {
-            case 1:
-                gf0 gf0Var = this.W1;
-                ef0 ef0Var = gf0Var.a;
-                if (i10 == 67 && gf0Var.b.length() == 0) {
-                    ef0Var.requestFocus();
-                    ef0Var.setSelection(ef0Var.length());
-                    ef0Var.dispatchKeyEvent(keyEvent);
-                }
-                return super.onKeyDown(i10, keyEvent);
-            default:
-                return super.onKeyDown(i10, keyEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.V1) {
-            case 1:
-                if (motionEvent.getAction() == 0 && !hf0.Z0(this.W1.a0, this)) {
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
     }
 }

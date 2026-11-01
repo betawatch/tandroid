@@ -1,42 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xh implements Runnable {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ un b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.messenger.jj d;
+    public final /* synthetic */ org.telegram.messenger.kj d;
 
-    public /* synthetic */ xh(un unVar, int i10, org.telegram.messenger.jj jjVar) {
+    public /* synthetic */ xh(un unVar, int i10, org.telegram.messenger.kj kjVar) {
         this.b = unVar;
         this.c = i10;
-        this.d = jjVar;
+        this.d = kjVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        org.telegram.messenger.jj jjVar = this.d;
+        org.telegram.messenger.kj kjVar = this.d;
         int i11 = this.c;
         un unVar = this.b;
         switch (i10) {
             case 0:
                 unVar.B4 = null;
-                jjVar.k.replies.read_max_id = i11;
+                kjVar.k.replies.read_max_id = i11;
                 break;
             default:
-                org.telegram.ui.Components.cc.a0(unVar).c(org.telegram.messenger.cd.L0(2131754488, null)).j();
-                org.telegram.messenger.vp.r1(i11).o0(false);
-                unVar.Ua(jjVar);
-                unVar.Wa(jjVar);
+                org.telegram.ui.Components.cc.a0(unVar).c(org.telegram.messenger.dd.L0(2131754488, null)).j();
+                org.telegram.messenger.wp.r1(i11).o0(false);
+                unVar.Za(kjVar);
+                unVar.bb(kjVar);
                 break;
         }
     }
 
-    public /* synthetic */ xh(un unVar, org.telegram.messenger.jj jjVar, int i10) {
+    public /* synthetic */ xh(un unVar, org.telegram.messenger.kj kjVar, int i10) {
         this.b = unVar;
-        this.d = jjVar;
+        this.d = kjVar;
         this.c = i10;
     }
 }

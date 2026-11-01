@@ -3,9 +3,9 @@ package th;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ex0;
+import org.telegram.ui.dx0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class t implements Runnable {
                         }
                     }
                 }
-                Collections.sort(arrayList, new ex0(j0Var, 19));
+                Collections.sort(arrayList, new dx0(j0Var, 19));
                 j0Var.n.O(true);
                 j0Var.u(true);
                 j0Var.m();

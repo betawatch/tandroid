@@ -14,11 +14,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import e0.f0;
 import java.util.HashSet;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.k6;
@@ -28,10 +28,10 @@ import org.telegram.ui.ActionBar.w6;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.g9;
 import w7.b6;
+import yh.c0;
 import yh.d0;
-import yh.e0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class h extends FrameLayout implements k6 {
     public static final /* synthetic */ int H = 0;
@@ -63,14 +63,14 @@ public final class h extends FrameLayout implements k6 {
         if (Build.VERSION.SDK_INT >= 31) {
             hi.f fVar = new hi.f(null);
             this.w = fVar;
-            fVar.g(i0.L(7.0f), f0.a());
+            fVar.m(i0.L(7.0f), f0.a());
             fVar.n = true;
-            bVar = new tg.b(fVar);
+            bVar = new tg.b(fVar, fVar, fVar);
         } else {
             this.w = null;
             hi.c cVar = new hi.c();
             cVar.a(-16777216);
-            bVar = new tg.b(cVar);
+            bVar = new tg.b(cVar, cVar, cVar);
         }
         FrameLayout frameLayout = new FrameLayout(context);
         g9 g9Var = new g9(context);
@@ -137,9 +137,9 @@ public final class h extends FrameLayout implements k6 {
                         e eVar = hVar.E;
                         if (eVar != null) {
                             long j10 = hVar.G;
-                            d0 d0Var = ((e0) eVar).h;
-                            if (d0Var != null) {
-                                d0Var.a(j10);
+                            c0 c0Var = ((d0) eVar).h;
+                            if (c0Var != null) {
+                                c0Var.a(j10);
                                 break;
                             }
                         }
@@ -149,9 +149,9 @@ public final class h extends FrameLayout implements k6 {
                         e eVar2 = hVar2.E;
                         if (eVar2 != null) {
                             long j11 = hVar2.G;
-                            d0 d0Var2 = ((e0) eVar2).h;
-                            if (d0Var2 != null) {
-                                d0Var2.a(j11);
+                            c0 c0Var2 = ((d0) eVar2).h;
+                            if (c0Var2 != null) {
+                                c0Var2.a(j11);
                                 break;
                             }
                         }
@@ -160,7 +160,7 @@ public final class h extends FrameLayout implements k6 {
                         h hVar3 = this.b;
                         e eVar3 = hVar3.E;
                         if (eVar3 != null) {
-                            ((e0) eVar3).g(hVar3.F, false);
+                            ((d0) eVar3).g(hVar3.F, false);
                             break;
                         }
                         break;
@@ -168,7 +168,7 @@ public final class h extends FrameLayout implements k6 {
                         h hVar4 = this.b;
                         e eVar4 = hVar4.E;
                         if (eVar4 != null) {
-                            ((e0) eVar4).g(hVar4.F, true);
+                            ((d0) eVar4).g(hVar4.F, true);
                             break;
                         }
                         break;
@@ -196,9 +196,9 @@ public final class h extends FrameLayout implements k6 {
                         e eVar = hVar.E;
                         if (eVar != null) {
                             long j10 = hVar.G;
-                            d0 d0Var = ((e0) eVar).h;
-                            if (d0Var != null) {
-                                d0Var.a(j10);
+                            c0 c0Var = ((d0) eVar).h;
+                            if (c0Var != null) {
+                                c0Var.a(j10);
                                 break;
                             }
                         }
@@ -208,9 +208,9 @@ public final class h extends FrameLayout implements k6 {
                         e eVar2 = hVar2.E;
                         if (eVar2 != null) {
                             long j11 = hVar2.G;
-                            d0 d0Var2 = ((e0) eVar2).h;
-                            if (d0Var2 != null) {
-                                d0Var2.a(j11);
+                            c0 c0Var2 = ((d0) eVar2).h;
+                            if (c0Var2 != null) {
+                                c0Var2.a(j11);
                                 break;
                             }
                         }
@@ -219,7 +219,7 @@ public final class h extends FrameLayout implements k6 {
                         h hVar3 = this.b;
                         e eVar3 = hVar3.E;
                         if (eVar3 != null) {
-                            ((e0) eVar3).g(hVar3.F, false);
+                            ((d0) eVar3).g(hVar3.F, false);
                             break;
                         }
                         break;
@@ -227,14 +227,14 @@ public final class h extends FrameLayout implements k6 {
                         h hVar4 = this.b;
                         e eVar4 = hVar4.E;
                         if (eVar4 != null) {
-                            ((e0) eVar4).g(hVar4.F, true);
+                            ((d0) eVar4).g(hVar4.F, true);
                             break;
                         }
                         break;
                 }
             }
         });
-        TextView f7 = z20.f(linearLayout, textView3, b6.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
+        TextView f7 = a30.f(linearLayout, textView3, b6.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
         this.n = f7;
         f7.setTextSize(1, 13.0f);
         int L = i0.L(12.0f);
@@ -248,7 +248,7 @@ public final class h extends FrameLayout implements k6 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
         spannableStringBuilder.setSpan(new dq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) cd.L0(2131751899, null));
+        spannableStringBuilder.append((CharSequence) dd.L0(2131751899, null));
         f7.setText(spannableStringBuilder);
         f7.setVisibility(8);
         linearLayout.addView(f7, b6.k(0.0f, 7.0f, 0.0f, 1.33f, -2, -2));
@@ -270,7 +270,7 @@ public final class h extends FrameLayout implements k6 {
             dVar2.setBackground(background);
             a7.k(dVar2, background, L3, null, p6Var);
         }
-        dVar2.i(cd.L0(2131751605, null), false, true);
+        dVar2.i(dd.L0(2131751605, null), false, true);
         dVar2.setOnClickListener(new View.OnClickListener(this) { // from class: zh.d
             public final /* synthetic */ h b;
 
@@ -286,9 +286,9 @@ public final class h extends FrameLayout implements k6 {
                         e eVar = hVar.E;
                         if (eVar != null) {
                             long j10 = hVar.G;
-                            d0 d0Var = ((e0) eVar).h;
-                            if (d0Var != null) {
-                                d0Var.a(j10);
+                            c0 c0Var = ((d0) eVar).h;
+                            if (c0Var != null) {
+                                c0Var.a(j10);
                                 break;
                             }
                         }
@@ -298,9 +298,9 @@ public final class h extends FrameLayout implements k6 {
                         e eVar2 = hVar2.E;
                         if (eVar2 != null) {
                             long j11 = hVar2.G;
-                            d0 d0Var2 = ((e0) eVar2).h;
-                            if (d0Var2 != null) {
-                                d0Var2.a(j11);
+                            c0 c0Var2 = ((d0) eVar2).h;
+                            if (c0Var2 != null) {
+                                c0Var2.a(j11);
                                 break;
                             }
                         }
@@ -309,7 +309,7 @@ public final class h extends FrameLayout implements k6 {
                         h hVar3 = this.b;
                         e eVar3 = hVar3.E;
                         if (eVar3 != null) {
-                            ((e0) eVar3).g(hVar3.F, false);
+                            ((d0) eVar3).g(hVar3.F, false);
                             break;
                         }
                         break;
@@ -317,7 +317,7 @@ public final class h extends FrameLayout implements k6 {
                         h hVar4 = this.b;
                         e eVar4 = hVar4.E;
                         if (eVar4 != null) {
-                            ((e0) eVar4).g(hVar4.F, true);
+                            ((d0) eVar4).g(hVar4.F, true);
                             break;
                         }
                         break;
@@ -329,7 +329,7 @@ public final class h extends FrameLayout implements k6 {
         dVar3.setUseWrapContent(true);
         dVar3.setPadding(i0.L(15.0f), 0, i0.L(15.0f), 0);
         dVar3.f();
-        dVar3.i(cd.L0(2131754486, null), false, true);
+        dVar3.i(dd.L0(2131754486, null), false, true);
         final int i16 = 3;
         dVar3.setOnClickListener(new View.OnClickListener(this) { // from class: zh.d
             public final /* synthetic */ h b;
@@ -346,9 +346,9 @@ public final class h extends FrameLayout implements k6 {
                         e eVar = hVar.E;
                         if (eVar != null) {
                             long j10 = hVar.G;
-                            d0 d0Var = ((e0) eVar).h;
-                            if (d0Var != null) {
-                                d0Var.a(j10);
+                            c0 c0Var = ((d0) eVar).h;
+                            if (c0Var != null) {
+                                c0Var.a(j10);
                                 break;
                             }
                         }
@@ -358,9 +358,9 @@ public final class h extends FrameLayout implements k6 {
                         e eVar2 = hVar2.E;
                         if (eVar2 != null) {
                             long j11 = hVar2.G;
-                            d0 d0Var2 = ((e0) eVar2).h;
-                            if (d0Var2 != null) {
-                                d0Var2.a(j11);
+                            c0 c0Var2 = ((d0) eVar2).h;
+                            if (c0Var2 != null) {
+                                c0Var2.a(j11);
                                 break;
                             }
                         }
@@ -369,7 +369,7 @@ public final class h extends FrameLayout implements k6 {
                         h hVar3 = this.b;
                         e eVar3 = hVar3.E;
                         if (eVar3 != null) {
-                            ((e0) eVar3).g(hVar3.F, false);
+                            ((d0) eVar3).g(hVar3.F, false);
                             break;
                         }
                         break;
@@ -377,7 +377,7 @@ public final class h extends FrameLayout implements k6 {
                         h hVar4 = this.b;
                         e eVar4 = hVar4.E;
                         if (eVar4 != null) {
-                            ((e0) eVar4).g(hVar4.F, true);
+                            ((d0) eVar4).g(hVar4.F, true);
                             break;
                         }
                         break;
@@ -429,16 +429,16 @@ public final class h extends FrameLayout implements k6 {
             int left = g9Var.getLeft() - L;
             int top = g9Var.getTop() - L;
             int L2 = (L * 2) + i0.L(52.0f);
-            RecordingCanvas b10 = fVar.b(L2, L2);
-            b10.translate(-left, -top);
-            b10.drawColor(t6.w0(t6.d6, this.a));
-            b10.save();
+            RecordingCanvas i10 = fVar.i(L2, L2);
+            i10.translate(-left, -top);
+            i10.drawColor(t6.w0(t6.d6, this.a));
+            i10.save();
             float f7 = L2 / 2.0f;
-            b10.scale(1.125f, 1.125f, f7, f7);
-            super.drawChild(b10, view, j10);
-            b10.restore();
-            b10.drawColor(TLObject.FLAG_29);
-            fVar.c();
+            i10.scale(1.125f, 1.125f, f7, f7);
+            super.drawChild(i10, view, j10);
+            i10.restore();
+            i10.drawColor(TLObject.FLAG_29);
+            fVar.j();
         }
         return super.drawChild(canvas, view, j10);
     }

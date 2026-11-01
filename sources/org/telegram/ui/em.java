@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class em extends org.telegram.ui.Components.h6 {
     public final /* synthetic */ int b;
@@ -31,7 +31,7 @@ public final class em extends org.telegram.ui.Components.h6 {
     public final void c(Object obj, float f7) {
         switch (this.b) {
             case 0:
-                ((org.telegram.messenger.fj) obj).e = f7;
+                ((org.telegram.messenger.gj) obj).e = f7;
                 View view = this.c.c.Q.fragmentView;
                 if (view != null) {
                     view.invalidate();
@@ -39,7 +39,7 @@ public final class em extends org.telegram.ui.Components.h6 {
                 }
                 break;
             case 1:
-                ((org.telegram.messenger.fj) obj).g = f7;
+                ((org.telegram.messenger.gj) obj).g = f7;
                 View view2 = this.c.c.Q.fragmentView;
                 if (view2 != null) {
                     view2.invalidate();
@@ -47,7 +47,7 @@ public final class em extends org.telegram.ui.Components.h6 {
                 }
                 break;
             default:
-                ((org.telegram.messenger.fj) obj).f = f7;
+                ((org.telegram.messenger.gj) obj).f = f7;
                 View view3 = this.c.c.Q.fragmentView;
                 if (view3 != null) {
                     view3.invalidate();
@@ -61,11 +61,11 @@ public final class em extends org.telegram.ui.Components.h6 {
     public final Object get(Object obj) {
         switch (this.b) {
             case 0:
-                return Float.valueOf(((org.telegram.messenger.fj) obj).e);
+                return Float.valueOf(((org.telegram.messenger.gj) obj).e);
             case 1:
-                return Float.valueOf(((org.telegram.messenger.fj) obj).g);
+                return Float.valueOf(((org.telegram.messenger.gj) obj).g);
             default:
-                return Float.valueOf(((org.telegram.messenger.fj) obj).f);
+                return Float.valueOf(((org.telegram.messenger.gj) obj).f);
         }
     }
 }

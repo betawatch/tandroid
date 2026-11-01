@@ -10,10 +10,10 @@ import h2.l;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -87,12 +87,12 @@ public final class FfmpegAudioDecoder extends l {
                 byte[] bArr5 = (byte[]) list.get(1);
                 byte[] bArr6 = new byte[bArr4.length + bArr5.length + 6];
                 bArr6[0] = (byte) (bArr4.length >> 8);
-                bArr6[1] = (byte) (bArr4.length & zs.e4);
+                bArr6[1] = (byte) (bArr4.length & at.e4);
                 System.arraycopy(bArr4, 0, bArr6, 2, bArr4.length);
                 bArr6[bArr4.length + 2] = 0;
                 bArr6[bArr4.length + 3] = 0;
                 bArr6[bArr4.length + 4] = (byte) (bArr5.length >> 8);
-                bArr6[bArr4.length + 5] = (byte) (bArr5.length & zs.e4);
+                bArr6[bArr4.length + 5] = (byte) (bArr5.length & at.e4);
                 System.arraycopy(bArr5, 0, bArr6, bArr4.length + 6, bArr5.length);
                 bArr = bArr6;
                 break;

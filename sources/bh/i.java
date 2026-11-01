@@ -8,13 +8,13 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.view.View;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i extends View implements k6 {
     public LinearGradient D;
@@ -103,7 +103,7 @@ public final class i extends View implements k6 {
             }
             if (this.d > 0) {
                 paint.setShader(this.D);
-                paint.setAlpha(zs.e4);
+                paint.setAlpha(at.e4);
                 canvas2 = canvas;
                 canvas2.drawRect(0.0f, measuredHeight - this.d, getMeasuredWidth(), measuredHeight, paint);
             } else {
@@ -132,7 +132,7 @@ public final class i extends View implements k6 {
                 this.s = b(false);
             }
             paint2.setShader(this.s);
-            paint2.setAlpha(zs.e4);
+            paint2.setAlpha(at.e4);
             canvas.drawRect(0.0f, getMeasuredHeight() - this.d, getMeasuredWidth(), getMeasuredHeight(), paint2);
         }
     }
@@ -203,7 +203,8 @@ public final class i extends View implements k6 {
             hi.c cVar = new hi.c();
             this.e = cVar;
             cVar.a(t6.x0(null, i10, false));
-            setup(new tg.b(this.e));
+            hi.c cVar2 = this.e;
+            setup(new tg.b(cVar2, cVar2, cVar2));
         }
     }
 

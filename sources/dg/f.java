@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.u1;
 import org.telegram.ui.ActionBar.a7;
@@ -33,7 +33,7 @@ import org.telegram.ui.le;
 import rh.h8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class f extends FrameLayout {
     public boolean D;
@@ -215,15 +215,15 @@ public class f extends FrameLayout {
                         charSequence = String.format("%.2f", Float.valueOf(f10)) + i0.g0[i23];
                     }
                 } else if (i21 == 0) {
-                    charSequence = h8.Z0(false, i0.a.k(j12, ' ', new StringBuilder("XTR ")), 0.7f, null);
+                    charSequence = h8.a1(false, i0.a.k(j12, ' ', new StringBuilder("XTR ")), 0.7f, null);
                 } else {
                     charSequence = "≈" + u1.i().f((long) (j12 / f7), "USD");
                 }
                 n5Var.setText(charSequence);
                 if (i11 == 1) {
-                    textView3.setText(cd.a0(null, null, i21 == 0 ? 2131752251 : 2131752250, aVar.d));
+                    textView3.setText(dd.a0(null, null, i21 == 0 ? 2131752251 : 2131752250, aVar.d));
                 } else if (i11 == 2) {
-                    textView3.setText(h8.Z0(false, cd.a0(null, null, i21 == 0 ? 2131752249 : 2131752250, aVar.d), 0.7f, null));
+                    textView3.setText(h8.a1(false, dd.a0(null, null, i21 == 0 ? 2131752249 : 2131752250, aVar.d), 0.7f, null));
                 } else {
                     textView3.setText(aVar.d);
                 }

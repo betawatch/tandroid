@@ -15,7 +15,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v80 extends Drawable {
     public final Bitmap a;
@@ -32,7 +32,7 @@ public final class v80 extends Drawable {
     public v80(g9 g9Var, String str, int i10, int i11) {
         Bitmap bitmap;
         try {
-            Path b10 = org.telegram.messenger.d00.b(str);
+            Path b10 = org.telegram.messenger.e00.b(str);
             bitmap = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(bitmap);
             float f7 = 512;

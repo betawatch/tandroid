@@ -19,9 +19,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.telegram.messenger.us, fe.e {
+public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.telegram.messenger.vs, fe.e {
     public boolean D;
     public final yi E;
     public final aj F;
@@ -52,7 +52,7 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
         yh yhVar = new yh(context, p6Var, this.b);
         this.I = yhVar;
         yhVar.setPadding(org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f));
-        String L0 = org.telegram.messenger.cd.L0(2131745784, null);
+        String L0 = org.telegram.messenger.dd.L0(2131745784, null);
         org.telegram.ui.ActionBar.n0 n0Var = yhVar.r;
         n0Var.setHint(L0);
         n0Var.addTextChangedListener(new ag.a1(this, 11));
@@ -63,7 +63,7 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
         xy xyVar = new xy(context, p6Var);
         this.G = xyVar;
         xyVar.c();
-        xyVar.setText(org.telegram.messenger.cd.L0(2131748240, null));
+        xyVar.setText(org.telegram.messenger.dd.L0(2131748240, null));
         addView(xyVar, w7.b6.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         ag.b1 b1Var = new ag.b1(this, context, p6Var, 10);
         this.s = b1Var;
@@ -92,7 +92,7 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
         FrameLayout.LayoutParams e = w7.b6.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e).height += org.telegram.messenger.i0.m;
         addView(frameLayout, e);
-        org.telegram.messenger.zs.f(this.b.D3).c(this, org.telegram.messenger.zs.O);
+        org.telegram.messenger.at.f(this.b.D3).c(this, org.telegram.messenger.at.O);
         Q();
     }
 
@@ -104,12 +104,12 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
         }
         int i10 = 0;
         View childAt = b1Var.getChildAt(0);
-        ck0 ck0Var = (ck0) b1Var.G(childAt);
-        if (ck0Var == null) {
+        dk0 dk0Var = (dk0) b1Var.G(childAt);
+        if (dk0Var == null) {
             return -1000;
         }
         int paddingTop = b1Var.getPaddingTop();
-        if (ck0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (dk0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
@@ -163,8 +163,8 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
             arrayList.add(P(hashMap.get((ui) obj)));
         }
         bi biVar = this.b;
-        return s4.a0(biVar.D3, biVar.a1(), biVar.W0() + arrayList.size(), new org.telegram.messenger.q20() { // from class: org.telegram.ui.Components.si
-            @Override // org.telegram.messenger.q20
+        return s4.a0(biVar.D3, biVar.a1(), biVar.W0() + arrayList.size(), new org.telegram.messenger.r20() { // from class: org.telegram.ui.Components.si
+            @Override // org.telegram.messenger.r20
             public final void a(Object obj2) {
                 ej ejVar = ej.this;
                 vi viVar = ejVar.J;
@@ -181,9 +181,9 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
         boolean z10;
         HashMap hashMap = this.x;
         if (hashMap.isEmpty() && !this.K) {
-            String a02 = org.telegram.messenger.cd.a0("AttachContactsSlowMode", null, 2131753978, new Object[0]);
+            String a02 = org.telegram.messenger.dd.a0("AttachContactsSlowMode", null, 2131753978, new Object[0]);
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.a);
-            String L0 = org.telegram.messenger.cd.L0(R.string.AppName, null);
+            String L0 = org.telegram.messenger.dd.L0(R.string.AppName, null);
             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
             x1Var.R = L0;
             x1Var.T = a02;
@@ -384,10 +384,10 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
         hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.t6.i6));
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         yi yiVar;
-        if (i10 != org.telegram.messenger.zs.O || (yiVar = this.E) == null) {
+        if (i10 != org.telegram.messenger.at.O || (yiVar = this.E) == null) {
             return;
         }
         yiVar.f();
@@ -400,11 +400,11 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = b1Var.getChildAt(0);
-        ck0 ck0Var = (ck0) b1Var.G(childAt);
+        dk0 dk0Var = (dk0) b1Var.G(childAt);
         int top = (childAt.getTop() - org.telegram.messenger.i0.m) - org.telegram.messenger.i0.L(8.0f);
-        int i10 = (top <= 0 || ck0Var == null || ck0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || dk0Var == null || dk0Var.b() != 0) ? 0 : top;
         fe.b bVar = this.n;
-        if (top < 0 || ck0Var == null || ck0Var.b() != 0) {
+        if (top < 0 || dk0Var == null || dk0Var.b() != 0) {
             bVar.a(true, true);
             top = i10;
         } else {
@@ -455,7 +455,7 @@ public final class ej extends uh implements org.telegram.ui.ActionBar.k6, org.te
 
     @Override // org.telegram.ui.Components.uh
     public final void o() {
-        org.telegram.messenger.zs.f(this.b.D3).n(this, org.telegram.messenger.zs.O);
+        org.telegram.messenger.at.f(this.b.D3).n(this, org.telegram.messenger.at.O);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

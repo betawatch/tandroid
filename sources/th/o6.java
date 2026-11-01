@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o6 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final Paint a;
@@ -51,7 +51,7 @@ public final class o6 extends FrameLayout implements org.telegram.ui.ActionBar.k
         int L = org.telegram.messenger.i0.L(16.0f);
         textView3.setBackground(org.telegram.ui.ActionBar.t6.k0(L, L, L, L, 536870911, 956301311, 956301311));
         textView3.setTypeface(org.telegram.messenger.i0.o());
-        textView3.setText(cd.L0(2131743968, null));
+        textView3.setText(dd.L0(2131743968, null));
         textView3.setTextSize(1, 14.0f);
         textView3.setTextColor(-1);
         textView3.setGravity(17);

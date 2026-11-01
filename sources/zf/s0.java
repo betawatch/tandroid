@@ -1,12 +1,12 @@
 package zf;
 
 import java.util.ArrayList;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.q8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s0 implements Runnable {
     public final /* synthetic */ TLRPC.Chat a;
@@ -14,17 +14,17 @@ public final class s0 implements Runnable {
     public final /* synthetic */ long c;
     public final /* synthetic */ ArrayList d;
     public final /* synthetic */ a0.h e;
-    public final /* synthetic */ vp f;
+    public final /* synthetic */ wp f;
     public final /* synthetic */ x0 h;
 
-    public s0(x0 x0Var, TLRPC.Chat chat, String str, long j10, ArrayList arrayList, a0.h hVar, vp vpVar) {
+    public s0(x0 x0Var, TLRPC.Chat chat, String str, long j10, ArrayList arrayList, a0.h hVar, wp wpVar) {
         this.h = x0Var;
         this.a = chat;
         this.b = str;
         this.c = j10;
         this.d = arrayList;
         this.e = hVar;
-        this.f = vpVar;
+        this.f = wpVar;
     }
 
     @Override // java.lang.Runnable
@@ -34,7 +34,7 @@ public final class s0 implements Runnable {
             return;
         }
         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-        tL_channels_getParticipants.channel = vp.h1(this.a);
+        tL_channels_getParticipants.channel = wp.h1(this.a);
         tL_channels_getParticipants.limit = 20;
         tL_channels_getParticipants.offset = 0;
         TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();

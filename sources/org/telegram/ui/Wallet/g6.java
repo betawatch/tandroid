@@ -11,13 +11,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ew;
-import org.telegram.ui.ns0;
+import org.telegram.ui.ms0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g6 extends FrameLayout implements SensorEventListener {
     public static final Object n0 = new Object();
@@ -62,7 +62,7 @@ public final class g6 extends FrameLayout implements SensorEventListener {
     public float l0;
     public float m0;
     public final e6 n;
-    public final org.telegram.ui.Components.voip.i0 r;
+    public final org.telegram.ui.Components.voip.j0 r;
     public final m.p3 s;
     public final float[] w;
     public final SensorManager x;
@@ -105,14 +105,14 @@ public final class g6 extends FrameLayout implements SensorEventListener {
         e6 e6Var = new e6(this, context);
         this.n = e6Var;
         f6Var.addView(e6Var, w7.b6.e(-1, -1, 17));
-        org.telegram.ui.Components.voip.i0 i0Var = new org.telegram.ui.Components.voip.i0(this, context, 2);
-        this.r = i0Var;
-        i0Var.setClipChildren(false);
-        i0Var.setClipToPadding(false);
-        i0Var.setLayerType(2, null);
-        i0Var.setPivotX(0.0f);
-        i0Var.setPivotY(0.0f);
-        f6Var.addView(i0Var, w7.b6.e(zs.H5, zs.j3, 51));
+        org.telegram.ui.Components.voip.j0 j0Var = new org.telegram.ui.Components.voip.j0(this, context, 2);
+        this.r = j0Var;
+        j0Var.setClipChildren(false);
+        j0Var.setClipToPadding(false);
+        j0Var.setLayerType(2, null);
+        j0Var.setPivotX(0.0f);
+        j0Var.setPivotY(0.0f);
+        f6Var.addView(j0Var, w7.b6.e(at.H5, at.j3, 51));
         this.H = ViewConfiguration.get(context).getScaledTouchSlop();
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         this.x = sensorManager;
@@ -149,9 +149,9 @@ public final class g6 extends FrameLayout implements SensorEventListener {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.b0 = ofFloat;
         ofFloat.setDuration(600L);
-        z20.j(1.2f, this.b0);
+        a30.j(1.2f, this.b0);
         this.b0.addUpdateListener(new fe.c(this, f7, f10, 6));
-        this.b0.addListener(new ns0(this, 19));
+        this.b0.addListener(new ms0(this, 19));
         this.b0.start();
     }
 
@@ -392,9 +392,9 @@ public final class g6 extends FrameLayout implements SensorEventListener {
     @Override // android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
-        org.telegram.ui.Components.voip.i0 i0Var = this.r;
-        i0Var.setScaleX(i10 / org.telegram.messenger.i0.L(336.0f));
-        i0Var.setScaleY(i11 / org.telegram.messenger.i0.L(205.0f));
+        org.telegram.ui.Components.voip.j0 j0Var = this.r;
+        j0Var.setScaleX(i10 / org.telegram.messenger.i0.L(336.0f));
+        j0Var.setScaleY(i11 / org.telegram.messenger.i0.L(205.0f));
         b(this.c0, this.f0);
     }
 

@@ -6,22 +6,22 @@ import android.view.View;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class fj implements org.telegram.ui.Components.hk0 {
+public final class fj implements org.telegram.ui.Components.ik0 {
     public final /* synthetic */ un a;
 
     public fj(un unVar) {
         this.a = unVar;
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public final void b(float f7, float f10, int i10, View view) {
         boolean z10;
         org.telegram.ui.ActionBar.l lVar;
         org.telegram.ui.Cells.q1 q1Var;
-        org.telegram.messenger.jj messageObject;
-        org.telegram.messenger.jj messageObject2;
+        org.telegram.messenger.kj messageObject;
+        org.telegram.messenger.kj messageObject2;
         int i11;
         org.telegram.ui.ActionBar.p6 p6Var;
         un unVar = this.a;
@@ -35,7 +35,7 @@ public final class fj implements org.telegram.ui.Components.hk0 {
             TLRPC.MessageAction messageAction = messageObject2.k.action;
             if (messageAction instanceof TLRPC.TL_messageActionWalletTonConnectRequest) {
                 TLRPC.TL_messageActionWalletTonConnectRequest tL_messageActionWalletTonConnectRequest = (TLRPC.TL_messageActionWalletTonConnectRequest) messageAction;
-                if (tL_messageActionWalletTonConnectRequest.expires <= unVar.getConnectionsManager().getCurrentTime() || messageObject2.N3() || org.telegram.messenger.jj.B0(messageObject2.k) != 777000) {
+                if (tL_messageActionWalletTonConnectRequest.expires <= unVar.getConnectionsManager().getCurrentTime() || messageObject2.N3() || org.telegram.messenger.kj.B0(messageObject2.k) != 777000) {
                     return;
                 }
                 Activity parentActivity = unVar.getParentActivity();
@@ -68,7 +68,7 @@ public final class fj implements org.telegram.ui.Components.hk0 {
         if (z11) {
             org.telegram.ui.Cells.s0 s0Var2 = (org.telegram.ui.Cells.s0) view;
             if (s0Var2.getMessageObject() != null && (s0Var2.getMessageObject().k.action instanceof TLRPC.TL_messageActionBoostApply)) {
-                unVar.getNotificationCenter().k(org.telegram.messenger.zs.n3, Long.valueOf(unVar.j6));
+                unVar.getNotificationCenter().k(org.telegram.messenger.at.n3, Long.valueOf(unVar.j6));
                 return;
             }
         }
@@ -80,7 +80,7 @@ public final class fj implements org.telegram.ui.Components.hk0 {
             }
         }
         lVar = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
-        if (lVar.u() || unVar.M9()) {
+        if (lVar.u() || unVar.R9()) {
             if (view instanceof org.telegram.ui.Cells.q1) {
                 org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) view;
                 if (unVar.q9.z(q1Var2.getMessageObject())) {
@@ -89,11 +89,11 @@ public final class fj implements org.telegram.ui.Components.hk0 {
                     z12 = !q1Var2.y2(f7);
                 }
             }
-            un.i2(unVar, view, z12, f7, f10);
+            un.j2(unVar, view, z12, f7, f10);
             return;
         }
         if (!(view instanceof org.telegram.ui.Cells.q1) || (messageObject = (q1Var = (org.telegram.ui.Cells.q1) view).getMessageObject()) == null || messageObject.D != 27) {
-            unVar.Q7(view, true, false, f7, f10, true, false, false);
+            unVar.U7(view, true, false, f7, f10, true, false, false);
             return;
         }
         messageObject.W5();
@@ -105,14 +105,14 @@ public final class fj implements org.telegram.ui.Components.hk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public final boolean h1(View view) {
         boolean z10;
-        org.telegram.messenger.jj messageObject;
+        org.telegram.messenger.kj messageObject;
         org.telegram.ui.ActionBar.l lVar;
         TLRPC.ChatFull chatFull;
         un unVar = this.a;
-        if (!unVar.L9() && (!((z10 = view instanceof org.telegram.ui.Cells.q1)) || !((org.telegram.ui.Cells.q1) view).M2())) {
+        if (!unVar.Q9() && (!((z10 = view instanceof org.telegram.ui.Cells.q1)) || !((org.telegram.ui.Cells.q1) view).M2())) {
             String Q = unVar.getMediaDataController().Q();
             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) unVar.getMediaDataController().r.get(Q);
             if (tL_availableReaction != null || (Q != null && Q.startsWith("animated_"))) {
@@ -121,7 +121,7 @@ public final class fj implements org.telegram.ui.Components.hk0 {
                     if (tL_availableReaction != null) {
                         Q = tL_availableReaction.reaction;
                     }
-                    z11 = org.telegram.messenger.w3.w0(chatFull, Q);
+                    z11 = org.telegram.messenger.w3.v0(chatFull, Q);
                 }
                 if (z11) {
                     if (z10) {
@@ -131,7 +131,7 @@ public final class fj implements org.telegram.ui.Components.hk0 {
                     }
                     if (messageObject != null && !messageObject.j0 && !messageObject.o4() && messageObject.z() && !messageObject.Y2()) {
                         lVar = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
-                        if (!lVar.u() && !unVar.z() && !unVar.c() && !messageObject.r4()) {
+                        if (!lVar.u() && !unVar.A() && !unVar.c() && !messageObject.r4()) {
                             return true;
                         }
                     }
@@ -141,14 +141,14 @@ public final class fj implements org.telegram.ui.Components.hk0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public final void q0(View view, float f7, float f10) {
-        org.telegram.messenger.jj messageObject;
+        org.telegram.messenger.kj messageObject;
         boolean z10;
         TLRPC.ChatFull chatFull;
         TLRPC.ChatFull chatFull2;
         un unVar = this.a;
-        if (unVar.getParentActivity() == null || unVar.z() || unVar.c() || unVar.isInPreviewMode() || unVar.L9()) {
+        if (unVar.getParentActivity() == null || unVar.A() || unVar.c() || unVar.isInPreviewMode() || unVar.Q9()) {
             return;
         }
         if (view instanceof org.telegram.ui.Cells.q1) {
@@ -162,8 +162,8 @@ public final class fj implements org.telegram.ui.Components.hk0 {
                 return;
             }
         }
-        org.telegram.messenger.jj jjVar = messageObject;
-        if ((jjVar.k instanceof TLRPC.TL_message_secret) || !jjVar.z() || jjVar.g3() || jjVar.D == 27) {
+        org.telegram.messenger.kj kjVar = messageObject;
+        if ((kjVar.k instanceof TLRPC.TL_message_secret) || !kjVar.z() || kjVar.g3() || kjVar.D == 27) {
             return;
         }
         TLRPC.Chat chat = unVar.e;
@@ -173,24 +173,24 @@ public final class fj implements org.telegram.ui.Components.hk0 {
             if (Q.startsWith("animated_")) {
                 z10 = unVar.j6 >= 0;
                 if (!z10 && (chatFull2 = unVar.p8) != null) {
-                    z10 = org.telegram.messenger.w3.w0(chatFull2, Q);
+                    z10 = org.telegram.messenger.w3.v0(chatFull2, Q);
                 }
                 if (z10) {
-                    unVar.qb(view, jjVar, null, null, f7, f10, sg.o0.b(Q), true, false, false, false);
+                    unVar.vb(view, kjVar, null, null, f7, f10, sg.o0.b(Q), true, false, false, false);
                     return;
                 }
                 return;
             }
             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) unVar.getMediaDataController().r.get(Q);
-            if (tL_availableReaction == null || jjVar.r4()) {
+            if (tL_availableReaction == null || kjVar.r4()) {
                 return;
             }
             z10 = unVar.j6 >= 0;
             if (!z10 && (chatFull = unVar.p8) != null) {
-                z10 = org.telegram.messenger.w3.w0(chatFull, tL_availableReaction.reaction);
+                z10 = org.telegram.messenger.w3.v0(chatFull, tL_availableReaction.reaction);
             }
             if (z10) {
-                unVar.qb(view, jjVar, null, null, f7, f10, sg.o0.c(tL_availableReaction), true, false, false, false);
+                unVar.vb(view, kjVar, null, null, f7, f10, sg.o0.c(tL_availableReaction), true, false, false, false);
             }
         }
     }

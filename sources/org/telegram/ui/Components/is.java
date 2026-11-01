@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class is extends p51 {
+public abstract class is extends q51 {
     public final int P;
     public final int Q;
     public final ArrayList R;
@@ -25,16 +25,16 @@ public abstract class is extends p51 {
     public String d0;
     public final ho e0;
 
-    public is(tk0 tk0Var, Context context, int i10, int i11) {
-        super(tk0Var, context, i10, 0, false, null, null);
+    public is(uk0 uk0Var, Context context, int i10, int i11) {
+        super(uk0Var, context, i10, 0, false, null, null);
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.T = new ArrayList();
         this.U = new ArrayList();
         this.X = new ArrayList();
-        bn0 bn0Var = (bn0) this;
-        this.e0 = new ho(bn0Var, 8);
-        this.w = new d(bn0Var, 9);
+        cn0 cn0Var = (cn0) this;
+        this.e0 = new ho(cn0Var, 8);
+        this.w = new d(cn0Var, 9);
         this.P = i10;
         this.Q = i11;
         O(false);
@@ -65,13 +65,13 @@ public abstract class is extends p51 {
         if (z10) {
             ArrayList arrayList = this.R;
             if (!arrayList.isEmpty()) {
-                org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) i0.a.g(1, arrayList);
+                org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) i0.a.g(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.b0;
-                tL_messages_searchGlobal.offset_id = jjVar.f1();
-                if (jjVar.k.peer_id == null) {
+                tL_messages_searchGlobal.offset_id = kjVar.f1();
+                if (kjVar.k.peer_id == null) {
                     tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
                 } else {
-                    tL_messages_searchGlobal.offset_peer = org.telegram.messenger.vp.r1(i12).l1(jjVar.k.peer_id);
+                    tL_messages_searchGlobal.offset_peer = org.telegram.messenger.wp.r1(i12).l1(kjVar.k.peer_id);
                 }
                 org.telegram.messenger.i0.h3(new org.telegram.messenger.voip.p0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
                 if (z10) {
@@ -97,13 +97,13 @@ public abstract class is extends p51 {
     public final void X() {
         ArrayList arrayList = new ArrayList();
         int i10 = this.P;
-        ArrayList arrayList2 = org.telegram.messenger.vp.r1(i10).y;
+        ArrayList arrayList2 = org.telegram.messenger.wp.r1(i10).y;
         int size = arrayList2.size();
         int i11 = 0;
         while (i11 < size) {
             Object obj = arrayList2.get(i11);
             i11++;
-            TLRPC.Chat L0 = org.telegram.messenger.vp.r1(i10).L0(Long.valueOf(-((TLRPC.Dialog) obj).id));
+            TLRPC.Chat L0 = org.telegram.messenger.wp.r1(i10).L0(Long.valueOf(-((TLRPC.Dialog) obj).id));
             if (L0 != null && org.telegram.messenger.w3.V(L0) && org.telegram.messenger.w3.t0(L0) && !org.telegram.messenger.w3.r0(L0)) {
                 arrayList.add(L0);
                 if (arrayList.size() >= 100) {

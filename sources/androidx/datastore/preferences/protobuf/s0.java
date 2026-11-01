@@ -5,11 +5,11 @@ import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class s0 implements b1 {
     public static final int[] o = new int[0];
@@ -426,7 +426,7 @@ public final class s0 implements b1 {
                 i25 = i86;
             }
             int i90 = i13;
-            int i91 = charAt26 & zs.e4;
+            int i91 = charAt26 & at.e4;
             Object[] objArr3 = objArr;
             if ((charAt26 & 1024) != 0) {
                 iArr[i79] = i80;
@@ -928,12 +928,12 @@ public final class s0 implements b1 {
                     z10 = false;
                     c1.O(iArr[i13], (List) unsafe.getObject(obj, j10), k0Var, false);
                     break;
-                case zs.T /* 30 */:
+                case at.T /* 30 */:
                     i13 = i10;
                     z10 = false;
                     c1.B(iArr[i13], (List) unsafe.getObject(obj, j10), k0Var, false);
                     break;
-                case zs.U /* 31 */:
+                case at.U /* 31 */:
                     i13 = i10;
                     z10 = false;
                     c1.J(iArr[i13], (List) unsafe.getObject(obj, j10), k0Var, false);
@@ -1017,7 +1017,7 @@ public final class s0 implements b1 {
                     i13 = i10;
                     J(k0Var, i17, unsafe.getObject(obj, j10), i13);
                     break;
-                case zs.o0 /* 51 */:
+                case at.o0 /* 51 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         double doubleValue = ((Double) r1.d.i(obj, j10)).doubleValue();
@@ -1026,7 +1026,7 @@ public final class s0 implements b1 {
                         jVar3.K(i17, Double.doubleToRawLongBits(doubleValue));
                     }
                     break;
-                case zs.p0 /* 52 */:
+                case at.p0 /* 52 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         float floatValue = ((Float) r1.d.i(obj, j10)).floatValue();
@@ -1035,67 +1035,67 @@ public final class s0 implements b1 {
                         jVar4.I(i17, Float.floatToRawIntBits(floatValue));
                     }
                     break;
-                case zs.q0 /* 53 */:
+                case at.q0 /* 53 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).U(i17, A(obj, j10));
                     }
                     break;
-                case zs.r0 /* 54 */:
+                case at.r0 /* 54 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).U(i17, A(obj, j10));
                     }
                     break;
-                case zs.s0 /* 55 */:
+                case at.s0 /* 55 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).M(i17, z(obj, j10));
                     }
                     break;
-                case zs.t0 /* 56 */:
+                case at.t0 /* 56 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).K(i17, A(obj, j10));
                     }
                     break;
-                case zs.u0 /* 57 */:
+                case at.u0 /* 57 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).I(i17, z(obj, j10));
                     }
                     break;
-                case zs.v0 /* 58 */:
+                case at.v0 /* 58 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).F(i17, ((Boolean) r1.d.i(obj, j10)).booleanValue());
                     }
                     break;
-                case zs.w0 /* 59 */:
+                case at.w0 /* 59 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         K(i17, unsafe.getObject(obj, j10), k0Var);
                     }
                     break;
-                case zs.x0 /* 60 */:
+                case at.x0 /* 60 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).O(i17, (a) unsafe.getObject(obj, j10), n(i13));
                     }
                     break;
-                case zs.y0 /* 61 */:
+                case at.y0 /* 61 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         k0Var.a(i17, (g) unsafe.getObject(obj, j10));
                     }
                     break;
-                case zs.z0 /* 62 */:
+                case at.z0 /* 62 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).S(i17, z(obj, j10));
                     }
                     break;
-                case zs.A0 /* 63 */:
+                case at.A0 /* 63 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).M(i17, z(obj, j10));
@@ -1113,21 +1113,21 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).K(i17, A(obj, j10));
                     }
                     break;
-                case zs.D0 /* 66 */:
+                case at.D0 /* 66 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         int z11 = z(obj, j10);
                         ((j) k0Var.a).S(i17, (z11 >> 31) ^ (z11 << 1));
                     }
                     break;
-                case zs.E0 /* 67 */:
+                case at.E0 /* 67 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         long A = A(obj, j10);
                         ((j) k0Var.a).U(i17, (A >> 63) ^ (A << 1));
                     }
                     break;
-                case zs.F0 /* 68 */:
+                case at.F0 /* 68 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         k0Var.b(i17, unsafe.getObject(obj, j10), n(i13));
@@ -1715,10 +1715,10 @@ public final class s0 implements b1 {
                 case 29:
                     c1.O(iArr[i10], (List) r1.d.i(obj, H & 1048575), k0Var, false);
                     break;
-                case zs.T /* 30 */:
+                case at.T /* 30 */:
                     c1.B(iArr[i10], (List) r1.d.i(obj, H & 1048575), k0Var, false);
                     break;
-                case zs.U /* 31 */:
+                case at.U /* 31 */:
                     c1.J(iArr[i10], (List) r1.d.i(obj, H & 1048575), k0Var, false);
                     break;
                 case 32:
@@ -1778,7 +1778,7 @@ public final class s0 implements b1 {
                 case 50:
                     J(k0Var, i11, r1.d.i(obj, H & 1048575), i10);
                     break;
-                case zs.o0 /* 51 */:
+                case at.o0 /* 51 */:
                     if (r(i11, i10, obj)) {
                         double doubleValue = ((Double) r1.d.i(obj, H & 1048575)).doubleValue();
                         jVar.getClass();
@@ -1787,7 +1787,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.p0 /* 52 */:
+                case at.p0 /* 52 */:
                     if (r(i11, i10, obj)) {
                         float floatValue = ((Float) r1.d.i(obj, H & 1048575)).floatValue();
                         jVar.getClass();
@@ -1796,77 +1796,77 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.q0 /* 53 */:
+                case at.q0 /* 53 */:
                     if (r(i11, i10, obj)) {
                         jVar.U(i11, A(obj, H & 1048575));
                         break;
                     } else {
                         break;
                     }
-                case zs.r0 /* 54 */:
+                case at.r0 /* 54 */:
                     if (r(i11, i10, obj)) {
                         jVar.U(i11, A(obj, H & 1048575));
                         break;
                     } else {
                         break;
                     }
-                case zs.s0 /* 55 */:
+                case at.s0 /* 55 */:
                     if (r(i11, i10, obj)) {
                         jVar.M(i11, z(obj, H & 1048575));
                         break;
                     } else {
                         break;
                     }
-                case zs.t0 /* 56 */:
+                case at.t0 /* 56 */:
                     if (r(i11, i10, obj)) {
                         jVar.K(i11, A(obj, H & 1048575));
                         break;
                     } else {
                         break;
                     }
-                case zs.u0 /* 57 */:
+                case at.u0 /* 57 */:
                     if (r(i11, i10, obj)) {
                         jVar.I(i11, z(obj, H & 1048575));
                         break;
                     } else {
                         break;
                     }
-                case zs.v0 /* 58 */:
+                case at.v0 /* 58 */:
                     if (r(i11, i10, obj)) {
                         jVar.F(i11, ((Boolean) r1.d.i(obj, H & 1048575)).booleanValue());
                         break;
                     } else {
                         break;
                     }
-                case zs.w0 /* 59 */:
+                case at.w0 /* 59 */:
                     if (r(i11, i10, obj)) {
                         K(i11, r1.d.i(obj, H & 1048575), k0Var);
                         break;
                     } else {
                         break;
                     }
-                case zs.x0 /* 60 */:
+                case at.x0 /* 60 */:
                     if (r(i11, i10, obj)) {
                         jVar.O(i11, (a) r1.d.i(obj, H & 1048575), n(i10));
                         break;
                     } else {
                         break;
                     }
-                case zs.y0 /* 61 */:
+                case at.y0 /* 61 */:
                     if (r(i11, i10, obj)) {
                         k0Var.a(i11, (g) r1.d.i(obj, H & 1048575));
                         break;
                     } else {
                         break;
                     }
-                case zs.z0 /* 62 */:
+                case at.z0 /* 62 */:
                     if (r(i11, i10, obj)) {
                         jVar.S(i11, z(obj, H & 1048575));
                         break;
                     } else {
                         break;
                     }
-                case zs.A0 /* 63 */:
+                case at.A0 /* 63 */:
                     if (r(i11, i10, obj)) {
                         jVar.M(i11, z(obj, H & 1048575));
                         break;
@@ -1887,7 +1887,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.D0 /* 66 */:
+                case at.D0 /* 66 */:
                     if (r(i11, i10, obj)) {
                         int z10 = z(obj, H & 1048575);
                         jVar.S(i11, (z10 >> 31) ^ (z10 << 1));
@@ -1895,7 +1895,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.E0 /* 67 */:
+                case at.E0 /* 67 */:
                     if (r(i11, i10, obj)) {
                         long A = A(obj, H & 1048575);
                         jVar.U(i11, (A >> 63) ^ (A << 1));
@@ -1903,7 +1903,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.F0 /* 68 */:
+                case at.F0 /* 68 */:
                     if (r(i11, i10, obj)) {
                         k0Var.b(i11, r1.d.i(obj, H & 1048575), n(i10));
                         break;
@@ -2341,7 +2341,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.T /* 30 */:
+                                    case at.T /* 30 */:
                                         gVar3.t(h0Var.c(obj2, y(H)));
                                         s0Var2.l(i10);
                                         Class cls = c1.a;
@@ -2350,7 +2350,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.U /* 31 */:
+                                    case at.U /* 31 */:
                                         gVar3.L(h0Var.c(obj2, y(H)));
                                         s0Var = s0Var2;
                                         gVar2 = gVar3;
@@ -2512,7 +2512,7 @@ public final class s0 implements b1 {
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
                                         break;
-                                    case zs.o0 /* 51 */:
+                                    case at.o0 /* 51 */:
                                         r1.o(obj2, H & 1048575, Double.valueOf(gVar3.q()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2520,7 +2520,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.p0 /* 52 */:
+                                    case at.p0 /* 52 */:
                                         r1.o(obj2, H & 1048575, Float.valueOf(gVar3.z()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2528,7 +2528,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.q0 /* 53 */:
+                                    case at.q0 /* 53 */:
                                         r1.o(obj2, H & 1048575, Long.valueOf(gVar3.G()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2536,7 +2536,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.r0 /* 54 */:
+                                    case at.r0 /* 54 */:
                                         r1.o(obj2, H & 1048575, Long.valueOf(gVar3.X()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2544,7 +2544,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.s0 /* 55 */:
+                                    case at.s0 /* 55 */:
                                         r1.o(obj2, H & 1048575, Integer.valueOf(gVar3.E()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2552,7 +2552,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.t0 /* 56 */:
+                                    case at.t0 /* 56 */:
                                         r1.o(obj2, H & 1048575, Long.valueOf(gVar3.x()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2560,7 +2560,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.u0 /* 57 */:
+                                    case at.u0 /* 57 */:
                                         r1.o(obj2, H & 1048575, Integer.valueOf(gVar3.v()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2568,7 +2568,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.v0 /* 58 */:
+                                    case at.v0 /* 58 */:
                                         r1.o(obj2, H & 1048575, Boolean.valueOf(gVar3.l()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2576,7 +2576,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.w0 /* 59 */:
+                                    case at.w0 /* 59 */:
                                         s0Var2.C(obj2, H, gVar3);
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2584,7 +2584,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.x0 /* 60 */:
+                                    case at.x0 /* 60 */:
                                         if (s0Var2.r(e, i10, obj2)) {
                                             long j10 = H & 1048575;
                                             r1.o(obj2, j10, z.c(r1.d.i(obj2, j10), gVar3.J(s0Var2.n(i10), mVar2)));
@@ -2598,7 +2598,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.y0 /* 61 */:
+                                    case at.y0 /* 61 */:
                                         r1.o(obj2, H & 1048575, gVar3.n());
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2606,7 +2606,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.z0 /* 62 */:
+                                    case at.z0 /* 62 */:
                                         r1.o(obj2, H & 1048575, Integer.valueOf(gVar3.V()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2614,7 +2614,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.A0 /* 63 */:
+                                    case at.A0 /* 63 */:
                                         int s11 = gVar3.s();
                                         s0Var2.l(i10);
                                         r1.o(obj2, H & 1048575, Integer.valueOf(s11));
@@ -2640,7 +2640,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.D0 /* 66 */:
+                                    case at.D0 /* 66 */:
                                         r1.o(obj2, H & 1048575, Integer.valueOf(gVar3.O()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2648,7 +2648,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.E0 /* 67 */:
+                                    case at.E0 /* 67 */:
                                         r1.o(obj2, H & 1048575, Long.valueOf(gVar3.Q()));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2656,7 +2656,7 @@ public final class s0 implements b1 {
                                         mVar2 = mVar;
                                         s0Var2 = s0Var;
                                         gVar3 = gVar2;
-                                    case zs.F0 /* 68 */:
+                                    case at.F0 /* 68 */:
                                         r1.o(obj2, H & 1048575, gVar3.C(s0Var2.n(i10), mVar2));
                                         s0Var2.F(e, i10, obj2);
                                         s0Var = s0Var2;
@@ -2987,8 +2987,8 @@ public final class s0 implements b1 {
                 case 27:
                 case 28:
                 case 29:
-                case zs.T /* 30 */:
-                case zs.U /* 31 */:
+                case at.T /* 30 */:
+                case at.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -3019,39 +3019,39 @@ public final class s0 implements b1 {
                     r1.o(wVar, j10, o0.b(i12, i13));
                     wVar3 = wVar;
                     break;
-                case zs.o0 /* 51 */:
-                case zs.p0 /* 52 */:
-                case zs.q0 /* 53 */:
-                case zs.r0 /* 54 */:
-                case zs.s0 /* 55 */:
-                case zs.t0 /* 56 */:
-                case zs.u0 /* 57 */:
-                case zs.v0 /* 58 */:
-                case zs.w0 /* 59 */:
+                case at.o0 /* 51 */:
+                case at.p0 /* 52 */:
+                case at.q0 /* 53 */:
+                case at.r0 /* 54 */:
+                case at.s0 /* 55 */:
+                case at.t0 /* 56 */:
+                case at.u0 /* 57 */:
+                case at.v0 /* 58 */:
+                case at.w0 /* 59 */:
                     if (r(i11, i10, wVar2)) {
                         r1.o(wVar, j10, r1.d.i(wVar2, j10));
                         F(i11, i10, wVar);
                     }
                     wVar3 = wVar;
                     break;
-                case zs.x0 /* 60 */:
+                case at.x0 /* 60 */:
                     v(i10, wVar, wVar2);
                     wVar3 = wVar;
                     break;
-                case zs.y0 /* 61 */:
-                case zs.z0 /* 62 */:
-                case zs.A0 /* 63 */:
+                case at.y0 /* 61 */:
+                case at.z0 /* 62 */:
+                case at.A0 /* 63 */:
                 case 64:
                 case 65:
-                case zs.D0 /* 66 */:
-                case zs.E0 /* 67 */:
+                case at.D0 /* 66 */:
+                case at.E0 /* 67 */:
                     if (r(i11, i10, wVar2)) {
                         r1.o(wVar, j10, r1.d.i(wVar2, j10));
                         F(i11, i10, wVar);
                     }
                     wVar3 = wVar;
                     break;
-                case zs.F0 /* 68 */:
+                case at.F0 /* 68 */:
                     v(i10, wVar, wVar2);
                     wVar3 = wVar;
                     break;
@@ -3204,8 +3204,8 @@ public final class s0 implements b1 {
                 case 27:
                 case 28:
                 case 29:
-                case zs.T /* 30 */:
-                case zs.U /* 31 */:
+                case at.T /* 30 */:
+                case at.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -3233,7 +3233,7 @@ public final class s0 implements b1 {
                     b10 = r1.d.i(wVar, j10).hashCode();
                     i12 = b10 + i10;
                     break;
-                case zs.o0 /* 51 */:
+                case at.o0 /* 51 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z.b(Double.doubleToLongBits(((Double) r1.d.i(wVar, j10)).doubleValue()));
@@ -3242,7 +3242,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.p0 /* 52 */:
+                case at.p0 /* 52 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = Float.floatToIntBits(((Float) r1.d.i(wVar, j10)).floatValue());
@@ -3251,7 +3251,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.q0 /* 53 */:
+                case at.q0 /* 53 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z.b(A(wVar, j10));
@@ -3260,7 +3260,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.r0 /* 54 */:
+                case at.r0 /* 54 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z.b(A(wVar, j10));
@@ -3269,7 +3269,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.s0 /* 55 */:
+                case at.s0 /* 55 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z(wVar, j10);
@@ -3278,7 +3278,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.t0 /* 56 */:
+                case at.t0 /* 56 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z.b(A(wVar, j10));
@@ -3287,7 +3287,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.u0 /* 57 */:
+                case at.u0 /* 57 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z(wVar, j10);
@@ -3296,7 +3296,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.v0 /* 58 */:
+                case at.v0 /* 58 */:
                     if (r(i14, i13, wVar)) {
                         i11 = i12 * 53;
                         boolean booleanValue = ((Boolean) r1.d.i(wVar, j10)).booleanValue();
@@ -3305,7 +3305,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.w0 /* 59 */:
+                case at.w0 /* 59 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = ((String) r1.d.i(wVar, j10)).hashCode();
@@ -3314,7 +3314,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.x0 /* 60 */:
+                case at.x0 /* 60 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = r1.d.i(wVar, j10).hashCode();
@@ -3323,7 +3323,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.y0 /* 61 */:
+                case at.y0 /* 61 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = r1.d.i(wVar, j10).hashCode();
@@ -3332,7 +3332,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.z0 /* 62 */:
+                case at.z0 /* 62 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z(wVar, j10);
@@ -3341,7 +3341,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.A0 /* 63 */:
+                case at.A0 /* 63 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z(wVar, j10);
@@ -3368,7 +3368,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.D0 /* 66 */:
+                case at.D0 /* 66 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z(wVar, j10);
@@ -3377,7 +3377,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.E0 /* 67 */:
+                case at.E0 /* 67 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = z.b(A(wVar, j10));
@@ -3386,7 +3386,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.F0 /* 68 */:
+                case at.F0 /* 68 */:
                     if (r(i14, i13, wVar)) {
                         i10 = i12 * 53;
                         b10 = r1.d.i(wVar, j10).hashCode();
@@ -3629,8 +3629,8 @@ public final class s0 implements b1 {
                     case 27:
                     case 28:
                     case 29:
-                    case zs.T /* 30 */:
-                    case zs.U /* 31 */:
+                    case at.T /* 30 */:
+                    case at.U /* 31 */:
                     case 32:
                     case 33:
                     case 34:
@@ -3656,24 +3656,24 @@ public final class s0 implements b1 {
                         q1 q1Var20 = r1.d;
                         z10 = c1.x(q1Var20.i(wVar, j10), q1Var20.i(wVar2, j10));
                         break;
-                    case zs.o0 /* 51 */:
-                    case zs.p0 /* 52 */:
-                    case zs.q0 /* 53 */:
-                    case zs.r0 /* 54 */:
-                    case zs.s0 /* 55 */:
-                    case zs.t0 /* 56 */:
-                    case zs.u0 /* 57 */:
-                    case zs.v0 /* 58 */:
-                    case zs.w0 /* 59 */:
-                    case zs.x0 /* 60 */:
-                    case zs.y0 /* 61 */:
-                    case zs.z0 /* 62 */:
-                    case zs.A0 /* 63 */:
+                    case at.o0 /* 51 */:
+                    case at.p0 /* 52 */:
+                    case at.q0 /* 53 */:
+                    case at.r0 /* 54 */:
+                    case at.s0 /* 55 */:
+                    case at.t0 /* 56 */:
+                    case at.u0 /* 57 */:
+                    case at.v0 /* 58 */:
+                    case at.w0 /* 59 */:
+                    case at.x0 /* 60 */:
+                    case at.y0 /* 61 */:
+                    case at.z0 /* 62 */:
+                    case at.A0 /* 63 */:
                     case 64:
                     case 65:
-                    case zs.D0 /* 66 */:
-                    case zs.E0 /* 67 */:
-                    case zs.F0 /* 68 */:
+                    case at.D0 /* 66 */:
+                    case at.E0 /* 67 */:
+                    case at.F0 /* 68 */:
                         long j11 = iArr[i10 + 2] & 1048575;
                         q1 q1Var21 = r1.d;
                         if (q1Var21.g(wVar, j11) == q1Var21.g(wVar2, j11)) {
@@ -3993,11 +3993,11 @@ public final class s0 implements b1 {
                     u10 = c1.r(i16, (List) unsafe.getObject(obj, j10));
                     i14 += u10;
                     break;
-                case zs.T /* 30 */:
+                case at.T /* 30 */:
                     u10 = c1.b(i16, (List) unsafe.getObject(obj, j10));
                     i14 += u10;
                     break;
-                case zs.U /* 31 */:
+                case at.U /* 31 */:
                     u10 = c1.d(i16, (List) unsafe.getObject(obj, j10));
                     i14 += u10;
                     break;
@@ -4149,21 +4149,21 @@ public final class s0 implements b1 {
                     u10 = o0.a(i16, object3, m10);
                     i14 += u10;
                     break;
-                case zs.o0 /* 51 */:
+                case at.o0 /* 51 */:
                     if (r(i16, i13, obj)) {
                         i14 = a1.g.d(i16, 8, i14);
                         break;
                     } else {
                         break;
                     }
-                case zs.p0 /* 52 */:
+                case at.p0 /* 52 */:
                     if (r(i16, i13, obj)) {
                         i14 = a1.g.d(i16, 4, i14);
                         break;
                     } else {
                         break;
                     }
-                case zs.q0 /* 53 */:
+                case at.q0 /* 53 */:
                     if (r(i16, i13, obj)) {
                         long A2 = A(obj, j10);
                         y3 = j.y(i16);
@@ -4174,7 +4174,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.r0 /* 54 */:
+                case at.r0 /* 54 */:
                     if (r(i16, i13, obj)) {
                         long A3 = A(obj, j10);
                         y3 = j.y(i16);
@@ -4185,7 +4185,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.s0 /* 55 */:
+                case at.s0 /* 55 */:
                     if (r(i16, i13, obj)) {
                         int z10 = z(obj, j10);
                         y10 = j.y(i16);
@@ -4196,7 +4196,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.t0 /* 56 */:
+                case at.t0 /* 56 */:
                     if (r(i16, i13, obj)) {
                         u10 = j.u(i16);
                         i14 += u10;
@@ -4204,7 +4204,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.u0 /* 57 */:
+                case at.u0 /* 57 */:
                     if (r(i16, i13, obj)) {
                         u10 = j.t(i16);
                         i14 += u10;
@@ -4212,14 +4212,14 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.v0 /* 58 */:
+                case at.v0 /* 58 */:
                     if (r(i16, i13, obj)) {
                         i14 = a1.g.d(i16, 1, i14);
                         break;
                     } else {
                         break;
                     }
-                case zs.w0 /* 59 */:
+                case at.w0 /* 59 */:
                     if (!r(i16, i13, obj)) {
                         break;
                     } else {
@@ -4237,7 +4237,7 @@ public final class s0 implements b1 {
                             i14 = e;
                         }
                     }
-                case zs.x0 /* 60 */:
+                case at.x0 /* 60 */:
                     if (r(i16, i13, obj)) {
                         Object object5 = unsafe.getObject(obj, j10);
                         b1 n13 = n(i13);
@@ -4249,7 +4249,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.y0 /* 61 */:
+                case at.y0 /* 61 */:
                     if (r(i16, i13, obj)) {
                         u10 = j.r(i16, (g) unsafe.getObject(obj, j10));
                         i14 += u10;
@@ -4257,7 +4257,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.z0 /* 62 */:
+                case at.z0 /* 62 */:
                     if (r(i16, i13, obj)) {
                         int z11 = z(obj, j10);
                         y10 = j.y(i16);
@@ -4268,7 +4268,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.A0 /* 63 */:
+                case at.A0 /* 63 */:
                     if (r(i16, i13, obj)) {
                         int z12 = z(obj, j10);
                         y10 = j.y(i16);
@@ -4293,7 +4293,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.D0 /* 66 */:
+                case at.D0 /* 66 */:
                     if (r(i16, i13, obj)) {
                         int z13 = z(obj, j10);
                         y10 = j.y(i16);
@@ -4304,7 +4304,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.E0 /* 67 */:
+                case at.E0 /* 67 */:
                     if (r(i16, i13, obj)) {
                         long A4 = A(obj, j10);
                         y3 = j.y(i16);
@@ -4315,7 +4315,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.F0 /* 68 */:
+                case at.F0 /* 68 */:
                     if (r(i16, i13, obj)) {
                         u10 = j.v(i16, (a) unsafe.getObject(obj, j10), n(i13));
                         i14 += u10;
@@ -4579,11 +4579,11 @@ public final class s0 implements b1 {
                     u10 = c1.r(i13, s(obj, j10));
                     i12 += u10;
                     break;
-                case zs.T /* 30 */:
+                case at.T /* 30 */:
                     u10 = c1.b(i13, s(obj, j10));
                     i12 += u10;
                     break;
-                case zs.U /* 31 */:
+                case at.U /* 31 */:
                     u10 = c1.d(i13, s(obj, j10));
                     i12 += u10;
                     break;
@@ -4735,21 +4735,21 @@ public final class s0 implements b1 {
                     u10 = o0.a(i13, i19, m10);
                     i12 += u10;
                     break;
-                case zs.o0 /* 51 */:
+                case at.o0 /* 51 */:
                     if (r(i13, i11, obj)) {
                         i12 = a1.g.d(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
-                case zs.p0 /* 52 */:
+                case at.p0 /* 52 */:
                     if (r(i13, i11, obj)) {
                         i12 = a1.g.d(i13, 4, i12);
                         break;
                     } else {
                         break;
                     }
-                case zs.q0 /* 53 */:
+                case at.q0 /* 53 */:
                     if (r(i13, i11, obj)) {
                         long A3 = A(obj, j10);
                         y3 = j.y(i13);
@@ -4760,7 +4760,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.r0 /* 54 */:
+                case at.r0 /* 54 */:
                     if (r(i13, i11, obj)) {
                         long A4 = A(obj, j10);
                         y3 = j.y(i13);
@@ -4771,7 +4771,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.s0 /* 55 */:
+                case at.s0 /* 55 */:
                     if (r(i13, i11, obj)) {
                         int z10 = z(obj, j10);
                         y10 = j.y(i13);
@@ -4782,7 +4782,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.t0 /* 56 */:
+                case at.t0 /* 56 */:
                     if (r(i13, i11, obj)) {
                         u10 = j.u(i13);
                         i12 += u10;
@@ -4790,7 +4790,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.u0 /* 57 */:
+                case at.u0 /* 57 */:
                     if (r(i13, i11, obj)) {
                         u10 = j.t(i13);
                         i12 += u10;
@@ -4798,14 +4798,14 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.v0 /* 58 */:
+                case at.v0 /* 58 */:
                     if (r(i13, i11, obj)) {
                         i12 = a1.g.d(i13, 1, i12);
                         break;
                     } else {
                         break;
                     }
-                case zs.w0 /* 59 */:
+                case at.w0 /* 59 */:
                     if (r(i13, i11, obj)) {
                         Object i20 = r1.d.i(obj, j10);
                         if (i20 instanceof g) {
@@ -4822,7 +4822,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.x0 /* 60 */:
+                case at.x0 /* 60 */:
                     if (r(i13, i11, obj)) {
                         Object i21 = r1.d.i(obj, j10);
                         b1 n13 = n(i11);
@@ -4834,7 +4834,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.y0 /* 61 */:
+                case at.y0 /* 61 */:
                     if (r(i13, i11, obj)) {
                         u10 = j.r(i13, (g) r1.d.i(obj, j10));
                         i12 += u10;
@@ -4842,7 +4842,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.z0 /* 62 */:
+                case at.z0 /* 62 */:
                     if (r(i13, i11, obj)) {
                         int z11 = z(obj, j10);
                         y10 = j.y(i13);
@@ -4853,7 +4853,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.A0 /* 63 */:
+                case at.A0 /* 63 */:
                     if (r(i13, i11, obj)) {
                         int z12 = z(obj, j10);
                         y10 = j.y(i13);
@@ -4878,7 +4878,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.D0 /* 66 */:
+                case at.D0 /* 66 */:
                     if (r(i13, i11, obj)) {
                         int z13 = z(obj, j10);
                         y10 = j.y(i13);
@@ -4889,7 +4889,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.E0 /* 67 */:
+                case at.E0 /* 67 */:
                     if (r(i13, i11, obj)) {
                         long A5 = A(obj, j10);
                         y12 = j.y(i13);
@@ -4900,7 +4900,7 @@ public final class s0 implements b1 {
                     } else {
                         break;
                     }
-                case zs.F0 /* 68 */:
+                case at.F0 /* 68 */:
                     if (r(i13, i11, obj)) {
                         u10 = j.v(i13, (a) r1.d.i(obj, j10), n(i11));
                         i12 += u10;

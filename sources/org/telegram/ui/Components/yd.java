@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yd extends FrameLayout {
     public final Paint a;
@@ -105,10 +105,10 @@ public final class yd extends FrameLayout {
                             Activity activity = chatActivityEnterView.O2;
                             long a2 = unVar.a();
                             v1 v1Var = new v1(25);
-                            org.telegram.messenger.rz rzVar = new org.telegram.messenger.rz(13);
+                            org.telegram.messenger.sz szVar = new org.telegram.messenger.sz(13);
                             Pattern pattern = s4.a;
                             org.telegram.ui.ActionBar.p6 p6Var = this.c;
-                            s4.J(activity, a2, -1L, 0, false, v1Var, rzVar, new p4(p6Var), p6Var);
+                            s4.J(activity, a2, -1L, 0, false, v1Var, szVar, new p4(p6Var), p6Var);
                         }
                         if (s4.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             if (chatActivityEnterView.c1) {
@@ -128,14 +128,14 @@ public final class yd extends FrameLayout {
                                     slideTextView2.setEnabled(false);
                                 }
                             }
-                            s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new org.telegram.messenger.q20(this) { // from class: org.telegram.ui.Components.wd
+                            s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new org.telegram.messenger.r20(this) { // from class: org.telegram.ui.Components.wd
                                 public final /* synthetic */ yd b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // org.telegram.messenger.q20
+                                @Override // org.telegram.messenger.r20
                                 public final void a(Object obj) {
                                     Long l4 = (Long) obj;
                                     switch (i11) {
@@ -165,14 +165,14 @@ public final class yd extends FrameLayout {
                                 slideTextView3.setEnabled(false);
                             }
                             chatActivityEnterView.Z2.X0();
-                            s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new org.telegram.messenger.q20(this) { // from class: org.telegram.ui.Components.wd
+                            s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new org.telegram.messenger.r20(this) { // from class: org.telegram.ui.Components.wd
                                 public final /* synthetic */ yd b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // org.telegram.messenger.q20
+                                @Override // org.telegram.messenger.r20
                                 public final void a(Object obj) {
                                     Long l4 = (Long) obj;
                                     switch (i10) {
@@ -291,15 +291,15 @@ public final class yd extends FrameLayout {
                             } else {
                                 chatActivityEnterView2.s4 = true;
                                 wf wfVar = chatActivityEnterView2.O1;
-                                if (wfVar != null && org.telegram.messenger.vp.d1().getInt("voicepausehint", 0) <= 3) {
+                                if (wfVar != null && org.telegram.messenger.wp.d1().getInt("voicepausehint", 0) <= 3) {
                                     wfVar.a();
                                     vh.p2 p2Var = new vh.p2(wfVar.getContext(), 2);
                                     wfVar.a = p2Var;
                                     p2Var.l(1.0f, 0.0f);
                                     wfVar.a.p(true);
-                                    wfVar.a.s(org.telegram.messenger.cd.L0(2131743538, null));
-                                    org.telegram.messenger.vp.d1().edit().putInt("voicepausehint", org.telegram.messenger.vp.d1().getInt("voicepausehint", 0) + 1).apply();
-                                    wfVar.addView(wfVar.a, w7.b6.d(-1, -1.0f, org.telegram.messenger.zs.E1, 0.0f, 0.0f, 54.0f, 58.0f));
+                                    wfVar.a.s(org.telegram.messenger.dd.L0(2131743538, null));
+                                    org.telegram.messenger.wp.d1().edit().putInt("voicepausehint", org.telegram.messenger.wp.d1().getInt("voicepausehint", 0) + 1).apply();
+                                    wfVar.addView(wfVar.a, w7.b6.d(-1, -1.0f, org.telegram.messenger.at.E1, 0.0f, 0.0f, 54.0f, 58.0f));
                                     vh.p2 p2Var2 = wfVar.a;
                                     p2Var2.l0 = new uf(wfVar, p2Var2, 3);
                                     p2Var2.u();
@@ -383,14 +383,14 @@ public final class yd extends FrameLayout {
                                 if (slideTextView5 != null) {
                                     slideTextView5.setEnabled(false);
                                 }
-                                s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new org.telegram.messenger.q20(this) { // from class: org.telegram.ui.Components.wd
+                                s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new org.telegram.messenger.r20(this) { // from class: org.telegram.ui.Components.wd
                                     public final /* synthetic */ yd b;
 
                                     {
                                         this.b = this;
                                     }
 
-                                    @Override // org.telegram.messenger.q20
+                                    @Override // org.telegram.messenger.r20
                                     public final void a(Object obj) {
                                         Long l4 = (Long) obj;
                                         switch (r2) {
@@ -415,9 +415,9 @@ public final class yd extends FrameLayout {
                                 Activity activity2 = chatActivityEnterView.O2;
                                 long a10 = unVar.a();
                                 v1 v1Var2 = new v1(26);
-                                org.telegram.messenger.rz rzVar2 = new org.telegram.messenger.rz(14);
+                                org.telegram.messenger.sz szVar2 = new org.telegram.messenger.sz(14);
                                 org.telegram.ui.ActionBar.p6 p6Var2 = this.c;
-                                s4.J(activity2, a10, -1L, 0, false, v1Var2, rzVar2, new p4(p6Var2), p6Var2);
+                                s4.J(activity2, a10, -1L, 0, false, v1Var2, szVar2, new p4(p6Var2), p6Var2);
                             }
                             chatActivityEnterView.Z2.G0(0);
                             MediaController.B().B0(chatActivityEnterView.c() ? 3 : 1, 0, true, chatActivityEnterView.O);
@@ -429,14 +429,14 @@ public final class yd extends FrameLayout {
                                 slideTextView6.setEnabled(false);
                             }
                             chatActivityEnterView.Z2.X0();
-                            s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new org.telegram.messenger.q20(this) { // from class: org.telegram.ui.Components.wd
+                            s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new org.telegram.messenger.r20(this) { // from class: org.telegram.ui.Components.wd
                                 public final /* synthetic */ yd b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // org.telegram.messenger.q20
+                                @Override // org.telegram.messenger.r20
                                 public final void a(Object obj) {
                                     Long l4 = (Long) obj;
                                     switch (i12) {

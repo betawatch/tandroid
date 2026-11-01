@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class xe extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -24,7 +24,7 @@ public final class xe extends AnimatorListenerAdapter {
         chatActivityEnterView.k1.setAlpha(1.0f);
         chatActivityEnterView.k1.setTranslationX(0.0f);
         wf wfVar = chatActivityEnterView.O1;
-        if (wfVar != null && org.telegram.messenger.tz.O < 3) {
+        if (wfVar != null && org.telegram.messenger.uz.O < 3) {
             ChatActivityEnterView chatActivityEnterView2 = wfVar.b0;
             chatActivityEnterView2.e4 = true;
             chatActivityEnterView2.f4 = System.currentTimeMillis();
@@ -34,9 +34,9 @@ public final class xe extends AnimatorListenerAdapter {
             seVar.setAlpha(0.0f);
         }
         if (this.a) {
-            nj0 nj0Var = chatActivityEnterView.h1;
-            if (nj0Var != null) {
-                nj0Var.setVisibility(8);
+            oj0 oj0Var = chatActivityEnterView.h1;
+            if (oj0Var != null) {
+                oj0Var.setVisibility(8);
             }
             pd pdVar = chatActivityEnterView.e1;
             if (pdVar != null) {

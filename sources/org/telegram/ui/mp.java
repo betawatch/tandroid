@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class mp extends org.telegram.ui.Components.y70 {
     public final /* synthetic */ TLRPC.Chat x;
@@ -23,7 +23,7 @@ public final class mp extends org.telegram.ui.Components.y70 {
             return false;
         }
         qpVar.P = true;
-        e(new zg(20, this, w70Var), new kp(this, this.x, z10, w70Var, 0));
+        e(new ch(20, this, w70Var), new kp(this, this.x, z10, w70Var, 0));
         return true;
     }
 
@@ -34,16 +34,16 @@ public final class mp extends org.telegram.ui.Components.y70 {
             return false;
         }
         qpVar.O = true;
-        e(new zg(20, this, x70Var), new bi.n4(this, this.x, z10, x70Var, 29));
+        e(new ch(20, this, x70Var), new bi.n4(this, this.x, z10, x70Var, 29));
         return true;
     }
 
-    public final void e(zg zgVar, Runnable runnable) {
+    public final void e(ch chVar, Runnable runnable) {
         qp qpVar = this.y.d;
         if (org.telegram.messenger.w3.T(qpVar.f)) {
             runnable.run();
         } else {
-            qpVar.getMessagesController().T(qpVar.getParentActivity(), this.x.id, qpVar, new ng.d(20, this, runnable), zgVar);
+            qpVar.getMessagesController().T(qpVar.getParentActivity(), this.x.id, qpVar, new ng.d(20, this, runnable), chVar);
         }
     }
 }

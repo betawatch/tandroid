@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yf extends View {
     public float a;
@@ -14,7 +14,7 @@ public final class yf extends View {
     public boolean c;
     public boolean d;
     public boolean e;
-    public final bi0 f;
+    public final ci0 f;
     public boolean h;
     public boolean n;
     public long r;
@@ -25,18 +25,18 @@ public final class yf extends View {
         super(context);
         this.s = chatActivityEnterView;
         this.r = -1L;
-        bi0 bi0Var = new bi0(R.raw.chat_audio_record_delete_2, org.telegram.messenger.i0.L(28.0f), org.telegram.messenger.i0.L(28.0f), false, null);
-        this.f = bi0Var;
-        bi0Var.o0 = true;
+        ci0 ci0Var = new ci0(R.raw.chat_audio_record_delete_2, org.telegram.messenger.i0.L(28.0f), org.telegram.messenger.i0.L(28.0f), false, null);
+        this.f = ci0Var;
+        ci0Var.o0 = true;
         b();
     }
 
     public final void a() {
         this.e = true;
-        bi0 bi0Var = this.f;
-        bi0Var.T(true, 0.0f);
+        ci0 ci0Var = this.f;
+        ci0Var.T(true, 0.0f);
         if (this.d) {
-            bi0Var.start();
+            ci0Var.start();
         }
     }
 
@@ -48,20 +48,20 @@ public final class yf extends View {
         int e03 = chatActivityEnterView.e0(org.telegram.ui.ActionBar.t6.Ge);
         int e04 = chatActivityEnterView.e0(org.telegram.ui.ActionBar.t6.Sf);
         chatActivityEnterView.w3.setColor(e02);
-        bi0 bi0Var = this.f;
-        bi0Var.Z = true;
-        bi0Var.Q(e02, "Cup Red");
-        bi0Var.Q(e02, "Box Red");
-        bi0Var.Q(e04, "Cup Grey");
-        bi0Var.Q(e04, "Box Grey");
-        bi0Var.Q(e04, "Box_Grey 2");
-        bi0Var.Q(e04, "Line 1");
-        bi0Var.Q(e04, "Line 2");
-        bi0Var.Q(e04, "Line 3");
-        bi0Var.Q(e03, "Line 1 Dup");
-        bi0Var.Q(e03, "Line 2 Dup");
-        bi0Var.Q(e03, "Line 3 Dup");
-        bi0Var.o();
+        ci0 ci0Var = this.f;
+        ci0Var.Z = true;
+        ci0Var.Q(e02, "Cup Red");
+        ci0Var.Q(e02, "Box Red");
+        ci0Var.Q(e04, "Cup Grey");
+        ci0Var.Q(e04, "Box Grey");
+        ci0Var.Q(e04, "Box_Grey 2");
+        ci0Var.Q(e04, "Line 1");
+        ci0Var.Q(e04, "Line 2");
+        ci0Var.Q(e04, "Line 3");
+        ci0Var.Q(e03, "Line 1 Dup");
+        ci0Var.Q(e03, "Line 2 Dup");
+        ci0Var.Q(e03, "Line 3 Dup");
+        ci0Var.o();
     }
 
     @Override // android.view.View
@@ -69,29 +69,29 @@ public final class yf extends View {
         super.onAttachedToWindow();
         this.d = true;
         boolean z10 = this.e;
-        bi0 bi0Var = this.f;
+        ci0 ci0Var = this.f;
         if (z10) {
-            bi0Var.start();
+            ci0Var.start();
         }
-        bi0Var.R(this);
+        ci0Var.R(this);
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d = false;
-        bi0 bi0Var = this.f;
-        bi0Var.stop();
-        bi0Var.R(null);
+        ci0 ci0Var = this.f;
+        ci0Var.stop();
+        ci0Var.R(null);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Paint paint = this.s.w3;
         boolean z10 = this.e;
-        bi0 bi0Var = this.f;
+        ci0 ci0Var = this.f;
         if (z10) {
-            bi0Var.setAlpha((int) (this.a * 255.0f));
+            ci0Var.setAlpha((int) (this.a * 255.0f));
         }
         paint.setAlpha((int) (this.a * 255.0f));
         if (!this.n) {
@@ -117,9 +117,9 @@ public final class yf extends View {
             this.b = currentTimeMillis;
         }
         if (this.e) {
-            bi0Var.draw(canvas);
+            ci0Var.draw(canvas);
         }
-        if (!this.e || !bi0Var.u()) {
+        if (!this.e || !ci0Var.u()) {
             canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, org.telegram.messenger.i0.L(5.0f), paint);
         }
         if (this.n) {

@@ -7,23 +7,23 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.kj;
 import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.tk0;
 import org.telegram.ui.Components.zz;
-import org.telegram.ui.u71;
+import org.telegram.ui.s71;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class u3 extends sk0 {
+public final class u3 extends tk0 {
     public final ArrayList c = new ArrayList();
     public final /* synthetic */ y3 d;
 
@@ -31,7 +31,7 @@ public final class u3 extends sk0 {
         this.d = y3Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -158,12 +158,12 @@ public final class u3 extends sk0 {
         }
         long o10 = org.telegram.messenger.o5.o(peer);
         if (o10 >= 0) {
-            user = vp.r1(i14).Z1(Long.valueOf(o10));
+            user = wp.r1(i14).Z1(Long.valueOf(o10));
             j10 = o10;
             L0 = null;
         } else {
             j10 = o10;
-            L0 = vp.r1(i14).L0(Long.valueOf(-o10));
+            L0 = wp.r1(i14).L0(Long.valueOf(-o10));
             user = null;
         }
         boolean remove = y3Var.F.p.remove(Long.valueOf(j10));
@@ -265,23 +265,23 @@ public final class u3 extends sk0 {
                 nh.p pVar = kjVar.d;
                 if (i10 == 7) {
                     pVar.setVisibility(8);
-                    kjVar.setSubtitle(cd.L0(2131748183, null));
+                    kjVar.setSubtitle(dd.L0(2131748183, null));
                 } else if (i10 == 8) {
                     pVar.setVisibility(8);
-                    kjVar.setSubtitle(cd.L0(2131748239, null));
+                    kjVar.setSubtitle(dd.L0(2131748239, null));
                 } else if (i10 == 10) {
                     pVar.setVisibility(0);
-                    pVar.setText(cd.L0(2131745579, null));
-                    kjVar.setSubtitle(cd.L0(2131745581, null));
+                    pVar.setText(dd.L0(2131745579, null));
+                    kjVar.setSubtitle(dd.L0(2131745581, null));
                 } else if (y3Var.F.j) {
                     pVar.setVisibility(8);
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.W2(cd.L0(2131750872, null)));
-                    boolean A3 = vp.r1(i11).A3();
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.W2(dd.L0(2131750872, null)));
+                    boolean A3 = wp.r1(i11).A3();
                     p80 p80Var = kjVar.e;
                     if (!A3) {
                         spannableStringBuilder.append((CharSequence) "\n\n");
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.T2(cd.L0(2131750871, null), new Runnable() { // from class: th.r3
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.T2(dd.L0(2131750871, null), new Runnable() { // from class: th.r3
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i13) {
@@ -294,7 +294,7 @@ public final class u3 extends sk0 {
                                 }
                             }
                         }));
-                        String L0 = cd.L0(2131749020, null);
+                        String L0 = dd.L0(2131749020, null);
                         Runnable runnable = new Runnable() { // from class: th.r3
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -331,19 +331,19 @@ public final class u3 extends sk0 {
                         org.telegram.ui.ActionBar.a7.k(a5Var, k02, N, h, p6Var);
                         w7.e6.b(a5Var, 0.05f, 1.5f);
                         a5Var.addView(textView);
-                        u71 u71Var = kjVar.a;
-                        u71Var.setClipChildren(false);
-                        u71Var.addView(a5Var, w7.b6.t(-2, -2, 1, 0, 28, 0, 4));
+                        s71 s71Var = kjVar.a;
+                        s71Var.setClipChildren(false);
+                        s71Var.addView(a5Var, w7.b6.t(-2, -2, 1, 0, 28, 0, 4));
                     }
                     p80Var.setText(spannableStringBuilder);
                 } else {
                     pVar.setVisibility(0);
                     if (y3Var.F.f) {
-                        pVar.setText(cd.L0(2131748191, null));
-                        kjVar.setSubtitle(cd.L0(2131748189, null));
+                        pVar.setText(dd.L0(2131748191, null));
+                        kjVar.setSubtitle(dd.L0(2131748189, null));
                     } else {
-                        pVar.setText(cd.L0(2131748148, null));
-                        kjVar.setSubtitle(cd.L0(2131748147, null));
+                        pVar.setText(dd.L0(2131748148, null));
+                        kjVar.setSubtitle(dd.L0(2131748147, null));
                     }
                 }
                 kjVar.e(false, false);
@@ -371,14 +371,14 @@ public final class u3 extends sk0 {
                 p80Var2.setGravity(17);
                 p80Var2.setDisablePaddingsOffsetY(true);
                 if (i10 == 11) {
-                    p80Var2.setText(org.telegram.messenger.i0.T2(cd.L0(2131744472, null), new sg.v(this, 10)));
+                    p80Var2.setText(org.telegram.messenger.i0.T2(dd.L0(2131744472, null), new sg.v(this, 10)));
                 } else {
-                    p80Var2.setText(cd.L0(2131745580, null));
+                    p80Var2.setText(dd.L0(2131745580, null));
                 }
                 p80Var2.setLayoutParams(new s4.o0(-1, -2));
                 view = p80Var2;
                 break;
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

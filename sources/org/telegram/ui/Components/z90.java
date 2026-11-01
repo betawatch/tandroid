@@ -9,7 +9,7 @@ import android.view.SubMenu;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z90 implements Menu {
     public final z60 a;
@@ -93,7 +93,7 @@ public final class z90 implements Menu {
         ct ctVar;
         if (i11 != R.id.menu_quote || (ctVar = this.d) == null || ((Boolean) ctVar.run()).booleanValue()) {
             Runnable runnable = this.c;
-            if ((i11 != R.id.menu_regular || runnable == null) && (runnable == null || !org.telegram.ui.ActionBar.s4.r.contains(Integer.valueOf(i11)) || !org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).A3())) {
+            if ((i11 != R.id.menu_regular || runnable == null) && (runnable == null || !org.telegram.ui.ActionBar.s4.r.contains(Integer.valueOf(i11)) || !org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).A3())) {
                 qq qqVar = new qq(this, i11, 2);
                 z60 z60Var = this.a;
                 z60Var.c(0, charSequence, qqVar, false);
@@ -117,7 +117,7 @@ public final class z90 implements Menu {
 
     @Override // android.view.Menu
     public final MenuItem add(int i10, int i11, int i12, int i13) {
-        add(i10, i11, i12, org.telegram.messenger.cd.L0(i13, null));
+        add(i10, i11, i12, org.telegram.messenger.dd.L0(i13, null));
         return null;
     }
 

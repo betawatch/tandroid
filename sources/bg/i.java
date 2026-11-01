@@ -19,17 +19,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.e61;
-import org.telegram.ui.tj0;
+import org.telegram.ui.c61;
+import org.telegram.ui.rj0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class i extends View implements m {
     public static final boolean A1;
@@ -403,9 +403,9 @@ public abstract class i extends View implements m {
             g gVar = this.Q0;
             if (gVar != null) {
                 getSelectedDate();
-                e61 e61Var = (e61) ((tj0) gVar).b;
-                e61Var.f();
-                e61Var.b.t0.d(false, false);
+                c61 c61Var = (c61) ((rj0) gVar).b;
+                c61Var.f();
+                c61Var.b.t0.d(false, false);
             }
             B();
             invalidate();
@@ -538,7 +538,7 @@ public abstract class i extends View implements m {
                 this.x = f15;
                 arrayList.clear();
                 arrayList.add(f7);
-                f7.f = zs.e4;
+                f7.f = at.e4;
                 return;
             }
             arrayList.add(f7);
@@ -693,12 +693,12 @@ public abstract class i extends View implements m {
                     double d = highestOneBit;
                     double d10 = 0.2d * d;
                     dg.b bVar4 = new dg.b(highestOneBit, (int) (d + d10), (int) (d - d10));
-                    bVar4.d = zs.e4;
+                    bVar4.d = at.e4;
                     dg.b bVar5 = this.i0;
                     ArrayList arrayList = this.c;
                     if (bVar5 == null) {
                         this.i0 = bVar4;
-                        bVar4.d = zs.e4;
+                        bVar4.d = at.e4;
                         arrayList.add(bVar4);
                         return;
                     }

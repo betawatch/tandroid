@@ -24,17 +24,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.ov0;
+import org.telegram.ui.Components.pv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i6 extends View implements s9 {
     public final boolean D;
@@ -95,10 +95,10 @@ public final class i6 extends View implements s9 {
             return new StaticLayout(charSequence, textPaint, i10, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setBreakStrategy(0).setHyphenationFrequency(0);
-        if (cd.X) {
-            alignment = ov0.a();
+        if (dd.X) {
+            alignment = pv0.a();
         } else {
-            Layout.Alignment[] alignmentArr = ov0.a;
+            Layout.Alignment[] alignmentArr = pv0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -110,8 +110,8 @@ public final class i6 extends View implements s9 {
         }
         h6[] h6VarArr = this.r;
         CharSequence charSequence2 = h6VarArr[0].n;
-        Pattern pattern = ui.R1;
-        if ((charSequence2 == null || !TextUtils.equals(charSequence2, charSequence)) ? false : ui.K(ui.b0(d20.s0).W(new CharSequence[]{new SpannableStringBuilder(charSequence2)}, true, true), ui.b0(d20.s0).W(new CharSequence[]{new SpannableStringBuilder(charSequence)}, true, true))) {
+        Pattern pattern = vi.R1;
+        if ((charSequence2 == null || !TextUtils.equals(charSequence2, charSequence)) ? false : vi.K(vi.b0(e20.s0).W(new CharSequence[]{new SpannableStringBuilder(charSequence2)}, true, true), vi.b0(e20.s0).W(new CharSequence[]{new SpannableStringBuilder(charSequence)}, true, true))) {
             h6 h6Var = h6VarArr[0];
             if (h6Var.o == e6Var && h6Var.p == e6Var2) {
                 h6Var.q = z10;
@@ -425,7 +425,7 @@ public final class i6 extends View implements s9 {
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         if (this.w != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), zs.e4, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), at.e4, 31);
             canvas2 = canvas;
         } else {
             canvas2 = canvas;
@@ -621,7 +621,7 @@ public final class i6 extends View implements s9 {
         r1.e.getSelectionPath(r9, r12, r13);
         r9 = r1.a;
         r6.W.f(false);
-        r4.postDelayed(new th.o0(22, r1, r9), android.view.ViewConfiguration.getLongPressTimeout());
+        r4.postDelayed(new th.o0(23, r1, r9), android.view.ViewConfiguration.getLongPressTimeout());
         r4 = true;
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:0x0175, code lost:
@@ -719,7 +719,7 @@ public final class i6 extends View implements s9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
     
-        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.d51.class);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.e51.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:76:0x0198, code lost:
     

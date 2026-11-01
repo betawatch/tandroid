@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class fe0 extends FrameLayout {
     public static final float N = org.telegram.messenger.i0.L(20.0f);
@@ -26,7 +26,7 @@ public final class fe0 extends FrameLayout {
     public PointF a;
     public float b;
     public float c;
-    public pu0 d;
+    public qu0 d;
     public PointF e;
     public float f;
     public float h;
@@ -54,25 +54,25 @@ public final class fe0 extends FrameLayout {
 
     private PointF getActualCenterPoint() {
         float width = getWidth();
-        pu0 pu0Var = this.d;
-        float f7 = pu0Var.a;
+        qu0 qu0Var = this.d;
+        float f7 = qu0Var.a;
         float f10 = (this.e.x * f7) + ((width - f7) / 2.0f);
         int i10 = !this.K ? org.telegram.messenger.i0.m : 0;
         float height = getHeight();
-        float f11 = pu0Var.b;
+        float f11 = qu0Var.b;
         float B = c3.i0.B(height, f11, 2.0f, i10);
-        float f12 = pu0Var.a;
+        float f12 = qu0Var.a;
         return new PointF(f10, (this.e.y * f12) + org.telegram.messenger.m5.y(f12, f11, 2.0f, B));
     }
 
     private float getActualInnerRadius() {
-        pu0 pu0Var = this.d;
-        return Math.min(pu0Var.a, pu0Var.b) * this.f;
+        qu0 qu0Var = this.d;
+        return Math.min(qu0Var.a, qu0Var.b) * this.f;
     }
 
     private float getActualOuterRadius() {
-        pu0 pu0Var = this.d;
-        return Math.min(pu0Var.a, pu0Var.b) * this.h;
+        qu0 qu0Var = this.d;
+        return Math.min(qu0Var.a, qu0Var.b) * this.h;
     }
 
     public final void c(int i10, MotionEvent motionEvent) {
@@ -83,8 +83,8 @@ public final class fe0 extends FrameLayout {
         float f7 = x10 - actualCenterPoint.x;
         float f10 = y3 - actualCenterPoint.y;
         float sqrt = (float) Math.sqrt((f10 * f10) + (f7 * f7));
-        pu0 pu0Var = this.d;
-        float min = Math.min(pu0Var.a, pu0Var.b);
+        qu0 qu0Var = this.d;
+        float min = Math.min(qu0Var.a, qu0Var.b);
         float f11 = this.f * min;
         float f12 = this.h * min;
         float abs = (float) Math.abs((Math.sin(a(this.n) + 1.5707963267948966d) * f10) + (Math.cos(a(this.n) + 1.5707963267948966d) * f7));
@@ -158,15 +158,15 @@ public final class fe0 extends FrameLayout {
             if (c10 == 1) {
                 float f18 = x10 - this.s;
                 float f19 = y3 - this.w;
-                float width = (getWidth() - pu0Var.a) / 2.0f;
+                float width = (getWidth() - qu0Var.a) / 2.0f;
                 int i13 = !z10 ? org.telegram.messenger.i0.m : 0;
                 float height = getHeight();
-                float f20 = pu0Var.b;
+                float f20 = qu0Var.b;
                 float B = c3.i0.B(height, f20, 2.0f, i13);
-                PointF pointF = new PointF(org.telegram.messenger.z20.z(this.a.x, f18, pu0Var.a + width, width), org.telegram.messenger.z20.z(this.a.y, f19, f20 + B, B));
+                PointF pointF = new PointF(org.telegram.messenger.a30.z(this.a.x, f18, qu0Var.a + width, width), org.telegram.messenger.a30.z(this.a.y, f19, f20 + B, B));
                 float f21 = pointF.x - width;
-                float f22 = pu0Var.a;
-                this.e = new PointF(f21 / f22, (((f22 - pu0Var.b) / 2.0f) + (pointF.y - B)) / f22);
+                float f22 = qu0Var.a;
+                this.e = new PointF(f21 / f22, (((f22 - qu0Var.b) / 2.0f) + (pointF.y - B)) / f22);
             } else if (c10 == 2) {
                 this.f = Math.min(Math.max(0.1f, (this.c + (abs - this.b)) / min), this.h - 0.02f);
             } else if (c10 == 3) {
@@ -186,15 +186,15 @@ public final class fe0 extends FrameLayout {
             if (c11 == 1) {
                 float f25 = x10 - this.s;
                 float f26 = y3 - this.w;
-                float width2 = (getWidth() - pu0Var.a) / 2.0f;
+                float width2 = (getWidth() - qu0Var.a) / 2.0f;
                 int i14 = !z10 ? org.telegram.messenger.i0.m : 0;
                 float height2 = getHeight();
-                float f27 = pu0Var.b;
+                float f27 = qu0Var.b;
                 float B2 = c3.i0.B(height2, f27, 2.0f, i14);
-                PointF pointF2 = new PointF(org.telegram.messenger.z20.z(this.a.x, f25, pu0Var.a + width2, width2), org.telegram.messenger.z20.z(this.a.y, f26, f27 + B2, B2));
+                PointF pointF2 = new PointF(org.telegram.messenger.a30.z(this.a.x, f25, qu0Var.a + width2, width2), org.telegram.messenger.a30.z(this.a.y, f26, f27 + B2, B2));
                 float f28 = pointF2.x - width2;
-                float f29 = pu0Var.a;
-                this.e = new PointF(f28 / f29, (((f29 - pu0Var.b) / 2.0f) + (pointF2.y - B2)) / f29);
+                float f29 = qu0Var.a;
+                this.e = new PointF(f28 / f29, (((f29 - qu0Var.b) / 2.0f) + (pointF2.y - B2)) / f29);
             } else if (c11 == 2) {
                 this.f = Math.min(Math.max(0.1f, (this.c + (sqrt - this.b)) / min), this.h - 0.02f);
             } else if (c11 == 3) {

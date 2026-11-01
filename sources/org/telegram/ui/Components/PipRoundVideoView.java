@@ -13,9 +13,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class PipRoundVideoView implements org.telegram.messenger.us {
+public class PipRoundVideoView implements org.telegram.messenger.vs {
     public static PipRoundVideoView F;
     public DecelerateInterpolator D;
     public final RectF E = new RectF();
@@ -59,7 +59,7 @@ public class PipRoundVideoView implements org.telegram.messenger.us {
             if (F == this) {
                 F = null;
             }
-            org.telegram.messenger.zs.f(this.b).n(this, org.telegram.messenger.zs.e2);
+            org.telegram.messenger.at.f(this.b).n(this, org.telegram.messenger.at.e2);
             return;
         }
         TextureView textureView = this.c;
@@ -70,7 +70,7 @@ public class PipRoundVideoView implements org.telegram.messenger.us {
             int width = this.c.getWidth();
             int height = this.c.getHeight();
             Bitmap.Config config = Bitmap.Config.ARGB_8888;
-            this.f = org.telegram.messenger.js.b(width, height);
+            this.f = org.telegram.messenger.ks.b(width, height);
         }
         try {
             this.c.getBitmap(this.f);
@@ -157,19 +157,19 @@ public class PipRoundVideoView implements org.telegram.messenger.us {
             layoutParams2.flags = 16777736;
             org.telegram.messenger.i0.x3(this.x, this.a, layoutParams2);
             this.x.addView(this.a, this.w);
-            int i13 = org.telegram.messenger.d20.s0;
+            int i13 = org.telegram.messenger.e20.s0;
             this.b = i13;
-            org.telegram.messenger.zs.f(i13).c(this, org.telegram.messenger.zs.e2);
+            org.telegram.messenger.at.f(i13).c(this, org.telegram.messenger.at.e2);
             c(true);
         } catch (Exception e) {
             org.telegram.messenger.f8.g(e, true);
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         af0 af0Var;
-        if (i10 != org.telegram.messenger.zs.e2 || (af0Var = this.e) == null) {
+        if (i10 != org.telegram.messenger.at.e2 || (af0Var = this.e) == null) {
             return;
         }
         af0Var.invalidate();

@@ -3,19 +3,19 @@ package vh;
 import android.content.Context;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.bu0;
-import org.telegram.ui.nb0;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vs;
+import org.telegram.ui.Components.cu0;
+import org.telegram.ui.mb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class g1 extends h1 implements us {
-    public final nb0 b;
+public final class g1 extends h1 implements vs {
+    public final mb0 b;
     public final e1 c;
     public final p1 d;
     public final f1 e;
-    public final c1 f;
+    public final d1 f;
     public final ArrayList h;
     public final ArrayList n;
     public final /* synthetic */ u1 r;
@@ -24,25 +24,25 @@ public final class g1 extends h1 implements us {
     public g1(u1 u1Var, Context context) {
         super(context);
         this.r = u1Var;
-        this.f = new c1();
+        this.f = new d1();
         this.h = new ArrayList();
         this.n = new ArrayList();
-        nb0 nb0Var = new nb0(this, context, 5);
-        this.b = nb0Var;
+        mb0 mb0Var = new mb0(this, context, 5);
+        this.b = mb0Var;
         e1 e1Var = new e1(this);
         this.c = e1Var;
-        nb0Var.setAdapter(e1Var);
+        mb0Var.setAdapter(e1Var);
         f1 f1Var = new f1(this);
         this.e = f1Var;
-        nb0Var.setLayoutManager(f1Var);
-        nb0Var.i(new mg.u1(this, 9));
-        nb0Var.setClipToPadding(true);
-        nb0Var.setVerticalScrollBarEnabled(false);
+        mb0Var.setLayoutManager(f1Var);
+        mb0Var.i(new mg.u1(this, 9));
+        mb0Var.setClipToPadding(true);
+        mb0Var.setVerticalScrollBarEnabled(false);
         ag.y0 y0Var = new ag.y0(this, 19);
-        nb0Var.setOnTouchListener(new org.telegram.ui.ActionBar.d1(7, this, y0Var));
-        nb0Var.setOnItemClickListener(y0Var);
-        nb0Var.setOnScrollListener(new bu0(this, 24));
-        addView(nb0Var, w7.b6.d(-1, -1.0f, zs.E1, 0.0f, 58.0f, 0.0f, 40.0f));
+        mb0Var.setOnTouchListener(new org.telegram.ui.ActionBar.d1(7, this, y0Var));
+        mb0Var.setOnItemClickListener(y0Var);
+        mb0Var.setOnScrollListener(new cu0(this, 24));
+        addView(mb0Var, w7.b6.d(-1, -1.0f, at.E1, 0.0f, 58.0f, 0.0f, 40.0f));
         int i10 = u1.y1;
         p1 p1Var = new p1(context, u1Var.I0);
         this.d = p1Var;
@@ -65,11 +65,11 @@ public final class g1 extends h1 implements us {
     public final float b() {
         int i10 = 0;
         while (true) {
-            nb0 nb0Var = this.b;
-            if (i10 >= nb0Var.getChildCount()) {
+            mb0 mb0Var = this.b;
+            if (i10 >= mb0Var.getChildCount()) {
                 return 0.0f;
             }
-            Object tag = nb0Var.getChildAt(i10).getTag();
+            Object tag = mb0Var.getChildAt(i10).getTag();
             if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
                 return Math.max(0, r2.getBottom());
             }
@@ -82,9 +82,9 @@ public final class g1 extends h1 implements us {
         this.d.setTranslationY(org.telegram.messenger.i0.L(10.0f) + Math.max(0.0f, b()));
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.X0) {
+        if (i10 == at.X0) {
             e1.E(this.c, true);
         }
     }
@@ -93,14 +93,14 @@ public final class g1 extends h1 implements us {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i10 = u1.y1;
-        zs.f(this.r.a).c(this, zs.X0);
+        at.f(this.r.a).c(this, at.X0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         int i10 = u1.y1;
-        zs.f(this.r.a).n(this, zs.X0);
+        at.f(this.r.a).n(this, at.X0);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

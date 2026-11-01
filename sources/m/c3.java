@@ -6,10 +6,10 @@ import android.os.Handler;
 import android.util.SparseArray;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c3 implements j9.t {
     public boolean a;
@@ -25,12 +25,12 @@ public final class c3 implements j9.t {
         if (i11 < 0 || i11 >= unVar.K6.size()) {
             return false;
         }
-        jj jjVar = (jj) unVar.K6.get(i11);
-        if (jjVar.U != 0) {
+        kj kjVar = (kj) unVar.K6.get(i11);
+        if (kjVar.U != 0) {
             return false;
         }
-        if (z10 || sparseArray.get(jjVar.f1(), null) != null) {
-            return z10 && sparseArray.get(jjVar.f1(), null) != null;
+        if (z10 || sparseArray.get(kjVar.f1(), null) != null) {
+            return z10 && sparseArray.get(kjVar.f1(), null) != null;
         }
         return true;
     }
@@ -60,9 +60,9 @@ public final class c3 implements j9.t {
         if (i11 < 0 || i11 >= arrayList.size()) {
             return;
         }
-        jj jjVar = (jj) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(jjVar.f1()) < 0 && sparseArrayArr[1].indexOfKey(jjVar.f1()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(jjVar.f1()) >= 0 || sparseArrayArr[1].indexOfKey(jjVar.f1()) >= 0) && jjVar.U == 0) {
+        kj kjVar = (kj) arrayList.get(i11);
+        if (!z10 || (sparseArrayArr[0].indexOfKey(kjVar.f1()) < 0 && sparseArrayArr[1].indexOfKey(kjVar.f1()) < 0)) {
+            if ((z10 || sparseArrayArr[0].indexOfKey(kjVar.f1()) >= 0 || sparseArrayArr[1].indexOfKey(kjVar.f1()) >= 0) && kjVar.U == 0) {
                 if (z10) {
                     if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
                         this.a = true;
@@ -70,22 +70,22 @@ public final class c3 implements j9.t {
                         if (K != null) {
                             View view = K.a;
                             if (view instanceof org.telegram.ui.Cells.q1) {
-                                un.i2(unVar, view, false, f7, f10);
+                                un.j2(unVar, view, false, f7, f10);
                                 return;
                             }
                         }
-                        unVar.E6(jjVar, false, true);
-                        unVar.xc();
-                        unVar.sd(false);
+                        unVar.H6(kjVar, false, true);
+                        unVar.Cc();
+                        unVar.xd(false);
                     }
                 }
                 this.a = false;
                 K = unVar.z0.K(i10);
                 if (K != null) {
                 }
-                unVar.E6(jjVar, false, true);
-                unVar.xc();
-                unVar.sd(false);
+                unVar.H6(kjVar, false, true);
+                unVar.Cc();
+                unVar.xd(false);
             }
         }
     }

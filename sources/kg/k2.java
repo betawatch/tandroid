@@ -21,14 +21,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.c00;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.d00;
+import org.telegram.messenger.ic;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
@@ -36,9 +36,9 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.fq;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class k2 extends FrameLayout implements t0, us {
+public final class k2 extends FrameLayout implements t0, vs {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
     public boolean D;
     public boolean E;
@@ -57,7 +57,7 @@ public final class k2 extends FrameLayout implements t0, us {
     public final TLRPC.Document R;
     public int S;
     public long T;
-    public final c00 a;
+    public final d00 a;
     public final Paint b;
     public final Paint c;
     public final boolean d;
@@ -78,7 +78,7 @@ public final class k2 extends FrameLayout implements t0, us {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public k2(Context context, c00 c00Var, int i10, int i11, p6 p6Var) {
+    public k2(Context context, d00 d00Var, int i10, int i11, p6 p6Var) {
         super(context);
         boolean[] zArr;
         Paint paint = new Paint(1);
@@ -90,19 +90,19 @@ public final class k2 extends FrameLayout implements t0, us {
         this.n = imageReceiver;
         this.s = i10;
         this.w = i11;
-        this.a = c00Var;
+        this.a = d00Var;
         paint.setColor(-16777216);
         paint2.setColor(i0.b.f(0.5f, t6.w0(t6.Ak, p6Var), -16777216));
         imageReceiver.E0(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        TLRPC.TL_help_premiumPromo tL_help_premiumPromo = ui.b0(i10).D;
-        String p02 = PremiumPreviewFragment.p0(i11);
+        TLRPC.TL_help_premiumPromo tL_help_premiumPromo = vi.b0(i10).D;
+        String q02 = PremiumPreviewFragment.q0(i11);
         if (tL_help_premiumPromo != null) {
             int i12 = 0;
             while (true) {
                 if (i12 >= tL_help_premiumPromo.video_sections.size()) {
                     i12 = -1;
                     break;
-                } else if (tL_help_premiumPromo.video_sections.get(i12).equals(p02)) {
+                } else if (tL_help_premiumPromo.video_sections.get(i12).equals(q02)) {
                     break;
                 } else {
                     i12++;
@@ -113,14 +113,14 @@ public final class k2 extends FrameLayout implements t0, us {
                 i2 i2Var = null;
                 for (int i13 = 0; i13 < document.thumbs.size(); i13++) {
                     if (document.thumbs.get(i13) instanceof TLRPC.TL_photoStrippedSize) {
-                        this.K = new j0.a(getResources(), hc.F("b", document.thumbs.get(i13).bytes));
+                        this.K = new j0.a(getResources(), ic.F("b", document.thumbs.get(i13).bytes));
                         org.telegram.ui.Components.voip.g gVar = new org.telegram.ui.Components.voip.g();
                         gVar.m = 4.0f;
                         gVar.g = 3.5f;
                         gVar.l = true;
-                        c00 c00Var2 = this.a;
+                        d00 d00Var2 = this.a;
                         gVar.o = this;
-                        this.L = new fq(gVar, c00Var2);
+                        this.L = new fq(gVar, d00Var2);
                         i2Var = new i2(this, this.K, this.L);
                         i2Var.x = true;
                     }
@@ -201,7 +201,7 @@ public final class k2 extends FrameLayout implements t0, us {
                         }
                     }
                 } else {
-                    f2 f2Var2 = new f2(tz.o() == 2 ? 800 : tz.o() == 1 ? 400 : 100);
+                    f2 f2Var2 = new f2(uz.o() == 2 ? 800 : uz.o() == 1 ? 400 : 100);
                     this.N = f2Var2;
                     f2Var2.P = p6Var;
                     f2Var2.Q = t6.Nk;
@@ -248,12 +248,12 @@ public final class k2 extends FrameLayout implements t0, us {
 
     public final void a() {
         File file = this.e;
-        if ((file != null && file.exists()) || tz.B0) {
+        if ((file != null && file.exists()) || uz.B0) {
             File file2 = this.e;
             if (file2 == null || !file2.exists()) {
                 this.f = 0.671f;
             } else {
-                if ((zs.e().p & 512) != 0) {
+                if ((at.e().p & 512) != 0) {
                     gg.c cVar = this.r;
                     if (cVar != null) {
                         org.telegram.messenger.i0.r(cVar);
@@ -284,7 +284,7 @@ public final class k2 extends FrameLayout implements t0, us {
     public final void b() {
         Uri uri;
         int i10 = this.s;
-        if ((this.e != null || tz.B0) && this.H == null) {
+        if ((this.e != null || uz.B0) && this.H == null) {
             this.I.a(this.f, 0);
             j2 j2Var = new j2(this, 0);
             this.H = j2Var;
@@ -306,7 +306,7 @@ public final class k2 extends FrameLayout implements t0, us {
                     sb2.append("&mime=");
                     sb2.append(URLEncoder.encode(this.R.mime_type, "UTF-8"));
                     sb2.append("&rid=");
-                    sb2.append(b8.G(i10).F(ui.b0(i10).D));
+                    sb2.append(b8.G(i10).F(vi.b0(i10).D));
                     sb2.append("&name=");
                     sb2.append(URLEncoder.encode(b8.B(this.R), "UTF-8"));
                     sb2.append("&reference=");
@@ -348,9 +348,9 @@ public final class k2 extends FrameLayout implements t0, us {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.Y1) {
+        if (i10 == at.Y1) {
             String str = (String) objArr[0];
             String str2 = this.h;
             if (str2 == null || !str2.equals(str)) {
@@ -467,7 +467,7 @@ public final class k2 extends FrameLayout implements t0, us {
                                 d5.a aVar3 = Utilities.c;
                                 h1Var2.a = Math.abs(((int) aVar3.nextLong()) % 16);
                                 h1Var2.b = Math.abs(((int) aVar3.nextLong()) % 16);
-                                h1Var2.c = Math.abs(((int) aVar3.nextLong()) % zs.X4) + currentTimeMillis + j10;
+                                h1Var2.c = Math.abs(((int) aVar3.nextLong()) % at.X4) + currentTimeMillis + j10;
                                 i20++;
                                 f15 = f15;
                             }
@@ -550,11 +550,11 @@ public final class k2 extends FrameLayout implements t0, us {
                                             canvas.drawBitmap(bitmapArr[h1Var3.a], f18, f19, paint);
                                             paint.setAlpha((int) (i25 * i26 * 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.b], f18, f19, paint);
-                                            paint.setAlpha(zs.e4);
+                                            paint.setAlpha(at.e4);
                                             if (i26 >= 1.0f) {
                                                 h1Var3.a = h1Var3.b;
                                                 h1Var3.b = Math.abs(((int) Utilities.c.nextLong()) % 16);
-                                                h1Var3.c = Math.abs(((int) r2.nextLong()) % zs.X4) + currentTimeMillis + j10;
+                                                h1Var3.c = Math.abs(((int) r2.nextLong()) % at.X4) + currentTimeMillis + j10;
                                             }
                                         } else {
                                             i14 = i22;
@@ -780,7 +780,7 @@ public final class k2 extends FrameLayout implements t0, us {
         if (!this.F) {
             a();
         }
-        zs.f(this.s).c(this, zs.Y1);
+        at.f(this.s).c(this, at.Y1);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -788,7 +788,7 @@ public final class k2 extends FrameLayout implements t0, us {
         super.onDetachedFromWindow();
         this.y = false;
         c();
-        zs.f(this.s).n(this, zs.Y1);
+        at.f(this.s).n(this, at.Y1);
         o oVar = this.P;
         if (oVar != null) {
             HashMap hashMap = (HashMap) oVar.f;

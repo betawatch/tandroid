@@ -7,23 +7,23 @@ import java.util.regex.Pattern;
 import li.t0;
 import li.x0;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.go;
-import org.telegram.ui.Components.lz0;
+import org.telegram.ui.Components.mz0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ay;
-import org.telegram.ui.pb1;
+import org.telegram.ui.nb1;
 import org.telegram.ui.un;
+import org.telegram.ui.zx;
 import rh.b2;
 import rh.e4;
 import rh.x7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j15 = this.d;
                 synchronized (x0Var.g) {
                     if (!t0Var.d && !t0Var.e) {
-                        ((lz0) x0Var.e).a(t0Var.a, t0Var.b, j14, j15);
+                        ((mz0) x0Var.e).a(t0Var.a, t0Var.b, j14, j15);
                         return;
                     }
                     return;
@@ -84,19 +84,19 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((go) this.e).e(this.c, this.d, (HashSet) this.b);
                 return;
             case 5:
-                ay ayVar = (ay) this.e;
+                zx zxVar = (zx) this.e;
                 long j16 = this.c;
                 long j17 = this.d;
-                pb1 pb1Var = (pb1) this.b;
-                if (ayVar.C2 == null) {
-                    ayVar.finishFragment();
+                nb1 nb1Var = (nb1) this.b;
+                if (zxVar.C2 == null) {
+                    zxVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(gs.a(j16, j17));
-                ayVar.C2.y(ayVar, arrayList, null, false, ayVar.J2, ayVar.K2, ayVar.L2, pb1Var);
-                if (ayVar.i2) {
-                    ayVar.C2 = null;
+                arrayList.add(hs.a(j16, j17));
+                zxVar.C2.z(zxVar, arrayList, null, false, zxVar.J2, zxVar.K2, zxVar.L2, nb1Var);
+                if (zxVar.i2) {
+                    zxVar.C2 = null;
                     return;
                 }
                 return;
@@ -106,21 +106,21 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j19 = this.d;
                 un unVar = (un) this.b;
                 Pattern pattern = LaunchActivity.D1;
-                TLRPC.TL_forumTopic f7 = vp.r1(launchActivity.O).r7.f(j18, j19);
+                TLRPC.TL_forumTopic f7 = wp.r1(launchActivity.O).r7.f(j18, j19);
                 StringBuilder s10 = a1.g.s(j18, "LaunchActivity openForum after load ", " ");
                 s10.append(j19);
                 s10.append(" TL_forumTopic ");
                 s10.append(f7);
                 f8.b(s10.toString());
                 if (launchActivity.q0 != null) {
-                    gg.e.a(unVar, gs.a(-j18, j19));
+                    gg.e.a(unVar, hs.a(-j18, j19));
                     ((ActionBarLayout) launchActivity.M()).R(unVar);
                     return;
                 }
                 return;
             case 7:
                 e4 e4Var = (e4) this.e;
-                x7 x7Var = new x7(e4Var.getContext(), e4Var.I0, this.c, 11, null, new a3(e4Var, new boolean[]{false}, this.d, (q20) this.b, 17), 0L);
+                x7 x7Var = new x7(e4Var.getContext(), e4Var.I0, this.c, 11, null, new a3(e4Var, new boolean[]{false}, this.d, (r20) this.b, 17), 0L);
                 x7Var.setOnDismissListener(new b2(e4Var, 1));
                 x7Var.show();
                 return;

@@ -7,11 +7,11 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x2 {
     public final Paint a;
@@ -33,8 +33,8 @@ public final class x2 {
     public final Drawable q;
     public final Drawable r;
     public final Drawable s;
-    public final bi0 t;
-    public final bi0 u;
+    public final ci0 t;
+    public final ci0 u;
 
     public x2(Context context) {
         new RectF();
@@ -49,18 +49,18 @@ public final class x2 {
         this.q = context.getDrawable(R.drawable.media_more);
         this.r = context.getDrawable(R.drawable.menu_stream_pip);
         this.s = context.getDrawable(R.drawable.msg_delete);
-        this.u = new bi0(R.raw.media_mute_unmute, org.telegram.messenger.i0.L(28.0f), org.telegram.messenger.i0.L(28.0f), true, null);
-        bi0 bi0Var = new bi0(R.raw.media_mute_unmute, org.telegram.messenger.i0.L(28.0f), org.telegram.messenger.i0.L(28.0f), true, null);
-        this.t = bi0Var;
-        bi0Var.N(20, false, true);
-        bi0Var.stop();
+        this.u = new ci0(R.raw.media_mute_unmute, org.telegram.messenger.i0.L(28.0f), org.telegram.messenger.i0.L(28.0f), true, null);
+        ci0 ci0Var = new ci0(R.raw.media_mute_unmute, org.telegram.messenger.i0.L(28.0f), org.telegram.messenger.i0.L(28.0f), true, null);
+        this.t = ci0Var;
+        ci0Var.N(20, false, true);
+        ci0Var.stop();
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setColor(1442840575);
         Paint paint2 = new Paint(1);
         this.b = paint2;
         paint2.setColor(-1);
-        int o10 = i0.b.o(-16777216, zs.n1);
+        int o10 = i0.b.o(-16777216, at.n1);
         this.d = context.getDrawable(R.drawable.shadow_story_top);
         this.e = context.getDrawable(R.drawable.shadow_story_bottom);
         Paint paint3 = new Paint();
@@ -70,25 +70,25 @@ public final class x2 {
     }
 
     public final void a(boolean z10, boolean z11) {
-        bi0 bi0Var = this.u;
+        ci0 ci0Var = this.u;
         if (!z11) {
-            bi0Var.N(z10 ? 20 : 0, false, false);
-            bi0Var.P(z10 ? 20 : 0);
+            ci0Var.N(z10 ? 20 : 0, false, false);
+            ci0Var.P(z10 ? 20 : 0);
             return;
         }
         if (z10) {
-            if (bi0Var.a0 > 20) {
-                bi0Var.N(0, false, false);
+            if (ci0Var.a0 > 20) {
+                ci0Var.N(0, false, false);
             }
-            bi0Var.P(20);
-            bi0Var.start();
+            ci0Var.P(20);
+            ci0Var.start();
             return;
         }
-        int i10 = bi0Var.a0;
+        int i10 = ci0Var.a0;
         if (i10 == 0 || i10 >= 43) {
             return;
         }
-        bi0Var.P(43);
-        bi0Var.start();
+        ci0Var.P(43);
+        ci0Var.start();
     }
 }

@@ -18,11 +18,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.jf;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.kf;
-import org.telegram.messenger.x20;
-import org.telegram.messenger.yd;
+import org.telegram.messenger.lf;
+import org.telegram.messenger.y20;
+import org.telegram.messenger.zd;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -35,9 +35,9 @@ import org.telegram.ui.Components.yf0;
 import v7.p8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class n0 implements j9.t, v, kf {
+public final class n0 implements j9.t, v, lf {
     public Object a;
     public Object b;
     public Object c;
@@ -58,9 +58,9 @@ public final class n0 implements j9.t, v, kf {
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
         this.c = a8Var;
         if (yf0Var != null) {
-            org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, cd.L0(2131753756, null), false, p6Var).setOnClickListener(new y7(yf0Var, 0));
+            org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, dd.L0(2131753756, null), false, p6Var).setOnClickListener(new y7(yf0Var, 0));
         }
-        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, cd.L0(2131753881, null), false, p6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z7
+        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, dd.L0(2131753881, null), false, p6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z7
             public final /* synthetic */ m4.n0 b;
 
             {
@@ -89,7 +89,7 @@ public final class n0 implements j9.t, v, kf {
                 }
             }
         });
-        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, cd.L0(2131753878, null), false, p6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z7
+        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, dd.L0(2131753878, null), false, p6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z7
             public final /* synthetic */ m4.n0 b;
 
             {
@@ -119,7 +119,7 @@ public final class n0 implements j9.t, v, kf {
             }
         });
         final int i14 = 2;
-        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, cd.L0(2131753880, null), false, p6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z7
+        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, dd.L0(2131753880, null), false, p6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z7
             public final /* synthetic */ m4.n0 b;
 
             {
@@ -148,8 +148,8 @@ public final class n0 implements j9.t, v, kf {
                 }
             }
         });
-        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i10 == 1 ? cd.L0(2131753863, null) : cd.L0(2131753864, null), false, p6Var).setOnClickListener(new org.telegram.messenger.video.h(this, context, i10, p6Var, a8Var));
-        org.telegram.ui.ActionBar.b1 c10 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, cd.L0(2131753862, null), false, p6Var);
+        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i10 == 1 ? dd.L0(2131753863, null) : dd.L0(2131753864, null), false, p6Var).setOnClickListener(new org.telegram.messenger.video.h(this, context, i10, p6Var, a8Var));
+        org.telegram.ui.ActionBar.b1 c10 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, dd.L0(2131753862, null), false, p6Var);
         this.b = c10;
         final int i15 = 3;
         c10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z7
@@ -208,7 +208,7 @@ public final class n0 implements j9.t, v, kf {
                     a7.V(p80Var, t6.E8, null);
                     p80Var.setMovementMethod(LinkMovementMethod.getInstance());
                     a7.H(p80Var, t6.J6, null);
-                    p80Var.setText(cd.L0(2131753848, null));
+                    p80Var.setText(dd.L0(2131753848, null));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.a(p80Var, b6.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
                     return;
                 }
@@ -272,25 +272,25 @@ public final class n0 implements j9.t, v, kf {
 
     public void k(long j10, float f7) {
         File file = (File) this.b;
-        x20 x20Var = (x20) this.a;
-        if (x20Var.W) {
+        y20 y20Var = (y20) this.a;
+        if (y20Var.W) {
             return;
         }
         if (j10 < 0) {
             j10 = file.length();
         }
         long j11 = j10;
-        if (x20Var.Y || this.d != j11) {
+        if (y20Var.Y || this.d != j11) {
             this.d = j11;
             MediaController mediaController = (MediaController) this.e;
-            jf jfVar = (jf) this.c;
+            kf kfVar = (kf) this.c;
             String[] strArr = MediaController.U1;
-            x20 x20Var2 = jfVar.b;
-            boolean z10 = x20Var2.X;
+            y20 y20Var2 = kfVar.b;
+            boolean z10 = y20Var2.X;
             if (z10) {
-                x20Var2.X = false;
+                y20Var2.X = false;
             }
-            org.telegram.messenger.i0.g3(new yd(mediaController, false, false, jfVar, file, f7, 0L, z10, j11));
+            org.telegram.messenger.i0.g3(new zd(mediaController, false, false, kfVar, file, f7, 0L, z10, j11));
         }
     }
 
@@ -564,11 +564,11 @@ public final class n0 implements j9.t, v, kf {
         this.d = j10;
     }
 
-    public n0(MediaController mediaController, x20 x20Var, File file, jf jfVar) {
+    public n0(MediaController mediaController, y20 y20Var, File file, kf kfVar) {
         this.e = mediaController;
-        this.a = x20Var;
+        this.a = y20Var;
         this.b = file;
-        this.c = jfVar;
+        this.c = kfVar;
         this.d = 0L;
     }
 

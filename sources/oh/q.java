@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import k2.v;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.r5;
-import org.telegram.messenger.vi;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
@@ -23,25 +23,25 @@ import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.h5;
 import org.telegram.ui.Cells.i5;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class q implements h5 {
     public final boolean a;
     public boolean b;
     public final k2 g;
     public final FrameLayout h;
-    public final vi i;
+    public final wi i;
     public final long j;
     public final int k;
     public final boolean l;
     public FrameLayout m;
-    public dw0 n;
-    public dw0 o;
-    public tk0 p;
+    public ew0 n;
+    public ew0 o;
+    public uk0 p;
     public zz q;
     public TLRPC.TL_chatInviteImporter r;
     public p s;
@@ -69,7 +69,7 @@ public abstract class q implements h5 {
         this.k = currentAccount;
         this.a = w3.U(currentAccount, j10);
         this.l = z10;
-        this.i = vi.b(currentAccount);
+        this.i = wi.b(currentAccount);
     }
 
     public static void k(View view, boolean z10, boolean z11) {
@@ -92,14 +92,14 @@ public abstract class q implements h5 {
         view.animate().alpha(f7).setDuration(150L).start();
     }
 
-    public final dw0 a() {
+    public final ew0 a() {
         if (this.n == null) {
             k2 k2Var = this.g;
-            dw0 dw0Var = new dw0(k2Var.getParentActivity(), null, 16, k2Var.getResourceProvider());
-            this.n = dw0Var;
+            ew0 ew0Var = new ew0(k2Var.getParentActivity(), null, 16, k2Var.getResourceProvider());
+            this.n = ew0Var;
             boolean z10 = this.a;
-            dw0Var.d.setText(cd.L0(z10 ? 2131748162 : 2131748212, null));
-            this.n.e.setText(cd.L0(z10 ? 2131748161 : 2131748211, null));
+            ew0Var.d.setText(dd.L0(z10 ? 2131748162 : 2131748212, null));
+            this.n.e.setText(dd.L0(z10 ? 2131748161 : 2131748211, null));
             this.n.setAnimateLayoutChange(true);
             this.n.setVisibility(8);
         }
@@ -122,16 +122,16 @@ public abstract class q implements h5 {
         return this.q;
     }
 
-    public final dw0 c() {
+    public final ew0 c() {
         if (this.o == null) {
             k2 k2Var = this.g;
-            dw0 dw0Var = new dw0(k2Var.getParentActivity(), null, 1, k2Var.getResourceProvider());
-            this.o = dw0Var;
+            ew0 ew0Var = new ew0(k2Var.getParentActivity(), null, 1, k2Var.getResourceProvider());
+            this.o = ew0Var;
             if (this.B) {
-                a7.i(t6.d6, dw0Var, k2Var.getResourceProvider());
+                a7.i(t6.d6, ew0Var, k2Var.getResourceProvider());
             }
-            this.o.d.setText(cd.L0(2131748183, null));
-            this.o.e.setText(cd.L0(2131745824, null));
+            this.o.d.setText(dd.L0(2131748183, null));
+            this.o.e.setText(dd.L0(2131745824, null));
             this.o.setAnimateLayoutChange(true);
             this.o.setVisibility(8);
         }
@@ -146,8 +146,8 @@ public abstract class q implements h5 {
         TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = new TLRPC.TL_messages_hideChatJoinRequest();
         tL_messages_hideChatJoinRequest.approved = z10;
         int i10 = this.k;
-        tL_messages_hideChatJoinRequest.peer = vp.r1(i10).i1(-this.j);
-        tL_messages_hideChatJoinRequest.user_id = vp.r1(i10).p1(user);
+        tL_messages_hideChatJoinRequest.peer = wp.r1(i10).i1(-this.j);
+        tL_messages_hideChatJoinRequest.user_id = wp.r1(i10).p1(user);
         ConnectionsManager.getInstance(i10).sendRequest(tL_messages_hideChatJoinRequest, new m1(this, tL_chatInviteImporter, z10, user, tL_messages_hideChatJoinRequest));
     }
 
@@ -170,34 +170,34 @@ public abstract class q implements h5 {
         ArrayList arrayList = this.e;
         if (isEmpty) {
             z12 = !arrayList.isEmpty() || z10;
-            dw0 dw0Var = this.n;
-            if (dw0Var != null) {
-                dw0Var.setVisibility(z12 ? 4 : 0);
+            ew0 ew0Var = this.n;
+            if (ew0Var != null) {
+                ew0Var.setVisibility(z12 ? 4 : 0);
             }
-            dw0 dw0Var2 = this.o;
-            if (dw0Var2 != null) {
-                dw0Var2.setVisibility(4);
+            ew0 ew0Var2 = this.o;
+            if (ew0Var2 != null) {
+                ew0Var2.setVisibility(4);
             }
         } else {
             z12 = !this.c.isEmpty() || z10;
-            dw0 dw0Var3 = this.n;
-            if (dw0Var3 != null) {
-                dw0Var3.setVisibility(4);
+            ew0 ew0Var3 = this.n;
+            if (ew0Var3 != null) {
+                ew0Var3.setVisibility(4);
             }
-            dw0 dw0Var4 = this.o;
-            if (dw0Var4 != null) {
-                dw0Var4.setVisibility(z12 ? 4 : 0);
+            ew0 ew0Var4 = this.o;
+            if (ew0Var4 != null) {
+                ew0Var4.setVisibility(z12 ? 4 : 0);
             }
         }
         k(this.p, z12, true);
         if (arrayList.isEmpty()) {
-            dw0 dw0Var5 = this.n;
-            if (dw0Var5 != null) {
-                dw0Var5.setVisibility(0);
+            ew0 ew0Var5 = this.n;
+            if (ew0Var5 != null) {
+                ew0Var5.setVisibility(0);
             }
-            dw0 dw0Var6 = this.o;
-            if (dw0Var6 != null) {
-                dw0Var6.setVisibility(4);
+            ew0 ew0Var6 = this.o;
+            if (ew0Var6 != null) {
+                ew0Var6.setVisibility(4);
             }
             k(this.q, false, false);
             if (this.y && this.l) {
@@ -330,8 +330,8 @@ public abstract class q implements h5 {
 
     public final void i(boolean z10) {
         int i10;
-        tk0 tk0Var = this.p;
-        if (tk0Var == null || (i10 = !this.f.c.B ? 1 : 0) < 0 || i10 >= tk0Var.getChildCount()) {
+        uk0 uk0Var = this.p;
+        if (uk0Var == null || (i10 = !this.f.c.B ? 1 : 0) < 0 || i10 >= uk0Var.getChildCount()) {
             return;
         }
         this.p.getChildAt(i10).setEnabled(z10);
@@ -355,9 +355,9 @@ public abstract class q implements h5 {
             this.f.E(this.e);
             k(this.p, true, true);
             k(this.q, false, false);
-            dw0 dw0Var = this.o;
-            if (dw0Var != null) {
-                dw0Var.setVisibility(4);
+            ew0 ew0Var = this.o;
+            if (ew0Var != null) {
+                ew0Var.setVisibility(4);
             }
             if (str == null && this.l) {
                 this.g.getActionBar().p().j(0).setVisibility(this.e.isEmpty() ? 8 : 0);
@@ -372,13 +372,13 @@ public abstract class q implements h5 {
             r5Var.d(fVar, 300L);
         }
         if (str != null) {
-            dw0 dw0Var2 = this.n;
-            if (dw0Var2 != null) {
-                dw0Var2.setVisibility(4);
+            ew0 ew0Var2 = this.n;
+            if (ew0Var2 != null) {
+                ew0Var2.setVisibility(4);
             }
-            dw0 dw0Var3 = this.o;
-            if (dw0Var3 != null) {
-                dw0Var3.setVisibility(4);
+            ew0 ew0Var3 = this.o;
+            if (ew0Var3 != null) {
+                ew0Var3.setVisibility(4);
             }
         }
     }

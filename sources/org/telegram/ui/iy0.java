@@ -1,97 +1,35 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.View;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class iy0 extends Drawable implements org.telegram.ui.ActionBar.t5 {
-    public final org.telegram.ui.Components.e6 a;
-    public final Paint b;
-    public int c;
-    public float d;
-    public float e;
-    public final org.telegram.ui.Cells.j0 f;
-    public org.telegram.ui.Cells.s0 h;
+public final class iy0 extends TextView implements org.telegram.ui.ActionBar.k6 {
+    public final /* synthetic */ ProfileActivity a;
 
-    public iy0(String str) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.d = 1.0f;
-        this.e = 1.0f;
-        this.f = new org.telegram.ui.Cells.j0(this);
-        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(false, false, false);
-        this.a = e6Var;
-        e6Var.setCallback(new ur(1, this));
-        e6Var.t(str, true, true);
-        e6Var.w(org.telegram.messenger.i0.L(11.0f));
-        e6Var.b = 17;
-        paint.setColor(520093696);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iy0(ProfileActivity profileActivity, Context context) {
+        super(context);
+        this.a = profileActivity;
+        updateColors();
     }
 
-    public final void a(int i10) {
-        Paint paint = this.b;
-        if (paint.getColor() != i10) {
-            paint.setColor(i10);
-            invalidateSelf();
-        }
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.t6.G6));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float f7 = this.d * this.e;
-        if (f7 <= 0.0f) {
-            return;
-        }
-        RectF rectF = org.telegram.messenger.i0.P;
-        rectF.set(getBounds());
-        canvas.save();
-        float a2 = this.f.a(0.1f);
-        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
-        Paint paint = this.b;
-        int alpha = paint.getAlpha();
-        paint.setAlpha((int) (alpha * f7));
-        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(20.0f), org.telegram.messenger.i0.L(20.0f), paint);
-        paint.setAlpha(alpha);
-        int i10 = this.c;
-        org.telegram.ui.Components.e6 e6Var = this.a;
-        e6Var.u(i10);
-        e6Var.B = (int) (f7 * 255.0f);
-        e6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        e6Var.draw(canvas);
-        canvas.restore();
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return (int) (this.d * 255.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.i0.L(17.33f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (this.a.d + org.telegram.messenger.i0.L(11.0f));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10 / 255.0f;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        setTextColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.G6, this.a.z0));
     }
 }

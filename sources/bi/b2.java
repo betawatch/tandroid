@@ -10,12 +10,12 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final class b2 extends uu0 {
+public final class b2 extends vu0 {
     public boolean f0;
     public final Paint g0;
     public final RectF h0;
@@ -30,7 +30,7 @@ public final class b2 extends uu0 {
         this.h0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         k2 k2Var = this.i0;
         Rect rect = k2Var.x;
@@ -81,7 +81,7 @@ public final class b2 extends uu0 {
         int action = keyEvent.getAction();
         k2 k2Var = this.i0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
-            if (k2Var.u0()) {
+            if (k2Var.v0()) {
                 org.telegram.messenger.m5.n(null, 2131746020, new cc(k2Var.X, k2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
@@ -106,7 +106,7 @@ public final class b2 extends uu0 {
         if (!k2Var.P.u3.x() || !k2Var.P.v3.onTouchEvent(motionEvent)) {
             int height = (!k2Var.C0 || (vyVar = k2Var.A0) == null) ? (getHeight() - org.telegram.messenger.i0.L(60.0f)) - Math.max(Math.max(k2Var.D0, k2Var.T0), k2Var.U0) : (int) vyVar.getY();
             if (motionEvent.getAction() == 0 && k2Var.B0 && motionEvent.getY() < height) {
-                k2Var.o0(true);
+                k2Var.p0(true);
             }
             if (motionEvent.getAction() == 0) {
                 if (motionEvent.getY() > org.telegram.messenger.i0.L(60.0f) + getPaddingTop()) {

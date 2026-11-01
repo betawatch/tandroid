@@ -1,21 +1,21 @@
 package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
-import org.telegram.ui.f70;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vs;
+import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class z implements Runnable, us {
+public final class z implements Runnable, vs {
     public boolean a;
-    public final /* synthetic */ zs b;
-    public final /* synthetic */ f70 c;
+    public final /* synthetic */ at b;
+    public final /* synthetic */ if0 c;
     public final /* synthetic */ k0 d;
 
-    public z(zs zsVar, f70 f70Var, k0 k0Var) {
-        this.b = zsVar;
-        this.c = f70Var;
+    public z(at atVar, if0 if0Var, k0 k0Var) {
+        this.b = atVar;
+        this.c = if0Var;
         this.d = k0Var;
     }
 
@@ -40,9 +40,9 @@ public final class z implements Runnable, us {
         run();
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.a4) {
+        if (i10 == at.a4) {
             a();
         }
     }
@@ -54,7 +54,7 @@ public final class z implements Runnable, us {
         }
         this.a = true;
         org.telegram.messenger.i0.r(this);
-        this.b.n(this, zs.a4);
+        this.b.n(this, at.a4);
         this.c.run();
     }
 }

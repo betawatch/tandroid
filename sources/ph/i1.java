@@ -8,11 +8,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import org.telegram.messenger.sc;
+import org.telegram.messenger.tc;
 import org.telegram.ui.ActionBar.w5;
 import rh.s8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i1 extends Drawable {
     public final int a;
@@ -30,7 +30,7 @@ public final class i1 extends Drawable {
     }
 
     public final void a() {
-        boolean z10 = this.e != null && this.i && sc.e(131072);
+        boolean z10 = this.e != null && this.i && tc.e(131072);
         if (this.f == z10) {
             return;
         }

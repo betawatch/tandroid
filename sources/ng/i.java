@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import k2.u;
 import mg.y1;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i0;
+import org.telegram.messenger.is;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -26,22 +26,22 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Cells.z3;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.ep;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import qg.k;
 import s4.c1;
 import s4.o0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i extends hg.c {
     public final p6 d;
     public final Context e;
-    public tk0 f;
+    public uk0 f;
     public ArrayList n;
     public boolean s;
     public z3 w;
@@ -56,11 +56,11 @@ public final class i extends hg.c {
         this.x = z10;
         this.d = p6Var;
         l lVar = new l(this, 23);
-        hs a02 = hs.a0(d20.s0);
+        is a02 = is.a0(e20.s0);
         a02.a.c(new u(25, a02, lVar));
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -69,7 +69,7 @@ public final class i extends hg.c {
     public final int F(TLRPC.Chat chat) {
         Integer num;
         int i10;
-        TLRPC.ChatFull M0 = vp.r1(d20.s0).M0(chat.id);
+        TLRPC.ChatFull M0 = wp.r1(e20.s0).M0(chat.id);
         if (M0 != null && (i10 = M0.participants_count) > 0) {
             return i10;
         }
@@ -139,7 +139,7 @@ public final class i extends hg.c {
             }
             if (i12 == 5) {
                 try {
-                    ((dw0) view).b.getImageReceiver().P0(false);
+                    ((ew0) view).b.getImageReceiver().P0(false);
                     return;
                 } catch (Exception unused) {
                     return;
@@ -224,14 +224,14 @@ public final class i extends hg.c {
                     TLRPC.InputPeer inputPeer = hVar.d;
                     if (inputPeer != null) {
                         if (inputPeer instanceof TLRPC.TL_inputPeerSelf) {
-                            kVar.setUser(d20.i(d20.s0).f());
+                            kVar.setUser(e20.i(e20.s0).f());
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerUser) {
-                            kVar.setUser(vp.r1(d20.s0).Z1(Long.valueOf(inputPeer.user_id)));
+                            kVar.setUser(wp.r1(e20.s0).Z1(Long.valueOf(inputPeer.user_id)));
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
-                            TLRPC.Chat L0 = vp.r1(d20.s0).L0(Long.valueOf(inputPeer.chat_id));
+                            TLRPC.Chat L0 = wp.r1(e20.s0).L0(Long.valueOf(inputPeer.chat_id));
                             kVar.h(F(L0), L0);
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
-                            TLRPC.Chat L02 = vp.r1(d20.s0).L0(Long.valueOf(inputPeer.channel_id));
+                            TLRPC.Chat L02 = wp.r1(e20.s0).L0(Long.valueOf(inputPeer.channel_id));
                             kVar.h(F(L02), L02);
                         }
                     }
@@ -277,11 +277,11 @@ public final class i extends hg.c {
         } else {
             p6 p6Var = this.d;
             if (i10 == 5) {
-                dw0 dw0Var = new dw0(context, null, 1, p6Var);
-                dw0Var.d.setText(cd.L0(2131748183, null));
-                dw0Var.e.setText(cd.L0(2131745824, null));
-                dw0Var.a.setTranslationY(i0.L(24.0f));
-                kVar = dw0Var;
+                ew0 ew0Var = new ew0(context, null, 1, p6Var);
+                ew0Var.d.setText(dd.L0(2131748183, null));
+                ew0Var.e.setText(dd.L0(2131745824, null));
+                ew0Var.a.setTranslationY(i0.L(24.0f));
+                kVar = ew0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {
@@ -318,7 +318,7 @@ public final class i extends hg.c {
                 }
             }
         }
-        return new ck0(kVar);
+        return new dk0(kVar);
     }
 
     @Override // s4.g0

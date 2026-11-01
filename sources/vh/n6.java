@@ -6,22 +6,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bn;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n6 extends hg.c {
     public final Context d;
     public final org.telegram.ui.ActionBar.p6 e;
     public final k6 f;
-    public tk0 h;
+    public uk0 h;
     public final /* synthetic */ r6 n;
 
     public n6(r6 r6Var, Context context, org.telegram.ui.ActionBar.p6 p6Var, k6 k6Var, th.r2 r2Var) {
@@ -31,7 +31,7 @@ public final class n6 extends hg.c {
         this.f = k6Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 3 && this.n.W.w1) || i10 == 7 || i10 == 9 || i10 == 10;
@@ -116,8 +116,8 @@ public final class n6 extends hg.c {
         }
         if (i13 == -1) {
             if (g6Var.o > 0) {
-                tk0 tk0Var = this.h;
-                i11 = Math.max(((tk0Var == null || tk0Var.getMeasuredHeight() <= 0) ? org.telegram.messenger.i0.q.y : this.h.getMeasuredHeight() + r6Var.T) - g6Var.o, org.telegram.messenger.i0.L(120.0f));
+                uk0 uk0Var = this.h;
+                i11 = Math.max(((uk0Var == null || uk0Var.getMeasuredHeight() <= 0) ? org.telegram.messenger.i0.q.y : this.h.getMeasuredHeight() + r6Var.T) - g6Var.o, org.telegram.messenger.i0.L(120.0f));
                 view.setTag(33);
             } else {
                 i11 = g6Var.p;
@@ -151,7 +151,7 @@ public final class n6 extends hg.c {
         }
         if (i13 == 5) {
             try {
-                ((dw0) view).b.getImageReceiver().P0(false);
+                ((ew0) view).b.getImageReceiver().P0(false);
                 return;
             } catch (Exception unused) {
                 return;
@@ -201,8 +201,8 @@ public final class n6 extends hg.c {
         }
         if (i13 == 10) {
             int i18 = w6.U1;
-            int i19 = (int) vp.r1(w6Var.a).J6;
-            int[] a2 = org.telegram.ui.Cells.x7.a(new int[]{0, 1, 10, 50, 100, zs.e3, zs.Z3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, i19);
+            int i19 = (int) wp.r1(w6Var.a).J6;
+            int[] a2 = org.telegram.ui.Cells.x7.a(new int[]{0, 1, 10, 50, 100, at.e3, at.Z3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, i19);
             int j10 = Utilities.j(w6Var.y1, i19, 0);
             th.m1 m1Var = new th.m1(14);
             org.telegram.ui.Cells.w7 w7Var = new org.telegram.ui.Cells.w7();
@@ -240,11 +240,11 @@ public final class n6 extends hg.c {
                     x7Var = new org.telegram.ui.Cells.p4(context, p6Var);
                     org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.h5, x7Var, p6Var);
                 } else if (i10 == 5) {
-                    dw0 dw0Var = new dw0(context, null, 1, p6Var);
-                    dw0Var.d.setText(cd.L0(2131748183, null));
-                    dw0Var.e.setText(cd.L0(2131745824, null));
-                    dw0Var.a.setTranslationY(org.telegram.messenger.i0.L(24.0f));
-                    view = dw0Var;
+                    ew0 ew0Var = new ew0(context, null, 1, p6Var);
+                    ew0Var.d.setText(dd.L0(2131748183, null));
+                    ew0Var.e.setText(dd.L0(2131745824, null));
+                    ew0Var.a.setTranslationY(org.telegram.messenger.i0.L(24.0f));
+                    view = ew0Var;
                 } else if (i10 == 6) {
                     x7Var = new org.telegram.ui.Cells.b9(context, p6Var);
                     x7Var.setBackgroundColor(-15921907);
@@ -261,6 +261,6 @@ public final class n6 extends hg.c {
                 x7Var = view;
             }
         }
-        return new ck0(x7Var);
+        return new dk0(x7Var);
     }
 }

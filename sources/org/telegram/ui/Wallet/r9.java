@@ -28,34 +28,34 @@ import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.p51;
 import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.r51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.s51;
 import org.telegram.ui.Components.u80;
-import org.telegram.ui.ra1;
+import org.telegram.ui.pa1;
 import org.telegram.ui.un;
-import org.telegram.ui.y01;
+import org.telegram.ui.z01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class r9 extends r51 implements us {
+public final class r9 extends s51 implements vs {
     public LinearLayout D;
     public q9 E;
     public ShapeDrawable F;
@@ -136,33 +136,33 @@ public final class r9 extends r51 implements us {
         k0.x(this.currentAccount).a0(user, new e9(this, 2));
     }
 
-    public static void c0(r9 r9Var) {
-        b6.I0(r9Var.currentAccount, r9Var.getParentActivity(), r9Var.getResourceProvider());
+    public static void d0(r9 r9Var) {
+        b6.J0(r9Var.currentAccount, r9Var.getParentActivity(), r9Var.getResourceProvider());
     }
 
-    public static void d0(final r9 r9Var) {
+    public static void e0(final r9 r9Var) {
         vh.d dVar = r9Var.d0;
         if (!dVar.c0 || dVar.Q) {
             return;
         }
         final k0 x10 = k0.x(r9Var.currentAccount);
-        long o02 = r9Var.o0();
+        long p02 = r9Var.p0();
         long v = x10.v();
-        if (r9Var.r || !WalletEngine2.isValidRecipientAddress(r9Var.h) || o02 <= 0) {
+        if (r9Var.r || !WalletEngine2.isValidRecipientAddress(r9Var.h) || p02 <= 0) {
             return;
         }
-        long j10 = vp.r1(r9Var.currentAccount).y7.l0.a.c;
-        if (o02 < j10) {
-            String k02 = r9Var.k0 ? r9Var.k0(j10, r9Var.m0()) : p0(j10);
-            r9Var.E.setAmountText(k02);
-            r9Var.H.setSelection(k02.length());
+        long j10 = wp.r1(r9Var.currentAccount).y7.l0.a.c;
+        if (p02 < j10) {
+            String l02 = r9Var.k0 ? r9Var.l0(j10, r9Var.n0()) : q0(j10);
+            r9Var.E.setAmountText(l02);
+            r9Var.H.setSelection(l02.length());
             EditTextBoldCursor editTextBoldCursor = r9Var.H;
             int i10 = -r9Var.o0;
             r9Var.o0 = i10;
             org.telegram.messenger.i0.F3(i10, editTextBoldCursor, null);
             return;
         }
-        if (o02 > v) {
+        if (p02 > v) {
             org.telegram.messenger.t2.D.a();
             p80 p80Var = r9Var.Q;
             int i11 = -r9Var.o0;
@@ -171,8 +171,8 @@ public final class r9 extends r51 implements us {
             return;
         }
         long j11 = r9Var.e0;
-        if (j11 >= 0 && o02 + j11 > v) {
-            o02 -= j11;
+        if (j11 >= 0 && p02 + j11 > v) {
+            p02 -= j11;
         }
         r9Var.I = false;
         EditTextBoldCursor editTextBoldCursor2 = r9Var.H;
@@ -185,17 +185,17 @@ public final class r9 extends r51 implements us {
         r9Var.q0 = null;
         if (r9Var.f != null && TextUtils.isEmpty(r9Var.n)) {
             r9Var.p0 = true;
-            x10.d0(r9Var.f, r9Var.h, o02, r9Var.g0, r9Var.h0 ? r9Var.q0() : null, null, null, new g9(r9Var, 0), new g9(r9Var, 1), null);
+            x10.d0(r9Var.f, r9Var.h, p02, r9Var.g0, r9Var.h0 ? r9Var.r0() : null, null, null, new g9(r9Var, 0), new g9(r9Var, 1), null);
             return;
         }
         final String str = r9Var.g0;
-        byte[] q02 = r9Var.h0 ? r9Var.q0() : null;
-        boolean z10 = q02 != null;
+        byte[] r02 = r9Var.h0 ? r9Var.r0() : null;
+        boolean z10 = r02 != null;
         if (!x10.F()) {
-            final long j12 = o02;
+            final long j12 = p02;
             final boolean z11 = z10;
-            x10.i(r9Var.h, j12, str, q02, new j20() { // from class: org.telegram.ui.Wallet.i9
-                @Override // org.telegram.messenger.j20
+            x10.i(r9Var.h, j12, str, r02, new k20() { // from class: org.telegram.ui.Wallet.i9
+                @Override // org.telegram.messenger.k20
                 public final void a(Object obj, Object obj2) {
                     TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                     String str2 = (String) obj2;
@@ -210,7 +210,7 @@ public final class r9 extends r51 implements us {
                     wallettransaction.comment_encrypted = z11;
                     wallettransaction.date = r9Var2.getConnectionsManager().getCurrentTime();
                     org.telegram.messenger.i0.v1(r9Var2.H);
-                    b6.F0(r9Var2.getParentActivity(), r9Var2.getCurrentAccount(), wallettransaction, new h9(r9Var2, x10, j12, 1), new e9(r9Var2, 4), r9Var2.q0(), null, r9Var2.getResourceProvider());
+                    b6.G0(r9Var2.getParentActivity(), r9Var2.getCurrentAccount(), wallettransaction, new h9(r9Var2, x10, j12, 1), new e9(r9Var2, 4), r9Var2.r0(), null, r9Var2.getResourceProvider());
                     org.telegram.messenger.i0.h3(new c9(r9Var2, 3), 1000L);
                 }
             });
@@ -223,13 +223,13 @@ public final class r9 extends r51 implements us {
         wallettransaction.date = r9Var.getConnectionsManager().getCurrentTime();
         wallettransaction.fee = Math.max(0L, r9Var.e0);
         wallettransaction.gasless = true;
-        wallettransaction.amount = o02;
+        wallettransaction.amount = p02;
         org.telegram.messenger.i0.v1(r9Var.H);
-        b6.F0(r9Var.getParentActivity(), r9Var.getCurrentAccount(), wallettransaction, new h9(r9Var, x10, o02, 0), new e9(r9Var, 3), r9Var.q0(), null, r9Var.getResourceProvider());
+        b6.G0(r9Var.getParentActivity(), r9Var.getCurrentAccount(), wallettransaction, new h9(r9Var, x10, p02, 0), new e9(r9Var, 3), r9Var.r0(), null, r9Var.getResourceProvider());
         org.telegram.messenger.i0.h3(new c9(r9Var, 2), 1000L);
     }
 
-    public static void e0(r9 r9Var, String str) {
+    public static void f0(r9 r9Var, String str) {
         if ("PASSCODE_FAILED".equalsIgnoreCase(str)) {
             r9Var.p0 = false;
             r9Var.d0.setLoading(false);
@@ -242,7 +242,7 @@ public final class r9 extends r51 implements us {
             return;
         }
         if (!r9Var.f0) {
-            r9Var.v0();
+            r9Var.w0();
             return;
         }
         org.telegram.ui.ActionBar.z4 parentLayout = r9Var.getParentLayout();
@@ -273,36 +273,36 @@ public final class r9 extends r51 implements us {
             size--;
         }
         if (r9Var.t0 == null) {
-            r9Var.getNotificationCenter().k(zs.v, Long.valueOf(j10), Boolean.FALSE);
-            un ha = un.ha(j10);
-            ha.setCurrentAccount(r9Var.currentAccount);
-            if (!((ActionBarLayout) parentLayout).c(parentLayout.getFragmentStack().size() - 1, ha)) {
+            r9Var.getNotificationCenter().k(at.v, Long.valueOf(j10), Boolean.FALSE);
+            un ma2 = un.ma(j10);
+            ma2.setCurrentAccount(r9Var.currentAccount);
+            if (!((ActionBarLayout) parentLayout).c(parentLayout.getFragmentStack().size() - 1, ma2)) {
                 r9Var.finishFragment();
                 return;
             }
-            r9Var.t0 = ha;
+            r9Var.t0 = ma2;
         }
         r9Var.finishFragment();
     }
 
-    public static void f0(r9 r9Var, TL_wallet.walletUserAddress walletuseraddress) {
+    public static void g0(r9 r9Var, TL_wallet.walletUserAddress walletuseraddress) {
         r9Var.r = false;
         r9Var.e = walletuseraddress;
         if (walletuseraddress != null && walletuseraddress.user_id != 0) {
-            r9Var.f = vp.r1(r9Var.currentAccount).Z1(Long.valueOf(walletuseraddress.user_id));
+            r9Var.f = wp.r1(r9Var.currentAccount).Z1(Long.valueOf(walletuseraddress.user_id));
         }
         ii iiVar = r9Var.a;
         if (iiVar != null) {
             iiVar.f3.O(true);
         }
-        r9Var.B0();
+        r9Var.C0();
         w8 w8Var = r9Var.w;
         if (w8Var != null) {
             w8Var.a(r9Var.h, r9Var.f);
         }
     }
 
-    public static int l0(BigDecimal bigDecimal) {
+    public static int m0(BigDecimal bigDecimal) {
         if (bigDecimal.signum() <= 0) {
             return 9;
         }
@@ -314,12 +314,12 @@ public final class r9 extends r51 implements us {
         return i10;
     }
 
-    public static String p0(long j10) {
+    public static String q0(long j10) {
         BigDecimal scale = BigDecimal.valueOf(j10).movePointLeft(9).setScale(2, RoundingMode.HALF_UP);
         return (scale.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : scale.stripTrailingZeros()).toPlainString();
     }
 
-    public static BigDecimal u0(String str) {
+    public static BigDecimal v0(String str) {
         if (TextUtils.isEmpty(str)) {
             return BigDecimal.ZERO;
         }
@@ -331,7 +331,7 @@ public final class r9 extends r51 implements us {
         }
     }
 
-    public static void y0(SpannableStringBuilder spannableStringBuilder, int i10, int i11, char c10) {
+    public static void z0(SpannableStringBuilder spannableStringBuilder, int i10, int i11, char c10) {
         int i12 = i10 + 1;
         while (true) {
             int i13 = i12 + 1;
@@ -350,13 +350,21 @@ public final class r9 extends r51 implements us {
         }
     }
 
-    public final void A0(boolean z10) {
+    public final void A0(String str) {
+        this.n = str;
+        org.telegram.ui.ActionBar.l lVar = this.actionBar;
+        if (lVar != null) {
+            lVar.setTitle(dd.L0(2131743042, null));
+        }
+    }
+
+    public final void B0(boolean z10) {
         if (z10) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) cd.L0(2131743110, null));
+            spannableStringBuilder.append((CharSequence) dd.L0(2131743110, null));
             spannableStringBuilder.append((CharSequence) " ");
             int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) cd.L0(2131743163, null));
+            spannableStringBuilder.append((CharSequence) dd.L0(2131743163, null));
             spannableStringBuilder.append((CharSequence) " >");
             dq dqVar = new dq(R.drawable.settings_arrow, 0);
             float N = org.telegram.messenger.i0.N(0.66f);
@@ -369,39 +377,39 @@ public final class r9 extends r51 implements us {
         this.Q.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).setDuration(320L).setInterpolator(gr.h).start();
     }
 
-    public final void B0() {
-        D0();
+    public final void C0() {
+        E0();
         if (this.H == null || this.d0 == null) {
             return;
         }
         k0 x10 = k0.x(this.currentAccount);
         long v = x10.v();
-        long o02 = o0();
-        long j10 = vp.r1(this.currentAccount).y7.l0.a.c;
-        if (o02 > 0 && o02 < j10) {
-            String k02 = this.k0 ? k0(j10, m0()) : p0(j10);
-            this.E.setAmountText(k02);
-            this.H.setSelection(k02.length());
+        long p02 = p0();
+        long j10 = wp.r1(this.currentAccount).y7.l0.a.c;
+        if (p02 > 0 && p02 < j10) {
+            String l02 = this.k0 ? l0(j10, n0()) : q0(j10);
+            this.E.setAmountText(l02);
+            this.H.setSelection(l02.length());
             EditTextBoldCursor editTextBoldCursor = this.H;
             int i10 = -this.o0;
             this.o0 = i10;
             org.telegram.messenger.i0.F3(i10, editTextBoldCursor, null);
             return;
         }
-        boolean z10 = WalletEngine2.isValidRecipientAddress(this.h) && !this.r && o02 > 0 && o02 <= v;
-        A0(!TextUtils.isEmpty(this.H.getText()) && o02 > v);
-        long o03 = o0();
+        boolean z10 = WalletEngine2.isValidRecipientAddress(this.h) && !this.r && p02 > 0 && p02 <= v;
+        B0(!TextUtils.isEmpty(this.H.getText()) && p02 > v);
+        long p03 = p0();
         if (this.m0 == null) {
             this.m0 = new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US));
         }
-        String format = o03 > 0 ? this.m0.format(BigDecimal.valueOf(o03, 9)) : "";
+        String format = p03 > 0 ? this.m0.format(BigDecimal.valueOf(p03, 9)) : "";
         this.d0.setLoading(this.r || this.p0);
-        this.d0.i(TextUtils.isEmpty(format) ? cd.L0(2131743046, null) : cd.V(null, null, 2131743047, k0.l("Grams", format, 2131749516)), true, true);
+        this.d0.i(TextUtils.isEmpty(format) ? dd.L0(2131743046, null) : dd.V(null, null, 2131743047, k0.l("Grams", format, 2131749516)), true, true);
         this.d0.setEnabled(z10);
-        C0();
-        E0();
+        D0();
+        F0();
         if (!this.k0) {
-            this.N.setText(n0(x10, o02));
+            this.N.setText(o0(x10, p02));
             return;
         }
         org.telegram.ui.Components.f6 f6Var = this.N;
@@ -413,21 +421,21 @@ public final class r9 extends r51 implements us {
             this.n0 = decimalFormat;
             decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
         }
-        spannableStringBuilder.append((CharSequence) this.n0.format(BigDecimal.valueOf(o02).movePointLeft(9)));
-        y0(spannableStringBuilder, length, spannableStringBuilder.length(), '.');
+        spannableStringBuilder.append((CharSequence) this.n0.format(BigDecimal.valueOf(p02).movePointLeft(9)));
+        z0(spannableStringBuilder, length, spannableStringBuilder.length(), '.');
         spannableStringBuilder.append((CharSequence) " ");
         int length2 = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) cd.L0(2131749525, null));
+        spannableStringBuilder.append((CharSequence) dd.L0(2131749525, null));
         spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85714287f), length2, spannableStringBuilder.length(), 33);
         f6Var.setText(spannableStringBuilder.append((CharSequence) " ").append((CharSequence) this.L));
     }
 
-    public final void C0() {
+    public final void D0() {
         if (this.R == null) {
             return;
         }
         k0 x10 = k0.x(this.currentAccount);
-        this.R.setText(cd.V(null, null, 2131743211, k0.l("Grams", k0.p(x10.v(), false), 2131749516)));
+        this.R.setText(dd.V(null, null, 2131743211, k0.l("Grams", k0.p(x10.v(), false), 2131749516)));
         boolean z10 = this.W;
         EditTextBoldCursor editTextBoldCursor = this.H;
         this.W = z10 | ((editTextBoldCursor == null || TextUtils.isEmpty(editTextBoldCursor.getText())) ? false : true);
@@ -435,9 +443,9 @@ public final class r9 extends r51 implements us {
         if (z11) {
             long j10 = this.e0;
             if (j10 >= 0) {
-                this.T.setText(cd.V(null, null, 2131743098, k0.s(j10, false)));
+                this.T.setText(dd.V(null, null, 2131743098, k0.s(j10, false)));
             } else {
-                this.T.setText(cd.V(null, null, 2131743098, this.U));
+                this.T.setText(dd.V(null, null, 2131743098, this.U));
             }
         }
         if (this.V == z11) {
@@ -451,7 +459,7 @@ public final class r9 extends r51 implements us {
         }
         float f7 = z11 ? 1.0f : 0.0f;
         if (!this.T.isAttachedToWindow()) {
-            x0(f7);
+            y0(f7);
             return;
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.X, f7);
@@ -462,11 +470,11 @@ public final class r9 extends r51 implements us {
         this.Y.start();
     }
 
-    public final void D0() {
+    public final void E0() {
         if (this.D == null || this.O == null) {
             return;
         }
-        final boolean z10 = o0() > 0 || this.P.getVisibility() == 0;
+        final boolean z10 = p0() > 0 || this.P.getVisibility() == 0;
         if (z10 == this.l0) {
             return;
         }
@@ -517,11 +525,11 @@ public final class r9 extends r51 implements us {
         }).setDuration(320L).setInterpolator(grVar).start();
     }
 
-    public final void E0() {
+    public final void F0() {
         this.E.d(k0.x(this.currentAccount), this.k0);
     }
 
-    public final void F0() {
+    public final void G0() {
         float f7 = this.b0;
         float f10 = 1.0f - f7;
         float max = Math.max(this.c0, Math.max(0.0f, Math.min(1.0f, f7)));
@@ -541,17 +549,17 @@ public final class r9 extends r51 implements us {
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final CharSequence Z() {
-        return cd.L0(2131743042, null);
+    @Override // org.telegram.ui.Components.s51
+    public final CharSequence a0() {
+        return dd.L0(2131743042, null);
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final boolean b0(a51 a51Var, View view) {
+    @Override // org.telegram.ui.Components.s51
+    public final boolean c0(b51 b51Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r51, org.telegram.ui.ActionBar.k2
+    @Override // org.telegram.ui.Components.s51, org.telegram.ui.ActionBar.k2
     public final View createView(Context context) {
         View createView = super.createView(context);
         this.fragmentView = createView;
@@ -565,11 +573,11 @@ public final class r9 extends r51 implements us {
         final int i12 = 0;
         this.actionBar.setCastShadows(false);
         org.telegram.ui.ActionBar.t0 a2 = this.actionBar.p().a(1, R.drawable.ic_ab_other);
-        a2.setContentDescription(cd.L0(2131754839, null));
+        a2.setContentDescription(dd.L0(2131754839, null));
         final int i13 = 2;
-        a2.e(2, R.drawable.msg_addbot, cd.L0(2131743163, null));
-        a2.e(3, R.drawable.menu_comments, cd.L0(2131743231, null));
-        this.actionBar.setActionBarMenuOnItemClick(new y01(this, 11));
+        a2.e(2, R.drawable.msg_addbot, dd.L0(2131743163, null));
+        a2.e(3, R.drawable.menu_comments, dd.L0(2131743231, null));
+        this.actionBar.setActionBarMenuOnItemClick(new z01(this, 11));
         FrameLayout frameLayout = (FrameLayout) this.fragmentView;
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
@@ -607,15 +615,15 @@ public final class r9 extends r51 implements us {
                 BigDecimal valueOf = BigDecimal.valueOf(Long.MAX_VALUE, 9);
                 r9 r9Var = r9.this;
                 if (r9Var.k0) {
-                    BigDecimal m0 = r9Var.m0();
-                    valueOf = valueOf.multiply(m0);
-                    i18 = r9.l0(m0);
+                    BigDecimal n02 = r9Var.n0();
+                    valueOf = valueOf.multiply(n02);
+                    i18 = r9.m0(n02);
                 }
                 int max = Math.max(sb3.indexOf(46), sb3.indexOf(44));
                 if (max >= 0 && (sb3.length() - max) - 1 > i18) {
                     return spanned.subSequence(i16, i17);
                 }
-                if (r9.u0(sb3).compareTo(valueOf) > 0) {
+                if (r9.v0(sb3).compareTo(valueOf) > 0) {
                     return spanned.subSequence(i16, i17);
                 }
                 if (i14 == i15) {
@@ -665,7 +673,7 @@ public final class r9 extends r51 implements us {
         this.N = f6Var;
         f6Var.c.m(0.35f, 320L, 3.5f, gr.h);
         this.N.setScaleProperty(0.25f);
-        this.N.setText(n0(k0.x(this.currentAccount), 0L));
+        this.N.setText(o0(k0.x(this.currentAccount), 0L));
         org.telegram.ui.Components.f6 f6Var2 = this.N;
         int i14 = org.telegram.ui.ActionBar.t6.z6;
         org.telegram.ui.ActionBar.w6 q6 = org.telegram.ui.ActionBar.a7.q(i11, i14);
@@ -693,26 +701,26 @@ public final class r9 extends r51 implements us {
             public final void onClick(View view2) {
                 switch (i13) {
                     case 0:
-                        this.b.t0();
+                        this.b.u0();
                         break;
                     case 1:
-                        r9.d0(this.b);
+                        r9.e0(this.b);
                         break;
                     case 2:
                         r9 r9Var = this.b;
-                        BigDecimal m0 = r9Var.m0();
-                        if (r9Var.k0 || m0.signum() > 0) {
-                            long o02 = r9Var.o0();
+                        BigDecimal n02 = r9Var.n0();
+                        if (r9Var.k0 || n02.signum() > 0) {
+                            long p02 = r9Var.p0();
                             r9Var.k0 = !r9Var.k0;
-                            r9Var.E0();
-                            String k02 = o02 <= 0 ? "" : r9Var.k0 ? r9Var.k0(o02, m0) : r9.p0(o02);
-                            r9Var.E.setAmountText(k02);
-                            r9Var.H.setSelection(k02.length());
+                            r9Var.F0();
+                            String l02 = p02 <= 0 ? "" : r9Var.k0 ? r9Var.l0(p02, n02) : r9.q0(p02);
+                            r9Var.E.setAmountText(l02);
+                            r9Var.H.setSelection(l02.length());
                             break;
                         }
                         break;
                     default:
-                        r9.c0(this.b);
+                        r9.d0(this.b);
                         break;
                 }
             }
@@ -734,7 +742,7 @@ public final class r9 extends r51 implements us {
         this.O.setPadding(org.telegram.messenger.i0.L(10.0f), 0, org.telegram.messenger.i0.L(10.0f), 0);
         this.O.setGravity(17);
         this.O.setTypeface(org.telegram.messenger.i0.o());
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cd.L0(2131743163, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(dd.L0(2131743163, null));
         spannableStringBuilder.append((CharSequence) " >");
         dq dqVar3 = new dq(R.drawable.settings_arrow, 0);
         float N = org.telegram.messenger.i0.N(0.66f);
@@ -756,26 +764,26 @@ public final class r9 extends r51 implements us {
             public final void onClick(View view2) {
                 switch (i16) {
                     case 0:
-                        this.b.t0();
+                        this.b.u0();
                         break;
                     case 1:
-                        r9.d0(this.b);
+                        r9.e0(this.b);
                         break;
                     case 2:
                         r9 r9Var = this.b;
-                        BigDecimal m0 = r9Var.m0();
-                        if (r9Var.k0 || m0.signum() > 0) {
-                            long o02 = r9Var.o0();
+                        BigDecimal n02 = r9Var.n0();
+                        if (r9Var.k0 || n02.signum() > 0) {
+                            long p02 = r9Var.p0();
                             r9Var.k0 = !r9Var.k0;
-                            r9Var.E0();
-                            String k02 = o02 <= 0 ? "" : r9Var.k0 ? r9Var.k0(o02, m0) : r9.p0(o02);
-                            r9Var.E.setAmountText(k02);
-                            r9Var.H.setSelection(k02.length());
+                            r9Var.F0();
+                            String l02 = p02 <= 0 ? "" : r9Var.k0 ? r9Var.l0(p02, n02) : r9.q0(p02);
+                            r9Var.E.setAmountText(l02);
+                            r9Var.H.setSelection(l02.length());
                             break;
                         }
                         break;
                     default:
-                        r9.c0(this.b);
+                        r9.d0(this.b);
                         break;
                 }
             }
@@ -825,32 +833,32 @@ public final class r9 extends r51 implements us {
             public final void onClick(View view2) {
                 switch (i12) {
                     case 0:
-                        this.b.t0();
+                        this.b.u0();
                         break;
                     case 1:
-                        r9.d0(this.b);
+                        r9.e0(this.b);
                         break;
                     case 2:
                         r9 r9Var = this.b;
-                        BigDecimal m0 = r9Var.m0();
-                        if (r9Var.k0 || m0.signum() > 0) {
-                            long o02 = r9Var.o0();
+                        BigDecimal n02 = r9Var.n0();
+                        if (r9Var.k0 || n02.signum() > 0) {
+                            long p02 = r9Var.p0();
                             r9Var.k0 = !r9Var.k0;
-                            r9Var.E0();
-                            String k02 = o02 <= 0 ? "" : r9Var.k0 ? r9Var.k0(o02, m0) : r9.p0(o02);
-                            r9Var.E.setAmountText(k02);
-                            r9Var.H.setSelection(k02.length());
+                            r9Var.F0();
+                            String l02 = p02 <= 0 ? "" : r9Var.k0 ? r9Var.l0(p02, n02) : r9.q0(p02);
+                            r9Var.E.setAmountText(l02);
+                            r9Var.H.setSelection(l02.length());
                             break;
                         }
                         break;
                     default:
-                        r9.c0(this.b);
+                        r9.d0(this.b);
                         break;
                 }
             }
         });
         w7.e6.b(this.P, 0.02f, 1.2f);
-        D0();
+        E0();
         p80 p80Var = new p80(context, this.resourceProvider);
         this.Q = p80Var;
         org.telegram.ui.ActionBar.a7.V(p80Var, org.telegram.ui.ActionBar.t6.q7, getResourceProvider());
@@ -859,7 +867,7 @@ public final class r9 extends r51 implements us {
         this.Q.setGravity(17);
         this.Q.setTypeface(org.telegram.messenger.i0.o());
         this.Q.setPadding(org.telegram.messenger.i0.L(10.0f), 0, org.telegram.messenger.i0.L(10.0f), 0);
-        A0(false);
+        B0(false);
         this.D.addView(this.Q, w7.b6.t(-2, -2, 49, 0, 10, 0, 0));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.Z = linearLayout2;
@@ -887,13 +895,13 @@ public final class r9 extends r51 implements us {
         this.T.setPadding(0, org.telegram.messenger.i0.L(4.0f), 0, org.telegram.messenger.i0.L(4.0f));
         this.T.setVisibility(8);
         this.Z.addView(this.T, w7.b6.t(-1, -2, 55, 16, 0, 16, 0));
-        SpannableString spannableString4 = new SpannableString(cd.L0(2131748789, null));
+        SpannableString spannableString4 = new SpannableString(dd.L0(2131748789, null));
         this.U = spannableString4;
         spannableString4.setSpan(new u80(org.telegram.messenger.i0.L(80.0f), this.T), 0, this.U.length(), 33);
         vh.d dVar = new vh.d(context, getResourceProvider(), true);
         dVar.setRoundRadius(24);
         this.d0 = dVar;
-        dVar.setText(cd.L0(2131743046, null));
+        dVar.setText(dd.L0(2131743046, null));
         this.d0.setEnabled(false);
         this.d0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.b9
             public final /* synthetic */ r9 b;
@@ -906,46 +914,51 @@ public final class r9 extends r51 implements us {
             public final void onClick(View view2) {
                 switch (i10) {
                     case 0:
-                        this.b.t0();
+                        this.b.u0();
                         break;
                     case 1:
-                        r9.d0(this.b);
+                        r9.e0(this.b);
                         break;
                     case 2:
                         r9 r9Var = this.b;
-                        BigDecimal m0 = r9Var.m0();
-                        if (r9Var.k0 || m0.signum() > 0) {
-                            long o02 = r9Var.o0();
+                        BigDecimal n02 = r9Var.n0();
+                        if (r9Var.k0 || n02.signum() > 0) {
+                            long p02 = r9Var.p0();
                             r9Var.k0 = !r9Var.k0;
-                            r9Var.E0();
-                            String k02 = o02 <= 0 ? "" : r9Var.k0 ? r9Var.k0(o02, m0) : r9.p0(o02);
-                            r9Var.E.setAmountText(k02);
-                            r9Var.H.setSelection(k02.length());
+                            r9Var.F0();
+                            String l02 = p02 <= 0 ? "" : r9Var.k0 ? r9Var.l0(p02, n02) : r9.q0(p02);
+                            r9Var.E.setAmountText(l02);
+                            r9Var.H.setSelection(l02.length());
                             break;
                         }
                         break;
                     default:
-                        r9.c0(this.b);
+                        r9.d0(this.b);
                         break;
                 }
             }
         });
         this.Z.addView(this.d0, w7.b6.t(-1, 48, 87, 0, 14, 0, 0));
         frameLayout.addView(this.Z, w7.b6.e(-1, -2, 87));
-        B0();
-        F0();
+        C0();
+        G0();
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.a4) {
+        if (i10 == at.a4) {
+            D0();
             C0();
-            B0();
         }
     }
 
-    public final void i0() {
+    @Override // org.telegram.ui.ActionBar.k2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    public final void j0() {
         try {
             ShapeDrawable shapeDrawable = this.F;
             if (shapeDrawable != null) {
@@ -971,12 +984,7 @@ public final class r9 extends r51 implements us {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.k2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    public final void j0() {
+    public final void k0() {
         q9 q9Var = this.E;
         if (q9Var != null) {
             q9Var.getDiamondView().l(null);
@@ -987,22 +995,22 @@ public final class r9 extends r51 implements us {
         }
         this.b0 = 1.0f;
         if (this.E != null) {
-            F0();
+            G0();
         }
     }
 
-    public final String k0(long j10, BigDecimal bigDecimal) {
+    public final String l0(long j10, BigDecimal bigDecimal) {
         BigDecimal movePointLeft = BigDecimal.valueOf(j10).multiply(bigDecimal).movePointLeft(9);
-        TL_wallet.currencyRate r02 = r0();
-        int max = Math.max(0, Math.min(r02 != null ? r02.exp : TextUtils.equals(k0.x(this.currentAccount).h.g(), "USD") ? 2 : 0, 20));
+        TL_wallet.currencyRate s02 = s0();
+        int max = Math.max(0, Math.min(s02 != null ? s02.exp : TextUtils.equals(k0.x(this.currentAccount).h.g(), "USD") ? 2 : 0, 20));
         RoundingMode roundingMode = RoundingMode.HALF_UP;
         BigDecimal scale = movePointLeft.setScale(max, roundingMode);
         if (scale.signum() == 0 && movePointLeft.signum() != 0) {
             scale = movePointLeft.setScale(Math.min(20, Math.max(max, movePointLeft.scale())), roundingMode);
         }
-        int l02 = l0(bigDecimal);
-        if (scale.scale() > l02) {
-            scale = scale.setScale(l02, RoundingMode.DOWN);
+        int m0 = m0(bigDecimal);
+        if (scale.scale() > m0) {
+            scale = scale.setScale(m0, RoundingMode.DOWN);
         }
         BigDecimal multiply = BigDecimal.valueOf(Long.MAX_VALUE, 9).multiply(bigDecimal);
         if (scale.compareTo(multiply) > 0) {
@@ -1011,42 +1019,22 @@ public final class r9 extends r51 implements us {
         return (scale.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : scale.stripTrailingZeros()).toPlainString();
     }
 
-    public final BigDecimal m0() {
+    public final BigDecimal n0() {
         f fVar = k0.x(this.currentAccount).h;
         fVar.f();
         double h = fVar.h();
-        double d = ((org.telegram.messenger.k0) vp.r1(this.currentAccount).y7.l.b).a;
+        double d = ((org.telegram.messenger.k0) wp.r1(this.currentAccount).y7.l.b).a;
         return (h <= 0.0d || d <= 0.0d || Double.isNaN(h) || Double.isInfinite(h) || Double.isNaN(d) || Double.isInfinite(d)) ? BigDecimal.ZERO : BigDecimal.valueOf(h).multiply(BigDecimal.valueOf(d));
     }
 
-    public final SpannableStringBuilder n0(k0 k0Var, long j10) {
+    public final SpannableStringBuilder o0(k0 k0Var, long j10) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("≈ ");
         int length = spannableStringBuilder.length();
         spannableStringBuilder.append(k0Var.m(j10, false));
         int length2 = spannableStringBuilder.length();
-        TL_wallet.currencyRate r02 = r0();
-        y0(spannableStringBuilder, length, length2, (r02 == null || TextUtils.isEmpty(r02.decimalSeparator)) ? '.' : r02.decimalSeparator.charAt(0));
+        TL_wallet.currencyRate s02 = s0();
+        z0(spannableStringBuilder, length, length2, (s02 == null || TextUtils.isEmpty(s02.decimalSeparator)) ? '.' : s02.decimalSeparator.charAt(0));
         return spannableStringBuilder.append((CharSequence) " ").append((CharSequence) this.L);
-    }
-
-    public final long o0() {
-        EditTextBoldCursor editTextBoldCursor = this.H;
-        if (editTextBoldCursor == null) {
-            return 0L;
-        }
-        BigDecimal u02 = u0(editTextBoldCursor.getText().toString());
-        if (this.k0) {
-            BigDecimal m0 = m0();
-            if (m0.signum() <= 0) {
-                return 0L;
-            }
-            u02 = u02.divide(m0, 9, RoundingMode.DOWN).setScale(2, RoundingMode.HALF_UP);
-        }
-        BigInteger bigInteger = u02.movePointRight(9).toBigInteger();
-        if (bigInteger.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) > 0) {
-            return Long.MAX_VALUE;
-        }
-        return bigInteger.longValue();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
@@ -1073,14 +1061,14 @@ public final class r9 extends r51 implements us {
 
     @Override // org.telegram.ui.ActionBar.k2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, zs.a4);
+        getNotificationCenter().c(this, at.a4);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onFragmentDestroy() {
         this.I = false;
-        j0();
+        k0();
         s6 s6Var = this.u0;
         if (s6Var != null) {
             AnimatorSet animatorSet = s6Var.m;
@@ -1114,7 +1102,7 @@ public final class r9 extends r51 implements us {
         if (editTextBoldCursor != null) {
             editTextBoldCursor.removeCallbacks(this.J);
         }
-        getNotificationCenter().n(this, zs.a4);
+        getNotificationCenter().n(this, at.a4);
         super.onFragmentDestroy();
     }
 
@@ -1141,7 +1129,7 @@ public final class r9 extends r51 implements us {
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onPause() {
-        j0();
+        k0();
         this.I = false;
         EditTextBoldCursor editTextBoldCursor = this.H;
         if (editTextBoldCursor != null) {
@@ -1155,14 +1143,14 @@ public final class r9 extends r51 implements us {
     @Override // org.telegram.ui.ActionBar.k2
     public final void onResume() {
         super.onResume();
-        s0();
+        t0();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onThemeColorsChanged() {
         try {
             super.onThemeColorsChanged();
-            i0();
+            j0();
             int themedColor = getThemedColor(org.telegram.ui.ActionBar.t6.d6);
             LinearLayout linearLayout = this.Z;
             if (linearLayout == null || themedColor == this.w0 || !(linearLayout.getBackground() instanceof GradientDrawable)) {
@@ -1210,7 +1198,27 @@ public final class r9 extends r51 implements us {
         }
     }
 
-    public final byte[] q0() {
+    public final long p0() {
+        EditTextBoldCursor editTextBoldCursor = this.H;
+        if (editTextBoldCursor == null) {
+            return 0L;
+        }
+        BigDecimal v02 = v0(editTextBoldCursor.getText().toString());
+        if (this.k0) {
+            BigDecimal n02 = n0();
+            if (n02.signum() <= 0) {
+                return 0L;
+            }
+            v02 = v02.divide(n02, 9, RoundingMode.DOWN).setScale(2, RoundingMode.HALF_UP);
+        }
+        BigInteger bigInteger = v02.movePointRight(9).toBigInteger();
+        if (bigInteger.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) > 0) {
+            return Long.MAX_VALUE;
+        }
+        return bigInteger.longValue();
+    }
+
+    public final byte[] r0() {
         TL_wallet.walletUserAddress walletuseraddress = this.e;
         if (walletuseraddress == null || walletuseraddress.public_key == null) {
             return null;
@@ -1228,7 +1236,7 @@ public final class r9 extends r51 implements us {
         }
     }
 
-    public final TL_wallet.currencyRate r0() {
+    public final TL_wallet.currencyRate s0() {
         f fVar = k0.x(this.currentAccount).h;
         TL_wallet.currencyRates f7 = fVar.f();
         if (f7 == null) {
@@ -1248,32 +1256,32 @@ public final class r9 extends r51 implements us {
         return null;
     }
 
-    public final void s0() {
+    public final void t0() {
         if (WalletEngine2.isValidRecipientAddress(this.h)) {
             this.e0 = -1L;
-            C0();
+            D0();
             k0 x10 = k0.x(this.currentAccount);
             if (!x10.F() || k0.b(x10.t(), this.h) || this.f == null || !TextUtils.isEmpty(this.n)) {
-                x10.i(this.h, 0L, this.g0, this.h0 ? q0() : null, new e9(this, 1));
+                x10.i(this.h, 0L, this.g0, this.h0 ? r0() : null, new e9(this, 1));
             }
         }
     }
 
-    public final void t0() {
+    public final void u0() {
         Activity parentActivity = getParentActivity();
         if (parentActivity == null) {
             return;
         }
         boolean z10 = this.j0 - this.i0 > org.telegram.messenger.i0.L(20.0f);
         AlertDialog$Builder a2Var = z10 ? new org.telegram.ui.ActionBar.a2(0, parentActivity, getResourceProvider()) : new AlertDialog$Builder(0, parentActivity, getResourceProvider());
-        String L0 = cd.L0(2131743231, null);
+        String L0 = dd.L0(2131743231, null);
         org.telegram.ui.ActionBar.x1 x1Var = a2Var.a;
         x1Var.R = L0;
         final ag.a2 a2Var2 = new ag.a2(this, parentActivity);
         a2Var2.setTextSize(1, 18.0f);
         org.telegram.ui.ActionBar.a7.V(a2Var2, org.telegram.ui.ActionBar.t6.j5, getResourceProvider());
         org.telegram.ui.ActionBar.a7.E(a2Var2, org.telegram.ui.ActionBar.t6.t5, getResourceProvider());
-        a2Var2.setHint(cd.L0(2131743195, null));
+        a2Var2.setHint(dd.L0(2131743195, null));
         a2Var2.setText(this.g0);
         a2Var2.setSelection(a2Var2.length());
         a2Var2.setInputType(147457);
@@ -1290,15 +1298,15 @@ public final class r9 extends r51 implements us {
         org.telegram.ui.ActionBar.p6 p6Var = this.resourceProvider;
         c2Var.setBackground(h02);
         org.telegram.ui.ActionBar.a7.k(c2Var, h02, null, N, p6Var);
-        c2Var.e(cd.L0(2131743103, null), "", !this.h0 || q0() == null, false, false);
+        c2Var.e(dd.L0(2131743103, null), "", !this.h0 || r0() == null, false, false);
         c2Var.setMultiline(true);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c2Var.getCheckBoxView().getLayoutParams();
         layoutParams.topMargin = 0;
-        layoutParams.gravity = (cd.X ? 5 : 3) | 16;
+        layoutParams.gravity = (dd.X ? 5 : 3) | 16;
         c2Var.getCheckBoxView().setLayoutParams(layoutParams);
-        c2Var.setPadding(cd.X ? org.telegram.messenger.i0.L(4.0f) : 0, org.telegram.messenger.i0.L(12.0f), cd.X ? 0 : org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(12.0f));
-        c2Var.setEnabled(q0() != null);
-        c2Var.setOnClickListener(new i3(c2Var, i10));
+        c2Var.setPadding(dd.X ? org.telegram.messenger.i0.L(4.0f) : 0, org.telegram.messenger.i0.L(12.0f), dd.X ? 0 : org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(12.0f));
+        c2Var.setEnabled(r0() != null);
+        c2Var.setOnClickListener(new j3(c2Var, i10));
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         linearLayout.setOrientation(1);
         linearLayout.addView(a2Var2, w7.b6.k(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
@@ -1306,9 +1314,9 @@ public final class r9 extends r51 implements us {
         x1Var.G = 6;
         a2Var.o(linearLayout);
         x1Var.a = org.telegram.messenger.i0.L(292.0f);
-        a2Var.h(cd.L0(2131752589, null), new ra1(4));
+        a2Var.h(dd.L0(2131752589, null), new pa1(4));
         int i12 = 2;
-        a2Var.k(cd.L0(2131754486, null), new o8(this, a2Var2, c2Var, i12));
+        a2Var.k(dd.L0(2131754486, null), new o8(this, a2Var2, c2Var, i12));
         x1Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Wallet.f9
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
@@ -1331,7 +1339,7 @@ public final class r9 extends r51 implements us {
         a2Var2.addTextChangedListener(new jg.f3(a2Var2, (TextView) d));
     }
 
-    public final void v0() {
+    public final void w0() {
         org.telegram.ui.ActionBar.z4 parentLayout = getParentLayout();
         if (parentLayout == null) {
             finishFragment();
@@ -1364,11 +1372,11 @@ public final class r9 extends r51 implements us {
         finishFragment();
     }
 
-    public final void w0() {
+    public final void x0() {
         this.f0 = true;
     }
 
-    public final void x0(float f7) {
+    public final void y0(float f7) {
         this.X = f7;
         this.T.setAlpha(f7);
         this.T.setVisibility(f7 > 0.0f ? 0 : 8);
@@ -1376,16 +1384,8 @@ public final class r9 extends r51 implements us {
         this.T.requestLayout();
     }
 
-    public final void z0(String str) {
-        this.n = str;
-        org.telegram.ui.ActionBar.l lVar = this.actionBar;
-        if (lVar != null) {
-            lVar.setTitle(cd.L0(2131743042, null));
-        }
-    }
-
     public r9(String str) {
-        this(d20.s0, str);
+        this(e20.s0, str);
     }
 
     public r9(int i10, String str) {
@@ -1409,16 +1409,16 @@ public final class r9 extends r51 implements us {
         setCurrentAccount(i10);
         this.f = null;
         this.h = str;
-        s0();
+        t0();
         this.r = true;
         k0.x(this.currentAccount).Z(new e9(this, 0), str);
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final void Y(ArrayList arrayList, p51 p51Var) {
+    @Override // org.telegram.ui.Components.s51
+    public final void Z(ArrayList arrayList, q51 q51Var) {
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final void a0(a51 a51Var, View view) {
+    @Override // org.telegram.ui.Components.s51
+    public final void b0(b51 b51Var, View view) {
     }
 }

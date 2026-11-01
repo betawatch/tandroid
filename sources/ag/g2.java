@@ -2,9 +2,9 @@ package ag;
 
 import java.util.Calendar;
 import java.util.Locale;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g2 {
     public int a;
@@ -19,7 +19,7 @@ public final class g2 {
         int i11 = i10 % 60;
         Calendar calendar = Calendar.getInstance();
         calendar.set(0, 0, 0, ((i10 - i11) / 60) % 24, i11);
-        cd D0 = cd.D0();
+        dd D0 = dd.D0();
         if (D0.c == null) {
             synchronized (D0) {
                 try {
@@ -36,15 +36,15 @@ public final class g2 {
                         if (!lowerCase.toLowerCase().equals("ar") && !lowerCase.toLowerCase().equals("ko")) {
                             locale = Locale.US;
                         }
-                        boolean z10 = cd.Z;
-                        D0.c = cd.k(locale, z10 ? "HH:mm" : "h:mm a", z10 ? "HH:mm" : "h:mm a");
+                        boolean z10 = dd.Z;
+                        D0.c = dd.k(locale, z10 ? "HH:mm" : "h:mm a", z10 ? "HH:mm" : "h:mm a");
                     }
                 } finally {
                 }
             }
         }
         String format = D0.c.format(calendar.getTime());
-        return i10 > 1440 ? cd.a0(null, null, 2131752748, format) : format;
+        return i10 > 1440 ? dd.a0(null, null, 2131752748, format) : format;
     }
 
     public final String toString() {

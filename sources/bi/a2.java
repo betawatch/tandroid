@@ -4,13 +4,13 @@ import android.text.SpannableString;
 import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.vx;
-import org.telegram.ui.Components.w41;
+import org.telegram.ui.Components.x41;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class a2 implements vx {
     public final /* synthetic */ k2 a;
@@ -59,7 +59,7 @@ public final class a2 implements vx {
         }
         boolean z10 = i10 != 0;
         k2Var.C0 = z10;
-        k2Var.i0(z10);
+        k2Var.j0(z10);
     }
 
     @Override // org.telegram.ui.Components.vx
@@ -69,28 +69,28 @@ public final class a2 implements vx {
 
     @Override // org.telegram.ui.Components.vx
     public final boolean k() {
-        n1 e02 = k2.e0(this.a);
-        if (e02 == null || e02.length() == 0) {
+        n1 f02 = k2.f0(this.a);
+        if (f02 == null || f02.length() == 0) {
             return false;
         }
-        e02.dispatchKeyEvent(new KeyEvent(0, 67));
+        f02.dispatchKeyEvent(new KeyEvent(0, 67));
         return true;
     }
 
     @Override // org.telegram.ui.Components.vx
     public final void l(String str) {
         k2 k2Var = this.a;
-        n1 e02 = k2.e0(k2Var);
-        if (e02 == null) {
+        n1 f02 = k2.f0(k2Var);
+        if (f02 == null) {
             return;
         }
-        int f02 = k2.f0(k2Var, e02);
+        int g02 = k2.g0(k2Var, f02);
         try {
-            CharSequence m10 = org.telegram.messenger.k6.m(str, e02.getPaint().getFontMetricsInt(), false, null, 0);
-            e02.setText(e02.getText().insert(f02, m10));
-            int length = f02 + m10.length();
-            e02.setSelection(length, length);
-            if (e02 == k2Var.R0) {
+            CharSequence m10 = org.telegram.messenger.k6.m(str, f02.getPaint().getFontMetricsInt(), false, null, 0);
+            f02.setText(f02.getText().insert(g02, m10));
+            int length = g02 + m10.length();
+            f02.setSelection(length, length);
+            if (f02 == k2Var.R0) {
                 k2Var.S0 = length;
             }
         } catch (Exception unused) {
@@ -115,23 +115,23 @@ public final class a2 implements vx {
     @Override // org.telegram.ui.Components.vx
     public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
         k2 k2Var = this.a;
-        n1 e02 = k2.e0(k2Var);
-        if (e02 == null) {
+        n1 f02 = k2.f0(k2Var);
+        if (f02 == null) {
             return;
         }
-        int f02 = k2.f0(k2Var, e02);
+        int g02 = k2.g0(k2Var, f02);
         try {
             if (str == null) {
                 str = "😀";
             }
             SpannableString spannableString = new SpannableString(str);
-            org.telegram.ui.Components.o5 o5Var = document != null ? new org.telegram.ui.Components.o5(document, e02.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.o5(j10, e02.getPaint().getFontMetricsInt());
+            org.telegram.ui.Components.o5 o5Var = document != null ? new org.telegram.ui.Components.o5(document, f02.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.o5(j10, f02.getPaint().getFontMetricsInt());
             o5Var.cacheType = org.telegram.ui.Components.f5.f();
             spannableString.setSpan(o5Var, 0, spannableString.length(), 33);
-            e02.setText(e02.getText().insert(f02, spannableString));
-            int length = f02 + spannableString.length();
-            e02.setSelection(length, length);
-            if (e02 == k2Var.R0) {
+            f02.setText(f02.getText().insert(g02, spannableString));
+            int length = g02 + spannableString.length();
+            f02.setSelection(length, length);
+            if (f02 == k2Var.R0) {
                 k2Var.S0 = length;
             }
         } catch (Exception unused) {
@@ -160,7 +160,7 @@ public final class a2 implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void o(w41 w41Var) {
+    public final /* synthetic */ void o(x41 x41Var) {
     }
 
     @Override // org.telegram.ui.Components.vx
@@ -176,7 +176,7 @@ public final class a2 implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, fj fjVar, boolean z10, int i10) {
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, gj gjVar, boolean z10, int i10) {
     }
 
     @Override // org.telegram.ui.Components.vx

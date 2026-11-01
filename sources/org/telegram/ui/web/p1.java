@@ -20,17 +20,17 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.il;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.us;
+import org.telegram.messenger.jl;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.uz;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a7;
@@ -42,27 +42,27 @@ import org.telegram.ui.ActionBar.w6;
 import org.telegram.ui.Cells.m5;
 import org.telegram.ui.Cells.n6;
 import org.telegram.ui.Cells.t8;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.r4;
-import org.telegram.ui.Components.r51;
 import org.telegram.ui.Components.s4;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.Wallet.k3;
-import org.telegram.ui.f11;
+import org.telegram.ui.Wallet.m2;
+import org.telegram.ui.d01;
 import org.telegram.ui.fp;
 import org.telegram.ui.nc;
-import org.telegram.ui.zw0;
+import org.telegram.ui.yw0;
 import w7.b6;
 import w7.m6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final class p1 extends r51 implements us {
-    public zw0 e;
-    public final q20 f;
+public final class p1 extends s51 implements vs {
+    public yw0 e;
+    public final r20 f;
     public long h;
     public long n;
     public long r;
@@ -73,7 +73,7 @@ public final class p1 extends r51 implements us {
         this.f = pVar;
     }
 
-    public static boolean c0(File file, Boolean bool) {
+    public static boolean d0(File file, Boolean bool) {
         boolean z10;
         if (file == null || !file.exists()) {
             return false;
@@ -83,7 +83,7 @@ public final class p1 extends r51 implements us {
             if (listFiles != null) {
                 z10 = true;
                 for (File file2 : listFiles) {
-                    if ((bool == null || bool.booleanValue() == file2.getName().startsWith("Cookies")) && !c0(file2, bool)) {
+                    if ((bool == null || bool.booleanValue() == file2.getName().startsWith("Cookies")) && !d0(file2, bool)) {
                         z10 = false;
                     }
                 }
@@ -102,7 +102,7 @@ public final class p1 extends r51 implements us {
         return true;
     }
 
-    public static long d0(File file, Boolean bool) {
+    public static long e0(File file, Boolean bool) {
         long j10 = 0;
         if (file == null || !file.exists()) {
             return 0L;
@@ -111,7 +111,7 @@ public final class p1 extends r51 implements us {
             File[] listFiles = file.listFiles();
             if (listFiles != null) {
                 for (File file2 : listFiles) {
-                    j10 += d0(file2, bool);
+                    j10 += e0(file2, bool);
                 }
                 return j10;
             }
@@ -121,34 +121,34 @@ public final class p1 extends r51 implements us {
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final void Y(ArrayList arrayList, p51 p51Var) {
+    @Override // org.telegram.ui.Components.s51
+    public final void Z(ArrayList arrayList, q51 q51Var) {
         boolean K2 = getMessagesController().K2();
         arrayList.size();
-        String L0 = cd.L0(2131752857, null);
-        a51 a51Var = new a51(9);
-        a51Var.d = 1;
-        a51Var.l = L0;
-        a51Var.L(K2);
-        arrayList.add(a51Var);
-        arrayList.add(a51.C(cd.L0(2131752856, null)));
+        String L0 = dd.L0(2131752857, null);
+        b51 b51Var = new b51(9);
+        b51Var.d = 1;
+        b51Var.l = L0;
+        b51Var.L(K2);
+        arrayList.add(b51Var);
+        arrayList.add(b51.C(dd.L0(2131752856, null)));
         int i10 = 0;
         if (!K2) {
             getMessagesController().M2();
-            a51 i11 = a51.i(17, cd.L0(2131742960, null));
+            b51 i11 = b51.i(17, dd.L0(2131742960, null));
             i11.L(getMessagesController().M2());
             arrayList.add(i11);
-            arrayList.add(a51.C(cd.L0(2131742959, null)));
-            arrayList.add(a51.u(cd.L0(2131752865, null)));
+            arrayList.add(b51.C(dd.L0(2131742959, null)));
+            arrayList.add(b51.u(dd.L0(2131752865, null)));
             arrayList.size();
-            zw0 zw0Var = this.e;
-            String L02 = cd.L0(2131752849, null);
-            a51 a51Var2 = new a51(3);
-            a51Var2.d = 16;
-            a51Var2.G = zw0Var;
-            a51Var2.l = L02;
-            a51Var2.q = true;
-            arrayList.add(a51Var2);
+            yw0 yw0Var = this.e;
+            String L02 = dd.L0(2131752849, null);
+            b51 b51Var2 = new b51(3);
+            b51Var2.d = 16;
+            b51Var2.G = yw0Var;
+            b51Var2.l = L02;
+            b51Var2.q = true;
+            arrayList.add(b51Var2);
             TL_account.TL_webBrowserSettings tL_webBrowserSettings = getMessagesController().z8;
             ArrayList<TL_account.WebDomainException> arrayList2 = tL_webBrowserSettings == null ? new ArrayList<>() : tL_webBrowserSettings.inapp_exceptions;
             int size = arrayList2.size();
@@ -160,49 +160,49 @@ public final class p1 extends r51 implements us {
                 String str2 = webDomainException2.title;
                 long j10 = webDomainException2.favicon;
                 int i12 = n1.b;
-                a51 K = a51.K(n1.class);
+                b51 K = b51.K(n1.class);
                 K.l = str;
                 K.n = str2;
                 K.B = j10;
                 arrayList.add(K);
             }
-            arrayList.add(a51.C(cd.L0(2131752866, null)));
+            arrayList.add(b51.C(dd.L0(2131752866, null)));
             if (arrayList2.isEmpty()) {
                 return;
             }
             arrayList.size();
-            a51 e = a51.e(5, cd.L0(2131752848, null));
+            b51 e = b51.e(5, dd.L0(2131752848, null));
             e.r = true;
             arrayList.add(e);
-            arrayList.add(a51.C(null));
+            arrayList.add(b51.C(null));
             return;
         }
         arrayList.size();
-        String L03 = cd.L0(2131752862, null);
+        String L03 = dd.L0(2131752862, null);
         long j11 = this.n;
-        arrayList.add(a51.d(3, R.drawable.menu_clear_cookies, L03, j11 > 0 ? org.telegram.messenger.i0.i0(j11, false, false) : ""));
+        arrayList.add(b51.d(3, R.drawable.menu_clear_cookies, L03, j11 > 0 ? org.telegram.messenger.i0.i0(j11, false, false) : ""));
         arrayList.size();
-        String L04 = cd.L0(2131752864, null);
+        String L04 = dd.L0(2131752864, null);
         long j12 = this.h;
-        arrayList.add(a51.d(2, R.drawable.menu_clear_cache, L04, j12 > 0 ? org.telegram.messenger.i0.i0(j12, false, false) : ""));
-        arrayList.add(a51.C(cd.L0(2131752860, null)));
+        arrayList.add(b51.d(2, R.drawable.menu_clear_cache, L04, j12 > 0 ? org.telegram.messenger.i0.i0(j12, false, false) : ""));
+        arrayList.add(b51.C(dd.L0(2131752860, null)));
         if (this.r > 0) {
             arrayList.size();
-            arrayList.add(a51.c(9, R.drawable.menu_clear_recent, cd.L0(2131752850, null)));
+            arrayList.add(b51.c(9, R.drawable.menu_clear_recent, dd.L0(2131752850, null)));
             arrayList.size();
-            arrayList.add(a51.d(7, R.drawable.menu_clear_cache, cd.L0(2131752855, null), cd.H(',', "BrowserSettingsHistoryPages", (int) this.r)));
-            arrayList.add(a51.C(null));
+            arrayList.add(b51.d(7, R.drawable.menu_clear_cache, dd.L0(2131752855, null), dd.H(',', "BrowserSettingsHistoryPages", (int) this.r)));
+            arrayList.add(b51.C(null));
         }
-        arrayList.add(a51.u(cd.L0(2131752846, null)));
+        arrayList.add(b51.u(dd.L0(2131752846, null)));
         arrayList.size();
-        zw0 zw0Var2 = this.e;
-        String L05 = cd.L0(2131752849, null);
-        a51 a51Var3 = new a51(3);
-        a51Var3.d = 15;
-        a51Var3.G = zw0Var2;
-        a51Var3.l = L05;
-        a51Var3.q = true;
-        arrayList.add(a51Var3);
+        yw0 yw0Var2 = this.e;
+        String L05 = dd.L0(2131752849, null);
+        b51 b51Var3 = new b51(3);
+        b51Var3.d = 15;
+        b51Var3.G = yw0Var2;
+        b51Var3.l = L05;
+        b51Var3.q = true;
+        arrayList.add(b51Var3);
         TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = getMessagesController().z8;
         ArrayList<TL_account.WebDomainException> arrayList3 = tL_webBrowserSettings2 == null ? new ArrayList<>() : tL_webBrowserSettings2.external_exceptions;
         int size2 = arrayList3.size();
@@ -215,51 +215,51 @@ public final class p1 extends r51 implements us {
             String str4 = webDomainException4.title;
             long j13 = webDomainException4.favicon;
             int i14 = n1.b;
-            a51 K3 = a51.K(n1.class);
+            b51 K3 = b51.K(n1.class);
             K3.l = str3;
             K3.n = str4;
             K3.B = j13;
             arrayList.add(K3);
         }
-        arrayList.add(a51.C(cd.L0(2131752847, null)));
+        arrayList.add(b51.C(dd.L0(2131752847, null)));
         if (!arrayList3.isEmpty()) {
             arrayList.size();
-            a51 e7 = a51.e(5, cd.L0(2131752848, null));
+            b51 e7 = b51.e(5, dd.L0(2131752848, null));
             e7.r = true;
             arrayList.add(e7);
-            arrayList.add(a51.C(null));
+            arrayList.add(b51.C(null));
         }
         arrayList.size();
-        arrayList.add(a51.d(6, R.drawable.msg_search, cd.L0(2131745816, null), g1.a().a));
-        arrayList.add(a51.C(cd.L0(2131752842, null)));
+        arrayList.add(b51.d(6, R.drawable.msg_search, dd.L0(2131745816, null), g1.a().a));
+        arrayList.add(b51.C(dd.L0(2131752842, null)));
         boolean z10 = v2.a;
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final CharSequence Z() {
-        return cd.L0(2131752841, null);
+    @Override // org.telegram.ui.Components.s51
+    public final CharSequence a0() {
+        return dd.L0(2131752841, null);
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final void a0(a51 a51Var, View view) {
-        int i10 = a51Var.d;
+    @Override // org.telegram.ui.Components.s51
+    public final void b0(b51 b51Var, View view) {
+        int i10 = b51Var.d;
         if (i10 == 12) {
-            tz.J();
-            ((t8) view).setChecked(tz.v0);
+            uz.J();
+            ((t8) view).setChecked(uz.v0);
             return;
         }
         final int i11 = 1;
         if (i10 == 13) {
-            tz.w0 = !tz.w0;
-            SharedPreferences.Editor edit = vp.d1().edit();
-            edit.putBoolean("onlyLocalInstantView", tz.w0);
+            uz.w0 = !uz.w0;
+            SharedPreferences.Editor edit = wp.d1().edit();
+            edit.putBoolean("onlyLocalInstantView", uz.w0);
             edit.apply();
-            ((t8) view).setChecked(tz.w0);
+            ((t8) view).setChecked(uz.w0);
             return;
         }
         if (i10 == 17) {
             boolean z10 = !getMessagesController().M2();
-            vp messagesController = getMessagesController();
+            wp messagesController = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings = messagesController.z8;
             if (tL_webBrowserSettings != null) {
                 messagesController.r5(tL_webBrowserSettings.open_external_browser, z10);
@@ -270,7 +270,7 @@ public final class p1 extends r51 implements us {
         }
         final int i12 = 0;
         if (i10 == 1) {
-            vp messagesController2 = getMessagesController();
+            wp messagesController2 = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = messagesController2.z8;
             if (tL_webBrowserSettings2 != null) {
                 messagesController2.r5(!tL_webBrowserSettings2.open_external_browser, tL_webBrowserSettings2.display_close_button);
@@ -283,7 +283,7 @@ public final class p1 extends r51 implements us {
             return;
         }
         if (i10 == 10) {
-            vp messagesController3 = getMessagesController();
+            wp messagesController3 = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings3 = messagesController3.z8;
             if (tL_webBrowserSettings3 != null) {
                 messagesController3.r5(tL_webBrowserSettings3.open_external_browser, true);
@@ -292,7 +292,7 @@ public final class p1 extends r51 implements us {
             return;
         }
         if (i10 == 11) {
-            vp messagesController4 = getMessagesController();
+            wp messagesController4 = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings4 = messagesController4.z8;
             if (tL_webBrowserSettings4 != null) {
                 messagesController4.r5(tL_webBrowserSettings4.open_external_browser, false);
@@ -303,11 +303,11 @@ public final class p1 extends r51 implements us {
         final int i13 = 2;
         if (i10 == 2) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String L0 = cd.L0(2131752864, null);
+            String L0 = dd.L0(2131752864, null);
             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
             x1Var.R = L0;
-            x1Var.T = cd.a0(null, null, 2131752863, this.h != 0 ? a1.g.r(new StringBuilder(" ("), org.telegram.messenger.i0.i0(this.h, false, false), ")") : "");
-            alertDialog$Builder.k(cd.L0(2131752101, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.web.m1
+            x1Var.T = dd.a0(null, null, 2131752863, this.h != 0 ? a1.g.r(new StringBuilder(" ("), org.telegram.messenger.i0.i0(this.h, false, false), ")") : "");
+            alertDialog$Builder.k(dd.L0(2131752101, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.web.m1
                 public final /* synthetic */ p1 b;
 
                 {
@@ -332,7 +332,7 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "app_webview");
                                 if (file.exists()) {
-                                    p1.c0(file, Boolean.FALSE);
+                                    p1.d0(file, Boolean.FALSE);
                                 }
                             } catch (Exception e) {
                                 f8.g(e, true);
@@ -340,7 +340,7 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file2 = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "cache/WebView");
                                 if (file2.exists()) {
-                                    p1.c0(file2, null);
+                                    p1.d0(file2, null);
                                 }
                             } catch (Exception e7) {
                                 f8.g(e7, true);
@@ -355,7 +355,7 @@ public final class p1 extends r51 implements us {
                                 hashMap.clear();
                             }
                             b10.d();
-                            p1Var.e0();
+                            p1Var.f0();
                             break;
                         case 1:
                             p1 p1Var2 = this.b;
@@ -365,12 +365,12 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file3 = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "app_webview");
                                 if (file3.exists()) {
-                                    p1.c0(file3, Boolean.TRUE);
+                                    p1.d0(file3, Boolean.TRUE);
                                 }
                             } catch (Exception e10) {
                                 f8.g(e10, true);
                             }
-                            p1Var2.e0();
+                            p1Var2.f0();
                             break;
                         case 2:
                             p1 p1Var3 = this.b;
@@ -389,7 +389,7 @@ public final class p1 extends r51 implements us {
                             break;
                         default:
                             p1 p1Var4 = this.b;
-                            vp messagesController5 = p1Var4.getMessagesController();
+                            wp messagesController5 = p1Var4.getMessagesController();
                             TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.z8;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
@@ -398,13 +398,13 @@ public final class p1 extends r51 implements us {
                                 messagesController5.z8.inapp_exceptions.clear();
                                 messagesController5.N4(messagesController5.z8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new a3.b(1), new il(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new a3.b(1), new jl(messagesController5, 6));
                             p1Var4.a.f3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder.h(cd.L0(2131752589, null), null);
+            alertDialog$Builder.h(dd.L0(2131752589, null), null);
             alertDialog$Builder.d(-1);
             alertDialog$Builder.p();
             return;
@@ -412,11 +412,11 @@ public final class p1 extends r51 implements us {
         final int i14 = 3;
         if (i10 == 3) {
             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String L02 = cd.L0(2131752862, null);
+            String L02 = dd.L0(2131752862, null);
             org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder2.a;
             x1Var2.R = L02;
-            x1Var2.T = cd.a0(null, null, 2131752861, this.n != 0 ? a1.g.r(new StringBuilder(" ("), org.telegram.messenger.i0.i0(this.n, false, false), ")") : "");
-            alertDialog$Builder2.k(cd.L0(2131752101, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.web.m1
+            x1Var2.T = dd.a0(null, null, 2131752861, this.n != 0 ? a1.g.r(new StringBuilder(" ("), org.telegram.messenger.i0.i0(this.n, false, false), ")") : "");
+            alertDialog$Builder2.k(dd.L0(2131752101, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.web.m1
                 public final /* synthetic */ p1 b;
 
                 {
@@ -441,7 +441,7 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "app_webview");
                                 if (file.exists()) {
-                                    p1.c0(file, Boolean.FALSE);
+                                    p1.d0(file, Boolean.FALSE);
                                 }
                             } catch (Exception e) {
                                 f8.g(e, true);
@@ -449,7 +449,7 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file2 = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "cache/WebView");
                                 if (file2.exists()) {
-                                    p1.c0(file2, null);
+                                    p1.d0(file2, null);
                                 }
                             } catch (Exception e7) {
                                 f8.g(e7, true);
@@ -464,7 +464,7 @@ public final class p1 extends r51 implements us {
                                 hashMap.clear();
                             }
                             b10.d();
-                            p1Var.e0();
+                            p1Var.f0();
                             break;
                         case 1:
                             p1 p1Var2 = this.b;
@@ -474,12 +474,12 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file3 = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "app_webview");
                                 if (file3.exists()) {
-                                    p1.c0(file3, Boolean.TRUE);
+                                    p1.d0(file3, Boolean.TRUE);
                                 }
                             } catch (Exception e10) {
                                 f8.g(e10, true);
                             }
-                            p1Var2.e0();
+                            p1Var2.f0();
                             break;
                         case 2:
                             p1 p1Var3 = this.b;
@@ -498,7 +498,7 @@ public final class p1 extends r51 implements us {
                             break;
                         default:
                             p1 p1Var4 = this.b;
-                            vp messagesController5 = p1Var4.getMessagesController();
+                            wp messagesController5 = p1Var4.getMessagesController();
                             TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.z8;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
@@ -507,13 +507,13 @@ public final class p1 extends r51 implements us {
                                 messagesController5.z8.inapp_exceptions.clear();
                                 messagesController5.N4(messagesController5.z8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new a3.b(1), new il(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new a3.b(1), new jl(messagesController5, 6));
                             p1Var4.a.f3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder2.h(cd.L0(2131752589, null), null);
+            alertDialog$Builder2.h(dd.L0(2131752589, null), null);
             alertDialog$Builder2.d(-1);
             alertDialog$Builder2.p();
             return;
@@ -529,11 +529,11 @@ public final class p1 extends r51 implements us {
                 j10 = Math.min(j10, ((a1) obj).b);
             }
             AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String L03 = cd.L0(2131752855, null);
+            String L03 = dd.L0(2131752855, null);
             org.telegram.ui.ActionBar.x1 x1Var3 = alertDialog$Builder3.a;
             x1Var3.R = L03;
-            x1Var3.T = cd.a0(null, null, 2131752854, cd.u(j10 / 1000, false));
-            alertDialog$Builder3.k(cd.L0(2131752101, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.web.m1
+            x1Var3.T = dd.a0(null, null, 2131752854, dd.u(j10 / 1000, false));
+            alertDialog$Builder3.k(dd.L0(2131752101, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.web.m1
                 public final /* synthetic */ p1 b;
 
                 {
@@ -558,7 +558,7 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "app_webview");
                                 if (file.exists()) {
-                                    p1.c0(file, Boolean.FALSE);
+                                    p1.d0(file, Boolean.FALSE);
                                 }
                             } catch (Exception e) {
                                 f8.g(e, true);
@@ -566,7 +566,7 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file2 = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "cache/WebView");
                                 if (file2.exists()) {
-                                    p1.c0(file2, null);
+                                    p1.d0(file2, null);
                                 }
                             } catch (Exception e7) {
                                 f8.g(e7, true);
@@ -581,7 +581,7 @@ public final class p1 extends r51 implements us {
                                 hashMap.clear();
                             }
                             b10.d();
-                            p1Var.e0();
+                            p1Var.f0();
                             break;
                         case 1:
                             p1 p1Var2 = this.b;
@@ -591,12 +591,12 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file3 = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "app_webview");
                                 if (file3.exists()) {
-                                    p1.c0(file3, Boolean.TRUE);
+                                    p1.d0(file3, Boolean.TRUE);
                                 }
                             } catch (Exception e10) {
                                 f8.g(e10, true);
                             }
-                            p1Var2.e0();
+                            p1Var2.f0();
                             break;
                         case 2:
                             p1 p1Var3 = this.b;
@@ -615,7 +615,7 @@ public final class p1 extends r51 implements us {
                             break;
                         default:
                             p1 p1Var4 = this.b;
-                            vp messagesController5 = p1Var4.getMessagesController();
+                            wp messagesController5 = p1Var4.getMessagesController();
                             TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.z8;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
@@ -624,31 +624,31 @@ public final class p1 extends r51 implements us {
                                 messagesController5.z8.inapp_exceptions.clear();
                                 messagesController5.N4(messagesController5.z8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new a3.b(1), new il(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new a3.b(1), new jl(messagesController5, 6));
                             p1Var4.a.f3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder3.h(cd.L0(2131752589, null), null);
+            alertDialog$Builder3.h(dd.L0(2131752589, null), null);
             alertDialog$Builder3.d(-1);
             alertDialog$Builder3.p();
             return;
         }
         if (i10 == 9) {
             b1[] b1VarArr = {null};
-            k2 b1Var = new b1(null, new f11(19, this, b1VarArr));
+            k2 b1Var = new b1(null, new d01(20, this, b1VarArr));
             b1VarArr[0] = b1Var;
             presentFragment(b1Var);
             return;
         }
         if (i10 == 5) {
             AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String L04 = cd.L0(2131742963, null);
+            String L04 = dd.L0(2131742963, null);
             org.telegram.ui.ActionBar.x1 x1Var4 = alertDialog$Builder4.a;
             x1Var4.R = L04;
-            x1Var4.T = cd.L0(2131742964, null);
-            alertDialog$Builder4.k(cd.L0(2131751599, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.web.m1
+            x1Var4.T = dd.L0(2131742964, null);
+            alertDialog$Builder4.k(dd.L0(2131751599, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.web.m1
                 public final /* synthetic */ p1 b;
 
                 {
@@ -673,7 +673,7 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "app_webview");
                                 if (file.exists()) {
-                                    p1.c0(file, Boolean.FALSE);
+                                    p1.d0(file, Boolean.FALSE);
                                 }
                             } catch (Exception e) {
                                 f8.g(e, true);
@@ -681,7 +681,7 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file2 = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "cache/WebView");
                                 if (file2.exists()) {
-                                    p1.c0(file2, null);
+                                    p1.d0(file2, null);
                                 }
                             } catch (Exception e7) {
                                 f8.g(e7, true);
@@ -696,7 +696,7 @@ public final class p1 extends r51 implements us {
                                 hashMap.clear();
                             }
                             b10.d();
-                            p1Var.e0();
+                            p1Var.f0();
                             break;
                         case 1:
                             p1 p1Var2 = this.b;
@@ -706,12 +706,12 @@ public final class p1 extends r51 implements us {
                             try {
                                 File file3 = new File(org.telegram.messenger.w0.b.getApplicationInfo().dataDir, "app_webview");
                                 if (file3.exists()) {
-                                    p1.c0(file3, Boolean.TRUE);
+                                    p1.d0(file3, Boolean.TRUE);
                                 }
                             } catch (Exception e10) {
                                 f8.g(e10, true);
                             }
-                            p1Var2.e0();
+                            p1Var2.f0();
                             break;
                         case 2:
                             p1 p1Var3 = this.b;
@@ -730,7 +730,7 @@ public final class p1 extends r51 implements us {
                             break;
                         default:
                             p1 p1Var4 = this.b;
-                            vp messagesController5 = p1Var4.getMessagesController();
+                            wp messagesController5 = p1Var4.getMessagesController();
                             TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.z8;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
@@ -739,27 +739,27 @@ public final class p1 extends r51 implements us {
                                 messagesController5.z8.inapp_exceptions.clear();
                                 messagesController5.N4(messagesController5.z8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new a3.b(1), new il(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new a3.b(1), new jl(messagesController5, 6));
                             p1Var4.a.f3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder4.h(cd.L0(2131752589, null), null);
+            alertDialog$Builder4.h(dd.L0(2131752589, null), null);
             alertDialog$Builder4.d(-1);
             alertDialog$Builder4.p();
             return;
         }
-        if (a51Var.H(n1.class)) {
+        if (b51Var.H(n1.class)) {
             o1 o1Var = (o1) view;
             String str = o1Var.e;
             z60 F = z60.F((ViewGroup) this.fragmentView, null, o1Var);
             F.s = 40;
-            F.c(R.drawable.menu_delete_old, cd.L0(2131746336, null), new k3(28, this, str), false);
+            F.c(R.drawable.menu_delete_old, dd.L0(2131746336, null), new m2(29, this, str), false);
             F.Z();
             return;
         }
-        int i16 = a51Var.d;
+        int i16 = b51Var.d;
         int i17 = 6;
         if (i16 == 6) {
             if (getParentActivity() == null) {
@@ -777,7 +777,7 @@ public final class p1 extends r51 implements us {
                 n6 n6Var = new n6(getParentActivity(), null);
                 n6Var.setPadding(org.telegram.messenger.i0.L(4.0f), 0, org.telegram.messenger.i0.L(4.0f), 0);
                 n6Var.a(t6.x0(null, t6.g7, false), t6.x0(null, t6.E5, false));
-                n6Var.b(charSequenceArr[i18], i18 == tz.p0);
+                n6Var.b(charSequenceArr[i18], i18 == uz.p0);
                 int i19 = t6.i6;
                 org.telegram.ui.Cells.y h02 = t6.h0(t6.x0(null, i19, false), 2, -1);
                 w6 N = a7.N(i19);
@@ -788,11 +788,11 @@ public final class p1 extends r51 implements us {
                 i18++;
             }
             AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(getParentActivity());
-            String L05 = cd.L0(2131745816, null);
+            String L05 = dd.L0(2131745816, null);
             org.telegram.ui.ActionBar.x1 x1Var5 = alertDialog$Builder5.a;
             x1Var5.R = L05;
             alertDialog$Builder5.o(linearLayout);
-            alertDialog$Builder5.h(cd.L0(2131752589, null), null);
+            alertDialog$Builder5.h(dd.L0(2131752589, null), null);
             atomicReference.set(x1Var5);
             showDialog(x1Var5);
             return;
@@ -800,7 +800,7 @@ public final class p1 extends r51 implements us {
         if (i16 == 15 || i16 == 16) {
             boolean K22 = getMessagesController().K2();
             if (getMessagesController().J2(K22)) {
-                s4.t0(this, cd.L0(2131742961, null), cd.L0(2131742962, null), null);
+                s4.t0(this, dd.L0(2131742961, null), dd.L0(2131742962, null), null);
                 return;
             }
             Activity parentActivity = getParentActivity();
@@ -811,16 +811,16 @@ public final class p1 extends r51 implements us {
             View currentFocus = W != null ? W.getCurrentFocus() : null;
             org.telegram.ui.ActionBar.x1[] x1VarArr = new org.telegram.ui.ActionBar.x1[1];
             AlertDialog$Builder alertDialog$Builder6 = new AlertDialog$Builder(0, parentActivity, resourceProvider);
-            String L06 = cd.L0(K22 ? 2131752868 : 2131752867, null);
+            String L06 = dd.L0(K22 ? 2131752868 : 2131752867, null);
             org.telegram.ui.ActionBar.x1 x1Var6 = alertDialog$Builder6.a;
             x1Var6.R = L06;
-            x1Var6.T = cd.L0(K22 ? 2131752870 : 2131752869, null);
+            x1Var6.T = dd.L0(K22 ? 2131752870 : 2131752869, null);
             r4 r4Var = new r4(parentActivity);
             r4Var.setTextSize(1, 16.0f);
             int i20 = t6.j5;
             a7.V(r4Var, i20, resourceProvider);
             a7.E(r4Var, t6.Li, resourceProvider);
-            r4Var.setHint(cd.L0(2131752871, null));
+            r4Var.setHint(dd.L0(2131752871, null));
             r4Var.setInputType(17);
             r4Var.setImeOptions(6);
             r4Var.setSingleLine(true);
@@ -840,8 +840,8 @@ public final class p1 extends r51 implements us {
             alertDialog$Builder6.c();
             alertDialog$Builder6.o(linearLayout2);
             x1Var6.a = Math.min(org.telegram.messenger.i0.L(320.0f), (org.telegram.messenger.i0.q.x * 85) / 100);
-            alertDialog$Builder6.k(cd.L0(2131751355, null), new org.telegram.ui.Components.t(fpVar, i13));
-            alertDialog$Builder6.h(cd.L0(2131752589, null), new m5(19));
+            alertDialog$Builder6.k(dd.L0(2131751355, null), new org.telegram.ui.Components.t(fpVar, i13));
+            alertDialog$Builder6.h(dd.L0(2131752589, null), new m5(19));
             x1VarArr[0] = x1Var6;
             x1Var6.j0 = false;
             x1Var6.setOnDismissListener(new org.telegram.ui.Components.r0(r4Var, 1));
@@ -850,12 +850,12 @@ public final class p1 extends r51 implements us {
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final boolean b0(a51 a51Var, View view) {
+    @Override // org.telegram.ui.Components.s51
+    public final boolean c0(b51 b51Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r51, org.telegram.ui.ActionBar.k2
+    @Override // org.telegram.ui.Components.s51, org.telegram.ui.ActionBar.k2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         Drawable mutate = context.getResources().getDrawable(R.drawable.poll_add_circle).mutate();
@@ -864,38 +864,38 @@ public final class p1 extends r51 implements us {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
         f7.setColorFilter(new PorterDuffColorFilter(getThemedColor(t6.k7), mode));
-        zw0 zw0Var = new zw0(mutate, f7, 1);
-        zw0Var.y = org.telegram.messenger.i0.L(2.0f);
-        this.e = zw0Var;
+        yw0 yw0Var = new yw0(mutate, f7, 1);
+        yw0Var.y = org.telegram.messenger.i0.L(2.0f);
+        this.e = yw0Var;
         this.fragmentView = super.createView(context);
         this.a.r1();
         this.a.setSectionsDrawBackground(true);
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         ii iiVar;
-        if (i10 != zs.R5 || (iiVar = this.a) == null) {
+        if (i10 != at.R5 || (iiVar = this.a) == null) {
             return;
         }
         iiVar.f3.O(true);
     }
 
-    public final void e0() {
-        p51 p51Var;
+    public final void f0() {
+        q51 q51Var;
         if (m6.a(new ag.l(this, 29)) != null) {
             this.r = r0.size();
             ii iiVar = this.a;
-            if (iiVar != null && (p51Var = iiVar.f3) != null && iiVar.G) {
-                p51Var.O(true);
+            if (iiVar != null && (q51Var = iiVar.f3) != null && iiVar.G) {
+                q51Var.O(true);
             }
         }
         Utilities.e.c(new w5(this, 19));
     }
 
     @Override // org.telegram.ui.ActionBar.k2
-    public final tk0 getListViewForSimpleGlass() {
+    public final uk0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -906,23 +906,23 @@ public final class p1 extends r51 implements us {
 
     @Override // org.telegram.ui.ActionBar.k2
     public final boolean onFragmentCreate() {
-        e0();
-        getNotificationCenter().c(this, zs.R5);
+        f0();
+        getNotificationCenter().c(this, at.R5);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, zs.R5);
+        getNotificationCenter().n(this, at.R5);
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onThemeColorsChanged() {
         super.onThemeColorsChanged();
         try {
-            zw0 zw0Var = this.e;
-            if (zw0Var != null) {
+            yw0 yw0Var = this.e;
+            if (yw0Var != null) {
                 int themedColor = getThemedColor(t6.N6);
                 int themedColor2 = getThemedColor(t6.k7);
                 if (themedColor == this.s && themedColor2 == this.w) {
@@ -930,11 +930,11 @@ public final class p1 extends r51 implements us {
                 }
                 this.s = themedColor;
                 this.w = themedColor2;
-                Drawable drawable = zw0Var.a;
+                Drawable drawable = yw0Var.a;
                 if (drawable != null) {
                     drawable.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
                 }
-                Drawable drawable2 = zw0Var.b;
+                Drawable drawable2 = yw0Var.b;
                 if (drawable2 != null) {
                     drawable2.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.MULTIPLY));
                 }

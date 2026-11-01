@@ -7,13 +7,13 @@ import android.view.Menu;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
-import org.telegram.messenger.pc;
 import org.telegram.messenger.qc;
+import org.telegram.messenger.rc;
 import org.telegram.ui.Components.ce0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g9 implements qc, pc, ce0 {
+public final /* synthetic */ class g9 implements rc, qc, ce0 {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
 
@@ -22,7 +22,7 @@ public final /* synthetic */ class g9 implements qc, pc, ce0 {
         this.b = obj2;
     }
 
-    @Override // org.telegram.messenger.qc
+    @Override // org.telegram.messenger.rc
     public void a(String str) {
         h9 h9Var = (h9) this.a;
         Menu menu = (Menu) this.b;
@@ -31,12 +31,12 @@ public final /* synthetic */ class g9 implements qc, pc, ce0 {
     }
 
     @Override // org.telegram.ui.Components.ce0
-    public void p(int i10, int i11) {
+    public void o(int i10, int i11) {
         x5 x5Var = (x5) this.a;
         ce0 ce0Var = (ce0) this.b;
         mg.c2 c2Var = x5Var.e;
         TextView textView = x5Var.b;
-        ce0Var.p(i10, i11);
+        ce0Var.o(i10, i11);
         if (i11 > 0) {
             textView.setText("+" + i11);
         } else {
@@ -62,8 +62,8 @@ public final /* synthetic */ class g9 implements qc, pc, ce0 {
         x5Var.d.start();
     }
 
-    @Override // org.telegram.messenger.pc
-    public void q(Exception exc) {
+    @Override // org.telegram.messenger.qc
+    public void p(Exception exc) {
         h9 h9Var = (h9) this.a;
         Menu menu = (Menu) this.b;
         org.telegram.messenger.f8.d("mlkit: failed to detect language in selection");

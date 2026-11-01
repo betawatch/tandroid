@@ -26,45 +26,45 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.o5;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.tz;
 import org.telegram.messenger.u3;
+import org.telegram.messenger.uz;
 import org.telegram.messenger.v3;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u5;
 import org.telegram.ui.Components.dr;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.r8;
 import org.telegram.ui.Components.w10;
 import org.telegram.ui.Components.x10;
 import org.telegram.ui.Components.y10;
-import org.telegram.ui.b50;
-import org.telegram.ui.y20;
+import org.telegram.ui.a50;
+import org.telegram.ui.x20;
 import org.webrtc.RendererCommon;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class r extends FrameLayout implements y {
+public final class r extends FrameLayout implements z {
     public final l A0;
     public final Rect B0;
     public ag.j0 C0;
@@ -74,7 +74,7 @@ public final class r extends FrameLayout implements y {
     public int E0;
     public final u3 F;
     public int F0;
-    public final b50 G;
+    public final a50 G;
     public ValueAnimator G0;
     public boolean H;
     public int H0;
@@ -93,7 +93,7 @@ public final class r extends FrameLayout implements y {
     public boolean R;
     public float S;
     public final Paint T;
-    public final ei0 U;
+    public final fi0 U;
     public final ImageView V;
     public boolean W;
     public final n a;
@@ -117,7 +117,7 @@ public final class r extends FrameLayout implements y {
     public final ImageReceiver l0;
     public final ArrayList m0;
     public boolean n;
-    public z n0;
+    public a0 n0;
     public boolean o0;
     public float p0;
     public Bitmap q0;
@@ -132,12 +132,12 @@ public final class r extends FrameLayout implements y {
     public float w0;
     public v3 x;
     public ImageView x0;
-    public final w y;
+    public final x y;
     public boolean y0;
     public boolean z0;
 
-    public r(w wVar, u3 u3Var, b50 b50Var) {
-        super(wVar.getContext());
+    public r(x xVar, u3 u3Var, a50 a50Var) {
+        super(xVar.getContext());
         this.D = new Paint(1);
         Paint paint = new Paint(1);
         this.T = paint;
@@ -147,9 +147,9 @@ public final class r extends FrameLayout implements y {
         this.A0 = new l(this, 1);
         this.B0 = new Rect();
         this.F = u3Var;
-        int i10 = b50Var.a;
+        int i10 = a50Var.a;
         this.K = i10;
-        dr drVar = new dr(wVar.getContext(), R.drawable.calls_video, -1);
+        dr drVar = new dr(xVar.getContext(), R.drawable.calls_video, -1);
         this.u0 = drVar;
         drVar.a(true, false);
         float f7 = -org.telegram.messenger.i0.L(4.0f);
@@ -162,7 +162,7 @@ public final class r extends FrameLayout implements y {
         float N = org.telegram.messenger.i0.N(3.4f);
         drVar.c.setStrokeWidth(N);
         drVar.d.setStrokeWidth(N * 1.47f);
-        this.v0 = wVar.getContext().getResources().getDrawable(R.drawable.screencast_big).mutate();
+        this.v0 = xVar.getContext().getResources().getDrawable(R.drawable.screencast_big).mutate();
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTypeface(org.telegram.messenger.i0.o());
         textPaint.setTextSize(org.telegram.messenger.i0.L(13.0f));
@@ -171,43 +171,43 @@ public final class r extends FrameLayout implements y {
         textPaint2.setTypeface(org.telegram.messenger.i0.o());
         textPaint2.setTextSize(org.telegram.messenger.i0.L(15.0f));
         textPaint2.setColor(-1);
-        String L0 = cd.L0(2131743250, null);
-        String L02 = cd.L0(2131743247, null);
+        String L0 = dd.L0(2131743250, null);
+        String L02 = dd.L0(2131743247, null);
         int L3 = org.telegram.messenger.i0.L(400.0f);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         StaticLayout staticLayout = new StaticLayout(L02, textPaint, L3, alignment, 1.0f, 0.0f, false);
-        TLRPC.Chat L03 = vp.r1(i10).L0(Long.valueOf(u3Var.c));
-        StaticLayout staticLayout2 = new StaticLayout(cd.a0("VoipVideoNotAvailable", null, 2131743252, cd.G(vp.r1(i10).b4, "Participants", new Object[0])), textPaint, org.telegram.messenger.i0.L(400.0f), alignment, 1.0f, 0.0f, false);
-        String L04 = cd.L0(2131743248, null);
-        n nVar = new n(this, wVar.getContext(), u3Var, wVar, textPaint, staticLayout2, textPaint2, L04, textPaint2.measureText(L04), staticLayout, b50Var, L0, textPaint.measureText(L0));
+        TLRPC.Chat L03 = wp.r1(i10).L0(Long.valueOf(u3Var.c));
+        StaticLayout staticLayout2 = new StaticLayout(dd.a0("VoipVideoNotAvailable", null, 2131743252, dd.G(wp.r1(i10).b4, "Participants", new Object[0])), textPaint, org.telegram.messenger.i0.L(400.0f), alignment, 1.0f, 0.0f, false);
+        String L04 = dd.L0(2131743248, null);
+        n nVar = new n(this, xVar.getContext(), u3Var, xVar, textPaint, staticLayout2, textPaint2, L04, textPaint2.measureText(L04), staticLayout, a50Var, L0, textPaint.measureText(L0));
         this.a = nVar;
         RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FIT;
-        x1 x1Var = nVar.d;
-        x1Var.setScalingType(scalingType);
-        this.y = wVar;
-        this.G = b50Var;
-        x1Var.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new o(this));
+        y1 y1Var = nVar.d;
+        y1Var.setScalingType(scalingType);
+        this.y = xVar;
+        this.G = a50Var;
+        y1Var.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new o(this));
         TextureView textureView = nVar.e;
         if (textureView != null) {
-            x1Var.setBackgroundRenderer(textureView);
-            if (!x1Var.isFirstFrameRendered()) {
+            y1Var.setBackgroundRenderer(textureView);
+            if (!y1Var.isFirstFrameRendered()) {
                 textureView.setAlpha(0.0f);
             }
         }
         setClipChildren(false);
-        x1Var.setAlpha(0.0f);
+        y1Var.setAlpha(0.0f);
         addView(nVar);
         q qVar = new q(this, getContext());
         this.b0 = qVar;
         addView(qVar);
-        u5 u5Var = new u5(wVar.getContext());
+        u5 u5Var = new u5(xVar.getContext());
         this.L = u5Var;
         u5Var.setTextSize(13);
-        u5Var.setTextColor(i0.b.o(-1, zs.F3));
+        u5Var.setTextColor(i0.b.o(-1, at.F3));
         u5Var.setTypeface(org.telegram.messenger.i0.o());
         u5Var.setFullTextMaxLines(1);
         u5Var.setBuildFullLayout(true);
-        FrameLayout frameLayout = new FrameLayout(wVar.getContext());
+        FrameLayout frameLayout = new FrameLayout(xVar.getContext());
         this.J = frameLayout;
         frameLayout.addView(u5Var, b6.d(-1, -2.0f, 19, 32.0f, 0.0f, 8.0f, 0.0f));
         addView(frameLayout, b6.c(32.0f, -1));
@@ -215,21 +215,21 @@ public final class r extends FrameLayout implements y {
         paint.setStrokeWidth(org.telegram.messenger.i0.L(2.0f));
         paint.setColor(t6.x0(null, t6.eh, false));
         frameLayout.setClipChildren(false);
-        ei0 ei0Var = new ei0(wVar.getContext());
-        this.U = ei0Var;
-        addView(ei0Var, b6.d(24, 24.0f, 0, 4.0f, 6.0f, 4.0f, 0.0f));
-        ImageView imageView = new ImageView(wVar.getContext());
+        fi0 fi0Var = new fi0(xVar.getContext());
+        this.U = fi0Var;
+        addView(fi0Var, b6.d(24, 24.0f, 0, 4.0f, 6.0f, 4.0f, 0.0f));
+        ImageView imageView = new ImageView(xVar.getContext());
         this.V = imageView;
         addView(imageView, b6.d(24, 24.0f, 0, 4.0f, 6.0f, 4.0f, 0.0f));
         imageView.setPadding(org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f));
-        imageView.setImageDrawable(wVar.getContext().getDrawable(R.drawable.voicechat_screencast));
+        imageView.setImageDrawable(xVar.getContext().getDrawable(R.drawable.voicechat_screencast));
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         int L4 = org.telegram.messenger.i0.L(19.0f);
         int o10 = i0.b.o(-1, 100);
         org.telegram.ui.Cells.y k02 = t6.k0(L4, L4, L4, L4, 0, o10, o10);
-        org.telegram.ui.ActionBar.q2 q2Var = new org.telegram.ui.ActionBar.q2(this, wVar.getContext(), 4);
+        org.telegram.ui.ActionBar.q2 q2Var = new org.telegram.ui.ActionBar.q2(this, xVar.getContext(), 4);
         this.N = q2Var;
-        q2Var.setText(cd.L0(2131743246, null));
+        q2Var.setText(dd.L0(2131743246, null));
         q2Var.setTextSize(1, 15.0f);
         q2Var.setTypeface(org.telegram.messenger.i0.o());
         q2Var.setPadding(org.telegram.messenger.i0.L(21.0f), 0, org.telegram.messenger.i0.L(21.0f), 0);
@@ -238,7 +238,7 @@ public final class r extends FrameLayout implements y {
         q2Var.setGravity(17);
         q2Var.setOnClickListener(new ag.g(this, 20));
         addView(q2Var, b6.e(-2, 38, 51));
-        TextView textView = new TextView(wVar.getContext());
+        TextView textView = new TextView(xVar.getContext());
         this.O = textView;
         textView.setTextSize(1, 15.0f);
         textView.setPadding(org.telegram.messenger.i0.L(21.0f), 0, org.telegram.messenger.i0.L(21.0f), 0);
@@ -247,14 +247,14 @@ public final class r extends FrameLayout implements y {
         textView.setGravity(17);
         textView.setAlpha(0.0f);
         if (w3.w(14, L03)) {
-            textView.setText(org.telegram.messenger.i0.W2(cd.L0(2131748179, null)));
+            textView.setText(org.telegram.messenger.i0.W2(dd.L0(2131748179, null)));
         } else {
             m5.q("NoRtmpStreamFromAppViewer", null, 2131748178, new Object[]{L03.title}, textView);
         }
         addView(textView, b6.e(-2, -2, 51));
     }
 
-    public static r c(ArrayList arrayList, y20 y20Var, k kVar, y10 y10Var, k kVar2, v3 v3Var, u3 u3Var, b50 b50Var) {
+    public static r c(ArrayList arrayList, x20 x20Var, k kVar, y10 y10Var, k kVar2, v3 v3Var, u3 u3Var, a50 a50Var) {
         r rVar;
         int i10 = 0;
         while (true) {
@@ -269,7 +269,7 @@ public final class r extends FrameLayout implements y {
             i10++;
         }
         if (rVar == null) {
-            rVar = new r(y20Var, u3Var, b50Var);
+            rVar = new r(x20Var, u3Var, a50Var);
         }
         if (kVar != null) {
             rVar.setPrimaryView(kVar);
@@ -283,7 +283,7 @@ public final class r extends FrameLayout implements y {
         return rVar;
     }
 
-    @Override // org.telegram.ui.Components.voip.y
+    @Override // org.telegram.ui.Components.voip.z
     public final void a() {
         invalidate();
         k(true);
@@ -302,7 +302,7 @@ public final class r extends FrameLayout implements y {
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().setLocalSink(null, this.x.b);
                 }
-            } else if (VoIPService.getSharedInstance() != null && !s0.d0.V) {
+            } else if (VoIPService.getSharedInstance() != null && !t0.d0.V) {
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
                 v3 v3Var = this.x;
                 sharedInstance.removeRemoteSink(v3Var.a, v3Var.b);
@@ -329,7 +329,7 @@ public final class r extends FrameLayout implements y {
         this.q0 = bitmap;
         this.a.setThumb(bitmap);
         if (this.q0 == null) {
-            long C1 = jj.C1(this.x.a.peer);
+            long C1 = kj.C1(this.x.a.peer);
             v3 v3Var2 = this.x;
             boolean z11 = v3Var2.a.self;
             ImageReceiver imageReceiver = this.l0;
@@ -339,14 +339,14 @@ public final class r extends FrameLayout implements y {
             }
             int i10 = this.K;
             if (C1 > 0) {
-                TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(C1));
-                ic l4 = ic.l(i10, 1, Z1);
+                TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(C1));
+                jc l4 = jc.l(i10, 1, Z1);
                 int d = Z1 != null ? r8.d(Z1.id) : i0.b.f(0.2f, -16777216, -1);
                 imageReceiver.q0(l4, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.b.f(0.2f, d, -16777216), i0.b.f(0.4f, d, -16777216)}), null, Z1, 0);
                 return;
             }
-            TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-C1));
-            ic a2 = ic.a(1, L0);
+            TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-C1));
+            jc a2 = jc.a(1, L0);
             int d10 = L0 != null ? r8.d(L0.id) : i0.b.f(0.2f, -16777216, -1);
             imageReceiver.q0(a2, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.b.f(0.2f, d10, -16777216), i0.b.f(0.4f, d10, -16777216)}), null, L0, 0);
         }
@@ -355,53 +355,53 @@ public final class r extends FrameLayout implements y {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10 = this.w;
-        w wVar = this.y;
+        x xVar = this.y;
         n nVar = this.a;
         if (z10) {
             float y3 = (nVar.getY() + nVar.getMeasuredHeight()) - nVar.N;
             FrameLayout frameLayout = this.J;
             float measuredHeight = (y3 - frameLayout.getMeasuredHeight()) + this.p0;
             boolean z11 = this.h;
-            ei0 ei0Var = this.U;
+            fi0 fi0Var = this.U;
             if (z11 || this.f) {
-                frameLayout.setAlpha(1.0f - wVar.n);
-                ei0Var.setAlpha(1.0f - wVar.n);
+                frameLayout.setAlpha(1.0f - xVar.n);
+                fi0Var.setAlpha(1.0f - xVar.n);
             } else if (this.b || this.r) {
-                if (!b50.w5 && !b50.x5) {
-                    measuredHeight = sc.e.z(1.0f, wVar.W, org.telegram.messenger.i0.L(90.0f) * wVar.c, measuredHeight);
+                if (!a50.w5 && !a50.x5) {
+                    measuredHeight = sc.e.z(1.0f, xVar.W, org.telegram.messenger.i0.L(90.0f) * xVar.c, measuredHeight);
                 }
                 frameLayout.setAlpha(1.0f);
-                ei0Var.setAlpha(1.0f);
+                fi0Var.setAlpha(1.0f);
             } else if (this.d != null) {
-                frameLayout.setAlpha(1.0f - wVar.c);
-                ei0Var.setAlpha(1.0f - wVar.c);
+                frameLayout.setAlpha(1.0f - xVar.c);
+                fi0Var.setAlpha(1.0f - xVar.c);
             } else {
                 frameLayout.setAlpha(1.0f);
-                ei0Var.setAlpha(1.0f);
+                fi0Var.setAlpha(1.0f);
             }
             boolean z12 = this.b;
             u5 u5Var = this.L;
             if (z12 || this.r) {
-                u5Var.setFullAlpha(wVar.c);
+                u5Var.setFullAlpha(xVar.c);
             } else {
                 u5Var.setFullAlpha(0.0f);
             }
-            ei0Var.setTranslationX(frameLayout.getX());
-            ei0Var.setTranslationY(measuredHeight - org.telegram.messenger.i0.L(2.0f));
+            fi0Var.setTranslationX(frameLayout.getX());
+            fi0Var.setTranslationY(measuredHeight - org.telegram.messenger.i0.L(2.0f));
             ImageView imageView = this.V;
             if (imageView.getVisibility() == 0) {
                 imageView.setTranslationX((nVar.getMeasuredWidth() - (nVar.O * 2.0f)) - org.telegram.messenger.i0.L(32.0f));
                 imageView.setTranslationY(measuredHeight - org.telegram.messenger.i0.L(2.0f));
-                imageView.setAlpha(Math.min(1.0f - wVar.c, 1.0f - wVar.n));
+                imageView.setAlpha(Math.min(1.0f - xVar.c, 1.0f - xVar.n));
             }
             frameLayout.setTranslationY(measuredHeight);
-            frameLayout.setTranslationX(this.y0 ? 0.0f : org.telegram.messenger.i0.L(6.0f) * wVar.c);
+            frameLayout.setTranslationX(this.y0 ? 0.0f : org.telegram.messenger.i0.L(6.0f) * xVar.c);
         }
         super.dispatchDraw(canvas);
         if (this.w) {
-            z zVar = this.n0;
-            if (zVar != null) {
-                boolean z13 = zVar.e;
+            a0 a0Var = this.n0;
+            if (a0Var != null) {
+                boolean z13 = a0Var.e;
                 if (z13) {
                     float f7 = this.S;
                     if (f7 != 1.0f) {
@@ -428,7 +428,7 @@ public final class r extends FrameLayout implements y {
                 }
             }
             float f13 = this.S;
-            float f14 = (1.0f - wVar.n) * (1.0f - wVar.c) * f13;
+            float f14 = (1.0f - xVar.n) * (1.0f - xVar.c) * f13;
             if (f13 > 0.0f) {
                 int i10 = (int) (f14 * 255.0f);
                 Paint paint = this.T;
@@ -462,13 +462,13 @@ public final class r extends FrameLayout implements y {
 
     public final void e() {
         this.a.d.release();
-        z zVar = this.n0;
-        if (zVar != null) {
-            this.G.k4.add(zVar);
+        a0 a0Var = this.n0;
+        if (a0Var != null) {
+            this.G.k4.add(a0Var);
             this.n0.b();
-            z zVar2 = this.n0;
-            zVar2.c = null;
-            zVar2.c(false);
+            a0 a0Var2 = this.n0;
+            a0Var2.c = null;
+            a0Var2.c(false);
         }
         this.n0 = null;
     }
@@ -476,12 +476,12 @@ public final class r extends FrameLayout implements y {
     public final void f() {
         if (this.x != null) {
             n nVar = this.a;
-            x1 x1Var = nVar.d;
-            x1 x1Var2 = nVar.d;
-            if (x1Var.getMeasuredHeight() == 0 || x1Var2.getMeasuredWidth() == 0) {
+            y1 y1Var = nVar.d;
+            y1 y1Var2 = nVar.d;
+            if (y1Var.getMeasuredHeight() == 0 || y1Var2.getMeasuredWidth() == 0) {
                 return;
             }
-            x1Var2.getRenderBufferBitmap(new mg.l(this, 14));
+            y1Var2.getRenderBufferBitmap(new mg.l(this, 14));
         }
     }
 
@@ -493,8 +493,8 @@ public final class r extends FrameLayout implements y {
     }
 
     public String getName() {
-        long C1 = jj.C1(this.x.a.peer);
-        return o5.E(C1) ? h20.p(vp.r1(org.telegram.messenger.c.a(d20.s0).a).Z1(Long.valueOf(C1))) : vp.r1(org.telegram.messenger.c.a(d20.s0).a).L0(Long.valueOf(-C1)).title;
+        long C1 = kj.C1(this.x.a.peer);
+        return o5.E(C1) ? i20.p(wp.r1(org.telegram.messenger.c.a(e20.s0).a).Z1(Long.valueOf(C1))) : wp.r1(org.telegram.messenger.c.a(e20.s0).a).L0(Long.valueOf(-C1)).title;
     }
 
     public k getPrimaryView() {
@@ -531,9 +531,9 @@ public final class r extends FrameLayout implements y {
         k kVar = this.c;
         if (kVar != null) {
             kVar.invalidate();
-            b50 b50Var = this.G;
-            if (b50Var.O4 == this.c) {
-                b50Var.b.invalidate();
+            a50 a50Var = this.G;
+            if (a50Var.O4 == this.c) {
+                a50Var.b.invalidate();
             }
         }
         y10 y10Var = this.d;
@@ -602,12 +602,12 @@ public final class r extends FrameLayout implements y {
         ViewGroup.MarginLayoutParams marginLayoutParams;
         v3 v3Var3;
         boolean z16;
-        x1 x1Var;
+        y1 y1Var;
         boolean C;
         q qVar;
         long C1;
-        ic a2;
-        ic a10;
+        jc a2;
+        jc a10;
         TLRPC.Chat chat;
         boolean z17;
         Drawable C2;
@@ -639,27 +639,27 @@ public final class r extends FrameLayout implements y {
             }
         }
         boolean z19 = this.w;
-        ei0 ei0Var = this.U;
-        w wVar = this.y;
+        fi0 fi0Var = this.U;
+        x xVar = this.y;
         String str = null;
         n nVar = this.a;
         int i12 = 1;
         if (z19 && !this.b) {
             boolean z20 = VoIPService.getSharedInstance() == null;
-            if (b50.z5 || (v3Var4 = this.x) == null || (this.d == null && (!u3.C(v3Var4.a, v3Var4.b, u3Var) || (!u3Var.x && this.x != u3Var.z)))) {
+            if (a50.z5 || (v3Var4 = this.x) == null || (this.d == null && (!u3.C(v3Var4.a, v3Var4.b, u3Var) || (!u3Var.x && this.x != u3Var.z)))) {
                 z20 = true;
             }
             if (z20 || (this.c == null && this.d == null && this.e == null && !this.h && !this.f)) {
                 this.w = false;
                 f();
-                boolean z21 = tz.o() <= 0;
+                boolean z21 = uz.o() <= 0;
                 if (nVar.b0 == null && z20) {
                     if (z21) {
-                        wVar.f(this);
+                        xVar.f(this);
                     }
                     animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new androidx.fragment.app.g(this, this, z21, 6)).setDuration(150L).start();
                 } else {
-                    if (wVar.s) {
+                    if (xVar.s) {
                         ag.j0 j0Var = this.C0;
                         if (j0Var != null) {
                             org.telegram.messenger.i0.r(j0Var);
@@ -670,12 +670,12 @@ public final class r extends FrameLayout implements y {
                         org.telegram.messenger.i0.g3(j0Var2);
                     } else {
                         if (z21) {
-                            wVar.removeView(this);
+                            xVar.removeView(this);
                         }
                         setVisibility(8);
                     }
                     if (z21) {
-                        wVar.f(this);
+                        xVar.f(this);
                         e();
                     }
                 }
@@ -728,16 +728,16 @@ public final class r extends FrameLayout implements y {
                     }
                 }
                 this.w = true;
-                b50 b50Var = this.G;
-                if (b50Var.k4.size() > 0) {
-                    this.n0 = (z) i0.a.v(1, b50Var.k4);
+                a50 a50Var = this.G;
+                if (a50Var.k4.size() > 0) {
+                    this.n0 = (a0) i0.a.v(1, a50Var.k4);
                 } else {
-                    this.n0 = new z();
+                    this.n0 = new a0();
                 }
-                z zVar = this.n0;
-                zVar.g = this;
-                zVar.c = ei0Var;
-                zVar.c(false);
+                a0 a0Var = this.n0;
+                a0Var.g = this;
+                a0Var.c = fi0Var;
+                a0Var.c(false);
                 k(false);
                 ag.j0 j0Var3 = this.C0;
                 if (j0Var3 != null) {
@@ -745,10 +745,10 @@ public final class r extends FrameLayout implements y {
                     this.C0 = null;
                 }
                 if (getParent() == null) {
-                    wVar.addView(this, b6.e(46, 46, 51));
-                    wVar.H.add(this);
-                    long C12 = jj.C1(this.x.a.peer);
-                    LongSparseIntArray longSparseIntArray = wVar.x;
+                    xVar.addView(this, b6.e(46, 46, 51));
+                    xVar.H.add(this);
+                    long C12 = kj.C1(this.x.a.peer);
+                    LongSparseIntArray longSparseIntArray = xVar.x;
                     longSparseIntArray.put(C12, longSparseIntArray.get(C12, 0) + 1);
                     setVisibility(0);
                 } else if (getVisibility() == 8) {
@@ -780,19 +780,19 @@ public final class r extends FrameLayout implements y {
                 if (v3Var != v3Var2) {
                     if (u5Var.getVisibility() != 4) {
                         u5Var.setVisibility(4);
-                        ei0Var.setVisibility(4);
+                        fi0Var.setVisibility(4);
                     }
                 } else if (u5Var.getVisibility() != 0) {
                     u5Var.setVisibility(0);
-                    ei0Var.setVisibility(0);
+                    fi0Var.setVisibility(0);
                 }
                 z13 = this.w;
                 int i13 = this.K;
                 if (z13) {
-                    boolean z23 = b50.x5 && (!wVar.b || (this.d == null && this.c == null));
+                    boolean z23 = a50.x5 && (!xVar.b || (this.d == null && this.c == null));
                     if (!this.b) {
                         y10 y10Var2 = this.d;
-                        if (y10Var2 == null || this.c != null || wVar.b) {
+                        if (y10Var2 == null || this.c != null || xVar.b) {
                             if (!this.h) {
                                 if (y10Var2 == null || this.c != null) {
                                     k kVar5 = this.e;
@@ -833,32 +833,32 @@ public final class r extends FrameLayout implements y {
                                             this.s = true;
                                         }
                                         org.telegram.messenger.i0.g3(new l(this, i11));
-                                        wVar.requestLayout();
+                                        xVar.requestLayout();
                                         invalidate();
                                     }
                                     v3Var3 = this.x;
                                     if (v3Var3.a.self || v3Var3.b || VoIPService.getSharedInstance() == null) {
-                                        x1 x1Var2 = nVar.d;
-                                        x1 x1Var3 = nVar.d;
-                                        x1Var2.setMirror(false);
-                                        x1Var3.setRotateTextureWithScreen(true);
-                                        x1Var3.setUseCameraRotation(false);
+                                        y1 y1Var2 = nVar.d;
+                                        y1 y1Var3 = nVar.d;
+                                        y1Var2.setMirror(false);
+                                        y1Var3.setRotateTextureWithScreen(true);
+                                        y1Var3.setUseCameraRotation(false);
                                     } else {
-                                        x1 x1Var4 = nVar.d;
-                                        x1 x1Var5 = nVar.d;
-                                        x1Var4.setMirror(VoIPService.getSharedInstance().isFrontFaceCamera());
-                                        x1Var5.setRotateTextureWithScreen(true);
-                                        x1Var5.setUseCameraRotation(true);
+                                        y1 y1Var4 = nVar.d;
+                                        y1 y1Var5 = nVar.d;
+                                        y1Var4.setMirror(VoIPService.getSharedInstance().isFrontFaceCamera());
+                                        y1Var5.setRotateTextureWithScreen(true);
+                                        y1Var5.setUseCameraRotation(true);
                                     }
                                     z16 = nVar.a;
-                                    x1Var = nVar.d;
+                                    y1Var = nVar.d;
                                     if (!z16) {
                                         ((WindowManager) nVar.getContext().getSystemService("window")).getDefaultDisplay();
                                     }
                                     if (this.x.a.self) {
-                                        x1Var.setMaxTextureSize(0);
+                                        y1Var.setMaxTextureSize(0);
                                     } else {
-                                        x1Var.setMaxTextureSize(720);
+                                        y1Var.setMaxTextureSize(720);
                                     }
                                     v3 v3Var9 = this.x;
                                     C = u3.C(v3Var9.a, v3Var9.b, u3Var);
@@ -867,24 +867,24 @@ public final class r extends FrameLayout implements y {
                                         ImageReceiver imageReceiver = qVar.a;
                                         r8 r8Var = qVar.c;
                                         imageReceiver.d = i13;
-                                        C1 = jj.C1(this.x.a.peer);
+                                        C1 = kj.C1(this.x.a.peer);
                                         if (o5.E(C1)) {
-                                            TLRPC.Chat L0 = vp.r1(org.telegram.messenger.c.a(d20.s0).a).L0(Long.valueOf(-C1));
+                                            TLRPC.Chat L0 = wp.r1(org.telegram.messenger.c.a(e20.s0).a).L0(Long.valueOf(-C1));
                                             r8Var.q(L0);
-                                            a2 = ic.a(0, L0);
-                                            a10 = ic.a(1, L0);
+                                            a2 = jc.a(0, L0);
+                                            a10 = jc.a(1, L0);
                                             chat = L0;
                                         } else {
-                                            TLRPC.User Z1 = vp.r1(org.telegram.messenger.c.a(i13).a).Z1(Long.valueOf(C1));
+                                            TLRPC.User Z1 = wp.r1(org.telegram.messenger.c.a(i13).a).Z1(Long.valueOf(C1));
                                             r8Var.r(Z1);
-                                            a2 = ic.l(i13, 0, Z1);
-                                            a10 = ic.l(i13, 1, Z1);
+                                            a2 = jc.l(i13, 0, Z1);
+                                            a10 = jc.l(i13, 1, Z1);
                                             chat = Z1;
                                         }
                                         TLRPC.Chat chat2 = chat;
-                                        ic icVar = a2;
-                                        qVar.a.q0(icVar, null, (a10 != null || (C2 = hc.D().C(a10.f)) == null) ? r8Var : C2, null, chat2, 0);
-                                        qVar.b.q0(icVar, "50_50_b", new ColorDrawable(t6.x0(null, t6.hh, false)), null, chat2, 0);
+                                        jc jcVar = a2;
+                                        qVar.a.q0(jcVar, null, (a10 != null || (C2 = ic.D().C(a10.f)) == null) ? r8Var : C2, null, chat2, 0);
+                                        qVar.b.q0(jcVar, "50_50_b", new ColorDrawable(t6.x0(null, t6.hh, false)), null, chat2, 0);
                                         z17 = false;
                                     } else {
                                         z17 = true;
@@ -919,11 +919,11 @@ public final class r extends FrameLayout implements y {
                                         }
                                     }
                                     if (this.x.a.self && VoIPService.getSharedInstance() != null) {
-                                        VoIPService.getSharedInstance().setLocalSink(x1Var, this.x.b);
+                                        VoIPService.getSharedInstance().setLocalSink(y1Var, this.x.b);
                                     }
-                                    z zVar2 = this.n0;
-                                    zVar2.h = this.x.a;
-                                    zVar2.c(z11);
+                                    a0 a0Var2 = this.n0;
+                                    a0Var2.h = this.x.a;
+                                    a0Var2.c(z11);
                                     if (qVar.getVisibility() == 0) {
                                         q.a(qVar, true);
                                     }
@@ -931,25 +931,25 @@ public final class r extends FrameLayout implements y {
                                     z18 = v3Var10.b ? !((tL_groupCallParticipantVideo = v3Var10.a.video) == null || !tL_groupCallParticipantVideo.paused) : !((tL_groupCallParticipantVideo2 = v3Var10.a.presentation) == null || !tL_groupCallParticipantVideo2.paused);
                                     if (this.s0 != z18) {
                                         this.s0 = z18;
-                                        x1Var.animate().alpha(this.s0 ? 0.0f : 1.0f).setDuration(250L).start();
+                                        y1Var.animate().alpha(this.s0 ? 0.0f : 1.0f).setDuration(250L).start();
                                         nVar.invalidate();
                                     }
-                                    if (b50.z5 && this.W) {
-                                        if (!x1Var.isFirstFrameRendered()) {
+                                    if (a50.z5 && this.W) {
+                                        if (!y1Var.isFirstFrameRendered()) {
                                             d();
                                         }
                                         if (this.x.a.self) {
                                             if (VoIPService.getSharedInstance() != null) {
-                                                VoIPService.getSharedInstance().setLocalSink(x1Var, this.x.b);
+                                                VoIPService.getSharedInstance().setLocalSink(y1Var, this.x.b);
                                             }
                                         } else if (VoIPService.getSharedInstance() != null) {
                                             VoIPService sharedInstance4 = VoIPService.getSharedInstance();
                                             v3 v3Var11 = this.x;
-                                            sharedInstance4.addRemoteSink(v3Var11.a, v3Var11.b, x1Var, null);
+                                            sharedInstance4.addRemoteSink(v3Var11.a, v3Var11.b, y1Var, null);
                                             VoIPService sharedInstance5 = VoIPService.getSharedInstance();
                                             v3 v3Var12 = this.x;
-                                            sharedInstance5.addRemoteSink(v3Var12.a, v3Var12.b, x1Var, null);
-                                            if (u3Var.b.rtmp_stream && !x1Var.isFirstFrameRendered() && !this.z0) {
+                                            sharedInstance5.addRemoteSink(v3Var12.a, v3Var12.b, y1Var, null);
+                                            if (u3Var.b.rtmp_stream && !y1Var.isFirstFrameRendered() && !this.z0) {
                                                 org.telegram.messenger.i0.h3(this.A0, 15000L);
                                                 this.z0 = true;
                                             }
@@ -972,10 +972,10 @@ public final class r extends FrameLayout implements y {
                                         } else {
                                             str = null;
                                         }
-                                        if (b50.z5 && x1Var.isFirstFrameRendered()) {
+                                        if (a50.z5 && y1Var.isFirstFrameRendered()) {
                                             f();
-                                            x1Var.clearFirstFrame();
-                                            x1Var.setAlpha(0.0f);
+                                            y1Var.clearFirstFrame();
+                                            y1Var.setAlpha(0.0f);
                                             nVar.e.setAlpha(0.0f);
                                         }
                                     }
@@ -998,19 +998,19 @@ public final class r extends FrameLayout implements y {
                                     if (z11) {
                                     }
                                     org.telegram.messenger.i0.g3(new l(this, i11));
-                                    wVar.requestLayout();
+                                    xVar.requestLayout();
                                     invalidate();
                                 }
                                 v3Var3 = this.x;
                                 if (v3Var3.a.self) {
                                 }
-                                x1 x1Var22 = nVar.d;
-                                x1 x1Var32 = nVar.d;
-                                x1Var22.setMirror(false);
-                                x1Var32.setRotateTextureWithScreen(true);
-                                x1Var32.setUseCameraRotation(false);
+                                y1 y1Var22 = nVar.d;
+                                y1 y1Var32 = nVar.d;
+                                y1Var22.setMirror(false);
+                                y1Var32.setRotateTextureWithScreen(true);
+                                y1Var32.setUseCameraRotation(false);
                                 z16 = nVar.a;
-                                x1Var = nVar.d;
+                                y1Var = nVar.d;
                                 if (!z16) {
                                 }
                                 if (this.x.a.self) {
@@ -1023,13 +1023,13 @@ public final class r extends FrameLayout implements y {
                                 ImageReceiver imageReceiver2 = qVar.a;
                                 r8 r8Var2 = qVar.c;
                                 imageReceiver2.d = i13;
-                                C1 = jj.C1(this.x.a.peer);
+                                C1 = kj.C1(this.x.a.peer);
                                 if (o5.E(C1)) {
                                 }
                                 TLRPC.Chat chat22 = chat;
-                                ic icVar2 = a2;
-                                qVar.a.q0(icVar2, null, (a10 != null || (C2 = hc.D().C(a10.f)) == null) ? r8Var2 : C2, null, chat22, 0);
-                                qVar.b.q0(icVar2, "50_50_b", new ColorDrawable(t6.x0(null, t6.hh, false)), null, chat22, 0);
+                                jc jcVar2 = a2;
+                                qVar.a.q0(jcVar2, null, (a10 != null || (C2 = ic.D().C(a10.f)) == null) ? r8Var2 : C2, null, chat22, 0);
+                                qVar.b.q0(jcVar2, "50_50_b", new ColorDrawable(t6.x0(null, t6.hh, false)), null, chat22, 0);
                                 z17 = false;
                                 if (z11) {
                                 }
@@ -1044,11 +1044,11 @@ public final class r extends FrameLayout implements y {
                                     }
                                 }
                                 if (this.x.a.self) {
-                                    VoIPService.getSharedInstance().setLocalSink(x1Var, this.x.b);
+                                    VoIPService.getSharedInstance().setLocalSink(y1Var, this.x.b);
                                 }
-                                z zVar22 = this.n0;
-                                zVar22.h = this.x.a;
-                                zVar22.c(z11);
+                                a0 a0Var22 = this.n0;
+                                a0Var22.h = this.x.a;
+                                a0Var22.c(z11);
                                 if (qVar.getVisibility() == 0) {
                                 }
                                 v3 v3Var102 = this.x;
@@ -1056,14 +1056,14 @@ public final class r extends FrameLayout implements y {
                                 }
                                 if (this.s0 != z18) {
                                 }
-                                if (b50.z5) {
+                                if (a50.z5) {
                                 }
                                 if (this.x.a.self) {
                                 }
-                                if (b50.z5) {
+                                if (a50.z5) {
                                     f();
-                                    x1Var.clearFirstFrame();
-                                    x1Var.setAlpha(0.0f);
+                                    y1Var.clearFirstFrame();
+                                    y1Var.setAlpha(0.0f);
                                     nVar.e.setAlpha(0.0f);
                                 }
                                 k(true);
@@ -1079,13 +1079,13 @@ public final class r extends FrameLayout implements y {
                         v3Var3 = this.x;
                         if (v3Var3.a.self) {
                         }
-                        x1 x1Var222 = nVar.d;
-                        x1 x1Var322 = nVar.d;
-                        x1Var222.setMirror(false);
-                        x1Var322.setRotateTextureWithScreen(true);
-                        x1Var322.setUseCameraRotation(false);
+                        y1 y1Var222 = nVar.d;
+                        y1 y1Var322 = nVar.d;
+                        y1Var222.setMirror(false);
+                        y1Var322.setRotateTextureWithScreen(true);
+                        y1Var322.setUseCameraRotation(false);
                         z16 = nVar.a;
-                        x1Var = nVar.d;
+                        y1Var = nVar.d;
                         if (!z16) {
                         }
                         if (this.x.a.self) {
@@ -1098,13 +1098,13 @@ public final class r extends FrameLayout implements y {
                         ImageReceiver imageReceiver22 = qVar.a;
                         r8 r8Var22 = qVar.c;
                         imageReceiver22.d = i13;
-                        C1 = jj.C1(this.x.a.peer);
+                        C1 = kj.C1(this.x.a.peer);
                         if (o5.E(C1)) {
                         }
                         TLRPC.Chat chat222 = chat;
-                        ic icVar22 = a2;
-                        qVar.a.q0(icVar22, null, (a10 != null || (C2 = hc.D().C(a10.f)) == null) ? r8Var22 : C2, null, chat222, 0);
-                        qVar.b.q0(icVar22, "50_50_b", new ColorDrawable(t6.x0(null, t6.hh, false)), null, chat222, 0);
+                        jc jcVar22 = a2;
+                        qVar.a.q0(jcVar22, null, (a10 != null || (C2 = ic.D().C(a10.f)) == null) ? r8Var22 : C2, null, chat222, 0);
+                        qVar.b.q0(jcVar22, "50_50_b", new ColorDrawable(t6.x0(null, t6.hh, false)), null, chat222, 0);
                         z17 = false;
                         if (z11) {
                         }
@@ -1112,9 +1112,9 @@ public final class r extends FrameLayout implements y {
                         }
                         if (this.x.a.self) {
                         }
-                        z zVar222 = this.n0;
-                        zVar222.h = this.x.a;
-                        zVar222.c(z11);
+                        a0 a0Var222 = this.n0;
+                        a0Var222.h = this.x.a;
+                        a0Var222.c(z11);
                         if (qVar.getVisibility() == 0) {
                         }
                         v3 v3Var1022 = this.x;
@@ -1122,11 +1122,11 @@ public final class r extends FrameLayout implements y {
                         }
                         if (this.s0 != z18) {
                         }
-                        if (b50.z5) {
+                        if (a50.z5) {
                         }
                         if (this.x.a.self) {
                         }
-                        if (b50.z5) {
+                        if (a50.z5) {
                         }
                         k(true);
                     }
@@ -1140,13 +1140,13 @@ public final class r extends FrameLayout implements y {
                     v3Var3 = this.x;
                     if (v3Var3.a.self) {
                     }
-                    x1 x1Var2222 = nVar.d;
-                    x1 x1Var3222 = nVar.d;
-                    x1Var2222.setMirror(false);
-                    x1Var3222.setRotateTextureWithScreen(true);
-                    x1Var3222.setUseCameraRotation(false);
+                    y1 y1Var2222 = nVar.d;
+                    y1 y1Var3222 = nVar.d;
+                    y1Var2222.setMirror(false);
+                    y1Var3222.setRotateTextureWithScreen(true);
+                    y1Var3222.setUseCameraRotation(false);
                     z16 = nVar.a;
-                    x1Var = nVar.d;
+                    y1Var = nVar.d;
                     if (!z16) {
                     }
                     if (this.x.a.self) {
@@ -1159,13 +1159,13 @@ public final class r extends FrameLayout implements y {
                     ImageReceiver imageReceiver222 = qVar.a;
                     r8 r8Var222 = qVar.c;
                     imageReceiver222.d = i13;
-                    C1 = jj.C1(this.x.a.peer);
+                    C1 = kj.C1(this.x.a.peer);
                     if (o5.E(C1)) {
                     }
                     TLRPC.Chat chat2222 = chat;
-                    ic icVar222 = a2;
-                    qVar.a.q0(icVar222, null, (a10 != null || (C2 = hc.D().C(a10.f)) == null) ? r8Var222 : C2, null, chat2222, 0);
-                    qVar.b.q0(icVar222, "50_50_b", new ColorDrawable(t6.x0(null, t6.hh, false)), null, chat2222, 0);
+                    jc jcVar222 = a2;
+                    qVar.a.q0(jcVar222, null, (a10 != null || (C2 = ic.D().C(a10.f)) == null) ? r8Var222 : C2, null, chat2222, 0);
+                    qVar.b.q0(jcVar222, "50_50_b", new ColorDrawable(t6.x0(null, t6.hh, false)), null, chat2222, 0);
                     z17 = false;
                     if (z11) {
                     }
@@ -1173,9 +1173,9 @@ public final class r extends FrameLayout implements y {
                     }
                     if (this.x.a.self) {
                     }
-                    z zVar2222 = this.n0;
-                    zVar2222.h = this.x.a;
-                    zVar2222.c(z11);
+                    a0 a0Var2222 = this.n0;
+                    a0Var2222.h = this.x.a;
+                    a0Var2222.c(z11);
                     if (qVar.getVisibility() == 0) {
                     }
                     v3 v3Var10222 = this.x;
@@ -1183,22 +1183,22 @@ public final class r extends FrameLayout implements y {
                     }
                     if (this.s0 != z18) {
                     }
-                    if (b50.z5) {
+                    if (a50.z5) {
                     }
                     if (this.x.a.self) {
                     }
-                    if (b50.z5) {
+                    if (a50.z5) {
                     }
                     k(true);
                 }
                 if (this.w) {
                     return;
                 }
-                long C13 = jj.C1(this.x.a.peer);
+                long C13 = kj.C1(this.x.a.peer);
                 if (o5.E(C13)) {
-                    str = h20.p(vp.r1(org.telegram.messenger.c.a(i13).a).Z1(Long.valueOf(C13)));
+                    str = i20.p(wp.r1(org.telegram.messenger.c.a(i13).a).Z1(Long.valueOf(C13)));
                 } else {
-                    TLRPC.Chat L02 = vp.r1(org.telegram.messenger.c.a(i13).a).L0(Long.valueOf(-C13));
+                    TLRPC.Chat L02 = wp.r1(org.telegram.messenger.c.a(i13).a).L0(Long.valueOf(-C13));
                     if (L02 != null) {
                         str = L02.title;
                     }
@@ -1231,14 +1231,14 @@ public final class r extends FrameLayout implements y {
         int x02;
         int i10;
         int x03;
-        z zVar = this.n0;
-        if (zVar == null) {
+        a0 a0Var = this.n0;
+        if (a0Var == null) {
             return;
         }
-        if (zVar.k) {
+        if (a0Var.k) {
             x03 = t6.x0(null, t6.gh, false);
         } else {
-            if (!zVar.e) {
+            if (!a0Var.e) {
                 x02 = t6.x0(null, t6.eh, false);
                 i10 = -1;
                 if (this.E0 != i10) {
@@ -1318,7 +1318,7 @@ public final class r extends FrameLayout implements y {
         u3 u3Var = this.F;
         float f10 = u3Var.b.rtmp_stream ? 0.0f : 1.0f;
         boolean z10 = this.d0;
-        boolean z11 = b50.w5;
+        boolean z11 = a50.w5;
         if (z10 != z11) {
             this.R = true;
             this.d0 = z11;
@@ -1327,27 +1327,27 @@ public final class r extends FrameLayout implements y {
         layoutParams.rightMargin = L3;
         layoutParams.leftMargin = L3;
         boolean z12 = this.s;
-        ei0 ei0Var = this.U;
+        fi0 fi0Var = this.U;
         u5 u5Var = this.L;
         if (z12) {
             u5Var.animate().scaleX(f10).scaleY(f10).start();
-            ei0Var.animate().scaleX(f10).scaleY(f10).start();
+            fi0Var.animate().scaleX(f10).scaleY(f10).start();
         } else {
             u5Var.animate().cancel();
             u5Var.setScaleX(f10);
             u5Var.setScaleY(f10);
-            ei0Var.animate().cancel();
-            ei0Var.setScaleX(f10);
-            ei0Var.setScaleY(f10);
+            fi0Var.animate().cancel();
+            fi0Var.setScaleX(f10);
+            fi0Var.setScaleY(f10);
             frameLayout.animate().cancel();
         }
         this.s = false;
         if (this.b) {
             l(0);
             this.w0 = 1.0f;
-            if (b50.x5) {
+            if (a50.x5) {
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10) - org.telegram.messenger.i0.L(328.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11) - org.telegram.messenger.i0.L(4.0f), TLObject.FLAG_30));
-            } else if (b50.w5) {
+            } else if (a50.w5) {
                 int size = View.MeasureSpec.getSize(i10);
                 if (!u3Var.b.rtmp_stream) {
                     size -= org.telegram.messenger.i0.L(92.0f);
@@ -1362,30 +1362,30 @@ public final class r extends FrameLayout implements y {
             }
         } else if (this.h) {
             this.w0 = 1.0f;
-            int A2 = z20.A(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
+            int A2 = a30.A(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(A2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + A2, TLObject.FLAG_30));
         } else if (this.H) {
             this.w0 = 1.0f;
             int i13 = 6;
-            if ((!b50.x5 || this.e == null) && !b50.w5) {
+            if ((!a50.x5 || this.e == null) && !a50.w5) {
                 i13 = 2;
             }
             if (this.e != null) {
                 L = View.MeasureSpec.getSize(i10) - org.telegram.messenger.i0.L(344.0f);
-            } else if (b50.x5) {
+            } else if (a50.x5) {
                 L = org.telegram.messenger.i0.L(320.0f);
             } else {
-                A = z20.A(14.0f, 2, View.MeasureSpec.getSize(i10)) + (b50.w5 ? -org.telegram.messenger.i0.L(90.0f) : 0);
+                A = a30.A(14.0f, 2, View.MeasureSpec.getSize(i10)) + (a50.w5 ? -org.telegram.messenger.i0.L(90.0f) : 0);
                 float f11 = (this.I / i13) * A;
                 kVar = this.e;
                 if (kVar == null) {
                     f7 = kVar.getItemHeight() - org.telegram.messenger.i0.L(4.0f);
                     L2 = org.telegram.messenger.i0.L(4.0f);
                 } else {
-                    if (b50.x5) {
+                    if (a50.x5) {
                         f7 = A / 2.0f;
                     } else {
-                        f7 = A / (b50.w5 ? 3 : 2);
+                        f7 = A / (a50.w5 ? 3 : 2);
                     }
                     L2 = org.telegram.messenger.i0.L(2.0f);
                 }

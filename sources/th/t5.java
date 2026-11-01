@@ -7,15 +7,15 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.dc;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class t5 {
     public int A;
@@ -76,15 +76,15 @@ public class t5 {
         boolean z10;
         TLRPC.TL_recentStory tL_recentStory4;
         this.R = view;
-        e5 O1 = vp.r1(d20.s0).O1();
+        e5 O1 = wp.r1(e20.s0).O1();
         boolean z11 = false;
         if (motionEvent.getAction() == 0) {
             if (this.F.contains(motionEvent.getX(), motionEvent.getY())) {
                 TLRPC.Chat chat = null;
                 if (this.x > 0) {
-                    user = vp.r1(d20.s0).Z1(Long.valueOf(this.x));
+                    user = wp.r1(e20.s0).Z1(Long.valueOf(this.x));
                 } else {
-                    chat = vp.r1(d20.s0).L0(Long.valueOf(-this.x));
+                    chat = wp.r1(e20.s0).L0(Long.valueOf(-this.x));
                     user = null;
                 }
                 if (c(chat, user)) {
@@ -92,12 +92,12 @@ public class t5 {
                 } else if (this.r) {
                     z10 = !O1.h.isEmpty();
                 } else {
-                    if (this.x <= 0 ? vp.r1(d20.s0).O1().K(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : vp.r1(d20.s0).O1().K(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
+                    if (this.x <= 0 ? wp.r1(e20.s0).O1().K(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : wp.r1(e20.s0).O1().K(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
                         z11 = true;
                     }
                     z10 = z11;
                 }
-                if (this.x != d20.i(d20.s0).n && z10) {
+                if (this.x != e20.i(e20.s0).n && z10) {
                     dc dcVar = this.H;
                     if (dcVar == null) {
                         this.H = new dc(view, 1.5f, 5.0f);
@@ -114,7 +114,7 @@ public class t5 {
                         if (o0Var != null) {
                             org.telegram.messenger.i0.r(o0Var);
                         }
-                        o0 o0Var2 = new o0(21, this, view);
+                        o0 o0Var2 = new o0(22, this, view);
                         this.Q = o0Var2;
                         org.telegram.messenger.i0.h3(o0Var2, ViewConfiguration.getLongPressTimeout());
                     }
@@ -143,11 +143,11 @@ public class t5 {
                 dcVar3.c(false);
             }
             if (this.N && motionEvent.getAction() == 1 && !d(this.x)) {
-                vp r12 = vp.r1(d20.s0);
+                wp r12 = wp.r1(e20.s0);
                 e5 O12 = r12.O1();
                 if (this.r) {
                     f(0L);
-                } else if (this.x != d20.i(d20.s0).e()) {
+                } else if (this.x != e20.i(e20.s0).e()) {
                     if (O12.K(this.x)) {
                         f(this.x);
                     } else {
@@ -202,7 +202,7 @@ public class t5 {
         }
         Q.getOrCreateStoryViewer().getClass();
         ViewParent parent = this.R.getParent();
-        Q.getOrCreateStoryViewer().R(Q.getContext(), j10, parent instanceof RecyclerView ? n5.a((tk0) parent) : null);
+        Q.getOrCreateStoryViewer().R(Q.getContext(), j10, parent instanceof RecyclerView ? n5.a((uk0) parent) : null);
     }
 
     public final void g() {

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class AudioRecoder {
     private static final int BYTES_PER_SHORT = 2;

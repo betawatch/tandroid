@@ -9,14 +9,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.t9;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.w9;
+import org.telegram.messenger.u9;
+import org.telegram.messenger.wp;
 import org.telegram.messenger.x9;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.y9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -26,33 +26,33 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.w5;
 import org.telegram.ui.ActionBar.w6;
 import org.telegram.ui.Cells.p4;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.c7;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
 import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.p51;
 import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.a80;
-import org.telegram.ui.h51;
+import org.telegram.ui.f51;
 import org.telegram.ui.un;
+import org.telegram.ui.z70;
 import rh.h8;
 import rh.x7;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class m extends ha implements w9 {
+public final class m extends ha implements x9 {
     public static final /* synthetic */ int s2 = 0;
     public final long P1;
-    public final a51 Q1;
+    public final b51 Q1;
     public final rh.a R1;
     public final i S1;
     public final rf.m T1;
@@ -65,7 +65,7 @@ public final class m extends ha implements w9 {
     public final j a2;
     public final j[] b2;
     public final FrameLayout c2;
-    public t9 d2;
+    public u9 d2;
     public final l e2;
     public Runnable f2;
     public long g2;
@@ -77,11 +77,11 @@ public final class m extends ha implements w9 {
     public final fe.b m2;
     public final dq[] n2;
     public boolean o2;
-    public p51 p2;
+    public q51 p2;
     public boolean q2;
     public boolean r2;
 
-    public m(Context context, p6 p6Var, l lVar, t9 t9Var) {
+    public m(Context context, p6 p6Var, l lVar, u9 u9Var) {
         super(context, null, false, false, 2, p6Var);
         ArrayList<TL_stars.TL_AuctionBidLevel> arrayList;
         this.b2 = new j[3];
@@ -92,33 +92,33 @@ public final class m extends ha implements w9 {
         this.l2 = new fe.b(0, fVar, grVar, 380L, false);
         this.m2 = new fe.b(0, new f(this), grVar, 380L, false);
         this.n2 = new dq[1];
-        this.d2 = t9Var;
+        this.d2 = u9Var;
         this.e2 = lVar;
-        long j10 = t9Var.b;
+        long j10 = u9Var.b;
         this.P1 = j10;
         this.I1 = true;
         this.r1 = 0.2f;
-        t9 l4 = x9.c(this.a).l(j10, this);
+        u9 l4 = y9.c(this.a).l(j10, this);
         this.T1 = new rf.m(new f(this));
         this.C1 = false;
         this.B1 = org.telegram.messenger.i0.L(12.0f);
         O();
         w.d1(this.l1, context, p6Var, l4.d);
-        TLRPC.User Z1 = vp.r1(this.a).Z1(Long.valueOf(d20.i(this.a).e()));
+        TLRPC.User Z1 = wp.r1(this.a).Z1(Long.valueOf(e20.i(this.a).e()));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.Q1 = a51.j(-1, linearLayout);
+        this.Q1 = b51.j(-1, linearLayout);
         h hVar = new h(this, context, p6Var);
         this.U1 = hVar;
         hVar.O = true;
         this.d2.e();
-        t9 t9Var2 = this.d2;
-        long j11 = t9Var2.e.bid_amount;
-        TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = t9Var2.f;
-        long j12 = (tL_starGiftAuctionState == null || (arrayList = tL_starGiftAuctionState.bid_levels) == null || arrayList.isEmpty()) ? 0L : t9Var2.f.bid_levels.get(0).amount;
+        u9 u9Var2 = this.d2;
+        long j11 = u9Var2.e.bid_amount;
+        TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = u9Var2.f;
+        long j12 = (tL_starGiftAuctionState == null || (arrayList = tL_starGiftAuctionState.bid_levels) == null || arrayList.isEmpty()) ? 0L : u9Var2.f.bid_levels.get(0).amount;
         int i10 = j12 > 100000 ? ((((int) j12) * 3) / 2000) * 1000 : j12 > 30000 ? 100000 : 50000;
         int i11 = 15;
         int[] iArr = {50, 100, 500, 1000, 2000, 5000, 7500, 10000, 25000, 50000, 100000, 500000, 1000000, 5000000, 10000000};
@@ -176,21 +176,21 @@ public final class m extends ha implements w9 {
         kVar.setBackground(k02);
         a7.k(kVar, k02, N, null, p6Var);
         kVar.setOnClickListener(new g(this, i14));
-        ((TextView) kVar.c).setText(cd.L0(2131750384, null));
+        ((TextView) kVar.c).setText(dd.L0(2131750384, null));
         k kVar2 = new k(context, p6Var);
         this.W1 = kVar2;
         ShapeDrawable d02 = t6.d0(org.telegram.messenger.i0.L(12.0f), t6.w0(i16, this.I0));
         w6 N2 = a7.N(i16);
         kVar2.setBackground(d02);
         a7.k(kVar2, d02, N2, null, p6Var);
-        ((TextView) kVar2.c).setText(cd.L0(2131750382, null));
+        ((TextView) kVar2.c).setText(dd.L0(2131750382, null));
         k kVar3 = new k(context, p6Var);
         this.X1 = kVar3;
         ShapeDrawable d03 = t6.d0(org.telegram.messenger.i0.L(12.0f), t6.w0(i16, this.I0));
         w6 N3 = a7.N(i16);
         kVar3.setBackground(d03);
         a7.k(kVar3, d03, N3, null, p6Var);
-        ((TextView) kVar3.c).setText(cd.L0(2131750385, null));
+        ((TextView) kVar3.c).setText(dd.L0(2131750385, null));
         linearLayout2.addView(kVar, b6.l(1.0f, 0, -1));
         linearLayout2.addView(new View(context), b6.l(0.0f, 10, -1));
         linearLayout2.addView(kVar2, b6.l(1.0f, 0, -1));
@@ -208,7 +208,7 @@ public final class m extends ha implements w9 {
             p80Var.setOnClickListener(new ag.i(this, new boolean[1], p6Var, i17));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
             spannableStringBuilder.setSpan(new o5(l4.c, p80Var.getPaint().getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
-            p80Var.setText(TextUtils.concat(org.telegram.messenger.i0.H2(cd.F("Gift2AuctionsItemsBought2", l4.e.acquired_count, spannableStringBuilder), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.0f))));
+            p80Var.setText(TextUtils.concat(org.telegram.messenger.i0.H2(dd.F("Gift2AuctionsItemsBought2", l4.e.acquired_count, spannableStringBuilder), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.0f))));
             e6.b(p80Var, 0.02f, 1.5f);
             linearLayout.addView(p80Var, b6.k(16.0f, 4.0f, 16.0f, 4.0f, -1, -2));
         }
@@ -232,7 +232,7 @@ public final class m extends ha implements w9 {
         jVar.c(Z1);
         linearLayout.addView(jVar, b6.k(0.0f, 0.0f, 0.0f, -7.0f, -1, -2));
         p4 p4Var2 = new p4(context, i19, 21, 15, 0, false, false, p6Var);
-        p4Var2.setText(cd.L0(2131750329, null));
+        p4Var2.setText(dd.L0(2131750329, null));
         linearLayout.addView(p4Var2, b6.o(-1, -2));
         int i20 = 0;
         while (true) {
@@ -259,9 +259,9 @@ public final class m extends ha implements w9 {
         d.leftMargin = i22 + i23;
         d.rightMargin += i23;
         this.b.addView(iVar, d);
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i24 = this.t0;
-        tk0Var.setPadding(i24, 0, i24, org.telegram.messenger.i0.L(64.0f));
+        uk0Var.setPadding(i24, 0, i24, org.telegram.messenger.i0.L(64.0f));
         this.k1.setOnItemClickListener(new c7(4));
         long j13 = l4.e.bid_amount;
         if (j13 > 0) {
@@ -280,7 +280,7 @@ public final class m extends ha implements w9 {
         aVar.setClickable(false);
         this.c.addView(aVar, b6.d(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
         e6.a(aVar);
-        aVar.setOnClickListener(new h51(1, context, p6Var));
+        aVar.setOnClickListener(new f51(1, context, p6Var));
         FrameLayout frameLayout = new FrameLayout(context);
         this.c2 = frameLayout;
         this.c.addView(frameLayout, b6.e(-1, 100, 48));
@@ -297,27 +297,27 @@ public final class m extends ha implements w9 {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(this.k1, getContext(), this.a, 0, true, new ag.a(this, 22), this.I0);
-        this.p2 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(this.k1, getContext(), this.a, 0, true, new ag.a(this, 22), this.I0);
+        this.p2 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return cd.L0(2131750353, null);
+        return dd.L0(2131750353, null);
     }
 
-    @Override // org.telegram.messenger.w9
-    public final void c(t9 t9Var) {
-        this.d2 = t9Var;
+    @Override // org.telegram.messenger.x9
+    public final void c(u9 u9Var) {
+        this.d2 = u9Var;
         n1(this.o2);
     }
 
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
-        x9.c(this.a).n(this.P1, this);
+        y9.c(this.a).n(this.P1, this);
         this.T1.b();
         super.dismiss();
     }
@@ -330,7 +330,7 @@ public final class m extends ha implements w9 {
             if (aVar != null) {
                 aVar.setEnabled(z10);
                 aVar.setClickable(z10);
-                z20.l(aVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
+                a30.l(aVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
             }
         }
     }
@@ -339,14 +339,14 @@ public final class m extends ha implements w9 {
         h hVar = this.U1;
         int value = hVar.getValue();
         if (hVar.getProgress() > 0.99f) {
-            hVar.g(cd.L0(2131750331, null));
+            hVar.g(dd.L0(2131750331, null));
             return;
         }
         long j10 = value;
         TL_stars.TL_StarGiftAuctionUserState tL_StarGiftAuctionUserState = this.d2.e;
         long j11 = tL_StarGiftAuctionUserState.bid_amount;
         if (j10 == j11) {
-            hVar.g(cd.L0(2131750326, null));
+            hVar.g(dd.L0(2131750326, null));
             return;
         }
         if (j11 <= 0 || tL_StarGiftAuctionUserState.returned) {
@@ -358,7 +358,7 @@ public final class m extends ha implements w9 {
             hVar.g(null);
             return;
         }
-        hVar.g("+" + cd.E(j12, ','));
+        hVar.g("+" + dd.E(j12, ','));
     }
 
     @Override // org.telegram.ui.ActionBar.z2
@@ -379,7 +379,7 @@ public final class m extends ha implements w9 {
         }
         this.r2 = true;
         this.S1.setLoading(true);
-        x9.c(this.a).k(this.P1, this.e2, i10, new a80(this, j10, 1));
+        y9.c(this.a).k(this.P1, this.e2, i10, new z70(this, j10, 1));
     }
 
     public final void h1() {
@@ -398,15 +398,15 @@ public final class m extends ha implements w9 {
         int i11 = 1;
         i iVar = this.S1;
         if (value == j10) {
-            iVar.i(cd.L0(2131747847, null), z10, true);
+            iVar.i(dd.L0(2131747847, null), z10, true);
             iVar.setOnClickListener(new g(this, i10));
             return;
         }
         dq[] dqVarArr = this.n2;
         if (j10 >= value || tL_StarGiftAuctionUserState.returned) {
-            iVar.i(h8.X0(false, cd.a0(null, null, 2131750348, cd.E(value, ',')), dqVarArr), z10, true);
+            iVar.i(h8.Y0(false, dd.a0(null, null, 2131750348, dd.E(value, ',')), dqVarArr), z10, true);
         } else {
-            iVar.i(h8.X0(false, cd.a0(null, null, 2131750347, cd.E(value - j10, ',')), dqVarArr), z10, true);
+            iVar.i(h8.Y0(false, dd.a0(null, null, 2131750347, dd.E(value - j10, ',')), dqVarArr), z10, true);
         }
         iVar.setOnClickListener(new g(this, i11));
     }
@@ -428,9 +428,9 @@ public final class m extends ha implements w9 {
 
     public final void l1(boolean z10) {
         long value = this.U1.getValue();
-        t9 t9Var = this.d2;
-        int i10 = t9Var.i;
-        int c10 = t9Var.c(ConnectionsManager.getInstance(t9Var.a).getCurrentTime(), value);
+        u9 u9Var = this.d2;
+        int i10 = u9Var.i;
+        int c10 = u9Var.c(ConnectionsManager.getInstance(u9Var.a).getCurrentTime(), value);
         long max = Math.max(value, this.d2.e.bid_amount);
         j jVar = this.a2;
         jVar.a(max, false);
@@ -438,17 +438,17 @@ public final class m extends ha implements w9 {
             c10 = Math.min(i10, c10);
         }
         jVar.b(c10, false, z10);
-        t9 t9Var2 = this.d2;
-        TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = t9Var2.f;
+        u9 u9Var2 = this.d2;
+        TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = u9Var2.f;
         f6 f6Var = this.Z1;
-        if (tL_starGiftAuctionState != null && c10 > 0 && t9Var2.d.title != null && t9Var2.d() == 1) {
-            t9 t9Var3 = this.d2;
-            t9Var3.getClass();
-            if (!t9Var3.g(ConnectionsManager.getInstance(d20.s0).getCurrentTime())) {
-                t9 t9Var4 = this.d2;
-                int i11 = t9Var4.f.last_gift_num + c10;
-                if (i11 <= t9Var4.d.availability_total) {
-                    f6Var.setText(this.d2.d.title + " #" + cd.E(i11, ','));
+        if (tL_starGiftAuctionState != null && c10 > 0 && u9Var2.d.title != null && u9Var2.d() == 1) {
+            u9 u9Var3 = this.d2;
+            u9Var3.getClass();
+            if (!u9Var3.g(ConnectionsManager.getInstance(e20.s0).getCurrentTime())) {
+                u9 u9Var4 = this.d2;
+                int i11 = u9Var4.f.last_gift_num + c10;
+                if (i11 <= u9Var4.d.availability_total) {
+                    f6Var.setText(this.d2.d.title + " #" + dd.E(i11, ','));
                     return;
                 }
             }
@@ -466,20 +466,20 @@ public final class m extends ha implements w9 {
         if (value <= j10) {
             z11 = true;
             if (d == 2) {
-                p4Var.c(cd.L0(2131750378, null), z10);
+                p4Var.c(dd.L0(2131750378, null), z10);
             } else if (d == 3) {
-                p4Var.c(cd.L0(2131750378, null), z10);
+                p4Var.c(dd.L0(2131750378, null), z10);
             } else if (d == 1) {
-                p4Var.c(cd.L0(2131750377, null), z10);
+                p4Var.c(dd.L0(2131750377, null), z10);
                 z11 = false;
                 z12 = true;
             } else {
-                p4Var.c(cd.L0(2131750380, null), z10);
+                p4Var.c(dd.L0(2131750380, null), z10);
             }
             this.l2.a(z12, z10);
             this.m2.a(z11, z10);
         }
-        p4Var.c(cd.L0(2131750380, null), z10);
+        p4Var.c(dd.L0(2131750380, null), z10);
         z11 = false;
         this.l2.a(z12, z10);
         this.m2.a(z11, z10);
@@ -498,9 +498,9 @@ public final class m extends ha implements w9 {
         f6 f6Var = (f6) this.V1.b;
         StringBuilder sb2 = new StringBuilder("⭐️");
         long e = (int) this.d2.e();
-        sb2.append(e < 1000000 ? cd.E(e, ',') : org.telegram.messenger.i0.o0((int) e, 1000000));
+        sb2.append(e < 1000000 ? dd.E(e, ',') : org.telegram.messenger.i0.o0((int) e, 1000000));
         int i11 = 1;
-        f6Var.c(h8.Z0(false, sb2.toString(), 0.78f, this.j2), z10, true);
+        f6Var.c(h8.a1(false, sb2.toString(), 0.78f, this.j2), z10, true);
         if (this.d2.f != null) {
             int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
             boolean g10 = this.d2.g(currentTime);
@@ -524,18 +524,18 @@ public final class m extends ha implements w9 {
                 spannableStringBuilder.append((CharSequence) "* ");
                 spannableStringBuilder.setSpan(this.k2, 0, 1, 33);
             }
-            spannableStringBuilder.append((CharSequence) cd.E(this.d2.f.gifts_left, ','));
+            spannableStringBuilder.append((CharSequence) dd.E(this.d2.f.gifts_left, ','));
             ((f6) kVar.b).c(spannableStringBuilder, z10, true);
             TextView textView = (TextView) this.W1.c;
-            t9 t9Var = this.d2;
-            t9Var.getClass();
-            if (t9Var.g(ConnectionsManager.getInstance(d20.s0).getCurrentTime())) {
+            u9 u9Var = this.d2;
+            u9Var.getClass();
+            if (u9Var.g(ConnectionsManager.getInstance(e20.s0).getCurrentTime())) {
                 i10 = 2131750381;
             } else {
                 TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = this.d2.f;
                 i10 = tL_starGiftAuctionState.current_round == tL_starGiftAuctionState.total_rounds ? 2131750383 : 2131750382;
             }
-            textView.setText(cd.L0(i10, null));
+            textView.setText(dd.L0(i10, null));
             j[] jVarArr = this.b2;
             int min = Math.min(jVarArr.length, this.d2.f.top_bidders.size());
             if (min > 0) {
@@ -544,7 +544,7 @@ public final class m extends ha implements w9 {
                     int i13 = i12 + 1;
                     Long l4 = this.d2.f.top_bidders.get(i12);
                     long longValue = l4.longValue();
-                    TLRPC.User Z1 = vp.r1(this.a).Z1(l4);
+                    TLRPC.User Z1 = wp.r1(this.a).Z1(l4);
                     if (Z1 != null) {
                         jVarArr[i12].c(Z1);
                     }
@@ -554,11 +554,11 @@ public final class m extends ha implements w9 {
                 }
             }
         }
-        t9 t9Var2 = this.d2;
-        long b10 = t9Var2.b(t9Var2.d.gifts_per_round) + 1;
+        u9 u9Var2 = this.d2;
+        long b10 = u9Var2.b(u9Var2.d.gifts_per_round) + 1;
         h hVar = this.U1;
         hVar.setStarsTop(b10);
-        hVar.setTopText(cd.G(this.d2.d.gifts_per_round, "StarsReactionTopX", new Object[0]));
+        hVar.setTopText(dd.G(this.d2.d.gifts_per_round, "StarsReactionTopX", new Object[0]));
         l1(z10);
         m1(z10);
         i1(z10);
@@ -568,9 +568,9 @@ public final class m extends ha implements w9 {
         if (this.h2 < j10 && !this.i2 && (Q = LaunchActivity.Q()) != null) {
             long j11 = this.g2;
             if (j11 != 0) {
-                un ha = un.ha(j11);
-                ha.whenFullyVisible(new gg.b(ha, i11));
-                Q.presentFragment(ha);
+                un ma2 = un.ma(j11);
+                ma2.whenFullyVisible(new gg.b(ma2, i11));
+                Q.presentFragment(ma2);
                 Runnable runnable = this.f2;
                 if (runnable != null) {
                     runnable.run();

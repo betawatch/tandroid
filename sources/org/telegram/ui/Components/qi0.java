@@ -1,25 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class qi0 extends zz {
-    public final /* synthetic */ vi0 U;
+public final class qi0 extends s4.s0 {
+    public final /* synthetic */ s4.a0 a;
+    public final /* synthetic */ wi0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qi0(vi0 vi0Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, p6Var);
-        this.U = vi0Var;
+    public qi0(wi0 wi0Var, s4.a0 a0Var) {
+        this.b = wi0Var;
+        this.a = a0Var;
     }
 
-    @Override // org.telegram.ui.Components.zz
-    public final int getAdditionalHeight() {
-        da0 da0Var;
-        vi0 vi0Var = this.U;
-        if (vi0Var.H.isEmpty() || (da0Var = vi0Var.J) == null) {
-            return 0;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        int loadCount;
+        wi0 wi0Var = this.b;
+        if (wi0Var.x && wi0Var.y && !wi0Var.w) {
+            int N0 = this.a.N0();
+            int b10 = wi0Var.f.b() - 1;
+            loadCount = wi0Var.getLoadCount();
+            if (N0 >= b10 - loadCount) {
+                wi0Var.c();
+            }
         }
-        return org.telegram.messenger.i0.L(8.0f) + da0Var.getMeasuredHeight();
     }
 }

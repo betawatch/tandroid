@@ -16,7 +16,7 @@ import org.telegram.ui.web.v1;
 import ph.x1;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -96,13 +96,8 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void f(v1 v1Var) {
-        f fVar = this.b;
-        v1 v1Var2 = new v1(24, this, v1Var);
-        synchronized (fVar.a) {
-            fVar.b();
-            v1Var2.run();
-        }
+    public final void f(int i10, long j10) {
+        this.a.releaseOutputBuffer(i10, j10);
     }
 
     @Override // r2.l
@@ -119,45 +114,13 @@ public final class c implements l {
         this.a.start();
     }
 
-    @Override // r2.l
-    public final void g(int i10, long j10) {
-        this.a.releaseOutputBuffer(i10, j10);
-    }
-
-    @Override // r2.l
-    public final ByteBuffer getInputBuffer(int i10) {
-        return this.a.getInputBuffer(i10);
-    }
-
-    @Override // r2.l
-    public final ByteBuffer getOutputBuffer(int i10) {
-        return this.a.getOutputBuffer(i10);
-    }
-
-    @Override // r2.l
-    public final MediaFormat getOutputFormat() {
-        MediaFormat mediaFormat;
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            try {
-                mediaFormat = fVar.h;
-                if (mediaFormat == null) {
-                    throw new IllegalStateException();
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return mediaFormat;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:12:0x0022 A[Catch: all -> 0x0024, DONT_GENERATE, TryCatch #0 {all -> 0x0024, blocks: (B:4:0x000a, B:6:0x0017, B:12:0x0022, B:15:0x0026, B:20:0x003e, B:23:0x0034, B:24:0x0040, B:25:0x0045), top: B:3:0x000a }] */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0026 A[Catch: all -> 0x0024, TryCatch #0 {all -> 0x0024, blocks: (B:4:0x000a, B:6:0x0017, B:12:0x0022, B:15:0x0026, B:20:0x003e, B:23:0x0034, B:24:0x0040, B:25:0x0045), top: B:3:0x000a }] */
     @Override // r2.l
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int h() {
+    public final int g() {
         boolean z10;
         this.c.x();
         f fVar = this.b;
@@ -188,6 +151,43 @@ public final class c implements l {
                 }
             } finally {
             }
+        }
+    }
+
+    @Override // r2.l
+    public final ByteBuffer getInputBuffer(int i10) {
+        return this.a.getInputBuffer(i10);
+    }
+
+    @Override // r2.l
+    public final ByteBuffer getOutputBuffer(int i10) {
+        return this.a.getOutputBuffer(i10);
+    }
+
+    @Override // r2.l
+    public final MediaFormat getOutputFormat() {
+        MediaFormat mediaFormat;
+        f fVar = this.b;
+        synchronized (fVar.a) {
+            try {
+                mediaFormat = fVar.h;
+                if (mediaFormat == null) {
+                    throw new IllegalStateException();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return mediaFormat;
+    }
+
+    @Override // r2.l
+    public final void h(v1 v1Var) {
+        f fVar = this.b;
+        v1 v1Var2 = new v1(25, this, v1Var);
+        synchronized (fVar.a) {
+            fVar.b();
+            v1Var2.run();
         }
     }
 

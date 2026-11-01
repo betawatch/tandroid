@@ -13,7 +13,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class fq extends Drawable {
     public final /* synthetic */ int a;
@@ -57,33 +57,33 @@ public final class fq extends Drawable {
                 RectF rectF = org.telegram.messenger.i0.P;
                 rectF.set(getBounds());
                 gVar.a(this.c, canvas, rectF, null);
-                org.telegram.messenger.c00 c00Var = (org.telegram.messenger.c00) this.d;
-                if (c00Var != null) {
-                    c00Var.c = gVar.a;
+                org.telegram.messenger.d00 d00Var = (org.telegram.messenger.d00) this.d;
+                if (d00Var != null) {
+                    d00Var.c = gVar.a;
                     int i11 = gVar.f;
                     float f14 = (((i10 * 2) + i11) * gVar.g) - i10;
                     int i12 = (int) (i11 * 0.5f);
                     int width = getBounds().width();
-                    float f15 = width / c00Var.e;
-                    float height = getBounds().height() / c00Var.f;
-                    float max = c00Var.s ? Math.max(f15, height) : Math.min(f15, height);
+                    float f15 = width / d00Var.e;
+                    float height = getBounds().height() / d00Var.f;
+                    float max = d00Var.s ? Math.max(f15, height) : Math.min(f15, height);
                     matrix.reset();
                     matrix.setScale(1.0f / max, 0.0f, i10 / 2.0f, 0.0f);
-                    matrix.setTranslate((f14 - c00Var.getBounds().left) - (i10 / max), 0.0f);
+                    matrix.setTranslate((f14 - d00Var.getBounds().left) - (i10 / max), 0.0f);
                     gVar.b.setLocalMatrix(matrix);
                     int i13 = i12 / 2;
-                    c00Var.setBounds(getBounds().centerX() - i13, getBounds().centerY() - i13, getBounds().centerX() + i13, getBounds().centerY() + i13);
-                    c00Var.draw(canvas);
+                    d00Var.setBounds(getBounds().centerX() - i13, getBounds().centerY() - i13, getBounds().centerX() + i13, getBounds().centerY() + i13);
+                    d00Var.draw(canvas);
                 }
                 gVar.o.invalidate();
                 break;
             default:
                 Rect bounds = getBounds();
-                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.zs.e4, 31);
+                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.at.e4, 31);
                 Drawable drawable = (Drawable) this.d;
                 drawable.setBounds(bounds);
                 drawable.draw(canvas);
-                ((qz0) this.b).c(bounds.centerX() - (((qz0) this.b).c / 2.0f), org.telegram.messenger.i0.L(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
+                ((rz0) this.b).c(bounds.centerX() - (((rz0) this.b).c / 2.0f), org.telegram.messenger.i0.L(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
                 canvas.restore();
                 break;
         }
@@ -194,19 +194,19 @@ public final class fq extends Drawable {
         this.c = f7;
     }
 
-    public fq(org.telegram.ui.Components.voip.g gVar, org.telegram.messenger.c00 c00Var) {
+    public fq(org.telegram.ui.Components.voip.g gVar, org.telegram.messenger.d00 d00Var) {
         this.a = 2;
         this.b = gVar;
-        this.d = c00Var;
+        this.d = d00Var;
     }
 
     public fq(Context context, int i10) {
         this.a = 3;
         this.c = 0.75f;
         this.d = i0.a.f(context, R.drawable.filled_stream_crown);
-        qz0 qz0Var = new qz0(i0.a.i(i10, ""), 8.0f, org.telegram.messenger.i0.o1("fonts/num.otf"));
-        this.b = qz0Var;
-        qz0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        rz0 rz0Var = new rz0(i0.a.i(i10, ""), 8.0f, org.telegram.messenger.i0.o1("fonts/num.otf"));
+        this.b = rz0Var;
+        rz0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
     private final void a(int i10) {

@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class li implements z4.e {
     public final /* synthetic */ AtomicBoolean a;
@@ -48,13 +48,13 @@ public final class li implements z4.e {
             if (i12 >= childCount) {
                 break;
             }
-            org.telegram.ui.Components.wi0 wi0Var = (org.telegram.ui.Components.wi0) linearLayout.getChildAt(i12);
-            wi0Var.setOutlineProgress(i12 == i10 ? 1.0f - f7 : i12 == (i10 + 1) % this.c ? f7 : 0.0f);
+            org.telegram.ui.Components.xi0 xi0Var = (org.telegram.ui.Components.xi0) linearLayout.getChildAt(i12);
+            xi0Var.setOutlineProgress(i12 == i10 ? 1.0f - f7 : i12 == (i10 + 1) % this.c ? f7 : 0.0f);
             if (i12 == i10) {
-                f10 = wi0Var.getX() - ((horizontalScrollView.getWidth() - wi0Var.getWidth()) / 2.0f);
+                f10 = xi0Var.getX() - ((horizontalScrollView.getWidth() - xi0Var.getWidth()) / 2.0f);
             }
             if (i12 == i10 + 1) {
-                f11 = wi0Var.getX() - ((horizontalScrollView.getWidth() - wi0Var.getWidth()) / 2.0f);
+                f11 = xi0Var.getX() - ((horizontalScrollView.getWidth() - xi0Var.getWidth()) / 2.0f);
             }
             i12++;
         }

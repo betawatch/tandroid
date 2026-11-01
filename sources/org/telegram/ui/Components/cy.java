@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class cy extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final ImageView a;
@@ -34,7 +34,7 @@ public final class cy extends FrameLayout implements org.telegram.ui.ActionBar.k
         addView(imageView, w7.b6.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         this.b = textView;
-        textView.setText(org.telegram.messenger.cd.L0(2131748224, null));
+        textView.setText(org.telegram.messenger.dd.L0(2131748224, null));
         textView.setTextSize(1, 16.0f);
         org.telegram.ui.ActionBar.a7.V(textView, i10, p6Var);
         addView(textView, w7.b6.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
@@ -56,7 +56,7 @@ public final class cy extends FrameLayout implements org.telegram.ui.ActionBar.k
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.z20.y(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - org.telegram.messenger.i0.L(80.0f), TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.a30.y(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - org.telegram.messenger.i0.L(80.0f), TLObject.FLAG_30));
     }
 
     @Override // org.telegram.ui.ActionBar.k6

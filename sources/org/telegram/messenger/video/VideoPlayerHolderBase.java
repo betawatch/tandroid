@@ -18,10 +18,10 @@ import org.telegram.messenger.i0;
 import org.telegram.messenger.s5;
 import org.telegram.messenger.x8;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class VideoPlayerHolderBase {
     private boolean allowMultipleInstances;
@@ -61,10 +61,10 @@ public class VideoPlayerHolderBase {
     private volatile int triesCount;
     private final Runnable updateSeek;
     public Uri uri;
-    u61 videoPlayer;
+    v61 videoPlayer;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-    public class 2 implements s61 {
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    public class 2 implements t61 {
         public 2() {
         }
 
@@ -99,8 +99,8 @@ public class VideoPlayerHolderBase {
             }
         }
 
-        @Override // org.telegram.ui.Components.s61
-        public void onError(u61 u61Var, Exception exc) {
+        @Override // org.telegram.ui.Components.t61
+        public void onError(v61 v61Var, Exception exc) {
             f8.g(exc, true);
             long currentPosition = VideoPlayerHolderBase.this.getCurrentPosition();
             VideoPlayerHolderBase.access$010(VideoPlayerHolderBase.this);
@@ -115,11 +115,11 @@ public class VideoPlayerHolderBase {
             s5Var.postRunnable(qVar);
         }
 
-        @Override // org.telegram.ui.Components.s61
+        @Override // org.telegram.ui.Components.t61
         public /* bridge */ /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
         }
 
-        @Override // org.telegram.ui.Components.s61
+        @Override // org.telegram.ui.Components.t61
         public void onStateChanged(boolean z10, int i10) {
             VideoPlayerHolderBase videoPlayerHolderBase = VideoPlayerHolderBase.this;
             videoPlayerHolderBase.lastState = i10;
@@ -144,30 +144,30 @@ public class VideoPlayerHolderBase {
             VideoPlayerHolderBase.this.onStateChanged(z10, i10);
         }
 
-        @Override // org.telegram.ui.Components.s61
+        @Override // org.telegram.ui.Components.t61
         public /* bridge */ /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
             return false;
         }
 
-        @Override // org.telegram.ui.Components.s61
+        @Override // org.telegram.ui.Components.t61
         public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
             VideoPlayerHolderBase.this.onVideoSizeChanged(i10, i11, i12, f7);
         }
 
-        @Override // org.telegram.ui.Components.s61
+        @Override // org.telegram.ui.Components.t61
         public void onRenderedFirstFrame() {
             i0.h3(new p(this, 0), VideoPlayerHolderBase.this.surface != null ? 0L : VideoPlayerHolderBase.this.surfaceView == null ? 16L : 32L);
         }
 
-        @Override // org.telegram.ui.Components.s61
+        @Override // org.telegram.ui.Components.t61
         public /* bridge */ /* synthetic */ void onSeekFinished(j2.a aVar) {
         }
 
-        @Override // org.telegram.ui.Components.s61
+        @Override // org.telegram.ui.Components.t61
         public /* bridge */ /* synthetic */ void onSeekStarted(j2.a aVar) {
         }
 
-        @Override // org.telegram.ui.Components.s61
+        @Override // org.telegram.ui.Components.t61
         public /* bridge */ /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         }
     }
@@ -181,12 +181,12 @@ public class VideoPlayerHolderBase {
             @Override // java.lang.Runnable
             public void run() {
                 VideoPlayerHolderBase videoPlayerHolderBase = VideoPlayerHolderBase.this;
-                u61 u61Var = videoPlayerHolderBase.videoPlayer;
-                if (u61Var != null) {
+                v61 v61Var = videoPlayerHolderBase.videoPlayer;
+                if (v61Var != null) {
                     if (videoPlayerHolderBase.lastState == 4) {
                         videoPlayerHolderBase.progress = 1.0f;
                     } else {
-                        videoPlayerHolderBase.currentPosition = u61Var.S();
+                        videoPlayerHolderBase.currentPosition = v61Var.S();
                         VideoPlayerHolderBase videoPlayerHolderBase2 = VideoPlayerHolderBase.this;
                         videoPlayerHolderBase2.playerDuration = videoPlayerHolderBase2.videoPlayer.U();
                     }
@@ -217,22 +217,22 @@ public class VideoPlayerHolderBase {
     }
 
     private void ensurePlayerCreated(boolean z10) {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var != null) {
-            u61Var.m0();
+        v61 v61Var = this.videoPlayer;
+        if (v61Var != null) {
+            v61Var.m0();
         }
-        u61 u61Var2 = new u61(false, z10);
-        this.videoPlayer = u61Var2;
-        u61Var2.D = this.allowMultipleInstances;
-        u61Var2.J = new 2();
+        v61 v61Var2 = new v61(false, z10);
+        this.videoPlayer = v61Var2;
+        v61Var2.D = this.allowMultipleInstances;
+        v61Var2.J = new 2();
         this.videoPlayer.c = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loopBack$9() {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var != null) {
-            u61Var.p0(0L);
+        v61 v61Var = this.videoPlayer;
+        if (v61Var != null) {
+            v61Var.p0(0L);
         }
         this.progress = 0.0f;
         this.currentPosition = 0L;
@@ -252,33 +252,33 @@ public class VideoPlayerHolderBase {
             this.lastBetterSeek = j10;
             this.dispatchQueue.cancelRunnable(this.betterSeek);
             this.dispatchQueue.postRunnable(this.betterSeek, 300L);
-            u61 u61Var = this.videoPlayer;
+            v61 v61Var = this.videoPlayer;
             this.lastSeek = j10;
-            u61Var.q0(j10, true);
+            v61Var.q0(j10, true);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$pause$4() {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var != null) {
-            u61Var.g0();
+        v61 v61Var = this.videoPlayer;
+        if (v61Var != null) {
+            v61Var.g0();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$play$6() {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var != null) {
+        v61 v61Var = this.videoPlayer;
+        if (v61Var != null) {
             Surface surface = this.surface;
             if (surface != null) {
-                u61Var.y0(surface);
+                v61Var.y0(surface);
             } else {
                 SurfaceView surfaceView = this.surfaceView;
                 if (surfaceView != null) {
-                    u61Var.z0(surfaceView);
+                    v61Var.z0(surfaceView);
                 } else {
-                    u61Var.A0(this.textureView);
+                    v61Var.A0(this.textureView);
                 }
             }
             long j10 = this.pendingSeekTo;
@@ -292,17 +292,17 @@ public class VideoPlayerHolderBase {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$play$7(float f7) {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var != null) {
+        v61 v61Var = this.videoPlayer;
+        if (v61Var != null) {
             Surface surface = this.surface;
             if (surface != null) {
-                u61Var.y0(surface);
+                v61Var.y0(surface);
             } else {
                 SurfaceView surfaceView = this.surfaceView;
                 if (surfaceView != null) {
-                    u61Var.z0(surfaceView);
+                    v61Var.z0(surfaceView);
                 } else {
-                    u61Var.A0(this.textureView);
+                    v61Var.A0(this.textureView);
                 }
             }
             long j10 = this.pendingSeekTo;
@@ -330,9 +330,9 @@ public class VideoPlayerHolderBase {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$release$3(TLRPC.Document document, Runnable runnable) {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var != null) {
-            u61Var.y0(null);
+        v61 v61Var = this.videoPlayer;
+        if (v61Var != null) {
+            v61Var.y0(null);
             this.videoPlayer.A0(null);
             this.videoPlayer.z0(null);
             this.videoPlayer.m0();
@@ -349,35 +349,35 @@ public class VideoPlayerHolderBase {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$seekTo$11(long j10) {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var == null) {
+        v61 v61Var = this.videoPlayer;
+        if (v61Var == null) {
             this.pendingSeekTo = j10;
         } else {
-            u61Var.p0(j10);
+            v61Var.p0(j10);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$seekTo$12(long j10, boolean z10, Runnable runnable) {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var == null) {
+        v61 v61Var = this.videoPlayer;
+        if (v61Var == null) {
             this.pendingSeekTo = j10;
         } else {
-            u61Var.r0(j10, z10, runnable);
+            v61Var.r0(j10, z10, runnable);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$setAudioEnabled$8(boolean z10, boolean z11) {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var == null) {
+        v61 v61Var = this.videoPlayer;
+        if (v61Var == null) {
             return;
         }
-        boolean d02 = u61Var.d0();
+        boolean d02 = v61Var.d0();
         if (z10) {
-            u61 u61Var2 = this.videoPlayer;
-            if (u61Var2.b0) {
-                u61Var2.g0();
+            v61 v61Var2 = this.videoPlayer;
+            if (v61Var2.b0) {
+                v61Var2.g0();
                 long S = this.videoPlayer.S();
                 this.videoPlayer.m0();
                 this.videoPlayer = null;
@@ -419,17 +419,17 @@ public class VideoPlayerHolderBase {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setSpeed$5(float f7) {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var != null) {
-            u61Var.v0(f7);
+        v61 v61Var = this.videoPlayer;
+        if (v61Var != null) {
+            v61Var.v0(f7);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setVolume$10(float f7) {
-        u61 u61Var = this.videoPlayer;
-        if (u61Var != null) {
-            u61Var.B0(f7);
+        v61 v61Var = this.videoPlayer;
+        if (v61Var != null) {
+            v61Var.B0(f7);
         }
     }
 

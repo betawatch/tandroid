@@ -9,12 +9,12 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.locks.LockSupport;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.Cells.f1;
 import td.e0;
 import yd.r;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c implements Executor, Closeable {
     public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
@@ -127,7 +127,7 @@ public final class c implements Executor, Closeable {
                     if (kVar.b.a == 1) {
                         n.e.incrementAndGet(nVar);
                     }
-                    int i10 = atomicIntegerFieldUpdater.get(nVar) & zs.L1;
+                    int i10 = atomicIntegerFieldUpdater.get(nVar) & at.L1;
                     while (atomicReferenceArray.get(i10) != null) {
                         Thread.yield();
                     }

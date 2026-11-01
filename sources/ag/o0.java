@@ -18,21 +18,20 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.ef;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.x20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -43,8 +42,8 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.e50;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.j40;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.kk;
@@ -66,14 +65,14 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.b6;
 import org.telegram.ui.am;
 import org.telegram.ui.ba;
-import org.telegram.ui.bh;
 import org.telegram.ui.f4;
 import org.telegram.ui.fm;
 import org.telegram.ui.h4;
 import org.telegram.ui.un;
+import org.telegram.ui.yg;
 import th.r4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -111,7 +110,7 @@ public final /* synthetic */ class o0 implements Runnable {
             case 0:
                 s0 s0Var = (s0) this.c;
                 s0Var.b.add(this.b, (TL_account.TL_businessChatLink) this.d);
-                zs.f(s0Var.a).k(zs.J1, new Object[0]);
+                at.f(s0Var.a).k(at.J1, new Object[0]);
                 break;
             case 1:
                 z5 z5Var = (z5) this.c;
@@ -199,7 +198,7 @@ public final /* synthetic */ class o0 implements Runnable {
                 int i15 = this.b;
                 Context context = (Context) this.c;
                 org.telegram.ui.ActionBar.z2[] z2VarArr = (org.telegram.ui.ActionBar.z2[]) this.d;
-                String str = vp.r1(i15).P6;
+                String str = wp.r1(i15).P6;
                 if (!str.startsWith("http://") && !str.startsWith("https://")) {
                     str = "https://".concat(str);
                 }
@@ -232,7 +231,7 @@ public final /* synthetic */ class o0 implements Runnable {
                 int i18 = this.b;
                 TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView = (TLRPC.TL_chatInviteJoinResultWebView) this.c;
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
-                vp.r1(i18).V3(tL_chatInviteJoinResultWebView.users, false);
+                wp.r1(i18).V3(tL_chatInviteJoinResultWebView.users, false);
                 org.telegram.messenger.o2.b(i18).c(-chat.id, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
                 break;
             case 16:
@@ -249,11 +248,11 @@ public final /* synthetic */ class o0 implements Runnable {
                 org.telegram.ui.ActionBar.z2[] z2VarArr2 = (org.telegram.ui.ActionBar.z2[]) this.d;
                 TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = new TLRPC.TL_inputGroupCallSlug();
                 tL_inputGroupCallSlug.slug = Uri.parse(str3).getPathSegments().get(r1.getPathSegments().size() - 1);
-                org.telegram.ui.Components.voip.m1.g(LaunchActivity.I1, i20, tL_inputGroupCallSlug, false, null, null);
+                org.telegram.ui.Components.voip.n1.g(LaunchActivity.I1, i20, tL_inputGroupCallSlug, false, null, null);
                 z2VarArr2[0].dismiss();
                 break;
             case 18:
-                ((un) this.c).Za(this.b, (ArrayList) this.d, false, false);
+                ((un) this.c).eb(this.b, (ArrayList) this.d, false, false);
                 break;
             case 19:
                 un unVar = (un) this.c;
@@ -265,19 +264,19 @@ public final /* synthetic */ class o0 implements Runnable {
                     editTextBoldCursor.clearFocus();
                     editTextBoldCursor.requestFocus();
                 }
-                org.telegram.messenger.i0.h3(new bh(editTextBoldCursor, i22), 100L);
+                org.telegram.messenger.i0.h3(new yg(editTextBoldCursor, i22), 100L);
                 break;
             case 20:
                 am amVar = (am) this.c;
                 org.telegram.ui.Cells.s0 s0Var2 = (org.telegram.ui.Cells.s0) this.d;
                 int i23 = this.b;
                 amVar.getClass();
-                jj messageObject = s0Var2.getMessageObject();
+                kj messageObject = s0Var2.getMessageObject();
                 fm fmVar = amVar.a;
-                fmVar.Q.k(i23, messageObject.f1(), true, jj.B0(messageObject.k) == fmVar.Q.b7 ? 1 : 0, true, 0);
+                fmVar.Q.l(i23, messageObject.f1(), true, kj.B0(messageObject.k) == fmVar.Q.b7 ? 1 : 0, true, 0);
                 break;
             case 21:
-                b6.I0(this.b, ((kk) this.c).getContext(), (p6) this.d);
+                b6.J0(this.b, ((kk) this.c).getContext(), (p6) this.d);
                 break;
             case 22:
                 jn jnVar = (jn) this.c;
@@ -299,7 +298,7 @@ public final /* synthetic */ class o0 implements Runnable {
                 org.telegram.ui.ActionBar.k2 k2Var = ruVar.R2.j1;
                 if (k2Var instanceof un) {
                     un unVar2 = (un) k2Var;
-                    unVar2.Y7();
+                    unVar2.c8();
                     undoView2 = unVar2.M3;
                 } else if (!(k2Var instanceof ProfileActivity)) {
                     undoView = null;
@@ -333,12 +332,12 @@ public final /* synthetic */ class o0 implements Runnable {
             case 25:
                 int i27 = this.b;
                 org.telegram.ui.ActionBar.k2 k2Var2 = (org.telegram.ui.ActionBar.k2) this.c;
-                q20 q20Var = (q20) this.d;
+                r20 r20Var = (r20) this.d;
                 TL_chatlists.TL_chatlists_getLeaveChatlistSuggestions tL_chatlists_getLeaveChatlistSuggestions = new TL_chatlists.TL_chatlists_getLeaveChatlistSuggestions();
                 TL_chatlists.TL_inputChatlistDialogFilter tL_inputChatlistDialogFilter = new TL_chatlists.TL_inputChatlistDialogFilter();
                 tL_chatlists_getLeaveChatlistSuggestions.chatlist = tL_inputChatlistDialogFilter;
                 tL_inputChatlistDialogFilter.filter_id = i27;
-                k2Var2.getConnectionsManager().sendRequest(tL_chatlists_getLeaveChatlistSuggestions, new mg.w(k2Var2, i27, q20Var, 5));
+                k2Var2.getConnectionsManager().sendRequest(tL_chatlists_getLeaveChatlistSuggestions, new mg.w(k2Var2, i27, r20Var, 5));
                 break;
             case 26:
                 y20 y20Var = (y20) this.c;
@@ -349,7 +348,7 @@ public final /* synthetic */ class o0 implements Runnable {
                 if (i28 == y20Var.n) {
                     y20Var.h = false;
                     TLRPC.Chat chat2 = z20Var.M1;
-                    dw0 dw0Var = z20Var.q1;
+                    ew0 ew0Var = z20Var.q1;
                     if (!w3.T(chat2)) {
                         a0.h hVar2 = m1Var.h;
                         ArrayList arrayList3 = m1Var.g;
@@ -361,19 +360,19 @@ public final /* synthetic */ class o0 implements Runnable {
                             if (tLObject instanceof TLRPC.ChatParticipant) {
                                 hVar2.k(tLObject, ((TLRPC.ChatParticipant) tLObject).user_id);
                             } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                                hVar2.k(tLObject, jj.C1(((TLRPC.ChannelParticipant) tLObject).peer));
+                                hVar2.k(tLObject, kj.C1(((TLRPC.ChannelParticipant) tLObject).peer));
                             }
                         }
                         m1Var.i();
                     }
                     int i30 = y20Var.f - 1;
-                    boolean z10 = dw0Var.getVisibility() == 0;
+                    boolean z10 = ew0Var.getVisibility() == 0;
                     y20Var.f();
                     if (y20Var.f > i30) {
                         z20Var.O0(i30);
                     }
                     if (!y20Var.h && !m1Var.e() && z20Var.k1.R0()) {
-                        dw0Var.e(false, z10);
+                        ew0Var.e(false, z10);
                         break;
                     }
                 }
@@ -408,9 +407,9 @@ public final /* synthetic */ class o0 implements Runnable {
                     if (arrayList4.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        jj jjVar = (jj) i0.a.g(r92, arrayList4);
+                        kj kjVar = (kj) i0.a.g(r92, arrayList4);
                         tL_channels_searchPosts.offset_rate = m30Var.b0;
-                        tL_channels_searchPosts.offset_peer = vp.r1(i32).l1(jjVar.k.peer_id);
+                        tL_channels_searchPosts.offset_peer = wp.r1(i32).l1(kjVar.k.peer_id);
                     }
                     m30Var.W = ConnectionsManager.getInstance(i32).sendRequest(tL_channels_searchPosts, new mg.w(m30Var, i31, sb3, 6));
                     break;
@@ -465,45 +464,45 @@ public final /* synthetic */ class o0 implements Runnable {
                 int i35 = this.b;
                 u40 u40Var = (u40) this.d;
                 e50 e50Var2 = x40Var.H0;
-                x20 x20Var = e50Var2.R;
+                org.telegram.messenger.y20 y20Var2 = e50Var2.R;
                 int i36 = e50Var2.e;
                 s40 s40Var = e50Var2.h;
-                if (x20Var == null) {
-                    x20 x20Var2 = new x20();
-                    e50Var2.R = x20Var2;
-                    x20Var2.a = -1L;
-                    x20Var2.b = -1L;
+                if (y20Var2 == null) {
+                    org.telegram.messenger.y20 y20Var3 = new org.telegram.messenger.y20();
+                    e50Var2.R = y20Var3;
+                    y20Var3.a = -1L;
+                    y20Var3.b = -1L;
                 }
                 if (e50Var2.R.c()) {
                     e50Var2.L = null;
                     e50Var2.M = null;
                     e50Var2.N = null;
                     e50Var2.O = null;
-                    x20 x20Var3 = e50Var2.R;
+                    org.telegram.messenger.y20 y20Var4 = e50Var2.R;
                     c10 = 2;
                     c11 = 3;
-                    long j10 = x20Var3.r;
+                    long j10 = y20Var4.r;
                     double d = j10;
-                    long j11 = x20Var3.a;
+                    long j11 = y20Var4.a;
                     if (j11 < 0) {
                         j11 = 0;
                     }
-                    long j12 = x20Var3.b;
+                    long j12 = y20Var4.b;
                     if (j12 >= 0) {
                         j10 = j12;
                     }
                     long j13 = j10 - j11;
-                    x20Var3.r = j13;
-                    x20Var3.q = Math.max(1L, (long) ((j13 / d) * e50Var2.P));
-                    x20 x20Var4 = e50Var2.R;
-                    x20Var4.m = 1000000;
-                    long j14 = x20Var4.a;
+                    y20Var4.r = j13;
+                    y20Var4.q = Math.max(1L, (long) ((j13 / d) * e50Var2.P));
+                    org.telegram.messenger.y20 y20Var5 = e50Var2.R;
+                    y20Var5.m = 1000000;
+                    long j14 = y20Var5.a;
                     if (j14 > 0) {
-                        x20Var4.a = j14 * 1000;
+                        y20Var5.a = j14 * 1000;
                     }
-                    long j15 = x20Var4.b;
+                    long j15 = y20Var5.b;
                     if (j15 > 0) {
-                        x20Var4.b = j15 * 1000;
+                        y20Var5.b = j15 * 1000;
                     }
                     b8.G(i36).b(e50Var2.e0.getAbsolutePath(), false);
                 } else {
@@ -511,52 +510,52 @@ public final /* synthetic */ class o0 implements Runnable {
                     c11 = 3;
                     e50Var2.R.q = Math.max(1L, e50Var2.P);
                 }
-                x20 x20Var5 = e50Var2.R;
-                x20Var5.s = true;
-                x20Var5.w = e50Var2.L;
-                x20Var5.x = e50Var2.M;
-                x20Var5.y = e50Var2.N;
-                x20Var5.z = e50Var2.O;
+                org.telegram.messenger.y20 y20Var6 = e50Var2.R;
+                y20Var6.s = true;
+                y20Var6.w = e50Var2.L;
+                y20Var6.x = e50Var2.M;
+                y20Var6.y = e50Var2.N;
+                y20Var6.z = e50Var2.O;
                 int i37 = 25;
-                x20Var5.n = 25;
-                x20Var5.h = 360;
-                x20Var5.k = 360;
-                x20Var5.i = 360;
-                x20Var5.l = 360;
-                x20Var5.o = x40Var.a.getAbsolutePath();
-                x20 x20Var6 = e50Var2.R;
+                y20Var6.n = 25;
+                y20Var6.h = 360;
+                y20Var6.k = 360;
+                y20Var6.i = 360;
+                y20Var6.l = 360;
+                y20Var6.o = x40Var.a.getAbsolutePath();
+                org.telegram.messenger.y20 y20Var7 = e50Var2.R;
                 if (i35 == 1) {
                     if (s40Var.c()) {
                         Activity parentActivity = s40Var.getParentActivity();
                         long a2 = s40Var.a();
-                        androidx.car.app.utils.a aVar2 = new androidx.car.app.utils.a(x40Var, u40Var, x20Var6, i37);
+                        androidx.car.app.utils.a aVar2 = new androidx.car.app.utils.a(x40Var, u40Var, y20Var7, i37);
                         v40 v40Var = new v40(x40Var, 0);
                         p6 p6Var = e50Var2.Y0;
                         Pattern pattern = s4.a;
                         s4.J(parentActivity, a2, -1L, 0, false, aVar2, v40Var, new p4(p6Var), p6Var);
                     } else {
-                        ef efVar = new ef(0, x40Var.a.getAbsolutePath(), 0, true, 0, 0);
+                        ff ffVar = new ff(0, x40Var.a.getAbsolutePath(), 0, true, 0, 0);
                         if (u40Var != null) {
-                            efVar.x = u40Var.c;
-                            efVar.y = u40Var.d;
+                            ffVar.x = u40Var.c;
+                            ffVar.y = u40Var.d;
                         }
-                        e50Var2.h.t(efVar, x20Var6, u40Var == null || u40Var.a, u40Var != null ? u40Var.b : 0, 0, false, u40Var != null ? u40Var.e : 0L);
+                        e50Var2.h.u(ffVar, y20Var7, u40Var == null || u40Var.a, u40Var != null ? u40Var.b : 0, 0, false, u40Var != null ? u40Var.e : 0L);
                     }
                     e50Var2.R = null;
                     break;
                 } else {
                     x40Var.h(x40Var.a);
-                    x20Var6.r = e50Var2.j0;
-                    zs f7 = zs.f(i36);
+                    y20Var7.r = e50Var2.j0;
+                    at f7 = at.f(i36);
                     Integer valueOf = Integer.valueOf(e50Var2.U);
                     String absolutePath = x40Var.a.getAbsolutePath();
                     ArrayList arrayList5 = x40Var.A0;
                     Object[] objArr = new Object[4];
                     objArr[0] = valueOf;
-                    objArr[1] = x20Var6;
+                    objArr[1] = y20Var7;
                     objArr[c10] = absolutePath;
                     objArr[c11] = arrayList5;
-                    f7.k(zs.s2, objArr);
+                    f7.k(at.s2, objArr);
                     break;
                 }
         }

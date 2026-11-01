@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dx implements Runnable {
     public final /* synthetic */ int a;
@@ -33,13 +33,13 @@ public final /* synthetic */ class dx implements Runnable {
                     return;
                 }
             default:
-                org.telegram.ui.i31 i31Var = (org.telegram.ui.i31) this.d;
+                org.telegram.ui.g31 g31Var = (org.telegram.ui.g31) this.d;
                 float f10 = this.b;
                 int i11 = this.c;
                 try {
-                    ci.p pVar2 = new ci.p(i31Var.h0.getContext(), 0, f10);
+                    ci.p pVar2 = new ci.p(g31Var.h0.getContext(), 0, f10);
                     pVar2.a = i11;
-                    i31Var.r0.w0(pVar2);
+                    g31Var.r0.w0(pVar2);
                     break;
                 } catch (Exception e7) {
                     org.telegram.messenger.f8.g(e7, true);

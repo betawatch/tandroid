@@ -1,11 +1,11 @@
 package org.telegram.messenger.voip;
 
 import java.util.ArrayList;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLRPC;
 import v7.u7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class GroupCallMessage {
     private static final int FLAG_IS_OUT = 1;
@@ -45,7 +45,7 @@ public class GroupCallMessage {
                     c10.h = j12;
                 } else {
                     ArrayList<TLRPC.MessageEntity> arrayList2 = tL_textWithEntities.entities;
-                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(i10).r.get(tL_textWithEntities.text)) != null) ? sg.o0.c(tL_availableReaction) : null;
+                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = (TLRPC.TL_availableReaction) vi.b0(i10).r.get(tL_textWithEntities.text)) != null) ? sg.o0.c(tL_availableReaction) : null;
                 }
                 this.reactionAnimatedEmojiId = j12;
                 this.visibleReaction = c10;

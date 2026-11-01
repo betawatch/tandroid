@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ia0 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final org.telegram.ui.ActionBar.p6 a;
@@ -26,7 +26,7 @@ public final class ia0 extends FrameLayout implements org.telegram.ui.ActionBar.
         e6Var.x(org.telegram.messenger.i0.o());
         e6Var.u(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.A8, p6Var));
         e6Var.w(org.telegram.messenger.i0.L(18.0f));
-        e6Var.q(!org.telegram.messenger.cd.X);
+        e6Var.q(!org.telegram.messenger.dd.X);
         e6Var.setCallback(this);
         Point point = org.telegram.messenger.i0.q;
         e6Var.M = point.x;
@@ -35,13 +35,13 @@ public final class ia0 extends FrameLayout implements org.telegram.ui.ActionBar.
         e6Var2.n(0.3f, 430L, grVar);
         e6Var2.u(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.B8, p6Var));
         e6Var2.w(org.telegram.messenger.i0.L(14.0f));
-        e6Var2.q(!org.telegram.messenger.cd.X);
+        e6Var2.q(!org.telegram.messenger.dd.X);
         e6Var2.setCallback(this);
         e6Var2.M = point.x;
     }
 
     public final void a(CharSequence charSequence, boolean z10) {
-        this.c.t(charSequence, z10 && !org.telegram.messenger.cd.X, true);
+        this.c.t(charSequence, z10 && !org.telegram.messenger.dd.X, true);
     }
 
     @Override // org.telegram.ui.ActionBar.k6
@@ -51,7 +51,7 @@ public final class ia0 extends FrameLayout implements org.telegram.ui.ActionBar.
     }
 
     public final void b(CharSequence charSequence, boolean z10) {
-        this.b.t(charSequence, z10 && !org.telegram.messenger.cd.X, true);
+        this.b.t(charSequence, z10 && !org.telegram.messenger.dd.X, true);
     }
 
     @Override // android.view.ViewGroup, android.view.View

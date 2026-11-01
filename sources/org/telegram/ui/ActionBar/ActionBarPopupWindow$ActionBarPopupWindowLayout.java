@@ -21,16 +21,16 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.jr;
 import org.telegram.ui.Components.yf0;
-import org.telegram.ui.u71;
+import org.telegram.ui.s71;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout {
     public final HashMap D;
@@ -41,7 +41,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     public float I;
     public final yf0 J;
     public final ScrollView K;
-    public final u71 L;
+    public final s71 L;
     public int M;
     public Drawable N;
     public boolean O;
@@ -84,9 +84,9 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
 
     public final void c() {
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(1000.0f), TLObject.FLAG_31);
-        u71 u71Var = this.L;
-        u71Var.measure(makeMeasureSpec, makeMeasureSpec);
-        u71Var.getMeasuredHeight();
+        s71 s71Var = this.L;
+        s71Var.measure(makeMeasureSpec, makeMeasureSpec);
+        s71Var.getMeasuredHeight();
     }
 
     public final void d() {
@@ -95,7 +95,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        u71 u71Var;
+        s71 s71Var;
         int i10;
         boolean z10;
         int i11;
@@ -134,13 +134,13 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
             int scrollY2 = this.F - (scrollView == null ? 0 : scrollView.getScrollY());
             int i19 = 0;
             while (true) {
-                u71Var = this.L;
+                s71Var = this.L;
                 i10 = 1;
-                if (i19 >= u71Var.getChildCount()) {
+                if (i19 >= s71Var.getChildCount()) {
                     z10 = false;
                     break;
                 } else {
-                    if ((u71Var.getChildAt(i19) instanceof h1) && u71Var.getChildAt(i19).getVisibility() == 0) {
+                    if ((s71Var.getChildAt(i19) instanceof h1) && s71Var.getChildAt(i19).getVisibility() == 0) {
                         z10 = true;
                         break;
                     }
@@ -177,7 +177,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                     rect = rect2;
                     i14 = -1000000;
                     i12 = 1;
-                    i13 = zs.e4;
+                    i13 = at.e4;
                     i11 = i20;
                     canvas2 = canvas;
                     canvas2.saveLayerAlpha(0.0f, f14, measuredWidth, measuredHeight, i21, 31);
@@ -268,10 +268,10 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                     }
                     this.S.addRoundRect(rectF, org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(12.0f), Path.Direction.CW);
                     canvas2.clipPath(this.S);
-                    for (int i24 = i17; i24 < u71Var.getChildCount(); i24++) {
-                        if ((u71Var.getChildAt(i24) instanceof h1) && u71Var.getChildAt(i24).getVisibility() == 0) {
+                    for (int i24 = i17; i24 < s71Var.getChildCount(); i24++) {
+                        if ((s71Var.getChildAt(i24) instanceof h1) && s71Var.getChildAt(i24).getVisibility() == 0) {
                             canvas2.save();
-                            h1 h1Var = (h1) u71Var.getChildAt(i24);
+                            h1 h1Var = (h1) s71Var.getChildAt(i24);
                             float f15 = 0.0f;
                             View view2 = h1Var;
                             float f16 = 0.0f;
@@ -315,7 +315,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
         i1 i1Var = this.e;
         if (i1Var != null) {
-            i1Var.r(keyEvent);
+            i1Var.p(keyEvent);
         }
         return super.dispatchKeyEvent(keyEvent);
     }
@@ -337,12 +337,12 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     }
 
     public final void f() {
-        u71 u71Var = this.L;
-        int childCount = u71Var.getChildCount();
+        s71 s71Var = this.L;
+        int childCount = s71Var.getChildCount();
         View view = null;
         View view2 = null;
         for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = u71Var.getChildAt(i10);
+            View childAt = s71Var.getChildAt(i10);
             if (childAt.getVisibility() == 0) {
                 if (view == null) {
                     view = childAt;
@@ -352,7 +352,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
         }
         boolean z10 = false;
         for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt2 = u71Var.getChildAt(i11);
+            View childAt2 = s71Var.getChildAt(i11);
             if (childAt2.getVisibility() == 0) {
                 Object tag = childAt2.getTag(R.id.object_tag);
                 if (childAt2 instanceof b1) {
@@ -441,13 +441,13 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                 int measuredHeight = getMeasuredHeight() - org.telegram.messenger.i0.L(16.0f);
                 boolean z10 = this.w;
                 HashMap hashMap = this.D;
-                u71 u71Var = this.L;
+                s71 s71Var = this.L;
                 if (z10) {
                     for (int i10 = this.s; i10 >= 0; i10--) {
-                        View childAt = u71Var.getChildAt(i10);
+                        View childAt = s71Var.getChildAt(i10);
                         if (childAt != null && childAt.getVisibility() == 0 && !(childAt instanceof h1)) {
                             if (((Integer) hashMap.get(childAt)) != null) {
-                                if (z20.w(32.0f, org.telegram.messenger.i0.L(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f7) {
+                                if (a30.w(32.0f, org.telegram.messenger.i0.L(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f7) {
                                     break;
                                 }
                             }
@@ -459,7 +459,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                     int itemsCount = getItemsCount();
                     int i11 = 0;
                     for (int i12 = 0; i12 < itemsCount; i12++) {
-                        View childAt2 = u71Var.getChildAt(i12);
+                        View childAt2 = s71Var.getChildAt(i12);
                         if (childAt2.getVisibility() == 0) {
                             int measuredHeight2 = childAt2.getMeasuredHeight() + i11;
                             if (i12 >= this.s) {
@@ -538,11 +538,11 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
     }
 
     public void setupRadialSelectors(int i10) {
-        u71 u71Var = this.L;
-        int childCount = u71Var.getChildCount();
+        s71 s71Var = this.L;
+        int childCount = s71Var.getChildCount();
         int i11 = 0;
         while (i11 < childCount) {
-            View childAt = u71Var.getChildAt(i11);
+            View childAt = s71Var.getChildAt(i11);
             int i12 = 6;
             int i13 = i11 == 0 ? 6 : 0;
             if (i11 != childCount - 1) {
@@ -558,7 +558,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
         this.f = 1.0f;
         this.h = 1.0f;
         this.n = false;
-        this.r = zs.e4;
+        this.r = at.e4;
         this.s = 0;
         this.x = true;
         this.D = new HashMap();
@@ -593,7 +593,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
             yf0Var.x = new RectF();
             yf0Var.y = new ArrayList();
             yf0Var.G = -1;
-            yf0Var.H = new e2.f(null);
+            yf0Var.H = new e2.f((int[]) null);
             yf0Var.J = -1;
             yf0Var.L = new Rect();
             yf0Var.I = p6Var;
@@ -618,19 +618,19 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                 f8.g(th2, true);
             }
         }
-        u71 u71Var = new u71(this, context, 4);
-        this.L = u71Var;
-        u71Var.setOrientation(1);
+        s71 s71Var = new s71(this, context, 4);
+        this.L = s71Var;
+        s71Var.setOrientation(1);
         ScrollView scrollView2 = this.K;
         if (scrollView2 != null) {
-            scrollView2.addView(u71Var, new FrameLayout.LayoutParams(-2, -2));
+            scrollView2.addView(s71Var, new FrameLayout.LayoutParams(-2, -2));
             return;
         }
         yf0 yf0Var3 = this.J;
         if (yf0Var3 != null) {
-            yf0Var3.addView(u71Var, w7.b6.e(-2, -2, this.w ? 80 : 48));
+            yf0Var3.addView(s71Var, w7.b6.e(-2, -2, this.w ? 80 : 48));
         } else {
-            addView(u71Var, w7.b6.c(-2.0f, -2));
+            addView(s71Var, w7.b6.c(-2.0f, -2));
         }
     }
 }

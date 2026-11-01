@@ -12,14 +12,14 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import fe.e;
 import fe.f;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.gr;
 import rf.o;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a extends c implements e {
     public final fe.b d;
@@ -97,7 +97,7 @@ public final class a extends c implements e {
         int width = rect.width() - i0.L(56.0f);
         if (this.n == null || this.r != width) {
             this.r = width;
-            this.n = new StaticLayout(cd.L0(2131747199, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.n = new StaticLayout(dd.L0(2131747199, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
     }
 

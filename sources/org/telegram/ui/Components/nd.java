@@ -7,9 +7,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nd implements org.telegram.messenger.q20 {
+public final /* synthetic */ class nd implements org.telegram.messenger.r20 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -23,7 +23,7 @@ public final /* synthetic */ class nd implements org.telegram.messenger.q20 {
         this.b = z10;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         int i10;
         sg.k0 k0Var;
@@ -71,14 +71,14 @@ public final /* synthetic */ class nd implements org.telegram.messenger.q20 {
                 k0Var.s = true;
                 k0Var.y = System.currentTimeMillis();
                 if (o0Var.f != null) {
-                    e = org.telegram.messenger.ui.b0(z2Var.l2).T(o0Var.f);
-                    org.telegram.messenger.oz a2 = org.telegram.messenger.oz.a(z2Var.k1, o0Var.f);
+                    e = org.telegram.messenger.vi.b0(z2Var.l2).T(o0Var.f);
+                    org.telegram.messenger.pz a2 = org.telegram.messenger.pz.a(z2Var.k1, o0Var.f);
                     a2.H = y2Var.a;
                     a2.Q = l4.longValue();
-                    org.telegram.messenger.qz.C(z2Var.l2).r0(a2);
+                    org.telegram.messenger.rz.C(z2Var.l2).r0(a2);
                 } else {
                     e = f5.e(z2Var.l2, o0Var.g);
-                    String V = org.telegram.messenger.jj.V(e, null, null);
+                    String V = org.telegram.messenger.kj.V(e, null, null);
                     if (V == null) {
                         if (z2Var.O1.getReactionsWindow() != null) {
                             z2Var.O1.getReactionsWindow().e();
@@ -86,7 +86,7 @@ public final /* synthetic */ class nd implements org.telegram.messenger.q20 {
                         z2Var.q0();
                         break;
                     } else {
-                        org.telegram.messenger.oz a10 = org.telegram.messenger.oz.a(z2Var.k1, V);
+                        org.telegram.messenger.pz a10 = org.telegram.messenger.pz.a(z2Var.k1, V);
                         a10.w = new ArrayList();
                         TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
                         tL_messageEntityCustomEmoji.document_id = o0Var.g;
@@ -95,11 +95,11 @@ public final /* synthetic */ class nd implements org.telegram.messenger.q20 {
                         a10.w.add(tL_messageEntityCustomEmoji);
                         a10.H = y2Var.a;
                         a10.Q = l4.longValue();
-                        org.telegram.messenger.qz.C(z2Var.l2).r0(a10);
+                        org.telegram.messenger.rz.C(z2Var.l2).r0(a10);
                     }
                 }
                 if (l4.longValue() <= 0) {
-                    wb r10 = new cc(z2Var.L0, z2Var.k0).r(e, org.telegram.messenger.cd.L0(2131746404, null), org.telegram.messenger.cd.L0(2131743578, null), new sg.v(d2Var, 6));
+                    wb r10 = new cc(z2Var.L0, z2Var.k0).r(e, org.telegram.messenger.dd.L0(2131746404, null), org.telegram.messenger.dd.L0(2131743578, null), new sg.v(d2Var, 6));
                     r10.j = 5000;
                     r10.j();
                 }
@@ -122,10 +122,10 @@ public final /* synthetic */ class nd implements org.telegram.messenger.q20 {
                         if (z10) {
                             i11 = R.raw.contact_check;
                         }
-                        ccVar2.Q(i11, 36, org.telegram.messenger.cd.L0(z10 ? 2131744601 : 2131744745, null)).j();
+                        ccVar2.Q(i11, 36, org.telegram.messenger.dd.L0(z10 ? 2131744601 : 2131744745, null)).j();
                         break;
                     } else if (z10) {
-                        new cc(g2Var, p6Var).I(R.raw.contact_check, org.telegram.messenger.cd.L0(2131744603, null), org.telegram.messenger.cd.L0(2131744602, null)).j();
+                        new cc(g2Var, p6Var).I(R.raw.contact_check, org.telegram.messenger.dd.L0(2131744603, null), org.telegram.messenger.dd.L0(2131744602, null)).j();
                         break;
                     } else {
                         ccVar = new cc(g2Var, p6Var);

@@ -9,9 +9,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class pj extends sk0 {
+public final class pj extends tk0 {
     public final /* synthetic */ int c;
     public final Context d;
     public ArrayList e;
@@ -19,21 +19,21 @@ public final class pj extends sk0 {
     public Object h;
     public final /* synthetic */ Object n;
 
-    public pj(org.telegram.ui.rt rtVar, Context context, HashMap hashMap) {
+    public pj(org.telegram.ui.qt qtVar, Context context, HashMap hashMap) {
         this.c = 1;
-        this.n = rtVar;
+        this.n = qtVar;
         this.f = new ArrayList();
         this.d = context;
         Iterator it = hashMap.values().iterator();
         while (it.hasNext()) {
             Iterator it2 = ((List) it.next()).iterator();
             while (it2.hasNext()) {
-                this.f.add((org.telegram.ui.nt) it2.next());
+                this.f.add((org.telegram.ui.mt) it2.next());
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         switch (this.c) {
             case 0:
@@ -120,10 +120,10 @@ public final class pj extends sk0 {
                 if (i12 == 0) {
                     org.telegram.ui.Cells.p4 p4Var = (org.telegram.ui.Cells.p4) view;
                     if (!xjVar.c0) {
-                        p4Var.setText(org.telegram.messenger.cd.L0(2131746383, null));
+                        p4Var.setText(org.telegram.messenger.dd.L0(2131746383, null));
                         break;
                     } else {
-                        p4Var.setText(org.telegram.messenger.cd.L0(2131746382, null));
+                        p4Var.setText(org.telegram.messenger.dd.L0(2131746382, null));
                         break;
                     }
                 } else if (i12 == 1) {
@@ -146,11 +146,11 @@ public final class pj extends sk0 {
                 }
                 break;
             default:
-                org.telegram.ui.nt ntVar = (org.telegram.ui.nt) this.e.get(i10);
+                org.telegram.ui.mt mtVar = (org.telegram.ui.mt) this.e.get(i10);
                 org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) c1Var.a;
-                CharSequence m10 = org.telegram.messenger.k6.m(org.telegram.ui.rt.Z(ntVar), x9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
-                if (((org.telegram.ui.rt) obj).h) {
-                    str = "+" + ntVar.c;
+                CharSequence m10 = org.telegram.messenger.k6.m(org.telegram.ui.qt.a0(mtVar), x9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
+                if (((org.telegram.ui.qt) obj).h) {
+                    str = "+" + mtVar.c;
                 }
                 x9Var.c(m10, str, false, false);
                 break;
@@ -175,14 +175,14 @@ public final class pj extends sk0 {
                         } else {
                             view = new org.telegram.ui.Cells.c7(context, (org.telegram.ui.Cells.f1) null);
                         }
-                        return new ck0(view);
+                        return new dk0(view);
                     }
                     p4Var = new org.telegram.ui.Cells.l7(1, context, p6Var);
                 }
                 view = p4Var;
-                return new ck0(view);
+                return new dk0(view);
             default:
-                return new ck0(org.telegram.ui.rt.Y(this.d));
+                return new dk0(org.telegram.ui.qt.Z(this.d));
         }
     }
 

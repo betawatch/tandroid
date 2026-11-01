@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class n0 {
     public q5.d a;
@@ -306,21 +306,21 @@ public abstract class n0 {
             q5.d dVar = this.a;
             c3.g0 g0Var = (c3.g0) dVar.c;
             int indexOfChild = ((RecyclerView) ((m2.t) dVar.b).b).indexOfChild(view);
-            int B = (indexOfChild == -1 || g0Var.F(indexOfChild)) ? -1 : indexOfChild - g0Var.B(indexOfChild);
+            int C = (indexOfChild == -1 || g0Var.F(indexOfChild)) ? -1 : indexOfChild - g0Var.C(indexOfChild);
             if (i10 == -1) {
                 i10 = this.a.m();
             }
-            if (B == -1) {
+            if (C == -1) {
                 throw new IllegalStateException("Added View has RecyclerView as parent but view is not a real child. Unfiltered index:" + this.b.indexOfChild(view) + this.b.C());
             }
-            if (B != i10) {
+            if (C != i10) {
                 n0 n0Var = this.b.y;
-                View q6 = n0Var.q(B);
+                View q6 = n0Var.q(C);
                 if (q6 == null) {
-                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + B + n0Var.b.toString());
+                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + C + n0Var.b.toString());
                 }
-                n0Var.q(B);
-                n0Var.a.j(B);
+                n0Var.q(C);
+                n0Var.a.j(C);
                 o0 o0Var2 = (o0) q6.getLayoutParams();
                 c1 U2 = RecyclerView.U(q6);
                 if (U2.j()) {

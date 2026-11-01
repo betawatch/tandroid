@@ -3,10 +3,10 @@ package th;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -15,7 +15,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class l0 implements RequestDelegate {
         this.b = s0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01bc A[LOOP:4: B:78:0x01ba->B:79:0x01bc, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01bb A[LOOP:4: B:78:0x01b9->B:79:0x01bb, LOOP_END] */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -49,9 +49,9 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                 } else {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                     int i12 = 0;
-                    vp.r1(i11).V3(updates.users, false);
-                    vp.r1(i11).P3(updates.chats, false);
-                    ArrayList y02 = vp.y0(updates, TL_update.TL_updateGroupCall.class);
+                    wp.r1(i11).V3(updates.users, false);
+                    wp.r1(i11).P3(updates.chats, false);
+                    ArrayList y02 = wp.y0(updates, TL_update.TL_updateGroupCall.class);
                     int size2 = y02.size();
                     int i13 = 0;
                     while (i13 < size2) {
@@ -59,11 +59,11 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                         i13++;
                         s0Var.w = ((TL_update.TL_updateGroupCall) obj).call;
                     }
-                    org.telegram.messenger.i0.g3(new rh.o(29, s0Var, vp.z0(updates, TL_update.TL_updateGroupCallMessage.class)));
-                    vp.r1(i11).L3(updates, false);
+                    org.telegram.messenger.i0.g3(new o0(0, s0Var, wp.z0(updates, TL_update.TL_updateGroupCallMessage.class)));
+                    wp.r1(i11).L3(updates, false);
                     TLRPC.GroupCall groupCall = s0Var.w;
                     boolean z10 = groupCall != null && groupCall.rtmp_stream;
-                    ArrayList y03 = vp.y0(updates, TL_update.TL_updateGroupCallParticipants.class);
+                    ArrayList y03 = wp.y0(updates, TL_update.TL_updateGroupCallParticipants.class);
                     int size3 = y03.size();
                     int i14 = 0;
                     while (i14 < size3) {
@@ -88,7 +88,7 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                                 }
                             }
                             if (s0Var.G != null) {
-                                ArrayList y04 = vp.y0(updates, TL_update.TL_updateGroupCallConnection.class);
+                                ArrayList y04 = wp.y0(updates, TL_update.TL_updateGroupCallConnection.class);
                                 size = y04.size();
                                 TLRPC.TL_dataJSON tL_dataJSON = null;
                                 i10 = 0;
@@ -146,7 +146,7 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                         y03 = arrayList;
                         i12 = 0;
                     }
-                    ArrayList y042 = vp.y0(updates, TL_update.TL_updateGroupCallConnection.class);
+                    ArrayList y042 = wp.y0(updates, TL_update.TL_updateGroupCallConnection.class);
                     size = y042.size();
                     TLRPC.TL_dataJSON tL_dataJSON2 = null;
                     i10 = 0;
@@ -176,10 +176,10 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                                 if (!s0Var3.x) {
                                     if (tLObject2 instanceof TL_phone.groupCall) {
                                         TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject2;
-                                        vp.r1(i17).V3(groupcall.users, false);
-                                        vp.r1(i17).P3(groupcall.chats, false);
+                                        wp.r1(i17).V3(groupcall.users, false);
+                                        wp.r1(i17).P3(groupcall.chats, false);
                                         s0Var3.w = groupcall.call;
-                                        zs.f(i17).k(zs.G2, Long.valueOf(s0Var3.w.id));
+                                        at.f(i17).k(at.G2, Long.valueOf(s0Var3.w.id));
                                     } else if (tL_error2 != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
                                         org.telegram.messenger.i0.g3(new n0(s0Var3, 4));
                                     }
@@ -214,10 +214,10 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                                         }
                                     } else if (tLObject3 instanceof TL_phone.groupCall) {
                                         TL_phone.groupCall groupcall2 = (TL_phone.groupCall) tLObject3;
-                                        vp.r1(s0Var4.e).V3(groupcall2.users, false);
-                                        vp.r1(s0Var4.e).P3(groupcall2.chats, false);
+                                        wp.r1(s0Var4.e).V3(groupcall2.users, false);
+                                        wp.r1(s0Var4.e).P3(groupcall2.chats, false);
                                         s0Var4.w = groupcall2.call;
-                                        zs.f(s0Var4.e).k(zs.G2, Long.valueOf(s0Var4.w.id));
+                                        at.f(s0Var4.e).k(at.G2, Long.valueOf(s0Var4.w.id));
                                     } else if (tL_error3 != null) {
                                         if ("GROUPCALL_JOIN_MISSING".equals(tL_error3.text)) {
                                             f8.b("[LivePlayer] received GROUPCALL_JOIN_MISSING on checkGroupCall => rejoining");
@@ -248,8 +248,8 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                 if (tLObject instanceof TL_phone.groupCall) {
                     TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
                     int i18 = 0;
-                    vp.r1(i17).V3(groupcall.users, false);
-                    vp.r1(i17).P3(groupcall.chats, false);
+                    wp.r1(i17).V3(groupcall.users, false);
+                    wp.r1(i17).P3(groupcall.chats, false);
                     if (s0Var3.E != null && !s0Var3.x) {
                         while (true) {
                             if (i18 < groupcall.participants.size()) {
@@ -290,10 +290,10 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                                 if (!s0Var32.x) {
                                     if (tLObject2 instanceof TL_phone.groupCall) {
                                         TL_phone.groupCall groupcall2 = (TL_phone.groupCall) tLObject2;
-                                        vp.r1(i172).V3(groupcall2.users, false);
-                                        vp.r1(i172).P3(groupcall2.chats, false);
+                                        wp.r1(i172).V3(groupcall2.users, false);
+                                        wp.r1(i172).P3(groupcall2.chats, false);
                                         s0Var32.w = groupcall2.call;
-                                        zs.f(i172).k(zs.G2, Long.valueOf(s0Var32.w.id));
+                                        at.f(i172).k(at.G2, Long.valueOf(s0Var32.w.id));
                                     } else if (tL_error2 != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
                                         org.telegram.messenger.i0.g3(new n0(s0Var32, 4));
                                     }
@@ -328,10 +328,10 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                                         }
                                     } else if (tLObject3 instanceof TL_phone.groupCall) {
                                         TL_phone.groupCall groupcall22 = (TL_phone.groupCall) tLObject3;
-                                        vp.r1(s0Var42.e).V3(groupcall22.users, false);
-                                        vp.r1(s0Var42.e).P3(groupcall22.chats, false);
+                                        wp.r1(s0Var42.e).V3(groupcall22.users, false);
+                                        wp.r1(s0Var42.e).P3(groupcall22.chats, false);
                                         s0Var42.w = groupcall22.call;
-                                        zs.f(s0Var42.e).k(zs.G2, Long.valueOf(s0Var42.w.id));
+                                        at.f(s0Var42.e).k(at.G2, Long.valueOf(s0Var42.w.id));
                                     } else if (tL_error3 != null) {
                                         if ("GROUPCALL_JOIN_MISSING".equals(tL_error3.text)) {
                                             f8.b("[LivePlayer] received GROUPCALL_JOIN_MISSING on checkGroupCall => rejoining");
@@ -366,9 +366,9 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                     }
                 } else {
                     TLRPC.Updates updates2 = (TLRPC.Updates) tLObject;
-                    vp.r1(i20).V3(updates2.users, false);
-                    vp.r1(i20).P3(updates2.chats, false);
-                    vp.r1(i20).L3(updates2, false);
+                    wp.r1(i20).V3(updates2.users, false);
+                    wp.r1(i20).P3(updates2.chats, false);
+                    wp.r1(i20).L3(updates2, false);
                     break;
                 }
                 break;
@@ -379,7 +379,7 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                     s0Var6.getClass();
                     break;
                 } else {
-                    vp.r1(s0Var6.e).L3((TLRPC.Updates) tLObject, false);
+                    wp.r1(s0Var6.e).L3((TLRPC.Updates) tLObject, false);
                     break;
                 }
         }

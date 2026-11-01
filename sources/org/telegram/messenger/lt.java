@@ -1,69 +1,118 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class lt {
-    public final int a;
-    public final long b;
-    public final boolean c;
-    public final String d;
-    public final TLRPC.User e;
-    public final TLRPC.Chat f;
-    public final e0.r g;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ String i;
-    public final /* synthetic */ long[] j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ Uri l;
-    public final /* synthetic */ int m;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ boolean o;
-    public final /* synthetic */ boolean p;
-    public final /* synthetic */ int q;
-    public final /* synthetic */ ot r;
+public final /* synthetic */ class lt implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
 
-    public lt(ot otVar, int i10, long j10, boolean z10, String str, TLRPC.User user, TLRPC.Chat chat, e0.r rVar, long j11, String str2, long[] jArr, int i11, Uri uri, int i12, boolean z11, boolean z12, boolean z13, int i13) {
-        this.r = otVar;
-        this.h = j11;
-        this.i = str2;
-        this.j = jArr;
-        this.k = i11;
-        this.l = uri;
-        this.m = i12;
-        this.n = z11;
-        this.o = z12;
-        this.p = z13;
-        this.q = i13;
+    public /* synthetic */ lt(Object obj, long j10, boolean z10, int i10) {
         this.a = i10;
-        this.d = str;
-        this.e = user;
-        this.f = chat;
-        this.g = rVar;
+        this.d = obj;
         this.b = j10;
         this.c = z10;
     }
 
-    public final void a() {
-        e0.r rVar = this.g;
-        boolean z10 = v2.a;
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-        if (z10) {
-            StringBuilder l4 = i0.a.l(i10, "show dialog notification with id ", " ");
-            l4.append(this.b);
-            l4.append(" user=");
-            l4.append(this.e);
-            l4.append(" chat=");
-            l4.append(this.f);
-            f8.l(l4.toString());
+        int i11 = 2;
+        int i12 = 1;
+        boolean z10 = this.c;
+        long j10 = this.b;
+        Object obj = this.d;
+        switch (i10) {
+            case 0:
+                HashSet hashSet = ((pt) obj).y;
+                if (z10) {
+                    hashSet.add(Long.valueOf(j10));
+                    break;
+                } else {
+                    hashSet.remove(Long.valueOf(j10));
+                    break;
+                }
+            case 1:
+                y00 y00Var = (y00) obj;
+                y00Var.getUserConfig().k().edit().remove("topics_end_reached_" + j10).apply();
+                y00Var.a.l(j10);
+                y00Var.b.l(j10);
+                y00Var.d.delete(j10);
+                y00Var.h.l(j10);
+                TLRPC.Chat L0 = y00Var.getMessagesController().L0(Long.valueOf(j10));
+                if (L0 != null && (L0.forum || L0.monoforum)) {
+                    y00Var.n(0, j10, z10);
+                }
+                y00Var.y(j10, true);
+                break;
+            case 2:
+                rh.y8 y8Var = (rh.y8) obj;
+                y8Var.w1 = j10;
+                y8Var.v1 = j10;
+                if (z10) {
+                    th.h0 h0Var = y8Var.x1;
+                    h0Var.c = j10;
+                    y8Var.y1.set(h0Var);
+                }
+                y8Var.M0();
+                y8Var.A1.a(true, true);
+                rh.x8 x8Var = y8Var.u1;
+                if (x8Var != null) {
+                    x8Var.setMyPrivacy(y8Var.v1);
+                    break;
+                }
+                break;
+            case 3:
+                vh.r6 r6Var = (vh.r6) obj;
+                vh.w6 w6Var = r6Var.W;
+                if (z10) {
+                    int i13 = vh.w6.U1;
+                    wp.r1(w6Var.a).R2(Long.valueOf(j10), new org.telegram.ui.ActionBar.u3(r6Var, j10, i11), at.e3);
+                    break;
+                } else {
+                    int i14 = vh.w6.U1;
+                    wp.r1(w6Var.a).T2(0, j10, true);
+                    break;
+                }
+            default:
+                yh.d0 d0Var = (yh.d0) obj;
+                d0Var.i = null;
+                d0Var.g.l(j10);
+                ArrayList arrayList = d0Var.j;
+                if (arrayList != null) {
+                    for (int size = arrayList.size() - 1; size >= 0; size--) {
+                        if (o5.o(((TL_communities.CommunityPeerRequest) d0Var.j.get(size)).peer) == j10) {
+                            d0Var.j.remove(size);
+                        }
+                    }
+                }
+                d0Var.a();
+                yh.c0 c0Var = d0Var.h;
+                if (c0Var != null) {
+                    c0Var.b();
+                }
+                wp r12 = wp.r1(d0Var.d);
+                long j11 = d0Var.e;
+                yh.b0 b0Var = new yh.b0(d0Var, i11);
+                TL_communities.TL_communities_togglePeerLinkRequestApproval tL_communities_togglePeerLinkRequestApproval = new TL_communities.TL_communities_togglePeerLinkRequestApproval();
+                tL_communities_togglePeerLinkRequestApproval.community = r12.g1(j11);
+                tL_communities_togglePeerLinkRequestApproval.peer = r12.i1(j10);
+                tL_communities_togglePeerLinkRequestApproval.reject = !z10;
+                r12.getConnectionsManager().sendRequestTyped(tL_communities_togglePeerLinkRequestApproval, new a3.b(i12), new s9(r12, j11, b0Var, 2));
+                break;
         }
-        try {
-            ot.l0.e(null, i10, rVar.b());
-        } catch (SecurityException e) {
-            f8.g(e, true);
-            this.r.P(rVar, this.b, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q);
-        }
+    }
+
+    public /* synthetic */ lt(vs vsVar, boolean z10, long j10, int i10) {
+        this.a = i10;
+        this.d = vsVar;
+        this.c = z10;
+        this.b = j10;
     }
 }

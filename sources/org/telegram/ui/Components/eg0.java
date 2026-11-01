@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class eg0 {
     public int a;
@@ -13,8 +13,8 @@ public final class eg0 {
     public final t5 e;
     public Drawable i;
     public Drawable j;
-    public bi0 k;
-    public qz0 l;
+    public ci0 k;
+    public rz0 l;
     public t80 r;
     public boolean s;
     public boolean t;
@@ -72,29 +72,29 @@ public final class eg0 {
     }
 
     public final void c(String str) {
-        qz0 qz0Var = new qz0(str, 11.0f, org.telegram.messenger.i0.o());
-        qz0Var.m(3);
+        rz0 rz0Var = new rz0(str, 11.0f, org.telegram.messenger.i0.o());
+        rz0Var.m(3);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        qz0Var.a();
-        this.l = qz0Var;
+        rz0Var.a();
+        this.l = rz0Var;
     }
 
     public final void d(int i10, int i11, int i12) {
         hg0 hg0Var = this.y;
         if (i10 != 0) {
-            bi0 bi0Var = new bi0(i10, org.telegram.messenger.i0.L(56.0f), org.telegram.messenger.i0.L(56.0f), false, null);
-            bi0Var.R(hg0Var);
-            bi0Var.start();
-            this.k = bi0Var;
+            ci0 ci0Var = new ci0(i10, org.telegram.messenger.i0.L(56.0f), org.telegram.messenger.i0.L(56.0f), false, null);
+            ci0Var.R(hg0Var);
+            ci0Var.start();
+            this.k = ci0Var;
         } else {
             this.k = null;
         }
         this.i = i11 != 0 ? hg0Var.getResources().getDrawable(i11).mutate() : null;
         this.j = i12 != 0 ? hg0Var.getResources().getDrawable(i12).mutate() : null;
-        bi0 bi0Var2 = this.k;
+        ci0 ci0Var2 = this.k;
         Rect rect = this.h;
-        if (bi0Var2 != null) {
-            bi0Var2.setBounds(rect);
+        if (ci0Var2 != null) {
+            ci0Var2.setBounds(rect);
         }
         Drawable drawable = this.i;
         if (drawable != null) {
@@ -111,6 +111,6 @@ public final class eg0 {
         this.b = new dc(hg0Var);
         this.e = new t5(hg0Var, 0L, 250L, gr.f);
         d(0, fg0Var.b, fg0Var.c);
-        c(org.telegram.messenger.cd.L0(fg0Var.a, null));
+        c(org.telegram.messenger.dd.L0(fg0Var.a, null));
     }
 }

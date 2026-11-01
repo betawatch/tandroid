@@ -11,20 +11,20 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.ye;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.ze;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.t5;
 import vh.n5;
 import w7.b6;
 import w7.w7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e2 extends j {
     public final Bitmap A0;
@@ -33,19 +33,19 @@ public final class e2 extends j {
     public final Rect D0;
     public final Rect E0;
     public final Paint F0;
-    public ye G0;
+    public ze G0;
     public final TLObject q0;
     public final String r0;
     public final int s0;
     public boolean t0;
     public final t5 u0;
-    public final pu0 v0;
+    public final qu0 v0;
     public final int w0;
     public boolean x0;
     public final t5 y0;
     public final l0 z0;
 
-    public e2(Context context, PointF pointF, pu0 pu0Var, String str, int i10) {
+    public e2(Context context, PointF pointF, qu0 qu0Var, String str, int i10) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -59,7 +59,7 @@ public final class e2 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.r0 = str;
-        this.v0 = pu0Var;
+        this.v0 = qu0Var;
         l0 l0Var = new l0(this, context);
         this.z0 = l0Var;
         addView(l0Var, b6.c(-1.0f, -1));
@@ -90,7 +90,7 @@ public final class e2 extends j {
         return this.s0;
     }
 
-    public pu0 getBaseSize() {
+    public qu0 getBaseSize() {
         return this.v0;
     }
 
@@ -119,10 +119,10 @@ public final class e2 extends j {
     }
 
     @Override // jg.j
-    public oj0 getSelectionBounds() {
+    public pj0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new oj0();
+            return new pj0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.i0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -131,19 +131,19 @@ public final class e2 extends j {
         getMeasuredHeight();
         getScale();
         org.telegram.messenger.i0.L(64.0f);
-        float x10 = z20.x(L, 2.0f, getPositionX(), scaleX);
-        return new oj0(x10, z20.x(L2, 2.0f, getPositionY(), scaleX), ((L3 * scaleX) + x10) - x10, L2 * scaleX);
+        float x10 = a30.x(L, 2.0f, getPositionX(), scaleX);
+        return new pj0(x10, a30.x(L2, 2.0f, getPositionY(), scaleX), ((L3 * scaleX) + x10) - x10, L2 * scaleX);
     }
 
     @Override // jg.j
     public final void k() {
-        pu0 pu0Var = this.v0;
-        float f7 = pu0Var.a / 2.0f;
-        float f10 = pu0Var.b / 2.0f;
-        ye yeVar = this.G0;
-        if (yeVar != null) {
-            f7 *= yeVar.e;
-            f10 *= yeVar.f;
+        qu0 qu0Var = this.v0;
+        float f7 = qu0Var.a / 2.0f;
+        float f10 = qu0Var.b / 2.0f;
+        ze zeVar = this.G0;
+        if (zeVar != null) {
+            f7 *= zeVar.e;
+            f10 *= zeVar.f;
         }
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
@@ -162,13 +162,13 @@ public final class e2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        pu0 pu0Var = this.v0;
-        float f7 = pu0Var.a;
-        float f10 = pu0Var.b;
-        ye yeVar = this.G0;
-        if (yeVar != null) {
-            f7 *= yeVar.e;
-            f10 *= yeVar.f;
+        qu0 qu0Var = this.v0;
+        float f7 = qu0Var.a;
+        float f10 = qu0Var.b;
+        ze zeVar = this.G0;
+        if (zeVar != null) {
+            f7 *= zeVar.e;
+            f10 *= zeVar.f;
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) f10, TLObject.FLAG_30));
     }
@@ -221,7 +221,7 @@ public final class e2 extends j {
         }
     }
 
-    public e2(Context context, PointF pointF, pu0 pu0Var, TLObject tLObject) {
+    public e2(Context context, PointF pointF, qu0 qu0Var, TLObject tLObject) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -235,7 +235,7 @@ public final class e2 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.q0 = tLObject;
-        this.v0 = pu0Var;
+        this.v0 = qu0Var;
         l0 l0Var = new l0(this, context);
         this.z0 = l0Var;
         addView(l0Var, b6.c(-1.0f, -1));

@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rd implements gc1 {
+public final /* synthetic */ class rd implements ec1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ le b;
     public final /* synthetic */ TwoStepVerificationActivity c;
@@ -15,7 +15,7 @@ public final /* synthetic */ class rd implements gc1 {
         this.c = twoStepVerificationActivity;
     }
 
-    @Override // org.telegram.ui.gc1
+    @Override // org.telegram.ui.ec1
     public final void m(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         switch (this.a) {
             case 0:

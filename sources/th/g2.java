@@ -14,17 +14,17 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.wb;
-import org.telegram.ui.ly;
-import org.telegram.ui.qs0;
+import org.telegram.ui.ky;
+import org.telegram.ui.ps0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g2 extends p {
     public final org.telegram.ui.Components.t5 d;
@@ -47,7 +47,7 @@ public final class g2 extends p {
         gr grVar = gr.f;
         this.d = new org.telegram.ui.Components.t5(this, 150L, grVar);
         this.e = new org.telegram.ui.Components.t5(this, 150L, grVar);
-        this.f = new org.telegram.ui.Components.voip.g(32, zs.n1, zs.P3);
+        this.f = new org.telegram.ui.Components.voip.g(32, at.n1, at.P3);
         org.telegram.ui.Components.t5 t5Var = new org.telegram.ui.Components.t5(this);
         this.h = t5Var;
         org.telegram.ui.Components.t5 t5Var2 = new org.telegram.ui.Components.t5(this);
@@ -99,7 +99,7 @@ public final class g2 extends p {
             z2 z2Var2 = y2Var.k;
             TL_stories.PeerStories peerStories = z2Var2.d1;
             o7 o7Var = z2Var2.s0;
-            if (peerStories == null && (peerStories = z2Var2.B1.y(z2Var2.k1)) == null && (a2 = vp.r1(z2Var2.l2).a2(z2Var2.k1)) != null) {
+            if (peerStories == null && (peerStories = z2Var2.B1.y(z2Var2.k1)) == null && (a2 = wp.r1(z2Var2.l2).a2(z2Var2.k1)) != null) {
                 peerStories = a2.stories;
             }
             if (z2Var2.t1 && (storyItem2 = y2Var.a) != null && peerStories != null && ((!w5.v(storyItem2) && ((i10 = y2Var.a.id) > peerStories.max_read_id || i10 > z2Var2.B1.f.get(z2Var2.k1, 0))) || z2Var2.l1)) {
@@ -386,7 +386,7 @@ public final class g2 extends p {
         float f11;
         float f12;
         boolean z10;
-        ly lyVar;
+        ky kyVar;
         e3 e3Var;
         boolean z11;
         float f13;
@@ -417,17 +417,17 @@ public final class g2 extends p {
                 invalidate();
             }
             canvas2.save();
-            qs0 qs0Var = z2Var.G2;
-            if (qs0Var.n) {
+            ps0 ps0Var = z2Var.G2;
+            if (ps0Var.n) {
                 canvas2.save();
-                float f14 = qs0Var.O;
-                float f15 = qs0Var.A;
+                float f14 = ps0Var.O;
+                float f15 = ps0Var.A;
                 float f16 = ((f14 * f15) + 1.0f) - f15;
-                canvas2.scale(f16, f16, qs0Var.o + qs0Var.s, qs0Var.p + qs0Var.t);
-                float f17 = qs0Var.o;
-                float f18 = qs0Var.J;
-                float f19 = qs0Var.A;
-                canvas2.translate((f18 * f19) + f17, (qs0Var.K * f19) + qs0Var.p);
+                canvas2.scale(f16, f16, ps0Var.o + ps0Var.s, ps0Var.p + ps0Var.t);
+                float f17 = ps0Var.o;
+                float f18 = ps0Var.J;
+                float f19 = ps0Var.A;
+                canvas2.translate((f18 * f19) + f17, (ps0Var.K * f19) + ps0Var.p);
             }
             org.telegram.ui.k4 k4Var = (org.telegram.ui.k4) t0Var.e;
             if (k4Var == null || (!t0Var.b && ((s0) t0Var.a) == null)) {
@@ -560,7 +560,7 @@ public final class g2 extends p {
         Drawable drawable = x2Var.d;
         Paint paint = x2Var.c;
         Drawable drawable2 = x2Var.e;
-        drawable.setAlpha(zs.e4);
+        drawable.setAlpha(at.e4);
         x2Var.d.draw(canvas2);
         if (z2Var.l1 || !z2Var.g2 || k2Var.getVisibility() == 0) {
             if (k2Var.getVisibility() == 0) {
@@ -679,9 +679,9 @@ public final class g2 extends p {
                     super.dispatchDraw(canvas);
                     b(canvas);
                 }
-                lyVar = z2Var.T0;
-                if (lyVar == null) {
-                    lyVar.e(canvas2);
+                kyVar = z2Var.T0;
+                if (kyVar == null) {
+                    kyVar.e(canvas2);
                     return;
                 }
                 return;
@@ -707,8 +707,8 @@ public final class g2 extends p {
         }
         if (f10 <= 0.0f) {
         }
-        lyVar = z2Var.T0;
-        if (lyVar == null) {
+        kyVar = z2Var.T0;
+        if (kyVar == null) {
         }
     }
 

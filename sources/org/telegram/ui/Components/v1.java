@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v1 implements wb0, org.telegram.ui.ActionBar.u1, org.telegram.ui.ActionBar.x6, org.telegram.ui.ActionBar.y6, q4, org.telegram.messenger.mc, org.telegram.messenger.l9 {
+public final /* synthetic */ class v1 implements wb0, org.telegram.ui.ActionBar.u1, org.telegram.ui.ActionBar.x6, org.telegram.ui.ActionBar.y6, q4, org.telegram.messenger.nc, org.telegram.messenger.m9 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ v1(int i10) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class v1 implements wb0, org.telegram.ui.ActionBar.
                     break;
                 }
             case 11:
-                boolean z10 = org.telegram.messenger.cd.Z;
+                boolean z10 = org.telegram.messenger.dd.Z;
                 String format = String.format("%02d", Integer.valueOf((i10 % 12 != 0 || z10) ? i10 % (z10 ? 24 : 12) : 12));
                 if (i10 >= 24) {
                     break;
@@ -135,27 +135,27 @@ public final /* synthetic */ class v1 implements wb0, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
         return CheckBoxBase.I;
     }
 
-    @Override // org.telegram.messenger.mc
-    public void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    @Override // org.telegram.messenger.nc
+    public void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Drawable t10 = imageReceiver.t();
-        if (t10 instanceof bi0) {
-            bi0 bi0Var = (bi0) t10;
-            bi0Var.P(0);
-            bi0Var.stop();
-            bi0Var.T(false, 0.0f);
+        if (t10 instanceof ci0) {
+            ci0 ci0Var = (ci0) t10;
+            ci0Var.P(0);
+            ci0Var.stop();
+            ci0Var.T(false, 0.0f);
         }
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public /* synthetic */ void j(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.mc
-    public /* synthetic */ void q(int i10, Drawable drawable) {
+    @Override // org.telegram.messenger.nc
+    public /* synthetic */ void s(int i10, Drawable drawable) {
     }
 }

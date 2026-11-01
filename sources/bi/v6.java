@@ -4,15 +4,15 @@ import android.util.SparseIntArray;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Comparator;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.we;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.xe;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v6 implements Comparator {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class v6 implements Comparator {
                 r2.v vVar = (r2.v) this.b;
                 return vVar.d(obj2) - vVar.d(obj);
             case 4:
-                float[] fArr = ((rh.u2) this.b).r;
+                float[] fArr = ((rh.v2) this.b).r;
                 return Float.compare(fArr[((Integer) obj).intValue()], fArr[((Integer) obj2).intValue()]);
             case 5:
                 th.e5 e5Var = (th.e5) this.b;
@@ -75,14 +75,14 @@ public final /* synthetic */ class v6 implements Comparator {
                 if (L != L2) {
                     return (L2 ? 1 : 0) - (L ? 1 : 0);
                 }
-                boolean A = h20.A(o10);
-                boolean A2 = h20.A(o11);
+                boolean A = i20.A(o10);
+                boolean A2 = i20.A(o11);
                 if (A != A2) {
                     return (A2 ? 1 : 0) - (A ? 1 : 0);
                 }
-                TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(o10));
+                TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(o10));
                 ?? r02 = Z1 == null ? 0 : Z1.premium;
-                TLRPC.User Z12 = vp.r1(i10).Z1(Long.valueOf(o11));
+                TLRPC.User Z12 = wp.r1(i10).Z1(Long.valueOf(o11));
                 ?? r12 = Z12 == null ? 0 : Z12.premium;
                 if (r02 != r12) {
                     return r12 - r02;
@@ -90,11 +90,11 @@ public final /* synthetic */ class v6 implements Comparator {
                 return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i0.a.g(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i0.a.g(1, peerStories.stories)).date);
             default:
                 ArrayList arrayList = (ArrayList) this.b;
-                we weVar = (we) obj;
-                we weVar2 = (we) obj2;
-                int i11 = weVar.a;
-                if (i11 != 0 || weVar2.a == 0) {
-                    if ((i11 != 0 && weVar2.a == 0) || (indexOf = arrayList.indexOf(weVar)) > (indexOf2 = arrayList.indexOf(weVar2))) {
+                xe xeVar = (xe) obj;
+                xe xeVar2 = (xe) obj2;
+                int i11 = xeVar.a;
+                if (i11 != 0 || xeVar2.a == 0) {
+                    if ((i11 != 0 && xeVar2.a == 0) || (indexOf = arrayList.indexOf(xeVar)) > (indexOf2 = arrayList.indexOf(xeVar2))) {
                         return 1;
                     }
                     if (indexOf >= indexOf2) {

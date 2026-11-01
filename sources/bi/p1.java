@@ -5,14 +5,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.kh0;
+import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class p1 implements View.OnClickListener {
         final k2 k2Var = this.b;
         switch (i10) {
             case 0:
-                k2Var.v0();
+                k2Var.w0();
                 break;
             case 1:
                 if (!k2Var.P.I2()) {
@@ -61,7 +61,7 @@ public final /* synthetic */ class p1 implements View.OnClickListener {
                 }
                 break;
             case 4:
-                k2.Y(k2Var);
+                k2.Z(k2Var);
                 break;
             case 5:
                 k2 k2Var2 = this.b;
@@ -77,31 +77,31 @@ public final /* synthetic */ class p1 implements View.OnClickListener {
                         if (indexOfChild < 0) {
                             indexOfChild = k2Var2.O.getChildCount();
                         }
-                        FrameLayout.LayoutParams e = w7.b6.e(-1, k2Var2.n0(), 87);
+                        FrameLayout.LayoutParams e = w7.b6.e(-1, k2Var2.o0(), 87);
                         e.bottomMargin = k2Var2.T0;
                         k2Var2.O.addView(k2Var2.A0, indexOfChild, e);
                     }
-                    int n02 = k2Var2.n0();
+                    int o02 = k2Var2.o0();
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) k2Var2.A0.getLayoutParams();
                     if (layoutParams == null) {
-                        layoutParams = w7.b6.e(-1, n02, 87);
+                        layoutParams = w7.b6.e(-1, o02, 87);
                     } else {
-                        layoutParams.height = n02;
+                        layoutParams.height = o02;
                     }
                     layoutParams.bottomMargin = k2Var2.T0;
                     k2Var2.A0.setLayoutParams(layoutParams);
                     k2Var2.A0.setVisibility(0);
                     k2Var2.B0 = true;
-                    k2Var2.D0 = n02 + k2Var2.T0;
+                    k2Var2.D0 = o02 + k2Var2.T0;
                     n1 S2 = k2Var2.P.S2();
                     if (S2 != null) {
                         org.telegram.messenger.i0.v1(S2);
                     }
-                    k2Var2.l0();
+                    k2Var2.m0();
                     k2Var2.b0.j(dg.d, true);
                     break;
                 } else {
-                    k2Var2.o0(true);
+                    k2Var2.p0(true);
                     n1 S22 = k2Var2.P.S2();
                     if (S22 != null) {
                         S22.N();
@@ -119,12 +119,12 @@ public final /* synthetic */ class p1 implements View.OnClickListener {
                 final z60 H = z60.H(k2Var, view);
                 H.Q = true;
                 a T2 = k2Var.P.T2();
-                H.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, cd.L0(2131753999, null), new t1(k2Var, T2, 5));
-                H.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, cd.L0(2131754005, null), new t1(k2Var, T2, 6));
-                H.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, cd.L0(2131754002, null), new t1(k2Var, T2, 7));
-                H.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, cd.L0(2131754004, null), new t1(k2Var, T2, 8));
+                H.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, dd.L0(2131753999, null), new t1(k2Var, T2, 5));
+                H.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, dd.L0(2131754005, null), new t1(k2Var, T2, 6));
+                H.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, dd.L0(2131754002, null), new t1(k2Var, T2, 7));
+                H.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, dd.L0(2131754004, null), new t1(k2Var, T2, 8));
                 boolean z10 = T2 != null && (T2.b instanceof TL_iv.pageBlockDetails);
-                String L0 = cd.L0(2131753987, null);
+                String L0 = dd.L0(2131753987, null);
                 d4 d4Var = k2Var.P;
                 Objects.requireNonNull(d4Var);
                 H.j(z10, R.drawable.iv_details, null, L0, new b(d4Var, i13));
@@ -133,7 +133,7 @@ public final /* synthetic */ class p1 implements View.OnClickListener {
                 if (p22 || s22) {
                     H.k();
                     if (p22) {
-                        H.c(R.drawable.iv_list_tab, cd.L0(2131754013, null), new Runnable() { // from class: bi.w1
+                        H.c(R.drawable.iv_list_tab, dd.L0(2131754013, null), new Runnable() { // from class: bi.w1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i12) {
@@ -150,7 +150,7 @@ public final /* synthetic */ class p1 implements View.OnClickListener {
                         }, false);
                     }
                     if (s22) {
-                        H.c(R.drawable.iv_list_untab, cd.L0(2131753998, null), new Runnable() { // from class: bi.w1
+                        H.c(R.drawable.iv_list_untab, dd.L0(2131753998, null), new Runnable() { // from class: bi.w1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i13) {
@@ -217,20 +217,20 @@ public final /* synthetic */ class p1 implements View.OnClickListener {
                 break;
             case 9:
                 k2Var.P.i4 = null;
-                k2Var.s0(90, 0);
+                k2Var.t0(90, 0);
                 break;
             case 10:
-                k2Var.v0();
-                kh0 kh0Var = k2Var.O0;
-                if (kh0Var != null) {
-                    kh0Var.g(true);
+                k2Var.w0();
+                ih0 ih0Var = k2Var.O0;
+                if (ih0Var != null) {
+                    ih0Var.g(true);
                     k2Var.O0 = null;
                     break;
                 }
                 break;
             case 11:
                 k2Var.P.T4();
-                k2Var.C0();
+                k2Var.D0();
                 break;
             case 12:
                 k2Var.P.c4(view);
@@ -245,7 +245,7 @@ public final /* synthetic */ class p1 implements View.OnClickListener {
                 k2Var.P.e4();
                 break;
             default:
-                k2Var.r0();
+                k2Var.s0();
                 break;
         }
     }

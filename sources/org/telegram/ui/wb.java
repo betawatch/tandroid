@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wb implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class wb implements RequestDelegate {
                                     zbVar2.M = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
                                     boolean z10 = false;
-                                    org.telegram.messenger.vp.r1(zbVar2.b).V3(tL_premium_boostsList.users, false);
+                                    org.telegram.messenger.wp.r1(zbVar2.b).V3(tL_premium_boostsList.users, false);
                                     zbVar2.J = tL_premium_boostsList.next_offset;
                                     arrayList.addAll(tL_premium_boostsList.boosts);
                                     int size = arrayList.size();
@@ -91,7 +91,7 @@ public final /* synthetic */ class wb implements RequestDelegate {
                                     zbVar3.L = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
                                     boolean z11 = false;
-                                    org.telegram.messenger.vp.r1(zbVar3.b).V3(tL_premium_boostsList2.users, false);
+                                    org.telegram.messenger.wp.r1(zbVar3.b).V3(tL_premium_boostsList2.users, false);
                                     zbVar3.K = tL_premium_boostsList2.next_offset;
                                     arrayList2.addAll(tL_premium_boostsList2.boosts);
                                     int size2 = arrayList2.size();
@@ -148,7 +148,7 @@ public final /* synthetic */ class wb implements RequestDelegate {
                                     zbVar22.M = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
                                     boolean z10 = false;
-                                    org.telegram.messenger.vp.r1(zbVar22.b).V3(tL_premium_boostsList.users, false);
+                                    org.telegram.messenger.wp.r1(zbVar22.b).V3(tL_premium_boostsList.users, false);
                                     zbVar22.J = tL_premium_boostsList.next_offset;
                                     arrayList.addAll(tL_premium_boostsList.boosts);
                                     int size = arrayList.size();
@@ -192,7 +192,7 @@ public final /* synthetic */ class wb implements RequestDelegate {
                                     zbVar3.L = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
                                     boolean z11 = false;
-                                    org.telegram.messenger.vp.r1(zbVar3.b).V3(tL_premium_boostsList2.users, false);
+                                    org.telegram.messenger.wp.r1(zbVar3.b).V3(tL_premium_boostsList2.users, false);
                                     zbVar3.K = tL_premium_boostsList2.next_offset;
                                     arrayList2.addAll(tL_premium_boostsList2.boosts);
                                     int size2 = arrayList2.size();

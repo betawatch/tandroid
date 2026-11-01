@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.Point;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class d2 extends h3 {
+public final class d2 extends i3 {
     public final /* synthetic */ int c0;
     public final /* synthetic */ Object d0;
 
@@ -60,7 +60,7 @@ public final class d2 extends h3 {
                         if (i2Var != null && i2Var.getTotalHeight() > 0) {
                             size -= i2Var.getTotalHeight();
                         }
-                        super.onMeasure(i10, z20.B(24.0f, size, TLObject.FLAG_30));
+                        super.onMeasure(i10, a30.B(24.0f, size, TLObject.FLAG_30));
                         break;
                     }
                 }
@@ -84,9 +84,9 @@ public final class d2 extends h3 {
                 if (i2Var != null) {
                     size -= i2Var.getTotalHeight();
                 }
-                super.onMeasure(i10, z20.B(24.0f, size, TLObject.FLAG_30));
+                super.onMeasure(i10, a30.B(24.0f, size, TLObject.FLAG_30));
             default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i11) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.i0.L(84.0f)) + ((i3) this.d0).N, TLObject.FLAG_30));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i11) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.i0.L(84.0f)) + ((j3) this.d0).N, TLObject.FLAG_30));
                 break;
         }
     }
@@ -106,7 +106,7 @@ public final class d2 extends h3 {
         }
     }
 
-    @Override // xh.h3, android.view.View
+    @Override // xh.i3, android.view.View
     public void setTranslationY(float f7) {
         switch (this.c0) {
             case 0:

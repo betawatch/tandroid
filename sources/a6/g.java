@@ -5,9 +5,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.api.q;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g extends com.google.android.gms.common.api.internal.e {
     public final /* synthetic */ int q;
@@ -41,7 +41,7 @@ public final class g extends com.google.android.gms.common.api.internal.e {
                 int i10 = i7.f.a;
                 L0.writeStrongBinder(fVar);
                 i7.f.c(L0, googleSignInOptions);
-                kVar.M0(L0, zs.n1);
+                kVar.M0(L0, at.n1);
                 break;
             default:
                 e eVar2 = (e) cVar;
@@ -52,7 +52,7 @@ public final class g extends com.google.android.gms.common.api.internal.e {
                 int i11 = i7.f.a;
                 L02.writeStrongBinder(fVar2);
                 i7.f.c(L02, googleSignInOptions2);
-                kVar2.M0(L02, zs.o1);
+                kVar2.M0(L02, at.o1);
                 break;
         }
     }

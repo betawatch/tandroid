@@ -1,49 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import android.content.Context;
+import java.nio.ByteBuffer;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class q61 implements g2.h {
-    public final g2.h a;
-    public final long b;
+public final class q61 extends i2.j {
+    public final /* synthetic */ v61 d;
 
-    public q61(ExtendedDefaultDataSource extendedDefaultDataSource, long j10) {
-        this.a = extendedDefaultDataSource;
-        this.b = j10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q61(Context context, v61 v61Var) {
+        super(context);
+        this.d = v61Var;
     }
 
-    @Override // g2.h
-    public final void addTransferListener(g2.d0 d0Var) {
-        this.a.addTransferListener(d0Var);
-    }
-
-    @Override // g2.h
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(g2.n nVar) {
-        g2.m a2 = nVar.a();
-        a2.b = nVar.e + this.b;
-        return this.a.open(a2.d());
-    }
-
-    @Override // b2.p
-    public final int read(byte[] bArr, int i10, int i11) {
-        return this.a.read(bArr, i10, i11);
+    /* JADX WARN: Type inference failed for: r3v2, types: [float[], java.io.Serializable] */
+    @Override // i2.j
+    public final k2.w0 a(Context context) {
+        k2.t0 t0Var = new k2.t0(context, 0);
+        bi.r6 r6Var = new bi.r6();
+        r6Var.f = this.d;
+        org.telegram.messenger.l9 l9Var = new org.telegram.messenger.l9();
+        l9Var.e = new float[0];
+        l9Var.a = 3;
+        l9Var.d = new float[513];
+        l9Var.b = new float[1024];
+        l9Var.c = new float[1024];
+        int[] iArr = new int[1024];
+        l9Var.h = iArr;
+        iArr[0] = 0;
+        int i10 = 512;
+        int i11 = 1;
+        while (i11 < 1024) {
+            for (int i12 = 0; i12 < i11; i12++) {
+                int[] iArr2 = (int[]) l9Var.h;
+                iArr2[i12 + i11] = iArr2[i12] + i10;
+            }
+            i11 <<= 1;
+            i10 >>= 1;
+        }
+        l9Var.f = new float[1024];
+        l9Var.g = new float[1024];
+        for (int i13 = 0; i13 < 1024; i13++) {
+            double d = (-3.1415927f) / i13;
+            ((float[]) l9Var.f)[i13] = (float) Math.sin(d);
+            ((float[]) l9Var.g)[i13] = (float) Math.cos(d);
+        }
+        r6Var.c = l9Var;
+        r6Var.d = new float[1024];
+        r6Var.a = 0;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(TLObject.FLAG_13);
+        r6Var.e = allocateDirect;
+        allocateDirect.position(0);
+        t0Var.d = new android.support.v4.media.session.a0(new c2.m[]{new k2.d1(r6Var)});
+        return t0Var.a();
     }
 }

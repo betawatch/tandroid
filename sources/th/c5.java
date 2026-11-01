@@ -3,14 +3,14 @@ package th;
 import java.io.File;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.x20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.y20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c5 implements q20 {
+public final /* synthetic */ class c5 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ d5 b;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class c5 implements q20 {
         this.b = d5Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         int i10 = this.a;
         d5 d5Var = this.b;
@@ -29,7 +29,7 @@ public final /* synthetic */ class c5 implements q20 {
                 n5Var.c0 = (TLRPC.Document) obj;
                 TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
                 TLRPC.Document document = n5Var.c0;
-                int i11 = vp.D8;
+                int i11 = wp.D8;
                 TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
                 tL_inputDocument.id = document.id;
                 tL_inputDocument.access_hash = document.access_hash;
@@ -38,11 +38,11 @@ public final /* synthetic */ class c5 implements q20 {
                 d5Var.c(tL_inputFileStoryDocument);
                 break;
             default:
-                x20 x20Var = (x20) obj;
-                d5Var.F = x20Var;
-                d5Var.E.p0 = x20Var;
-                d5Var.D = x20Var.r / 1000;
-                if (!x20Var.c()) {
+                y20 y20Var = (y20) obj;
+                d5Var.F = y20Var;
+                d5Var.E.p0 = y20Var;
+                d5Var.D = y20Var.r / 1000;
+                if (!y20Var.c()) {
                     if (new File(d5Var.E.p0.o).renameTo(new File(d5Var.e))) {
                         b8.G(d5Var.M.a).i0(false, 33554432, d5Var.e, false);
                         break;

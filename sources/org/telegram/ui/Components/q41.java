@@ -1,46 +1,28 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q41 implements ax0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ w41 b;
+    public final /* synthetic */ x41 a;
 
-    public q41(w41 w41Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = w41Var;
-        this.a = inputStickerSet;
+    public q41(x41 x41Var) {
+        this.a = x41Var;
     }
 
     @Override // org.telegram.ui.Components.ax0
-    public final void a() {
-        w41 w41Var = this.b;
-        s4.g0 adapter = w41Var.n.getAdapter();
-        v41 v41Var = w41Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i10 = 0;
-        if (adapter == v41Var) {
-            while (i10 < v41Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) v41Var.e.get(i10);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    v41Var.F(stickerSetCovered, null);
-                    return;
-                }
-                i10++;
-            }
-            return;
-        }
-        zf.o1 o1Var = w41Var.w;
-        ArrayList arrayList = o1Var.E;
-        while (i10 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                o1Var.F(stickerSetCovered2, null);
-                return;
-            }
-            i10++;
-        }
+    public final void a(TLRPC.Document document, String str, Object obj, org.telegram.messenger.gj gjVar, boolean z10, boolean z11, int i10, int i11) {
+        this.a.b.f(document, obj, z11, i10);
+    }
+
+    @Override // org.telegram.ui.Components.ax0
+    public final boolean b() {
+        return this.a.b.a();
+    }
+
+    @Override // org.telegram.ui.Components.ax0
+    public final boolean c() {
+        return this.a.b.c();
     }
 }

@@ -7,25 +7,25 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.Calendar;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.cv;
 import org.telegram.ui.Components.om;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.v7;
 import org.telegram.ui.Components.w7;
 import org.telegram.ui.FiltersSetupActivity;
-import org.telegram.ui.b10;
-import org.telegram.ui.f10;
-import org.telegram.ui.fy;
-import org.telegram.ui.iy;
-import org.telegram.ui.ll0;
-import org.telegram.ui.lt;
-import org.telegram.ui.nb0;
-import org.telegram.ui.rv;
+import org.telegram.ui.a10;
+import org.telegram.ui.e10;
+import org.telegram.ui.ey;
+import org.telegram.ui.hy;
+import org.telegram.ui.jl0;
+import org.telegram.ui.kt;
+import org.telegram.ui.mb0;
+import org.telegram.ui.qv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -78,31 +78,31 @@ public final /* synthetic */ class d1 implements View.OnTouchListener {
                 return false;
             case 2:
                 cv cvVar = (cv) obj2;
-                return lt.p().r(motionEvent, cvVar.n1, (om) obj, cvVar.E1, cvVar.I0);
+                return kt.p().r(motionEvent, cvVar.n1, (om) obj, cvVar.E1, cvVar.I0);
             case 3:
-                r10 = lt.p().r(motionEvent, r5.e, (org.telegram.ui.Components.k) obj, r5.getPreviewDelegate(), ((sx0) obj2).b);
+                r10 = kt.p().r(motionEvent, r5.e, (org.telegram.ui.Components.k) obj, r5.getPreviewDelegate(), ((tx0) obj2).b);
                 return r10;
             case 4:
-                fy fyVar = (fy) obj2;
+                ey eyVar = (ey) obj2;
                 org.telegram.ui.Cells.j4 j4Var = (org.telegram.ui.Cells.j4) obj;
-                fyVar.getClass();
+                eyVar.getClass();
                 if (motionEvent.getAction() == 0) {
-                    iy iyVar = fyVar.f;
-                    iyVar.c.t(iyVar.b.T(j4Var));
+                    hy hyVar = eyVar.f;
+                    hyVar.c.t(hyVar.b.T(j4Var));
                 }
                 return false;
             case 5:
-                f10 f10Var = (f10) obj2;
-                b10 b10Var = (b10) obj;
+                e10 e10Var = (e10) obj2;
+                a10 a10Var = (a10) obj;
                 if (motionEvent.getAction() == 0) {
-                    FiltersSetupActivity filtersSetupActivity = f10Var.e;
-                    filtersSetupActivity.c.t(filtersSetupActivity.a.T(b10Var));
+                    FiltersSetupActivity filtersSetupActivity = e10Var.e;
+                    filtersSetupActivity.c.t(filtersSetupActivity.a.T(a10Var));
                 }
                 return false;
             case 6:
-                ll0 ll0Var = (ll0) obj2;
+                jl0 jl0Var = (jl0) obj2;
                 Context context = (Context) obj;
-                if (ll0Var.getParentActivity() == null) {
+                if (jl0Var.getParentActivity() == null) {
                     return false;
                 }
                 if (motionEvent.getAction() != 1) {
@@ -117,7 +117,7 @@ public final /* synthetic */ class d1 implements View.OnTouchListener {
                     int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
                     if (intValue == 8) {
                         try {
-                            L0 = cd.L0(2131747483, null);
+                            L0 = dd.L0(2131747483, null);
                             i11 = 0;
                             str = null;
                             i12 = 20;
@@ -130,7 +130,7 @@ public final /* synthetic */ class d1 implements View.OnTouchListener {
                     } else {
                         i10 = -120;
                         i11 = -18;
-                        L0 = cd.L0(2131747484, null);
+                        L0 = dd.L0(2131747484, null);
                         str = null;
                         i12 = 0;
                     }
@@ -147,11 +147,11 @@ public final /* synthetic */ class d1 implements View.OnTouchListener {
                     int i17 = i11;
                     int i18 = i14;
                     String str2 = str;
-                    AlertDialog$Builder w9 = org.telegram.ui.Components.s4.w(context, i10, i12, i17, i13, i15, i18, L0, intValue == 8, new ag.b0(ll0Var, intValue, editTextBoldCursor, 14));
+                    AlertDialog$Builder w9 = org.telegram.ui.Components.s4.w(context, i10, i12, i17, i13, i15, i18, L0, intValue == 8, new ag.b0(jl0Var, intValue, editTextBoldCursor, 14));
                     if (intValue == 8) {
-                        w9.h(cd.L0(2131747481, str2), new rv(26, ll0Var, editTextBoldCursor));
+                        w9.h(dd.L0(2131747481, str2), new qv(26, jl0Var, editTextBoldCursor));
                     }
-                    ll0Var.showDialog(w9.a);
+                    jl0Var.showDialog(w9.a);
                     return true;
                 } catch (Exception e7) {
                     e = e7;
@@ -159,12 +159,12 @@ public final /* synthetic */ class d1 implements View.OnTouchListener {
                 }
             default:
                 vh.g1 g1Var = (vh.g1) obj2;
-                lt p5 = lt.p();
-                nb0 nb0Var = g1Var.b;
-                vh.c1 c1Var = g1Var.f;
+                kt p5 = kt.p();
+                mb0 mb0Var = g1Var.b;
+                vh.d1 d1Var = g1Var.f;
                 vh.u1 u1Var = g1Var.r;
                 int i19 = vh.u1.y1;
-                return p5.r(motionEvent, nb0Var, (ag.y0) obj, c1Var, u1Var.I0);
+                return p5.r(motionEvent, mb0Var, (ag.y0) obj, d1Var, u1Var.I0);
         }
     }
 }

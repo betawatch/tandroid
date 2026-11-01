@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ma0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,21 +42,21 @@ public final /* synthetic */ class ma0 implements View.OnClickListener {
                 za0 za0Var = (za0) obj2;
                 za0 za0Var2 = (za0) obj;
                 ab0 ab0Var = ua0Var.c0;
-                org.telegram.messenger.nj njVar = ab0Var.d;
+                org.telegram.messenger.oj ojVar = ab0Var.d;
                 if (!z10) {
                     new cc(ab0Var, ab0Var.F).Q(R.raw.star_premium_2, 36, org.telegram.messenger.i0.R2("Subscribe to **Telegram Premium** to forward formatted messages without the sender’s name.", -1, 0, new ka0(ua0Var, context, i11), null)).j();
                     break;
                 } else {
-                    boolean z11 = njVar.k;
-                    njVar.k = !z11;
+                    boolean z11 = ojVar.k;
+                    ojVar.k = !z11;
                     ab0Var.y = false;
                     if (z11) {
-                        njVar.l = false;
+                        ojVar.l = false;
                         if (za0Var != null) {
                             za0Var.a(false, true);
                         }
                     }
-                    za0Var2.a(njVar.k, true);
+                    za0Var2.a(ojVar.k, true);
                     ua0Var.i();
                     ua0Var.l(true);
                     break;
@@ -65,21 +65,21 @@ public final /* synthetic */ class ma0 implements View.OnClickListener {
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
                 z60 z60Var = (z60) obj;
-                vq0 vq0Var = ((ph.f2) frameLayout).a;
+                wq0 wq0Var = ((ph.f2) frameLayout).a;
                 if (z10) {
-                    vq0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    cc.a0(vq0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0(null, null, 2131750046, rh.e4.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    wq0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
+                    cc.a0(wq0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.i0.W2(org.telegram.messenger.dd.a0(null, null, 2131750046, rh.e4.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 } else {
-                    rh.u5 u5Var = vq0Var.e;
+                    rh.u5 u5Var = wq0Var.e;
                     int i12 = tL_starGiftCollection.collection_id;
                     u5Var.getClass();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(savedStarGift);
                     u5Var.a(i12, arrayList);
-                    cc.a0(vq0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0(null, null, 2131750402, rh.e4.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    cc.a0(wq0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.i0.W2(org.telegram.messenger.dd.a0(null, null, 2131750402, rh.e4.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
                 z60Var.u();
-                vq0Var.o();
+                wq0Var.o();
                 break;
         }
     }

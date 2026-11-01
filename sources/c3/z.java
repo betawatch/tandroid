@@ -1,9 +1,9 @@
 package c3;
 
 import java.io.Serializable;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class z {
     public int a;
@@ -49,11 +49,11 @@ public final class z {
             this.e = i18;
             this.b = (((i18 * 12) / this.c) + i16) * 4;
         } else {
-            int i19 = zs.a2;
+            int i19 = at.a2;
             if (i11 == 3) {
                 int i20 = i12 == 2 ? b.w[i13 - 1] : b.x[i13 - 1];
                 this.e = i20;
-                this.b = ((i20 * zs.a2) / this.c) + i16;
+                this.b = ((i20 * at.a2) / this.c) + i16;
             } else {
                 int i21 = b.y[i13 - 1];
                 this.e = i21;

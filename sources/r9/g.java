@@ -18,7 +18,7 @@ import org.telegram.ui.web.v1;
 import w7.f7;
 import w7.g7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g implements b {
     public static final f n = new f(0);
@@ -235,7 +235,7 @@ public final class g implements b {
                 for (r rVar : aVar.b) {
                     HashMap hashMap = this.b;
                     if (hashMap.containsKey(rVar)) {
-                        arrayList2.add(new v1(27, (p) ((qa.b) hashMap.get(rVar)), bVar));
+                        arrayList2.add(new v1(28, (p) ((qa.b) hashMap.get(rVar)), bVar));
                     } else {
                         hashMap.put(rVar, bVar);
                     }
@@ -284,7 +284,7 @@ public final class g implements b {
                 o oVar = (o) hashMap.get(entry2.getKey());
                 Iterator it = ((Set) entry2.getValue()).iterator();
                 while (it.hasNext()) {
-                    arrayList.add(new v1(28, oVar, (qa.b) it.next()));
+                    arrayList.add(new v1(29, oVar, (qa.b) it.next()));
                 }
             } else {
                 r rVar2 = (r) entry2.getKey();

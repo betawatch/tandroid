@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class wi extends org.telegram.ui.Cells.s0 {
     public final /* synthetic */ un t2;
@@ -18,6 +18,6 @@ public final class wi extends org.telegram.ui.Cells.s0 {
         super.onLayout(z10, i10, i11, i12, i13);
         float y3 = getY();
         un unVar = this.t2;
-        g0(unVar.f1.getY() + y3, unVar.l1.getBackgroundSizeY());
+        h0(unVar.f1.getY() + y3, unVar.l1.getBackgroundSizeY());
     }
 }

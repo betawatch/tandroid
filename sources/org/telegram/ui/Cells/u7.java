@@ -7,11 +7,11 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.nd;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.od;
 import org.telegram.ui.Components.bl;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final /* synthetic */ class u7 implements Runnable {
                 double d = this.c;
                 double d10 = this.d;
                 try {
-                    List<Address> fromLocation = new Geocoder(org.telegram.messenger.w0.b, cd.D0().y).getFromLocation(d, d10, 1);
+                    List<Address> fromLocation = new Geocoder(org.telegram.messenger.w0.b, dd.D0().y).getFromLocation(d, d10, 1);
                     if (fromLocation.isEmpty()) {
-                        String c10 = nd.c(d10, d);
+                        String c10 = od.c(d10, d);
                         v7Var.K = c10;
                         if (c10 == null) {
                             v7Var.K = "";
@@ -62,7 +62,7 @@ public final /* synthetic */ class u7 implements Runnable {
                             }
                         }
                         v7Var.K = sb2.toString();
-                        String b10 = nd.b(address.getCountryCode());
+                        String b10 = od.b(address.getCountryCode());
                         if (b10 != null && org.telegram.messenger.k6.g(b10) != null) {
                             v7Var.K = b10 + " " + ((Object) v7Var.K);
                         }

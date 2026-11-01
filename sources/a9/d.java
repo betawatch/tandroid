@@ -14,11 +14,11 @@ import j$.util.Objects;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final class d implements ServiceConnection {
                 m4.c cVar3 = new m4.c(eVar, componentName, z10, 21);
                 if (((gf.d) ((WeakReference) this.b).get()) != null) {
                     gf.f.b = cVar3;
-                    if (vp.r1(d20.s0).M2() && (cVar = gf.f.b) != null) {
+                    if (wp.r1(e20.s0).M2() && (cVar = gf.f.b) != null) {
                         try {
                             ((pf.c) ((pf.e) cVar.b)).I0();
                             break;

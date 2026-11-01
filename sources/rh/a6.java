@@ -1,10 +1,10 @@
 package rh;
 
-import org.telegram.messenger.jj;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.kj;
 import org.telegram.ui.Components.wb;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a6 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,16 +30,16 @@ public final /* synthetic */ class a6 implements Runnable {
                 wb wbVar = c6Var.d;
                 e6 e6Var = c6Var.q;
                 a6 a6Var = c6Var.p;
-                jj jjVar = c6Var.b;
+                kj kjVar = c6Var.b;
                 if (!c6Var.l) {
                     c6Var.l = true;
-                    jjVar.f((int) c6Var.k, c6Var.c(), true);
+                    kjVar.f((int) c6Var.k, c6Var.c(), true);
                     long j10 = e6Var.g;
                     int i11 = e6Var.a;
                     e6Var.g = j10 + c6Var.k;
-                    zs.f(i11).k(zs.y3, new Object[0]);
+                    at.f(i11).k(at.y3, new Object[0]);
                     c6Var.k = 0L;
-                    zs.f(i11).k(zs.o1, Long.valueOf(jj.B0(jjVar.k)), Integer.valueOf(jjVar.f1()), jjVar.k.reactions);
+                    at.f(i11).k(at.o1, Long.valueOf(kj.B0(kjVar.k)), Integer.valueOf(kjVar.f1()), kjVar.k.reactions);
                 }
                 if (!c6Var.m) {
                     c6Var.m = true;

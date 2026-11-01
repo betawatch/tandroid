@@ -6,7 +6,7 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f80 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
@@ -33,10 +33,10 @@ public final class f80 implements PopupWindow.OnDismissListener {
                 f0Var.animate().alpha(0.0f).setDuration(150L).setListener(new t60(this, 3));
                 break;
             default:
-                ((org.telegram.ui.gz) this.e).y = null;
+                ((org.telegram.ui.fz) this.e).y = null;
                 kg.f0 f0Var2 = (kg.f0) this.c;
                 f0Var2.animate().cancel();
-                f0Var2.animate().alpha(0.0f).setDuration(150L).setListener(new org.telegram.ui.Components.voip.h2(this, 10));
+                f0Var2.animate().alpha(0.0f).setDuration(150L).setListener(new org.telegram.ui.Components.voip.i2(this, 10));
                 break;
         }
     }

@@ -2,11 +2,11 @@ package th;
 
 import android.content.Context;
 import android.text.TextUtils;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class k3 extends hm0 {
+public final class k3 extends im0 {
     public o0 f;
     public final /* synthetic */ y3 h;
 
@@ -16,13 +16,13 @@ public final class k3 extends hm0 {
         this.h = y3Var;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final void a(String str) {
         o0 o0Var = this.f;
         if (o0Var != null) {
             org.telegram.messenger.i0.r(o0Var);
         }
-        this.f = new o0(4, this, str);
+        this.f = new o0(5, this, str);
         if (TextUtils.isEmpty(str)) {
             this.f.run();
         } else {

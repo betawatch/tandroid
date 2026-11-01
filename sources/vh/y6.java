@@ -8,14 +8,14 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y6 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class y6 implements Runnable {
                 break;
             case 1:
                 if (o8Var.t2 >= 0) {
-                    vp.d1().edit().putFloat("frontflash_warmth", o8Var.s.o).putFloat("frontflash_intensity", o8Var.s.p).apply();
+                    wp.d1().edit().putFloat("frontflash_warmth", o8Var.s.o).putFloat("frontflash_intensity", o8Var.s.p).apply();
                 }
                 o8Var.s.e(0.0f, 240L, null);
                 o8Var.E0.setSelected(false);
@@ -134,12 +134,12 @@ public final /* synthetic */ class y6 implements Runnable {
                                 if (n5Var3 == n5Var2) {
                                     CharSequence[] charSequenceArr = new CharSequence[1];
                                     charSequenceArr[i11] = o8Var.c1.getText();
-                                    ArrayList W = vp.r1(i10).U4() ? ui.b0(i10).W(charSequenceArr, true, true) : new ArrayList();
+                                    ArrayList W = wp.r1(i10).U4() ? vi.b0(i10).W(charSequenceArr, true, true) : new ArrayList();
                                     CharSequence[] charSequenceArr2 = new CharSequence[1];
                                     charSequenceArr2[i11] = o8Var.K1.C0;
-                                    ArrayList W2 = vp.r1(i10).U4() ? ui.b0(i10).W(charSequenceArr2, true, true) : new ArrayList();
+                                    ArrayList W2 = wp.r1(i10).U4() ? vi.b0(i10).W(charSequenceArr2, true, true) : new ArrayList();
                                     n5 n5Var4 = o8Var.K1;
-                                    n5Var4.k = (TextUtils.equals(n5Var4.C0, charSequenceArr[i11]) && ui.K(W, W2)) ? i11 : 1;
+                                    n5Var4.k = (TextUtils.equals(n5Var4.C0, charSequenceArr[i11]) && vi.K(W, W2)) ? i11 : 1;
                                     o8Var.K1.C0 = new SpannableString(o8Var.c1.getText());
                                 } else if (n5Var2.C0 == null) {
                                     n5Var3.k = i11;
@@ -151,14 +151,14 @@ public final /* synthetic */ class y6 implements Runnable {
                         }
                     } else {
                         CharSequence[] charSequenceArr3 = {o8Var.c1.getText()};
-                        ArrayList W3 = vp.r1(i10).U4() ? ui.b0(i10).W(charSequenceArr3, true, true) : new ArrayList();
-                        ArrayList W4 = vp.r1(i10).U4() ? ui.b0(i10).W(new CharSequence[]{o8Var.K1.C0}, true, true) : new ArrayList();
+                        ArrayList W3 = wp.r1(i10).U4() ? vi.b0(i10).W(charSequenceArr3, true, true) : new ArrayList();
+                        ArrayList W4 = wp.r1(i10).U4() ? vi.b0(i10).W(new CharSequence[]{o8Var.K1.C0}, true, true) : new ArrayList();
                         n5 n5Var5 = o8Var.K1;
-                        n5Var5.k = (TextUtils.equals(n5Var5.C0, charSequenceArr3[0]) && ui.K(W3, W4)) ? false : true;
+                        n5Var5.k = (TextUtils.equals(n5Var5.C0, charSequenceArr3[0]) && vi.K(W3, W4)) ? false : true;
                         o8Var.K1.C0 = new SpannableString(o8Var.c1.getText());
                         z6Var.a(o8Var.K1);
                     }
-                    long j15 = d20.i(i10).n;
+                    long j15 = e20.i(i10).n;
                     TLRPC.InputPeer inputPeer = o8Var.K1.v0;
                     if (inputPeer != null && !(inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
                         j15 = org.telegram.messenger.o5.n(inputPeer);
@@ -175,7 +175,7 @@ public final /* synthetic */ class y6 implements Runnable {
                     } else {
                         eVar.run();
                     }
-                    vp.d1().edit().putInt("storyhint2", 2).apply();
+                    wp.d1().edit().putInt("storyhint2", 2).apply();
                     break;
                 }
                 break;
@@ -336,7 +336,7 @@ public final /* synthetic */ class y6 implements Runnable {
                 o8Var.b1.setShareEnabled(false);
                 n0 n0Var = o8Var.e1;
                 n0Var.getClass();
-                n0Var.c(cd.M0("VideoConvertFail"));
+                n0Var.c(dd.M0("VideoConvertFail"));
                 break;
             case 18:
                 o8Var.A0.setCameraThumb(o8Var.z());
@@ -344,7 +344,7 @@ public final /* synthetic */ class y6 implements Runnable {
             case 19:
                 n8 n8Var2 = o8Var.n;
                 th.b bVar = o8Var.a;
-                new cc(n8Var2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.i0.R2(cd.L0(2131744600, null), org.telegram.ui.ActionBar.t6.Uc, 0, new y6(o8Var, 27), bVar)).k(true);
+                new cc(n8Var2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.i0.R2(dd.L0(2131744600, null), org.telegram.ui.ActionBar.t6.Uc, 0, new y6(o8Var, 27), bVar)).k(true);
                 break;
             case 20:
                 w6 w6Var = o8Var.q0;
@@ -400,9 +400,9 @@ public final /* synthetic */ class y6 implements Runnable {
                 if (n8Var3 != null) {
                     n8Var3.setTag(R.id.bulletin_delegate_tag, null);
                 }
-                org.telegram.ui.Components.voip.i0 i0Var = o8Var.l0;
-                if (i0Var != null) {
-                    i0Var.setTag(R.id.bulletin_delegate_tag, null);
+                org.telegram.ui.Components.voip.j0 j0Var = o8Var.l0;
+                if (j0Var != null) {
+                    j0Var.setTag(R.id.bulletin_delegate_tag, null);
                 }
                 c8 c8Var3 = o8Var.A0;
                 if (c8Var3 != null) {

@@ -14,11 +14,11 @@ import e9.x1;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import w7.z6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -294,7 +294,7 @@ public final class o {
                             codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(1026, i16)};
                         } else {
                             i10 = 4;
-                            codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(zs.g4, i16), w.b(513, i16), w.b(514, i16), w.b(1026, i16), w.b(1028, i16)};
+                            codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(at.g4, i16), w.b(513, i16), w.b(514, i16), w.b(1026, i16), w.b(1028, i16)};
                         }
                     } else {
                         i10 = 4;

@@ -1,31 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes3.dex */
-public final class lv0 {
-    public org.telegram.messenger.kp a;
-    public org.telegram.ui.ActionBar.p6 b;
-    public int c;
-    public int d;
-    public float e;
+import org.telegram.ui.ProfileActivity;
 
-    public final void a(org.telegram.messenger.kp kpVar) {
-        this.a = kpVar;
-        if (kpVar == null) {
-            this.c = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.A8, this.b);
-            this.d = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.s8, this.b);
-            this.c = i0.b.f(this.e, this.c, 603979776);
-            this.d = i0.b.f(this.e, this.d, -1);
-            return;
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class lv0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ov0 b;
+
+    public /* synthetic */ lv0(ov0 ov0Var, int i10) {
+        this.a = i10;
+        this.b = ov0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ov0 ov0Var = this.b;
+                ov0Var.invalidate();
+                org.telegram.messenger.i0.g3(new lv0(ov0Var, 1));
+                break;
+            default:
+                ov0 ov0Var2 = this.b;
+                nv0 nv0Var = ov0Var2.e;
+                if (nv0Var != null) {
+                    ov0Var2.getVisibilityFactor();
+                    ProfileActivity profileActivity = ((org.telegram.ui.av0) nv0Var).b;
+                    profileActivity.r.setTranslationX(profileActivity.m4(profileActivity.u6, profileActivity.w6));
+                    profileActivity.r.setTranslationY(profileActivity.n4(profileActivity.x6));
+                    break;
+                }
+                break;
         }
-        int c10 = kpVar.c(org.telegram.ui.ActionBar.t6.I.q());
-        int d = kpVar.d(org.telegram.ui.ActionBar.t6.I.q());
-        org.telegram.ui.ActionBar.p6 p6Var = this.b;
-        int f7 = i0.b.f(0.75f, d, c10);
-        int w02 = org.telegram.messenger.i0.B(f7) > 0.721f ? org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.v6, p6Var) : org.telegram.ui.ActionBar.t6.b(0.08f, -0.08f, f7);
-        this.c = w02;
-        this.d = org.telegram.messenger.i0.B(w02) > 0.721f ? -16777216 : -1;
-        this.c = i0.b.f(this.e, this.c, 603979776);
-        this.d = i0.b.f(this.e, this.d, -1);
     }
 }

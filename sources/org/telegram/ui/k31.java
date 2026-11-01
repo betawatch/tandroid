@@ -1,17 +1,14 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class k31 extends EditTextBoldCursor {
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && !org.telegram.messenger.i0.J3(this)) {
-            clearFocus();
-            requestFocus();
-        }
-        return super.onTouchEvent(motionEvent);
+public final class k31 extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(240.0f), TLObject.FLAG_30));
     }
 }

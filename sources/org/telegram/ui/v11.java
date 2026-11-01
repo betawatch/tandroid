@@ -1,20 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class v11 extends l21 {
-    public final /* synthetic */ i31 m3;
+public final class v11 extends w7.d6 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ViewGroup b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v11(i31 i31Var, Context context) {
-        super(i31Var, context);
-        this.m3 = i31Var;
+    public /* synthetic */ v11(ViewGroup viewGroup, int i10) {
+        this.a = i10;
+        this.b = viewGroup;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i10) {
-        this.m3.h();
+    @Override // w7.d6
+    public final void a() {
+        switch (this.a) {
+            case 0:
+                ((g31) this.b).x1 = false;
+                break;
+            case 1:
+                ((qh.g0) this.b).w = false;
+                break;
+            default:
+                ((vh.c1) this.b).i3 = false;
+                break;
+        }
+    }
+
+    @Override // w7.d6
+    public void b() {
+        switch (this.a) {
+            case 0:
+                ((g31) this.b).x1 = true;
+                break;
+            case 2:
+                ((vh.c1) this.b).i3 = true;
+                break;
+        }
     }
 }

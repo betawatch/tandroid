@@ -10,14 +10,14 @@ import mg.f2;
 import mg.i2;
 import mg.w1;
 import mg.x1;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.z2;
@@ -25,20 +25,20 @@ import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ep;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.ik0;
 import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.s4;
-import org.telegram.ui.Components.vh0;
-import org.telegram.ui.m10;
-import org.telegram.ui.t10;
+import org.telegram.ui.Components.wh0;
+import org.telegram.ui.l10;
+import org.telegram.ui.s10;
 import rh.t7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s0 implements e2.j, hk0, lt {
+public final /* synthetic */ class s0 implements e2.j, ik0, lt {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -61,7 +61,7 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
         CharacterStyle[] characterStyleArr = (CharacterStyle[]) text.getSpans(i10, i11, CharacterStyle.class);
         if (characterStyleArr != null && characterStyleArr.length > 0) {
             for (CharacterStyle characterStyle : characterStyleArr) {
-                if (!(characterStyle instanceof o5) && !(characterStyle instanceof vh0)) {
+                if (!(characterStyle instanceof o5) && !(characterStyle instanceof wh0)) {
                     int spanStart = text.getSpanStart(characterStyle);
                     int spanEnd = text.getSpanEnd(characterStyle);
                     text.removeSpan(characterStyle);
@@ -103,11 +103,11 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public void b(float f7, float f10, int i10, View view) {
         i2 i2Var = (i2) this.c;
         p6 p6Var = (p6) this.d;
-        m10 m10Var = i2Var.V1;
+        l10 l10Var = i2Var.V1;
         f2 f2Var = i2Var.R1;
         ArrayList arrayList = i2Var.Y1;
         HashSet hashSet = i2Var.Z1;
@@ -117,12 +117,12 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
         ng.h hVar = null;
         if (z10) {
             if (i12 != 4) {
-                ((z2) s4.l(i2Var.getContext(), cd.L0(2131751239, null), cd.L0(2131751244, null), null, new x1(i2Var, i11), new w1(i2Var, 9), false, false, i2Var.I0).b).show();
+                ((z2) s4.l(i2Var.getContext(), dd.L0(2131751239, null), dd.L0(2131751244, null), null, new x1(i2Var, i11), new w1(i2Var, 9), false, false, i2Var.I0).b).show();
                 return;
             }
-            t10 t10Var = i2Var.s2;
-            if (t10Var != null) {
-                t10Var.run();
+            s10 s10Var = i2Var.s2;
+            if (s10Var != null) {
+                s10Var.run();
                 i2Var.dismiss();
                 return;
             }
@@ -137,19 +137,19 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
                 if (i13 >= 0 && i13 < arrayList.size()) {
                     hVar = (ng.h) arrayList.get(i13);
                 }
-                q20 q20Var = i2Var.t2;
-                if (q20Var == null || hVar == null) {
+                r20 r20Var = i2Var.t2;
+                if (r20Var == null || hVar == null) {
                     return;
                 }
                 int i14 = hVar.i;
                 if (i14 == 4) {
-                    q20Var.a(-98L);
+                    r20Var.a(-98L);
                     return;
                 } else if (i14 == 5) {
-                    q20Var.a(-97L);
+                    r20Var.a(-97L);
                     return;
                 } else {
-                    q20Var.a(-99L);
+                    r20Var.a(-99L);
                     return;
                 }
             }
@@ -158,9 +158,9 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
             }
             long j10 = user != null ? user.id : -chat.id;
             if (i12 == 3) {
-                q20 q20Var2 = i2Var.t2;
-                if (q20Var2 != null) {
-                    q20Var2.a(Long.valueOf(j10));
+                r20 r20Var2 = i2Var.t2;
+                if (r20Var2 != null) {
+                    r20Var2.a(Long.valueOf(j10));
                     return;
                 }
                 return;
@@ -177,8 +177,8 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
                 return;
             }
             if (i12 == 0 || i12 == 2) {
-                if (h20.b(vp.r1(d20.s0).a2(j10))) {
-                    z20.s(cd.a0(null, null, 2131743768, org.telegram.messenger.o5.t(j10)), new cc(i2Var.c, p6Var), R.raw.error, 36);
+                if (i20.b(wp.r1(e20.s0).a2(j10))) {
+                    a30.s(dd.a0(null, null, 2131743768, org.telegram.messenger.o5.t(j10)), new cc(i2Var.c, p6Var), R.raw.error, 36);
                     return;
                 }
                 ph.l1 l1Var = new ph.l1(i2Var.getContext(), this.b, j10, mg.k0.c(mg.k0.b(1, i2Var.j2)), new x1(i2Var, true ? 1 : 0));
@@ -191,10 +191,10 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
             if (i12 == 4) {
                 if (hashSet.isEmpty()) {
                     hashSet.add(Long.valueOf(j10));
-                    j20 j20Var = i2Var.v2;
-                    if (j20Var != null) {
+                    k20 k20Var = i2Var.v2;
+                    if (k20Var != null) {
                         ep epVar = i2Var.U1;
-                        j20Var.a(Boolean.valueOf(epVar != null && epVar.a.q), hashSet);
+                        k20Var.a(Boolean.valueOf(epVar != null && epVar.a.q), hashSet);
                         i2Var.v2 = null;
                     }
                     i2Var.dismiss();
@@ -216,8 +216,8 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
             }
             boolean z12 = (i12 == 4 && hashSet.isEmpty()) ? false : true;
             if (z11 != z12) {
-                m10Var.setVisibility(0);
-                m10Var.animate().alpha(z12 ? 1.0f : 0.0f).translationY(z12 ? 0.0f : org.telegram.messenger.i0.L(12.0f)).setInterpolator(gr.h).setDuration(320L).withEndAction(!z12 ? new w1(i2Var, true ? 1 : 0) : null).start();
+                l10Var.setVisibility(0);
+                l10Var.animate().alpha(z12 ? 1.0f : 0.0f).translationY(z12 ? 0.0f : org.telegram.messenger.i0.L(12.0f)).setInterpolator(gr.h).setDuration(320L).withEndAction(!z12 ? new w1(i2Var, true ? 1 : 0) : null).start();
                 ng.i iVar = i2Var.h2;
                 boolean z13 = !z12;
                 if (iVar.D != z13) {
@@ -232,7 +232,7 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ boolean h1(View view) {
         return false;
     }
@@ -251,7 +251,7 @@ public final /* synthetic */ class s0 implements e2.j, hk0, lt {
         this.d = runnable;
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

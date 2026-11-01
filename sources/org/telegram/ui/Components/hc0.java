@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class hc0 implements z4.e {
     public final /* synthetic */ int a;
@@ -51,23 +51,23 @@ public final class hc0 implements z4.e {
                 }
                 break;
             case 1:
-                mg0 mg0Var = (mg0) this.b;
-                if (!mg0Var.a && Math.abs(i10 - mg0Var.x) == 1) {
-                    int i12 = mg0Var.x;
+                ng0 ng0Var = (ng0) this.b;
+                if (!ng0Var.a && Math.abs(i10 - ng0Var.x) == 1) {
+                    int i12 = ng0Var.x;
                     if (i10 > i12) {
-                        mg0.a(mg0Var, 0, 1, 1);
+                        ng0.a(ng0Var, 0, 1, 1);
                     } else if (i10 < i12) {
-                        mg0.a(mg0Var, 1, 0, 0);
-                        mg0.a(mg0Var, 2, 0, -1);
+                        ng0.a(ng0Var, 1, 0, 0);
+                        ng0.a(ng0Var, 2, 0, -1);
                     }
                 }
-                int i13 = mg0Var.x;
-                int i14 = mg0Var.y;
-                mg0Var.x = i10;
-                mg0Var.y = i11;
+                int i13 = ng0Var.x;
+                int i14 = ng0Var.y;
+                ng0Var.x = i10;
+                ng0Var.y = i11;
                 if (i13 != i10 || i14 != i11) {
-                    mg0Var.H = true;
-                    mg0Var.postInvalidateOnAnimation();
+                    ng0Var.H = true;
+                    ng0Var.postInvalidateOnAnimation();
                     break;
                 }
                 break;

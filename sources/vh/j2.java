@@ -4,18 +4,18 @@ import android.graphics.drawable.ColorDrawable;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.tk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class j2 extends sk0 {
+public abstract class j2 extends tk0 {
     public boolean d;
     public String f;
     public String h;
@@ -31,7 +31,7 @@ public abstract class j2 extends sk0 {
         this.x = k2Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -43,7 +43,7 @@ public abstract class j2 extends sk0 {
         }
         this.d = true;
         F(true);
-        vp r12 = vp.r1(i10);
+        wp r12 = wp.r1(i10);
         String str = r12.N3;
         if (this.n == null) {
             TLObject e22 = r12.e2(str);
@@ -89,12 +89,12 @@ public abstract class j2 extends sk0 {
         boolean z10 = tLObject instanceof TLRPC.Document;
         ColorDrawable colorDrawable = this.s;
         if (z10) {
-            g9Var.j(ic.b((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
+            g9Var.j(jc.b((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
             return;
         }
         if (tLObject instanceof TLRPC.Photo) {
             TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-            g9Var.j(ic.i(org.telegram.messenger.b8.w(photo.sizes, zs.r5, false, null, false), photo), "200_200", colorDrawable, null);
+            g9Var.j(jc.i(org.telegram.messenger.b8.w(photo.sizes, at.r5, false, null, false), photo), "200_200", colorDrawable, null);
         } else {
             if (!(tLObject instanceof TLRPC.BotInlineResult)) {
                 g9Var.b();
@@ -103,7 +103,7 @@ public abstract class j2 extends sk0 {
             TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) tLObject;
             TLRPC.WebDocument webDocument = botInlineResult.thumb;
             if (webDocument != null) {
-                g9Var.j(ic.g(webDocument.url), "200_200", colorDrawable, botInlineResult);
+                g9Var.j(jc.g(webDocument.url), "200_200", colorDrawable, botInlineResult);
             } else {
                 g9Var.b();
             }
@@ -112,6 +112,6 @@ public abstract class j2 extends sk0 {
 
     @Override // s4.g0
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        return new ck0(new rh.v3(this.x.getContext(), 1));
+        return new dk0(new rh.v3(this.x.getContext(), 1));
     }
 }

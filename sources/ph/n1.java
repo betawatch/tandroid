@@ -1,25 +1,25 @@
 package ph;
 
-import org.telegram.messenger.k20;
-import org.telegram.ui.Components.vq0;
+import org.telegram.messenger.l20;
+import org.telegram.ui.Components.wq0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n1 implements fe.e, k20 {
-    public final /* synthetic */ vq0 a;
+public final /* synthetic */ class n1 implements fe.e, l20 {
+    public final /* synthetic */ wq0 a;
 
-    public /* synthetic */ n1(vq0 vq0Var) {
-        this.a = vq0Var;
+    public /* synthetic */ n1(wq0 wq0Var) {
+        this.a = wq0Var;
     }
 
-    @Override // org.telegram.messenger.k20
+    @Override // org.telegram.messenger.l20
     public Object d(Number number, Object obj) {
-        vq0 vq0Var = this.a;
-        vq0Var.i();
+        wq0 wq0Var = this.a;
+        wq0Var.i();
         if (((Integer) number).intValue() != -1) {
             return Boolean.FALSE;
         }
-        vq0Var.h(null, new o1(vq0Var, 1));
+        wq0Var.h(null, new o1(wq0Var, 1));
         return Boolean.TRUE;
     }
 

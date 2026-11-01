@@ -5,18 +5,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.n00;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.o00;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.px0;
+import org.telegram.ui.ox0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s2 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -43,16 +43,16 @@ public final /* synthetic */ class s2 implements View.OnClickListener {
         long j10;
         switch (this.a) {
             case 0:
-                px0 px0Var = (px0) this.n;
+                ox0 ox0Var = (ox0) this.n;
                 TL_payments.connectedBotStarRef connectedbotstarref = this.h;
                 if (!connectedbotstarref.revoked) {
-                    px0Var.run();
+                    ox0Var.run();
                     break;
                 } else {
                     int i10 = this.b;
-                    TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(connectedbotstarref.bot_id));
+                    TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(connectedbotstarref.bot_id));
                     if (Z1 != null) {
-                        vp.r1(i10).U2(Z1, 0, true, new q2(this.c, this.f, i10, this.e, this.d, 0));
+                        wp.r1(i10).U2(Z1, 0, true, new q2(this.c, this.f, i10, this.e, this.d, 0));
                         break;
                     }
                 }
@@ -72,7 +72,7 @@ public final /* synthetic */ class s2 implements View.OnClickListener {
                 if (arrayList3 != null) {
                     arrayList.addAll(arrayList3);
                 }
-                arrayList.add(0, d20.i(i11).f());
+                arrayList.add(0, e20.i(i11).f());
                 org.telegram.ui.ActionBar.z2 z2Var = this.c;
                 ViewGroup viewGroup = z2Var.b;
                 p6 p6Var = this.d;
@@ -93,7 +93,7 @@ public final /* synthetic */ class s2 implements View.OnClickListener {
                         }
                         i12 = i13;
                     }
-                    F.g(tLObject, j10 == this.e, new n00(i11, j10, this.f, this.h, z2Var, p6Var));
+                    F.g(tLObject, j10 == this.e, new o00(i11, j10, this.f, this.h, z2Var, p6Var));
                     i12 = i13;
                 }
                 F.t = false;
@@ -105,13 +105,13 @@ public final /* synthetic */ class s2 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ s2(TL_payments.connectedBotStarRef connectedbotstarref, int i10, org.telegram.ui.ActionBar.z2 z2Var, Context context, long j10, p6 p6Var, px0 px0Var) {
+    public /* synthetic */ s2(TL_payments.connectedBotStarRef connectedbotstarref, int i10, org.telegram.ui.ActionBar.z2 z2Var, Context context, long j10, p6 p6Var, ox0 ox0Var) {
         this.h = connectedbotstarref;
         this.b = i10;
         this.c = z2Var;
         this.f = context;
         this.e = j10;
         this.d = p6Var;
-        this.n = px0Var;
+        this.n = ox0Var;
     }
 }

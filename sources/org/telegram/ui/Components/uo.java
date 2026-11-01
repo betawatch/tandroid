@@ -9,9 +9,9 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ne1;
+import org.telegram.ui.le1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class uo implements ai {
     public final /* synthetic */ bi a;
@@ -50,24 +50,24 @@ public final class uo implements ai {
             if (selectedPhotos.isEmpty()) {
                 return;
             }
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) selectedPhotos.values().iterator().next();
-            String str = efVar.h;
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) selectedPhotos.values().iterator().next();
+            String str = ffVar.h;
             if (str == null) {
-                str = efVar.I;
+                str = ffVar.I;
             }
             if (str != null) {
                 File file = new File(org.telegram.messenger.b8.z(4), Utilities.b.nextInt() + ".jpg");
                 Point c12 = org.telegram.messenger.i0.c1();
-                Bitmap K = org.telegram.messenger.hc.K(str, null, (float) c12.x, (float) c12.y, true);
+                Bitmap K = org.telegram.messenger.ic.K(str, null, (float) c12.x, (float) c12.y, true);
                 K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                to toVar = new to(new ne1(file, file, ""), K, false, 0);
+                to toVar = new to(new le1(file, file, ""), K, false, 0);
                 toVar.W1 = this.b;
                 toVar.a.a = this.c;
                 toVar.q1 = this.d;
                 toVar.G1 = false;
                 toVar.F1 = false;
                 toVar.o1 = 0.2f;
-                toVar.g1(this.e);
+                toVar.h1(this.e);
                 toVar.J1 = new so(biVar, this.f, 0);
                 org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2();
                 i2Var.a = true;
@@ -92,7 +92,7 @@ public final class uo implements ai {
         toVar.W1 = this.b;
         toVar.a.a = this.c;
         toVar.q1 = this.d;
-        toVar.g1(this.e);
+        toVar.h1(this.e);
         toVar.J1 = new so(this.a, this.f, 1);
         org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2();
         i2Var.a = true;

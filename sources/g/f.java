@@ -21,11 +21,11 @@ import androidx.appcompat.app.AlertController$RecycleListView;
 import androidx.core.widget.NestedScrollView;
 import java.util.WeakHashMap;
 import m.v1;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import r0.h0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class f extends t implements DialogInterface {
     public final e f;
@@ -36,7 +36,7 @@ public class f extends t implements DialogInterface {
     }
 
     public static int e(Context context, int i10) {
-        if (((i10 >>> 24) & zs.e4) >= 1) {
+        if (((i10 >>> 24) & at.e4) >= 1) {
             return i10;
         }
         TypedValue typedValue = new TypedValue();

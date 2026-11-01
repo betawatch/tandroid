@@ -2,14 +2,14 @@ package vh;
 
 import android.content.Context;
 import android.text.TextUtils;
-import org.telegram.messenger.ui;
-import org.telegram.ui.Components.bu0;
+import org.telegram.messenger.vi;
+import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class l1 extends h1 {
-    public final b1 b;
+    public final c1 b;
     public final k1 c;
     public final s4.r d;
     public final j1 e;
@@ -26,28 +26,28 @@ public final class l1 extends h1 {
         this.h = 8;
         this.n = -1.0f;
         this.r = false;
-        b1 b1Var = new b1(context);
-        this.b = b1Var;
+        c1 c1Var = new c1(context);
+        this.b = c1Var;
         k1 k1Var = new k1(this);
         this.c = k1Var;
-        b1Var.setAdapter(k1Var);
+        c1Var.setAdapter(k1Var);
         s4.r rVar = new s4.r(this.h);
         this.d = rVar;
-        b1Var.setLayoutManager(rVar);
-        b1Var.setClipToPadding(true);
-        b1Var.setVerticalScrollBarEnabled(false);
+        c1Var.setLayoutManager(rVar);
+        c1Var.setClipToPadding(true);
+        c1Var.setVerticalScrollBarEnabled(false);
         int i10 = 17;
         rVar.O = new jg.h1(this, i10);
-        b1Var.setOnItemClickListener(new ag.y0(this, 20));
-        b1Var.setOnScrollListener(new bu0(this, 25));
+        c1Var.setOnItemClickListener(new ag.y0(this, 20));
+        c1Var.setOnScrollListener(new cu0(this, 25));
         s4.j jVar = new s4.j();
         jVar.c = 220L;
         jVar.e = 220L;
         jVar.f = 160L;
         jVar.g = 160L;
         jVar.i = gr.g;
-        b1Var.setItemAnimator(jVar);
-        addView(b1Var, w7.b6.c(-1.0f, -1));
+        c1Var.setItemAnimator(jVar);
+        addView(c1Var, w7.b6.c(-1.0f, -1));
         int i11 = u1.y1;
         p1 p1Var = new p1(context, u1Var.I0);
         this.f = p1Var;
@@ -101,7 +101,7 @@ public final class l1 extends h1 {
             org.telegram.messenger.i0.g3(k1Var.M);
         }
         p1Var.a(i10, u1Var.q1);
-        ui.b0(u1Var.a).B(i10 == 0 ? 5 : 0);
+        vi.b0(u1Var.a).B(i10 == 0 ? 5 : 0);
     }
 
     @Override // vh.h1
@@ -112,11 +112,11 @@ public final class l1 extends h1 {
         }
         int i10 = 0;
         while (true) {
-            b1 b1Var = this.b;
-            if (i10 >= b1Var.getChildCount()) {
+            c1 c1Var = this.b;
+            if (i10 >= c1Var.getChildCount()) {
                 return 0.0f;
             }
-            Object tag = b1Var.getChildAt(i10).getTag();
+            Object tag = c1Var.getChildAt(i10).getTag();
             if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
                 return i0.a.d(102.0f, r3.getBottom(), 0);
             }
@@ -129,10 +129,10 @@ public final class l1 extends h1 {
         float max = Math.max(0.0f, b());
         this.e.setTranslationY(org.telegram.messenger.i0.L(16.0f) + max);
         this.f.setTranslationY(org.telegram.messenger.i0.L(52.0f) + max);
-        b1 b1Var = this.b;
-        float height = b1Var.getHeight() - b1Var.getPaddingBottom();
-        b1Var.g3 = max + b1Var.getPaddingTop();
-        b1Var.h3 = height;
+        c1 c1Var = this.b;
+        float height = c1Var.getHeight() - c1Var.getPaddingBottom();
+        c1Var.g3 = max + c1Var.getPaddingTop();
+        c1Var.h3 = height;
     }
 
     @Override // android.widget.FrameLayout, android.view.View

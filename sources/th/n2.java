@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.c01;
+import org.telegram.ui.b01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -55,8 +55,8 @@ public final /* synthetic */ class n2 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.p6 p6Var2 = this.c;
                 cc ccVar = new cc(g2Var, p6Var2);
                 ph.h1 h1Var = new ph.h1(o7Var, 15);
-                int i12 = c01.s1;
-                c01.J0(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), ccVar, p6Var2, new byte[0], null, h1Var);
+                int i12 = b01.s1;
+                b01.J0(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), ccVar, p6Var2, new byte[0], null, h1Var);
                 u2 u2Var2 = z2Var.c1;
                 if (u2Var2 != null) {
                     u2Var2.a();
@@ -72,7 +72,7 @@ public final /* synthetic */ class n2 implements View.OnClickListener {
                 }
                 vh.w6 w6Var = new vh.w6(86400, z2Var2.getContext(), p6Var);
                 w6Var.U0();
-                w6Var.V0(vp.r1(z2Var2.l2).i1(z2Var2.k1));
+                w6Var.V0(wp.r1(z2Var2.l2).i1(z2Var2.k1));
                 w6Var.C1 = true;
                 View[] viewPages = w6Var.i1.getViewPages();
                 View view4 = viewPages[0];
@@ -146,12 +146,12 @@ public final /* synthetic */ class n2 implements View.OnClickListener {
                     u2Var4.a();
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, z2Var3.getContext(), p6Var);
-                String L0 = cd.L0(2131748827, null);
+                String L0 = dd.L0(2131748827, null);
                 org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                 x1Var.R = L0;
-                x1Var.T = cd.L0(2131748828, null);
-                alertDialog$Builder.k(cd.L0(2131748829, null), new org.telegram.ui.web.k0(20, u2Var, o7Var));
-                alertDialog$Builder.h(cd.L0(2131752589, null), null);
+                x1Var.T = dd.L0(2131748828, null);
+                alertDialog$Builder.k(dd.L0(2131748829, null), new org.telegram.ui.web.k0(20, u2Var, o7Var));
+                alertDialog$Builder.h(dd.L0(2131752589, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;

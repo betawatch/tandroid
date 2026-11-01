@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class e0 implements PopupWindow.OnDismissListener {
                 unVar.h9 = null;
                 unVar.g9 = null;
                 unVar.B0.R = true;
-                unVar.o8(false, true, 0.0f);
+                unVar.s8(false, true, 0.0f);
                 mk mkVar = unVar.Z;
                 if (mkVar != null && mkVar.getEditField() != null) {
                     unVar.Z.getEditField().setAllowDrawCursor(true);
@@ -49,7 +49,7 @@ public final /* synthetic */ class e0 implements PopupWindow.OnDismissListener {
                 unVar2.g9 = null;
                 unVar2.B0.R = true;
                 if (unVar2.f9) {
-                    unVar2.o8(false, true, 0.0f);
+                    unVar2.s8(false, true, 0.0f);
                 } else {
                     unVar2.f9 = true;
                 }

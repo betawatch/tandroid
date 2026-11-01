@@ -28,11 +28,11 @@ import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
-import org.telegram.ui.u71;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.ui.s71;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q4 {
     public final Rect A = new Rect();
@@ -58,7 +58,7 @@ public final class q4 {
     public final int d;
     public final int e;
     public final RelativeLayout f;
-    public final u71 g;
+    public final s71 g;
     public final o4 h;
     public final FrameLayout i;
     public final View j;
@@ -187,7 +187,7 @@ public final class q4 {
         l4Var.setImageDrawable(mutate2);
         TextView textView = new TextView(context);
         this.l = textView;
-        textView.setText(cd.L0(2131753756, null));
+        textView.setText(dd.L0(2131753756, null));
         textView.setTextSize(1, 16.0f);
         textView.setAlpha(0.0f);
         View view2 = new View(context);
@@ -250,7 +250,7 @@ public final class q4 {
         frameLayout.addView(view2, w7.b6.a(-1.0f, f7 / org.telegram.messenger.i0.p, 55));
         l4Var.measure(0, 0);
         this.H = new Size(l4Var.getMeasuredWidth(), l4Var.getMeasuredHeight());
-        this.g = new u71(this, context, 5);
+        this.g = new s71(this, context, 5);
         p4 p4Var = new p4();
         p4Var.e = this;
         p4Var.d = context;
@@ -303,7 +303,7 @@ public final class q4 {
         RelativeLayout relativeLayout3 = relativeLayout;
         animatorSet.playTogether(ObjectAnimator.ofFloat(relativeLayout3, (Property<RelativeLayout, Float>) View.ALPHA, 0.0f, 1.0f).setDuration(150L));
         this.v = animatorSet;
-        this.w = s4.a(relativeLayout3, zs.g2, new m4(this, 0));
+        this.w = s4.a(relativeLayout3, at.g2, new m4(this, 0));
         this.x = s4.a(relativeLayout3, 0, new m4(this, 1));
     }
 
@@ -358,7 +358,7 @@ public final class q4 {
 
     public final int e() {
         int i10 = this.O;
-        return i10 < 150 ? Math.max(zs.e3, 0) : i10 > 300 ? zs.X4 : zs.Z3;
+        return i10 < 150 ? Math.max(at.e3, 0) : i10 > 300 ? at.X4 : at.Z3;
     }
 
     public final boolean f() {
@@ -369,7 +369,7 @@ public final class q4 {
         boolean z10 = this.N;
         Interpolator interpolator = this.t;
         o4 o4Var = this.h;
-        u71 u71Var = this.g;
+        s71 s71Var = this.g;
         n4 n4Var = this.r;
         Interpolator interpolator2 = this.s;
         FrameLayout frameLayout = this.i;
@@ -401,7 +401,7 @@ public final class q4 {
             relativeLayout.startAnimation(animationSet);
             this.N = false;
             n();
-            u71Var.animate().alpha(1.0f).withLayer().setInterpolator(this.u).setDuration(100L).start();
+            s71Var.animate().alpha(1.0f).withLayer().setInterpolator(this.u).setDuration(100L).start();
             o4Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(150L).start();
             return;
         }
@@ -432,7 +432,7 @@ public final class q4 {
         relativeLayout.startAnimation(animationSet2);
         this.N = true;
         n();
-        u71Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(250L).start();
+        s71Var.animate().alpha(0.0f).withLayer().setInterpolator(interpolator).setDuration(250L).start();
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) frameLayout.getLayoutParams();
         layoutParams.width = o4Var.getWidth();
         frameLayout.setLayoutParams(layoutParams);
@@ -534,60 +534,60 @@ public final class q4 {
         int i10 = this.d;
         Size size = this.H;
         int i11 = this.e;
-        u71 u71Var = this.g;
+        s71 s71Var = this.g;
         RelativeLayout relativeLayout = this.f;
         if (z10) {
             m(relativeLayout, this.I);
-            u71Var.setAlpha(0.0f);
-            u71Var.setVisibility(4);
+            s71Var.setAlpha(0.0f);
+            s71Var.setVisibility(4);
             o4Var.setAlpha(1.0f);
             o4Var.setVisibility(0);
             l4Var.setImageDrawable(this.m);
-            frameLayout.setContentDescription(cd.L0(2131754839, null));
+            frameLayout.setContentDescription(dd.L0(2131754839, null));
             relativeLayout.setX((popupWindow.getWidth() - r3.getWidth()) - i10);
-            u71Var.setX(-relativeLayout.getX());
+            s71Var.setX(-relativeLayout.getX());
             frameLayout.setX(0.0f);
             o4Var.setX(0.0f);
             if (this.M) {
                 relativeLayout.setY(i11);
-                u71Var.setY(r3.getHeight() - relativeLayout.getHeight());
+                s71Var.setY(r3.getHeight() - relativeLayout.getHeight());
                 frameLayout.setY(r3.getHeight() - size.getHeight());
                 o4Var.setY(0.0f);
                 return;
             }
             relativeLayout.setY(i11);
-            u71Var.setY(0.0f);
+            s71Var.setY(0.0f);
             frameLayout.setY(0.0f);
             o4Var.setY(size.getHeight());
             return;
         }
         m(relativeLayout, this.J);
-        u71Var.setAlpha(1.0f);
-        u71Var.setVisibility(0);
+        s71Var.setAlpha(1.0f);
+        s71Var.setVisibility(0);
         o4Var.setAlpha(0.0f);
         o4Var.setVisibility(4);
         l4Var.setImageDrawable(this.n);
-        frameLayout.setContentDescription(cd.L0(2131754839, null));
+        frameLayout.setContentDescription(dd.L0(2131754839, null));
         if (this.I == null) {
             relativeLayout.setX(i10);
             relativeLayout.setY(i11);
-            u71Var.setX(0.0f);
-            u71Var.setY(0.0f);
+            s71Var.setX(0.0f);
+            s71Var.setY(0.0f);
             return;
         }
         relativeLayout.setX((popupWindow.getWidth() - r3.getWidth()) - i10);
-        u71Var.setX(0.0f);
+        s71Var.setX(0.0f);
         frameLayout.setX(r3.getWidth() - size.getWidth());
         o4Var.setX(r3.getWidth() - this.I.getWidth());
         if (this.M) {
             relativeLayout.setY((this.I.getHeight() + i11) - r3.getHeight());
-            u71Var.setY(0.0f);
+            s71Var.setY(0.0f);
             frameLayout.setY(0.0f);
             o4Var.setY(r3.getHeight() - this.I.getHeight());
             return;
         }
         relativeLayout.setY(i11);
-        u71Var.setY(0.0f);
+        s71Var.setY(0.0f);
         frameLayout.setY(0.0f);
         o4Var.setY(size.getHeight());
     }

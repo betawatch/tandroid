@@ -4,9 +4,9 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class av implements org.telegram.messenger.us {
+public abstract class av implements org.telegram.messenger.vs {
     public final ArrayList a;
     public ArrayList b;
     public ArrayList[] c;
@@ -60,13 +60,13 @@ public abstract class av implements org.telegram.messenger.us {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         TLRPC.StickerSet stickerSet;
-        if (i10 == org.telegram.messenger.zs.B0) {
+        if (i10 == org.telegram.messenger.at.B0) {
             for (int i12 = 0; i12 < this.b.size(); i12++) {
                 if (this.b.get(i12) == null) {
-                    TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.ui.b0(this.d).m0((TLRPC.InputStickerSet) this.a.get(i12), true);
+                    TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.vi.b0(this.d).m0((TLRPC.InputStickerSet) this.a.get(i12), true);
                     if (this.b.size() == 1 && m0 != null && (stickerSet = m0.set) != null && !stickerSet.emojis) {
                         cv cvVar = this.f;
                         cvVar.dismiss();
@@ -74,7 +74,7 @@ public abstract class av implements org.telegram.messenger.us {
                         org.telegram.ui.ActionBar.k2 k2Var = cvVar.j1;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
                         org.telegram.ui.ActionBar.k2 k2Var2 = cvVar.j1;
-                        new cx0(context, k2Var, inputStickerSet, null, k2Var2 instanceof org.telegram.ui.un ? ((org.telegram.ui.un) k2Var2).Z : null, cvVar.I0).show();
+                        new dx0(context, k2Var, inputStickerSet, null, k2Var2 instanceof org.telegram.ui.un ? ((org.telegram.ui.un) k2Var2).Z : null, cvVar.I0).show();
                         return;
                     }
                     this.b.set(i12, m0);

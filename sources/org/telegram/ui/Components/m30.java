@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class m30 extends p51 {
+public abstract class m30 extends q51 {
     public final int P;
     public final ArrayList Q;
     public boolean R;
@@ -24,8 +24,8 @@ public abstract class m30 extends p51 {
     public ag.o0 c0;
     public final boolean[] d0;
 
-    public m30(tk0 tk0Var, Context context, int i10) {
-        super(tk0Var, context, i10, 0, false, null, null);
+    public m30(uk0 uk0Var, Context context, int i10) {
+        super(uk0Var, context, i10, 0, false, null, null);
         this.Q = new ArrayList();
         this.V = 0;
         this.W = -1;
@@ -71,12 +71,12 @@ public abstract class m30 extends p51 {
     }
 
     public final void X() {
-        tk0 tk0Var;
-        if (TextUtils.isEmpty(this.Z) || this.X || this.U || (tk0Var = this.d) == null) {
+        uk0 uk0Var;
+        if (TextUtils.isEmpty(this.Z) || this.X || this.U || (uk0Var = this.d) == null) {
             return;
         }
-        for (int i10 = 0; i10 < tk0Var.getChildCount(); i10++) {
-            if (tk0Var.getChildAt(i10) instanceof zz) {
+        for (int i10 = 0; i10 < uk0Var.getChildCount(); i10++) {
+            if (uk0Var.getChildAt(i10) instanceof zz) {
                 Z(this.Z);
                 return;
             }

@@ -7,11 +7,11 @@ import android.widget.TextView;
 import java.util.HashSet;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z3 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public static final /* synthetic */ int h = 0;
@@ -115,17 +115,17 @@ public final class z3 extends FrameLayout implements org.telegram.ui.ActionBar.k
         n5Var.setTypeface(org.telegram.messenger.i0.o());
         int i11 = org.telegram.ui.ActionBar.t6.f7;
         org.telegram.ui.ActionBar.a7.V(n5Var, i11, p6Var);
-        n5Var.setGravity((cd.X ? 5 : 3) | 16);
+        n5Var.setGravity((dd.X ? 5 : 3) | 16);
         float f7 = i10;
-        addView(n5Var, w7.b6.d(-1, -1.0f, (cd.X ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
+        addView(n5Var, w7.b6.d(-1, -1.0f, (dd.X ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
         y3 y3Var = new y3(getContext(), z10, z10, z10, 0);
         this.b = y3Var;
         y3Var.setPadding(org.telegram.messenger.i0.L(2.0f), 0, org.telegram.messenger.i0.L(2.0f), 0);
         y3Var.b(0.9f, 420L, gr.h);
         y3Var.setTextSize(org.telegram.messenger.i0.L(14.0f));
         org.telegram.ui.ActionBar.a7.Z(y3Var, i11, p6Var);
-        y3Var.setGravity(cd.X ? 3 : 5);
-        FrameLayout.LayoutParams d = w7.b6.d(-2, -1.0f, (cd.X ? 3 : 5) | 48, f7, 0.0f, f7, 0.0f);
+        y3Var.setGravity(dd.X ? 3 : 5);
+        FrameLayout.LayoutParams d = w7.b6.d(-2, -1.0f, (dd.X ? 3 : 5) | 48, f7, 0.0f, f7, 0.0f);
         this.c = d;
         addView(y3Var, d);
         WeakHashMap weakHashMap = r0.h0.a;

@@ -1,53 +1,195 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class yj0 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final /* synthetic */ View b;
-    public final /* synthetic */ Path c;
-    public final /* synthetic */ RectF d;
-    public final /* synthetic */ tk0 e;
+public final class yj0 extends s4.i0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public yj0(tk0 tk0Var, View view, Path path, RectF rectF) {
-        this.e = tk0Var;
-        this.b = view;
-        this.c = path;
-        this.d = rectF;
+    public /* synthetic */ yj0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        View view = this.b;
-        canvas.translate(-view.getX(), -view.getY());
-        canvas.clipPath(this.c);
-        int w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, this.e.n2);
-        Paint paint = this.a;
-        paint.setColor(i0.b.o(w02, paint.getAlpha()));
-        canvas.drawRect(this.d, paint);
-        canvas.restore();
+    @Override // s4.i0
+    public final void a() {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                uk0 uk0Var = (uk0) obj;
+                uk0Var.K0(true);
+                if (uk0Var.q2) {
+                    uk0Var.q1 = -1;
+                    if (uk0Var.T1 == null) {
+                        uk0Var.E1.setEmpty();
+                    }
+                }
+                uk0Var.invalidate();
+                break;
+            case 1:
+                RecyclerView recyclerView = (RecyclerView) obj;
+                recyclerView.l(null);
+                recyclerView.u0.f = true;
+                boolean z10 = org.telegram.messenger.v2.a;
+                recyclerView.d.i("notifyDataSetChanged()");
+                recyclerView.n0(true);
+                if (!recyclerView.d.h()) {
+                    recyclerView.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                ((zf.c1) obj).f();
+                break;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // s4.i0
+    public void b(int i10, int i11) {
+        switch (this.a) {
+            case 2:
+                ((zf.c1) this.b).k(i10 + 1, i11);
+                break;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
+    @Override // s4.i0
+    public void c(int i10, int i11, Object obj) {
+        switch (this.a) {
+            case 1:
+                RecyclerView recyclerView = (RecyclerView) this.b;
+                recyclerView.l(null);
+                kg.s0 s0Var = recyclerView.d;
+                ArrayList arrayList = (ArrayList) s0Var.d;
+                if (i11 >= 1) {
+                    boolean z10 = org.telegram.messenger.v2.a;
+                    StringBuilder m10 = i0.a.m("onItemRangeChanged(", i10, ", ", i11, ", ");
+                    m10.append(obj);
+                    m10.append(")");
+                    s0Var.i(m10.toString());
+                    arrayList.add(s0Var.j(4, i10, obj, i11));
+                    s0Var.b |= 4;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.c(i10, i11, obj);
+                break;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // s4.i0
+    public final void d(int i10, int i11) {
+        int i12 = this.a;
+        Object obj = this.b;
+        switch (i12) {
+            case 0:
+                uk0 uk0Var = (uk0) obj;
+                uk0Var.K0(true);
+                View view = uk0Var.p1;
+                if (view != null && view.getAlpha() == 0.0f) {
+                    uk0Var.q1 = -1;
+                    uk0Var.g1();
+                    break;
+                }
+                break;
+            case 1:
+                RecyclerView recyclerView = (RecyclerView) obj;
+                recyclerView.l(null);
+                kg.s0 s0Var = recyclerView.d;
+                ArrayList arrayList = (ArrayList) s0Var.d;
+                if (i11 >= 1) {
+                    boolean z10 = org.telegram.messenger.v2.a;
+                    s0Var.i("onItemRangeInserted(" + i10 + ", " + i11 + ")");
+                    arrayList.add(s0Var.j(1, i10, null, i11));
+                    s0Var.b = s0Var.b | 1;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((zf.c1) obj).o(i10 + 1, i11);
+                break;
+        }
+    }
+
+    @Override // s4.i0
+    public void e(int i10, int i11) {
+        int i12 = this.a;
+        Object obj = this.b;
+        switch (i12) {
+            case 1:
+                RecyclerView recyclerView = (RecyclerView) obj;
+                recyclerView.l(null);
+                kg.s0 s0Var = recyclerView.d;
+                ArrayList arrayList = (ArrayList) s0Var.d;
+                if (i10 != i11) {
+                    boolean z10 = org.telegram.messenger.v2.a;
+                    s0Var.i("onItemRangeMoved(" + i10 + ", " + i11 + ", 1)");
+                    arrayList.add(s0Var.j(8, i10, null, i11));
+                    s0Var.b = s0Var.b | 8;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                ((zf.c1) obj).k(i10 + 1, i11 + 2);
+                break;
+        }
+    }
+
+    @Override // s4.i0
+    public final void f(int i10, int i11) {
+        int i12 = this.a;
+        Object obj = this.b;
+        switch (i12) {
+            case 0:
+                ((uk0) obj).K0(true);
+                break;
+            case 1:
+                RecyclerView recyclerView = (RecyclerView) obj;
+                recyclerView.l(null);
+                kg.s0 s0Var = recyclerView.d;
+                ArrayList arrayList = (ArrayList) s0Var.d;
+                if (i11 >= 1) {
+                    boolean z10 = org.telegram.messenger.v2.a;
+                    s0Var.i("onItemRangeRemoved(" + i10 + ", " + i11 + ")");
+                    arrayList.add(s0Var.j(2, i10, null, i11));
+                    s0Var.b = s0Var.b | 2;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((zf.c1) obj).p(i10 + 1, i11);
+                break;
+        }
+    }
+
+    public void g() {
+        int[] iArr = RecyclerView.Q0;
+        RecyclerView recyclerView = (RecyclerView) this.b;
+        if (!recyclerView.H || !recyclerView.G) {
+            recyclerView.requestLayout();
+            return;
+        }
+        s4.e0 e0Var = recyclerView.n;
+        WeakHashMap weakHashMap = r0.h0.a;
+        recyclerView.postOnAnimation(e0Var);
     }
 }

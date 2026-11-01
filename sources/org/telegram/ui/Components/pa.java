@@ -4,9 +4,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.jd1;
+import org.telegram.ui.hd1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class pa implements View.OnLayoutChangeListener {
     public final /* synthetic */ boolean a;
@@ -27,8 +27,8 @@ public final class pa implements View.OnLayoutChangeListener {
             bbVar.onShow();
             org.telegram.ui.ActionBar.k2 k2Var = wbVar.g;
             boolean z10 = this.a;
-            if (z10 && (k2Var instanceof jd1)) {
-                k2Var = ((jd1) k2Var).b0();
+            if (z10 && (k2Var instanceof hd1)) {
+                k2Var = ((hd1) k2Var).c0();
             }
             FrameLayout frameLayout = wbVar.h;
             if (k2Var == null || (uaVar = k2Var.getBulletinDelegate()) == null) {
@@ -54,7 +54,7 @@ public final class pa implements View.OnLayoutChangeListener {
             if (uaVar3 != null) {
                 uaVar3.b(wbVar);
             }
-            if (org.telegram.messenger.vp.d1().getBoolean("view_animations", true) && !wbVar.s) {
+            if (org.telegram.messenger.wp.d1().getBoolean("view_animations", true) && !wbVar.s) {
                 if (bbVar != null && wbVar.q == null) {
                     wbVar.q = bbVar.createTransition();
                 }

@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 }
                 break;
             case 6:
-                org.telegram.ui.ActionBar.n0 n0Var = ((hm0) this.b).d;
+                org.telegram.ui.ActionBar.n0 n0Var = ((im0) this.b).d;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
                         n0Var.m();
@@ -80,10 +80,10 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 }
                 break;
             case 7:
-                op0 op0Var = (op0) this.b;
+                pp0 pp0Var = (pp0) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.i0.v1(op0Var.q2.r);
+                        org.telegram.messenger.i0.v1(pp0Var.q2.r);
                         break;
                     }
                 }
@@ -103,19 +103,19 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 }
                 break;
             case 10:
-                z01 z01Var = (z01) this.b;
+                a11 a11Var = (a11) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.i0.v1(z01Var.b);
+                        org.telegram.messenger.i0.v1(a11Var.b);
                         break;
                     }
                 }
                 break;
             default:
-                d61 d61Var = (d61) this.b;
+                e61 e61Var = (e61) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.i0.v1(d61Var.J);
+                        org.telegram.messenger.i0.v1(e61Var.J);
                         break;
                     }
                 }

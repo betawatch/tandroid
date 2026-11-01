@@ -10,9 +10,9 @@ import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.voip.r2;
+import org.telegram.ui.Components.voip.s2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g0 extends Visibility {
     public final /* synthetic */ int a;
@@ -60,17 +60,17 @@ public final class g0 extends Visibility {
                 return animatorSet5;
             default:
                 ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_Y, org.telegram.messenger.i0.L(100.0f), 0.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, 0.0f, 1.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, 0.0f, 1.0f));
-                if (view instanceof org.telegram.ui.Components.voip.b2) {
+                if (view instanceof org.telegram.ui.Components.voip.c2) {
                     view.setTranslationY(org.telegram.messenger.i0.L(100.0f));
                     view.setScaleX(0.0f);
                     view.setScaleY(0.0f);
-                    ofPropertyValuesHolder.setStartDelay(((org.telegram.ui.Components.voip.b2) view).F);
+                    ofPropertyValuesHolder.setStartDelay(((org.telegram.ui.Components.voip.c2) view).F);
                 }
-                if (view instanceof r2) {
+                if (view instanceof s2) {
                     view.setTranslationY(org.telegram.messenger.i0.L(100.0f));
                     view.setScaleX(0.0f);
                     view.setScaleY(0.0f);
-                    ofPropertyValuesHolder.setStartDelay(((r2) view).f);
+                    ofPropertyValuesHolder.setStartDelay(((s2) view).f);
                 }
                 return ofPropertyValuesHolder;
         }
@@ -107,8 +107,8 @@ public final class g0 extends Visibility {
                 return animatorSet4;
             case 4:
                 AnimatorSet animatorSet5 = new AnimatorSet();
-                if (view instanceof org.telegram.ui.Components.voip.n1) {
-                    ((org.telegram.ui.Components.voip.n1) view).d = true;
+                if (view instanceof org.telegram.ui.Components.voip.o1) {
+                    ((org.telegram.ui.Components.voip.o1) view).d = true;
                 }
                 animatorSet5.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.7f, 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 1.0f, 0.6f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.6f));
                 animatorSet5.setInterpolator(gr.f);

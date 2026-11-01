@@ -7,13 +7,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class j3 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public boolean D;
@@ -31,7 +31,7 @@ public abstract class j3 extends FrameLayout implements org.telegram.ui.ActionBa
     public int x;
     public final org.telegram.ui.Components.e6 y;
 
-    public j3(Context context, uu0 uu0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+    public j3(Context context, vu0 vu0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
         super(context);
         this.f = -1;
         this.r = true;
@@ -41,7 +41,7 @@ public abstract class j3 extends FrameLayout implements org.telegram.ui.ActionBa
         e6Var.w(org.telegram.messenger.i0.L(15.33f));
         e6Var.b = 5;
         this.d = i10;
-        h3 h3Var = new h3(this, context, uu0Var, p6Var, z10);
+        h3 h3Var = new h3(this, context, vu0Var, p6Var, z10);
         this.b = h3Var;
         mt editText = h3Var.getEditText();
         editText.setDelegate(new m4.c(14, this, editText));
@@ -61,7 +61,7 @@ public abstract class j3 extends FrameLayout implements org.telegram.ui.ActionBa
             editText.setSingleLine(true);
         }
         editText.setPadding(editText.getPaddingLeft(), editText.getPaddingTop(), org.telegram.messenger.i0.L(0.0f), editText.getPaddingBottom());
-        editText.setGravity((cd.X ? 5 : 3) | 48);
+        editText.setGravity((dd.X ? 5 : 3) | 48);
         editText.setInputType((z10 ? 131072 : 0) | 573441);
         editText.setRawInputType(573441);
         editText.setHint(str);
@@ -101,7 +101,7 @@ public abstract class j3 extends FrameLayout implements org.telegram.ui.ActionBa
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.D) {
-            canvas.drawLine(cd.X ? 0.0f : org.telegram.messenger.i0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (cd.X ? org.telegram.messenger.i0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+            canvas.drawLine(dd.X ? 0.0f : org.telegram.messenger.i0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (dd.X ? org.telegram.messenger.i0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
         }
     }
 

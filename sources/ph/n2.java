@@ -3,14 +3,14 @@ package ph;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.o20;
+import org.telegram.messenger.p20;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n2 implements o20 {
+public final /* synthetic */ class n2 implements p20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ r3 b;
     public final /* synthetic */ z60 c;
@@ -21,12 +21,12 @@ public final /* synthetic */ class n2 implements o20 {
         this.c = z60Var;
     }
 
-    @Override // org.telegram.messenger.o20
+    @Override // org.telegram.messenger.p20
     public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        a51 a51Var = (a51) obj;
+        b51 b51Var = (b51) obj;
         switch (this.a) {
             case 0:
-                long j10 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                long j10 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                 h3 h3Var = this.b.d;
                 HashSet hashSet = h3Var.l;
                 if (hashSet.contains(Long.valueOf(j10))) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class n2 implements o20 {
                 this.c.u();
                 break;
             case 1:
-                int i11 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                int i11 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                 h3 h3Var2 = this.b.d;
                 HashSet hashSet2 = h3Var2.k;
                 if (hashSet2.contains(Integer.valueOf(i11))) {
@@ -74,7 +74,7 @@ public final /* synthetic */ class n2 implements o20 {
                 this.c.u();
                 break;
             default:
-                long j12 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                long j12 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                 h3 h3Var3 = this.b.d;
                 HashSet hashSet3 = h3Var3.j;
                 if (hashSet3.contains(Long.valueOf(j12))) {

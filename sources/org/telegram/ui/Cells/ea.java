@@ -2,15 +2,15 @@ package org.telegram.ui.Cells;
 
 import android.graphics.Canvas;
 import android.view.VelocityTracker;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ea implements Runnable {
     public final /* synthetic */ int a;
@@ -83,13 +83,13 @@ public final /* synthetic */ class ea implements Runnable {
                 TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
                 tL_resolveStarGiftOffer.offer_msg_id = s0Var2.getMessageObject().f1();
                 tL_resolveStarGiftOffer.decline = true;
-                ConnectionsManager.getInstance(s0Var2.H).sendRequestTyped(tL_resolveStarGiftOffer, new j20() { // from class: org.telegram.ui.Cells.p0
-                    @Override // org.telegram.messenger.j20
+                ConnectionsManager.getInstance(s0Var2.H).sendRequestTyped(tL_resolveStarGiftOffer, new k20() { // from class: org.telegram.ui.Cells.p0
+                    @Override // org.telegram.messenger.k20
                     public final void a(Object obj, Object obj2) {
                         TLRPC.Updates updates = (TLRPC.Updates) obj;
                         TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                         if (updates != null) {
-                            vp.r1(s0.this.H).L3(updates, false);
+                            wp.r1(s0.this.H).L3(updates, false);
                         }
                         if (tL_error != null) {
                             org.telegram.messenger.i0.g3(new ea(4, k2Var, tL_error));

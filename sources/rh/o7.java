@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o7 extends kg.g2 {
     public final /* synthetic */ int r;
@@ -43,7 +43,7 @@ public final class o7 extends kg.g2 {
             case 0:
                 kg.f2 f2Var = new kg.f2(this.w);
                 this.a = f2Var;
-                f2Var.O = zs.q1;
+                f2Var.O = at.q1;
                 int i12 = 0;
                 f2Var.M = false;
                 f2Var.G = false;
@@ -103,7 +103,7 @@ public final class o7 extends kg.g2 {
             default:
                 kg.f2 f2Var3 = new kg.f2(this.w);
                 this.a = f2Var3;
-                f2Var3.O = zs.r1;
+                f2Var3.O = at.r1;
                 int i14 = 0;
                 f2Var3.M = false;
                 f2Var3.G = false;

@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class jm extends uh {
     public static final HashMap U = new HashMap();
@@ -220,10 +220,10 @@ public final class jm extends uh {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = b1Var.getChildAt(0);
-        ck0 ck0Var = (ck0) b1Var.G(childAt);
+        dk0 dk0Var = (dk0) b1Var.G(childAt);
         int top = childAt.getTop();
         int L = org.telegram.messenger.i0.L(8.0f);
-        if (top < org.telegram.messenger.i0.L(8.0f) || ck0Var == null || ck0Var.b() != 0) {
+        if (top < org.telegram.messenger.i0.L(8.0f) || dk0Var == null || dk0Var.b() != 0) {
             top = L;
         }
         b1Var.setTopGlowOffset(top);
@@ -300,7 +300,7 @@ public final class jm extends uh {
 
     @Override // org.telegram.ui.Components.uh
     public final void s() {
-        org.telegram.messenger.ef efVar;
+        org.telegram.messenger.ff ffVar;
         this.J = null;
         UndoView undoView = this.x;
         if (undoView != null) {
@@ -319,8 +319,8 @@ public final class jm extends uh {
                 Object obj2 = arrayList2.get(i11);
                 i11++;
                 gm gmVar = (gm) obj2;
-                if (gmVar.e && (efVar = gmVar.b) != null) {
-                    efVar.R = false;
+                if (gmVar.e && (ffVar = gmVar.b) != null) {
+                    ffVar.R = false;
                 }
             }
         }
@@ -340,7 +340,7 @@ public final class jm extends uh {
         interpolator.start();
         if (getSelectedItemsCount() > 1 && (chatAttachAlertPhotoLayout = (biVar = this.b).a2) != null) {
             chatAttachAlertPhotoLayout.c1.setIcon(R.drawable.msg_view_file);
-            biVar.a2.c1.setText(org.telegram.messenger.cd.L0(2131753957, null));
+            biVar.a2.c1.setText(org.telegram.messenger.dd.L0(2131753957, null));
             biVar.a2.c1.setRightIcon(R.drawable.msg_arrowright);
         }
         this.w.i(this.P, true);

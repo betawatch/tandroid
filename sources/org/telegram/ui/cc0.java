@@ -1,32 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class cc0 implements org.telegram.ui.ActionBar.u1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hf0 b;
+import android.os.Bundle;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.play.core.integrity.IntegrityTokenResponse;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ cc0(hf0 hf0Var, int i10) {
-        this.a = i10;
-        this.b = hf0Var;
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class cc0 implements OnSuccessListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ gf0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TLRPC.auth_SentCode d;
+    public final /* synthetic */ Bundle e;
+    public final /* synthetic */ boolean f;
+
+    public /* synthetic */ cc0(gf0 gf0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10) {
+        this.b = gf0Var;
+        this.e = bundle;
+        this.d = auth_sentcode;
+        this.c = str;
+        this.f = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.u1
-    public final void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
         switch (this.a) {
             case 0:
-                hf0 hf0Var = this.b;
-                hf0Var.b[hf0Var.a].d();
-                hf0Var.s1(true, true);
+                gf0.a0(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
                 break;
             default:
-                hf0 hf0Var2 = this.b;
-                hf0Var2.l0 = true;
-                if (hf0Var2.a != 0) {
-                    hf0Var2.C1(0, true, null, true);
-                    break;
-                }
+                gf0.c0(this.b, this.c, this.d, this.e, this.f, (m8.d) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ cc0(gf0 gf0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z10) {
+        this.b = gf0Var;
+        this.c = str;
+        this.d = auth_sentcode;
+        this.e = bundle;
+        this.f = z10;
     }
 }

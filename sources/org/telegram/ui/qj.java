@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class qj extends org.telegram.ui.Components.sn {
     public final /* synthetic */ un A0;
@@ -25,7 +25,7 @@ public final class qj extends org.telegram.ui.Components.sn {
         if (z10 || unVar.j0 == null || unVar.G3) {
             return false;
         }
-        return !unVar.T9() || unVar.v4;
+        return !unVar.Y9() || unVar.v4;
     }
 
     @Override // org.telegram.ui.Components.sn
@@ -33,21 +33,21 @@ public final class qj extends org.telegram.ui.Components.sn {
         un unVar = this.A0;
         TLRPC.User user = unVar.f;
         if (user != null && user.linked_community_id != 0) {
-            unVar.showDialog(new yh.a0(unVar, unVar.f.linked_community_id, null, null));
+            unVar.showDialog(new yh.z(unVar, unVar.f.linked_community_id, null, null));
             return true;
         }
         TLRPC.Chat chat = unVar.e;
         if (chat == null || chat.linked_community_id == 0) {
             return false;
         }
-        unVar.showDialog(new yh.a0(unVar, unVar.e.linked_community_id, null, null));
+        unVar.showDialog(new yh.z(unVar, unVar.e.linked_community_id, null, null));
         return true;
     }
 
     @Override // org.telegram.ui.Components.sn
     public final void f() {
         un unVar = this.A0;
-        unVar.Ba(unVar.S9() ? "" : null);
+        unVar.Ga(unVar.X9() ? "" : null);
     }
 
     @Override // org.telegram.ui.Components.sn

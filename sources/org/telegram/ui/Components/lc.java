@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class lc extends Drawable {
     public static final nh.a H = new nh.a(1);
@@ -45,7 +45,7 @@ public final class lc extends Drawable {
     public int A = -1;
     public float E = 1.0f;
     public final tf F = new tf(this, 17);
-    public int G = org.telegram.messenger.zs.e4;
+    public int G = org.telegram.messenger.at.e4;
 
     public lc() {
         kc kcVar = new kc();
@@ -270,7 +270,7 @@ public final class lc extends Drawable {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long min = (this.u || this.E < 1.0f) ? Math.min(40L, Math.max(0L, elapsedRealtime - this.t)) : 0L;
         this.t = elapsedRealtime;
-        boolean e = org.telegram.messenger.sc.e(512);
+        boolean e = org.telegram.messenger.tc.e(512);
         kc kcVar = this.r;
         kc kcVar2 = this.q;
         if (e && min > 0) {
@@ -317,7 +317,7 @@ public final class lc extends Drawable {
 
     public final void f(float f7) {
         this.w = f7;
-        if (org.telegram.messenger.sc.e(512)) {
+        if (org.telegram.messenger.tc.e(512)) {
             float f10 = this.w - this.v;
             this.x = f10 / (((f10 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
         }
@@ -327,7 +327,7 @@ public final class lc extends Drawable {
         if (i10 != this.A || this.E < 1.0f) {
             this.A = i10;
             int e = e(i10);
-            if (z10 && this.B != 0 && org.telegram.messenger.sc.e(512)) {
+            if (z10 && this.B != 0 && org.telegram.messenger.tc.e(512)) {
                 this.C = this.B;
                 this.D = e;
                 this.E = 0.0f;

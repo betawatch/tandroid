@@ -7,18 +7,18 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.mg0;
-import org.telegram.ui.ng0;
+import org.telegram.ui.kg0;
+import org.telegram.ui.lg0;
 import rf.w;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public final /* synthetic */ int a = 1;
@@ -30,24 +30,24 @@ public final class e extends View {
     public e(ViewGroup viewGroup, int i10) {
         super(viewGroup.getContext());
         this.c = new ArrayList();
-        this.e = new mg0(this, 0);
+        this.e = new kg0(this, 0);
         this.d = viewGroup;
         this.b = i10;
     }
 
     public void a() {
-        mg0 mg0Var = (mg0) this.e;
+        kg0 kg0Var = (kg0) this.e;
         ArrayList arrayList = (ArrayList) this.c;
         boolean isEmpty = arrayList.isEmpty();
         int i10 = this.b;
         if (isEmpty && getVisibility() != 8) {
-            zs.f(i10).e.remove(mg0Var);
-            zs.f(i10).d(mg0Var);
+            at.f(i10).e.remove(kg0Var);
+            at.f(i10).d(kg0Var);
         } else {
             if (arrayList.isEmpty() || getVisibility() == 0) {
                 return;
             }
-            zs.f(i10).e.remove(mg0Var);
+            at.f(i10).e.remove(kg0Var);
             setVisibility(0);
         }
     }
@@ -145,7 +145,7 @@ public final class e extends View {
                 ArrayList arrayList = (ArrayList) this.c;
                 if (!arrayList.isEmpty()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        ((ng0) arrayList.get(i11)).a(canvas);
+                        ((lg0) arrayList.get(i11)).a(canvas);
                     }
                     break;
                 }

@@ -1,56 +1,51 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ra1 implements org.telegram.ui.ActionBar.u1, org.telegram.ui.ActionBar.x6, org.telegram.ui.ActionBar.y6 {
+public final class ra1 extends s4.s0 {
     public final /* synthetic */ int a;
+    public final /* synthetic */ nb1 b;
 
-    public /* synthetic */ ra1(int i10) {
+    public /* synthetic */ ra1(nb1 nb1Var, int i10) {
         this.a = i10;
+        this.b = nb1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.y6
-    public void d(int i10, View view) {
-        org.telegram.ui.Wallet.w3 w3Var = (org.telegram.ui.Wallet.w3) view;
-        ShapeDrawable shapeDrawable = w3Var.e0;
-        if (shapeDrawable != null) {
-            shapeDrawable.getPaint().setColor(i10);
-            w3Var.e0.invalidateSelf();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.x6
-    public int f(View view) {
-        ShapeDrawable shapeDrawable = ((org.telegram.ui.Wallet.w3) view).e0;
-        if (shapeDrawable != null) {
-            return shapeDrawable.getPaint().getColor();
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        boolean z10;
+        nb1 nb1Var;
+        tg.f fVar;
         switch (this.a) {
             case 0:
-                x1Var.dismiss();
+                nb1 nb1Var2 = this.b;
+                int L0 = nb1Var2.F.L0();
+                if (L0 != -1) {
+                    s4.c1 K = recyclerView.K(L0);
+                    int top = K != null ? K.a.getTop() : 0;
+                    if (L0 == 0) {
+                        int i12 = 0 - top;
+                        z10 = top < 0;
+                        Math.abs(i12);
+                    } else {
+                        z10 = L0 > 0;
+                    }
+                    nb1Var2.K0(z10 || !nb1Var2.K, true);
+                    break;
+                }
                 break;
             case 1:
-            case 2:
-            case 3:
+                this.b.C0();
+                break;
             default:
-                x1Var.dismiss();
-                break;
-            case 4:
-                x1Var.dismiss();
-                break;
-            case 5:
-                x1Var.dismiss();
-                break;
-            case 6:
-                x1Var.dismiss();
+                if (Build.VERSION.SDK_INT >= 31 && (fVar = (nb1Var = this.b).g1) != null) {
+                    fVar.f(i10, i11);
+                    nb1Var.B0();
+                    break;
+                }
                 break;
         }
     }

@@ -18,11 +18,11 @@ import j$.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.tp;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class k2 extends LinearLayout {
     public boolean D;
@@ -73,11 +73,11 @@ public abstract class k2 extends LinearLayout {
                 a5Var.setMinimumHeight(org.telegram.messenger.i0.L(60.0f));
                 TextView textView = new TextView(context);
                 this.b = textView;
-                textView.setGravity(cd.X ? 5 : 3);
+                textView.setGravity(dd.X ? 5 : 3);
                 textView.setTextSize(1, 16.0f);
                 a5Var.addView(textView, b6.i(-1.0f, -2.0f, 8388659, 0.0f, 9.33f, 0.0f, 0.0f));
                 this.h[i10] = new TextView(context);
-                this.h[i10].setGravity(cd.X ? 5 : 3);
+                this.h[i10].setGravity(dd.X ? 5 : 3);
                 this.h[i10].setTextSize(1, 13.0f);
                 a7.V(this.h[i10], t6.z6, p6Var);
                 a5Var.addView(this.h[i10], b6.i(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
@@ -90,15 +90,15 @@ public abstract class k2 extends LinearLayout {
                     this.n[i10][i12] = new TextView(context);
                     this.n[i10][i12].setTextSize(1, 14.0f);
                     a7.V(this.n[i10][i12], t6.z6, p6Var);
-                    this.n[i10][i12].setGravity(cd.X ? 3 : 5);
-                    this.s.addView(this.n[i10][i12], b6.i(-1.0f, -1.0f, zs.E1, 0.0f, 0.0f, 20.0f, 0.0f));
+                    this.n[i10][i12].setGravity(dd.X ? 3 : 5);
+                    this.s.addView(this.n[i10][i12], b6.i(-1.0f, -1.0f, at.E1, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
                 for (int i13 = 0; i13 < 2; i13++) {
                     this.c[i13] = new TextView(context);
                     this.c[i13].setTextSize(1, 14.0f);
                     a7.V(this.c[i13], t6.z6, p6Var);
-                    this.c[i13].setGravity(cd.X ? 3 : 5);
-                    this.s.addView(this.c[i13], b6.i(-1.0f, -1.0f, zs.E1, 0.0f, 0.0f, 20.0f, 0.0f));
+                    this.c[i13].setGravity(dd.X ? 3 : 5);
+                    this.s.addView(this.c[i13], b6.i(-1.0f, -1.0f, at.E1, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
                 ImageView imageView = new ImageView(context);
                 this.d = imageView;
@@ -108,13 +108,13 @@ public abstract class k2 extends LinearLayout {
                 imageView.setImageResource(R.drawable.arrow_more);
                 a7.t(imageView, t6.z6, p6Var, PorterDuff.Mode.SRC_IN);
                 this.s.addView(imageView, b6.h(20.0f, 20.0f, 8388629));
-                this.w.addView(this.s, new LinearLayout.LayoutParams(b6.z(-1.0f), b6.z(-1.0f), Gravity.getAbsoluteGravity(zs.E1, cd.X ? 1 : 0)));
+                this.w.addView(this.s, new LinearLayout.LayoutParams(b6.z(-1.0f), b6.z(-1.0f), Gravity.getAbsoluteGravity(at.E1, dd.X ? 1 : 0)));
                 tp tpVar = new tp(context);
                 this.r = tpVar;
                 tpVar.getDrawable().L = true;
                 tpVar.setTextSize(org.telegram.messenger.i0.L(13.0f));
                 tpVar.setPadding(org.telegram.messenger.i0.L(6.0f), 0, org.telegram.messenger.i0.L(6.0f), 0);
-                tpVar.setGravity(cd.X ? 3 : 5);
+                tpVar.setGravity(dd.X ? 3 : 5);
                 int L = org.telegram.messenger.i0.L(8.0f);
                 int i14 = t6.o6;
                 int w02 = t6.w0(i14, p6Var);
@@ -141,17 +141,17 @@ public abstract class k2 extends LinearLayout {
                 this.h[i10] = new TextView(context);
                 this.h[i10].setTextSize(1, 14.0f);
                 a7.V(this.h[i10], t6.G6, p6Var);
-                this.h[i10].setGravity(cd.X ? 5 : 3);
+                this.h[i10].setGravity(dd.X ? 5 : 3);
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 this.n[i10] = new TextView[2];
                 for (int i15 = 0; i15 < 2; i15++) {
                     this.n[i10][i15] = new TextView(context);
                     this.n[i10][i15].setTextSize(1, 14.0f);
                     a7.V(this.n[i10][i15], t6.z6, p6Var);
-                    this.n[i10][i15].setGravity(cd.X ? 3 : 5);
-                    frameLayout2.addView(this.n[i10][i15], b6.e(-1, -1, zs.E1));
+                    this.n[i10][i15].setGravity(dd.X ? 3 : 5);
+                    frameLayout2.addView(this.n[i10][i15], b6.e(-1, -1, at.E1));
                 }
-                if (cd.X) {
+                if (dd.X) {
                     f7.addView(frameLayout2, b6.r(-2, -1, 51));
                     f7.addView(this.h[i10], b6.r(-1, -1, 53));
                 } else {
@@ -268,7 +268,7 @@ public abstract class k2 extends LinearLayout {
             ImageView imageView = this.d;
             imageView.setVisibility(i22);
             this.w.setTranslationX(!z13 ? org.telegram.messenger.i0.L(11.0f) : 0.0f);
-            TLRPC.TL_timezone a2 = n3.b(d20.s0).a(tL_businessWorkHours.timezone_id);
+            TLRPC.TL_timezone a2 = n3.b(e20.s0).a(tL_businessWorkHours.timezone_id);
             Calendar calendar = Calendar.getInstance();
             offset = ((calendar.getTimeZone().getOffset(System.currentTimeMillis()) / 1000) - (a2 != null ? 0 : a2.utc_offset)) / 60;
             if (offset != 0 && !z13) {
@@ -330,9 +330,9 @@ public abstract class k2 extends LinearLayout {
                 }
                 z21 = true;
             }
-            tpVar.c(cd.L0(!z22 ? 2131752730 : 2131752731, null), (!cd.X || this.D) ? z15 : true, true);
+            tpVar.c(dd.L0(!z22 ? 2131752730 : 2131752731, null), (!dd.X || this.D) ? z15 : true, true);
             this.D = z15;
-            ArrayList[] d02 = h2.d0(new ArrayList(tL_businessWorkHours.weekly_open));
+            ArrayList[] e02 = h2.e0(new ArrayList(tL_businessWorkHours.weekly_open));
             int i24 = (calendar.get(7) + 5) % 7;
             int i25 = calendar.get(11);
             int i26 = calendar.get(12);
@@ -349,7 +349,7 @@ public abstract class k2 extends LinearLayout {
                     boolean z25 = z23;
                     int i28 = i27 % 1440;
                     int i29 = tL_businessWeeklyOpen2.end_minute;
-                    arrayListArr2 = d02;
+                    arrayListArr2 = e02;
                     int i30 = (i29 - i27) + i28;
                     z18 = z25;
                     if (i28 == 0) {
@@ -365,11 +365,11 @@ public abstract class k2 extends LinearLayout {
                         z20 = z24;
                         z23 = z19;
                         i26 = i19;
-                        d02 = arrayListArr2;
+                        e02 = arrayListArr2;
                     }
                 } else {
                     z18 = z23;
-                    arrayListArr2 = d02;
+                    arrayListArr2 = e02;
                 }
                 i19 = i26;
                 z19 = z18;
@@ -409,7 +409,7 @@ public abstract class k2 extends LinearLayout {
                             z20 = z24;
                             z23 = z19;
                             i26 = i19;
-                            d02 = arrayListArr2;
+                            e02 = arrayListArr2;
                         }
                     }
                 }
@@ -417,11 +417,11 @@ public abstract class k2 extends LinearLayout {
                 z20 = z24;
                 z23 = z19;
                 i26 = i19;
-                d02 = arrayListArr2;
+                e02 = arrayListArr2;
             }
             boolean z26 = z20;
             boolean z27 = z23;
-            ArrayList[] arrayListArr3 = d02;
+            ArrayList[] arrayListArr3 = e02;
             Collections.sort(arrayList2, new a4.d(1));
             int i34 = (i24 * 1440) + (i25 * 60) + i26;
             for (i12 = 0; i12 < arrayList2.size(); i12++) {
@@ -433,8 +433,8 @@ public abstract class k2 extends LinearLayout {
                 }
             }
             z16 = false;
-            ArrayList[] d03 = h2.d0(arrayList2);
-            String L0 = cd.L0(!z16 ? 2131752742 : 2131752743, null);
+            ArrayList[] e03 = h2.e0(arrayList2);
+            String L0 = dd.L0(!z16 ? 2131752742 : 2131752743, null);
             TextView textView = this.b;
             textView.setText(L0);
             a7.V(textView, !z16 ? t6.l8 : t6.p7, this.a);
@@ -444,20 +444,20 @@ public abstract class k2 extends LinearLayout {
             this.y = 0;
             i14 = 0;
             while (i14 < 2) {
-                ArrayList[] arrayListArr4 = i14 == 0 ? arrayListArr3 : d03;
+                ArrayList[] arrayListArr4 = i14 == 0 ? arrayListArr3 : e03;
                 int i37 = 0;
                 while (i37 < 7) {
                     int i38 = (i24 + i37) % 7;
                     TextView[] textViewArr5 = this.h;
                     if (i37 == 0) {
-                        arrayListArr = d03;
-                        textViewArr5[i37].setText(cd.L0(2131752746, null));
+                        arrayListArr = e03;
+                        textViewArr5[i37].setText(dd.L0(2131752746, null));
                         i15 = i14;
                         z17 = z16;
                     } else {
-                        arrayListArr = d03;
+                        arrayListArr = e03;
                         i15 = i14;
-                        String displayName = DayOfWeek.values()[i38].getDisplayName(TextStyle.FULL, cd.D0().y);
+                        String displayName = DayOfWeek.values()[i38].getDisplayName(TextStyle.FULL, dd.D0().y);
                         StringBuilder sb2 = new StringBuilder();
                         z17 = z16;
                         sb2.append(displayName.substring(0, 1).toUpperCase());
@@ -489,23 +489,23 @@ public abstract class k2 extends LinearLayout {
                                     i16 = ((TL_account.TL_businessWeeklyOpen) arrayList2.get(0)).start_minute;
                                 }
                                 if (i16 == -1) {
-                                    textView2.setText(cd.L0(2131752745, null));
+                                    textView2.setText(dd.L0(2131752745, null));
                                     arrayList3 = arrayList2;
                                     textViewArr2 = textViewArr;
                                 } else {
                                     int i41 = i16 < i34 ? (10080 - i34) + i16 : i16 - i34;
                                     if (i41 < i23) {
                                         arrayList3 = arrayList2;
-                                        textView2.setText(cd.G(i41, "BusinessHoursProfileOpensInMinutes", new Object[0]));
+                                        textView2.setText(dd.G(i41, "BusinessHoursProfileOpensInMinutes", new Object[0]));
                                         textViewArr2 = textViewArr;
                                     } else {
                                         arrayList3 = arrayList2;
                                         if (i41 < 1440) {
                                             textViewArr2 = textViewArr;
-                                            textView2.setText(cd.G((int) Math.ceil(i41 / 60.0f), "BusinessHoursProfileOpensInHours", new Object[0]));
+                                            textView2.setText(dd.G((int) Math.ceil(i41 / 60.0f), "BusinessHoursProfileOpensInHours", new Object[0]));
                                         } else {
                                             textViewArr2 = textViewArr;
-                                            textView2.setText(cd.G((int) Math.ceil((i41 / 60.0f) / 24.0f), "BusinessHoursProfileOpensInDays", new Object[0]));
+                                            textView2.setText(dd.G((int) Math.ceil((i41 / 60.0f) / 24.0f), "BusinessHoursProfileOpensInDays", new Object[0]));
                                         }
                                     }
                                 }
@@ -513,11 +513,11 @@ public abstract class k2 extends LinearLayout {
                                 arrayList3 = arrayList2;
                                 textViewArr2 = textViewArr;
                                 if (z27) {
-                                    textView2.setText(cd.L0(2131752744, null));
+                                    textView2.setText(dd.L0(2131752744, null));
                                 } else if (arrayListArr4[i38].isEmpty()) {
-                                    textView2.setText(cd.L0(2131752745, null));
-                                } else if (h2.g0(arrayListArr4[i38])) {
-                                    textView2.setText(cd.L0(2131752741, null));
+                                    textView2.setText(dd.L0(2131752745, null));
+                                } else if (h2.h0(arrayListArr4[i38])) {
+                                    textView2.setText(dd.L0(2131752741, null));
                                 } else {
                                     StringBuilder sb3 = new StringBuilder();
                                     for (int i42 = 0; i42 < arrayListArr4[i38].size(); i42++) {
@@ -541,7 +541,7 @@ public abstract class k2 extends LinearLayout {
                         }
                     }
                     i37++;
-                    d03 = arrayListArr;
+                    e03 = arrayListArr;
                     i14 = i15;
                     z16 = z17;
                     i23 = 60;
@@ -557,7 +557,7 @@ public abstract class k2 extends LinearLayout {
                 f10 = 12.0f;
             }
             layoutParams.bottomMargin = org.telegram.messenger.i0.L(f10);
-            layoutParams.gravity = ((this.x <= 2 || tpVar.getVisibility() == 0) ? 16 : 80) | (!cd.X ? 3 : 5);
+            layoutParams.gravity = ((this.x <= 2 || tpVar.getVisibility() == 0) ? 16 : 80) | (!dd.X ? 3 : 5);
             if (i13 == this.x || i36 != this.y) {
                 requestLayout();
             }
@@ -572,7 +572,7 @@ public abstract class k2 extends LinearLayout {
         ImageView imageView2 = this.d;
         imageView2.setVisibility(i22);
         this.w.setTranslationX(!z13 ? org.telegram.messenger.i0.L(11.0f) : 0.0f);
-        TLRPC.TL_timezone a22 = n3.b(d20.s0).a(tL_businessWorkHours.timezone_id);
+        TLRPC.TL_timezone a22 = n3.b(e20.s0).a(tL_businessWorkHours.timezone_id);
         Calendar calendar2 = Calendar.getInstance();
         offset = ((calendar2.getTimeZone().getOffset(System.currentTimeMillis()) / 1000) - (a22 != null ? 0 : a22.utc_offset)) / 60;
         if (offset != 0) {
@@ -591,9 +591,9 @@ public abstract class k2 extends LinearLayout {
         }
         while (r42 < textViewArr.length) {
         }
-        tpVar2.c(cd.L0(!z22 ? 2131752730 : 2131752731, null), (!cd.X || this.D) ? z15 : true, true);
+        tpVar2.c(dd.L0(!z22 ? 2131752730 : 2131752731, null), (!dd.X || this.D) ? z15 : true, true);
         this.D = z15;
-        ArrayList[] d022 = h2.d0(new ArrayList(tL_businessWorkHours.weekly_open));
+        ArrayList[] e022 = h2.e0(new ArrayList(tL_businessWorkHours.weekly_open));
         int i242 = (calendar2.get(7) + 5) % 7;
         int i252 = calendar2.get(11);
         int i262 = calendar2.get(12);
@@ -605,14 +605,14 @@ public abstract class k2 extends LinearLayout {
         }
         boolean z262 = z20;
         boolean z272 = z232;
-        ArrayList[] arrayListArr32 = d022;
+        ArrayList[] arrayListArr32 = e022;
         Collections.sort(arrayList2, new a4.d(1));
         int i342 = (i242 * 1440) + (i252 * 60) + i262;
         while (i12 < arrayList2.size()) {
         }
         z16 = false;
-        ArrayList[] d032 = h2.d0(arrayList2);
-        String L02 = cd.L0(!z16 ? 2131752742 : 2131752743, null);
+        ArrayList[] e032 = h2.e0(arrayList2);
+        String L02 = dd.L0(!z16 ? 2131752742 : 2131752743, null);
         TextView textView3 = this.b;
         textView3.setText(L02);
         a7.V(textView3, !z16 ? t6.l8 : t6.p7, this.a);
@@ -630,7 +630,7 @@ public abstract class k2 extends LinearLayout {
             f10 = 12.0f;
         }
         layoutParams2.bottomMargin = org.telegram.messenger.i0.L(f10);
-        layoutParams2.gravity = ((this.x <= 2 || tpVar2.getVisibility() == 0) ? 16 : 80) | (!cd.X ? 3 : 5);
+        layoutParams2.gravity = ((this.x <= 2 || tpVar2.getVisibility() == 0) ? 16 : 80) | (!dd.X ? 3 : 5);
         if (i13 == this.x) {
         }
         requestLayout();
@@ -644,7 +644,7 @@ public abstract class k2 extends LinearLayout {
             if (W0 == null) {
                 W0 = t6.k0;
             }
-            canvas.drawRect(org.telegram.messenger.i0.L(cd.X ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.i0.L(cd.X ? 21.33f : 0.0f), getMeasuredHeight(), W0);
+            canvas.drawRect(org.telegram.messenger.i0.L(dd.X ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.i0.L(dd.X ? 21.33f : 0.0f), getMeasuredHeight(), W0);
         }
     }
 

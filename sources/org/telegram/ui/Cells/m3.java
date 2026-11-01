@@ -7,14 +7,14 @@ import android.text.Spannable;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class m3 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public boolean D;
@@ -58,7 +58,7 @@ public class m3 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
             k3Var.setSingleLine(true);
         }
         k3Var.setPadding(org.telegram.messenger.i0.L(21.0f), org.telegram.messenger.i0.L(15.0f), org.telegram.messenger.i0.L((i10 > 0 ? 42 : 0) + 21), org.telegram.messenger.i0.L(15.0f));
-        k3Var.setGravity((cd.X ? 5 : 3) | 48);
+        k3Var.setGravity((dd.X ? 5 : 3) | 48);
         k3Var.setInputType((z10 ? 131072 : 0) | 573441);
         k3Var.setRawInputType((z10 ? 131072 : 0) | 573441);
         k3Var.setHint(str);
@@ -94,7 +94,7 @@ public class m3 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public TLRPC.TL_textWithEntities getTextWithEntities() {
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
         CharSequence[] charSequenceArr = {getText()};
-        tL_textWithEntities.entities = ui.b0(d20.s0).W(charSequenceArr, true, true);
+        tL_textWithEntities.entities = vi.b0(e20.s0).W(charSequenceArr, true, true);
         tL_textWithEntities.text = charSequenceArr[0].toString();
         return tL_textWithEntities;
     }
@@ -103,7 +103,7 @@ public class m3 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.D) {
-            canvas.drawLine(cd.X ? 0.0f : org.telegram.messenger.i0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (cd.X ? org.telegram.messenger.i0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+            canvas.drawLine(dd.X ? 0.0f : org.telegram.messenger.i0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (dd.X ? org.telegram.messenger.i0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
         }
     }
 
@@ -155,7 +155,7 @@ public class m3 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
 
     public void setText(TLRPC.TL_textWithEntities tL_textWithEntities) {
         this.c = true;
-        Spannable h02 = jj.h0(tL_textWithEntities, false);
+        Spannable h02 = kj.h0(tL_textWithEntities, false);
         k3 k3Var = this.d;
         k3Var.setText(h02);
         k3Var.setSelection(k3Var.getText().length());

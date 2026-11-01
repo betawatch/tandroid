@@ -1,129 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.Utilities;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.os.Build;
+import android.view.View;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mg0 b;
+public final class lg0 {
+    public static final float[] m = new ColorMatrix().getArray();
+    public static final float[] n;
+    public static final t7.u o;
+    public final ei.e a;
+    public final ei.d b;
+    public final tg.b c;
+    public final tg.b d;
+    public final tg.b e;
+    public final hi.d f;
+    public final je.b g;
+    public final je.b h;
+    public int i;
+    public boolean j;
+    public float k;
+    public float l;
 
-    public /* synthetic */ lg0(mg0 mg0Var, int i10) {
-        this.a = i10;
-        this.b = mg0Var;
+    static {
+        ColorMatrix colorMatrix = new ColorMatrix();
+        org.telegram.messenger.i0.i(colorMatrix, 0.65f);
+        org.telegram.messenger.i0.n2(colorMatrix, 0.5f);
+        n = colorMatrix.getArray();
+        o = new t7.u(14);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
-    
-        if (r3.getHeight() != r5.b.getHeight()) goto L30;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i10;
-        zg0[] zg0VarArr;
-        switch (this.a) {
-            case 0:
-                mg0 mg0Var = this.b;
-                synchronized (mg0Var.b) {
-                    zg0[] zg0VarArr2 = mg0Var.c;
-                    zg0 zg0Var = zg0VarArr2[0];
-                    zg0[] zg0VarArr3 = mg0Var.d;
-                    i10 = 2;
-                    zg0VarArr = new zg0[]{zg0Var, zg0VarArr3[0], zg0VarArr2[1], zg0VarArr3[1], zg0VarArr2[2], zg0VarArr3[2]};
+    public lg0(ei.r rVar, ei.b bVar) {
+        je.b bVar2 = new je.b();
+        this.g = bVar2;
+        je.b bVar3 = new je.b();
+        this.h = bVar3;
+        if (Build.VERSION.SDK_INT >= 31) {
+            ei.e eVar = bVar.g;
+            this.a = eVar;
+            this.b = eVar != null ? eVar.d(4) : null;
+        } else {
+            this.a = null;
+            this.b = null;
+        }
+        kg0 kg0Var = new kg0(this, null);
+        kg0 kg0Var2 = new kg0(this, new jg0(bVar.c));
+        tg.b bVar4 = new tg.b(kg0Var, kg0Var, kg0Var);
+        bVar4.j = rVar;
+        bVar4.g = bVar2;
+        bVar4.f = bVar3;
+        this.c = bVar4;
+        tg.b bVar5 = new tg.b(kg0Var2, kg0Var2, kg0Var2);
+        bVar5.j = rVar;
+        bVar5.g = bVar2;
+        bVar5.f = bVar3;
+        this.d = bVar5;
+        bVar5.k = true;
+        hi.d dVar = new hi.d(kg0Var2, new jg0(bVar.f));
+        this.f = dVar;
+        tg.b bVar6 = new tg.b(dVar, dVar, dVar);
+        bVar6.j = rVar;
+        bVar6.g = bVar2;
+        bVar6.f = bVar3;
+        this.e = bVar6;
+        bVar6.k = true;
+    }
+
+    public final void a() {
+        Iterator it = this.h.iterator();
+        while (it.hasNext()) {
+            ((vg.f) it.next()).updateColors();
+        }
+        Iterator it2 = this.g.iterator();
+        while (it2.hasNext()) {
+            ((View) it2.next()).invalidate();
+        }
+    }
+
+    public final void b(float f7) {
+        ei.e eVar;
+        ColorMatrixColorFilter colorMatrixColorFilter;
+        if (this.k != f7) {
+            this.k = f7;
+            if (Build.VERSION.SDK_INT >= 31 && (eVar = this.a) != null) {
+                if (f7 > 0.0f) {
+                    float[] fArr = m;
+                    int length = fArr.length;
+                    float[] fArr2 = new float[length];
+                    for (int i10 = 0; i10 < length; i10++) {
+                        fArr2[i10] = org.telegram.messenger.i0.T1(fArr[i10], n[i10], f7);
+                    }
+                    colorMatrixColorFilter = new ColorMatrixColorFilter(fArr2);
+                } else {
+                    colorMatrixColorFilter = null;
                 }
-                boolean z10 = false;
-                for (int i11 = 0; i11 < 6; i11 += 2) {
-                    zg0 zg0Var2 = zg0VarArr[i11];
-                    zg0 zg0Var3 = zg0VarArr[i11 + 1];
-                    if (zg0Var2 != null && !zg0Var2.c && zg0Var2.f) {
-                        zg0Var2.e = true;
-                        if (zg0Var3 != null) {
-                            Bitmap bitmap = zg0Var3.b;
-                            if (!zg0Var3.d) {
-                                if (bitmap.getWidth() == zg0Var2.b.getWidth()) {
-                                    break;
-                                }
-                            }
-                        }
-                        if (zg0Var3 != null) {
-                            zg0Var3.a();
-                        }
-                        zg0Var3 = new zg0();
-                        Bitmap createBitmap = Bitmap.createBitmap(zg0Var2.b.getWidth(), zg0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
-                        zg0Var3.b = createBitmap;
-                        zg0Var3.a = new Canvas(createBitmap);
-                        synchronized (mg0Var.b) {
-                            zg0[] zg0VarArr4 = mg0Var.d;
-                            int i12 = 0;
-                            while (true) {
-                                zg0[] zg0VarArr5 = mg0Var.c;
-                                if (i12 >= zg0VarArr5.length) {
-                                    i12 = 0;
-                                } else if (zg0VarArr5[i12] != zg0Var2) {
-                                    i12++;
-                                }
-                            }
-                            zg0VarArr4[i12] = zg0Var3;
-                        }
-                        Bitmap bitmap2 = zg0Var2.b;
-                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / org.telegram.messenger.zs.K2));
-                        synchronized (mg0Var.b) {
-                            if (!zg0Var3.d) {
-                                zg0Var3.f = false;
-                                zg0Var3.b.eraseColor(0);
-                            }
-                            zg0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
-                            zg0Var3.f = true;
-                            Bitmap bitmap3 = zg0Var3.b;
-                            int i13 = 0;
-                            while (true) {
-                                zg0[] zg0VarArr6 = mg0Var.c;
-                                if (i13 >= zg0VarArr6.length) {
-                                    i13 = 0;
-                                } else if (zg0VarArr6[i13] != zg0Var2) {
-                                    i13++;
-                                }
-                            }
-                            mg0Var.b(bitmap3, i13);
-                        }
-                        if (!zg0Var2.d) {
-                            zg0Var2.f = false;
-                            zg0Var2.b.eraseColor(0);
-                        }
-                        zg0Var2.e = false;
-                        if (!zg0Var2.d && zg0Var2.c) {
-                            zg0Var2.d = true;
-                            zg0Var2.b.recycle();
-                        }
-                        z10 = true;
+                if (eVar.k != colorMatrixColorFilter) {
+                    eVar.k = colorMatrixColorFilter;
+                    for (int i11 = 0; i11 < eVar.b; i11++) {
+                        ((ei.c) eVar.a.get(i11)).c(colorMatrixColorFilter);
                     }
                 }
-                if (z10 && mg0Var.e && mg0Var.h != null) {
-                    mg0Var.postInvalidateOnAnimation();
-                }
-                if (mg0Var.e && (mg0Var.F || mg0Var.H)) {
-                    org.telegram.messenger.i0.g3(new lg0(mg0Var, i10));
-                    return;
-                } else {
-                    mg0Var.e = false;
-                    return;
-                }
-            case 1:
-                mg0 mg0Var2 = this.b;
-                mg0Var2.H = true;
-                mg0Var2.postInvalidateOnAnimation();
-                return;
-            default:
-                mg0 mg0Var3 = this.b;
-                mg0Var3.c();
-                ah0.a.postRunnable(mg0Var3.s);
-                return;
+            }
+            a();
         }
     }
 }

@@ -13,18 +13,18 @@ import android.view.RoundedCorner;
 import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.nc;
 import org.telegram.ui.Components.s9;
 import org.telegram.ui.Components.st;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wt;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f extends wt {
     public w9 V;
@@ -34,8 +34,8 @@ public final class f extends wt {
     public final /* synthetic */ k c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(k kVar, Context context, uu0 uu0Var, int i10, th.b bVar, org.telegram.ui.ActionBar.p6 p6Var, s9 s9Var) {
-        super(context, uu0Var, null, i10, true, bVar);
+    public f(k kVar, Context context, vu0 vu0Var, int i10, th.b bVar, org.telegram.ui.ActionBar.p6 p6Var, s9 s9Var) {
+        super(context, vu0Var, null, i10, true, bVar);
         this.c0 = kVar;
         this.a0 = p6Var;
         this.b0 = s9Var;
@@ -106,10 +106,10 @@ public final class f extends wt {
                 this.W = c10;
                 c10.s(org.telegram.messenger.i0.L(29.0f), org.telegram.messenger.i0.L(29.0f), i10, i11, true);
                 vg.f fVar = this.W;
-                fVar.O = true;
+                fVar.R = true;
                 fVar.t(org.telegram.messenger.i0.L(32.0f));
                 vg.f fVar2 = this.W;
-                fVar2.M.g = 0.4f;
+                fVar2.P.g = 0.4f;
                 fVar2.m();
             }
             Rect rect = org.telegram.messenger.i0.Q;
@@ -146,7 +146,7 @@ public final class f extends wt {
             kVar.t0.setAlpha((int) (kVar.n0 * 255.0f * 0.95f));
             canvas.drawRoundRect(rectF, 0.0f, 0.0f, kVar.t0);
         }
-        paint.setAlpha((int) (kVar.t0 == null ? 128.0f : org.telegram.messenger.i0.W1(kVar.n0, 128, zs.j2) * 0.95f));
+        paint.setAlpha((int) (kVar.t0 == null ? 128.0f : org.telegram.messenger.i0.W1(kVar.n0, 128, at.j2) * 0.95f));
         canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
     }
 

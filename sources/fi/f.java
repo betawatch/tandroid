@@ -1,194 +1,143 @@
 package fi;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
+import android.graphics.Color;
+import android.graphics.RecordingCanvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import android.os.Build;
-import ei.s;
-import org.telegram.messenger.zs;
-import org.telegram.ui.ActionBar.t6;
-import rf.w;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.RuntimeShader;
+import android.support.v4.media.session.w;
+import java.util.Arrays;
 import v7.i7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final class f extends ei.f {
-    public g D;
-    public g E;
-    public g F;
-    public hi.c G;
-    public int H;
-    public int I;
-    public int J;
-    public int K;
-    public final RectF L;
-    public final hi.a f;
-    public final ei.d h;
-    public final i7 n;
-    public final i7 r;
-    public i7 s;
-    public boolean w = true;
-    public boolean x = true;
-    public int y = 1;
+public final class f extends i7 {
+    public final RenderNode a = w.m();
+    public final RuntimeShader b = e.a();
+    public int c = -1;
+    public int d = -1;
+    public int e;
+    public RenderEffect[] f;
+    public float[] g;
+    public float[] h;
+    public final /* synthetic */ g i;
 
-    public f(hi.a aVar) {
-        g gVar = g.b;
-        this.D = gVar;
-        this.E = gVar;
-        this.F = gVar;
-        this.I = zs.e4;
-        this.K = zs.e4;
-        this.L = new RectF();
-        this.f = aVar;
-        this.h = aVar instanceof ei.d ? (ei.d) aVar : null;
-        if (aVar instanceof hi.e) {
-            i7 bVar = Build.VERSION.SDK_INT >= 29 ? new b(this) : new a(this, false);
-            this.n = bVar;
-            this.r = bVar;
+    public f(g gVar) {
+        this.i = gVar;
+    }
+
+    @Override // v7.i7
+    public final void a(Rect rect, RectF rectF) {
+        float f7;
+        a aVar;
+        int i10;
+        int i11;
+        int i12;
+        int a2;
+        int a10;
+        int g10;
+        int g11;
+        g gVar = this.i;
+        a aVar2 = gVar.h;
+        int i13 = (aVar2 == null || !aVar2.h() || aVar2.f() <= 0) ? 0 : 1;
+        int f10 = i13 != 0 ? aVar2.f() : 1;
+        float l4 = i13 != 0 ? g.l(rectF.left, aVar2.g(), f10) - (i13 * f10) : rectF.left;
+        float l10 = i13 != 0 ? g.l(rectF.top, aVar2.a(), f10) - (i13 * f10) : rectF.top;
+        float f11 = l4 - rectF.left;
+        float f12 = l10 - rectF.top;
+        float f13 = f10;
+        int ceil = ((int) Math.ceil((rectF.right - l4) / f13)) + i13;
+        int ceil2 = ((int) Math.ceil((rectF.bottom - l10) / f13)) + i13;
+        if (!gVar.w && this.c == rect.width() && this.d == rect.height() && this.e == f10) {
+            aVar = aVar2;
+            i11 = i13;
+            i10 = ceil;
+            f7 = f13;
+            i12 = ceil2;
         } else {
-            int i10 = Build.VERSION.SDK_INT;
-            if (i10 >= 33) {
-                this.n = new e(this);
-                this.r = new b(this);
-            } else if (i10 >= 31) {
-                this.n = new c(this);
-                this.r = new b(this);
+            int i14 = gVar.y;
+            float height = (i14 == 1 || i14 == 4) ? rect.height() : rect.width();
+            RuntimeShader runtimeShader = this.b;
+            h hVar = gVar.D;
+            hVar.getClass();
+            float f14 = 0;
+            f7 = f13;
+            aVar = aVar2;
+            i10 = ceil;
+            i11 = i13;
+            i12 = ceil2;
+            runtimeShader.setInputShader("alphaMask", g.k(gVar, hVar, height, f14, -1, f10));
+            RuntimeShader runtimeShader2 = this.b;
+            h hVar2 = gVar.E;
+            hVar2.getClass();
+            runtimeShader2.setInputShader("overlay", g.k(gVar, hVar2, height, f14, gVar.H, f10));
+            this.b.setFloatUniform("background_color_premultiplied", Color.red(gVar.H) / 255.0f, Color.green(gVar.H) / 255.0f, Color.blue(gVar.H) / 255.0f, 1.0f);
+            this.c = rect.width();
+            this.d = rect.height();
+            this.e = f10;
+            int i15 = f10 * f10;
+            RenderEffect[] renderEffectArr = this.f;
+            if (renderEffectArr == null || renderEffectArr.length != i15) {
+                this.f = new RenderEffect[i15];
+                this.g = new float[i15];
+                this.h = new float[i15];
             } else {
-                this.n = new a(this, true);
-                this.r = new a(this, false);
+                Arrays.fill(renderEffectArr, (Object) null);
             }
         }
-        g(this.b);
-    }
-
-    public static float k(float f7, int i10, int i11) {
-        return (((float) Math.floor((f7 - r3) / r4)) * i11) + i10;
-    }
-
-    public static LinearGradient l(f fVar, g gVar, float f7, float f10, int i10, int i11) {
-        int i12 = gVar == null ? -1 : gVar.a;
-        float f11 = 0;
-        float f12 = f7 - f11;
-        float max = Math.max(0.0f, f12 - f10);
-        if (i12 != -1) {
-            max = Math.min(i12, max);
+        int i16 = (((i11 == 0 || (a10 = (a2 = aVar.a()) % f10) == 0) ? 0 : (((a2 ^ f10) >> 31) | 1) > 0 ? a10 : a10 + f10) * f10) + ((i11 == 0 || (g11 = (g10 = aVar.g()) % f10) == 0) ? 0 : (((g10 ^ f10) >> 31) | 1) > 0 ? g11 : g11 + f10);
+        float f15 = f11 / f7;
+        float f16 = f12 / f7;
+        RenderEffect renderEffect = this.f[i16];
+        if (renderEffect == null || this.g[i16] != f15 || this.h[i16] != f16) {
+            this.b.setFloatUniform("shader_offset", f15, f16);
+            renderEffect = RenderEffect.createRuntimeShaderEffect(this.b, "content");
+            this.f[i16] = renderEffect;
+            this.g[i16] = f15;
+            this.h[i16] = f16;
         }
-        float f13 = 1.0f / i11;
-        int i13 = fVar.y;
-        boolean z10 = i13 == 1 || i13 == 2;
-        if (z10) {
-            f11 = f12;
+        this.a.setPosition(0, 0, i10, i12);
+        this.a.setPivotX(0.0f);
+        this.a.setPivotY(0.0f);
+        this.a.setScaleX(f7);
+        this.a.setScaleY(f7);
+        this.a.setTranslationX(f11);
+        this.a.setTranslationY(f12);
+        RecordingCanvas beginRecording = this.a.beginRecording();
+        if (i11 != 0) {
+            gVar.h.d(l4, l10, f10, beginRecording, rectF);
+        } else {
+            beginRecording.save();
+            beginRecording.translate(-rectF.left, -rectF.top);
+            gVar.f.e(beginRecording, rectF.left, rectF.top, rectF.right, rectF.bottom);
+            beginRecording.restore();
         }
-        float f14 = (f11 + (z10 ? -0.0f : 0.0f)) * f13;
-        float max2 = (Math.max(max * f13, 0.001f) * (z10 ? -1.0f : 1.0f)) + f14;
-        int[] iArr = new int[8];
-        w.a(w.i, i10, iArr);
-        int i14 = fVar.y;
-        return (i14 == 1 || i14 == 4) ? new LinearGradient(0.0f, max2, 0.0f, f14, iArr, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(max2, 0.0f, f14, 0.0f, iArr, (float[]) null, Shader.TileMode.CLAMP);
+        this.a.endRecording();
+        this.a.setRenderEffect(renderEffect);
+        gVar.w = false;
     }
 
-    @Override // ei.f
-    public final void a() {
-        Rect bounds = getBounds();
-        if (bounds.isEmpty()) {
-            this.s.b();
-            return;
-        }
-        RectF rectF = this.L;
-        rectF.set(bounds);
-        rectF.offset(this.d, this.e);
-        this.s.a(bounds, rectF);
+    @Override // v7.i7
+    public final void b() {
+        this.a.discardDisplayList();
+        this.c = -1;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
-    
-        if ((r0 instanceof fi.a) != false) goto L11;
-     */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        if (bounds.isEmpty() || this.c <= 0) {
-            return;
-        }
-        canvas.save();
-        canvas.clipRect(bounds);
-        canvas.translate(bounds.left, bounds.top);
-        if (!canvas.isHardwareAccelerated()) {
-            i7 i7Var = this.s;
-            i7Var.getClass();
-        }
-        this.s.c(canvas);
-        canvas.restore();
+    @Override // v7.i7
+    public final void c(Canvas canvas) {
+        canvas.drawRenderNode(this.a);
     }
 
-    @Override // ei.f
-    public final boolean e() {
-        return this.s.d();
+    @Override // v7.i7
+    public final boolean d() {
+        return this.a.hasDisplayList();
     }
 
-    @Override // ei.f
-    public final void f(int i10) {
-        this.s.e(i10 / 255.0f);
-        invalidateSelf();
-    }
-
-    @Override // ei.f
-    public final void g(s sVar) {
-        boolean z10 = sVar.a;
-        i7 i7Var = this.r;
-        i7 i7Var2 = z10 ? this.n : i7Var;
-        i7 i7Var3 = this.s;
-        if (i7Var3 != i7Var2) {
-            if (i7Var3 != null) {
-                i7Var3.b();
-            }
-            this.s = i7Var2;
-            i7Var2.e(this.c / 255.0f);
-            if (this.s == i7Var) {
-                this.x = true;
-            } else {
-                this.w = true;
-            }
-            invalidateSelf();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // ei.f
-    public final boolean j() {
-        this.s.getClass();
-        return !(r0 instanceof a);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.w = true;
-        this.x = true;
-    }
-
-    @Override // ei.f
-    public final void updateColors() {
-        hi.c cVar = this.G;
-        if (cVar != null) {
-            this.H = t6.r1(this.I / 255.0f, cVar.b);
-            this.J = t6.r1(this.K / 255.0f, this.G.b);
-        }
-        this.w = true;
-        this.x = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // v7.i7
+    public final void e(float f7) {
+        this.a.setAlpha(f7);
     }
 }

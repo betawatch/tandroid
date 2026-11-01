@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cb0 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -39,38 +39,38 @@ public final /* synthetic */ class cb0 implements View.OnClickListener {
                 n2.u uVar = (n2.u) this.d;
                 Runnable runnable2 = (Runnable) this.c;
                 if (this.b) {
-                    ((zt0) uVar.b).I.o();
+                    ((au0) uVar.b).I.o();
                 }
                 runnable2.run();
                 break;
             default:
-                org.telegram.ui.gt gtVar = (org.telegram.ui.gt) this.d;
+                org.telegram.ui.ft ftVar = (org.telegram.ui.ft) this.d;
                 ArrayList arrayList = (ArrayList) this.c;
-                org.telegram.ui.lt ltVar = gtVar.a;
-                if (ltVar.w != null && ltVar.l != null) {
+                org.telegram.ui.kt ktVar = ftVar.a;
+                if (ktVar.w != null && ktVar.l != null) {
                     int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
                     if (intValue == 0) {
-                        ltVar.l.A(ltVar.W);
+                        ktVar.l.A(ktVar.W);
                     } else if (intValue == 1) {
-                        ltVar.l.t(ltVar.W);
+                        ktVar.l.t(ktVar.W);
                     } else if (intValue == 2) {
-                        ltVar.l.t(null);
+                        ktVar.l.t(null);
                     } else if (intValue == 3) {
-                        ltVar.l.G(ltVar.W);
+                        ktVar.l.G(ktVar.W);
                     } else if (intValue == 4) {
-                        ltVar.l.p(ltVar.W);
+                        ktVar.l.p(ktVar.W);
                     } else if (intValue == 5) {
-                        org.telegram.messenger.ui.b0(ltVar.r).d(2, ltVar.b0, ltVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                        org.telegram.messenger.vi.b0(ktVar.r).d(2, ktVar.b0, ktVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
                     }
-                    ltVar.o();
+                    ktVar.o();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ cb0(org.telegram.ui.gt gtVar, ArrayList arrayList, boolean z10) {
-        this.d = gtVar;
+    public /* synthetic */ cb0(org.telegram.ui.ft ftVar, ArrayList arrayList, boolean z10) {
+        this.d = ftVar;
         this.c = arrayList;
         this.b = z10;
     }

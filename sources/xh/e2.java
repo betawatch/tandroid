@@ -3,11 +3,11 @@ package xh;
 import android.content.Context;
 import android.graphics.Paint;
 import android.view.MotionEvent;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.wp;
 import org.telegram.ui.ActionBar.p6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e2 extends org.telegram.ui.web.z0 {
     public final /* synthetic */ int T0;
@@ -28,7 +28,7 @@ public final class e2 extends org.telegram.ui.web.z0 {
                 Paint paint = m2Var.Q;
                 if (z10) {
                     m2Var.m();
-                    m2Var.Y0.a(m2Var.q() ? m2Var.w0.e : h20.p(vp.r1(m2Var.H).Z1(Long.valueOf(m2Var.I))), str);
+                    m2Var.Y0.a(m2Var.q() ? m2Var.w0.e : i20.p(wp.r1(m2Var.H).Z1(Long.valueOf(m2Var.I))), str);
                     m2Var.Y0.b(org.telegram.messenger.i0.B(paint.getColor()) <= 0.721f, false);
                     m2Var.Y0.setBackgroundColor(paint.getColor());
                     m2Var.X0 = str;
@@ -55,7 +55,7 @@ public final class e2 extends org.telegram.ui.web.z0 {
                 m2Var.K();
                 break;
             default:
-                ((i3) this.U0).J.setWebView(v0Var);
+                ((j3) this.U0).J.setWebView(v0Var);
                 break;
         }
     }
@@ -80,10 +80,10 @@ public final class e2 extends org.telegram.ui.web.z0 {
         switch (this.T0) {
             case 1:
                 if (motionEvent.getAction() == 0) {
-                    i3 i3Var = (i3) this.U0;
-                    if (!i3Var.P) {
-                        i3Var.P = true;
-                        i3Var.n.Q();
+                    j3 j3Var = (j3) this.U0;
+                    if (!j3Var.P) {
+                        j3Var.P = true;
+                        j3Var.n.Q();
                     }
                 }
                 return super.dispatchTouchEvent(motionEvent);

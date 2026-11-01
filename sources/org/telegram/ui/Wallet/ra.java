@@ -20,11 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ra extends FrameLayout {
     public final Rect D;
@@ -127,7 +127,7 @@ public final class ra extends FrameLayout {
             textView2.setTextSize(14.0f);
             textView2.setTypeface(org.telegram.messenger.i0.o());
             textView2.setGravity(17);
-            z20.p(textView2, org.telegram.ui.ActionBar.t6.q6, p6Var, null, 2131743081);
+            a30.p(textView2, org.telegram.ui.ActionBar.t6.q6, p6Var, null, 2131743081);
             textView2.setPadding(org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(6.0f));
             int L3 = org.telegram.messenger.i0.L(28.0f);
             int i15 = org.telegram.ui.ActionBar.t6.d6;

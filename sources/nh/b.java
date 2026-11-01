@@ -5,11 +5,11 @@ import org.telegram.ui.ActionBar.z2;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.d50;
 import org.telegram.ui.Components.vy;
-import org.telegram.ui.Components.wj0;
 import org.telegram.ui.Components.wt;
+import org.telegram.ui.Components.xj0;
 import org.telegram.ui.uq;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -80,10 +80,10 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
                 uq uqVar = (uq) this.c;
                 uqVar.getClass();
                 Float f11 = (Float) valueAnimator.getAnimatedValue();
-                wj0 wj0Var = (wj0) uqVar.d;
-                wj0Var.b.put(this.b, f11);
-                wj0Var.d = true;
-                wj0Var.a.invalidate();
+                xj0 xj0Var = (xj0) uqVar.d;
+                xj0Var.b.put(this.b, f11);
+                xj0Var.d = true;
+                xj0Var.a.invalidate();
                 break;
         }
     }

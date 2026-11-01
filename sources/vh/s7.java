@@ -7,20 +7,20 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.ye;
+import org.telegram.messenger.ze;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.kf0;
 import org.telegram.ui.Components.s9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s7 extends b4 {
     public boolean i2;
     public final /* synthetic */ o8 j2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s7(o8 o8Var, Context context, boolean z10, File file, boolean z11, boolean z12, n8 n8Var, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, n5 n5Var, int i12, int i13, ye yeVar, s9 s9Var, th.b bVar, j4 j4Var, d8 d8Var) {
-        super(context, z10, file, z11, z12, n8Var, activity, i10, bitmap, bitmap2, i11, arrayList, n5Var, i12, i13, yeVar, s9Var, bVar, j4Var, d8Var);
+    public s7(o8 o8Var, Context context, boolean z10, File file, boolean z11, boolean z12, n8 n8Var, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, n5 n5Var, int i12, int i13, ze zeVar, s9 s9Var, th.b bVar, j4 j4Var, d8 d8Var) {
+        super(context, z10, file, z11, z12, n8Var, activity, i10, bitmap, bitmap2, i11, arrayList, n5Var, i12, i13, zeVar, s9Var, bVar, j4Var, d8Var);
         this.j2 = o8Var;
     }
 

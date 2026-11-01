@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class RadialProgress2 {
     public float A;
@@ -407,17 +407,17 @@ public class RadialProgress2 {
         this.w.o0(str, str2, null, null, -1L);
     }
 
-    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, org.telegram.messenger.jj jjVar) {
+    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, org.telegram.messenger.kj kjVar) {
         Locale locale = Locale.US;
-        org.telegram.messenger.ic c10 = org.telegram.messenger.ic.c(photoSize, document);
+        org.telegram.messenger.jc c10 = org.telegram.messenger.jc.c(photoSize, document);
         int i10 = this.x;
-        this.w.q0(c10, a1.g.i(i10 * 2, i10 * 2, "_"), null, null, jjVar, 1);
+        this.w.q0(c10, a1.g.i(i10 * 2, i10 * 2, "_"), null, null, kjVar, 1);
     }
 
     public final void j(TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, TLRPC.Document document, Object obj) {
         Locale locale = Locale.US;
         String i10 = a1.g.i(this.x * 2, this.x * 2, "_");
-        this.w.r0(photoSize == null ? null : org.telegram.messenger.ic.c(photoSize, document), i10, photoSize2 != null ? org.telegram.messenger.ic.c(photoSize2, document) : null, i10, null, 0L, null, obj, 1);
+        this.w.r0(photoSize == null ? null : org.telegram.messenger.jc.c(photoSize, document), i10, photoSize2 != null ? org.telegram.messenger.jc.c(photoSize2, document) : null, i10, null, 0L, null, obj, 1);
     }
 
     public final void k(int i10, boolean z10, boolean z11) {

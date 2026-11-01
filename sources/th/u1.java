@@ -3,9 +3,9 @@ package th;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.q30;
 import org.telegram.ui.Components.sf;
 import org.telegram.ui.kn;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u1 implements sf {
     public final /* synthetic */ z2 a;
@@ -77,11 +77,11 @@ public final class u1 implements sf {
         if (storyItem != null && (storyItem.media instanceof TLRPC.TL_messageMediaVideoStream)) {
             TL_phone.saveDefaultSendAs savedefaultsendas = new TL_phone.saveDefaultSendAs();
             savedefaultsendas.call = ((TLRPC.TL_messageMediaVideoStream) y2Var.a.media).call;
-            savedefaultsendas.send_as = vp.r1(z2Var.l2).i1(j10);
+            savedefaultsendas.send_as = wp.r1(z2Var.l2).i1(j10);
             ConnectionsManager.getInstance(z2Var.l2).sendRequest(savedefaultsendas, null);
             s0 s0Var = z2Var.s0.A0;
             if (s0Var != null) {
-                TLRPC.Peer y12 = vp.r1(z2Var.l2).y1(j10);
+                TLRPC.Peer y12 = wp.r1(z2Var.l2).y1(j10);
                 TLRPC.GroupCall groupCall = s0Var.w;
                 if (groupCall != null) {
                     groupCall.flags = TLObject.setFlag(groupCall.flags, TLObject.FLAG_21, true);
@@ -117,12 +117,12 @@ public final class u1 implements sf {
             z2Var.addView(z2Var.F2, w7.b6.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
         }
         if (z2Var.k1 >= 0) {
-            str = h20.j(vp.r1(z2Var.l2).Z1(Long.valueOf(z2Var.k1)), true);
+            str = i20.j(wp.r1(z2Var.l2).Z1(Long.valueOf(z2Var.k1)), true);
         } else {
-            TLRPC.Chat L0 = vp.r1(z2Var.l2).L0(Long.valueOf(-z2Var.k1));
+            TLRPC.Chat L0 = wp.r1(z2Var.l2).L0(Long.valueOf(-z2Var.k1));
             str = L0 != null ? L0.title : "";
         }
-        z2Var.F2.setText(org.telegram.messenger.i0.W2(cd.a0(null, null, z2Var.K1.c1 ? 2131743620 : 2131743546, str)));
+        z2Var.F2.setText(org.telegram.messenger.i0.W2(dd.a0(null, null, z2Var.K1.c1 ? 2131743620 : 2131743546, str)));
         z2Var.F2.f(z2Var.K1.getAudioVideoButtonContainer(), true);
     }
 
@@ -176,8 +176,8 @@ public final class u1 implements sf {
                 }
             } else {
                 zf.x0 adapter2 = z2Var.M2.getAdapter();
-                vp.r1(z2Var.l2).Z1(Long.valueOf(z2Var.k1));
-                TLRPC.Chat L0 = vp.r1(z2Var.l2).L0(Long.valueOf(-z2Var.k1));
+                wp.r1(z2Var.l2).Z1(Long.valueOf(z2Var.k1));
+                TLRPC.Chat L0 = wp.r1(z2Var.l2).L0(Long.valueOf(-z2Var.k1));
                 adapter2.getClass();
                 adapter2.l0 = L0;
                 z2Var.M2.getAdapter().U(charSequence, z2Var.K1.getCursorPosition(), null, false, false);
@@ -219,7 +219,7 @@ public final class u1 implements sf {
     public final boolean Y0() {
         TLRPC.User Z1;
         z2 z2Var = this.a;
-        return (z2Var.k1 < 0 || (Z1 = vp.r1(z2Var.l2).Z1(Long.valueOf(z2Var.k1))) == null || h20.B(Z1) || Z1.bot) ? false : true;
+        return (z2Var.k1 < 0 || (Z1 = wp.r1(z2Var.l2).Z1(Long.valueOf(z2Var.k1))) == null || i20.B(Z1) || Z1.bot) ? false : true;
     }
 
     @Override // org.telegram.ui.Components.sf

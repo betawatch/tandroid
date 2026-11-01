@@ -7,15 +7,15 @@ import android.os.Looper;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i5;
 import org.telegram.messenger.j5;
-import org.telegram.messenger.zs;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.rv;
+import org.telegram.ui.qv;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class t0 {
     public Object a;
@@ -41,19 +41,19 @@ public final class t0 {
         }
     }
 
-    public static void c(rv rvVar) {
+    public static void c(qv qvVar) {
         t0 t0Var = new t0();
         t0Var.a = new j5(t0Var, 0);
-        t0Var.d = rvVar;
-        int i10 = d20.s0;
+        t0Var.d = qvVar;
+        int i10 = e20.s0;
         t0Var.g = new org.telegram.messenger.a(t0Var, 6);
         t0Var.f = i5.r(i10);
-        t0Var.e = zs.f(i10);
+        t0Var.e = at.f(i10);
         t0Var.c = new Handler(Looper.myLooper());
         if (t0Var.d(false)) {
             return;
         }
-        ((zs) t0Var.e).b((j5) t0Var.a, zs.O);
+        ((at) t0Var.e).b((j5) t0Var.a, at.O);
         ((Handler) t0Var.c).postDelayed((org.telegram.messenger.a) t0Var.g, 1000L);
     }
 
@@ -107,9 +107,9 @@ public final class t0 {
             return false;
         }
         if (!z11) {
-            zs zsVar = (zs) this.e;
-            if (zsVar != null) {
-                zsVar.n((j5) this.a, zs.O);
+            at atVar = (at) this.e;
+            if (atVar != null) {
+                atVar.n((j5) this.a, at.O);
             }
             Handler handler = (Handler) this.c;
             if (handler != null) {
@@ -117,9 +117,9 @@ public final class t0 {
             }
             this.b = true;
         }
-        rv rvVar = (rv) this.d;
-        LaunchActivity launchActivity = (LaunchActivity) rvVar.b;
-        Intent intent = (Intent) rvVar.c;
+        qv qvVar = (qv) this.d;
+        LaunchActivity launchActivity = (LaunchActivity) qvVar.b;
+        Intent intent = (Intent) qvVar.c;
         Pattern pattern = LaunchActivity.D1;
         launchActivity.W(intent, true, false, false, null, true, false);
         return true;

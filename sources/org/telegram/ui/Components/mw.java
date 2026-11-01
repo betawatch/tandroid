@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class mw {
     public final int a;
@@ -8,13 +8,13 @@ public final class mw {
     public final long c;
     public boolean e;
     public final /* synthetic */ int g;
-    public final /* synthetic */ org.telegram.messenger.us h;
+    public final /* synthetic */ org.telegram.messenger.vs h;
     public boolean d = false;
     public long f = -1;
 
-    public mw(org.telegram.messenger.us usVar, int i10, long j10, long j11, int i11) {
+    public mw(org.telegram.messenger.vs vsVar, int i10, long j10, long j11, int i11) {
         this.g = i11;
-        this.h = usVar;
+        this.h = vsVar;
         this.a = i10;
         this.b = j10;
         this.c = j11;
@@ -41,7 +41,7 @@ public final class mw {
             return;
         }
         if (this.e) {
-            org.telegram.messenger.vp.r1(this.a).z4(2, 0, this.b, this.c, null);
+            org.telegram.messenger.wp.r1(this.a).z4(2, 0, this.b, this.c, null);
         }
         this.f = -1L;
     }
@@ -53,7 +53,7 @@ public final class mw {
             } else if (System.currentTimeMillis() - this.f > 2000) {
                 this.e = true;
                 this.f = System.currentTimeMillis();
-                org.telegram.messenger.vp.r1(this.a).z4(10, 0, this.b, this.c, null);
+                org.telegram.messenger.wp.r1(this.a).z4(10, 0, this.b, this.c, null);
             }
         }
     }

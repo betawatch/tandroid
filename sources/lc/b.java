@@ -2,11 +2,11 @@ package lc;
 
 import java.util.ArrayList;
 import org.telegram.messenger.i0;
-import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.d11;
 import org.telegram.ui.Wallet.y0;
 import org.telegram.ui.Wallet.z0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b extends b0 {
     public final /* synthetic */ int b;
@@ -38,7 +38,7 @@ public final class b extends b0 {
                         try {
                             try {
                                 v vVar2 = (v) aVar.b;
-                                i0.g3(new c11(y0Var.c, vVar2, y0Var.a, "connect error: " + z0.a(e), 13));
+                                i0.g3(new d11(y0Var.c, vVar2, y0Var.a, "connect error: " + z0.a(e), 13));
                             } catch (Throwable unused) {
                             }
                         } catch (Throwable unused2) {

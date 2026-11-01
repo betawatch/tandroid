@@ -8,14 +8,14 @@ import android.widget.ImageView;
 import java.util.Date;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
 import org.telegram.messenger.i0;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.a7;
@@ -25,11 +25,11 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u5;
 import org.telegram.ui.Components.ep;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.qv0;
 import org.telegram.ui.Components.r8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k extends og.d implements k6 {
     public final ImageView D;
@@ -39,7 +39,7 @@ public final class k extends og.d implements k6 {
     public TLRPC.User H;
     public TLRPC.Chat I;
     public TL_stories.TL_myBoost J;
-    public final pv0 K;
+    public final qv0 K;
     public int L;
     public final boolean[] s;
     public final ep w;
@@ -50,7 +50,7 @@ public final class k extends og.d implements k6 {
         super(context, p6Var);
         this.s = new boolean[1];
         this.G = true;
-        this.K = new pv0(this);
+        this.K = new qv0(this);
         this.d.setTypeface(i0.o());
         this.f.setVisibility(8);
         if (z11) {
@@ -59,7 +59,7 @@ public final class k extends og.d implements k6 {
             epVar.b(t6.B5, t6.h5, t6.k7);
             epVar.setDrawUnchecked(false);
             epVar.setDrawBackgroundAsArc(3);
-            boolean z13 = cd.X;
+            boolean z13 = dd.X;
             addView(epVar, b6.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
             d();
         } else if (z10) {
@@ -74,7 +74,7 @@ public final class k extends og.d implements k6 {
             epVar2.setDrawBackgroundAsArc(10);
             addView(epVar2);
             epVar2.a(false, false);
-            epVar2.setLayoutParams(b6.d(24, 24.0f, (cd.X ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+            epVar2.setLayoutParams(b6.d(24, 24.0f, (dd.X ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
             d();
         } else {
             this.w = null;
@@ -87,14 +87,14 @@ public final class k extends og.d implements k6 {
         int i10 = t6.od;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         a7.t(imageView, i10, p6Var, mode);
-        addView(imageView, b6.d(32, 32.0f, (cd.X ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView, b6.d(32, 32.0f, (dd.X ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.D = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.menu_phone);
         int i11 = t6.Ci;
         a7.t(imageView2, i11, p6Var, mode);
-        boolean z14 = cd.X;
+        boolean z14 = dd.X;
         addView(imageView2, b6.d(32, 32.0f, (z14 ? 3 : 5) | 16, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f));
         imageView2.setVisibility(8);
         ImageView imageView3 = new ImageView(context);
@@ -102,7 +102,7 @@ public final class k extends og.d implements k6 {
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.menu_videocall);
         a7.t(imageView3, i11, p6Var, mode);
-        addView(imageView3, b6.d(32, 32.0f, (cd.X ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView3, b6.d(32, 32.0f, (dd.X ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         imageView3.setVisibility(8);
     }
 
@@ -253,9 +253,9 @@ public final class k extends og.d implements k6 {
         }
         boolean V = w3.V(chat);
         if (i10 >= 1) {
-            L0 = cd.G(i10, V ? "Subscribers" : "Members", new Object[0]);
+            L0 = dd.G(i10, V ? "Subscribers" : "Members", new Object[0]);
         } else {
-            L0 = cd.L0(V ? 2131751391 : 2131754876, null);
+            L0 = dd.L0(V ? 2131751391 : 2131754876, null);
         }
         setSubtitle(L0);
         a7.Y(this.e, t6.r5, this.a);
@@ -291,7 +291,7 @@ public final class k extends og.d implements k6 {
     public void setBoost(TL_stories.TL_myBoost tL_myBoost) {
         this.x.setVisibility(8);
         this.J = tL_myBoost;
-        TLRPC.Chat L0 = vp.r1(d20.s0).L0(Long.valueOf(-o5.o(tL_myBoost.peer)));
+        TLRPC.Chat L0 = wp.r1(e20.s0).L0(Long.valueOf(-o5.o(tL_myBoost.peer)));
         this.I = L0;
         r8 r8Var = this.b;
         r8Var.q(L0);
@@ -306,14 +306,14 @@ public final class k extends og.d implements k6 {
         p6 p6Var = this.a;
         u5 u5Var = this.e;
         a7.Y(u5Var, i10, p6Var);
-        setSubtitle(cd.a0(null, null, 2131753661, cd.D0().n0().format(new Date(tL_myBoost.expires * 1000))));
+        setSubtitle(dd.a0(null, null, 2131753661, dd.D0().n0().format(new Date(tL_myBoost.expires * 1000))));
         int i11 = tL_myBoost.cooldown_until_date;
         if (i11 <= 0) {
             cVar.setAlpha(1.0f);
             u5Var.setAlpha(1.0f);
             i(false, 1.0f);
         } else {
-            setSubtitle(cd.a0(null, null, 2131753594, f((i11 * 1000) - System.currentTimeMillis())));
+            setSubtitle(dd.a0(null, null, 2131753594, f((i11 * 1000) - System.currentTimeMillis())));
             cVar.setAlpha(0.65f);
             u5Var.setAlpha(0.65f);
             i(false, 0.3f);
@@ -340,20 +340,20 @@ public final class k extends og.d implements k6 {
         g9 g9Var = this.c;
         g9Var.setRoundRadius(L);
         g9Var.e(user, r8Var);
-        String p5 = h20.p(user);
+        String p5 = i20.p(user);
         og.c cVar = this.d;
         cVar.k(p5);
         boolean[] zArr = this.s;
         zArr[0] = false;
-        if (h20.t(user)) {
+        if (i20.t(user)) {
             int i10 = user.bot_active_users;
             if (i10 > 0) {
-                setSubtitle(cd.H(',', "BotUsers", i10));
+                setSubtitle(dd.H(',', "BotUsers", i10));
             } else {
-                setSubtitle(cd.L0(2131753156, null));
+                setSubtitle(dd.L0(2131753156, null));
             }
         } else {
-            setSubtitle(cd.d0(d20.s0, user, zArr, null));
+            setSubtitle(dd.d0(e20.s0, user, zArr, null));
         }
         a7.Y(this.e, zArr[0] ? t6.n5 : t6.r5, this.a);
         ep epVar = this.w;
@@ -367,13 +367,13 @@ public final class k extends og.d implements k6 {
 
     @Override // org.telegram.ui.ActionBar.k6
     public final void updateColors() {
-        pv0 pv0Var;
+        qv0 qv0Var;
         og.c cVar;
         int x02;
         try {
-            if (this.H != null && (pv0Var = this.K) != null && (cVar = this.d) != null && (x02 = t6.x0(null, t6.z9, false)) != this.L) {
+            if (this.H != null && (qv0Var = this.K) != null && (cVar = this.d) != null && (x02 = t6.x0(null, t6.z9, false)) != this.L) {
                 this.L = x02;
-                pv0Var.a(this.H, x02, false);
+                qv0Var.a(this.H, x02, false);
                 cVar.invalidate();
             }
         } catch (Exception e) {

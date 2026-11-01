@@ -14,19 +14,19 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d00;
+import org.telegram.messenger.e00;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.l00;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.m00;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.w5;
-import org.telegram.ui.f11;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class y1 {
     public static final HashMap e = new HashMap();
@@ -118,16 +118,16 @@ public final class y1 {
         return null;
     }
 
-    public static w5 e(v0 v0Var, q20 q20Var) {
+    public static w5 e(v0 v0Var, r20 r20Var) {
         if (v0Var == null) {
-            q20Var.a(null);
+            r20Var.a(null);
             return null;
         }
         boolean[] zArr = {false};
         y1 y1Var = new y1();
         y1Var.a = v0Var.getUrl();
-        l00 l00Var = !v2.a ? null : new l00("WebInstantView");
-        q1 q1Var = new q1(l00.d(l00Var, "getHTML"), zArr, l00Var, y1Var, q20Var, 0);
+        m00 m00Var = !v2.a ? null : new m00("WebInstantView");
+        q1 q1Var = new q1(m00.d(m00Var, "getHTML"), zArr, m00Var, y1Var, r20Var, 0);
         System.currentTimeMillis();
         v0Var.evaluateJavascript(org.telegram.messenger.i0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "true"), new r1(y1Var, v0Var, new File(org.telegram.messenger.i0.E0(), "archive.mht"), q1Var, 0));
         return new w5(zArr, 20);
@@ -185,7 +185,7 @@ public final class y1 {
                 ArrayList arrayList = (ArrayList) f.get(x1Var.b);
                 if (arrayList == null) {
                     f.put(x1Var.b, new ArrayList());
-                    new c1(new f11(20, y1Var, x1Var)).execute(x1Var.b);
+                    new c1(new d01(21, y1Var, x1Var)).execute(x1Var.b);
                     return;
                 }
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -199,7 +199,7 @@ public final class y1 {
             f1 f1Var = (f1) e1Var.a.get("content-type");
             if ((f1Var == null ? null : f1Var.a).contains("svg")) {
                 if (x1Var.d > 0 && x1Var.e > 0) {
-                    decodeStream = d00.g(e1Var.a(), org.telegram.messenger.i0.L(x1Var.d), org.telegram.messenger.i0.L(x1Var.e));
+                    decodeStream = e00.g(e1Var.a(), org.telegram.messenger.i0.L(x1Var.d), org.telegram.messenger.i0.L(x1Var.e));
                 }
                 return;
             }
@@ -461,31 +461,31 @@ public final class y1 {
                             break;
                         }
                         break;
-                    case zs.i1 /* 97 */:
+                    case at.i1 /* 97 */:
                         if (optString.equals("a")) {
                             c10 = 3;
                             break;
                         }
                         break;
-                    case zs.j1 /* 98 */:
+                    case at.j1 /* 98 */:
                         if (optString.equals("b")) {
                             c10 = 4;
                             break;
                         }
                         break;
-                    case zs.q1 /* 105 */:
+                    case at.q1 /* 105 */:
                         if (optString.equals("i")) {
                             c10 = 5;
                             break;
                         }
                         break;
-                    case zs.x1 /* 112 */:
+                    case at.x1 /* 112 */:
                         if (optString.equals("p")) {
                             c10 = 6;
                             break;
                         }
                         break;
-                    case zs.A1 /* 115 */:
+                    case at.A1 /* 115 */:
                         if (optString.equals("s")) {
                             c10 = 7;
                             break;
@@ -862,35 +862,35 @@ public final class y1 {
                         }
                         c10 = 65535;
                         break;
-                    case zs.i1 /* 97 */:
+                    case at.i1 /* 97 */:
                         if (optString.equals("a")) {
                             c10 = 1;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case zs.j1 /* 98 */:
+                    case at.j1 /* 98 */:
                         if (optString.equals("b")) {
                             c10 = 2;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case zs.q1 /* 105 */:
+                    case at.q1 /* 105 */:
                         if (optString.equals("i")) {
                             c10 = 3;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case zs.x1 /* 112 */:
+                    case at.x1 /* 112 */:
                         if (optString.equals("p")) {
                             c10 = 4;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case zs.A1 /* 115 */:
+                    case at.A1 /* 115 */:
                         if (optString.equals("s")) {
                             c10 = 5;
                             break;

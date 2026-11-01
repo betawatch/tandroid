@@ -3,16 +3,16 @@ package rh;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.mb;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u5 {
     public final int a;
@@ -45,11 +45,11 @@ public final class u5 {
         if (e != null) {
             e.l.addAll(0, arrayList);
             e.n = arrayList.size() + e.n;
-            zs.f(i13).k(zs.G3, Long.valueOf(j10), e);
+            at.f(i13).k(at.G3, Long.valueOf(j10), e);
             n(i10);
         }
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
-        updatestargiftcollection.peer = vp.r1(i13).i1(j10);
+        updatestargiftcollection.peer = wp.r1(i13).i1(j10);
         updatestargiftcollection.collection_id = i10;
         updatestargiftcollection.flags |= 4;
         int size = arrayList.size();
@@ -64,7 +64,7 @@ public final class u5 {
                 updatestargiftcollection.add_stargift.add(tL_inputSavedStarGiftUser);
             } else if (savedStarGift.saved_id != 0) {
                 TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat = new TL_stars.TL_inputSavedStarGiftChat();
-                tL_inputSavedStarGiftChat.peer = vp.r1(i13).i1(j10);
+                tL_inputSavedStarGiftChat.peer = wp.r1(i13).i1(j10);
                 tL_inputSavedStarGiftChat.saved_id = savedStarGift.saved_id;
                 updatestargiftcollection.add_stargift.add(tL_inputSavedStarGiftChat);
             } else {
@@ -74,7 +74,7 @@ public final class u5 {
         ConnectionsManager.getInstance(i13).sendRequest(updatestargiftcollection, new s5(this, i11));
     }
 
-    public final void b(String str, q20 q20Var) {
+    public final void b(String str, r20 r20Var) {
         if (this.k) {
             return;
         }
@@ -93,9 +93,9 @@ public final class u5 {
         v5Var.j = true;
         this.h.put(-1, v5Var);
         TL_stars.createStarGiftCollection createstargiftcollection = new TL_stars.createStarGiftCollection();
-        createstargiftcollection.peer = vp.r1(i10).i1(j10);
+        createstargiftcollection.peer = wp.r1(i10).i1(j10);
         createstargiftcollection.title = str;
-        ConnectionsManager.getInstance(i10).sendRequest(createstargiftcollection, new mb(this, tL_starGiftCollection, v5Var, q20Var, 16));
+        ConnectionsManager.getInstance(i10).sendRequest(createstargiftcollection, new mb(this, tL_starGiftCollection, v5Var, r20Var, 16));
     }
 
     public final TL_stars.TL_starGiftCollection c(int i10) {
@@ -150,7 +150,7 @@ public final class u5 {
     public final boolean h() {
         long j10 = this.b;
         int i10 = this.a;
-        return j10 >= 0 ? j10 == 0 || j10 == d20.i(i10).e() : org.telegram.messenger.w3.w(5, vp.r1(i10).L0(Long.valueOf(-j10)));
+        return j10 >= 0 ? j10 == 0 || j10 == e20.i(i10).e() : org.telegram.messenger.w3.w(5, wp.r1(i10).L0(Long.valueOf(-j10)));
     }
 
     public final void i() {
@@ -160,7 +160,7 @@ public final class u5 {
         this.c = true;
         TL_stars.getStarGiftCollections getstargiftcollections = new TL_stars.getStarGiftCollections();
         int i10 = this.a;
-        getstargiftcollections.peer = vp.r1(i10).i1(this.b);
+        getstargiftcollections.peer = wp.r1(i10).i1(this.b);
         ArrayList arrayList = this.e;
         int size = arrayList.size();
         long j10 = 0;
@@ -168,7 +168,7 @@ public final class u5 {
         while (i11 < size) {
             Object obj = arrayList.get(i11);
             i11++;
-            j10 = ui.p(j10, ((TL_stars.TL_starGiftCollection) obj).hash);
+            j10 = vi.p(j10, ((TL_stars.TL_starGiftCollection) obj).hash);
         }
         getstargiftcollections.hash = j10;
         this.i = ConnectionsManager.getInstance(i10).sendRequest(getstargiftcollections, new s5(this, 0));
@@ -228,7 +228,7 @@ public final class u5 {
         n(i10);
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
         int i13 = this.a;
-        vp r12 = vp.r1(i13);
+        wp r12 = wp.r1(i13);
         long j10 = this.b;
         updatestargiftcollection.peer = r12.i1(j10);
         updatestargiftcollection.collection_id = i10;
@@ -249,7 +249,7 @@ public final class u5 {
                 z11 = z13;
             } else if (savedStarGift3.saved_id != 0) {
                 TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat = new TL_stars.TL_inputSavedStarGiftChat();
-                tL_inputSavedStarGiftChat.peer = vp.r1(i13).i1(j10);
+                tL_inputSavedStarGiftChat.peer = wp.r1(i13).i1(j10);
                 z10 = z12;
                 z11 = z13;
                 tL_inputSavedStarGiftChat.saved_id = savedStarGift3.saved_id;
@@ -265,11 +265,11 @@ public final class u5 {
         boolean z14 = z12;
         updatestargiftcollection.delete_stargift.size();
         ConnectionsManager.getInstance(i13).sendRequest(updatestargiftcollection, new s5(this, i14));
-        zs f7 = zs.f(i13);
+        at f7 = at.f(i13);
         Object[] objArr = new Object[2];
         objArr[z13 ? 1 : 0] = Long.valueOf(j10);
         objArr[z14 ? 1 : 0] = e;
-        f7.k(zs.G3, objArr);
+        f7.k(at.G3, objArr);
     }
 
     public final void l(TL_stars.SavedStarGift savedStarGift, int i10, boolean z10) {
@@ -310,7 +310,7 @@ public final class u5 {
                 c10.flags |= 1;
                 c10.icon = savedStarGift.gift.getDocument();
             }
-            zs.f(this.a).k(zs.H3, Long.valueOf(this.b), this);
+            at.f(this.a).k(at.H3, Long.valueOf(this.b), this);
         }
     }
 }

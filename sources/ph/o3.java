@@ -5,29 +5,29 @@ import android.content.Context;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.p4;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.p10;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.o10;
 import rh.h8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class o3 extends p51 {
+public final class o3 extends q51 {
     public final /* synthetic */ int P;
     public final /* synthetic */ Object Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o3(KeyEvent.Callback callback, tk0 tk0Var, Context context, int i10, j20 j20Var, p6 p6Var, int i11) {
-        super(tk0Var, context, i10, 0, false, j20Var, p6Var);
+    public /* synthetic */ o3(KeyEvent.Callback callback, uk0 uk0Var, Context context, int i10, k20 k20Var, p6 p6Var, int i11) {
+        super(uk0Var, context, i10, 0, false, k20Var, p6Var);
         this.P = i11;
         this.Q = callback;
     }
 
-    @Override // org.telegram.ui.Components.p51, s4.g0
+    @Override // org.telegram.ui.Components.q51, s4.g0
     public void t(s4.c1 c1Var, int i10) {
         th.c0 c0Var;
         th.h0 h0Var;
@@ -50,7 +50,7 @@ public final class o3 extends p51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p51, s4.g0
+    @Override // org.telegram.ui.Components.q51, s4.g0
     public s4.c1 w(ViewGroup viewGroup, int i10) {
         p6 p6Var;
         p6 p6Var2;
@@ -120,7 +120,7 @@ public final class o3 extends p51 {
         return super.w(viewGroup, i10);
     }
 
-    @Override // org.telegram.ui.Components.p51, s4.g0
+    @Override // org.telegram.ui.Components.q51, s4.g0
     public void y(s4.c1 c1Var) {
         th.c0 c0Var;
         th.h0 h0Var;
@@ -144,9 +144,9 @@ public final class o3 extends p51 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o3(p10 p10Var, tk0 tk0Var, Activity activity, int i10, int i11, j20 j20Var, p6 p6Var, int i12) {
-        super(tk0Var, activity, i10, i11, true, j20Var, p6Var);
+    public /* synthetic */ o3(o10 o10Var, uk0 uk0Var, Activity activity, int i10, int i11, k20 k20Var, p6 p6Var, int i12) {
+        super(uk0Var, activity, i10, i11, true, k20Var, p6Var);
         this.P = i12;
-        this.Q = p10Var;
+        this.Q = o10Var;
     }
 }

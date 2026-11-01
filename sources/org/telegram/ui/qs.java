@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qs implements org.telegram.ui.Components.ik0, r0.m, org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class qs implements org.telegram.ui.Components.jk0, r0.m, org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ ContactsActivity a;
 
     public /* synthetic */ qs(ContactsActivity contactsActivity) {
@@ -22,12 +22,12 @@ public final /* synthetic */ class qs implements org.telegram.ui.Components.ik0,
         ContactsActivity contactsActivity = this.a;
         contactsActivity.k0 = i10;
         ei.b.e(contactsActivity.d, I0.b, i10, org.telegram.ui.ActionBar.l.getCurrentActionBarHeight(), contactsActivity.h0);
+        contactsActivity.j0();
         contactsActivity.i0();
-        contactsActivity.h0();
         return r0.j1.b;
     }
 
-    @Override // org.telegram.ui.Components.ik0
+    @Override // org.telegram.ui.Components.jk0
     public boolean f(int i10, View view) {
         ContactsActivity contactsActivity = this.a;
         s4.g0 adapter = contactsActivity.d.getAdapter();
@@ -45,7 +45,7 @@ public final /* synthetic */ class qs implements org.telegram.ui.Components.ik0,
         }
         boolean z10 = contactsActivity.I;
         if (!z10 && !contactsActivity.J && (view instanceof org.telegram.ui.Cells.pa)) {
-            contactsActivity.o0((org.telegram.ui.Cells.pa) view);
+            contactsActivity.p0((org.telegram.ui.Cells.pa) view);
             return true;
         }
         if (z10 || contactsActivity.J || !(view instanceof org.telegram.ui.Cells.k6)) {
@@ -53,7 +53,7 @@ public final /* synthetic */ class qs implements org.telegram.ui.Components.ik0,
         }
         org.telegram.ui.Cells.k6 k6Var = (org.telegram.ui.Cells.k6) view;
         if (k6Var.getUser() != null && k6Var.getUser().contact) {
-            contactsActivity.o0(k6Var);
+            contactsActivity.p0(k6Var);
         }
         return true;
     }
@@ -81,19 +81,19 @@ public final /* synthetic */ class qs implements org.telegram.ui.Components.ik0,
                 hashMap.put(user, tL_contact);
             }
             contactsController.d(false);
-            org.telegram.messenger.zs notificationCenter = contactsController.getNotificationCenter();
-            int i13 = org.telegram.messenger.vp.D8;
-            notificationCenter.k(org.telegram.messenger.zs.r, 1);
-            contactsController.getNotificationCenter().k(org.telegram.messenger.zs.O, new Object[0]);
+            org.telegram.messenger.at notificationCenter = contactsController.getNotificationCenter();
+            int i13 = org.telegram.messenger.wp.D8;
+            notificationCenter.k(org.telegram.messenger.at.r, 1);
+            contactsController.getNotificationCenter().k(org.telegram.messenger.at.O, new Object[0]);
             org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(parentActivity, contactsActivity.getResourceProvider());
             obVar.setTimer();
-            obVar.b.setText(org.telegram.messenger.cd.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
+            obVar.b.setText(org.telegram.messenger.dd.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
             org.telegram.ui.Components.ub ubVar = new org.telegram.ui.Components.ub(parentActivity, contactsActivity.getResourceProvider(), true, true);
             ubVar.b = new org.telegram.messenger.e4(25, contactsController, hashMap);
             ubVar.c = new org.telegram.messenger.z4(contactsController, arrayList, 1);
             obVar.setButton(ubVar);
             org.telegram.ui.Components.wb.g(contactsActivity, obVar, 5000).j();
         }
-        contactsActivity.l0();
+        contactsActivity.m0();
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k7 implements ua {
     public final /* synthetic */ int a;
@@ -100,18 +100,18 @@ public final class k7 implements ua {
                 R = org.telegram.messenger.i0.L(72.0f);
                 break;
             case 4:
-                FrameLayout frameLayout = ((cx0) this.b).s1;
+                FrameLayout frameLayout = ((dx0) this.b).s1;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
                 return 0;
             case 5:
                 org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.b;
-                if (!(z0Var.getParent() instanceof xh.h3)) {
+                if (!(z0Var.getParent() instanceof xh.i3)) {
                     return 0;
                 }
-                xh.h3 h3Var = (xh.h3) z0Var.getParent();
-                return (int) ((h3Var.getSwipeOffsetY() + h3Var.getOffsetY()) - h3Var.getTopActionBarOffsetY());
+                xh.i3 i3Var = (xh.i3) z0Var.getParent();
+                return (int) ((i3Var.getSwipeOffsetY() + i3Var.getOffsetY()) - i3Var.getTopActionBarOffsetY());
             case 6:
                 return 0;
             case 7:

@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final /* synthetic */ class h0 implements Runnable {
     */
     public final void run() {
         int i10;
-        org.telegram.ui.Components.p51 p51Var;
-        org.telegram.ui.Components.h01 h01Var;
+        org.telegram.ui.Components.q51 q51Var;
+        org.telegram.ui.Components.i01 i01Var;
         int i11 = this.a;
         int i12 = -1;
         boolean z10 = false;
@@ -76,13 +76,13 @@ public final /* synthetic */ class h0 implements Runnable {
                 p4 p4Var = (p4) ((m4) obj2).b;
                 if (!arrayList.isEmpty()) {
                     for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                        p4Var.getMessagesController().F4(p4Var.Y() * 60, ((Long) arrayList.get(i14)).longValue());
+                        p4Var.getMessagesController().F4(p4Var.Z() * 60, ((Long) arrayList.get(i14)).longValue());
                     }
-                    if (p4Var.Y() > 0) {
-                        org.telegram.messenger.z20.s(org.telegram.messenger.cd.a0("AutodeleteTimerEnabledForChats", null, 2131753778, org.telegram.messenger.cd.c0(p4Var.Y() * 60), org.telegram.messenger.cd.G(arrayList.size(), "Chats", Integer.valueOf(arrayList.size()))), org.telegram.ui.Components.cc.a0(p4Var), R.raw.fire_on, 36);
+                    if (p4Var.Z() > 0) {
+                        org.telegram.messenger.a30.s(org.telegram.messenger.dd.a0("AutodeleteTimerEnabledForChats", null, 2131753778, org.telegram.messenger.dd.c0(p4Var.Z() * 60), org.telegram.messenger.dd.G(arrayList.size(), "Chats", Integer.valueOf(arrayList.size()))), org.telegram.ui.Components.cc.a0(p4Var), R.raw.fire_on, 36);
                         break;
                     } else {
-                        org.telegram.ui.Components.cc.a0(p4Var).Q(R.raw.fire_off, 36, org.telegram.messenger.cd.a0("AutodeleteTimerDisabledForChats", null, 2131753779, org.telegram.messenger.cd.G(arrayList.size(), "Chats", Integer.valueOf(arrayList.size())))).j();
+                        org.telegram.ui.Components.cc.a0(p4Var).Q(R.raw.fire_off, 36, org.telegram.messenger.dd.a0("AutodeleteTimerDisabledForChats", null, 2131753779, org.telegram.messenger.dd.G(arrayList.size(), "Chats", Integer.valueOf(arrayList.size())))).j();
                         break;
                     }
                 }
@@ -96,9 +96,9 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 t5Var.h0.animate().cancel();
                 t5Var.h0.animate().alpha(0.0f).setDuration(100L).setStartDelay(0L).setListener(new bg.e(t5Var, 28));
-                t5Var.H0(true);
                 t5Var.I0(true);
-                t5Var.G0(null);
+                t5Var.J0(true);
+                t5Var.H0(null);
                 break;
             case 5:
                 x5 x5Var = (x5) obj2;
@@ -125,15 +125,15 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 break;
             case 6:
-                y6.b0((y6) obj2, (org.telegram.ui.ActionBar.x1) obj);
+                y6.c0((y6) obj2, (org.telegram.ui.ActionBar.x1) obj);
                 break;
             case 7:
-                org.telegram.ui.Components.nh0 nh0Var = new org.telegram.ui.Components.nh0((Context) obj2, org.telegram.messenger.cd.L0(2131749180, null), ((String[]) obj)[0], org.telegram.messenger.cd.L0(2131746524, null), false);
-                nh0Var.I0();
-                nh0Var.show();
+                org.telegram.ui.Components.oh0 oh0Var = new org.telegram.ui.Components.oh0((Context) obj2, org.telegram.messenger.dd.L0(2131749180, null), ((String[]) obj)[0], org.telegram.messenger.dd.L0(2131746524, null), false);
+                oh0Var.I0();
+                oh0Var.show();
                 break;
             case 8:
-                ((x8) obj2).b.h0(((TLRPC.Message) i0.a.g(1, ((g9) obj).c)).id, 100);
+                ((x8) obj2).b.i0(((TLRPC.Message) i0.a.g(1, ((g9) obj).c)).id, 100);
                 break;
             case 9:
                 u9 u9Var = (u9) obj2;
@@ -149,12 +149,12 @@ public final /* synthetic */ class h0 implements Runnable {
                 break;
             case 10:
                 u9 u9Var2 = (u9) obj2;
-                org.telegram.messenger.is isVar = (org.telegram.messenger.is) obj;
-                u9Var2.h.setText(isVar.p);
+                org.telegram.messenger.js jsVar = (org.telegram.messenger.js) obj;
+                u9Var2.h.setText(jsVar.p);
                 u9Var2.h.animate().setDuration(200L).alpha(1.0f).setInterpolator(org.telegram.ui.Components.gr.f).start();
                 t9 t9Var2 = u9Var2.M;
                 if (t9Var2 != null) {
-                    t9Var2.X0(isVar);
+                    t9Var2.X0(jsVar);
                 }
                 org.telegram.messenger.i0.h3(new k9(u9Var2, 3), 1200L);
                 break;
@@ -174,8 +174,8 @@ public final /* synthetic */ class h0 implements Runnable {
                     rectF3.set(rectF);
                     rectF2.set(rectF);
                     if (pointFArr == null) {
-                        u9.h0(rectF, pointFArr2);
-                        u9.h0(rectF, pointFArr3);
+                        u9.i0(rectF, pointFArr2);
+                        u9.i0(rectF, pointFArr3);
                     } else {
                         for (int i16 = 0; i16 < 4; i16++) {
                             PointF pointF = pointFArr2[i16];
@@ -198,7 +198,7 @@ public final /* synthetic */ class h0 implements Runnable {
                             }
                             rectF3.set(rectF);
                             if (pointFArr != null) {
-                                u9.h0(rectF3, pointFArr3);
+                                u9.i0(rectF3, pointFArr3);
                             } else {
                                 for (int i18 = 0; i18 < 4; i18++) {
                                     PointF pointF6 = pointFArr3[i18];
@@ -223,12 +223,12 @@ public final /* synthetic */ class h0 implements Runnable {
                 u9Var3.fragmentView.invalidate();
                 break;
             case 12:
-                oa.a0((oa) obj2, (String) obj);
+                oa.b0((oa) obj2, (String) obj);
                 break;
             case 13:
                 sb sbVar = (sb) obj2;
-                org.telegram.ui.Components.cc.a0(sbVar).Q(R.raw.ic_ban, 36, org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0(null, null, 2131746074, org.telegram.messenger.h20.j((TLRPC.User) obj, true)))).k(false);
-                sbVar.Z0();
+                org.telegram.ui.Components.cc.a0(sbVar).Q(R.raw.ic_ban, 36, org.telegram.messenger.i0.W2(org.telegram.messenger.dd.a0(null, null, 2131746074, org.telegram.messenger.i20.j((TLRPC.User) obj, true)))).k(false);
+                sbVar.a1();
                 break;
             case 14:
                 sb sbVar2 = (sb) obj2;
@@ -251,13 +251,13 @@ public final /* synthetic */ class h0 implements Runnable {
             case 16:
                 zc zcVar = (zc) obj2;
                 zcVar.getClass();
-                zcVar.presentFragment(u61.f0((TLRPC.Chat) obj, true));
+                zcVar.presentFragment(s61.g0((TLRPC.Chat) obj, true));
                 break;
             case 17:
                 List list = (List) obj;
                 xc xcVar = ((wc) obj2).b;
                 int i20 = xcVar.a;
-                w71 w71Var = xcVar.d;
+                u71 u71Var = xcVar.d;
                 ArrayList arrayList3 = xcVar.c;
                 if (list != null && !list.isEmpty()) {
                     xcVar.n = true;
@@ -287,15 +287,15 @@ public final /* synthetic */ class h0 implements Runnable {
                     if (vcVar != null) {
                         vcVar.f();
                     }
-                    w71Var.animate().alpha(1.0f).setDuration(150L).start();
+                    u71Var.animate().alpha(1.0f).setDuration(150L).start();
                     org.telegram.ui.Components.zz zzVar = xcVar.e;
                     if (xcVar.n) {
                         org.telegram.messenger.i0.Y3(zzVar, false, 1.0f, true, true);
                     } else {
                         org.telegram.messenger.i0.Y3(zzVar, true, 1.0f, true, true);
                     }
-                    if (i12 >= 0 && (w71Var.getLayoutManager() instanceof s4.a0)) {
-                        ((s4.a0) w71Var.getLayoutManager()).h1(i12, (org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(83.0f)) / 2);
+                    if (i12 >= 0 && (u71Var.getLayoutManager() instanceof s4.a0)) {
+                        ((s4.a0) u71Var.getLayoutManager()).h1(i12, (org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(83.0f)) / 2);
                         break;
                     }
                 }
@@ -311,7 +311,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 kdVar.k0 = z10;
                 break;
             case 19:
-                kd.a0((kd) obj2, (String) obj);
+                kd.b0((kd) obj2, (String) obj);
                 break;
             case 20:
                 kd kdVar2 = (kd) obj2;
@@ -332,7 +332,7 @@ public final /* synthetic */ class h0 implements Runnable {
                         kdVar2.M.addView(mVar, w7.b6.o(-1, 72));
                         i24++;
                     }
-                    kdVar2.m0();
+                    kdVar2.n0();
                     break;
                 }
                 break;
@@ -343,9 +343,9 @@ public final /* synthetic */ class h0 implements Runnable {
                 if (tL_premium_boostsStatus2 != null) {
                     leVar.r0 = tL_premium_boostsStatus2.level;
                 }
-                org.telegram.ui.Components.u51 u51Var = leVar.X0;
-                if (u51Var != null && (p51Var = u51Var.f3) != null) {
-                    p51Var.O(true);
+                org.telegram.ui.Components.v51 v51Var = leVar.X0;
+                if (v51Var != null && (q51Var = v51Var.f3) != null) {
+                    q51Var.O(true);
                     break;
                 }
                 break;
@@ -354,18 +354,18 @@ public final /* synthetic */ class h0 implements Runnable {
                 break;
             case 23:
                 un unVar = (un) obj2;
-                org.telegram.ui.Components.h01[] h01VarArr = (org.telegram.ui.Components.h01[]) obj;
-                if (!unVar.Fb && (h01Var = h01VarArr[0]) != null) {
-                    h01VarArr[0] = null;
-                    if (unVar.x0 == h01Var) {
+                org.telegram.ui.Components.i01[] i01VarArr = (org.telegram.ui.Components.i01[]) obj;
+                if (!unVar.Gb && (i01Var = i01VarArr[0]) != null) {
+                    i01VarArr[0] = null;
+                    if (unVar.x0 == i01Var) {
                         unVar.x0 = null;
                     }
-                    org.telegram.messenger.i0.E2(h01Var);
+                    org.telegram.messenger.i0.E2(i01Var);
                     break;
                 }
                 break;
             case 24:
-                un.b0((un) obj2, (org.telegram.ui.Components.z60) obj);
+                un.a0((un) obj2, (org.telegram.ui.Components.z60) obj);
                 break;
             case 25:
                 un unVar2 = (un) obj2;
@@ -376,7 +376,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 unVar2.N1.u();
                 break;
             case 26:
-                un.Y((un) obj2, (TLRPC.TL_inlineBotWebView) obj);
+                un.n1((un) obj2, (TLRPC.TL_inlineBotWebView) obj);
                 break;
             case 27:
                 ((pa) obj2).a((TLRPC.User) obj);
@@ -384,7 +384,7 @@ public final /* synthetic */ class h0 implements Runnable {
             case 28:
                 un unVar3 = (un) obj2;
                 unVar3.getClass();
-                unVar3.presentFragment(ProfileActivity.z4(((TLRPC.User[]) obj)[0].id));
+                unVar3.presentFragment(ProfileActivity.A4(((TLRPC.User[]) obj)[0].id));
                 break;
             default:
                 un unVar4 = (un) obj2;

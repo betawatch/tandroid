@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class vf extends j1.b {
     public final /* synthetic */ wf o;
@@ -51,7 +51,7 @@ public final class vf extends j1.b {
             RectF rectF = chatActivityEnterView.S3;
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
             cVar.h(chatActivityEnterView.U3);
-            cVar.o(org.telegram.messenger.cd.L0(chatActivityEnterView.p4 > 0.5f ? 2131754927 : 2131754930, null));
+            cVar.o(org.telegram.messenger.dd.L0(chatActivityEnterView.p4 > 0.5f ? 2131754927 : 2131754930, null));
             return;
         }
         if (i10 == 4) {
@@ -59,7 +59,7 @@ public final class vf extends j1.b {
             RectF rectF2 = wfVar.J;
             rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
             cVar.h(chatActivityEnterView.U3);
-            cVar.o(org.telegram.messenger.cd.L0(chatActivityEnterView.O ? 2131754934 : 2131754935, null));
+            cVar.o(org.telegram.messenger.dd.L0(chatActivityEnterView.O ? 2131754934 : 2131754935, null));
         }
     }
 }

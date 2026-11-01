@@ -13,7 +13,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z extends ha {
     public final FrameLayout P1;
@@ -32,7 +32,7 @@ public final class z extends ha {
     public f c2;
     public f d2;
     public int e2;
-    public p51 f2;
+    public q51 f2;
     public int g2;
 
     public z(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
@@ -110,13 +110,13 @@ public final class z extends ha {
                 }
             }
         });
-        org.telegram.ui.Cells.m3 m3Var = new org.telegram.ui.Cells.m3(context, org.telegram.messenger.cd.L0(2131754965, null), false, false, ((org.telegram.messenger.l0) org.telegram.messenger.vp.r1(this.a).y7.Q.a).c, p6Var);
+        org.telegram.ui.Cells.m3 m3Var = new org.telegram.ui.Cells.m3(context, org.telegram.messenger.dd.L0(2131754965, null), false, false, ((org.telegram.messenger.l0) org.telegram.messenger.wp.r1(this.a).y7.Q.a).c, p6Var);
         this.S1 = m3Var;
         m3Var.d.addTextChangedListener(new v(this, 0));
-        org.telegram.ui.Cells.m3 m3Var2 = new org.telegram.ui.Cells.m3(context, org.telegram.messenger.cd.L0(2131754972, null), true, false, ((org.telegram.messenger.l0) org.telegram.messenger.vp.r1(this.a).y7.R.a).c, p6Var);
+        org.telegram.ui.Cells.m3 m3Var2 = new org.telegram.ui.Cells.m3(context, org.telegram.messenger.dd.L0(2131754972, null), true, false, ((org.telegram.messenger.l0) org.telegram.messenger.wp.r1(this.a).y7.R.a).c, p6Var);
         this.T1 = m3Var2;
         final int i14 = 2;
-        m3Var2.setShowLimitWhenNear(Math.max(100, ((org.telegram.messenger.l0) org.telegram.messenger.vp.r1(this.a).y7.R.a).c / 2));
+        m3Var2.setShowLimitWhenNear(Math.max(100, ((org.telegram.messenger.l0) org.telegram.messenger.wp.r1(this.a).y7.R.a).c / 2));
         m3Var2.d.addTextChangedListener(new v(this, 1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(8.0f));
@@ -166,9 +166,9 @@ public final class z extends ha {
         int i16 = org.telegram.ui.ActionBar.t6.a7;
         this.a0 = i16;
         v0(org.telegram.ui.ActionBar.t6.w0(i16, this.I0));
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i17 = this.t0;
-        tk0Var.setPadding(i17, 0, i17, org.telegram.messenger.i0.L(66.0f));
+        uk0Var.setPadding(i17, 0, i17, org.telegram.messenger.i0.L(66.0f));
         this.k1.setClipToPadding(false);
         this.k1.r1();
         this.k1.setOnItemClickListener(new mg.q0(7, this, p6Var));
@@ -201,26 +201,26 @@ public final class z extends ha {
         d.leftMargin = i20 + i21;
         d.rightMargin += i21;
         this.b.addView(frameLayout5, d);
-        vh.d i22 = org.telegram.messenger.z20.i(24, context, p6Var, true);
+        vh.d i22 = org.telegram.messenger.a30.i(24, context, p6Var, true);
         this.Y1 = i22;
-        i22.setText(org.telegram.messenger.cd.L0(2131754981, null));
+        i22.setText(org.telegram.messenger.dd.L0(2131754981, null));
         i22.setOnClickListener(new org.telegram.ui.ud(10, this, p6Var));
-        frameLayout4.addView(i22, w7.b6.e(-1, 48, org.telegram.messenger.zs.E1));
+        frameLayout4.addView(i22, w7.b6.e(-1, 48, org.telegram.messenger.at.E1));
         e1();
         this.f2.O(false);
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(tk0Var, getContext(), this.a, 0, true, new d(this, 2), this.I0);
-        this.f2 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(uk0Var, getContext(), this.a, 0, true, new d(this, 2), this.I0);
+        this.f2 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return org.telegram.messenger.cd.L0(this.b2 != null ? 2131754996 : 2131754988, null);
+        return org.telegram.messenger.dd.L0(this.b2 != null ? 2131754996 : 2131754988, null);
     }
 
     public final void d1() {
@@ -232,9 +232,9 @@ public final class z extends ha {
         xVar.setSaveState(1);
         y yVar = new y(this, xVar);
         this.a2 = yVar;
-        org.telegram.ui.z21[] z21VarArr = {yVar};
+        org.telegram.ui.x21[] x21VarArr = {yVar};
         yVar.showAsDropDown(this.Q1, org.telegram.messenger.i0.L(150.0f), -org.telegram.messenger.i0.L(390.0f), 80);
-        z21VarArr[0].b();
+        x21VarArr[0].b();
     }
 
     public final void e1() {

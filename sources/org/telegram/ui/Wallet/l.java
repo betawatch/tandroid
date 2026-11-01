@@ -2,9 +2,9 @@ package org.telegram.ui.Wallet;
 
 import android.view.View;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class l implements Runnable {
                 }
                 return;
             case 5:
-                ((y2) this.b).dismiss();
+                ((z2) this.b).dismiss();
                 return;
             case 6:
                 ((org.telegram.ui.Cells.s0) this.b).invalidate();
@@ -81,8 +81,8 @@ public final /* synthetic */ class l implements Runnable {
                 if (iiVar == null || iiVar.getScrollState() != 0) {
                     return;
                 }
-                u51 x02 = x5Var.j.x0();
-                if ((x02 == null || x02.getScrollState() == 0) && (d = x5Var.d(x5Var.c.e3)) != null) {
+                v51 y02 = x5Var.j.y0();
+                if ((y02 == null || y02.getScrollState() == 0) && (d = x5Var.d(x5Var.c.e3)) != null) {
                     s4.a0 a0Var = x5Var.c.e3;
                     a0Var.getClass();
                     int i10 = new int[]{0, s4.n0.z(d) - a0Var.F()}[1];
@@ -137,7 +137,7 @@ public final /* synthetic */ class l implements Runnable {
                 ((org.telegram.ui.Cells.y3) this.b).requestLayout();
                 return;
             default:
-                ((ja) this.b).Y();
+                ((ja) this.b).Z();
                 return;
         }
     }

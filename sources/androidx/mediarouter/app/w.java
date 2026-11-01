@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import m.g3;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.q4;
@@ -35,7 +35,7 @@ import org.telegram.ui.un;
 import s4.c1;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -236,7 +236,7 @@ public final class w implements View.OnClickListener {
                 bi biVar = new bi(unVar.getParentActivity(), unVar, false, false, false, unVar.getResourceProvider());
                 dpVar.O1 = biVar;
                 biVar.n = true;
-                biVar.z1(cd.L0(2131752139, null));
+                biVar.z1(dd.L0(2131752139, null));
                 bi biVar2 = dpVar.O1;
                 biVar2.T3 = new wo(dpVar);
                 biVar2.x1(1, false);
@@ -247,7 +247,7 @@ public final class w implements View.OnClickListener {
                 f6 f6Var = new f6(dpVar.getContext(), true, true, true);
                 dpVar.Q1 = f6Var;
                 f6Var.setTextSize(org.telegram.messenger.i0.L(14.0f));
-                dpVar.Q1.setText(cd.L0(2131745554, null));
+                dpVar.Q1.setText(dd.L0(2131745554, null));
                 dpVar.Q1.setGravity(17);
                 f6 f6Var2 = dpVar.Q1;
                 int i11 = t6.Ci;
@@ -274,27 +274,27 @@ public final class w implements View.OnClickListener {
                 imageView.setImageResource(R.drawable.smiles_info);
                 linearLayout.addView(imageView, b6.t(-2, -2, 49, 0, 15, 0, 0));
                 TextView textView = new TextView(vyVar.getContext());
-                textView.setText(cd.L0(2131751165, null));
+                textView.setText(dd.L0(2131751165, null));
                 textView.setTextSize(1, 15.0f);
                 a7.V(textView, t6.n5, vyVar.Z1);
-                textView.setGravity(cd.X ? 5 : 3);
+                textView.setGravity(dd.X ? 5 : 3);
                 textView.setTypeface(org.telegram.messenger.i0.o());
                 linearLayout.addView(textView, b6.t(-2, -2, 51, 0, 24, 0, 0));
                 TextView textView2 = new TextView(vyVar.getContext());
-                textView2.setText(org.telegram.messenger.i0.W2(cd.L0(2131751164, null)));
+                textView2.setText(org.telegram.messenger.i0.W2(dd.L0(2131751164, null)));
                 textView2.setTextSize(1, 15.0f);
                 a7.V(textView2, t6.j5, vyVar.Z1);
-                textView2.setGravity(cd.X ? 5 : 3);
+                textView2.setGravity(dd.X ? 5 : 3);
                 linearLayout.addView(textView2, b6.t(-2, -2, 51, 0, 11, 0, 0));
                 TextView textView3 = new TextView(vyVar.getContext());
                 Object obj2 = uxVar.x;
                 if (obj2 == null) {
                     obj2 = vyVar.W0;
                 }
-                textView3.setText(cd.a0("EmojiSuggestionsUrl", null, 2131751163, obj2));
+                textView3.setText(dd.a0("EmojiSuggestionsUrl", null, 2131751163, obj2));
                 textView3.setTextSize(1, 15.0f);
                 a7.V(textView3, t6.k5, vyVar.Z1);
-                textView3.setGravity(cd.X ? 5 : 3);
+                textView3.setGravity(dd.X ? 5 : 3);
                 linearLayout.addView(textView3, b6.t(-2, -2, 51, 0, 18, 0, 16));
                 textView3.setOnClickListener(new rx(this, zArr, fVar));
                 z2 z2Var = (z2) fVar.b;

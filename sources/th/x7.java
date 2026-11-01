@@ -1,11 +1,11 @@
 package th;
 
 import java.util.ArrayList;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class x7 {
     public static long g;
@@ -62,7 +62,7 @@ public class x7 {
                 a(tL_stories_getStoriesViews.id);
                 if (!tL_stories_getStoriesViews.id.isEmpty()) {
                     int i10 = this.b;
-                    tL_stories_getStoriesViews.peer = vp.r1(i10).i1(this.c);
+                    tL_stories_getStoriesViews.peer = wp.r1(i10).i1(this.c);
                     this.d = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_getStoriesViews, new rh.h5(5, this, tL_stories_getStoriesViews));
                     return;
                 }

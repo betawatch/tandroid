@@ -8,9 +8,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class v20 extends sk0 {
+public final class v20 extends tk0 {
     public final Context c;
     public final /* synthetic */ z20 d;
 
@@ -27,7 +27,7 @@ public final class v20 extends sk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         View view = c1Var.a;
         if ((view instanceof org.telegram.ui.Cells.e5) && this.d.W1.contains(Long.valueOf(((org.telegram.ui.Cells.e5) view).getUserId()))) {
@@ -85,7 +85,7 @@ public final class v20 extends sk0 {
             if (i10 < z20Var.b2 || i10 >= (i11 = z20Var.c2)) {
                 i11 = z20Var.f2;
             }
-            TLRPC.User Z1 = org.telegram.messenger.vp.r1(z20Var.a).Z1(Long.valueOf(tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? org.telegram.messenger.jj.C1(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id));
+            TLRPC.User Z1 = org.telegram.messenger.wp.r1(z20Var.a).Z1(Long.valueOf(tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? org.telegram.messenger.kj.C1(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id));
             if (Z1 != null) {
                 e5Var.setCustomImageVisible(z20Var.W1.contains(Long.valueOf(Z1.id)));
                 e5Var.c(Z1, null, null, i10 != i11 - 1);
@@ -99,7 +99,7 @@ public final class v20 extends sk0 {
                 if ((!z20Var.T1 || z20Var.U1) && z20Var.g2 == -1 && !arrayList.isEmpty()) {
                     r3 = true;
                 }
-                b5Var.b(R.drawable.msg_link, 7, org.telegram.messenger.cd.L0(2131743416, null), r3);
+                b5Var.b(R.drawable.msg_link, 7, org.telegram.messenger.dd.L0(2131743416, null), r3);
                 return;
             }
             return;
@@ -109,12 +109,12 @@ public final class v20 extends sk0 {
         }
         org.telegram.ui.Cells.z3 z3Var = (org.telegram.ui.Cells.z3) view;
         if (i10 == z20Var.g2) {
-            z3Var.setText(org.telegram.messenger.cd.L0(2131752336, null));
+            z3Var.setText(org.telegram.messenger.dd.L0(2131752336, null));
         } else if (i10 == z20Var.d2) {
             if (z20Var.Y1) {
-                z3Var.setText(org.telegram.messenger.cd.L0(2131742850, null));
+                z3Var.setText(org.telegram.messenger.dd.L0(2131742850, null));
             } else {
-                z3Var.setText(org.telegram.messenger.cd.L0(2131749465, null));
+                z3Var.setText(org.telegram.messenger.dd.L0(2131749465, null));
             }
         }
     }
@@ -166,6 +166,6 @@ public final class v20 extends sk0 {
             e5Var2.setDividerColor(org.telegram.ui.ActionBar.t6.Ug);
             e5Var = e5Var2;
         }
-        return new ck0(e5Var);
+        return new dk0(e5Var);
     }
 }

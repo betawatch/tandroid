@@ -5,7 +5,7 @@ import android.content.ClipboardManager;
 import android.text.TextUtils;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u9 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class u9 implements View.OnClickListener {
                 ba baVar = this.b;
                 if (baVar.y != null) {
                     org.telegram.messenger.i0.v1(baVar.N);
-                    baVar.l0(baVar.y, null);
+                    baVar.m0(baVar.y, null);
                     break;
                 }
                 break;
@@ -31,7 +31,7 @@ public final /* synthetic */ class u9 implements View.OnClickListener {
                 ba baVar2 = this.b;
                 if (baVar2.y != null) {
                     org.telegram.messenger.i0.v1(baVar2.N);
-                    baVar2.l0(baVar2.y, null);
+                    baVar2.m0(baVar2.y, null);
                     break;
                 }
                 break;
@@ -49,22 +49,22 @@ public final /* synthetic */ class u9 implements View.OnClickListener {
                             break;
                         } else {
                             baVar3.S = false;
-                            baVar3.o0(true);
+                            baVar3.p0(true);
                             break;
                         }
                     } else {
                         baVar3.S = false;
-                        baVar3.o0(true);
+                        baVar3.p0(true);
                         break;
                     }
                 } else {
                     baVar3.S = false;
-                    baVar3.o0(true);
+                    baVar3.p0(true);
                     break;
                 }
                 break;
             default:
-                this.b.h0();
+                this.b.i0();
                 break;
         }
     }

@@ -9,12 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vi;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a9 extends org.telegram.ui.ActionBar.k2 {
     public final ArrayList a;
@@ -30,7 +30,7 @@ public final class a9 extends org.telegram.ui.ActionBar.k2 {
         this.a = new ArrayList();
     }
 
-    public static void Y(a9 a9Var) {
+    public static void Z(a9 a9Var) {
         ArrayList arrayList = a9Var.a;
         if (arrayList.size() == 12 || arrayList.size() == 24) {
             ja jaVar = new ja(arrayList, new l(a9Var, 12));
@@ -39,7 +39,7 @@ public final class a9 extends org.telegram.ui.ActionBar.k2 {
         }
     }
 
-    public final void Z() {
+    public final void a0() {
         LinearLayout linearLayout = this.d;
         if (linearLayout == null) {
             return;
@@ -49,9 +49,9 @@ public final class a9 extends org.telegram.ui.ActionBar.k2 {
         ArrayList arrayList = this.a;
         boolean z10 = true;
         int size = (arrayList.size() + 1) / 2;
-        this.d.addView(t8.i0(0, size, context, arrayList, this.resourceProvider), w7.b6.p(0, -2, 1.0f, 48));
+        this.d.addView(t8.j0(0, size, context, arrayList, this.resourceProvider), w7.b6.p(0, -2, 1.0f, 48));
         this.d.addView(new View(context), w7.b6.o(10, 0));
-        this.d.addView(t8.i0(size, arrayList.size(), context, arrayList, this.resourceProvider), w7.b6.p(0, -2, 1.0f, 48));
+        this.d.addView(t8.j0(size, arrayList.size(), context, arrayList, this.resourceProvider), w7.b6.p(0, -2, 1.0f, 48));
         vh.d dVar = this.e;
         if (dVar != null) {
             if (arrayList.size() != 12 && arrayList.size() != 24) {
@@ -106,7 +106,7 @@ public final class a9 extends org.telegram.ui.ActionBar.k2 {
                         this.b.finishFragment();
                         break;
                     default:
-                        a9.Y(this.b);
+                        a9.Z(this.b);
                         break;
                 }
             }
@@ -115,7 +115,7 @@ public final class a9 extends org.telegram.ui.ActionBar.k2 {
         org.telegram.ui.Components.g9 g9Var = new org.telegram.ui.Components.g9(context);
         g9Var.setAspectFit(true);
         g9Var.getImageReceiver().d = org.telegram.messenger.i0.t0();
-        ui.b0(org.telegram.messenger.i0.t0()).c2(g9Var, "RestrictedEmoji", "📝", "100_100");
+        vi.b0(org.telegram.messenger.i0.t0()).c2(g9Var, "RestrictedEmoji", "📝", "100_100");
         g9Var.getImageReceiver().X(1);
         linearLayout.addView(g9Var, w7.b6.t(100, 100, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
@@ -123,12 +123,12 @@ public final class a9 extends org.telegram.ui.ActionBar.k2 {
         textView.setTypeface(org.telegram.messenger.i0.o());
         textView.setGravity(1);
         org.telegram.ui.ActionBar.a7.V(textView, i12, this.resourceProvider);
-        textView.setText(cd.L0(this.h ? 2131743172 : 2131743096, null));
-        TextView f7 = z20.f(linearLayout, textView, w7.b6.t(-1, -2, 1, 32, 0, 32, 10), context);
+        textView.setText(dd.L0(this.h ? 2131743172 : 2131743096, null));
+        TextView f7 = a30.f(linearLayout, textView, w7.b6.t(-1, -2, 1, 32, 0, 32, 10), context);
         f7.setTextSize(1, 14.0f);
         f7.setGravity(1);
         org.telegram.ui.ActionBar.a7.V(f7, org.telegram.ui.ActionBar.t6.z6, this.resourceProvider);
-        f7.setText(cd.L0(this.h ? 2131743171 : 2131743095, null));
+        f7.setText(dd.L0(this.h ? 2131743171 : 2131743095, null));
         linearLayout.addView(f7, w7.b6.t(-1, -2, 1, 32, 0, 32, 8));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.d = linearLayout2;
@@ -139,7 +139,7 @@ public final class a9 extends org.telegram.ui.ActionBar.k2 {
         vh.d dVar = new vh.d(context, this.resourceProvider, true);
         this.e = dVar;
         dVar.f();
-        this.e.setText(cd.L0(2131743180, null));
+        this.e.setText(dd.L0(2131743180, null));
         this.e.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.z8
             public final /* synthetic */ a9 b;
 
@@ -154,13 +154,13 @@ public final class a9 extends org.telegram.ui.ActionBar.k2 {
                         this.b.finishFragment();
                         break;
                     default:
-                        a9.Y(this.b);
+                        a9.Z(this.b);
                         break;
                 }
             }
         });
         linearLayout.addView(this.e, w7.b6.t(-1, 48, 1, 0, 24, 0, 0));
-        Z();
+        a0();
         return this.fragmentView;
     }
 

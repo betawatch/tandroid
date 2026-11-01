@@ -19,14 +19,14 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.b6;
 import org.telegram.ui.Wallet.r9;
-import org.telegram.ui.f30;
+import org.telegram.ui.e30;
 import org.telegram.ui.na;
 import org.telegram.ui.p1;
 import org.telegram.ui.sb;
-import org.telegram.ui.wd0;
+import org.telegram.ui.vd0;
 import vh.e8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final class a extends ClickableSpan {
                 d dVar = (d) this.b;
                 b bVar = dVar.I;
                 if (bVar != null && (groupCallMessage = dVar.H) != null) {
-                    ((f30) bVar).a(groupCallMessage);
+                    ((e30) bVar).a(groupCallMessage);
                     break;
                 }
                 break;
@@ -71,19 +71,19 @@ public final class a extends ClickableSpan {
                 break;
             case 7:
                 kk kkVar = (kk) this.b;
-                b6.I0(kkVar.n, kkVar.getContext(), kkVar.a);
+                b6.J0(kkVar.n, kkVar.getContext(), kkVar.a);
                 break;
             case 8:
                 ((ActionBarLayout) ((LaunchActivity) this.b).M()).R(new PremiumPreviewFragment(0, "gift"));
                 break;
             case 9:
-                ((wd0) this.b).p(false);
+                ((vd0) this.b).p(false);
                 break;
             case 10:
                 r9 r9Var = (r9) this.b;
                 Activity parentActivity = r9Var.getParentActivity();
                 i10 = ((k2) r9Var).currentAccount;
-                b6.I0(i10, parentActivity, r9Var.getResourceProvider());
+                b6.J0(i10, parentActivity, r9Var.getResourceProvider());
                 break;
             default:
                 ((e8) this.b).R1.S();

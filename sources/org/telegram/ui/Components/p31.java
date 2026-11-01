@@ -1,86 +1,147 @@
 package org.telegram.ui.Components;
 
-import android.text.style.ClickableSpan;
+import android.text.Spannable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p31 implements org.telegram.messenger.j20 {
+public final /* synthetic */ class p31 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x31 b;
+    public final /* synthetic */ y31 b;
 
-    public /* synthetic */ p31(x31 x31Var, int i10) {
+    public /* synthetic */ p31(y31 y31Var, int i10) {
         this.a = i10;
-        this.b = x31Var;
+        this.b = y31Var;
     }
 
-    @Override // org.telegram.messenger.j20
-    public final void a(Object obj, Object obj2) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        LinearLayout linearLayout;
+        boolean z10;
         int i10 = this.a;
-        final x31 x31Var = this.b;
+        y31 y31Var = this.b;
         switch (i10) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                p51 p51Var = (p51) obj2;
-                String[] strArr = x31Var.a2;
-                arrayList.add(a51.C(null));
-                p51Var.F = 1;
-                p51Var.V();
-                String str = x31Var.W1;
-                arrayList.add(r31.j(3, "", str != null ? m31.K0(m31.O0(str, null, null)) : org.telegram.messenger.cd.L0(2131754986, null), null, null));
-                arrayList.add(v31.i(4, x31Var.S1, x31Var.c2, new sr(19, x31Var, p51Var), new o80() { // from class: org.telegram.ui.Components.q31
-                    @Override // org.telegram.ui.Components.o80
-                    public final void a(ClickableSpan clickableSpan) {
-                        if (clickableSpan == null) {
-                            return;
-                        }
-                        clickableSpan.onClick(x31.this.b);
-                    }
-                }, null));
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(m31.O0(x31Var.X1, null, null));
-                sb2.append((x31Var.Y1 == 1 || strArr == null) ? "" : a1.g.r(new StringBuilder(" ("), strArr[x31Var.Y1], ")"));
-                arrayList.add(r31.j(5, "", m31.K0(sb2.toString()), null, new o31(x31Var, 4)));
-                arrayList.add(v31.i(6, x31Var.U1, false, null, new o80() { // from class: org.telegram.ui.Components.q31
-                    @Override // org.telegram.ui.Components.o80
-                    public final void a(ClickableSpan clickableSpan) {
-                        if (clickableSpan == null) {
-                            return;
-                        }
-                        clickableSpan.onClick(x31.this.b);
-                    }
-                }, null));
-                p51Var.U();
-                arrayList.add(a51.C(null));
-                p51Var.V();
-                arrayList.add(a51.c(1, R.drawable.msg_copy, org.telegram.messenger.cd.L0(2131743983, null)));
-                p51Var.U();
+                y31Var.dismiss();
+                break;
+            case 1:
+                y31Var.dismiss();
+                break;
+            case 2:
+                y31Var.dismiss();
+                break;
+            case 3:
+                Spannable spannable = y31Var.U1;
+                if (spannable != null) {
+                    y31Var.V1.a(spannable);
+                }
+                y31Var.dismiss();
                 break;
             default:
-                TLRPC.TL_messages_translateResult tL_messages_translateResult = (TLRPC.TL_messages_translateResult) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                x31Var.d2 = -1;
-                vh.d dVar = x31Var.R1;
-                dVar.setLoading(false);
-                if (tL_error == null) {
-                    if (tL_messages_translateResult != null && !tL_messages_translateResult.result.isEmpty()) {
-                        x31Var.U1 = org.telegram.messenger.jj.h0(tL_messages_translateResult.result.get(0), false);
-                        x31Var.T1 = false;
-                        x31Var.b2.O(true);
-                        break;
+                final y31 y31Var2 = this.b;
+                z60 F = z60.F(y31Var2.c, y31Var2.I0, view);
+                F.X = org.telegram.messenger.i0.L(450.0f);
+                final int i11 = 0;
+                F.t = false;
+                final int i12 = 1;
+                F.Y = true;
+                ScrollView scrollView = new ScrollView(y31Var2.getContext());
+                LinearLayout linearLayout2 = new LinearLayout(y31Var2.getContext());
+                linearLayout2.setOrientation(1);
+                scrollView.addView(linearLayout2);
+                F.q(scrollView);
+                int i13 = 0;
+                while (i13 < y31Var2.Z1.length) {
+                    if (y31Var2.Y1 == i13) {
+                        linearLayout = linearLayout2;
+                        z10 = true;
                     } else {
-                        dVar.setText(org.telegram.messenger.cd.L0(2131747847, null));
-                        dVar.setOnClickListener(new o31(x31Var, 1));
-                        break;
+                        linearLayout = linearLayout2;
+                        z10 = false;
                     }
-                } else {
-                    org.telegram.ui.Cells.f1.s(x31Var.E, x31Var.I0, tL_error, false);
-                    dVar.setText(org.telegram.messenger.cd.L0(2131747847, null));
-                    dVar.setOnClickListener(new o31(x31Var, 0));
-                    break;
+                    y31Var2.d1(F, linearLayout, z10, y31Var2.a2[i13], new qq(y31Var2, i13, 5));
+                    i13++;
+                    linearLayout2 = linearLayout;
                 }
+                LinearLayout linearLayout3 = linearLayout2;
+                View h1Var = new org.telegram.ui.ActionBar.h1(y31Var2.getContext(), y31Var2.I0);
+                h1Var.setTag(R.id.fit_width_tag, 1);
+                linearLayout3.addView(h1Var, w7.b6.o(-1, 8));
+                ArrayList o10 = org.telegram.messenger.u10.o(null);
+                ArrayList n10 = org.telegram.messenger.u10.n();
+                if (!TextUtils.isEmpty(y31Var2.X1)) {
+                    y31Var2.d1(F, linearLayout3, true, n31.K0(n31.O0(y31Var2.X1, null, null)), null);
+                }
+                int size = o10.size();
+                int i14 = 0;
+                while (i14 < size) {
+                    int i15 = i14 + 1;
+                    final org.telegram.messenger.n10 n10Var = (org.telegram.messenger.n10) o10.get(i14);
+                    if (!TextUtils.equals(n10Var.a, y31Var2.X1)) {
+                        y31Var2.d1(F, linearLayout3, false, n10Var.b, new Runnable() { // from class: org.telegram.ui.Components.o31
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i11) {
+                                    case 0:
+                                        y31 y31Var3 = y31Var2;
+                                        y31Var3.e1();
+                                        String str = n10Var.a;
+                                        y31Var3.X1 = str;
+                                        n31.S0(str);
+                                        y31Var3.f1();
+                                        break;
+                                    default:
+                                        y31 y31Var4 = y31Var2;
+                                        y31Var4.e1();
+                                        String str2 = n10Var.a;
+                                        y31Var4.X1 = str2;
+                                        n31.S0(str2);
+                                        y31Var4.f1();
+                                        break;
+                                }
+                            }
+                        });
+                    }
+                    i14 = i15;
+                }
+                View h1Var2 = new org.telegram.ui.ActionBar.h1(y31Var2.getContext(), y31Var2.I0);
+                h1Var2.setTag(R.id.fit_width_tag, 1);
+                linearLayout3.addView(h1Var2, w7.b6.o(-1, 8));
+                int size2 = n10.size();
+                while (i11 < size2) {
+                    Object obj = n10.get(i11);
+                    i11++;
+                    final org.telegram.messenger.n10 n10Var2 = (org.telegram.messenger.n10) obj;
+                    y31Var2.d1(F, linearLayout3, TextUtils.equals(n10Var2.a, y31Var2.X1), n10Var2.b, new Runnable() { // from class: org.telegram.ui.Components.o31
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i12) {
+                                case 0:
+                                    y31 y31Var3 = y31Var2;
+                                    y31Var3.e1();
+                                    String str = n10Var2.a;
+                                    y31Var3.X1 = str;
+                                    n31.S0(str);
+                                    y31Var3.f1();
+                                    break;
+                                default:
+                                    y31 y31Var4 = y31Var2;
+                                    y31Var4.e1();
+                                    String str2 = n10Var2.a;
+                                    y31Var4.X1 = str2;
+                                    n31.S0(str2);
+                                    y31Var4.f1();
+                                    break;
+                            }
+                        }
+                    });
+                }
+                F.Z();
                 break;
         }
     }

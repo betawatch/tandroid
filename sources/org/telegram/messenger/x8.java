@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class x8 implements g2.h, n7 {
     public static final ConcurrentHashMap H = new ConcurrentHashMap();
@@ -260,9 +260,9 @@ public final class x8 implements g2.h, n7 {
                     StringBuilder sb2 = new StringBuilder("FileStreamLoadOperation ");
                     sb2.append(this.s.id);
                     sb2.append(" ");
-                    sb2.append(jj.i2(this.s));
+                    sb2.append(kj.i2(this.s));
                     sb2.append("x");
-                    sb2.append(jj.i2(this.s));
+                    sb2.append(kj.i2(this.s));
                     sb2.append(" mime_type=");
                     sb2.append(this.s.mime_type);
                     sb2.append(" codec=");
@@ -296,9 +296,9 @@ public final class x8 implements g2.h, n7 {
         StringBuilder sb22 = new StringBuilder("FileStreamLoadOperation ");
         sb22.append(this.s.id);
         sb22.append(" ");
-        sb22.append(jj.i2(this.s));
+        sb22.append(kj.i2(this.s));
         sb22.append("x");
-        sb22.append(jj.i2(this.s));
+        sb22.append(kj.i2(this.s));
         sb22.append(" mime_type=");
         sb22.append(this.s.mime_type);
         sb22.append(" codec=");
@@ -356,7 +356,7 @@ public final class x8 implements g2.h, n7 {
                     m7Var.getClass();
                     CountDownLatch countDownLatch = new CountDownLatch(1);
                     ?? r62 = new long[2];
-                    Utilities.d.c(new m9(m7Var, (Serializable) r62, this.h, i17, countDownLatch, 2));
+                    Utilities.d.c(new n9(m7Var, (Serializable) r62, this.h, i17, countDownLatch, 2));
                     countDownLatch.await();
                     i12 = (int) r62[i16];
                     if (i12 != 0) {
@@ -458,7 +458,7 @@ public final class x8 implements g2.h, n7 {
             m7Var7.getClass();
             CountDownLatch countDownLatch5 = new CountDownLatch(1);
             ?? r622 = new long[2];
-            Utilities.d.c(new m9(m7Var7, (Serializable) r622, this.h, i17, countDownLatch5, 2));
+            Utilities.d.c(new n9(m7Var7, (Serializable) r622, this.h, i17, countDownLatch5, 2));
             countDownLatch5.await();
             i12 = (int) r622[i16];
             if (i12 != 0) {

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class py implements jy {
     public String a;
@@ -28,7 +28,7 @@ public final class py implements jy {
 
     public final void a(Runnable runnable, boolean z10) {
         String[] G0 = org.telegram.messenger.i0.G0();
-        org.telegram.messenger.ui.b0(this.x.Q.c1).Z1(false, G0.length == 0 ? "" : G0[0], this.a, new ll(this, z10, runnable, 1), z10);
+        org.telegram.messenger.vi.b0(this.x.Q.c1).Z1(false, G0.length == 0 ? "" : G0[0], this.a, new ll(this, z10, runnable, 1), z10);
     }
 
     @Override // org.telegram.ui.Components.jy

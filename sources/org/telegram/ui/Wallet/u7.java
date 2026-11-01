@@ -9,11 +9,11 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u7 extends ph.c1 {
     public ValueAnimator A0;
@@ -72,7 +72,7 @@ public final class u7 extends ph.c1 {
                 org.telegram.ui.Components.g9 g9Var = this.D;
                 float left2 = g9Var.getLeft() + left + (g9Var.getWidth() / 2.0f);
                 float height = (g9Var.getHeight() / 2.0f) + g9Var.getTop() + frameLayout.getTop();
-                float D2 = c3.i0.D(f13, 0.025f, (0.07f * f12) + 1.0f, (g9Var.getWidth() * zs.L4) / 268.0f);
+                float D2 = c3.i0.D(f13, 0.025f, (0.07f * f12) + 1.0f, (g9Var.getWidth() * at.L4) / 268.0f);
                 if (f12 > 0.01f && g8Var.w != null) {
                     float f14 = ((176.0f * D2) / 128.0f) / 2.0f;
                     float L = (org.telegram.messenger.i0.L(2.0f) * f12) + height;
@@ -86,7 +86,7 @@ public final class u7 extends ph.c1 {
                 float L2 = height - (org.telegram.messenger.i0.L(5.0f) * f12);
                 float f15 = f12 * (-5.0f);
                 if (l10 < 0.99f) {
-                    paint.setAlpha(zs.e4);
+                    paint.setAlpha(at.e4);
                     f10 = L2;
                     f7 = D2;
                     i10 = 255;

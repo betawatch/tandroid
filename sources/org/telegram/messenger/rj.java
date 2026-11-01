@@ -1,189 +1,328 @@
 package org.telegram.messenger;
 
+import android.util.SparseArray;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class rj implements Runnable {
+public final /* synthetic */ class rj implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vp b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
-    public final /* synthetic */ a0.h h;
-    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ f1 c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ rj(vp vpVar, int i10, ArrayList arrayList, boolean z10, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, a0.h hVar, TLRPC.TL_messages_dialogs tL_messages_dialogs, int i11) {
-        this.a = i11;
-        this.b = vpVar;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = z10;
-        this.f = tL_messages_peerDialogs;
-        this.h = hVar;
-        this.n = tL_messages_dialogs;
+    public /* synthetic */ rj(f1 f1Var, long j10, Object obj, int i10) {
+        this.a = i10;
+        this.c = f1Var;
+        this.b = j10;
+        this.d = obj;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0164  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z10;
-        int i10;
-        int i11;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        int i12;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        Integer num;
+        Integer num2;
         switch (this.a) {
             case 0:
-                i0.g3(new rj(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1));
+                wp wpVar = (wp) this.c;
+                long j10 = this.b;
+                sp spVar = (sp) this.d;
+                wpVar.getClass();
+                Integer num3 = null;
+                if (tLObject instanceof TLRPC.messages_SponsoredMessages) {
+                    TLRPC.messages_SponsoredMessages messages_sponsoredmessages = (TLRPC.messages_SponsoredMessages) tLObject;
+                    if (messages_sponsoredmessages.messages.isEmpty()) {
+                        num2 = null;
+                    } else {
+                        if ((messages_sponsoredmessages instanceof TLRPC.TL_messages_sponsoredMessages) && (messages_sponsoredmessages.flags & 1) > 0) {
+                            num3 = Integer.valueOf(messages_sponsoredmessages.posts_between);
+                        }
+                        ArrayList arrayList = new ArrayList();
+                        i0.g3(new pi(16, wpVar, messages_sponsoredmessages));
+                        a0.h hVar = new a0.h();
+                        a0.h hVar2 = new a0.h();
+                        int i10 = 0;
+                        for (int i11 = 0; i11 < messages_sponsoredmessages.users.size(); i11++) {
+                            TLRPC.User user = messages_sponsoredmessages.users.get(i11);
+                            hVar.k(user, user.id);
+                        }
+                        for (int i12 = 0; i12 < messages_sponsoredmessages.chats.size(); i12++) {
+                            TLRPC.Chat chat = messages_sponsoredmessages.chats.get(i12);
+                            hVar2.k(chat, chat.id);
+                        }
+                        int size = messages_sponsoredmessages.messages.size();
+                        int i13 = -10000000;
+                        while (i10 < size) {
+                            TLRPC.TL_sponsoredMessage tL_sponsoredMessage = messages_sponsoredmessages.messages.get(i10);
+                            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                            if (!tL_sponsoredMessage.entities.isEmpty()) {
+                                tL_message.entities = tL_sponsoredMessage.entities;
+                                tL_message.flags |= 128;
+                            }
+                            tL_message.peer_id = wpVar.y1(j10);
+                            tL_message.flags |= 256;
+                            tL_message.date = wpVar.getConnectionsManager().getCurrentTime();
+                            int i14 = i13 - 1;
+                            tL_message.id = i13;
+                            tL_message.message = tL_sponsoredMessage.message;
+                            TLRPC.MessageMedia messageMedia = tL_sponsoredMessage.media;
+                            if (messageMedia != null) {
+                                tL_message.flags |= 512;
+                            }
+                            tL_message.media = messageMedia;
+                            kj kjVar = new kj(wpVar.currentAccount, (TLRPC.Message) tL_message, hVar, hVar2, true, true);
+                            kjVar.P0 = tL_sponsoredMessage.random_id;
+                            kjVar.Q0 = tL_sponsoredMessage.title;
+                            kjVar.R0 = tL_sponsoredMessage.url;
+                            kjVar.S0 = tL_sponsoredMessage.recommended;
+                            kjVar.T0 = tL_sponsoredMessage.photo;
+                            kjVar.U0 = tL_sponsoredMessage.sponsor_info;
+                            kjVar.V0 = tL_sponsoredMessage.additional_info;
+                            kjVar.W0 = tL_sponsoredMessage.button_text;
+                            kjVar.Z0 = tL_sponsoredMessage.can_report;
+                            kjVar.X0 = tL_sponsoredMessage.color;
+                            kjVar.Y0 = tL_sponsoredMessage.media;
+                            kjVar.K5();
+                            kjVar.z2 = new ArrayList();
+                            kjVar.r0(true);
+                            arrayList.add(kjVar);
+                            i10++;
+                            i13 = i14;
+                        }
+                        num2 = num3;
+                        num3 = arrayList;
+                    }
+                    num = num2;
+                } else {
+                    num = null;
+                }
+                i0.g3(new zm(wpVar, num3, j10, spVar, num, 1));
                 break;
-            default:
-                vp vpVar = this.b;
-                ArrayList arrayList3 = vpVar.y;
-                a0.h hVar = vpVar.Q;
-                SparseIntArray sparseIntArray = vpVar.o2;
-                int i13 = this.c;
-                sparseIntArray.delete(i13);
-                ArrayList arrayList4 = this.d;
-                vpVar.r(arrayList4);
-                ArrayList V0 = vpVar.V0(i13);
-                int i14 = 0;
-                int i15 = 0;
-                boolean z11 = false;
-                int i16 = this.e;
-                while (i14 < V0.size()) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) V0.get(i14);
-                    if (!(dialog instanceof TLRPC.TL_dialogFolder)) {
-                        if (o5.C(dialog.id)) {
-                            if (i16 < arrayList4.size()) {
-                                arrayList4.add(i16, dialog);
-                            } else {
-                                arrayList4.add(dialog);
-                            }
-                            i16++;
-                        } else if (dialog.pinned) {
-                            i15 = Math.max(dialog.pinnedNum, i15);
-                            dialog.pinned = false;
-                            dialog.pinnedNum = 0;
-                            i16++;
-                            z11 = true;
-                        } else if (dialog.id != vpVar.z2) {
-                            ArrayList arrayList5 = new ArrayList();
-                            if (arrayList4.isEmpty()) {
-                                TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = this.f;
-                                vpVar.V3(tL_messages_peerDialogs.users, false);
-                                vpVar.P3(tL_messages_peerDialogs.chats, false);
-                                ArrayList arrayList6 = new ArrayList();
-                                ArrayList arrayList7 = new ArrayList();
-                                int size = arrayList4.size();
-                                int i17 = 0;
-                                z10 = false;
-                                ArrayList arrayList8 = arrayList4;
-                                while (i17 < size) {
-                                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList8.get(i17);
-                                    dialog2.pinnedNum = (size - i17) + i15;
-                                    ArrayList arrayList9 = arrayList7;
-                                    arrayList5.add(Long.valueOf(dialog2.id));
-                                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) hVar.f(dialog2.id);
-                                    if (dialog3 != null) {
-                                        dialog3.pinned = true;
-                                        dialog3.pinnedNum = dialog2.pinnedNum;
-                                        arrayList6.add(Long.valueOf(dialog2.id));
-                                        arrayList7 = arrayList9;
-                                        arrayList7.add(Integer.valueOf(dialog2.pinnedNum));
-                                        arrayList = arrayList8;
-                                        i10 = size;
-                                        i11 = i17;
-                                    } else {
-                                        i10 = size;
-                                        arrayList7 = arrayList9;
-                                        i11 = i17;
-                                        hVar.k(dialog2, dialog2.id);
-                                        ArrayList arrayList10 = (ArrayList) this.h.f(dialog2.id);
-                                        vpVar.R.k(arrayList10, dialog2.id);
-                                        if (arrayList10 != null) {
-                                            int i18 = 0;
-                                            arrayList8 = arrayList8;
-                                            while (i18 < arrayList10.size()) {
-                                                jj jjVar = (jj) arrayList10.get(i18);
-                                                if (jjVar != null) {
-                                                    i12 = i18;
-                                                    if (jjVar.k.peer_id.channel_id == 0) {
-                                                        vpVar.U.put(jjVar.f1(), jjVar);
-                                                        vpVar.N = Math.min(vpVar.N, jjVar.k.date);
-                                                        long j10 = jjVar.k.random_id;
-                                                        if (j10 != 0) {
-                                                            arrayList2 = arrayList8;
-                                                            vpVar.S.k(jjVar, j10);
-                                                        }
-                                                    }
-                                                    arrayList2 = arrayList8;
-                                                } else {
-                                                    arrayList2 = arrayList8;
-                                                    i12 = i18;
-                                                }
-                                                i18 = i12 + 1;
-                                                arrayList8 = arrayList2;
-                                            }
-                                        }
-                                        arrayList = arrayList8;
-                                        vpVar.t7.d(dialog2.id);
-                                        z10 = true;
-                                    }
-                                    i17 = i11 + 1;
-                                    size = i10;
-                                    arrayList8 = arrayList;
-                                    z11 = true;
-                                }
-                                hs messagesStorage = vpVar.getMessagesStorage();
-                                messagesStorage.a.c(new eq(messagesStorage, arrayList6, arrayList7, 0));
-                            } else {
-                                z10 = false;
-                            }
-                            if (z11) {
-                                if (z10) {
-                                    arrayList3.clear();
-                                    int m10 = hVar.m();
-                                    for (int i19 = 0; i19 < m10; i19++) {
-                                        TLRPC.Dialog dialog4 = (TLRPC.Dialog) hVar.n(i19);
-                                        if (vpVar.D0.h(dialog4.id) < 0) {
-                                            arrayList3.add(dialog4);
-                                        }
-                                    }
-                                }
-                                vpVar.Q4(null);
-                                vpVar.getNotificationCenter().k(3, new Object[0]);
-                            }
-                            hs messagesStorage2 = vpVar.getMessagesStorage();
-                            messagesStorage2.a.c(new zp(messagesStorage2, arrayList5, i13));
-                            vpVar.getMessagesStorage().d1(this.n, 1);
-                            vpVar.getUserConfig().y(i13, true);
-                            vpVar.getUserConfig().v(false);
+            case 1:
+                vi viVar = (vi) this.c;
+                long j11 = this.b;
+                TLRPC.TL_messages_getMessages tL_messages_getMessages = (TLRPC.TL_messages_getMessages) this.d;
+                if (tL_error == null) {
+                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                    vi.K1(messages_messages.messages);
+                    if (!messages_messages.messages.isEmpty()) {
+                        ic.X(messages_messages.messages);
+                        viVar.k(messages_messages.messages, messages_messages.users, messages_messages.chats, false, false);
+                        viVar.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
+                        ArrayList<TLRPC.Message> arrayList2 = messages_messages.messages;
+                        if (!arrayList2.isEmpty()) {
+                            viVar.getMessagesStorage().a.c(new d4(viVar, arrayList2, j11, 14));
                             break;
                         }
                     }
-                    i14++;
-                    i16 = i16;
                 }
-                ArrayList arrayList52 = new ArrayList();
-                if (arrayList4.isEmpty()) {
+                viVar.getMessagesStorage().c2(j11, tL_messages_getMessages.id, false, -1, 0, false, null);
+                break;
+            case 2:
+                wp wpVar2 = (wp) this.c;
+                long j12 = this.b;
+                TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
+                    if (!tL_messages_peerDialogs.dialogs.isEmpty() && !tL_messages_peerDialogs.chats.isEmpty()) {
+                        TLRPC.TL_dialog tL_dialog = (TLRPC.TL_dialog) tL_messages_peerDialogs.dialogs.get(0);
+                        TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
+                        tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
+                        tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
+                        tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
+                        tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
+                        wpVar2.G3(tL_messages_dialogs, null, null, tL_dialog.folder_id, 0, 1, wpVar2.P7, false, false, false);
+                    }
                 }
-                if (z11) {
+                if (j12 != 0) {
+                    wpVar2.getMessagesStorage().q1(j12);
                 }
-                hs messagesStorage22 = vpVar.getMessagesStorage();
-                messagesStorage22.a.c(new zp(messagesStorage22, arrayList52, i13));
-                vpVar.getMessagesStorage().d1(this.n, 1);
-                vpVar.getUserConfig().y(i13, true);
-                vpVar.getUserConfig().v(false);
+                wpVar2.b1.e(chat2.id);
+                break;
+            case 3:
+                wp wpVar3 = (wp) this.c;
+                long j13 = this.b;
+                TLRPC.TL_messages_getMessagesViews tL_messages_getMessagesViews = (TLRPC.TL_messages_getMessagesViews) this.d;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_messageViews tL_messages_messageViews = (TLRPC.TL_messages_messageViews) tLObject;
+                    a0.h hVar3 = new a0.h();
+                    a0.h hVar4 = new a0.h();
+                    a0.h hVar5 = new a0.h();
+                    SparseIntArray sparseIntArray = (SparseIntArray) hVar3.f(j13);
+                    SparseIntArray sparseIntArray2 = (SparseIntArray) hVar4.f(j13);
+                    SparseArray sparseArray = (SparseArray) hVar5.f(j13);
+                    for (int i15 = 0; i15 < tL_messages_getMessagesViews.id.size() && i15 < tL_messages_messageViews.views.size(); i15++) {
+                        TLRPC.TL_messageViews tL_messageViews = tL_messages_messageViews.views.get(i15);
+                        if ((tL_messageViews.flags & 1) != 0) {
+                            if (sparseIntArray == null) {
+                                sparseIntArray = new SparseIntArray();
+                                hVar3.k(sparseIntArray, j13);
+                            }
+                            sparseIntArray.put(tL_messages_getMessagesViews.id.get(i15).intValue(), tL_messageViews.views);
+                        }
+                        if ((tL_messageViews.flags & 2) != 0) {
+                            if (sparseIntArray2 == null) {
+                                sparseIntArray2 = new SparseIntArray();
+                                hVar4.k(sparseIntArray2, j13);
+                            }
+                            sparseIntArray2.put(tL_messages_getMessagesViews.id.get(i15).intValue(), tL_messageViews.forwards);
+                        }
+                        if ((tL_messageViews.flags & 4) != 0) {
+                            if (sparseArray == null) {
+                                sparseArray = new SparseArray();
+                                hVar5.k(sparseArray, j13);
+                            }
+                            sparseArray.put(tL_messages_getMessagesViews.id.get(i15).intValue(), tL_messageViews.replies);
+                        }
+                    }
+                    wpVar3.getMessagesStorage().m1(tL_messages_messageViews.users, tL_messages_messageViews.chats, true, true);
+                    wpVar3.getMessagesStorage().a1(hVar3, hVar4, hVar5, false);
+                    i0.g3(new dn(wpVar3, tL_messages_messageViews, hVar3, hVar4, hVar5, 9));
+                    break;
+                }
+                break;
+            case 4:
+                wp wpVar4 = (wp) this.c;
+                long j14 = this.b;
+                TLRPC.TL_messages_setChatAvailableReactions tL_messages_setChatAvailableReactions = (TLRPC.TL_messages_setChatAvailableReactions) this.d;
+                if (tLObject != null) {
+                    wpVar4.L3((TLRPC.Updates) tLObject, false);
+                    TLRPC.ChatFull M0 = wpVar4.M0(j14);
+                    if (M0 != null) {
+                        if (M0 instanceof TLRPC.TL_chatFull) {
+                            M0.flags |= 262144;
+                        }
+                        if (M0 instanceof TLRPC.TL_channelFull) {
+                            M0.flags |= TLObject.FLAG_30;
+                        }
+                        M0.available_reactions = tL_messages_setChatAvailableReactions.available_reactions;
+                        wpVar4.getMessagesStorage().N1(M0, false);
+                    }
+                    i0.g3(new xk(wpVar4, j14, 17));
+                    break;
+                }
+                break;
+            case 5:
+                i0.g3(new xm((wp) this.c, tLObject, this.b, (Runnable) this.d, 5));
+                break;
+            case 6:
+                wp wpVar5 = (wp) this.c;
+                TLRPC.TL_channels_inviteToChannel tL_channels_inviteToChannel = (TLRPC.TL_channels_inviteToChannel) this.d;
+                long j15 = this.b;
+                if (tL_error != null) {
+                    i0.g3(new ng(wpVar5, tL_error, tL_channels_inviteToChannel, 1));
+                    break;
+                } else if (tLObject instanceof TLRPC.TL_messages_invitedUsers) {
+                    TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) tLObject;
+                    wpVar5.L3(tL_messages_invitedUsers.updates, false);
+                    i0.g3(new d4(wpVar5, tL_messages_invitedUsers, j15, 4));
+                    break;
+                }
+                break;
+            case 7:
+                wp wpVar6 = (wp) this.c;
+                ph.h1 h1Var = (ph.h1) this.d;
+                long j16 = this.b;
+                if (tLObject instanceof TLRPC.TL_exportedContactToken) {
+                    wpVar6.Y7 = (TLRPC.TL_exportedContactToken) tLObject;
+                    i0.h3(new pi(22, wpVar6, h1Var), Math.max(0L, 0 - (System.currentTimeMillis() - j16)));
+                    break;
+                } else {
+                    wpVar6.X7 = false;
+                    break;
+                }
+            case 8:
+                wp wpVar7 = (wp) this.c;
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.d;
+                long j17 = this.b;
+                TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
+                if (messages_messages2 != null) {
+                    int i16 = messages_messages2.count;
+                    if (i16 == 0) {
+                        i16 = messages_messages2.messages.size();
+                    }
+                    int i17 = i16;
+                    is messagesStorage = wpVar7.getMessagesStorage();
+                    messagesStorage.a.c(new jr(messagesStorage, 0L, -inputPeer.channel_id, i17, 7));
+                }
+                if (j17 != 0) {
+                    wpVar7.getMessagesStorage().q1(j17);
+                    break;
+                }
+                break;
+            case 9:
+                wp wpVar8 = (wp) this.c;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) this.d;
+                long j18 = this.b;
+                if (tLObject != null) {
+                    TLRPC.messages_Messages messages_messages3 = (TLRPC.messages_Messages) tLObject;
+                    wpVar8.b4(messages_messages3.messages, dialog.id);
+                    if (messages_messages3.messages.isEmpty()) {
+                        i0.g3(new xn(wpVar8, dialog, 0));
+                    } else {
+                        if (v2.a) {
+                            f8.b("checkLastDialogMessage for " + dialog.id + " has message");
+                        }
+                        TLRPC.TL_messages_dialogs tL_messages_dialogs2 = new TLRPC.TL_messages_dialogs();
+                        TLRPC.Message message = messages_messages3.messages.get(0);
+                        TLRPC.TL_dialog tL_dialog2 = new TLRPC.TL_dialog();
+                        tL_dialog2.flags = dialog.flags;
+                        tL_dialog2.top_message = message.id;
+                        tL_dialog2.last_message_date = message.date;
+                        tL_dialog2.notify_settings = dialog.notify_settings;
+                        tL_dialog2.pts = dialog.pts;
+                        tL_dialog2.unread_count = dialog.unread_count;
+                        tL_dialog2.unread_mark = dialog.unread_mark;
+                        tL_dialog2.unread_mentions_count = dialog.unread_mentions_count;
+                        tL_dialog2.unread_reactions_count = dialog.unread_reactions_count;
+                        tL_dialog2.unread_poll_votes_count = dialog.unread_poll_votes_count;
+                        tL_dialog2.read_inbox_max_id = dialog.read_inbox_max_id;
+                        tL_dialog2.read_outbox_max_id = dialog.read_outbox_max_id;
+                        tL_dialog2.pinned = dialog.pinned;
+                        tL_dialog2.pinnedNum = dialog.pinnedNum;
+                        tL_dialog2.folder_id = dialog.folder_id;
+                        long j19 = dialog.id;
+                        tL_dialog2.id = j19;
+                        message.dialog_id = j19;
+                        tL_messages_dialogs2.users.addAll(messages_messages3.users);
+                        tL_messages_dialogs2.chats.addAll(messages_messages3.chats);
+                        tL_messages_dialogs2.dialogs.add(tL_dialog2);
+                        tL_messages_dialogs2.messages.addAll(messages_messages3.messages);
+                        tL_messages_dialogs2.count = 1;
+                        Utilities.d.c(new xf((Object) wpVar8, (Object) tL_messages_dialogs2, false, 1));
+                        wpVar8.getMessagesStorage().j1(messages_messages3.messages, true, true, false, wpVar8.getDownloadController().l(), true, 0, 0L);
+                    }
+                }
+                if (j18 != 0) {
+                    wpVar8.getMessagesStorage().q1(j18);
+                }
+                i0.g3(new xn(wpVar8, dialog, 1));
+                break;
+            case 10:
+                y00 y00Var = (y00) this.c;
+                long j20 = this.b;
+                org.telegram.ui.Components.vg vgVar = (org.telegram.ui.Components.vg) this.d;
+                y00Var.getClass();
+                i0.g3(new xm(y00Var, tLObject, j20, vgVar, 20));
+                break;
+            case 11:
+                i0.g3(new zm((u10) this.c, (o10) this.d, tLObject, tL_error, this.b, 6));
+                break;
+            default:
+                i0.g3(new zm((u10) this.c, (p10) this.d, tLObject, tL_error, this.b, 5));
+                break;
         }
+    }
+
+    public /* synthetic */ rj(f1 f1Var, Object obj, long j10, int i10) {
+        this.a = i10;
+        this.c = f1Var;
+        this.d = obj;
+        this.b = j10;
     }
 }

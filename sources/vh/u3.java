@@ -5,14 +5,14 @@ import android.text.Spanned;
 import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.vx;
-import org.telegram.ui.Components.w41;
+import org.telegram.ui.Components.x41;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u3 implements vx {
     public final /* synthetic */ b4 a;
@@ -99,12 +99,12 @@ public final class u3 implements vx {
     public final void n() {
         b4 b4Var = this.a;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, b4Var.getContext(), b4Var.p1);
-        String L0 = cd.L0(2131752068, null);
+        String L0 = dd.L0(2131752068, null);
         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
         x1Var.R = L0;
-        x1Var.T = cd.L0(2131752069, null);
-        alertDialog$Builder.k(cd.L0(2131752099, null), new rh.d0(this, 28));
-        alertDialog$Builder.h(cd.L0(2131752589, null), null);
+        x1Var.T = dd.L0(2131752069, null);
+        alertDialog$Builder.k(dd.L0(2131752099, null), new rh.d0(this, 28));
+        alertDialog$Builder.h(dd.L0(2131752589, null), null);
         alertDialog$Builder.p();
     }
 
@@ -157,7 +157,7 @@ public final class u3 implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void o(w41 w41Var) {
+    public final /* synthetic */ void o(x41 x41Var) {
     }
 
     @Override // org.telegram.ui.Components.vx
@@ -197,7 +197,7 @@ public final class u3 implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, fj fjVar, boolean z10, int i10) {
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, gj gjVar, boolean z10, int i10) {
     }
 
     @Override // org.telegram.ui.Components.vx

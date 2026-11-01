@@ -1,8 +1,8 @@
 package vh;
 
-import org.telegram.ui.jx0;
+import org.telegram.ui.ix0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h8 extends j8 {
     public final /* synthetic */ int g;
@@ -17,9 +17,9 @@ public final class h8 extends j8 {
     public final void e() {
         switch (this.g) {
             case 0:
-                jx0 jx0Var = (jx0) this.h;
-                jx0Var.Q = false;
-                jx0Var.invalidate();
+                ix0 ix0Var = (ix0) this.h;
+                ix0Var.Q = false;
+                ix0Var.invalidate();
                 break;
             case 1:
                 th.z2 H = ((th.o7) this.h).H();
@@ -39,9 +39,9 @@ public final class h8 extends j8 {
     public final void f(boolean z10) {
         switch (this.g) {
             case 0:
-                jx0 jx0Var = (jx0) this.h;
-                jx0Var.Q = true;
-                jx0Var.invalidate();
+                ix0 ix0Var = (ix0) this.h;
+                ix0Var.Q = true;
+                ix0Var.invalidate();
                 break;
             case 1:
                 th.z2 H = ((th.o7) this.h).H();

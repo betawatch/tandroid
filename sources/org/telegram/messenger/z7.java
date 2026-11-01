@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class z7 {
     public final /* synthetic */ Object a;
@@ -33,12 +33,12 @@ public final class z7 {
     */
     public final void a(m7 m7Var, long j10, long j11) {
         int i10;
-        rb rbVar = this.e.E;
-        if (rbVar != null) {
-            hc hcVar = rbVar.b;
+        sb sbVar = this.e.E;
+        if (sbVar != null) {
+            ic icVar = sbVar.b;
             String str = this.c;
-            hcVar.u.put(str, new long[]{j10, j11});
-            if (!hcVar.h.isEmpty() && (i10 = m7Var.J) > 0) {
+            icVar.u.put(str, new long[]{j10, j11});
+            if (!icVar.h.isEmpty() && (i10 = m7Var.J) > 0) {
                 long j12 = i10;
                 if (m7Var.a0 > j12) {
                     ArrayList arrayList = m7Var.M;
@@ -52,14 +52,14 @@ public final class z7 {
                             }
                         }
                     }
-                    hcVar.s.c(new mg(rbVar, str, m7Var, 25));
+                    icVar.s.c(new ng(sbVar, str, m7Var, 25));
                 }
             }
             long elapsedRealtime = SystemClock.elapsedRealtime();
             long j14 = m7Var.L;
             if (j14 == 0 || j14 < elapsedRealtime - 500 || j10 == 0) {
                 m7Var.L = elapsedRealtime;
-                i0.g3(new lb(rbVar.a, j10, j11, str));
+                i0.g3(new mb(sbVar.a, j10, j11, str));
             }
         }
     }
@@ -71,25 +71,25 @@ public final class z7 {
         ConcurrentHashMap concurrentHashMap = b8Var.x;
         String str = this.c;
         concurrentHashMap.remove(str);
-        b8.J.d(new mg(b8Var, m7Var.e1, m7Var, 23), 0L);
-        rb rbVar = b8Var.E;
-        if (rbVar != null) {
-            rbVar.b.u.remove(str);
+        b8.J.d(new ng(b8Var, m7Var.e1, m7Var, 23), 0L);
+        sb sbVar = b8Var.E;
+        if (sbVar != null) {
+            sbVar.b.u.remove(str);
             i11 = i10;
-            i0.g3(new i2.a0(rbVar, str, i11, rbVar.a, 1));
+            i0.g3(new i2.a0(sbVar, str, i11, sbVar.a, 1));
         } else {
             i11 = i10;
         }
-        if (this.b == null || !(obj instanceof jj) || i11 != 0) {
+        if (this.b == null || !(obj instanceof kj) || i11 != 0) {
             if (i11 == -1) {
                 LaunchActivity.D(2);
             }
         } else {
             b6 downloadController = b8Var.getDownloadController();
-            jj jjVar = (jj) obj;
+            kj kjVar = (kj) obj;
             downloadController.getClass();
-            i0.g3(new o7(downloadController, jjVar, i11, 2));
-            downloadController.getMessagesStorage().a.c(new x5(downloadController, jjVar, 2));
+            i0.g3(new o7(downloadController, kjVar, i11, 2));
+            downloadController.getMessagesStorage().a.c(new x5(downloadController, kjVar, 2));
         }
     }
 
@@ -97,7 +97,7 @@ public final class z7 {
         Object obj = this.a;
         b8 b8Var = this.e;
         if (!m7Var.y && m7Var.z) {
-            b8.J.d(new mg(b8Var, m7Var.e1, m7Var, 23), 0L);
+            b8.J.d(new ng(b8Var, m7Var.e1, m7Var, 23), 0L);
             return;
         }
         j8 E = b8.E(obj);
@@ -105,30 +105,30 @@ public final class z7 {
             k8 k8Var = b8Var.getFileLoader().d;
             k8Var.getClass();
             if (file != null) {
-                k8Var.h(new mg(k8Var, file, E, 24));
+                k8Var.h(new ng(k8Var, file, E, 24));
             }
         }
-        if (obj instanceof jj) {
-            jj jjVar = (jj) obj;
-            if (this.b != null && jjVar.P) {
+        if (obj instanceof kj) {
+            kj kjVar = (kj) obj;
+            if (this.b != null && kjVar.P) {
                 b6 downloadController = b8Var.getDownloadController();
                 downloadController.getClass();
-                if (jjVar.F0() != null) {
-                    i0.g3(new w5(downloadController, jjVar.F0(), jjVar, 0));
+                if (kjVar.F0() != null) {
+                    i0.g3(new w5(downloadController, kjVar.F0(), kjVar, 0));
                 }
             }
         }
         if (!m7Var.y) {
             b8Var.x.remove(this.c);
-            rb rbVar = b8Var.E;
-            if (rbVar != null) {
+            sb sbVar = b8Var.E;
+            if (sbVar != null) {
                 String str = this.c;
                 Object obj2 = this.a;
                 int i10 = this.d;
-                rbVar.b.u.remove(str);
-                i0.g3(new bi.k0(rbVar, file, str, rbVar.a, obj2, i10));
+                sbVar.b.u.remove(str);
+                i0.g3(new bi.k0(sbVar, file, str, sbVar.a, obj2, i10));
             }
         }
-        b8.J.d(new mg(b8Var, m7Var.e1, m7Var, 23), 0L);
+        b8.J.d(new ng(b8Var, m7Var.e1, m7Var, 23), 0L);
     }
 }

@@ -31,16 +31,16 @@ import m4.n1;
 import m4.t1;
 import mg.i2;
 import mg.r1;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.is;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -49,14 +49,14 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.d50;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.s80;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.vg;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.ll;
 import org.telegram.ui.un;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class u implements Runnable {
                 kg.q0 q0Var = (kg.q0) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 ArrayList arrayList = q0Var.a2;
-                tk0 tk0Var = q0Var.k1;
+                uk0 uk0Var = q0Var.k1;
                 if (tLObject != null) {
                     arrayList.clear();
                     arrayList.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
@@ -121,17 +121,17 @@ public final /* synthetic */ class u implements Runnable {
                     q0Var.B2.b(q0Var.f2 + 4);
                     int i11 = 0;
                     while (true) {
-                        if (i11 >= tk0Var.getChildCount()) {
+                        if (i11 >= uk0Var.getChildCount()) {
                             i10 = 0;
-                        } else if (tk0Var.getChildAt(i11) instanceof kg.p0) {
-                            i10 = tk0Var.getChildAt(i11).getTop();
+                        } else if (uk0Var.getChildAt(i11) instanceof kg.p0) {
+                            i10 = uk0Var.getChildAt(i11).getTop();
                         } else {
                             i11++;
                         }
                     }
                     q0Var.G1();
                     if (q0Var.d2 >= 0 && i10 != 0) {
-                        ((s4.a0) tk0Var.getLayoutManager()).h1(q0Var.d2 + 1, i10);
+                        ((s4.a0) uk0Var.getLayoutManager()).h1(q0Var.d2 + 1, i10);
                     }
                 }
                 int max = Math.max(arrayList.size(), q0Var.E2.b);
@@ -352,24 +352,24 @@ public final /* synthetic */ class u implements Runnable {
                 ((mg.o0) this.b).a((TLRPC.TL_error) this.c);
                 return;
             case 25:
-                hs hsVar = (hs) this.b;
-                q20 q20Var = (q20) this.c;
-                HashMap h02 = hsVar.h0();
+                is isVar = (is) this.b;
+                r20 r20Var = (r20) this.c;
+                HashMap h02 = isVar.h0();
                 if (h02.isEmpty()) {
                     return;
                 }
-                org.telegram.messenger.i0.g3(new mg.j0(q20Var, h02, 0));
+                org.telegram.messenger.i0.g3(new mg.j0(r20Var, h02, 0));
                 return;
             case 26:
                 ((vg) this.b).a((ArrayList) this.c);
                 return;
             case 27:
-                wb I = cc.a0((un) this.b).I(R.raw.stars_send, cd.L0(2131745110, null), org.telegram.messenger.i0.W2(cd.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)));
+                wb I = cc.a0((un) this.b).I(R.raw.stars_send, dd.L0(2131745110, null), org.telegram.messenger.i0.W2(dd.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)));
                 I.j = 5000;
                 I.k(true);
                 return;
             case 28:
-                zs.f(d20.s0).k(zs.V2, ((mg.w0) this.b).T1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.c);
+                at.f(e20.s0).k(at.V2, ((mg.w0) this.b).T1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.c);
                 return;
             default:
                 i2 i2Var = (i2) this.b;
@@ -379,7 +379,7 @@ public final /* synthetic */ class u implements Runnable {
                 i2Var.p2 = -1;
                 if (tLObject2 instanceof TLRPC.TL_contacts_found) {
                     TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject2;
-                    vp r12 = vp.r1(i2Var.a);
+                    wp r12 = wp.r1(i2Var.a);
                     r12.V3(tL_contacts_found.users, false);
                     r12.P3(tL_contacts_found.chats, false);
                     HashSet hashSet = new HashSet();

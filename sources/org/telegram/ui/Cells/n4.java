@@ -16,23 +16,23 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bj;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.qz;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.cj;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.dz;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.rz;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.t80;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n4 {
     public int A;
@@ -53,8 +53,8 @@ public final class n4 {
     public final dc n;
     public m4 o;
     public boolean p;
-    public qz0 q;
-    public qz0 r;
+    public rz0 q;
+    public rz0 r;
     public long s;
     public Bitmap w;
     public Paint x;
@@ -104,10 +104,10 @@ public final class n4 {
         Path path2;
         float f13;
         boolean o42;
-        jj jjVar;
+        kj kjVar;
         float f14;
         long[] jArr;
-        cz czVar;
+        dz dzVar;
         int max;
         Canvas canvas2 = canvas;
         if (this.b == null) {
@@ -118,7 +118,7 @@ public final class n4 {
         float d = t5Var.d(z10);
         float d10 = t5Var.d(this.i);
         q1 q1Var2 = this.a;
-        jj messageObject = q1Var2.getMessageObject();
+        kj messageObject = q1Var2.getMessageObject();
         Path path3 = this.u;
         path3.rewind();
         float f15 = Float.MAX_VALUE;
@@ -148,7 +148,7 @@ public final class n4 {
                 int round = Math.round(0 / 1000.0f);
                 if (!m4Var.y && m4Var.K != (max = Math.max(0, m4Var.J - round))) {
                     m4Var.K = max;
-                    m4Var.L = new qz0(org.telegram.messenger.i0.g0(max, true, false), 12.0f, null);
+                    m4Var.L = new rz0(org.telegram.messenger.i0.g0(max, true, false), 12.0f, null);
                     if (f20 > 0.0f) {
                         float min = Math.min(this.d + m4Var.a, f18);
                         float min2 = Math.min(this.e + m4Var.b, f15);
@@ -175,7 +175,7 @@ public final class n4 {
                     o42 = messageObject.o4();
                     int i16 = messageObject.I1;
                     if (o42) {
-                        jjVar = messageObject;
+                        kjVar = messageObject;
                         f14 = f16;
                         if (org.telegram.messenger.b8.G(i16).T(m4Var.w)) {
                             m4Var.b(3);
@@ -183,16 +183,16 @@ public final class n4 {
                             m4Var.b(m4Var.a());
                         }
                     } else {
-                        qz C = qz.C(i16);
-                        long[] x10 = hc.D().x(m4Var.F);
+                        rz C = rz.C(i16);
+                        long[] x10 = ic.D().x(m4Var.F);
                         int f110 = messageObject.f1();
                         HashMap hashMap = C.a;
                         if (hashMap != null) {
                             Iterator it = hashMap.values().iterator();
-                            cz czVar2 = null;
+                            dz dzVar2 = null;
                             while (true) {
                                 if (!it.hasNext()) {
-                                    jjVar = messageObject;
+                                    kjVar = messageObject;
                                     jArr = x10;
                                     f14 = f16;
                                     break;
@@ -200,7 +200,7 @@ public final class n4 {
                                 ArrayList arrayList2 = (ArrayList) it.next();
                                 if (arrayList2 != null) {
                                     int size = arrayList2.size();
-                                    jjVar = messageObject;
+                                    kjVar = messageObject;
                                     int i17 = 0;
                                     while (true) {
                                         if (i17 >= size) {
@@ -210,9 +210,9 @@ public final class n4 {
                                         }
                                         Object obj = arrayList2.get(i17);
                                         int i18 = i17 + 1;
-                                        cz czVar3 = (cz) obj;
+                                        dz dzVar3 = (dz) obj;
                                         jArr = x10;
-                                        ArrayList arrayList3 = czVar3.z;
+                                        ArrayList arrayList3 = dzVar3.z;
                                         if (arrayList3 == null) {
                                             x10 = jArr;
                                             i17 = i18;
@@ -229,12 +229,12 @@ public final class n4 {
                                                 int i20 = size2;
                                                 TLRPC.Message message = (TLRPC.Message) obj2;
                                                 if (message != null && message.id == f110) {
-                                                    czVar2 = czVar3;
+                                                    dzVar2 = dzVar3;
                                                     break;
                                                 }
                                                 size2 = i20;
                                             }
-                                            if (czVar2 != null) {
+                                            if (dzVar2 != null) {
                                                 break;
                                             }
                                             x10 = jArr;
@@ -242,23 +242,23 @@ public final class n4 {
                                             f16 = f14;
                                         }
                                     }
-                                    if (czVar2 != null) {
+                                    if (dzVar2 != null) {
                                         break;
                                     }
                                     x10 = jArr;
-                                    messageObject = jjVar;
+                                    messageObject = kjVar;
                                     f16 = f14;
                                 }
                             }
-                            czVar = czVar2;
+                            dzVar = dzVar2;
                         } else {
-                            jjVar = messageObject;
+                            kjVar = messageObject;
                             jArr = x10;
                             f14 = f16;
-                            czVar = null;
+                            dzVar = null;
                         }
-                        if (czVar != null && i10 >= 0 && i10 < czVar.z.size()) {
-                            f110 = ((TLRPC.Message) czVar.z.get(i10)).id;
+                        if (dzVar != null && i10 >= 0 && i10 < dzVar.z.size()) {
+                            f110 = ((TLRPC.Message) dzVar.z.get(i10)).id;
                         }
                         boolean z11 = C.c.indexOfKey(f110) >= 0 || C.d.indexOfKey(f110) >= 0;
                         if (jArr == null && z11) {
@@ -275,7 +275,7 @@ public final class n4 {
                     q1Var2 = q1Var3;
                     d10 = f20;
                     f15 = f25;
-                    messageObject = jjVar;
+                    messageObject = kjVar;
                     f16 = f14;
                 }
             }
@@ -304,7 +304,7 @@ public final class n4 {
             q1Var2 = q1Var3;
             d10 = f20;
             f15 = f252;
-            messageObject = jjVar;
+            messageObject = kjVar;
             f16 = f14;
         }
         float f29 = d;
@@ -572,7 +572,7 @@ public final class n4 {
                     if (m4Var != null && m4Var == d10) {
                         q1Var = this.a;
                         if (q1Var.getDelegate() != null && motionEvent.getAction() == 1) {
-                            jj messageObject = q1Var.getMessageObject();
+                            kj messageObject = q1Var.getMessageObject();
                             if (this.p || !z10 || d10.G.i.q != 3 || messageObject == null) {
                                 l1 delegate = q1Var.getDelegate();
                                 m4 m4Var2 = this.o;
@@ -582,7 +582,7 @@ public final class n4 {
                                 motionEvent.getY();
                                 delegate.C1(q1Var, messageExtendedMedia);
                             } else if (messageObject.o4()) {
-                                qz.C(messageObject.I1).g(messageObject);
+                                rz.C(messageObject.I1).g(messageObject);
                             }
                         }
                     }
@@ -595,7 +595,7 @@ public final class n4 {
             if (m4Var != null) {
                 q1Var = this.a;
                 if (q1Var.getDelegate() != null) {
-                    jj messageObject2 = q1Var.getMessageObject();
+                    kj messageObject2 = q1Var.getMessageObject();
                     if (this.p) {
                     }
                     l1 delegate2 = q1Var.getDelegate();
@@ -626,7 +626,7 @@ public final class n4 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void g(jj jjVar) {
+    public final void g(kj kjVar) {
         TLRPC.Message message;
         TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia;
         int i10;
@@ -641,11 +641,11 @@ public final class n4 {
         int i13;
         TLRPC.Document document;
         TLRPC.PhotoSize w9;
-        jj jjVar2;
+        kj kjVar2;
         ArrayList arrayList;
-        bj bjVar;
+        cj cjVar;
         n4 n4Var = this;
-        if (jjVar == null || (message = jjVar.k) == null) {
+        if (kjVar == null || (message = kjVar.k) == null) {
             return;
         }
         TLRPC.MessageMedia messageMedia = message.media;
@@ -686,12 +686,12 @@ public final class n4 {
                 float f15 = 1.0f;
                 while (i14 < size) {
                     TLRPC.MessageExtendedMedia messageExtendedMedia = (TLRPC.MessageExtendedMedia) arrayList3.get(i14);
-                    bj bjVar2 = new bj();
-                    bjVar2.h = i14 == size + (-1) ? true : z10;
+                    cj cjVar2 = new cj();
+                    cjVar2.h = i14 == size + (-1) ? true : z10;
                     if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview) {
                         TLRPC.TL_messageExtendedMediaPreview tL_messageExtendedMediaPreview = (TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia;
-                        bjVar2.n = tL_messageExtendedMediaPreview.w;
-                        bjVar2.o = tL_messageExtendedMediaPreview.h;
+                        cjVar2.n = tL_messageExtendedMediaPreview.w;
+                        cjVar2.o = tL_messageExtendedMediaPreview.h;
                         i13 = i14;
                     } else {
                         boolean z12 = z10;
@@ -702,37 +702,37 @@ public final class n4 {
                                 if (photo == null) {
                                     i13 = i14;
                                     w9 = null;
-                                    bjVar2.n = w9 != null ? 100 : w9.w;
-                                    bjVar2.o = w9 != null ? 100 : w9.h;
+                                    cjVar2.n = w9 != null ? 100 : w9.w;
+                                    cjVar2.o = w9 != null ? 100 : w9.h;
                                 } else {
                                     i13 = i14;
                                     w9 = org.telegram.messenger.b8.w(photo.sizes, org.telegram.messenger.i0.Z0(z12), z12, null, z12);
-                                    bjVar2.n = w9 != null ? 100 : w9.w;
-                                    bjVar2.o = w9 != null ? 100 : w9.h;
+                                    cjVar2.n = w9 != null ? 100 : w9.w;
+                                    cjVar2.o = w9 != null ? 100 : w9.h;
                                 }
                             } else {
                                 i13 = i14;
                                 if ((messageMedia2 instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) messageMedia2).document) != null) {
                                     w9 = org.telegram.messenger.b8.w(document.thumbs, org.telegram.messenger.i0.Z0(z12), z12, null, z12);
-                                    bjVar2.n = w9 != null ? 100 : w9.w;
-                                    bjVar2.o = w9 != null ? 100 : w9.h;
+                                    cjVar2.n = w9 != null ? 100 : w9.w;
+                                    cjVar2.o = w9 != null ? 100 : w9.h;
                                 }
                                 w9 = null;
-                                bjVar2.n = w9 != null ? 100 : w9.w;
-                                bjVar2.o = w9 != null ? 100 : w9.h;
+                                cjVar2.n = w9 != null ? 100 : w9.w;
+                                cjVar2.o = w9 != null ? 100 : w9.h;
                             }
                         } else {
                             i13 = i14;
-                            bjVar2.n = 100;
-                            bjVar2.o = 100;
+                            cjVar2.n = 100;
+                            cjVar2.o = 100;
                         }
                     }
-                    if (bjVar2.n <= 0 || bjVar2.o <= 0) {
-                        bjVar2.n = 50;
-                        bjVar2.o = 50;
+                    if (cjVar2.n <= 0 || cjVar2.o <= 0) {
+                        cjVar2.n = 50;
+                        cjVar2.o = 50;
                     }
-                    float f16 = bjVar2.n / bjVar2.o;
-                    bjVar2.g = f16;
+                    float f16 = cjVar2.n / cjVar2.o;
+                    cjVar2.g = f16;
                     if (f16 > 1.2f) {
                         sb2.append("w");
                     } else if (f16 < 0.8f) {
@@ -740,13 +740,13 @@ public final class n4 {
                     } else {
                         sb2.append("q");
                     }
-                    float f17 = bjVar2.g;
+                    float f17 = cjVar2.g;
                     f15 += f17;
                     if (f17 > 2.0f) {
                         z11 = true;
                     }
-                    hashMap.put(messageExtendedMedia, bjVar2);
-                    arrayList2.add(bjVar2);
+                    hashMap.put(messageExtendedMedia, cjVar2);
+                    arrayList2.add(cjVar2);
                     i14 = i13 + 1;
                     z10 = false;
                 }
@@ -763,8 +763,8 @@ public final class n4 {
                 float f21 = f15 / size;
                 float L4 = org.telegram.messenger.i0.L(100.0f) / f14;
                 if (size == 1) {
-                    bj bjVar3 = (bj) arrayList2.get(0);
-                    float f22 = bjVar3.g;
+                    cj cjVar3 = (cj) arrayList2.get(0);
+                    float f22 = cjVar3.g;
                     if (f22 >= 1.0f) {
                         f12 = l4Var2.h;
                         f13 = ((f12 / f22) / f12) * f14;
@@ -772,7 +772,7 @@ public final class n4 {
                         f12 = l4Var2.h * ((f22 * f14) / f14);
                         f13 = f14;
                     }
-                    bjVar3.a(f13 / f14, 0, 0, 0, 0, (int) f12, 15);
+                    cjVar3.a(f13 / f14, 0, 0, 0, 0, (int) f12, 15);
                     tL_messageMediaPaidMedia = tL_messageMediaPaidMedia2;
                 } else {
                     if (z11) {
@@ -781,85 +781,85 @@ public final class n4 {
                         tL_messageMediaPaidMedia = tL_messageMediaPaidMedia2;
                         if (size == 2 || size == 3 || size == 4) {
                             if (size == 2) {
-                                bj bjVar4 = (bj) arrayList2.get(0);
-                                bj bjVar5 = (bj) arrayList2.get(1);
+                                cj cjVar4 = (cj) arrayList2.get(0);
+                                cj cjVar5 = (cj) arrayList2.get(1);
                                 String sb3 = sb2.toString();
                                 if (sb3.equals("ww") && f21 > f20 * 1.4d) {
-                                    float f23 = bjVar4.g;
-                                    float f24 = bjVar5.g;
+                                    float f23 = cjVar4.g;
+                                    float f24 = cjVar5.g;
                                     if (f23 - f24 < 0.2d) {
                                         float f25 = l4Var2.h;
                                         float round = Math.round(Math.min(f25 / f23, Math.min(f25 / f24, f14 / 2.0f))) / f14;
-                                        bjVar4.a(round, 0, 0, 0, 0, l4Var2.h, 7);
-                                        bjVar5.a(round, 0, 0, 1, 1, l4Var2.h, 11);
+                                        cjVar4.a(round, 0, 0, 0, 0, l4Var2.h, 7);
+                                        cjVar5.a(round, 0, 0, 1, 1, l4Var2.h, 11);
                                     }
                                 }
                                 if (sb3.equals("ww") || sb3.equals("qq")) {
                                     int i16 = l4Var2.h / 2;
                                     float f26 = i16;
-                                    float round2 = Math.round(Math.min(f26 / bjVar4.g, Math.min(f26 / bjVar5.g, f14))) / f14;
-                                    bjVar4.a(round2, 0, 0, 0, 0, i16, 13);
-                                    bjVar5.a(round2, 1, 1, 0, 0, i16, 14);
+                                    float round2 = Math.round(Math.min(f26 / cjVar4.g, Math.min(f26 / cjVar5.g, f14))) / f14;
+                                    cjVar4.a(round2, 0, 0, 0, 0, i16, 13);
+                                    cjVar5.a(round2, 1, 1, 0, 0, i16, 14);
                                     l4Var2.e = 1;
                                 } else {
                                     float f27 = l4Var2.h;
-                                    float f28 = bjVar4.g;
-                                    int max = (int) Math.max(f27 * 0.4f, Math.round((f27 / f28) / ((1.0f / bjVar5.g) + (1.0f / f28))));
+                                    float f28 = cjVar4.g;
+                                    int max = (int) Math.max(f27 * 0.4f, Math.round((f27 / f28) / ((1.0f / cjVar5.g) + (1.0f / f28))));
                                     int i17 = l4Var2.h - max;
                                     if (i17 < min) {
                                         max -= min - i17;
                                     } else {
                                         min = i17;
                                     }
-                                    float min3 = Math.min(f14, Math.round(Math.min(min / bjVar4.g, max / bjVar5.g))) / f14;
-                                    bjVar4.a(min3, 0, 0, 0, 0, min, 13);
-                                    bjVar5.a(min3, 1, 1, 0, 0, max, 14);
+                                    float min3 = Math.min(f14, Math.round(Math.min(min / cjVar4.g, max / cjVar5.g))) / f14;
+                                    cjVar4.a(min3, 0, 0, 0, 0, min, 13);
+                                    cjVar5.a(min3, 1, 1, 0, 0, max, 14);
                                     l4Var2.e = 1;
                                 }
                             } else if (size == 3) {
-                                bj bjVar6 = (bj) arrayList2.get(0);
-                                bj bjVar7 = (bj) arrayList2.get(1);
-                                bj bjVar8 = (bj) arrayList2.get(2);
+                                cj cjVar6 = (cj) arrayList2.get(0);
+                                cj cjVar7 = (cj) arrayList2.get(1);
+                                cj cjVar8 = (cj) arrayList2.get(2);
                                 if (sb2.charAt(0) == 'n') {
-                                    float f29 = bjVar7.g;
-                                    float min4 = Math.min(f14 * 0.5f, Math.round((l4Var2.h * f29) / (bjVar8.g + f29)));
+                                    float f29 = cjVar7.g;
+                                    float min4 = Math.min(f14 * 0.5f, Math.round((l4Var2.h * f29) / (cjVar8.g + f29)));
                                     float f30 = f14 - min4;
-                                    int max2 = (int) Math.max(min, Math.min(l4Var2.h * 0.5f, Math.round(Math.min(bjVar8.g * min4, bjVar7.g * f30))));
-                                    int round3 = Math.round(Math.min((bjVar6.g * f14) + i15, l4Var2.h - max2));
-                                    bjVar6.a(1.0f, 0, 0, 0, 1, round3, 13);
+                                    int max2 = (int) Math.max(min, Math.min(l4Var2.h * 0.5f, Math.round(Math.min(cjVar8.g * min4, cjVar7.g * f30))));
+                                    int round3 = Math.round(Math.min((cjVar6.g * f14) + i15, l4Var2.h - max2));
+                                    cjVar6.a(1.0f, 0, 0, 0, 1, round3, 13);
                                     float f31 = f30 / f14;
-                                    bjVar7.a(f31, 1, 1, 0, 0, max2, 6);
+                                    cjVar7.a(f31, 1, 1, 0, 0, max2, 6);
                                     float f32 = min4 / f14;
-                                    bjVar8.a(f32, 1, 1, 1, 1, max2, 10);
+                                    cjVar8.a(f32, 1, 1, 1, 1, max2, 10);
                                     int i18 = l4Var2.h;
-                                    bjVar8.i = i18;
-                                    bjVar6.m = new float[]{f32, f31};
-                                    bjVar7.i = i18 - round3;
-                                    bjVar8.j = round3;
+                                    cjVar8.i = i18;
+                                    cjVar6.m = new float[]{f32, f31};
+                                    cjVar7.i = i18 - round3;
+                                    cjVar8.j = round3;
                                     l4Var2.e = 1;
                                 } else {
-                                    float round4 = Math.round(Math.min(l4Var2.h / bjVar6.g, 0.66f * f14)) / f14;
-                                    bjVar6.a(round4, 0, 1, 0, 0, l4Var2.h, 7);
+                                    float round4 = Math.round(Math.min(l4Var2.h / cjVar6.g, 0.66f * f14)) / f14;
+                                    cjVar6.a(round4, 0, 1, 0, 0, l4Var2.h, 7);
                                     int i19 = l4Var2.h / 2;
                                     float f33 = i19;
-                                    float min5 = Math.min(f14 - round4, Math.round(Math.min(f33 / bjVar7.g, f33 / bjVar8.g))) / f14;
+                                    float min5 = Math.min(f14 - round4, Math.round(Math.min(f33 / cjVar7.g, f33 / cjVar8.g))) / f14;
                                     float f34 = min5 < L4 ? L4 : min5;
-                                    bjVar7.a(f34, 0, 0, 1, 1, i19, 9);
-                                    bjVar8.a(f34, 1, 1, 1, 1, i19, 10);
+                                    cjVar7.a(f34, 0, 0, 1, 1, i19, 9);
+                                    cjVar8.a(f34, 1, 1, 1, 1, i19, 10);
                                     l4Var2.e = 1;
                                 }
                             } else {
-                                bj bjVar9 = (bj) arrayList2.get(0);
-                                bj bjVar10 = (bj) arrayList2.get(1);
-                                bj bjVar11 = (bj) arrayList2.get(2);
-                                bj bjVar12 = (bj) arrayList2.get(3);
+                                cj cjVar9 = (cj) arrayList2.get(0);
+                                cj cjVar10 = (cj) arrayList2.get(1);
+                                cj cjVar11 = (cj) arrayList2.get(2);
+                                cj cjVar12 = (cj) arrayList2.get(3);
                                 if (sb2.charAt(0) == 'w') {
-                                    float round5 = Math.round(Math.min(l4Var2.h / bjVar9.g, f14 * 0.66f)) / f14;
-                                    bjVar9.a(round5, 0, 2, 0, 0, l4Var2.h, 7);
-                                    float round6 = Math.round(l4Var2.h / ((bjVar10.g + bjVar11.g) + bjVar12.g));
+                                    float round5 = Math.round(Math.min(l4Var2.h / cjVar9.g, f14 * 0.66f)) / f14;
+                                    cjVar9.a(round5, 0, 2, 0, 0, l4Var2.h, 7);
+                                    float round6 = Math.round(l4Var2.h / ((cjVar10.g + cjVar11.g) + cjVar12.g));
                                     float f35 = min;
-                                    int max3 = (int) Math.max(f35, Math.min(l4Var2.h * 0.4f, bjVar10.g * round6));
-                                    int max4 = (int) Math.max(Math.max(f35, l4Var2.h * 0.33f), bjVar12.g * round6);
+                                    int max3 = (int) Math.max(f35, Math.min(l4Var2.h * 0.4f, cjVar10.g * round6));
+                                    int max4 = (int) Math.max(Math.max(f35, l4Var2.h * 0.33f), cjVar12.g * round6);
                                     int i20 = (l4Var2.h - max3) - max4;
                                     if (i20 < org.telegram.messenger.i0.L(58.0f)) {
                                         int L5 = org.telegram.messenger.i0.L(58.0f) - i20;
@@ -871,29 +871,29 @@ public final class n4 {
                                     int i22 = max3;
                                     float min6 = Math.min(f14 - round5, round6) / f14;
                                     float f36 = min6 < L4 ? L4 : min6;
-                                    bjVar10.a(f36, 0, 0, 1, 1, i22, 9);
-                                    bjVar11.a(f36, 1, 1, 1, 1, i20, 8);
-                                    bjVar12.a(f36, 2, 2, 1, 1, max4, 10);
+                                    cjVar10.a(f36, 0, 0, 1, 1, i22, 9);
+                                    cjVar11.a(f36, 1, 1, 1, 1, i20, 8);
+                                    cjVar12.a(f36, 2, 2, 1, 1, max4, 10);
                                     l4Var2.e = 2;
                                 } else {
-                                    int max5 = Math.max(min, Math.round(f14 / ((1.0f / bjVar12.g) + ((1.0f / bjVar11.g) + (1.0f / bjVar10.g)))));
+                                    int max5 = Math.max(min, Math.round(f14 / ((1.0f / cjVar12.g) + ((1.0f / cjVar11.g) + (1.0f / cjVar10.g)))));
                                     float f37 = L;
                                     float f38 = max5;
-                                    float min7 = Math.min(0.33f, Math.max(f37, f38 / bjVar10.g) / f14);
-                                    float min8 = Math.min(0.33f, Math.max(f37, f38 / bjVar11.g) / f14);
+                                    float min7 = Math.min(0.33f, Math.max(f37, f38 / cjVar10.g) / f14);
+                                    float min8 = Math.min(0.33f, Math.max(f37, f38 / cjVar11.g) / f14);
                                     float f39 = (1.0f - min7) - min8;
-                                    int round7 = Math.round(Math.min((bjVar9.g * f14) + i15, l4Var2.h - max5));
-                                    bjVar9.a(min7 + min8 + f39, 0, 0, 0, 2, round7, 13);
-                                    bjVar10.a(min7, 1, 1, 0, 0, max5, 6);
-                                    bjVar11.a(min8, 1, 1, 1, 1, max5, 2);
-                                    bjVar11.i = l4Var2.h;
-                                    bjVar12.a(f39, 1, 1, 2, 2, max5, 10);
+                                    int round7 = Math.round(Math.min((cjVar9.g * f14) + i15, l4Var2.h - max5));
+                                    cjVar9.a(min7 + min8 + f39, 0, 0, 0, 2, round7, 13);
+                                    cjVar10.a(min7, 1, 1, 0, 0, max5, 6);
+                                    cjVar11.a(min8, 1, 1, 1, 1, max5, 2);
+                                    cjVar11.i = l4Var2.h;
+                                    cjVar12.a(f39, 1, 1, 2, 2, max5, 10);
                                     int i23 = l4Var2.h;
-                                    bjVar12.i = i23;
-                                    bjVar10.i = i23 - round7;
-                                    bjVar11.j = round7;
-                                    bjVar12.j = round7;
-                                    bjVar9.m = new float[]{min7, min8, f39};
+                                    cjVar12.i = i23;
+                                    cjVar10.i = i23 - round7;
+                                    cjVar11.j = round7;
+                                    cjVar12.j = round7;
+                                    cjVar9.m = new float[]{min7, min8, f39};
                                     l4Var2.e = 1;
                                 }
                             }
@@ -905,10 +905,10 @@ public final class n4 {
                     while (i24 < size) {
                         if (f21 > 1.1f) {
                             f11 = f18;
-                            fArr2[i24] = Math.max(f11, ((bj) arrayList2.get(i24)).g);
+                            fArr2[i24] = Math.max(f11, ((cj) arrayList2.get(i24)).g);
                         } else {
                             f11 = f18;
-                            fArr2[i24] = Math.min(f11, ((bj) arrayList2.get(i24)).g);
+                            fArr2[i24] = Math.min(f11, ((cj) arrayList2.get(i24)).g);
                         }
                         fArr2[i24] = Math.max(0.66667f, Math.min(1.7f, fArr2[i24]));
                         i24++;
@@ -1065,12 +1065,12 @@ public final class n4 {
                             int i47 = l4Var2.h;
                             int i48 = i46 - 1;
                             l4Var2.e = Math.max(l4Var2.e, i48);
-                            bj bjVar13 = null;
+                            cj cjVar13 = null;
                             int i49 = 0;
                             while (i49 < i46) {
                                 int i50 = (int) (fArr4[i45] * f46);
                                 i47 -= i50;
-                                bj bjVar14 = (bj) arrayList2.get(i45);
+                                cj cjVar14 = (cj) arrayList2.get(i45);
                                 int i51 = i44 == 0 ? 4 : 0;
                                 k4 k4Var6 = k4Var4;
                                 if (i44 == iArr2.length - 1) {
@@ -1081,73 +1081,73 @@ public final class n4 {
                                 }
                                 if (i49 == i48) {
                                     i51 |= 2;
-                                    bjVar13 = bjVar14;
+                                    cjVar13 = cjVar14;
                                 }
                                 int i52 = i49;
-                                bjVar14.a(Math.max(L4, f46 / f14), i52, i49, i44, i44, i50, i51);
+                                cjVar14.a(Math.max(L4, f46 / f14), i52, i49, i44, i44, i50, i51);
                                 i45++;
                                 i49 = i52 + 1;
                                 k4Var4 = k4Var6;
                             }
-                            bjVar13.e += i47;
-                            bjVar13.i += i47;
+                            cjVar13.e += i47;
+                            cjVar13.i += i47;
                             i44++;
                             k4Var4 = k4Var4;
                         }
                     }
                 }
                 for (int i53 = 0; i53 < size; i53++) {
-                    bj bjVar15 = (bj) arrayList2.get(i53);
-                    if (bjVar15.b == l4Var2.e || (bjVar15.l & 2) != 0) {
-                        bjVar15.i += zs.e3;
+                    cj cjVar15 = (cj) arrayList2.get(i53);
+                    if (cjVar15.b == l4Var2.e || (cjVar15.l & 2) != 0) {
+                        cjVar15.i += at.e3;
                     }
-                    if ((bjVar15.l & 1) != 0) {
-                        bjVar15.k = true;
+                    if ((cjVar15.l & 1) != 0) {
+                        cjVar15.k = true;
                     }
-                    if (bjVar15.k) {
-                        int i54 = bjVar15.i;
+                    if (cjVar15.k) {
+                        int i54 = cjVar15.i;
                         if (i54 != 1000) {
-                            bjVar15.i = i54 + zs.t1;
+                            cjVar15.i = i54 + at.t1;
                         }
-                        bjVar15.e += zs.t1;
-                    } else if ((bjVar15.l & 2) != 0) {
-                        int i55 = bjVar15.i;
+                        cjVar15.e += at.t1;
+                    } else if ((cjVar15.l & 2) != 0) {
+                        int i55 = cjVar15.i;
                         if (i55 != 1000) {
-                            bjVar15.i = i55 - 108;
+                            cjVar15.i = i55 - 108;
                         } else {
-                            int i56 = bjVar15.j;
+                            int i56 = cjVar15.j;
                             if (i56 != 0) {
-                                bjVar15.j = i56 + zs.t1;
+                                cjVar15.j = i56 + at.t1;
                             }
                         }
                     }
                 }
                 int i57 = 0;
                 while (i57 < size) {
-                    bj bjVar16 = (bj) arrayList2.get(i57);
-                    if (bjVar16.a == 0) {
-                        bjVar16.i += zs.e3;
+                    cj cjVar16 = (cj) arrayList2.get(i57);
+                    if (cjVar16.a == 0) {
+                        cjVar16.i += at.e3;
                     }
-                    if ((bjVar16.l & 2) != 0) {
-                        bjVar16.k = true;
+                    if ((cjVar16.l & 2) != 0) {
+                        cjVar16.k = true;
                     }
-                    l4Var2.e = Math.max(l4Var2.e, (int) bjVar16.b);
-                    l4Var2.f = Math.max(l4Var2.f, (int) bjVar16.d);
-                    byte b10 = bjVar16.c;
-                    byte b11 = bjVar16.d;
-                    byte b12 = bjVar16.a;
+                    l4Var2.e = Math.max(l4Var2.e, (int) cjVar16.b);
+                    l4Var2.f = Math.max(l4Var2.f, (int) cjVar16.d);
+                    byte b10 = cjVar16.c;
+                    byte b11 = cjVar16.d;
+                    byte b12 = cjVar16.a;
                     int i58 = (b11 - b10) + 1;
                     float[] fArr5 = new float[i58];
                     Arrays.fill(fArr5, 0.0f);
                     int size3 = arrayList2.size();
                     int i59 = 0;
                     while (i59 < size3) {
-                        bj bjVar17 = (bj) arrayList2.get(i59);
-                        if (bjVar17 != bjVar16 && bjVar17.b < b12) {
-                            int min9 = Math.min((int) bjVar17.d, (int) b11) - b10;
-                            int max6 = Math.max(bjVar17.c - b10, 0);
+                        cj cjVar17 = (cj) arrayList2.get(i59);
+                        if (cjVar17 != cjVar16 && cjVar17.b < b12) {
+                            int min9 = Math.min((int) cjVar17.d, (int) b11) - b10;
+                            int max6 = Math.max(cjVar17.c - b10, 0);
                             while (max6 <= min9) {
-                                fArr5[max6] = fArr5[max6] + bjVar17.e;
+                                fArr5[max6] = fArr5[max6] + cjVar17.e;
                                 max6++;
                                 i57 = i57;
                             }
@@ -1163,21 +1163,21 @@ public final class n4 {
                             f47 = f48;
                         }
                     }
-                    bjVar16.q = f47;
+                    cjVar16.q = f47;
                     i57 = i60 + 1;
                 }
                 for (int i62 = 0; i62 < size; i62++) {
-                    bj bjVar18 = (bj) arrayList2.get(i62);
-                    byte b13 = bjVar18.c;
+                    cj cjVar18 = (cj) arrayList2.get(i62);
+                    byte b13 = cjVar18.c;
                     int i63 = l4Var2.e + 1;
                     float[] fArr6 = new float[i63];
                     Arrays.fill(fArr6, 0.0f);
                     int size4 = arrayList2.size();
                     for (int i64 = 0; i64 < size4; i64++) {
-                        bj bjVar19 = (bj) arrayList2.get(i64);
-                        if (bjVar19 != bjVar18 && bjVar19.d < b13) {
-                            for (int i65 = bjVar19.a; i65 <= bjVar19.b; i65++) {
-                                fArr6[i65] = fArr6[i65] + bjVar19.f;
+                        cj cjVar19 = (cj) arrayList2.get(i64);
+                        if (cjVar19 != cjVar18 && cjVar19.d < b13) {
+                            for (int i65 = cjVar19.a; i65 <= cjVar19.b; i65++) {
+                                fArr6[i65] = fArr6[i65] + cjVar19.f;
                             }
                         }
                     }
@@ -1188,15 +1188,15 @@ public final class n4 {
                             f49 = f50;
                         }
                     }
-                    bjVar18.p = f49;
+                    cjVar18.p = f49;
                 }
                 int[] iArr3 = new int[10];
                 Arrays.fill(iArr3, 0);
                 int size5 = arrayList2.size();
                 for (int i67 = 0; i67 < size5; i67++) {
-                    bj bjVar20 = (bj) arrayList2.get(i67);
-                    int i68 = bjVar20.e;
-                    for (int i69 = bjVar20.c; i69 <= bjVar20.d; i69++) {
+                    cj cjVar20 = (cj) arrayList2.get(i67);
+                    int i68 = cjVar20.e;
+                    for (int i69 = cjVar20.c; i69 <= cjVar20.d; i69++) {
                         iArr3[i69] = iArr3[i69] + i68;
                     }
                 }
@@ -1212,9 +1212,9 @@ public final class n4 {
                 Arrays.fill(fArr7, 0.0f);
                 int size6 = arrayList2.size();
                 for (int i73 = 0; i73 < size6; i73++) {
-                    bj bjVar21 = (bj) arrayList2.get(i73);
-                    float f51 = bjVar21.f;
-                    for (int i74 = bjVar21.a; i74 <= bjVar21.b; i74++) {
+                    cj cjVar21 = (cj) arrayList2.get(i73);
+                    float f51 = cjVar21.f;
+                    for (int i74 = cjVar21.a; i74 <= cjVar21.b; i74++) {
                         fArr7[i74] = fArr7[i74] + f51;
                     }
                 }
@@ -1233,14 +1233,14 @@ public final class n4 {
             q1 q1Var = n4Var.a;
             if (i76 > 0) {
                 n4Var.f = i76;
-                jjVar2 = jjVar;
+                kjVar2 = kjVar;
             } else {
                 if (org.telegram.messenger.i0.Q1()) {
                     n4Var.f = org.telegram.messenger.i0.Q0() - org.telegram.messenger.i0.L(122.0f);
-                    jjVar2 = jjVar;
+                    kjVar2 = kjVar;
                 } else {
-                    jjVar2 = jjVar;
-                    n4Var.f = Math.min(q1Var.getParentWidth(), org.telegram.messenger.i0.q.y) - org.telegram.messenger.i0.L((q1Var.V(jjVar2) ? i10 : 0) + 64);
+                    kjVar2 = kjVar;
+                    n4Var.f = Math.min(q1Var.getParentWidth(), org.telegram.messenger.i0.q.y) - org.telegram.messenger.i0.L((q1Var.V(kjVar2) ? i10 : 0) + 64);
                 }
                 if (q1Var.V2()) {
                     n4Var.f -= org.telegram.messenger.i0.L(52.0f);
@@ -1260,21 +1260,21 @@ public final class n4 {
                     l4 l4Var3 = n4Var.b;
                     if (messageExtendedMedia2 == null) {
                         l4Var3.getClass();
-                        bjVar = null;
+                        cjVar = null;
                     } else {
-                        bjVar = (bj) l4Var3.c.get(messageExtendedMedia2);
+                        cjVar = (cj) l4Var3.c.get(messageExtendedMedia2);
                     }
-                    m4 m4Var2 = new m4(n4Var.a, jjVar2, messageExtendedMedia2, tL_messageMediaPaidMedia3.extended_media.size() != 1, (int) ((bjVar.e / 1000.0f) * n4Var.f), (int) (bjVar.f * n4Var.b.i));
+                    m4 m4Var2 = new m4(n4Var.a, kjVar2, messageExtendedMedia2, tL_messageMediaPaidMedia3.extended_media.size() != 1, (int) ((cjVar.e / 1000.0f) * n4Var.f), (int) (cjVar.f * n4Var.b.i));
                     String str = messageExtendedMedia2.attachPath;
                     if (str != null) {
                         m4Var2.F = str;
                     } else if (tL_messageMediaPaidMedia3.extended_media.size() == 1) {
-                        TLRPC.Message message2 = jjVar2.k;
+                        TLRPC.Message message2 = kjVar2.k;
                         m4Var2.F = message2 != null ? message2.attachPath : null;
                     }
                     if (!TextUtils.isEmpty(m4Var2.F)) {
-                        org.telegram.messenger.b6.q(q1Var.Y5).a(m4Var2.F, jjVar2, m4Var2);
-                        if (jjVar2.o4()) {
+                        org.telegram.messenger.b6.q(q1Var.Y5).a(m4Var2.F, kjVar2, m4Var2);
+                        if (kjVar2.o4()) {
                             m4Var2.G.p(false, messageExtendedMedia2.uploadProgress);
                         }
                     }
@@ -1284,7 +1284,7 @@ public final class n4 {
                     }
                     arrayList.add(m4Var2);
                 } else {
-                    m4Var.c(messageExtendedMedia2, jjVar2);
+                    m4Var.c(messageExtendedMedia2, kjVar2);
                 }
                 i77++;
             }
@@ -1301,34 +1301,34 @@ public final class n4 {
                 }
                 size8++;
             }
-            h(jjVar);
+            h(kjVar);
             l4 l4Var4 = n4Var.b;
             n4Var.g = (int) ((l4Var4.d / 1000.0f) * n4Var.f);
             n4Var.h = (int) (l4Var4.g * l4Var4.i);
             if (n4Var.i) {
-                qz0 qz0Var = new qz0(rh.h8.Z0(false, cd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.i0.o());
-                n4Var.q = qz0Var;
-                if (qz0Var.c > n4Var.g - org.telegram.messenger.i0.L(30.0f)) {
-                    n4Var.q = new qz0(rh.h8.Z0(false, cd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.i0.o());
+                rz0 rz0Var = new rz0(rh.h8.a1(false, dd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.i0.o());
+                n4Var.q = rz0Var;
+                if (rz0Var.c > n4Var.g - org.telegram.messenger.i0.L(30.0f)) {
+                    n4Var.q = new rz0(rh.h8.a1(false, dd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.i0.o());
                 }
             }
             if (n4Var.r == null || n4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j10 = tL_messageMediaPaidMedia3.stars_amount;
                 n4Var.s = j10;
-                n4Var.r = new qz0(rh.h8.T0(cd.H(',', "PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, org.telegram.messenger.i0.o());
+                n4Var.r = new rz0(rh.h8.U0(dd.H(',', "PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, org.telegram.messenger.i0.o());
             }
         }
     }
 
-    public final void h(jj jjVar) {
+    public final void h(kj kjVar) {
         float f7;
         boolean z10;
         boolean z11;
         int i10;
         q1 q1Var = this.a;
         boolean z12 = false;
-        boolean z13 = q1Var.Sa > 0 || (q1Var.u1 && !TextUtils.isEmpty(jjVar.z));
-        boolean z14 = ((q1Var.u1 || TextUtils.isEmpty(jjVar.z)) && q1Var.N.p && !q1Var.v7) ? false : true;
+        boolean z13 = q1Var.Sa > 0 || (q1Var.u1 && !TextUtils.isEmpty(kjVar.z));
+        boolean z14 = ((q1Var.u1 || TextUtils.isEmpty(kjVar.z)) && q1Var.N.p && !q1Var.v7) ? false : true;
         int i11 = this.m;
         float f10 = 1000.0f;
         if (i11 > 0) {
@@ -1338,7 +1338,7 @@ public final class n4 {
             if (org.telegram.messenger.i0.Q1()) {
                 this.f = org.telegram.messenger.i0.Q0() - org.telegram.messenger.i0.L(122.0f);
             } else {
-                this.f = Math.min(q1Var.getParentWidth(), org.telegram.messenger.i0.q.y) - org.telegram.messenger.i0.L((q1Var.V(jjVar) ? 10 : 0) + 64);
+                this.f = Math.min(q1Var.getParentWidth(), org.telegram.messenger.i0.q.y) - org.telegram.messenger.i0.L((q1Var.V(kjVar) ? 10 : 0) + 64);
             }
             if (q1Var.V2()) {
                 this.f -= org.telegram.messenger.i0.L(52.0f);
@@ -1352,13 +1352,13 @@ public final class n4 {
         int L = org.telegram.messenger.i0.L(1.0f);
         int L2 = org.telegram.messenger.i0.L(4.0f);
         char c10 = 2;
-        int L3 = org.telegram.messenger.i0.L(r11 - (tz.Y0 > 2 ? 2 : 0));
+        int L3 = org.telegram.messenger.i0.L(r11 - (uz.Y0 > 2 ? 2 : 0));
         int min = Math.min(org.telegram.messenger.i0.L(3.0f), L3);
         int i12 = 0;
         while (true) {
             ArrayList arrayList = this.c;
             float f11 = f10;
-            bj bjVar = null;
+            cj cjVar = null;
             if (i12 >= arrayList.size()) {
                 break;
             }
@@ -1371,24 +1371,24 @@ public final class n4 {
             if (messageExtendedMedia == null) {
                 l4Var2.getClass();
             } else {
-                bjVar = (bj) l4Var2.c.get(messageExtendedMedia);
+                cjVar = (cj) l4Var2.c.get(messageExtendedMedia);
             }
-            if (bjVar == null) {
+            if (cjVar == null) {
                 z10 = z13;
                 z11 = z14;
                 i10 = L;
             } else {
-                float f12 = (bjVar.q / f11) * f7;
+                float f12 = (cjVar.q / f11) * f7;
                 float f13 = this.f;
                 int i13 = (int) (f12 * f13);
                 z10 = z13;
-                float f14 = bjVar.p;
+                float f14 = cjVar.p;
                 float f15 = this.b.i;
                 int i14 = (int) (f14 * f15);
-                int i15 = (int) ((bjVar.e / f11) * f7 * f13);
-                int i16 = (int) (bjVar.f * f15);
+                int i15 = (int) ((cjVar.e / f11) * f7 * f13);
+                int i16 = (int) (cjVar.f * f15);
                 int i17 = i15;
-                int i18 = bjVar.l;
+                int i18 = cjVar.l;
                 if ((i18 & 1) == 0) {
                     i13 += L;
                     i17 -= L;
@@ -1414,7 +1414,7 @@ public final class n4 {
                 m4Var.c = i13 + i21;
                 m4Var.d = i19 + i22;
                 imageReceiver.y0(i13, i19, i21, i22);
-                int i23 = bjVar.l;
+                int i23 = cjVar.l;
                 int i24 = i23 & 4;
                 int i25 = (i24 == 0 || (i23 & 1) == 0 || z10) ? L2 : L3;
                 int i26 = (i24 == 0 || (i23 & 2) == 0 || z10) ? L2 : L3;
@@ -1422,14 +1422,14 @@ public final class n4 {
                 int i28 = (i27 == 0 || (i23 & 1) == 0 || z11) ? L2 : L3;
                 int i29 = (i27 == 0 || (i23 & 2) == 0 || z11) ? L2 : L3;
                 if (!z11) {
-                    if (jjVar.P3()) {
+                    if (kjVar.P3()) {
                         i29 = L2;
                     } else {
                         i28 = L2;
                     }
                 }
                 if (!z10 && q1Var.E) {
-                    if (jjVar.P3()) {
+                    if (kjVar.P3()) {
                         i26 = min;
                     } else {
                         i25 = min;
@@ -1449,7 +1449,7 @@ public final class n4 {
                 float f19 = i28;
                 fArr[7] = f19;
                 fArr[6] = f19;
-                if (jjVar != null && jjVar.o4()) {
+                if (kjVar != null && kjVar.o4()) {
                     m4Var.b(3);
                 }
                 this.i = (this.i || m4Var.h) ? true : z15 ? 1 : 0;
@@ -1464,12 +1464,12 @@ public final class n4 {
         }
         boolean z16 = z12;
         if (this.i) {
-            TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = jjVar == null ? null : (TLRPC.TL_messageMediaPaidMedia) jjVar.k.media;
+            TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = kjVar == null ? null : (TLRPC.TL_messageMediaPaidMedia) kjVar.k.media;
             if (tL_messageMediaPaidMedia != null) {
-                qz0 qz0Var = new qz0(rh.h8.Z0(z16, cd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.i0.o());
-                this.q = qz0Var;
-                if (qz0Var.c > this.g - org.telegram.messenger.i0.L(30.0f)) {
-                    this.q = new qz0(rh.h8.Z0(false, cd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.i0.o());
+                rz0 rz0Var = new rz0(rh.h8.a1(z16, dd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.i0.o());
+                this.q = rz0Var;
+                if (rz0Var.c > this.g - org.telegram.messenger.i0.L(30.0f)) {
+                    this.q = new rz0(rh.h8.a1(false, dd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.i0.o());
                 }
             }
         }

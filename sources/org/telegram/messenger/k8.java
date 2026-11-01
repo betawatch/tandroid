@@ -8,7 +8,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class k8 {
     public r5 a;
@@ -127,9 +127,9 @@ public final class k8 {
         if (this.h) {
             return;
         }
-        if (!js.a) {
+        if (!ks.a) {
             int i10 = 0;
-            while (!js.a) {
+            while (!ks.a) {
                 try {
                     Thread.sleep(1000L);
                 } catch (InterruptedException e) {

@@ -1,14 +1,14 @@
 package bi;
 
 import java.util.ArrayList;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.ji;
 import org.telegram.ui.Components.wk;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements wk, ji {
     public final /* synthetic */ t a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class g implements wk, ji {
     @Override // org.telegram.ui.Components.ji
     public void l(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
         if (!arrayList.isEmpty()) {
-            this.a.r.e2((jj) arrayList.get(0));
+            this.a.r.e2((kj) arrayList.get(0));
         }
         this.b.a(true);
     }

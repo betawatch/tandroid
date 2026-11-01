@@ -1,17 +1,17 @@
 package xh;
 
-import org.telegram.messenger.l9;
+import org.telegram.messenger.m9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r1 implements g3, l9, org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class r1 implements h3, m9, org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ m2 a;
 
     public /* synthetic */ r1(m2 m2Var) {
         this.a = m2Var;
     }
 
-    @Override // xh.g3
+    @Override // xh.h3
     public void a(boolean z10) {
         m2 m2Var = this.a;
         if (m2Var.e0 && z10) {
@@ -25,7 +25,7 @@ public final /* synthetic */ class r1 implements g3, l9, org.telegram.ui.ActionB
         this.a.o(false);
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
         return Boolean.valueOf(this.a.f.getKeyboardHeight() >= org.telegram.messenger.i0.L(20.0f));
     }

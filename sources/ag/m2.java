@@ -10,23 +10,24 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.qi;
-import org.telegram.messenger.qz;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.rz;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.au0;
 import org.telegram.ui.Components.bl;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.f5;
@@ -37,23 +38,22 @@ import org.telegram.ui.Components.s4;
 import org.telegram.ui.Components.ux;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.Components.zt0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ay;
-import org.telegram.ui.cj0;
-import org.telegram.ui.i31;
+import org.telegram.ui.aj0;
+import org.telegram.ui.g31;
 import org.telegram.ui.kd;
 import org.telegram.ui.qq;
 import org.telegram.ui.un;
 import org.telegram.ui.zc;
+import org.telegram.ui.zx;
 import th.e5;
 import th.e6;
 import th.o7;
 import th.y4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m2 implements q20 {
+public final /* synthetic */ class m2 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -76,7 +76,7 @@ public final /* synthetic */ class m2 implements q20 {
     
         if (r12.charAt(r13) != 9794) goto L66;
      */
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -129,7 +129,7 @@ public final /* synthetic */ class m2 implements q20 {
                         boolean z10 = tL_payments_checkedGiftCode.used_date != 0;
                         org.telegram.ui.ActionBar.k2 Q = LaunchActivity.Q();
                         if (Q != null && mg.c1.K2 == null) {
-                            mg.c1 c1Var = new mg.c1(Q, d20.s0, user, new kg.m(tL_premiumGiftOption), str, z10, Q.getResourceProvider());
+                            mg.c1 c1Var = new mg.c1(Q, e20.s0, user, new kg.m(tL_premiumGiftOption), str, z10, Q.getResourceProvider());
                             c1Var.show();
                             mg.c1.K2 = c1Var;
                         }
@@ -144,29 +144,29 @@ public final /* synthetic */ class m2 implements q20 {
                 break;
             case 2:
                 mg.o1 o1Var = (mg.o1) obj5;
-                vp.r1(o1Var.a).G0().a(-((TLRPC.Chat) obj4).id, new m2(o1Var, (TL_stories.TL_premium_myBoosts) obj, (ArrayList) obj3, (HashSet) obj2, 3));
+                wp.r1(o1Var.a).G0().a(-((TLRPC.Chat) obj4).id, new m2(o1Var, (TL_stories.TL_premium_myBoosts) obj, (ArrayList) obj3, (HashSet) obj2, 3));
                 break;
             case 3:
                 ((mg.o1) obj5).dismiss();
-                zs.f(d20.s0).k(zs.U2, (TL_stories.TL_premium_myBoosts) obj4, Integer.valueOf(((ArrayList) obj3).size()), Integer.valueOf(((HashSet) obj2).size()), (TL_stories.TL_premium_boostsStatus) obj);
+                at.f(e20.s0).k(at.U2, (TL_stories.TL_premium_myBoosts) obj4, Integer.valueOf(((ArrayList) obj3).size()), Integer.valueOf(((HashSet) obj2).size()), (TL_stories.TL_premium_boostsStatus) obj);
                 break;
             case 4:
                 org.telegram.messenger.i0.g3(new e3((zc) obj5, (boolean[]) obj4, (int[]) obj3, (int[]) obj2, (TLRPC.TL_error) obj, 12));
                 break;
             case 5:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj5;
-                jj jjVar = (jj) obj4;
+                kj kjVar = (kj) obj4;
                 TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) obj3;
                 TLRPC.User user2 = (TLRPC.User) obj2;
                 TLRPC.User user3 = (TLRPC.User) obj;
                 int i13 = ChatActivityEnterView.s5;
                 if (user3 != null) {
                     TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-                    tL_messages_sendBotRequestedPeer.peer = vp.r1(chatActivityEnterView.Q).l1(jjVar.k.peer_id);
+                    tL_messages_sendBotRequestedPeer.peer = wp.r1(chatActivityEnterView.Q).l1(kjVar.k.peer_id);
                     tL_messages_sendBotRequestedPeer.flags |= 1;
-                    tL_messages_sendBotRequestedPeer.msg_id = jjVar.f1();
+                    tL_messages_sendBotRequestedPeer.msg_id = kjVar.f1();
                     tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
-                    tL_messages_sendBotRequestedPeer.requested_peers.add(vp.m1(user3));
+                    tL_messages_sendBotRequestedPeer.requested_peers.add(wp.m1(user3));
                     ConnectionsManager.getInstance(chatActivityEnterView.Q).sendRequest(tL_messages_sendBotRequestedPeer, null);
                     long j11 = user2.id;
                     Bundle bundle = new Bundle();
@@ -210,50 +210,50 @@ public final /* synthetic */ class m2 implements q20 {
                     while (i11 < size) {
                         Object obj6 = arrayList3.get(i11);
                         i11++;
-                        qi qiVar = new qi();
-                        qiVar.a = "animated_" + ((TLRPC.Document) obj6).id;
-                        qiVar.b = null;
-                        arrayList2.add(qiVar);
+                        ri riVar = new ri();
+                        riVar.a = "animated_" + ((TLRPC.Document) obj6).id;
+                        riVar.b = null;
+                        arrayList2.add(riVar);
                     }
                     runnable.run();
                     break;
                 }
                 break;
             case 10:
-                zt0.j((zt0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (z60) obj2, (y4) obj);
+                au0.j((au0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (z60) obj2, (y4) obj);
                 break;
             case 11:
-                ay ayVar = (ay) obj5;
-                ayVar.b5(ayVar.getMessagesController().L0((Long) obj4), (Runnable) obj, new qq(ayVar, (kd) obj3, (org.telegram.ui.ActionBar.k2) obj2, i12));
+                zx zxVar = (zx) obj5;
+                zxVar.c5(zxVar.getMessagesController().L0((Long) obj4), (Runnable) obj, new qq(zxVar, (kd) obj3, (org.telegram.ui.ActionBar.k2) obj2, i12));
                 break;
             case 12:
-                i31 i31Var = (i31) obj5;
+                g31 g31Var = (g31) obj5;
                 String[] strArr = (String[]) obj4;
                 String str2 = (String) obj3;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) obj2;
                 Runnable runnable2 = (Runnable) obj;
-                int i14 = i31Var.V;
+                int i14 = g31Var.V;
                 if (ConnectionsManager.getInstance(i14).getConnectionState() != 3) {
                     runnable2.run();
                     break;
                 } else {
-                    ui.b0(i14).Z1(true, strArr.length != 0 ? strArr[0] : "", str2, new org.telegram.ui.w(i31Var, linkedHashSet, runnable2, 13), false);
+                    vi.b0(i14).Z1(true, strArr.length != 0 ? strArr[0] : "", str2, new org.telegram.ui.w(g31Var, linkedHashSet, runnable2, 13), false);
                     break;
                 }
             case 13:
-                i31 i31Var2 = (i31) obj5;
+                g31 g31Var2 = (g31) obj5;
                 String str3 = (String) obj4;
                 ArrayList arrayList4 = (ArrayList) obj3;
                 HashMap hashMap = (HashMap) obj2;
                 Runnable runnable3 = (Runnable) obj;
-                int i15 = i31Var2.V;
-                if (i31Var2.W != 4) {
+                int i15 = g31Var2.V;
+                if (g31Var2.W != 4) {
                     runnable3.run();
                     break;
                 } else {
                     ArrayList arrayList5 = new ArrayList(0);
                     LongSparseArray longSparseArray = new LongSparseArray(0);
-                    HashMap hashMap2 = ui.b0(i15).d0;
+                    HashMap hashMap2 = vi.b0(i15).d0;
                     if (str3.length() <= 14) {
                         int length = str3.length();
                         int i16 = 0;
@@ -298,7 +298,7 @@ public final /* synthetic */ class m2 implements q20 {
                         }
                     }
                     if (hashMap2 != null && !hashMap2.isEmpty() && str3.length() > 1) {
-                        ui.b0(i15).U(i31.b2, str3, false, new a1.d(hashMap2, hashMap, arrayList4, runnable3, 15), false);
+                        vi.b0(i15).U(g31.b2, str3, false, new a1.d(hashMap2, hashMap, arrayList4, runnable3, 15), false);
                         break;
                     }
                 }
@@ -314,11 +314,11 @@ public final /* synthetic */ class m2 implements q20 {
                     break;
                 } else {
                     TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer2 = new TLRPC.TL_messages_sendBotRequestedPeer();
-                    tL_messages_sendBotRequestedPeer2.peer = vp.m1(z0Var.U);
+                    tL_messages_sendBotRequestedPeer2.peer = wp.m1(z0Var.U);
                     tL_messages_sendBotRequestedPeer2.webapp_req_id = str4;
                     tL_messages_sendBotRequestedPeer2.button_id = tL_buttonTypeRequestPeer2.button_id;
-                    tL_messages_sendBotRequestedPeer2.requested_peers.add(vp.m1(user4));
-                    ConnectionsManager.getInstance(z0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer2, new a3.b(1), new cj0(z0Var, x0Var, str4, user4, 1));
+                    tL_messages_sendBotRequestedPeer2.requested_peers.add(wp.m1(user4));
+                    ConnectionsManager.getInstance(z0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer2, new a3.b(1), new aj0(z0Var, x0Var, str4, user4, 1));
                     z0Var.y(x0Var, "requested_chat_sent", org.telegram.ui.web.z0.A(str4, "req_id"));
                     break;
                 }
@@ -337,16 +337,16 @@ public final /* synthetic */ class m2 implements q20 {
                 }
             case 16:
                 ph.l1 l1Var = (ph.l1) obj5;
-                q20 q20Var = (q20) obj3;
+                r20 r20Var = (r20) obj3;
                 ph.w0 w0Var = (ph.w0) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 ((gf.e) obj4).b();
-                if (q20Var != null) {
-                    q20Var.a(Boolean.FALSE);
+                if (r20Var != null) {
+                    r20Var.a(Boolean.FALSE);
                 }
                 l1Var.dismiss();
                 if (tL_error != null) {
-                    org.telegram.messenger.i0.g3(new org.telegram.ui.web.v1(8, w0Var, tL_error));
+                    org.telegram.messenger.i0.g3(new org.telegram.ui.web.v1(9, w0Var, tL_error));
                     break;
                 } else {
                     l1Var.dismiss();
@@ -356,7 +356,7 @@ public final /* synthetic */ class m2 implements q20 {
                 TLRPC.TL_document tL_document = (TLRPC.TL_document) obj4;
                 Long l10 = (Long) obj;
                 th.z2 z2Var = ((th.w1) obj5).a;
-                qz.C(z2Var.l2).v0(tL_document, (String) obj3, z2Var.k1, null, null, z2Var.x1.a, null, null, true, 0, 0, false, this.e, null, l10.longValue(), z2Var.K1.getSendMonoForumPeerId(), z2Var.K1.getSendMessageSuggestionParams());
+                rz.C(z2Var.l2).v0(tL_document, (String) obj3, z2Var.k1, null, null, z2Var.x1.a, null, null, true, 0, 0, false, this.e, null, l10.longValue(), z2Var.K1.getSendMonoForumPeerId(), z2Var.K1.getSendMessageSuggestionParams());
                 z2Var.K1.k(tL_document);
                 z2Var.K1.setFieldText("");
                 z2Var.i0(l10.longValue() <= 0);
@@ -368,7 +368,7 @@ public final /* synthetic */ class m2 implements q20 {
                 p6 p6Var = (p6) obj2;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
                 if (storyItem == null) {
-                    wb Q2 = new cc(k2Var2.z0.L0, p6Var).Q(R.raw.story_bomb2, 36, cd.L0(2131744625, null));
+                    wb Q2 = new cc(k2Var2.z0.L0, p6Var).Q(R.raw.story_bomb2, 36, dd.L0(2131744625, null));
                     Q2.a = 3;
                     Q2.k(true);
                     break;
@@ -391,7 +391,7 @@ public final /* synthetic */ class m2 implements q20 {
                 th.z2 z2Var2 = ((th.u2) obj5).x;
                 if (((HashSet) obj4).contains(Integer.valueOf(y4Var.a))) {
                     z2Var2.B1.c(y4Var.a, z2Var2.k1, storyItem2);
-                    a02 = cd.a0(null, null, 2131744749, y4Var.b);
+                    a02 = dd.a0(null, null, 2131744749, y4Var.b);
                 } else {
                     e5 e5Var = z2Var2.B1;
                     long j12 = z2Var2.k1;
@@ -400,9 +400,9 @@ public final /* synthetic */ class m2 implements q20 {
                     ArrayList arrayList7 = new ArrayList(1);
                     arrayList7.add(storyItem2);
                     e5Var.f0(i20, j12, arrayList7);
-                    a02 = cd.a0(null, null, 2131744520, y4Var.b);
+                    a02 = dd.a0(null, null, 2131744520, y4Var.b);
                 }
-                z20.s(a02, new cc(z2Var2.L0, p6Var2), R.raw.contact_check, 36);
+                a30.s(a02, new cc(z2Var2.L0, p6Var2), R.raw.contact_check, 36);
                 th.u2 u2Var = z2Var2.c1;
                 if (u2Var != null) {
                     u2Var.a();

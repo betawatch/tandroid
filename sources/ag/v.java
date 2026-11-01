@@ -9,7 +9,7 @@ import org.telegram.ui.km;
 import org.telegram.ui.mk;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v extends bi {
     public final /* synthetic */ int F4;
@@ -48,7 +48,7 @@ public final class v extends bi {
                     org.telegram.messenger.i0.Z2(parentActivity2, i11);
                 }
                 super.L();
-                unVar.ja(false, true);
+                unVar.oa(false, true);
                 km kmVar = unVar.l1;
                 if (kmVar != null) {
                     WeakHashMap weakHashMap = r0.h0.a;
@@ -101,7 +101,7 @@ public final class v extends bi {
                     mk mkVar2 = unVar.Z;
                     if (mkVar2 != null) {
                         if (!z10) {
-                            mkVar2.L();
+                            mkVar2.K();
                         }
                         if (unVar.Z.getEditField() != null) {
                             unVar.Z.getEditField().clearFocus();
@@ -122,7 +122,7 @@ public final class v extends bi {
                         i11 = ((org.telegram.ui.ActionBar.k2) unVar).classGuid;
                         org.telegram.messenger.i0.Z2(parentActivity2, i11);
                     }
-                    unVar.ja(false, false);
+                    unVar.oa(false, false);
                     km kmVar = unVar.l1;
                     if (kmVar != null) {
                         WeakHashMap weakHashMap = r0.h0.a;

@@ -10,14 +10,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c00;
-import org.telegram.messenger.cd;
 import org.telegram.messenger.d00;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e00;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
@@ -25,16 +25,16 @@ import org.telegram.ui.ActionBar.z2;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.du0;
 import org.telegram.ui.eu0;
-import org.telegram.ui.fu0;
 import rh.e4;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class i1 extends z2 implements us {
+public final class i1 extends z2 implements vs {
     public static final /* synthetic */ int F1 = 0;
-    public final fu0 A1;
+    public final eu0 A1;
     public int B1;
     public int C1;
     public int D1;
@@ -50,7 +50,7 @@ public final class i1 extends z2 implements us {
     public int q1;
     public final FrameLayout r1;
     public boolean s1;
-    public final c00 t1;
+    public final d00 t1;
     public final int u1;
     public final boolean v1;
     public boolean w1;
@@ -59,7 +59,7 @@ public final class i1 extends z2 implements us {
     public float z1;
 
     public i1(int i10, Context context, p6 p6Var) {
-        this(null, context, d20.s0, false, i10, true, null, p6Var);
+        this(null, context, e20.s0, false, i10, true, null, p6Var);
     }
 
     @Override // org.telegram.ui.ActionBar.z2
@@ -141,21 +141,21 @@ public final class i1 extends z2 implements us {
         boolean z10 = this.w1;
         x0 x0Var = this.j1;
         if (z10) {
-            x0Var.f.setText(cd.L0(2131754942, null));
+            x0Var.f.setText(dd.L0(2131754942, null));
             return;
         }
         if (!this.v1) {
-            x0Var.f.setText(PremiumPreviewFragment.s0(this.a, this.A1));
+            x0Var.f.setText(PremiumPreviewFragment.t0(this.a, this.A1));
             return;
         }
         int i10 = this.u1;
         if (i10 == 4) {
-            x0Var.f.setText(cd.L0(2131743884, null));
+            x0Var.f.setText(dd.L0(2131743884, null));
             x0Var.setIcon(R.raw.unlock_icon);
         } else if (i10 != 10) {
-            x0Var.f.setText(cd.L0(2131754942, null));
+            x0Var.f.setText(dd.L0(2131754942, null));
         } else {
-            x0Var.f.setText(cd.L0(2131743885, null));
+            x0Var.f.setText(dd.L0(2131743885, null));
             x0Var.setIcon(R.raw.unlock_icon);
         }
     }
@@ -168,17 +168,17 @@ public final class i1 extends z2 implements us {
         J0();
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.j5 || i10 == zs.g5) {
+        if (i10 == at.j5 || i10 == at.g5) {
             J0();
             return;
         }
-        if (i10 == zs.f5) {
-            boolean q6 = d20.i(this.a).q();
+        if (i10 == at.f5) {
+            boolean q6 = e20.i(this.a).q();
             x0 x0Var = this.j1;
             if (q6) {
-                x0Var.c(cd.L0(2131747847, null), false, true);
+                x0Var.c(dd.L0(2131747847, null), false, true);
             } else {
                 x0Var.r = false;
                 x0Var.d(true);
@@ -189,10 +189,10 @@ public final class i1 extends z2 implements us {
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
         super.dismiss();
-        zs.e().n(this, zs.j5);
-        zs.f(this.a).n(this, zs.g5);
-        zs.f(this.a).n(this, zs.f5);
-        zs.e().k(zs.k1, 16);
+        at.e().n(this, at.j5);
+        at.f(this.a).n(this, at.g5);
+        at.f(this.a).n(this, at.f5);
+        at.e().k(at.k1, 16);
     }
 
     @Override // org.telegram.ui.ActionBar.z2
@@ -219,9 +219,9 @@ public final class i1 extends z2 implements us {
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        zs.e().c(this, zs.j5);
-        zs.f(this.a).c(this, zs.g5);
-        zs.f(this.a).c(this, zs.f5);
+        at.e().c(this, at.j5);
+        at.f(this.a).c(this, at.g5);
+        at.f(this.a).c(this, at.f5);
         g1 g1Var = new g1(this, getContext(), 0);
         this.E1 = g1Var;
         a7.i(t6.h5, g1Var, this.I0);
@@ -240,17 +240,17 @@ public final class i1 extends z2 implements us {
         org.telegram.messenger.i0.Y3(this.E1, false, 1.0f, true, false);
         int i11 = this.x1;
         ArrayList arrayList = this.k1;
-        if (((eu0) arrayList.get(i11)).a == 14) {
-            this.E1.setTitle(cd.L0(2131743831, null));
+        if (((du0) arrayList.get(i11)).a == 14) {
+            this.E1.setTitle(dd.L0(2131743831, null));
             this.E1.requestLayout();
-        } else if (((eu0) arrayList.get(this.x1)).a == 28) {
-            this.E1.setTitle(cd.L0(2131744277, null));
+        } else if (((du0) arrayList.get(this.x1)).a == 28) {
+            this.E1.setTitle(dd.L0(2131744277, null));
             this.E1.requestLayout();
-        } else if (((eu0) arrayList.get(this.x1)).a == 40) {
-            this.E1.setTitle(cd.L0(2131750838, null));
+        } else if (((du0) arrayList.get(this.x1)).a == 40) {
+            this.E1.setTitle(dd.L0(2131750838, null));
             this.E1.requestLayout();
         } else {
-            this.E1.setTitle(cd.L0(2131751350, null));
+            this.E1.setTitle(dd.L0(2131751350, null));
             this.E1.requestLayout();
         }
     }
@@ -258,7 +258,7 @@ public final class i1 extends z2 implements us {
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog
     public final void show() {
         super.show();
-        zs.e().k(zs.j1, 16);
+        at.e().k(at.j1, 16);
     }
 
     public i1(org.telegram.ui.ActionBar.k2 k2Var, int i10, boolean z10) {
@@ -273,8 +273,8 @@ public final class i1 extends z2 implements us {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public i1(org.telegram.ui.ActionBar.k2 k2Var, Context context, int i10, boolean z10, int i11, boolean z11, fu0 fu0Var) {
-        this(k2Var, context, i10, z10, i11, z11, fu0Var, r0);
+    public i1(org.telegram.ui.ActionBar.k2 k2Var, Context context, int i10, boolean z10, int i11, boolean z11, eu0 eu0Var) {
+        this(k2Var, context, i10, z10, i11, z11, eu0Var, r0);
         p6 p6Var;
         if (k2Var == null) {
             p6Var = null;
@@ -286,47 +286,47 @@ public final class i1 extends z2 implements us {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i1(org.telegram.ui.ActionBar.k2 k2Var, Context context, int i10, boolean z10, int i11, boolean z11, fu0 fu0Var, p6 p6Var) {
+    public i1(org.telegram.ui.ActionBar.k2 k2Var, Context context, int i10, boolean z10, int i11, boolean z11, eu0 eu0Var, p6 p6Var) {
         super(1, context, p6Var, false);
         final int i12 = 0;
         ArrayList arrayList = new ArrayList();
         this.k1 = arrayList;
-        this.B1 = zs.e4;
+        this.B1 = at.e4;
         this.i1 = k2Var;
-        this.A1 = fu0Var;
+        this.A1 = eu0Var;
         Q(t6.h5);
         this.u1 = i11;
         this.v1 = z11;
-        this.t1 = d00.i(org.telegram.messenger.i0.y2(null, R.raw.star_loader));
+        this.t1 = e00.i(org.telegram.messenger.i0.y2(null, R.raw.star_loader));
         jg.l0 l0Var = new jg.l0(this, getContext(), 5);
         if (!z10 && i11 != 35) {
-            PremiumPreviewFragment.r0(i10, arrayList);
+            PremiumPreviewFragment.s0(i10, arrayList);
         } else {
-            PremiumPreviewFragment.q0(i10, arrayList, false);
-            PremiumPreviewFragment.q0(i10, arrayList, true);
+            PremiumPreviewFragment.r0(i10, arrayList, false);
+            PremiumPreviewFragment.r0(i10, arrayList, true);
         }
         if (i11 == 40) {
             arrayList.clear();
-            arrayList.add(new eu0(40, R.drawable.gift, cd.L0(2131750838, null), cd.L0(2131750837, null)));
+            arrayList.add(new du0(40, R.drawable.gift, dd.L0(2131750838, null), dd.L0(2131750837, null)));
         }
         int i13 = 0;
         while (true) {
             if (i13 >= this.k1.size()) {
                 i13 = 0;
                 break;
-            } else if (((eu0) this.k1.get(i13)).a == i11) {
+            } else if (((du0) this.k1.get(i13)).a == i11) {
                 break;
             } else {
                 i13++;
             }
         }
         if (z11) {
-            eu0 eu0Var = (eu0) this.k1.get(i13);
+            du0 du0Var = (du0) this.k1.get(i13);
             this.k1.clear();
-            this.k1.add(eu0Var);
+            this.k1.add(du0Var);
             i13 = 0;
         }
-        eu0 eu0Var2 = (eu0) this.k1.get(i13);
+        du0 du0Var2 = (du0) this.k1.get(i13);
         this.u0 = false;
         this.v0 = false;
         this.T0 = false;
@@ -339,7 +339,7 @@ public final class i1 extends z2 implements us {
         this.p1 = iVar;
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.r1 = frameLayout;
-        frameLayout.setContentDescription(cd.L0(2131752041, null));
+        frameLayout.setContentDescription(dd.L0(2131752041, null));
         ImageView imageView = new ImageView(getContext());
         imageView.setImageResource(R.drawable.msg_close);
         int L = org.telegram.messenger.i0.L(12.0f);
@@ -391,7 +391,7 @@ public final class i1 extends z2 implements us {
         final int i16 = 1;
         x0 x0Var = new x0(getContext(), p6Var, true);
         this.j1 = x0Var;
-        x0Var.w.setOnClickListener(new z0(this, k2Var, z11, eu0Var2, 0));
+        x0Var.w.setOnClickListener(new z0(this, k2Var, z11, du0Var2, 0));
         x0Var.h.setOnClickListener(new View.OnClickListener(this) { // from class: kg.y0
             public final /* synthetic */ i1 b;
 
@@ -416,14 +416,14 @@ public final class i1 extends z2 implements us {
         a7.i(t6.h5, frameLayout2, p6Var);
         linearLayout.addView(frameLayout2, b6.r(-1, 68, 80));
         if (i11 == 40) {
-            x0Var.c(e4.g2(cd.L0(2131743913, null)), true, false);
-        } else if (d20.i(i10).q()) {
-            x0Var.c(cd.L0(2131747847, null), false, false);
+            x0Var.c(e4.g2(dd.L0(2131743913, null)), true, false);
+        } else if (e20.i(i10).q()) {
+            x0Var.c(dd.L0(2131747847, null), false, false);
         }
         ScrollView scrollView = new ScrollView(getContext());
         scrollView.addView(linearLayout);
         this.N = scrollView;
-        ui.b0(i10).o1();
+        vi.b0(i10).o1();
         J0();
         this.U0 = 83;
         jg.b1 b1Var = new jg.b1(this, getContext(), scrollView, getContext().getDrawable(R.drawable.header_shadow).mutate());

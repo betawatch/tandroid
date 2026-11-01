@@ -2,14 +2,14 @@ package th;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.is;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.u1, bh.a {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.u1, b
     /* JADX WARN: Type inference failed for: r12v8, types: [org.telegram.tgnet.TLRPC$UserFull] */
     /* JADX WARN: Type inference failed for: r4v21, types: [java.util.ArrayList] */
     /* JADX WARN: Type inference failed for: r4v22, types: [java.util.ArrayList] */
-    /* JADX WARN: Type inference failed for: r4v9, types: [org.telegram.messenger.hs] */
+    /* JADX WARN: Type inference failed for: r4v9, types: [org.telegram.messenger.is] */
     /* JADX WARN: Type inference failed for: r9v10 */
     /* JADX WARN: Type inference failed for: r9v11, types: [java.lang.Object, org.telegram.tgnet.tl.TL_stories$PeerStories] */
     /* JADX WARN: Type inference failed for: r9v14 */
@@ -76,7 +76,7 @@ public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.u1, b
                             s0.W.e();
                             if (s0.W != null) {
                                 s0.W = null;
-                                zs.f(z2Var.l2).k(zs.G2, Long.valueOf(s0.W.g()));
+                                at.f(z2Var.l2).k(at.G2, Long.valueOf(s0.W.g()));
                             }
                         }
                     }
@@ -103,7 +103,7 @@ public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.u1, b
                                 r92 = (TL_stories.PeerStories) hVar.f(j11);
                                 r12 = chatFull3;
                             } else if (j11 >= 0) {
-                                TLRPC.UserFull a2 = vp.r1(i13).a2(j11);
+                                TLRPC.UserFull a2 = wp.r1(i13).a2(j11);
                                 if (a2 != null) {
                                     j10 = 0;
                                     chatFull = chatFull2;
@@ -117,7 +117,7 @@ public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.u1, b
                                 }
                             } else {
                                 j10 = 0;
-                                TLRPC.ChatFull M0 = vp.r1(i13).M0(-j11);
+                                TLRPC.ChatFull M0 = wp.r1(i13).M0(-j11);
                                 if (M0 != null) {
                                     chatFull = M0;
                                     r92 = M0.stories;
@@ -142,12 +142,12 @@ public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.u1, b
                                                     e5Var.h.remove(r92);
                                                 }
                                                 if (j11 > j10) {
-                                                    TLRPC.User Z1 = vp.r1(i13).Z1(Long.valueOf(j11));
+                                                    TLRPC.User Z1 = wp.r1(i13).Z1(Long.valueOf(j11));
                                                     if (Z1 != null) {
                                                         Z1.stories_unavailable = z12;
                                                     }
                                                 } else {
-                                                    TLRPC.Chat L0 = vp.r1(i13).L0(Long.valueOf(-j11));
+                                                    TLRPC.Chat L0 = wp.r1(i13).L0(Long.valueOf(-j11));
                                                     if (L0 != null) {
                                                         L0.stories_unavailable = true;
                                                     }
@@ -162,12 +162,12 @@ public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.u1, b
                             }
                             if (chatFull != null) {
                                 z10 = false;
-                                hs.a0(i13).N1(chatFull, false);
+                                is.a0(i13).N1(chatFull, false);
                             } else {
                                 z10 = false;
                             }
                             if (r12 != 0) {
-                                hs.a0(i13).j2(r12, z10);
+                                is.a0(i13).j2(r12, z10);
                             }
                             i14++;
                             i12 = 0;
@@ -175,13 +175,13 @@ public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.u1, b
                             chatFull2 = null;
                         }
                         TL_stories.TL_stories_deleteStories tL_stories_deleteStories = new TL_stories.TL_stories_deleteStories();
-                        tL_stories_deleteStories.peer = vp.r1(i13).i1(j11);
+                        tL_stories_deleteStories.peer = wp.r1(i13).i1(j11);
                         tL_stories_deleteStories.id.add(Integer.valueOf(storyItem2.id));
                         ConnectionsManager.getInstance(i13).sendRequest(tL_stories_deleteStories, new i4(e5Var, 4));
                         r5 r5Var = e5Var.k;
                         r5Var.b.a.c(new o5(r5Var, j11, storyItem2.id, 1));
-                        zs.f(i13).k(zs.v5, new Object[0]);
-                        vp.r1(i13).D();
+                        at.f(i13).k(at.v5, new Object[0]);
+                        wp.r1(i13).D();
                         e5Var.n0(j11, Arrays.asList(storyItem2));
                     }
                 } else {

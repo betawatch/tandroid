@@ -9,11 +9,11 @@ import android.webkit.JsPromptResult;
 import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
@@ -26,12 +26,12 @@ import org.telegram.ui.Components.wb;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.r9;
-import org.telegram.ui.be1;
-import org.telegram.ui.tm0;
-import org.telegram.ui.y11;
+import org.telegram.ui.rm0;
+import org.telegram.ui.w11;
+import org.telegram.ui.zd1;
 import ph.u3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -110,7 +110,7 @@ public final /* synthetic */ class g implements DialogInterface.OnDismissListene
                     ActionBarLayout actionBarLayout = launchActivity.q0;
                     k2 lastFragment = actionBarLayout == null ? null : actionBarLayout.getLastFragment();
                     try {
-                        String str = cd.D0().B.c;
+                        String str = dd.D0().B.c;
                         if (lastFragment != null) {
                             wb Q = cc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.U(2131752545, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q.j = 5000;
@@ -125,34 +125,34 @@ public final /* synthetic */ class g implements DialogInterface.OnDismissListene
                     }
                     launchActivity.H0 = null;
                 } else if (x1Var == launchActivity.F0) {
-                    vp.d1();
-                    SharedPreferences.Editor edit = vp.d1().edit();
+                    wp.d1();
+                    SharedPreferences.Editor edit = wp.d1().edit();
                     edit.putBoolean("proxy_enabled", false);
                     edit.commit();
                     ConnectionsManager.setProxySettings(false, null);
-                    zs.e().k(zs.A4, new Object[0]);
+                    at.e().k(at.A4, new Object[0]);
                     launchActivity.F0 = null;
                 }
                 launchActivity.E0.remove(x1Var);
                 break;
             case 8:
-                tm0 tm0Var = (tm0) obj;
+                rm0 rm0Var = (rm0) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    tm0Var.a(Boolean.FALSE);
+                    rm0Var.a(Boolean.FALSE);
                     break;
                 }
                 break;
             case 9:
-                y11 y11Var = (y11) obj2;
+                w11 w11Var = (w11) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    y11Var.c(true);
+                    w11Var.c(true);
                 }
-                y11Var.x = null;
+                w11Var.x = null;
                 break;
             case 10:
-                be1 be1Var = (be1) obj2;
+                zd1 zd1Var = (zd1) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    be1Var.u0.b();
+                    zd1Var.u0.b();
                     break;
                 }
                 break;
@@ -165,7 +165,7 @@ public final /* synthetic */ class g implements DialogInterface.OnDismissListene
                         r9Var = new r9(user);
                     } else {
                         r9Var = new r9(wallettransactionpeeruser.address);
-                        r9Var.z0(wallettransactionpeeruser.domain);
+                        r9Var.A0(wallettransactionpeeruser.domain);
                     }
                     T.presentFragment(r9Var);
                     break;

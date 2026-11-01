@@ -13,17 +13,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.t9;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.w9;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.u9;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.messenger.x9;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.y9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -34,17 +34,17 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.w6;
 import org.telegram.ui.ActionBar.z4;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.gk0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
+import org.telegram.ui.Components.hk0;
 import org.telegram.ui.Components.jb0;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.un;
@@ -53,16 +53,16 @@ import rh.h8;
 import vh.k4;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class g4 extends ha implements us, w9 {
+public class g4 extends ha implements vs, x9 {
     public final boolean P1;
     public final int Q1;
     public final long R1;
     public final boolean S1;
     public final boolean T1;
     public final TL_stars.StarGift U1;
-    public t9 V1;
+    public u9 V1;
     public final kg.m W1;
     public final String X1;
     public final Runnable Y1;
@@ -71,7 +71,7 @@ public class g4 extends ha implements us, w9 {
     public final long b2;
     public final org.telegram.ui.Cells.s0 c2;
     public final TLRPC.MessageAction d2;
-    public final jj e2;
+    public final kj e2;
     public final LinearLayout f2;
     public final vh.d g2;
     public final FrameLayout h2;
@@ -79,7 +79,7 @@ public class g4 extends ha implements us, w9 {
     public boolean j2;
     public boolean k2;
     public final b4 l2;
-    public p51 m2;
+    public q51 m2;
     public int n2;
     public final dq[] o2;
     public boolean p2;
@@ -100,7 +100,7 @@ public class g4 extends ha implements us, w9 {
         this.n2 = -2;
         this.o2 = new dq[1];
         this.p2 = false;
-        boolean z13 = j10 == d20.i(i10).e();
+        boolean z13 = j10 == e20.i(i10).e();
         this.P1 = z13;
         this.M0 = 4;
         O();
@@ -116,7 +116,7 @@ public class g4 extends ha implements us, w9 {
             f7 = 4.0f;
         } else {
             f7 = 4.0f;
-            this.V1 = x9.c(i10).l(starGift.id, this);
+            this.V1 = y9.c(i10).l(starGift.id, this);
         }
         this.W1 = mVar;
         this.Y1 = runnable;
@@ -130,10 +130,10 @@ public class g4 extends ha implements us, w9 {
         this.r1 = 0.2f;
         if (j10 >= 0) {
             j11 = 0;
-            this.X1 = h20.k(vp.r1(i10).Z1(Long.valueOf(j10)));
+            this.X1 = i20.k(wp.r1(i10).Z1(Long.valueOf(j10)));
         } else {
             j11 = 0;
-            TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-j10));
             this.X1 = L0 == null ? "" : L0.title;
         }
         org.telegram.ui.Cells.s0 s0Var = new org.telegram.ui.Cells.s0(context, this.I0, false);
@@ -169,7 +169,7 @@ public class g4 extends ha implements us, w9 {
         }
         cVar.a(w02);
         this.q2 = num2 == null ? cVar : null;
-        vg.f fVar = new vg.f(cVar);
+        vg.f fVar = new vg.f(cVar, cVar, cVar);
         p6 p6Var = this.I0;
         int i13 = t6.h5;
         fVar.o(new wg.b(i13, p6Var));
@@ -241,18 +241,18 @@ public class g4 extends ha implements us, w9 {
         TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
         tL_messageService.id = 1;
         tL_messageService.dialog_id = j10;
-        tL_messageService.from_id = vp.r1(i10).y1(d20.i(i10).e());
-        tL_messageService.peer_id = vp.r1(i10).y1(j10);
+        tL_messageService.from_id = wp.r1(i10).y1(e20.i(i10).e());
+        tL_messageService.peer_id = wp.r1(i10).y1(j10);
         tL_messageService.action = this.d2;
-        long M1 = starGift != null ? vp.r1(i10).M1(j10) : j11;
+        long M1 = starGift != null ? wp.r1(i10).M1(j10) : j11;
         this.b2 = M1;
-        jj jjVar = new jj(i10, tL_messageService, false, false);
-        this.e2 = jjVar;
+        kj kjVar = new kj(i10, tL_messageService, false, false);
+        this.e2 = kjVar;
         int i14 = 1;
-        s0Var.f0(jjVar, true);
-        linearLayout.addView(s0Var, b6.t(-1, -1, zs.E1, 0, M1 > j11 ? 0 : 8, 0, 8));
-        a4Var.addView(linearLayout, b6.e(-1, -1, zs.E1));
-        b4 b4Var = new b4(this, context, (uu0) this.b, cd.L0(starGift != null ? 2131750129 : 2131750128, null), vp.r1(i10).E6, this.I0, fVar, i10);
+        s0Var.f0(kjVar, true);
+        linearLayout.addView(s0Var, b6.t(-1, -1, at.E1, 0, M1 > j11 ? 0 : 8, 0, 8));
+        a4Var.addView(linearLayout, b6.e(-1, -1, at.E1));
+        b4 b4Var = new b4(this, context, (vu0) this.b, dd.L0(starGift != null ? 2131750129 : 2131750128, null), wp.r1(i10).E6, this.I0, fVar, i10);
         this.l2 = b4Var;
         org.telegram.ui.Cells.h3 h3Var = b4Var.b;
         h3Var.getEditText().addTextChangedListener(new org.telegram.ui.Cells.l3());
@@ -315,7 +315,7 @@ public class g4 extends ha implements us, w9 {
         int i21 = t6.G6;
         a7.V(textView, i21, this.I0);
         if (starGift != null) {
-            textView.setText(cd.H(',', "Gift2AvailabilityLeft", starGift.availability_remains));
+            textView.setText(dd.H(',', "Gift2AvailabilityLeft", starGift.availability_remains));
         }
         TextView l4 = org.telegram.ui.Cells.f1.l(frameLayout, textView, b6.d(-1, -1.0f, 3, 11.0f, 0.0f, 11.0f, 0.0f), context);
         l4.setTextSize(1, 13.0f);
@@ -323,7 +323,7 @@ public class g4 extends ha implements us, w9 {
         l4.setTypeface(org.telegram.messenger.i0.o());
         a7.V(l4, i21, this.I0);
         if (starGift != null) {
-            l4.setText(cd.H(',', "Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
+            l4.setText(dd.H(',', "Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
         }
         frameLayout.addView(l4, b6.d(-1, -1.0f, 5, 11.0f, 0.0f, 11.0f, 0.0f));
         View d4Var = new d4(context, starGift, i19);
@@ -334,17 +334,17 @@ public class g4 extends ha implements us, w9 {
         p6 p6Var3 = this.I0;
         d4Var.setBackground(d03);
         a7.k(d4Var, d03, N2, null, p6Var3);
-        frameLayout.addView(d4Var, b6.e(-1, -1, zs.E1));
+        frameLayout.addView(d4Var, b6.e(-1, -1, at.E1));
         e4 e4Var = new e4(context, i19);
         e4Var.setWillNotDraw(false);
-        frameLayout.addView(e4Var, b6.e(-1, -1, zs.E1));
+        frameLayout.addView(e4Var, b6.e(-1, -1, at.E1));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(19);
         textView2.setTypeface(org.telegram.messenger.i0.o());
         textView2.setTextColor(-1);
         if (starGift != null) {
-            textView2.setText(cd.H(',', "Gift2AvailabilityLeft", starGift.availability_remains));
+            textView2.setText(dd.H(',', "Gift2AvailabilityLeft", starGift.availability_remains));
         }
         e4Var.addView(textView2, b6.d(-1, -1.0f, 3, 11.0f, 0.0f, 11.0f, 0.0f));
         TextView textView3 = new TextView(context);
@@ -353,26 +353,26 @@ public class g4 extends ha implements us, w9 {
         textView3.setTypeface(org.telegram.messenger.i0.o());
         textView3.setTextColor(-1);
         if (starGift != null) {
-            textView3.setText(cd.H(',', "Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
+            textView3.setText(dd.H(',', "Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
         }
         e4Var.addView(textView3, b6.d(-1, -1.0f, 5, 11.0f, 0.0f, 11.0f, 0.0f));
         vh.d dVar = new vh.d(context, this.I0, true);
         this.g2 = dVar;
         dVar.f();
         g1(false);
-        linearLayout2.addView(dVar, b6.t(-1, 48, zs.E1, 10, 10, 10, 10));
+        linearLayout2.addView(dVar, b6.t(-1, 48, at.E1, 10, 10, 10, 10));
         dVar.setOnClickListener(new n(this, j10, context, runnable, starGift));
         dh.f fVar3 = this.j1;
         this.G1 = true;
         fVar3.k1(true);
         this.m2.O(false);
         this.j1.h1(this.m2.D.size(), org.telegram.messenger.i0.L(200.0f));
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i23 = this.t0;
-        tk0Var.setPadding(i23, 0, i23, org.telegram.messenger.i0.L(68 + ((starGift != null && starGift.limited && this.h2 == null) ? 40 : 0)));
+        uk0Var.setPadding(i23, 0, i23, org.telegram.messenger.i0.L(68 + ((starGift != null && starGift.limited && this.h2 == null) ? 40 : 0)));
         this.k1.i(new f4(this));
-        this.k1.setOnItemClickListener(new gk0() { // from class: ph.y3
-            @Override // org.telegram.ui.Components.gk0
+        this.k1.setOnItemClickListener(new hk0() { // from class: ph.y3
+            @Override // org.telegram.ui.Components.hk0
             public final void f(int i24, View view2) {
                 TL_stars.StarGift starGift2;
                 g4 g4Var = g4.this;
@@ -380,12 +380,12 @@ public class g4 extends ha implements us, w9 {
                 boolean z16 = g4Var.P1;
                 org.telegram.ui.Cells.s0 s0Var2 = g4Var.c2;
                 TLRPC.MessageAction messageAction2 = g4Var.d2;
-                jj jjVar2 = g4Var.e2;
-                p51 p51Var = g4Var.m2;
+                kj kjVar2 = g4Var.e2;
+                q51 q51Var = g4Var.m2;
                 if (!g4Var.G1) {
                     i24--;
                 }
-                a51 G = p51Var.G(i24);
+                b51 G = q51Var.G(i24);
                 if (G == null) {
                     return;
                 }
@@ -396,8 +396,8 @@ public class g4 extends ha implements us, w9 {
                     if (messageAction2 instanceof TLRPC.TL_messageActionStarGift) {
                         ((TLRPC.TL_messageActionStarGift) messageAction2).name_hidden = z17;
                     }
-                    jjVar2.Y5();
-                    s0Var2.f0(jjVar2, true);
+                    kjVar2.Y5();
+                    s0Var2.f0(kjVar2, true);
                     g4Var.m2.O(true);
                     return;
                 }
@@ -416,8 +416,8 @@ public class g4 extends ha implements us, w9 {
                         tL_messageActionStarGift3.upgrade_stars = (z16 || z18) ? 0L : starGift3.upgrade_stars;
                         tL_messageActionStarGift3.convert_stars = z18 ? starGift3.convert_stars : 0L;
                     }
-                    jjVar2.Y5();
-                    s0Var2.f0(jjVar2, true);
+                    kjVar2.Y5();
+                    s0Var2.f0(kjVar2, true);
                     g4Var.m2.O(true);
                     g4Var.g1(true);
                     return;
@@ -454,8 +454,8 @@ public class g4 extends ha implements us, w9 {
                             tL_messageActionGiftCode2.amount = mVar2.g();
                         }
                     }
-                    jjVar2.Y5();
-                    s0Var2.f0(jjVar2, true);
+                    kjVar2.Y5();
+                    s0Var2.f0(kjVar2, true);
                     g4Var.m2.O(true);
                     g4Var.g1(true);
                 }
@@ -465,25 +465,25 @@ public class g4 extends ha implements us, w9 {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(this.k1, getContext(), this.Q1, 0, true, new u3(this, 0), this.I0);
-        this.m2 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(this.k1, getContext(), this.Q1, 0, true, new u3(this, 0), this.I0);
+        this.m2 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return cd.L0(this.P1 ? 2131749947 : 2131749953, null);
+        return dd.L0(this.P1 ? 2131749947 : 2131749953, null);
     }
 
-    @Override // org.telegram.messenger.w9
-    public final void c(t9 t9Var) {
-        this.V1 = t9Var;
+    @Override // org.telegram.messenger.x9
+    public final void c(u9 u9Var) {
+        this.V1 = u9Var;
     }
 
     public final TLRPC.TL_textWithEntities d1() {
-        if (vp.r1(this.Q1).M1(this.R1) > 0) {
+        if (wp.r1(this.Q1).M1(this.R1) > 0) {
             return null;
         }
         TLRPC.MessageAction messageAction = this.d2;
@@ -499,15 +499,15 @@ public class g4 extends ha implements us, w9 {
         return null;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.y3) {
+        if (i10 == at.y3) {
             g1(true);
-            p51 p51Var = this.m2;
-            if (p51Var == null || this.W1 == null) {
+            q51 q51Var = this.m2;
+            if (q51Var == null || this.W1 == null) {
                 return;
             }
-            p51Var.O(true);
+            q51Var.O(true);
         }
     }
 
@@ -526,7 +526,7 @@ public class g4 extends ha implements us, w9 {
         }
         h3Var2.r();
         if (this.V1 != null) {
-            x9.c(this.Q1).n(this.V1.b, this);
+            y9.c(this.Q1).n(this.V1.b, this);
         }
         this.p2 = true;
         super.dismiss();
@@ -542,16 +542,16 @@ public class g4 extends ha implements us, w9 {
 
     public final void f1(boolean z10) {
         int i10 = this.Q1;
-        vp r12 = vp.r1(i10);
+        wp r12 = wp.r1(i10);
         long j10 = this.R1;
         TLRPC.UserFull a2 = r12.a2(j10);
-        TLObject d22 = vp.r1(i10).d2(j10);
+        TLObject d22 = wp.r1(i10).d2(j10);
         int i11 = 0;
         if (a2 != null && (d22 instanceof TLRPC.User)) {
             TLRPC.User user = (TLRPC.User) d22;
             user.premium = true;
-            vp.r1(i10).U3(user, true, false);
-            zs.f(i10).k(zs.E0, Long.valueOf(user.id), a2);
+            wp.r1(i10).U3(user, true, false);
+            at.f(i10).k(at.E0, Long.valueOf(user.id), a2);
         }
         org.telegram.ui.ActionBar.k2 k2Var = this.o1;
         if (k2Var != null) {
@@ -585,26 +585,26 @@ public class g4 extends ha implements us, w9 {
 
     public final void g1(boolean z10) {
         CharSequence charSequence;
-        t9 t9Var = this.V1;
+        u9 u9Var = this.V1;
         int i10 = this.Q1;
         vh.d dVar = this.g2;
-        if (t9Var != null) {
+        if (u9Var != null) {
             int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
             if (this.V1.g(currentTime)) {
                 int i11 = this.V1.d.auction_start_date - currentTime;
-                dVar.i(cd.L0(2131750349, null), z10, true);
-                dVar.g(cd.a0(null, null, 2131750344, cd.c0(i11)), z10);
+                dVar.i(dd.L0(2131750349, null), z10, true);
+                dVar.g(dd.a0(null, null, 2131750344, dd.c0(i11)), z10);
                 return;
             }
             TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = this.V1.f;
             if (tL_starGiftAuctionState == null) {
-                dVar.i(cd.L0(2131750354, null), z10, true);
+                dVar.i(dd.L0(2131750354, null), z10, true);
                 dVar.g(null, z10);
                 return;
             } else {
                 int i12 = tL_starGiftAuctionState.end_date - currentTime;
-                dVar.i(cd.L0(2131750354, null), z10, true);
-                dVar.g(cd.a0(null, null, 2131750330, cd.c0(i12)), z10);
+                dVar.i(dd.L0(2131750354, null), z10, true);
+                dVar.g(dd.a0(null, null, 2131750330, dd.c0(i12)), z10);
                 return;
             }
         }
@@ -613,24 +613,24 @@ public class g4 extends ha implements us, w9 {
         if (starGift != null) {
             long j10 = e6.y(i10, false).p().amount;
             long j11 = starGift.stars + (this.j2 ? starGift.upgrade_stars : 0L) + (TextUtils.isEmpty(this.l2.getText()) ? 0L : this.b2);
-            dVar.i(h8.X0(false, cd.H(',', this.P1 ? "Gift2SendSelf" : "Gift2Send", (int) j11), dqVarArr), z10, true);
+            dVar.i(h8.Y0(false, dd.H(',', this.P1 ? "Gift2SendSelf" : "Gift2Send", (int) j11), dqVarArr), z10, true);
             if (!e6.y(i10, false).e || j11 <= j10) {
                 dVar.g(null, z10);
                 return;
             } else {
-                dVar.g(cd.H(',', "Gift2SendYourBalance", (int) j10), z10);
+                dVar.g(dd.H(',', "Gift2SendYourBalance", (int) j10), z10);
                 return;
             }
         }
         kg.m mVar = this.W1;
         if (mVar != null) {
             if (this.k2) {
-                dVar.i(h8.T0(cd.a0(null, null, 2131750003, cd.E(mVar.g(), ',')), 1.0f, dqVarArr), z10, true);
+                dVar.i(h8.U0(dd.a0(null, null, 2131750003, dd.E(mVar.g(), ',')), 1.0f, dqVarArr), z10, true);
                 dqVarArr[0].G = 0.85f;
                 charSequence = null;
             } else {
                 charSequence = null;
-                dVar.i(new SpannableStringBuilder(cd.a0(null, null, 2131750004, mVar.c())), z10, true);
+                dVar.i(new SpannableStringBuilder(dd.a0(null, null, 2131750004, mVar.c())), z10, true);
             }
             dVar.g(charSequence, z10);
         }
@@ -639,7 +639,7 @@ public class g4 extends ha implements us, w9 {
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        zs.f(this.Q1).c(this, zs.y3);
+        at.f(this.Q1).c(this, at.y3);
     }
 
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog
@@ -659,7 +659,7 @@ public class g4 extends ha implements us, w9 {
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        zs.f(this.Q1).n(this, zs.y3);
+        at.f(this.Q1).n(this, at.y3);
     }
 
     @Override // org.telegram.ui.ActionBar.z2

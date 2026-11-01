@@ -23,26 +23,26 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Locale;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.do0;
+import org.telegram.ui.bo0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class l6 extends FrameLayout implements us {
+public class l6 extends FrameLayout implements vs {
     public static Typeface j0;
     public static Typeface k0;
     public final g6 D;
     public final FrameLayout E;
     public View.OnClickListener F;
     public final org.telegram.ui.ActionBar.q2 G;
-    public final do0 H;
+    public final bo0 H;
     public final Paint I;
     public float J;
     public final org.telegram.ui.Components.t5 K;
@@ -110,7 +110,7 @@ public class l6 extends FrameLayout implements us {
         canvas.save();
         canvas.translate(f10 * 1527.738f, 0.5002976f * height);
         canvas.rotate(90.0f);
-        l6Var.c(f7, new d3(l6Var, 2), new Runnable() { // from class: org.telegram.ui.Wallet.i6
+        l6Var.c(f7, new e3(l6Var, 2), new Runnable() { // from class: org.telegram.ui.Wallet.i6
             @Override // java.lang.Runnable
             public final void run() {
                 l6 l6Var2 = l6.this;
@@ -182,21 +182,21 @@ public class l6 extends FrameLayout implements us {
         return 1.0f;
     }
 
-    public final void c(float f7, d3 d3Var, Runnable runnable) {
-        d3Var.a(f7 > 0.0f ? org.telegram.messenger.i0.L(5.0f) : 0.0f, org.telegram.messenger.i0.L(1.0f), Color.argb((int) (89.0f * f7), 0, 0, 0));
+    public final void c(float f7, e3 e3Var, Runnable runnable) {
+        e3Var.a(f7 > 0.0f ? org.telegram.messenger.i0.L(5.0f) : 0.0f, org.telegram.messenger.i0.L(1.0f), Color.argb((int) (89.0f * f7), 0, 0, 0));
         runnable.run();
         if (f7 <= 0.0f) {
             return;
         }
-        d3Var.a(org.telegram.messenger.i0.N(1.5f), 0.0f, Color.argb((int) (f7 * 140.0f), 0, 0, 0));
+        e3Var.a(org.telegram.messenger.i0.N(1.5f), 0.0f, Color.argb((int) (f7 * 140.0f), 0, 0, 0));
         this.i0 = true;
         runnable.run();
         this.i0 = false;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.a4) {
+        if (i10 == at.a4) {
             Object obj = objArr[0];
             k0 k0Var = this.W;
             if (obj == k0Var) {
@@ -324,10 +324,10 @@ public class l6 extends FrameLayout implements us {
         spannableStringBuilder.append((CharSequence) e(j10));
         spannableStringBuilder.append((CharSequence) " ");
         int length = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) cd.L0(2131749525, null));
+        spannableStringBuilder.append((CharSequence) dd.L0(2131749525, null));
         spannableStringBuilder.setSpan(new bi.m6(this, 5), length, spannableStringBuilder.length(), 33);
         this.N.setText(spannableStringBuilder);
-        long round = Math.round((j10 / 1.0E9d) * ((org.telegram.messenger.k0) vp.r1(i10).y7.l.b).a * 100.0d);
+        long round = Math.round((j10 / 1.0E9d) * ((org.telegram.messenger.k0) wp.r1(i10).y7.l.b).a * 100.0d);
         org.telegram.messenger.u1 i11 = org.telegram.messenger.u1.i();
         boolean z10 = round % 100 == 0;
         i11.getClass();
@@ -339,7 +339,7 @@ public class l6 extends FrameLayout implements us {
             return;
         }
         int i10 = k0Var.a;
-        setCardHolder(h20.p(d20.i(i10).f()).toUpperCase());
+        setCardHolder(i20.p(e20.i(i10).f()).toUpperCase());
         if (k0Var.t() != null) {
             setCardNumber(d(k0Var.t().toUpperCase()));
         }
@@ -384,10 +384,10 @@ public class l6 extends FrameLayout implements us {
                 int i15 = (int) fArr[i14];
                 int i16 = i12 * 3;
                 int i17 = i16 + 30;
-                float f12 = ((i15 >> 16) & zs.e4) / 255.0f;
+                float f12 = ((i15 >> 16) & at.e4) / 255.0f;
                 f7 = f10;
-                float f13 = ((i15 >> 8) & zs.e4) / 255.0f;
-                float f14 = (i15 & zs.e4) / 255.0f;
+                float f13 = ((i15 >> 8) & at.e4) / 255.0f;
+                float f14 = (i15 & at.e4) / 255.0f;
                 float min = Math.min(f12, Math.min(f13, f14));
                 float max = Math.max(f12, Math.max(f13, f14)) - min;
                 float f15 = (fArr2[i11] * 0.0722f) + (fArr2[z11 ? 1 : 0] * 0.7152f) + (fArr2[0] * 0.2126f);
@@ -423,9 +423,9 @@ public class l6 extends FrameLayout implements us {
             int i25 = i23 * 4;
             int f17 = (fArr.length < 18 || fArr[i25 + 10] < f16) ? i0.b.f(0.2f, -16611884, -16748084) : i0.b.f(0.2f, ((int) fArr[i25 + 12]) | (-16777216), ((int) fArr[i25 + 11]) | (-16777216));
             int i26 = i23 * 3;
-            fArr3[i26 + 36] = ((f17 >> 16) & zs.e4) / 255.0f;
-            fArr3[i26 + 37] = ((f17 >> 8) & zs.e4) / 255.0f;
-            fArr3[i26 + 38] = (f17 & zs.e4) / 255.0f;
+            fArr3[i26 + 36] = ((f17 >> 16) & at.e4) / 255.0f;
+            fArr3[i26 + 37] = ((f17 >> 8) & at.e4) / 255.0f;
+            fArr3[i26 + 38] = (f17 & at.e4) / 255.0f;
             i23++;
         }
         System.arraycopy(fArr, 6, fArr3, 24, 4);
@@ -515,7 +515,7 @@ public class l6 extends FrameLayout implements us {
             }
         }
         if (this.W != null) {
-            zs.f(this.V).c(this, zs.a4);
+            at.f(this.V).c(this, at.a4);
         }
     }
 
@@ -527,7 +527,7 @@ public class l6 extends FrameLayout implements us {
         }
         super.onDetachedFromWindow();
         if (this.W != null) {
-            zs.f(this.V).n(this, zs.a4);
+            at.f(this.V).n(this, at.a4);
         }
     }
 
@@ -602,7 +602,7 @@ public class l6 extends FrameLayout implements us {
         this.w = new Matrix();
         this.x = new Matrix();
         this.y = new Matrix();
-        this.I = new Paint(zs.X2);
+        this.I = new Paint(at.X2);
         final int i12 = 0;
         Runnable runnable = new Runnable(this) { // from class: org.telegram.ui.Wallet.h6
             public final /* synthetic */ l6 b;
@@ -630,7 +630,7 @@ public class l6 extends FrameLayout implements us {
         };
         gr grVar = gr.h;
         this.K = new org.telegram.ui.Components.t5(runnable, 240L, grVar, 0);
-        this.V = d20.s0;
+        this.V = e20.s0;
         final int i13 = 1;
         this.f0 = new org.telegram.ui.Components.t5(new Runnable(this) { // from class: org.telegram.ui.Wallet.h6
             public final /* synthetic */ l6 b;
@@ -713,9 +713,9 @@ public class l6 extends FrameLayout implements us {
         q2Var.setMaxLines(1);
         q2Var.setSingleLine();
         this.E.addView(q2Var, w7.b6.d(-1, -2.0f, 83, 24.0f, 0.0f, 64.0f, 17.2f));
-        do0 do0Var = new do0(this, context, 7);
-        this.H = do0Var;
-        this.E.addView(do0Var, w7.b6.c(-1.0f, -1));
+        bo0 bo0Var = new bo0(this, context, 7);
+        this.H = bo0Var;
+        this.E.addView(bo0Var, w7.b6.c(-1.0f, -1));
         View view = new View(context);
         this.L = view;
         this.E.addView(view, w7.b6.d(1, 1.0f, 19, 24.0f, 0.0f, 0.0f, 0.0f));

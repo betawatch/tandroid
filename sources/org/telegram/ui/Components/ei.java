@@ -4,22 +4,22 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ei implements org.telegram.messenger.j20 {
+public final /* synthetic */ class ei implements org.telegram.messenger.k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ mi b;
-    public final /* synthetic */ org.telegram.messenger.vp c;
+    public final /* synthetic */ org.telegram.messenger.wp c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ ei(mi miVar, org.telegram.messenger.vp vpVar, int i10, int i11) {
+    public /* synthetic */ ei(mi miVar, org.telegram.messenger.wp wpVar, int i10, int i11) {
         this.a = i11;
         this.b = miVar;
-        this.c = vpVar;
+        this.c = wpVar;
         this.d = i10;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio;
         TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio2;
@@ -51,7 +51,7 @@ public final /* synthetic */ class ei implements org.telegram.messenger.j20 {
                                 tL_message.from_id = tL_peerUser;
                                 TLRPC.Peer peer = tL_message.peer_id;
                                 int i12 = this.d;
-                                long e = org.telegram.messenger.d20.i(i12).e();
+                                long e = org.telegram.messenger.e20.i(i12).e();
                                 tL_peerUser.user_id = e;
                                 peer.user_id = e;
                                 tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -61,10 +61,10 @@ public final /* synthetic */ class ei implements org.telegram.messenger.j20 {
                                 tL_messageMediaDocument.flags |= 3;
                                 tL_messageMediaDocument.document = tL_botInlineMediaResult.document;
                                 tL_message.flags |= 768;
-                                org.telegram.messenger.xe xeVar = new org.telegram.messenger.xe();
-                                org.telegram.messenger.jj jjVar = new org.telegram.messenger.jj(i12, tL_message, false, true);
-                                xeVar.e = jjVar;
-                                TLRPC.Document F0 = jjVar.F0();
+                                org.telegram.messenger.ye yeVar = new org.telegram.messenger.ye();
+                                org.telegram.messenger.kj kjVar = new org.telegram.messenger.kj(i12, tL_message, false, true);
+                                yeVar.e = kjVar;
+                                TLRPC.Document F0 = kjVar.F0();
                                 if (F0 != null) {
                                     int i13 = 0;
                                     while (true) {
@@ -77,10 +77,10 @@ public final /* synthetic */ class ei implements org.telegram.messenger.j20 {
                                         }
                                     }
                                     if (tL_documentAttributeAudio != null) {
-                                        xeVar.a = tL_documentAttributeAudio.performer;
-                                        xeVar.b = tL_documentAttributeAudio.title;
-                                        xeVar.c = (int) tL_documentAttributeAudio.duration;
-                                        miVar.M.add(xeVar);
+                                        yeVar.a = tL_documentAttributeAudio.performer;
+                                        yeVar.b = tL_documentAttributeAudio.title;
+                                        yeVar.c = (int) tL_documentAttributeAudio.duration;
+                                        miVar.M.add(yeVar);
                                     }
                                 }
                             }
@@ -101,19 +101,19 @@ public final /* synthetic */ class ei implements org.telegram.messenger.j20 {
                 miVar2.W = false;
                 if (messages_messages != null) {
                     ArrayList<TLRPC.User> arrayList3 = messages_messages.users;
-                    org.telegram.messenger.vp vpVar = this.c;
-                    vpVar.V3(arrayList3, false);
-                    vpVar.P3(messages_messages.chats, false);
+                    org.telegram.messenger.wp wpVar = this.c;
+                    wpVar.V3(arrayList3, false);
+                    wpVar.P3(messages_messages.chats, false);
                     ArrayList<TLRPC.Message> arrayList4 = messages_messages.messages;
                     int size2 = arrayList4.size();
                     int i14 = 0;
                     while (i14 < size2) {
                         TLRPC.Message message = arrayList4.get(i14);
                         i14++;
-                        org.telegram.messenger.xe xeVar2 = new org.telegram.messenger.xe();
-                        org.telegram.messenger.jj jjVar2 = new org.telegram.messenger.jj(this.d, message, false, true);
-                        xeVar2.e = jjVar2;
-                        TLRPC.Document F02 = jjVar2.F0();
+                        org.telegram.messenger.ye yeVar2 = new org.telegram.messenger.ye();
+                        org.telegram.messenger.kj kjVar2 = new org.telegram.messenger.kj(this.d, message, false, true);
+                        yeVar2.e = kjVar2;
+                        TLRPC.Document F02 = kjVar2.F0();
                         if (F02 != null) {
                             int i15 = 0;
                             while (true) {
@@ -126,10 +126,10 @@ public final /* synthetic */ class ei implements org.telegram.messenger.j20 {
                                 }
                             }
                             if (tL_documentAttributeAudio2 != null) {
-                                xeVar2.a = tL_documentAttributeAudio2.performer;
-                                xeVar2.b = tL_documentAttributeAudio2.title;
-                                xeVar2.c = (int) tL_documentAttributeAudio2.duration;
-                                arrayList2.add(xeVar2);
+                                yeVar2.a = tL_documentAttributeAudio2.performer;
+                                yeVar2.b = tL_documentAttributeAudio2.title;
+                                yeVar2.c = (int) tL_documentAttributeAudio2.duration;
+                                arrayList2.add(yeVar2);
                             }
                         }
                     }

@@ -43,12 +43,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.telegram.messenger.at;
 import org.telegram.messenger.s1;
 import org.telegram.messenger.t1;
 import org.telegram.messenger.u1;
-import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class b {
     public final Long A;
@@ -463,7 +463,7 @@ public class b {
                     str = null;
                 }
                 if (gVar2 == c0.g) {
-                    B(zs.t1, gVar2, j10, false);
+                    B(at.t1, gVar2, j10, false);
                     D(gVar2);
                     return gVar2;
                 }
@@ -674,7 +674,7 @@ public class b {
                                     cVar = bVar.i;
                                 }
                                 if (cVar == null) {
-                                    return com.google.android.gms.internal.play_billing.u.c(zs.s1, c0.h);
+                                    return com.google.android.gms.internal.play_billing.u.c(at.s1, c0.h);
                                 }
                                 return ((com.google.android.gms.internal.play_billing.a) cVar).a1(i24, bVar.g.getPackageName(), str18, str19, bundle2);
                             } catch (DeadObjectException e7) {
@@ -1016,7 +1016,7 @@ public class b {
                                         } else if (this.b != 1) {
                                             com.google.android.gms.internal.play_billing.u.h("BillingClient", "Client state no longer CONNECTING, returning service disconnected.");
                                             gVar = c0.h;
-                                            j(zs.q1, gVar);
+                                            j(at.q1, gVar);
                                         } else {
                                             u uVar = this.j;
                                             if (this.g.bindService(intent2, uVar, 1)) {

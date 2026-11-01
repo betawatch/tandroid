@@ -2,12 +2,12 @@ package org.telegram.ui.ActionBar;
 
 import android.graphics.Bitmap;
 import android.text.TextUtils;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.wp;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class h3 {
     public boolean A;
@@ -22,7 +22,7 @@ public class h3 {
     public org.telegram.ui.h4 J;
     public xh.s0 K;
     public boolean L;
-    public xh.s3 a;
+    public xh.t3 a;
     public org.telegram.ui.web.v0 b;
     public org.telegram.ui.l3 c;
     public Object d;
@@ -67,9 +67,9 @@ public class h3 {
 
     public String b() {
         if (this.J != null) {
-            return TextUtils.isEmpty(this.E) ? cd.L0(2131742952, null) : this.E;
+            return TextUtils.isEmpty(this.E) ? dd.L0(2131742952, null) : this.E;
         }
-        xh.s3 s3Var = this.a;
-        return s3Var == null ? "" : s3Var.g == 6 ? s3Var.e : h20.p(vp.r1(s3Var.a).Z1(Long.valueOf(this.a.c)));
+        xh.t3 t3Var = this.a;
+        return t3Var == null ? "" : t3Var.g == 6 ? t3Var.e : i20.p(wp.r1(t3Var.a).Z1(Long.valueOf(this.a.c)));
     }
 }

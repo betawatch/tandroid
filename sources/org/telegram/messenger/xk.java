@@ -1,95 +1,163 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xk implements RequestDelegate {
+public final /* synthetic */ class xk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vp b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ wp b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ xk(int i10, long j10, long j11, vp vpVar) {
-        this.a = 0;
-        this.b = vpVar;
-        this.d = j10;
-        this.c = i10;
-        this.e = j11;
+    public /* synthetic */ xk(wp wpVar, long j10, int i10) {
+        this.a = i10;
+        this.b = wpVar;
+        this.c = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        TLRPC.Chat chat;
-        switch (this.a) {
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x00d7, code lost:
+    
+        if (r4 == null) goto L45;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00e7  */
+    /* JADX WARN: Type inference failed for: r0v23, types: [org.telegram.messenger.pt] */
+    /* JADX WARN: Type inference failed for: r4v0, types: [long] */
+    /* JADX WARN: Type inference failed for: r4v10, types: [org.telegram.SQLite.SQLiteCursor] */
+    /* JADX WARN: Type inference failed for: r4v15 */
+    /* JADX WARN: Type inference failed for: r4v16 */
+    /* JADX WARN: Type inference failed for: r4v17 */
+    /* JADX WARN: Type inference failed for: r4v18 */
+    /* JADX WARN: Type inference failed for: r4v8 */
+    /* JADX WARN: Type inference failed for: r6v0, types: [org.telegram.messenger.f1, org.telegram.messenger.wp] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        SQLiteCursor sQLiteCursor;
+        int i10 = this.a;
+        ?? r42 = this.c;
+        ?? r62 = this.b;
+        switch (i10) {
             case 0:
-                vp vpVar = this.b;
-                long j10 = this.d;
-                long j11 = this.e;
-                if (tLObject != null) {
-                    TLRPC.updates_ChannelDifference updates_channeldifference = (TLRPC.updates_ChannelDifference) tLObject;
-                    a0.h hVar = new a0.h();
-                    int i10 = 0;
-                    for (int i11 = 0; i11 < updates_channeldifference.users.size(); i11++) {
-                        TLRPC.User user = updates_channeldifference.users.get(i11);
-                        hVar.k(user, user.id);
-                    }
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 < updates_channeldifference.chats.size()) {
-                            chat = updates_channeldifference.chats.get(i12);
-                            if (chat.id != j10) {
-                                i12++;
-                            }
-                        } else {
-                            chat = null;
-                        }
-                    }
-                    TLRPC.Chat chat2 = chat;
-                    ArrayList arrayList = new ArrayList();
-                    if (!updates_channeldifference.other_updates.isEmpty()) {
-                        while (i10 < updates_channeldifference.other_updates.size()) {
-                            TLRPC.Update update = updates_channeldifference.other_updates.get(i10);
-                            if (update instanceof TL_update.TL_updateMessageID) {
-                                arrayList.add((TL_update.TL_updateMessageID) update);
-                                updates_channeldifference.other_updates.remove(i10);
-                                i10--;
-                            }
-                            i10++;
-                        }
-                    }
-                    vpVar.getMessagesStorage().m1(updates_channeldifference.users, updates_channeldifference.chats, true, true);
-                    i0.g3(new oi(11, vpVar, updates_channeldifference));
-                    vpVar.getMessagesStorage().a.c(new zk(vpVar, arrayList, j10, updates_channeldifference, chat2, hVar, this.c, j11));
-                    break;
-                } else if (tL_error != null) {
-                    i0.g3(new nl(vpVar, tL_error, j10, 0));
-                    vpVar.Z0.e(j10);
-                    if (j11 != 0) {
-                        vpVar.getMessagesStorage().q1(j11);
-                        break;
-                    }
-                }
-                break;
+                at.f(r62.currentAccount).k(at.E5, Long.valueOf((long) r42));
+                return;
             case 1:
-                i0.g3(new fk(this.b, this.c, this.d, this.e, 2));
-                break;
+                at.f(r62.currentAccount).k(at.E5, Long.valueOf((long) r42));
+                return;
+            case 2:
+                at.f(r62.currentAccount).k(at.E5, Long.valueOf((long) r42));
+                return;
+            case 3:
+                at.f(r62.currentAccount).k(at.E5, Long.valueOf((long) r42));
+                return;
+            case 4:
+                at.f(r62.currentAccount).k(at.E5, Long.valueOf((long) r42));
+                return;
+            case 5:
+                at.f(r62.currentAccount).k(at.E5, Long.valueOf((long) r42));
+                return;
+            case 6:
+                r62.T2(0, r42, true);
+                return;
+            case 7:
+                long j10 = this.c;
+                wp wpVar = this.b;
+                SQLiteCursor sQLiteCursor2 = null;
+                r1 = null;
+                r1 = null;
+                r1 = null;
+                TLRPC.messages_SavedReactionTags messages_savedreactiontags = null;
+                try {
+                    try {
+                        sQLiteCursor = wpVar.getMessagesStorage().b.queryFinalized("SELECT data FROM saved_reaction_tags WHERE topic_id = ?", Long.valueOf(j10));
+                        try {
+                            boolean next = sQLiteCursor.next();
+                            r42 = sQLiteCursor;
+                            if (next) {
+                                NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
+                                r42 = sQLiteCursor;
+                                if (byteBufferValue != null) {
+                                    messages_savedreactiontags = TLRPC.messages_SavedReactionTags.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
+                                    r42 = sQLiteCursor;
+                                }
+                            }
+                        } catch (Exception e) {
+                            e = e;
+                            f8.g(e, true);
+                            r42 = sQLiteCursor;
+                            break;
+                        }
+                    } catch (Throwable th2) {
+                        th = th2;
+                        sQLiteCursor2 = r42;
+                        if (sQLiteCursor2 != null) {
+                            sQLiteCursor2.dispose();
+                        }
+                        throw th;
+                    }
+                } catch (Exception e7) {
+                    e = e7;
+                    sQLiteCursor = null;
+                } catch (Throwable th3) {
+                    th = th3;
+                    if (sQLiteCursor2 != null) {
+                    }
+                    throw th;
+                }
+                r42.dispose();
+                i0.g3(new d4(wpVar, messages_savedreactiontags, j10, 16));
+                return;
+            case 8:
+                r62.getNotificationsController().N(r42);
+                return;
+            case 9:
+                long j11 = -r42;
+                r62.Y0.delete(j11);
+                r62.z0.delete(j11);
+                r62.A0.e(j11);
+                r62.B0.delete(j11);
+                r62.C0.e(j11);
+                return;
+            case 10:
+                r62.T2(0, r42, true);
+                return;
+            case 11:
+                r62.n.remove(Long.valueOf((long) r42));
+                return;
+            case 12:
+                r62.getNotificationCenter().k(at.X3, Long.valueOf((long) r42));
+                return;
+            case 13:
+                r62.T2(0, r42, true);
+                return;
+            case 14:
+                i0.g3(new xk(r62, r42, 5));
+                return;
+            case 15:
+                i0.g3(new xk(r62, r42, 8));
+                return;
+            case 16:
+                r62.T2(0, r42, true);
+                return;
+            case 17:
+                r62.getNotificationCenter().k(at.X4, Long.valueOf((long) r42), 0L);
+                return;
+            case 18:
+                r62.T2(0, r42, true);
+                return;
+            case 19:
+                r62.T2(0, r42, true);
+                return;
+            case 20:
+                r62.T2(0, r42, true);
+                return;
             default:
-                i0.g3(new fk(this.b, this.c, this.d, this.e, 0));
-                break;
+                r62.T2(0, r42, true);
+                return;
         }
-    }
-
-    public /* synthetic */ xk(vp vpVar, int i10, long j10, long j11, int i11) {
-        this.a = i11;
-        this.b = vpVar;
-        this.c = i10;
-        this.d = j10;
-        this.e = j11;
     }
 }

@@ -13,7 +13,7 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
     public static String a(String str) {
@@ -324,28 +324,28 @@ public class MrzRecognizer {
         return c10 - '0';
     }
 
-    public static void f(String str, is isVar) {
+    public static void f(String str, js jsVar) {
         try {
             int parseInt = Integer.parseInt(str.substring(0, 2));
-            isVar.i = parseInt;
-            isVar.i = parseInt < (Calendar.getInstance().get(1) % 100) + (-5) ? isVar.i + 2000 : isVar.i + 1900;
-            isVar.j = Integer.parseInt(str.substring(2, 4));
-            isVar.k = Integer.parseInt(str.substring(4));
+            jsVar.i = parseInt;
+            jsVar.i = parseInt < (Calendar.getInstance().get(1) % 100) + (-5) ? jsVar.i + 2000 : jsVar.i + 1900;
+            jsVar.j = Integer.parseInt(str.substring(2, 4));
+            jsVar.k = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
 
     private static native int[] findCornerPoints(Bitmap bitmap);
 
-    public static void g(String str, is isVar) {
+    public static void g(String str, js jsVar) {
         try {
             if ("<<<<<<".equals(str)) {
-                isVar.o = true;
+                jsVar.o = true;
                 return;
             }
-            isVar.f = Integer.parseInt(str.substring(0, 2)) + 2000;
-            isVar.g = Integer.parseInt(str.substring(2, 4));
-            isVar.h = Integer.parseInt(str.substring(4));
+            jsVar.f = Integer.parseInt(str.substring(0, 2)) + 2000;
+            jsVar.g = Integer.parseInt(str.substring(2, 4));
+            jsVar.h = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
@@ -357,7 +357,7 @@ public class MrzRecognizer {
         return 2;
     }
 
-    public static is i(Bitmap bitmap) {
+    public static js i(Bitmap bitmap) {
         r8.e eVar;
         r8.n nVar = new r8.n(new com.google.android.gms.internal.vision.t2(w0.b, new com.google.android.gms.internal.vision.x1()));
         if (bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500) {
@@ -379,31 +379,31 @@ public class MrzRecognizer {
             int i13 = 6;
             int i14 = 4;
             if (i12 == 12 && (eVar = mVar.D) != null) {
-                is isVar = new is();
-                isVar.a = "ID".equals(eVar.a) ? 2 : 4;
+                js jsVar = new js();
+                jsVar.a = "ID".equals(eVar.a) ? 2 : 4;
                 String str = mVar.D.D;
                 str.getClass();
                 if (str.equals("CAN")) {
-                    isVar.l = "CA";
-                    isVar.m = "CA";
+                    jsVar.l = "CA";
+                    jsVar.m = "CA";
                 } else if (str.equals("USA")) {
-                    isVar.l = "US";
-                    isVar.m = "US";
+                    jsVar.l = "US";
+                    jsVar.m = "US";
                 }
-                isVar.b = a(mVar.D.b);
-                isVar.c = a(mVar.D.d);
-                isVar.d = a(mVar.D.c);
+                jsVar.b = a(mVar.D.b);
+                jsVar.c = a(mVar.D.d);
+                jsVar.d = a(mVar.D.c);
                 r8.e eVar2 = mVar.D;
-                isVar.e = eVar2.s;
+                jsVar.e = eVar2.s;
                 String str2 = eVar2.e;
                 if (str2 != null) {
                     if (str2.equals("1")) {
-                        isVar.n = 1;
+                        jsVar.n = 1;
                     } else if (str2.equals("2")) {
-                        isVar.n = 2;
+                        jsVar.n = 2;
                     }
                 }
-                if ("USA".equals(isVar.l)) {
+                if ("USA".equals(jsVar.l)) {
                     i14 = 0;
                     i10 = 4;
                     i13 = 2;
@@ -411,39 +411,39 @@ public class MrzRecognizer {
                 try {
                     String str3 = mVar.D.y;
                     if (str3 != null && str3.length() == 8) {
-                        isVar.i = Integer.parseInt(mVar.D.y.substring(i10, i10 + 4));
-                        isVar.j = Integer.parseInt(mVar.D.y.substring(i14, i14 + 2));
-                        isVar.k = Integer.parseInt(mVar.D.y.substring(i13, i13 + 2));
+                        jsVar.i = Integer.parseInt(mVar.D.y.substring(i10, i10 + 4));
+                        jsVar.j = Integer.parseInt(mVar.D.y.substring(i14, i14 + 2));
+                        jsVar.k = Integer.parseInt(mVar.D.y.substring(i13, i13 + 2));
                     }
                     String str4 = mVar.D.x;
                     if (str4 != null && str4.length() == 8) {
-                        isVar.f = Integer.parseInt(mVar.D.x.substring(i10, i10 + 4));
-                        isVar.g = Integer.parseInt(mVar.D.x.substring(i14, i14 + 2));
-                        isVar.h = Integer.parseInt(mVar.D.x.substring(i13, i13 + 2));
+                        jsVar.f = Integer.parseInt(mVar.D.x.substring(i10, i10 + 4));
+                        jsVar.g = Integer.parseInt(mVar.D.x.substring(i14, i14 + 2));
+                        jsVar.h = Integer.parseInt(mVar.D.x.substring(i13, i13 + 2));
                     }
                 } catch (NumberFormatException unused) {
                 }
-                return isVar;
+                return jsVar;
             }
             if (i12 == 7 && mVar.a == 2048 && mVar.b.matches("^[A-Za-z0-9=]+$")) {
                 try {
                     String[] split = new String(Base64.decode(mVar.b, 0), "windows-1251").split("\\|");
                     if (split.length >= 10) {
-                        is isVar2 = new is();
-                        isVar2.a = 4;
-                        isVar2.l = "RU";
-                        isVar2.m = "RU";
-                        isVar2.e = split[0];
-                        isVar2.f = Integer.parseInt(split[2].substring(0, 4));
-                        isVar2.g = Integer.parseInt(split[2].substring(4, 6));
-                        isVar2.h = Integer.parseInt(split[2].substring(6));
-                        isVar2.c = a(c(split[3]));
-                        isVar2.b = a(c(split[4]));
-                        isVar2.d = a(c(split[5]));
-                        isVar2.i = Integer.parseInt(split[6].substring(0, 4));
-                        isVar2.j = Integer.parseInt(split[6].substring(4, 6));
-                        isVar2.k = Integer.parseInt(split[6].substring(6));
-                        return isVar2;
+                        js jsVar2 = new js();
+                        jsVar2.a = 4;
+                        jsVar2.l = "RU";
+                        jsVar2.m = "RU";
+                        jsVar2.e = split[0];
+                        jsVar2.f = Integer.parseInt(split[2].substring(0, 4));
+                        jsVar2.g = Integer.parseInt(split[2].substring(4, 6));
+                        jsVar2.h = Integer.parseInt(split[2].substring(6));
+                        jsVar2.c = a(c(split[3]));
+                        jsVar2.b = a(c(split[4]));
+                        jsVar2.d = a(c(split[5]));
+                        jsVar2.i = Integer.parseInt(split[6].substring(0, 4));
+                        jsVar2.j = Integer.parseInt(split[6].substring(4, 6));
+                        jsVar2.k = Integer.parseInt(split[6].substring(6));
+                        return jsVar2;
                     }
                     continue;
                 } catch (Exception unused2) {
@@ -462,7 +462,7 @@ public class MrzRecognizer {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static is j(Bitmap bitmap) {
+    public static js j(Bitmap bitmap) {
         float max;
         Bitmap createScaledBitmap;
         int i10;
@@ -607,27 +607,27 @@ public class MrzRecognizer {
                         return null;
                     }
                     String[] split = TextUtils.split(performRecognition, "\n");
-                    is isVar = new is();
+                    js jsVar = new js();
                     if (split.length < 2 || split[0].length() < 30 || split[1].length() != split[0].length()) {
                         return null;
                     }
-                    isVar.p = TextUtils.join("\n", split);
+                    jsVar.p = TextUtils.join("\n", split);
                     HashMap d13 = d();
                     char charAt = split[0].charAt(0);
                     if (charAt == 'P') {
-                        isVar.a = 1;
+                        jsVar.a = 1;
                         if (split[0].length() == 44) {
                             int i29 = i13;
-                            isVar.l = split[0].substring(2, i29);
+                            jsVar.l = split[0].substring(2, i29);
                             int indexOf = split[0].indexOf("<<", i11);
                             if (indexOf != -1) {
-                                isVar.c = split[0].substring(i29, indexOf).replace('<', ' ').replace('0', 'O').trim();
+                                jsVar.c = split[0].substring(i29, indexOf).replace('<', ' ').replace('0', 'O').trim();
                                 String trim = split[0].substring(indexOf + 2).replace('<', ' ').replace('0', 'O').trim();
-                                isVar.b = trim;
+                                jsVar.b = trim;
                                 if (trim.contains("   ")) {
-                                    String str = isVar.b;
+                                    String str = jsVar.b;
                                     i20 = 0;
-                                    isVar.b = str.substring(0, str.indexOf("   "));
+                                    jsVar.b = str.substring(0, str.indexOf("   "));
                                 } else {
                                     i20 = 0;
                                 }
@@ -636,111 +636,111 @@ public class MrzRecognizer {
                             }
                             String trim2 = split[1].substring(i20, 9).replace('<', ' ').replace('O', '0').trim();
                             if (b(trim2) == e(split[1].charAt(9))) {
-                                isVar.e = trim2;
+                                jsVar.e = trim2;
                             }
-                            isVar.m = split[1].substring(10, 13);
+                            jsVar.m = split[1].substring(10, 13);
                             String replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                             if (b(replace) == e(split[1].charAt(19))) {
-                                f(replace, isVar);
+                                f(replace, jsVar);
                             }
-                            isVar.n = h(split[1].charAt(20));
+                            jsVar.n = h(split[1].charAt(20));
                             String replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
                             if (b(replace2) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                g(replace2, isVar);
+                                g(replace2, jsVar);
                             }
-                            if ("RUS".equals(isVar.l) && split[0].charAt(1) == 'N') {
-                                isVar.a = 3;
-                                String[] split2 = isVar.b.split(" ");
-                                isVar.b = c(k(split2[0]));
+                            if ("RUS".equals(jsVar.l) && split[0].charAt(1) == 'N') {
+                                jsVar.a = 3;
+                                String[] split2 = jsVar.b.split(" ");
+                                jsVar.b = c(k(split2[0]));
                                 if (split2.length > 1) {
-                                    isVar.d = c(k(split2[1]));
+                                    jsVar.d = c(k(split2[1]));
                                 }
-                                isVar.c = c(k(isVar.c));
-                                if (isVar.e != null) {
-                                    isVar.e = isVar.e.substring(0, 3) + split[1].charAt(28) + isVar.e.substring(3);
+                                jsVar.c = c(k(jsVar.c));
+                                if (jsVar.e != null) {
+                                    jsVar.e = jsVar.e.substring(0, 3) + split[1].charAt(28) + jsVar.e.substring(3);
                                 }
                             } else {
-                                isVar.b = isVar.b.replace('8', 'B');
-                                isVar.c = isVar.c.replace('8', 'B');
+                                jsVar.b = jsVar.b.replace('8', 'B');
+                                jsVar.c = jsVar.c.replace('8', 'B');
                             }
-                            isVar.c = a(isVar.c);
-                            isVar.b = a(isVar.b);
-                            isVar.d = a(isVar.d);
+                            jsVar.c = a(jsVar.c);
+                            jsVar.b = a(jsVar.b);
+                            jsVar.d = a(jsVar.d);
                         }
                     } else {
                         if (charAt != 'I' && charAt != 'A' && charAt != 'C') {
                             return null;
                         }
-                        isVar.a = 2;
+                        jsVar.a = 2;
                         if (split.length == 3 && split[0].length() == 30 && split[2].length() == 30) {
-                            isVar.l = split[0].substring(2, 5);
+                            jsVar.l = split[0].substring(2, 5);
                             String trim3 = split[0].substring(5, 14).replace('<', ' ').replace('O', '0').trim();
                             if (b(trim3) == split[0].charAt(14) - '0') {
-                                isVar.e = trim3;
+                                jsVar.e = trim3;
                             }
                             String replace3 = split[1].substring(0, 6).replace('O', '0').replace('I', '1');
                             if (b(replace3) == e(split[1].charAt(6))) {
-                                f(replace3, isVar);
+                                f(replace3, jsVar);
                             }
-                            isVar.n = h(split[1].charAt(i15));
+                            jsVar.n = h(split[1].charAt(i15));
                             String replace4 = split[1].substring(8, 14).replace('O', '0').replace('I', '1');
                             if (b(replace4) == e(split[1].charAt(14)) || split[1].charAt(14) == '<') {
-                                g(replace4, isVar);
+                                g(replace4, jsVar);
                             }
-                            isVar.m = split[1].substring(15, 18);
+                            jsVar.m = split[1].substring(15, 18);
                             int indexOf2 = split[2].indexOf("<<");
                             if (indexOf2 != -1) {
-                                isVar.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
-                                isVar.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
+                                jsVar.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
+                                jsVar.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
                             }
                         } else if (split.length == 2 && split[0].length() == 36) {
                             String substring = split[0].substring(2, 5);
-                            isVar.l = substring;
+                            jsVar.l = substring;
                             if ("FRA".equals(substring) && charAt == 'I' && split[0].charAt(1) == 'D') {
-                                isVar.m = "FRA";
-                                isVar.c = split[0].substring(5, 30).replace('<', ' ').trim();
-                                isVar.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
+                                jsVar.m = "FRA";
+                                jsVar.c = split[0].substring(5, 30).replace('<', ' ').trim();
+                                jsVar.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
                                 String replace5 = split[1].substring(0, 12).replace('O', '0');
                                 if (b(replace5) == e(split[1].charAt(12))) {
-                                    isVar.e = replace5;
+                                    jsVar.e = replace5;
                                 }
                                 String replace6 = split[1].substring(27, 33).replace('O', '0').replace('I', '1');
                                 if (b(replace6) == e(split[1].charAt(33))) {
-                                    f(replace6, isVar);
+                                    f(replace6, jsVar);
                                 }
-                                isVar.n = h(split[1].charAt(34));
-                                isVar.o = true;
+                                jsVar.n = h(split[1].charAt(34));
+                                jsVar.o = true;
                             } else {
                                 int indexOf3 = split[0].indexOf("<<");
                                 if (indexOf3 != -1) {
-                                    isVar.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
-                                    isVar.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
+                                    jsVar.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
+                                    jsVar.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
                                 }
                                 String trim4 = split[1].substring(0, 9).replace('<', ' ').replace('O', '0').trim();
                                 if (b(trim4) == e(split[1].charAt(9))) {
-                                    isVar.e = trim4;
+                                    jsVar.e = trim4;
                                 }
-                                isVar.m = split[1].substring(10, 13);
+                                jsVar.m = split[1].substring(10, 13);
                                 String replace7 = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                                 if (b(replace7) == e(split[1].charAt(19))) {
-                                    f(replace7, isVar);
+                                    f(replace7, jsVar);
                                 }
-                                isVar.n = h(split[1].charAt(20));
+                                jsVar.n = h(split[1].charAt(20));
                                 String replace8 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
                                 if (b(replace8) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                    g(replace8, isVar);
+                                    g(replace8, jsVar);
                                 }
                             }
                         }
-                        isVar.b = a(isVar.b.replace('0', 'O').replace('8', 'B'));
-                        isVar.c = a(isVar.c.replace('0', 'O').replace('8', 'B'));
+                        jsVar.b = a(jsVar.b.replace('0', 'O').replace('8', 'B'));
+                        jsVar.c = a(jsVar.c.replace('0', 'O').replace('8', 'B'));
                     }
-                    if (TextUtils.isEmpty(isVar.b) && TextUtils.isEmpty(isVar.c)) {
+                    if (TextUtils.isEmpty(jsVar.b) && TextUtils.isEmpty(jsVar.c)) {
                         return null;
                     }
-                    isVar.l = (String) d13.get(isVar.l);
-                    isVar.m = (String) d13.get(isVar.m);
-                    return isVar;
+                    jsVar.l = (String) d13.get(jsVar.l);
+                    jsVar.m = (String) d13.get(jsVar.m);
+                    return jsVar;
                 }
                 return null;
             }

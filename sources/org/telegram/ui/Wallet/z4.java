@@ -12,17 +12,17 @@ import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.TreeSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.us;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.w71;
 import org.telegram.ui.Components.wb;
+import org.telegram.ui.Components.x71;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class z4 extends w71 {
+public final class z4 extends x71 {
     public boolean V;
     public final y4 W;
     public final /* synthetic */ ArrayList a0;
@@ -40,8 +40,8 @@ public final class z4 extends w71 {
         this.c0 = i10;
         this.d0 = rect;
         this.e0 = viewArr;
-        this.W = new us() { // from class: org.telegram.ui.Wallet.y4
-            @Override // org.telegram.messenger.us
+        this.W = new vs() { // from class: org.telegram.ui.Wallet.y4
+            @Override // org.telegram.messenger.vs
             public final void didReceivedNotification(int i11, int i12, Object[] objArr) {
                 ArrayList arrayList2 = arrayList;
                 ArrayList arrayList3 = j0Var.c;
@@ -87,7 +87,7 @@ public final class z4 extends w71 {
         };
     }
 
-    @Override // org.telegram.ui.Components.w71
+    @Override // org.telegram.ui.Components.x71
     public final void F(View view, float f7) {
         view.setTranslationX(f7);
         if (getMeasuredWidth() <= 0) {
@@ -129,7 +129,7 @@ public final class z4 extends w71 {
                     jVar.m = kVar;
                     a7Var.O.b(new u6(a7Var, 1));
                 }
-                float z11 = z20.z(a7Var.P, L, org.telegram.messenger.i0.L(1600.0f), -org.telegram.messenger.i0.L(1600.0f));
+                float z11 = a30.z(a7Var.P, L, org.telegram.messenger.i0.L(1600.0f), -org.telegram.messenger.i0.L(1600.0f));
                 a7Var.P = z11;
                 o1.j jVar2 = a7Var.O;
                 jVar2.a = z11;
@@ -178,7 +178,7 @@ public final class z4 extends w71 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.w71
+    @Override // org.telegram.ui.Components.x71
     public final float getAvailableTranslationX() {
         int measuredWidth = getMeasuredWidth();
         Rect rect = this.d0;
@@ -188,14 +188,14 @@ public final class z4 extends w71 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        zs.f(this.c0).c(this.W, zs.b4);
+        at.f(this.c0).c(this.W, at.b4);
         L();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        zs.f(this.c0).n(this.W, zs.b4);
+        at.f(this.c0).n(this.W, at.b4);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -214,7 +214,7 @@ public final class z4 extends w71 {
         super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.w71
+    @Override // org.telegram.ui.Components.x71
     public final void t(View view, View view2, int i10, int i11) {
         requestLayout();
         View childAt = ((FrameLayout) view).getChildAt(0);
@@ -228,7 +228,7 @@ public final class z4 extends w71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w71
+    @Override // org.telegram.ui.Components.x71
     public final void w(boolean z10) {
         requestLayout();
         View view = this.e0[0];

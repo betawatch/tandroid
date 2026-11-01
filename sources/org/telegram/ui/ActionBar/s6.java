@@ -15,11 +15,11 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
@@ -27,9 +27,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.f9;
 import org.telegram.ui.Components.jb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class s6 implements us {
+public final class s6 implements vs {
     public int D;
     public int E;
     public TLRPC.TL_theme F;
@@ -352,10 +352,10 @@ public final class s6 implements us {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = zs.Y1;
-        if (i10 == i12 || i10 == zs.Z1) {
+        int i12 = at.Y1;
+        if (i10 == i12 || i10 == at.Z1) {
             String str = (String) objArr[0];
             TLRPC.TL_theme tL_theme = this.F;
             if (tL_theme == null || tL_theme.document == null) {
@@ -571,19 +571,19 @@ public final class s6 implements us {
 
     public final String n() {
         if ("Blue".equals(this.a)) {
-            return cd.L0(2131744211, null);
+            return dd.L0(2131744211, null);
         }
         if ("Dark Blue".equals(this.a)) {
-            return cd.L0(2131744208, null);
+            return dd.L0(2131744208, null);
         }
         if ("Arctic Blue".equals(this.a)) {
-            return cd.L0(2131744212, null);
+            return dd.L0(2131744212, null);
         }
         if ("Day".equals(this.a)) {
-            return cd.L0(2131744207, null);
+            return dd.L0(2131744207, null);
         }
         if ("Night".equals(this.a)) {
-            return cd.L0(2131744200, null);
+            return dd.L0(2131744200, null);
         }
         TLRPC.TL_theme tL_theme = this.F;
         return tL_theme != null ? tL_theme.title : this.a;
@@ -663,8 +663,8 @@ public final class s6 implements us {
     }
 
     public final void t() {
-        zs.f(this.E).n(this, zs.Y1);
-        zs.f(this.E).n(this, zs.Z1);
+        at.f(this.E).n(this, at.Y1);
+        at.f(this.E).n(this, at.Z1);
     }
 
     public final void u(int i10) {

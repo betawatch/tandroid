@@ -6,10 +6,10 @@ import android.os.SystemClock;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.me;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.ne;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -102,9 +102,9 @@ public final /* synthetic */ class a implements Runnable {
                                     long j14 = kVar.j();
                                     double d = sqrt;
                                     if (d >= 0.0d) {
-                                        MediaController mediaController = ((me) kVar.f.b).a;
+                                        MediaController mediaController = ((ne) kVar.f.b).a;
                                         mediaController.j1 = j14;
-                                        zs.f(mediaController.g1).k(zs.k2, Integer.valueOf(mediaController.f1), Double.valueOf(d / 2.0d));
+                                        at.f(mediaController.g1).k(at.k2, Integer.valueOf(mediaController.f1), Double.valueOf(d / 2.0d));
                                     }
                                 }
                             }

@@ -25,14 +25,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.w0;
-import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class Camera2Session {
     private CameraCharacteristics cameraCharacteristics;
@@ -65,7 +65,7 @@ public class Camera2Session {
     private boolean opened = false;
     private final Rect cropRegion = new Rect();
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public class 1 extends CameraDevice.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -100,7 +100,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public class 2 extends CameraCaptureSession.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -143,22 +143,22 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public class 3 implements ImageReader.OnImageAvailableListener {
         final /* synthetic */ File val$file;
         final /* synthetic */ int val$orientation;
-        final /* synthetic */ q20 val$whenDone;
+        final /* synthetic */ r20 val$whenDone;
 
-        public 3(File file, q20 q20Var, int i10) {
+        public 3(File file, r20 r20Var, int i10) {
             this.val$file = file;
-            this.val$whenDone = q20Var;
+            this.val$whenDone = r20Var;
             this.val$orientation = i10;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onImageAvailable$0(q20 q20Var, int i10) {
-            if (q20Var != null) {
-                q20Var.a(Integer.valueOf(i10));
+        public static /* synthetic */ void lambda$onImageAvailable$0(r20 r20Var, int i10) {
+            if (r20Var != null) {
+                r20Var.a(Integer.valueOf(i10));
             }
         }
 
@@ -218,18 +218,18 @@ public class Camera2Session {
             } catch (IOException e12) {
                 e12.printStackTrace();
             }
-            final q20 q20Var = this.val$whenDone;
+            final r20 r20Var = this.val$whenDone;
             final int i10 = this.val$orientation;
             i0.g3(new Runnable() { // from class: org.telegram.messenger.camera.e
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Camera2Session.3.lambda$onImageAvailable$0(q20.this, i10);
+                    Camera2Session.3.lambda$onImageAvailable$0(r20.this, i10);
                 }
             });
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static class CompareSizesByArea implements Comparator<android.util.Size> {
         @Override // java.util.Comparator
         public int compare(android.util.Size size, android.util.Size size2) {
@@ -387,9 +387,9 @@ public class Camera2Session {
                 if (rotation == 1) {
                     i10 = 90;
                 } else if (rotation == 2) {
-                    i10 = zs.K2;
+                    i10 = at.K2;
                 } else if (rotation == 3) {
-                    i10 = zs.t4;
+                    i10 = at.t4;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 return !this.isFront ? (360 - ((num.intValue() + i10) % 360)) % 360 : ((num.intValue() - i10) + 360) % 360;
@@ -523,9 +523,9 @@ public class Camera2Session {
                 if (rotation == 1) {
                     i10 = 90;
                 } else if (rotation == 2) {
-                    i10 = zs.K2;
+                    i10 = at.K2;
                 } else if (rotation == 3) {
-                    i10 = zs.t4;
+                    i10 = at.t4;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 return !this.isFront ? (360 - ((num.intValue() + i10) % 360)) % 360 : ((num.intValue() - i10) + 360) % 360;
@@ -618,14 +618,14 @@ public class Camera2Session {
         }
     }
 
-    public boolean takePicture(File file, q20 q20Var) {
+    public boolean takePicture(File file, r20 r20Var) {
         CameraDevice cameraDevice = this.cameraDevice;
         if (cameraDevice != null && this.captureSession != null) {
             try {
                 CaptureRequest.Builder createCaptureRequest = cameraDevice.createCaptureRequest(2);
                 int jpegOrientation = getJpegOrientation();
                 createCaptureRequest.set(CaptureRequest.JPEG_ORIENTATION, Integer.valueOf(jpegOrientation));
-                this.imageReader.setOnImageAvailableListener(new 3(file, q20Var, jpegOrientation), null);
+                this.imageReader.setOnImageAvailableListener(new 3(file, r20Var, jpegOrientation), null);
                 if (this.scanningBarcode) {
                     createCaptureRequest.set(CaptureRequest.CONTROL_SCENE_MODE, 16);
                 }

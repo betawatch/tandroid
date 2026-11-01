@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class cg extends HashMap {
     public final /* synthetic */ int a;
@@ -18,14 +18,14 @@ public final class cg extends HashMap {
         switch (this.a) {
             case 0:
                 int i10 = ((fg) this.b).w;
-                bi0 bi0Var = (bi0) super.get(obj);
-                if (bi0Var != null) {
-                    return bi0Var;
+                ci0 ci0Var = (ci0) super.get(obj);
+                if (ci0Var != null) {
+                    return ci0Var;
                 }
                 eg egVar = (eg) obj;
-                bi0 bi0Var2 = new bi0(egVar.c, org.telegram.messenger.i0.L(i10), org.telegram.messenger.i0.L(i10));
-                put(egVar, bi0Var2);
-                return bi0Var2;
+                ci0 ci0Var2 = new ci0(egVar.c, org.telegram.messenger.i0.L(i10), org.telegram.messenger.i0.L(i10));
+                put(egVar, ci0Var2);
+                return ci0Var2;
             default:
                 return super.get(obj);
         }

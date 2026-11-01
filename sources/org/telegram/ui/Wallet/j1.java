@@ -3,12 +3,12 @@ package org.telegram.ui.Wallet;
 import android.text.TextUtils;
 import android.view.View;
 import org.json.JSONObject;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 JSONObject jSONObject = (JSONObject) this.b;
-                y2 y2Var = (y2) this.c;
+                z2 z2Var = (z2) this.c;
                 org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) this.d;
                 if (org.telegram.messenger.i0.g(jSONObject.optString("text"))) {
-                    z20.r(null, 2131743035, new cc(y2Var.E, p6Var));
+                    a30.r(null, 2131743035, new cc(z2Var.E, p6Var));
                     break;
                 }
                 break;
@@ -41,12 +41,13 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.c;
                 TL_wallet.card cardVar = (TL_wallet.card) this.d;
                 if (!p3Var.R) {
+                    int i11 = 1;
                     if (p3Var.e) {
-                        p3Var.U = new j3(1, k2Var);
+                        p3Var.U = new k3(i11, k2Var);
                     } else if (p3Var.d) {
-                        p3Var.U = new j3(i10, k2Var);
+                        p3Var.U = new k3(i10, k2Var);
                     } else if (p3Var.c && !TextUtils.isEmpty(cardVar.address)) {
-                        p3Var.U = new k3(i10, k2Var, cardVar);
+                        p3Var.U = new m2(i11, k2Var, cardVar);
                     }
                     p3Var.dismiss();
                     break;

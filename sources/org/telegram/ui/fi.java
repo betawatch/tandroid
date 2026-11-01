@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class fi extends AnimatorListenerAdapter {
     public final /* synthetic */ tn a;
@@ -29,8 +29,8 @@ public final class fi extends AnimatorListenerAdapter {
         un unVar = this.h;
         if (unVar.T2.getTag() != null) {
             unVar.T2.setVisibility(4);
-            int T8 = unVar.T8();
-            unVar.T2.a(Math.min(T8 - 1, Math.max(1, T8 - unVar.Y4[0])), false);
+            int X8 = unVar.X8();
+            unVar.T2.a(Math.min(X8 - 1, Math.max(1, X8 - unVar.Y4[0])), false);
         } else {
             unVar.T2.setAlpha(1.0f);
         }

@@ -32,12 +32,12 @@ import k2.w;
 import k2.w0;
 import k2.y;
 import n2.g;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import v7.t6;
 import za.c;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioRenderer extends b implements x0 {
     public final hf.b I;
@@ -118,7 +118,7 @@ public final class FfmpegAudioRenderer extends b implements x0 {
         } else {
             i10 = 0;
         }
-        return i10 <= 2 ? i0.a.a(i10, 0, 0, 0) : i10 | zs.y2;
+        return i10 <= 2 ? i0.a.a(i10, 0, 0, 0) : i10 | at.y2;
     }
 
     @Override // i2.b

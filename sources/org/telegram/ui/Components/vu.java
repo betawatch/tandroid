@@ -5,10 +5,10 @@ import android.view.View;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class vu extends View {
-    public org.telegram.messenger.jc[] a;
+    public org.telegram.messenger.kc[] a;
     public ag.c2 b;
     public o5 c;
     public ValueAnimator d;
@@ -23,7 +23,7 @@ public final class vu extends View {
         if (document != null) {
             return document;
         }
-        return f5.e(org.telegram.messenger.d20.s0, o5Var.getDocumentId());
+        return f5.e(org.telegram.messenger.e20.s0, o5Var.getDocumentId());
     }
 
     @Override // android.view.View
@@ -51,7 +51,7 @@ public final class vu extends View {
                 this.d = ofFloat;
                 ofFloat.addUpdateListener(new a6(this, 17));
                 this.d.addListener(new w5(this, 23));
-                org.telegram.messenger.z20.j(5.0f, this.d);
+                org.telegram.messenger.a30.j(5.0f, this.d);
                 this.d.setDuration(350L);
                 this.d.start();
             }

@@ -1,23 +1,23 @@
 package xh;
 
-import org.telegram.messenger.l9;
+import org.telegram.messenger.m9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d3 implements org.telegram.ui.ActionBar.u1, g3, l9 {
-    public final /* synthetic */ i3 a;
+public final /* synthetic */ class d3 implements org.telegram.ui.ActionBar.u1, h3, m9 {
+    public final /* synthetic */ j3 a;
 
-    public /* synthetic */ d3(i3 i3Var) {
-        this.a = i3Var;
+    public /* synthetic */ d3(j3 j3Var) {
+        this.a = j3Var;
     }
 
-    @Override // xh.g3
+    @Override // xh.h3
     public void a(boolean z10) {
-        i3 i3Var = this.a;
-        if (i3Var.N()) {
+        j3 j3Var = this.a;
+        if (j3Var.N()) {
             return;
         }
-        i3Var.J.e(0.0f);
+        j3Var.J.e(0.0f);
     }
 
     @Override // org.telegram.ui.ActionBar.u1
@@ -25,7 +25,7 @@ public final /* synthetic */ class d3 implements org.telegram.ui.ActionBar.u1, g
         this.a.b.dismiss();
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
         return Boolean.valueOf(this.a.b.l3.getKeyboardHeight() >= org.telegram.messenger.i0.L(20.0f));
     }

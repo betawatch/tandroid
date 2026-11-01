@@ -1,8 +1,8 @@
 package ph;
 
 import android.view.View;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
@@ -11,9 +11,9 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.sf;
 import org.telegram.ui.kn;
-import org.telegram.ui.ns0;
+import org.telegram.ui.ms0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i0 implements sf {
     public final /* synthetic */ TL_stars.TL_starGiftUnique a;
@@ -63,18 +63,18 @@ public final class i0 implements sf {
         int i10;
         k0 k0Var = this.b;
         f6 f6Var = k0Var.s1;
-        k0Var.i1.a(this.a, d20.i(k0Var.a).e(), k0Var.o1.getTextWithEntities(), cd.L0(2131749754, null), true);
+        k0Var.i1.a(this.a, e20.i(k0Var.a).e(), k0Var.o1.getTextWithEntities(), dd.L0(2131749754, null), true);
         int codePointCount = Character.codePointCount(charSequence, 0, charSequence.length());
         k0Var.w1 = codePointCount;
         int i11 = k0Var.v1;
         if (i11 <= 0 || (i10 = i11 - codePointCount) > 15) {
-            f6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new ns0(this, 25));
+            f6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new ms0(this, 25));
             return;
         }
         if (i10 < -9999) {
             i10 = -9999;
         }
-        f6Var.c(cd.E(i10, ','), f6Var.getVisibility() == 0, true);
+        f6Var.c(dd.E(i10, ','), f6Var.getVisibility() == 0, true);
         if (f6Var.getVisibility() != 0) {
             f6Var.setVisibility(0);
             f6Var.setAlpha(0.0f);

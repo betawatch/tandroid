@@ -22,21 +22,21 @@ import javax.crypto.spec.IvParameterSpec;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.l20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.m20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.LaunchActivity;
 import rh.s6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class n {
     public static final WeakHashMap k = new WeakHashMap();
@@ -82,7 +82,7 @@ public final class n {
         return nVar2;
     }
 
-    public static void d(Activity activity, int i10, q20 q20Var) {
+    public static void d(Activity activity, int i10, r20 r20Var) {
         int i11 = 0;
         SharedPreferences sharedPreferences = activity.getSharedPreferences("2botbiometry_" + i10, 0);
         ArrayList arrayList = new ArrayList();
@@ -109,9 +109,9 @@ public final class n {
             }
         }
         if (arrayList.isEmpty()) {
-            q20Var.a(new ArrayList());
+            r20Var.a(new ArrayList());
         } else {
-            hs.a0(i10).a.c(new c11(i10, arrayList, hashMap, q20Var, 21));
+            is.a0(i10).a.c(new d11(i10, arrayList, hashMap, r20Var, 21));
         }
     }
 
@@ -244,7 +244,7 @@ public final class n {
         }
     }
 
-    public final void j(String str, boolean z10, String str2, l20 l20Var) {
+    public final void j(String str, boolean z10, String str2, m20 m20Var) {
         int i10;
         this.j = null;
         try {
@@ -252,10 +252,10 @@ public final class n {
                 this.i = new k6.h(LaunchActivity.I1, f0.c.d(this.a), new pc0(this, 1));
             }
             androidx.biometric.u i11 = i(z10);
-            TLRPC.User Z1 = vp.r1(this.b).Z1(Long.valueOf(this.c));
+            TLRPC.User Z1 = wp.r1(this.b).Z1(Long.valueOf(this.c));
             j6.m mVar = new j6.m(1);
-            mVar.b = h20.p(Z1);
-            mVar.d = cd.L0(2131753756, null);
+            mVar.b = i20.p(Z1);
+            mVar.d = dd.L0(2131753756, null);
             mVar.a = 15;
             if (!TextUtils.isEmpty(str)) {
                 mVar.c = str;
@@ -272,7 +272,7 @@ public final class n {
                             this.h = Utilities.f(cipher.getIV());
                         }
                         k();
-                        l20Var.a(Boolean.TRUE, null, null);
+                        m20Var.a(Boolean.TRUE, null, null);
                         return;
                     } catch (Exception e) {
                         f8.g(e, true);
@@ -280,7 +280,7 @@ public final class n {
                     }
                 }
             }
-            this.j = new s6(6, l20Var, (i11 == null || Build.VERSION.SDK_INT >= 30) ? null : i11);
+            this.j = new s6(6, m20Var, (i11 == null || Build.VERSION.SDK_INT >= 30) ? null : i11);
             if (i11 == null || (i10 = Build.VERSION.SDK_INT) >= 30) {
                 this.i.a(c10, null);
                 return;
@@ -289,7 +289,7 @@ public final class n {
             hVar.getClass();
             int i12 = c10.a;
             int i13 = i12 != 0 ? i12 : 15;
-            if ((i13 & zs.e4) == 255) {
+            if ((i13 & at.e4) == 255) {
                 throw new IllegalArgumentException("Crypto-based authentication is not supported for Class 2 (Weak) biometrics.");
             }
             if (i10 < 30 && v7.k.a(i13)) {
@@ -298,7 +298,7 @@ public final class n {
             hVar.a(c10, i11);
         } catch (Exception e7) {
             f8.g(e7, true);
-            l20Var.a(Boolean.FALSE, null, null);
+            m20Var.a(Boolean.FALSE, null, null);
         }
     }
 
@@ -334,8 +334,8 @@ public final class n {
     }
 
     public final void l(String str, final String str2, final kg.d0 d0Var) {
-        j(str, false, str2, new l20() { // from class: xh.l
-            @Override // org.telegram.messenger.l20
+        j(str, false, str2, new m20() { // from class: xh.l
+            @Override // org.telegram.messenger.m20
             public final void a(Object obj, Object obj2, Object obj3) {
                 String str3 = str2;
                 Boolean bool = (Boolean) obj;

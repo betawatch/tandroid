@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class k6 {
     public static final HashMap a = new HashMap();
@@ -520,7 +520,7 @@ public abstract class k6 {
     public static CharSequence n(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z10, int[] iArr, int i10, float f7, int i11) {
         int i12;
         int i13;
-        if (tz.U0 || charSequence == null || charSequence.length() == 0) {
+        if (uz.U0 || charSequence == null || charSequence.length() == 0) {
             return charSequence;
         }
         Spannable newSpannable = (z10 || !(charSequence instanceof Spannable)) ? Spannable.Factory.getInstance().newSpannable(charSequence) : (Spannable) charSequence;
@@ -530,7 +530,7 @@ public abstract class k6 {
         }
         org.telegram.ui.Components.o5[] o5VarArr = (org.telegram.ui.Components.o5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.o5.class);
         org.telegram.ui.Components.dq[] dqVarArr = (org.telegram.ui.Components.dq[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.dq.class);
-        int i14 = (tz.o() >= 2 ? 100 : 50) - i11;
+        int i14 = (uz.o() >= 2 ? 100 : 50) - i11;
         for (int i15 = 0; i15 < j10.size(); i15++) {
             try {
                 i6 i6Var = (i6) j10.get(i15);
@@ -577,20 +577,20 @@ public abstract class k6 {
         TLRPC.Document document;
         org.telegram.ui.Components.o5 o5Var;
         int i11;
-        if (tz.U0 || charSequence == null || charSequence.length() == 0) {
+        if (uz.U0 || charSequence == null || charSequence.length() == 0) {
             return charSequence;
         }
-        int i12 = d20.s0;
+        int i12 = e20.s0;
         TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
         tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-        TLRPC.TL_messages_stickerSet l02 = ui.b0(i12).l0(tL_inputStickerSetShortName, 0, false, true, runnable == null ? null : new x3(runnable, 1));
+        TLRPC.TL_messages_stickerSet l02 = vi.b0(i12).l0(tL_inputStickerSetShortName, 0, false, true, runnable == null ? null : new x3(runnable, 1));
         Spannable newSpannable = charSequence instanceof Spannable ? (Spannable) charSequence : Spannable.Factory.getInstance().newSpannable(charSequence.toString());
         ArrayList j10 = j(newSpannable, null);
         if (j10.isEmpty()) {
             return charSequence;
         }
         org.telegram.ui.Components.o5[] o5VarArr = (org.telegram.ui.Components.o5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.o5.class);
-        int i13 = tz.o() >= 2 ? 100 : 50;
+        int i13 = uz.o() >= 2 ? 100 : 50;
         for (int i14 = 0; i14 < j10.size(); i14++) {
             try {
                 i6Var = (i6) j10.get(i14);
@@ -607,7 +607,7 @@ public abstract class k6 {
                         TLRPC.Document document2 = arrayList.get(i15);
                         i15++;
                         document = document2;
-                        if (jj.V(document, null, null).contains(i6Var.c)) {
+                        if (kj.V(document, null, null).contains(i6Var.c)) {
                             break;
                         }
                     }
@@ -642,7 +642,7 @@ public abstract class k6 {
     }
 
     public static void q() {
-        SharedPreferences c12 = vp.c1();
+        SharedPreferences c12 = wp.c1();
         StringBuilder sb2 = new StringBuilder();
         for (Map.Entry entry : j.entrySet()) {
             if (sb2.length() != 0) {
@@ -656,7 +656,7 @@ public abstract class k6 {
     }
 
     public static void r() {
-        SharedPreferences c12 = vp.c1();
+        SharedPreferences c12 = wp.c1();
         StringBuilder sb2 = new StringBuilder();
         for (Map.Entry entry : h.entrySet()) {
             if (sb2.length() != 0) {

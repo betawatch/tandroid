@@ -1,11 +1,11 @@
 package th;
 
-import org.telegram.messenger.n20;
-import org.telegram.ui.Components.ei0;
+import org.telegram.messenger.o20;
+import org.telegram.ui.Components.fi0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q2 implements n20 {
+public final /* synthetic */ class q2 implements o20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ u2 b;
     public final /* synthetic */ x2 c;
@@ -16,7 +16,7 @@ public final /* synthetic */ class q2 implements n20 {
         this.c = x2Var;
     }
 
-    @Override // org.telegram.messenger.n20
+    @Override // org.telegram.messenger.o20
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
@@ -32,9 +32,9 @@ public final /* synthetic */ class q2 implements n20 {
                     t0Var.b = false;
                     n7Var.setOnReadyListener(new o1(1, currentTimeMillis, runnable));
                     ((f7) z2Var.z1).g(false);
-                    ei0 ei0Var = z2Var.i0;
-                    if (ei0Var != null) {
-                        ei0Var.setAnimation(this.c.u);
+                    fi0 fi0Var = z2Var.i0;
+                    if (fi0Var != null) {
+                        fi0Var.setAnimation(this.c.u);
                     }
                     if (z2Var.A2 > 0 && l4.longValue() > z2Var.A2 - 1400) {
                         l4 = 0L;
@@ -71,9 +71,9 @@ public final /* synthetic */ class q2 implements n20 {
                     t0Var2.b = false;
                     n7Var2.setOnReadyListener(new o1(2, currentTimeMillis2, runnable2));
                     ((f7) z2Var2.z1).g(false);
-                    ei0 ei0Var2 = z2Var2.i0;
-                    if (ei0Var2 != null) {
-                        ei0Var2.setAnimation(this.c.u);
+                    fi0 fi0Var2 = z2Var2.i0;
+                    if (fi0Var2 != null) {
+                        fi0Var2.setAnimation(this.c.u);
                     }
                     if (z2Var2.A2 > 0 && l10.longValue() > z2Var2.A2 - 1400) {
                         l10 = 0L;

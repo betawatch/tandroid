@@ -22,15 +22,15 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.z2;
 import w7.m6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class j0 extends WebViewClient {
     public boolean a = true;
@@ -270,9 +270,9 @@ public final class j0 extends WebViewClient {
             z0 z0Var = v0Var.Q;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, z0Var == null ? null : z0Var.e);
             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-            x1Var.R = cd.L0(2131752104, null);
-            x1Var.T = org.telegram.messenger.i0.T2(cd.L0(2131752105, null), new i0(this, 2));
-            alertDialog$Builder.k(cd.L0(2131747847, null), null);
+            x1Var.R = dd.L0(2131752104, null);
+            x1Var.T = org.telegram.messenger.i0.T2(dd.L0(2131752105, null), new i0(this, 2));
+            alertDialog$Builder.k(dd.L0(2131747847, null), null);
             x1Var.setOnDismissListener(new ag.x(this, 9));
             alertDialog$Builder.p();
             return true;
@@ -428,7 +428,7 @@ public final class j0 extends WebViewClient {
                 return false;
             }
             if (z10 || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
-                if (vp.r1(v0Var.Q.M).C4 != null && vp.r1(v0Var.Q.M).C4.contains(parse.getScheme())) {
+                if (wp.r1(v0Var.Q.M).C4 != null && wp.r1(v0Var.Q.M).C4.contains(parse.getScheme())) {
                     z0 z0Var = v0Var.Q;
                     if (v0Var.f != null) {
                         d0 d0Var4 = z0Var.c;

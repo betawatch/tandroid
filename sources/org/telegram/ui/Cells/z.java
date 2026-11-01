@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.ru0;
+import org.telegram.ui.Components.su0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class z extends ViewGroup implements ru0 {
+public abstract class z extends ViewGroup implements su0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
@@ -26,7 +26,7 @@ public abstract class z extends ViewGroup implements ru0 {
         setHapticFeedbackEnabled(true);
     }
 
-    public static float s(Drawable drawable, float f7, float f10, float f11) {
+    public static float r(Drawable drawable, float f7, float f10, float f11) {
         float intrinsicWidth = (drawable.getIntrinsicWidth() * f11) / drawable.getIntrinsicHeight();
         int i10 = (int) f7;
         int i11 = (int) f10;
@@ -44,7 +44,7 @@ public abstract class z extends ViewGroup implements ru0 {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.ru0
+    @Override // org.telegram.ui.Components.su0
     public final void f(Runnable runnable) {
         this.e = runnable;
     }
@@ -83,11 +83,11 @@ public abstract class z extends ViewGroup implements ru0 {
         }
     }
 
-    public void p() {
+    public void n() {
         super.invalidate();
     }
 
-    public boolean r() {
+    public boolean p() {
         return true;
     }
 

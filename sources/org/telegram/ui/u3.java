@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.ActionBar.n3 {
     public ValueAnimator D;
@@ -20,7 +20,7 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
     public float I;
     public boolean J;
     public final /* synthetic */ h4 K;
-    public final e2.f a = new e2.f(null);
+    public final e2.f a = new e2.f((int[]) null);
     public org.telegram.ui.ActionBar.k2 b;
     public final t3 c;
     public View d;
@@ -62,7 +62,7 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
         if (z10) {
             LaunchActivity.I1.y0.b(this);
         } else {
-            m(true, new rr0(this, 10));
+            m(true, new qr0(this, 10));
         }
         u();
         r();
@@ -84,9 +84,9 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
         h3Var.J = h4Var;
         l3 l3Var = h4Var.u0[0];
         Bitmap bitmap = null;
-        h3Var.q = (l3Var == null || !org.telegram.messenger.tz.v0) ? org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Dl, false) : l3Var.getActionBarColor();
+        h3Var.q = (l3Var == null || !org.telegram.messenger.uz.v0) ? org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Dl, false) : l3Var.getActionBarColor();
         l3 l3Var2 = h4Var.u0[0];
-        h3Var.r = (l3Var2 == null || !org.telegram.messenger.tz.v0) ? org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Dl, false) : l3Var2.getBackgroundColor();
+        h3Var.r = (l3Var2 == null || !org.telegram.messenger.uz.v0) ? org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Dl, false) : l3Var2.getBackgroundColor();
         h3Var.n = true;
         h3Var.I = !this.F ? 0.0f : h4Var.u0[0].getProgress();
         l3 l3Var3 = h4Var.u0[0];
@@ -131,7 +131,7 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
         int f7;
         float min = this.n ? 0.0f : (1.0f - this.I) * Math.min(this.x, 1.0f - this.y);
         if (this.F && min > 0.25f) {
-            if (org.telegram.messenger.tz.v0) {
+            if (org.telegram.messenger.uz.v0) {
                 h4 h4Var = this.K;
                 f7 = i0.b.f(1.0f - (h4Var.u0[0].getVisibility() == 0 ? 1.0f - (h4Var.u0[0].getTranslationX() / h4Var.u0[0].getWidth()) : 0.0f), h4Var.u0[0].getActionBarColor(), h4Var.u0[1].getActionBarColor());
             } else {
@@ -192,7 +192,7 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
         return ofFloat;
     }
 
-    public final void m(boolean z10, rr0 rr0Var) {
+    public final void m(boolean z10, qr0 qr0Var) {
         ValueAnimator valueAnimator = this.E;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -201,13 +201,18 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y, z10 ? 1.0f : 0.0f);
         this.E = ofFloat;
         ofFloat.addUpdateListener(new r3(this, i10));
-        this.E.addListener(new androidx.fragment.app.g(this, z10, rr0Var, i10));
+        this.E.addListener(new androidx.fragment.app.g(this, z10, qr0Var, i10));
         this.E.setInterpolator(org.telegram.ui.Components.gr.h);
         this.E.setDuration(250L);
         this.E.start();
     }
 
-    public final void n() {
+    @Override // org.telegram.ui.ActionBar.g2
+    public final void n(Runnable runnable) {
+        this.w = (th.i2) runnable;
+    }
+
+    public final void o() {
         ValueAnimator valueAnimator = this.D;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -219,11 +224,6 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
         this.D.setInterpolator(org.telegram.ui.Components.gr.h);
         this.D.setDuration(320L);
         this.D.start();
-    }
-
-    @Override // org.telegram.ui.ActionBar.g2
-    public final void o(Runnable runnable) {
-        this.w = (th.i2) runnable;
     }
 
     @Override // org.telegram.ui.ActionBar.g2
@@ -266,7 +266,7 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
         this.b = k2Var;
         k2Var.getResourceProvider();
         if ((k2Var instanceof un) && (mkVar = (unVar = (un) k2Var).Z) != null) {
-            mkVar.L();
+            mkVar.K();
             unVar.Z.j0(true, false, true);
         }
         org.telegram.ui.ActionBar.d3 d3Var = this.e;
@@ -401,7 +401,7 @@ public final class u3 implements org.telegram.ui.ActionBar.g2, org.telegram.ui.A
     }
 
     public final int v() {
-        if (!org.telegram.messenger.tz.v0) {
+        if (!org.telegram.messenger.uz.v0) {
             return org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Gl, false);
         }
         h4 h4Var = this.K;

@@ -2,10 +2,10 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class gn extends w7.d6 {
-    public org.telegram.messenger.jj a;
+    public org.telegram.messenger.kj a;
     public int b = 0;
     public boolean c = true;
     public int d = 0;
@@ -20,9 +20,9 @@ public final class gn extends w7.d6 {
 
     @Override // w7.d6
     public final void a() {
-        org.telegram.messenger.jj jjVar = this.a;
+        org.telegram.messenger.kj kjVar = this.a;
         un unVar = this.h;
-        if (jjVar != null) {
+        if (kjVar != null) {
             unVar.C0.T();
             int indexOf = unVar.K6.indexOf(this.a) + unVar.C0.J;
             if (indexOf >= 0) {
@@ -34,14 +34,14 @@ public final class gn extends w7.d6 {
         }
         this.a = null;
         unVar.A3 = true;
-        unVar.sd(false);
+        unVar.xd(false);
         org.telegram.messenger.i0.g3(new rh(this, 10));
     }
 
     @Override // w7.d6
     public final void c() {
         un unVar = this.h;
-        unVar.ba = unVar.getNotificationCenter().q(un.gd, unVar.ba, true);
+        unVar.ba = unVar.getNotificationCenter().q(un.hd, unVar.ba, true);
         uk ukVar = unVar.Pa;
         if (ukVar.n) {
             ukVar.d();

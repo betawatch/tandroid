@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.util.SparseArray;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class d5 implements t2 {
     public static final double[] a = {0.819022437996703d, 0.3619062600528904d, -0.1288737815209879d, 0.0329836539323885d, 0.9292868615863434d, 0.0361446663506424d, 0.0481771893596242d, 0.2642395317527308d, 0.6335478284694309d};

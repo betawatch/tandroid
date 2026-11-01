@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e0 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final int a;
@@ -33,7 +33,7 @@ public final class e0 extends FrameLayout implements org.telegram.ui.ActionBar.k
         addView(linearLayout, w7.b6.d(-2, -2.0f, 17, 0.0f, 2.0f, 0.0f, 2.0f));
         g9 g9Var = new g9(context);
         this.h = g9Var;
-        org.telegram.messenger.zs.i(g9Var);
+        org.telegram.messenger.at.i(g9Var);
         linearLayout.addView(g9Var, w7.b6.t(24, 24, 49, 0, 4, 0, 0));
         TextView textView = new TextView(context);
         this.n = textView;

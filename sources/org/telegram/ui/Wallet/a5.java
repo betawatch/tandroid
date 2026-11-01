@@ -9,35 +9,35 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.p71;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class a5 extends o71 {
+public final class a5 extends p71 {
     public final /* synthetic */ ArrayList a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ org.telegram.ui.ActionBar.p6 c;
     public final /* synthetic */ Rect d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ z2[] f;
+    public final /* synthetic */ a3[] f;
 
-    public a5(ArrayList arrayList, Context context, org.telegram.ui.ActionBar.p6 p6Var, Rect rect, int i10, z2[] z2VarArr) {
+    public a5(ArrayList arrayList, Context context, org.telegram.ui.ActionBar.p6 p6Var, Rect rect, int i10, a3[] a3VarArr) {
         this.a = arrayList;
         this.b = context;
         this.c = p6Var;
         this.d = rect;
         this.e = i10;
-        this.f = z2VarArr;
+        this.f = a3VarArr;
     }
 
-    @Override // org.telegram.ui.Components.o71
+    @Override // org.telegram.ui.Components.p71
     public final void b(View view, int i10, int i11) {
         FrameLayout frameLayout = (FrameLayout) view;
         frameLayout.removeAllViews();
-        frameLayout.addView(b6.s0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i10), null, null, null, null, this.c, this.f, true), w7.b6.c(-2.0f, -1));
+        frameLayout.addView(b6.t0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i10), null, null, null, null, this.c, this.f, true), w7.b6.c(-2.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.o71
+    @Override // org.telegram.ui.Components.p71
     public final View d(int i10) {
         FrameLayout frameLayout = new FrameLayout(this.b);
         int L = org.telegram.messenger.i0.L(20.0f);
@@ -52,7 +52,7 @@ public final class a5 extends o71 {
         return frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.o71
+    @Override // org.telegram.ui.Components.p71
     public final int e() {
         return this.a.size();
     }

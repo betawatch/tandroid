@@ -4,10 +4,10 @@ import android.view.MotionEvent;
 import org.telegram.messenger.video.OldVideoPlayerRewinder;
 import org.telegram.ui.Components.if0;
 import org.telegram.ui.Components.jf0;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n61;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j1 extends OldVideoPlayerRewinder {
     public final /* synthetic */ int a;
@@ -40,9 +40,9 @@ public final class j1 extends OldVideoPlayerRewinder {
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
-                m61 m61Var = q1Var.Mb;
-                m61Var.n = new m2.t(this, 7);
-                m61Var.e(false);
+                n61 n61Var = q1Var.Mb;
+                n61Var.n = new m2.t(this, 7);
+                n61Var.e(false);
                 q1Var.Mb.d(!z10);
                 q1Var.Mb.f(true);
                 q1Var.invalidate();

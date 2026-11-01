@@ -2,23 +2,23 @@ package org.telegram.ui.Cells;
 
 import android.text.style.CharacterStyle;
 import java.util.ArrayList;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.hj;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.qs0;
+import org.telegram.ui.ps0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public interface l1 {
     void A(q1 q1Var);
 
     void A0(q1 q1Var, float f7, float f10);
 
-    boolean A1(q1 q1Var, jj jjVar);
+    boolean A1(q1 q1Var, kj kjVar);
 
     void B1();
 
@@ -34,17 +34,17 @@ public interface l1 {
 
     void F0(q1 q1Var);
 
-    void F1(q1 q1Var, c20 c20Var);
+    void F1(q1 q1Var, d20 d20Var);
 
     void G(q1 q1Var, org.telegram.messenger.s2 s2Var);
 
     void H(q1 q1Var);
 
-    qs0 H1();
+    ps0 H1();
 
     boolean I0(long j10);
 
-    void J(gj gjVar);
+    void J(hj hjVar);
 
     void J0(q1 q1Var);
 
@@ -66,7 +66,7 @@ public interface l1 {
 
     boolean N1(q1 q1Var, TLRPC.TodoItem todoItem);
 
-    void O(jj jjVar);
+    void O(kj kjVar);
 
     void O0(q1 q1Var);
 
@@ -80,7 +80,7 @@ public interface l1 {
 
     boolean S();
 
-    boolean S0(jj jjVar);
+    boolean S0(kj kjVar);
 
     void S1(q1 q1Var, long j10);
 
@@ -188,9 +188,9 @@ public interface l1 {
 
     void v(q1 q1Var);
 
-    void v1(jj jjVar);
+    void v1(kj kjVar);
 
-    boolean w0(jj jjVar);
+    boolean w0(kj kjVar);
 
     void w1(q1 q1Var, TLRPC.WebPage webPage, String str, boolean z10);
 
@@ -206,5 +206,5 @@ public interface l1 {
 
     void z0(q1 q1Var, TLObject tLObject, boolean z10);
 
-    void z1(jj jjVar, String str, String str2, String str3, String str4, int i10, int i11);
+    void z1(kj kjVar, String str, String str2, String str3, String str4, int i10, int i11);
 }

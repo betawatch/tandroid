@@ -1,70 +1,143 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.graphics.Point;
 import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class gt0 implements View.OnClickListener {
-    public final /* synthetic */ rg0 a;
-    public final /* synthetic */ un b;
-    public final /* synthetic */ org.telegram.ui.Components.tk0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.z60 e;
-    public final /* synthetic */ org.telegram.ui.Components.z60 f;
-    public final /* synthetic */ kt0 h;
+public final class gt0 implements r0.m, org.telegram.ui.Components.w61, org.telegram.ui.Components.fp0, org.telegram.ui.Components.nn0, org.telegram.ui.Components.dn0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public gt0(kt0 kt0Var, rg0 rg0Var, un unVar, org.telegram.ui.Components.tk0 tk0Var, LinearLayout linearLayout, org.telegram.ui.Components.z60 z60Var, org.telegram.ui.Components.z60 z60Var2) {
-        this.h = kt0Var;
-        this.a = rg0Var;
-        this.b = unVar;
-        this.c = tk0Var;
-        this.d = linearLayout;
-        this.e = z60Var;
-        this.f = z60Var2;
+    public /* synthetic */ gt0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        rg0 rg0Var = this.a;
-        ArrayList arrayList = rg0Var.b;
-        ArrayList arrayList2 = rg0Var.c;
-        if (arrayList2.isEmpty()) {
-            return;
+    @Override // org.telegram.ui.Components.fp0
+    public void B0() {
+        ((StickersActivity) this.b).o0();
+    }
+
+    @Override // org.telegram.ui.Components.nn0
+    public void C() {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.dn0
+    public void L(org.telegram.ui.Cells.v2 v2Var) {
+        nb1 nb1Var = ((jb1) this.b).v0;
+        HashSet hashSet = nb1.q1;
+        nb1Var.Q0(v2Var);
+    }
+
+    @Override // r0.m
+    public r0.j1 R0(View view, r0.j1 j1Var) {
+        switch (this.a) {
+            case 0:
+                jt0 jt0Var = (jt0) this.b;
+                i0.c g10 = j1Var.a.g(519);
+                jt0Var.r = g10;
+                jt0Var.d.setPadding(g10.a, g10.b, g10.c, g10.d);
+                jt0Var.c.requestLayout();
+                break;
+            default:
+                v91 v91Var = (v91) this.b;
+                i0.c g11 = j1Var.a.g(519);
+                v91Var.n = g11;
+                v91Var.c.setPadding(g11.a, g11.b, g11.c, g11.d);
+                v91Var.b.requestLayout();
+                break;
         }
-        int size = arrayList2.size();
-        kt0 kt0Var = this.h;
-        un unVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
+        return r0.j1.b;
+    }
+
+    @Override // org.telegram.ui.Components.fp0
+    public void V() {
+        ((StickersActivity) this.b).o0();
+    }
+
+    @Override // org.telegram.ui.Components.dn0
+    public void a(float f7) {
+        Point point = org.telegram.messenger.i0.q;
+        if (point.x > point.y) {
+            ((jb1) this.b).v0.movePreviewFragment(f7);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public void c(float f7) {
+        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
+        sq0 sq0Var = secretMediaViewer.D;
+        if (sq0Var != null) {
+            long U = sq0Var.U();
+            if (U != -9223372036854775807L) {
+                secretMediaViewer.D.q0((long) (f7 * U), false);
             }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            secretMediaViewer.D.h0();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public void d(float f7) {
+        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
+        sq0 sq0Var = secretMediaViewer.D;
+        if (sq0Var != null) {
+            sq0Var.g0();
+            long U = secretMediaViewer.D.U();
+            if (U != -9223372036854775807L) {
+                secretMediaViewer.D.q0((long) (f7 * U), false);
             }
-            unVar.presentFragment(new ProfileActivity(bundle, null));
-            kt0Var.c(false);
-            return;
         }
-        if (org.telegram.messenger.tz.c1 > 0 && unVar.l1.getKeyboardHeight() < org.telegram.messenger.i0.L(20.0f)) {
-            org.telegram.ui.Components.wb t10 = new org.telegram.ui.Components.cc(org.telegram.ui.Components.ra.a(kt0Var.getContext()), kt0Var.b).t(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.L0(2131748503, null)), null);
-            unVar.B1 = t10;
-            t10.j = 4000;
-            t10.j();
-            org.telegram.messenger.tz.S(org.telegram.messenger.tz.c1 - 1);
+    }
+
+    @Override // org.telegram.ui.Components.dn0
+    public void finish() {
+        Point point = org.telegram.messenger.i0.q;
+        if (point.x > point.y) {
+            ((jb1) this.b).v0.finishPreviewFragment();
         }
-        org.telegram.ui.Components.tk0 tk0Var = this.c;
-        tk0Var.requestLayout();
-        this.d.requestLayout();
-        tk0Var.getAdapter().f();
-        this.e.K(this.f);
+    }
+
+    @Override // org.telegram.ui.Components.nn0
+    public CharSequence getContentDescription() {
+        switch (this.a) {
+            case 3:
+                return String.valueOf(Math.round((((m71) this.b).a.getProgress() * r0.b) + 0));
+            default:
+                w71 w71Var = (w71) this.b;
+                return String.valueOf(Math.round((w71Var.b.getProgress() * (w71Var.e - r1)) + w71Var.d));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.nn0
+    public void k(boolean z10, float f7) {
+        switch (this.a) {
+            case 3:
+                ThemeActivity.d0(((m71) this.b).e, Math.round((r4.b * f7) + 0), false);
+                break;
+            default:
+                w71 w71Var = (w71) this.b;
+                ThemeActivity.p0(w71Var.r, Math.round(((w71Var.e - r1) * f7) + w71Var.d));
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.nn0
+    public int p0() {
+        switch (this.a) {
+            case 3:
+                return ((m71) this.b).b;
+            default:
+                w71 w71Var = (w71) this.b;
+                return w71Var.e - w71Var.d;
+        }
+    }
+
+    private final void b() {
+    }
+
+    private final void e() {
     }
 }

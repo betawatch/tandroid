@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yo extends org.telegram.ui.Components.y70 {
     public final /* synthetic */ Context x;
@@ -32,11 +32,11 @@ public final class yo extends org.telegram.ui.Components.y70 {
         p6Var = ((org.telegram.ui.ActionBar.k2) cpVar).resourceProvider;
         final int i12 = 0;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, p6Var);
-        String L0 = org.telegram.messenger.cd.L0(2131754204, null);
+        String L0 = org.telegram.messenger.dd.L0(2131754204, null);
         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
         x1Var.R = L0;
-        x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.cd.G(i10, str, new Object[0]));
-        alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131754206, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.xo
+        x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.dd.G(i10, str, new Object[0]));
+        alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131754206, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.xo
             public final /* synthetic */ yo b;
 
             {
@@ -61,7 +61,7 @@ public final class yo extends org.telegram.ui.Components.y70 {
                 }
             }
         });
-        alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131754205, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.xo
+        alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131754205, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.xo
             public final /* synthetic */ yo b;
 
             {

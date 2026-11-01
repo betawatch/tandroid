@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class h6 implements org.telegram.ui.Components.hu0, i7 {
+public final class h6 implements org.telegram.ui.Components.iu0, i7 {
     public final /* synthetic */ y6 a;
 
     public /* synthetic */ h6(y6 y6Var) {
         this.a = y6Var;
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public void F(boolean z10) {
         fe.b bVar = this.a.T;
         if (bVar == null || bVar.f == z10) {
@@ -31,7 +31,7 @@ public final class h6 implements org.telegram.ui.Components.hu0, i7 {
             if (aVar != null) {
                 y6Var.d0.i(aVar);
                 y6Var.M.e();
-                y6.h0(y6Var);
+                y6.i0(y6Var);
                 return;
             }
             return;
@@ -73,7 +73,7 @@ public final class h6 implements org.telegram.ui.Components.hu0, i7 {
             }
             bVar.c();
             y6Var.M.e();
-            y6.h0(y6Var);
+            y6.i0(y6Var);
             return;
         }
         if (y6Var.G <= 0 || y6Var.getParentActivity() == null) {
@@ -141,24 +141,24 @@ public final class h6 implements org.telegram.ui.Components.hu0, i7 {
         bVar2.o = z11;
         bVar2.p = z11;
         bVar2.q = z11;
-        Collections.sort(arrayList3, new ex0(17));
-        Collections.sort(arrayList4, new ex0(17));
-        Collections.sort(arrayList5, new ex0(17));
-        Collections.sort(arrayList6, new ex0(17));
-        Collections.sort(bVar2.h, new ex0(17));
-        zu zuVar = new zu(y6Var, s6Var, bVar2, new m4.c(13, y6Var, s6Var));
-        y6Var.Z = zuVar;
-        y6Var.showDialog(zuVar);
+        Collections.sort(arrayList3, new dx0(17));
+        Collections.sort(arrayList4, new dx0(17));
+        Collections.sort(arrayList5, new dx0(17));
+        Collections.sort(arrayList6, new dx0(17));
+        Collections.sort(bVar2.h, new dx0(17));
+        yu yuVar = new yu(y6Var, s6Var, bVar2, new m4.c(13, y6Var, s6Var));
+        y6Var.Z = yuVar;
+        y6Var.showDialog(yuVar);
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public float a1() {
         return i0.a.d(9.66f, ei.b.d(this.a.P), 0);
     }
 
     @Override // org.telegram.ui.i7
     public void clear() {
-        y6.j0(this.a);
+        y6.k0(this.a);
     }
 
     @Override // org.telegram.ui.i7
@@ -176,7 +176,7 @@ public final class h6 implements org.telegram.ui.Components.hu0, i7 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hu0
+    @Override // org.telegram.ui.Components.iu0
     public int g1() {
         return this.a.Q;
     }

@@ -12,7 +12,7 @@ import android.text.style.CharacterStyle;
 import android.view.ViewConfiguration;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q80 {
     public static final ArrayList s = new ArrayList();
@@ -33,7 +33,7 @@ public final class q80 {
     public final Path l = new Path();
     public long o = -1;
     public long p = -1;
-    public final boolean r = !org.telegram.messenger.sc.e(360928);
+    public final boolean r = !org.telegram.messenger.tc.e(360928);
 
     public q80(CharacterStyle characterStyle, org.telegram.ui.ActionBar.p6 p6Var, float f7, float f10, int i10) {
         this.i = characterStyle;

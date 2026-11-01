@@ -10,8 +10,8 @@ import android.graphics.Shader;
 import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p6;
@@ -19,13 +19,13 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.m9;
 import org.telegram.ui.Components.r8;
 import org.telegram.ui.a50;
-import org.telegram.ui.b50;
+import org.telegram.ui.z40;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q extends View implements k6 {
-    public a50 D;
-    public a50 E;
+    public z40 D;
+    public z40 E;
     public int F;
     public float G;
     public final /* synthetic */ r H;
@@ -41,7 +41,7 @@ public final class q extends View implements k6 {
     public float s;
     public float w;
     public float x;
-    public final a50[] y;
+    public final z40[] y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public q(r rVar, Context context) {
@@ -54,7 +54,7 @@ public final class q extends View implements k6 {
         this.f = paint;
         Paint paint2 = new Paint(1);
         this.h = paint2;
-        this.y = new a50[3];
+        this.y = new z40[3];
         this.F = -1;
         this.G = 1.0f;
         m9 m9Var = new m9(9);
@@ -68,36 +68,36 @@ public final class q extends View implements k6 {
         m9Var2.b = org.telegram.messenger.i0.L(95.0f);
         m9Var2.b();
         paint.setColor(i0.b.f(0.0f, t6.x0(null, t6.dh, false), t6.x0(null, t6.eh, false)));
-        paint.setAlpha(zs.n1);
-        paint2.setColor(i0.b.o(-16777216, zs.L1));
+        paint.setAlpha(at.n1);
+        paint2.setColor(i0.b.o(-16777216, at.L1));
     }
 
     public static void a(q qVar, boolean z10) {
         TLRPC.GroupCallParticipant groupCallParticipant;
-        a50[] a50VarArr = qVar.y;
-        z zVar = qVar.H.n0;
-        int i10 = (zVar.k || !((groupCallParticipant = zVar.h) == null || !groupCallParticipant.muted || groupCallParticipant.can_self_unmute)) ? 2 : zVar.e ? 1 : 0;
+        z40[] z40VarArr = qVar.y;
+        a0 a0Var = qVar.H.n0;
+        int i10 = (a0Var.k || !((groupCallParticipant = a0Var.h) == null || !groupCallParticipant.muted || groupCallParticipant.can_self_unmute)) ? 2 : a0Var.e ? 1 : 0;
         if (i10 == qVar.F) {
             return;
         }
         qVar.F = i10;
-        if (a50VarArr[i10] == null) {
-            a50VarArr[i10] = new a50(i10);
+        if (z40VarArr[i10] == null) {
+            z40VarArr[i10] = new z40(i10);
             int i11 = qVar.F;
             if (i11 == 2) {
-                a50VarArr[i11].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{t6.x0(null, t6.Wh, false), t6.x0(null, t6.Yh, false), t6.x0(null, t6.Xh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                z40VarArr[i11].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{t6.x0(null, t6.Wh, false), t6.x0(null, t6.Yh, false), t6.x0(null, t6.Xh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else if (i11 == 1) {
-                a50VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{t6.x0(null, t6.th, false), t6.x0(null, t6.vh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                z40VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{t6.x0(null, t6.th, false), t6.x0(null, t6.vh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else {
-                a50VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{t6.x0(null, t6.xh, false), t6.x0(null, t6.wh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                z40VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{t6.x0(null, t6.xh, false), t6.x0(null, t6.wh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             }
         }
-        a50 a50Var = a50VarArr[qVar.F];
-        a50 a50Var2 = qVar.D;
-        if (a50Var != a50Var2) {
-            qVar.E = a50Var2;
-            qVar.D = a50Var;
-            if (a50Var2 == null || !z10) {
+        z40 z40Var = z40VarArr[qVar.F];
+        z40 z40Var2 = qVar.D;
+        if (z40Var != z40Var2) {
+            qVar.E = z40Var2;
+            qVar.D = z40Var;
+            if (z40Var2 == null || !z10) {
                 qVar.G = 1.0f;
                 qVar.E = null;
             } else {
@@ -123,9 +123,9 @@ public final class q extends View implements k6 {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        a50 a50Var;
+        z40 z40Var;
         float f7;
-        a50 a50Var2;
+        z40 z40Var2;
         super.onDraw(canvas);
         RectF rectF = org.telegram.messenger.i0.P;
         n nVar = this.H.a;
@@ -167,9 +167,9 @@ public final class q extends View implements k6 {
         float f18 = (this.n * 0.8f) + 1.0f;
         canvas.save();
         canvas.scale(f18, f18, this.w, this.x);
-        a50 a50Var3 = this.D;
-        if (a50Var3 != null) {
-            a50Var3.b((int) (this.x - org.telegram.messenger.i0.L(100.0f)), (int) (this.w - org.telegram.messenger.i0.L(100.0f)), org.telegram.messenger.i0.L(200.0f), 16L, this.n);
+        z40 z40Var3 = this.D;
+        if (z40Var3 != null) {
+            z40Var3.b((int) (this.x - org.telegram.messenger.i0.L(100.0f)), (int) (this.w - org.telegram.messenger.i0.L(100.0f)), org.telegram.messenger.i0.L(200.0f), 16L, this.n);
         }
         float f19 = this.n;
         m9 m9Var = this.e;
@@ -179,13 +179,13 @@ public final class q extends View implements k6 {
         m9Var2.e(f20, 1.0f);
         for (int i10 = 0; i10 < 2; i10++) {
             Paint paint = this.f;
-            if (i10 != 0 || (a50Var2 = this.E) == null) {
-                if (i10 == 1 && (a50Var = this.D) != null) {
-                    paint.setShader(a50Var.g);
+            if (i10 != 0 || (z40Var2 = this.E) == null) {
+                if (i10 == 1 && (z40Var = this.D) != null) {
+                    paint.setShader(z40Var.g);
                     f7 = this.G;
                 }
             } else {
-                paint.setShader(a50Var2.g);
+                paint.setShader(z40Var2.g);
                 f7 = 1.0f - this.G;
             }
             paint.setAlpha((int) (f7 * 76.0f));
@@ -206,7 +206,7 @@ public final class q extends View implements k6 {
         super.onMeasure(i10, i11);
         float L = org.telegram.messenger.i0.L(157.0f);
         this.w = getMeasuredWidth() >> 1;
-        this.x = (getMeasuredHeight() >> 1) + (b50.w5 ? 0.0f : (-getMeasuredHeight()) * 0.12f);
+        this.x = (getMeasuredHeight() >> 1) + (a50.w5 ? 0.0f : (-getMeasuredHeight()) * 0.12f);
         float f7 = L / 2.0f;
         ImageReceiver imageReceiver = this.a;
         imageReceiver.J0((int) f7);

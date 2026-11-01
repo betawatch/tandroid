@@ -6,10 +6,10 @@ import android.text.TextPaint;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d4 extends FrameLayout {
-    public final org.telegram.ui.Components.nn0 a;
+    public final org.telegram.ui.Components.on0 a;
     public final int b;
     public final int c;
     public int d;
@@ -26,12 +26,12 @@ public final class d4 extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.e = textPaint;
         textPaint.setTextSize(org.telegram.messenger.i0.L(16.0f));
-        org.telegram.ui.Components.nn0 nn0Var = new org.telegram.ui.Components.nn0(context, null, false);
-        this.a = nn0Var;
-        nn0Var.setReportChanges(true);
-        nn0Var.setSeparatorsCount(19);
-        nn0Var.setDelegate(new e(this, 3));
-        addView(nn0Var, w7.b6.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        org.telegram.ui.Components.on0 on0Var = new org.telegram.ui.Components.on0(context, null, false);
+        this.a = on0Var;
+        on0Var.setReportChanges(true);
+        on0Var.setSeparatorsCount(19);
+        on0Var.setDelegate(new e(this, 3));
+        addView(on0Var, w7.b6.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -47,7 +47,7 @@ public final class d4 extends FrameLayout {
         int v02 = org.telegram.ui.ActionBar.t6.v0(i10);
         TextPaint textPaint = this.e;
         textPaint.setColor(v02);
-        canvas.drawText("" + org.telegram.messenger.tz.Z0, getMeasuredWidth() - org.telegram.messenger.i0.L(39.0f), org.telegram.messenger.i0.L(28.0f), textPaint);
+        canvas.drawText("" + org.telegram.messenger.uz.Z0, getMeasuredWidth() - org.telegram.messenger.i0.L(39.0f), org.telegram.messenger.i0.L(28.0f), textPaint);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -55,7 +55,7 @@ public final class d4 extends FrameLayout {
         super.onMeasure(i10, i11);
         int size = View.MeasureSpec.getSize(i10);
         if (this.d != size) {
-            int i12 = org.telegram.messenger.tz.Z0;
+            int i12 = org.telegram.messenger.uz.Z0;
             int i13 = this.b;
             this.a.setProgress((i12 - i13) / (this.c - i13));
             this.d = size;

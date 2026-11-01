@@ -5,9 +5,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 import org.telegram.ui.Cells.p2;
-import org.telegram.ui.gy;
+import org.telegram.ui.fy;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final p2 b = new p2(2);
@@ -90,7 +90,7 @@ public abstract class u {
     }
 
     public boolean k() {
-        return !(this instanceof gy);
+        return !(this instanceof fy);
     }
 
     public void m(Canvas canvas, RecyclerView recyclerView, c1 c1Var, float f7, float f10, int i10, boolean z10) {

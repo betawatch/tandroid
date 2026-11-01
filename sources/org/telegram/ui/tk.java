@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class tk extends w7.x5 {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class tk extends w7.x5 {
                 unVar.G9 = !z10;
                 if (z10) {
                     if (unVar.r9 != null) {
-                        un.c2(unVar, 0.0f);
+                        un.d2(unVar, 0.0f);
                         unVar.r9 = null;
                     }
                     unVar.s9 = false;
@@ -32,7 +32,7 @@ public final class tk extends w7.x5 {
                         qlVar.a();
                     }
                 }
-                unVar.Pc();
+                unVar.Uc();
                 break;
             case 1:
                 org.telegram.ui.Components.ua0 ua0Var = (org.telegram.ui.Components.ua0) this.b;
@@ -44,16 +44,16 @@ public final class tk extends w7.x5 {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
                         break;
                     } else if (z10) {
-                        if (oa0Var.v - oa0Var.u <= org.telegram.messenger.vp.r1(ab0Var.x).p4) {
+                        if (oa0Var.v - oa0Var.u <= org.telegram.messenger.wp.r1(ab0Var.x).p4) {
                             org.telegram.ui.Cells.r9 r9Var = oa0Var.W;
-                            org.telegram.messenger.jj c10 = ua0Var.c(r9Var != null ? ((org.telegram.ui.Cells.q1) r9Var).getMessageObject() : null);
-                            org.telegram.messenger.nj njVar = ab0Var.d;
-                            if (njVar.d == null) {
+                            org.telegram.messenger.kj c10 = ua0Var.c(r9Var != null ? ((org.telegram.ui.Cells.q1) r9Var).getMessageObject() : null);
+                            org.telegram.messenger.oj ojVar = ab0Var.d;
+                            if (ojVar.d == null) {
                                 int i10 = oa0Var.u;
-                                njVar.e = i10;
+                                ojVar.e = i10;
                                 int i11 = oa0Var.v;
-                                njVar.f = i11;
-                                njVar.d = kn.b(i10, i11, c10);
+                                ojVar.f = i11;
+                                ojVar.d = kn.b(i10, i11, c10);
                                 actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(ua0Var.I);
                                 break;
                             }
@@ -86,10 +86,10 @@ public final class tk extends w7.x5 {
                 if (lVar != null) {
                     lVar2 = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
                     if (lVar2.u()) {
-                        unVar.H7(false);
+                        unVar.L7(false);
                     }
                 }
-                unVar.Y7();
+                unVar.c8();
                 unVar.M3.j(58, 0L, null);
                 break;
         }

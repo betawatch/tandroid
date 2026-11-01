@@ -13,9 +13,9 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.h4;
-import org.telegram.ui.m60;
+import org.telegram.ui.l60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k1 extends View implements k6 {
     public final /* synthetic */ int a = 0;
@@ -63,9 +63,9 @@ public final class k1 extends View implements k6 {
             case 1:
                 setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.i0.L(12.0f));
                 eq eqVar = (eq) this.c;
-                m60 m60Var = (m60) this.b;
+                l60 l60Var = (l60) this.b;
                 int i12 = t6.El;
-                ((h4) m60Var).getClass();
+                ((h4) l60Var).getClass();
                 t6.B1(eqVar, t6.v0(i12), false);
                 break;
             default:
@@ -84,7 +84,7 @@ public final class k1 extends View implements k6 {
             default:
                 try {
                     eq eqVar = (eq) this.c;
-                    if (eqVar != null && ((m60) this.b) != null) {
+                    if (eqVar != null && ((l60) this.b) != null) {
                         t6.B1(eqVar, t6.x0(null, t6.El, false), false);
                         invalidate();
                         break;
@@ -97,9 +97,9 @@ public final class k1 extends View implements k6 {
         }
     }
 
-    public k1(Context context, m60 m60Var) {
+    public k1(Context context, l60 l60Var) {
         super(context);
-        this.b = m60Var;
+        this.b = l60Var;
         eq eqVar = new eq(new ColorDrawable(t6.x0(null, t6.El, false)), t6.X0(context, R.drawable.greydivider_bottom, -16777216));
         this.c = eqVar;
         eqVar.x = true;

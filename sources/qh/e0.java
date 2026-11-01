@@ -8,13 +8,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.Components.oh;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.jx0;
-import org.telegram.ui.xz;
-import rh.a3;
+import org.telegram.ui.ix0;
+import org.telegram.ui.wz;
+import rh.b3;
 import rh.e4;
 import rh.i4;
-import rh.t2;
 import rh.u2;
+import rh.v2;
 import rh.v8;
 import rh.w7;
 import th.d1;
@@ -30,7 +30,7 @@ import vh.p2;
 import vh.y2;
 import vh.z1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class e0 implements ValueAnimator.AnimatorUpdateLis
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        t2 t2Var;
+        u2 u2Var;
         boolean z10;
         switch (this.a) {
             case 0:
@@ -55,18 +55,18 @@ public final /* synthetic */ class e0 implements ValueAnimator.AnimatorUpdateLis
                 e4Var.P1();
                 break;
             case 2:
-                ((a3) this.b).h.invalidate();
+                ((b3) this.b).h.invalidate();
                 break;
             case 3:
-                u2 u2Var = (u2) this.b;
-                u2Var.getClass();
+                v2 v2Var = (v2) this.b;
+                v2Var.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u2Var.E = floatValue;
-                if (floatValue >= 0.8f && (t2Var = u2Var.H) != null && (z10 = t2Var.l) && z10) {
-                    t2Var.l = false;
-                    t2Var.b();
+                v2Var.E = floatValue;
+                if (floatValue >= 0.8f && (u2Var = v2Var.H) != null && (z10 = u2Var.l) && z10) {
+                    u2Var.l = false;
+                    u2Var.b();
                 }
-                u2Var.invalidate();
+                v2Var.invalidate();
                 break;
             case 4:
                 View view = (View) this.b;
@@ -83,9 +83,9 @@ public final /* synthetic */ class e0 implements ValueAnimator.AnimatorUpdateLis
             case 6:
                 w7 w7Var = (w7) this.b;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xz xzVar = w7Var.c;
-                xzVar.setScaleX(floatValue2);
-                xzVar.setScaleY(floatValue2);
+                wz wzVar = w7Var.c;
+                wzVar.setScaleX(floatValue2);
+                wzVar.setScaleY(floatValue2);
                 break;
             case 7:
                 v8 v8Var = (v8) this.b;
@@ -168,11 +168,11 @@ public final /* synthetic */ class e0 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 18:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
-                jx0 jx0Var = profileStoriesView.h;
+                ix0 ix0Var = profileStoriesView.h;
                 float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 profileStoriesView.G = floatValue8;
-                jx0Var.R = floatValue8;
-                jx0Var.invalidate();
+                ix0Var.R = floatValue8;
+                ix0Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 19:

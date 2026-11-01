@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ek extends org.telegram.ui.Components.y90 {
     public boolean V;
@@ -37,7 +37,7 @@ public final class ek extends org.telegram.ui.Components.y90 {
 
     @Override // org.telegram.ui.Components.y90
     public final void j() {
-        this.W.Mc();
+        this.W.Rc();
     }
 
     @Override // org.telegram.ui.Components.y90
@@ -47,10 +47,10 @@ public final class ek extends org.telegram.ui.Components.y90 {
             return;
         }
         if (!botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) && !botInlineResult.type.equals("web_player_video")) {
-            unVar.Ma(0, botInlineResult.content.url, null, null, false);
+            unVar.Ra(0, botInlineResult.content.url, null, null, false);
             return;
         }
-        int[] h12 = org.telegram.messenger.jj.h1(botInlineResult);
+        int[] h12 = org.telegram.messenger.kj.h1(botInlineResult);
         ii iiVar = unVar.cb;
         String str = botInlineResult.title;
         if (str == null) {
@@ -58,7 +58,7 @@ public final class ek extends org.telegram.ui.Components.y90 {
         }
         String str2 = botInlineResult.description;
         String str3 = botInlineResult.content.url;
-        org.telegram.ui.Components.hu.K0(unVar, null, iiVar, str, str2, str3, str3, h12[0], h12[1], -1, unVar.J9());
+        org.telegram.ui.Components.hu.K0(unVar, null, iiVar, str, str2, str3, str3, h12[0], h12[1], -1, unVar.O9());
     }
 
     @Override // org.telegram.ui.Components.y90
@@ -73,7 +73,7 @@ public final class ek extends org.telegram.ui.Components.y90 {
                 L0 = user.bot_inline_placeholder;
             } else {
                 String str = adapter.q0;
-                L0 = (str == null || !str.equals("gif")) ? null : org.telegram.messenger.cd.L0(2131745781, null);
+                L0 = (str == null || !str.equals("gif")) ? null : org.telegram.messenger.dd.L0(2131745781, null);
             }
             mkVar.setCaption(L0);
             org.telegram.ui.Components.ae aeVar = unVar.Z.P1;
@@ -94,19 +94,19 @@ public final class ek extends org.telegram.ui.Components.y90 {
     public final void m() {
         un unVar = this.W;
         if (unVar.p5 && ((getAdapter().R == null || unVar.q5 || unVar.r5) && unVar.h != null && getAdapter().R != null)) {
-            SharedPreferences d12 = org.telegram.messenger.vp.d1();
+            SharedPreferences d12 = org.telegram.messenger.wp.d1();
             if (!d12.getBoolean("secretbot", false)) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, unVar.getParentActivity(), unVar.xa);
-                String L0 = org.telegram.messenger.cd.L0(R.string.AppName, null);
+                String L0 = org.telegram.messenger.dd.L0(R.string.AppName, null);
                 org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                 x1Var.R = L0;
-                x1Var.T = org.telegram.messenger.cd.L0(2131745711, null);
-                alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131747847, null), null);
+                x1Var.T = org.telegram.messenger.dd.L0(2131745711, null);
+                alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), null);
                 unVar.showDialog(x1Var);
                 d12.edit().putBoolean("secretbot", true).commit();
             }
         }
-        unVar.Mc();
+        unVar.Rc();
     }
 
     @Override // org.telegram.ui.Components.y90

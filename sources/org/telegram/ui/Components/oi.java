@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class oi extends s4.r {
     public final /* synthetic */ int Q;
@@ -21,7 +21,7 @@ public final class oi extends s4.r {
     public boolean Y0() {
         switch (this.Q) {
             case 2:
-                return ((cx0) this.R).N1 != null && org.telegram.messenger.cd.X;
+                return ((dx0) this.R).N1 != null && org.telegram.messenger.dd.X;
             default:
                 return super.Y0();
         }
@@ -100,9 +100,9 @@ public final class oi extends s4.r {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oi(cx0 cx0Var) {
+    public oi(dx0 dx0Var) {
         super(5);
         this.Q = 2;
-        this.R = cx0Var;
+        this.R = dx0Var;
     }
 }

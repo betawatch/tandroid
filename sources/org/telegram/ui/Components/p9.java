@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p9 implements Runnable {
     public boolean a;
@@ -51,7 +51,7 @@ public final class p9 implements Runnable {
             } else {
                 q9Var.f[i11].eraseColor(0);
             }
-            paint.setAlpha(org.telegram.messenger.zs.e4);
+            paint.setAlpha(org.telegram.messenger.at.e4);
             Utilities.stackBlurBitmap(q9Var.e[i11], 15);
             Canvas canvas = q9Var.i[i11];
             if (canvas != null) {

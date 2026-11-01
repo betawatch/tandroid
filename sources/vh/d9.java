@@ -7,11 +7,11 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d9 extends View {
     public final Paint a;
@@ -46,7 +46,7 @@ public final class d9 extends View {
             this.c = false;
             animate().cancel();
             if (z10) {
-                z20.m(animate().translationY(org.telegram.messenger.i0.L(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), gr.h, 220L);
+                a30.m(animate().translationY(org.telegram.messenger.i0.L(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), gr.h, 220L);
                 return;
             }
             setTranslationY(org.telegram.messenger.i0.L(6.0f));

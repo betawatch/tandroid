@@ -26,18 +26,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 import m.z0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.w0;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.v9;
 import org.webrtc.MediaStreamTrack;
 import v7.h5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
@@ -92,23 +92,23 @@ public abstract class d {
                 long a2 = e10 == null ? -1L : e10.a();
                 long D = B.D(B.u0);
                 if (D >= 0 && a2 >= 0 && Math.abs(D - a2) > 1000) {
-                    jj jjVar = B.u0;
-                    if ((B.i0 != null || B.E0 != null) && jjVar != null && B.L(jjVar)) {
+                    kj kjVar = B.u0;
+                    if ((B.i0 != null || B.E0 != null) && kjVar != null && B.L(kjVar)) {
                         try {
-                            u61 u61Var = B.i0;
-                            if (u61Var != null) {
-                                j10 = u61Var.U();
+                            v61 v61Var = B.i0;
+                            if (v61Var != null) {
+                                j10 = v61Var.U();
                                 if (j10 != -9223372036854775807L) {
-                                    jjVar.b0 = Utilities.l(a2 / j10);
+                                    kjVar.b0 = Utilities.l(a2 / j10);
                                 }
                                 B.i0.q0(a2, false);
                                 if (!B.S1) {
                                     v(a2);
                                 }
                             } else {
-                                u61 u61Var2 = B.E0;
-                                if (u61Var2 != null) {
-                                    j10 = u61Var2.U();
+                                v61 v61Var2 = B.E0;
+                                if (v61Var2 != null) {
+                                    j10 = v61Var2.U();
                                     B.E0.p0(a2);
                                     if (!B.S1) {
                                         v(a2);
@@ -118,7 +118,7 @@ public abstract class d {
                                 }
                             }
                             if (j10 != 0) {
-                                zs.f(jjVar.I1).k(zs.i2, Integer.valueOf(jjVar.f1()), Float.valueOf(Utilities.l(a2 / j10)));
+                                at.f(kjVar.I1).k(at.i2, Integer.valueOf(kjVar.f1()), Float.valueOf(Utilities.l(a2 / j10)));
                             }
                         } catch (Exception e11) {
                             f8.g(e11, true);

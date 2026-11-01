@@ -7,9 +7,9 @@ import android.util.Pair;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ov implements ei.n, ik0, sl0, fe.e {
+public final /* synthetic */ class ov implements ei.n, jk0, tl0, fe.e {
     public final /* synthetic */ int a;
     public final /* synthetic */ vy b;
 
@@ -18,7 +18,7 @@ public final /* synthetic */ class ov implements ei.n, ik0, sl0, fe.e {
         this.b = vyVar;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.tl0
     public void a(int i10) {
         int i11;
         hy hyVar;
@@ -41,13 +41,13 @@ public final /* synthetic */ class ov implements ei.n, ik0, sl0, fe.e {
                             ayVar.h1(i11, -org.telegram.messenger.i0.L(4.0f));
                         }
                         if (i10 == vyVar.s0) {
-                            ArrayList arrayList = org.telegram.messenger.vp.r1(i12).d4;
+                            ArrayList arrayList = org.telegram.messenger.wp.r1(i12).d4;
                             if (!arrayList.isEmpty()) {
                                 dyVar.a((String) arrayList.get(0), true);
                             }
                         }
                     } else {
-                        ArrayList arrayList2 = org.telegram.messenger.vp.r1(i12).d4;
+                        ArrayList arrayList2 = org.telegram.messenger.wp.r1(i12).d4;
                         vyVar.j0.H((String) arrayList2.get(i10 - vyVar.t0));
                         int i13 = i10 - vyVar.t0;
                         if (i13 > 0) {
@@ -121,7 +121,7 @@ public final /* synthetic */ class ov implements ei.n, ik0, sl0, fe.e {
                             break;
                         }
                     } else {
-                        vyVar2.t1.o(new w41(vyVar2.getContext(), new ow(vyVar2), vyVar2.x1, vyVar2.y1, vyVar2.z1, null, vyVar2.Z1));
+                        vyVar2.t1.o(new x41(vyVar2.getContext(), new ow(vyVar2), vyVar2.x1, vyVar2.y1, vyVar2.z1, null, vyVar2.Z1));
                         break;
                     }
                 }
@@ -129,7 +129,7 @@ public final /* synthetic */ class ov implements ei.n, ik0, sl0, fe.e {
         }
     }
 
-    @Override // org.telegram.ui.Components.ik0
+    @Override // org.telegram.ui.Components.jk0
     public boolean f(int i10, View view) {
         String str;
         int i11;
@@ -223,7 +223,7 @@ public final /* synthetic */ class ov implements ei.n, ik0, sl0, fe.e {
                         i11 = org.telegram.messenger.i0.L((r3 * 4) - (org.telegram.messenger.i0.Q1() ? 5 : 1)) + (iuVar2.n[0] * i12);
                     }
                     if (iArr[0] - i11 < org.telegram.messenger.i0.L(5.0f)) {
-                        i11 = org.telegram.messenger.z20.D(5.0f, iArr[0] - i11, i11);
+                        i11 = org.telegram.messenger.a30.D(5.0f, iArr[0] - i11, i11);
                     } else {
                         int i15 = (iArr[0] - i11) + L;
                         Point point = org.telegram.messenger.i0.q;

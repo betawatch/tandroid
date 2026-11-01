@@ -26,14 +26,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.ActionBar.w5;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Components.ew;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.wj0;
 import v7.e5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -46,7 +46,7 @@ public final class e {
     public w d;
     public q e;
     public com.google.android.gms.internal.cast.p f;
-    public vj0 g;
+    public wj0 g;
     public final Context h;
     public final e2.s n;
     public final m2.t o;
@@ -302,20 +302,20 @@ public final class e {
 
     public final void h(e eVar, w wVar, q qVar, int i10, w wVar2, Collection collection) {
         final com.google.android.gms.internal.cast.p pVar;
-        vj0 vj0Var = this.g;
-        if (vj0Var != null) {
-            vj0Var.a();
+        wj0 wj0Var = this.g;
+        if (wj0Var != null) {
+            wj0Var.a();
             this.g = null;
         }
-        vj0 vj0Var2 = new vj0(eVar, wVar, qVar, i10, wVar2, collection);
-        this.g = vj0Var2;
+        wj0 wj0Var2 = new wj0(eVar, wVar, qVar, i10, wVar2, collection);
+        this.g = wj0Var2;
         int i11 = 3;
-        if (vj0Var2.b != 3 || (pVar = this.f) == null) {
-            vj0Var2.b();
+        if (wj0Var2.b != 3 || (pVar = this.f) == null) {
+            wj0Var2.b();
             return;
         }
         final w wVar3 = this.d;
-        final w wVar4 = (w) vj0Var2.g;
+        final w wVar4 = (w) wj0Var2.g;
         com.google.android.gms.internal.cast.p.c.b("Prepare transfer from Route(%s) to Route(%s)", wVar3, wVar4);
         c0.l a2 = e5.a(new c0.j() { // from class: com.google.android.gms.internal.cast.n
             @Override // c0.j
@@ -325,17 +325,17 @@ public final class e {
                 return Boolean.valueOf(pVar2.b.post(new o(pVar2, wVar3, wVar4, iVar, 0)));
             }
         });
-        vj0 vj0Var3 = this.g;
-        e eVar2 = (e) ((WeakReference) vj0Var3.j).get();
-        if (eVar2 == null || eVar2.g != vj0Var3) {
+        wj0 wj0Var3 = this.g;
+        e eVar2 = (e) ((WeakReference) wj0Var3.j).get();
+        if (eVar2 == null || eVar2.g != wj0Var3) {
             Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-            vj0Var3.a();
+            wj0Var3.a();
         } else {
-            if (((c0.l) vj0Var3.k) != null) {
+            if (((c0.l) wj0Var3.k) != null) {
                 throw new IllegalStateException("future is already set");
             }
-            vj0Var3.k = a2;
-            w5 w5Var = new w5(vj0Var3, 23);
+            wj0Var3.k = a2;
+            w5 w5Var = new w5(wj0Var3, 23);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
             a2.b.a(w5Var, new i2.g0(bVar, i11));
@@ -420,7 +420,7 @@ public final class e {
         }
         this.d = wVar;
         this.e = d10;
-        Message obtainMessage = this.a.obtainMessage(zs.l4, new q0.b(null, wVar));
+        Message obtainMessage = this.a.obtainMessage(at.l4, new q0.b(null, wVar));
         obtainMessage.arg1 = i10;
         obtainMessage.sendToTarget();
     }
@@ -709,7 +709,7 @@ public final class e {
                             arrayList2.add(wVar);
                             if (mVar2.c().isEmpty()) {
                                 wVar.i(mVar2);
-                                bVar.b(zs.g4, wVar);
+                                bVar.b(at.g4, wVar);
                             } else {
                                 arrayList3.add(new q0.b(wVar, mVar2));
                             }
@@ -746,7 +746,7 @@ public final class e {
                     q0.b bVar2 = (q0.b) obj;
                     w wVar3 = (w) bVar2.a;
                     wVar3.i((m) bVar2.b);
-                    bVar.b(zs.g4, wVar3);
+                    bVar.b(at.g4, wVar3);
                 }
                 int size6 = arrayList4.size();
                 boolean z14 = z13;
@@ -768,7 +768,7 @@ public final class e {
                 }
                 o(z10);
                 for (size2 = arrayList.size() - 1; size2 >= i10; size2--) {
-                    bVar.b(zs.h4, (w) arrayList.remove(size2));
+                    bVar.b(at.h4, (w) arrayList.remove(size2));
                 }
                 bVar.b(515, vVar);
             }
@@ -790,13 +790,13 @@ public final class e {
             int i11 = i10 & 1;
             b bVar = this.a;
             if (i11 != 0) {
-                bVar.b(zs.i4, wVar);
+                bVar.b(at.i4, wVar);
             }
             if ((i10 & 2) != 0) {
-                bVar.b(zs.j4, wVar);
+                bVar.b(at.j4, wVar);
             }
             if ((i10 & 4) != 0) {
-                bVar.b(zs.k4, wVar);
+                bVar.b(at.k4, wVar);
             }
         }
         return i10;

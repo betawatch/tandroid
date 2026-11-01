@@ -14,12 +14,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.WearAuthListenerService;
-import org.telegram.messenger.e00;
+import org.telegram.messenger.f00;
 import org.telegram.messenger.f8;
 import org.telegram.ui.LaunchActivity;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -217,7 +217,7 @@ public final class z1 implements Runnable {
                         f8.e("wear-auth: failed to pop LaunchActivity", e15);
                     }
                 }
-                org.telegram.messenger.i0.g3(new e00(bArr, str, str2));
+                org.telegram.messenger.i0.g3(new f00(bArr, str, str2));
                 return;
             case 10:
                 ((x8.d) this.c).c.getClass();

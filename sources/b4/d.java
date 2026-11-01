@@ -11,9 +11,9 @@ import e2.l0;
 import e2.x;
 import java.lang.reflect.Array;
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d implements w3.b {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final class d implements w3.b {
             int i13 = 8 - i11;
             int min = Math.min(i10, i13);
             int i14 = i13 - min;
-            int i15 = (zs.e4 >> (8 - min)) << i14;
+            int i15 = (at.e4 >> (8 - min)) << i14;
             int i16 = this.b;
             int i17 = (i15 & bArr[i16]) >> i14;
             i10 -= min;
@@ -85,7 +85,7 @@ public final class d implements w3.b {
             }
             if (i10 > 0) {
                 int i22 = 8 - i10;
-                int i23 = ((bArr[this.b] & ((zs.e4 >> i22) << i22)) >> i22) | (i12 << i10);
+                int i23 = ((bArr[this.b] & ((at.e4 >> i22) << i22)) >> i22) | (i12 << i10);
                 this.c += i10;
                 return i23;
             }

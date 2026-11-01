@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -17,12 +17,12 @@ public final /* synthetic */ class q5 implements DialogInterface.OnDismissListen
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
-        org.telegram.ui.Components.bi0 bi0Var;
+        org.telegram.ui.Components.ci0 ci0Var;
         int i10 = this.a;
         Object obj = this.b;
         switch (i10) {
             case 0:
-                ((r5) obj).a.x0(false);
+                ((r5) obj).a.y0(false);
                 break;
             case 1:
                 ((p9) obj).i1.onFragmentDestroy();
@@ -68,29 +68,29 @@ public final /* synthetic */ class q5 implements DialogInterface.OnDismissListen
                 externalActionActivity.finish();
                 break;
             case 7:
-                c60 c60Var = (c60) obj;
-                if (!c60Var.N.g()) {
-                    c60Var.R.P(86);
-                    c60Var.f.d();
+                b60 b60Var = (b60) obj;
+                if (!b60Var.N.g()) {
+                    b60Var.R.P(86);
+                    b60Var.f.d();
                     break;
                 } else {
-                    c60Var.R.N(0, false, false);
+                    b60Var.R.N(0, false, false);
                     break;
                 }
             case 8:
-                wd0 wd0Var = (wd0) obj;
-                org.telegram.ui.Components.bi0 bi0Var2 = wd0Var.I;
-                hd hdVar = wd0Var.n;
-                if (!wd0Var.L.g()) {
-                    hdVar.setAnimation(bi0Var2);
-                    bi0Var2.P(86);
-                    hdVar.setOnAnimationEndListener(new kc0(wd0Var, 2));
+                vd0 vd0Var = (vd0) obj;
+                org.telegram.ui.Components.ci0 ci0Var2 = vd0Var.I;
+                hd hdVar = vd0Var.n;
+                if (!vd0Var.L.g()) {
+                    hdVar.setAnimation(ci0Var2);
+                    ci0Var2.P(86);
+                    hdVar.setOnAnimationEndListener(new jc0(vd0Var, 2));
                     hdVar.d();
                     break;
                 } else {
-                    hdVar.setAnimation(bi0Var2);
-                    bi0Var2.N(0, false, false);
-                    wd0Var.K = true;
+                    hdVar.setAnimation(ci0Var2);
+                    ci0Var2.N(0, false, false);
+                    vd0Var.K = true;
                     break;
                 }
             case 9:
@@ -121,8 +121,8 @@ public final /* synthetic */ class q5 implements DialogInterface.OnDismissListen
                     org.telegram.ui.Components.hg0 hg0Var = profileActivity.Z;
                     if (hg0Var != null) {
                         org.telegram.ui.Components.eg0 i11 = org.telegram.ui.Components.hg0.i(14, hg0Var.a);
-                        if (i11 != null && (bi0Var = i11.k) != null) {
-                            bi0Var.start();
+                        if (i11 != null && (ci0Var = i11.k) != null) {
+                            ci0Var.start();
                         }
                     } else {
                         profileActivity.s.d();
@@ -139,7 +139,7 @@ public final /* synthetic */ class q5 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 14:
-                ((i31) obj).w(0.0f);
+                ((g31) obj).w(0.0f);
                 break;
             case 15:
                 ShareActivity shareActivity = (ShareActivity) obj;
@@ -161,7 +161,7 @@ public final /* synthetic */ class q5 implements DialogInterface.OnDismissListen
                 twoStepVerificationActivity.finishFragment();
                 break;
             default:
-                ((be1) obj).u0.b();
+                ((zd1) obj).u0.b();
                 break;
         }
     }

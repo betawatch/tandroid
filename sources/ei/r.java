@@ -6,13 +6,13 @@ import android.graphics.RectF;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.sc;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.w71;
+import org.telegram.messenger.tc;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.x71;
 import org.telegram.ui.Components.xs;
 import w7.f0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class r {
     public static s F;
@@ -50,8 +50,8 @@ public final class r {
     public final ArrayList E = new ArrayList();
 
     public static s f() {
-        boolean e = sc.e(256);
-        boolean e7 = sc.e(262144);
+        boolean e = tc.e(256);
+        boolean e7 = tc.e(262144);
         s sVar = F;
         if (sVar == null || sVar.a != e || sVar.b != e7) {
             F = new s(e, e7);
@@ -64,12 +64,12 @@ public final class r {
         this.o.add(fVar);
     }
 
-    public final void b(tk0 tk0Var) {
-        if (tk0Var == null) {
+    public final void b(uk0 uk0Var) {
+        if (uk0Var == null) {
             return;
         }
-        this.n.add(tk0Var);
-        tk0Var.D2.b.add(new xs() { // from class: ei.g
+        this.n.add(uk0Var);
+        uk0Var.D2.b.add(new xs() { // from class: ei.g
             @Override // org.telegram.ui.Components.xs
             public final void a(int i10, boolean z10) {
                 r rVar = r.this;
@@ -78,19 +78,19 @@ public final class r {
             }
         });
         k kVar = new k(this);
-        if (tk0Var.P == null) {
-            tk0Var.P = new ArrayList();
+        if (uk0Var.P == null) {
+            uk0Var.P = new ArrayList();
         }
-        tk0Var.P.add(kVar);
-        tk0Var.j(new u(this, 3));
+        uk0Var.P.add(kVar);
+        uk0Var.j(new u(this, 3));
     }
 
-    public final void c(w71 w71Var) {
-        if (w71Var == null) {
+    public final void c(x71 x71Var) {
+        if (x71Var == null) {
             return;
         }
         h hVar = new h(this);
-        ArrayList arrayList = w71Var.R;
+        ArrayList arrayList = x71Var.R;
         if (arrayList.contains(hVar)) {
             return;
         }

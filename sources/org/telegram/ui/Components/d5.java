@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class d5 extends Drawable implements l5 {
     public boolean D;
@@ -29,7 +29,7 @@ public class d5 extends Drawable implements l5 {
     public final t5 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.i31 n;
+    public org.telegram.ui.g31 n;
     public final boolean r;
     public final int s;
     public int w;
@@ -252,7 +252,7 @@ public class d5 extends Drawable implements l5 {
             drawableArr[1] = drawableArr[0];
             if (document != null) {
                 Integer num = this.y;
-                f5 l4 = f5.l(num != null ? num.intValue() : org.telegram.messenger.d20.s0, i10, document);
+                f5 l4 = f5.l(num != null ? num.intValue() : org.telegram.messenger.e20.s0, i10, document);
                 drawableArr[0] = l4;
                 if (this.x) {
                     l4.b(this);
@@ -268,7 +268,7 @@ public class d5 extends Drawable implements l5 {
             }
             if (document != null) {
                 Integer num2 = this.y;
-                drawableArr[0] = f5.l(num2 != null ? num2.intValue() : org.telegram.messenger.d20.s0, i10, document);
+                drawableArr[0] = f5.l(num2 != null ? num2.intValue() : org.telegram.messenger.e20.s0, i10, document);
             } else {
                 drawableArr[0] = null;
             }
@@ -297,9 +297,9 @@ public class d5 extends Drawable implements l5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.i31 i31Var = this.n;
-        if (i31Var != null) {
-            i31Var.invalidate();
+        org.telegram.ui.g31 g31Var = this.n;
+        if (g31Var != null) {
+            g31Var.invalidate();
         }
         invalidateSelf();
     }
@@ -323,7 +323,7 @@ public class d5 extends Drawable implements l5 {
             }
             drawableArr[1] = drawableArr[0];
             Integer num = this.y;
-            f5 m10 = f5.m(num != null ? num.intValue() : org.telegram.messenger.d20.s0, j10, null, i10);
+            f5 m10 = f5.m(num != null ? num.intValue() : org.telegram.messenger.e20.s0, j10, null, i10);
             drawableArr[0] = m10;
             if (this.x) {
                 m10.b(this);
@@ -335,7 +335,7 @@ public class d5 extends Drawable implements l5 {
                 b();
             }
             Integer num2 = this.y;
-            drawableArr[0] = f5.m(num2 != null ? num2.intValue() : org.telegram.messenger.d20.s0, j10, null, i10);
+            drawableArr[0] = f5.m(num2 != null ? num2.intValue() : org.telegram.messenger.e20.s0, j10, null, i10);
             if (z11) {
                 a();
             }
@@ -415,7 +415,7 @@ public class d5 extends Drawable implements l5 {
         t5 t5Var2 = new t5((View) null, 300L, grVar);
         this.e = t5Var2;
         this.f = new Drawable[2];
-        this.w = org.telegram.messenger.zs.e4;
+        this.w = org.telegram.messenger.at.e4;
         this.K = new Rect();
         this.L = new tf(this, 7);
         t5Var.a = view;

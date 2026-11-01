@@ -12,14 +12,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.kf0;
 import org.telegram.ui.Components.ob0;
 import org.telegram.ui.jc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -120,16 +120,16 @@ public final /* synthetic */ class a7 implements View.OnClickListener {
                     if (o8Var.g0 == -1) {
                         p2 p2Var = o8Var.k1;
                         if (n5Var2.Y) {
-                            L0 = cd.L0((!isEmpty || z12) ? 2131744611 : 2131744486, null);
+                            L0 = dd.L0((!isEmpty || z12) ? 2131744611 : 2131744486, null);
                         } else {
-                            L0 = cd.L0((!isEmpty || z12) ? 2131744610 : 2131744485, null);
+                            L0 = dd.L0((!isEmpty || z12) ? 2131744610 : 2131744485, null);
                         }
                         boolean z13 = o8Var.k1.V;
                         if (p2Var.getMeasuredWidth() < 0) {
                             p2Var.G = L0;
                         } else {
                             org.telegram.ui.Components.e6 e6Var = p2Var.H;
-                            if (!cd.X && z13) {
+                            if (!dd.X && z13) {
                                 z10 = true;
                             }
                             e6Var.t(L0, z10, true);
@@ -159,7 +159,7 @@ public final /* synthetic */ class a7 implements View.OnClickListener {
                                 int indexOf = o8Var.u2.indexOf(E);
                                 if (indexOf >= 0) {
                                     o8Var.t2 = indexOf;
-                                    vp.d1().edit().putInt("frontflash", o8Var.t2).apply();
+                                    wp.d1().edit().putInt("frontflash", o8Var.t2).apply();
                                 }
                             }
                         }
@@ -173,11 +173,11 @@ public final /* synthetic */ class a7 implements View.OnClickListener {
                 if (t7Var2 != null && o8Var.f0 == 0) {
                     t7Var2.toggleDual();
                     o8Var.F0.setValue(o8Var.B0.isDual());
-                    o8Var.F0.setContentDescription(cd.L0(o8Var.B0.isDual() ? 2131754886 : 2131754887, null));
+                    o8Var.F0.setContentDescription(dd.L0(o8Var.B0.isDual() ? 2131754886 : 2131754887, null));
                     o8Var.l1.e(true);
-                    vp.d1().edit().putInt("storydualhint", 2).apply();
+                    wp.d1().edit().putInt("storydualhint", 2).apply();
                     if (o8Var.m1.V) {
-                        vp.d1().edit().putInt("storysvddualhint", 2).apply();
+                        wp.d1().edit().putInt("storysvddualhint", 2).apply();
                     }
                     o8Var.m1.e(true);
                     break;

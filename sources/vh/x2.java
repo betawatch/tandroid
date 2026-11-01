@@ -18,12 +18,12 @@ import java.io.File;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x2 extends View implements org.telegram.ui.ActionBar.k6 {
     public float D;
@@ -302,7 +302,7 @@ public final class x2 extends View implements org.telegram.ui.ActionBar.k6 {
             paint2.setAlpha((int) (d10 * 255.0f));
             canvas.drawCircle(this.x, this.y, this.D, paint2);
         }
-        paint.setAlpha(zs.e4);
+        paint.setAlpha(at.e4);
         canvas.drawCircle(this.x, this.y, this.D - org.telegram.messenger.i0.L(1.0f), paint);
         if (d10 > 0.0f) {
             float f7 = this.x;

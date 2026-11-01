@@ -25,11 +25,11 @@ import kg.g2;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class q extends TextureView implements TextureView.SurfaceTextureListener, k6 {
     public volatile int D;
@@ -388,7 +388,7 @@ public class q extends TextureView implements TextureView.SurfaceTextureListener
     }
 
     public int getMaxFrameRate() {
-        return this.S == 4 ? tz.o() == 2 ? 60 : 30 : this.K;
+        return this.S == 4 ? uz.o() == 2 ? 60 : 30 : this.K;
     }
 
     public int getMsaaSamples() {

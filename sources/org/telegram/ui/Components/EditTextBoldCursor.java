@@ -42,7 +42,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class EditTextBoldCursor extends qt {
     public static Field A1;
@@ -83,7 +83,7 @@ public class EditTextBoldCursor extends qt {
     public View a1;
     public final GradientDrawable b0;
     public View b1;
-    public mx0 c0;
+    public nx0 c0;
     public int c1;
     public float d0;
     public boolean d1;
@@ -562,7 +562,7 @@ public class EditTextBoldCursor extends qt {
                 float lineLeft = this.o0.getLineLeft(0);
                 float lineWidth = this.o0.getLineWidth(0);
                 int i15 = lineLeft != 0.0f ? (int) (0 - lineLeft) : 0;
-                if (this.F0 && org.telegram.messenger.cd.X) {
+                if (this.F0 && org.telegram.messenger.dd.X) {
                     float scrollX = getScrollX() + i15 + (getMeasuredWidth() - lineWidth);
                     this.p0 = scrollX;
                     canvas2.translate(scrollX, (this.L0 - this.o0.getHeight()) - org.telegram.messenger.i0.L(7.0f));
@@ -573,7 +573,7 @@ public class EditTextBoldCursor extends qt {
                 }
                 if (this.S0) {
                     float f16 = 1.0f - (this.W0 * 0.3f);
-                    if (this.F0 && org.telegram.messenger.cd.X) {
+                    if (this.F0 && org.telegram.messenger.dd.X) {
                         float f17 = lineWidth + lineLeft;
                         canvas2.translate(f17 - (f17 * f16), 0.0f);
                     } else if (lineLeft != 0.0f) {
@@ -586,8 +586,8 @@ public class EditTextBoldCursor extends qt {
                     getPaint().setColor(this.x0);
                     getPaint().setAlpha((int) ((Color.alpha(this.x0) / 255.0f) * this.A0 * 255.0f));
                 }
-                mx0 mx0Var = this.c0;
-                if (mx0Var == null || !mx0Var.e) {
+                nx0 nx0Var = this.c0;
+                if (nx0Var == null || !nx0Var.e) {
                     f7 = 2.0f;
                     f10 = 150.0f;
                     qh.d dVar = this.s0;
@@ -599,45 +599,45 @@ public class EditTextBoldCursor extends qt {
                 } else {
                     canvas2.save();
                     canvas2.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                    mx0 mx0Var2 = this.c0;
+                    nx0 nx0Var2 = this.c0;
                     TextPaint paint = getPaint();
-                    EditTextBoldCursor editTextBoldCursor = mx0Var2.a;
-                    if (mx0Var2.e) {
-                        float f18 = mx0Var2.h * (mx0Var2.f ? mx0Var2.i : 1.0f - mx0Var2.i);
+                    EditTextBoldCursor editTextBoldCursor = nx0Var2.a;
+                    if (nx0Var2.e) {
+                        float f18 = nx0Var2.h * (nx0Var2.f ? nx0Var2.i : 1.0f - nx0Var2.i);
                         int alpha = paint.getAlpha();
-                        if (mx0Var2.d != null) {
+                        if (nx0Var2.d != null) {
                             canvas2.save();
                             canvas2.translate(f18, 0.0f);
-                            mx0Var2.d.draw(canvas2);
+                            nx0Var2.d.draw(canvas2);
                             canvas2.restore();
                         }
-                        if (mx0Var2.b != null) {
-                            float f19 = mx0Var2.f ? 1.0f - mx0Var2.i : mx0Var2.i;
+                        if (nx0Var2.b != null) {
+                            float f19 = nx0Var2.f ? 1.0f - nx0Var2.i : nx0Var2.i;
                             canvas2.save();
                             f7 = 2.0f;
                             paint.setAlpha((int) (alpha * f19));
                             canvas2.translate(f18, 0.0f);
-                            if (mx0Var2.g) {
+                            if (nx0Var2.g) {
                                 float f20 = (f19 * 0.1f) + 0.9f;
                                 canvas2.scale(f20, f20, f18, editTextBoldCursor.getMeasuredHeight() / 2.0f);
                             }
-                            mx0Var2.b.draw(canvas2);
+                            nx0Var2.b.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                         } else {
                             f7 = 2.0f;
                         }
-                        if (mx0Var2.c != null) {
-                            float f21 = mx0Var2.f ? mx0Var2.i : 1.0f - mx0Var2.i;
+                        if (nx0Var2.c != null) {
+                            float f21 = nx0Var2.f ? nx0Var2.i : 1.0f - nx0Var2.i;
                             canvas2.save();
                             f10 = 150.0f;
-                            paint.setAlpha((int) (alpha * (mx0Var2.f ? mx0Var2.i : 1.0f - mx0Var2.i)));
+                            paint.setAlpha((int) (alpha * (nx0Var2.f ? nx0Var2.i : 1.0f - nx0Var2.i)));
                             canvas2.translate(f18, 0.0f);
-                            if (mx0Var2.g) {
+                            if (nx0Var2.g) {
                                 float f22 = (f21 * 0.1f) + 0.9f;
                                 canvas2.scale(f22, f22, f18, editTextBoldCursor.getMeasuredHeight() / f7);
                             }
-                            mx0Var2.c.draw(canvas2);
+                            nx0Var2.c.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                             canvas2.restore();
@@ -651,7 +651,7 @@ public class EditTextBoldCursor extends qt {
                 getPaint().setColor(color);
                 canvas2.restore();
                 if (this.t1) {
-                    canvas2.saveLayerAlpha((getPaddingLeft() + getScrollX()) - this.x1, 0.0f, ((getWidth() + getScrollX()) - getPaddingRight()) + this.x1, getHeight(), org.telegram.messenger.zs.e4, 31);
+                    canvas2.saveLayerAlpha((getPaddingLeft() + getScrollX()) - this.x1, 0.0f, ((getWidth() + getScrollX()) - getPaddingRight()) + this.x1, getHeight(), org.telegram.messenger.at.e4, 31);
                 }
                 int extendedPaddingTop = getExtendedPaddingTop();
                 this.l0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -693,7 +693,7 @@ public class EditTextBoldCursor extends qt {
                         if (this.C0 && z10) {
                             canvas2.save();
                             if (C1 != null) {
-                                if ((getGravity() & org.telegram.messenger.zs.x1) != 48) {
+                                if ((getGravity() & org.telegram.messenger.at.x1) != 48) {
                                     totalPaddingTop = ((Integer) C1.invoke(this, Boolean.TRUE)).intValue();
                                     canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop);
                                     Layout layout = getLayout();
@@ -744,7 +744,7 @@ public class EditTextBoldCursor extends qt {
                                 n(canvas2, gradientDrawable);
                                 canvas2.restore();
                             } else {
-                                if ((getGravity() & org.telegram.messenger.zs.x1) != 48) {
+                                if ((getGravity() & org.telegram.messenger.at.x1) != 48) {
                                     totalPaddingTop = getTotalPaddingTop() - getExtendedPaddingTop();
                                     canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop);
                                     Layout layout22 = getLayout();
@@ -801,7 +801,7 @@ public class EditTextBoldCursor extends qt {
                     try {
                         canvas2.save();
                         if (C1 != null) {
-                            if ((getGravity() & org.telegram.messenger.zs.x1) != 48) {
+                            if ((getGravity() & org.telegram.messenger.at.x1) != 48) {
                                 totalPaddingTop2 = ((Integer) C1.invoke(this, Boolean.TRUE)).intValue();
                                 canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop2);
                                 Layout layout3 = getLayout();
@@ -854,7 +854,7 @@ public class EditTextBoldCursor extends qt {
                             canvas2.restore();
                             this.G0 = false;
                         } else {
-                            if ((getGravity() & org.telegram.messenger.zs.x1) != 48) {
+                            if ((getGravity() & org.telegram.messenger.at.x1) != 48) {
                                 totalPaddingTop2 = getTotalPaddingTop() - getExtendedPaddingTop();
                                 canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop2);
                                 Layout layout322 = getLayout();
@@ -1187,7 +1187,7 @@ public class EditTextBoldCursor extends qt {
         CharSequence charSequence4 = charSequence;
         et etVar = this.t0;
         if (etVar != null) {
-            etVar.t(charSequence4, !org.telegram.messenger.cd.X, true);
+            etVar.t(charSequence4, !org.telegram.messenger.dd.X, true);
             return;
         }
         if (charSequence4 == null) {
@@ -1197,14 +1197,14 @@ public class EditTextBoldCursor extends qt {
         boolean z12 = false;
         if (getMeasuredWidth() == 0 ? false : z10) {
             if (this.c0 == null) {
-                this.c0 = new mx0(this);
+                this.c0 = new nx0(this);
             }
-            mx0 mx0Var = this.c0;
+            nx0 nx0Var = this.c0;
             StaticLayout staticLayout = this.o0;
             CharSequence charSequence6 = this.v0;
-            mx0Var.getClass();
+            nx0Var.getClass();
             if (staticLayout != null && !charSequence6.equals(charSequence5)) {
-                ValueAnimator valueAnimator = mx0Var.j;
+                ValueAnimator valueAnimator = nx0Var.j;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
@@ -1230,41 +1230,41 @@ public class EditTextBoldCursor extends qt {
                     spannableStringBuilder.setSpan(new wy(z12), indexOf, charSequence3.length() + indexOf, 0);
                     int L = org.telegram.messenger.i0.L(400.0f);
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                    mx0Var.b = new StaticLayout(spannableStringBuilder, textPaint, L, alignment, 1.0f, 0.0f, false);
+                    nx0Var.b = new StaticLayout(spannableStringBuilder, textPaint, L, alignment, 1.0f, 0.0f, false);
                     StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder2, textPaint, org.telegram.messenger.i0.L(400.0f), alignment, 1.0f, 0.0f, false);
-                    mx0Var.d = staticLayout2;
-                    mx0Var.e = true;
-                    mx0Var.f = z11;
-                    mx0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
-                    mx0Var.c = null;
-                    mx0Var.g = false;
+                    nx0Var.d = staticLayout2;
+                    nx0Var.e = true;
+                    nx0Var.f = z11;
+                    nx0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
+                    nx0Var.c = null;
+                    nx0Var.g = false;
                 } else {
                     int L2 = org.telegram.messenger.i0.L(400.0f);
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
-                    mx0Var.b = new StaticLayout(charSequence5, textPaint, L2, alignment2, 1.0f, 0.0f, false);
-                    mx0Var.c = new StaticLayout(charSequence6, textPaint, org.telegram.messenger.i0.L(400.0f), alignment2, 1.0f, 0.0f, false);
-                    mx0Var.d = null;
-                    mx0Var.e = true;
-                    mx0Var.g = true;
-                    mx0Var.h = 0.0f;
+                    nx0Var.b = new StaticLayout(charSequence5, textPaint, L2, alignment2, 1.0f, 0.0f, false);
+                    nx0Var.c = new StaticLayout(charSequence6, textPaint, org.telegram.messenger.i0.L(400.0f), alignment2, 1.0f, 0.0f, false);
+                    nx0Var.d = null;
+                    nx0Var.e = true;
+                    nx0Var.g = true;
+                    nx0Var.h = 0.0f;
                 }
-                mx0Var.i = 0.0f;
+                nx0Var.i = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                mx0Var.j = ofFloat;
-                ofFloat.addUpdateListener(new r60(mx0Var, 25));
-                mx0Var.j.addListener(new t60(mx0Var, 27));
-                mx0Var.j.setDuration(150L);
-                mx0Var.j.setInterpolator(gr.f);
-                mx0Var.j.start();
+                nx0Var.j = ofFloat;
+                ofFloat.addUpdateListener(new r60(nx0Var, 25));
+                nx0Var.j.addListener(new t60(nx0Var, 27));
+                nx0Var.j.setDuration(150L);
+                nx0Var.j.setInterpolator(gr.f);
+                nx0Var.j.start();
             }
         } else {
-            mx0 mx0Var2 = this.c0;
-            if (mx0Var2 != null) {
-                ValueAnimator valueAnimator2 = mx0Var2.j;
+            nx0 nx0Var2 = this.c0;
+            if (nx0Var2 != null) {
+                ValueAnimator valueAnimator2 = nx0Var2.j;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                mx0Var2.e = false;
+                nx0Var2.e = false;
             }
         }
         this.v0 = charSequence5;
@@ -1586,8 +1586,8 @@ public class EditTextBoldCursor extends qt {
         if (!hasSelection() || getSelectionStart() < 0 || getSelectionEnd() < 0 || getSelectionStart() == getSelectionEnd() || (text = getText()) == null) {
             return false;
         }
-        vh0[] vh0VarArr = (vh0[]) text.getSpans(getSelectionStart(), getSelectionEnd(), vh0.class);
-        return vh0VarArr == null || vh0VarArr.length == 0;
+        wh0[] wh0VarArr = (wh0[]) text.getSpans(getSelectionStart(), getSelectionEnd(), wh0.class);
+        return wh0VarArr == null || wh0VarArr.length == 0;
     }
 
     public final void x() {

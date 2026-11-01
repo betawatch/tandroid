@@ -8,29 +8,29 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class g8 implements SuccessContinuation, yh.d0 {
+public final class g8 implements SuccessContinuation, yh.c0 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
 
-    @Override // yh.d0
+    @Override // yh.c0
     public void a(long j10) {
-        ((org.telegram.ui.ActionBar.k2) this.b).presentFragment(un.ha(j10));
-        ((yh.a0) this.c).dismiss();
+        ((org.telegram.ui.ActionBar.k2) this.b).presentFragment(un.ma(j10));
+        ((yh.z) this.c).dismiss();
     }
 
-    @Override // yh.d0
+    @Override // yh.c0
     public void b() {
-        yh.a0 a0Var = (yh.a0) this.c;
-        a0Var.s1.d.f3.O(true);
-        a0Var.r1.d.f3.O(true);
+        yh.z zVar = (yh.z) this.c;
+        zVar.s1.d.f3.O(true);
+        zVar.r1.d.f3.O(true);
     }
 
-    @Override // yh.d0
+    @Override // yh.c0
     public void close() {
-        ((yh.a0) this.c).k1.E(0);
+        ((yh.z) this.c).k1.E(0);
     }
 
     @Override // com.google.android.gms.tasks.SuccessContinuation

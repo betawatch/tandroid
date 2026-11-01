@@ -11,12 +11,12 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class ec0 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
-    public static final ou0 I;
-    public static final ou0 J;
-    public static final ou0 K;
+    public static final pu0 I;
+    public static final pu0 J;
+    public static final pu0 K;
     public boolean D;
     public boolean E;
     public boolean F;
@@ -37,15 +37,15 @@ public class ec0 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public EditText y;
 
     static {
-        ou0 ou0Var = new ou0(new au(3), new au(4));
-        ou0Var.c = 100.0f;
-        I = ou0Var;
-        ou0 ou0Var2 = new ou0(new au(5), new au(6));
-        ou0Var2.c = 100.0f;
-        J = ou0Var2;
-        ou0 ou0Var3 = new ou0(new au(7), new au(8));
-        ou0Var3.c = 100.0f;
-        K = ou0Var3;
+        pu0 pu0Var = new pu0(new au(3), new au(4));
+        pu0Var.c = 100.0f;
+        I = pu0Var;
+        pu0 pu0Var2 = new pu0(new au(5), new au(6));
+        pu0Var2.c = 100.0f;
+        J = pu0Var2;
+        pu0 pu0Var3 = new pu0(new au(7), new au(8));
+        pu0Var3.c = 100.0f;
+        K = pu0Var3;
     }
 
     public ec0(Context context, org.telegram.ui.ActionBar.p6 p6Var) {

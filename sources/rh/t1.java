@@ -1,10 +1,10 @@
 package rh;
 
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.ec;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,10 +30,10 @@ public final /* synthetic */ class t1 implements Runnable {
         org.telegram.tgnet.e eVar = this.b;
         switch (i10) {
             case 0:
-                eVar.a(ecVarArr[0], cd.a0(null, null, 2131749588, org.telegram.messenger.u1.i().f(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
+                eVar.a(ecVarArr[0], dd.a0(null, null, 2131749588, org.telegram.messenger.u1.i().f(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
                 break;
             default:
-                eVar.a(ecVarArr[0], cd.a0(null, null, 2131749596, org.telegram.messenger.u1.i().f(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
+                eVar.a(ecVarArr[0], dd.a0(null, null, 2131749596, org.telegram.messenger.u1.i().f(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
                 break;
         }
     }

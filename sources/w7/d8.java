@@ -1,8 +1,8 @@
 package w7;
 
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class d8 {
     /* JADX WARN: Removed duplicated region for block: B:47:0x0078 A[RETURN] */
@@ -72,9 +72,9 @@ public abstract class d8 {
     public static int b(int i10, CharSequence charSequence) {
         while (i10 < charSequence.length()) {
             switch (charSequence.charAt(i10)) {
-                case zs.c1 /* 91 */:
+                case at.c1 /* 91 */:
                     return -1;
-                case zs.d1 /* 92 */:
+                case at.d1 /* 92 */:
                     int i11 = i10 + 1;
                     if (!e8.a(i11, charSequence)) {
                         break;
@@ -82,7 +82,7 @@ public abstract class d8 {
                         i10 = i11;
                         break;
                     }
-                case zs.e1 /* 93 */:
+                case at.e1 /* 93 */:
                     return i10;
             }
             i10++;

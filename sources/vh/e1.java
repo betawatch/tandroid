@@ -5,20 +5,20 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.is;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.dc;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.tk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class e1 extends sk0 {
+public final class e1 extends tk0 {
     public String e;
     public TLRPC.User f;
     public String h;
@@ -38,13 +38,13 @@ public final class e1 extends sk0 {
         arrayList.clear();
         u1 u1Var = g1Var.r;
         int i10 = u1.y1;
-        arrayList.addAll(new ArrayList(ui.b0(u1Var.a).i0));
+        arrayList.addAll(new ArrayList(vi.b0(u1Var.a).i0));
         if (z10) {
             e1Var.f();
         }
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
@@ -85,7 +85,7 @@ public final class e1 extends sk0 {
         }
         if (this.f == null) {
             int i11 = u1.y1;
-            TLObject e22 = vp.r1(u1Var.a).e2(vp.r1(u1Var.a).M3);
+            TLObject e22 = wp.r1(u1Var.a).e2(wp.r1(u1Var.a).M3);
             if (e22 instanceof TLRPC.User) {
                 this.f = (TLRPC.User) e22;
             }
@@ -94,7 +94,7 @@ public final class e1 extends sk0 {
         if (user == null && !this.n) {
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
             int i12 = u1.y1;
-            tL_contacts_resolveUsername.username = vp.r1(u1Var.a).M3;
+            tL_contacts_resolveUsername.username = wp.r1(u1Var.a).M3;
             this.d = ConnectionsManager.getInstance(u1Var.a).sendRequest(tL_contacts_resolveUsername, new ag.c(this, 22));
             return;
         }
@@ -103,7 +103,7 @@ public final class e1 extends sk0 {
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
         int i13 = u1.y1;
-        tL_messages_getInlineBotResults.bot = vp.r1(u1Var.a).p1(this.f);
+        tL_messages_getInlineBotResults.bot = wp.r1(u1Var.a).p1(this.f);
         String str = this.e;
         if (str == null) {
             str = "";
@@ -114,7 +114,7 @@ public final class e1 extends sk0 {
         tL_messages_getInlineBotResults.offset = str2 != null ? str2 : "";
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         String str3 = "gif_search_" + tL_messages_getInlineBotResults.query + "_" + tL_messages_getInlineBotResults.offset;
-        hs.a0(u1Var.a).M(str3, new org.telegram.messenger.s6(this, isEmpty, tL_messages_getInlineBotResults, str3));
+        is.a0(u1Var.a).M(str3, new org.telegram.messenger.s6(this, isEmpty, tL_messages_getInlineBotResults, str3));
     }
 
     public final void H(String str) {
@@ -212,7 +212,7 @@ public final class e1 extends sk0 {
             u1 u1Var = g1Var.r;
             int i11 = u1.y1;
             ?? n8Var = new org.telegram.ui.Cells.n8(context, false, false, u1Var.I0, false);
-            n8Var.a(0, cd.L0(2131750835, null));
+            n8Var.a(0, dd.L0(2131750835, null));
             s4.o0 o0Var = new s4.o0(-1, -2);
             ((ViewGroup.MarginLayoutParams) o0Var).topMargin = org.telegram.messenger.i0.L(2.5f);
             ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin = org.telegram.messenger.i0.L(5.5f);
@@ -230,6 +230,6 @@ public final class e1 extends sk0 {
             h2Var2.setCanPreviewGif(true);
             h2Var = h2Var2;
         }
-        return new ck0(h2Var);
+        return new dk0(h2Var);
     }
 }

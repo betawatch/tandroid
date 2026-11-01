@@ -2,10 +2,10 @@ package vh;
 
 import org.telegram.ui.Components.dz;
 import org.telegram.ui.Components.gz;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i4 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,18 +31,18 @@ public final /* synthetic */ class i4 implements Runnable {
             case 3:
                 k4 k4Var = this.b;
                 i4 i4Var = k4Var.K;
-                u61 u61Var = k4Var.e;
-                if (u61Var != null && k4Var.F != null) {
-                    long S = u61Var.S();
+                v61 v61Var = k4Var.e;
+                if (v61Var != null && k4Var.F != null) {
+                    long S = v61Var.S();
                     if (k4Var.getDuration() > 1) {
                         float duration = S / k4Var.getDuration();
                         if (!k4Var.F.m1) {
                             n5 n5Var = k4Var.d;
                             if ((duration < n5Var.Z || duration > n5Var.a0) && System.currentTimeMillis() - k4Var.J > 500) {
                                 k4Var.J = System.currentTimeMillis();
-                                u61 u61Var2 = k4Var.e;
+                                v61 v61Var2 = k4Var.e;
                                 long duration2 = (long) (k4Var.d.Z * k4Var.getDuration());
-                                u61Var2.q0(duration2, false);
+                                v61Var2.q0(duration2, false);
                                 k4Var.w(true);
                                 k4Var.y(true);
                                 S = duration2;
@@ -75,9 +75,9 @@ public final /* synthetic */ class i4 implements Runnable {
                         float f11 = n5Var2.C;
                         if ((f7 < f10 * f11 || f7 > n5Var2.F * f11) && System.currentTimeMillis() - k4Var2.J > 500) {
                             k4Var2.J = System.currentTimeMillis();
-                            u61 u61Var3 = k4Var2.D;
+                            v61 v61Var3 = k4Var2.D;
                             long j10 = (long) (k4Var2.d.E * r3.C);
-                            u61Var3.q0(j10, false);
+                            v61Var3.q0(j10, false);
                             S2 = j10;
                         }
                     }
@@ -101,9 +101,9 @@ public final /* synthetic */ class i4 implements Runnable {
                         float f14 = n5Var3.q0;
                         if ((f12 < f13 * f14 || f12 > n5Var3.t0 * f14) && System.currentTimeMillis() - k4Var3.J > 500) {
                             k4Var3.J = System.currentTimeMillis();
-                            u61 u61Var4 = k4Var3.y;
+                            v61 v61Var4 = k4Var3.y;
                             long j11 = (long) (k4Var3.d.s0 * r3.q0);
-                            u61Var4.q0(j11, false);
+                            v61Var4.q0(j11, false);
                             k4Var3.w(true);
                             S3 = j11;
                         }
@@ -118,13 +118,13 @@ public final /* synthetic */ class i4 implements Runnable {
                 break;
             default:
                 k4 k4Var4 = this.b;
-                k61 k61Var = k4Var4.n;
-                if (k61Var != null) {
-                    gz gzVar = k61Var.b;
+                l61 l61Var = k4Var4.n;
+                if (l61Var != null) {
+                    gz gzVar = l61Var.b;
                     if (gzVar != null) {
                         gzVar.postRunnable(new dz(gzVar, 0));
                     }
-                    k61Var.a = null;
+                    l61Var.a = null;
                     k4Var4.removeView(k4Var4.n);
                     k4Var4.n = null;
                     break;

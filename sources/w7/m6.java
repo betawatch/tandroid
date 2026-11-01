@@ -3,9 +3,9 @@ package w7;
 import android.util.LongSparseArray;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class m6 {
     public static boolean a;
@@ -14,15 +14,15 @@ public abstract class m6 {
     public static LongSparseArray d;
     public static ArrayList e;
 
-    public static ArrayList a(q20 q20Var) {
+    public static ArrayList a(r20 r20Var) {
         boolean z10;
-        if (q20Var == null || b) {
+        if (r20Var == null || b) {
             z10 = false;
         } else {
             if (e == null) {
                 e = new ArrayList();
             }
-            e.add(q20Var);
+            e.add(r20Var);
             z10 = true;
         }
         b();
@@ -39,7 +39,7 @@ public abstract class m6 {
         a = true;
         c = new ArrayList();
         d = new LongSparseArray();
-        Utilities.e.c(new org.telegram.ui.Components.voip.m0(24));
+        Utilities.e.c(new org.telegram.ui.Components.voip.n0(24));
     }
 
     public static void c(org.telegram.ui.web.a1 a1Var) {
@@ -55,7 +55,7 @@ public abstract class m6 {
             d.put(a1Var.a, a1Var);
         }
         int i10 = 23;
-        org.telegram.messenger.i0.r(new org.telegram.ui.Components.voip.m0(i10));
-        org.telegram.messenger.i0.h3(new org.telegram.ui.Components.voip.m0(i10), 1000L);
+        org.telegram.messenger.i0.r(new org.telegram.ui.Components.voip.n0(i10));
+        org.telegram.messenger.i0.h3(new org.telegram.ui.Components.voip.n0(i10), 1000L);
     }
 }

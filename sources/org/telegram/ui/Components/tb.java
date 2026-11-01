@@ -5,10 +5,10 @@ import android.graphics.Typeface;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class tb extends ta {
-    public final ei0 a;
+    public final fi0 a;
     public final p80 b;
     public final p80 c;
     public final LinearLayout d;
@@ -19,10 +19,10 @@ public final class tb extends ta {
         int i10 = org.telegram.ui.ActionBar.t6.vj;
         this.e = getThemedColor(i10);
         setBackground(getThemedColor(org.telegram.ui.ActionBar.t6.tj));
-        ei0 ei0Var = new ei0(context);
-        this.a = ei0Var;
-        ei0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ei0Var, w7.b6.h(56.0f, 48.0f, 8388627));
+        fi0 fi0Var = new fi0(context);
+        this.a = fi0Var;
+        fi0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(fi0Var, w7.b6.h(56.0f, 48.0f, 8388627));
         getThemedColor(i10);
         int i11 = org.telegram.ui.ActionBar.t6.uj;
         getThemedColor(i11);
@@ -48,10 +48,10 @@ public final class tb extends ta {
     }
 
     public final void c(int i10, int i11, int i12, String... strArr) {
-        ei0 ei0Var = this.a;
-        ei0Var.f(i10, i11, i12, null);
+        fi0 fi0Var = this.a;
+        fi0Var.f(i10, i11, i12, null);
         for (String str : strArr) {
-            ei0Var.h(this.e, str);
+            fi0Var.h(this.e, str);
         }
     }
 

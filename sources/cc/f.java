@@ -40,12 +40,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.dy0;
-import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.ey0;
+import org.telegram.ui.Components.gy0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f implements b0 {
     public final /* synthetic */ int a;
@@ -191,9 +191,9 @@ public final class f implements b0 {
                                 int A3 = xVar.A();
                                 if (A3 != 21) {
                                     if (A3 == 14) {
-                                        i19 = zs.S1;
+                                        i19 = at.S1;
                                     } else if (A3 == 33) {
-                                        i19 = zs.V1;
+                                        i19 = at.V1;
                                     }
                                 }
                                 i19 = 172;
@@ -342,12 +342,12 @@ public final class f implements b0 {
             return;
         }
         iArr[i10] = 1;
-        for (dy0 dy0Var : ((dy0[][]) this.d)[i10]) {
-            g(dy0Var.a.b);
-            dy0[] dy0VarArr = (dy0[]) this.c;
+        for (ey0 ey0Var : ((ey0[][]) this.d)[i10]) {
+            g(ey0Var.a.b);
+            ey0[] ey0VarArr = (ey0[]) this.c;
             int i11 = this.b;
             this.b = i11 - 1;
-            dy0VarArr[i11] = dy0Var;
+            ey0VarArr[i11] = ey0Var;
         }
         iArr[i10] = 2;
     }
@@ -355,7 +355,7 @@ public final class f implements b0 {
     public String toString() {
         switch (this.a) {
             case 0:
-                StringBuilder sb2 = new StringBuilder(zs.e3);
+                StringBuilder sb2 = new StringBuilder(at.e3);
                 sb2.append("<<\n mode: ");
                 sb2.append((ac.f) this.c);
                 sb2.append("\n ecLevel: ");
@@ -733,31 +733,31 @@ public final class f implements b0 {
         this.b = i10;
     }
 
-    public f(fy0 fy0Var, dy0[] dy0VarArr) {
+    public f(gy0 gy0Var, ey0[] ey0VarArr) {
         this.a = 4;
-        this.f = fy0Var;
-        int length = dy0VarArr.length;
-        this.c = new dy0[length];
+        this.f = gy0Var;
+        int length = ey0VarArr.length;
+        this.c = new ey0[length];
         this.b = length - 1;
-        int e = fy0Var.e() + 1;
-        dy0[][] dy0VarArr2 = new dy0[e][];
+        int e = gy0Var.e() + 1;
+        ey0[][] ey0VarArr2 = new ey0[e][];
         int[] iArr = new int[e];
-        for (dy0 dy0Var : dy0VarArr) {
-            int i10 = dy0Var.a.a;
+        for (ey0 ey0Var : ey0VarArr) {
+            int i10 = ey0Var.a.a;
             iArr[i10] = iArr[i10] + 1;
         }
         for (int i11 = 0; i11 < e; i11++) {
-            dy0VarArr2[i11] = new dy0[iArr[i11]];
+            ey0VarArr2[i11] = new ey0[iArr[i11]];
         }
         Arrays.fill(iArr, 0);
-        for (dy0 dy0Var2 : dy0VarArr) {
-            int i12 = dy0Var2.a.a;
-            dy0[] dy0VarArr3 = dy0VarArr2[i12];
+        for (ey0 ey0Var2 : ey0VarArr) {
+            int i12 = ey0Var2.a.a;
+            ey0[] ey0VarArr3 = ey0VarArr2[i12];
             int i13 = iArr[i12];
             iArr[i12] = i13 + 1;
-            dy0VarArr3[i13] = dy0Var2;
+            ey0VarArr3[i13] = ey0Var2;
         }
-        this.d = dy0VarArr2;
-        this.e = new int[((fy0) this.f).e() + 1];
+        this.d = ey0VarArr2;
+        this.e = new int[((gy0) this.f).e() + 1];
     }
 }

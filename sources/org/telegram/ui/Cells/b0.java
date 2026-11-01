@@ -10,19 +10,19 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.qz0;
+import org.telegram.messenger.dd;
+import org.telegram.ui.Components.rz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b0 extends Drawable {
     public final RectF a = new RectF();
     public final int b;
     public final org.telegram.ui.ActionBar.p6 c;
-    public final qz0 d;
-    public final qz0 e;
+    public final rz0 d;
+    public final rz0 e;
     public final Drawable f;
     public final Drawable g;
     public int h;
@@ -34,14 +34,14 @@ public final class b0 extends Drawable {
         this.j = paint;
         this.b = i10;
         this.c = p6Var;
-        qz0 qz0Var = new qz0(cd.L0(2131753068, null), 14.0f, org.telegram.messenger.i0.o());
-        this.d = qz0Var;
+        rz0 rz0Var = new rz0(dd.L0(2131753068, null), 14.0f, org.telegram.messenger.i0.o());
+        this.d = rz0Var;
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        qz0Var.a();
-        qz0 qz0Var2 = new qz0("", 13.0f, null);
-        this.e = qz0Var2;
-        qz0Var2.m(4);
-        qz0Var2.a();
+        rz0Var.a();
+        rz0 rz0Var2 = new rz0("", 13.0f, null);
+        this.e = rz0Var2;
+        rz0Var2.m(4);
+        rz0Var2.a();
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_topic_new_24).mutate();
         this.f = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -49,7 +49,7 @@ public final class b0 extends Drawable {
         Drawable mutate2 = context.getResources().getDrawable(R.drawable.arrow_more).mutate();
         this.g = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        mutate2.setAlpha(zs.j2);
+        mutate2.setAlpha(at.j2);
         paint.setColor(-16777216);
         paint.setAlpha(30);
     }
@@ -78,14 +78,14 @@ public final class b0 extends Drawable {
         canvas.translate(0.0f, org.telegram.messenger.i0.L(70.0f));
         canvas.translate(0.0f, org.telegram.messenger.i0.L(14.0f));
         float centerX2 = rectF.centerX();
-        qz0 qz0Var = this.d;
-        this.d.c(centerX2 - (qz0Var.k() / 2.0f), qz0Var.i() / 2.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, qz0Var.i());
+        rz0 rz0Var = this.d;
+        this.d.c(centerX2 - (rz0Var.k() / 2.0f), rz0Var.i() / 2.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, rz0Var.i());
         canvas.translate(0.0f, org.telegram.messenger.i0.L(4.0f));
         float centerX3 = rectF.centerX();
-        qz0 qz0Var2 = this.e;
-        this.e.c(centerX3 - (qz0Var2.k() / 2.0f), 0.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, qz0Var2.i());
+        rz0 rz0Var2 = this.e;
+        this.e.c(centerX3 - (rz0Var2.k() / 2.0f), 0.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, rz0Var2.i());
         canvas.translate(0.0f, org.telegram.messenger.i0.L(2.0f));
         int centerX4 = (int) (rectF.centerX() - org.telegram.messenger.i0.L(10.0f));
         int centerX5 = (int) (rectF.centerX() + org.telegram.messenger.i0.L(10.0f));

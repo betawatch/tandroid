@@ -7,25 +7,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.s0;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.un;
 import org.telegram.ui.vj;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
     public final /* synthetic */ k2 a;
     public final /* synthetic */ View b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ jj d;
+    public final /* synthetic */ kj d;
     public final /* synthetic */ un e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
@@ -37,13 +37,13 @@ public final class h0 extends FrameLayout {
     public final /* synthetic */ k0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(k0 k0Var, Context context, k2 k2Var, View view, boolean z10, jj jjVar, un unVar, int i10, int i11, boolean z11, float f7, float f10, float f11, o0 o0Var) {
+    public h0(k0 k0Var, Context context, k2 k2Var, View view, boolean z10, kj kjVar, un unVar, int i10, int i11, boolean z11, float f7, float f10, float f11, o0 o0Var) {
         super(context);
         this.y = k0Var;
         this.a = k2Var;
         this.b = view;
         this.c = z10;
-        this.d = jjVar;
+        this.d = kjVar;
         this.e = unVar;
         this.f = i10;
         this.h = i11;
@@ -64,7 +64,7 @@ public final class h0 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x0538, code lost:
     
-        if (((int) org.telegram.messenger.z20.v(r24.y.b.getImageReceiver().B().a0, r24.y.b.getImageReceiver().B().e[0], r8, r8)) < r6.b) goto L260;
+        if (((int) org.telegram.messenger.a30.v(r24.y.b.getImageReceiver().B().a0, r24.y.b.getImageReceiver().B().e[0], r8, r8)) < r6.b) goto L260;
      */
     /* JADX WARN: Code restructure failed: missing block: B:234:0x03b5, code lost:
     
@@ -83,7 +83,7 @@ public final class h0 extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:48:0x0139  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x02c2  */
     /* JADX WARN: Type inference failed for: r4v44, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r9v17, types: [org.telegram.messenger.jc] */
+    /* JADX WARN: Type inference failed for: r9v17, types: [org.telegram.messenger.kc] */
     /* JADX WARN: Type inference failed for: r9v3 */
     /* JADX WARN: Type inference failed for: r9v4 */
     @Override // android.view.ViewGroup, android.view.View
@@ -111,7 +111,7 @@ public final class h0 extends FrameLayout {
         m0 m0Var;
         int paddingTop;
         un unVar;
-        jj messageObject;
+        kj messageObject;
         k0 k0Var2 = this.y;
         final int i11 = 0;
         if (k0Var2.l) {
@@ -154,9 +154,9 @@ public final class h0 extends FrameLayout {
             invalidate();
             return;
         }
-        kj0 kj0Var = k0Var2.t;
-        if (kj0Var != null) {
-            kj0Var.a.setAlpha(0.0f);
+        lj0 lj0Var = k0Var2.t;
+        if (lj0Var != null) {
+            lj0Var.a.setAlpha(0.0f);
             this.y.t.c.setAlpha(0.0f);
         }
         k2 k2Var = this.a;
@@ -184,7 +184,7 @@ public final class h0 extends FrameLayout {
         } else {
             view = this.b;
         }
-        float L = this.c ? org.telegram.messenger.i0.L(tz.j() ? 120.0f : 50.0f) : this.d != null ? org.telegram.messenger.i0.L(20.0f) : org.telegram.messenger.i0.L(14.0f);
+        float L = this.c ? org.telegram.messenger.i0.L(uz.j() ? 120.0f : 50.0f) : this.d != null ? org.telegram.messenger.i0.L(20.0f) : org.telegram.messenger.i0.L(14.0f);
         final int i14 = 1;
         if (view != null) {
             view.getLocationInWindow(this.y.j);
@@ -364,7 +364,7 @@ public final class h0 extends FrameLayout {
                     if (!this.y.x.isEmpty()) {
                         i0 i0Var3 = this.y.b;
                         if (i0Var3.G) {
-                            bi0 B = i0Var3.getImageReceiver().B();
+                            ci0 B = i0Var3.getImageReceiver().B();
                             int i16 = 0;
                             while (i16 < this.y.x.size()) {
                                 j0 j0Var = (j0) this.y.x.get(i16);

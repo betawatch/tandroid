@@ -3,7 +3,7 @@ package ag;
 import android.text.TextUtils;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class l1 implements Runnable {
                 t1 t1Var = this.b;
                 t1Var.J.manage_stories = !r2.manage_stories;
                 t1Var.c.f3.O(true);
-                t1Var.c0(true);
+                t1Var.d0(true);
                 break;
             case 1:
                 t1 t1Var2 = this.b;
@@ -32,7 +32,7 @@ public final /* synthetic */ class l1 implements Runnable {
                 tL_businessBotRights.sell_gifts = true;
                 tL_businessBotRights.view_gifts = true;
                 t1Var2.c.f3.O(true);
-                t1Var2.c0(true);
+                t1Var2.d0(true);
                 break;
             case 2:
                 t1 t1Var3 = this.b;
@@ -42,12 +42,12 @@ public final /* synthetic */ class l1 implements Runnable {
                 tL_businessBotRights2.edit_bio = true;
                 tL_businessBotRights2.edit_name = true;
                 t1Var3.c.f3.O(true);
-                t1Var3.c0(true);
+                t1Var3.d0(true);
                 break;
             case 3:
                 t1 t1Var4 = this.b;
                 t1Var4.c.f3.O(true);
-                t1Var4.c0(true);
+                t1Var4.d0(true);
                 break;
             default:
                 t1 t1Var5 = this.b;

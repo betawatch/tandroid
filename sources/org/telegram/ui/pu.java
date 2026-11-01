@@ -1,33 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pu implements RequestDelegate {
+public final /* synthetic */ class pu implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ su b;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ pu(su suVar, int i10) {
-        this.a = i10;
-        this.b = suVar;
+    public /* synthetic */ pu(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
         switch (this.a) {
             case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                su suVar = this.b;
-                suVar.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new pu(suVar, 1));
-                break;
+                int i11 = 2 - i10;
+                if (i11 != this.b) {
+                    org.telegram.messenger.uz.w(i11);
+                    break;
+                } else {
+                    org.telegram.messenger.uz.w(-1);
+                    break;
+                }
             default:
-                this.b.getMessagesController().P2(true);
-                break;
+                int i12 = 2 - i10;
+                if (i12 != this.b) {
+                    org.telegram.messenger.uz.w(i12);
+                    break;
+                } else {
+                    org.telegram.messenger.uz.w(-1);
+                    break;
+                }
         }
     }
 }

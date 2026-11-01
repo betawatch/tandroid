@@ -2,7 +2,7 @@ package mg;
 
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.o5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -10,13 +10,13 @@ import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.wb;
-import org.telegram.ui.m10;
+import org.telegram.ui.l10;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o1 extends ha {
     public final ArrayList P1;
@@ -44,23 +44,23 @@ public final class o1 extends ha {
                 this.Q1.add(tL_myBoost2);
             }
         }
-        m10 m10Var = new m10(getContext(), this.I0, this.k1);
-        m10Var.setClickable(true);
-        m10Var.setOrientation(1);
-        m10Var.setPadding(org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f));
-        a7.i(t6.h5, m10Var, this.I0);
+        l10 l10Var = new l10(getContext(), this.I0, this.k1);
+        l10Var.setClickable(true);
+        l10Var.setOrientation(1);
+        l10Var.setPadding(org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f));
+        a7.i(t6.h5, l10Var, this.I0);
         z0 z0Var = new z0(getContext(), this.I0);
         this.S1 = z0Var;
         z0Var.k();
         z0Var.setCounterColor(-6785796);
         z0Var.setOnClickListener(new ag.t0(8, this, chat));
-        m10Var.addView(z0Var, b6.r(-1, 48, 87));
+        l10Var.addView(z0Var, b6.r(-1, 48, 87));
         ViewGroup viewGroup = this.b;
         int i11 = this.t0;
-        viewGroup.addView(m10Var, b6.f(-2.0f, -1, 87, i11, 0, i11, 0));
-        tk0 tk0Var = this.k1;
+        viewGroup.addView(l10Var, b6.f(-2.0f, -1, 87, i11, 0, i11, 0));
+        uk0 uk0Var = this.k1;
         int i12 = this.t0;
-        tk0Var.setPadding(i12, 0, i12, org.telegram.messenger.i0.L(64.0f));
+        uk0Var.setPadding(i12, 0, i12, org.telegram.messenger.i0.L(64.0f));
         this.k1.setOnItemClickListener(new q0(1, this, chat));
         O();
         b1();
@@ -69,13 +69,13 @@ public final class o1 extends ha {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
+    public final tk0 L0(uk0 uk0Var) {
         return new i1(this);
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return cd.L0(2131753321, null);
+        return dd.L0(2131753321, null);
     }
 
     public final void d1(boolean z10) {
@@ -83,9 +83,9 @@ public final class o1 extends ha {
         z0Var.setShowZero(false);
         ArrayList arrayList = this.P1;
         if (arrayList.size() > 1) {
-            z0Var.i(cd.L0(2131753316, null), z10, true);
+            z0Var.i(dd.L0(2131753316, null), z10, true);
         } else {
-            z0Var.i(cd.L0(2131753321, null), z10, true);
+            z0Var.i(dd.L0(2131753321, null), z10, true);
         }
         z0Var.c(arrayList.size(), z10);
         z0Var.setEnabled(arrayList.size() > 0);

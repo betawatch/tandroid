@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class v7 implements th.k7, org.telegram.messenger.zr {
+public final class v7 implements th.k7, org.telegram.messenger.as {
     public final /* synthetic */ h8 a;
 
     public /* synthetic */ v7(h8 h8Var) {
@@ -23,7 +23,7 @@ public final class v7 implements th.k7, org.telegram.messenger.zr {
         h8Var.b.post(i2Var);
     }
 
-    @Override // org.telegram.messenger.zr
+    @Override // org.telegram.messenger.as
     public void i(boolean z10) {
         org.telegram.ui.ActionBar.z4 z4Var;
         org.telegram.ui.ActionBar.z4 z4Var2;
@@ -40,7 +40,7 @@ public final class v7 implements th.k7, org.telegram.messenger.zr {
                 z4Var4 = ((org.telegram.ui.ActionBar.k2) h8Var).parentLayout;
                 org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) fragmentStack.get(z4Var4.getFragmentStack().size() - 2);
                 if (k2Var instanceof un) {
-                    ((un) k2Var).a8(h8Var.P, h8Var.Q + 86400, z10);
+                    ((un) k2Var).e8(h8Var.P, h8Var.Q + 86400, z10);
                     return;
                 }
                 return;
@@ -48,7 +48,7 @@ public final class v7 implements th.k7, org.telegram.messenger.zr {
         }
         un unVar = h8Var.N;
         if (unVar != null) {
-            unVar.a8(h8Var.P, h8Var.Q + 86400, z10);
+            unVar.e8(h8Var.P, h8Var.Q + 86400, z10);
         }
     }
 

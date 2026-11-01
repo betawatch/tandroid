@@ -2,15 +2,15 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ep0;
+import org.telegram.ui.cp0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class m0 {
     public static final long[] j = {500, 1000, 3000, 5000, 10000};
     public final int a;
     public final String b;
-    public final ep0 c;
+    public final cp0 c;
     public boolean d;
     public int e;
     public int f;
@@ -20,7 +20,7 @@ public final class m0 {
 
     /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.l0] */
     /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.l0] */
-    public m0(int i10, String str, ep0 ep0Var) {
+    public m0(int i10, String str, cp0 cp0Var) {
         final int i11 = 0;
         this.h = new Runnable(this) { // from class: org.telegram.ui.Wallet.l0
             public final /* synthetic */ m0 b;
@@ -99,7 +99,7 @@ public final class m0 {
         };
         this.a = i10;
         this.b = str;
-        this.c = ep0Var;
+        this.c = cp0Var;
     }
 
     public final void a() {

@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class RadioButton extends View {
     public static Paint s;
@@ -108,7 +108,7 @@ public class RadioButton extends View {
             s.setColor(rgb);
             x.setColor(rgb);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.zs.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.at.e4, 31);
         float f12 = (this.h / 2) - ((f7 + 1.0f) * org.telegram.messenger.i0.p);
         canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f12, s);
         if (this.r == null) {

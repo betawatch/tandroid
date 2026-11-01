@@ -9,9 +9,9 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class bh extends tk0 {
+public final class bh extends uk0 {
     public final /* synthetic */ int e3;
     public final Paint f3;
     public final Paint g3;
@@ -57,7 +57,7 @@ public final class bh extends tk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         switch (this.e3) {
             case 0:
@@ -84,7 +84,7 @@ public final class bh extends tk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
         switch (this.e3) {
             case 0:
@@ -146,7 +146,7 @@ public final class bh extends tk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.e3) {
             case 0:

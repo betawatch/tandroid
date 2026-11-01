@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ap implements ResultCallback {
     public final /* synthetic */ org.telegram.messenger.g4 a;
@@ -21,7 +21,7 @@ public final class ap implements ResultCallback {
         org.telegram.messenger.g4 g4Var = this.a;
         ArrayList e = g4Var.e((g4Var.f.c ? 2 : 0) | 5);
         dp dpVar = this.b;
-        org.telegram.messenger.zs.f(dpVar.a).d(new cd(23, this, e));
+        org.telegram.messenger.at.f(dpVar.a).d(new cd(23, this, e));
         dpVar.R1 = false;
     }
 

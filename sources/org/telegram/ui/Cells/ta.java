@@ -14,18 +14,18 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.io.File;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d00;
-import org.telegram.messenger.hf;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.e00;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.jf;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.jb0;
-import org.telegram.ui.me1;
-import org.telegram.ui.ne1;
+import org.telegram.ui.ke1;
+import org.telegram.ui.le1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ta extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final ag.d2 a;
@@ -80,15 +80,15 @@ public final class ta extends FrameLayout implements org.telegram.ui.ActionBar.k
         if (obj instanceof TLRPC.TL_wallPaper) {
             TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj;
             TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(tL_wallPaper.document.thumbs, org.telegram.messenger.i0.L(100), false, null, false);
-            TLRPC.PhotoSize w10 = org.telegram.messenger.b8.w(tL_wallPaper.document.thumbs, org.telegram.messenger.i0.L(zs.K2), false, null, false);
+            TLRPC.PhotoSize w10 = org.telegram.messenger.b8.w(tL_wallPaper.document.thumbs, org.telegram.messenger.i0.L(at.K2), false, null, false);
             TLRPC.PhotoSize photoSize = w10 != w9 ? w10 : null;
             long j10 = photoSize != null ? photoSize.size : tL_wallPaper.document.size;
             if (!tL_wallPaper.pattern) {
                 if (photoSize != null) {
-                    d2Var2.g(1, j10, tL_wallPaper, "180_180", "100_100_b", "jpg", ic.c(photoSize, tL_wallPaper.document), ic.c(w9, tL_wallPaper.document));
+                    d2Var2.g(1, j10, tL_wallPaper, "180_180", "100_100_b", "jpg", jc.c(photoSize, tL_wallPaper.document), jc.c(w9, tL_wallPaper.document));
                     return;
                 } else {
-                    d2Var2.g(1, j10, tL_wallPaper, "180_180", "100_100_b", "jpg", ic.b(tL_wallPaper.document), ic.c(w9, tL_wallPaper.document));
+                    d2Var2.g(1, j10, tL_wallPaper, "180_180", "100_100_b", "jpg", jc.b(tL_wallPaper.document), jc.c(w9, tL_wallPaper.document));
                     return;
                 }
             }
@@ -114,65 +114,65 @@ public final class ta extends FrameLayout implements org.telegram.ui.ActionBar.k
                 d2Var2.getImageReceiver().o1 = new PorterDuffColorFilter(org.telegram.messenger.i0.V0(V02, false), PorterDuff.Mode.SRC_IN);
             }
             if (photoSize != null) {
-                ic c10 = ic.c(photoSize, tL_wallPaper.document);
-                ic c11 = ic.c(w9, tL_wallPaper.document);
+                jc c10 = jc.c(photoSize, tL_wallPaper.document);
+                jc c11 = jc.c(w9, tL_wallPaper.document);
                 d2Var = d2Var2;
                 d2Var.g(1, j10, tL_wallPaper, "180_180", null, "jpg", c10, c11);
             } else {
-                ic c12 = ic.c(w9, tL_wallPaper.document);
+                jc c12 = jc.c(w9, tL_wallPaper.document);
                 d2Var = d2Var2;
                 d2Var.g(1, j10, tL_wallPaper, "180_180", null, "jpg", c12, null);
             }
             d2Var.getImageReceiver().setAlpha(Math.abs(tL_wallPaper.settings.intensity) / 100.0f);
             return;
         }
-        if (!(obj instanceof me1)) {
-            if (obj instanceof ne1) {
-                ne1 ne1Var = (ne1) obj;
-                File file = ne1Var.e;
+        if (!(obj instanceof ke1)) {
+            if (obj instanceof le1) {
+                le1 le1Var = (le1) obj;
+                File file = le1Var.e;
                 if (file != null) {
                     d2Var2.h(file.getAbsolutePath(), "180_180", null);
                     return;
                 }
-                File file2 = ne1Var.d;
+                File file2 = le1Var.d;
                 if (file2 != null) {
                     d2Var2.h(file2.getAbsolutePath(), "180_180", null);
                     return;
-                } else if ("t".equals(ne1Var.a)) {
+                } else if ("t".equals(le1Var.a)) {
                     d2Var2.setImageDrawable(org.telegram.ui.ActionBar.t6.Z0(d2Var2, true));
                     return;
                 } else {
-                    d2Var2.setImageResource(ne1Var.c);
+                    d2Var2.setImageResource(le1Var.c);
                     return;
                 }
             }
-            if (!(obj instanceof hf)) {
+            if (!(obj instanceof jf)) {
                 this.e = false;
                 return;
             }
-            hf hfVar = (hf) obj;
-            TLRPC.Photo photo = hfVar.K;
+            jf jfVar = (jf) obj;
+            TLRPC.Photo photo = jfVar.K;
             if (photo == null) {
-                d2Var2.h(hfVar.D, "180_180", null);
+                d2Var2.h(jfVar.D, "180_180", null);
                 return;
             }
             TLRPC.PhotoSize w11 = org.telegram.messenger.b8.w(photo.sizes, org.telegram.messenger.i0.L(100), false, null, false);
-            TLRPC.PhotoSize w12 = org.telegram.messenger.b8.w(hfVar.K.sizes, org.telegram.messenger.i0.L(zs.K2), false, null, false);
+            TLRPC.PhotoSize w12 = org.telegram.messenger.b8.w(jfVar.K.sizes, org.telegram.messenger.i0.L(at.K2), false, null, false);
             if (w12 == w11) {
                 w12 = null;
             }
-            d2Var2.g(1, w12 != null ? w12.size : 0, hfVar, "180_180", "100_100_b", "jpg", ic.i(w12, hfVar.K), ic.i(w11, hfVar.K));
+            d2Var2.g(1, w12 != null ? w12.size : 0, jfVar, "180_180", "100_100_b", "jpg", jc.i(w12, jfVar.K), jc.i(w11, jfVar.K));
             return;
         }
-        me1 me1Var = (me1) obj;
-        File file3 = me1Var.i;
-        int i10 = me1Var.d;
-        int i11 = me1Var.c;
-        int i12 = me1Var.b;
-        if (file3 == null && me1Var.g == null && !"d".equals(me1Var.a)) {
+        ke1 ke1Var = (ke1) obj;
+        File file3 = ke1Var.i;
+        int i10 = ke1Var.d;
+        int i11 = ke1Var.c;
+        int i12 = ke1Var.b;
+        if (file3 == null && ke1Var.g == null && !"d".equals(ke1Var.a)) {
             d2Var2.setImageBitmap(null);
-            if (me1Var.k) {
-                d2Var2.setBackground(new jb0(true, me1Var.b, me1Var.c, me1Var.d, me1Var.e));
+            if (ke1Var.k) {
+                d2Var2.setBackground(new jb0(true, ke1Var.b, ke1Var.c, ke1Var.d, ke1Var.e));
                 return;
             } else if (i11 != 0) {
                 d2Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i12 | (-16777216), i11 | (-16777216)}));
@@ -183,35 +183,35 @@ public final class ta extends FrameLayout implements org.telegram.ui.ActionBar.k
             }
         }
         if (i10 != 0) {
-            jb0 jb0Var2 = new jb0(true, me1Var.b, me1Var.c, me1Var.d, me1Var.e);
-            if (me1Var.h >= 0.0f) {
-                d2Var2.setBackground(new jb0(true, me1Var.b, me1Var.c, me1Var.d, me1Var.e));
+            jb0 jb0Var2 = new jb0(true, ke1Var.b, ke1Var.c, ke1Var.d, ke1Var.e);
+            if (ke1Var.h >= 0.0f) {
+                d2Var2.setBackground(new jb0(true, ke1Var.b, ke1Var.c, ke1Var.d, ke1Var.e));
                 if (Build.VERSION.SDK_INT >= 29) {
                     d2Var2.getImageReceiver().Z(BlendMode.SOFT_LIGHT);
                 }
             } else {
                 d2Var2.getImageReceiver().m0(jb0Var2.k);
             }
-            V0 = jb0.g(i12, i11, i10, me1Var.e);
+            V0 = jb0.g(i12, i11, i10, ke1Var.e);
         } else {
             V0 = org.telegram.messenger.i0.V0(i12, false);
         }
         int i13 = V0;
-        if ("d".equals(me1Var.a)) {
-            if (me1Var.m == null) {
-                me1Var.m = d00.d(R.raw.default_pattern, 100, zs.K2, -16777216);
+        if ("d".equals(ke1Var.a)) {
+            if (ke1Var.m == null) {
+                ke1Var.m = e00.d(R.raw.default_pattern, 100, at.K2, -16777216);
             }
-            d2Var2.setImageBitmap(me1Var.m);
-            d2Var2.getImageReceiver().setAlpha(Math.abs(me1Var.h));
+            d2Var2.setImageBitmap(ke1Var.m);
+            d2Var2.getImageReceiver().setAlpha(Math.abs(ke1Var.h));
             return;
         }
         if (file3 != null) {
             d2Var2.h(file3.getAbsolutePath(), "180_180", null);
             return;
         }
-        TLRPC.PhotoSize w13 = org.telegram.messenger.b8.w(me1Var.g.document.thumbs, 100, false, null, false);
-        d2Var2.g(1, w13 != null ? w13.size : me1Var.g.document.size, me1Var.g, "180_180", null, "jpg", ic.c(w13, me1Var.g.document), null);
-        d2Var2.getImageReceiver().setAlpha(Math.abs(me1Var.h));
+        TLRPC.PhotoSize w13 = org.telegram.messenger.b8.w(ke1Var.g.document.thumbs, 100, false, null, false);
+        d2Var2.g(1, w13 != null ? w13.size : ke1Var.g.document.size, ke1Var.g, "180_180", null, "jpg", jc.c(w13, ke1Var.g.document), null);
+        d2Var2.getImageReceiver().setAlpha(Math.abs(ke1Var.h));
         if (Build.VERSION.SDK_INT < 29 || i10 == 0) {
             d2Var2.getImageReceiver().o1 = new PorterDuffColorFilter(org.telegram.messenger.i0.V0(i13, false), PorterDuff.Mode.SRC_IN);
         }

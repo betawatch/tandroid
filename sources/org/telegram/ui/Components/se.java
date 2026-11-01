@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class se extends rf {
     public boolean a2;
@@ -84,7 +84,7 @@ public final class se extends rf {
                             ArrayList z10 = bi.l4.z(htmlText, hashMap);
                             if (!z10.isEmpty()) {
                                 if (bi.n5.d(z10, hashMap)) {
-                                    org.telegram.messenger.vp.r1(chatActivityEnterView.Q);
+                                    org.telegram.messenger.wp.r1(chatActivityEnterView.Q);
                                     boolean z11 = org.telegram.messenger.v2.a;
                                     int max = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                     int min = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
@@ -101,14 +101,14 @@ public final class se extends rf {
                                 }
                                 int max2 = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                 int min2 = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
-                                vh0[] vh0VarArr = (vh0[]) chatActivityEnterView.E0.getText().getSpans(max2, min2, vh0.class);
-                                if (vh0VarArr == null || vh0VarArr.length <= 0) {
-                                    wh0.a(spannableStringBuilder);
+                                wh0[] wh0VarArr = (wh0[]) chatActivityEnterView.E0.getText().getSpans(max2, min2, wh0.class);
+                                if (wh0VarArr == null || wh0VarArr.length <= 0) {
+                                    xh0.a(spannableStringBuilder);
                                 } else {
-                                    vh0[] vh0VarArr2 = (vh0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), vh0.class);
-                                    for (int i11 = 0; i11 < vh0VarArr2.length; i11++) {
-                                        spannableStringBuilder.removeSpan(vh0VarArr2[i11]);
-                                        spannableStringBuilder.removeSpan(vh0VarArr2[i11].a);
+                                    wh0[] wh0VarArr2 = (wh0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), wh0.class);
+                                    for (int i11 = 0; i11 < wh0VarArr2.length; i11++) {
+                                        spannableStringBuilder.removeSpan(wh0VarArr2[i11]);
+                                        spannableStringBuilder.removeSpan(wh0VarArr2[i11].a);
                                     }
                                 }
                                 se seVar = chatActivityEnterView.E0;

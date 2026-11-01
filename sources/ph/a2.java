@@ -6,30 +6,30 @@ import android.widget.LinearLayout;
 import java.io.Serializable;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.o20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.o5;
 import org.telegram.messenger.p20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.q20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ma0;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.vq0;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.w60;
+import org.telegram.ui.Components.wq0;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.px0;
+import org.telegram.ui.ox0;
 import rh.e6;
 import rh.u5;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a2 implements o20, p20 {
+public final /* synthetic */ class a2 implements p20, q20 {
     public final /* synthetic */ f2 a;
 
     public /* synthetic */ a2(f2 f2Var) {
@@ -43,11 +43,11 @@ public final /* synthetic */ class a2 implements o20, p20 {
     /* JADX WARN: Removed duplicated region for block: B:70:0x02ca  */
     /* JADX WARN: Removed duplicated region for block: B:98:0x02cc  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x02b3  */
-    @Override // org.telegram.messenger.p20
+    @Override // org.telegram.messenger.q20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Boolean a(a51 a51Var, View view, Integer num, Float f7, Float f10) {
+    public Boolean a(b51 b51Var, View view, Integer num, Float f7, Float f10) {
         boolean z10;
         f2 f2Var;
         c1 c1Var;
@@ -67,18 +67,18 @@ public final /* synthetic */ class a2 implements o20, p20 {
         Object obj;
         f2 f2Var3 = this.a;
         int i11 = f2Var3.b;
-        vq0 vq0Var = f2Var3.a;
+        wq0 wq0Var = f2Var3.a;
         boolean z13 = false;
         if (f2Var3.e != null) {
             if (view instanceof c1) {
-                Object obj2 = a51Var.G;
+                Object obj2 = b51Var.G;
                 if (obj2 instanceof TL_stars.SavedStarGift) {
                     c1 c1Var3 = (c1) view;
                     TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
-                    org.telegram.ui.ActionBar.k2 k2Var = vq0Var.a;
-                    u5 u5Var2 = vq0Var.e;
+                    org.telegram.ui.ActionBar.k2 k2Var = wq0Var.a;
+                    u5 u5Var2 = wq0Var.e;
                     z60 I = z60.I(k2Var, view);
-                    vq0Var.I = I;
+                    wq0Var.I = I;
                     int i12 = 5;
                     int i13 = 2;
                     if (u5Var2.h()) {
@@ -86,20 +86,20 @@ public final /* synthetic */ class a2 implements o20, p20 {
                             u5Var2.d().size();
                         }
                         z60 J = I.J();
-                        J.c(R.drawable.ic_ab_back, cd.L0(2131753756, null), new bi.j(I, i13), false);
+                        J.c(R.drawable.ic_ab_back, dd.L0(2131753756, null), new bi.j(I, i13), false);
                         J.k();
                         w60 w60Var = new w60(f2Var3.getContext(), i12);
                         LinearLayout linearLayout2 = new LinearLayout(f2Var3.getContext());
                         w60Var.addView(linearLayout2);
                         linearLayout2.setOrientation(1);
                         J.r(w60Var, b6.o(-1, -2));
-                        if (u5Var2.d().size() + 1 < ((org.telegram.messenger.l0) vp.r1(i11).y7.t.a).c) {
+                        if (u5Var2.d().size() + 1 < ((org.telegram.messenger.l0) wp.r1(i11).y7.t.a).c) {
                             org.telegram.ui.ActionBar.b1 b1Var = new org.telegram.ui.ActionBar.b1(0, f2Var3.getContext(), f2Var3.c, false, false);
                             b1Var.setPadding(org.telegram.messenger.i0.L(18.0f), 0, org.telegram.messenger.i0.L(18.0f), 0);
                             int i14 = t6.E8;
                             b1Var.c(i14, t6.F8);
                             b1Var.h(0.12f, i14);
-                            b1Var.j(cd.L0(2131750107, null), R.drawable.menu_folder_add, null);
+                            b1Var.j(dd.L0(2131750107, null), R.drawable.menu_folder_add, null);
                             b1Var.setOnClickListener(new ag.i(f2Var3, I, savedStarGift2, 27));
                             linearLayout2.addView(b1Var, b6.o(-1, -2));
                         }
@@ -160,7 +160,7 @@ public final /* synthetic */ class a2 implements o20, p20 {
                         f2Var = f2Var3;
                         c1Var = c1Var3;
                         z10 = false;
-                        I.c(R.drawable.msg_addfolder, cd.L0(2131750404, null), new bi.k(I, J, 10), false);
+                        I.c(R.drawable.msg_addfolder, dd.L0(2131750404, null), new bi.k(I, J, 10), false);
                         I.k();
                     } else {
                         f2Var = f2Var3;
@@ -168,26 +168,26 @@ public final /* synthetic */ class a2 implements o20, p20 {
                         c1Var = c1Var3;
                     }
                     if (savedStarGift2.gift instanceof TL_stars.TL_starGiftUnique) {
-                        if (!vq0Var.c() || f2Var.d || (savedStarGift2.unsaved && savedStarGift2.pinned_to_top)) {
+                        if (!wq0Var.c() || f2Var.d || (savedStarGift2.unsaved && savedStarGift2.pinned_to_top)) {
                             f2Var2 = f2Var;
                             savedStarGift = savedStarGift2;
                             c1Var2 = c1Var;
                             str = null;
                             u5Var = u5Var2;
-                            if (vq0Var.c() && f2Var2.d) {
+                            if (wq0Var.c() && f2Var2.d) {
                                 z11 = true;
-                                I.c(R.drawable.tabs_reorder, cd.L0(2131750042, null), new u1(f2Var2, true ? 1 : 0), z10);
+                                I.c(R.drawable.tabs_reorder, dd.L0(2131750042, null), new u1(f2Var2, true ? 1 : 0), z10);
                                 starGift = savedStarGift.gift;
                                 tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift;
                                 if (starGift.slug == null) {
-                                    str2 = vp.r1(i11).U2 + "/nft/" + savedStarGift.gift.slug;
+                                    str2 = wp.r1(i11).U2 + "/nft/" + savedStarGift.gift.slug;
                                 } else {
                                     str2 = str;
                                 }
                                 if (rh.e4.L1(i11, o5.o(tL_starGiftUnique.owner_id))) {
                                     boolean M1 = rh.e4.M1(i11, tL_starGiftUnique);
                                     int i20 = M1 ? R.drawable.menu_takeoff : R.drawable.menu_wear;
-                                    String L0 = cd.L0(M1 ? 2131749888 : 2131749851, str);
+                                    String L0 = dd.L0(M1 ? 2131749888 : 2131749851, str);
                                     final int i21 = z10 ? 1 : 0;
                                     I.c(i20, L0, new Runnable() { // from class: ph.v1
                                         @Override // java.lang.Runnable
@@ -215,9 +215,9 @@ public final /* synthetic */ class a2 implements o20, p20 {
                                         }
                                     }, z10);
                                 }
-                                I.l(R.drawable.msg_link2, cd.L0(2131751762, str), new org.telegram.ui.web.v1(11, f2Var2, str2), str2 == null ? z11 ? 1 : 0 : z10 ? 1 : 0);
+                                I.l(R.drawable.msg_link2, dd.L0(2131751762, str), new org.telegram.ui.web.v1(12, f2Var2, str2), str2 == null ? z11 ? 1 : 0 : z10 ? 1 : 0);
                                 boolean z14 = str2 == null ? z11 ? 1 : 0 : z10 ? 1 : 0;
-                                String L02 = cd.L0(2131745477, str);
+                                String L02 = dd.L0(2131745477, str);
                                 final int i22 = z11 ? 1 : 0;
                                 I.l(R.drawable.msg_share, L02, new Runnable() { // from class: ph.v1
                                     @Override // java.lang.Runnable
@@ -255,14 +255,14 @@ public final /* synthetic */ class a2 implements o20, p20 {
                                 str3 = null;
                                 i10 = 2131750087;
                             }
-                            String L03 = cd.L0(i10, str3);
+                            String L03 = dd.L0(i10, str3);
                             str = str3;
                             savedStarGift = savedStarGift2;
                             f2Var2 = f2Var;
                             u5Var = u5Var2;
                             c1Var2 = c1Var;
-                            I.c(i23, L03, new px0(f2Var2, savedStarGift, c1Var2, view, 11), z10);
-                            I.l(R.drawable.tabs_reorder, cd.L0(2131750042, str), new u1(f2Var2, z10 ? 1 : 0), savedStarGift.pinned_to_top);
+                            I.c(i23, L03, new ox0(f2Var2, savedStarGift, c1Var2, view, 11), z10);
+                            I.l(R.drawable.tabs_reorder, dd.L0(2131750042, str), new u1(f2Var2, z10 ? 1 : 0), savedStarGift.pinned_to_top);
                         }
                         z11 = true;
                         starGift = savedStarGift.gift;
@@ -271,10 +271,10 @@ public final /* synthetic */ class a2 implements o20, p20 {
                         }
                         if (rh.e4.L1(i11, o5.o(tL_starGiftUnique.owner_id))) {
                         }
-                        I.l(R.drawable.msg_link2, cd.L0(2131751762, str), new org.telegram.ui.web.v1(11, f2Var2, str2), str2 == null ? z11 ? 1 : 0 : z10 ? 1 : 0);
+                        I.l(R.drawable.msg_link2, dd.L0(2131751762, str), new org.telegram.ui.web.v1(12, f2Var2, str2), str2 == null ? z11 ? 1 : 0 : z10 ? 1 : 0);
                         if (str2 == null) {
                         }
-                        String L022 = cd.L0(2131745477, str);
+                        String L022 = dd.L0(2131745477, str);
                         final int i222 = z11 ? 1 : 0;
                         I.l(R.drawable.msg_share, L022, new Runnable() { // from class: ph.v1
                             @Override // java.lang.Runnable
@@ -310,18 +310,18 @@ public final /* synthetic */ class a2 implements o20, p20 {
                         z11 = true;
                         z11 = true;
                         z11 = true;
-                        if (vq0Var.c() && f2Var2.d) {
-                            I.c(R.drawable.tabs_reorder, cd.L0(2131750042, null), new u1(f2Var2, 3), z10);
+                        if (wq0Var.c() && f2Var2.d) {
+                            I.c(R.drawable.tabs_reorder, dd.L0(2131750042, null), new u1(f2Var2, 3), z10);
                         }
                     }
-                    if (rh.e4.L1(i11, vq0Var.c)) {
+                    if (rh.e4.L1(i11, wq0Var.c)) {
                         boolean z16 = savedStarGift.unsaved;
-                        I.c(z16 ? R.drawable.msg_message : R.drawable.menu_hide_gift, cd.L0(z16 ? 2131749990 : 2131750196, str), new u41(f2Var2, savedStarGift, c1Var2, 15), z10);
+                        I.c(z16 ? R.drawable.msg_message : R.drawable.menu_hide_gift, dd.L0(z16 ? 2131749990 : 2131750196, str), new v41(f2Var2, savedStarGift, c1Var2, 15), z10);
                     }
                     TL_stars.StarGift starGift2 = savedStarGift.gift;
                     if (starGift2 instanceof TL_stars.TL_starGiftUnique) {
                         final int i24 = 2;
-                        I.l(R.drawable.menu_transfer, cd.L0(2131749927, str), new Runnable() { // from class: ph.v1
+                        I.l(R.drawable.menu_transfer, dd.L0(2131749927, str), new Runnable() { // from class: ph.v1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i24) {
@@ -345,10 +345,10 @@ public final /* synthetic */ class a2 implements o20, p20 {
                                         break;
                                 }
                             }
-                        }, o5.o(((TL_stars.TL_starGiftUnique) starGift2).owner_id) == d20.i(i11).e() ? z11 : z10 ? 1 : 0);
+                        }, o5.o(((TL_stars.TL_starGiftUnique) starGift2).owner_id) == e20.i(i11).e() ? z11 : z10 ? 1 : 0);
                     }
                     if (u5Var.h() && f2Var2.d) {
-                        I.c(R.drawable.msg_removefolder, cd.L0(2131750048, str), new u41(f2Var2, savedStarGift, I, 14), z11);
+                        I.c(R.drawable.msg_removefolder, dd.L0(2131750048, str), new v41(f2Var2, savedStarGift, I, 14), z11);
                         I.E();
                         I.t();
                     }
@@ -376,20 +376,20 @@ public final /* synthetic */ class a2 implements o20, p20 {
         return Boolean.valueOf(z13);
     }
 
-    @Override // org.telegram.messenger.o20
+    @Override // org.telegram.messenger.p20
     public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        a51 a51Var = (a51) obj;
+        b51 b51Var = (b51) obj;
         f2 f2Var = this.a;
-        vq0 vq0Var = f2Var.a;
+        wq0 wq0Var = f2Var.a;
         int i10 = f2Var.b;
         if (f2Var.e == null) {
             return;
         }
-        Object obj3 = a51Var.G;
+        Object obj3 = b51Var.G;
         if (obj3 instanceof TL_stars.SavedStarGift) {
             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj3;
             if (!f2Var.h) {
-                rh.e4 e4Var = new rh.e4(f2Var.getContext(), f2Var.b, vq0Var.c, f2Var.c, null);
+                rh.e4 e4Var = new rh.e4(f2Var.getContext(), f2Var.b, wq0Var.c, f2Var.c, null);
                 e4Var.c3 = new u1(f2Var, 2);
                 e4Var.J2 = new org.telegram.ui.web.k0(4, f2Var, savedStarGift);
                 e4Var.j2(savedStarGift, f2Var.e);
@@ -407,7 +407,7 @@ public final /* synthetic */ class a2 implements o20, p20 {
                     ConnectionsManager.getInstance(i10).sendRequest(savestargift, null, 64);
                 }
                 if (f2Var.e.o(savedStarGift, z11, true)) {
-                    cc.a0(vq0Var.a).Q(R.raw.chats_infotip, 36, cd.H(',', "GiftsPinLimit", vp.r1(i10).L6)).j();
+                    cc.a0(wq0Var.a).Q(R.raw.chats_infotip, 36, dd.H(',', "GiftsPinLimit", wp.r1(i10).L6)).j();
                 }
                 if (z10) {
                     return;

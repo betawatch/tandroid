@@ -2,33 +2,33 @@ package zf;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.oz;
-import org.telegram.messenger.us;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.pz;
+import org.telegram.messenger.vs;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.x1;
-import org.telegram.ui.ay;
-import org.telegram.ui.pb1;
-import org.telegram.ui.ux;
+import org.telegram.ui.nb1;
+import org.telegram.ui.tx;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j0 implements u1, ux {
-    public final /* synthetic */ us a;
+public final /* synthetic */ class j0 implements u1, tx {
+    public final /* synthetic */ vs a;
     public final /* synthetic */ Serializable b;
 
-    public /* synthetic */ j0(us usVar, Serializable serializable) {
-        this.a = usVar;
+    public /* synthetic */ j0(vs vsVar, Serializable serializable) {
+        this.a = vsVar;
         this.b = serializable;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean G() {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean H() {
         return false;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean N(ay ayVar) {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean O(zx zxVar) {
         return false;
     }
 
@@ -41,16 +41,16 @@ public final /* synthetic */ class j0 implements u1, ux {
         x0Var.Q();
     }
 
-    @Override // org.telegram.ui.ux
-    public boolean y(ay ayVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, pb1 pb1Var) {
+    @Override // org.telegram.ui.tx
+    public boolean z(zx zxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, nb1 nb1Var) {
         mg.c1 c1Var = (mg.c1) this.a;
         String str = (String) this.b;
         long j10 = 0;
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            j10 = ((gs) arrayList.get(i12)).a;
-            c1Var.o1.getSendMessagesHelper().r0(oz.b(str, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
+            j10 = ((hs) arrayList.get(i12)).a;
+            c1Var.o1.getSendMessagesHelper().r0(pz.b(str, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
         }
-        ayVar.finishFragment();
+        zxVar.finishFragment();
         mg.p.h(j10);
         return true;
     }

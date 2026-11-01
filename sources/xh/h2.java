@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -24,12 +24,12 @@ import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ay;
-import org.telegram.ui.sm0;
+import org.telegram.ui.qm0;
 import org.telegram.ui.un;
+import org.telegram.ui.zx;
 import rh.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class h2 implements org.telegram.ui.web.d0 {
     public boolean a;
@@ -57,10 +57,10 @@ public final class h2 implements org.telegram.ui.web.d0 {
     @Override // org.telegram.ui.web.d0
     public final void a() {
         m2 m2Var = this.d;
-        TLRPC.User Z1 = vp.r1(m2Var.H).Z1(Long.valueOf(m2Var.I));
+        TLRPC.User Z1 = wp.r1(m2Var.H).Z1(Long.valueOf(m2Var.I));
         m4.c cVar = new m4.c((char) 0, 15);
         cVar.b = new f2(this, 0);
-        wb V = new cc(m2Var.q0, m2Var.F).V(Arrays.asList(Z1), org.telegram.messenger.i0.W2(cd.a0(null, null, 2131753087, h20.p(Z1))), null, cVar);
+        wb V = new cc(m2Var.q0, m2Var.F).V(Arrays.asList(Z1), org.telegram.messenger.i0.W2(dd.a0(null, null, 2131753087, i20.p(Z1))), null, cVar);
         V.j = 5000;
         V.k(true);
     }
@@ -74,9 +74,9 @@ public final class h2 implements org.telegram.ui.web.d0 {
     public final void c() {
         m2 m2Var = this.d;
         if (m2Var.E0 != null) {
-            org.telegram.ui.ActionBar.i3 O = LaunchActivity.I1.O();
-            if (O != null) {
-                O.e(m2Var.E0);
+            org.telegram.ui.ActionBar.i3 N = LaunchActivity.I1.N();
+            if (N != null) {
+                N.e(m2Var.E0);
             }
             m2Var.E0 = null;
         }
@@ -85,7 +85,7 @@ public final class h2 implements org.telegram.ui.web.d0 {
     @Override // org.telegram.ui.web.d0
     public final void d(TLRPC.Document document) {
         m2 m2Var = this.d;
-        new cc(m2Var.q0, m2Var.F).q(document, cd.L0(2131753075, null)).k(true);
+        new cc(m2Var.q0, m2Var.F).q(document, dd.L0(2131753075, null)).k(true);
     }
 
     @Override // org.telegram.ui.web.d0
@@ -96,7 +96,7 @@ public final class h2 implements org.telegram.ui.web.d0 {
         }
         this.a = true;
         TLRPC.TL_messages_sendWebViewData tL_messages_sendWebViewData = new TLRPC.TL_messages_sendWebViewData();
-        tL_messages_sendWebViewData.bot = vp.r1(m2Var.H).n1(m2Var.I);
+        tL_messages_sendWebViewData.bot = wp.r1(m2Var.H).n1(m2Var.I);
         tL_messages_sendWebViewData.random_id = Utilities.b.nextLong();
         tL_messages_sendWebViewData.button_text = m2Var.N;
         tL_messages_sendWebViewData.data = str;
@@ -107,7 +107,7 @@ public final class h2 implements org.telegram.ui.web.d0 {
     public final void f(ArrayList arrayList) {
         int size = arrayList.size();
         m2 m2Var = this.d;
-        new cc(m2Var.q0, m2Var.F).Q(R.raw.forward, 36, org.telegram.messenger.i0.W2(size == 1 ? cd.a0(null, null, 2131752973, vp.r1(m2Var.H).A1(((Long) arrayList.get(0)).longValue(), false)) : cd.G(arrayList.size(), "BotSharedToMany", new Object[0]))).k(true);
+        new cc(m2Var.q0, m2Var.F).Q(R.raw.forward, 36, org.telegram.messenger.i0.W2(size == 1 ? dd.a0(null, null, 2131752973, wp.r1(m2Var.H).A1(((Long) arrayList.get(0)).longValue(), false)) : dd.G(arrayList.size(), "BotSharedToMany", new Object[0]))).k(true);
     }
 
     @Override // org.telegram.ui.web.d0
@@ -130,7 +130,7 @@ public final class h2 implements org.telegram.ui.web.d0 {
         if (m2Var.q()) {
             return false;
         }
-        return ui.b0(m2Var.H).j(m2Var.I) || vp.r1(m2Var.H).X6.contains(Long.valueOf(m2Var.I));
+        return vi.b0(m2Var.H).j(m2Var.I) || wp.r1(m2Var.H).X6.contains(Long.valueOf(m2Var.I));
     }
 
     @Override // org.telegram.ui.web.d0
@@ -198,29 +198,29 @@ public final class h2 implements org.telegram.ui.web.d0 {
         d2 d2Var = m2Var.x;
         l2 l2Var = m2Var.f;
         org.telegram.ui.ActionBar.k2 lastFragment = ((LaunchActivity) m2Var.l0).M().getLastFragment();
-        sm0 sm0Var = null;
+        qm0 qm0Var = null;
         if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
             org.telegram.messenger.i0.v1(l2Var);
             org.telegram.ui.ActionBar.x1 x1Var = new org.telegram.ui.ActionBar.x1(3, m2Var.getContext(), null);
             x1Var.r(150L);
-            e6.y(m2Var.H, false).X(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new org.telegram.ui.ActionBar.n1(x1Var, 3), new rh.e3(14, this, str));
+            e6.y(m2Var.H, false).X(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new org.telegram.ui.ActionBar.n1(x1Var, 3), new rh.q2(15, this, str));
             return;
         }
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
-            vp.r1(m2Var.H).V3(paymentForm.users, false);
-            sm0Var = new sm0(paymentForm, null, str, lastFragment);
+            wp.r1(m2Var.H).V3(paymentForm.users, false);
+            qm0Var = new qm0(paymentForm, null, str, lastFragment);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            sm0Var = new sm0((TLRPC.PaymentReceipt) tLObject);
+            qm0Var = new qm0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (sm0Var != null) {
+        if (qm0Var != null) {
             d2Var.e(d2Var.getTopActionBarOffsetY() + (-d2Var.getOffsetY()));
             org.telegram.messenger.i0.v1(l2Var);
             fc0 fc0Var = new fc0(this.b);
             fc0Var.show();
-            sm0Var.Z0 = new q5.a(this, fc0Var, str, 13);
-            sm0Var.Y0 = this.c;
-            fc0Var.c(sm0Var);
+            qm0Var.Z0 = new q5.a(this, fc0Var, str, 13);
+            qm0Var.Y0 = this.c;
+            fc0Var.c(qm0Var);
         }
     }
 
@@ -305,7 +305,7 @@ public final class h2 implements org.telegram.ui.web.d0 {
             if (activity instanceof LaunchActivity) {
                 org.telegram.ui.ActionBar.k2 lastFragment = ((LaunchActivity) activity).M().getLastFragment();
                 if (lastFragment instanceof un) {
-                    ((un) lastFragment).Z.setFieldText("@" + h20.n(user) + " " + str);
+                    ((un) lastFragment).Z.setFieldText("@" + i20.n(user) + " " + str);
                     m2Var.o(false);
                     return;
                 }
@@ -322,12 +322,12 @@ public final class h2 implements org.telegram.ui.web.d0 {
         bundle.putBoolean("allowUsers", arrayList.contains("users"));
         bundle.putBoolean("allowChannels", arrayList.contains("channels"));
         bundle.putBoolean("allowBots", arrayList.contains("bots"));
-        ay ayVar = new ay(bundle);
+        zx zxVar = new zx(bundle);
         org.telegram.messenger.i0.v1(m2Var.f);
         fc0 fc0Var = new fc0(this.b);
-        ayVar.C2 = new a1.d(this, user, str, fc0Var, 22);
+        zxVar.C2 = new a1.d(this, user, str, fc0Var, 22);
         fc0Var.show();
-        fc0Var.c(ayVar);
+        fc0Var.c(zxVar);
     }
 
     @Override // org.telegram.ui.web.d0
@@ -335,21 +335,21 @@ public final class h2 implements org.telegram.ui.web.d0 {
         m2 m2Var = this.d;
         p6 p6Var = m2Var.F;
         FrameLayout frameLayout = m2Var.q0;
-        TLRPC.User Z1 = vp.r1(m2Var.H).Z1(Long.valueOf(m2Var.I));
+        TLRPC.User Z1 = wp.r1(m2Var.H).Z1(Long.valueOf(m2Var.I));
         int i10 = 1;
         if (z10) {
             m4.c cVar = new m4.c((char) 0, 15);
-            cd.L0(2131743910, null);
+            dd.L0(2131743910, null);
             cVar.b = new f2(this, i10);
-            wb V = new cc(frameLayout, p6Var).V(Arrays.asList(Z1), org.telegram.messenger.i0.W2(cd.a0(null, null, 2131753054, h20.p(Z1))), null, cVar);
+            wb V = new cc(frameLayout, p6Var).V(Arrays.asList(Z1), org.telegram.messenger.i0.W2(dd.a0(null, null, 2131753054, i20.p(Z1))), null, cVar);
             V.j = 5000;
             V.k(true);
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        m5.p(null, null, 2131753056, new Object[]{h20.p(Z1)}, spannableStringBuilder);
+        m5.p(null, null, 2131753056, new Object[]{i20.p(Z1)}, spannableStringBuilder);
         spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.G2(org.telegram.messenger.i0.k2(cd.L0(2131753055, null), new f2(this, 2)), true));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.G2(org.telegram.messenger.i0.k2(dd.L0(2131753055, null), new f2(this, 2)), true));
         wb P = new cc(frameLayout, p6Var).P(R.raw.error, spannableStringBuilder);
         P.j = 5000;
         P.k(true);

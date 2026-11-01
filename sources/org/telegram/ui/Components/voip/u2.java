@@ -1,31 +1,50 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
-import java.security.SecureRandom;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class u2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ v2 a;
+public final /* synthetic */ class u2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w2 b;
 
-    public u2(v2 v2Var) {
-        this.a = v2Var;
+    public /* synthetic */ u2(w2 w2Var, int i10) {
+        this.a = i10;
+        this.b = w2Var;
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator, boolean z10) {
-        v2 v2Var = this.a;
-        v2Var.e = v2Var.c;
-        v2Var.f = v2Var.d;
-        SecureRandom secureRandom = Utilities.b;
-        v2Var.c = org.telegram.messenger.i0.L(12.0f) + secureRandom.nextInt(org.telegram.messenger.i0.L(16.0f));
-        v2Var.d = org.telegram.messenger.i0.L(12.0f) + secureRandom.nextInt(org.telegram.messenger.i0.L(16.0f));
-        ValueAnimator valueAnimator = v2Var.b;
-        if (valueAnimator != null) {
-            valueAnimator.start();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w2 w2Var = this.b;
+                w2Var.n = floatValue;
+                w2Var.k.invalidate();
+                if (w2Var.n > 1.0f && w2Var.r == null) {
+                    ValueAnimator ofInt = ValueAnimator.ofInt(org.telegram.messenger.i0.L(12), 0);
+                    w2Var.r = ofInt;
+                    ofInt.addUpdateListener(new u2(w2Var, 2));
+                    w2Var.r.setDuration(350 - valueAnimator.getCurrentPlayTime());
+                    w2Var.r.start();
+                    break;
+                }
+                break;
+            case 1:
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                w2 w2Var2 = this.b;
+                w2Var2.m = intValue;
+                w2Var2.k.invalidate();
+                break;
+            default:
+                int intValue2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                w2 w2Var3 = this.b;
+                if (w2Var3.i <= w2Var3.o / 2) {
+                    intValue2 = -intValue2;
+                }
+                w2Var3.p = intValue2;
+                w2Var3.k.invalidate();
+                break;
         }
     }
 }

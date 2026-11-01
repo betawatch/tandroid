@@ -1,48 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class cr0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ PhotoViewer c;
+public final class cr0 extends jg.r0 {
+    public final /* synthetic */ PhotoViewer X1;
 
-    public /* synthetic */ cr0(PhotoViewer photoViewer, int i10, int i11) {
-        this.a = i11;
-        this.c = photoViewer;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cr0(PhotoViewer photoViewer, Context context, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, org.telegram.messenger.ze zeVar, oo0 oo0Var, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, activity, i10, bitmap, bitmap2, i11, arrayList, zeVar, oo0Var, p6Var);
+        this.X1 = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.c;
-                dr0 dr0Var = photoViewer.N1;
-                dr0Var.e.setVisibility(0);
-                FrameLayout frameLayout = dr0Var.r;
-                frameLayout.setVisibility(0);
-                frameLayout.setTranslationY(org.telegram.messenger.i0.L(18.0f));
-                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
-                org.telegram.ui.Components.gr grVar = org.telegram.ui.Components.gr.h;
-                org.telegram.messenger.z20.m(translationY, grVar, 320L);
-                dr0Var.x.animate().alpha(1.0f).translationX(0.0f).setInterpolator(grVar).setDuration(320L).start();
-                photoViewer.u4 = this.b;
-                photoViewer.q6 = null;
-                photoViewer.o6 = -1;
-                break;
-            default:
-                int i10 = this.b;
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.u4 = i10;
-                photoViewer2.q6 = null;
-                photoViewer2.o6 = -1;
-                break;
+    @Override // jg.r0
+    public final int getPKeyboardHeight() {
+        vh.r2 r2Var = this.X1.K1;
+        if (r2Var != null) {
+            return r2Var.l;
         }
+        return 0;
     }
 }

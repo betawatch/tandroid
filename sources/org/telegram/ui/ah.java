@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ah implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -20,7 +20,7 @@ public final /* synthetic */ class ah implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                un.k1(this.b, this.d, this.c);
+                un.T0(this.b, this.d, this.c);
                 break;
             default:
                 mk mkVar = this.b.Z;
@@ -40,7 +40,7 @@ public final /* synthetic */ class ah implements Runnable {
                             if (wfVar != null) {
                                 wfVar.D.d(1, true, false);
                             }
-                            org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(mkVar.Q);
+                            org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(mkVar.Q);
                             long j10 = mkVar.Q2;
                             un unVar = mkVar.P2;
                             b02.e2(j10, (unVar == null || !unVar.v4) ? 0L : unVar.b(), true);

@@ -7,12 +7,12 @@ import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.w0;
-import org.telegram.messenger.zs;
 import sc.e;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b {
     public static volatile b j;
@@ -75,10 +75,10 @@ public final class b {
                 f8.g(e11, true);
             }
             this.d = Locale.getDefault().getCountry().toLowerCase();
-            this.f = new HashMap(zs.e4);
-            this.g = new HashMap(zs.e4);
+            this.f = new HashMap(at.e4);
+            this.g = new HashMap(at.e4);
             this.h = new HashMap(10);
-            this.i = new HashMap(zs.e4);
+            this.i = new HashMap(at.e4);
             int f7 = f(0);
             int i10 = 4;
             int i11 = (f7 * 12) + 4;

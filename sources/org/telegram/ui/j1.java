@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j1 extends FrameLayout implements org.telegram.ui.Cells.j9 {
     public final ag.b1 a;
@@ -115,7 +115,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.j9 {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.cd.L0(2131754895, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.dd.L0(2131754895, null));
         if (this.c != null) {
             sb2.append(", ");
             sb2.append(this.c.d.getText());
@@ -150,7 +150,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.j9 {
                 int L2 = org.telegram.messenger.i0.L(18.0f) + org.telegram.messenger.i0.L(r15 * 14);
                 this.e = L2;
                 this.f = L2;
-                i12 = org.telegram.messenger.z20.w(18.0f, L2, size);
+                i12 = org.telegram.messenger.a30.w(18.0f, L2, size);
                 L = i12;
             } else {
                 this.e = 0;
@@ -186,7 +186,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.j9 {
             TL_iv.pageBlockCollage pageblockcollage3 = j1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (j1Var.x.G) {
-                alignment = org.telegram.ui.Components.ov0.a();
+                alignment = org.telegram.ui.Components.pv0.a();
             }
             z2 n11 = h4.n(h4Var, j1Var, null, richText2, L, 0, pageblockcollage3, alignment, 0, j1Var.x);
             j1Var.d = n11;

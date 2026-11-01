@@ -13,7 +13,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBar.k6, fe.e {
     public ValueAnimator D;
@@ -22,7 +22,7 @@ public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBa
     public final /* synthetic */ vy G;
     public final fe.b a;
     public final int b;
-    public final im0 c;
+    public final jm0 c;
     public final yp d;
     public final View e;
     public final View f;
@@ -70,21 +70,21 @@ public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBa
         frameLayout.setOutlineProvider(new rf.c0(0, L));
         int i14 = 2;
         if (i10 == 2) {
-            addView(frameLayout, w7.b6.d(-1, 36.0f, org.telegram.messenger.zs.E1, 10.0f, 8.0f, 10.0f, 8.0f));
+            addView(frameLayout, w7.b6.d(-1, 36.0f, org.telegram.messenger.at.E1, 10.0f, 8.0f, 10.0f, 8.0f));
         } else {
-            addView(frameLayout, w7.b6.d(-1, 36.0f, org.telegram.messenger.zs.E1, 10.0f, 6.0f, 10.0f, 8.0f));
+            addView(frameLayout, w7.b6.d(-1, 36.0f, org.telegram.messenger.at.E1, 10.0f, 6.0f, 10.0f, 8.0f));
         }
         fg.i iVar = new fg.i(this, context, 12);
         this.s = iVar;
         frameLayout.addView(iVar, w7.b6.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
-        im0 im0Var = new im0();
-        this.c = im0Var;
-        im0Var.c(0, false, false);
-        im0Var.a(z10 ? vyVar.w(0.4f) : vyVar.A(org.telegram.ui.ActionBar.t6.yf));
+        jm0 jm0Var = new jm0();
+        this.c = jm0Var;
+        jm0Var.c(0, false, false);
+        jm0Var.a(z10 ? vyVar.w(0.4f) : vyVar.A(org.telegram.ui.ActionBar.t6.yf));
         ImageView.ScaleType scaleType2 = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType2);
-        imageView.setImageDrawable(im0Var);
+        imageView.setImageDrawable(jm0Var);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.fy
             public final /* synthetic */ iy b;
 
@@ -145,7 +145,7 @@ public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBa
         ypVar2.setLines(1);
         ypVar2.setSingleLine(true);
         ypVar2.setImeOptions(268435459);
-        ypVar2.setHint(org.telegram.messenger.cd.L0(2131745853, null));
+        ypVar2.setHint(org.telegram.messenger.dd.L0(2131745853, null));
         org.telegram.ui.ActionBar.a7.m(ypVar2, 30, org.telegram.ui.ActionBar.t6.Ai, p6Var);
         ypVar2.setCursorSize(org.telegram.messenger.i0.L(20.0f));
         ypVar2.setCursorWidth(1.5f);
@@ -231,7 +231,7 @@ public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBa
             }
         });
         frameLayout.addView(imageView2, w7.b6.e(36, 36, 53));
-        if (i10 != 1 || (vyVar.c2 && org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).q())) {
+        if (i10 != 1 || (vyVar.c2 && org.telegram.messenger.e20.i(org.telegram.messenger.e20.s0).q())) {
             hy hyVar = new hy(this, context, i10 == 0 ? i11 : 0, vyVar.Z1, i10);
             this.r = hyVar;
             hyVar.D3 = z10;
@@ -240,14 +240,14 @@ public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBa
                 org.telegram.ui.ActionBar.a7.j(hyVar, org.telegram.ui.ActionBar.a7.q(org.telegram.ui.ActionBar.t6.wf, org.telegram.ui.ActionBar.t6.xf), p6Var);
             }
             final int i17 = 0;
-            hyVar.setOnScrollIntoOccupiedWidth(new org.telegram.messenger.q20(this) { // from class: org.telegram.ui.Components.gy
+            hyVar.setOnScrollIntoOccupiedWidth(new org.telegram.messenger.r20(this) { // from class: org.telegram.ui.Components.gy
                 public final /* synthetic */ iy b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.messenger.q20
+                @Override // org.telegram.messenger.r20
                 public final void a(Object obj) {
                     switch (i17) {
                         case 0:
@@ -258,14 +258,14 @@ public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBa
                             iyVar.g(false);
                             break;
                         default:
-                            xv0 xv0Var = (xv0) obj;
+                            yv0 yv0Var = (yv0) obj;
                             iy iyVar2 = this.b;
                             vy vyVar2 = iyVar2.G;
                             hy hyVar2 = iyVar2.r;
-                            if (xv0Var != null) {
-                                if (hyVar2.getSelectedCategory() != xv0Var) {
-                                    iyVar2.c(xv0Var.a, false);
-                                    hyVar2.I1(xv0Var);
+                            if (yv0Var != null) {
+                                if (hyVar2.getSelectedCategory() != yv0Var) {
+                                    iyVar2.c(yv0Var.a, false);
+                                    hyVar2.I1(yv0Var);
                                     break;
                                 } else {
                                     iyVar2.c(null, false);
@@ -284,14 +284,14 @@ public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBa
             });
             hyVar.setOnTouchListener(new m.c2(this, 2));
             final int i18 = 1;
-            hyVar.setOnCategoryClick(new org.telegram.messenger.q20(this) { // from class: org.telegram.ui.Components.gy
+            hyVar.setOnCategoryClick(new org.telegram.messenger.r20(this) { // from class: org.telegram.ui.Components.gy
                 public final /* synthetic */ iy b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.messenger.q20
+                @Override // org.telegram.messenger.r20
                 public final void a(Object obj) {
                     switch (i18) {
                         case 0:
@@ -302,14 +302,14 @@ public abstract class iy extends FrameLayout implements org.telegram.ui.ActionBa
                             iyVar.g(false);
                             break;
                         default:
-                            xv0 xv0Var = (xv0) obj;
+                            yv0 yv0Var = (yv0) obj;
                             iy iyVar2 = this.b;
                             vy vyVar2 = iyVar2.G;
                             hy hyVar2 = iyVar2.r;
-                            if (xv0Var != null) {
-                                if (hyVar2.getSelectedCategory() != xv0Var) {
-                                    iyVar2.c(xv0Var.a, false);
-                                    hyVar2.I1(xv0Var);
+                            if (yv0Var != null) {
+                                if (hyVar2.getSelectedCategory() != yv0Var) {
+                                    iyVar2.c(yv0Var.a, false);
+                                    hyVar2.I1(yv0Var);
                                     break;
                                 } else {
                                     iyVar2.c(null, false);

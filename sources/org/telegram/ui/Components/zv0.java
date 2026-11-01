@@ -1,43 +1,56 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class zv0 extends org.telegram.messenger.b3 {
-    @Override // org.telegram.messenger.b3
-    public final void e(int i10, Object obj, org.telegram.messenger.j20 j20Var) {
-        org.telegram.messenger.hs.a0(i10).a.c(new ji0(i10, (Integer) obj, (org.telegram.messenger.z2) j20Var, 8));
+public final /* synthetic */ class zv0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.a3 b;
+
+    public /* synthetic */ zv0(org.telegram.messenger.a3 a3Var, int i10) {
+        this.a = i10;
+        this.b = a3Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.b3
-    public final void f(int i10, Object obj, long j10, org.telegram.messenger.a3 a3Var) {
-        TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups;
-        Integer num = (Integer) obj;
-        if (num.intValue() == 1) {
-            TLRPC.TL_messages_getEmojiStatusGroups tL_messages_getEmojiStatusGroups = new TLRPC.TL_messages_getEmojiStatusGroups();
-            tL_messages_getEmojiStatusGroups.hash = (int) j10;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiStatusGroups;
-        } else if (num.intValue() == 2) {
-            TLRPC.TL_messages_getEmojiProfilePhotoGroups tL_messages_getEmojiProfilePhotoGroups = new TLRPC.TL_messages_getEmojiProfilePhotoGroups();
-            tL_messages_getEmojiProfilePhotoGroups.hash = (int) j10;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiProfilePhotoGroups;
-        } else if (num.intValue() == 3) {
-            TLRPC.TL_messages_getEmojiStickerGroups tL_messages_getEmojiStickerGroups = new TLRPC.TL_messages_getEmojiStickerGroups();
-            tL_messages_getEmojiStickerGroups.hash = (int) j10;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiStickerGroups;
-        } else {
-            TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups2 = new TLRPC.TL_messages_getEmojiGroups();
-            tL_messages_getEmojiGroups2.hash = (int) j10;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiGroups2;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                boolean z10 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
+                org.telegram.messenger.a3 a3Var = this.b;
+                if (!z10) {
+                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
+                        a3Var.a(Boolean.FALSE, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        a3Var.a(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool = Boolean.TRUE;
+                    a3Var.a(bool, null, 0L, bool);
+                    break;
+                }
+            default:
+                boolean z11 = tLObject instanceof TLRPC.TL_emojiListNotModified;
+                org.telegram.messenger.a3 a3Var2 = this.b;
+                if (!z11) {
+                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
+                        a3Var2.a(Boolean.FALSE, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
+                        a3Var2.a(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool2 = Boolean.TRUE;
+                    a3Var2.a(bool2, null, 0L, bool2);
+                    break;
+                }
         }
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getEmojiGroups, new yv0(a3Var, 0));
-    }
-
-    @Override // org.telegram.messenger.b3
-    public final void g(int i10, Object obj, Object obj2) {
-        org.telegram.messenger.hs.a0(i10).a.c(new ji0(i10, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 9));
     }
 }

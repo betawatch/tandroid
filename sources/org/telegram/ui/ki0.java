@@ -1,50 +1,71 @@
 package org.telegram.ui;
 
 import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ki0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ NotificationsCustomSettingsActivity b;
-    public final /* synthetic */ ui0 c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ ki0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, ui0 ui0Var, View view, int i10, int i11) {
+    public /* synthetic */ ki0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, View view, int i10, int i11) {
         this.a = i11;
         this.b = notificationsCustomSettingsActivity;
-        this.c = ui0Var;
-        this.d = view;
+        this.c = view;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        int i11 = this.d;
+        View view = this.c;
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.b;
+        switch (i10) {
             case 0:
-                this.b.o0(this.c, this.d, false);
+                ArrayList arrayList = notificationsCustomSettingsActivity.I;
+                if (!(view instanceof org.telegram.ui.Cells.v8)) {
+                    notificationsCustomSettingsActivity.q0(true);
+                    break;
+                } else {
+                    if (i11 >= 0 && i11 < arrayList.size()) {
+                        ((oi0) arrayList.get(i11)).h = notificationsCustomSettingsActivity.k0();
+                    }
+                    ((org.telegram.ui.Cells.v8) view).b(notificationsCustomSettingsActivity.k0(), org.telegram.messenger.dd.L0(2131748999, "LedColor"), true);
+                    break;
+                }
                 break;
             case 1:
-                this.b.i0(this.c, this.d);
-                break;
-            case 2:
-                NotificationsCustomSettingsActivity.b0(this.b, this.c, this.d);
-                break;
-            case 3:
-                NotificationsCustomSettingsActivity.Z(this.b, this.c, this.d);
-                break;
-            case 4:
-                this.b.i0(this.c, this.d);
+                ArrayList arrayList2 = notificationsCustomSettingsActivity.I;
+                if (!(view instanceof org.telegram.ui.Cells.x9)) {
+                    notificationsCustomSettingsActivity.q0(true);
+                    break;
+                } else {
+                    if (i11 >= 0 && i11 < arrayList2.size()) {
+                        ((oi0) arrayList2.get(i11)).f = notificationsCustomSettingsActivity.l0();
+                    }
+                    org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) view;
+                    x9Var.c(org.telegram.messenger.dd.L0(2131747113, "PopupNotification"), notificationsCustomSettingsActivity.l0(), true, x9Var.h);
+                    break;
+                }
                 break;
             default:
-                this.b.o0(this.c, this.d, true);
+                ArrayList arrayList3 = notificationsCustomSettingsActivity.I;
+                if (!(view instanceof org.telegram.ui.Cells.x9)) {
+                    notificationsCustomSettingsActivity.q0(true);
+                    break;
+                } else {
+                    if (i11 >= 0 && i11 < arrayList3.size()) {
+                        ((oi0) arrayList3.get(i11)).f = notificationsCustomSettingsActivity.m0();
+                    }
+                    org.telegram.ui.Cells.x9 x9Var2 = (org.telegram.ui.Cells.x9) view;
+                    x9Var2.c(org.telegram.messenger.dd.L0(2131747922, "NotificationsImportance"), notificationsCustomSettingsActivity.m0(), true, x9Var2.h);
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ ki0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, ui0 ui0Var, View view, boolean z10, int i10) {
-        this.a = i10;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = ui0Var;
-        this.d = view;
     }
 }

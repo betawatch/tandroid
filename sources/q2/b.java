@@ -6,12 +6,12 @@ import b2.v0;
 import b2.x;
 import e2.l0;
 import kotlin.jvm.internal.i;
-import org.telegram.messenger.zt;
+import org.telegram.messenger.au;
 import r2.y;
 import td.m;
 import v7.w6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b {
     public final Context a;
@@ -59,8 +59,8 @@ public final class b {
         return i0.a.a(1, 0, 0, 0);
     }
 
-    public Object a(Context context, v0.e eVar, zt ztVar) {
-        m mVar = new m(1, w6.b(ztVar));
+    public Object a(Context context, v0.e eVar, au auVar) {
+        m mVar = new m(1, w6.b(auVar));
         mVar.s();
         CancellationSignal cancellationSignal = new CancellationSignal();
         mVar.u(new v0.g(cancellationSignal));

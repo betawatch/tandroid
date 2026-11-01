@@ -1,16 +1,16 @@
 package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.f11;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements j20 {
+public final /* synthetic */ class v implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -25,13 +25,13 @@ public final /* synthetic */ class v implements j20 {
         this.b = z10;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
                 k0 k0Var = (k0) this.c;
                 h0 h0Var = (h0) this.d;
-                j20 j20Var = (j20) this.e;
+                k20 k20Var = (k20) this.e;
                 boolean z10 = this.b;
                 TL_wallet.proofChallenge proofchallenge = (TL_wallet.proofChallenge) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -42,11 +42,11 @@ public final /* synthetic */ class v implements j20 {
                     sb2.append(proofchallenge.expires - currentTime);
                     sb2.append("s");
                     k0.H(sb2.toString());
-                    Utilities.d.c(new bi.y2(k0Var, z10, h0Var, proofchallenge, currentTime, j20Var));
+                    Utilities.d.c(new bi.y2(k0Var, z10, h0Var, proofchallenge, currentTime, k20Var));
                     break;
                 } else {
                     h0Var.close();
-                    j20Var.a(null, tL_error == null ? "NULL_ERROR" : tL_error.text);
+                    k20Var.a(null, tL_error == null ? "NULL_ERROR" : tL_error.text);
                     break;
                 }
             default:
@@ -58,21 +58,21 @@ public final /* synthetic */ class v implements j20 {
                 String str = (String) obj2;
                 if (h0Var2 != null && str == null) {
                     h0 b10 = h0Var2.b();
-                    f11 f11Var = new f11(13, b10, mVar);
+                    d01 d01Var = new d01(14, b10, mVar);
                     String str2 = a2Var.e;
                     TL_wallet.tonConnectSession tonconnectsession = a2Var.a;
                     if ("sendTransaction".equals(str2)) {
-                        if (vp.r1(e2Var.a).f7.contains(e2.l(tonconnectsession.id, a2Var.b) + ".transfer")) {
-                            e2Var.B(a2Var, b10, f11Var);
+                        if (wp.r1(e2Var.a).f7.contains(e2.l(tonconnectsession.id, a2Var.b) + ".transfer")) {
+                            e2Var.B(a2Var, b10, d01Var);
                             break;
                         }
                     }
-                    u1 u1Var = new u1(e2Var, a2Var, f11Var, z11, b10);
+                    u1 u1Var = new u1(e2Var, a2Var, d01Var, z11, b10);
                     if (!tonconnectsession.closed) {
                         TL_wallet.tonConnectRegisterKey tonconnectregisterkey = new TL_wallet.tonConnectRegisterKey();
                         tonconnectregisterkey.session_id = tonconnectsession.id;
                         tonconnectregisterkey.client_id = tonconnectsession.client_id;
-                        e2Var.f.sendRequestTyped(tonconnectregisterkey, new a3.b(1), new q(f11Var, b10, a2Var, u1Var, 6));
+                        e2Var.f.sendRequestTyped(tonconnectregisterkey, new a3.b(1), new q(d01Var, b10, a2Var, u1Var, 6));
                         break;
                     } else {
                         u1Var.a(null);

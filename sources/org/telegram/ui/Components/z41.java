@@ -1,57 +1,154 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.LongSparseArray;
-import android.view.View;
-import java.util.HashMap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class z41 {
-    public final int a;
+public final class z41 extends rv0 {
+    public final int a = org.telegram.messenger.e20.s0;
+    public boolean b = false;
+    public final float[] c = new float[3];
+    public final float[] d = {0.0f, 150.0f, 300.0f};
+    public final float[] e = {0.0f, 0.0f, 0.0f};
+    public long f = 0;
+    public boolean g = false;
+    public final DecelerateInterpolator h = new DecelerateInterpolator();
+    public boolean i;
+    public final Paint j;
 
-    public z41() {
-        int i10 = a51.J;
-        a51.J = i10 + 1;
-        this.a = i10;
-    }
-
-    public static void h(z41 z41Var) {
-        if (a51.L == null) {
-            a51.L = new HashMap();
+    public z41(boolean z10) {
+        if (z10) {
+            this.j = new Paint(1);
         }
-        if (a51.K == null) {
-            a51.K = new LongSparseArray();
+    }
+
+    @Override // org.telegram.ui.Components.rv0
+    public final void b(int i10) {
+        Paint paint = this.j;
+        if (paint != null) {
+            paint.setColor(i10);
         }
-        Class<?> cls = z41Var.getClass();
-        if (a51.L.containsKey(cls)) {
-            return;
+    }
+
+    @Override // org.telegram.ui.Components.rv0
+    public final void c(boolean z10) {
+        this.b = z10;
+    }
+
+    @Override // org.telegram.ui.Components.rv0
+    public final void d() {
+        this.f = System.currentTimeMillis();
+        this.g = true;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int L;
+        int i10;
+        int i11 = getBounds().left;
+        if (this.b) {
+            L = org.telegram.messenger.i0.L(8.5f);
+            i10 = getBounds().top;
+        } else {
+            L = org.telegram.messenger.i0.L(9.3f);
+            i10 = getBounds().top;
         }
-        a51.L.put(cls, z41Var);
-        a51.K.put(z41Var.a, z41Var);
+        int i12 = L + i10;
+        Paint paint = this.j;
+        if (paint == null) {
+            paint = org.telegram.ui.ActionBar.t6.c2;
+            paint.setAlpha(org.telegram.messenger.at.e4);
+        }
+        float L2 = org.telegram.messenger.i0.L(3.0f) + i11;
+        float f7 = i12;
+        float[] fArr = this.c;
+        canvas.drawCircle(L2, f7, fArr[0] * org.telegram.messenger.i0.p, paint);
+        canvas.drawCircle(org.telegram.messenger.i0.L(9.0f) + i11, f7, fArr[1] * org.telegram.messenger.i0.p, paint);
+        canvas.drawCircle(org.telegram.messenger.i0.L(15.0f) + i11, f7, fArr[2] * org.telegram.messenger.i0.p, paint);
+        f();
     }
 
-    public boolean c(a51 a51Var, a51 a51Var2) {
-        return a51Var.I(a51Var2);
+    @Override // org.telegram.ui.Components.rv0
+    public final void e() {
+        for (int i10 = 0; i10 < 3; i10++) {
+            this.e[i10] = 0.0f;
+            this.c[i10] = 1.33f;
+        }
+        float[] fArr = this.d;
+        fArr[0] = 0.0f;
+        fArr[1] = 150.0f;
+        fArr[2] = 300.0f;
+        this.g = false;
     }
 
-    public abstract View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var);
-
-    public boolean e(a51 a51Var, a51 a51Var2) {
-        return a51Var.J(a51Var2);
+    public final void f() {
+        if (this.g) {
+            if (org.telegram.messenger.at.f(this.a).g() && !this.i) {
+                org.telegram.messenger.i0.h3(new vo0(this, 29), 100L);
+                return;
+            }
+            long currentTimeMillis = System.currentTimeMillis();
+            long j10 = currentTimeMillis - this.f;
+            this.f = currentTimeMillis;
+            if (j10 > 50) {
+                j10 = 50;
+            }
+            for (int i10 = 0; i10 < 3; i10++) {
+                float[] fArr = this.e;
+                float f7 = fArr[i10] + j10;
+                fArr[i10] = f7;
+                float[] fArr2 = this.d;
+                float f10 = f7 - fArr2[i10];
+                float[] fArr3 = this.c;
+                if (f10 > 0.0f) {
+                    DecelerateInterpolator decelerateInterpolator = this.h;
+                    if (f10 <= 320.0f) {
+                        fArr3[i10] = decelerateInterpolator.getInterpolation(f10 / 320.0f) + 1.33f;
+                    } else if (f10 <= 640.0f) {
+                        fArr3[i10] = (1.0f - decelerateInterpolator.getInterpolation((f10 - 320.0f) / 320.0f)) + 1.33f;
+                    } else if (f10 >= 800.0f) {
+                        fArr[i10] = 0.0f;
+                        fArr2[i10] = 0.0f;
+                        fArr3[i10] = 1.33f;
+                    } else {
+                        fArr3[i10] = 1.33f;
+                    }
+                } else {
+                    fArr3[i10] = 1.33f;
+                }
+            }
+            a();
+        }
     }
 
-    public boolean f() {
-        return !(this instanceof org.telegram.messenger.ku);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.i0.L(18.0f);
     }
 
-    public boolean g() {
-        return this instanceof ki;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.i0.L(18.0f);
     }
 
-    public void a(tk0 tk0Var, View view, a51 a51Var) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        Paint paint = this.j;
+        if (paint != null) {
+            paint.setColorFilter(colorFilter);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 }

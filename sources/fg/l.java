@@ -18,12 +18,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.vs;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.t6;
@@ -31,14 +31,14 @@ import org.telegram.ui.ActionBar.z4;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.LaunchActivity;
 import w7.u;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class l extends FrameLayout implements us {
-    public tk0 D;
+public final class l extends FrameLayout implements vs {
+    public uk0 D;
     public ArrayList E;
     public int F;
     public i a;
@@ -69,10 +69,10 @@ public final class l extends FrameLayout implements us {
         int i10 = 1;
         arrayList.add(new a("Draw action bar shadow", new f3(1)));
         arrayList.add(new a("Show blur settings", new e(this, 0)));
-        arrayList.add(new a(cd.L0(2131751648, null)));
-        arrayList.add(new a(cd.L0(tz.J0 ? 2131751639 : 2131751631, null), new e(this, i10)));
+        arrayList.add(new a(dd.L0(2131751648, null)));
+        arrayList.add(new a(dd.L0(uz.J0 ? 2131751639 : 2131751631, null), new e(this, i10)));
         arrayList.add(new a(t6.I.q() ? "Switch to day theme" : "Switch to dark theme", new f3(2)));
-        arrayList.add(new a(cd.L0(2131751614, null), new e(this, 2)));
+        arrayList.add(new a(dd.L0(2131751614, null), new e(this, 2)));
         return arrayList;
     }
 
@@ -89,15 +89,15 @@ public final class l extends FrameLayout implements us {
             if (getContext() instanceof LaunchActivity) {
                 z4 M = ((LaunchActivity) getContext()).M();
                 if (M instanceof b) {
-                    arrayList.addAll(((b) M).F());
+                    arrayList.addAll(((b) M).G());
                 }
                 ActionBarLayout actionBarLayout = ((LaunchActivity) getContext()).s0;
                 if (actionBarLayout != null) {
-                    arrayList.addAll(actionBarLayout.F());
+                    arrayList.addAll(actionBarLayout.G());
                 }
                 ActionBarLayout actionBarLayout2 = ((LaunchActivity) getContext()).r0;
                 if (actionBarLayout2 != null) {
-                    arrayList.addAll(actionBarLayout2.F());
+                    arrayList.addAll(actionBarLayout2.G());
                 }
             }
             arrayList.addAll(getBuiltInDebugItems());
@@ -176,9 +176,9 @@ public final class l extends FrameLayout implements us {
         invalidate();
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.n4) {
+        if (i10 == at.n4) {
             d();
             this.D.getAdapter().f();
         }
@@ -215,7 +215,7 @@ public final class l extends FrameLayout implements us {
         kVar2.a(0.75f);
         jVar2.m = kVar2;
         this.d = jVar2;
-        zs.e().c(this, zs.n4);
+        at.e().c(this, at.n4);
     }
 
     @Override // android.view.View
@@ -236,7 +236,7 @@ public final class l extends FrameLayout implements us {
         super.onDetachedFromWindow();
         this.c.d();
         this.d.d();
-        zs.e().n(this, zs.n4);
+        at.e().n(this, at.n4);
     }
 
     @Override // android.view.View

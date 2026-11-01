@@ -12,12 +12,12 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.uz;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class g2 extends View implements k6 {
     public f2 a;
@@ -32,7 +32,7 @@ public class g2 extends View implements k6 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public g2(Context context) {
         super(context);
-        int i10 = tz.o() == 2 ? zs.e3 : tz.o() == 1 ? 100 : 50;
+        int i10 = uz.o() == 2 ? at.e3 : uz.o() == 1 ? 100 : 50;
         this.b = new androidx.activity.i(this, 25);
         this.e = true;
         this.a = new f2(i10);
@@ -86,8 +86,8 @@ public class g2 extends View implements k6 {
         super.onAttachedToWindow();
         ag.l lVar = new ag.l(this, 16);
         this.d = lVar;
-        sc.a(lVar);
-        boolean e = sc.e(131072);
+        tc.a(lVar);
+        boolean e = tc.e(131072);
         if (this.e != e) {
             this.e = e;
             invalidate();
@@ -99,7 +99,7 @@ public class g2 extends View implements k6 {
         HashSet hashSet;
         super.onDetachedFromWindow();
         ag.l lVar = this.d;
-        if (lVar == null || (hashSet = sc.n) == null) {
+        if (lVar == null || (hashSet = tc.n) == null) {
             return;
         }
         hashSet.remove(lVar);
@@ -111,7 +111,7 @@ public class g2 extends View implements k6 {
         super.onDraw(canvas);
         if (this.e) {
             if (this.f != null) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;

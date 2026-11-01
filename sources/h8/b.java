@@ -10,21 +10,21 @@ import j8.e;
 import java.util.HashMap;
 import n4.q;
 import n6.l;
-import org.telegram.messenger.db;
+import org.telegram.messenger.aa;
 import org.telegram.messenger.eb;
-import org.telegram.messenger.fa;
+import org.telegram.messenger.fb;
 import org.telegram.messenger.ga;
-import org.telegram.messenger.ia;
+import org.telegram.messenger.ha;
+import org.telegram.messenger.ja;
 import org.telegram.messenger.p;
 import org.telegram.messenger.s1;
-import org.telegram.messenger.z9;
 import org.telegram.ui.Components.lk;
 import s7.i;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b extends b8.b {
-    public final /* synthetic */ int b = 1;
+    public final /* synthetic */ int b = 2;
     public final /* synthetic */ Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -50,15 +50,15 @@ public final class b extends b8.b {
                     s7.b.a(parcel);
                     p pVar = (p) this.c;
                     e eVar = new e(iVar);
-                    ga gaVar = (ga) pVar.b;
-                    eb ebVar = (eb) pVar.c;
-                    HashMap hashMap = gaVar.b;
-                    fa faVar = (fa) hashMap.get(eVar);
-                    if (faVar == null) {
-                        faVar = new fa(gaVar, eVar);
-                        hashMap.put(eVar, faVar);
+                    ha haVar = (ha) pVar.b;
+                    fb fbVar = (fb) pVar.c;
+                    HashMap hashMap = haVar.b;
+                    ga gaVar = (ga) hashMap.get(eVar);
+                    if (gaVar == null) {
+                        gaVar = new ga(haVar, eVar);
+                        hashMap.put(eVar, gaVar);
                     }
-                    ebVar.a(faVar);
+                    fbVar.a(gaVar);
                     parcel2.writeNoException();
                     parcel2.writeInt(1);
                     break;
@@ -74,18 +74,18 @@ public final class b extends b8.b {
                         fVar = queryLocalInterface2 instanceof f ? (f) queryLocalInterface2 : new f(readStrongBinder2, "com.google.android.gms.maps.internal.IGoogleMapDelegate", 9);
                     }
                     s7.b.a(parcel);
-                    ia iaVar = (ia) this.c;
+                    ja jaVar = (ja) this.c;
                     q qVar = new q();
                     new HashMap();
                     l.g(fVar);
                     qVar.a = fVar;
-                    d dVar = iaVar.a;
-                    q0.a aVar = iaVar.b;
-                    ga gaVar2 = new ga();
-                    gaVar2.b = new HashMap();
-                    gaVar2.c = new HashMap();
-                    gaVar2.a = qVar;
-                    aVar.accept(gaVar2);
+                    d dVar = jaVar.a;
+                    q0.a aVar = jaVar.b;
+                    ha haVar2 = new ha();
+                    haVar2.b = new HashMap();
+                    haVar2.c = new HashMap();
+                    haVar2.a = qVar;
+                    aVar.accept(haVar2);
                     dVar.q((fg.i) dVar.a);
                     parcel2.writeNoException();
                     break;
@@ -95,7 +95,7 @@ public final class b extends b8.b {
                 if (i10 == 1) {
                     x6.a M0 = x6.b.M0(parcel.readStrongBinder());
                     s7.b.a(parcel);
-                    ((z9) this.c).b.accept((Location) x6.b.N0(M0));
+                    ((aa) this.c).b.accept((Location) x6.b.N0(M0));
                     parcel2.writeNoException();
                     break;
                 }
@@ -111,7 +111,7 @@ public final class b extends b8.b {
                 if (i10 == 1) {
                     int readInt = parcel.readInt();
                     s7.b.a(parcel);
-                    db dbVar = (db) ((s1) this.c).b;
+                    eb ebVar = (eb) ((s1) this.c).b;
                     int i11 = 2;
                     if (readInt != 2) {
                         i11 = 3;
@@ -119,7 +119,7 @@ public final class b extends b8.b {
                             i11 = 1;
                         }
                     }
-                    dbVar.d(i11);
+                    ebVar.d(i11);
                     parcel2.writeNoException();
                     break;
                 }
@@ -167,14 +167,14 @@ public final class b extends b8.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(z9 z9Var) {
+    public b(aa aaVar) {
         super("com.google.android.gms.maps.internal.IOnMyLocationChangeListener", 10);
-        this.c = z9Var;
+        this.c = aaVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(ia iaVar) {
+    public b(ja jaVar) {
         super("com.google.android.gms.maps.internal.IOnMapReadyCallback", 10);
-        this.c = iaVar;
+        this.c = jaVar;
     }
 }

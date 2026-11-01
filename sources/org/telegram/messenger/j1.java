@@ -2,9 +2,9 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j1 implements q20 {
+public final /* synthetic */ class j1 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -15,15 +15,15 @@ public final /* synthetic */ class j1 implements q20 {
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                i0.g3(new mg((k1) this.b, (String) obj, (Runnable) this.c, 7));
+                i0.g3(new ng((k1) this.b, (String) obj, (Runnable) this.c, 7));
                 break;
             case 1:
                 h3 h3Var = (h3) this.b;
-                q20 q20Var = (q20) this.c;
+                r20 r20Var = (r20) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tL_error.text.startsWith("FLOOD_WAIT")) {
                     h3Var.f = Utilities.z(tL_error.text).intValue();
@@ -31,14 +31,14 @@ public final /* synthetic */ class j1 implements q20 {
                     h3Var.b = true;
                 }
                 h3Var.a = false;
-                q20Var.a(h3Var);
+                r20Var.a(h3Var);
                 break;
             default:
-                qz qzVar = (qz) this.b;
-                oz ozVar = (oz) this.c;
-                qzVar.getClass();
-                ozVar.Q = ((Long) obj).longValue();
-                qzVar.r0(ozVar);
+                rz rzVar = (rz) this.b;
+                pz pzVar = (pz) this.c;
+                rzVar.getClass();
+                pzVar.Q = ((Long) obj).longValue();
+                rzVar.r0(pzVar);
                 break;
         }
     }

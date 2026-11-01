@@ -11,11 +11,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s extends v {
     public float[] I1;
@@ -301,7 +301,7 @@ public final class s extends v {
             float f17 = this.z0.f;
             i10 = (int) (f17 * f17 * 255.0f);
         } else {
-            i10 = zs.e4;
+            i10 = at.e4;
         }
         float f18 = 0.0f;
         if (this.L1) {
@@ -394,7 +394,7 @@ public final class s extends v {
                                 f16 = f15;
                                 i14 = i12;
                             }
-                            ((t) arrayList.get(i13)).c.setAlpha(zs.e4);
+                            ((t) arrayList.get(i13)).c.setAlpha(at.e4);
                             f26 = (f27 * 360.0f) + f16;
                             i17 = i13 + 1;
                             i15 = i11;
@@ -408,7 +408,7 @@ public final class s extends v {
                     ((t) arrayList.get(i17)).c.setAntiAlias(!i.A1);
                     if (canvas == null) {
                     }
-                    ((t) arrayList.get(i13)).c.setAlpha(zs.e4);
+                    ((t) arrayList.get(i13)).c.setAlpha(at.e4);
                     f26 = (f27 * 360.0f) + f16;
                     i17 = i13 + 1;
                     i15 = i11;
@@ -458,7 +458,7 @@ public final class s extends v {
                         canvas.drawText(this.R1[i20], (float) ((Math.cos(Math.toRadians(c11)) * d10) + rectF.centerX()), ((float) ((Math.sin(Math.toRadians(c11)) * d10) + rectF.centerY())) - ((textPaint2.ascent() + textPaint2.descent()) / f12), textPaint2);
                     }
                     canvas.restore();
-                    ((t) arrayList.get(i19)).c.setAlpha(zs.e4);
+                    ((t) arrayList.get(i19)).c.setAlpha(at.e4);
                     f28 = 360.0f;
                     f14 = (f13 * 360.0f) + f11;
                 } else {
@@ -624,7 +624,7 @@ public final class s extends v {
                 Paint paint = gVar3.c;
                 Paint paint2 = gVar3.c;
                 paint.setStrokeWidth(length2);
-                paint2.setAlpha(zs.e4);
+                paint2.setAlpha(at.e4);
                 paint2.setAntiAlias(false);
                 canvas.drawLines(gVar3.k, 0, gVar3.j, paint2);
             }

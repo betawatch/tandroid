@@ -9,21 +9,21 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.s9;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class y2 extends FrameLayout {
     public final RectF D;
@@ -33,7 +33,7 @@ public abstract class y2 extends FrameLayout {
     public final Path H;
     public boolean I;
     public final org.telegram.ui.Components.t5 J;
-    public qz0 K;
+    public rz0 K;
     public final Path L;
     public boolean M;
     public final w9 a;
@@ -47,7 +47,7 @@ public abstract class y2 extends FrameLayout {
     public final RectF r;
     public final RectF s;
     public final Paint w;
-    public qz0 x;
+    public rz0 x;
     public final Path y;
 
     /* JADX WARN: Type inference failed for: r5v0, types: [vh.t2] */
@@ -81,8 +81,8 @@ public abstract class y2 extends FrameLayout {
         this.a = new w9(s9Var, this, 0, !k7Var.O.r0.c());
         setPadding(org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(44.0f));
         final int i10 = 0;
-        ii iiVar = new ii(k7Var, context, d20.s0, (t2) new j20() { // from class: vh.t2
-            @Override // org.telegram.messenger.j20
+        ii iiVar = new ii(k7Var, context, e20.s0, (t2) new k20() { // from class: vh.t2
+            @Override // org.telegram.messenger.k20
             public final void a(Object obj, Object obj2) {
                 int i11 = i10;
                 int i12 = 0;
@@ -90,15 +90,15 @@ public abstract class y2 extends FrameLayout {
                 switch (i11) {
                     case 0:
                         ArrayList arrayList = (ArrayList) obj;
-                        p51 p51Var = (p51) obj2;
-                        p51Var.M();
+                        q51 q51Var = (q51) obj2;
+                        q51Var.M();
                         int i13 = 0;
                         for (int i14 = 0; i14 < k7Var2.d.size(); i14++) {
                             Integer num = (Integer) k7Var2.d.get(i14);
                             int intValue = num.intValue();
                             n5 n5Var = (n5) k7Var2.c.get(intValue);
                             int i15 = w2.b;
-                            a51 K = a51.K(w2.class);
+                            b51 K = b51.K(w2.class);
                             K.d = intValue;
                             K.G = n5Var;
                             K.z = i13;
@@ -111,7 +111,7 @@ public abstract class y2 extends FrameLayout {
                                 i13++;
                             }
                         }
-                        p51Var.L();
+                        q51Var.L();
                         break;
                     default:
                         ((Integer) obj).getClass();
@@ -121,7 +121,7 @@ public abstract class y2 extends FrameLayout {
                         while (i12 < size) {
                             Object obj3 = arrayList2.get(i12);
                             i12++;
-                            k7Var2.d.add(Integer.valueOf(((a51) obj3).d));
+                            k7Var2.d.add(Integer.valueOf(((b51) obj3).d));
                         }
                         org.telegram.messenger.i0.d0(k7Var2.b, new ph.h1(k7Var2, 24));
                         break;
@@ -136,8 +136,8 @@ public abstract class y2 extends FrameLayout {
         addView(iiVar, w7.b6.e(-2, 120, 85));
         iiVar.z1(true);
         final int i11 = 1;
-        iiVar.E1(new j20() { // from class: vh.t2
-            @Override // org.telegram.messenger.j20
+        iiVar.E1(new k20() { // from class: vh.t2
+            @Override // org.telegram.messenger.k20
             public final void a(Object obj, Object obj2) {
                 int i112 = i11;
                 int i12 = 0;
@@ -145,15 +145,15 @@ public abstract class y2 extends FrameLayout {
                 switch (i112) {
                     case 0:
                         ArrayList arrayList = (ArrayList) obj;
-                        p51 p51Var = (p51) obj2;
-                        p51Var.M();
+                        q51 q51Var = (q51) obj2;
+                        q51Var.M();
                         int i13 = 0;
                         for (int i14 = 0; i14 < k7Var2.d.size(); i14++) {
                             Integer num = (Integer) k7Var2.d.get(i14);
                             int intValue = num.intValue();
                             n5 n5Var = (n5) k7Var2.c.get(intValue);
                             int i15 = w2.b;
-                            a51 K = a51.K(w2.class);
+                            b51 K = b51.K(w2.class);
                             K.d = intValue;
                             K.G = n5Var;
                             K.z = i13;
@@ -166,7 +166,7 @@ public abstract class y2 extends FrameLayout {
                                 i13++;
                             }
                         }
-                        p51Var.L();
+                        q51Var.L();
                         break;
                     default:
                         ((Integer) obj).getClass();
@@ -176,7 +176,7 @@ public abstract class y2 extends FrameLayout {
                         while (i12 < size) {
                             Object obj3 = arrayList2.get(i12);
                             i12++;
-                            k7Var2.d.add(Integer.valueOf(((a51) obj3).d));
+                            k7Var2.d.add(Integer.valueOf(((b51) obj3).d));
                         }
                         org.telegram.messenger.i0.d0(k7Var2.b, new ph.h1(k7Var2, 24));
                         break;
@@ -257,7 +257,7 @@ public abstract class y2 extends FrameLayout {
         iiVar.animate().cancel();
         if (z11) {
             iiVar.setVisibility(0);
-            z20.m(iiVar.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new sg.y(11, this, z10)).setUpdateListener(new qh.e0(this, 29)), gr.h, 360L);
+            a30.m(iiVar.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new sg.y(11, this, z10)).setUpdateListener(new qh.e0(this, 29)), gr.h, 360L);
         } else {
             iiVar.setVisibility(z10 ? 0 : 8);
             iiVar.setAlpha(z10 ? 1.0f : 0.0f);
@@ -289,12 +289,12 @@ public abstract class y2 extends FrameLayout {
         float L = org.telegram.messenger.i0.L(2.0f);
         Paint paint = this.w;
         paint.setStrokeWidth(L);
-        paint.setAlpha(zs.e4);
+        paint.setAlpha(at.e4);
         canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) - org.telegram.messenger.i0.L(0.9f), paint);
-        qz0 qz0Var = this.x;
+        rz0 rz0Var = this.x;
         ii iiVar = this.b;
-        if (qz0Var != null) {
-            qz0Var.c(rectF.centerX() - (this.x.c / 2.0f), rectF.centerY() - org.telegram.messenger.i0.L(0.6f), 1.0f - iiVar.getAlpha(), -1, canvas);
+        if (rz0Var != null) {
+            rz0Var.c(rectF.centerX() - (this.x.c / 2.0f), rectF.centerY() - org.telegram.messenger.i0.L(0.6f), 1.0f - iiVar.getAlpha(), -1, canvas);
         }
         if (iiVar.getAlpha() > 0.0f) {
             canvas.save();

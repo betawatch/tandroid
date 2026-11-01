@@ -3,16 +3,16 @@ package vh;
 import android.graphics.SurfaceTexture;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.jj;
-import org.telegram.ui.Components.gn0;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.s00;
-import org.telegram.ui.y00;
+import org.telegram.messenger.kj;
+import org.telegram.ui.Components.hn0;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.r00;
+import org.telegram.ui.x00;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class e0 implements eg.p, s61, y00, zf.l1 {
+public final class e0 implements eg.p, t61, x00, zf.l1 {
     public Object a;
 
     public /* synthetic */ e0(Object obj) {
@@ -29,16 +29,16 @@ public final class e0 implements eg.p, s61, y00, zf.l1 {
         return true;
     }
 
-    @Override // org.telegram.ui.y00
-    public boolean b(s00 s00Var) {
+    @Override // org.telegram.ui.x00
+    public boolean b(r00 r00Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.y00
-    public void c(jj jjVar) {
-        yh.a0 a0Var = (yh.a0) this.a;
-        a0Var.q1.presentFragment(gn0.M(a0Var.a, jjVar));
-        a0Var.dismiss();
+    @Override // org.telegram.ui.x00
+    public void c(kj kjVar) {
+        yh.z zVar = (yh.z) this.a;
+        zVar.q1.presentFragment(hn0.M(zVar.a, kjVar));
+        zVar.dismiss();
     }
 
     @Override // zf.l1
@@ -55,7 +55,7 @@ public final class e0 implements eg.p, s61, y00, zf.l1 {
         ((g0) this.a).e.invalidate();
     }
 
-    @Override // org.telegram.ui.y00
+    @Override // org.telegram.ui.x00
     public boolean f() {
         return false;
     }
@@ -65,28 +65,28 @@ public final class e0 implements eg.p, s61, y00, zf.l1 {
         ((zf.x0) this.a).f();
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onStateChanged(boolean z10, int i10) {
         k4 k4Var = (k4) this.a;
         i4 i4Var = k4Var.L;
         org.telegram.messenger.i0.r(i4Var);
-        u61 u61Var = k4Var.D;
-        if (u61Var == null || !u61Var.d0()) {
+        v61 v61Var = k4Var.D;
+        if (v61Var == null || !v61Var.d0()) {
             return;
         }
         org.telegram.messenger.i0.g3(i4Var);
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((k4) this.a).i();
     }
@@ -96,7 +96,7 @@ public final class e0 implements eg.p, s61, y00, zf.l1 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onRenderedFirstFrame() {
     }
 
@@ -108,15 +108,15 @@ public final class e0 implements eg.p, s61, y00, zf.l1 {
     public void l(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.y00
+    @Override // org.telegram.ui.x00
     public void a() {
     }
 
@@ -124,15 +124,15 @@ public final class e0 implements eg.p, s61, y00, zf.l1 {
     public void n() {
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public void onError(u61 u61Var, Exception exc) {
+    @Override // org.telegram.ui.Components.t61
+    public void onError(v61 v61Var, Exception exc) {
     }
 
-    @Override // org.telegram.ui.y00
-    public void e(jj jjVar, View view, int i10) {
+    @Override // org.telegram.ui.x00
+    public void e(kj kjVar, View view, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

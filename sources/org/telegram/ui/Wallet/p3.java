@@ -17,22 +17,22 @@ import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ig0;
-import org.telegram.ui.Components.nl0;
-import org.telegram.ui.dg0;
-import org.telegram.ui.rv0;
+import org.telegram.ui.Components.ol0;
+import org.telegram.ui.bg0;
+import org.telegram.ui.qv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p3 extends Dialog {
     public static final /* synthetic */ int W = 0;
@@ -65,7 +65,7 @@ public final class p3 extends Dialog {
     public final o3 n;
     public final l6 r;
     public final h8 s;
-    public final dg0 w;
+    public final bg0 w;
     public final TextView x;
     public final Paint y;
 
@@ -86,9 +86,9 @@ public final class p3 extends Dialog {
         this.a = k2Var;
         this.b = ig0Var;
         int i11 = 1;
-        boolean z10 = user != null && user.id == d20.i(k2Var.getCurrentAccount()).e();
+        boolean z10 = user != null && user.id == e20.i(k2Var.getCurrentAccount()).e();
         this.e = z10;
-        boolean z11 = (user == null || z10 || !((org.telegram.messenger.j0) vp.r1(k2Var.getCurrentAccount()).y7.j0.b).c) ? false : true;
+        boolean z11 = (user == null || z10 || !((org.telegram.messenger.j0) wp.r1(k2Var.getCurrentAccount()).y7.j0.b).c) ? false : true;
         this.c = z11;
         this.d = (user == null || z10 || z11) ? false : true;
         ig0Var.getLocationOnScreen(new int[2]);
@@ -103,15 +103,15 @@ public final class p3 extends Dialog {
         n3Var.addView(o3Var, w7.b6.c(-1.0f, -1));
         n3Var.setClipChildren(false);
         n3Var.setClipToPadding(false);
-        n3Var.setOnClickListener(new i3(this, r9));
-        d3 d3Var = new d3(this, 1);
+        n3Var.setOnClickListener(new j3(this, r9));
+        e3 e3Var = new e3(this, 1);
         WeakHashMap weakHashMap = r0.h0.a;
-        r0.z.i(n3Var, d3Var);
+        r0.z.i(n3Var, e3Var);
         l6 l6Var = new l6(getContext());
         this.r = l6Var;
         l6Var.setDiamondOnCard(true);
         int currentAccount = k2Var.getCurrentAccount();
-        String p5 = h20.p(user);
+        String p5 = i20.p(user);
         Locale locale = Locale.ROOT;
         l6Var.setCardHolder(p5.toUpperCase(locale));
         if (!TextUtils.isEmpty(cardVar.address)) {
@@ -122,29 +122,29 @@ public final class p3 extends Dialog {
         if (!TextUtils.isEmpty(m10)) {
             l6Var.O.c(m10, false, true);
         }
-        l6Var.setCardOnClickListener(new rv0(12, this, k2Var));
+        l6Var.setCardOnClickListener(new qv0(12, this, k2Var));
         l6Var.setOnClickListener(new bh.c(19));
         l6Var.setAlpha(0.0f);
         n3Var.addView(l6Var, w7.b6.c(-2.0f, -2));
         h8 h8Var = new h8(k2Var, l6Var, null, cardVar);
         this.s = h8Var;
         n3Var.addView(h8Var, w7.b6.c(-1.0f, -1));
-        tg.b bVar2 = new tg.b(bVar);
+        tg.b bVar2 = new tg.b(bVar, bVar, bVar);
         this.F = bVar2;
-        bVar2.f = new zg.h(n3Var);
-        bVar2.g = n3Var;
-        dg0 dg0Var = new dg0(getContext());
-        this.w = dg0Var;
-        vg.f c10 = bVar2.c(dg0Var, new wg.b(org.telegram.ui.ActionBar.t6.d6, k2Var.getResourceProvider()), false);
+        bVar2.h = new zg.h(n3Var);
+        bVar2.i = n3Var;
+        bg0 bg0Var = new bg0(getContext());
+        this.w = bg0Var;
+        vg.f c10 = bVar2.c(bg0Var, new wg.b(org.telegram.ui.ActionBar.t6.d6, k2Var.getResourceProvider()), false);
         c10.p(org.telegram.messenger.i0.L(8.0f));
         c10.q(org.telegram.messenger.i0.L(22.0f));
-        dg0Var.setBackground(c10);
-        w7.e6.b(dg0Var, 0.02f, 1.2f);
+        bg0Var.setBackground(c10);
+        w7.e6.b(bg0Var, 0.02f, 1.2f);
         vh.d dVar = new vh.d(getContext(), k2Var.getResourceProvider(), true);
         dVar.setUseWrapContent(true);
         dVar.setPadding(org.telegram.messenger.i0.L(16.0f), 0, org.telegram.messenger.i0.L(16.0f), 0);
         dVar.setRoundRadius(19);
-        CharSequence L0 = cd.L0(z10 ? 2131743087 : z11 ? 2131743043 : 2131749285, null);
+        CharSequence L0 = dd.L0(z10 ? 2131743087 : z11 ? 2131743043 : 2131749285, null);
         if (z11) {
             SpannableStringBuilder append = new SpannableStringBuilder("G  ").append(L0);
             dq dqVar = new dq(R.drawable.mini_gram_24, 0);
@@ -158,12 +158,12 @@ public final class p3 extends Dialog {
             i10 = -1;
         }
         dVar.setStateListAnimator(null);
-        dg0Var.addView(dVar, w7.b6.e(-2, i10, 17));
-        dg0Var.setContentDescription(L0);
-        dg0Var.setOnClickListener(new j1(this, k2Var, cardVar, i11));
-        dg0Var.setAlpha(0.0f);
-        dg0Var.setVisibility(c() ? 0 : 8);
-        n3Var.addView(dg0Var, w7.b6.e(-2, 60, 81));
+        bg0Var.addView(dVar, w7.b6.e(-2, i10, 17));
+        bg0Var.setContentDescription(L0);
+        bg0Var.setOnClickListener(new j1(this, k2Var, cardVar, i11));
+        bg0Var.setAlpha(0.0f);
+        bg0Var.setVisibility(c() ? 0 : 8);
+        n3Var.addView(bg0Var, w7.b6.e(-2, 60, 81));
         TextView textView = new TextView(getContext());
         this.x = textView;
         textView.setTextSize(14.0f);
@@ -173,10 +173,10 @@ public final class p3 extends Dialog {
         d();
         textView.setAlpha(0.0f);
         if (z10) {
-            textView.setText(cd.L0(2131743069, null));
+            textView.setText(dd.L0(2131743069, null));
         } else if (user != null) {
-            String j10 = h20.j(user, true);
-            textView.setText(vh.p2.b(new BigDecimal(k0.p(cardVar.balance, false)).signum() == 0 ? cd.a0(null, null, 2131743071, j10) : cd.a0(null, null, 2131743072, j10, k0.l("Grams", l6.e(cardVar.balance).toString(), 2131749516).toString().replace(' ', (char) 160)), textView.getPaint()));
+            String j10 = i20.j(user, true);
+            textView.setText(vh.p2.b(new BigDecimal(k0.p(cardVar.balance, false)).signum() == 0 ? dd.a0(null, null, 2131743071, j10) : dd.a0(null, null, 2131743072, j10, k0.l("Grams", l6.e(cardVar.balance).toString(), 2131749516).toString().replace(' ', (char) 160)), textView.getPaint()));
         }
         textView.setVisibility(user == null ? 8 : 0);
         n3Var.addView(textView, w7.b6.e(-2, -2, 49));
@@ -315,14 +315,14 @@ public final class p3 extends Dialog {
         this.b.setEjectProgress(interpolation);
         this.n.setAlpha(this.I);
         this.s.setAlpha(interpolation2);
-        dg0 dg0Var = this.w;
-        dg0Var.setAlpha(interpolation2);
+        bg0 bg0Var = this.w;
+        bg0Var.setAlpha(interpolation2);
         TextView textView = this.x;
         textView.setAlpha(interpolation2);
         textView.setTranslationY((-org.telegram.messenger.i0.L(8.0f)) * f22);
-        dg0Var.setTranslationY(org.telegram.messenger.i0.L(16.0f) * f22);
-        dg0Var.setScaleX(org.telegram.messenger.i0.T1(0.8f, 1.0f, interpolation2));
-        dg0Var.setScaleY(org.telegram.messenger.i0.T1(0.8f, 1.0f, interpolation2));
+        bg0Var.setTranslationY(org.telegram.messenger.i0.L(16.0f) * f22);
+        bg0Var.setScaleX(org.telegram.messenger.i0.T1(0.8f, 1.0f, interpolation2));
+        bg0Var.setScaleY(org.telegram.messenger.i0.T1(0.8f, 1.0f, interpolation2));
         this.h.invalidate();
     }
 
@@ -337,7 +337,7 @@ public final class p3 extends Dialog {
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.height = -1;
         attributes.width = -1;
-        attributes.gravity = zs.E1;
+        attributes.gravity = at.E1;
         attributes.dimAmount = 0.0f;
         attributes.flags = (attributes.flags & (-3)) | (-2147286784);
         window.setAttributes(attributes);
@@ -351,7 +351,7 @@ public final class p3 extends Dialog {
     @Override // android.app.Dialog
     public final void show() {
         if (org.telegram.messenger.i0.M1(getContext())) {
-            nl0.d(new d(this, 6));
+            ol0.d(new d(this, 6));
             super.show();
             WeakHashMap weakHashMap = r0.h0.a;
             r0.x.c(this.h);

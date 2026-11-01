@@ -1,8 +1,8 @@
 package vh;
 
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n7 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -30,7 +30,7 @@ public final /* synthetic */ class n7 implements Runnable {
                 runnable.run();
                 o8 o8Var = o7Var.a;
                 o2 o2Var = o8Var.T0;
-                o2Var.a.t(cd.L0(z10 ? 2131744679 : 2131744680, null), false, true);
+                o2Var.a.t(dd.L0(z10 ? 2131744679 : 2131744680, null), false, true);
                 o2Var.invalidate();
                 o8Var.g(true, true);
                 o8Var.c0(true);

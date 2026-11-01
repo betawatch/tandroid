@@ -9,7 +9,7 @@ import java.util.List;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -201,7 +201,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public enum SwitchState {
         IDLE,
         PENDING,

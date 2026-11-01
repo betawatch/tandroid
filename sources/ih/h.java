@@ -10,43 +10,43 @@ import android.view.ViewGroup;
 import java.util.Locale;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.b30;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b6;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c00;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.c30;
+import org.telegram.messenger.d00;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.v5;
-import org.telegram.messenger.z20;
 import org.telegram.messenger.z5;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.jn0;
 import org.telegram.ui.Components.kn0;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.ln0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class h extends Drawable implements z5, jn0 {
+public final class h extends Drawable implements z5, kn0 {
     public final boolean D;
     public String E;
     public String F;
     public boolean G;
-    public jj H;
+    public kj H;
     public double I;
     public int J;
-    public final kn0 K;
+    public final ln0 K;
     public float L;
     public float M;
-    public c00 N;
+    public d00 N;
     public up O;
     public Drawable P;
     public a Q;
@@ -71,14 +71,14 @@ public final class h extends Drawable implements z5, jn0 {
     public int f0;
     public int g0;
     public String h;
-    public qz0 n;
-    public qz0 r;
-    public qz0 s;
-    public qz0 w;
+    public rz0 n;
+    public rz0 r;
+    public rz0 s;
+    public rz0 w;
     public final RadialProgress2 y;
     public final Paint x = new Paint(1);
     public int Z = 0;
-    public int c0 = zs.e4;
+    public int c0 = at.e4;
 
     public h(int i10, ViewGroup viewGroup, p6 p6Var, boolean z10) {
         ImageReceiver imageReceiver = new ImageReceiver(viewGroup);
@@ -88,20 +88,20 @@ public final class h extends Drawable implements z5, jn0 {
         this.D = z10;
         this.y = new RadialProgress2(viewGroup, p6Var);
         this.d = viewGroup;
-        kn0 kn0Var = new kn0(viewGroup);
-        this.K = kn0Var;
-        kn0Var.h = this;
+        ln0 ln0Var = new ln0(viewGroup);
+        this.K = ln0Var;
+        ln0Var.h = this;
         this.a = new fe.b(viewGroup, ee.a.a, 180L);
         this.d0 = b6.q(i10).k();
     }
 
     @Override // org.telegram.messenger.z5
-    public final void C(boolean z10) {
+    public final void D(boolean z10) {
         e();
     }
 
     @Override // org.telegram.messenger.z5
-    public final void M(String str) {
+    public final void N(String str) {
         e();
     }
 
@@ -111,18 +111,18 @@ public final class h extends Drawable implements z5, jn0 {
     }
 
     public final void b(boolean z10) {
-        qz0 qz0Var = this.n;
-        if (qz0Var != null) {
-            qz0Var.n(t6.x0(null, z10 ? t6.tc : t6.re, false));
+        rz0 rz0Var = this.n;
+        if (rz0Var != null) {
+            rz0Var.n(t6.x0(null, z10 ? t6.tc : t6.re, false));
         }
         this.x.setColor(1711276032);
-        qz0 qz0Var2 = this.w;
-        if (qz0Var2 != null) {
-            qz0Var2.n(-1);
+        rz0 rz0Var2 = this.w;
+        if (rz0Var2 != null) {
+            rz0Var2.n(-1);
         }
-        c00 c00Var = this.N;
-        if (c00Var != null) {
-            c00Var.m = z10 ? t6.Dc : t6.ef;
+        d00 d00Var = this.N;
+        if (d00Var != null) {
+            d00Var.m = z10 ? t6.Dc : t6.ef;
         }
         boolean z11 = this.X;
         RadialProgress2 radialProgress2 = this.y;
@@ -130,12 +130,12 @@ public final class h extends Drawable implements z5, jn0 {
             radialProgress2.g(t6.Ze, t6.af, t6.bf, t6.cf);
             return;
         }
-        kn0 kn0Var = this.K;
+        ln0 ln0Var = this.K;
         if (z10) {
             int x02 = t6.x0(null, t6.kc, false);
             int x03 = t6.x0(null, t6.lc, false);
             int i10 = t6.nc;
-            kn0Var.g(x02, x03, t6.x0(null, i10, false), t6.x0(null, i10, false), t6.x0(null, t6.mc, false));
+            ln0Var.g(x02, x03, t6.x0(null, i10, false), t6.x0(null, i10, false), t6.x0(null, t6.mc, false));
             radialProgress2.g(t6.Bc, t6.Cc, t6.Db, t6.Eb);
             return;
         }
@@ -143,10 +143,10 @@ public final class h extends Drawable implements z5, jn0 {
         int x04 = t6.x0(null, t6.ie, false);
         int x05 = t6.x0(null, t6.je, false);
         int i11 = t6.le;
-        kn0Var.g(x04, x05, t6.x0(null, i11, false), t6.x0(null, i11, false), t6.x0(null, t6.ke, false));
+        ln0Var.g(x04, x05, t6.x0(null, i11, false), t6.x0(null, i11, false), t6.x0(null, t6.ke, false));
     }
 
-    @Override // org.telegram.ui.Components.jn0
+    @Override // org.telegram.ui.Components.kn0
     public final void c(float f7) {
         if (j()) {
             MediaController.B().i0(MediaController.B().u0, f7);
@@ -154,12 +154,12 @@ public final class h extends Drawable implements z5, jn0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.jn0
+    @Override // org.telegram.ui.Components.kn0
     public final void d(float f7) {
         if (j()) {
-            jj jjVar = MediaController.B().u0;
-            jjVar.b0 = f7;
-            jjVar.g0 = (int) (jjVar.L0() * f7);
+            kj kjVar = MediaController.B().u0;
+            kjVar.b0 = f7;
+            kjVar.g0 = (int) (kjVar.L0() * f7);
             p(true);
         }
     }
@@ -181,9 +181,9 @@ public final class h extends Drawable implements z5, jn0 {
             int L = i11 + (z11 ? 0 : i0.L(8.0f));
             int L2 = bounds.top + (z11 ? 0 : i0.L(3.0f));
             int L3 = this.X ? 0 : i0.L(3.0f);
-            qz0 qz0Var = this.n;
-            if (qz0Var != null) {
-                qz0Var.e(canvas, i0.L(56.0f) + L, i0.L(15.0f) + L2 + L3);
+            rz0 rz0Var = this.n;
+            if (rz0Var != null) {
+                rz0Var.e(canvas, i0.L(56.0f) + L, i0.L(15.0f) + L2 + L3);
             }
             if (this.X) {
                 float f7 = this.a.e;
@@ -197,22 +197,22 @@ public final class h extends Drawable implements z5, jn0 {
                     canvas.restore();
                 }
                 if (f7 > 0.0f) {
-                    kn0 kn0Var = this.K;
-                    kn0Var.t = f7;
-                    kn0Var.i(z20.w(56.0f, L, bounds.right), i0.L(30.0f));
+                    ln0 ln0Var = this.K;
+                    ln0Var.t = f7;
+                    ln0Var.i(a30.w(56.0f, L, bounds.right), i0.L(30.0f));
                     canvas.save();
                     float L4 = i0.L(45.0f) + L;
                     this.L = L4;
                     float L5 = i0.L(21.0f) + L2 + L3;
                     this.M = L5;
                     canvas.translate(L4, L5);
-                    kn0Var.b(canvas);
+                    ln0Var.b(canvas);
                     canvas.restore();
                 }
             }
-            qz0 qz0Var2 = this.s;
-            if (qz0Var2 != null) {
-                qz0Var2.e(canvas, i0.L(56.0f) + L, i0.L((this.X ? 20 : 2) + 34) + L3 + L2);
+            rz0 rz0Var2 = this.s;
+            if (rz0Var2 != null) {
+                rz0Var2.e(canvas, i0.L(56.0f) + L, i0.L((this.X ? 20 : 2) + 34) + L3 + L2);
             }
             int L6 = i0.L(2.0f) + L;
             this.a0 = L6;
@@ -242,8 +242,8 @@ public final class h extends Drawable implements z5, jn0 {
         if (this.Y) {
             return;
         }
-        jj jjVar = this.H;
-        if (jjVar == null || !jjVar.o4()) {
+        kj kjVar = this.H;
+        if (kjVar == null || !kjVar.o4()) {
             a aVar = this.Q;
             if (aVar == null || !aVar.g) {
                 if (this.X) {
@@ -259,7 +259,7 @@ public final class h extends Drawable implements z5, jn0 {
             } else {
                 l(3);
             }
-        } else if (hc.D().x(this.F) == null) {
+        } else if (ic.D().x(this.F) == null) {
             radialProgress2.p(true, 1.0f);
             if (this.X) {
                 m(6, true);
@@ -288,29 +288,29 @@ public final class h extends Drawable implements z5, jn0 {
             String str = this.e;
             if (str != null) {
                 if (this.n == null) {
-                    this.n = new qz0(str, 15.0f, i0.o());
+                    this.n = new rz0(str, 15.0f, i0.o());
                 }
-                qz0 qz0Var = this.n;
-                qz0Var.q(TextUtils.ellipsize(this.e, qz0Var.a, width, TextUtils.TruncateAt.MIDDLE));
+                rz0 rz0Var = this.n;
+                rz0Var.q(TextUtils.ellipsize(this.e, rz0Var.a, width, TextUtils.TruncateAt.MIDDLE));
             }
             String str2 = this.f;
             if (str2 != null) {
                 if (this.r == null) {
-                    this.r = new qz0(str2, 14.0f, null);
+                    this.r = new rz0(str2, 14.0f, null);
                 }
-                qz0 qz0Var2 = this.r;
-                qz0Var2.q(TextUtils.ellipsize(this.f, qz0Var2.a, width, TextUtils.TruncateAt.END));
+                rz0 rz0Var2 = this.r;
+                rz0Var2.q(TextUtils.ellipsize(this.f, rz0Var2.a, width, TextUtils.TruncateAt.END));
             }
             String str3 = this.h;
             if (str3 != null) {
                 if (this.s == null) {
-                    this.s = new qz0(str3, 12.0f, null);
+                    this.s = new rz0(str3, 12.0f, null);
                 }
-                qz0 qz0Var3 = this.s;
-                qz0Var3.q(TextUtils.ellipsize(this.h, qz0Var3.a, width, TextUtils.TruncateAt.END));
+                rz0 rz0Var3 = this.s;
+                rz0Var3.q(TextUtils.ellipsize(this.h, rz0Var3.a, width, TextUtils.TruncateAt.END));
             }
             if (this.G && this.w == null) {
-                this.w = new qz0(i0.g0(this.J, true, false), 12.0f, null);
+                this.w = new rz0(i0.g0(this.J, true, false), 12.0f, null);
             }
         }
     }
@@ -434,29 +434,13 @@ public final class h extends Drawable implements z5, jn0 {
         }
     }
 
-    @Override // org.telegram.messenger.z5
-    public final void n(long j10, long j11) {
-        float min = j11 == 0 ? 0.0f : Math.min(1.0f, j10 / j11);
-        this.y.p(true, min);
-        a aVar = this.Q;
-        if (aVar != null) {
-            aVar.a();
-        }
-        if (this.X) {
-            m(min >= 1.0f ? 4 : 3, true);
-        } else {
-            l(min >= 1.0f ? g() : 3);
-        }
-        this.d.invalidate();
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:16:0x027d  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0288  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x02aa  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void o(jj jjVar, TLRPC.MessageMedia messageMedia, jj jjVar2, int i10, String str, boolean z10) {
+    public final void n(kj kjVar, TLRPC.MessageMedia messageMedia, kj kjVar2, int i10, String str, boolean z10) {
         boolean z11;
         boolean z12;
         TLRPC.Document document;
@@ -465,7 +449,7 @@ public final class h extends Drawable implements z5, jn0 {
         String str2 = this.E;
         this.U = 0;
         this.V = 0;
-        this.H = jjVar;
+        this.H = kjVar;
         this.T = messageMedia;
         this.W = false;
         this.X = false;
@@ -493,16 +477,16 @@ public final class h extends Drawable implements z5, jn0 {
                     float f7 = i0.p;
                     String i15 = a1.g.i((int) (i13 / f7), (int) (i14 / f7), "_");
                     String concat = i15.concat("_b");
-                    this.E = !TextUtils.isEmpty(str) ? str : jj.U0(messageMedia);
+                    this.E = !TextUtils.isEmpty(str) ? str : kj.U0(messageMedia);
                     z12 = true;
-                    imageReceiver.r0(ic.f(w10, photo), i15, ic.f(w9, photo), concat, null, w10.size, null, jjVar2, 1);
+                    imageReceiver.r0(jc.f(w10, photo), i15, jc.f(w9, photo), concat, null, w10.size, null, kjVar2, 1);
                     z11 = z12;
                 }
             } else if ((messageMedia instanceof TLRPC.TL_messageMediaGeo) || (messageMedia instanceof TLRPC.TL_messageMediaVenue)) {
                 z12 = true;
                 if (messageMedia.geo != null) {
                     if (this.N == null) {
-                        c00 c10 = v5.c((t6.I.q() ? 3 : 6) * 0.12f, t6.Dc);
+                        d00 c10 = v5.c((t6.I.q() ? 3 : 6) * 0.12f, t6.Dc);
                         this.N = c10;
                         c10.t = true;
                         this.O = new up(c10);
@@ -516,16 +500,16 @@ public final class h extends Drawable implements z5, jn0 {
                     this.V = i16;
                     TLRPC.GeoPoint geoPoint = messageMedia.geo;
                     float f10 = i0.p;
-                    imageReceiver.s0(ic.p(b30.b(geoPoint, (int) (i10 / f10), (int) (i16 / f10), 15, Math.min(2, (int) Math.ceil(f10)))), null, null, null, this.O, jjVar2, 0);
+                    imageReceiver.s0(jc.p(c30.b(geoPoint, (int) (i10 / f10), (int) (i16 / f10), 15, Math.min(2, (int) Math.ceil(f10)))), null, null, null, this.O, kjVar2, 0);
                     z11 = z12;
                 }
             } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) messageMedia).document) != null) {
-                this.Q = new a(i12, jjVar, document, str);
-                this.E = !TextUtils.isEmpty(str) ? str : jj.U0(messageMedia);
-                if (jj.J3(document)) {
+                this.Q = new a(i12, kjVar, document, str);
+                this.E = !TextUtils.isEmpty(str) ? str : kj.U0(messageMedia);
+                if (kj.J3(document)) {
                     this.X = true;
-                    this.e = jj.y1(document);
-                    this.f = jj.w1(document);
+                    this.e = kj.y1(document);
+                    this.f = kj.w1(document);
                     int i17 = 0;
                     while (true) {
                         if (i17 >= document.attributes.size()) {
@@ -539,11 +523,11 @@ public final class h extends Drawable implements z5, jn0 {
                         }
                         i17++;
                     }
-                    if (jj.W2(document)) {
+                    if (kj.W2(document)) {
                         TLRPC.PhotoSize w11 = b8.w(document.thumbs, i0.L(22.0f), true, null, false);
                         radialProgress2.j(b8.w(document.thumbs, i0.L(44.0f), true, w11, true), w11, document, this.H);
                     } else {
-                        String t02 = jj.t0(document, true);
+                        String t02 = kj.t0(document, true);
                         if (TextUtils.isEmpty(t02)) {
                             radialProgress2.i(null, null, null);
                         } else {
@@ -553,14 +537,14 @@ public final class h extends Drawable implements z5, jn0 {
                     this.I = d;
                     this.h = i0.k0(j() ? MediaController.B().u0.g0 : 0, (int) this.I);
                     z12 = true;
-                } else if (jj.K4(document)) {
-                    this.J = (int) Math.max(1L, Math.round(jj.H0(document)));
+                } else if (kj.K4(document)) {
+                    this.J = (int) Math.max(1L, Math.round(kj.H0(document)));
                     this.G = true;
                     TLRPC.PhotoSize w12 = b8.w(document.thumbs, i0.Z0(false), true, null, true);
                     float f11 = i10;
                     TLRPC.PhotoSize w13 = b8.w(document.thumbs, (int) (f11 / i0.p), false, w12, false);
-                    ic c11 = ic.c(w12, document);
-                    ic c12 = ic.c(w13, document);
+                    jc c11 = jc.c(w12, document);
+                    jc c12 = jc.c(w13, document);
                     int i18 = (int) (f11 / i0.p);
                     if (w12 != null) {
                         int i19 = w12.w;
@@ -571,12 +555,12 @@ public final class h extends Drawable implements z5, jn0 {
                             i11 = (i20 * i18) / i19;
                             String i21 = a1.g.i(i18, i11, "_");
                             z12 = true;
-                            imageReceiver.u0(null, i21, c11, i21, c12, i21, null, 0L, null, jjVar2, 0);
+                            imageReceiver.u0(null, i21, c11, i21, c12, i21, null, 0L, null, kjVar2, 0);
                         }
                         i11 = i18;
                         String i212 = a1.g.i(i18, i11, "_");
                         z12 = true;
-                        imageReceiver.u0(null, i212, c11, i212, c12, i212, null, 0L, null, jjVar2, 0);
+                        imageReceiver.u0(null, i212, c11, i212, c12, i212, null, 0L, null, kjVar2, 0);
                     } else {
                         if (w13 != null) {
                             int i22 = w13.w;
@@ -587,13 +571,13 @@ public final class h extends Drawable implements z5, jn0 {
                                 i11 = (i23 * i18) / i22;
                                 String i2122 = a1.g.i(i18, i11, "_");
                                 z12 = true;
-                                imageReceiver.u0(null, i2122, c11, i2122, c12, i2122, null, 0L, null, jjVar2, 0);
+                                imageReceiver.u0(null, i2122, c11, i2122, c12, i2122, null, 0L, null, kjVar2, 0);
                             }
                         }
                         i11 = i18;
                         String i21222 = a1.g.i(i18, i11, "_");
                         z12 = true;
-                        imageReceiver.u0(null, i21222, c11, i21222, c12, i21222, null, 0L, null, jjVar2, 0);
+                        imageReceiver.u0(null, i21222, c11, i21222, c12, i21222, null, 0L, null, kjVar2, 0);
                     }
                 } else {
                     z12 = true;
@@ -635,24 +619,40 @@ public final class h extends Drawable implements z5, jn0 {
         p(z10);
     }
 
+    @Override // org.telegram.messenger.z5
+    public final void o(long j10, long j11) {
+        float min = j11 == 0 ? 0.0f : Math.min(1.0f, j10 / j11);
+        this.y.p(true, min);
+        a aVar = this.Q;
+        if (aVar != null) {
+            aVar.a();
+        }
+        if (this.X) {
+            m(min >= 1.0f ? 4 : 3, true);
+        } else {
+            l(min >= 1.0f ? g() : 3);
+        }
+        this.d.invalidate();
+    }
+
     public final void p(boolean z10) {
         int i10;
         if (!this.X || this.H == null) {
             return;
         }
-        jj jjVar = MediaController.B().u0;
+        kj kjVar = MediaController.B().u0;
         boolean j10 = j();
         this.a.a(j10, z10);
-        if (jjVar == null || !j10) {
+        if (kjVar == null || !j10) {
             i10 = 0;
         } else {
-            i10 = jjVar.g0;
-            kn0 kn0Var = this.K;
-            if (!kn0Var.e) {
-                kn0Var.h(jjVar.b0);
-                kn0Var.q = jjVar.e0;
+            i10 = kjVar.g0;
+            ln0 ln0Var = this.K;
+            if (!ln0Var.e) {
+                ln0Var.h(kjVar.b0);
+                ln0Var.q = kjVar.e0;
             }
-            kn0Var.j(jjVar);
+            ln0Var.j(kjVar);
         }
         if (this.g0 != i10) {
             this.g0 = i10;

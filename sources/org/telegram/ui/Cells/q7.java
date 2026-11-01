@@ -13,18 +13,18 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ep;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q7 extends FrameLayout {
     public final org.telegram.ui.Components.g9 a;
@@ -34,7 +34,7 @@ public final class q7 extends FrameLayout {
     public final ep e;
     public final FrameLayout f;
     public AnimatorSet h;
-    public jj n;
+    public kj n;
     public final /* synthetic */ t7 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -104,14 +104,14 @@ public final class q7 extends FrameLayout {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         if (this.n.D3()) {
-            accessibilityNodeInfo.setText(cd.L0(2131753962, null));
-        } else if (jj.L4(this.n.k)) {
+            accessibilityNodeInfo.setText(dd.L0(2131753962, null));
+        } else if (kj.L4(this.n.k)) {
             StringBuilder sb2 = new StringBuilder();
-            z20.q(null, 2131753933, sb2, ", ");
-            sb2.append(cd.z((int) this.n.L0()));
+            a30.q(null, 2131753933, sb2, ", ");
+            sb2.append(dd.z((int) this.n.L0()));
             accessibilityNodeInfo.setText(sb2.toString());
         } else {
-            accessibilityNodeInfo.setText(cd.L0(2131753948, null));
+            accessibilityNodeInfo.setText(dd.L0(2131753948, null));
         }
         if (this.e.a.q) {
             accessibilityNodeInfo.setCheckable(true);
@@ -125,64 +125,64 @@ public final class q7 extends FrameLayout {
         return super.onTouchEvent(motionEvent);
     }
 
-    public void setMessageObject(jj jjVar) {
+    public void setMessageObject(kj kjVar) {
         TLRPC.PhotoSize photoSize;
-        this.n = jjVar;
-        this.a.getImageReceiver().O0(!PhotoViewer.Q1(jjVar), false);
-        if (!TextUtils.isEmpty(vp.r1(this.r.s).E1(jjVar.k.restriction_reason))) {
+        this.n = kjVar;
+        this.a.getImageReceiver().O0(!PhotoViewer.Q1(kjVar), false);
+        if (!TextUtils.isEmpty(wp.r1(this.r.s).E1(kjVar.k.restriction_reason))) {
             this.c.setVisibility(4);
             this.a.setImageResource(R.drawable.photo_placeholder_in);
             return;
         }
-        if (jj.L4(jjVar.k)) {
+        if (kj.L4(kjVar.k)) {
             this.c.setVisibility(0);
-            this.b.setText(org.telegram.messenger.i0.g0((int) jjVar.L0(), false, false));
-            TLRPC.Document F0 = jjVar.F0();
+            this.b.setText(org.telegram.messenger.i0.g0((int) kjVar.L0(), false, false));
+            TLRPC.Document F0 = kjVar.F0();
             TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(F0.thumbs, 50, false, null, false);
-            TLRPC.PhotoSize w10 = org.telegram.messenger.b8.w(F0.thumbs, zs.r5, false, null, false);
+            TLRPC.PhotoSize w10 = org.telegram.messenger.b8.w(F0.thumbs, at.r5, false, null, false);
             photoSize = w9 != w10 ? w10 : null;
             if (w9 == null) {
                 this.a.setImageResource(R.drawable.photo_placeholder_in);
                 return;
-            } else if (jjVar.G1 != null) {
-                this.a.k(ic.c(photoSize, F0), "100_100", null, jjVar.G1, jjVar);
+            } else if (kjVar.G1 != null) {
+                this.a.k(jc.c(photoSize, F0), "100_100", null, kjVar.G1, kjVar);
                 return;
             } else {
-                this.a.o(ic.c(photoSize, F0), "100_100", ic.c(w9, F0), "b", org.telegram.messenger.w0.b.getResources().getDrawable(R.drawable.photo_placeholder_in), null, 0, jjVar);
+                this.a.n(jc.c(photoSize, F0), "100_100", jc.c(w9, F0), "b", org.telegram.messenger.w0.b.getResources().getDrawable(R.drawable.photo_placeholder_in), null, 0, kjVar);
                 return;
             }
         }
-        TLRPC.MessageMedia messageMedia = jjVar.k.media;
-        if (!(messageMedia instanceof TLRPC.TL_messageMediaPhoto) || messageMedia.photo == null || jjVar.n0.isEmpty()) {
+        TLRPC.MessageMedia messageMedia = kjVar.k.media;
+        if (!(messageMedia instanceof TLRPC.TL_messageMediaPhoto) || messageMedia.photo == null || kjVar.n0.isEmpty()) {
             this.c.setVisibility(4);
             this.a.setImageResource(R.drawable.photo_placeholder_in);
             return;
         }
         this.c.setVisibility(4);
-        TLRPC.PhotoSize w11 = org.telegram.messenger.b8.w(jjVar.n0, 50, false, null, false);
-        TLRPC.PhotoSize w12 = org.telegram.messenger.b8.w(jjVar.n0, zs.r5, false, w11, false);
-        if (!jjVar.x0 && !org.telegram.messenger.b6.q(this.r.s).d(jjVar)) {
-            BitmapDrawable bitmapDrawable = jjVar.G1;
+        TLRPC.PhotoSize w11 = org.telegram.messenger.b8.w(kjVar.n0, 50, false, null, false);
+        TLRPC.PhotoSize w12 = org.telegram.messenger.b8.w(kjVar.n0, at.r5, false, w11, false);
+        if (!kjVar.x0 && !org.telegram.messenger.b6.q(this.r.s).d(kjVar)) {
+            BitmapDrawable bitmapDrawable = kjVar.G1;
             if (bitmapDrawable != null) {
-                this.a.o(null, null, null, null, bitmapDrawable, null, 0, jjVar);
+                this.a.n(null, null, null, null, bitmapDrawable, null, 0, kjVar);
                 return;
             } else {
-                this.a.o(null, null, ic.f(w11, jjVar.l0), "b", org.telegram.messenger.w0.b.getResources().getDrawable(R.drawable.photo_placeholder_in), null, 0, jjVar);
+                this.a.n(null, null, jc.f(w11, kjVar.l0), "b", org.telegram.messenger.w0.b.getResources().getDrawable(R.drawable.photo_placeholder_in), null, 0, kjVar);
                 return;
             }
         }
         photoSize = w12 != w11 ? w11 : null;
-        if (jjVar.G1 == null) {
-            this.a.getImageReceiver().r0(ic.f(w12, jjVar.l0), "100_100", ic.f(photoSize, jjVar.l0), "b", null, w12 != null ? w12.size : 0L, null, jjVar, jj.Q5(jjVar.k) ? 2 : 1);
+        if (kjVar.G1 == null) {
+            this.a.getImageReceiver().r0(jc.f(w12, kjVar.l0), "100_100", jc.f(photoSize, kjVar.l0), "b", null, w12 != null ? w12.size : 0L, null, kjVar, kj.Q5(kjVar.k) ? 2 : 1);
             return;
         }
         ImageReceiver imageReceiver = this.a.getImageReceiver();
-        ic f7 = ic.f(w12, jjVar.l0);
+        jc f7 = jc.f(w12, kjVar.l0);
         long j10 = 0;
-        BitmapDrawable bitmapDrawable2 = jjVar.G1;
+        BitmapDrawable bitmapDrawable2 = kjVar.G1;
         if (w12 != null) {
             j10 = w12.size;
         }
-        imageReceiver.r0(f7, "100_100", null, null, bitmapDrawable2, j10, null, jjVar, jj.Q5(jjVar.k) ? 2 : 1);
+        imageReceiver.r0(f7, "100_100", null, null, bitmapDrawable2, j10, null, kjVar, kj.Q5(kjVar.k) ? 2 : 1);
     }
 }

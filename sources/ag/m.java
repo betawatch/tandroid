@@ -21,9 +21,9 @@ import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.m20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.n20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -32,15 +32,15 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.ob0;
-import org.telegram.ui.rm0;
-import org.telegram.ui.tb0;
-import org.telegram.ui.yb0;
+import org.telegram.ui.nb0;
+import org.telegram.ui.pm0;
+import org.telegram.ui.sb0;
+import org.telegram.ui.xb0;
 import v7.p8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m implements m20, org.telegram.ui.ActionBar.u1, tb0, bi.q0, kt, s4, OnFailureListener, di.p, r9.d, e2.p, e2.o, m4.o0, e2.j, m4.h1, rm0 {
+public final /* synthetic */ class m implements n20, org.telegram.ui.ActionBar.u1, sb0, bi.q0, kt, s4, OnFailureListener, di.p, r9.d, e2.p, e2.o, m4.o0, e2.j, m4.h1, pm0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -199,9 +199,9 @@ public final /* synthetic */ class m implements m20, org.telegram.ui.ActionBar.u
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0053, code lost:
     
-        r2.c0();
+        r2.d0();
         r2.a.f3.O(true);
-        r2.Y(true);
+        r2.Z(true);
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0060, code lost:
     
@@ -224,21 +224,21 @@ public final /* synthetic */ class m implements m20, org.telegram.ui.ActionBar.u
     
         if (r1 == null) goto L15;
      */
-    @Override // org.telegram.ui.tb0
+    @Override // org.telegram.ui.sb0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         f2 f2Var = (f2) this.b;
-        yb0 yb0Var = (yb0) this.c;
+        xb0 xb0Var = (xb0) this.c;
         f2Var.x = messageMedia.geo;
         String str = null;
         if (TextUtils.isEmpty(f2Var.y)) {
-            ob0 ob0Var = yb0Var.R;
+            nb0 nb0Var = xb0Var.R;
         }
     }
 
-    @Override // org.telegram.ui.rm0
+    @Override // org.telegram.ui.pm0
     public void e(int i10) {
         switch (this.a) {
             case 27:
@@ -255,15 +255,15 @@ public final /* synthetic */ class m implements m20, org.telegram.ui.ActionBar.u
                 }
                 break;
             default:
-                q20 q20Var = (q20) this.b;
-                q20 q20Var2 = (q20) this.c;
+                r20 r20Var = (r20) this.b;
+                r20 r20Var2 = (r20) this.c;
                 if (i10 != 1) {
                     if (i10 != 3) {
-                        q20Var2.a(null);
+                        r20Var2.a(null);
                         break;
                     }
                 } else {
-                    q20Var.a(null);
+                    r20Var.a(null);
                     break;
                 }
                 break;
@@ -304,7 +304,7 @@ public final /* synthetic */ class m implements m20, org.telegram.ui.ActionBar.u
                 q0Var.dismiss();
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                     TLRPC.TL_channels_updateUsername tL_channels_updateUsername = new TLRPC.TL_channels_updateUsername();
-                    tL_channels_updateUsername.channel = vp.h1((TLRPC.Chat) arrayList.get(i11));
+                    tL_channels_updateUsername.channel = wp.h1((TLRPC.Chat) arrayList.get(i11));
                     tL_channels_updateUsername.username = "";
                     ConnectionsManager.getInstance(q0Var.a).sendRequest(tL_channels_updateUsername, new kg.z(q0Var, 1), 64);
                 }
@@ -321,7 +321,7 @@ public final /* synthetic */ class m implements m20, org.telegram.ui.ActionBar.u
         }
     }
 
-    @Override // org.telegram.messenger.m20
+    @Override // org.telegram.messenger.n20
     public void i(Object obj, TLRPC.Document document, Boolean bool) {
         w wVar = (w) this.b;
         View view = (View) this.c;
@@ -331,7 +331,7 @@ public final /* synthetic */ class m implements m20, org.telegram.ui.ActionBar.u
         wVar.y = document;
         pVar.setSticker(document);
         ((org.telegram.ui.Cells.p8) view).setValueSticker(document);
-        wVar.i0(true);
+        wVar.j0(true);
     }
 
     @Override // e2.o

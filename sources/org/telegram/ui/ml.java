@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ml implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -48,8 +48,8 @@ public final /* synthetic */ class ml implements Runnable {
                 un unVar = ((nl) obj2).b;
                 if (this.d) {
                     i10 = ((org.telegram.ui.ActionBar.k2) unVar).currentAccount;
-                    org.telegram.messenger.vp.r1(i10).e7.edit().remove("pin_" + unVar.j6).commit();
-                    unVar.Sc(0, true);
+                    org.telegram.messenger.wp.r1(i10).e7.edit().remove("pin_" + unVar.j6).commit();
+                    unVar.Xc(0, true);
                     wbVar = null;
                 } else {
                     wbVar = null;

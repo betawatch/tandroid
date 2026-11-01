@@ -3,16 +3,16 @@ package rh;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ex0;
+import org.telegram.ui.dx0;
 import org.telegram.ui.wd;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v5 implements w5 {
     public final int a;
@@ -95,10 +95,10 @@ public final class v5 implements w5 {
             if (j11 == 0) {
                 getsavedstargifts2.peer = new TLRPC.TL_inputPeerSelf();
             } else {
-                getsavedstargifts2.peer = vp.r1(i10).i1(j11);
+                getsavedstargifts2.peer = wp.r1(i10).i1(j11);
             }
             getsavedstargifts2.offset = z10 ? "" : this.k;
-            getsavedstargifts2.limit = z10 ? Math.max(vp.r1(i10).L6, 15) : 30;
+            getsavedstargifts2.limit = z10 ? Math.max(wp.r1(i10).L6, 15) : 30;
             getsavedstargifts = getsavedstargifts2;
             if (this.c) {
                 getsavedstargifts2.flags |= 64;
@@ -118,7 +118,7 @@ public final class v5 implements w5 {
 
     @Override // rh.w5
     public final void d() {
-        zs.f(this.a).k(zs.G3, Long.valueOf(this.b), this);
+        at.f(this.a).k(at.G3, Long.valueOf(this.b), this);
     }
 
     @Override // rh.w5
@@ -168,7 +168,7 @@ public final class v5 implements w5 {
             return tL_inputSavedStarGiftUser;
         }
         TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat = new TL_stars.TL_inputSavedStarGiftChat();
-        tL_inputSavedStarGiftChat.peer = vp.r1(this.a).i1(this.b);
+        tL_inputSavedStarGiftChat.peer = wp.r1(this.a).i1(this.b);
         tL_inputSavedStarGiftChat.saved_id = savedStarGift.saved_id;
         return tL_inputSavedStarGiftChat;
     }
@@ -236,7 +236,7 @@ public final class v5 implements w5 {
                 }
             }
             if (z10) {
-                zs.f(i10).k(zs.G3, Long.valueOf(this.b), this);
+                at.f(i10).k(at.G3, Long.valueOf(this.b), this);
             }
         }
         if (starGift != null) {
@@ -258,7 +258,7 @@ public final class v5 implements w5 {
             if (e6.k((TL_stars.SavedStarGift) arrayList.get(i10), savedStarGift)) {
                 arrayList.remove(i10);
                 this.n = Math.max(0, this.n - 1);
-                zs.f(this.a).k(zs.G3, Long.valueOf(this.b), this);
+                at.f(this.a).k(at.G3, Long.valueOf(this.b), this);
                 return true;
             }
             i10++;
@@ -286,7 +286,7 @@ public final class v5 implements w5 {
         int i11 = this.a;
         if (!z10) {
             TL_stars.toggleStarGiftsPinnedToTop togglestargiftspinnedtotop = new TL_stars.toggleStarGiftsPinnedToTop();
-            togglestargiftspinnedtotop.peer = vp.r1(i11).i1(j10);
+            togglestargiftspinnedtotop.peer = wp.r1(i11).i1(j10);
             ArrayList i12 = i();
             int size = i12.size();
             while (i10 < size) {
@@ -298,7 +298,7 @@ public final class v5 implements w5 {
             return;
         }
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
-        updatestargiftcollection.peer = vp.r1(i11).i1(j10);
+        updatestargiftcollection.peer = wp.r1(i11).i1(j10);
         updatestargiftcollection.collection_id = this.d;
         updatestargiftcollection.flags |= 8;
         ArrayList arrayList = this.l;
@@ -326,21 +326,21 @@ public final class v5 implements w5 {
                     arrayList = this.l;
                     arrayList.removeAll(i10);
                     if (this.e && !this.c) {
-                        Collections.sort(arrayList, new ex0(12));
+                        Collections.sort(arrayList, new dx0(12));
                     }
                     arrayList.addAll(0, i10);
-                    zs.f(i11).k(zs.G3, Long.valueOf(this.b), this);
+                    at.f(i11).k(at.G3, Long.valueOf(this.b), this);
                     n();
                     return z12;
                 }
             } else if (z10) {
-                if (i10.size() + 1 <= vp.r1(i11).L6) {
+                if (i10.size() + 1 <= wp.r1(i11).L6) {
                     z12 = false;
                 } else {
                     if (!z11) {
                         return true;
                     }
-                    while (i10.size() > 0 && i10.size() + 1 > vp.r1(i11).L6) {
+                    while (i10.size() > 0 && i10.size() + 1 > wp.r1(i11).L6) {
                         ((TL_stars.SavedStarGift) i0.a.v(1, i10)).pinned_to_top = false;
                     }
                     z12 = true;
@@ -350,10 +350,10 @@ public final class v5 implements w5 {
                 arrayList = this.l;
                 arrayList.removeAll(i10);
                 if (this.e) {
-                    Collections.sort(arrayList, new ex0(12));
+                    Collections.sort(arrayList, new dx0(12));
                 }
                 arrayList.addAll(0, i10);
-                zs.f(i11).k(zs.G3, Long.valueOf(this.b), this);
+                at.f(i11).k(at.G3, Long.valueOf(this.b), this);
                 n();
                 return z12;
             }
@@ -394,7 +394,7 @@ public final class v5 implements w5 {
             }
         }
         if (z11) {
-            zs.f(this.a).k(zs.G3, Long.valueOf(this.b), this);
+            at.f(this.a).k(at.G3, Long.valueOf(this.b), this);
         }
     }
 }

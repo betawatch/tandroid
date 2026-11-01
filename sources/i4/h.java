@@ -26,12 +26,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import v7.p6;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*+)?$");
@@ -41,23 +41,23 @@ public abstract class h {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(zs.e4, zs.e4, zs.e4)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, zs.e4, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, zs.e4, zs.e4)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(zs.e4, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(zs.e4, zs.e4, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(zs.e4, 0, zs.e4)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, zs.e4)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(at.e4, at.e4, at.e4)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, at.e4, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, at.e4, at.e4)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(at.e4, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(at.e4, at.e4, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(at.e4, 0, at.e4)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, at.e4)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         c = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(zs.e4, zs.e4, zs.e4)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, zs.e4, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, zs.e4, zs.e4)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(zs.e4, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(zs.e4, zs.e4, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(zs.e4, 0, zs.e4)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, zs.e4)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(at.e4, at.e4, at.e4)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, at.e4, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, at.e4, at.e4)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(at.e4, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(at.e4, at.e4, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(at.e4, 0, at.e4)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, at.e4)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         d = DesugarCollections.unmodifiableMap(hashMap2);
     }
@@ -81,35 +81,35 @@ public abstract class h {
                 }
                 c10 = 65535;
                 break;
-            case zs.j1 /* 98 */:
+            case at.j1 /* 98 */:
                 if (str2.equals("b")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case zs.k1 /* 99 */:
+            case at.k1 /* 99 */:
                 if (str2.equals("c")) {
                     c10 = 2;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case zs.q1 /* 105 */:
+            case at.q1 /* 105 */:
                 if (str2.equals("i")) {
                     c10 = 3;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case zs.C1 /* 117 */:
+            case at.C1 /* 117 */:
                 if (str2.equals("u")) {
                     c10 = 4;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case zs.D1 /* 118 */:
+            case at.D1 /* 118 */:
                 if (str2.equals("v")) {
                     c10 = 5;
                     break;
@@ -578,35 +578,35 @@ public abstract class h {
                         String str5 = trim.split("[ \\.]", 2)[0];
                         str5.getClass();
                         switch (str5.hashCode()) {
-                            case zs.j1 /* 98 */:
+                            case at.j1 /* 98 */:
                                 if (str5.equals("b")) {
                                     c10 = 0;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case zs.k1 /* 99 */:
+                            case at.k1 /* 99 */:
                                 if (str5.equals("c")) {
                                     c10 = 1;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case zs.q1 /* 105 */:
+                            case at.q1 /* 105 */:
                                 if (str5.equals("i")) {
                                     c10 = 2;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case zs.C1 /* 117 */:
+                            case at.C1 /* 117 */:
                                 if (str5.equals("u")) {
                                     c10 = 3;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case zs.D1 /* 118 */:
+                            case at.D1 /* 118 */:
                                 if (str5.equals("v")) {
                                     c10 = 4;
                                     break;

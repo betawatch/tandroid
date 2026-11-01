@@ -6,7 +6,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x10 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -36,32 +36,32 @@ public final class x10 extends AnimatorListenerAdapter {
                 y10Var.J.d(i0.b.o(y10Var.M, 38));
                 break;
             case 1:
-                zt0 zt0Var = (zt0) this.d;
-                ss0[] ss0VarArr = zt0Var.m0;
-                zt0Var.L1.e();
-                zt0Var.q1 = false;
-                int[] iArr = zt0Var.o1;
+                au0 au0Var = (au0) this.d;
+                ts0[] ts0VarArr = au0Var.m0;
+                au0Var.L1.e();
+                au0Var.q1 = false;
+                int[] iArr = au0Var.o1;
                 int i11 = this.c;
                 int i12 = this.b;
                 iArr[i12] = i11;
-                for (int i13 = 0; i13 < ss0VarArr.length; i13++) {
-                    ss0 ss0Var = ss0VarArr[i13];
-                    if (ss0Var != null && ss0Var.h != null && (((i10 = ss0Var.E) == 0 || zt0.x0(i10)) && (adapter = ss0VarArr[i13].h.getAdapter()) != null)) {
+                for (int i13 = 0; i13 < ts0VarArr.length; i13++) {
+                    ts0 ts0Var = ts0VarArr[i13];
+                    if (ts0Var != null && ts0Var.h != null && (((i10 = ts0Var.E) == 0 || au0.y0(i10)) && (adapter = ts0VarArr[i13].h.getAdapter()) != null)) {
                         int b10 = adapter.b();
                         if (i13 == 0) {
-                            zt0Var.v1[0].g(false);
+                            au0Var.v1[0].g(false);
                         }
-                        ss0VarArr[i13].x.y1(iArr[i12]);
-                        ss0VarArr[i13].h.a0();
+                        ts0VarArr[i13].x.y1(iArr[i12]);
+                        ts0VarArr[i13].h.a0();
                         if (adapter.b() == b10) {
-                            org.telegram.messenger.i0.a4(ss0VarArr[i13].h);
+                            org.telegram.messenger.i0.a4(ts0VarArr[i13].h);
                         } else {
                             adapter.f();
                         }
-                        ss0VarArr[i13].n.setVisibility(8);
+                        ts0VarArr[i13].n.setVisibility(8);
                     }
                 }
-                zt0Var.e1();
+                au0Var.f1();
                 break;
             case 2:
                 org.telegram.ui.Components.voip.r rVar = (org.telegram.ui.Components.voip.r) this.d;

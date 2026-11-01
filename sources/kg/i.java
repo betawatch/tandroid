@@ -9,10 +9,10 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.r8;
 import org.telegram.ui.Components.u10;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout {
     public final g9 a;
@@ -44,13 +44,13 @@ public final class i extends FrameLayout {
             this.a = g9Var;
             g9Var.setRoundRadius((int) (org.telegram.messenger.i0.L(65.0f) / 2.0f));
             addView(g9Var, b6.d(65, 65.0f, 1, 0.0f, 32.0f, 0.0f, 0.0f));
-            TLRPC.User f7 = d20.i(d20.s0).f();
+            TLRPC.User f7 = e20.i(e20.s0).f();
             r8 r8Var = new r8((p6) null);
             r8Var.r(f7);
             g9Var.getImageReceiver().i0(f7, r8Var, null);
             TextView textView = new TextView(context);
             sc.e.t(textView, 1, 20.0f);
-            z20.p(textView, t6.G6, p6Var, null, 2131743831);
+            a30.p(textView, t6.G6, p6Var, null, 2131743831);
             addView(textView, b6.d(-2, -2.0f, 1, 0.0f, 111.0f, 0.0f, 0.0f));
             u10Var.m = true;
             u10Var.a = true;
@@ -64,7 +64,7 @@ public final class i extends FrameLayout {
         }
         if (i10 == 1) {
             g gVar = new g(context, 0);
-            addView(gVar, b6.e(-1, zs.U2, 55));
+            addView(gVar, b6.e(-1, at.U2, 55));
             h hVar = new h(context, 1, 1, 0);
             hVar.setStarParticlesView(gVar);
             Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
@@ -76,16 +76,16 @@ public final class i extends FrameLayout {
             hVar2.z = i11;
             hVar2.A = t6.zk;
             hVar2.b();
-            addView(hVar, b6.e(zs.q2, zs.q2, 1));
+            addView(hVar, b6.e(at.q2, at.q2, 1));
             hVar.m(100L);
             TextView g10 = m5.g(context, 1, 20.0f);
             g10.setTypeface(org.telegram.messenger.i0.o());
-            z20.p(g10, t6.G6, p6Var, null, 2131744277);
+            a30.p(g10, t6.G6, p6Var, null, 2131744277);
             g10.setGravity(17);
             addView(g10, b6.d(-2, -2.0f, 1, 33.0f, 150.0f, 33.0f, 0.0f));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
-            z20.p(textView2, t6.z6, p6Var, null, 2131744273);
+            a30.p(textView2, t6.z6, p6Var, null, 2131744273);
             textView2.setGravity(17);
             addView(textView2, b6.d(-2, -2.0f, 1, 33.0f, 183.0f, 33.0f, 20.0f));
         }

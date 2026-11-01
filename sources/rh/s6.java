@@ -2,24 +2,24 @@ package rh;
 
 import android.widget.FrameLayout;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.l20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.is;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.m20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s6 implements j20 {
+public final /* synthetic */ class s6 implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -30,7 +30,7 @@ public final /* synthetic */ class s6 implements j20 {
         this.b = obj2;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         boolean z10;
         int i10 = this.a;
@@ -39,28 +39,28 @@ public final /* synthetic */ class s6 implements j20 {
         Object obj4 = this.c;
         switch (i10) {
             case 0:
-                h8.C0((h8) obj4, (a51) obj3, (Boolean) obj, (String) obj2);
+                h8.D0((h8) obj4, (b51) obj3, (Boolean) obj, (String) obj2);
                 break;
             case 1:
                 x7 x7Var = (x7) obj4;
-                a51 a51Var = (a51) obj3;
+                b51 b51Var = (b51) obj3;
                 Boolean bool = (Boolean) obj;
                 String str = (String) obj2;
                 if (x7Var.getContext() != null) {
                     if (bool.booleanValue()) {
-                        new cc((FrameLayout) x7Var.b, x7Var.I0).I(R.raw.stars_topup, cd.L0(2131745177, null), org.telegram.messenger.i0.W2(cd.G((int) a51Var.B, "StarsAcquiredInfo", new Object[0]))).j();
+                        new cc((FrameLayout) x7Var.b, x7Var.I0).I(R.raw.stars_topup, dd.L0(2131745177, null), org.telegram.messenger.i0.W2(dd.G((int) b51Var.B, "StarsAcquiredInfo", new Object[0]))).j();
                         x7Var.S1.c(true);
                         e6.y(x7Var.a, false).S(true);
                         break;
                     } else if (str != null) {
-                        new cc((FrameLayout) x7Var.b, x7Var.I0).Q(R.raw.error, 36, cd.a0(null, null, 2131743903, str)).j();
+                        new cc((FrameLayout) x7Var.b, x7Var.I0).Q(R.raw.error, 36, dd.a0(null, null, 2131743903, str)).j();
                         break;
                     }
                 }
                 break;
             case 2:
                 y7 y7Var = (y7) obj4;
-                a51 a51Var2 = (a51) obj3;
+                b51 b51Var2 = (b51) obj3;
                 Boolean bool2 = (Boolean) obj;
                 String str2 = (String) obj2;
                 if (y7Var.getContext() != null) {
@@ -69,14 +69,14 @@ public final /* synthetic */ class s6 implements j20 {
                     org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
                     if (T != null) {
                         if (bool2.booleanValue()) {
-                            cc.a0(T).I(R.raw.stars_topup, cd.L0(2131745177, null), org.telegram.messenger.i0.W2(cd.G((int) a51Var2.B, "StarsAcquiredInfo", new Object[0]))).j();
+                            cc.a0(T).I(R.raw.stars_topup, dd.L0(2131745177, null), org.telegram.messenger.i0.W2(dd.G((int) b51Var2.B, "StarsAcquiredInfo", new Object[0]))).j();
                             LaunchActivity launchActivity = LaunchActivity.I1;
                             if (launchActivity != null) {
                                 launchActivity.x0.c(true);
                                 break;
                             }
                         } else if (str2 != null) {
-                            cc.a0(T).Q(R.raw.error, 36, cd.a0(null, null, 2131743903, str2)).j();
+                            cc.a0(T).Q(R.raw.error, 36, dd.a0(null, null, 2131743903, str2)).j();
                             break;
                         }
                     }
@@ -92,8 +92,8 @@ public final /* synthetic */ class s6 implements j20 {
                 TLRPC.InputGroupCall inputGroupCall = p1Var.O;
                 if (inputGroupCall != null && inputGroupCall.id == getgroupcallstars.call.id) {
                     if (groupcallstars != null) {
-                        vp.r1(i11).V3(groupcallstars.users, false);
-                        vp.r1(i11).P3(groupcallstars.chats, false);
+                        wp.r1(i11).V3(groupcallstars.users, false);
+                        wp.r1(i11).P3(groupcallstars.chats, false);
                         int i12 = 0;
                         while (true) {
                             if (i12 < groupcallstars.top_donors.size()) {
@@ -133,7 +133,7 @@ public final /* synthetic */ class s6 implements j20 {
                     ArrayList arrayList3 = new ArrayList();
                     for (int i14 = 0; i14 < vector.objects.size(); i14++) {
                         if (((Long) arrayList.get(i14)).longValue() > 0) {
-                            TLRPC.User Z1 = vp.r1(i13).Z1((Long) arrayList.get(i14));
+                            TLRPC.User Z1 = wp.r1(i13).Z1((Long) arrayList.get(i14));
                             if (Z1 != null) {
                                 TLRPC.TL_recentStory tL_recentStory = (TLRPC.TL_recentStory) vector.objects.get(i14);
                                 Z1.stories_max_id = tL_recentStory;
@@ -145,7 +145,7 @@ public final /* synthetic */ class s6 implements j20 {
                                 arrayList2.add(Z1);
                             }
                         } else {
-                            TLRPC.Chat L0 = vp.r1(i13).L0((Long) arrayList.get(i14));
+                            TLRPC.Chat L0 = wp.r1(i13).L0((Long) arrayList.get(i14));
                             if (L0 != null) {
                                 TLRPC.TL_recentStory tL_recentStory2 = (TLRPC.TL_recentStory) vector.objects.get(i14);
                                 L0.stories_max_id = tL_recentStory2;
@@ -158,8 +158,8 @@ public final /* synthetic */ class s6 implements j20 {
                             }
                         }
                     }
-                    hs.a0(i13).m1(arrayList2, arrayList3, true, true);
-                    zs.f(i13).k(2, 0);
+                    is.a0(i13).m1(arrayList2, arrayList3, true, true);
+                    at.f(i13).k(2, 0);
                     break;
                 }
                 break;
@@ -171,7 +171,7 @@ public final /* synthetic */ class s6 implements j20 {
                 b4Var.b0(jVar);
                 break;
             default:
-                ((l20) obj4).a((Boolean) obj, (androidx.biometric.t) obj2, (androidx.biometric.u) obj3);
+                ((m20) obj4).a((Boolean) obj, (androidx.biometric.t) obj2, (androidx.biometric.u) obj3);
                 break;
         }
     }

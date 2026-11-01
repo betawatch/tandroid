@@ -10,9 +10,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d6 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -22,9 +22,9 @@ public final class d6 extends FrameLayout {
     public final /* synthetic */ org.telegram.ui.ActionBar.z2 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d6(yh.a0 a0Var, Context context) {
+    public d6(yh.z zVar, Context context) {
         super(context);
-        this.e = a0Var;
+        this.e = zVar;
         this.b = new org.telegram.ui.Components.t5(this, 250L, gr.h);
         this.d = new Path();
     }
@@ -52,12 +52,12 @@ public final class d6 extends FrameLayout {
                         r6 r6Var = (r6) view;
                         float i11 = Utilities.i(1.0f - Math.abs(r6Var.getTranslationX() / r6Var.getMeasuredWidth()), 1.0f, f7);
                         float f10 = this.c;
-                        tk0 tk0Var = r6Var.f;
+                        uk0 uk0Var = r6Var.f;
                         FrameLayout frameLayout = r6Var.e;
                         s4.a0 a0Var = r6Var.h;
                         float f11 = (a0Var.t || r6Var.a == 0) ? org.telegram.messenger.i0.q.y : f7;
-                        for (int i12 = 0; i12 < tk0Var.getChildCount(); i12++) {
-                            View childAt = tk0Var.getChildAt(i12);
+                        for (int i12 = 0; i12 < uk0Var.getChildCount(); i12++) {
+                            View childAt = uk0Var.getChildAt(i12);
                             if (a0Var.t) {
                                 float y10 = childAt.getY() + frameLayout.getPaddingTop();
                                 float alpha = childAt.getAlpha();
@@ -109,25 +109,25 @@ public final class d6 extends FrameLayout {
                 canvas.restore();
                 break;
             default:
-                yh.a0 a0Var2 = (yh.a0) this.e;
-                View[] viewPages2 = a0Var2.k1.getViewPages();
+                yh.z zVar = (yh.z) this.e;
+                View[] viewPages2 = zVar.k1.getViewPages();
                 this.c = 0.0f;
                 for (View view2 : viewPages2) {
                     if (view2 != null) {
-                        yh.y yVar = (yh.y) view2;
-                        this.c = (yVar.b() * Utilities.i(1.0f - Math.abs(yVar.getTranslationX() / yVar.getMeasuredWidth()), 1.0f, 0.0f)) + this.c;
-                        if (yVar.getVisibility() == 0) {
-                            yVar.c();
+                        yh.x xVar = (yh.x) view2;
+                        this.c = (xVar.b() * Utilities.i(1.0f - Math.abs(xVar.getTranslationX() / xVar.getMeasuredWidth()), 1.0f, 0.0f)) + this.c;
+                        if (xVar.getVisibility() == 0) {
+                            xVar.c();
                         }
                     }
                 }
                 float e7 = this.b.e(false, this.c <= ((float) org.telegram.messenger.i0.m) ? 1.0f : 0.0f);
-                float max2 = (Math.max(org.telegram.messenger.i0.m, this.c) - (org.telegram.messenger.i0.m * e7)) - (org.telegram.messenger.i0.L(10.0f) * Math.max(a0Var2.i1.e, a0Var2.j1.e));
+                float max2 = (Math.max(org.telegram.messenger.i0.m, this.c) - (org.telegram.messenger.i0.m * e7)) - (org.telegram.messenger.i0.L(10.0f) * Math.max(zVar.i1.e, zVar.j1.e));
                 this.c = max2;
                 RectF rectF2 = org.telegram.messenger.i0.P;
-                rectF2.set(a0Var2.t0, max2, getWidth() - a0Var2.t0, org.telegram.messenger.i0.L(8.0f) + getHeight());
+                rectF2.set(zVar.t0, max2, getWidth() - zVar.t0, org.telegram.messenger.i0.L(8.0f) + getHeight());
                 float W12 = org.telegram.messenger.i0.W1(e7, org.telegram.messenger.i0.L(14.0f), 0);
-                canvas.drawRoundRect(rectF2, W12, W12, a0Var2.G1);
+                canvas.drawRoundRect(rectF2, W12, W12, zVar.G1);
                 canvas.save();
                 Path path2 = this.d;
                 path2.rewind();
@@ -152,7 +152,7 @@ public final class d6 extends FrameLayout {
                 break;
             default:
                 if (motionEvent.getAction() == 0 && motionEvent.getY() < this.c) {
-                    ((yh.a0) this.e).dismiss();
+                    ((yh.z) this.e).dismiss();
                     break;
                 } else {
                     break;

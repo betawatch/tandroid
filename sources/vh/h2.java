@@ -22,16 +22,16 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.ff;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.yv0;
+import org.telegram.ui.xv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h2 extends FrameLayout {
     public static int d0;
@@ -174,15 +174,15 @@ public final class h2 extends FrameLayout {
             invalidate();
             return;
         }
-        boolean z10 = obj instanceof ef;
+        boolean z10 = obj instanceof ff;
         if (z10) {
-            ef efVar = (ef) obj;
-            str = efVar.c;
+            ff ffVar = (ff) obj;
+            str = ffVar.c;
             if (str == null) {
-                if (!efVar.b || efVar.d()) {
-                    str = efVar.I;
+                if (!ffVar.b || ffVar.d()) {
+                    str = ffVar.I;
                 } else {
-                    str = "" + efVar.C;
+                    str = "" + ffVar.C;
                 }
             }
         } else if (obj instanceof n5) {
@@ -204,9 +204,9 @@ public final class h2 extends FrameLayout {
         paint.setShader(null);
         this.e = null;
         if (z10) {
-            ef efVar2 = (ef) obj;
-            if (efVar2.T != 0 && efVar2.U != 0) {
-                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{efVar2.T, efVar2.U}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+            ff ffVar2 = (ff) obj;
+            if (ffVar2.T != 0 && ffVar2.U != 0) {
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{ffVar2.T, ffVar2.U}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                 this.e = linearGradient;
                 paint.setShader(linearGradient);
                 h();
@@ -237,13 +237,13 @@ public final class h2 extends FrameLayout {
         a2.postRunnable(l5Var);
     }
 
-    public final Bitmap c(ef efVar, BitmapFactory.Options options) {
-        if (efVar == null) {
+    public final Bitmap c(ff ffVar, BitmapFactory.Options options) {
+        if (ffVar == null) {
             return null;
         }
-        int i10 = efVar.C;
-        String str = efVar.c;
-        return str != null ? BitmapFactory.decodeFile(str, options) : (!efVar.b || efVar.d()) ? MediaStore.Images.Thumbnails.getThumbnail(getContext().getContentResolver(), i10, 1, options) : MediaStore.Video.Thumbnails.getThumbnail(getContext().getContentResolver(), i10, 1, options);
+        int i10 = ffVar.C;
+        String str = ffVar.c;
+        return str != null ? BitmapFactory.decodeFile(str, options) : (!ffVar.b || ffVar.d()) ? MediaStore.Images.Thumbnails.getThumbnail(getContext().getContentResolver(), i10, 1, options) : MediaStore.Video.Thumbnails.getThumbnail(getContext().getContentResolver(), i10, 1, options);
     }
 
     @Override // android.view.View
@@ -334,12 +334,12 @@ public final class h2 extends FrameLayout {
         this.S = n5Var;
         if (i10 > 0) {
             this.F = null;
-            g(cd.G(i10, "StoryDrafts", new Object[0]));
+            g(dd.G(i10, "StoryDrafts", new Object[0]));
             this.x = false;
-            this.O = cd.G(i10, "StoryDrafts", new Object[0]);
+            this.O = dd.G(i10, "StoryDrafts", new Object[0]);
         } else {
             if (n5Var != null && n5Var.c) {
-                StaticLayout staticLayout = new StaticLayout(cd.M0("StoryDraft"), this.s, getMeasuredWidth() > 0 ? getMeasuredWidth() : org.telegram.messenger.i0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                StaticLayout staticLayout = new StaticLayout(dd.M0("StoryDraft"), this.s, getMeasuredWidth() > 0 ? getMeasuredWidth() : org.telegram.messenger.i0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 this.F = staticLayout;
                 this.G = staticLayout.getLineCount() > 0 ? this.F.getLineWidth(0) : 0.0f;
                 this.H = this.F.getLineCount() > 0 ? this.F.getLineLeft(0) : 0.0f;
@@ -348,9 +348,9 @@ public final class h2 extends FrameLayout {
             }
             g((n5Var == null || !n5Var.K) ? null : org.telegram.messenger.i0.g0((int) Math.max(0.0f, ((n5Var.a0 - n5Var.Z) * n5Var.h0) / 1000.0f), false, false));
             if (n5Var == null || !n5Var.K) {
-                this.O = cd.L0(2131744700, null);
+                this.O = dd.L0(2131744700, null);
             } else {
-                this.O = cd.L0(2131744700, null) + ", " + cd.z((int) Math.max(0.0f, ((n5Var.a0 - n5Var.Z) * n5Var.h0) / 1000.0f));
+                this.O = dd.L0(2131744700, null) + ", " + dd.z((int) Math.max(0.0f, ((n5Var.a0 - n5Var.Z) * n5Var.h0) / 1000.0f));
             }
         }
         b(n5Var);
@@ -364,7 +364,7 @@ public final class h2 extends FrameLayout {
         org.telegram.ui.Cells.n2 n2Var = this.J;
         if (z11) {
             frameLayout.setVisibility(0);
-            z20.m(n2Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new yv0(10, this, z10)), gr.h, 320L);
+            a30.m(n2Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new xv0(10, this, z10)), gr.h, 320L);
         } else {
             frameLayout.setVisibility(z10 ? 0 : 8);
         }

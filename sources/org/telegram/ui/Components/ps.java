@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class ps extends s4.f1 {
     public static final DecelerateInterpolator D = new DecelerateInterpolator();
     public int A;
     public int B;
-    public final tk0 C;
+    public final uk0 C;
     public final ArrayList o = new ArrayList();
     public final ArrayList p = new ArrayList();
     public final ArrayList q = new ArrayList();
@@ -30,9 +30,9 @@ public abstract class ps extends s4.f1 {
     public final ArrayList y = new ArrayList();
     public org.telegram.ui.Cells.v2 z;
 
-    public ps(tk0 tk0Var) {
+    public ps(uk0 uk0Var) {
         this.m = false;
-        this.C = tk0Var;
+        this.C = uk0Var;
     }
 
     public final void A() {
@@ -678,11 +678,11 @@ public abstract class ps extends s4.f1 {
         org.telegram.ui.Cells.v2 v2Var = null;
         int i10 = 0;
         while (true) {
-            tk0 tk0Var = this.C;
-            if (i10 >= tk0Var.getChildCount()) {
+            uk0 uk0Var = this.C;
+            if (i10 >= uk0Var.getChildCount()) {
                 break;
             }
-            View childAt = tk0Var.getChildAt(i10);
+            View childAt = uk0Var.getChildAt(i10);
             if (childAt.getTop() > Integer.MIN_VALUE && (childAt instanceof org.telegram.ui.Cells.v2)) {
                 v2Var = (org.telegram.ui.Cells.v2) childAt;
             }

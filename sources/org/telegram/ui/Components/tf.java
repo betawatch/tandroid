@@ -12,7 +12,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tf implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class tf implements Runnable {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = ((wf) obj).b0;
                 if (!MediaController.B().K()) {
-                    org.telegram.messenger.vp.d1().edit().putInt("voicepausehint", 3).apply();
+                    org.telegram.messenger.wp.d1().edit().putInt("voicepausehint", 3).apply();
                 }
                 if (chatActivityEnterView.s4) {
                     chatActivityEnterView.J3 = true;
@@ -69,7 +69,7 @@ public final /* synthetic */ class tf implements Runnable {
                 b5 b5Var = (b5) obj;
                 ArrayList arrayList = new ArrayList(b5Var.c);
                 b5Var.c.clear();
-                org.telegram.messenger.hs.a0(b5Var.e).a.c(new y4(b5Var, arrayList, i11));
+                org.telegram.messenger.is.a0(b5Var.e).a.c(new y4(b5Var, arrayList, i11));
                 b5Var.d = null;
                 break;
             case 7:
@@ -142,7 +142,7 @@ public final /* synthetic */ class tf implements Runnable {
             case 17:
                 lc lcVar = (lc) obj;
                 lcVar.getClass();
-                if (org.telegram.messenger.sc.e(512)) {
+                if (org.telegram.messenger.tc.e(512)) {
                     lcVar.invalidateSelf();
                     break;
                 }
@@ -207,7 +207,7 @@ public final /* synthetic */ class tf implements Runnable {
                 if (jmVar.Q && (chatAttachAlertPhotoLayout = biVar.a2) != null) {
                     org.telegram.ui.ActionBar.b1 b1Var = chatAttachAlertPhotoLayout.c1;
                     b1Var.setIcon(R.drawable.ic_ab_back);
-                    b1Var.setText(org.telegram.messenger.cd.L0(2131753756, null));
+                    b1Var.setText(org.telegram.messenger.dd.L0(2131753756, null));
                     b1Var.setRightIcon(0);
                     break;
                 }
@@ -218,7 +218,7 @@ public final /* synthetic */ class tf implements Runnable {
                 jnVar.k1 = null;
                 break;
             default:
-                ((fo) obj).v();
+                ((fo) obj).s();
                 break;
         }
     }

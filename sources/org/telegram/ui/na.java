@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class na extends FrameLayout {
     public final org.telegram.ui.Components.p80 a;
@@ -29,7 +29,7 @@ public final class na extends FrameLayout {
         p80Var.setTextSize(1, 15.0f);
         int i10 = org.telegram.ui.ActionBar.t6.F6;
         org.telegram.ui.ActionBar.a7.V(p80Var, i10, null);
-        p80Var.setGravity(org.telegram.messenger.cd.X ? 5 : 3);
+        p80Var.setGravity(org.telegram.messenger.dd.X ? 5 : 3);
         int i11 = org.telegram.ui.ActionBar.t6.J6;
         org.telegram.ui.ActionBar.a7.H(p80Var, i11, null);
         int i12 = org.telegram.ui.ActionBar.t6.K6;
@@ -40,24 +40,24 @@ public final class na extends FrameLayout {
         this.b = b2Var;
         b2Var.setTextSize(1, 15.0f);
         org.telegram.ui.ActionBar.a7.V(b2Var, i10, null);
-        b2Var.setGravity(org.telegram.messenger.cd.X ? 5 : 3);
+        b2Var.setGravity(org.telegram.messenger.dd.X ? 5 : 3);
         org.telegram.ui.ActionBar.a7.H(b2Var, i11, null);
         org.telegram.ui.ActionBar.a7.D(b2Var, i12, null);
         b2Var.setPadding(org.telegram.messenger.i0.L(3.0f), 0, org.telegram.messenger.i0.L(3.0f), 0);
         addView(p80Var, w7.b6.e(-1, -2, 48));
         addView(b2Var, w7.b6.e(-1, -2, 48));
         if (oaVar.y == 0) {
-            p80Var.setText(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.L0(2131743686, null)));
+            p80Var.setText(org.telegram.messenger.i0.W2(org.telegram.messenger.dd.L0(2131743686, null)));
             return;
         }
-        String L0 = org.telegram.messenger.cd.L0(2131752938, null);
+        String L0 = org.telegram.messenger.dd.L0(2131752938, null);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(L0);
         int indexOf = L0.indexOf(42);
         int lastIndexOf = L0.lastIndexOf(42);
         if (indexOf != -1 && lastIndexOf != -1 && indexOf != lastIndexOf) {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.e51("https://fragment.com", (org.telegram.ui.Components.yz0) null), indexOf, lastIndexOf - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.f51("https://fragment.com", (org.telegram.ui.Components.zz0) null), indexOf, lastIndexOf - 1, 33);
         }
         p80Var.setText(spannableStringBuilder);
     }

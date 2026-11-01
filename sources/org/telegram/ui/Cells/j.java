@@ -7,13 +7,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout {
     public final org.telegram.ui.ActionBar.u5 a;
@@ -53,11 +53,11 @@ public final class j extends FrameLayout {
         }
         addView(u5Var, w7.b6.d(-2, -2.0f, 51, 61.0f, 7.0f, 8.0f, 0.0f));
         org.telegram.ui.ActionBar.a7.Y(u5Var, org.telegram.ui.ActionBar.t6.bh, null);
-        u5Var.l(cd.L0(2131743412, null), false);
+        u5Var.l(dd.L0(2131743412, null), false);
         TextView textView = new TextView(activity);
         this.b = textView;
         org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.ch, null);
-        z20.o(textView, 1, 15.0f, 1, 1);
+        a30.o(textView, 1, 15.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setMaxWidth(org.telegram.messenger.i0.L(320.0f));
         textView.setGravity(51);

@@ -21,12 +21,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import jg.b1;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.l0;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
@@ -39,16 +39,16 @@ import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.h10;
 import org.telegram.ui.Components.ha;
 import org.telegram.ui.Components.l10;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.s20;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import r0.z;
 import s4.j;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g extends ha implements fe.e {
     public static final /* synthetic */ int j2 = 0;
@@ -58,7 +58,7 @@ public final class g extends ha implements fe.e {
     public final ArrayList S1;
     public final ArrayList T1;
     public String U1;
-    public p51 V1;
+    public q51 V1;
     public final vh.d W1;
     public final j6 X1;
     public final b1 Y1;
@@ -87,11 +87,11 @@ public final class g extends ha implements fe.e {
         this.n = false;
         this.C1 = false;
         this.s1 = false;
-        this.e2 = ((l0) vp.r1(this.a).y7.H.a).c;
+        this.e2 = ((l0) wp.r1(this.a).y7.H.a).c;
         i0.S(getWindow());
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i10 = this.t0;
-        tk0Var.setPadding(i10, 0, i10, i0.L(68.0f) + i0.n);
+        uk0Var.setPadding(i10, 0, i10, i0.L(68.0f) + i0.n);
         this.k1.setClipToPadding(false);
         this.k1.j(new u(this, 5));
         this.k1.setOnItemClickListener(new d(context, this, p6Var));
@@ -99,12 +99,12 @@ public final class g extends ha implements fe.e {
         this.W1 = dVar;
         dVar.f();
         dVar.setCountFilled(true);
-        dVar.setText(cd.L0(2131745963, null));
+        dVar.setText(dd.L0(2131745963, null));
         dVar.setOnClickListener(new a(this, 0));
         j6 j6Var = new j6(this, context);
         this.X1 = j6Var;
         a7.V(j6Var, t6.Gi, p6Var);
-        j6Var.setText(cd.L0(2131745963, null));
+        j6Var.setText(dd.L0(2131745963, null));
         j6Var.setTypeface(i0.o());
         j6Var.setTextSize(1, 14.0f);
         j6Var.setGravity(17);
@@ -114,7 +114,7 @@ public final class g extends ha implements fe.e {
         this.l1.p().addView(j6Var, b6.t(-2, 48, 16, 12, 0, 12, 0));
         j6Var.setOnClickListener(new a(this, 1));
         h10 h10Var = new h10(context, p6Var);
-        String L0 = cd.L0(2131747142, null);
+        String L0 = dd.L0(2131747142, null);
         n0 n0Var = h10Var.r;
         n0Var.setHint(L0);
         n0Var.addTextChangedListener(new a1(this, 4));
@@ -130,9 +130,9 @@ public final class g extends ha implements fe.e {
         z3 z3Var = new z3(18, context, p6Var);
         this.a2 = z3Var;
         z3Var.setTranslationY(i0.L(48.0f));
-        z3Var.b(cd.L0(2131745827, null), cd.L0(2131751458, null), new a(this, 2));
+        z3Var.b(dd.L0(2131745827, null), dd.L0(2131751458, null), new a(this, 2));
         b1Var.addView(z3Var, b6.e(-1, 32, 48));
-        this.b.addView(b1Var, b6.e(-1, zs.t3, 48));
+        this.b.addView(b1Var, b6.e(-1, at.t3, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(i0.L(10.0f) + this.t0, i0.L(10.0f), i0.L(10.0f) + this.t0, i0.L(10.0f) + i0.n);
         frameLayout.addView(dVar, b6.c(48.0f, -1));
@@ -140,7 +140,7 @@ public final class g extends ha implements fe.e {
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.f2 = frameLayout2;
         frameLayout2.setTranslationY((-i0.n) - i0.L(68.0f));
-        this.b.addView(frameLayout2, b6.e(-1, zs.g2, 80));
+        this.b.addView(frameLayout2, b6.e(-1, at.g2, 80));
         j jVar = new j();
         jVar.n(350L);
         jVar.o(grVar);
@@ -149,9 +149,9 @@ public final class g extends ha implements fe.e {
         this.k1.setItemAnimator(jVar);
         this.k1.i(new e(this, p6Var));
         l lVar = new l(this, 17);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(d20.s0);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(e20.s0);
         TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
-        tL_help_getCountriesList.lang_code = cd.D0().B != null ? cd.D0().B.c() : Locale.getDefault().getCountry();
+        tL_help_getCountriesList.lang_code = dd.D0().B != null ? dd.D0().B.c() : Locale.getDefault().getCountry();
         connectionsManager.sendRequest(tL_help_getCountriesList, new ag.c(lVar, 9));
         z.i(this.c, new b(this));
     }
@@ -196,16 +196,16 @@ public final class g extends ha implements fe.e {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(tk0Var, getContext(), this.a, 0, true, new ag.a(this, 16), this.I0);
-        this.V1 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(uk0Var, getContext(), this.a, 0, true, new ag.a(this, 16), this.I0);
+        this.V1 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
-        return cd.L0(2131753288, null);
+        return dd.L0(2131753288, null);
     }
 
     @Override // org.telegram.ui.ActionBar.z2
@@ -220,23 +220,23 @@ public final class g extends ha implements fe.e {
         Rect rect = this.h2;
         boolean z10 = (rect.top == L && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, L, this.b.getMeasuredWidth(), measuredHeight);
-        tk0 tk0Var = this.k1;
-        tk0Var.setClipBounds(rect);
+        uk0 uk0Var = this.k1;
+        uk0Var.setClipBounds(rect);
         if (z10) {
-            tk0Var.invalidate();
+            uk0Var.invalidate();
         }
     }
 
     public final void f1() {
-        tk0 tk0Var;
+        uk0 uk0Var;
         float f7 = i0.q.y;
         int i10 = 0;
         while (true) {
-            tk0Var = this.k1;
-            if (i10 >= tk0Var.getChildCount()) {
+            uk0Var = this.k1;
+            if (i10 >= uk0Var.getChildCount()) {
                 break;
             }
-            View childAt = tk0Var.getChildAt(i10);
+            View childAt = uk0Var.getChildAt(i10);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -246,7 +246,7 @@ public final class g extends ha implements fe.e {
         b1 b1Var = this.Y1;
         if (b1Var.getTranslationY() != max) {
             b1Var.setTranslationY(max);
-            tk0Var.invalidate();
+            uk0Var.invalidate();
         }
     }
 

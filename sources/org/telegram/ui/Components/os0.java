@@ -1,82 +1,96 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class os0 implements zf.l1, org.telegram.ui.Cells.d5 {
-    public final /* synthetic */ qs0 a;
+public final class os0 extends tk0 {
+    public final Context c;
+    public final /* synthetic */ au0 d;
 
-    public /* synthetic */ os0(qs0 qs0Var) {
-        this.a = qs0Var;
+    public os0(au0 au0Var, Context context) {
+        this.d = au0Var;
+        this.c = context;
     }
 
-    @Override // zf.l1
-    public /* synthetic */ a0.h M() {
-        return null;
+    @Override // org.telegram.ui.Components.tk0
+    public final boolean D(s4.c1 c1Var) {
+        pt0[] pt0VarArr = this.d.v1;
+        return pt0VarArr[5].a.size() != 0 || pt0VarArr[5].g;
     }
 
-    @Override // zf.l1
-    public /* synthetic */ boolean Y(int i10) {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.d5
-    public boolean c(org.telegram.ui.Cells.e5 e5Var, boolean z10) {
-        int intValue = ((Integer) e5Var.getTag()).intValue();
-        qs0 qs0Var = this.a;
-        TLObject E = qs0Var.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
+    @Override // s4.g0
+    public final int b() {
+        pt0[] pt0VarArr = this.d.v1;
+        if (pt0VarArr[5].a.size() != 0 || pt0VarArr[5].g) {
+            return pt0VarArr[5].a.size();
         }
-        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-        tL_chatChannelParticipant.channelParticipant = channelParticipant;
-        tL_chatChannelParticipant.user_id = org.telegram.messenger.jj.C1(channelParticipant.peer);
-        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-        tL_chatChannelParticipant.date = channelParticipant.date;
-        return qs0Var.s.F1.h(tL_chatChannelParticipant, true, !z10, e5Var);
+        return 1;
     }
 
-    @Override // zf.l1
-    public void i(int i10) {
-        qs0 qs0Var = this.a;
-        qs0Var.f();
-        if (i10 != 1) {
-            return;
-        }
-        int i11 = qs0Var.r - 1;
-        qs0Var.r = i11;
-        if (i11 != 0) {
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            zt0 zt0Var = qs0Var.s;
-            ss0[] ss0VarArr = zt0Var.m0;
-            if (i12 >= ss0VarArr.length) {
-                return;
-            }
-            ss0 ss0Var = ss0VarArr[i12];
-            if (ss0Var.E == 7) {
-                if (qs0Var.h == 0) {
-                    ss0Var.w.e(false, true);
-                } else {
-                    zt0Var.C(ss0Var.h, 0, null);
+    @Override // s4.g0
+    public final long c(int i10) {
+        return i10;
+    }
+
+    @Override // s4.g0
+    public final int d(int i10) {
+        pt0[] pt0VarArr = this.d.v1;
+        return (pt0VarArr[5].a.size() != 0 || pt0VarArr[5].g) ? 12 : 11;
+    }
+
+    @Override // s4.g0
+    public final void t(s4.c1 c1Var, int i10) {
+        if (c1Var.f == 12) {
+            au0 au0Var = this.d;
+            org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) au0Var.v1[5].a.get(i10);
+            TLRPC.Document F0 = kjVar.F0();
+            if (F0 != null) {
+                View view = c1Var.a;
+                if (view instanceof org.telegram.ui.Cells.h2) {
+                    org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) view;
+                    h2Var.d(kjVar.k.date, kjVar, F0);
+                    if (au0Var.E1) {
+                        h2Var.c(au0Var.b1[(org.telegram.messenger.kj.B0(kjVar.k) > au0Var.l1 ? 1 : (org.telegram.messenger.kj.B0(kjVar.k) == au0Var.l1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(kjVar.f1()) >= 0, !au0Var.d1);
+                    } else {
+                        h2Var.c(false, !au0Var.d1);
+                    }
                 }
             }
-            i12++;
         }
     }
 
-    @Override // zf.l1
-    public /* synthetic */ a0.h x() {
-        return null;
+    @Override // s4.g0
+    public final s4.c1 w(ViewGroup viewGroup, int i10) {
+        au0 au0Var = this.d;
+        org.telegram.ui.ActionBar.p6 p6Var = au0Var.H1;
+        Context context = this.c;
+        if (i10 == 11) {
+            p3 W = au0.W(5, au0Var.l1, context, p6Var);
+            W.setLayoutParams(new s4.o0(-1, -1));
+            return new dk0(W);
+        }
+        org.telegram.ui.Cells.h2 h2Var = new org.telegram.ui.Cells.h2(context, p6Var, true);
+        h2Var.setCanPreviewGif(true);
+        return new dk0(h2Var);
     }
 
-    @Override // zf.l1
-    public /* synthetic */ void c0(ArrayList arrayList) {
+    @Override // s4.g0
+    public final void y(s4.c1 c1Var) {
+        View view = c1Var.a;
+        if (view instanceof org.telegram.ui.Cells.h2) {
+            ImageReceiver photoImage = ((org.telegram.ui.Cells.h2) view).getPhotoImage();
+            if (this.d.m0[0].E == 5) {
+                photoImage.t0 = true;
+                photoImage.P0(false);
+            } else {
+                photoImage.t0 = false;
+                photoImage.Q0();
+            }
+        }
     }
 }

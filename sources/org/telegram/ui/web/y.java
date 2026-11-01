@@ -3,19 +3,19 @@ package org.telegram.ui.web;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ay;
-import org.telegram.ui.pb1;
-import org.telegram.ui.ux;
-import org.telegram.ui.vh0;
+import org.telegram.ui.nb1;
+import org.telegram.ui.th0;
+import org.telegram.ui.tx;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y implements vh0, ux {
+public final /* synthetic */ class y implements th0, tx {
     public final /* synthetic */ z0 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -30,17 +30,17 @@ public final /* synthetic */ class y implements vh0, ux {
         this.e = x0Var;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean G() {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean H() {
         return false;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean N(ay ayVar) {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean O(zx zxVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.vh0
+    @Override // org.telegram.ui.th0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;
@@ -49,8 +49,8 @@ public final /* synthetic */ class y implements vh0, ux {
         this.b[0] = true;
         TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
         z0 z0Var = this.a;
-        vp.r1(z0Var.M);
-        tL_messages_sendBotRequestedPeer.peer = vp.m1(z0Var.U);
+        wp.r1(z0Var.M);
+        tL_messages_sendBotRequestedPeer.peer = wp.m1(z0Var.U);
         String str = this.c;
         tL_messages_sendBotRequestedPeer.webapp_req_id = str;
         tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
@@ -58,20 +58,20 @@ public final /* synthetic */ class y implements vh0, ux {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            tL_messages_sendBotRequestedPeer.requested_peers.add(vp.r1(z0Var.M).i1(((Long) obj).longValue()));
+            tL_messages_sendBotRequestedPeer.requested_peers.add(wp.r1(z0Var.M).i1(((Long) obj).longValue()));
         }
         ConnectionsManager.getInstance(z0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new a3.b(1), new s(z0Var, this.e, str, 2));
     }
 
-    @Override // org.telegram.ui.ux
-    public boolean y(ay ayVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, pb1 pb1Var) {
+    @Override // org.telegram.ui.tx
+    public boolean z(zx zxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, nb1 nb1Var) {
         if (!arrayList.isEmpty()) {
             int i12 = 0;
             this.b[0] = true;
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
             z0 z0Var = this.a;
-            vp.r1(z0Var.M);
-            tL_messages_sendBotRequestedPeer.peer = vp.m1(z0Var.U);
+            wp.r1(z0Var.M);
+            tL_messages_sendBotRequestedPeer.peer = wp.m1(z0Var.U);
             String str = this.c;
             tL_messages_sendBotRequestedPeer.webapp_req_id = str;
             tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
@@ -80,15 +80,15 @@ public final /* synthetic */ class y implements vh0, ux {
             while (i12 < size) {
                 Object obj = arrayList.get(i12);
                 i12++;
-                hashSet.add(Long.valueOf(((gs) obj).a));
+                hashSet.add(Long.valueOf(((hs) obj).a));
             }
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                tL_messages_sendBotRequestedPeer.requested_peers.add(vp.r1(z0Var.M).i1(((Long) it.next()).longValue()));
+                tL_messages_sendBotRequestedPeer.requested_peers.add(wp.r1(z0Var.M).i1(((Long) it.next()).longValue()));
             }
             ConnectionsManager.getInstance(z0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new a3.b(1), new s(z0Var, this.e, str, 1));
         }
-        ayVar.finishFragment();
+        zxVar.finishFragment();
         return true;
     }
 }

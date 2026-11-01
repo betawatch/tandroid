@@ -9,23 +9,23 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.StaticLayout;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.b30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.c30;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u1 {
     public final q1 a;
     public int b;
     public up c;
     public String d;
-    public b30 e;
+    public c30 e;
     public Drawable f;
     public int g = -1;
 
@@ -80,7 +80,7 @@ public final class u1 {
                 org.telegram.ui.ActionBar.t6.H2.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Sc, q1Var2.Ob));
                 org.telegram.ui.ActionBar.t6.I2.setColor(org.telegram.ui.ActionBar.t6.w0(q1Var2.v2() ? org.telegram.ui.ActionBar.t6.xe : org.telegram.ui.ActionBar.t6.we, q1Var2.Ob));
             }
-            if (!(jj.o1(q1Var2.O5.k) instanceof TLRPC.TL_messageMediaGeoLive)) {
+            if (!(kj.o1(q1Var2.O5.k) instanceof TLRPC.TL_messageMediaGeoLive)) {
                 canvas.save();
                 canvas.translate(c2Var.K0 + org.telegram.messenger.i0.L(6.0f), c2Var.A() + org.telegram.messenger.i0.L(8.0f));
                 q1Var2.c3.draw(canvas);
@@ -111,7 +111,7 @@ public final class u1 {
                     f11 = 2.0f;
                 } else {
                     f10 = 255.0f;
-                    if (jj.o1(q1Var2.O5.k).period == Integer.MAX_VALUE) {
+                    if (kj.o1(q1Var2.O5.k).period == Integer.MAX_VALUE) {
                         C = "";
                         f12 = 1.0f;
                         abs = 1.0f;
@@ -119,8 +119,8 @@ public final class u1 {
                         z10 = true;
                     } else {
                         f11 = 2.0f;
-                        C = cd.C(Math.abs(jj.o1(q1Var2.O5.k).period - (ConnectionsManager.getInstance(i10).getCurrentTime() - q1Var2.O5.k.date)));
-                        abs = 1.0f - (Math.abs(ConnectionsManager.getInstance(i10).getCurrentTime() - q1Var2.O5.k.date) / jj.o1(q1Var2.O5.k).period);
+                        C = dd.C(Math.abs(kj.o1(q1Var2.O5.k).period - (ConnectionsManager.getInstance(i10).getCurrentTime() - q1Var2.O5.k.date)));
+                        abs = 1.0f - (Math.abs(ConnectionsManager.getInstance(i10).getCurrentTime() - q1Var2.O5.k.date) / kj.o1(q1Var2.O5.k).period);
                         f12 = 1.0f;
                     }
                 }

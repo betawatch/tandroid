@@ -2,22 +2,22 @@ package mg;
 
 import android.util.SparseIntArray;
 import java.util.Calendar;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Components.ac0;
-import org.telegram.ui.Components.ti0;
-import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.ui0;
+import org.telegram.ui.Components.wi0;
 import org.telegram.ui.Components.yb0;
-import xh.m3;
+import xh.n3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e implements yb0, ti0, org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class e implements yb0, ui0, org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -25,17 +25,17 @@ public final /* synthetic */ class e implements yb0, ti0, org.telegram.ui.Action
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e(int i10, boolean[] zArr, TLRPC.Document document, int i11, boolean[] zArr2, q20 q20Var) {
+    public /* synthetic */ e(int i10, boolean[] zArr, TLRPC.Document document, int i11, boolean[] zArr2, r20 r20Var) {
         this.a = i10;
         this.c = zArr;
         this.d = document;
         this.b = i11;
         this.e = zArr2;
-        this.f = q20Var;
+        this.f = r20Var;
     }
 
-    @Override // org.telegram.ui.Components.ti0
-    public void c(vi0 vi0Var, int i10) {
+    @Override // org.telegram.ui.Components.ui0
+    public void c(wi0 wi0Var, int i10) {
         SparseIntArray sparseIntArray = (SparseIntArray) this.c;
         z4.g gVar = (z4.g) this.d;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.e;
@@ -53,10 +53,10 @@ public final /* synthetic */ class e implements yb0, ti0, org.telegram.ui.Action
         boolean[] zArr = (boolean[]) this.c;
         TLRPC.Document document = (TLRPC.Document) this.d;
         boolean[] zArr2 = (boolean[]) this.e;
-        q20 q20Var = (q20) this.f;
+        r20 r20Var = (r20) this.f;
         int i11 = this.a;
-        if (!d20.i(i11).q()) {
-            new kg.i1((k2) new m3(null), 12, false).show();
+        if (!e20.i(i11).q()) {
+            new kg.i1((k2) new n3(null), 12, false).show();
             return;
         }
         zArr[0] = true;
@@ -69,7 +69,7 @@ public final /* synthetic */ class e implements yb0, ti0, org.telegram.ui.Action
             tL_emojiStatus.until = ConnectionsManager.getInstance(i11).getCurrentTime() + i12;
         }
         updateemojistatus.emoji_status = tL_emojiStatus;
-        ConnectionsManager.getInstance(i11).sendRequest(updateemojistatus, new org.telegram.ui.b0(zArr2, q20Var, i11, updateemojistatus, 8));
+        ConnectionsManager.getInstance(i11).sendRequest(updateemojistatus, new org.telegram.ui.b0(zArr2, r20Var, i11, updateemojistatus, 8));
     }
 
     @Override // org.telegram.ui.Components.yb0

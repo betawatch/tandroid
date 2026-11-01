@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class aj extends gf.e {
     public final /* synthetic */ int d;
@@ -43,17 +43,17 @@ public final class aj extends gf.e {
             case 0:
                 int i10 = this.e;
                 un unVar = this.g;
-                unVar.Rb = i10;
-                unVar.Sb = 1;
-                unVar.Tb = (CharacterStyle) this.h;
+                unVar.Sb = i10;
+                unVar.Tb = 1;
+                unVar.Ub = (CharacterStyle) this.h;
                 this.f.invalidate();
                 break;
             default:
                 int i11 = this.e;
                 un unVar2 = this.g;
-                unVar2.Rb = i11;
-                unVar2.Sb = 3;
-                unVar2.Ub = (String) this.h;
+                unVar2.Sb = i11;
+                unVar2.Tb = 3;
+                unVar2.Vb = (String) this.h;
                 this.f.invalidate();
                 break;
         }

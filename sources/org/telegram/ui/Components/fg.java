@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class fg extends ei0 {
+public class fg extends fi0 {
     public final t5 D;
     public final cg E;
     public dg r;
@@ -80,30 +80,30 @@ public class fg extends ei0 {
                     return;
                 }
                 this.s = egVar3;
-                bi0 bi0Var = (bi0) cgVar.get(egVar3);
-                bi0Var.stop();
+                ci0 ci0Var = (ci0) cgVar.get(egVar3);
+                ci0Var.stop();
                 if (egVar3 == eg.e) {
-                    bi0Var.P(30);
-                    bi0Var.T(false, 0.0f);
+                    ci0Var.P(30);
+                    ci0Var.T(false, 0.0f);
                 } else if (egVar3 == eg.d) {
-                    bi0Var.P(60);
-                    bi0Var.T(false, 0.5f);
+                    ci0Var.P(60);
+                    ci0Var.T(false, 0.5f);
                 } else {
-                    bi0Var.T(false, 0.0f);
+                    ci0Var.T(false, 0.0f);
                 }
-                bi0Var.K(0);
-                bi0Var.t0 = new tf(this, 22);
-                setAnimation(bi0Var);
-                org.telegram.messenger.i0.g3(new org.telegram.ui.Cells.o0(bi0Var, 1));
+                ci0Var.K(0);
+                ci0Var.t0 = new tf(this, 22);
+                setAnimation(ci0Var);
+                org.telegram.messenger.i0.g3(new org.telegram.ui.Cells.o0(ci0Var, 1));
                 ordinal = dgVar.ordinal();
                 if (ordinal != 0) {
-                    setContentDescription(org.telegram.messenger.cd.L0(2131754734, null));
+                    setContentDescription(org.telegram.messenger.dd.L0(2131754734, null));
                     return;
                 } else {
                     if (ordinal != 1) {
                         return;
                     }
-                    setContentDescription(org.telegram.messenger.cd.L0(2131754736, null));
+                    setContentDescription(org.telegram.messenger.dd.L0(2131754736, null));
                     return;
                 }
             }
@@ -124,10 +124,10 @@ public class fg extends ei0 {
                 i12++;
             }
         }
-        bi0 bi0Var2 = (bi0) cgVar.get(egVar);
-        bi0Var2.stop();
-        bi0Var2.T(false, dgVar != dg.a ? 0.0f : 0.5f);
-        setAnimation(bi0Var2);
+        ci0 ci0Var2 = (ci0) cgVar.get(egVar);
+        ci0Var2.stop();
+        ci0Var2.T(false, dgVar != dg.a ? 0.0f : 0.5f);
+        setAnimation(ci0Var2);
         ordinal = dgVar.ordinal();
         if (ordinal != 0) {
         }

@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d30 extends View implements GestureDetector.OnGestureListener {
     public float D;
@@ -91,7 +91,7 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
             imageReceiver = imageReceiver2;
         }
         this.c.add(imageReceiver);
-        imageReceiver.d = ((org.telegram.ui.dq0) this.W).a.T;
+        imageReceiver.d = ((org.telegram.ui.bq0) this.W).a.T;
         return imageReceiver;
     }
 
@@ -162,20 +162,20 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                     if (i21 >= measuredWidth) {
                         break;
                     }
-                    org.telegram.messenger.ic icVar = (org.telegram.messenger.ic) arrayList3.get(i11);
+                    org.telegram.messenger.jc jcVar = (org.telegram.messenger.jc) arrayList3.get(i11);
                     ImageReceiver freeReceiver = getFreeReceiver();
                     int i22 = measuredWidth;
                     int i23 = i14;
                     freeReceiver.y0(i21, i20, i13, i19);
-                    if (arrayList4.get(0) instanceof org.telegram.messenger.jj) {
+                    if (arrayList4.get(0) instanceof org.telegram.messenger.kj) {
                         obj2 = arrayList4.get(i11);
                     } else if (arrayList4.get(0) instanceof TL_iv.PageBlock) {
-                        org.telegram.ui.bs0 bs0Var = ((org.telegram.ui.dq0) this.W).a.j7;
-                        obj2 = bs0Var != null ? bs0Var.g() : null;
+                        org.telegram.ui.as0 as0Var = ((org.telegram.ui.bq0) this.W).a.j7;
+                        obj2 = as0Var != null ? as0Var.g() : null;
                     } else {
-                        obj2 = "avatar_" + ((org.telegram.ui.dq0) this.W).a.z5;
+                        obj2 = "avatar_" + ((org.telegram.ui.bq0) this.W).a.z5;
                     }
-                    freeReceiver.r0(null, null, icVar, "80_80", null, 0L, null, obj2, 1);
+                    freeReceiver.r0(null, null, jcVar, "80_80", null, 0L, null, obj2, 1);
                     freeReceiver.f = i11;
                     i11++;
                     measuredWidth = i22;
@@ -189,18 +189,18 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                     if (i25 <= 0) {
                         break;
                     }
-                    org.telegram.messenger.ic icVar2 = (org.telegram.messenger.ic) arrayList3.get(i12);
+                    org.telegram.messenger.jc jcVar2 = (org.telegram.messenger.jc) arrayList3.get(i12);
                     ImageReceiver freeReceiver2 = getFreeReceiver();
                     freeReceiver2.y0(i25, i20, i13, i19);
-                    if (arrayList4.get(0) instanceof org.telegram.messenger.jj) {
+                    if (arrayList4.get(0) instanceof org.telegram.messenger.kj) {
                         obj = arrayList4.get(i12);
                     } else if (arrayList4.get(0) instanceof TL_iv.PageBlock) {
-                        org.telegram.ui.bs0 bs0Var2 = ((org.telegram.ui.dq0) this.W).a.j7;
-                        obj = bs0Var2 != null ? bs0Var2.g() : null;
+                        org.telegram.ui.as0 as0Var2 = ((org.telegram.ui.bq0) this.W).a.j7;
+                        obj = as0Var2 != null ? as0Var2.g() : null;
                     } else {
-                        obj = "avatar_" + ((org.telegram.ui.dq0) this.W).a.z5;
+                        obj = "avatar_" + ((org.telegram.ui.bq0) this.W).a.z5;
                     }
-                    freeReceiver2.r0(null, null, icVar2, "80_80", null, 0L, null, obj, 1);
+                    freeReceiver2.r0(null, null, jcVar2, "80_80", null, 0L, null, obj, 1);
                     freeReceiver2.f = i12;
                     i12--;
                 }
@@ -227,7 +227,7 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
         TL_iv.PageBlock pageBlock;
         int i12;
         int i13;
-        org.telegram.ui.es0 es0Var;
+        org.telegram.ui.ds0 ds0Var;
         boolean z11;
         int i14;
         int i15 = 0;
@@ -235,27 +235,27 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
             this.R = false;
             return;
         }
-        PhotoViewer photoViewer = ((org.telegram.ui.dq0) this.W).a;
+        PhotoViewer photoViewer = ((org.telegram.ui.bq0) this.W).a;
         int i16 = photoViewer.P4;
         ArrayList arrayList = photoViewer.a7;
         ArrayList arrayList2 = photoViewer.Y6;
-        org.telegram.ui.bs0 bs0Var = photoViewer.j7;
-        List all = bs0Var != null ? bs0Var.getAll() : null;
-        int i17 = ((org.telegram.ui.dq0) this.W).a.w;
+        org.telegram.ui.as0 as0Var = photoViewer.j7;
+        List all = as0Var != null ? as0Var.getAll() : null;
+        int i17 = ((org.telegram.ui.bq0) this.W).a.w;
         this.U = false;
         long j11 = 0;
         if (arrayList != null && !arrayList.isEmpty()) {
             if (i16 >= arrayList.size()) {
                 i16 = arrayList.size() - 1;
             }
-            org.telegram.messenger.ic icVar = (org.telegram.messenger.ic) arrayList.get(i16);
+            org.telegram.messenger.jc jcVar = (org.telegram.messenger.jc) arrayList.get(i16);
             int size = arrayList.size();
             this.U = true;
             i10 = 0;
             j10 = 0;
             i11 = size;
             z10 = false;
-            obj = icVar;
+            obj = jcVar;
         } else if (arrayList2 == null || arrayList2.isEmpty()) {
             i10 = 0;
             j10 = 0;
@@ -304,15 +304,15 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
             if (i16 >= arrayList2.size()) {
                 i16 = arrayList2.size() - 1;
             }
-            org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) arrayList2.get(i16);
-            long e12 = jjVar.e1();
+            org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) arrayList2.get(i16);
+            long e12 = kjVar.e1();
             if (e12 != this.h) {
                 this.h = e12;
                 z10 = true;
             } else {
                 z10 = false;
             }
-            boolean z12 = arrayList2.size() > 1 && (es0Var = ((org.telegram.ui.dq0) this.W).a.d) != null && es0Var.L();
+            boolean z12 = arrayList2.size() > 1 && (ds0Var = ((org.telegram.ui.bq0) this.W).a.d) != null && ds0Var.L();
             if (this.h != 0 || z12) {
                 this.U = true;
                 int min = Math.min(i16 + 10, arrayList2.size());
@@ -323,10 +323,10 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                         j10 = j11;
                         break;
                     }
-                    org.telegram.messenger.jj jjVar2 = (org.telegram.messenger.jj) arrayList2.get(i20);
+                    org.telegram.messenger.kj kjVar2 = (org.telegram.messenger.kj) arrayList2.get(i20);
                     if (i17 == 0 && !z12) {
                         j10 = j11;
-                        if (jjVar2.e1() != this.h) {
+                        if (kjVar2.e1() != this.h) {
                             break;
                         }
                     } else {
@@ -344,11 +344,11 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                         i13 = i16;
                         break;
                     }
-                    org.telegram.messenger.jj jjVar3 = (org.telegram.messenger.jj) arrayList2.get(i21);
+                    org.telegram.messenger.kj kjVar3 = (org.telegram.messenger.kj) arrayList2.get(i21);
                     if (i17 == 0 && !z12) {
                         i10 = i15;
                         i13 = i16;
-                        if (jjVar3.e1() != this.h) {
+                        if (kjVar3.e1() != this.h) {
                             break;
                         }
                     } else {
@@ -368,7 +368,7 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
             }
             i11 = i12;
             i16 = i13;
-            obj = jjVar;
+            obj = kjVar;
         }
         if (obj == null) {
             return;
@@ -520,7 +520,7 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                             break;
                         }
                         arrayList4.add(pageBlock4);
-                        arrayList3.add(org.telegram.messenger.ic.f(pageBlock4.thumb, pageBlock4.thumbObject));
+                        arrayList3.add(org.telegram.messenger.jc.f(pageBlock4.thumb, pageBlock4.thumbObject));
                     }
                     int i29 = 0;
                     this.f = 0;
@@ -533,15 +533,15 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                             break;
                         }
                         arrayList4.add(i29, pageBlock5);
-                        arrayList3.add(i29, org.telegram.messenger.ic.f(pageBlock5.thumb, pageBlock5.thumbObject));
+                        arrayList3.add(i29, org.telegram.messenger.jc.f(pageBlock5.thumb, pageBlock5.thumbObject));
                         this.f++;
                         i30--;
                         i29 = 0;
                     }
                 }
             } else {
-                org.telegram.ui.es0 es0Var2 = ((org.telegram.ui.dq0) this.W).a.d;
-                boolean z15 = (es0Var2 != null && es0Var2.L()) && arrayList2.size() > 1;
+                org.telegram.ui.ds0 ds0Var2 = ((org.telegram.ui.bq0) this.W).a.d;
+                boolean z15 = (ds0Var2 != null && ds0Var2.L()) && arrayList2.size() > 1;
                 if (this.h != j10 || z15 || i17 != 0) {
                     int min2 = Math.min(i16 + 10, arrayList2.size());
                     int i31 = i16;
@@ -550,17 +550,17 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                             i14 = i16;
                             break;
                         }
-                        org.telegram.messenger.jj jjVar4 = (org.telegram.messenger.jj) arrayList2.get(i31);
+                        org.telegram.messenger.kj kjVar4 = (org.telegram.messenger.kj) arrayList2.get(i31);
                         if (i17 == 0 && !z15) {
                             i14 = i16;
-                            if (jjVar4.e1() != this.h) {
+                            if (kjVar4.e1() != this.h) {
                                 break;
                             }
                         } else {
                             i14 = i16;
                         }
-                        arrayList4.add(jjVar4);
-                        arrayList3.add(org.telegram.messenger.ic.f(org.telegram.messenger.b8.w(jjVar4.n0, 56, true, null, false), jjVar4.l0));
+                        arrayList4.add(kjVar4);
+                        arrayList3.add(org.telegram.messenger.jc.f(org.telegram.messenger.b8.w(kjVar4.n0, 56, true, null, false), kjVar4.l0));
                         i31++;
                         i16 = i14;
                     }
@@ -569,12 +569,12 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                     this.M = false;
                     int max2 = Math.max(i14 - 10, 0);
                     for (int i32 = i14 - 1; i32 >= max2; i32--) {
-                        org.telegram.messenger.jj jjVar5 = (org.telegram.messenger.jj) arrayList2.get(i32);
-                        if (i17 == 0 && !z15 && jjVar5.e1() != this.h) {
+                        org.telegram.messenger.kj kjVar5 = (org.telegram.messenger.kj) arrayList2.get(i32);
+                        if (i17 == 0 && !z15 && kjVar5.e1() != this.h) {
                             break;
                         }
-                        arrayList4.add(0, jjVar5);
-                        arrayList3.add(0, org.telegram.messenger.ic.f(org.telegram.messenger.b8.w(jjVar5.n0, 56, true, null, false), jjVar5.l0));
+                        arrayList4.add(0, kjVar5);
+                        arrayList3.add(0, org.telegram.messenger.jc.f(org.telegram.messenger.b8.w(kjVar5.n0, 56, true, null, false), kjVar5.l0));
                         this.f++;
                     }
                 }
@@ -631,7 +631,7 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
             this.T = -1;
             c30 c30Var = this.W;
             if (c30Var != null) {
-                PhotoViewer photoViewer = ((org.telegram.ui.dq0) c30Var).a;
+                PhotoViewer photoViewer = ((org.telegram.ui.bq0) c30Var).a;
                 if (PhotoViewer.U2(photoViewer.T4)) {
                     photoViewer.Y2 = true;
                     photoViewer.X1(true);
@@ -665,25 +665,25 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
             i10 = 0;
         }
         this.T = this.f - i10;
-        PhotoViewer photoViewer = ((org.telegram.ui.dq0) this.W).a;
+        PhotoViewer photoViewer = ((org.telegram.ui.bq0) this.W).a;
         int i18 = photoViewer.P4;
         ArrayList arrayList = photoViewer.a7;
         ArrayList arrayList2 = photoViewer.Y6;
-        org.telegram.ui.bs0 bs0Var = photoViewer.j7;
-        List all = bs0Var != null ? bs0Var.getAll() : null;
+        org.telegram.ui.as0 as0Var = photoViewer.j7;
+        List all = as0Var != null ? as0Var.getAll() : null;
         int i19 = this.T;
         if (i18 != i19 && i19 >= 0 && i19 < this.d.size()) {
             Object obj = this.e.get(this.T);
             if (arrayList2 != null && !arrayList2.isEmpty()) {
-                i17 = arrayList2.indexOf((org.telegram.messenger.jj) obj);
+                i17 = arrayList2.indexOf((org.telegram.messenger.kj) obj);
             } else if (all != null && !all.isEmpty()) {
                 i17 = all.indexOf((TL_iv.PageBlock) obj);
             } else if (arrayList != null && !arrayList.isEmpty()) {
-                i17 = arrayList.indexOf((org.telegram.messenger.ic) obj);
+                i17 = arrayList.indexOf((org.telegram.messenger.jc) obj);
             }
             if (i17 >= 0) {
                 this.R = true;
-                ((org.telegram.ui.dq0) this.W).a(i17);
+                ((org.telegram.ui.bq0) this.W).a(i17);
             }
         }
         if (!this.P) {
@@ -738,9 +738,9 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
             int L = org.telegram.messenger.i0.L(8.0f);
             int i14 = this.f;
             ArrayList arrayList2 = this.d;
-            org.telegram.messenger.ic icVar = (org.telegram.messenger.ic) arrayList2.get(i14);
+            org.telegram.messenger.jc jcVar = (org.telegram.messenger.jc) arrayList2.get(i14);
             int i15 = this.r;
-            int min = Math.min(i13, (icVar == null || (photoSize2 = icVar.k) == null) ? i15 : Math.max(i12, (int) ((i15 / photoSize2.h) * photoSize2.w)));
+            int min = Math.min(i13, (jcVar == null || (photoSize2 = jcVar.k) == null) ? i15 : Math.max(i12, (int) ((i15 / photoSize2.h) * photoSize2.w)));
             float f11 = L * 2;
             float f12 = this.D;
             int i16 = ((int) ((min - i12) * f12)) + i12 + ((int) (f11 * f12));
@@ -748,8 +748,8 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
             if (i17 < 0 || i17 >= arrayList2.size()) {
                 i15 = i12;
             } else {
-                org.telegram.messenger.ic icVar2 = (org.telegram.messenger.ic) arrayList2.get(this.F);
-                if (icVar2 != null && (photoSize = icVar2.k) != null) {
+                org.telegram.messenger.jc jcVar2 = (org.telegram.messenger.jc) arrayList2.get(this.F);
+                if (jcVar2 != null && (photoSize = jcVar2.k) != null) {
                     i15 = Math.max(i12, (int) ((i15 / photoSize.h) * photoSize.w));
                 }
             }
@@ -915,12 +915,12 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
 
     @Override // android.view.GestureDetector.OnGestureListener
     public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        PhotoViewer photoViewer = ((org.telegram.ui.dq0) this.W).a;
+        PhotoViewer photoViewer = ((org.telegram.ui.bq0) this.W).a;
         int i10 = photoViewer.P4;
         ArrayList arrayList = photoViewer.a7;
         ArrayList arrayList2 = photoViewer.Y6;
-        org.telegram.ui.bs0 bs0Var = photoViewer.j7;
-        List all = bs0Var != null ? bs0Var.getAll() : null;
+        org.telegram.ui.as0 as0Var = photoViewer.j7;
+        List all = as0Var != null ? as0Var.getAll() : null;
         e();
         ArrayList arrayList3 = this.c;
         int size = arrayList3.size();
@@ -936,11 +936,11 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                     ArrayList arrayList4 = this.e;
                     if (i12 < arrayList4.size()) {
                         if (arrayList2 != null && !arrayList2.isEmpty()) {
-                            int indexOf = arrayList2.indexOf((org.telegram.messenger.jj) arrayList4.get(i12));
+                            int indexOf = arrayList2.indexOf((org.telegram.messenger.kj) arrayList4.get(i12));
                             if (i10 != indexOf) {
                                 this.y = 1.0f;
                                 this.I = true;
-                                ((org.telegram.ui.dq0) this.W).a(indexOf);
+                                ((org.telegram.ui.bq0) this.W).a(indexOf);
                                 return false;
                             }
                         } else if (all != null && !all.isEmpty()) {
@@ -948,15 +948,15 @@ public final class d30 extends View implements GestureDetector.OnGestureListener
                             if (i10 != indexOf2) {
                                 this.y = 1.0f;
                                 this.I = true;
-                                ((org.telegram.ui.dq0) this.W).a(indexOf2);
+                                ((org.telegram.ui.bq0) this.W).a(indexOf2);
                                 return false;
                             }
                         } else if (arrayList != null && !arrayList.isEmpty()) {
-                            int indexOf3 = arrayList.indexOf((org.telegram.messenger.ic) arrayList4.get(i12));
+                            int indexOf3 = arrayList.indexOf((org.telegram.messenger.jc) arrayList4.get(i12));
                             if (i10 != indexOf3) {
                                 this.y = 1.0f;
                                 this.I = true;
-                                ((org.telegram.ui.dq0) this.W).a(indexOf3);
+                                ((org.telegram.ui.bq0) this.W).a(indexOf3);
                                 return false;
                             }
                         }

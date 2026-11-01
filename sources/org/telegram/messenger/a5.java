@@ -6,7 +6,7 @@ import android.provider.ContactsContract;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a5 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class a5 implements Runnable {
         synchronized (i5Var.c) {
             i5Var.b = false;
         }
-        i5Var.getNotificationCenter().k(zs.O, new Object[0]);
+        i5Var.getNotificationCenter().k(at.O, new Object[0]);
     }
 
     @Override // java.lang.Runnable
@@ -49,7 +49,7 @@ public final /* synthetic */ class a5 implements Runnable {
                         int i11 = 0;
                         while (true) {
                             if (i11 < 4) {
-                                TLRPC.User f7 = d20.i(i11).f();
+                                TLRPC.User f7 = e20.i(i11).f();
                                 if (f7 != null) {
                                     if (account.name.equals("" + f7.id)) {
                                         if (i11 == i5Var.currentAccount) {
@@ -123,8 +123,8 @@ public final /* synthetic */ class a5 implements Runnable {
                 b();
                 return;
             case 7:
-                hs messagesStorage = this.b.getMessagesStorage();
-                messagesStorage.a.c(new kr(messagesStorage, true, 0));
+                is messagesStorage = this.b.getMessagesStorage();
+                messagesStorage.a.c(new lr(messagesStorage, true, 0));
                 return;
             case 8:
                 i5 i5Var5 = this.b;

@@ -2,9 +2,9 @@ package ig;
 
 import android.graphics.Bitmap;
 import java.util.ArrayList;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class b0 implements Runnable {
             case 0:
                 h0.h = this.b;
                 h0.i = false;
-                zs.e().k(zs.C5, new Object[0]);
+                at.e().k(at.C5, new Object[0]);
                 break;
             default:
                 ArrayList arrayList = this.b;

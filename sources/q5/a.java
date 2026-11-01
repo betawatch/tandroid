@@ -35,18 +35,18 @@ import kg.d0;
 import l5.h;
 import l5.i;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.fs;
 import org.telegram.messenger.g4;
 import org.telegram.messenger.gs;
+import org.telegram.messenger.hs;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.i6;
-import org.telegram.messenger.jj;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.qi;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.ri;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.si;
+import org.telegram.messenger.vi;
 import org.telegram.messenger.w0;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
@@ -54,15 +54,15 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.s7;
+import org.telegram.ui.Components.ak0;
 import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.s4;
-import org.telegram.ui.Components.zj0;
-import org.telegram.ui.ay;
-import org.telegram.ui.pb1;
-import org.telegram.ui.rm0;
+import org.telegram.ui.nb1;
+import org.telegram.ui.pm0;
+import org.telegram.ui.tx;
 import org.telegram.ui.un;
-import org.telegram.ui.ux;
 import org.telegram.ui.web.o;
+import org.telegram.ui.zx;
 import rh.e4;
 import s5.e;
 import s5.g;
@@ -72,7 +72,7 @@ import th.z2;
 import u2.c0;
 import u2.g0;
 import u2.k0;
-import vh.b1;
+import vh.c1;
 import vh.k1;
 import vh.l1;
 import vh.u6;
@@ -85,9 +85,9 @@ import xa.n;
 import xh.h2;
 import zf.x0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, l, SuccessContinuation, rm0 {
+public final /* synthetic */ class a implements t5.b, tx, e, gs, j7, j, si, u1, l, SuccessContinuation, pm0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -100,17 +100,17 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean G() {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean H() {
         return false;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean N(ay ayVar) {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean O(zx zxVar) {
         return false;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public void a(String str) {
         u2 u2Var = (u2) this.b;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
@@ -361,7 +361,7 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.ri
+    @Override // org.telegram.messenger.si
     public void c(String str, ArrayList arrayList) {
         int i10;
         int i11;
@@ -372,7 +372,7 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
         ArrayList arrayList5 = arrayList;
         k1 k1Var = (k1) this.b;
         String str2 = (String) this.c;
-        ui uiVar = (ui) this.d;
+        vi viVar = (vi) this.d;
         ArrayList arrayList6 = k1Var.h;
         SparseIntArray sparseIntArray = k1Var.D;
         ArrayList arrayList7 = k1Var.n;
@@ -385,9 +385,9 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
             int i13 = 0;
             for (int i14 = 0; i14 < j10.size(); i14++) {
                 try {
-                    qi qiVar = new qi();
-                    qiVar.a = ((i6) j10.get(i14)).c.toString();
-                    arrayList5.add(qiVar);
+                    ri riVar = new ri();
+                    riVar.a = ((i6) j10.get(i14)).c.toString();
+                    arrayList5.add(riVar);
                 } catch (Exception unused) {
                 }
             }
@@ -403,9 +403,9 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
             if (l1Var.a == 0) {
                 hashSet.clear();
                 for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-                    qi qiVar2 = (qi) arrayList5.get(i16);
-                    String str3 = qiVar2.a;
-                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) k1Var.d.get(qiVar2.a)) != null) {
+                    ri riVar2 = (ri) arrayList5.get(i16);
+                    String str3 = riVar2.a;
+                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) k1Var.d.get(riVar2.a)) != null) {
                         hashSet.addAll(arrayList4);
                     }
                 }
@@ -417,13 +417,13 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
                 i10 = 1;
                 i11 = 0;
             } else {
-                HashMap hashMap = uiVar.d0;
+                HashMap hashMap = viVar.d0;
                 int i18 = 0;
                 while (i18 < arrayList5.size()) {
-                    qi qiVar3 = (qi) arrayList5.get(i18);
+                    ri riVar3 = (ri) arrayList5.get(i18);
                     int i19 = i13;
-                    String str4 = qiVar3.a;
-                    if (str4 == null || str4.startsWith("animated_") || (arrayList3 = (ArrayList) hashMap.get(qiVar3.a)) == null || arrayList3.isEmpty()) {
+                    String str4 = riVar3.a;
+                    if (str4 == null || str4.startsWith("animated_") || (arrayList3 = (ArrayList) hashMap.get(riVar3.a)) == null || arrayList3.isEmpty()) {
                         i12 = i15;
                     } else {
                         i12 = i15;
@@ -441,11 +441,11 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
                 }
                 i10 = i15;
                 i11 = i13;
-                ArrayList arrayList10 = uiVar.s0[i11];
+                ArrayList arrayList10 = viVar.s0[i11];
                 int i21 = i11;
                 while (i21 < arrayList5.size()) {
-                    qi qiVar4 = (qi) arrayList5.get(i21);
-                    String str5 = qiVar4.a;
+                    ri riVar4 = (ri) arrayList5.get(i21);
+                    String str5 = riVar4.a;
                     if (str5 != null && !str5.startsWith("animated_")) {
                         for (int i22 = i11; i22 < arrayList10.size(); i22++) {
                             TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList10.get(i22);
@@ -459,8 +459,8 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
                                 arrayList2 = arrayList11;
                             }
                             for (int i23 = i11; i23 < arrayList2.size(); i23++) {
-                                String V = jj.V(arrayList2.get(i23), null, null);
-                                if (V != null && V.contains(qiVar4.a)) {
+                                String V = kj.V(arrayList2.get(i23), null, null);
+                                if (V != null && V.contains(riVar4.a)) {
                                     arrayList9.add(arrayList2.get(i23));
                                     k1Var.y++;
                                 }
@@ -499,13 +499,13 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
             k1Var.I = k1Var.H;
             k1Var.f();
             boolean z11 = i11;
-            b1.z1(l1Var.b, z11 ? 1 : 0, z11 ? 1 : 0);
+            c1.z1(l1Var.b, z11 ? 1 : 0, z11 ? 1 : 0);
             l1Var.f.c(z11);
             l1Var.e.n(z11);
         }
     }
 
-    @Override // org.telegram.ui.rm0
+    @Override // org.telegram.ui.pm0
     public void e(int i10) {
         h2 h2Var = (h2) this.b;
         fc0 fc0Var = (fc0) this.c;
@@ -563,7 +563,7 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
                 x0Var.getClass();
                 zArr2[0] = true;
                 if (user != null) {
-                    vp.r1(x0Var.f).e7.edit().putBoolean("inlinegeo_" + user.id, true).commit();
+                    wp.r1(x0Var.f).e7.edit().putBoolean("inlinegeo_" + user.id, true).commit();
                     x0Var.G();
                     break;
                 }
@@ -574,7 +574,7 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
     @Override // th.j7
     public void n(Canvas canvas, RectF rectF, float f7) {
         s7 s7Var = (s7) this.b;
-        zj0 zj0Var = (zj0) this.c;
+        ak0 ak0Var = (ak0) this.c;
         int[] iArr = (int[]) this.d;
         s7Var.c(canvas, rectF, f7);
         s7Var.f(canvas, rectF, f7);
@@ -583,10 +583,10 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
         } else {
             s7Var.e(canvas, rectF, f7);
         }
-        if (zj0Var != null && zj0Var.a0 && zj0Var.getVisibility() == 0) {
+        if (ak0Var != null && ak0Var.a0 && ak0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            zj0Var.draw(canvas);
+            ak0Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -628,23 +628,23 @@ public final /* synthetic */ class a implements t5.b, ux, e, fs, j7, j, ri, u1, 
         return Tasks.forResult(str2);
     }
 
-    @Override // org.telegram.ui.ux
-    public boolean y(ay ayVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, pb1 pb1Var) {
+    @Override // org.telegram.ui.tx
+    public boolean z(zx zxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, nb1 nb1Var) {
         e4 e4Var = (e4) this.b;
         TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.c;
-        ay ayVar2 = (ay) this.d;
+        zx zxVar2 = (zx) this.d;
         if (arrayList.isEmpty()) {
             return false;
         }
-        long j10 = ((gs) arrayList.get(0)).a;
+        long j10 = ((hs) arrayList.get(0)).a;
         Long l4 = (Long) g4.f(e4Var.a).r.get(tL_starGiftUnique.slug);
         long longValue = l4 != null ? l4.longValue() : 0L;
         if (longValue != 0 && longValue != j10) {
-            s4.m0(e4Var.getContext(), e4Var.I0, e4Var.a, tL_starGiftUnique, longValue, new a3(e4Var, j10, tL_starGiftUnique, ayVar2, 16));
+            s4.m0(e4Var.getContext(), e4Var.I0, e4Var.a, tL_starGiftUnique, longValue, new a3(e4Var, j10, tL_starGiftUnique, zxVar2, 16));
             return true;
         }
         g4.f(e4Var.a).s(j10, new yf.b(null, tL_starGiftUnique.slug), null, true);
-        ayVar2.presentFragment(un.ha(j10), true);
+        zxVar2.presentFragment(un.ma(j10), true);
         return true;
     }
 

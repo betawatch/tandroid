@@ -69,12 +69,12 @@ import m4.y;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.ld;
-import org.telegram.messenger.ms;
-import org.telegram.messenger.mz;
+import org.telegram.messenger.md;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.nz;
 import org.telegram.messenger.w0;
 import org.telegram.ui.ActionBar.p4;
-import org.telegram.ui.Components.bx0;
+import org.telegram.ui.Components.cx0;
 import org.telegram.ui.LaunchActivity;
 import th.m1;
 import u2.g0;
@@ -102,7 +102,7 @@ import z9.x0;
 import z9.y0;
 import z9.z1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class f {
     public Object a;
@@ -308,12 +308,12 @@ public class f {
             this.b = (LocationManager) w0.b.getSystemService("location");
         }
         try {
-            ((LocationManager) this.b).requestLocationUpdates("gps", 1L, 0.0f, (ld) this.c);
+            ((LocationManager) this.b).requestLocationUpdates("gps", 1L, 0.0f, (md) this.c);
         } catch (Exception e) {
             f8.g(e, true);
         }
         try {
-            ((LocationManager) this.b).requestLocationUpdates("network", 1L, 0.0f, (ld) this.d);
+            ((LocationManager) this.b).requestLocationUpdates("network", 1L, 0.0f, (md) this.d);
         } catch (Exception e7) {
             f8.g(e7, true);
         }
@@ -326,13 +326,13 @@ public class f {
         } catch (Exception e10) {
             f8.g(e10, true);
         }
-        ms msVar = (ms) this.e;
-        if (msVar != null) {
-            i0.r(msVar);
+        ns nsVar = (ns) this.e;
+        if (nsVar != null) {
+            i0.r(nsVar);
         }
-        ms msVar2 = new ms(this, 15);
-        this.e = msVar2;
-        i0.h3(msVar2, 5000L);
+        ns nsVar2 = new ns(this, 15);
+        this.e = nsVar2;
+        i0.h3(nsVar2, 5000L);
     }
 
     public Task C(String str, String str2, Bundle bundle) {
@@ -360,9 +360,9 @@ public class f {
         if (((LocationManager) this.b) == null) {
             return;
         }
-        ms msVar = (ms) this.e;
-        if (msVar != null) {
-            i0.r(msVar);
+        ns nsVar = (ns) this.e;
+        if (nsVar != null) {
+            i0.r(nsVar);
         }
         j();
     }
@@ -375,7 +375,7 @@ public class f {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new bx0(this, i10, 0));
+                ofFloat.addUpdateListener(new cx0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -384,7 +384,7 @@ public class f {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new bx0(this, i11, 1));
+                ofFloat2.addUpdateListener(new cx0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -393,7 +393,7 @@ public class f {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new bx0(this, i12, 2));
+                ofFloat3.addUpdateListener(new cx0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -672,8 +672,8 @@ public class f {
     }
 
     public void j() {
-        ((LocationManager) this.b).removeUpdates((ld) this.c);
-        ((LocationManager) this.b).removeUpdates((ld) this.d);
+        ((LocationManager) this.b).removeUpdates((md) this.c);
+        ((LocationManager) this.b).removeUpdates((md) this.d);
         this.f = null;
         this.e = null;
     }
@@ -1145,10 +1145,10 @@ public class f {
         }
     }
 
-    public f(mz mzVar) {
+    public f(nz nzVar) {
         int i10 = 1;
-        this.c = new ld(this, i10);
-        this.d = new ld(this, i10);
-        this.a = mzVar;
+        this.c = new md(this, i10);
+        this.d = new md(this, i10);
+        this.a = nzVar;
     }
 }

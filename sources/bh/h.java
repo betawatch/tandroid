@@ -12,7 +12,7 @@ import androidx.activity.o;
 import bi.d2;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p6;
@@ -26,7 +26,7 @@ import vh.p2;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class h extends FrameLayout implements fe.e, k6 {
     public static final int[] H = {R.drawable.msg_search, R.drawable.input_gift_s, R.drawable.input_message, R.drawable.msg_help, R.drawable.msg_help};
@@ -114,16 +114,16 @@ public class h extends FrameLayout implements fe.e, k6 {
                                                 p2Var2.setPadding(org.telegram.messenger.i0.L(7.33f), 0, org.telegram.messenger.i0.L(7.33f), 0);
                                                 unVar2.Z0.p(false);
                                                 vh.p2 p2Var3 = unVar2.Z0;
-                                                String L0 = org.telegram.messenger.cd.L0(2131744450, null);
+                                                String L0 = org.telegram.messenger.dd.L0(2131744450, null);
                                                 if (p2Var3.getMeasuredWidth() < 0) {
                                                     p2Var3.G = L0;
                                                 } else {
-                                                    p2Var3.H.t(L0, !org.telegram.messenger.cd.X, true);
+                                                    p2Var3.H.t(L0, !org.telegram.messenger.dd.X, true);
                                                 }
                                                 unVar2.Z0.l(1.0f, (-width) + 7.33f);
                                                 unVar2.l1.addView(unVar2.Z0, w7.b6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f10 + 50.0f));
                                                 vh.p2 p2Var4 = unVar2.Z0;
-                                                p2Var4.l0 = new lg(unVar2, 14);
+                                                p2Var4.l0 = new ng(unVar2, 12);
                                                 p2Var4.u();
                                                 org.telegram.ui.Components.r30.f.b();
                                                 break;
@@ -137,11 +137,11 @@ public class h extends FrameLayout implements fe.e, k6 {
                                                 unVar2.X0 = p2Var5;
                                                 p2Var5.setPadding(org.telegram.messenger.i0.L(7.33f), 0, org.telegram.messenger.i0.L(7.33f), 0);
                                                 unVar2.X0.p(false);
-                                                unVar2.X0.s(org.telegram.messenger.cd.L0(2131750260, null));
+                                                unVar2.X0.s(org.telegram.messenger.dd.L0(2131750260, null));
                                                 unVar2.X0.l(1.0f, (-width2) + 7.33f);
                                                 unVar2.l1.addView(unVar2.X0, w7.b6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
                                                 vh.p2 p2Var6 = unVar2.X0;
-                                                p2Var6.l0 = new mf(unVar2, 18);
+                                                p2Var6.l0 = new nf(unVar2, 18);
                                                 p2Var6.u();
                                                 org.telegram.ui.Components.r30.h.b();
                                                 break;
@@ -172,16 +172,16 @@ public class h extends FrameLayout implements fe.e, k6 {
                                                 p2Var2.setPadding(org.telegram.messenger.i0.L(7.33f), 0, org.telegram.messenger.i0.L(7.33f), 0);
                                                 unVar2.Z0.p(false);
                                                 vh.p2 p2Var3 = unVar2.Z0;
-                                                String L0 = org.telegram.messenger.cd.L0(2131744450, null);
+                                                String L0 = org.telegram.messenger.dd.L0(2131744450, null);
                                                 if (p2Var3.getMeasuredWidth() < 0) {
                                                     p2Var3.G = L0;
                                                 } else {
-                                                    p2Var3.H.t(L0, !org.telegram.messenger.cd.X, true);
+                                                    p2Var3.H.t(L0, !org.telegram.messenger.dd.X, true);
                                                 }
                                                 unVar2.Z0.l(1.0f, (-width) + 7.33f);
                                                 unVar2.l1.addView(unVar2.Z0, w7.b6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f10 + 50.0f));
                                                 vh.p2 p2Var4 = unVar2.Z0;
-                                                p2Var4.l0 = new lg(unVar2, 14);
+                                                p2Var4.l0 = new ng(unVar2, 12);
                                                 p2Var4.u();
                                                 org.telegram.ui.Components.r30.f.b();
                                                 break;
@@ -195,11 +195,11 @@ public class h extends FrameLayout implements fe.e, k6 {
                                                 unVar2.X0 = p2Var5;
                                                 p2Var5.setPadding(org.telegram.messenger.i0.L(7.33f), 0, org.telegram.messenger.i0.L(7.33f), 0);
                                                 unVar2.X0.p(false);
-                                                unVar2.X0.s(org.telegram.messenger.cd.L0(2131750260, null));
+                                                unVar2.X0.s(org.telegram.messenger.dd.L0(2131750260, null));
                                                 unVar2.X0.l(1.0f, (-width2) + 7.33f);
                                                 unVar2.l1.addView(unVar2.X0, w7.b6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
                                                 vh.p2 p2Var6 = unVar2.X0;
-                                                p2Var6.l0 = new mf(unVar2, 18);
+                                                p2Var6.l0 = new nf(unVar2, 18);
                                                 p2Var6.u();
                                                 org.telegram.ui.Components.r30.h.b();
                                                 break;
@@ -336,13 +336,13 @@ public class h extends FrameLayout implements fe.e, k6 {
                     fe.b bVar = new fe.b((i10 << 16) | 1, this, gr.h, 300L, false);
                     ah.a d = ah.a.d(getContext(), this.n, this.r, this.h, H[i10], 48);
                     if (i10 == 1) {
-                        d.setContentDescription(cd.L0(2131746750, null));
+                        d.setContentDescription(dd.L0(2131746750, null));
                     } else if (i10 == 2) {
-                        d.setContentDescription(cd.L0(2131752337, null));
+                        d.setContentDescription(dd.L0(2131752337, null));
                     } else if (i10 == 0) {
-                        d.setContentDescription(cd.L0(2131745853, null));
+                        d.setContentDescription(dd.L0(2131745853, null));
                     } else if (i10 == 3) {
-                        d.setContentDescription(cd.L0(2131752880, null));
+                        d.setContentDescription(dd.L0(2131752880, null));
                     }
                     e6.b(d, 0.13f, 2.0f);
                     d.setVisibility(8);

@@ -1,10 +1,10 @@
 package yh;
 
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -21,11 +21,11 @@ public final /* synthetic */ class g implements Runnable {
         l lVar = this.b;
         switch (i10) {
             case 0:
-                l.a0(lVar);
+                l.b0(lVar);
                 break;
             default:
-                zs notificationCenter = lVar.getNotificationCenter();
-                int i11 = vp.D8;
+                at notificationCenter = lVar.getNotificationCenter();
+                int i11 = wp.D8;
                 notificationCenter.k(2, Integer.valueOf(TLObject.FLAG_13));
                 break;
         }

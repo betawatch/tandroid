@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o7 extends g7 {
     public m.p3 n;
@@ -32,7 +32,7 @@ public final class o7 extends g7 {
             if (i10 >= arrayList2.size()) {
                 return;
             }
-            arrayList.add(new org.telegram.messenger.ef(0, ((m7) arrayList2.get(i10)).d.a.getPath(), 0, ((m7) arrayList2.get(i10)).d.d == 1, 0, 0));
+            arrayList.add(new org.telegram.messenger.ff(0, ((m7) arrayList2.get(i10)).d.a.getPath(), 0, ((m7) arrayList2.get(i10)).d.d == 1, 0, 0));
             i10++;
         }
     }
@@ -54,10 +54,10 @@ public final class o7 extends g7 {
         int i11 = aVar.d;
         File file = aVar.a;
         if (i11 == 1) {
-            imageReceiver.q0(org.telegram.messenger.ic.g("vthumb://0:" + file.getAbsolutePath()), a1.g.i(max, max, "_"), this.s, null, null, 0);
+            imageReceiver.q0(org.telegram.messenger.jc.g("vthumb://0:" + file.getAbsolutePath()), a1.g.i(max, max, "_"), this.s, null, null, 0);
             s7Var.m(org.telegram.messenger.i0.i0(aVar.c, false, false), true);
         } else {
-            imageReceiver.q0(org.telegram.messenger.ic.g("thumb://0:" + file.getAbsolutePath()), a1.g.i(max, max, "_"), this.s, null, null, 0);
+            imageReceiver.q0(org.telegram.messenger.jc.g("thumb://0:" + file.getAbsolutePath()), a1.g.i(max, max, "_"), this.s, null, null, 0);
             s7Var.m(org.telegram.messenger.i0.i0(aVar.c, false, false), false);
         }
         s7Var.i(this.w.h.j.contains(aVar), z10);
@@ -70,6 +70,6 @@ public final class o7 extends g7 {
         }
         n7 n7Var = new n7(this, viewGroup.getContext(), this.n, this.w.e.getCurrentAccount());
         n7Var.setStyle(1);
-        return new org.telegram.ui.Components.ck0(n7Var);
+        return new org.telegram.ui.Components.dk0(n7Var);
     }
 }

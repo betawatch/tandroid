@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.k2;
@@ -14,21 +14,21 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u5;
 import org.telegram.ui.Cells.i5;
 import org.telegram.ui.Components.bn;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.tk0;
 import s4.c1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class j extends sk0 {
+public final class j extends tk0 {
     public final /* synthetic */ q c;
 
     public j(q qVar) {
         this.c = qVar;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -104,20 +104,20 @@ public final class j extends sk0 {
         r8 r8Var = i5Var.a;
         r8Var.r(user);
         i5Var.b.e(user, r8Var);
-        i5Var.c.l(h20.p(user), false);
-        String s10 = cd.s(tL_chatInviteImporter.date, false);
+        i5Var.c.l(i20.p(user), false);
+        String s10 = dd.s(tL_chatInviteImporter.date, false);
         if (tL_chatInviteImporter.via_chatlist) {
-            u5Var.l(cd.L0(2131749079, null), false);
+            u5Var.l(dd.L0(2131749079, null), false);
             return;
         }
         long j10 = tL_chatInviteImporter.approved_by;
         if (j10 == 0) {
-            u5Var.l(cd.a0("RequestedToJoinAt", null, 2131746177, s10), false);
+            u5Var.l(dd.a0("RequestedToJoinAt", null, 2131746177, s10), false);
             return;
         }
         TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j10);
         if (user2 != null) {
-            u5Var.l(cd.a0("AddedBy", null, 2131754361, h20.j(user2, true), s10), false);
+            u5Var.l(dd.a0("AddedBy", null, 2131754361, i20.j(user2, true), s10), false);
         } else {
             u5Var.l("", false);
         }
@@ -152,6 +152,6 @@ public final class j extends sk0 {
             iVar.setTag(-33024);
             view = iVar;
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

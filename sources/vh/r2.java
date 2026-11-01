@@ -3,14 +3,14 @@ package vh;
 import android.graphics.Rect;
 import android.view.View;
 import java.util.WeakHashMap;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class r2 {
     public final View a;
     public View b;
-    public final q20 c;
+    public final r20 c;
     public boolean d;
     public boolean e;
     public boolean f;
@@ -21,13 +21,13 @@ public class r2 {
     public int k;
     public int l;
 
-    public r2(View view, boolean z10, q20 q20Var) {
+    public r2(View view, boolean z10, r20 r20Var) {
         dg.c cVar = new dg.c(this, 2);
         this.i = cVar;
         jf.d dVar = new jf.d(this, 1);
         this.j = dVar;
         this.a = view;
-        this.c = q20Var;
+        this.c = r20Var;
         this.b = view;
         if (view.isAttachedToWindow()) {
             view.getViewTreeObserver().addOnGlobalLayoutListener(dVar);
@@ -44,9 +44,9 @@ public class r2 {
                 this.e = false;
             }
         }
-        q20 q20Var = this.c;
-        if (q20Var != null) {
-            q20Var.a(Integer.valueOf(this.l));
+        r20 r20Var = this.c;
+        if (r20Var != null) {
+            r20Var.a(Integer.valueOf(this.l));
         }
     }
 

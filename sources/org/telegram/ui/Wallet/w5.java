@@ -3,10 +3,10 @@ package org.telegram.ui.Wallet;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class w5 extends ClickableSpan {
     public final /* synthetic */ int a = 0;
@@ -86,10 +86,10 @@ public final class w5 extends ClickableSpan {
                                 break;
                         }
                     }
-                }, cd.L0(2131752478, null), i12 == 3);
+                }, dd.L0(2131752478, null), i12 == 3);
                 final int i13 = 2;
                 boolean z10 = i12 == 2;
-                String L0 = cd.L0(2131752476, null);
+                String L0 = dd.L0(2131752476, null);
                 final char c11 = c10 == true ? 1 : 0;
                 H.i(new Runnable() { // from class: xh.t2
                     @Override // java.lang.Runnable
@@ -188,7 +188,7 @@ public final class w5 extends ClickableSpan {
                                 break;
                         }
                     }
-                }, cd.L0(2131752477, null), i12 == 1);
+                }, dd.L0(2131752477, null), i12 == 1);
                 H.V(5);
                 H.t = false;
                 H.s = 0;

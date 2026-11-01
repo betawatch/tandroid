@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class sb0 extends uu0 implements r0.l, View.OnLayoutChangeListener {
+public abstract class sb0 extends vu0 implements r0.l, View.OnLayoutChangeListener {
     public final ac.g f0;
     public View g0;
     public rb0 h0;
@@ -41,7 +41,7 @@ public abstract class sb0 extends uu0 implements r0.l, View.OnLayoutChangeListen
         if (view != this.g0 || (rb0Var = this.h0) == null || ((org.telegram.ui.t7) rb0Var).getListView() == null) {
             return;
         }
-        tk0 listView = ((org.telegram.ui.t7) this.h0).getListView();
+        uk0 listView = ((org.telegram.ui.t7) this.h0).getListView();
         if (this.h0.getTop() == this.j0) {
             iArr[1] = i13;
             listView.scrollBy(0, i13);
@@ -53,7 +53,7 @@ public abstract class sb0 extends uu0 implements r0.l, View.OnLayoutChangeListen
         return view != null && view.isAttachedToWindow() && i10 == 2;
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.k0 = true;
@@ -63,7 +63,7 @@ public abstract class sb0 extends uu0 implements r0.l, View.OnLayoutChangeListen
         }
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.k0 = false;
@@ -111,7 +111,7 @@ public abstract class sb0 extends uu0 implements r0.l, View.OnLayoutChangeListen
             this.i0.onNestedScroll(view, 0, 0, i10, i11);
             return;
         }
-        tk0 listView = ((org.telegram.ui.t7) this.h0).getListView();
+        uk0 listView = ((org.telegram.ui.t7) this.h0).getListView();
         int L0 = ((s4.a0) listView.getLayoutManager()).L0();
         if (L0 != -1) {
             s4.c1 K = listView.K(L0);

@@ -6,14 +6,14 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.HashSet;
-import org.telegram.messenger.c00;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.d00;
+import org.telegram.messenger.jc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q0 extends FrameLayout implements fe.e, org.telegram.ui.ActionBar.k6 {
     public final org.telegram.ui.ActionBar.p6 a;
@@ -38,7 +38,7 @@ public final class q0 extends FrameLayout implements fe.e, org.telegram.ui.Actio
         this.c = z0Var;
         frameLayout.setBackground(z0Var);
         z0Var.w = 1;
-        addView(frameLayout, w7.b6.e(-1, -1, zs.E1));
+        addView(frameLayout, w7.b6.e(-1, -1, at.E1));
         g9 g9Var = new g9(context);
         this.d = g9Var;
         g9Var.getImageReceiver().W(0);
@@ -73,7 +73,7 @@ public final class q0 extends FrameLayout implements fe.e, org.telegram.ui.Actio
         }
         q0Var.n = document;
         TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(document.thumbs, org.telegram.messenger.i0.L(100.0f), false, null, false);
-        c00 f7 = org.telegram.messenger.v5.f(document, org.telegram.ui.ActionBar.t6.a7, 0.3f, null);
+        d00 f7 = org.telegram.messenger.v5.f(document, org.telegram.ui.ActionBar.t6.a7, 0.3f, null);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(i10);
         sb2.append("_");
@@ -81,7 +81,7 @@ public final class q0 extends FrameLayout implements fe.e, org.telegram.ui.Actio
         sb2.append(z10 ? "_nolimit_pcache" : "");
         String sb3 = sb2.toString();
         g9Var.setLayoutParams(w7.b6.d(i10, i10, 49, 0.0f, r3 + 17, 0.0f, (80 - i10) / 2));
-        g9Var.m(ic.b(document), sb3, ic.c(w9, document), sb3, f7, obj);
+        g9Var.m(jc.b(document), sb3, jc.c(w9, document), sb3, f7, obj);
     }
 
     public final void b() {
@@ -104,7 +104,7 @@ public final class q0 extends FrameLayout implements fe.e, org.telegram.ui.Actio
             textView.setTextColor(i0.b.f(bVar.e, i0.b.f(0.5f, org.telegram.ui.ActionBar.t6.x0(null, i10, false), org.telegram.ui.ActionBar.t6.x0(null, i11, false)), -1));
             f7 = f10;
         } else {
-            f7 = i0.b.f(0.5f, i0.b.o(this.w.a.center_color, zs.e4), i0.b.o(this.w.a.pattern_color, zs.e4));
+            f7 = i0.b.f(0.5f, i0.b.o(this.w.a.center_color, at.e4), i0.b.o(this.w.a.pattern_color, at.e4));
             textView.setTextColor(-1);
         }
         if (textView.getBackground() instanceof ShapeDrawable) {

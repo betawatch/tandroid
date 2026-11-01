@@ -16,17 +16,17 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.gs;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.hs;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.sz;
+import org.telegram.messenger.is;
+import org.telegram.messenger.tc;
 import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -45,13 +45,13 @@ import org.telegram.ui.Components.zf0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ay;
-import org.telegram.ui.b50;
+import org.telegram.ui.a50;
 import org.telegram.ui.oi;
-import org.telegram.ui.ta0;
-import org.telegram.ui.u61;
+import org.telegram.ui.s61;
+import org.telegram.ui.sa0;
 import org.telegram.ui.un;
 import org.telegram.ui.y6;
+import org.telegram.ui.zx;
 import rh.h8;
 import rh.x7;
 import vh.b8;
@@ -59,7 +59,7 @@ import vh.f8;
 import vh.j8;
 import vh.o8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -138,14 +138,14 @@ public final /* synthetic */ class e implements Runnable {
                 }
                 break;
             case 9:
-                wb Q = cc.a0((y6) obj).Q(R.raw.ic_delete, 36, cd.a0(null, null, 2131752645, org.telegram.messenger.i0.i0(j10, false, false)));
+                wb Q = cc.a0((y6) obj).Q(R.raw.ic_delete, 36, dd.a0(null, null, 2131752645, org.telegram.messenger.i0.i0(j10, false, false)));
                 Q.r = false;
                 Q.j();
                 break;
             case 10:
                 ff ffVar = (ff) obj;
                 ffVar.getClass();
-                ffVar.presentFragment(un.ha(j10));
+                ffVar.presentFragment(un.ma(j10));
                 break;
             case 11:
                 kk kkVar = (kk) obj;
@@ -162,14 +162,14 @@ public final /* synthetic */ class e implements Runnable {
                         Context context = (k2Var2 == null || k2Var2.getParentActivity() == null) ? kkVar.getContext() : k2Var2.getParentActivity();
                         if (context != null) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, p6Var2);
-                            String L0 = cd.L0(2131743231, null);
+                            String L0 = dd.L0(2131743231, null);
                             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                             x1Var.R = L0;
                             ag.a2 a2Var = new ag.a2(kkVar, context);
                             a2Var.setTextSize(1, 18.0f);
                             a7.V(a2Var, org.telegram.ui.ActionBar.t6.j5, p6Var2);
                             a7.E(a2Var, org.telegram.ui.ActionBar.t6.t5, p6Var2);
-                            a2Var.setHint(cd.L0(2131743195, null));
+                            a2Var.setHint(dd.L0(2131743195, null));
                             a2Var.setText(kkVar.s0);
                             a2Var.setSelection(a2Var.length());
                             a2Var.setInputType(147457);
@@ -184,13 +184,13 @@ public final /* synthetic */ class e implements Runnable {
                             org.telegram.ui.ActionBar.w6 N = a7.N(i15);
                             c2Var.setBackground(h02);
                             a7.k(c2Var, h02, null, N, p6Var2);
-                            c2Var.e(cd.L0(2131743103, null), "", !kkVar.t0 || kkVar.getPublicKey() == null, false, false);
+                            c2Var.e(dd.L0(2131743103, null), "", !kkVar.t0 || kkVar.getPublicKey() == null, false, false);
                             c2Var.setMultiline(true);
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c2Var.getCheckBoxView().getLayoutParams();
                             layoutParams.topMargin = 0;
-                            layoutParams.gravity = (cd.X ? 5 : 3) | 16;
+                            layoutParams.gravity = (dd.X ? 5 : 3) | 16;
                             c2Var.getCheckBoxView().setLayoutParams(layoutParams);
-                            c2Var.setPadding(cd.X ? org.telegram.messenger.i0.L(4.0f) : 0, org.telegram.messenger.i0.L(12.0f), cd.X ? 0 : org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(12.0f));
+                            c2Var.setPadding(dd.X ? org.telegram.messenger.i0.L(4.0f) : 0, org.telegram.messenger.i0.L(12.0f), dd.X ? 0 : org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(12.0f));
                             c2Var.setEnabled(kkVar.getPublicKey() != null);
                             c2Var.setOnClickListener(new org.telegram.ui.Components.a1(c2Var, 1));
                             LinearLayout linearLayout = new LinearLayout(context);
@@ -200,8 +200,8 @@ public final /* synthetic */ class e implements Runnable {
                             x1Var.G = 6;
                             alertDialog$Builder.o(linearLayout);
                             x1Var.a = org.telegram.messenger.i0.L(292.0f);
-                            alertDialog$Builder.h(cd.L0(2131752589, null), new org.telegram.ui.Components.v1(28));
-                            alertDialog$Builder.k(cd.L0(2131754486, null), new androidx.car.app.utils.a(kkVar, a2Var, c2Var, 18));
+                            alertDialog$Builder.h(dd.L0(2131752589, null), new org.telegram.ui.Components.v1(28));
+                            alertDialog$Builder.k(dd.L0(2131754486, null), new androidx.car.app.utils.a(kkVar, a2Var, c2Var, 18));
                             kkVar.T0 = x1Var;
                             x1Var.j0 = false;
                             x1Var.setOnShowListener(new org.telegram.ui.Components.g2(a2Var, i14));
@@ -252,23 +252,23 @@ public final /* synthetic */ class e implements Runnable {
                 new x7(u02, p6Var, this.b, 15, "", new zf0(cg0Var, 0), 0L).show();
                 break;
             case 14:
-                ay ayVar = (ay) obj;
-                ayVar.L4(true, true);
+                zx zxVar = (zx) obj;
+                zxVar.M4(true, true);
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(gs.a(j10, 0L));
-                ayVar.C2.y(ayVar, arrayList, null, false, ayVar.J2, ayVar.K2, ayVar.L2, null);
+                arrayList.add(hs.a(j10, 0L));
+                zxVar.C2.z(zxVar, arrayList, null, false, zxVar.J2, zxVar.K2, zxVar.L2, null);
                 break;
             case 15:
-                ((b50) obj).o1(j10, false);
+                ((a50) obj).o1(j10, false);
                 break;
             case 16:
-                ta0 ta0Var = (ta0) obj;
-                ta0Var.getClass();
-                ta0Var.presentFragment(un.ha(j10));
+                sa0 sa0Var = (sa0) obj;
+                sa0Var.getClass();
+                sa0Var.presentFragment(un.ma(j10));
                 break;
             case 17:
                 un unVar = ((oi) obj).f;
-                unVar.I7(true);
+                unVar.M7(true);
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", j10);
                 if (j10 == unVar.getUserConfig().e()) {
@@ -277,17 +277,17 @@ public final /* synthetic */ class e implements Runnable {
                 unVar.presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 18:
-                sz szVar = (sz) obj;
-                szVar.e = SystemClock.elapsedRealtime();
-                szVar.c = false;
+                tz tzVar = (tz) obj;
+                tzVar.e = SystemClock.elapsedRealtime();
+                tzVar.c = false;
                 if (j10 == -1) {
-                    szVar.d = false;
-                    szVar.b = 0L;
+                    tzVar.d = false;
+                    tzVar.b = 0L;
                 } else {
-                    szVar.b = j10;
-                    szVar.d = true;
+                    tzVar.b = j10;
+                    tzVar.d = true;
                 }
-                zs.e().k(zs.B4, szVar);
+                at.e().k(at.B4, tzVar);
                 break;
             case 19:
                 ((ag.e0) obj).a(Long.valueOf(j10));
@@ -295,13 +295,13 @@ public final /* synthetic */ class e implements Runnable {
             case 20:
                 org.telegram.ui.web.b0 b0Var = (org.telegram.ui.web.b0) obj;
                 b0Var.getClass();
-                b0Var.presentFragment(un.ha(j10));
+                b0Var.presentFragment(un.ma(j10));
                 break;
             case 21:
-                cc.a0((h8) obj).I(R.raw.stars_topup, cd.L0(2131750230, null), cd.H(',', "Gift2Converted", (int) j10)).k(true);
+                cc.a0((h8) obj).I(R.raw.stars_topup, dd.L0(2131750230, null), dd.H(',', "Gift2Converted", (int) j10)).k(true);
                 break;
             case 22:
-                cc.a0((u61) obj).I(R.raw.stars_topup, cd.L0(2131750230, null), cd.H(',', "Gift2ConvertedChannel", (int) j10)).k(true);
+                cc.a0((s61) obj).I(R.raw.stars_topup, dd.L0(2131750230, null), dd.H(',', "Gift2ConvertedChannel", (int) j10)).k(true);
                 break;
             case 23:
                 ((th.m) obj).s.h0(j10, false);
@@ -313,30 +313,30 @@ public final /* synthetic */ class e implements Runnable {
                 org.telegram.messenger.i0.h3((th.o2) obj, Math.max(0L, 500 - (System.currentTimeMillis() - j10)));
                 break;
             case 26:
-                org.telegram.ui.ActionBar.k2 f02 = u61.f0(vp.r1(((th.e5) obj).a).L0(Long.valueOf(-j10)), true);
+                org.telegram.ui.ActionBar.k2 g02 = s61.g0(wp.r1(((th.e5) obj).a).L0(Long.valueOf(-j10)), true);
                 org.telegram.ui.ActionBar.k2 Q2 = LaunchActivity.Q();
                 if (Q2 != null) {
                     o8 o8Var = o8.F2;
                     if (o8Var != null && o8Var.d) {
                         org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2();
                         i2Var.a = true;
-                        Q2.showAsSheet(f02, i2Var);
+                        Q2.showAsSheet(g02, i2Var);
                         break;
                     } else {
-                        Q2.presentFragment(f02);
+                        Q2.presentFragment(g02);
                         break;
                     }
                 }
                 break;
             case 27:
-                hs hsVar = ((th.r5) obj).b;
-                SQLiteDatabase sQLiteDatabase = hsVar.b;
+                is isVar = ((th.r5) obj).b;
+                SQLiteDatabase sQLiteDatabase = isVar.b;
                 try {
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("DELETE FROM stories WHERE dialog_id = " + j10).stepThis().dispose();
                     break;
                 } catch (Throwable th2) {
-                    hsVar.o(th2, true);
+                    isVar.o(th2, true);
                     return;
                 }
             case 28:
@@ -370,8 +370,8 @@ public final /* synthetic */ class e implements Runnable {
                     j8 j8Var2 = o8Var2.F;
                     o8Var2.G = j8Var2.b;
                     j8Var2.e();
-                    if (tz.o() > 1) {
-                        sc.e(360928);
+                    if (uz.o() > 1) {
+                        tc.e(360928);
                     }
                 }
                 o8Var2.y = null;

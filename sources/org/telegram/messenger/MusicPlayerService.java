@@ -27,9 +27,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public class MusicPlayerService extends Service implements us {
+public class MusicPlayerService extends Service implements vs {
     public static final boolean w = !TextUtils.isEmpty(i0.k1("ro.miui.ui.version.code"));
     public RemoteControlClient a;
     public AudioManager b;
@@ -46,14 +46,14 @@ public class MusicPlayerService extends Service implements us {
         return (Build.VERSION.SDK_INT >= 31 || !d6.i()) ? i10 : i10 & (-100663297);
     }
 
-    public static float d(jj jjVar, boolean z10) {
+    public static float d(kj kjVar, boolean z10) {
         if (!z10) {
             return 0.0f;
         }
-        if (jjVar == null) {
+        if (kjVar == null) {
             return 1.0f;
         }
-        if (jj.R4(jjVar.k) || jjVar.h4()) {
+        if (kj.R4(kjVar.k) || kjVar.h4()) {
             return MediaController.B().p0;
         }
         return 1.0f;
@@ -69,7 +69,7 @@ public class MusicPlayerService extends Service implements us {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(jj jjVar, boolean z10) {
+    public final void a(kj kjVar, boolean z10) {
         Bitmap bitmap;
         Bitmap bitmap2;
         Bitmap c10;
@@ -91,42 +91,42 @@ public class MusicPlayerService extends Service implements us {
         String str7;
         Bitmap bitmap3;
         int i13;
-        String z12 = jjVar.z1(true);
-        String x12 = jjVar.x1(true);
+        String z12 = kjVar.z1(true);
+        String x12 = kjVar.x1(true);
         cf.a aVar3 = MediaController.B().D0;
         Intent intent = new Intent(w0.b, (Class<?>) LaunchActivity.class);
-        if (jjVar.I3()) {
+        if (kjVar.I3()) {
             intent.setAction("com.tmessages.openplayer");
             intent.addCategory("android.intent.category.LAUNCHER");
-        } else if (jj.R4(jjVar.k) || jjVar.h4()) {
+        } else if (kj.R4(kjVar.k) || kjVar.h4()) {
             intent.setAction("android.intent.action.VIEW");
-            TLRPC.Peer peer = jjVar.k.peer_id;
+            TLRPC.Peer peer = kjVar.k.peer_id;
             boolean z11 = peer instanceof TLRPC.TL_peerUser;
             long j11 = z11 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
             if (j11 != 0) {
                 if (z11) {
                     StringBuilder s10 = a1.g.s(j11, "tg://openmessage?user_id=", "&message_id=");
-                    s10.append(jjVar.f1());
+                    s10.append(kjVar.f1());
                     intent.setData(Uri.parse(s10.toString()));
                 } else {
                     StringBuilder s11 = a1.g.s(j11, "tg://openmessage?chat_id=", "&message_id=");
-                    s11.append(jjVar.f1());
+                    s11.append(kjVar.f1());
                     intent.setData(Uri.parse(s11.toString()));
                 }
             }
         }
         PendingIntent activity = PendingIntent.getActivity(w0.b, 0, intent, b(33554432));
-        long L0 = (long) (jjVar.L0() * 1000.0d);
-        if (jjVar.I3()) {
-            String u02 = jjVar.u0(true);
-            String u03 = jjVar.u0(false);
+        long L0 = (long) (kjVar.L0() * 1000.0d);
+        if (kjVar.I3()) {
+            String u02 = kjVar.u0(true);
+            String u03 = kjVar.u0(false);
             bitmap2 = aVar3 != null ? aVar3.p : null;
             bitmap = aVar3 != null ? aVar3.o : null;
             this.r = null;
             this.h.w0(null);
             if (bitmap2 != null || TextUtils.isEmpty(u02)) {
-                b8.G(d20.s0);
-                this.r = b8.I(jjVar.F0()).getAbsolutePath();
+                b8.G(e20.s0);
+                this.r = b8.I(kjVar.F0()).getAbsolutePath();
             } else {
                 boolean z13 = !z10;
                 Bitmap e = e(u03, true, z13);
@@ -138,12 +138,12 @@ public class MusicPlayerService extends Service implements us {
                     bitmap = e;
                 }
             }
-        } else if (jj.R4(jjVar.k) || jjVar.h4()) {
-            long S1 = jjVar.S1();
-            if (jjVar.p3()) {
-                TLRPC.User Z1 = vp.r1(d20.s0).Z1(Long.valueOf(S1));
+        } else if (kj.R4(kjVar.k) || kjVar.h4()) {
+            long S1 = kjVar.S1();
+            if (kjVar.p3()) {
+                TLRPC.User Z1 = wp.r1(e20.s0).Z1(Long.valueOf(S1));
                 if (Z1 != null) {
-                    z12 = h20.p(Z1);
+                    z12 = i20.p(Z1);
                     boolean z14 = !z10;
                     bitmap = c(Z1, true, z14);
                     c10 = c(Z1, false, z14);
@@ -152,7 +152,7 @@ public class MusicPlayerService extends Service implements us {
                     bitmap = null;
                 }
             } else {
-                TLRPC.Chat L02 = vp.r1(d20.s0).L0(Long.valueOf(-S1));
+                TLRPC.Chat L02 = wp.r1(e20.s0).L0(Long.valueOf(-S1));
                 if (L02 != null) {
                     z12 = L02.title;
                     boolean z15 = !z10;
@@ -164,14 +164,14 @@ public class MusicPlayerService extends Service implements us {
                     if (bitmap == null && bitmap2 != null) {
                         bitmap = bitmap2;
                     }
-                    x12 = !jj.R4(jjVar.k) ? cd.L0(2131753982, null) : cd.L0(2131753941, null);
+                    x12 = !kj.R4(kjVar.k) ? dd.L0(2131753982, null) : dd.L0(2131753941, null);
                 }
             }
             bitmap2 = c10;
             if (bitmap == null) {
                 bitmap = bitmap2;
             }
-            if (!jj.R4(jjVar.k)) {
+            if (!kj.R4(kjVar.k)) {
             }
         } else {
             bitmap = null;
@@ -189,7 +189,7 @@ public class MusicPlayerService extends Service implements us {
         PendingIntent broadcast4 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.repeat").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent broadcast5 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.shuffle").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         Notification.MediaStyle mediaSession = new Notification.MediaStyle().setMediaSession((MediaSession.Token) ((android.support.v4.media.session.u) this.c.b).c.b);
-        if (jjVar.I3()) {
+        if (kjVar.I3()) {
             pendingIntent = broadcast;
             pendingIntent2 = broadcast5;
             str = "org.telegram.android.musicplayer.shuffle";
@@ -198,34 +198,34 @@ public class MusicPlayerService extends Service implements us {
             pendingIntent = broadcast;
             pendingIntent2 = broadcast5;
             str = "org.telegram.android.musicplayer.shuffle";
-            if (jj.R4(jjVar.k) || jjVar.h4()) {
+            if (kj.R4(kjVar.k) || kjVar.h4()) {
                 mediaSession.setShowActionsInCompactView(0);
             }
         }
         Notification.Builder builder = new Notification.Builder(this);
-        builder.setSmallIcon(R.drawable.player).setOngoing(z16).setContentTitle(z12).setContentText(x12).setSubText((aVar3 == null || !jjVar.I3()) ? null : aVar3.f).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(mediaSession);
+        builder.setSmallIcon(R.drawable.player).setOngoing(z16).setContentTitle(z12).setContentText(x12).setSubText((aVar3 == null || !kjVar.I3()) ? null : aVar3.f).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(mediaSession);
         if (i14 >= 26) {
-            ot.i();
-            builder.setChannelId(ot.j0);
+            pt.i();
+            builder.setChannelId(pt.j0);
         }
         if (bitmap2 != null) {
             builder.setLargeIcon(bitmap2);
         } else {
             builder.setLargeIcon(this.e);
         }
-        String L03 = cd.L0(2131748267, null);
-        String L04 = cd.L0(2131754800, null);
+        String L03 = dd.L0(2131748267, null);
+        String L04 = dd.L0(2131754800, null);
         this.d = new android.support.v4.media.session.d0();
         if (MediaController.B().A0) {
             android.support.v4.media.session.d0 d0Var = this.d;
             j10 = 1000;
             d0Var.c(6, 0L, 1.0f);
             d0Var.e = 0L;
-            if (jjVar.I3()) {
+            if (kjVar.I3()) {
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, L04, pendingIntent).build());
             }
-            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, cd.L0(2131748789, null), (PendingIntent) null).build());
-            if (jjVar.I3()) {
+            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, dd.L0(2131748789, null), (PendingIntent) null).build());
+            if (kjVar.I3()) {
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, L03, broadcast3).build());
             }
             str2 = z12;
@@ -235,9 +235,9 @@ public class MusicPlayerService extends Service implements us {
         } else {
             PendingIntent pendingIntent3 = pendingIntent;
             j10 = 1000;
-            long j12 = jjVar.I3() ? 2360118L : 2360070L;
-            if (jjVar.I3()) {
-                if (tz.N0) {
+            long j12 = kjVar.I3() ? 2360118L : 2360070L;
+            if (kjVar.I3()) {
+                if (uz.N0) {
                     i10 = i14;
                     i12 = R.drawable.player_new_shuffle;
                 } else {
@@ -248,7 +248,7 @@ public class MusicPlayerService extends Service implements us {
                 android.support.v4.media.session.d0 d0Var2 = this.d;
                 str2 = z12;
                 str3 = x12;
-                String L05 = cd.L0(2131745340, null);
+                String L05 = dd.L0(2131745340, null);
                 if (TextUtils.isEmpty(str)) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
@@ -265,15 +265,15 @@ public class MusicPlayerService extends Service implements us {
                 i10 = i14;
             }
             android.support.v4.media.session.d0 d0Var3 = this.d;
-            d0Var3.c(!H ? 3 : 2, MediaController.B().u0.g0 * 1000, d(jjVar, z16));
+            d0Var3.c(!H ? 3 : 2, MediaController.B().u0.g0 * 1000, d(kjVar, z16));
             d0Var3.e = j12;
-            boolean I3 = jjVar.I3();
+            boolean I3 = kjVar.I3();
             int i15 = R.drawable.player_new_repeatall;
             if (I3) {
-                int i16 = tz.S0;
+                int i16 = uz.S0;
                 int i17 = i16 != 1 ? i16 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
                 android.support.v4.media.session.d0 d0Var4 = this.d;
-                String L06 = cd.L0(2131746288, null);
+                String L06 = dd.L0(2131746288, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.repeat")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
@@ -289,25 +289,25 @@ public class MusicPlayerService extends Service implements us {
                 i11 = 2131754930;
                 str5 = null;
             }
-            String L07 = cd.L0(i11, str5);
-            if (jjVar.I3()) {
-                builder.addAction(new Notification.Action.Builder(tz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, cd.L0(2131745340, str5), pendingIntent2).build());
+            String L07 = dd.L0(i11, str5);
+            if (kjVar.I3()) {
+                builder.addAction(new Notification.Action.Builder(uz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, dd.L0(2131745340, str5), pendingIntent2).build());
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, L04, pendingIntent3).build());
             }
             builder.addAction(new Notification.Action.Builder(!H ? R.drawable.ic_action_pause : R.drawable.ic_action_play, L07, broadcast2).build());
-            if (jjVar.I3()) {
+            if (kjVar.I3()) {
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, str4, broadcast3).build());
-                int i18 = tz.S0;
+                int i18 = uz.S0;
                 if (i18 != 1) {
                     i15 = i18 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone;
                 }
                 str6 = null;
-                builder.addAction(new Notification.Action.Builder(i15, cd.L0(2131746288, null), broadcast4).build());
+                builder.addAction(new Notification.Action.Builder(i15, dd.L0(2131746288, null), broadcast4).build());
                 this.c.C(this.d.b());
                 g();
                 a0Var = this.c;
                 if (a0Var != null) {
-                    a0Var.F(tz.N0 ? 1 : 0);
+                    a0Var.F(uz.N0 ? 1 : 0);
                 }
                 a4.l lVar = new a4.l(1);
                 String str8 = str3;
@@ -316,7 +316,7 @@ public class MusicPlayerService extends Service implements us {
                 lVar.C(L0);
                 String str9 = str2;
                 lVar.D("android.media.metadata.TITLE", str9);
-                if (aVar == null && jjVar.I3()) {
+                if (aVar == null && kjVar.I3()) {
                     aVar2 = aVar;
                     str7 = aVar2.f;
                 } else {
@@ -420,16 +420,16 @@ public class MusicPlayerService extends Service implements us {
                 TLRPC.User user = (TLRPC.User) tLObject;
                 TLRPC.FileLocation fileLocation = z10 ? user.photo.photo_big : user.photo.photo_small;
                 if (fileLocation != null) {
-                    b8.G(d20.s0);
+                    b8.G(e20.s0);
                     File K = b8.K(fileLocation, null, true, true);
                     if (K.exists()) {
                         float f7 = i10;
-                        return hc.K(K.getAbsolutePath(), null, f7, f7, false);
+                        return ic.K(K.getAbsolutePath(), null, f7, f7, false);
                     }
                     if (z10) {
                         if (z11) {
                             this.r = b8.r(null, fileLocation);
-                            this.h.q0(ic.l(d20.s0, 0, user), "", null, null, null, 0);
+                            this.h.q0(jc.l(e20.s0, 0, user), "", null, null, null, 0);
                         } else {
                             this.r = null;
                         }
@@ -439,16 +439,16 @@ public class MusicPlayerService extends Service implements us {
                 TLRPC.Chat chat = (TLRPC.Chat) tLObject;
                 TLRPC.FileLocation fileLocation2 = z10 ? chat.photo.photo_big : chat.photo.photo_small;
                 if (fileLocation2 != null) {
-                    b8.G(d20.s0);
+                    b8.G(e20.s0);
                     File K2 = b8.K(fileLocation2, null, true, true);
                     if (K2.exists()) {
                         float f10 = i10;
-                        return hc.K(K2.getAbsolutePath(), null, f10, f10, false);
+                        return ic.K(K2.getAbsolutePath(), null, f10, f10, false);
                     }
                     if (z10) {
                         if (z11) {
                             this.r = b8.r(null, fileLocation2);
-                            this.h.q0(ic.a(0, chat), "", null, null, null, 0);
+                            this.h.q0(jc.a(0, chat), "", null, null, null, 0);
                         } else {
                             this.r = null;
                         }
@@ -471,21 +471,21 @@ public class MusicPlayerService extends Service implements us {
         return createBitmap;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         String str;
         String str2;
-        if (i10 == zs.g2) {
-            jj jjVar = MediaController.B().u0;
-            if (jjVar != null) {
-                a(jjVar, false);
+        if (i10 == at.g2) {
+            kj kjVar = MediaController.B().u0;
+            if (kjVar != null) {
+                a(kjVar, false);
                 return;
             } else {
                 stopSelf();
                 return;
             }
         }
-        if (i10 == zs.i2) {
+        if (i10 == at.i2) {
             if (MediaController.B().u0 == null) {
                 return;
             }
@@ -498,29 +498,29 @@ public class MusicPlayerService extends Service implements us {
             }
             return;
         }
-        if (i10 == zs.R1) {
+        if (i10 == at.R1) {
             String str3 = (String) objArr[0];
-            jj jjVar2 = MediaController.B().u0;
-            if (jjVar2 == null || (str2 = this.r) == null || !str2.equals(str3)) {
+            kj kjVar2 = MediaController.B().u0;
+            if (kjVar2 == null || (str2 = this.r) == null || !str2.equals(str3)) {
                 return;
             }
-            a(jjVar2, false);
+            a(kjVar2, false);
             return;
         }
-        if (i10 == zs.Y1) {
+        if (i10 == at.Y1) {
             String str4 = (String) objArr[0];
-            jj jjVar3 = MediaController.B().u0;
-            if (jjVar3 == null || (str = this.r) == null || !str.equals(str4)) {
+            kj kjVar3 = MediaController.B().u0;
+            if (kjVar3 == null || (str = this.r) == null || !str.equals(str4)) {
                 return;
             }
-            a(jjVar3, false);
+            a(kjVar3, false);
         }
     }
 
     public final Bitmap e(String str, boolean z10, boolean z11) {
-        File A = hc.A(str);
+        File A = ic.A(str);
         if (A.exists()) {
-            return hc.K(A.getAbsolutePath(), null, z10 ? 600.0f : 100.0f, z10 ? 600.0f : 100.0f, false);
+            return ic.K(A.getAbsolutePath(), null, z10 ? 600.0f : 100.0f, z10 ? 600.0f : 100.0f, false);
         }
         if (!z11) {
             this.r = null;
@@ -543,13 +543,13 @@ public class MusicPlayerService extends Service implements us {
             d0Var.c(6, 0L, 1.0f);
             d0Var.e = 0L;
         } else {
-            jj jjVar = MediaController.B().u0;
-            if (jjVar == null || !jjVar.I3()) {
+            kj kjVar = MediaController.B().u0;
+            if (kjVar == null || !kjVar.I3()) {
                 j11 = 2360070;
             } else {
-                int i10 = tz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
+                int i10 = uz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
                 android.support.v4.media.session.d0 d0Var2 = this.d;
-                String L0 = cd.L0(2131745340, null);
+                String L0 = dd.L0(2131745340, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.shuffle")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
@@ -560,13 +560,13 @@ public class MusicPlayerService extends Service implements us {
                 j11 = 2360118;
             }
             android.support.v4.media.session.d0 d0Var3 = this.d;
-            d0Var3.c(!H ? 3 : 2, j10, d(jjVar, z10));
+            d0Var3.c(!H ? 3 : 2, j10, d(kjVar, z10));
             d0Var3.e = j11;
-            if (jjVar != null && jjVar.I3()) {
-                int i11 = tz.S0;
+            if (kjVar != null && kjVar.I3()) {
+                int i11 = uz.S0;
                 int i12 = i11 != 1 ? i11 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
                 android.support.v4.media.session.d0 d0Var4 = this.d;
-                String L02 = cd.L0(2131746288, null);
+                String L02 = dd.L0(2131746288, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.repeat")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
@@ -582,7 +582,7 @@ public class MusicPlayerService extends Service implements us {
     public final void g() {
         android.support.v4.media.session.a0 a0Var = this.c;
         if (a0Var != null) {
-            int i10 = tz.S0;
+            int i10 = uz.S0;
             a0Var.E(i10 != 1 ? i10 != 2 ? 0 : 1 : 2);
         }
     }
@@ -596,10 +596,10 @@ public class MusicPlayerService extends Service implements us {
     public final void onCreate() {
         this.b = (AudioManager) getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
         for (int i10 = 0; i10 < 4; i10++) {
-            zs.f(i10).b(this, zs.i2);
-            zs.f(i10).b(this, zs.g2);
-            zs.f(i10).b(this, zs.R1);
-            zs.f(i10).b(this, zs.Y1);
+            at.f(i10).b(this, at.i2);
+            at.f(i10).b(this, at.g2);
+            at.f(i10).b(this, at.R1);
+            at.f(i10).b(this, at.Y1);
         }
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.h = imageReceiver;
@@ -615,7 +615,7 @@ public class MusicPlayerService extends Service implements us {
         g();
         android.support.v4.media.session.a0 a0Var = this.c;
         if (a0Var != null) {
-            a0Var.F(tz.N0 ? 1 : 0);
+            a0Var.F(uz.N0 ? 1 : 0);
         }
         registerReceiver(this.s, new IntentFilter("android.media.AUDIO_BECOMING_NOISY"));
         super.onCreate();
@@ -638,10 +638,10 @@ public class MusicPlayerService extends Service implements us {
             a0Var.u();
         }
         for (int i10 = 0; i10 < 4; i10++) {
-            zs.f(i10).n(this, zs.i2);
-            zs.f(i10).n(this, zs.g2);
-            zs.f(i10).n(this, zs.R1);
-            zs.f(i10).n(this, zs.Y1);
+            at.f(i10).n(this, at.i2);
+            at.f(i10).n(this, at.g2);
+            at.f(i10).n(this, at.R1);
+            at.f(i10).n(this, at.Y1);
         }
     }
 
@@ -657,8 +657,8 @@ public class MusicPlayerService extends Service implements us {
                 e.printStackTrace();
             }
         }
-        jj jjVar = MediaController.B().u0;
-        if (jjVar == null) {
+        kj kjVar = MediaController.B().u0;
+        if (kjVar == null) {
             i0.g3(new a(this, 29));
             return 1;
         }
@@ -673,12 +673,12 @@ public class MusicPlayerService extends Service implements us {
                     this.a = remoteControlClient;
                     this.b.registerRemoteControlClient(remoteControlClient);
                 }
-                this.a.setTransportControlFlags(zs.T2);
+                this.a.setTransportControlFlags(at.T2);
             } catch (Exception e7) {
                 f8.g(e7, true);
             }
         }
-        a(jjVar, false);
+        a(kjVar, false);
         return 1;
     }
 }

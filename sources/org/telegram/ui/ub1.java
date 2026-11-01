@@ -1,30 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ub1 extends hg.b {
-    public final TLRPC.TL_forumTopic c;
+public final /* synthetic */ class ub1 implements org.telegram.ui.ActionBar.u1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TwoStepVerificationActivity b;
 
-    public ub1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, false);
-        this.c = tL_forumTopic;
+    public /* synthetic */ ub1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
+        this.a = i10;
+        this.b = twoStepVerificationActivity;
     }
 
-    public final boolean equals(Object obj) {
-        TLRPC.TL_forumTopic tL_forumTopic;
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.ActionBar.u1
+    public final void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                TL_account.declinePasswordReset declinepasswordreset = new TL_account.declinePasswordReset();
+                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
+                twoStepVerificationActivity.getConnectionsManager().sendRequest(declinepasswordreset, new vb1(twoStepVerificationActivity, 2));
+                break;
+            case 2:
+                this.b.p0();
+                break;
+            case 3:
+                this.b.z0();
+                break;
+            default:
+                this.b.z0();
+                break;
         }
-        if (obj == null || ub1.class != obj.getClass()) {
-            return false;
-        }
-        ub1 ub1Var = (ub1) obj;
-        if (this.a != ub1Var.a) {
-            return false;
-        }
-        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
-        return tL_forumTopic2 == null || (tL_forumTopic = ub1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
     }
 }

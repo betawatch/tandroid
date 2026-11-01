@@ -1,299 +1,664 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class oi implements Runnable {
+public final class oi implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ sg.o0 f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ vi w;
 
-    public /* synthetic */ oi(int i10, Object obj, Object obj2) {
+    public oi(vi viVar, int i10, long j10, int i11, long j11, int i12, sg.o0 o0Var, int i13, int i14, int i15, boolean z10, int i16) {
+        this.w = viVar;
         this.a = i10;
-        this.c = obj;
-        this.b = obj2;
+        this.b = j10;
+        this.c = i11;
+        this.d = j11;
+        this.e = i12;
+        this.f = o0Var;
+        this.h = i13;
+        this.n = i14;
+        this.r = i15;
+        this.s = i16;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v22 */
-    /* JADX WARN: Type inference failed for: r3v23, types: [org.telegram.tgnet.TLObject, org.telegram.tgnet.TLRPC$ChatFull] */
-    /* JADX WARN: Type inference failed for: r3v27 */
     @Override // java.lang.Runnable
     public final void run() {
+        TLRPC.TL_messages_messages tL_messages_messages;
+        vi viVar;
+        int i10;
+        int i11;
+        int i12;
+        long j10;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        long j11;
+        ArrayList arrayList;
+        int i17;
+        ArrayList arrayList2;
+        SQLiteDatabase R;
+        boolean C;
+        TLRPC.TL_messages_messages tL_messages_messages2;
+        sg.o0 o0Var;
+        long j12;
+        int i18;
+        int i19;
+        long j13;
+        int i20;
+        SQLiteDatabase sQLiteDatabase;
+        sg.o0 o0Var2;
+        int i21;
         SQLiteCursor queryFinalized;
-        TLRPC.TL_chatFull tL_chatFull;
-        NativeByteBuffer byteBufferValue;
-        int i10 = this.a;
-        int i11 = 7;
-        SQLiteCursor sQLiteCursor = null;
-        int i12 = 1;
-        Object obj = this.b;
-        Object obj2 = this.c;
-        switch (i10) {
-            case 0:
-                ui uiVar = (ui) ((j9.u) obj2).c;
-                uiVar.A0.clear();
-                uiVar.A0.addAll((ArrayList) obj);
-                return;
-            case 1:
-                ArrayList arrayList = ((ui) ((androidx.activity.g) obj2).c).A0;
-                arrayList.clear();
-                arrayList.addAll((ArrayList) obj);
-                zs.e().k(zs.U4, new Object[0]);
-                return;
-            case 2:
-                jj jjVar = (jj) obj2;
-                jjVar.n = (TLRPC.Document) obj;
-                zs.f(jjVar.I1).k(zs.B1, jjVar);
-                return;
-            case 3:
-                vp vpVar = (vp) obj2;
-                TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) obj;
-                long[] a2 = vpVar.getMessagesStorage().a2(tL_updateMessageID.random_id, 0L, null, tL_updateMessageID.id, 0, -1, 0);
-                if (a2 == null) {
-                    return;
-                }
-                i0.g3(new kg(vpVar, a2, tL_updateMessageID, i11));
-                return;
-            case 4:
-                TL_update.TL_updateServiceNotification tL_updateServiceNotification = (TL_update.TL_updateServiceNotification) obj;
-                ((vp) obj2).getNotificationCenter().k(75, 2, tL_updateServiceNotification.message, tL_updateServiceNotification.type);
-                return;
-            case 5:
-                TL_update.TL_updateGroupCallMessage tL_updateGroupCallMessage = (TL_update.TL_updateGroupCallMessage) obj;
-                ((vp) obj2).getNotificationCenter().k(zs.H2, Long.valueOf(tL_updateGroupCallMessage.call.id), tL_updateGroupCallMessage, Boolean.FALSE);
-                return;
-            case 6:
-                TL_update.TL_updateDeleteGroupCallMessages tL_updateDeleteGroupCallMessages = (TL_update.TL_updateDeleteGroupCallMessages) obj;
-                ((vp) obj2).getNotificationCenter().k(zs.H2, Long.valueOf(tL_updateDeleteGroupCallMessages.call.id), tL_updateDeleteGroupCallMessages, Boolean.FALSE);
-                return;
-            case 7:
-                TL_update.TL_updateUserTyping tL_updateUserTyping = (TL_update.TL_updateUserTyping) obj;
-                ((vp) obj2).getNotificationCenter().k(zs.T4, Long.valueOf(tL_updateUserTyping.user_id), tL_updateUserTyping.action);
-                return;
-            case 8:
-                TL_update.TL_updateChatUserTyping tL_updateChatUserTyping = (TL_update.TL_updateChatUserTyping) obj;
-                ((vp) obj2).getNotificationCenter().k(zs.T4, Long.valueOf(-tL_updateChatUserTyping.chat_id), tL_updateChatUserTyping.action);
-                return;
-            case 9:
-                vp vpVar2 = (vp) obj2;
-                TLRPC.updates_Difference updates_difference = (TLRPC.updates_Difference) obj;
-                vpVar2.r1.clear();
-                vpVar2.w1.clear();
-                vpVar2.V3(updates_difference.users, false);
-                vpVar2.P3(updates_difference.chats, false);
-                return;
-            case 10:
-                vp vpVar3 = (vp) obj2;
-                Runnable runnable = (Runnable) obj;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                vpVar3.getNotificationCenter().k(2, 2);
-                vpVar3.getNotificationCenter().k(39, new Object[0]);
-                return;
-            case 11:
-                vp vpVar4 = (vp) obj2;
-                TLRPC.updates_ChannelDifference updates_channeldifference = (TLRPC.updates_ChannelDifference) obj;
-                vpVar4.getClass();
-                vpVar4.V3(updates_channeldifference.users, false);
-                vpVar4.P3(updates_channeldifference.chats, false);
-                return;
-            case 12:
-                vp vpVar5 = (vp) obj2;
-                TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers = (TLRPC.TL_channels_sendAsPeers) obj;
-                vpVar5.getClass();
-                vpVar5.V3(tL_channels_sendAsPeers.users, false);
-                vpVar5.P3(tL_channels_sendAsPeers.chats, false);
-                return;
-            case 13:
-                vp vpVar6 = (vp) obj2;
-                TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
-                vpVar6.getClass();
-                vpVar6.V3(tL_channels_channelParticipant.users, false);
-                vpVar6.P3(tL_channels_channelParticipant.chats, false);
-                return;
-            case 14:
-                ((vp) obj2).getNotificationCenter().k(75, 4, ((TLRPC.TL_help_termsOfServiceUpdate) obj).terms_of_service);
-                return;
-            case 15:
-                vp vpVar7 = (vp) obj2;
-                vpVar7.getClass();
-                vpVar7.I0(((TL_update.TL_updateChannel) obj).channel_id, 1, 0L, null);
-                return;
-            case 16:
-                vp vpVar8 = (vp) obj2;
-                TLRPC.messages_SponsoredMessages messages_sponsoredmessages = (TLRPC.messages_SponsoredMessages) obj;
-                vpVar8.getClass();
-                vpVar8.V3(messages_sponsoredmessages.users, false);
-                vpVar8.P3(messages_sponsoredmessages.chats, false);
-                return;
-            case 17:
-                vp vpVar9 = (vp) obj2;
-                TLRPC.TL_help_appConfig tL_help_appConfig = (TLRPC.TL_help_appConfig) obj;
-                zj zjVar = vpVar9.J7;
-                if (tL_help_appConfig != null) {
-                    TLRPC.JSONValue jSONValue = tL_help_appConfig.config;
-                    if (jSONValue instanceof TLRPC.TL_jsonObject) {
-                        vpVar9.q((TLRPC.TL_jsonObject) jSONValue);
-                    }
-                }
-                i0.r(zjVar);
-                i0.h3(zjVar, 240010L);
-                return;
-            case 18:
-                vp vpVar10 = (vp) obj2;
-                TLRPC.Updates updates = (TLRPC.Updates) obj;
-                vpVar10.V3(updates.users, false);
-                vpVar10.P3(updates.chats, false);
-                ArrayList<TLRPC.Chat> arrayList2 = updates.chats;
-                if (arrayList2 == null || arrayList2.isEmpty()) {
-                    vpVar10.getNotificationCenter().k(29, new Object[0]);
-                    return;
-                } else {
-                    vpVar10.getNotificationCenter().k(28, Long.valueOf(updates.chats.get(0).id));
-                    return;
-                }
-            case 19:
-                q20 q20Var = (q20) obj2;
-                Runnable runnable2 = (Runnable) obj;
-                if (q20Var != null) {
-                    q20Var.a(null);
-                }
-                if (runnable2 != null) {
-                    runnable2.run();
-                    return;
-                }
-                return;
-            case 20:
-                q20 q20Var2 = (q20) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (q20Var2 != null) {
-                    q20Var2.a(tL_error);
-                    return;
-                }
-                return;
-            case 21:
-                ((j20) obj2).a(0, (TLRPC.TL_error) obj);
-                return;
-            case 22:
-                vp vpVar11 = (vp) obj2;
-                ((ph.h1) obj).a(vpVar11.Y7);
-                vpVar11.X7 = false;
-                return;
-            case 23:
-                q0.a aVar = (q0.a) obj2;
-                TLRPC.User user = (TLRPC.User) obj;
-                if (aVar != null) {
-                    aVar.accept(user);
-                    return;
-                }
-                return;
-            case 24:
-                vp vpVar12 = (vp) obj2;
-                jj jjVar2 = (jj) obj;
-                vpVar12.getClass();
-                long B0 = jj.B0(jjVar2.k);
-                int f12 = jjVar2.f1();
-                a0.h hVar = vpVar12.J0;
-                ArrayList arrayList3 = (ArrayList) hVar.f(B0);
-                if (arrayList3 == null) {
-                    arrayList3 = m5.i(hVar, B0);
-                }
-                if (arrayList3.contains(Integer.valueOf(f12))) {
-                    return;
-                }
-                arrayList3.add(Integer.valueOf(f12));
-                return;
-            case 25:
-                op opVar = (op) obj2;
-                TLObject tLObject = (TLObject) obj;
-                opVar.c = false;
-                opVar.d = true;
-                if (tLObject instanceof TL_account.TL_savedMusicIds) {
-                    opVar.b.addAll(((TL_account.TL_savedMusicIds) tLObject).ids);
-                }
-                zs.f(opVar.a).k(zs.U3, new Object[0]);
-                return;
-            case 26:
-                ((x3) obj2).a((ArrayList) obj);
-                return;
-            case 27:
-                l00.a((k00) obj2);
-                ((jr) obj).run();
-                return;
-            case 28:
-                hs hsVar = (hs) obj2;
-                TLRPC.ChatParticipants chatParticipants = (TLRPC.ChatParticipants) obj;
-                try {
-                    try {
-                        queryFinalized = hsVar.b.queryFinalized("SELECT info, pinned, online, inviter FROM chat_settings_v2 WHERE uid = " + chatParticipants.chat_id, new Object[0]);
-                    } catch (Exception e) {
-                        e = e;
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                }
-                try {
-                    new ArrayList();
-                    if (!queryFinalized.next() || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
-                        tL_chatFull = 0;
+        boolean z10;
+        boolean z11;
+        int i22;
+        TLRPC.TL_messages_messages tL_messages_messages3;
+        long j14;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        long j15;
+        String str;
+        String str2;
+        int i23;
+        boolean z12;
+        String str3;
+        String str4;
+        String str5;
+        String str6;
+        int i24;
+        SQLiteCursor queryFinalized2;
+        int i25;
+        int i26;
+        SQLiteCursor queryFinalized3;
+        int i27;
+        boolean z13;
+        int i28;
+        int i29;
+        SQLiteCursor queryFinalized4;
+        int i30;
+        int i31;
+        SQLiteCursor queryFinalized5;
+        int i32;
+        SQLiteCursor queryFinalized6;
+        SQLiteCursor sQLiteCursor;
+        int intValue;
+        int i33;
+        oi oiVar = this;
+        int i34 = oiVar.a;
+        int i35 = oiVar.n;
+        long j16 = oiVar.b;
+        vi viVar2 = oiVar.w;
+        long e = viVar2.getUserConfig().e();
+        TLRPC.TL_messages_messages tL_messages_messages4 = new TLRPC.TL_messages_messages();
+        boolean z14 = false;
+        try {
+            ArrayList arrayList5 = new ArrayList();
+            try {
+                arrayList = new ArrayList();
+                i17 = i34 + 1;
+                arrayList2 = arrayList5;
+                R = viVar2.getMessagesStorage().R();
+                C = o5.C(j16);
+                tL_messages_messages2 = tL_messages_messages4;
+                o0Var = oiVar.f;
+                j12 = e;
+                i18 = oiVar.h;
+                i19 = oiVar.c;
+                j13 = oiVar.d;
+                i20 = oiVar.e;
+            } catch (Exception e7) {
+                e = e7;
+                tL_messages_messages = tL_messages_messages4;
+            } catch (Throwable th2) {
+                th = th2;
+                tL_messages_messages = tL_messages_messages4;
+            }
+            try {
+                if (C) {
+                    sQLiteDatabase = R;
+                    o0Var2 = o0Var;
+                    if (j13 == 0) {
+                        i21 = i19;
+                        if (i18 != 0) {
+                            Locale locale = Locale.US;
+                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid, r.random_id FROM media_v4 as m LEFT JOIN randoms_v2 as r ON r.mid = m.mid WHERE m.uid = " + j16 + " AND m.mid > " + i18 + " AND type = " + i20 + " ORDER BY m.mid ASC LIMIT " + i17, new Object[0]);
+                        } else if (i21 != 0) {
+                            Locale locale2 = Locale.US;
+                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid, r.random_id FROM media_v4 as m LEFT JOIN randoms_v2 as r ON r.mid = m.mid WHERE m.uid = " + j16 + " AND m.mid < " + i21 + " AND type = " + i20 + " ORDER BY m.mid DESC LIMIT " + i17, new Object[0]);
+                        } else {
+                            Locale locale3 = Locale.US;
+                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid, r.random_id FROM media_v4 as m LEFT JOIN randoms_v2 as r ON r.mid = m.mid WHERE m.uid = " + j16 + " AND type = " + i20 + " ORDER BY m.mid ASC LIMIT " + i17, new Object[0]);
+                        }
+                    } else if (i18 != 0) {
+                        Locale locale4 = Locale.US;
+                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid, r.random_id FROM media_topics as m LEFT JOIN randoms_v2 as r ON r.mid = m.mid WHERE m.uid = " + j16 + " AND m.topic_id = " + j13 + " AND m.mid > " + i18 + " AND type = " + i20 + " ORDER BY m.mid ASC LIMIT " + i17, new Object[0]);
+                        i21 = i19;
                     } else {
-                        TLRPC.ChatFull TLdeserialize = TLRPC.ChatFull.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                        byteBufferValue.reuse();
-                        TLdeserialize.pinned_msg_id = queryFinalized.intValue(1);
-                        TLdeserialize.online_count = queryFinalized.intValue(2);
-                        TLdeserialize.inviterId = queryFinalized.longValue(3);
-                        tL_chatFull = TLdeserialize;
+                        if (i19 != 0) {
+                            Locale locale5 = Locale.US;
+                            StringBuilder sb2 = new StringBuilder("SELECT m.data, m.mid, r.random_id FROM media_topics as m LEFT JOIN randoms_v2 as r ON r.mid = m.mid WHERE m.uid = ");
+                            sb2.append(j16);
+                            sb2.append(" AND m.topic_id = ");
+                            sb2.append(j13);
+                            sb2.append(" AND m.mid < ");
+                            i22 = i19;
+                            sb2.append(i22);
+                            sb2.append(" AND type = ");
+                            sb2.append(i20);
+                            sb2.append(" ORDER BY m.mid DESC LIMIT ");
+                            sb2.append(i17);
+                            queryFinalized = sQLiteDatabase.queryFinalized(sb2.toString(), new Object[0]);
+                        } else {
+                            i22 = i19;
+                            Locale locale6 = Locale.US;
+                            queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid, r.random_id FROM media_topics as m LEFT JOIN randoms_v2 as r ON r.mid = m.mid WHERE m.uid = " + j16 + " AND m.topic_id = " + j13 + " AND type = " + i20 + " ORDER BY m.mid ASC LIMIT " + i17, new Object[0]);
+                        }
+                        i21 = i22;
                     }
-                    queryFinalized.dispose();
-                    if (tL_chatFull instanceof TLRPC.TL_chatFull) {
-                        tL_chatFull.participants = chatParticipants;
-                        i0.g3(new ar(hsVar, tL_chatFull, i12));
-                        SQLitePreparedStatement executeFast = hsVar.b.executeFast("REPLACE INTO chat_settings_v2 VALUES(?, ?, ?, ?, ?, ?, ?)");
-                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_chatFull.getObjectSize());
-                        tL_chatFull.serializeToStream(nativeByteBuffer);
-                        executeFast.bindLong(1, tL_chatFull.id);
-                        executeFast.bindByteBuffer(2, nativeByteBuffer);
-                        executeFast.bindInteger(3, tL_chatFull.pinned_msg_id);
-                        executeFast.bindInteger(4, tL_chatFull.online_count);
-                        executeFast.bindLong(5, tL_chatFull.inviterId);
-                        executeFast.bindInteger(6, tL_chatFull.invitesCount);
-                        executeFast.bindInteger(7, tL_chatFull.participants_count);
-                        executeFast.step();
-                        executeFast.dispose();
-                        nativeByteBuffer.reuse();
-                        return;
+                    z10 = false;
+                    z11 = true;
+                } else {
+                    if (i19 == 0) {
+                        str = " AND m.topic_id = ";
+                        if (j13 != 0) {
+                            Locale locale7 = Locale.US;
+                            StringBuilder sb3 = new StringBuilder("SELECT start FROM media_holes_topics WHERE uid = ");
+                            sb3.append(j16);
+                            sb3.append(" AND topic_id = ");
+                            sb3.append(j13);
+                            str2 = " AND type = ";
+                            sb3.append(str2);
+                            sb3.append(i20);
+                            sb3.append(" AND start IN (0, 1)");
+                            i23 = i18;
+                            queryFinalized5 = R.queryFinalized(sb3.toString(), new Object[0]);
+                            i31 = 0;
+                        } else {
+                            str2 = " AND type = ";
+                            i23 = i18;
+                            Locale locale8 = Locale.US;
+                            i31 = 0;
+                            queryFinalized5 = R.queryFinalized("SELECT start FROM media_holes_v2 WHERE uid = " + j16 + str2 + i20 + " AND start IN (0, 1)", new Object[0]);
+                        }
+                        if (!queryFinalized5.next()) {
+                            queryFinalized5.dispose();
+                            if (j13 != 0) {
+                                Locale locale9 = Locale.US;
+                                queryFinalized6 = R.queryFinalized("SELECT min(mid) FROM media_topics WHERE uid = " + j16 + " AND topic_id = " + j13 + str2 + i20 + " AND mid > 0", new Object[0]);
+                                i32 = 0;
+                            } else {
+                                Locale locale10 = Locale.US;
+                                i32 = 0;
+                                queryFinalized6 = R.queryFinalized("SELECT min(mid) FROM media_v4 WHERE uid = " + j16 + str2 + i20 + " AND mid > 0", new Object[0]);
+                            }
+                            SQLiteCursor sQLiteCursor2 = queryFinalized6;
+                            if (!sQLiteCursor2.next() || (intValue = sQLiteCursor2.intValue(i32)) == 0) {
+                                sQLiteCursor = sQLiteCursor2;
+                            } else {
+                                SQLitePreparedStatement executeFast = j13 != 0 ? R.executeFast("REPLACE INTO media_holes_topics VALUES(?, ?, ?, ?, ?)") : R.executeFast("REPLACE INTO media_holes_v2 VALUES(?, ?, ?, ?)");
+                                executeFast.requery();
+                                executeFast.bindLong(1, j16);
+                                if (j13 != 0) {
+                                    executeFast.bindLong(2, j13);
+                                    i33 = 3;
+                                } else {
+                                    i33 = 2;
+                                }
+                                executeFast.bindInteger(i33, i20);
+                                sQLiteCursor = sQLiteCursor2;
+                                executeFast.bindInteger(i33 + 1, 0);
+                                executeFast.bindInteger(i33 + 2, intValue);
+                                executeFast.step();
+                                executeFast.dispose();
+                            }
+                            queryFinalized5 = sQLiteCursor;
+                        } else if (queryFinalized5.intValue(i31) == 1) {
+                            z12 = true;
+                            queryFinalized5.dispose();
+                        }
+                        z12 = false;
+                        queryFinalized5.dispose();
+                    } else {
+                        str = " AND m.topic_id = ";
+                        str2 = " AND type = ";
+                        i23 = i18;
+                        z12 = false;
                     }
-                    return;
-                } catch (Exception e7) {
-                    e = e7;
-                    sQLiteCursor = queryFinalized;
-                    hsVar.o(e, true);
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                        return;
+                    if (o0Var != null) {
+                        str3 = "INNER JOIN tag_message_id t ON m.mid = t.mid";
+                        str4 = "t.tag = " + (!TextUtils.isEmpty(o0Var.f) ? o0Var.f.hashCode() : o0Var.g) + " AND";
+                    } else {
+                        str3 = "";
+                        str4 = "";
                     }
-                    return;
-                } catch (Throwable th3) {
-                    th = th3;
-                    sQLiteCursor = queryFinalized;
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
+                    z11 = z12;
+                    o0Var2 = o0Var;
+                    if (i23 != 0) {
+                        String str7 = str4;
+                        if (j13 != 0) {
+                            Locale locale11 = Locale.US;
+                            StringBuilder sb4 = new StringBuilder("SELECT start, end FROM media_holes_topics WHERE uid = ");
+                            sb4.append(j16);
+                            sb4.append(" AND topic_id = ");
+                            sb4.append(j13);
+                            sb4.append(str2);
+                            sb4.append(i20);
+                            sb4.append(" AND start <= ");
+                            i28 = i23;
+                            sb4.append(i28);
+                            sb4.append(" ORDER BY end DESC LIMIT 1");
+                            queryFinalized4 = R.queryFinalized(sb4.toString(), new Object[0]);
+                            i29 = 0;
+                        } else {
+                            i28 = i23;
+                            Locale locale12 = Locale.US;
+                            i29 = 0;
+                            queryFinalized4 = R.queryFinalized("SELECT start, end FROM media_holes_v2 WHERE uid = " + j16 + str2 + i20 + " AND start <= " + i28 + " ORDER BY end DESC LIMIT 1", new Object[0]);
+                        }
+                        if (queryFinalized4.next()) {
+                            queryFinalized4.intValue(i29);
+                            i30 = queryFinalized4.intValue(1);
+                        } else {
+                            i30 = 0;
+                        }
+                        queryFinalized4.dispose();
+                        if (j13 != 0) {
+                            if (i30 > 1) {
+                                Locale locale13 = Locale.US;
+                                queryFinalized = R.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str7 + " m.uid = " + j16 + str + j13 + " AND m.mid > 0 AND m.mid < " + i28 + " AND m.mid >= " + i30 + " AND m.type = " + i20 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i17, new Object[0]);
+                                z11 = false;
+                                sQLiteDatabase = R;
+                            } else {
+                                Locale locale14 = Locale.US;
+                                R = R;
+                                queryFinalized = R.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str7 + " m.uid = " + j16 + str + j13 + " AND m.mid > 0 AND m.mid < " + i28 + " AND m.type = " + i20 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i17, new Object[0]);
+                                sQLiteDatabase = R;
+                            }
+                        } else if (i30 > 1) {
+                            Locale locale15 = Locale.US;
+                            R = R;
+                            queryFinalized = R.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str7 + " m.uid = " + j16 + " AND m.mid > 0 AND m.mid < " + i28 + " AND m.mid >= " + i30 + " AND m.type = " + i20 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i17, new Object[0]);
+                            z11 = false;
+                            sQLiteDatabase = R;
+                        } else {
+                            R = R;
+                            Locale locale16 = Locale.US;
+                            queryFinalized = R.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str7 + " m.uid = " + j16 + " AND m.mid > 0 AND m.mid < " + i28 + " AND m.type = " + i20 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i17, new Object[0]);
+                            sQLiteDatabase = R;
+                        }
+                    } else {
+                        String str8 = str4;
+                        if (i19 != 0) {
+                            if (j13 != 0) {
+                                Locale locale17 = Locale.US;
+                                StringBuilder sb5 = new StringBuilder("SELECT start, end FROM media_holes_topics WHERE uid = ");
+                                sb5.append(j16);
+                                sb5.append(" AND topic_id = ");
+                                sb5.append(j13);
+                                sb5.append(str2);
+                                sb5.append(i20);
+                                sb5.append(" AND end >= ");
+                                i25 = i19;
+                                sb5.append(i25);
+                                sb5.append(" ORDER BY end ASC LIMIT 1");
+                                queryFinalized3 = R.queryFinalized(sb5.toString(), new Object[0]);
+                                i26 = 0;
+                            } else {
+                                i25 = i19;
+                                Locale locale18 = Locale.US;
+                                i26 = 0;
+                                queryFinalized3 = R.queryFinalized("SELECT start, end FROM media_holes_v2 WHERE uid = " + j16 + str2 + i20 + " AND end >= " + i25 + " ORDER BY end ASC LIMIT 1", new Object[0]);
+                            }
+                            if (queryFinalized3.next()) {
+                                i27 = queryFinalized3.intValue(i26);
+                                queryFinalized3.intValue(1);
+                            } else {
+                                i27 = 0;
+                            }
+                            queryFinalized3.dispose();
+                            if (j13 == 0) {
+                                int i36 = i27;
+                                if (i36 > 1) {
+                                    Locale locale19 = Locale.US;
+                                    sQLiteDatabase = R;
+                                    queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j16 + " AND m.mid > 0 AND m.mid >= " + i25 + " AND m.mid <= " + i36 + " AND m.type = " + i20 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i17, new Object[0]);
+                                    i19 = i25;
+                                    z13 = true;
+                                    z10 = z13;
+                                    i21 = i19;
+                                } else {
+                                    sQLiteDatabase = R;
+                                    Locale locale20 = Locale.US;
+                                    queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j16 + " AND m.mid > 0 AND m.mid >= " + i25 + " AND m.type = " + i20 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i17, new Object[0]);
+                                    z11 = true;
+                                    i19 = i25;
+                                    z13 = true;
+                                    z10 = z13;
+                                    i21 = i19;
+                                }
+                            } else if (i27 > 1) {
+                                Locale locale21 = Locale.US;
+                                queryFinalized = R.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j16 + str + j13 + " AND m.mid > 0 AND m.mid >= " + i25 + " AND m.mid <= " + i27 + " AND m.type = " + i20 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i17, new Object[0]);
+                                sQLiteDatabase = R;
+                                i19 = i25;
+                                z13 = true;
+                                z10 = z13;
+                                i21 = i19;
+                            } else {
+                                Locale locale22 = Locale.US;
+                                sQLiteDatabase = R;
+                                queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j16 + str + j13 + " AND m.mid > 0 AND m.mid >= " + i25 + " AND m.type = " + i20 + " ORDER BY m.date ASC, m.mid ASC LIMIT " + i17, new Object[0]);
+                                z11 = true;
+                                i19 = i25;
+                                z13 = true;
+                                z10 = z13;
+                                i21 = i19;
+                            }
+                        } else {
+                            sQLiteDatabase = R;
+                            String str9 = str;
+                            if (j13 != 0) {
+                                Locale locale23 = Locale.US;
+                                str5 = " AND m.type = ";
+                                str6 = str9;
+                                queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT max(end) FROM media_holes_topics WHERE uid = " + j16 + " AND topic_id = " + j13 + str2 + i20, new Object[0]);
+                                i24 = 0;
+                            } else {
+                                str5 = " AND m.type = ";
+                                str6 = str9;
+                                Locale locale24 = Locale.US;
+                                i24 = 0;
+                                queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT max(end) FROM media_holes_v2 WHERE uid = " + j16 + str2 + i20, new Object[0]);
+                            }
+                            int intValue2 = queryFinalized2.next() ? queryFinalized2.intValue(i24) : 0;
+                            queryFinalized2.dispose();
+                            if (j13 == 0) {
+                                String str10 = str5;
+                                if (intValue2 > 1) {
+                                    Locale locale25 = Locale.US;
+                                    queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j16 + " AND m.mid >= " + intValue2 + str10 + i20 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i17, new Object[0]);
+                                } else {
+                                    Locale locale26 = Locale.US;
+                                    queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_v4 m " + str3 + " WHERE " + str8 + " m.uid = " + j16 + " AND m.mid > 0 AND m.type = " + i20 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i17, new Object[0]);
+                                }
+                            } else if (intValue2 > 1) {
+                                Locale locale27 = Locale.US;
+                                queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j16 + str6 + j13 + " AND m.mid >= " + intValue2 + str5 + i20 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i17, new Object[0]);
+                            } else {
+                                Locale locale28 = Locale.US;
+                                sQLiteDatabase = sQLiteDatabase;
+                                queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid FROM media_topics m " + str3 + " WHERE " + str8 + " m.uid = " + j16 + str6 + j13 + " AND m.mid > 0 AND m.type = " + i20 + " ORDER BY m.date DESC, m.mid DESC LIMIT " + i17, new Object[0]);
+                            }
+                        }
                     }
-                    throw th;
+                    z13 = false;
+                    z10 = z13;
+                    i21 = i19;
                 }
-            default:
-                ((hs) obj2).C((ap) obj);
-                return;
+                HashSet hashSet = o0Var2 != null ? new HashSet() : null;
+                while (queryFinalized.next()) {
+                    try {
+                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                        if (byteBufferValue != null) {
+                            TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                            j15 = j12;
+                            TLdeserialize.readAttachPath(byteBufferValue, j15);
+                            byteBufferValue.reuse();
+                            TLdeserialize.id = queryFinalized.intValue(1);
+                            TLdeserialize.dialog_id = j16;
+                            if (o5.C(j16)) {
+                                TLdeserialize.random_id = queryFinalized.longValue(2);
+                            }
+                            long j17 = TLdeserialize.grouped_id;
+                            if (j17 != 0 && hashSet != null) {
+                                hashSet.add(Long.valueOf(j17));
+                            }
+                            if (z10) {
+                                tL_messages_messages3 = tL_messages_messages2;
+                                try {
+                                    tL_messages_messages3.messages.add(0, TLdeserialize);
+                                } catch (Exception e10) {
+                                    e = e10;
+                                    oiVar = this;
+                                    tL_messages_messages = tL_messages_messages3;
+                                    viVar = viVar2;
+                                    i35 = i35;
+                                    try {
+                                        tL_messages_messages.messages.clear();
+                                        tL_messages_messages.chats.clear();
+                                        tL_messages_messages.users.clear();
+                                        f8.f(e);
+                                        i0.g3(new o7(oiVar, oiVar, i35, 11));
+                                        int i37 = oiVar.n;
+                                        int i38 = oiVar.s;
+                                        j11 = oiVar.b;
+                                        i11 = i37;
+                                        i10 = i38;
+                                        i16 = oiVar.a;
+                                        i15 = oiVar.h;
+                                        i14 = oiVar.c;
+                                        i13 = oiVar.e;
+                                        j10 = oiVar.d;
+                                        i12 = oiVar.r;
+                                        viVar.u1(tL_messages_messages, j11, i16, i15, i14, i13, j10, i12, i11, z14, i10);
+                                    } catch (Throwable th3) {
+                                        th = th3;
+                                        i0.g3(new o7(oiVar, oiVar, i35, 11));
+                                        viVar.u1(tL_messages_messages, oiVar.b, oiVar.a, oiVar.h, oiVar.c, oiVar.e, oiVar.d, oiVar.r, oiVar.n, false, oiVar.s);
+                                        throw th;
+                                    }
+                                } catch (Throwable th4) {
+                                    th = th4;
+                                    oiVar = this;
+                                    tL_messages_messages = tL_messages_messages3;
+                                    viVar = viVar2;
+                                    i35 = i35;
+                                    i0.g3(new o7(oiVar, oiVar, i35, 11));
+                                    viVar.u1(tL_messages_messages, oiVar.b, oiVar.a, oiVar.h, oiVar.c, oiVar.e, oiVar.d, oiVar.r, oiVar.n, false, oiVar.s);
+                                    throw th;
+                                }
+                            } else {
+                                tL_messages_messages3 = tL_messages_messages2;
+                                tL_messages_messages3.messages.add(TLdeserialize);
+                            }
+                            arrayList3 = arrayList;
+                            arrayList4 = arrayList2;
+                            is.e(TLdeserialize, arrayList4, arrayList3, null);
+                        } else {
+                            arrayList3 = arrayList;
+                            arrayList4 = arrayList2;
+                            tL_messages_messages3 = tL_messages_messages2;
+                            j15 = j12;
+                        }
+                        tL_messages_messages2 = tL_messages_messages3;
+                        j12 = j15;
+                        arrayList2 = arrayList4;
+                        arrayList = arrayList3;
+                    } catch (Exception e11) {
+                        e = e11;
+                        tL_messages_messages3 = tL_messages_messages2;
+                        oiVar = this;
+                        tL_messages_messages = tL_messages_messages3;
+                        viVar = viVar2;
+                        i35 = i35;
+                        tL_messages_messages.messages.clear();
+                        tL_messages_messages.chats.clear();
+                        tL_messages_messages.users.clear();
+                        f8.f(e);
+                        i0.g3(new o7(oiVar, oiVar, i35, 11));
+                        int i372 = oiVar.n;
+                        int i382 = oiVar.s;
+                        j11 = oiVar.b;
+                        i11 = i372;
+                        i10 = i382;
+                        i16 = oiVar.a;
+                        i15 = oiVar.h;
+                        i14 = oiVar.c;
+                        i13 = oiVar.e;
+                        j10 = oiVar.d;
+                        i12 = oiVar.r;
+                        viVar.u1(tL_messages_messages, j11, i16, i15, i14, i13, j10, i12, i11, z14, i10);
+                    } catch (Throwable th5) {
+                        th = th5;
+                        tL_messages_messages3 = tL_messages_messages2;
+                        oiVar = this;
+                        tL_messages_messages = tL_messages_messages3;
+                        viVar = viVar2;
+                        i35 = i35;
+                        i0.g3(new o7(oiVar, oiVar, i35, 11));
+                        viVar.u1(tL_messages_messages, oiVar.b, oiVar.a, oiVar.h, oiVar.c, oiVar.e, oiVar.d, oiVar.r, oiVar.n, false, oiVar.s);
+                        throw th;
+                    }
+                }
+                ArrayList arrayList6 = arrayList;
+                ArrayList arrayList7 = arrayList2;
+                tL_messages_messages3 = tL_messages_messages2;
+                long j18 = j12;
+                queryFinalized.dispose();
+                if (o0Var2 != null && !hashSet.isEmpty()) {
+                    Iterator it = hashSet.iterator();
+                    while (it.hasNext()) {
+                        Long l4 = (Long) it.next();
+                        long longValue = l4.longValue();
+                        int i39 = 0;
+                        while (true) {
+                            if (i39 >= tL_messages_messages3.messages.size()) {
+                                j14 = j16;
+                                i39 = -1;
+                                break;
+                            } else {
+                                j14 = j16;
+                                if (tL_messages_messages3.messages.get(i39).grouped_id == longValue) {
+                                    break;
+                                }
+                                i39++;
+                                j16 = j14;
+                            }
+                        }
+                        if (i39 < 0) {
+                            j16 = j14;
+                        } else {
+                            SQLiteCursor queryFinalized7 = sQLiteDatabase.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND group_id = ? ORDER BY mid DESC", Long.valueOf(j14), l4);
+                            ArrayList arrayList8 = new ArrayList();
+                            while (queryFinalized7.next()) {
+                                int intValue3 = queryFinalized7.intValue(1);
+                                NativeByteBuffer byteBufferValue2 = queryFinalized7.byteBufferValue(0);
+                                if (byteBufferValue2 != null) {
+                                    Iterator it2 = it;
+                                    TLRPC.Message TLdeserialize2 = TLRPC.Message.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
+                                    TLdeserialize2.readAttachPath(byteBufferValue2, j18);
+                                    byteBufferValue2.reuse();
+                                    TLdeserialize2.id = intValue3;
+                                    long j19 = j14;
+                                    TLdeserialize2.dialog_id = j19;
+                                    arrayList8.add(TLdeserialize2);
+                                    is.e(TLdeserialize2, arrayList7, arrayList6, null);
+                                    j14 = j19;
+                                    it = it2;
+                                }
+                            }
+                            Iterator it3 = it;
+                            long j20 = j14;
+                            if (z10) {
+                                Collections.reverse(arrayList8);
+                            }
+                            tL_messages_messages3.messages.remove(i39);
+                            tL_messages_messages3.messages.addAll(i39, arrayList8);
+                            queryFinalized7.dispose();
+                            j16 = j20;
+                            it = it3;
+                        }
+                    }
+                }
+                if (!arrayList7.isEmpty()) {
+                    viVar2.getMessagesStorage().m0(arrayList7, tL_messages_messages3.users);
+                }
+                if (!arrayList6.isEmpty()) {
+                    viVar2.getMessagesStorage().Q(TextUtils.join(",", arrayList6), tL_messages_messages3.chats);
+                }
+                if (tL_messages_messages3.messages.size() <= i34 || i21 != 0) {
+                    z14 = i21 != 0 ? false : z11;
+                } else {
+                    tL_messages_messages3.messages.remove(r0.size() - 1);
+                }
+                i0.g3(new o7(this, this, i35, 11));
+                int i40 = this.n;
+                int i41 = this.s;
+                j11 = this.b;
+                int i42 = this.a;
+                i11 = i40;
+                i10 = i41;
+                i15 = this.h;
+                i14 = this.c;
+                tL_messages_messages = tL_messages_messages3;
+                i13 = this.e;
+                j10 = this.d;
+                i12 = this.r;
+                viVar = viVar2;
+                i16 = i42;
+            } catch (Exception e12) {
+                e = e12;
+                oiVar = this;
+                viVar = viVar2;
+                i35 = i35;
+                tL_messages_messages = tL_messages_messages2;
+                tL_messages_messages.messages.clear();
+                tL_messages_messages.chats.clear();
+                tL_messages_messages.users.clear();
+                f8.f(e);
+                i0.g3(new o7(oiVar, oiVar, i35, 11));
+                int i3722 = oiVar.n;
+                int i3822 = oiVar.s;
+                j11 = oiVar.b;
+                i11 = i3722;
+                i10 = i3822;
+                i16 = oiVar.a;
+                i15 = oiVar.h;
+                i14 = oiVar.c;
+                i13 = oiVar.e;
+                j10 = oiVar.d;
+                i12 = oiVar.r;
+                viVar.u1(tL_messages_messages, j11, i16, i15, i14, i13, j10, i12, i11, z14, i10);
+            } catch (Throwable th6) {
+                th = th6;
+                oiVar = this;
+                viVar = viVar2;
+                i35 = i35;
+                tL_messages_messages = tL_messages_messages2;
+                i0.g3(new o7(oiVar, oiVar, i35, 11));
+                viVar.u1(tL_messages_messages, oiVar.b, oiVar.a, oiVar.h, oiVar.c, oiVar.e, oiVar.d, oiVar.r, oiVar.n, false, oiVar.s);
+                throw th;
+            }
+        } catch (Exception e13) {
+            e = e13;
+            tL_messages_messages = tL_messages_messages4;
+            viVar = viVar2;
+        } catch (Throwable th7) {
+            th = th7;
+            tL_messages_messages = tL_messages_messages4;
+            viVar = viVar2;
         }
+        viVar.u1(tL_messages_messages, j11, i16, i15, i14, i13, j10, i12, i11, z14, i10);
     }
 }

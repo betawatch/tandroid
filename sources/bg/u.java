@@ -6,12 +6,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.e61;
-import org.telegram.ui.tj0;
+import org.telegram.ui.c61;
+import org.telegram.ui.rj0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u extends i {
     public long[] D1;
@@ -58,9 +58,9 @@ public final class u extends i {
             g gVar = this.Q0;
             if (gVar != null) {
                 getSelectedDate();
-                e61 e61Var = (e61) ((tj0) gVar).b;
-                e61Var.f();
-                e61Var.b.t0.d(false, false);
+                c61 c61Var = (c61) ((rj0) gVar).b;
+                c61Var.f();
+                c61Var.b.t0.d(false, false);
             }
             invalidate();
             B();
@@ -365,7 +365,7 @@ public final class u extends i {
                 Paint paint = gVar3.c;
                 Paint paint2 = gVar3.c;
                 paint.setStrokeWidth(max * f15);
-                paint2.setAlpha(zs.e4);
+                paint2.setAlpha(at.e4);
                 canvas.drawLines(gVar3.k, 0, gVar3.j, paint2);
             }
         }

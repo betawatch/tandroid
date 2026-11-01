@@ -5,37 +5,37 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Calendar;
 import java.util.regex.Pattern;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.k20;
-import org.telegram.messenger.p20;
-import org.telegram.messenger.pc;
-import org.telegram.ui.Components.a51;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.l20;
+import org.telegram.messenger.q20;
+import org.telegram.messenger.qc;
 import org.telegram.ui.Components.ac0;
-import org.telegram.ui.Components.fk0;
-import org.telegram.ui.Components.iu0;
-import org.telegram.ui.Components.mu0;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.ju0;
 import org.telegram.ui.Components.nu0;
+import org.telegram.ui.Components.ou0;
 import org.telegram.ui.Components.wb0;
 import org.telegram.ui.Components.yb0;
 import org.telegram.ui.bs;
 import org.telegram.ui.fe;
 import org.telegram.ui.le;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m5 implements k20, org.telegram.ui.ActionBar.u1, iu0, p20, zg.f, fk0, mu0, nu0, pc, yb0, wb0 {
+public final /* synthetic */ class m5 implements l20, org.telegram.ui.ActionBar.u1, ju0, q20, zg.f, gk0, nu0, ou0, qc, yb0, wb0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ m5(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.messenger.p20
-    public Boolean a(a51 a51Var, View view, Integer num, Float f7, Float f10) {
+    @Override // org.telegram.messenger.q20
+    public Boolean a(b51 b51Var, View view, Integer num, Float f7, Float f10) {
         return Boolean.FALSE;
     }
 
-    @Override // org.telegram.ui.Components.nu0
+    @Override // org.telegram.ui.Components.ou0
     public void b(Object obj, float f7) {
         bs bsVar = (bs) obj;
         switch (this.a) {
@@ -72,19 +72,19 @@ public final /* synthetic */ class m5 implements k20, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.messenger.k20
+    @Override // org.telegram.messenger.l20
     public Object d(Number number, Object obj) {
         Integer num = (Integer) number;
         Integer num2 = (Integer) obj;
         switch (this.a) {
             case 1:
                 if (num.intValue() == 0) {
-                    return cd.G(num2.intValue(), "MaximumReactionsValue", new Object[0]);
+                    return dd.G(num2.intValue(), "MaximumReactionsValue", new Object[0]);
                 }
                 return "" + num2;
             default:
                 if (num.intValue() == 0) {
-                    return cd.H(',', "Stars", num2.intValue());
+                    return dd.H(',', "Stars", num2.intValue());
                 }
                 return "" + num2;
         }
@@ -134,12 +134,12 @@ public final /* synthetic */ class m5 implements k20, org.telegram.ui.ActionBar.
         return String.format("%02d", Integer.valueOf(i10));
     }
 
-    @Override // org.telegram.ui.Components.iu0
+    @Override // org.telegram.ui.Components.ju0
     public /* synthetic */ float f(RecyclerView recyclerView) {
         return f1.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.mu0
+    @Override // org.telegram.ui.Components.nu0
     public float get(Object obj) {
         bs bsVar = (bs) obj;
         switch (this.a) {
@@ -171,7 +171,7 @@ public final /* synthetic */ class m5 implements k20, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.ui.Components.iu0
+    @Override // org.telegram.ui.Components.ju0
     public RecyclerView j(View view) {
         return ((fe) view).a;
     }
@@ -181,13 +181,8 @@ public final /* synthetic */ class m5 implements k20, org.telegram.ui.ActionBar.
         view.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public /* synthetic */ void p(RecyclerView recyclerView) {
-        f1.b(recyclerView);
-    }
-
-    @Override // org.telegram.messenger.pc
-    public void q(Exception exc) {
+    @Override // org.telegram.messenger.qc
+    public void p(Exception exc) {
         switch (this.a) {
             case 17:
                 org.telegram.messenger.f8.g(exc, true);
@@ -196,6 +191,11 @@ public final /* synthetic */ class m5 implements k20, org.telegram.ui.ActionBar.
                 org.telegram.messenger.f8.g(exc, true);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public /* synthetic */ void q(RecyclerView recyclerView) {
+        f1.b(recyclerView);
     }
 
     @Override // org.telegram.ui.Components.yb0

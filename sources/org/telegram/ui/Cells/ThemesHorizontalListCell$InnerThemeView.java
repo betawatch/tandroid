@@ -29,9 +29,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -40,7 +40,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.jb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public static final /* synthetic */ int b0 = 0;
@@ -155,7 +155,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             this.R = true;
         }
         if (this.b.o() == 0 && this.b.T && this.O == null) {
-            jb0 S = org.telegram.ui.ActionBar.t6.S(100, zs.e3);
+            jb0 S = org.telegram.ui.ActionBar.t6.S(100, at.e3);
             this.O = S;
             S.v(org.telegram.messenger.i0.L(6.0f));
         }
@@ -576,7 +576,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         accessibilityNodeInfo.setCheckable(true);
         accessibilityNodeInfo.setEnabled(true);
         accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK);
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, cd.L0(2131754839, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, dd.L0(2131754839, null)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

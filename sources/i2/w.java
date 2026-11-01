@@ -2,13 +2,13 @@ package i2;
 
 import j$.time.LocalDate;
 import j$.time.ZoneOffset;
-import org.telegram.messenger.cd;
-import org.telegram.ui.Components.dk0;
+import org.telegram.messenger.dd;
+import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.wb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements e2.o, d9.k, e2.j, dk0, wb0 {
+public final /* synthetic */ class w implements e2.o, d9.k, e2.j, ek0, wb0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -47,15 +47,15 @@ public final /* synthetic */ class w implements e2.o, d9.k, e2.j, dk0, wb0 {
         switch (i11) {
             case 8:
                 if (i10 == 0) {
-                    return cd.L0(2131748546, null);
+                    return dd.L0(2131748546, null);
                 }
                 LocalDate plusDays = LocalDate.now().plusDays(i10);
                 int year = plusDays.getYear();
                 long epochMilli = plusDays.atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
                 if (year != i12) {
-                    return cd.D0().x0().format(epochMilli);
+                    return dd.D0().x0().format(epochMilli);
                 }
-                return cd.D0().z0().format(epochMilli) + ", " + cd.D0().v0().format(epochMilli);
+                return dd.D0().z0().format(epochMilli) + ", " + dd.D0().v0().format(epochMilli);
             default:
                 return i10 == i12 ? "—" : String.format("%02d", Integer.valueOf(i10));
         }
@@ -73,7 +73,7 @@ public final /* synthetic */ class w implements e2.o, d9.k, e2.j, dk0, wb0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.dk0
+    @Override // org.telegram.ui.Components.ek0
     public int run() {
         return this.b;
     }

@@ -9,34 +9,34 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.u10;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.c11;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.cv;
+import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.ec;
 import org.telegram.ui.Components.fc;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a80;
-import org.telegram.ui.f70;
-import org.telegram.ui.sv;
+import org.telegram.ui.rv;
+import org.telegram.ui.y60;
+import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i6 implements q20 {
+public final /* synthetic */ class i6 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -51,7 +51,7 @@ public final /* synthetic */ class i6 implements q20 {
         this.e = obj3;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         int i10 = this.a;
         int i11 = this.b;
@@ -95,18 +95,18 @@ public final /* synthetic */ class i6 implements q20 {
                 }
                 if (iArr[0] == i11 && iArr[1] > 0) {
                     cvVar.dismiss();
-                    wb.g(k2Var, new fw0(k2Var.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, k2Var.getResourceProvider()), 1500).j();
+                    wb.g(k2Var, new gw0(k2Var.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, k2Var.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
             case 2:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                f70 f70Var = (f70) obj3;
+                y60 y60Var = (y60) obj3;
                 Long l4 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 Pattern pattern = LaunchActivity.D1;
                 try {
-                    f70Var.run();
+                    y60Var.run();
                 } catch (Exception e) {
                     f8.g(e, true);
                 }
@@ -121,7 +121,7 @@ public final /* synthetic */ class i6 implements q20 {
                     Bundle bundle = new Bundle();
                     if (l4.longValue() > 0) {
                         bundle.putLong("user_id", l4.longValue());
-                        bundle.putBoolean("my_profile", l4.longValue() == d20.i(launchActivity.O).e());
+                        bundle.putBoolean("my_profile", l4.longValue() == e20.i(launchActivity.O).e());
                     } else {
                         bundle.putLong("chat_id", -l4.longValue());
                     }
@@ -132,12 +132,12 @@ public final /* synthetic */ class i6 implements q20 {
                 break;
             case 3:
                 PhotoViewer photoViewer = (PhotoViewer) obj4;
-                t10 t10Var = (t10) obj3;
-                jj jjVar = (jj) obj2;
+                u10 u10Var = (u10) obj3;
+                kj kjVar = (kj) obj2;
                 String str2 = (String) obj;
                 if (i11 == photoViewer.Q4) {
                     photoViewer.o5 = str2;
-                    if (!t10Var.s() || !t10Var.b(jjVar, photoViewer.o5)) {
+                    if (!u10Var.s() || !u10Var.b(kjVar, photoViewer.o5)) {
                         photoViewer.o0.t(19);
                         photoViewer.o0.t(20);
                         break;
@@ -159,7 +159,7 @@ public final /* synthetic */ class i6 implements q20 {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ecVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) fc.b(cd.L0(2131745237, null), new c11(this.b, context, p6Var, savedStarGift, 19), p6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) fc.b(dd.L0(2131745237, null), new d11(this.b, context, p6Var, savedStarGift, 19), p6Var, null));
                     ecVar.setText(spannableStringBuilder);
                     break;
                 }
@@ -173,12 +173,12 @@ public final /* synthetic */ class i6 implements q20 {
                 int i13 = this.b;
                 if (T) {
                     long j11 = chat.id;
-                    vp.r1(i13).O2(-j11, j10, false, booleanValue, new a80(k2Var2, j11, 2));
+                    wp.r1(i13).O2(-j11, j10, false, booleanValue, new z70(k2Var2, j11, 2));
                     break;
                 } else {
                     org.telegram.ui.ActionBar.x1 x1Var = new org.telegram.ui.ActionBar.x1(3, k2Var2.getContext(), null);
                     x1Var.r(250L);
-                    vp.r1(i13).T(k2Var2.getParentActivity(), chat.id, k2Var2, new sv(x1Var, k2Var2, i13, j10, booleanValue), null);
+                    wp.r1(i13).T(k2Var2.getParentActivity(), chat.id, k2Var2, new rv(x1Var, k2Var2, i13, j10, booleanValue), null);
                     break;
                 }
         }
@@ -192,10 +192,10 @@ public final /* synthetic */ class i6 implements q20 {
         this.e = arrayList;
     }
 
-    public /* synthetic */ i6(LaunchActivity launchActivity, f70 f70Var, Long l4, int i10) {
+    public /* synthetic */ i6(LaunchActivity launchActivity, y60 y60Var, Long l4, int i10) {
         this.a = 2;
         this.c = launchActivity;
-        this.d = f70Var;
+        this.d = y60Var;
         this.e = l4;
         this.b = i10;
     }

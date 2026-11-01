@@ -1,12 +1,12 @@
 package w7;
 
 import android.graphics.Color;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class b9 {
     public static wg.d a(org.telegram.ui.ActionBar.p6 p6Var) {
@@ -41,11 +41,11 @@ public abstract class b9 {
 
     public static boolean c(int i10, org.telegram.ui.ActionBar.p6 p6Var) {
         boolean a2 = p6Var != null ? p6Var.a() : org.telegram.ui.ActionBar.t6.I.q();
-        boolean f7 = tz.f();
-        if (f7 && !a2 && ((org.telegram.messenger.j0) vp.r1(i10).y7.B.b).c) {
+        boolean f7 = uz.f();
+        if (f7 && !a2 && ((org.telegram.messenger.j0) wp.r1(i10).y7.B.b).c) {
             f7 = false;
         }
-        if (f7 && a2 && ((org.telegram.messenger.j0) vp.r1(i10).y7.C.b).c) {
+        if (f7 && a2 && ((org.telegram.messenger.j0) wp.r1(i10).y7.C.b).c) {
             return false;
         }
         return f7;
@@ -202,13 +202,13 @@ public abstract class b9 {
             return Color.argb(0, 0, 0, 0);
         }
         if (a2 >= 1.0f) {
-            return Color.argb(zs.e4, Color.red(i11), Color.green(i11), Color.blue(i11));
+            return Color.argb(at.e4, Color.red(i11), Color.green(i11), Color.blue(i11));
         }
         int red = Color.red(i10);
         int green = Color.green(i10);
         int blue = Color.blue(i10);
         float f10 = 1.0f - a2;
-        return Color.argb(u.b(Math.round(a2 * 255.0f), 0, zs.e4), u.b(Math.round((Color.red(i11) - (red * f10)) / a2), 0, zs.e4), u.b(Math.round((Color.green(i11) - (green * f10)) / a2), 0, zs.e4), u.b(Math.round((Color.blue(i11) - (blue * f10)) / a2), 0, zs.e4));
+        return Color.argb(u.b(Math.round(a2 * 255.0f), 0, at.e4), u.b(Math.round((Color.red(i11) - (red * f10)) / a2), 0, at.e4), u.b(Math.round((Color.green(i11) - (green * f10)) / a2), 0, at.e4), u.b(Math.round((Color.blue(i11) - (blue * f10)) / a2), 0, at.e4));
     }
 
     public static wg.d o(org.telegram.ui.ActionBar.p6 p6Var) {

@@ -9,15 +9,15 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.pd;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t1 extends ChatActivityEnterView {
     public ValueAnimator t5;
@@ -72,9 +72,9 @@ public final class t1 extends ChatActivityEnterView {
         messageMinPrice = z2Var.getMessageMinPrice();
         long max = Math.max(j10, messageMinPrice);
         TLRPC.TL_textWithEntities textWithEntities = getTextWithEntities();
-        Spannable j02 = jj.j0(textWithEntities, false, false, new TextPaint());
+        Spannable j02 = kj.j0(textWithEntities, false, false, new TextPaint());
         int length = j02.length();
-        int[] iArr = vp.r1(z2Var.l2).Y6;
+        int[] iArr = wp.r1(z2Var.l2).Y6;
         if (length > ((iArr == null || iArr.length <= 2) ? 400 : iArr[2])) {
             NumberTextView numberTextView = this.b0;
             if (numberTextView != null) {
@@ -105,7 +105,7 @@ public final class t1 extends ChatActivityEnterView {
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final boolean R0(boolean z10, int i10, int i11, long j10, boolean z11) {
         z2 z2Var = this.x5;
-        if (!vp.r1(z2Var.l2).u2()) {
+        if (!wp.r1(z2Var.l2).u2()) {
             return super.R0(z10, i10, i11, j10, z11);
         }
         org.telegram.ui.b.b(z2Var.l2);
@@ -148,7 +148,7 @@ public final class t1 extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final void d0(Menu menu) {
-        un.t8(menu, null, false, !this.x5.x1.f, true, true);
+        un.x8(menu, null, false, !this.x5.x1.f, true, true);
     }
 
     @Override // android.view.ViewGroup, android.view.View

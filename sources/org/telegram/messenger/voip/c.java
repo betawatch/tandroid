@@ -3,8 +3,8 @@ package org.telegram.messenger.voip;
 import android.view.View;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.q00;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.r00;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -13,7 +13,7 @@ import org.telegram.ui.un;
 import th.t5;
 import th.v5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -41,7 +41,7 @@ public final /* synthetic */ class c implements RequestDelegate {
                 org.telegram.messenger.i0.g3(new f(tL_error, (un) this.c, tLObject, (TLRPC.FileLocation[]) this.d, (String) this.e, (TLRPC.FileLocation[]) this.f, this.b));
                 break;
             default:
-                org.telegram.messenger.i0.g3(new q00((v5) this.c, tLObject, this.b, (View) this.d, (t5) this.e, (vp) this.f, 7));
+                org.telegram.messenger.i0.g3(new r00((v5) this.c, tLObject, this.b, (View) this.d, (t5) this.e, (wp) this.f, 7));
                 break;
         }
     }
@@ -54,11 +54,11 @@ public final /* synthetic */ class c implements RequestDelegate {
         this.b = j10;
     }
 
-    public /* synthetic */ c(v5 v5Var, long j10, View view, t5 t5Var, vp vpVar) {
+    public /* synthetic */ c(v5 v5Var, long j10, View view, t5 t5Var, wp wpVar) {
         this.c = v5Var;
         this.b = j10;
         this.d = view;
         this.e = t5Var;
-        this.f = vpVar;
+        this.f = wpVar;
     }
 }

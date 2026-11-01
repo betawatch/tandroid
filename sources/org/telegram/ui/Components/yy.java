@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.util.SparseIntArray;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class yy extends s4.r {
     public final boolean Q;
@@ -21,26 +21,26 @@ public class yy extends s4.r {
         this.Q = z10;
     }
 
-    public static pu0 C1(pu0 pu0Var) {
-        if (pu0Var == null) {
+    public static qu0 C1(qu0 qu0Var) {
+        if (qu0Var == null) {
             return null;
         }
-        if (pu0Var.a == 0.0f) {
-            pu0Var.a = 100.0f;
+        if (qu0Var.a == 0.0f) {
+            qu0Var.a = 100.0f;
         }
-        if (pu0Var.b == 0.0f) {
-            pu0Var.b = 100.0f;
+        if (qu0Var.b == 0.0f) {
+            qu0Var.b = 100.0f;
         }
-        float f7 = pu0Var.a;
-        float f10 = pu0Var.b;
+        float f7 = qu0Var.a;
+        float f10 = qu0Var.b;
         float f11 = f7 / f10;
         if (f11 <= 4.0f && f11 >= 0.2f) {
-            return pu0Var;
+            return qu0Var;
         }
         float max = Math.max(f7, f10);
-        pu0Var.a = max;
-        pu0Var.b = max;
-        return pu0Var;
+        qu0Var.a = max;
+        qu0Var.b = max;
+        return qu0Var;
     }
 
     public final void B1() {
@@ -77,7 +77,7 @@ public class yy extends s4.r {
         int i15 = 0;
         int i16 = i12;
         while (i14 < i13) {
-            pu0 C1 = i14 < A ? C1(D1(i14)) : null;
+            qu0 C1 = i14 < A ? C1(D1(i14)) : null;
             if (C1 == null) {
                 z10 = i15 != 0 ? true : z11;
                 i10 = L;
@@ -152,8 +152,8 @@ public class yy extends s4.r {
         this.V++;
     }
 
-    public pu0 D1(int i10) {
-        return new pu0(100.0f, 100.0f);
+    public qu0 D1(int i10) {
+        return new qu0(100.0f, 100.0f);
     }
 
     public final boolean E1(int i10) {

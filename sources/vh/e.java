@@ -8,14 +8,14 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.widget.FrameLayout;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.oh;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class e implements Runnable {
                         valueAnimator.cancel();
                         kVar.p0 = null;
                     }
-                    q20 q20Var = kVar.j0;
-                    if (q20Var != null) {
-                        q20Var.a(Boolean.valueOf(z10));
+                    r20 r20Var = kVar.j0;
+                    if (r20Var != null) {
+                        r20Var.a(Boolean.valueOf(z10));
                     }
                     kVar.d(z10);
                     if (z10) {
@@ -94,7 +94,7 @@ public final /* synthetic */ class e implements Runnable {
                     if (!z10) {
                         fVar.getEditText().j(false, true);
                     }
-                    if (z10 && tz.o() >= 1 && !sc.f()) {
+                    if (z10 && uz.o() >= 1 && !tc.f()) {
                         if (kVar.q0 == null) {
                             kVar.q0 = Bitmap.createBitmap((int) (frameLayout.getWidth() / 12.0f), (int) (frameLayout.getHeight() / 12.0f), Bitmap.Config.ARGB_8888);
                         }

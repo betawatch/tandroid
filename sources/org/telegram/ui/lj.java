@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lj implements org.telegram.messenger.bs {
+public final /* synthetic */ class lj implements org.telegram.messenger.cs {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -15,7 +15,7 @@ public final /* synthetic */ class lj implements org.telegram.messenger.bs {
         this.b = z10;
     }
 
-    @Override // org.telegram.messenger.bs
+    @Override // org.telegram.messenger.cs
     public final void a(int i10) {
         switch (this.a) {
             case 0:
@@ -29,7 +29,7 @@ public final /* synthetic */ class lj implements org.telegram.messenger.bs {
                 mj mjVar = (mj) this.c;
                 un unVar2 = mjVar.b.b;
                 if (i10 < 50) {
-                    unVar2.Ga(unVar2.r4, true);
+                    unVar2.La(unVar2.r4, true);
                     break;
                 } else {
                     TLRPC.Chat chat = unVar2.e;

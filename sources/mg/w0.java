@@ -8,11 +8,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vs;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import rh.e6;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class w0 extends ha implements us {
+public final class w0 extends ha implements vs {
     public final ArrayList P1;
     public final List Q1;
     public final List R1;
@@ -112,22 +112,22 @@ public final class w0 extends ha implements us {
         jVar.C = false;
         jVar.m = false;
         this.k1.setItemAnimator(jVar);
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i15 = this.t0;
-        tk0Var.setPadding(i15, 0, i15, org.telegram.messenger.i0.L(68.0f));
+        uk0Var.setPadding(i15, 0, i15, org.telegram.messenger.i0.L(68.0f));
         this.k1.setOnScrollListener(new v0());
         this.k1.setOnItemClickListener(new q0(0, this, k2Var));
-        TLRPC.Chat L0 = vp.r1(this.a).L0(Long.valueOf(-j10));
+        TLRPC.Chat L0 = wp.r1(this.a).L0(Long.valueOf(-j10));
         this.T1 = L0;
         ng.b bVar = this.Y1;
         ArrayList arrayList = this.P1;
-        tk0 tk0Var2 = this.k1;
+        uk0 uk0Var2 = this.k1;
         m0 m0Var = new m0(this);
         m0 m0Var2 = new m0(this);
         m0 m0Var3 = new m0(this);
         bVar.e = arrayList;
         bVar.w = L0;
-        bVar.f = tk0Var2;
+        bVar.f = uk0Var2;
         bVar.h = m0Var;
         bVar.n = m0Var2;
         bVar.s = m0Var3;
@@ -138,11 +138,11 @@ public final class w0 extends ha implements us {
         j1(false);
         this.b.addView(aVar, b6.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         k0.j(this.a, L0, new o0(this, i10));
-        zs.f(this.a).c(this, zs.x3);
+        at.f(this.a).c(this, at.x3);
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
+    public final tk0 L0(uk0 uk0Var) {
         ng.b bVar = new ng.b(this.I0);
         this.Y1 = bVar;
         return bVar;
@@ -152,7 +152,7 @@ public final class w0 extends ha implements us {
     public final CharSequence O0() {
         int i10 = this.a2;
         int i11 = og.e.w;
-        return i10 == 1 ? cd.L0(2131749689, null) : cd.a0("BoostingStartGiveaway", null, 2131753193, new Object[0]);
+        return i10 == 1 ? dd.L0(2131749689, null) : dd.a0("BoostingStartGiveaway", null, 2131753193, new Object[0]);
     }
 
     @Override // org.telegram.ui.Components.ha
@@ -176,10 +176,10 @@ public final class w0 extends ha implements us {
         return arrayList2;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        tk0 tk0Var;
-        if (i10 == zs.x3 && (tk0Var = this.k1) != null && tk0Var.G) {
+        uk0 uk0Var;
+        if (i10 == at.x3 && (uk0Var = this.k1) != null && uk0Var.G) {
             k1(true, true);
         }
     }
@@ -190,7 +190,7 @@ public final class w0 extends ha implements us {
         if (qVar != null) {
             qVar.run();
         }
-        zs.f(this.a).n(this, zs.x3);
+        at.f(this.a).n(this, at.x3);
     }
 
     public final int e1() {
@@ -294,7 +294,7 @@ public final class w0 extends ha implements us {
         dVar.setShowZero(true);
         dVar.setEnabled(z11);
         dVar.c(g10, z10);
-        dVar.i(cd.L0(2131749689, null), z10, true);
+        dVar.i(dd.L0(2131749689, null), z10, true);
         a7.i(t6.h5, aVar.b, aVar.c);
     }
 
@@ -370,7 +370,7 @@ public final class w0 extends ha implements us {
         ArrayList arrayList5 = this.U1;
         if (i17 == 3) {
             if (!i1()) {
-                String L0 = cd.L0(2131753200, null);
+                String L0 = dd.L0(2131753200, null);
                 int f12 = f1();
                 ng.a aVar5 = new ng.a(13, false);
                 aVar5.c = L0;
@@ -428,26 +428,26 @@ public final class w0 extends ha implements us {
                     arrayList.add(ng.a.d(null, 2, 1L, false, false));
                 }
                 aVar5.i = f1();
-                arrayList.add(ng.a.c(cd.L0(2131753199, null), false));
+                arrayList.add(ng.a.c(dd.L0(2131753199, null), false));
                 List h12 = h1();
                 int i24 = this.g2;
                 if (i24 < 0 || i24 >= h12.size()) {
                     this.g2 = 0;
                 }
                 if (h12.size() > 1) {
-                    arrayList.add(ng.a.f(cd.L0(2131753195, null)));
+                    arrayList.add(ng.a.f(dd.L0(2131753195, null)));
                     List h13 = h1();
                     int i25 = this.g2;
                     ng.a aVar6 = new ng.a(5, false);
                     aVar6.k = h13;
                     aVar6.i = i25;
                     arrayList.add(aVar6);
-                    arrayList.add(ng.a.c(cd.L0(2131753194, null), false));
+                    arrayList.add(ng.a.c(dd.L0(2131753194, null), false));
                 }
             } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
                 this.h2 = ((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars;
             }
-            arrayList.add(ng.a.f(cd.L0(2131753558, null)));
+            arrayList.add(ng.a.f(dd.L0(2131753558, null)));
             if (!i1()) {
                 arrayList.add(ng.a.b(f1(), chat, false));
             } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
@@ -480,17 +480,17 @@ public final class w0 extends ha implements us {
             } else {
                 r103 = 0;
             }
-            arrayList.add(ng.a.c(cd.L0(2131753553, null), r103));
-            arrayList.add(ng.a.f(cd.L0(2131753536, null)));
+            arrayList.add(ng.a.c(dd.L0(2131753553, null), r103));
+            arrayList.add(ng.a.f(dd.L0(2131753536, null)));
             int i27 = og.w.w;
             arrayList.add(ng.a.e(r103, this.b2, true, arrayList4));
             arrayList.add(ng.a.e(1, this.b2, r103, arrayList4));
-            arrayList.add(ng.a.c(cd.L0(V ? 2131753551 : 2131753550, null), r103));
+            arrayList.add(ng.a.c(dd.L0(V ? 2131753551 : 2131753550, null), r103));
         } else {
             String str2 = null;
             if (this.a2 == 0) {
                 if (!i1()) {
-                    String L02 = cd.L0(2131753323, null);
+                    String L02 = dd.L0(2131753323, null);
                     int f14 = f1();
                     ng.a aVar8 = new ng.a(13, false);
                     aVar8.c = L02;
@@ -502,9 +502,9 @@ public final class w0 extends ha implements us {
                     aVar9.i = i28;
                     arrayList.add(aVar9);
                     str2 = null;
-                    arrayList.add(ng.a.c(cd.L0(2131753552, null), false));
+                    arrayList.add(ng.a.c(dd.L0(2131753552, null), false));
                 }
-                arrayList.add(ng.a.f(cd.L0(2131753558, str2)));
+                arrayList.add(ng.a.f(dd.L0(2131753558, str2)));
                 if (!i1()) {
                     arrayList.add(ng.a.b(f1(), chat, false));
                 } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
@@ -537,16 +537,16 @@ public final class w0 extends ha implements us {
                 } else {
                     r10 = 0;
                 }
-                arrayList.add(ng.a.c(cd.L0(2131753553, null), r10));
-                arrayList.add(ng.a.f(cd.L0(2131753536, null)));
+                arrayList.add(ng.a.c(dd.L0(2131753553, null), r10));
+                arrayList.add(ng.a.f(dd.L0(2131753536, null)));
                 int i30 = og.w.w;
                 arrayList.add(ng.a.e(r10, this.b2, true, arrayList4));
                 arrayList.add(ng.a.e(1, this.b2, r10, arrayList4));
                 str2 = null;
-                arrayList.add(ng.a.c(cd.L0(V ? 2131753551 : 2131753550, null), r10));
+                arrayList.add(ng.a.c(dd.L0(V ? 2131753551 : 2131753550, null), r10));
             }
             if (!i1()) {
-                arrayList.add(ng.a.f(cd.L0(2131753537, str2)));
+                arrayList.add(ng.a.f(dd.L0(2131753537, str2)));
                 int i31 = this.a2;
                 int i32 = og.e.w;
                 ArrayList b10 = k0.b(i31 == 0 ? e1() : arrayList3.size(), this.X1);
@@ -577,11 +577,11 @@ public final class w0 extends ha implements us {
             }
             if (!i1()) {
                 i10 = 3;
-                arrayList.add(ng.a.c(org.telegram.messenger.i0.R2(cd.L0(2131753187, null), t6.Uc, 0, new l0(this, i10), this.I0), true));
+                arrayList.add(ng.a.c(org.telegram.messenger.i0.R2(dd.L0(2131753187, null), t6.Uc, 0, new l0(this, i10), this.I0), true));
                 i11 = this.Z1;
                 int i39 = og.e.w;
                 if (i11 != i10 || this.a2 == 0) {
-                    String L03 = cd.L0(2131753484, null);
+                    String L03 = dd.L0(2131753484, null);
                     boolean z15 = this.o2;
                     int i40 = og.a0.L;
                     ng.a aVar12 = new ng.a(15, z15);
@@ -592,28 +592,28 @@ public final class w0 extends ha implements us {
                     if (this.o2) {
                         z12 = false;
                         str = null;
-                        arrayList.add(ng.a.c(cd.L0(this.Z1 == 3 ? 2131753237 : 2131753485, null), false));
+                        arrayList.add(ng.a.c(dd.L0(this.Z1 == 3 ? 2131753237 : 2131753485, null), false));
                     } else {
                         int e13 = i1() ? prepaidGiveaway.quantity : e1();
                         z12 = false;
                         ng.a aVar13 = new ng.a(16, false);
                         aVar13.i = e13;
                         arrayList.add(aVar13);
-                        String G = cd.G(this.d2, "BoldMonths", new Object[0]);
+                        String G = dd.G(this.d2, "BoldMonths", new Object[0]);
                         if (this.Z1 == 3) {
                             if (this.n2.isEmpty()) {
-                                arrayList.add(ng.a.c(org.telegram.messenger.i0.W2(cd.G((int) this.h2, "BoostingStarsGiveawayAdditionPrizeCountHint", new Object[0])), false));
+                                arrayList.add(ng.a.c(org.telegram.messenger.i0.W2(dd.G((int) this.h2, "BoostingStarsGiveawayAdditionPrizeCountHint", new Object[0])), false));
                             } else {
-                                arrayList.add(ng.a.c(org.telegram.messenger.i0.W2(cd.G((int) this.h2, "BoostingStarsGiveawayAdditionPrizeCountNameHint", Integer.valueOf(e13), this.n2)), false));
+                                arrayList.add(ng.a.c(org.telegram.messenger.i0.W2(dd.G((int) this.h2, "BoostingStarsGiveawayAdditionPrizeCountNameHint", Integer.valueOf(e13), this.n2)), false));
                             }
                         } else if (this.n2.isEmpty()) {
-                            arrayList.add(ng.a.c(org.telegram.messenger.i0.W2(cd.G(e13, "BoostingGiveawayAdditionPrizeCountHint", G)), false));
+                            arrayList.add(ng.a.c(org.telegram.messenger.i0.W2(dd.G(e13, "BoostingGiveawayAdditionPrizeCountHint", G)), false));
                         } else {
-                            arrayList.add(ng.a.c(org.telegram.messenger.i0.W2(cd.G(e13, "BoostingGiveawayAdditionPrizeCountNameHint", this.n2, G)), false));
+                            arrayList.add(ng.a.c(org.telegram.messenger.i0.W2(dd.G(e13, "BoostingGiveawayAdditionPrizeCountNameHint", this.n2, G)), false));
                         }
                         str = null;
                     }
-                    arrayList.add(ng.a.f(cd.L0(2131753538, str)));
+                    arrayList.add(ng.a.f(dd.L0(2131753538, str)));
                     long j12 = this.e2;
                     ng.a aVar14 = new ng.a(10, z12);
                     aVar14.h = j12;
@@ -621,31 +621,31 @@ public final class w0 extends ha implements us {
                     if (this.Z1 != 3) {
                         if (i1()) {
                             r102 = 0;
-                            arrayList.add(ng.a.c(cd.G(prepaidGiveaway.quantity, V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", cd.G((int) this.h2, "BoostingStarsChooseRandomStars", new Object[0])), false));
+                            arrayList.add(ng.a.c(dd.G(prepaidGiveaway.quantity, V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", dd.G((int) this.h2, "BoostingStarsChooseRandomStars", new Object[0])), false));
                         } else {
                             r102 = 0;
-                            arrayList.add(ng.a.c(cd.G(e1(), V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", cd.G((int) this.h2, "BoostingStarsChooseRandomStars", new Object[0])), false));
+                            arrayList.add(ng.a.c(dd.G(e1(), V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", dd.G((int) this.h2, "BoostingStarsChooseRandomStars", new Object[0])), false));
                         }
                     } else {
                         r102 = 0;
                         r102 = 0;
                         if (i1()) {
-                            arrayList.add(ng.a.c(cd.G(prepaidGiveaway.quantity, V ? "BoostingChooseRandom" : "BoostingChooseRandomGroup", new Object[0]), false));
+                            arrayList.add(ng.a.c(dd.G(prepaidGiveaway.quantity, V ? "BoostingChooseRandom" : "BoostingChooseRandomGroup", new Object[0]), false));
                         } else {
-                            arrayList.add(ng.a.c(cd.G(e1(), V ? "BoostingChooseRandom" : "BoostingChooseRandomGroup", new Object[0]), false));
+                            arrayList.add(ng.a.c(dd.G(e1(), V ? "BoostingChooseRandom" : "BoostingChooseRandomGroup", new Object[0]), false));
                         }
                     }
-                    String L04 = cd.L0(2131753368, null);
+                    String L04 = dd.L0(2131753368, null);
                     ng.a aVar15 = new ng.a(15, this.p2);
                     aVar15.c = L04;
                     aVar15.g = r102;
                     aVar15.l = r102;
                     arrayList.add(aVar15);
                     if (i1()) {
-                        arrayList.add(ng.a.c(cd.L0(2131753367, null), r102));
+                        arrayList.add(ng.a.c(dd.L0(2131753367, null), r102));
                     } else {
                         StringBuilder sb2 = new StringBuilder();
-                        sb2.append(cd.L0(2131753367, null));
+                        sb2.append(dd.L0(2131753367, null));
                         sb2.append(this.Z1 != 3 ? a1.g.m(null, 2131753187, new StringBuilder("\n\n")) : "");
                         arrayList.add(ng.a.c(org.telegram.messenger.i0.R2(sb2.toString(), t6.Uc, 0, new l0(this, 4), this.I0), true));
                     }
@@ -668,7 +668,7 @@ public final class w0 extends ha implements us {
         int i392 = og.e.w;
         if (i11 != i10) {
         }
-        String L032 = cd.L0(2131753484, null);
+        String L032 = dd.L0(2131753484, null);
         boolean z152 = this.o2;
         int i402 = og.a0.L;
         ng.a aVar122 = new ng.a(15, z152);
@@ -678,14 +678,14 @@ public final class w0 extends ha implements us {
         arrayList.add(aVar122);
         if (this.o2) {
         }
-        arrayList.add(ng.a.f(cd.L0(2131753538, str)));
+        arrayList.add(ng.a.f(dd.L0(2131753538, str)));
         long j122 = this.e2;
         ng.a aVar142 = new ng.a(10, z12);
         aVar142.h = j122;
         arrayList.add(aVar142);
         if (this.Z1 != 3) {
         }
-        String L042 = cd.L0(2131753368, null);
+        String L042 = dd.L0(2131753368, null);
         ng.a aVar152 = new ng.a(15, this.p2);
         aVar152.c = L042;
         aVar152.g = r102;

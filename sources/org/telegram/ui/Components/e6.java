@@ -24,7 +24,7 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class e6 extends Drawable {
     public static final LinearInterpolator c0 = new LinearInterpolator();
@@ -215,7 +215,7 @@ public class e6 extends Drawable {
             RectF rectF = org.telegram.messenger.i0.P;
             rectF.set(rect);
             rectF.right -= this.N;
-            canvas.saveLayerAlpha(rectF, org.telegram.messenger.zs.e4, 31);
+            canvas.saveLayerAlpha(rectF, org.telegram.messenger.at.e4, 31);
         }
         canvas.save();
         canvas.translate(rect.left, rect.top);
@@ -982,7 +982,7 @@ public class e6 extends Drawable {
         this.y = -1.0f;
         this.z = 0.3f;
         this.A = 0.0f;
-        this.B = org.telegram.messenger.zs.e4;
+        this.B = org.telegram.messenger.at.e4;
         this.C = new Rect();
         this.S = true;
         this.T = true;

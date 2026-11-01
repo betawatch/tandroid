@@ -1,8 +1,8 @@
 package b2;
 
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b2 {
     public static final b2 d = new b2(0, 0);
@@ -38,7 +38,7 @@ public final class b2 {
     }
 
     public final int hashCode() {
-        return Float.floatToRawIntBits(this.c) + ((((zs.u3 + this.a) * 31) + this.b) * 31);
+        return Float.floatToRawIntBits(this.c) + ((((at.u3 + this.a) * 31) + this.b) * 31);
     }
 
     public b2(float f7, int i10, int i11) {

@@ -6,22 +6,22 @@ import bi.n4;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.c11;
 import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.j00;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.n6;
-import org.telegram.ui.wo0;
+import org.telegram.ui.uo0;
 import rh.e4;
 import rh.u5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o2 implements q20 {
+public final /* synthetic */ class o2 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -34,11 +34,11 @@ public final /* synthetic */ class o2 implements q20 {
         this.d = n4Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                Utilities.i.c(new i2.g1((v2) this.c, this.b, (List) obj, new ArrayList(), (wo0) this.d, 1));
+                Utilities.i.c(new i2.g1((v2) this.c, this.b, (List) obj, new ArrayList(), (uo0) this.d, 1));
                 break;
             case 1:
                 org.telegram.messenger.i0.g3(new ag.g3(this.b, (lg.s) this.c, (SparseIntArray) obj, (n4) this.d));
@@ -53,12 +53,12 @@ public final /* synthetic */ class o2 implements q20 {
                 break;
             case 3:
                 j00 j00Var = (j00) this.c;
-                q20 q20Var = (q20) this.d;
+                r20 r20Var = (r20) this.d;
                 int i11 = this.b;
                 j00Var.getClass();
                 j00Var.s2 = ((Boolean) obj).booleanValue();
                 j00Var.dismiss();
-                q20Var.a(Integer.valueOf(i11));
+                r20Var.a(Integer.valueOf(i11));
                 break;
             case 4:
                 ph.j2 j2Var = (ph.j2) this.c;
@@ -76,13 +76,13 @@ public final /* synthetic */ class o2 implements q20 {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            wb R = cc.a0(k2Var).R(savedStarGift.gift.getDocument(), org.telegram.messenger.i0.W2(cd.a0(null, null, 2131750402, e4.A1(savedStarGift.gift), c10.title)));
+                            wb R = cc.a0(k2Var).R(savedStarGift.gift.getDocument(), org.telegram.messenger.i0.W2(dd.a0(null, null, 2131750402, e4.A1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;
                         }
                     } else {
-                        wb R2 = cc.a0(k2Var).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), org.telegram.messenger.i0.W2(cd.K("Gift2AddedToCollectionMany", arrayList.size(), ',', c10.title)));
+                        wb R2 = cc.a0(k2Var).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), org.telegram.messenger.i0.W2(dd.K("Gift2AddedToCollectionMany", arrayList.size(), ',', c10.title)));
                         R2.r = false;
                         R2.j();
                         break;
@@ -90,7 +90,7 @@ public final /* synthetic */ class o2 implements q20 {
                 }
                 break;
             case 5:
-                org.telegram.messenger.i0.g3(new c11((TLRPC.UserFull) obj, (org.telegram.ui.web.o) this.c, this.b, (TLRPC.User) this.d, 22));
+                org.telegram.messenger.i0.g3(new d11((TLRPC.UserFull) obj, (org.telegram.ui.web.o) this.c, this.b, (TLRPC.User) this.d, 22));
                 break;
             default:
                 org.telegram.ui.ActionBar.k2 k2Var2 = (org.telegram.ui.ActionBar.k2) this.c;

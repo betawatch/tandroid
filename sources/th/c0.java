@@ -17,23 +17,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.x41;
+import org.telegram.ui.Components.y41;
 import org.telegram.ui.Components.y60;
-import org.telegram.ui.ex0;
+import org.telegram.ui.dx0;
 import rh.h8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout implements y60 {
     public final nh.p D;
@@ -104,7 +104,7 @@ public final class c0 extends FrameLayout implements y60 {
         pVar3.setTextColor(-1);
         pVar3.setTextSize(1, 14.0f);
         pVar3.setShadowLayer(org.telegram.messenger.i0.L(2.5f), 0.0f, org.telegram.messenger.i0.L(1.5f), org.telegram.ui.ActionBar.t6.r1(0.6f, -16777216));
-        zs.i(pVar3);
+        at.i(pVar3);
         linearLayout.addView(pVar3, w7.b6.o(-2, -2));
         TextView textView = new TextView(context);
         this.E = textView;
@@ -199,12 +199,12 @@ public final class c0 extends FrameLayout implements y60 {
         r8 r8Var = this.y;
         int i13 = this.c;
         if (j10 >= 0) {
-            TLRPC.User Z1 = vp.r1(i13).Z1(Long.valueOf(h0Var.c));
+            TLRPC.User Z1 = wp.r1(i13).Z1(Long.valueOf(h0Var.c));
             r8Var.r(Z1);
             g9Var.e(Z1, r8Var);
-            str = h20.k(Z1);
+            str = i20.k(Z1);
         } else {
-            TLRPC.Chat L0 = vp.r1(i13).L0(Long.valueOf(-h0Var.c));
+            TLRPC.Chat L0 = wp.r1(i13).L0(Long.valueOf(-h0Var.c));
             r8Var.q(L0);
             g9Var.e(L0, r8Var);
             str = L0 == null ? "" : L0.title;
@@ -235,7 +235,7 @@ public final class c0 extends FrameLayout implements y60 {
             } else {
                 i10 = 33;
             }
-            spannableStringBuilder.setSpan(new x41(org.telegram.messenger.i0.o()), 0, spannableStringBuilder.length(), i10);
+            spannableStringBuilder.setSpan(new y41(org.telegram.messenger.i0.o()), 0, spannableStringBuilder.length(), i10);
             spannableStringBuilder.append((CharSequence) " ");
         } else {
             z10 = z13;
@@ -244,7 +244,7 @@ public final class c0 extends FrameLayout implements y60 {
         int b14 = o.b(i13, (int) h0Var.g, 2);
         TLRPC.TL_textWithEntities tL_textWithEntities = h0Var.f;
         if (tL_textWithEntities != null) {
-            CharSequence j02 = jj.j0(tL_textWithEntities, false, false, pVar.getPaint());
+            CharSequence j02 = kj.j0(tL_textWithEntities, false, false, pVar.getPaint());
             this.w = j02;
             if (j02 == null) {
                 z11 = true;
@@ -323,7 +323,7 @@ public final class c0 extends FrameLayout implements y60 {
                         arrayList.add(new Pair(Integer.valueOf(spannable.getSpanStart(h6VarArr[i18])), Integer.valueOf(spannable.getSpanEnd(h6VarArr[i19]))));
                         i18 = i19 + 1;
                     }
-                    Collections.sort(arrayList, new ex0(22));
+                    Collections.sort(arrayList, new dx0(22));
                     if (!(this.w instanceof SpannableStringBuilder)) {
                         this.w = new SpannableStringBuilder(this.w);
                     }
@@ -370,14 +370,14 @@ public final class c0 extends FrameLayout implements y60 {
                 textView.setText("");
                 textView2.setVisibility(0);
                 textView2.setBackground(org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(13.0f), org.telegram.ui.ActionBar.t6.r1(0.25f, b12)));
-                textView2.setText(h8.W0(false, i0.a.k(h0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, org.telegram.messenger.i0.L(0.66f), 1.0f));
+                textView2.setText(h8.X0(false, i0.a.k(h0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, org.telegram.messenger.i0.L(0.66f), 1.0f));
                 dq dqVar2 = this.G[0];
                 if (dqVar2 != null) {
                     dqVar2.a = this.b;
                 }
             } else {
                 textView.setVisibility(0);
-                textView.setText(h8.W0(false, i0.a.k(h0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
+                textView.setText(h8.X0(false, i0.a.k(h0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
                 textView2.setVisibility(8);
                 textView2.setText("");
             }
@@ -395,10 +395,10 @@ public final class c0 extends FrameLayout implements y60 {
             spannableStringBuilder2.append((CharSequence) org.telegram.messenger.o5.l(i13, h0Var.c));
             spannableStringBuilder2.append((CharSequence) str2);
             int length2 = spannableStringBuilder2.length();
-            spannableStringBuilder2.append((CharSequence) cd.L0(2131748835, null));
+            spannableStringBuilder2.append((CharSequence) dd.L0(2131748835, null));
             spannableStringBuilder2.setSpan(new z(0), length2, spannableStringBuilder2.length(), 33);
             this.r.setText(spannableStringBuilder2);
-            this.s.setText(cd.L0(2131748838, null));
+            this.s.setText(dd.L0(2131748838, null));
             textView.setVisibility(8);
             textView2.setVisibility(8);
         } else {

@@ -1,21 +1,22 @@
 package org.telegram.ui.Components;
 
+import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class kz0 {
-    public final long a;
-    public final TLRPC.InputFile b;
-    public final TLRPC.InputEncryptedFile c;
-    public final byte[] d;
-    public final byte[] e;
+    public final File a;
+    public long b;
+    public long c;
+    public boolean d;
+    public boolean e;
+    public TLRPC.InputFile f;
+    public TLRPC.InputEncryptedFile g;
+    public byte[] h;
+    public byte[] i;
 
-    public kz0(long j10, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
-        this.a = j10;
-        this.b = inputFile;
-        this.c = inputEncryptedFile;
-        this.d = bArr;
-        this.e = bArr2;
+    public kz0(File file) {
+        this.a = file;
     }
 }

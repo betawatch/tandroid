@@ -20,31 +20,31 @@ import android.view.ViewGroup;
 import b2.n0;
 import nh.p;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
+import org.telegram.messenger.vi;
 import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.x41;
-import org.telegram.ui.f30;
+import org.telegram.ui.Components.y41;
+import org.telegram.ui.e30;
 import sg.o0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class d extends ViewGroup implements ge.a, us, fe.e {
+public final class d extends ViewGroup implements ge.a, vs, fe.e {
     public static final Rect L = new Rect();
     public final a3.d D;
     public RenderNode E;
@@ -131,7 +131,7 @@ public final class d extends ViewGroup implements ge.a, us, fe.e {
         if (a(f7, f10) != 1 || (bVar = this.I) == null || (groupCallMessage = this.H) == null) {
             return;
         }
-        ((f30) bVar).a(groupCallMessage);
+        ((e30) bVar).a(groupCallMessage);
     }
 
     @Override // ge.a
@@ -159,9 +159,9 @@ public final class d extends ViewGroup implements ge.a, us, fe.e {
         return false;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.i4) {
+        if (i10 == at.i4) {
             invalidate();
         }
     }
@@ -245,7 +245,7 @@ public final class d extends ViewGroup implements ge.a, us, fe.e {
         if (f5Var != null) {
             f5Var.a(this);
         }
-        zs.e().c(this, zs.i4);
+        at.e().c(this, at.i4);
         GroupCallMessage groupCallMessage = this.H;
         if (groupCallMessage != null) {
             groupCallMessage.subscribeToStateUpdates(this.D);
@@ -261,7 +261,7 @@ public final class d extends ViewGroup implements ge.a, us, fe.e {
         if (f5Var != null) {
             f5Var.n(this);
         }
-        zs.e().n(this, zs.i4);
+        at.e().n(this, at.i4);
         GroupCallMessage groupCallMessage = this.H;
         if (groupCallMessage != null) {
             groupCallMessage.unsubscribeFromStateUpdates(this.D);
@@ -291,7 +291,7 @@ public final class d extends ViewGroup implements ge.a, us, fe.e {
             int paddingLeft = getPaddingLeft();
             int paddingRight = getPaddingRight();
             o0 o0Var = this.s;
-            int c10 = z20.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
+            int c10 = a30.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
             p pVar = this.w;
             pVar.measure(c10, makeMeasureSpec);
@@ -380,7 +380,7 @@ public final class d extends ViewGroup implements ge.a, us, fe.e {
             this.a.a(groupCallMessage4.isSendDelayed(), false);
             this.b.a(this.H.isSendError(), false);
         }
-        TLObject d22 = vp.r1(d20.s0).d2(groupCallMessage.fromId);
+        TLObject d22 = wp.r1(e20.s0).d2(groupCallMessage.fromId);
         String m10 = o5.m(d22);
         r8 r8Var = new r8((p6) null);
         r8Var.p(d22);
@@ -392,12 +392,12 @@ public final class d extends ViewGroup implements ge.a, us, fe.e {
         }
         this.r = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(m10);
-        spannableStringBuilder.setSpan(new x41(i0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new y41(i0.o()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(this.J, 0, spannableStringBuilder.length(), 33);
         o0 o0Var = groupCallMessage.visibleReaction;
         p pVar = this.w;
         if (o0Var == null) {
-            Spannable j02 = jj.j0(groupCallMessage.message, false, true, pVar.getPaint());
+            Spannable j02 = kj.j0(groupCallMessage.message, false, true, pVar.getPaint());
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             boolean b10 = b(spannableStringBuilder);
             boolean b11 = b(j02);
@@ -412,9 +412,9 @@ public final class d extends ViewGroup implements ge.a, us, fe.e {
             spannableStringBuilder2.append((CharSequence) j02);
             spannableStringBuilder = spannableStringBuilder2;
         } else if (o0Var.f != null) {
-            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(groupCallMessage.currentAccount).r.get(groupCallMessage.visibleReaction.f);
+            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) vi.b0(groupCallMessage.currentAccount).r.get(groupCallMessage.visibleReaction.f);
             if (tL_availableReaction != null) {
-                imageReceiver.q0(ic.b(tL_availableReaction.select_animation), "28_28", null, null, null, 0);
+                imageReceiver.q0(jc.b(tL_availableReaction.select_animation), "28_28", null, null, null, 0);
             }
         } else if (o0Var.g != 0) {
             f5 f5Var = new f5(0, groupCallMessage.currentAccount, groupCallMessage.visibleReaction.g);

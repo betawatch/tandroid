@@ -2,10 +2,10 @@ package i0;
 
 import android.graphics.Path;
 import android.util.Log;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import v7.w7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e {
     public char a;
@@ -150,27 +150,27 @@ public final class e {
             float f24 = fArr2[5];
             switch (c12) {
                 case 'A':
-                case zs.i1 /* 97 */:
+                case at.i1 /* 97 */:
                     i10 = 7;
                     break;
-                case zs.E0 /* 67 */:
-                case zs.k1 /* 99 */:
+                case at.E0 /* 67 */:
+                case at.k1 /* 99 */:
                     i10 = 6;
                     break;
-                case zs.J0 /* 72 */:
-                case zs.X0 /* 86 */:
-                case zs.p1 /* 104 */:
-                case zs.D1 /* 118 */:
+                case at.J0 /* 72 */:
+                case at.X0 /* 86 */:
+                case at.p1 /* 104 */:
+                case at.D1 /* 118 */:
                     i10 = 1;
                     break;
-                case zs.S0 /* 81 */:
-                case zs.U0 /* 83 */:
-                case zs.y1 /* 113 */:
-                case zs.A1 /* 115 */:
+                case at.S0 /* 81 */:
+                case at.U0 /* 83 */:
+                case at.y1 /* 113 */:
+                case at.A1 /* 115 */:
                     i10 = 4;
                     break;
-                case zs.b1 /* 90 */:
-                case zs.G1 /* 122 */:
+                case at.b1 /* 90 */:
+                case at.G1 /* 122 */:
                     path2.close();
                     path2.moveTo(f23, f24);
                     f19 = f23;

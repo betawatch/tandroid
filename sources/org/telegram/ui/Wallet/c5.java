@@ -3,11 +3,11 @@ package org.telegram.ui.Wallet;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.w71;
+import org.telegram.ui.Components.x71;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class c5 extends z2 {
+public final class c5 extends a3 {
     public final /* synthetic */ ViewGroup T1;
     public final /* synthetic */ View[] U1;
     public final /* synthetic */ Context V1;
@@ -20,28 +20,28 @@ public final class c5 extends z2 {
         this.V1 = context2;
     }
 
-    @Override // org.telegram.ui.Wallet.z2, org.telegram.ui.Components.ha
+    @Override // org.telegram.ui.Wallet.a3, org.telegram.ui.Components.ha
     public final void T0(float f7) {
         super.T0(f7);
-        if (this.T1 instanceof w71) {
+        if (this.T1 instanceof x71) {
             this.r0.setBounds(0, (int) f7, this.b.getWidth(), this.b.getHeight());
         }
     }
 
     @Override // org.telegram.ui.Components.ha
     public final boolean Z0() {
-        return !(this.T1 instanceof w71);
+        return !(this.T1 instanceof x71);
     }
 
-    @Override // org.telegram.ui.Wallet.z2
+    @Override // org.telegram.ui.Wallet.a3
     public final int d1() {
         return org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, this.I0);
     }
 
-    @Override // org.telegram.ui.Wallet.z2, org.telegram.ui.ActionBar.z2, android.app.Dialog
+    @Override // org.telegram.ui.Wallet.a3, org.telegram.ui.ActionBar.z2, android.app.Dialog
     public final void show() {
         super.show();
-        if (this.T1 instanceof w71) {
+        if (this.T1 instanceof x71) {
             View[] viewArr = this.U1;
             if (viewArr[0] == null) {
                 b5 b5Var = new b5(this, this.V1);

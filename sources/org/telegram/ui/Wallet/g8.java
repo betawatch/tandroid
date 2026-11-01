@@ -7,13 +7,13 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.jc;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g8 {
     public int[] A;
@@ -124,19 +124,19 @@ public final class g8 {
                 this.t = (TL_stars.starGiftAttributeBackdrop) starGiftAttribute2;
             }
             if (starGiftAttribute2 instanceof TL_stars.starGiftAttributePattern) {
-                this.d.q0(ic.b(((TL_stars.starGiftAttributePattern) starGiftAttribute2).document), "60_60_firstframe", null, null, nftitem.gift, 1);
+                this.d.q0(jc.b(((TL_stars.starGiftAttributePattern) starGiftAttribute2).document), "60_60_firstframe", null, null, nftitem.gift, 1);
             }
         }
-        d3 d3Var = new d3(this, i10);
+        e3 e3Var = new e3(this, i10);
         ag.c2 c2Var = this.c;
-        c2Var.g1 = d3Var;
-        this.d.g1 = d3Var;
+        c2Var.g1 = e3Var;
+        this.d.g1 = e3Var;
         c2Var.d = k2Var.getCurrentAccount();
         this.d.d = k2Var.getCurrentAccount();
         ag.c2 c2Var2 = this.c;
         c2Var2.u0 = false;
         c2Var2.W(1);
-        this.c.q0(ic.b(nftitem.gift.getDocument()), "120_120_nolimit", null, null, nftitem.gift, 1);
+        this.c.q0(jc.b(nftitem.gift.getDocument()), "120_120_nolimit", null, null, nftitem.gift, 1);
         if (h8Var.isAttachedToWindow()) {
             this.c.P();
             this.d.P();
@@ -151,7 +151,7 @@ public final class g8 {
         if (n10 == null || n10.isRecycled()) {
             return this.u;
         }
-        bi0 B = c2Var.B();
+        ci0 B = c2Var.B();
         int i10 = B == null ? 0 : B.a0;
         Bitmap bitmap = this.v;
         if (bitmap != null && this.G == n10 && this.E == i10) {
@@ -160,7 +160,7 @@ public final class g8 {
         this.G = n10;
         this.E = i10;
         if (bitmap == null) {
-            this.v = Bitmap.createBitmap(zs.L4, zs.L4, Bitmap.Config.ARGB_8888);
+            this.v = Bitmap.createBitmap(at.L4, at.L4, Bitmap.Config.ARGB_8888);
             this.x = new Canvas(this.v);
         }
         this.v.eraseColor(0);
@@ -185,9 +185,9 @@ public final class g8 {
             this.z = new int[82944];
             this.A = new int[82944];
             org.telegram.messenger.s5 s5Var = ga.a;
-            this.B = new int[zs.L4];
+            this.B = new int[at.L4];
         }
-        this.v.getPixels(this.y, 0, zs.L4, 0, 0, zs.L4, zs.L4);
+        this.v.getPixels(this.y, 0, at.L4, 0, 0, at.L4, at.L4);
         this.C = true;
         this.D = false;
         boolean z10 = this.w == null;

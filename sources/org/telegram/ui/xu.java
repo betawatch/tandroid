@@ -1,0 +1,56 @@
+package org.telegram.ui;
+
+import android.content.Context;
+import android.graphics.RectF;
+import android.os.Bundle;
+import org.telegram.messenger.ImageReceiver;
+
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes3.dex */
+public final class xu extends org.telegram.ui.Components.kx0 {
+    public final /* synthetic */ m4.c I;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xu(Context context, long j10, m4.c cVar) {
+        super(context);
+        this.I = cVar;
+        this.a = new RectF();
+        this.f = 0.0f;
+        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(false, true, true);
+        this.r = e6Var;
+        org.telegram.ui.Components.e6 e6Var2 = new org.telegram.ui.Components.e6(false, true, false);
+        this.s = e6Var2;
+        e6Var.setCallback(this);
+        e6Var2.setCallback(this);
+        this.n = Long.valueOf(j10);
+        org.telegram.ui.Components.r8 r8Var = new org.telegram.ui.Components.r8((org.telegram.ui.ActionBar.p6) null);
+        r8Var.p = 1.5f;
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.h = imageReceiver;
+        imageReceiver.H0(this);
+        if (j10 == Long.MAX_VALUE) {
+            this.w = org.telegram.messenger.dd.L0(2131752647, null);
+            r8Var.g(14);
+            imageReceiver.i0(null, r8Var, null);
+        } else {
+            String H = org.telegram.messenger.o5.H(imageReceiver, r8Var, org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).d2(j10));
+            this.w = H;
+            this.w = org.telegram.messenger.k6.m(H, null, false, null, 0);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kx0
+    public final void b() {
+        m4.c cVar = this.I;
+        y6 y6Var = (y6) cVar.c;
+        y6Var.Z.dismiss();
+        Bundle bundle = new Bundle();
+        long j10 = ((s6) cVar.b).a;
+        if (j10 > 0) {
+            bundle.putLong("user_id", j10);
+        } else {
+            bundle.putLong("chat_id", -j10);
+        }
+        y6Var.presentFragment(new ProfileActivity(bundle, null));
+    }
+}

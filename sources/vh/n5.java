@@ -22,27 +22,27 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.ff;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.u20;
+import org.telegram.messenger.gf;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.uz;
 import org.telegram.messenger.v20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.ye;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.w20;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.ze;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.mb;
-import org.telegram.ui.px0;
+import org.telegram.ui.ox0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n5 {
     public String A;
@@ -85,7 +85,7 @@ public final class n5 {
     public File Y0;
     public float Z;
     public File Z0;
-    public ff a1;
+    public gf a1;
     public long b;
     public boolean b0;
     public Bitmap b1;
@@ -108,7 +108,7 @@ public final class n5 {
     public boolean l;
     public int l0;
     public ArrayList m;
-    public ye m0;
+    public ze m0;
     public boolean n;
     public boolean o;
     public File o0;
@@ -130,7 +130,7 @@ public final class n5 {
     public Drawable x0;
     public String y;
     public TLRPC.InputDocument z;
-    public final int a = d20.s0;
+    public final int a = e20.s0;
     public double i = -1.0d;
     public float F = 1.0f;
     public float G = 1.0f;
@@ -160,27 +160,27 @@ public final class n5 {
         long maxMemory = runtime.maxMemory() - (runtime.totalMemory() - runtime.freeMemory());
         int i11 = options.outWidth;
         int i12 = options.outHeight;
-        if (i11 * i12 * 8 > maxMemory || Math.max(i11, i12) > 4200 || tz.o() <= 0) {
+        if (i11 * i12 * 8 > maxMemory || Math.max(i11, i12) > 4200 || uz.o() <= 0) {
             options.inScaled = true;
             options.inDensity = options.outWidth;
             options.inTargetDensity = i10;
         }
     }
 
-    public static Boolean D(jj jjVar) {
+    public static Boolean D(kj kjVar) {
         TLRPC.Peer peer;
-        if (jjVar != null) {
-            int i10 = jjVar.I1;
-            TLRPC.Message message = jjVar.k;
+        if (kjVar != null) {
+            int i10 = kjVar.I1;
+            TLRPC.Message message = kjVar.k;
             if (message != null) {
-                TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-org.telegram.messenger.o5.o(message.peer_id)));
+                TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-org.telegram.messenger.o5.o(message.peer_id)));
                 if ((L0 == null || !L0.noforwards) && org.telegram.messenger.w3.V(L0)) {
                     return Boolean.FALSE;
                 }
-                TLRPC.MessageFwdHeader messageFwdHeader = jjVar.k.fwd_from;
+                TLRPC.MessageFwdHeader messageFwdHeader = kjVar.k.fwd_from;
                 if (messageFwdHeader != null && (peer = messageFwdHeader.from_id) != null && (messageFwdHeader.flags & 4) != 0) {
                     long o10 = org.telegram.messenger.o5.o(peer);
-                    TLRPC.Chat L02 = vp.r1(i10).L0(Long.valueOf(-o10));
+                    TLRPC.Chat L02 = wp.r1(i10).L0(Long.valueOf(-o10));
                     if (o10 < 0 && ((L02 == null || !L02.noforwards) && org.telegram.messenger.w3.V(L02))) {
                         return Boolean.TRUE;
                     }
@@ -258,26 +258,26 @@ public final class n5 {
         return null;
     }
 
-    public static n5 l(ef efVar) {
+    public static n5 l(ff ffVar) {
         int i10;
         n5 n5Var = new n5();
-        n5Var.L = new File(efVar.I);
-        n5Var.Q = efVar.J;
-        n5Var.R = efVar.K;
-        n5Var.K = !efVar.d() && efVar.b;
-        n5Var.N = efVar.c;
-        long j10 = efVar.E * 1000;
+        n5Var.L = new File(ffVar.I);
+        n5Var.Q = ffVar.J;
+        n5Var.R = ffVar.K;
+        n5Var.K = !ffVar.d() && ffVar.b;
+        n5Var.N = ffVar.c;
+        long j10 = ffVar.E * 1000;
         n5Var.h0 = j10;
         n5Var.Z = 0.0f;
         n5Var.a0 = Math.min(1.0f, 59000.0f / j10);
         if (n5Var.K && n5Var.N == null) {
-            n5Var.N = "vthumb://" + efVar.C;
+            n5Var.N = "vthumb://" + ffVar.C;
         }
-        n5Var.A0 = efVar.T;
-        n5Var.B0 = efVar.U;
+        n5Var.A0 = ffVar.T;
+        n5Var.B0 = ffVar.U;
         n5Var.h(n5Var.L.getAbsolutePath());
-        int i11 = efVar.F;
-        if (i11 > 0 && (i10 = efVar.G) > 0) {
+        int i11 = ffVar.F;
+        if (i11 > 0 && (i10 = ffVar.G) > 0) {
             n5Var.k0 = i11;
             n5Var.l0 = i10;
         }
@@ -347,7 +347,7 @@ public final class n5 {
                         }
                         TLRPC.PhotoSize photoSize = storyItem.media.document.thumbs.get(i12);
                         if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                            n5Var.O = hc.F(null, photoSize.bytes);
+                            n5Var.O = ic.F(null, photoSize.bytes);
                             break;
                         }
                         org.telegram.messenger.b8.G(i10);
@@ -364,7 +364,7 @@ public final class n5 {
         ArrayList arrayList = n5Var.F0;
         arrayList.clear();
         ArrayList<TLRPC.PrivacyRule> arrayList2 = storyItem.privacy;
-        vp r12 = vp.r1(i10);
+        wp r12 = wp.r1(i10);
         ArrayList arrayList3 = new ArrayList();
         for (int i13 = 0; i13 < arrayList2.size(); i13++) {
             TLRPC.PrivacyRule privacyRule = arrayList2.get(i13);
@@ -406,14 +406,14 @@ public final class n5 {
         n5Var.I0 = storyItem.expire_date - storyItem.date;
         try {
             CharSequence m10 = org.telegram.messenger.k6.m(new SpannableString(storyItem.caption), org.telegram.ui.ActionBar.t6.o2.getFontMetricsInt(), true, null, 0);
-            jj.b(m10, storyItem.entities, true, false, true, false, 0);
-            n5Var.C0 = jj.A5(m10, storyItem.entities, org.telegram.ui.ActionBar.t6.o2.getFontMetricsInt(), false);
+            kj.b(m10, storyItem.entities, true, false, true, false, 0);
+            n5Var.C0 = kj.A5(m10, storyItem.entities, org.telegram.ui.ActionBar.t6.o2.getFontMetricsInt(), false);
         } catch (Exception unused) {
         }
         n5Var.A();
         n5Var.e(storyItem);
         n5Var.m = storyItem.media_areas;
-        n5Var.v0 = vp.r1(i10).i1(storyItem.dialogId);
+        n5Var.v0 = wp.r1(i10).i1(storyItem.dialogId);
         return n5Var;
     }
 
@@ -432,12 +432,12 @@ public final class n5 {
         return n5Var;
     }
 
-    public static long p(jj jjVar) {
-        Boolean D = D(jjVar);
+    public static long p(kj kjVar) {
+        Boolean D = D(kjVar);
         if (D == null) {
             return 0L;
         }
-        return D.booleanValue() ? org.telegram.messenger.o5.o(jjVar.k.fwd_from.from_id) : jj.B0(jjVar.k);
+        return D.booleanValue() ? org.telegram.messenger.o5.o(kjVar.k.fwd_from.from_id) : kj.B0(kjVar.k);
     }
 
     public static Bitmap q(l5 l5Var, int i10, int i11, int i12, boolean z10) {
@@ -463,7 +463,7 @@ public final class n5 {
         if (i15 <= i14 && i16 <= i13) {
             return l5Var.i(options);
         }
-        if (z10 && z11 && tz.o() >= 1) {
+        if (z10 && z11 && uz.o() >= 1) {
             Bitmap i17 = l5Var.i(options);
             float max = Math.max(i14 / i17.getWidth(), i13 / i17.getHeight());
             Bitmap createBitmap = Bitmap.createBitmap((int) (i17.getWidth() * max), (int) (i17.getHeight() * max), Bitmap.Config.ARGB_8888);
@@ -489,7 +489,7 @@ public final class n5 {
         long j10;
         if (document != null) {
             if (!"video/webm".equals(document.mime_type) && !"video/mp4".equals(document.mime_type)) {
-                if (jj.K2(document, true)) {
+                if (kj.K2(document, true)) {
                     RLottieNative a2 = RLottieNative.a(str, null, null, null, 0, null);
                     if (a2 != null) {
                         int i10 = a2.a[0];
@@ -514,7 +514,7 @@ public final class n5 {
         TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
         tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
         tL_fileLocationToBeDeprecated.dc_id = TLObject.FLAG_31;
-        tL_fileLocationToBeDeprecated.local_id = tz.p();
+        tL_fileLocationToBeDeprecated.local_id = uz.p();
         tL_fileLocationToBeDeprecated.file_reference = new byte[0];
         if ("mp4".equals(str) || "webm".equals(str)) {
             TLRPC.TL_videoSize_layer127 tL_videoSize_layer1272 = new TLRPC.TL_videoSize_layer127();
@@ -534,36 +534,36 @@ public final class n5 {
     }
 
     public static n5 y(ArrayList arrayList) {
-        jj jjVar;
+        kj kjVar;
         int i10;
         n5 n5Var = new n5();
         n5Var.u = true;
         n5Var.v = arrayList;
         n5Var.i0 = 1080;
         n5Var.j0 = 1920;
-        n5Var.z0 = p((jj) arrayList.get(0));
-        v20 v20Var = new v20();
-        v20Var.a = (byte) 6;
-        v20Var.c = 0.5f;
-        v20Var.d = 0.5f;
+        n5Var.z0 = p((kj) arrayList.get(0));
+        w20 w20Var = new w20();
+        w20Var.a = (byte) 6;
+        w20Var.c = 0.5f;
+        w20Var.d = 0.5f;
         ArrayList arrayList2 = new ArrayList();
         n5Var.T0 = arrayList2;
-        arrayList2.add(v20Var);
-        if (arrayList.size() == 1 && (jjVar = (jj) arrayList.get(0)) != null && ((i10 = jjVar.D) == 8 || i10 == 3 || i10 == 5)) {
-            TLRPC.Message message = jjVar.k;
+        arrayList2.add(w20Var);
+        if (arrayList.size() == 1 && (kjVar = (kj) arrayList.get(0)) != null && ((i10 = kjVar.D) == 8 || i10 == 3 || i10 == 5)) {
+            TLRPC.Message message = kjVar.k;
             if (message != null && message.attachPath != null) {
-                n5Var.L = new File(jjVar.k.attachPath);
+                n5Var.L = new File(kjVar.k.attachPath);
             }
             File file = n5Var.L;
             if (file == null || !file.exists()) {
                 org.telegram.messenger.b8.G(n5Var.a);
-                n5Var.L = org.telegram.messenger.b8.N(jjVar.k, false, true);
+                n5Var.L = org.telegram.messenger.b8.N(kjVar.k, false, true);
             }
             File file2 = n5Var.L;
             if (file2 != null && file2.exists()) {
                 n5Var.K = true;
                 n5Var.M = false;
-                long L0 = (long) (jjVar.L0() * 1000.0d);
+                long L0 = (long) (kjVar.L0() * 1000.0d);
                 n5Var.h0 = L0;
                 n5Var.Z = 0.0f;
                 n5Var.a0 = Math.min(1.0f, 59500.0f / L0);
@@ -606,7 +606,7 @@ public final class n5 {
     }
 
     public final void B() {
-        if (!this.K || v() || this.g || this.n || this.h0 <= 69000 || !d20.i(this.a).q()) {
+        if (!this.K || v() || this.g || this.n || this.h0 <= 69000 || !e20.i(this.a).q()) {
             return;
         }
         long j10 = this.h0 - 59000;
@@ -621,23 +621,23 @@ public final class n5 {
     public final boolean E() {
         ArrayList arrayList;
         ArrayList arrayList2;
-        jj jjVar;
+        kj kjVar;
         TLRPC.Message message;
         ArrayList arrayList3 = this.T0;
-        if (!this.K && this.y == null && this.o0 == null && ((arrayList = this.v) == null || arrayList.size() != 1 || (jjVar = (jj) this.v.get(0)) == null || (message = jjVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionStarGiftUnique))) {
+        if (!this.K && this.y == null && this.o0 == null && ((arrayList = this.v) == null || arrayList.size() != 1 || (kjVar = (kj) this.v.get(0)) == null || (message = kjVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionStarGiftUnique))) {
             if (arrayList3 != null && !arrayList3.isEmpty()) {
                 for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-                    v20 v20Var = (v20) arrayList3.get(i10);
-                    byte b10 = v20Var.a;
+                    w20 w20Var = (w20) arrayList3.get(i10);
+                    byte b10 = w20Var.a;
                     if (b10 != 0) {
-                        if (b10 == 1 && (arrayList2 = v20Var.k) != null && !arrayList2.isEmpty()) {
-                            for (int i11 = 0; i11 < v20Var.k.size(); i11++) {
-                                u20 u20Var = (u20) v20Var.k.get(i11);
-                                if (!u(u20Var.document, u20Var.a)) {
+                        if (b10 == 1 && (arrayList2 = w20Var.k) != null && !arrayList2.isEmpty()) {
+                            for (int i11 = 0; i11 < w20Var.k.size(); i11++) {
+                                v20 v20Var = (v20) w20Var.k.get(i11);
+                                if (!u(v20Var.document, v20Var.a)) {
                                 }
                             }
                         }
-                    } else if (!u(v20Var.B, v20Var.j)) {
+                    } else if (!u(w20Var.B, w20Var.j)) {
                     }
                 }
             }
@@ -1011,7 +1011,7 @@ public final class n5 {
             TLRPC.Photo photo = messageMedia.photo;
             if (photo == null) {
                 TLRPC.Document document = messageMedia.document;
-                if (document != null && jj.V2(document)) {
+                if (document != null && kj.V2(document)) {
                     TLRPC.TL_inputStickeredMediaDocument tL_inputStickeredMediaDocument = new TLRPC.TL_inputStickeredMediaDocument();
                     TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
                     tL_inputStickeredMediaDocument.id = tL_inputDocument;
@@ -1186,7 +1186,7 @@ public final class n5 {
         n5Var.T0 = new ArrayList();
         if (this.T0 != null) {
             for (int i11 = 0; i11 < this.T0.size(); i11++) {
-                n5Var.T0.add(((v20) this.T0.get(i11)).a());
+                n5Var.T0.add(((w20) this.T0.get(i11)).a());
             }
         }
         n5Var.U0 = this.U0;
@@ -1283,14 +1283,14 @@ public final class n5 {
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    v20 v20Var = (v20) obj;
-                    if (v20Var.a == 2 && !TextUtils.isEmpty(v20Var.t)) {
+                    w20 w20Var = (w20) obj;
+                    if (w20Var.a == 2 && !TextUtils.isEmpty(w20Var.t)) {
                         try {
-                            new File(v20Var.t).delete();
+                            new File(w20Var.t).delete();
                         } catch (Exception e) {
                             org.telegram.messenger.f8.g(e, true);
                         }
-                        v20Var.t = "";
+                        w20Var.t = "";
                     }
                 }
             }
@@ -1332,10 +1332,10 @@ public final class n5 {
         return (int) Math.ceil(r0 / 59000.0f);
     }
 
-    public final void s(q20 q20Var) {
+    public final void s(r20 r20Var) {
         int i10;
         if (!E()) {
-            q20Var.a(null);
+            r20Var.a(null);
             return;
         }
         if (!this.K && ((i10 = this.i0) > 720 || this.j0 > 1280)) {
@@ -1348,13 +1348,13 @@ public final class n5 {
         String absolutePath = file == null ? null : file.getAbsolutePath();
         int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, Math.max(1, v() ? this.T.size() : 0), 11);
         iArr[0] = new int[11];
-        px0 px0Var = new px0(this, absolutePath, iArr, q20Var, 27);
+        ox0 ox0Var = new ox0(this, absolutePath, iArr, r20Var, 27);
         if (!v()) {
             if (this.L == null) {
-                px0Var.run();
+                ox0Var.run();
                 return;
             } else {
-                Utilities.e.c(new rh.l5(absolutePath, iArr, px0Var, 16));
+                Utilities.e.c(new rh.l5(absolutePath, iArr, ox0Var, 16));
                 return;
             }
         }
@@ -1363,7 +1363,7 @@ public final class n5 {
             strArr[i11] = ((n5) this.T.get(i11)).L == null ? null : ((n5) this.T.get(i11)).L.getAbsolutePath();
             iArr[i11] = new int[11];
         }
-        Utilities.e.c(new rh.l5(strArr, iArr, px0Var, 15));
+        Utilities.e.c(new rh.l5(strArr, iArr, ox0Var, 15));
     }
 
     public final boolean t() {
@@ -1401,7 +1401,7 @@ public final class n5 {
                     long parseInt = Integer.parseInt(this.N.substring(9));
                     options.inJustDecodeBounds = true;
                     MediaStore.Video.Thumbnails.getThumbnail(org.telegram.messenger.w0.b.getContentResolver(), parseInt, 1, options);
-                    options.inSampleSize = d(options, zs.P3, zs.P3);
+                    options.inSampleSize = d(options, at.P3, at.P3);
                     options.inJustDecodeBounds = false;
                     options.inPreferredConfig = Bitmap.Config.RGB_565;
                     options.inDither = true;
@@ -1409,7 +1409,7 @@ public final class n5 {
                 } else {
                     options.inJustDecodeBounds = true;
                     BitmapFactory.decodeFile(this.N);
-                    options.inSampleSize = d(options, zs.P3, zs.P3);
+                    options.inSampleSize = d(options, at.P3, at.P3);
                     options.inJustDecodeBounds = false;
                     options.inPreferredConfig = Bitmap.Config.RGB_565;
                     options.inDither = true;

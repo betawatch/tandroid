@@ -1,770 +1,1482 @@
 package org.telegram.messenger;
 
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.drawable.Drawable;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.regex.Pattern;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.gi0;
-import org.telegram.ui.Components.ji0;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.u70;
-import org.telegram.ui.Components.vq0;
-import org.telegram.ui.Components.z60;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.a80;
-import org.telegram.ui.d50;
-import org.telegram.ui.f70;
-import org.telegram.ui.hf0;
-import org.telegram.ui.l50;
-import org.telegram.ui.l80;
-import org.telegram.ui.m90;
-import org.telegram.ui.pb1;
-import org.telegram.ui.s90;
-import org.telegram.ui.se0;
-import org.telegram.ui.sm0;
-import org.telegram.ui.w50;
-import org.telegram.ui.y70;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fe implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ vs f;
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ fe(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num, we weVar, we weVar2, we weVar3) {
+    public /* synthetic */ fe(MediaController mediaController, File file, File file2, TLRPC.TL_document tL_document, int i10, boolean z10, int i11, boolean z11) {
         this.a = 0;
+        this.f = mediaController;
+        this.h = file;
+        this.n = file2;
+        this.r = tL_document;
         this.b = i10;
-        this.c = arrayList;
-        this.d = arrayList2;
-        this.e = num;
-        this.f = weVar;
-        this.h = weVar2;
-        this.n = weVar3;
+        this.d = z10;
+        this.c = i11;
+        this.e = z11;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:210:0x0583, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x00e0, code lost:
     
-        if (r11.chat.has_geo != false) goto L187;
+        if (r13.isRecycled() != false) goto L46;
      */
-    /* JADX WARN: Type inference failed for: r3v36 */
-    /* JADX WARN: Type inference failed for: r3v37, types: [java.lang.String, org.telegram.ui.ActionBar.p6] */
-    /* JADX WARN: Type inference failed for: r3v38 */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0339  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x035f  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x040c  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0470 A[LOOP:2: B:151:0x046e->B:152:0x0470, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x044d  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x01db  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x021f  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0240  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0210  */
+    /* JADX WARN: Type inference failed for: r12v22 */
+    /* JADX WARN: Type inference failed for: r12v5 */
+    /* JADX WARN: Type inference failed for: r12v6, types: [org.telegram.messenger.ImageReceiver] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        sm0 sm0Var;
-        ?? r32;
-        org.telegram.ui.Components.cc a02;
+        boolean z10;
+        vh.b4 b4Var;
+        File file;
+        File file2;
+        File file3;
+        String str;
+        boolean z11;
+        File file4;
+        final File file5;
+        File file6;
+        File file7;
+        final File file8;
+        int size;
         int i10;
+        vh.b4 b4Var2;
+        String str2;
+        jg.j1 p02;
+        ?? r12;
+        File file9;
+        File file10;
+        vh.b4 b4Var3;
         int i11;
-        String i12;
-        JSONObject jSONObject;
-        TL_wallet.tonConnectSession tonconnectsession;
-        JSONObject put;
-        int i13 = this.a;
-        int i14 = this.b;
-        boolean z10 = false;
-        z10 = false;
-        Object obj = this.n;
-        Object obj2 = this.h;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.c;
-        Object obj6 = this.d;
-        switch (i13) {
+        int i12;
+        vh.n5 n5Var;
+        File file11;
+        int i13;
+        vh.b4 b4Var4;
+        int i14;
+        vh.n5 n5Var2;
+        int i15;
+        File file12;
+        File file13;
+        ImageReceiver imageReceiver;
+        switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj5;
-                ArrayList arrayList2 = (ArrayList) obj6;
-                Integer num = (Integer) obj4;
-                we weVar = (we) obj3;
-                we weVar2 = (we) obj2;
-                we weVar3 = (we) obj;
-                String[] strArr = MediaController.U1;
-                boolean U1 = PhotoViewer.v1().U1();
-                int i15 = this.b;
-                if (!U1 || MediaController.f2) {
-                    MediaController.a2 = arrayList;
-                    MediaController.b2 = arrayList2;
-                    MediaController.c2 = null;
-                    MediaController.Z1 = weVar2;
-                    MediaController.Y1 = weVar;
-                    zs.e().k(zs.r2, Integer.valueOf(i15), arrayList, arrayList2, num);
-                    break;
-                } else {
-                    fe feVar = MediaController.c2;
-                    if (feVar != null) {
-                        i0.r(feVar);
-                    }
-                    fe feVar2 = new fe(i15, arrayList, arrayList2, num, weVar, weVar2, weVar3);
-                    MediaController.c2 = feVar2;
-                    i0.h3(feVar2, 1000);
-                    break;
-                }
-                break;
+                MediaController.c((MediaController) this.f, (File) this.h, (File) this.n, (TLRPC.TL_document) this.r, this.b, this.d, this.c, this.e);
+                return;
             case 1:
-                qz qzVar = (qz) obj5;
-                TLObject tLObject = (TLObject) obj6;
-                TLRPC.InputFile inputFile = (TLRPC.InputFile) obj4;
-                TLRPC.InputMedia inputMedia = (TLRPC.InputMedia) obj3;
-                cz czVar = (cz) obj2;
-                String str = (String) obj;
-                qzVar.getClass();
-                if (tLObject instanceof TLRPC.TL_messageMediaDocument) {
-                    TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = new TLRPC.TL_inputMediaUploadedPhoto();
-                    tL_inputMediaUploadedPhoto.live_photo = true;
-                    tL_inputMediaUploadedPhoto.file = inputFile;
-                    tL_inputMediaUploadedPhoto.spoiler = inputMedia.spoiler;
-                    TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                    tL_inputMediaUploadedPhoto.video = tL_inputDocument;
-                    TLRPC.Document document = ((TLRPC.TL_messageMediaDocument) tLObject).document;
-                    tL_inputDocument.id = document.id;
-                    tL_inputDocument.access_hash = document.access_hash;
-                    byte[] bArr = document.file_reference;
-                    tL_inputDocument.file_reference = bArr;
-                    if (bArr == null) {
-                        tL_inputDocument.file_reference = new byte[0];
-                    }
-                    TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) czVar.c;
-                    if (i14 >= 0 && i14 < tL_messages_sendMultiMedia.multi_media.size()) {
-                        tL_messages_sendMultiMedia.multi_media.get(i14).media = tL_inputMediaUploadedPhoto;
-                    }
-                    ArrayList arrayList3 = czVar.A;
-                    if (arrayList3 != null && i14 >= 0 && i14 < arrayList3.size()) {
-                        czVar.A.set(i14, tL_inputMediaUploadedPhoto);
-                    }
-                    czVar.j = null;
-                    czVar.i = null;
-                    HashMap hashMap = czVar.E;
-                    if (hashMap != null) {
-                        hashMap.remove(str + "_ct");
-                    }
-                    qzVar.A0(czVar, tL_inputMediaUploadedPhoto, null, str);
-                    break;
-                } else {
-                    czVar.c();
-                    break;
+                vh.o8 o8Var = (vh.o8) this.f;
+                vh.b4 b4Var5 = (vh.b4) this.h;
+                final vh.n5 n5Var3 = (vh.n5) this.n;
+                final org.telegram.utils.twidget.v vVar = (org.telegram.utils.twidget.v) this.r;
+                int i16 = o8Var.c;
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                b4Var5.q0(arrayList2, false, false, false, false, n5Var3);
+                if (!n5Var3.K) {
+                    n5Var3.S0 = Utilities.k(b4Var5.getLcm(), 7500L, 5000L);
                 }
-                break;
-            case 2:
-                org.telegram.ui.h4 h4Var = (org.telegram.ui.h4) obj5;
-                gf.e eVar = (gf.e) obj6;
-                TLObject tLObject2 = (TLObject) obj4;
-                String str2 = (String) obj3;
-                org.telegram.ui.g0 g0Var = (org.telegram.ui.g0) obj2;
-                TLRPC.TL_messages_getWebPage tL_messages_getWebPage = (TLRPC.TL_messages_getWebPage) obj;
-                if (h4Var.G0 != 0 && i14 == h4Var.I0) {
-                    if (eVar != null) {
-                        eVar.b();
-                    }
-                    h4Var.G0 = 0;
-                    h4Var.Z(false);
-                    if (h4Var.V) {
-                        if (tLObject2 instanceof TLRPC.TL_messages_webPage) {
-                            TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject2;
-                            vp.r1(h4Var.X).V3(tL_messages_webPage.users, false);
-                            vp.r1(h4Var.X).P3(tL_messages_webPage.chats, false);
-                            TLRPC.WebPage webPage = tL_messages_webPage.webpage;
-                            if (webPage == null || !(webPage.cached_page instanceof TL_iv.TL_page)) {
-                                if (!((Boolean) g0Var.run()).booleanValue()) {
-                                    if (vp.r1(h4Var.X).L2(tL_messages_getWebPage.url)) {
-                                        h4Var.e(1, tL_messages_getWebPage.url);
-                                        break;
-                                    } else {
-                                        gf.f.r(h4Var.L, tL_messages_getWebPage.url);
-                                        break;
-                                    }
-                                }
-                            } else {
-                                h4Var.f(webPage, str2, 1);
-                                break;
-                            }
+                List<TLRPC.InputDocument> masks = b4Var5.getMasks();
+                final ArrayList arrayList3 = masks != null ? new ArrayList(masks) : null;
+                boolean z12 = n5Var3.K;
+                boolean E = n5Var3.E();
+                arrayList2.clear();
+                Bitmap q02 = b4Var5.q0(arrayList2, true, false, false, !z12, n5Var3);
+                ArrayList arrayList4 = arrayList2.isEmpty() ? null : arrayList2;
+                File w9 = vh.n5.w(i16, "png");
+                arrayList.add(new org.telegram.ui.ActionBar.w3(q02, w9, 1));
+                if (n5Var3.u) {
+                    z10 = E;
+                    long j10 = n5Var3.z0;
+                    if (j10 != Long.MIN_VALUE) {
+                        Drawable drawable = n5Var3.x0;
+                        if (drawable == null) {
+                            file = null;
+                            drawable = vh.k4.e(null, i16, j10, o8Var.c2);
                         } else {
-                            if (tLObject2 instanceof TLRPC.TL_webPage) {
-                                TLRPC.TL_webPage tL_webPage = (TLRPC.TL_webPage) tLObject2;
-                                if (tL_webPage.cached_page instanceof TL_iv.TL_page) {
-                                    h4Var.f(tL_webPage, str2, 1);
-                                    break;
-                                }
-                            }
-                            if (!((Boolean) g0Var.run()).booleanValue()) {
-                                if (vp.r1(h4Var.X).L2(tL_messages_getWebPage.url)) {
-                                    h4Var.e(1, tL_messages_getWebPage.url);
-                                    break;
-                                } else {
-                                    gf.f.r(h4Var.L, tL_messages_getWebPage.url);
-                                    break;
-                                }
-                            }
+                            file = null;
                         }
-                    }
-                }
-                break;
-            case 3:
-                TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) obj5;
-                TL_phone.toggleGroupCallSettings togglegroupcallsettings = new TL_phone.toggleGroupCallSettings();
-                togglegroupcallsettings.call = inputGroupCall;
-                togglegroupcallsettings.reset_invite_hash = true;
-                int i16 = this.b;
-                ConnectionsManager.getInstance(i16).sendRequest(togglegroupcallsettings, new org.telegram.ui.t8(i16, inputGroupCall, (String[]) obj6, (FrameLayout) obj4, (p80) obj3, (org.telegram.ui.ActionBar.z2) obj2, (org.telegram.ui.ActionBar.p6) obj));
-                break;
-            case 4:
-                TLObject tLObject3 = (TLObject) obj5;
-                org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) obj6;
-                Context context = (Context) obj4;
-                TL_phone.exportGroupCallInvite exportgroupcallinvite = (TL_phone.exportGroupCallInvite) obj3;
-                org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) obj2;
-                l50 l50Var = (l50) obj;
-                if (tLObject3 instanceof TL_phone.exportedGroupCallInvite) {
-                    x1Var.dismiss();
-                    org.telegram.ui.j9.m0(context, this.b, exportgroupcallinvite.call, ((TL_phone.exportedGroupCallInvite) tLObject3).link, p6Var, true, true);
-                } else {
-                    x1Var.dismiss();
-                }
-                i0.g3(l50Var);
-                break;
-            case 5:
-                TLObject tLObject4 = (TLObject) obj3;
-                ArrayList arrayList4 = (ArrayList) obj5;
-                AtomicInteger atomicInteger = (AtomicInteger) obj2;
-                ArrayList arrayList5 = (ArrayList) obj6;
-                org.telegram.ui.qq qqVar = (org.telegram.ui.qq) obj;
-                if (((TLRPC.TL_error) obj4) == null && (tLObject4 instanceof TLRPC.TL_channels_channelParticipants)) {
-                    arrayList4.set(i14, (TLRPC.TL_channels_channelParticipants) tLObject4);
-                }
-                atomicInteger.getAndIncrement();
-                if (atomicInteger.get() == arrayList5.size()) {
-                    qqVar.run();
-                    break;
-                }
-                break;
-            case 6:
-                TLObject tLObject5 = (TLObject) obj6;
-                TLRPC.Document document2 = (TLRPC.Document) obj4;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
-                TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = (TLRPC.TL_stickers_addStickerToSet) obj;
-                ((org.telegram.ui.ActionBar.x1) obj5).dismiss();
-                if (tLObject5 instanceof TLRPC.TL_messages_stickerSet) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject5;
-                    ui.b0(i14).I1(tL_messages_stickerSet, true);
-                    if (!ui.b0(i14).B0(tL_messages_stickerSet.set.id, true)) {
-                        ui.b0(i14).f2(null, tLObject5, 2, null, false, false);
-                    }
-                    i0.h3(new gi0(13, tLObject5, document2), 250L);
-                    break;
-                } else if (tL_error != null) {
-                    if (w8.r(tL_error.text)) {
-                        w8.n(i14).u(new Object[]{tL_stickers_addStickerToSet}, obj2);
-                        break;
-                    } else {
-                        org.telegram.ui.Components.cc.d0(tL_error);
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                d50.a((org.telegram.ui.ActionBar.x1) obj5, (gf.e) obj6, (TLObject) obj4, this.b, (Context) obj3, (TLRPC.TL_inputGroupCallSlug) obj2, (TLRPC.TL_error) obj);
-                break;
-            case 8:
-                LaunchActivity launchActivity = (LaunchActivity) obj5;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj6;
-                TLObject tLObject6 = (TLObject) obj4;
-                org.telegram.ui.ActionBar.x1 x1Var2 = (org.telegram.ui.ActionBar.x1) obj3;
-                f70 f70Var = (f70) obj2;
-                String str3 = (String) obj;
-                ArrayList arrayList6 = launchActivity.d0;
-                if (!launchActivity.isFinishing()) {
-                    if (tL_error2 != null || launchActivity.q0 == null) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
-                        String L0 = cd.L0(R.string.AppName, null);
-                        org.telegram.ui.ActionBar.x1 x1Var3 = alertDialog$Builder.a;
-                        x1Var3.R = L0;
-                        if (tL_error2.text.startsWith("FLOOD_WAIT")) {
-                            x1Var3.T = cd.L0(2131750688, null);
-                        } else if (tL_error2.text.startsWith("INVITE_HASH_EXPIRED")) {
-                            x1Var3.R = cd.L0(2131750876, null);
-                            x1Var3.T = cd.L0(2131749162, null);
+                        if (drawable != null) {
+                            File w10 = vh.n5.w(i16, "webp");
+                            Bitmap createBitmap = Bitmap.createBitmap(this.b, this.c, Bitmap.Config.ARGB_8888);
+                            b4Var = b4Var5;
+                            vh.n5.j(new Canvas(createBitmap), drawable, createBitmap.getWidth(), createBitmap.getHeight());
+                            arrayList.add(new org.telegram.ui.ActionBar.w3(createBitmap, w10, 2));
+                            file9 = w10;
                         } else {
-                            x1Var3.T = cd.L0(2131749085, null);
+                            b4Var = b4Var5;
+                            file9 = file;
                         }
-                        alertDialog$Builder.k(cd.L0(2131747847, null), null);
-                        launchActivity.F0(alertDialog$Builder);
-                    } else {
-                        TLRPC.ChatInvite chatInvite = (TLRPC.ChatInvite) tLObject6;
-                        TLRPC.Chat chat = chatInvite.chat;
-                        if (chat != null) {
-                            if (w3.l0(chat)) {
-                                TLRPC.Chat chat2 = chatInvite.chat;
-                                if (!chat2.kicked) {
-                                    if (!w3.t0(chat2)) {
-                                        if (!(chatInvite instanceof TLRPC.TL_chatInvitePeek)) {
-                                            break;
+                        file2 = file9;
+                        if (n5Var3.u && n5Var3.K) {
+                            int i17 = n5Var3.k0;
+                            int i18 = n5Var3.l0;
+                            p02 = b4Var.p0();
+                            if (p02 != null) {
+                                jg.c1 c1Var = p02.r0;
+                                if (c1Var.getChildCount() == 1 && i17 > 0 && i18 > 0) {
+                                    if (c1Var.getChildAt(0) instanceof org.telegram.ui.Cells.q1) {
+                                        r12 = ((org.telegram.ui.Cells.q1) c1Var.getChildAt(0)).getPhotoImage();
+                                        if (r12 != 0) {
+                                            float f7 = r12.M0;
+                                            if (((int) f7) > 0) {
+                                                float f10 = r12.N0;
+                                                file3 = file2;
+                                                if (((int) f10) > 0) {
+                                                    float f11 = i17;
+                                                    float f12 = i18;
+                                                    float max = Math.max(f7 / f11, f10 / f12);
+                                                    int i19 = (int) ((f11 * max) / 2.0f);
+                                                    int i20 = (int) ((f12 * max) / 2.0f);
+                                                    Bitmap createBitmap2 = Bitmap.createBitmap(i19, i20, Bitmap.Config.ARGB_8888);
+                                                    float[] fArr = new float[8];
+                                                    str = "png";
+                                                    int i21 = 0;
+                                                    while (true) {
+                                                        int[] iArr = r12.W0;
+                                                        z11 = z10;
+                                                        if (i21 >= iArr.length) {
+                                                            Canvas canvas = new Canvas(createBitmap2);
+                                                            Path path = new Path();
+                                                            canvas.scale(0.5f, 0.5f);
+                                                            RectF rectF = i0.P;
+                                                            float f13 = (i19 * 2.0f) / 2.0f;
+                                                            float f14 = r12.M0 / 2.0f;
+                                                            float f15 = (i20 * 2.0f) / 2.0f;
+                                                            float f16 = r12.N0 / 2.0f;
+                                                            file4 = w9;
+                                                            rectF.set(f13 - f14, f15 - f16, f14 + f13, f16 + f15);
+                                                            path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                                                            Paint paint = new Paint(1);
+                                                            paint.setColor(-1);
+                                                            canvas.drawPath(path, paint);
+                                                            File w11 = vh.n5.w(i16, "webp");
+                                                            arrayList.add(new org.telegram.ui.ActionBar.w3(createBitmap2, w11, 3));
+                                                            file5 = w11;
+                                                            if (b4Var.r0()) {
+                                                                file6 = n5Var3.R0;
+                                                                file7 = n5Var3.Q0;
+                                                            } else {
+                                                                if (z11) {
+                                                                    b4Var2 = b4Var;
+                                                                    str2 = str;
+                                                                    file6 = file;
+                                                                } else {
+                                                                    b4Var2 = b4Var;
+                                                                    str2 = str;
+                                                                    Bitmap q03 = b4Var2.q0(new ArrayList(), false, true, false, false, n5Var3);
+                                                                    file6 = vh.n5.w(i16, str2);
+                                                                    arrayList.add(new org.telegram.ui.ActionBar.w3(q03, file6, 4));
+                                                                }
+                                                                if (!this.d) {
+                                                                    file8 = file;
+                                                                    final int i22 = 1;
+                                                                    final boolean z13 = this.e;
+                                                                    final ArrayList arrayList5 = arrayList4;
+                                                                    final File file14 = file3;
+                                                                    final File file15 = file6;
+                                                                    final File file16 = file4;
+                                                                    i0.g3(new Runnable() { // from class: vh.b7
+                                                                        @Override // java.lang.Runnable
+                                                                        public final void run() {
+                                                                            switch (i22) {
+                                                                                case 0:
+                                                                                    n5 n5Var4 = n5Var3;
+                                                                                    y6 y6Var = (y6) vVar;
+                                                                                    try {
+                                                                                        File file17 = n5Var4.P0;
+                                                                                        if (file17 != null) {
+                                                                                            file17.delete();
+                                                                                        }
+                                                                                    } catch (Exception unused) {
+                                                                                    }
+                                                                                    try {
+                                                                                        File file18 = n5Var4.R0;
+                                                                                        if (file18 != null) {
+                                                                                            file18.delete();
+                                                                                        }
+                                                                                    } catch (Exception unused2) {
+                                                                                    }
+                                                                                    try {
+                                                                                        File file19 = n5Var4.Q0;
+                                                                                        if (file19 != null) {
+                                                                                            file19.delete();
+                                                                                        }
+                                                                                    } catch (Exception unused3) {
+                                                                                    }
+                                                                                    n5Var4.P0 = null;
+                                                                                    n5Var4.R0 = null;
+                                                                                    n5Var4.Q0 = null;
+                                                                                    File file20 = n5Var4.Y0;
+                                                                                    if (file20 != null) {
+                                                                                        try {
+                                                                                            file20.delete();
+                                                                                        } catch (Exception e) {
+                                                                                            org.telegram.messenger.f8.g(e, true);
+                                                                                        }
+                                                                                        n5Var4.Y0 = null;
+                                                                                    }
+                                                                                    File file21 = n5Var4.X0;
+                                                                                    if (file21 != null) {
+                                                                                        try {
+                                                                                            file21.delete();
+                                                                                        } catch (Exception e7) {
+                                                                                            org.telegram.messenger.f8.g(e7, true);
+                                                                                        }
+                                                                                        n5Var4.X0 = null;
+                                                                                    }
+                                                                                    n5Var4.j |= z13;
+                                                                                    n5Var4.T0 = arrayList5;
+                                                                                    n5Var4.P0 = file16;
+                                                                                    n5Var4.Y0 = file14;
+                                                                                    n5Var4.R0 = file15;
+                                                                                    n5Var4.X0 = file5;
+                                                                                    n5Var4.Q0 = file8;
+                                                                                    n5Var4.U0 = arrayList3;
+                                                                                    y6Var.run();
+                                                                                    break;
+                                                                                default:
+                                                                                    n5 n5Var5 = n5Var3;
+                                                                                    org.telegram.utils.twidget.v vVar2 = (org.telegram.utils.twidget.v) vVar;
+                                                                                    try {
+                                                                                        File file22 = n5Var5.P0;
+                                                                                        if (file22 != null) {
+                                                                                            file22.delete();
+                                                                                        }
+                                                                                    } catch (Exception unused4) {
+                                                                                    }
+                                                                                    try {
+                                                                                        File file23 = n5Var5.R0;
+                                                                                        if (file23 != null) {
+                                                                                            file23.delete();
+                                                                                        }
+                                                                                    } catch (Exception unused5) {
+                                                                                    }
+                                                                                    try {
+                                                                                        File file24 = n5Var5.Q0;
+                                                                                        if (file24 != null) {
+                                                                                            file24.delete();
+                                                                                        }
+                                                                                    } catch (Exception unused6) {
+                                                                                    }
+                                                                                    n5Var5.P0 = null;
+                                                                                    n5Var5.R0 = null;
+                                                                                    n5Var5.Q0 = null;
+                                                                                    File file25 = n5Var5.Y0;
+                                                                                    if (file25 != null) {
+                                                                                        try {
+                                                                                            file25.delete();
+                                                                                        } catch (Exception e10) {
+                                                                                            org.telegram.messenger.f8.g(e10, true);
+                                                                                        }
+                                                                                        n5Var5.Y0 = null;
+                                                                                    }
+                                                                                    File file26 = n5Var5.X0;
+                                                                                    if (file26 != null) {
+                                                                                        try {
+                                                                                            file26.delete();
+                                                                                        } catch (Exception e11) {
+                                                                                            org.telegram.messenger.f8.g(e11, true);
+                                                                                        }
+                                                                                        n5Var5.X0 = null;
+                                                                                    }
+                                                                                    n5Var5.j |= z13;
+                                                                                    n5Var5.T0 = arrayList5;
+                                                                                    n5Var5.P0 = file16;
+                                                                                    n5Var5.Y0 = file14;
+                                                                                    n5Var5.R0 = file15;
+                                                                                    n5Var5.X0 = file5;
+                                                                                    n5Var5.Q0 = file8;
+                                                                                    n5Var5.U0 = arrayList3;
+                                                                                    vVar2.run();
+                                                                                    break;
+                                                                            }
+                                                                        }
+                                                                    });
+                                                                    size = arrayList.size();
+                                                                    i10 = 0;
+                                                                    while (i10 < size) {
+                                                                        Object obj = arrayList.get(i10);
+                                                                        i10++;
+                                                                        ((Runnable) obj).run();
+                                                                    }
+                                                                    return;
+                                                                }
+                                                                Bitmap blurBitmap = b4Var2.getBlurBitmap();
+                                                                file7 = vh.n5.w(i16, str2);
+                                                                arrayList.add(new org.telegram.ui.ActionBar.w3(blurBitmap, file7, 5));
+                                                            }
+                                                            file8 = file7;
+                                                            final int i222 = 1;
+                                                            final boolean z132 = this.e;
+                                                            final ArrayList arrayList52 = arrayList4;
+                                                            final File file142 = file3;
+                                                            final File file152 = file6;
+                                                            final File file162 = file4;
+                                                            i0.g3(new Runnable() { // from class: vh.b7
+                                                                @Override // java.lang.Runnable
+                                                                public final void run() {
+                                                                    switch (i222) {
+                                                                        case 0:
+                                                                            n5 n5Var4 = n5Var3;
+                                                                            y6 y6Var = (y6) vVar;
+                                                                            try {
+                                                                                File file17 = n5Var4.P0;
+                                                                                if (file17 != null) {
+                                                                                    file17.delete();
+                                                                                }
+                                                                            } catch (Exception unused) {
+                                                                            }
+                                                                            try {
+                                                                                File file18 = n5Var4.R0;
+                                                                                if (file18 != null) {
+                                                                                    file18.delete();
+                                                                                }
+                                                                            } catch (Exception unused2) {
+                                                                            }
+                                                                            try {
+                                                                                File file19 = n5Var4.Q0;
+                                                                                if (file19 != null) {
+                                                                                    file19.delete();
+                                                                                }
+                                                                            } catch (Exception unused3) {
+                                                                            }
+                                                                            n5Var4.P0 = null;
+                                                                            n5Var4.R0 = null;
+                                                                            n5Var4.Q0 = null;
+                                                                            File file20 = n5Var4.Y0;
+                                                                            if (file20 != null) {
+                                                                                try {
+                                                                                    file20.delete();
+                                                                                } catch (Exception e) {
+                                                                                    org.telegram.messenger.f8.g(e, true);
+                                                                                }
+                                                                                n5Var4.Y0 = null;
+                                                                            }
+                                                                            File file21 = n5Var4.X0;
+                                                                            if (file21 != null) {
+                                                                                try {
+                                                                                    file21.delete();
+                                                                                } catch (Exception e7) {
+                                                                                    org.telegram.messenger.f8.g(e7, true);
+                                                                                }
+                                                                                n5Var4.X0 = null;
+                                                                            }
+                                                                            n5Var4.j |= z132;
+                                                                            n5Var4.T0 = arrayList52;
+                                                                            n5Var4.P0 = file162;
+                                                                            n5Var4.Y0 = file142;
+                                                                            n5Var4.R0 = file152;
+                                                                            n5Var4.X0 = file5;
+                                                                            n5Var4.Q0 = file8;
+                                                                            n5Var4.U0 = arrayList3;
+                                                                            y6Var.run();
+                                                                            break;
+                                                                        default:
+                                                                            n5 n5Var5 = n5Var3;
+                                                                            org.telegram.utils.twidget.v vVar2 = (org.telegram.utils.twidget.v) vVar;
+                                                                            try {
+                                                                                File file22 = n5Var5.P0;
+                                                                                if (file22 != null) {
+                                                                                    file22.delete();
+                                                                                }
+                                                                            } catch (Exception unused4) {
+                                                                            }
+                                                                            try {
+                                                                                File file23 = n5Var5.R0;
+                                                                                if (file23 != null) {
+                                                                                    file23.delete();
+                                                                                }
+                                                                            } catch (Exception unused5) {
+                                                                            }
+                                                                            try {
+                                                                                File file24 = n5Var5.Q0;
+                                                                                if (file24 != null) {
+                                                                                    file24.delete();
+                                                                                }
+                                                                            } catch (Exception unused6) {
+                                                                            }
+                                                                            n5Var5.P0 = null;
+                                                                            n5Var5.R0 = null;
+                                                                            n5Var5.Q0 = null;
+                                                                            File file25 = n5Var5.Y0;
+                                                                            if (file25 != null) {
+                                                                                try {
+                                                                                    file25.delete();
+                                                                                } catch (Exception e10) {
+                                                                                    org.telegram.messenger.f8.g(e10, true);
+                                                                                }
+                                                                                n5Var5.Y0 = null;
+                                                                            }
+                                                                            File file26 = n5Var5.X0;
+                                                                            if (file26 != null) {
+                                                                                try {
+                                                                                    file26.delete();
+                                                                                } catch (Exception e11) {
+                                                                                    org.telegram.messenger.f8.g(e11, true);
+                                                                                }
+                                                                                n5Var5.X0 = null;
+                                                                            }
+                                                                            n5Var5.j |= z132;
+                                                                            n5Var5.T0 = arrayList52;
+                                                                            n5Var5.P0 = file162;
+                                                                            n5Var5.Y0 = file142;
+                                                                            n5Var5.R0 = file152;
+                                                                            n5Var5.X0 = file5;
+                                                                            n5Var5.Q0 = file8;
+                                                                            n5Var5.U0 = arrayList3;
+                                                                            vVar2.run();
+                                                                            break;
+                                                                    }
+                                                                }
+                                                            });
+                                                            size = arrayList.size();
+                                                            i10 = 0;
+                                                            while (i10 < size) {
+                                                            }
+                                                            return;
+                                                        }
+                                                        int i23 = i21 * 2;
+                                                        float f17 = iArr[i21];
+                                                        fArr[i23] = f17;
+                                                        fArr[i23 + 1] = f17;
+                                                        i21++;
+                                                        z10 = z11;
+                                                    }
+                                                }
+                                                str = "png";
+                                                z11 = z10;
+                                                file4 = w9;
+                                                file5 = file;
+                                                if (b4Var.r0()) {
+                                                }
+                                                file8 = file7;
+                                                final int i2222 = 1;
+                                                final boolean z1322 = this.e;
+                                                final ArrayList arrayList522 = arrayList4;
+                                                final File file1422 = file3;
+                                                final File file1522 = file6;
+                                                final File file1622 = file4;
+                                                i0.g3(new Runnable() { // from class: vh.b7
+                                                    @Override // java.lang.Runnable
+                                                    public final void run() {
+                                                        switch (i2222) {
+                                                            case 0:
+                                                                n5 n5Var4 = n5Var3;
+                                                                y6 y6Var = (y6) vVar;
+                                                                try {
+                                                                    File file17 = n5Var4.P0;
+                                                                    if (file17 != null) {
+                                                                        file17.delete();
+                                                                    }
+                                                                } catch (Exception unused) {
+                                                                }
+                                                                try {
+                                                                    File file18 = n5Var4.R0;
+                                                                    if (file18 != null) {
+                                                                        file18.delete();
+                                                                    }
+                                                                } catch (Exception unused2) {
+                                                                }
+                                                                try {
+                                                                    File file19 = n5Var4.Q0;
+                                                                    if (file19 != null) {
+                                                                        file19.delete();
+                                                                    }
+                                                                } catch (Exception unused3) {
+                                                                }
+                                                                n5Var4.P0 = null;
+                                                                n5Var4.R0 = null;
+                                                                n5Var4.Q0 = null;
+                                                                File file20 = n5Var4.Y0;
+                                                                if (file20 != null) {
+                                                                    try {
+                                                                        file20.delete();
+                                                                    } catch (Exception e) {
+                                                                        org.telegram.messenger.f8.g(e, true);
+                                                                    }
+                                                                    n5Var4.Y0 = null;
+                                                                }
+                                                                File file21 = n5Var4.X0;
+                                                                if (file21 != null) {
+                                                                    try {
+                                                                        file21.delete();
+                                                                    } catch (Exception e7) {
+                                                                        org.telegram.messenger.f8.g(e7, true);
+                                                                    }
+                                                                    n5Var4.X0 = null;
+                                                                }
+                                                                n5Var4.j |= z1322;
+                                                                n5Var4.T0 = arrayList522;
+                                                                n5Var4.P0 = file1622;
+                                                                n5Var4.Y0 = file1422;
+                                                                n5Var4.R0 = file1522;
+                                                                n5Var4.X0 = file5;
+                                                                n5Var4.Q0 = file8;
+                                                                n5Var4.U0 = arrayList3;
+                                                                y6Var.run();
+                                                                break;
+                                                            default:
+                                                                n5 n5Var5 = n5Var3;
+                                                                org.telegram.utils.twidget.v vVar2 = (org.telegram.utils.twidget.v) vVar;
+                                                                try {
+                                                                    File file22 = n5Var5.P0;
+                                                                    if (file22 != null) {
+                                                                        file22.delete();
+                                                                    }
+                                                                } catch (Exception unused4) {
+                                                                }
+                                                                try {
+                                                                    File file23 = n5Var5.R0;
+                                                                    if (file23 != null) {
+                                                                        file23.delete();
+                                                                    }
+                                                                } catch (Exception unused5) {
+                                                                }
+                                                                try {
+                                                                    File file24 = n5Var5.Q0;
+                                                                    if (file24 != null) {
+                                                                        file24.delete();
+                                                                    }
+                                                                } catch (Exception unused6) {
+                                                                }
+                                                                n5Var5.P0 = null;
+                                                                n5Var5.R0 = null;
+                                                                n5Var5.Q0 = null;
+                                                                File file25 = n5Var5.Y0;
+                                                                if (file25 != null) {
+                                                                    try {
+                                                                        file25.delete();
+                                                                    } catch (Exception e10) {
+                                                                        org.telegram.messenger.f8.g(e10, true);
+                                                                    }
+                                                                    n5Var5.Y0 = null;
+                                                                }
+                                                                File file26 = n5Var5.X0;
+                                                                if (file26 != null) {
+                                                                    try {
+                                                                        file26.delete();
+                                                                    } catch (Exception e11) {
+                                                                        org.telegram.messenger.f8.g(e11, true);
+                                                                    }
+                                                                    n5Var5.X0 = null;
+                                                                }
+                                                                n5Var5.j |= z1322;
+                                                                n5Var5.T0 = arrayList522;
+                                                                n5Var5.P0 = file1622;
+                                                                n5Var5.Y0 = file1422;
+                                                                n5Var5.R0 = file1522;
+                                                                n5Var5.X0 = file5;
+                                                                n5Var5.Q0 = file8;
+                                                                n5Var5.U0 = arrayList3;
+                                                                vVar2.run();
+                                                                break;
+                                                        }
+                                                    }
+                                                });
+                                                size = arrayList.size();
+                                                i10 = 0;
+                                                while (i10 < size) {
+                                                }
+                                                return;
+                                            }
                                         }
                                     }
+                                    r12 = file;
+                                    if (r12 != 0) {
+                                    }
                                 }
                             }
-                            vp.r1(i14).N3(chatInvite.chat, false);
-                            ArrayList arrayList7 = new ArrayList();
-                            arrayList7.add(chatInvite.chat);
-                            int i17 = 1;
-                            hs.a0(i14).m1(null, arrayList7, false, true);
-                            Bundle bundle = new Bundle();
-                            bundle.putLong("chat_id", chatInvite.chat.id);
-                            if (arrayList6.isEmpty() || vp.r1(i14).E(bundle, (org.telegram.ui.ActionBar.k2) i0.a.g(1, arrayList6), null, null)) {
-                                boolean[] zArr = new boolean[1];
-                                x1Var2.setOnCancelListener(new org.telegram.ui.xg(i17, zArr));
-                                if (!chatInvite.chat.forum) {
-                                    vp.r1(i14).s0(-chatInvite.chat.id, 0, new s90(launchActivity, f70Var, zArr, bundle, chatInvite));
-                                    break;
-                                } else {
-                                    Bundle bundle2 = new Bundle();
-                                    bundle2.putLong("chat_id", chatInvite.chat.id);
-                                    launchActivity.t0(pb1.I0(launchActivity, bundle2));
-                                }
+                            r12 = file;
+                            if (r12 != 0) {
                             }
                         }
-                        TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
-                        if (tL_starsSubscriptionPricing == null || chatInvite.can_refulfill_subscription) {
-                            org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) i0.a.g(1, arrayList6);
-                            k2Var.showDialog(new u70(launchActivity, chatInvite, str3, k2Var, k2Var instanceof org.telegram.ui.un ? ((org.telegram.ui.un) k2Var).xa : null));
-                        } else {
-                            long j10 = tL_starsSubscriptionPricing.amount;
-                            vp.r1(i14).N3(chatInvite.chat, false);
-                            rh.e6.y(launchActivity.O, false).h0(str3, chatInvite, new a80(launchActivity, j10, z10 ? 1 : 0));
+                        file3 = file2;
+                        str = "png";
+                        z11 = z10;
+                        file4 = w9;
+                        file5 = file;
+                        if (b4Var.r0()) {
                         }
-                    }
-                    try {
-                        f70Var.run();
-                        break;
-                    } catch (Exception e) {
-                        f8.g(e, true);
+                        file8 = file7;
+                        final int i22222 = 1;
+                        final boolean z13222 = this.e;
+                        final ArrayList arrayList5222 = arrayList4;
+                        final File file14222 = file3;
+                        final File file15222 = file6;
+                        final File file16222 = file4;
+                        i0.g3(new Runnable() { // from class: vh.b7
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i22222) {
+                                    case 0:
+                                        n5 n5Var4 = n5Var3;
+                                        y6 y6Var = (y6) vVar;
+                                        try {
+                                            File file17 = n5Var4.P0;
+                                            if (file17 != null) {
+                                                file17.delete();
+                                            }
+                                        } catch (Exception unused) {
+                                        }
+                                        try {
+                                            File file18 = n5Var4.R0;
+                                            if (file18 != null) {
+                                                file18.delete();
+                                            }
+                                        } catch (Exception unused2) {
+                                        }
+                                        try {
+                                            File file19 = n5Var4.Q0;
+                                            if (file19 != null) {
+                                                file19.delete();
+                                            }
+                                        } catch (Exception unused3) {
+                                        }
+                                        n5Var4.P0 = null;
+                                        n5Var4.R0 = null;
+                                        n5Var4.Q0 = null;
+                                        File file20 = n5Var4.Y0;
+                                        if (file20 != null) {
+                                            try {
+                                                file20.delete();
+                                            } catch (Exception e) {
+                                                org.telegram.messenger.f8.g(e, true);
+                                            }
+                                            n5Var4.Y0 = null;
+                                        }
+                                        File file21 = n5Var4.X0;
+                                        if (file21 != null) {
+                                            try {
+                                                file21.delete();
+                                            } catch (Exception e7) {
+                                                org.telegram.messenger.f8.g(e7, true);
+                                            }
+                                            n5Var4.X0 = null;
+                                        }
+                                        n5Var4.j |= z13222;
+                                        n5Var4.T0 = arrayList5222;
+                                        n5Var4.P0 = file16222;
+                                        n5Var4.Y0 = file14222;
+                                        n5Var4.R0 = file15222;
+                                        n5Var4.X0 = file5;
+                                        n5Var4.Q0 = file8;
+                                        n5Var4.U0 = arrayList3;
+                                        y6Var.run();
+                                        break;
+                                    default:
+                                        n5 n5Var5 = n5Var3;
+                                        org.telegram.utils.twidget.v vVar2 = (org.telegram.utils.twidget.v) vVar;
+                                        try {
+                                            File file22 = n5Var5.P0;
+                                            if (file22 != null) {
+                                                file22.delete();
+                                            }
+                                        } catch (Exception unused4) {
+                                        }
+                                        try {
+                                            File file23 = n5Var5.R0;
+                                            if (file23 != null) {
+                                                file23.delete();
+                                            }
+                                        } catch (Exception unused5) {
+                                        }
+                                        try {
+                                            File file24 = n5Var5.Q0;
+                                            if (file24 != null) {
+                                                file24.delete();
+                                            }
+                                        } catch (Exception unused6) {
+                                        }
+                                        n5Var5.P0 = null;
+                                        n5Var5.R0 = null;
+                                        n5Var5.Q0 = null;
+                                        File file25 = n5Var5.Y0;
+                                        if (file25 != null) {
+                                            try {
+                                                file25.delete();
+                                            } catch (Exception e10) {
+                                                org.telegram.messenger.f8.g(e10, true);
+                                            }
+                                            n5Var5.Y0 = null;
+                                        }
+                                        File file26 = n5Var5.X0;
+                                        if (file26 != null) {
+                                            try {
+                                                file26.delete();
+                                            } catch (Exception e11) {
+                                                org.telegram.messenger.f8.g(e11, true);
+                                            }
+                                            n5Var5.X0 = null;
+                                        }
+                                        n5Var5.j |= z13222;
+                                        n5Var5.T0 = arrayList5222;
+                                        n5Var5.P0 = file16222;
+                                        n5Var5.Y0 = file14222;
+                                        n5Var5.R0 = file15222;
+                                        n5Var5.X0 = file5;
+                                        n5Var5.Q0 = file8;
+                                        n5Var5.U0 = arrayList3;
+                                        vVar2.run();
+                                        break;
+                                }
+                            }
+                        });
+                        size = arrayList.size();
+                        i10 = 0;
+                        while (i10 < size) {
+                        }
                         return;
                     }
-                }
-                break;
-            case 9:
-                LaunchActivity launchActivity2 = (LaunchActivity) obj5;
-                TLObject tLObject7 = (TLObject) obj6;
-                gf.e eVar2 = (gf.e) obj4;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj3;
-                vp vpVar = (vp) obj2;
-                String str4 = (String) obj;
-                Pattern pattern = LaunchActivity.D1;
-                if (tLObject7 instanceof TLRPC.User) {
-                    TLRPC.User user = (TLRPC.User) tLObject7;
-                    vpVar.U3(user, false, false);
-                    if (h20.B(user)) {
-                        if (eVar2 != null) {
-                            eVar2.b();
-                        }
-                        launchActivity2.m0(i14, user.id, null);
-                        break;
-                    } else {
-                        launchActivity2.Y(i14, user, str4, eVar2);
-                        break;
-                    }
                 } else {
-                    if (eVar2 != null) {
-                        eVar2.b();
-                    }
-                    StringBuilder sb2 = new StringBuilder("cant import contact token, err=");
-                    sb2.append(tL_error3 == null ? null : tL_error3.text);
-                    f8.d(sb2.toString());
-                    org.telegram.ui.ActionBar.k2 Q = LaunchActivity.Q();
-                    if (Q != null) {
-                        m5.o(null, 2131748150, org.telegram.ui.Components.cc.a0(Q), null);
-                        break;
-                    }
+                    z10 = E;
                 }
-                break;
-            case 10:
-                LaunchActivity launchActivity3 = (LaunchActivity) obj5;
-                org.telegram.ui.ay ayVar = (org.telegram.ui.ay) obj4;
-                org.telegram.ui.ActionBar.k2 k2Var2 = (org.telegram.ui.ActionBar.k2) obj3;
-                TLRPC.User user2 = (TLRPC.User) obj2;
-                String str5 = (String) obj;
-                Pattern pattern2 = LaunchActivity.D1;
-                if (((TLObject) obj6) instanceof TLRPC.TL_boolTrue) {
-                    ui.b0(i14).E0(false, true, new ag.e3(launchActivity3, ayVar, k2Var2, user2, str5, 28));
-                    break;
-                }
-                break;
-            case 11:
-                LaunchActivity launchActivity4 = (LaunchActivity) obj5;
-                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj6;
-                TLObject tLObject8 = (TLObject) obj4;
-                TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = (TLRPC.TL_inputInvoiceSlug) obj3;
-                f70 f70Var2 = (f70) obj2;
-                String str6 = (String) obj;
-                ArrayList arrayList8 = launchActivity4.d0;
-                if (tL_error4 != null) {
-                    if ("SUBSCRIPTION_ALREADY_ACTIVE".equalsIgnoreCase(tL_error4.text)) {
-                        a02 = org.telegram.ui.Components.cc.a0((org.telegram.ui.ActionBar.k2) i0.a.g(1, arrayList8));
-                        i10 = 2131747411;
-                        r32 = 0;
-                    } else {
-                        r32 = 0;
-                        a02 = org.telegram.ui.Components.cc.a0((org.telegram.ui.ActionBar.k2) i0.a.g(1, arrayList8));
-                        i10 = 2131747412;
+                b4Var = b4Var5;
+                file = null;
+                file2 = null;
+                if (n5Var3.u) {
+                    int i172 = n5Var3.k0;
+                    int i182 = n5Var3.l0;
+                    p02 = b4Var.p0();
+                    if (p02 != null) {
                     }
-                    m5.o(r32, i10, a02, r32);
-                } else if (!launchActivity4.isFinishing()) {
-                    if (tLObject8 instanceof TLRPC.TL_payments_paymentFormStars) {
-                        ph.w3 w3Var = launchActivity4.Z0;
-                        launchActivity4.Z0 = null;
-                        rh.e6.y(launchActivity4.O, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject8, new y70(f70Var2, 1), new l80(w3Var, z10 ? 1 : 0));
-                        break;
-                    } else {
-                        if (tLObject8 instanceof TLRPC.PaymentForm) {
-                            TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject8;
-                            vp.r1(i14).V3(paymentForm.users, false);
-                            sm0Var = new sm0(paymentForm, null, str6, launchActivity4.M().getLastFragment());
-                        } else {
-                            sm0Var = tLObject8 instanceof TLRPC.PaymentReceipt ? new sm0((TLRPC.PaymentReceipt) tLObject8) : null;
-                        }
-                        if (sm0Var != null) {
-                            ph.w3 w3Var2 = launchActivity4.Z0;
-                            if (w3Var2 != null) {
-                                launchActivity4.Z0 = null;
-                                sm0Var.Z0 = new org.telegram.ui.jf(9, w3Var2);
-                            }
-                            launchActivity4.t0(sm0Var);
-                        }
+                    r12 = file;
+                    if (r12 != 0) {
                     }
                 }
-                try {
-                    f70Var2.run();
-                    break;
-                } catch (Exception e7) {
-                    f8.g(e7, true);
-                    return;
+                file3 = file2;
+                str = "png";
+                z11 = z10;
+                file4 = w9;
+                file5 = file;
+                if (b4Var.r0()) {
                 }
-            case 12:
-                se0 se0Var = (se0) obj5;
-                String str7 = (String) obj6;
-                c5.g gVar = (c5.g) obj4;
-                List list = (List) obj3;
-                String str8 = (String) obj2;
-                String str9 = (String) obj;
-                hf0 hf0Var = se0Var.w;
-                StringBuilder u10 = a1.g.u("LoginBilling queried \"", str7, "\" product: ");
-                u10.append(u1.j(gVar.a));
-                f8.b(u10.toString());
-                int i18 = gVar.a;
-                if (i18 != 0) {
-                    se0Var.e = "BILLING_".concat(u1.j(i18));
-                    new org.telegram.ui.Components.cc(hf0Var.Z, null).H(R.raw.error, cd.a0(null, null, 2131743903, u1.j(gVar.a)));
-                    break;
-                } else if (list != null && !list.isEmpty()) {
-                    c5.m mVar = (c5.m) list.get(0);
-                    c5.i a2 = mVar.a();
-                    TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
-                    tL_inputStorePaymentAuthCode.currency = a2.c;
-                    tL_inputStorePaymentAuthCode.amount = (long) (Math.pow(10.0d, u1.i().h(tL_inputStorePaymentAuthCode.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
-                    tL_inputStorePaymentAuthCode.phone_code_hash = TextUtils.isEmpty(str8) ? "" : str8;
-                    tL_inputStorePaymentAuthCode.phone_number = str9;
-                    int i19 = this.b;
-                    tL_inputStorePaymentAuthCode.premium_days = i19;
-                    StringBuilder u11 = a1.g.u("LoginBilling found \"", str7, "\" product, with currency=");
-                    u11.append(tL_inputStorePaymentAuthCode.currency);
-                    u11.append(" amount=");
-                    u11.append(tL_inputStorePaymentAuthCode.amount);
-                    u11.append("; phone=");
-                    u11.append(str9);
-                    u11.append(", phone_code_hash=");
-                    u11.append(str8);
-                    f8.b(u11.toString());
-                    TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
-                    tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentAuthCode;
-                    i11 = ((org.telegram.ui.ActionBar.k2) hf0Var).currentAccount;
-                    ConnectionsManager.getInstance(i11).sendRequest(tL_payments_canPurchaseStore, new org.telegram.ui.t8(se0Var, a2, i19, mVar, tL_inputStorePaymentAuthCode, str7, tL_payments_canPurchaseStore, 3), 10);
-                    break;
-                } else {
-                    se0Var.e = "PRODUCT_NOT_FOUND";
-                    new org.telegram.ui.Components.cc(hf0Var.Z, null).H(R.raw.error, cd.a0(null, null, 2131743903, "PRODUCT_NOT_FOUND"));
-                    break;
-                }
-                break;
-            case 13:
-                ProfileActivity profileActivity = (ProfileActivity) obj5;
-                View view = (View) obj6;
-                String str10 = (String) obj4;
-                boolean[] zArr2 = (boolean[]) obj3;
-                String[] strArr2 = (String[]) obj2;
-                String str11 = (String) obj;
-                RectF rectF = ProfileActivity.R6;
-                if (profileActivity.getParentActivity() != null) {
-                    z60 H = z60.H(profileActivity, view);
-                    H.W(profileActivity.a.U0(view, false));
-                    H.w = false;
-                    H.c(R.drawable.msg_copy, cd.L0(2131751767, null), new ji0(profileActivity, str10, i14, 25), false);
-                    H.l(R.drawable.msg_translate, cd.L0(2131743981, null), new w50(profileActivity, strArr2, str11, str10, 26), zArr2[0]);
-                    H.Z();
-                    break;
-                }
-                break;
-            case 14:
-                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) obj5;
-                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj6;
-                String str12 = (String) obj3;
-                org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) obj2;
-                q20 q20Var = (q20) obj;
-                try {
-                    JSONObject jSONObject2 = new JSONObject();
-                    String str13 = a2Var.d;
-                    tonconnectsession = a2Var.a;
-                    JSONObject put2 = jSONObject2.put("id", str13);
-                    if (i14 < 0) {
-                        put2.put("result", obj4);
-                    } else {
-                        if (str12 == null) {
-                            str12 = "Could not complete request";
-                        }
-                        put2.put("error", new JSONObject().put("code", i14).put("message", str12));
-                    }
-                    JSONObject put3 = new JSONObject().put("body", WalletEngine2.tonConnectCrypto(h0Var, tonconnectsession, a2Var.h, a2Var.g, new JSONObject().put("encrypt", put2)).getString("body")).put("traceId", a2Var.i);
-                    if (i14 < 0 && "disconnect".equals(a2Var.e)) {
-                        z10 = true;
-                    }
-                    put = put3.put("disconnect", z10);
-                } catch (Exception e10) {
-                    i12 = org.telegram.ui.Wallet.e2.i("encrypt response", e10);
-                    jSONObject = null;
-                }
-                if (!vp.r1(e2Var.a).f7.edit().putString(org.telegram.ui.Wallet.e2.l(tonconnectsession.id, a2Var.b), put.toString()).commit()) {
-                    throw new IllegalStateException("Could not save TON Connect response");
-                }
-                jSONObject = put;
-                i12 = null;
-                i0.g3(new m90(e2Var, jSONObject, q20Var, i12, a2Var, 23));
-                break;
-                break;
-            case 15:
-                boolean[] zArr3 = (boolean[]) obj5;
-                Context context2 = (Context) obj6;
-                TLRPC.User user3 = (TLRPC.User) obj4;
-                JSONObject jSONObject3 = (JSONObject) obj3;
-                org.telegram.ui.ActionBar.p6 p6Var2 = (org.telegram.ui.ActionBar.p6) obj2;
-                org.telegram.ui.Wallet.r2 r2Var = (org.telegram.ui.Wallet.r2) obj;
-                if (!zArr3[0]) {
-                    zArr3[0] = true;
-                    int i20 = this.b;
-                    org.telegram.ui.Wallet.k0 x10 = org.telegram.ui.Wallet.k0.x(i20);
-                    String t10 = x10.t();
-                    byte[] y3 = x10.y();
-                    if (t10 == null || y3 == null || x10.b == null) {
-                        org.telegram.ui.Components.cc.b0(cd.L0(2131742985, null));
-                        r2Var.a();
-                        break;
-                    } else {
-                        int currentTime = ConnectionsManager.getInstance(i20).getCurrentTime();
-                        try {
-                            if ("signData".equals(jSONObject3.optString("method"))) {
-                                JSONObject jSONObject4 = jSONObject3.getJSONObject("payload");
-                                org.telegram.ui.Wallet.e2.G(t10, jSONObject4);
-                                org.telegram.ui.Wallet.u2.c(context2, i20, user3, jSONObject4, t10, (byte[]) y3.clone(), p6Var2, r2Var);
-                            } else {
-                                JSONObject jSONObject5 = jSONObject3.getJSONObject("transaction");
-                                org.telegram.ui.Wallet.e2.I(jSONObject5, t10, currentTime);
-                                org.telegram.ui.Wallet.u2.d(context2, i20, user3, new org.telegram.ui.Wallet.d2(jSONObject5), t10, (byte[]) y3.clone(), p6Var2, r2Var);
-                            }
-                            break;
-                        } catch (Exception e11) {
-                            org.telegram.ui.Components.cc.b0(org.telegram.ui.Wallet.e2.i("widget call", e11));
-                            r2Var.a();
-                            return;
-                        }
-                    }
-                }
-                break;
-            case 16:
-                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) obj5;
-                String str14 = (String) obj6;
-                TLObject tLObject9 = (TLObject) obj4;
-                TLRPC.TL_error tL_error5 = (TLRPC.TL_error) obj3;
-                org.telegram.ui.web.v0 v0Var = (org.telegram.ui.web.v0) obj2;
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) obj;
-                try {
-                    JSONObject jSONObject6 = new JSONObject();
-                    jSONObject6.put("req_id", str14);
-                    if (tLObject9 instanceof TLRPC.TL_dataJSON) {
-                        jSONObject6.put("result", new JSONTokener(((TLRPC.TL_dataJSON) tLObject9).data).nextValue());
-                    } else if (tL_error5 != null) {
-                        jSONObject6.put("error", tL_error5.text);
-                    }
-                    org.telegram.ui.web.z0.w(i14, v0Var, x0Var, "custom_method_invoked", jSONObject6);
-                    break;
-                } catch (Exception e12) {
-                    f8.g(e12, true);
-                    z0Var.Y(null);
-                    return;
-                }
-            case 17:
-                StringBuilder sb3 = new StringBuilder();
-                c3.i0.r(sb3, vp.r1(i14).U2, "/", (String) obj6, "/c/");
-                sb3.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
-                String sb4 = sb3.toString();
-                new ph.s1((vq0) obj5, (Context) obj3, sb4, sb4, (org.telegram.ui.ActionBar.p6) obj2, (org.telegram.ui.ActionBar.k2) obj).show();
-                break;
-            default:
-                ArrayList arrayList9 = (ArrayList) obj5;
-                a0.h hVar = (a0.h) obj4;
-                TLRPC.TL_error tL_error6 = (TLRPC.TL_error) obj3;
-                TLObject tLObject10 = (TLObject) obj2;
-                vp vpVar2 = (vp) obj;
-                zf.x0 x0Var2 = ((zf.s0) obj6).h;
-                if (x0Var2.j0 != 0 && i14 == x0Var2.i0 && x0Var2.D != null && x0Var2.y != null) {
-                    x0Var2.Y(hVar, arrayList9, false);
-                    if (tL_error6 == null) {
-                        TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject10;
-                        vpVar2.V3(tL_channels_channelParticipants.users, false);
-                        vpVar2.P3(tL_channels_channelParticipants.chats, false);
-                        x0Var2.y.isEmpty();
-                        if (!tL_channels_channelParticipants.participants.isEmpty()) {
-                            long e13 = d20.i(x0Var2.f).e();
-                            for (int i21 = 0; i21 < tL_channels_channelParticipants.participants.size(); i21++) {
-                                long C1 = jj.C1(tL_channels_channelParticipants.participants.get(i21).peer);
-                                if (x0Var2.D.h(C1) < 0 && ((C1 != 0 || x0Var2.D.h(e13) < 0) && (x0Var2.k0 || (C1 != e13 && C1 != 0)))) {
-                                    if (C1 >= 0) {
-                                        TLRPC.User Z1 = vpVar2.Z1(Long.valueOf(C1));
-                                        if (Z1 == null) {
-                                            break;
-                                        } else {
-                                            x0Var2.y.add(Z1);
-                                        }
-                                    } else {
-                                        TLRPC.Chat L02 = vpVar2.L0(Long.valueOf(-C1));
-                                        if (L02 == null) {
-                                            break;
-                                        } else {
-                                            x0Var2.y.add(L02);
-                                        }
+                file8 = file7;
+                final int i222222 = 1;
+                final boolean z132222 = this.e;
+                final ArrayList arrayList52222 = arrayList4;
+                final File file142222 = file3;
+                final File file152222 = file6;
+                final File file162222 = file4;
+                i0.g3(new Runnable() { // from class: vh.b7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i222222) {
+                            case 0:
+                                n5 n5Var4 = n5Var3;
+                                y6 y6Var = (y6) vVar;
+                                try {
+                                    File file17 = n5Var4.P0;
+                                    if (file17 != null) {
+                                        file17.delete();
                                     }
+                                } catch (Exception unused) {
+                                }
+                                try {
+                                    File file18 = n5Var4.R0;
+                                    if (file18 != null) {
+                                        file18.delete();
+                                    }
+                                } catch (Exception unused2) {
+                                }
+                                try {
+                                    File file19 = n5Var4.Q0;
+                                    if (file19 != null) {
+                                        file19.delete();
+                                    }
+                                } catch (Exception unused3) {
+                                }
+                                n5Var4.P0 = null;
+                                n5Var4.R0 = null;
+                                n5Var4.Q0 = null;
+                                File file20 = n5Var4.Y0;
+                                if (file20 != null) {
+                                    try {
+                                        file20.delete();
+                                    } catch (Exception e) {
+                                        org.telegram.messenger.f8.g(e, true);
+                                    }
+                                    n5Var4.Y0 = null;
+                                }
+                                File file21 = n5Var4.X0;
+                                if (file21 != null) {
+                                    try {
+                                        file21.delete();
+                                    } catch (Exception e7) {
+                                        org.telegram.messenger.f8.g(e7, true);
+                                    }
+                                    n5Var4.X0 = null;
+                                }
+                                n5Var4.j |= z132222;
+                                n5Var4.T0 = arrayList52222;
+                                n5Var4.P0 = file162222;
+                                n5Var4.Y0 = file142222;
+                                n5Var4.R0 = file152222;
+                                n5Var4.X0 = file5;
+                                n5Var4.Q0 = file8;
+                                n5Var4.U0 = arrayList3;
+                                y6Var.run();
+                                break;
+                            default:
+                                n5 n5Var5 = n5Var3;
+                                org.telegram.utils.twidget.v vVar2 = (org.telegram.utils.twidget.v) vVar;
+                                try {
+                                    File file22 = n5Var5.P0;
+                                    if (file22 != null) {
+                                        file22.delete();
+                                    }
+                                } catch (Exception unused4) {
+                                }
+                                try {
+                                    File file23 = n5Var5.R0;
+                                    if (file23 != null) {
+                                        file23.delete();
+                                    }
+                                } catch (Exception unused5) {
+                                }
+                                try {
+                                    File file24 = n5Var5.Q0;
+                                    if (file24 != null) {
+                                        file24.delete();
+                                    }
+                                } catch (Exception unused6) {
+                                }
+                                n5Var5.P0 = null;
+                                n5Var5.R0 = null;
+                                n5Var5.Q0 = null;
+                                File file25 = n5Var5.Y0;
+                                if (file25 != null) {
+                                    try {
+                                        file25.delete();
+                                    } catch (Exception e10) {
+                                        org.telegram.messenger.f8.g(e10, true);
+                                    }
+                                    n5Var5.Y0 = null;
+                                }
+                                File file26 = n5Var5.X0;
+                                if (file26 != null) {
+                                    try {
+                                        file26.delete();
+                                    } catch (Exception e11) {
+                                        org.telegram.messenger.f8.g(e11, true);
+                                    }
+                                    n5Var5.X0 = null;
+                                }
+                                n5Var5.j |= z132222;
+                                n5Var5.T0 = arrayList52222;
+                                n5Var5.P0 = file162222;
+                                n5Var5.Y0 = file142222;
+                                n5Var5.R0 = file152222;
+                                n5Var5.X0 = file5;
+                                n5Var5.Q0 = file8;
+                                n5Var5.U0 = arrayList3;
+                                vVar2.run();
+                                break;
+                        }
+                    }
+                });
+                size = arrayList.size();
+                i10 = 0;
+                while (i10 < size) {
+                }
+                return;
+            default:
+                vh.o8 o8Var2 = (vh.o8) this.f;
+                vh.b4 b4Var6 = (vh.b4) this.h;
+                vh.n5 n5Var4 = (vh.n5) this.n;
+                final vh.y6 y6Var = (vh.y6) this.r;
+                int i24 = o8Var2.c;
+                ArrayList arrayList6 = new ArrayList();
+                b4Var6.q0(arrayList6, false, false, false, false, n5Var4);
+                if (!n5Var4.K) {
+                    n5Var4.S0 = Utilities.k(b4Var6.getLcm(), 7500L, 5000L);
+                }
+                List<TLRPC.InputDocument> masks2 = b4Var6.getMasks();
+                ArrayList arrayList7 = masks2 != null ? new ArrayList(masks2) : null;
+                boolean z14 = n5Var4.K;
+                boolean E2 = n5Var4.E();
+                arrayList6.clear();
+                Bitmap q04 = b4Var6.q0(arrayList6, true, false, false, !z14, n5Var4);
+                ArrayList arrayList8 = arrayList6.isEmpty() ? null : arrayList6;
+                b8.G(i24);
+                final File K = b8.K(ic.a0(q04, Bitmap.CompressFormat.PNG, n5Var4.i0, n5Var4.j0, 87), null, true, true);
+                if (q04 != null && !q04.isRecycled()) {
+                    q04.recycle();
+                }
+                boolean z15 = n5Var4.u;
+                int i25 = this.b;
+                int i26 = this.c;
+                final ArrayList arrayList9 = arrayList7;
+                if (z15) {
+                    long j11 = n5Var4.z0;
+                    if (j11 != Long.MIN_VALUE) {
+                        Drawable drawable2 = n5Var4.x0;
+                        if (drawable2 == null) {
+                            drawable2 = vh.k4.e(null, i24, j11, o8Var2.c2);
+                        }
+                        if (drawable2 != null) {
+                            file10 = vh.n5.w(i24, "webp");
+                            Bitmap createBitmap3 = Bitmap.createBitmap(i25, i26, Bitmap.Config.ARGB_8888);
+                            vh.n5.j(new Canvas(createBitmap3), drawable2, createBitmap3.getWidth(), createBitmap3.getHeight());
+                            try {
+                                try {
+                                    createBitmap3.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(file10));
+                                    break;
+                                } catch (Exception e) {
+                                    f8.g(e, true);
+                                    break;
+                                }
+                            } finally {
+                                if (!createBitmap3.isRecycled()) {
+                                    createBitmap3.recycle();
                                 }
                             }
                         }
                     }
-                    x0Var2.f();
-                    x0Var2.V.a(!x0Var2.y.isEmpty());
                 }
-                x0Var2.j0 = 0;
-                break;
+                file10 = null;
+                if (n5Var4.u && n5Var4.K) {
+                    int i27 = n5Var4.k0;
+                    int i28 = n5Var4.l0;
+                    jg.j1 p03 = b4Var6.p0();
+                    if (p03 != null) {
+                        jg.c1 c1Var2 = p03.r0;
+                        if (c1Var2.getChildCount() == 1 && i27 > 0 && i28 > 0) {
+                            if (c1Var2.getChildAt(0) instanceof org.telegram.ui.Cells.q1) {
+                                imageReceiver = ((org.telegram.ui.Cells.q1) c1Var2.getChildAt(0)).getPhotoImage();
+                                if (imageReceiver != null) {
+                                    float f18 = imageReceiver.M0;
+                                    if (((int) f18) > 0) {
+                                        float f19 = imageReceiver.N0;
+                                        b4Var3 = b4Var6;
+                                        if (((int) f19) > 0) {
+                                            float f20 = i27;
+                                            float f21 = i28;
+                                            float max2 = Math.max(f18 / f20, f19 / f21);
+                                            int i29 = (int) ((f20 * max2) / 2.0f);
+                                            int i30 = (int) ((f21 * max2) / 2.0f);
+                                            Bitmap createBitmap4 = Bitmap.createBitmap(i29, i30, Bitmap.Config.ARGB_8888);
+                                            float[] fArr2 = new float[8];
+                                            i11 = i25;
+                                            int i31 = 0;
+                                            while (true) {
+                                                int[] iArr2 = imageReceiver.W0;
+                                                i12 = i26;
+                                                if (i31 >= iArr2.length) {
+                                                    Canvas canvas2 = new Canvas(createBitmap4);
+                                                    Path path2 = new Path();
+                                                    canvas2.scale(0.5f, 0.5f);
+                                                    RectF rectF2 = i0.P;
+                                                    float f22 = (i29 * 2.0f) / 2.0f;
+                                                    float f23 = imageReceiver.M0 / 2.0f;
+                                                    float f24 = (i30 * 2.0f) / 2.0f;
+                                                    float f25 = imageReceiver.N0 / 2.0f;
+                                                    n5Var = n5Var4;
+                                                    rectF2.set(f22 - f23, f24 - f25, f23 + f22, f25 + f24);
+                                                    path2.addRoundRect(rectF2, fArr2, Path.Direction.CW);
+                                                    Paint paint2 = new Paint(1);
+                                                    paint2.setColor(-1);
+                                                    canvas2.drawPath(path2, paint2);
+                                                    try {
+                                                        file11 = vh.n5.w(i24, "webp");
+                                                        createBitmap4.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(file11));
+                                                    } catch (Exception e7) {
+                                                        f8.g(e7, true);
+                                                        file11 = null;
+                                                    }
+                                                    createBitmap4.recycle();
+                                                    if (E2) {
+                                                        i13 = i11;
+                                                        b4Var4 = b4Var3;
+                                                        i14 = i12;
+                                                        n5Var2 = n5Var;
+                                                        i15 = 87;
+                                                        file12 = null;
+                                                    } else {
+                                                        i13 = i11;
+                                                        b4Var4 = b4Var3;
+                                                        i14 = i12;
+                                                        n5Var2 = n5Var;
+                                                        i15 = 87;
+                                                        Bitmap q05 = b4Var4.q0(new ArrayList(), false, true, false, false, n5Var2);
+                                                        b8.G(i24);
+                                                        File K2 = b8.K(ic.a0(q05, Bitmap.CompressFormat.PNG, i13, i14, 87), null, true, true);
+                                                        if (q05 != null && !q05.isRecycled()) {
+                                                            q05.recycle();
+                                                        }
+                                                        file12 = K2;
+                                                    }
+                                                    if (this.d) {
+                                                        Bitmap blurBitmap2 = b4Var4.getBlurBitmap();
+                                                        b8.G(i24);
+                                                        file13 = b8.K(ic.a0(blurBitmap2, Bitmap.CompressFormat.PNG, i13, i14, i15), null, true, true);
+                                                        if (blurBitmap2 != null && !blurBitmap2.isRecycled()) {
+                                                            blurBitmap2.recycle();
+                                                        }
+                                                    } else {
+                                                        file13 = null;
+                                                    }
+                                                    final vh.n5 n5Var5 = n5Var2;
+                                                    final File file17 = file10;
+                                                    final File file18 = file13;
+                                                    final File file19 = file12;
+                                                    final ArrayList arrayList10 = arrayList8;
+                                                    final int i32 = 0;
+                                                    final boolean z16 = this.e;
+                                                    final File file20 = file11;
+                                                    i0.g3(new Runnable() { // from class: vh.b7
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            switch (i32) {
+                                                                case 0:
+                                                                    n5 n5Var42 = n5Var5;
+                                                                    y6 y6Var2 = (y6) y6Var;
+                                                                    try {
+                                                                        File file172 = n5Var42.P0;
+                                                                        if (file172 != null) {
+                                                                            file172.delete();
+                                                                        }
+                                                                    } catch (Exception unused) {
+                                                                    }
+                                                                    try {
+                                                                        File file182 = n5Var42.R0;
+                                                                        if (file182 != null) {
+                                                                            file182.delete();
+                                                                        }
+                                                                    } catch (Exception unused2) {
+                                                                    }
+                                                                    try {
+                                                                        File file192 = n5Var42.Q0;
+                                                                        if (file192 != null) {
+                                                                            file192.delete();
+                                                                        }
+                                                                    } catch (Exception unused3) {
+                                                                    }
+                                                                    n5Var42.P0 = null;
+                                                                    n5Var42.R0 = null;
+                                                                    n5Var42.Q0 = null;
+                                                                    File file202 = n5Var42.Y0;
+                                                                    if (file202 != null) {
+                                                                        try {
+                                                                            file202.delete();
+                                                                        } catch (Exception e10) {
+                                                                            org.telegram.messenger.f8.g(e10, true);
+                                                                        }
+                                                                        n5Var42.Y0 = null;
+                                                                    }
+                                                                    File file21 = n5Var42.X0;
+                                                                    if (file21 != null) {
+                                                                        try {
+                                                                            file21.delete();
+                                                                        } catch (Exception e72) {
+                                                                            org.telegram.messenger.f8.g(e72, true);
+                                                                        }
+                                                                        n5Var42.X0 = null;
+                                                                    }
+                                                                    n5Var42.j |= z16;
+                                                                    n5Var42.T0 = arrayList10;
+                                                                    n5Var42.P0 = K;
+                                                                    n5Var42.Y0 = file17;
+                                                                    n5Var42.R0 = file19;
+                                                                    n5Var42.X0 = file20;
+                                                                    n5Var42.Q0 = file18;
+                                                                    n5Var42.U0 = arrayList9;
+                                                                    y6Var2.run();
+                                                                    break;
+                                                                default:
+                                                                    n5 n5Var52 = n5Var5;
+                                                                    org.telegram.utils.twidget.v vVar2 = (org.telegram.utils.twidget.v) y6Var;
+                                                                    try {
+                                                                        File file22 = n5Var52.P0;
+                                                                        if (file22 != null) {
+                                                                            file22.delete();
+                                                                        }
+                                                                    } catch (Exception unused4) {
+                                                                    }
+                                                                    try {
+                                                                        File file23 = n5Var52.R0;
+                                                                        if (file23 != null) {
+                                                                            file23.delete();
+                                                                        }
+                                                                    } catch (Exception unused5) {
+                                                                    }
+                                                                    try {
+                                                                        File file24 = n5Var52.Q0;
+                                                                        if (file24 != null) {
+                                                                            file24.delete();
+                                                                        }
+                                                                    } catch (Exception unused6) {
+                                                                    }
+                                                                    n5Var52.P0 = null;
+                                                                    n5Var52.R0 = null;
+                                                                    n5Var52.Q0 = null;
+                                                                    File file25 = n5Var52.Y0;
+                                                                    if (file25 != null) {
+                                                                        try {
+                                                                            file25.delete();
+                                                                        } catch (Exception e102) {
+                                                                            org.telegram.messenger.f8.g(e102, true);
+                                                                        }
+                                                                        n5Var52.Y0 = null;
+                                                                    }
+                                                                    File file26 = n5Var52.X0;
+                                                                    if (file26 != null) {
+                                                                        try {
+                                                                            file26.delete();
+                                                                        } catch (Exception e11) {
+                                                                            org.telegram.messenger.f8.g(e11, true);
+                                                                        }
+                                                                        n5Var52.X0 = null;
+                                                                    }
+                                                                    n5Var52.j |= z16;
+                                                                    n5Var52.T0 = arrayList10;
+                                                                    n5Var52.P0 = K;
+                                                                    n5Var52.Y0 = file17;
+                                                                    n5Var52.R0 = file19;
+                                                                    n5Var52.X0 = file20;
+                                                                    n5Var52.Q0 = file18;
+                                                                    n5Var52.U0 = arrayList9;
+                                                                    vVar2.run();
+                                                                    break;
+                                                            }
+                                                        }
+                                                    });
+                                                    return;
+                                                }
+                                                int i33 = i31 * 2;
+                                                float f26 = iArr2[i31];
+                                                fArr2[i33] = f26;
+                                                fArr2[i33 + 1] = f26;
+                                                i31++;
+                                                i26 = i12;
+                                            }
+                                        }
+                                        i11 = i25;
+                                        i12 = i26;
+                                        n5Var = n5Var4;
+                                        file11 = null;
+                                        if (E2) {
+                                        }
+                                        if (this.d) {
+                                        }
+                                        final vh.n5 n5Var52 = n5Var2;
+                                        final File file172 = file10;
+                                        final File file182 = file13;
+                                        final File file192 = file12;
+                                        final ArrayList arrayList102 = arrayList8;
+                                        final int i322 = 0;
+                                        final boolean z162 = this.e;
+                                        final File file202 = file11;
+                                        i0.g3(new Runnable() { // from class: vh.b7
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                switch (i322) {
+                                                    case 0:
+                                                        n5 n5Var42 = n5Var52;
+                                                        y6 y6Var2 = (y6) y6Var;
+                                                        try {
+                                                            File file1722 = n5Var42.P0;
+                                                            if (file1722 != null) {
+                                                                file1722.delete();
+                                                            }
+                                                        } catch (Exception unused) {
+                                                        }
+                                                        try {
+                                                            File file1822 = n5Var42.R0;
+                                                            if (file1822 != null) {
+                                                                file1822.delete();
+                                                            }
+                                                        } catch (Exception unused2) {
+                                                        }
+                                                        try {
+                                                            File file1922 = n5Var42.Q0;
+                                                            if (file1922 != null) {
+                                                                file1922.delete();
+                                                            }
+                                                        } catch (Exception unused3) {
+                                                        }
+                                                        n5Var42.P0 = null;
+                                                        n5Var42.R0 = null;
+                                                        n5Var42.Q0 = null;
+                                                        File file2022 = n5Var42.Y0;
+                                                        if (file2022 != null) {
+                                                            try {
+                                                                file2022.delete();
+                                                            } catch (Exception e10) {
+                                                                org.telegram.messenger.f8.g(e10, true);
+                                                            }
+                                                            n5Var42.Y0 = null;
+                                                        }
+                                                        File file21 = n5Var42.X0;
+                                                        if (file21 != null) {
+                                                            try {
+                                                                file21.delete();
+                                                            } catch (Exception e72) {
+                                                                org.telegram.messenger.f8.g(e72, true);
+                                                            }
+                                                            n5Var42.X0 = null;
+                                                        }
+                                                        n5Var42.j |= z162;
+                                                        n5Var42.T0 = arrayList102;
+                                                        n5Var42.P0 = K;
+                                                        n5Var42.Y0 = file172;
+                                                        n5Var42.R0 = file192;
+                                                        n5Var42.X0 = file202;
+                                                        n5Var42.Q0 = file182;
+                                                        n5Var42.U0 = arrayList9;
+                                                        y6Var2.run();
+                                                        break;
+                                                    default:
+                                                        n5 n5Var522 = n5Var52;
+                                                        org.telegram.utils.twidget.v vVar2 = (org.telegram.utils.twidget.v) y6Var;
+                                                        try {
+                                                            File file22 = n5Var522.P0;
+                                                            if (file22 != null) {
+                                                                file22.delete();
+                                                            }
+                                                        } catch (Exception unused4) {
+                                                        }
+                                                        try {
+                                                            File file23 = n5Var522.R0;
+                                                            if (file23 != null) {
+                                                                file23.delete();
+                                                            }
+                                                        } catch (Exception unused5) {
+                                                        }
+                                                        try {
+                                                            File file24 = n5Var522.Q0;
+                                                            if (file24 != null) {
+                                                                file24.delete();
+                                                            }
+                                                        } catch (Exception unused6) {
+                                                        }
+                                                        n5Var522.P0 = null;
+                                                        n5Var522.R0 = null;
+                                                        n5Var522.Q0 = null;
+                                                        File file25 = n5Var522.Y0;
+                                                        if (file25 != null) {
+                                                            try {
+                                                                file25.delete();
+                                                            } catch (Exception e102) {
+                                                                org.telegram.messenger.f8.g(e102, true);
+                                                            }
+                                                            n5Var522.Y0 = null;
+                                                        }
+                                                        File file26 = n5Var522.X0;
+                                                        if (file26 != null) {
+                                                            try {
+                                                                file26.delete();
+                                                            } catch (Exception e11) {
+                                                                org.telegram.messenger.f8.g(e11, true);
+                                                            }
+                                                            n5Var522.X0 = null;
+                                                        }
+                                                        n5Var522.j |= z162;
+                                                        n5Var522.T0 = arrayList102;
+                                                        n5Var522.P0 = K;
+                                                        n5Var522.Y0 = file172;
+                                                        n5Var522.R0 = file192;
+                                                        n5Var522.X0 = file202;
+                                                        n5Var522.Q0 = file182;
+                                                        n5Var522.U0 = arrayList9;
+                                                        vVar2.run();
+                                                        break;
+                                                }
+                                            }
+                                        });
+                                        return;
+                                    }
+                                }
+                            }
+                            imageReceiver = null;
+                            if (imageReceiver != null) {
+                            }
+                        }
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver != null) {
+                    }
+                }
+                b4Var3 = b4Var6;
+                i11 = i25;
+                i12 = i26;
+                n5Var = n5Var4;
+                file11 = null;
+                if (E2) {
+                }
+                if (this.d) {
+                }
+                final vh.n5 n5Var522 = n5Var2;
+                final File file1722 = file10;
+                final File file1822 = file13;
+                final File file1922 = file12;
+                final ArrayList arrayList1022 = arrayList8;
+                final int i3222 = 0;
+                final boolean z1622 = this.e;
+                final File file2022 = file11;
+                i0.g3(new Runnable() { // from class: vh.b7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i3222) {
+                            case 0:
+                                n5 n5Var42 = n5Var522;
+                                y6 y6Var2 = (y6) y6Var;
+                                try {
+                                    File file17222 = n5Var42.P0;
+                                    if (file17222 != null) {
+                                        file17222.delete();
+                                    }
+                                } catch (Exception unused) {
+                                }
+                                try {
+                                    File file18222 = n5Var42.R0;
+                                    if (file18222 != null) {
+                                        file18222.delete();
+                                    }
+                                } catch (Exception unused2) {
+                                }
+                                try {
+                                    File file19222 = n5Var42.Q0;
+                                    if (file19222 != null) {
+                                        file19222.delete();
+                                    }
+                                } catch (Exception unused3) {
+                                }
+                                n5Var42.P0 = null;
+                                n5Var42.R0 = null;
+                                n5Var42.Q0 = null;
+                                File file20222 = n5Var42.Y0;
+                                if (file20222 != null) {
+                                    try {
+                                        file20222.delete();
+                                    } catch (Exception e10) {
+                                        org.telegram.messenger.f8.g(e10, true);
+                                    }
+                                    n5Var42.Y0 = null;
+                                }
+                                File file21 = n5Var42.X0;
+                                if (file21 != null) {
+                                    try {
+                                        file21.delete();
+                                    } catch (Exception e72) {
+                                        org.telegram.messenger.f8.g(e72, true);
+                                    }
+                                    n5Var42.X0 = null;
+                                }
+                                n5Var42.j |= z1622;
+                                n5Var42.T0 = arrayList1022;
+                                n5Var42.P0 = K;
+                                n5Var42.Y0 = file1722;
+                                n5Var42.R0 = file1922;
+                                n5Var42.X0 = file2022;
+                                n5Var42.Q0 = file1822;
+                                n5Var42.U0 = arrayList9;
+                                y6Var2.run();
+                                break;
+                            default:
+                                n5 n5Var5222 = n5Var522;
+                                org.telegram.utils.twidget.v vVar2 = (org.telegram.utils.twidget.v) y6Var;
+                                try {
+                                    File file22 = n5Var5222.P0;
+                                    if (file22 != null) {
+                                        file22.delete();
+                                    }
+                                } catch (Exception unused4) {
+                                }
+                                try {
+                                    File file23 = n5Var5222.R0;
+                                    if (file23 != null) {
+                                        file23.delete();
+                                    }
+                                } catch (Exception unused5) {
+                                }
+                                try {
+                                    File file24 = n5Var5222.Q0;
+                                    if (file24 != null) {
+                                        file24.delete();
+                                    }
+                                } catch (Exception unused6) {
+                                }
+                                n5Var5222.P0 = null;
+                                n5Var5222.R0 = null;
+                                n5Var5222.Q0 = null;
+                                File file25 = n5Var5222.Y0;
+                                if (file25 != null) {
+                                    try {
+                                        file25.delete();
+                                    } catch (Exception e102) {
+                                        org.telegram.messenger.f8.g(e102, true);
+                                    }
+                                    n5Var5222.Y0 = null;
+                                }
+                                File file26 = n5Var5222.X0;
+                                if (file26 != null) {
+                                    try {
+                                        file26.delete();
+                                    } catch (Exception e11) {
+                                        org.telegram.messenger.f8.g(e11, true);
+                                    }
+                                    n5Var5222.X0 = null;
+                                }
+                                n5Var5222.j |= z1622;
+                                n5Var5222.T0 = arrayList1022;
+                                n5Var5222.P0 = K;
+                                n5Var5222.Y0 = file1722;
+                                n5Var5222.R0 = file1922;
+                                n5Var5222.X0 = file2022;
+                                n5Var5222.Q0 = file1822;
+                                n5Var5222.U0 = arrayList9;
+                                vVar2.run();
+                                break;
+                        }
+                    }
+                });
+                return;
         }
     }
 
-    public /* synthetic */ fe(Object obj, int i10, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i11) {
-        this.a = i11;
-        this.c = obj;
+    public /* synthetic */ fe(vh.o8 o8Var, vh.s7 s7Var, int i10, int i11, vh.n5 n5Var, boolean z10, boolean z11, Runnable runnable, int i12) {
+        this.a = i12;
+        this.f = o8Var;
+        this.h = s7Var;
         this.b = i10;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
-        this.h = obj5;
-        this.n = obj6;
-    }
-
-    public /* synthetic */ fe(Object obj, Object obj2, int i10, Object obj3, Object obj4, Object obj5, Object obj6, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.d = obj2;
-        this.b = i10;
-        this.e = obj3;
-        this.f = obj4;
-        this.h = obj5;
-        this.n = obj6;
-    }
-
-    public /* synthetic */ fe(Object obj, Object obj2, Object obj3, int i10, Object obj4, Object obj5, Object obj6, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = i10;
-        this.f = obj4;
-        this.h = obj5;
-        this.n = obj6;
-    }
-
-    public /* synthetic */ fe(us usVar, TLObject tLObject, Object obj, TLObject tLObject2, Object obj2, int i10, String str, int i11) {
-        this.a = i11;
-        this.c = usVar;
-        this.d = tLObject;
-        this.e = obj;
-        this.f = tLObject2;
-        this.h = obj2;
-        this.b = i10;
-        this.n = str;
-    }
-
-    public /* synthetic */ fe(TLRPC.TL_error tL_error, TLObject tLObject, ArrayList arrayList, int i10, AtomicInteger atomicInteger, ArrayList arrayList2, org.telegram.ui.qq qqVar) {
-        this.a = 5;
-        this.e = tL_error;
-        this.f = tLObject;
-        this.c = arrayList;
-        this.b = i10;
-        this.h = atomicInteger;
-        this.d = arrayList2;
-        this.n = qqVar;
-    }
-
-    public /* synthetic */ fe(se0 se0Var, String str, c5.g gVar, List list, String str2, String str3, int i10) {
-        this.a = 12;
-        this.c = se0Var;
-        this.d = str;
-        this.e = gVar;
-        this.f = list;
-        this.h = str2;
-        this.n = str3;
-        this.b = i10;
-    }
-
-    public /* synthetic */ fe(org.telegram.ui.web.z0 z0Var, String str, TLObject tLObject, TLRPC.TL_error tL_error, int i10, org.telegram.ui.web.v0 v0Var, org.telegram.ui.web.x0 x0Var) {
-        this.a = 16;
-        this.c = z0Var;
-        this.d = str;
-        this.e = tLObject;
-        this.f = tL_error;
-        this.b = i10;
-        this.h = v0Var;
-        this.n = x0Var;
-    }
-
-    public /* synthetic */ fe(zf.s0 s0Var, int i10, ArrayList arrayList, a0.h hVar, TLRPC.TL_error tL_error, TLObject tLObject, vp vpVar) {
-        this.a = 18;
-        this.d = s0Var;
-        this.b = i10;
-        this.c = arrayList;
-        this.e = hVar;
-        this.f = tL_error;
-        this.h = tLObject;
-        this.n = vpVar;
+        this.c = i11;
+        this.n = n5Var;
+        this.d = z10;
+        this.e = z11;
+        this.r = runnable;
     }
 }

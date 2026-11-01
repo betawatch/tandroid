@@ -1,27 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ni0 extends tk0 {
-    public final /* synthetic */ vi0 e3;
+public final /* synthetic */ class ni0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wi0 b;
+    public final /* synthetic */ TLObject c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ni0(vi0 vi0Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, p6Var);
-        this.e3 = vi0Var;
+    public /* synthetic */ ni0(wi0 wi0Var, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = wi0Var;
+        this.c = tLObject;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        vi0 vi0Var = this.e3;
-        da0 da0Var = vi0Var.J;
-        if (da0Var != null) {
-            da0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                wi0 wi0Var = this.b;
+                org.telegram.messenger.at.f(wi0Var.b).d(new ni0(wi0Var, this.c, 1));
+                break;
+            default:
+                wi0.a(this.b, this.c);
+                break;
         }
-        super.onMeasure(i10, i11);
-        vi0Var.j();
     }
 }

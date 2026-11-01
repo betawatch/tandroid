@@ -6,12 +6,12 @@ import android.opengl.GLUtils;
 import android.os.Build;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.qu0;
 import v7.h8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r1 {
     public final Bitmap a;
@@ -21,9 +21,9 @@ public final class r1 {
         this.a = bitmap;
     }
 
-    public static int b(pu0 pu0Var) {
-        int i10 = (int) pu0Var.a;
-        int i11 = (int) pu0Var.b;
+    public static int b(qu0 qu0Var) {
+        int i10 = (int) qu0Var.a;
+        int i11 = (int) qu0Var.b;
         int[] iArr = new int[1];
         GLES20.glGenTextures(1, iArr, 0);
         int i12 = iArr[0];
@@ -79,13 +79,13 @@ public final class r1 {
             this.a.getPixels(iArr2, 0, width, 0, 0, width, height);
             for (int i13 = 0; i13 < i12; i13++) {
                 int i14 = iArr2[i13];
-                iArr2[i13] = ((i14 >> 16) & zs.e4) | (i14 & (-16711936)) | ((i14 & zs.e4) << 16);
+                iArr2[i13] = ((i14 >> 16) & at.e4) | (i14 & (-16711936)) | ((i14 & at.e4) << 16);
             }
             GLES20.glTexImage2D(3553, 0, 6408, width, height, 0, 6408, 5121, IntBuffer.wrap(iArr2));
         }
         if (!bitmap.isRecycled() && Build.VERSION.SDK_INT <= 28) {
             int pixel = bitmap.getPixel(0, 0);
-            int i15 = ((pixel >> 16) & zs.e4) | (pixel & (-16711936)) | ((pixel & zs.e4) << 16);
+            int i15 = ((pixel >> 16) & at.e4) | (pixel & (-16711936)) | ((pixel & at.e4) << 16);
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(4);
             allocateDirect.putInt(i15).position(0);
             GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);

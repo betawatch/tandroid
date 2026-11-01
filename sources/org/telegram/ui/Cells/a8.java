@@ -10,15 +10,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.n61;
-import org.telegram.ui.r61;
+import org.telegram.ui.l61;
+import org.telegram.ui.p61;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class a8 extends FrameLayout {
     public final y7 a;
@@ -31,7 +31,7 @@ public abstract class a8 extends FrameLayout {
     public final org.telegram.ui.Components.r8 n;
     public final th.t5 r;
     public final org.telegram.ui.ActionBar.p6 s;
-    public r61 w;
+    public p61 w;
     public final TLRPC.ChatFull x;
     public boolean y;
 
@@ -45,24 +45,24 @@ public abstract class a8 extends FrameLayout {
         y7 y7Var = new y7(this, context, p6Var);
         this.a = y7Var;
         setClipChildren(false);
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         addView(y7Var, w7.b6.d(46, 46.0f, (!z10 ? 8388611 : 8388613) | 16, !z10 ? 12.0f : 16.0f, 0.0f, !z10 ? 16.0f : 12.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         LinearLayout f7 = org.telegram.messenger.m5.f(context, 0);
         z7 z7Var = new z7(context);
         this.b = z7Var;
-        zs.i(z7Var);
+        at.i(z7Var);
         z7Var.setTypeface(org.telegram.messenger.i0.o());
         z7Var.setTextSize(16);
         z7Var.setMaxLines(1);
         z7Var.setTextColor(-16777216);
-        z7Var.setGravity(cd.X ? 5 : 3);
+        z7Var.setGravity(dd.X ? 5 : 3);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(-16777216);
-        if (cd.X) {
+        if (dd.X) {
             f7.addView(textView, w7.b6.r(-2, -2, 80));
             f7.addView(z7Var, w7.b6.q(0, -2, 1.0f, 0, 16, 0, 0, 0));
         } else {
@@ -87,7 +87,7 @@ public abstract class a8 extends FrameLayout {
         textView4.setTextColor(-16777216);
         textView4.setGravity(16);
         LinearLayout f10 = org.telegram.messenger.m5.f(context, 0);
-        if (cd.X) {
+        if (dd.X) {
             f10.addView(textView3, w7.b6.t(-2, -2, 16, 0, 0, 10, 0));
             f10.addView(textView4, w7.b6.r(-2, -2, 16));
             f10.addView(textView2, w7.b6.q(0, -2, 1.0f, 0, 8, 0, 0, 0));
@@ -97,7 +97,7 @@ public abstract class a8 extends FrameLayout {
             f10.addView(textView3, w7.b6.t(-2, -2, 16, 10, 0, 0, 0));
         }
         linearLayout.addView(f10, w7.b6.d(-1, -2.0f, 8388659, 0.0f, 3.0f, 0.0f, 9.0f));
-        boolean z11 = cd.X;
+        boolean z11 = dd.X;
         addView(linearLayout, w7.b6.d(-1, -2.0f, 0, !z11 ? 72.0f : 18.0f, 0.0f, !z11 ? 18.0f : 72.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.t6.j5;
         org.telegram.ui.ActionBar.a7.Y(z7Var, i10, null);
@@ -135,7 +135,7 @@ public abstract class a8 extends FrameLayout {
             int w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d7, this.s);
             Paint paint = this.h;
             paint.setColor(w02);
-            if (cd.X) {
+            if (dd.X) {
                 canvas.drawRect(0.0f, getHeight() - 1, getWidth() - org.telegram.messenger.i0.L(72), getHeight(), paint);
             } else {
                 canvas.drawRect(org.telegram.messenger.i0.L(72), getHeight() - 1, getWidth(), getHeight(), paint);
@@ -147,7 +147,7 @@ public abstract class a8 extends FrameLayout {
         return this.a;
     }
 
-    public r61 getPostInfo() {
+    public p61 getPostInfo() {
         return this.w;
     }
 
@@ -161,16 +161,16 @@ public abstract class a8 extends FrameLayout {
         this.r.g();
     }
 
-    public void setData(n61 n61Var) {
-        TLRPC.User user = n61Var.a;
+    public void setData(l61 l61Var) {
+        TLRPC.User user = l61Var.a;
         org.telegram.ui.Components.r8 r8Var = this.n;
         r8Var.r(user);
-        TLRPC.User user2 = n61Var.a;
+        TLRPC.User user2 = l61Var.a;
         y7 y7Var = this.a;
         y7Var.e(user2, r8Var);
         y7Var.setRoundRadius(org.telegram.messenger.i0.L(46.0f) >> 1);
-        this.b.k(n61Var.a.first_name);
-        this.e.setText(n61Var.b);
+        this.b.k(l61Var.a.first_name);
+        this.e.setText(l61Var.b);
         this.c.setVisibility(8);
         this.d.setVisibility(8);
         this.f.setVisibility(8);

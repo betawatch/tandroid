@@ -1,10 +1,10 @@
 package ph;
 
-import org.telegram.ui.f11;
+import org.telegram.ui.d01;
 import rh.e6;
 import rh.y7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w3 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class w3 implements Runnable {
                 long j10 = g4Var.U1.id;
                 String str = g4Var.X1;
                 e4Var.f3 = true;
-                e6.y(e4Var.a, false).K(j10, new f11(28, e4Var, str));
+                e6.y(e4Var.a, false).K(j10, new d01(29, e4Var, str));
                 break;
             case 3:
                 g4 g4Var2 = this.b;

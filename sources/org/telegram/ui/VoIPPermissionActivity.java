@@ -8,7 +8,7 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class VoIPPermissionActivity extends Activity {
     @Override // android.app.Activity
@@ -33,7 +33,7 @@ public class VoIPPermissionActivity extends Activity {
             return;
         }
         try {
-            requestPermissions((String[]) arrayList.toArray(new String[0]), isVideo ? org.telegram.messenger.zs.n1 : 101);
+            requestPermissions((String[]) arrayList.toArray(new String[0]), isVideo ? org.telegram.messenger.at.n1 : 101);
         } catch (Exception e) {
             org.telegram.messenger.f8.g(e, true);
         }
@@ -73,7 +73,7 @@ public class VoIPPermissionActivity extends Activity {
             } else {
                 VoIPPreNotificationService.decline(this, 1);
             }
-            org.telegram.ui.Components.voip.m1.h(this, new ce1(this, 0), i10);
+            org.telegram.ui.Components.voip.n1.h(this, new ae1(this, 0), i10);
         }
     }
 }

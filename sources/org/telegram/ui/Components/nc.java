@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class nc extends vh.k {
     public boolean R0;
@@ -48,11 +48,11 @@ public abstract class nc extends vh.k {
     public boolean n1;
     public final tf o1;
     public boolean p1;
-    public org.telegram.messenger.q20 q1;
+    public org.telegram.messenger.r20 q1;
     public boolean r1;
 
-    public nc(Context context, FrameLayout frameLayout, uu0 uu0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.p6 p6Var, s9 s9Var, Runnable runnable) {
-        super(context, frameLayout, uu0Var, frameLayout2, p6Var, s9Var);
+    public nc(Context context, FrameLayout frameLayout, vu0 vu0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.p6 p6Var, s9 s9Var, Runnable runnable) {
+        super(context, frameLayout, vu0Var, frameLayout2, p6Var, s9Var);
         float f7;
         float f10;
         this.a1 = 0;
@@ -70,12 +70,12 @@ public abstract class nc extends vh.k {
         e6Var.w(org.telegram.messenger.i0.L(14.0f));
         e6Var.M = org.telegram.messenger.i0.q.x;
         e6Var.u(-1);
-        boolean z10 = this instanceof org.telegram.ui.kq0;
+        boolean z10 = this instanceof org.telegram.ui.iq0;
         if (z10) {
-            e6Var.t(org.telegram.messenger.cd.L0(2131748340, null), true, true);
+            e6Var.t(org.telegram.messenger.dd.L0(2131748340, null), true, true);
             this.f1 = context.getResources().getDrawable(R.drawable.menu_link_below);
         } else {
-            e6Var.t(org.telegram.messenger.cd.L0(2131748339, null), true, true);
+            e6Var.t(org.telegram.messenger.dd.L0(2131748339, null), true, true);
             this.f1 = context.getResources().getDrawable(R.drawable.menu_link_above);
         }
         ImageView imageView = new ImageView(context);
@@ -123,7 +123,7 @@ public abstract class nc extends vh.k {
         imageView3.setColorFilter(new PorterDuffColorFilter(-1140850689, PorterDuff.Mode.MULTIPLY));
         imageView3.setBackground(org.telegram.ui.ActionBar.t6.h0(1090519039, 1, org.telegram.messenger.i0.L(16.0f)));
         addView(imageView3, w7.b6.d(44, 44.0f, 53, 8.0f, 0.0f, 8.0f, 0.0f));
-        imageView3.setContentDescription(org.telegram.messenger.cd.L0(2131755006, null));
+        imageView3.setContentDescription(org.telegram.messenger.dd.L0(2131755006, null));
         w7.e6.a(imageView3);
         this.f.getEditText().addTextChangedListener(new ag.a1(this, 9));
         imageView3.setVisibility(8);
@@ -194,7 +194,7 @@ public abstract class nc extends vh.k {
             return;
         }
         if (z10) {
-            org.telegram.messenger.vp.r1(this.U).Q1().b();
+            org.telegram.messenger.wp.r1(this.U).Q1().b();
         }
         this.r1 = z10;
         ImageView imageView = this.Y0;
@@ -217,18 +217,18 @@ public abstract class nc extends vh.k {
             p2Var2.e(true);
             this.Z0 = null;
         }
-        if (org.telegram.messenger.vp.d1().getInt("aihintshown", 0) < 3) {
+        if (org.telegram.messenger.wp.d1().getInt("aihintshown", 0) < 3) {
             vh.p2 p2Var3 = new vh.p2(getContext(), 3);
             this.Z0 = p2Var3;
             p2Var3.p(true);
-            this.Z0.s(org.telegram.messenger.cd.L0(2131754992, null));
+            this.Z0.s(org.telegram.messenger.dd.L0(2131754992, null));
             this.Z0.m(1.0f, ((-imageView.getWidth()) / 2.0f) + org.telegram.messenger.i0.L(4.0f));
             addView(this.Z0, w7.b6.d(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
             vh.p2 p2Var4 = this.Z0;
-            p2Var4.l0 = new org.telegram.ui.zg(29, this, p2Var3);
+            p2Var4.l0 = new org.telegram.ui.ch(29, this, p2Var3);
             p2Var4.d = 4000L;
             p2Var4.u();
-            org.telegram.messenger.vp.d1().edit().putInt("aihintshown", org.telegram.messenger.vp.d1().getInt("aihintshown", 0) + 1).apply();
+            org.telegram.messenger.wp.d1().edit().putInt("aihintshown", org.telegram.messenger.wp.d1().getInt("aihintshown", 0) + 1).apply();
         }
     }
 
@@ -285,7 +285,7 @@ public abstract class nc extends vh.k {
         ImageView imageView = this.Y0;
         if (imageView != null) {
             imageView.setTranslationX(-org.telegram.messenger.i0.L((1.0f - this.n0) * 4.0f));
-            boolean z10 = this instanceof org.telegram.ui.kq0;
+            boolean z10 = this instanceof org.telegram.ui.iq0;
             imageView.setTranslationY((Utilities.l((-this.j1.e(false, this.f.getEditText().getLineCount())) + 4.0f) * org.telegram.messenger.i0.L(3.0f) * (z10 ? 1 : -1)) + (z10 ? rectF.bottom - org.telegram.messenger.i0.L(44.0f) : rectF.top));
         }
         float f10 = this.k1.f(this.m1, true ^ G());
@@ -293,15 +293,15 @@ public abstract class nc extends vh.k {
         if (f10 > 0.0f) {
             float a2 = this.h1.a(0.03f);
             int L = org.telegram.messenger.i0.L((1.0f - this.n0) * 4.0f);
-            boolean z11 = this instanceof org.telegram.ui.kq0;
+            boolean z11 = this instanceof org.telegram.ui.iq0;
             e6 e6Var = this.g1;
             RectF rectF2 = this.e1;
             if (z11) {
                 f7 = 1.0f;
-                rectF2.set(org.telegram.messenger.i0.L(7.0f) + L, rectF.bottom + org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.z20.b(e6Var.c(), org.telegram.messenger.i0.L(11.0f), d, org.telegram.messenger.i0.L(44.0f) + L), rectF.bottom + org.telegram.messenger.i0.L(42.0f));
+                rectF2.set(org.telegram.messenger.i0.L(7.0f) + L, rectF.bottom + org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.a30.b(e6Var.c(), org.telegram.messenger.i0.L(11.0f), d, org.telegram.messenger.i0.L(44.0f) + L), rectF.bottom + org.telegram.messenger.i0.L(42.0f));
             } else {
                 f7 = 1.0f;
-                rectF2.set(org.telegram.messenger.i0.L(7.0f) + L, rectF.top - org.telegram.messenger.i0.L(42.0f), org.telegram.messenger.z20.b(e6Var.c(), org.telegram.messenger.i0.L(11.0f), d, org.telegram.messenger.i0.L(44.0f) + L), rectF.top - org.telegram.messenger.i0.L(10.0f));
+                rectF2.set(org.telegram.messenger.i0.L(7.0f) + L, rectF.top - org.telegram.messenger.i0.L(42.0f), org.telegram.messenger.a30.b(e6Var.c(), org.telegram.messenger.i0.L(11.0f), d, org.telegram.messenger.i0.L(44.0f) + L), rectF.top - org.telegram.messenger.i0.L(10.0f));
             }
             if (f10 < f7) {
                 canvas.saveLayerAlpha(rectF2, (int) (f10 * 255.0f), 31);
@@ -354,7 +354,7 @@ public abstract class nc extends vh.k {
         } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && dcVar.i) {
             if (motionEvent.getAction() == 1) {
                 A();
-                this.g1.t(org.telegram.messenger.cd.L0(this instanceof org.telegram.ui.kq0 ? 2131748340 : 2131748339, null), true, true);
+                this.g1.t(org.telegram.messenger.dd.L0(this instanceof org.telegram.ui.iq0 ? 2131748340 : 2131748339, null), true, true);
             }
             dcVar.c(false);
             return true;
@@ -369,17 +369,17 @@ public abstract class nc extends vh.k {
 
     @Override // vh.k
     public int getCaptionDefaultLimit() {
-        return org.telegram.messenger.vp.r1(this.U).U4;
+        return org.telegram.messenger.wp.r1(this.U).U4;
     }
 
     @Override // vh.k
     public int getCaptionLimit() {
-        return org.telegram.messenger.d20.i(this.U).q() ? getCaptionPremiumLimit() : getCaptionDefaultLimit();
+        return org.telegram.messenger.e20.i(this.U).q() ? getCaptionPremiumLimit() : getCaptionDefaultLimit();
     }
 
     @Override // vh.k
     public int getCaptionPremiumLimit() {
-        return org.telegram.messenger.vp.r1(this.U).V4;
+        return org.telegram.messenger.wp.r1(this.U).V4;
     }
 
     @Override // vh.k
@@ -402,7 +402,7 @@ public abstract class nc extends vh.k {
 
     @Override // vh.k
     public final void r(int i10) {
-        this.c1.setTranslationY(((-Math.min(org.telegram.messenger.i0.L(34.0f), i10)) - org.telegram.messenger.i0.L(10.0f)) * (this instanceof org.telegram.ui.kq0 ? -1.0f : 1.0f));
+        this.c1.setTranslationY(((-Math.min(org.telegram.messenger.i0.L(34.0f), i10)) - org.telegram.messenger.i0.L(10.0f)) * (this instanceof org.telegram.ui.iq0 ? -1.0f : 1.0f));
     }
 
     @Override // vh.k
@@ -424,8 +424,8 @@ public abstract class nc extends vh.k {
         this.S0.setOnClickListener(onClickListener);
     }
 
-    public void setOnTimerChange(org.telegram.messenger.q20 q20Var) {
-        this.q1 = q20Var;
+    public void setOnTimerChange(org.telegram.messenger.r20 r20Var) {
+        this.q1 = r20Var;
     }
 
     @Override // vh.k
@@ -471,7 +471,7 @@ public abstract class nc extends vh.k {
         boolean z10;
         tf tfVar = this.o1;
         org.telegram.messenger.i0.r(tfVar);
-        if (org.telegram.messenger.vp.r1(this.U).f7.getInt("movecaptionhint", 0) >= 24) {
+        if (org.telegram.messenger.wp.r1(this.U).f7.getInt("movecaptionhint", 0) >= 24) {
             boolean z11 = org.telegram.messenger.v2.a;
             z10 = false;
         } else {
@@ -479,7 +479,7 @@ public abstract class nc extends vh.k {
         }
         this.n1 = z10;
         if (z10) {
-            SharedPreferences sharedPreferences = org.telegram.messenger.vp.r1(this.U).f7;
+            SharedPreferences sharedPreferences = org.telegram.messenger.wp.r1(this.U).f7;
             sharedPreferences.edit().putInt("movecaptionhint", sharedPreferences.getInt("movecaptionhint", 0) + 1).apply();
             invalidate();
             org.telegram.messenger.i0.h3(tfVar, 5000L);

@@ -9,8 +9,8 @@ import android.widget.TextView;
 import fe.e;
 import fe.f;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p6;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.gr;
 import rf.o;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements e, k6 {
     public ShapeDrawable a;
@@ -93,7 +93,7 @@ public final class b extends FrameLayout implements e, k6 {
             this.a.setAlpha((int) (this.e.e * 255.0f));
             invalidate();
         }
-        this.d.setTextColor(i0.b.o(t6.w0(t6.Kl, p6Var), zs.F3));
+        this.d.setTextColor(i0.b.o(t6.w0(t6.Kl, p6Var), at.F3));
     }
 
     @Override // fe.e

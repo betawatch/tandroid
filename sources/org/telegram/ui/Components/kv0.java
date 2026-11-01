@@ -1,37 +1,35 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ProfileActivity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kv0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nv0 b;
+public final class kv0 extends ha {
+    public gs P1;
 
-    public /* synthetic */ kv0(nv0 nv0Var, int i10) {
-        this.a = i10;
-        this.b = nv0Var;
+    public kv0(Context context) {
+        super(context, null, true, false, null);
+        O();
+        this.v1 = true;
+        this.u1 = true;
+        Y0();
+        uk0 uk0Var = this.k1;
+        int i10 = this.t0;
+        uk0Var.setPadding(i10, 0, i10, 0);
+        this.k1.j(new cu0(this, 2));
+        this.k1.setOnItemClickListener(new k(this, 14));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                nv0 nv0Var = this.b;
-                nv0Var.invalidate();
-                org.telegram.messenger.i0.g3(new kv0(nv0Var, 1));
-                break;
-            default:
-                nv0 nv0Var2 = this.b;
-                mv0 mv0Var = nv0Var2.e;
-                if (mv0Var != null) {
-                    nv0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.bv0) mv0Var).b;
-                    profileActivity.r.setTranslationX(profileActivity.l4(profileActivity.t6, profileActivity.v6));
-                    profileActivity.r.setTranslationY(profileActivity.m4(profileActivity.w6));
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.ha
+    public final tk0 L0(uk0 uk0Var) {
+        gs gsVar = new gs(uk0Var, getContext(), this.a, 0, true, this.I0);
+        this.P1 = gsVar;
+        gsVar.r = false;
+        return gsVar;
+    }
+
+    @Override // org.telegram.ui.Components.ha
+    public final CharSequence O0() {
+        return org.telegram.messenger.dd.L0(2131745838, null);
     }
 }

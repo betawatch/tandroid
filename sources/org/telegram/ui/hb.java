@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class hb extends qb {
     public final zg.i g0;
@@ -21,7 +21,7 @@ public final class hb extends qb {
         this.g0 = new zg.i();
     }
 
-    @Override // org.telegram.ui.Components.uu0
+    @Override // org.telegram.ui.Components.vu0
     public final void T(Drawable drawable) {
         if (drawable instanceof org.telegram.ui.Components.jb0) {
             ((org.telegram.ui.Components.jb0) drawable).p();
@@ -51,17 +51,17 @@ public final class hb extends qb {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.jj jjVar = MediaController.B().u0;
-        if (jjVar == null || !jjVar.h4() || jjVar.T == 0) {
+        org.telegram.messenger.kj kjVar = MediaController.B().u0;
+        if (kjVar == null || !kjVar.h4() || kjVar.T == 0) {
             return;
         }
-        long B0 = org.telegram.messenger.jj.B0(jjVar.k);
+        long B0 = org.telegram.messenger.kj.B0(kjVar.k);
         sb sbVar = this.h0;
         if (B0 == (-sbVar.f.id)) {
-            MediaController.B().p0(sbVar.U0(false), sbVar.e0, sbVar.d0, true);
+            MediaController.B().p0(sbVar.V0(false), sbVar.e0, sbVar.d0, true);
         }
     }
 
@@ -69,7 +69,7 @@ public final class hb extends qb {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0083  */
-    @Override // org.telegram.ui.Components.uu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -92,7 +92,7 @@ public final class hb extends qb {
         while (true) {
             sb sbVar = this.h0;
             if (i21 >= childCount) {
-                sbVar.g1();
+                sbVar.h1();
                 R();
                 return;
             }
@@ -105,7 +105,7 @@ public final class hb extends qb {
                 if (i22 == -1) {
                     i22 = 51;
                 }
-                int i23 = i22 & org.telegram.messenger.zs.x1;
+                int i23 = i22 & org.telegram.messenger.at.x1;
                 int i24 = i22 & 7;
                 if (i24 == 1) {
                     i14 = (((i12 - i10) - measuredWidth) / 2) + layoutParams.leftMargin;

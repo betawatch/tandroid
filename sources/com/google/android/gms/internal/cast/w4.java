@@ -2,9 +2,9 @@ package com.google.android.gms.internal.cast;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class w4 extends v7.u5 {
     public static final Logger e = Logger.getLogger(w4.class.getName());
@@ -112,15 +112,15 @@ public final class w4 extends v7.u5 {
             int i11 = this.d;
             int i12 = i11 + 1;
             this.d = i12;
-            bArr[i11] = (byte) (i10 & zs.e4);
+            bArr[i11] = (byte) (i10 & at.e4);
             int i13 = i11 + 2;
             this.d = i13;
-            bArr[i12] = (byte) ((i10 >> 8) & zs.e4);
+            bArr[i12] = (byte) ((i10 >> 8) & at.e4);
             int i14 = i11 + 3;
             this.d = i14;
-            bArr[i13] = (byte) ((i10 >> 16) & zs.e4);
+            bArr[i13] = (byte) ((i10 >> 16) & at.e4);
             this.d = i11 + 4;
-            bArr[i14] = (byte) ((i10 >> 24) & zs.e4);
+            bArr[i14] = (byte) ((i10 >> 24) & at.e4);
         } catch (IndexOutOfBoundsException e7) {
             throw new x4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e7);
         }
@@ -137,27 +137,27 @@ public final class w4 extends v7.u5 {
             int i10 = this.d;
             int i11 = i10 + 1;
             this.d = i11;
-            bArr[i10] = (byte) (((int) j10) & zs.e4);
+            bArr[i10] = (byte) (((int) j10) & at.e4);
             int i12 = i10 + 2;
             this.d = i12;
-            bArr[i11] = (byte) (((int) (j10 >> 8)) & zs.e4);
+            bArr[i11] = (byte) (((int) (j10 >> 8)) & at.e4);
             int i13 = i10 + 3;
             this.d = i13;
-            bArr[i12] = (byte) (((int) (j10 >> 16)) & zs.e4);
+            bArr[i12] = (byte) (((int) (j10 >> 16)) & at.e4);
             int i14 = i10 + 4;
             this.d = i14;
-            bArr[i13] = (byte) (((int) (j10 >> 24)) & zs.e4);
+            bArr[i13] = (byte) (((int) (j10 >> 24)) & at.e4);
             int i15 = i10 + 5;
             this.d = i15;
-            bArr[i14] = (byte) (((int) (j10 >> 32)) & zs.e4);
+            bArr[i14] = (byte) (((int) (j10 >> 32)) & at.e4);
             int i16 = i10 + 6;
             this.d = i16;
-            bArr[i15] = (byte) (((int) (j10 >> 40)) & zs.e4);
+            bArr[i15] = (byte) (((int) (j10 >> 40)) & at.e4);
             int i17 = i10 + 7;
             this.d = i17;
-            bArr[i16] = (byte) (((int) (j10 >> 48)) & zs.e4);
+            bArr[i16] = (byte) (((int) (j10 >> 48)) & at.e4);
             this.d = i10 + 8;
-            bArr[i17] = (byte) (((int) (j10 >> 56)) & zs.e4);
+            bArr[i17] = (byte) (((int) (j10 >> 56)) & at.e4);
         } catch (IndexOutOfBoundsException e7) {
             throw new x4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e7);
         }
@@ -216,7 +216,7 @@ public final class w4 extends v7.u5 {
                 try {
                     int i13 = this.d;
                     this.d = i13 + 1;
-                    bArr[i13] = (byte) ((i10 & zs.L1) | 128);
+                    bArr[i13] = (byte) ((i10 & at.L1) | 128);
                     i10 >>>= 7;
                 } catch (IndexOutOfBoundsException e7) {
                     throw new x4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e7);
@@ -240,7 +240,7 @@ public final class w4 extends v7.u5 {
                 try {
                     int i11 = this.d;
                     this.d = i11 + 1;
-                    bArr[i11] = (byte) ((((int) j10) & zs.L1) | 128);
+                    bArr[i11] = (byte) ((((int) j10) & at.L1) | 128);
                     j10 >>>= 7;
                 } catch (IndexOutOfBoundsException e7) {
                     throw new x4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(i10), 1), e7);
@@ -261,7 +261,7 @@ public final class w4 extends v7.u5 {
             } else {
                 int i15 = this.d;
                 this.d = i15 + 1;
-                q6.c.d(bArr, q6.f + i15, (byte) ((i13 & zs.L1) | 128));
+                q6.c.d(bArr, q6.f + i15, (byte) ((i13 & at.L1) | 128));
                 j10 >>>= 7;
             }
         }

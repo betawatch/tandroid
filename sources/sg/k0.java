@@ -11,13 +11,13 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.Random;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k1;
 import org.telegram.ui.ActionBar.k2;
@@ -26,13 +26,13 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.s0;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.s21;
+import org.telegram.ui.q21;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public static k0 B;
@@ -58,7 +58,7 @@ public final class k0 {
     public float q;
     public float r;
     public boolean s;
-    public final kj0 t;
+    public final lj0 t;
     public boolean u;
     public final View v;
     public boolean w;
@@ -94,20 +94,20 @@ public final class k0 {
     /* JADX WARN: Type inference failed for: r11v4, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r5v39, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r5v47, types: [org.telegram.ui.Components.bi0] */
-    /* JADX WARN: Type inference failed for: r5v51, types: [org.telegram.ui.Components.bi0] */
+    /* JADX WARN: Type inference failed for: r5v47, types: [org.telegram.ui.Components.ci0] */
+    /* JADX WARN: Type inference failed for: r5v51, types: [org.telegram.ui.Components.ci0] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public k0(Context context, k2 k2Var, mj0 mj0Var, View view, View view2, float f7, float f10, o0 o0Var, int i10, int i11, boolean z10) {
-        jj jjVar;
+    public k0(Context context, k2 k2Var, nj0 nj0Var, View view, View view2, float f7, float f10, o0 o0Var, int i10, int i11, boolean z10) {
+        kj kjVar;
         Context context2;
         k2 k2Var2;
         View view3;
         m0 m0Var;
         long j10;
-        jj jjVar2;
-        mj0 mj0Var2;
+        kj kjVar2;
+        nj0 nj0Var2;
         View view4;
         float f11;
         float f12;
@@ -127,7 +127,7 @@ public final class k0 {
         ?? r11;
         int i15;
         i0 i0Var3;
-        jj jjVar3;
+        kj kjVar3;
         int i16;
         int i17;
         boolean z11;
@@ -138,17 +138,17 @@ public final class k0 {
         this.z = z10;
         boolean z12 = view instanceof q1;
         if (z12) {
-            jjVar = ((q1) view).getMessageObject();
-            this.n = jjVar.f1();
-            this.o = jjVar.d1();
+            kjVar = ((q1) view).getMessageObject();
+            this.n = kjVar.f1();
+            this.o = kjVar.d1();
         } else if (view instanceof s0) {
-            jjVar = ((s0) view).getMessageObject();
-            this.n = jjVar.f1();
+            kjVar = ((s0) view).getMessageObject();
+            this.n = kjVar.f1();
             this.o = 0L;
         } else {
             this.n = 0;
             this.o = 0L;
-            jjVar = null;
+            kjVar = null;
         }
         this.p = o0Var;
         this.a = i11;
@@ -158,10 +158,10 @@ public final class k0 {
             view3 = view2;
             m0Var = l4;
             j10 = 0;
-            jjVar2 = jjVar;
-            mj0Var2 = mj0Var;
+            kjVar2 = kjVar;
+            nj0Var2 = nj0Var;
             k2Var2 = k2Var;
-            k0 k0Var = new k0(context, k2Var2, mj0Var2, view, view3, f7, f10, o0Var, i10, 1, true);
+            k0 k0Var = new k0(context, k2Var2, nj0Var2, view, view3, f7, f10, o0Var, i10, 1, true);
             context2 = context;
             this.f = k0Var;
             C = k0Var;
@@ -171,19 +171,19 @@ public final class k0 {
             view3 = view2;
             m0Var = l4;
             j10 = 0;
-            jjVar2 = jjVar;
-            mj0Var2 = mj0Var;
+            kjVar2 = kjVar;
+            nj0Var2 = nj0Var;
         }
         un unVar2 = k2Var2 instanceof un ? (un) k2Var2 : null;
-        if (mj0Var2 != null) {
-            b1 b1Var = mj0Var2.b;
+        if (nj0Var2 != null) {
+            b1 b1Var = nj0Var2.b;
             int i19 = 0;
             while (true) {
                 if (i19 >= b1Var.getChildCount()) {
                     break;
                 }
-                if ((b1Var.getChildAt(i19) instanceof kj0) && ((kj0) b1Var.getChildAt(i19)).e.equals(this.p)) {
-                    this.t = (kj0) b1Var.getChildAt(i19);
+                if ((b1Var.getChildAt(i19) instanceof lj0) && ((lj0) b1Var.getChildAt(i19)).e.equals(this.p)) {
+                    this.t = (lj0) b1Var.getChildAt(i19);
                     break;
                 }
                 i19++;
@@ -192,7 +192,7 @@ public final class k0 {
         int i20 = 1;
         if (i11 == 1) {
             Random random = new Random();
-            ArrayList<TLRPC.MessagePeerReaction> arrayList = (jjVar2 == null || (tL_messageReactions = jjVar2.k.reactions) == null) ? null : tL_messageReactions.recent_reactions;
+            ArrayList<TLRPC.MessagePeerReaction> arrayList = (kjVar2 == null || (tL_messageReactions = kjVar2.k.reactions) == null) ? null : tL_messageReactions.recent_reactions;
             if (arrayList != null && unVar2 != null && unVar2.a() < j10) {
                 int i21 = 0;
                 while (i21 < arrayList.size()) {
@@ -200,9 +200,9 @@ public final class k0 {
                         r8 r8Var = new r8((p6) null);
                         i18 = i20;
                         ImageReceiver imageReceiver = new ImageReceiver(null);
-                        long C1 = jj.C1(arrayList.get(i21).peer_id);
+                        long C1 = kj.C1(arrayList.get(i21).peer_id);
                         if (C1 < j10) {
-                            TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-C1));
+                            TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-C1));
                             if (L0 != null) {
                                 r8Var.q(L0);
                                 imageReceiver.i0(L0, r8Var, null);
@@ -256,7 +256,7 @@ public final class k0 {
                             }
                             unVar = unVar2;
                         } else {
-                            TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(C1));
+                            TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(C1));
                             if (Z1 != null) {
                                 r8Var.r(Z1);
                                 imageReceiver.i0(Z1, r8Var, null);
@@ -287,11 +287,11 @@ public final class k0 {
         }
         un unVar4 = unVar2;
         int i24 = i20;
-        kj0 kj0Var = this.t;
-        ?? r10 = (kj0Var == null && (f7 == 0.0f || f10 == 0.0f)) ? 0 : i24;
+        lj0 lj0Var = this.t;
+        ?? r10 = (lj0Var == null && (f7 == 0.0f || f10 == 0.0f)) ? 0 : i24;
         if (view3 == null) {
-            if (kj0Var != null) {
-                kj0Var.getLocationOnScreen(this.j);
+            if (lj0Var != null) {
+                lj0Var.getLocationOnScreen(this.j);
                 float x10 = this.j[0] + this.t.b.getX();
                 float y3 = this.j[i24] + this.t.b.getY();
                 f11 = this.t.getScaleX() * this.t.b.getWidth();
@@ -325,7 +325,7 @@ public final class k0 {
                 f11 = 0.0f;
             }
             if (i11 != 2) {
-                int L = org.telegram.messenger.i0.L((z10 && tz.j()) ? 60.0f : 34.0f);
+                int L = org.telegram.messenger.i0.L((z10 && uz.j()) ? 60.0f : 34.0f);
                 round = (int) ((L * 2.0f) / org.telegram.messenger.i0.p);
                 i13 = L;
                 i12 = i24;
@@ -338,8 +338,8 @@ public final class k0 {
                     round = (int) (Math.round(Math.min(org.telegram.messenger.i0.L(350.0f), Math.min(point.x, point.y)) * 0.7f) / org.telegram.messenger.i0.p);
                     i13 = round2;
                 } else if (z10) {
-                    i13 = org.telegram.messenger.i0.L(tz.j() ? 240.0f : 140.0f);
-                    round = tz.j() ? (int) ((org.telegram.messenger.i0.L(80.0f) * 2.0f) / org.telegram.messenger.i0.p) : e();
+                    i13 = org.telegram.messenger.i0.L(uz.j() ? 240.0f : 140.0f);
+                    round = uz.j() ? (int) ((org.telegram.messenger.i0.L(80.0f) * 2.0f) / org.telegram.messenger.i0.p) : e();
                 } else {
                     i13 = org.telegram.messenger.i0.L(80.0f);
                     round = e();
@@ -356,9 +356,9 @@ public final class k0 {
             int i26 = round;
             View view5 = view4;
             int i27 = i13;
-            jj jjVar4 = jjVar2;
+            kj kjVar4 = kjVar2;
             r15 = i12;
-            h0Var = new h0(this, context2, k2Var, view5, z10, jjVar4, unVar4, i14, i11, r10, f28, f12, f13, o0Var);
+            h0Var = new h0(this, context2, k2Var, view5, z10, kjVar4, unVar4, i14, i11, r10, f28, f12, f13, o0Var);
             this.i = h0Var;
             i0Var = new i0(this, context2);
             this.b = i0Var;
@@ -366,7 +366,7 @@ public final class k0 {
             this.c = i0Var2;
             i0 i0Var4 = new i0(this, context2);
             this.d = i0Var4;
-            tL_availableReaction = o0Var.f == null ? (TLRPC.TL_availableReaction) ui.b0(i10).r.get(this.p.f) : null;
+            tL_availableReaction = o0Var.f == null ? (TLRPC.TL_availableReaction) vi.b0(i10).r.get(this.p.f) : null;
             if (tL_availableReaction != null && o0Var.g == j10) {
                 this.l = r15;
                 return;
@@ -374,7 +374,7 @@ public final class k0 {
             if (tL_availableReaction == null) {
                 int i28 = 2;
                 if (i11 != 2) {
-                    if ((i11 == r15 && sc.e(4112)) || i11 == 0) {
+                    if ((i11 == r15 && tc.e(4112)) || i11 == 0) {
                         TLRPC.Document document = i11 == r15 ? tL_availableReaction.around_animation : tL_availableReaction.effect_animation;
                         String a2 = i11 == r15 ? a() : a1.g.i(i26, i26, "_");
                         ImageReceiver imageReceiver3 = i0Var.getImageReceiver();
@@ -384,7 +384,7 @@ public final class k0 {
                         sb2.append(i29);
                         sb2.append("_");
                         imageReceiver3.v1 = a1.g.p(sb2, this.n, "_");
-                        i0Var.l(ic.b(document), a2, null, null, 0, null);
+                        i0Var.l(jc.b(document), a2, null, null, 0, null);
                         z11 = false;
                         i0Var.getImageReceiver().W(0);
                         i0Var.getImageReceiver().t0 = false;
@@ -409,7 +409,7 @@ public final class k0 {
                     sb3.append(i30);
                     sb3.append("_");
                     imageReceiver4.v1 = a1.g.p(sb3, this.n, "_");
-                    i0Var2.l(ic.b(document2), a1.g.i(i25, i25, "_"), null, null, 0, null);
+                    i0Var2.l(jc.b(document2), a1.g.i(i25, i25, "_"), null, null, 0, null);
                 } else if (i11 == 0) {
                     TLRPC.Document document3 = tL_availableReaction.activate_animation;
                     ImageReceiver imageReceiver5 = i0Var2.getImageReceiver();
@@ -419,7 +419,7 @@ public final class k0 {
                     sb4.append(i31);
                     sb4.append("_");
                     imageReceiver5.v1 = a1.g.p(sb4, this.n, "_");
-                    i0Var2.l(ic.b(document3), a1.g.i(i25, i25, "_"), null, null, 0, null);
+                    i0Var2.l(jc.b(document3), a1.g.i(i25, i25, "_"), null, null, 0, null);
                 }
                 i0Var3 = i0Var4;
             } else {
@@ -437,7 +437,7 @@ public final class k0 {
                     i15 = i10;
                     if (i11 == 2) {
                         i0Var3 = i0Var4;
-                        jjVar3 = jjVar4;
+                        kjVar3 = kjVar4;
                         f5 f5Var2 = new f5(2, i15, o0Var.g);
                         f5Var2.n(i0Var2);
                         i0Var2.H = f5Var2;
@@ -446,7 +446,7 @@ public final class k0 {
                         }
                         if (i11 != 0 || i11 == r15) {
                             f5 f5Var3 = new f5(2, i15, o0Var.g);
-                            f5Var3.setColorFilter(new PorterDuffColorFilter(jjVar3 == null ? t6.w0(jjVar3.O5() ? jjVar3.P3() ? t6.Gc : t6.qk : jjVar3.P3() ? t6.uk : t6.tk, k2Var != null ? k2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
+                            f5Var3.setColorFilter(new PorterDuffColorFilter(kjVar3 == null ? t6.w0(kjVar3.O5() ? kjVar3.P3() ? t6.Gc : t6.qk : kjVar3.P3() ? t6.uk : t6.tk, k2Var != null ? k2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
                             boolean z13 = i11 != 0 ? r15 == true ? 1 : 0 : false;
                             i0Var.I = d.a(f5Var3, z13, !z13);
                             h0Var.setClipChildren(false);
@@ -454,13 +454,13 @@ public final class k0 {
                     }
                 }
                 i0Var3 = i0Var4;
-                jjVar3 = jjVar4;
+                kjVar3 = kjVar4;
                 if (i11 != 0) {
                 }
                 f5 f5Var32 = new f5(2, i15, o0Var.g);
-                if (jjVar3 == null) {
+                if (kjVar3 == null) {
                 }
-                f5Var32.setColorFilter(new PorterDuffColorFilter(jjVar3 == null ? t6.w0(jjVar3.O5() ? jjVar3.P3() ? t6.Gc : t6.qk : jjVar3.P3() ? t6.uk : t6.tk, k2Var != null ? k2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
+                f5Var32.setColorFilter(new PorterDuffColorFilter(kjVar3 == null ? t6.w0(kjVar3.O5() ? kjVar3.P3() ? t6.Gc : t6.qk : kjVar3.P3() ? t6.uk : t6.tk, k2Var != null ? k2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
                 if (i11 != 0) {
                 }
                 i0Var.I = d.a(f5Var32, z13, !z13);
@@ -486,7 +486,7 @@ public final class k0 {
             ((FrameLayout.LayoutParams) i0Var2.getLayoutParams()).leftMargin = i16;
             if (i11 != r15 && !z10) {
                 if (tL_availableReaction != null) {
-                    i0Var3.getImageReceiver().q0(ic.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
+                    i0Var3.getImageReceiver().q0(jc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
                 }
                 frameLayout.addView(i0Var3);
                 i0Var3.getLayoutParams().width = i14;
@@ -516,8 +516,8 @@ public final class k0 {
         f14 = iArr2[0];
         f15 = iArr2[i24];
         f11 = view3.getScaleX() * view3.getWidth();
-        if (view3 instanceof s21) {
-            float f29 = ((s21) view3).G;
+        if (view3 instanceof q21) {
+            float f29 = ((q21) view3).G;
             if (f29 > 0.0f) {
                 f11 = view3.getWidth() * ((f29 * 2.0f) + 1.0f);
                 f14 = m5.y(f11, view3.getWidth(), 2.0f, f14);
@@ -540,9 +540,9 @@ public final class k0 {
         int i262 = round;
         View view52 = view4;
         int i272 = i13;
-        jj jjVar42 = jjVar2;
+        kj kjVar42 = kjVar2;
         r15 = i12;
-        h0Var = new h0(this, context2, k2Var, view52, z10, jjVar42, unVar4, i14, i11, r10, f282, f12, f13, o0Var);
+        h0Var = new h0(this, context2, k2Var, view52, z10, kjVar42, unVar4, i14, i11, r10, f282, f12, f13, o0Var);
         this.i = h0Var;
         i0Var = new i0(this, context2);
         this.b = i0Var;
@@ -628,16 +628,16 @@ public final class k0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void d(k2 k2Var, mj0 mj0Var, View view, View view2, float f7, float f10, o0 o0Var, int i10, int i11) {
+    public static void d(k2 k2Var, nj0 nj0Var, View view, View view2, float f7, float f10, o0 o0Var, int i10, int i11) {
         if (view == null || o0Var == null || k2Var == null || k2Var.getParentActivity() == null) {
             return;
         }
         boolean z10 = true;
-        if (vp.d1().getBoolean("view_animations", true)) {
+        if (wp.d1().getBoolean("view_animations", true)) {
             if (i11 == 2 || i11 == 0) {
                 d(k2Var, null, view, view2, 0.0f, 0.0f, o0Var, i10, 1);
             }
-            k0 k0Var = new k0(k2Var.getParentActivity(), k2Var, mj0Var, view, view2, f7, f10, o0Var, i10, i11, false);
+            k0 k0Var = new k0(k2Var.getParentActivity(), k2Var, nj0Var, view, view2, f7, f10, o0Var, i10, i11, false);
             if (i11 == 1) {
                 C = k0Var;
             } else {

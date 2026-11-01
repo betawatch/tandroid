@@ -16,12 +16,12 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class xn extends Drawable {
     public final boolean a;
     public View b;
-    public int c = org.telegram.messenger.zs.e4;
+    public int c = org.telegram.messenger.at.e4;
     public final float d;
     public final ag.c2 e;
     public final org.telegram.ui.Components.jb0 f;
@@ -49,7 +49,7 @@ public final class xn extends Drawable {
             this.f = jb0Var;
             TLRPC.WallPaperSettings wallPaperSettings3 = wallPaper.settings;
             jb0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
-            org.telegram.ui.ActionBar.y3.o(org.telegram.messenger.d20.s0, wallPaper.id, wallPaper, new ag.e0(28, this, wallPaper));
+            org.telegram.ui.ActionBar.y3.o(org.telegram.messenger.e20.s0, wallPaper.id, wallPaper, new ag.e0(28, this, wallPaper));
             return;
         }
         Point point = org.telegram.messenger.i0.q;
@@ -71,12 +71,12 @@ public final class xn extends Drawable {
         Drawable b10 = b(wallPaper);
         String str = wallPaper.uploadingImage;
         if (str != null) {
-            c2Var.q0(org.telegram.messenger.ic.g(str), sb3, b10, null, wallPaper, 1);
+            c2Var.q0(org.telegram.messenger.jc.g(str), sb3, b10, null, wallPaper, 1);
             return;
         }
         TLRPC.Document document = wallPaper.document;
         if (document != null) {
-            c2Var.q0(org.telegram.messenger.ic.b(document), sb3, b10, null, wallPaper, 1);
+            c2Var.q0(org.telegram.messenger.jc.b(document), sb3, b10, null, wallPaper, 1);
         } else {
             c2Var.w0(b10);
         }
@@ -106,7 +106,7 @@ public final class xn extends Drawable {
             a2 = null;
             while (r2 < wallPaper.document.thumbs.size()) {
                 if (wallPaper.document.thumbs.get(r2) instanceof TLRPC.TL_photoStrippedSize) {
-                    a2 = new BitmapDrawable(org.telegram.messenger.hc.F("b", wallPaper.document.thumbs.get(r2).bytes));
+                    a2 = new BitmapDrawable(org.telegram.messenger.ic.F("b", wallPaper.document.thumbs.get(r2).bytes));
                 }
                 r2++;
             }
@@ -115,15 +115,15 @@ public final class xn extends Drawable {
             if (wallPaperSettings == null || wallPaperSettings.intensity < 0) {
                 a2 = a(new ColorDrawable(-16777216));
             } else if (wallPaperSettings.second_background_color == 0) {
-                a2 = a(new ColorDrawable(i0.b.o(wallPaper.settings.background_color, org.telegram.messenger.zs.e4)));
+                a2 = a(new ColorDrawable(i0.b.o(wallPaper.settings.background_color, org.telegram.messenger.at.e4)));
             } else if (wallPaperSettings.third_background_color == 0) {
-                a2 = a(new GradientDrawable(org.telegram.ui.Components.f9.d(wallPaper.settings.rotation), new int[]{i0.b.o(wallPaperSettings.background_color, org.telegram.messenger.zs.e4), i0.b.o(wallPaper.settings.second_background_color, org.telegram.messenger.zs.e4)}));
+                a2 = a(new GradientDrawable(org.telegram.ui.Components.f9.d(wallPaper.settings.rotation), new int[]{i0.b.o(wallPaperSettings.background_color, org.telegram.messenger.at.e4), i0.b.o(wallPaper.settings.second_background_color, org.telegram.messenger.at.e4)}));
             } else {
-                int o10 = i0.b.o(wallPaperSettings.background_color, org.telegram.messenger.zs.e4);
-                int o11 = i0.b.o(wallPaper.settings.second_background_color, org.telegram.messenger.zs.e4);
-                int o12 = i0.b.o(wallPaper.settings.third_background_color, org.telegram.messenger.zs.e4);
+                int o10 = i0.b.o(wallPaperSettings.background_color, org.telegram.messenger.at.e4);
+                int o11 = i0.b.o(wallPaper.settings.second_background_color, org.telegram.messenger.at.e4);
+                int o12 = i0.b.o(wallPaper.settings.third_background_color, org.telegram.messenger.at.e4);
                 int i10 = wallPaper.settings.fourth_background_color;
-                r2 = i10 != 0 ? i0.b.o(i10, org.telegram.messenger.zs.e4) : 0;
+                r2 = i10 != 0 ? i0.b.o(i10, org.telegram.messenger.at.e4) : 0;
                 org.telegram.ui.Components.jb0 jb0Var = new org.telegram.ui.Components.jb0();
                 jb0Var.n(o10, o11, o12, r2);
                 a2 = new BitmapDrawable(jb0Var.k);

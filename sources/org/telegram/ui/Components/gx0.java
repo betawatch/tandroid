@@ -1,30 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class gx0 implements TextWatcher {
-    public final /* synthetic */ NumberTextView a;
-    public final /* synthetic */ fx0 b;
-
-    public gx0(NumberTextView numberTextView, fx0 fx0Var) {
-        this.a = numberTextView;
-        this.b = fx0Var;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        this.a.a(50 - Character.codePointCount(editable, 0, editable.length()), true);
-        this.b.setErrorText(null);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+public final class gx0 extends EditTextBoldCursor {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(50.0f), TLObject.FLAG_30));
     }
 }

@@ -2,10 +2,10 @@ package ih;
 
 import android.os.Bundle;
 import android.view.View;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k2;
@@ -14,11 +14,11 @@ import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.u70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ay;
+import org.telegram.ui.zx;
 import ph.l1;
 import th.z2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class p implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                q20 q20Var = ((q) this.c).f;
-                if (q20Var != null) {
-                    q20Var.a(Long.valueOf(this.b));
+                r20 r20Var = ((q) this.c).f;
+                if (r20Var != null) {
+                    r20Var.a(Long.valueOf(this.b));
                     break;
                 }
                 break;
@@ -49,17 +49,17 @@ public final /* synthetic */ class p implements View.OnClickListener {
                 ConnectionsManager.getInstance(u70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new q70(u70Var, this.b, tL_messages_importChatInvite), 2);
                 break;
             case 2:
-                ay ayVar = (ay) this.c;
-                vp messagesController = ayVar.getMessagesController();
+                zx zxVar = (zx) this.c;
+                wp messagesController = zxVar.getMessagesController();
                 long j10 = this.b;
                 boolean q22 = messagesController.q2(j10, 0L, null);
                 if (q22) {
-                    ayVar.getNotificationsController().T(j10, 4, 0L);
+                    zxVar.getNotificationsController().T(j10, 4, 0L);
                 } else {
-                    ayVar.getNotificationsController().T(j10, 3, 0L);
+                    zxVar.getNotificationsController().T(j10, 3, 0L);
                 }
-                cc.A(ayVar, !q22, null).j();
-                ayVar.finishPreviewFragment();
+                cc.A(zxVar, !q22, null).j();
+                zxVar.finishPreviewFragment();
                 break;
             case 3:
                 ph.m mVar = (ph.m) this.c;
@@ -67,11 +67,11 @@ public final /* synthetic */ class p implements View.OnClickListener {
                 k2 T = LaunchActivity.T();
                 if (T != null) {
                     long j11 = this.b;
-                    if (!h20.A(j11)) {
+                    if (!i20.A(j11)) {
                         Bundle bundle = new Bundle();
                         if (j11 > 0) {
                             bundle.putLong("user_id", j11);
-                            if (j11 == d20.i(mVar.a).e()) {
+                            if (j11 == e20.i(mVar.a).e()) {
                                 bundle.putBoolean("my_profile", true);
                             }
                         } else {
@@ -93,7 +93,7 @@ public final /* synthetic */ class p implements View.OnClickListener {
                 k2 T2 = LaunchActivity.T();
                 if (T2 != null) {
                     l1Var.dismiss();
-                    T2.presentFragment(ProfileActivity.z4(this.b));
+                    T2.presentFragment(ProfileActivity.A4(this.b));
                     break;
                 }
                 break;

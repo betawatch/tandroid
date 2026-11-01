@@ -1,34 +1,52 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kb0 implements RequestDelegate {
+public final class kb0 extends s4.s0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ xb0 b;
 
-    public /* synthetic */ kb0(Object obj, long j10, int i10) {
+    public /* synthetic */ kb0(xb0 xb0Var, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = j10;
+        this.b = xb0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
         switch (this.a) {
             case 0:
-                yb0 yb0Var = (yb0) this.c;
-                if (tLObject != null) {
-                    org.telegram.messenger.i0.g3(new a3.i0(yb0Var, tLObject, this.b, 21));
-                    break;
+                if (i10 == 1) {
+                    xb0 xb0Var = this.b;
+                    if (xb0Var.z0 && xb0Var.A0) {
+                        org.telegram.messenger.i0.v1(xb0Var.getParentActivity().getCurrentFocus());
+                        break;
+                    }
                 }
                 break;
             default:
-                org.telegram.messenger.i0.g3(new a3.i0((th.e5) this.c, this.b, tLObject, 28));
+                boolean z10 = i10 != 0;
+                xb0 xb0Var2 = this.b;
+                xb0Var2.O = z10;
+                if (!z10 && xb0Var2.J != null) {
+                    xb0Var2.J = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // s4.s0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                xb0 xb0Var = this.b;
+                xb0Var.P0(false);
+                if (xb0Var.J != null) {
+                    xb0Var.L += i11;
+                    break;
+                }
                 break;
         }
     }

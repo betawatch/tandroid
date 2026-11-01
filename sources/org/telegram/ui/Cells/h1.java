@@ -4,10 +4,10 @@ import android.graphics.RectF;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextUtils;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.kj;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h1 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,18 +32,18 @@ public final class h1 implements Runnable {
             default:
                 q1 q1Var = this.b;
                 h1 h1Var = q1Var.ub;
-                jj jjVar = q1Var.O5;
-                if (jjVar != null && (u22 = q1Var.u2(jjVar)) != q1Var.f3) {
+                kj kjVar = q1Var.O5;
+                if (kjVar != null && (u22 = q1Var.u2(kjVar)) != q1Var.f3) {
                     q1Var.f3 = u22;
                     if (u22) {
-                        jj jjVar2 = q1Var.O5;
+                        kj kjVar2 = q1Var.O5;
                         q1Var.O5 = null;
-                        q1Var.s3(jjVar2, q1Var.K, q1Var.F, q1Var.E, q1Var.G, false);
+                        q1Var.s3(kjVar2, q1Var.K, q1Var.F, q1Var.E, q1Var.G, false);
                     } else {
                         org.telegram.messenger.i0.h3(h1Var, 1000L);
                         q1Var.db = true;
                         int L = q1Var.Z6 - org.telegram.messenger.i0.L(91.0f);
-                        q1Var.c3 = new StaticLayout(TextUtils.ellipsize(cd.L0(2131753966, null), org.telegram.ui.ActionBar.t6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.t6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                        q1Var.c3 = new StaticLayout(TextUtils.ellipsize(dd.L0(2131753966, null), org.telegram.ui.ActionBar.t6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.t6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     }
                 }
                 if (!q1Var.f3) {

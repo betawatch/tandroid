@@ -17,9 +17,9 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.im0;
+import org.telegram.ui.gm0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f {
     public static final Charset b = Charset.forName("UTF-8");
@@ -249,9 +249,9 @@ public final class f {
         BufferedWriter bufferedWriter2 = null;
         try {
             try {
-                im0 im0Var = new im0();
-                im0Var.put("userId", str2);
-                obj = im0Var.toString();
+                gm0 gm0Var = new gm0();
+                gm0Var.put("userId", str2);
+                obj = gm0Var.toString();
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b10), b));
             } catch (Exception e) {
                 e = e;

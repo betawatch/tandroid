@@ -6,22 +6,22 @@ import android.opengl.Matrix;
 import androidx.recyclerview.widget.RecyclerView;
 import bi.v6;
 import java.util.Arrays;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.e30;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.kv0;
 import org.telegram.ui.Wallet.h8;
 import org.telegram.ui.Wallet.i5;
 import org.telegram.ui.Wallet.j5;
 import rh.x7;
 import rh.y7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 hVar.a();
                 return;
             case 9:
-                new jv0(((e30) this.b).getContext()).show();
+                new kv0(((e30) this.b).getContext()).show();
                 return;
             case 10:
                 org.telegram.messenger.i0.J3(((rh.b0) this.b).W1);
@@ -155,56 +155,56 @@ public final /* synthetic */ class x1 implements Runnable {
                 }
                 return;
             case 16:
-                rh.a3 a3Var = (rh.a3) this.b;
-                a3Var.h0 = false;
-                a3Var.j0 = false;
-                a3Var.a(a3Var.W, a3Var.a0, a3Var.b0, a3Var.c0);
+                rh.b3 b3Var = (rh.b3) this.b;
+                b3Var.h0 = false;
+                b3Var.j0 = false;
+                b3Var.a(b3Var.W, b3Var.a0, b3Var.b0, b3Var.c0);
                 return;
             case 17:
-                ((rh.r2) this.b).invalidateSelf();
+                ((rh.s2) this.b).invalidateSelf();
                 return;
             case 18:
-                rh.u2 u2Var = (rh.u2) this.b;
-                rh.t2 t2Var = u2Var.H;
-                if (t2Var != null) {
-                    rh.u2 u2Var2 = t2Var.a;
-                    float[] fArr = t2Var.h;
-                    if (!t2Var.e && (i11 = t2Var.c) != 0) {
-                        if (t2Var.l) {
-                            u2Var2.a();
+                rh.v2 v2Var = (rh.v2) this.b;
+                rh.u2 u2Var = v2Var.H;
+                if (u2Var != null) {
+                    rh.v2 v2Var2 = u2Var.a;
+                    float[] fArr = u2Var.h;
+                    if (!u2Var.e && (i11 = u2Var.c) != 0) {
+                        if (u2Var.l) {
+                            v2Var2.a();
                         } else {
-                            int c11 = m1.j.c(((rh.s2) t2Var.b.get(i11 - 1)).a);
+                            int c11 = m1.j.c(((rh.t2) u2Var.b.get(i11 - 1)).a);
                             if (c11 == 1 || c11 == 2) {
                                 c10 = 2;
                                 z10 = true;
                                 i10 = 4;
-                                u2Var2.a();
-                                int i12 = t2Var.f - 1;
-                                t2Var.f = i12;
+                                v2Var2.a();
+                                int i12 = u2Var.f - 1;
+                                u2Var.f = i12;
                                 if (i12 <= 0) {
-                                    t2Var.b();
+                                    u2Var.b();
                                 }
                             } else if (c11 == 3) {
                                 z10 = true;
-                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (t2Var.f / t2Var.g)), 3.0d));
+                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (u2Var.f / u2Var.g)), 3.0d));
                                 float f7 = 1.0f - pow;
-                                if (Math.abs(t2Var.j * f7) > 1.0E-4f || Math.abs(t2Var.k * f7) > 1.0E-4f) {
+                                if (Math.abs(u2Var.j * f7) > 1.0E-4f || Math.abs(u2Var.k * f7) > 1.0E-4f) {
                                     float[] fArr2 = new float[16];
                                     c10 = 2;
-                                    float f10 = t2Var.j * f7 * 0.96f;
-                                    u2Var2.getClass();
-                                    rh.u2.b(1.0f, 0.0f, f10, fArr2);
-                                    u2Var2.getClass();
-                                    rh.u2.d(fArr2, fArr, fArr);
-                                    float f11 = t2Var.k * f7 * 0.96f;
-                                    u2Var2.getClass();
-                                    rh.u2.b(0.0f, 1.0f, f11, fArr2);
-                                    rh.u2.d(fArr2, fArr, fArr);
+                                    float f10 = u2Var.j * f7 * 0.96f;
+                                    v2Var2.getClass();
+                                    rh.v2.b(1.0f, 0.0f, f10, fArr2);
+                                    v2Var2.getClass();
+                                    rh.v2.d(fArr2, fArr, fArr);
+                                    float f11 = u2Var.k * f7 * 0.96f;
+                                    v2Var2.getClass();
+                                    rh.v2.b(0.0f, 1.0f, f11, fArr2);
+                                    rh.v2.d(fArr2, fArr, fArr);
                                 } else {
                                     c10 = 2;
                                 }
-                                float[] fArr3 = t2Var.i;
-                                float[] fArr4 = u2Var2.c;
+                                float[] fArr3 = u2Var.i;
+                                float[] fArr4 = v2Var2.c;
                                 for (int i13 = 0; i13 < 16; i13++) {
                                     float f12 = fArr[i13];
                                     fArr4[i13] = c3.i0.z(fArr3[i13], f12, pow, f12);
@@ -225,10 +225,10 @@ public final /* synthetic */ class x1 implements Runnable {
                                 fArr6[1] = f17;
                                 fArr6[c10] = f18;
                                 float[] fArr7 = new float[3];
-                                rh.u2.e(fArr5);
-                                rh.u2.c(fArr5, fArr6, fArr7);
-                                rh.u2.e(fArr7);
-                                rh.u2.c(fArr7, fArr5, fArr6);
+                                rh.v2.e(fArr5);
+                                rh.v2.c(fArr5, fArr6, fArr7);
+                                rh.v2.e(fArr7);
+                                rh.v2.c(fArr7, fArr5, fArr6);
                                 fArr4[0] = fArr5[0];
                                 fArr4[1] = fArr5[1];
                                 fArr4[c10] = fArr5[c10];
@@ -238,13 +238,13 @@ public final /* synthetic */ class x1 implements Runnable {
                                 fArr4[8] = fArr7[0];
                                 fArr4[9] = fArr7[1];
                                 fArr4[10] = fArr7[c10];
-                                int i14 = t2Var.f - 1;
-                                t2Var.f = i14;
+                                int i14 = u2Var.f - 1;
+                                u2Var.f = i14;
                                 if (i14 <= 0) {
-                                    System.arraycopy(t2Var.i, 0, u2Var2.c, 0, 16);
-                                    u2Var2.d = 0.0f;
-                                    u2Var2.e = 0.0f;
-                                    t2Var.b();
+                                    System.arraycopy(u2Var.i, 0, v2Var2.c, 0, 16);
+                                    v2Var2.d = 0.0f;
+                                    v2Var2.e = 0.0f;
+                                    u2Var.b();
                                 }
                             }
                         }
@@ -256,35 +256,35 @@ public final /* synthetic */ class x1 implements Runnable {
                     c10 = 2;
                     z10 = true;
                     i10 = 4;
-                    if (Math.abs(u2Var.d) <= 1.0E-4f && Math.abs(u2Var.e) <= 1.0E-4f) {
+                    if (Math.abs(v2Var.d) <= 1.0E-4f && Math.abs(v2Var.e) <= 1.0E-4f) {
                         z11 = false;
-                        if (u2Var.G == null ? z10 : z11) {
+                        if (v2Var.G == null ? z10 : z11) {
                             for (int i15 = 0; i15 < 6; i15++) {
-                                Matrix.multiplyMV(u2Var.n, 0, u2Var.c, 0, u2Var.h[i15], 0);
-                                u2Var.r[i15] = u2Var.n[c10];
+                                Matrix.multiplyMV(v2Var.n, 0, v2Var.c, 0, v2Var.h[i15], 0);
+                                v2Var.r[i15] = v2Var.n[c10];
                             }
-                            Arrays.sort(u2Var.s, new v6(u2Var, i10));
-                            u2Var.invalidate();
+                            Arrays.sort(v2Var.s, new v6(v2Var, i10));
+                            v2Var.invalidate();
                         }
-                        if (u2Var.isAttachedToWindow()) {
+                        if (v2Var.isAttachedToWindow()) {
                             return;
                         }
-                        org.telegram.messenger.i0.h3(u2Var.I, 16L);
+                        org.telegram.messenger.i0.h3(v2Var.I, 16L);
                         return;
                     }
-                    u2Var.a();
+                    v2Var.a();
                 }
                 z11 = z10;
-                if (u2Var.G == null ? z10 : z11) {
+                if (v2Var.G == null ? z10 : z11) {
                 }
-                if (u2Var.isAttachedToWindow()) {
+                if (v2Var.isAttachedToWindow()) {
                 }
                 break;
             case 19:
-                ((rh.v2) this.b).invalidate();
+                ((rh.w2) this.b).invalidate();
                 return;
             case 20:
-                ((rh.z2) this.b).invalidateSelf();
+                ((rh.a3) this.b).invalidateSelf();
                 return;
             case 21:
                 rh.y3 y3Var = (rh.y3) this.b;
@@ -305,8 +305,8 @@ public final /* synthetic */ class x1 implements Runnable {
                     }
                     int i16 = 1 - y3Var.u0;
                     y3Var.u0 = i16;
-                    bi0 B = g9VarArr[2 - i16].getImageReceiver().B();
-                    bi0 B2 = g9VarArr[y3Var.u0 + 1].getImageReceiver().B();
+                    ci0 B = g9VarArr[2 - i16].getImageReceiver().B();
+                    ci0 B2 = g9VarArr[y3Var.u0 + 1].getImageReceiver().B();
                     if (B2 != null && B != null) {
                         B2.T(false, B.t());
                     }
@@ -334,7 +334,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 if (h8Var3.U == null || h8Var3.a0 == -1) {
                     return;
                 }
-                h8Var3.m1("POSTED_ALIGN");
+                h8Var3.n1("POSTED_ALIGN");
                 h8Var3.U.a();
                 return;
             case 23:
@@ -347,10 +347,10 @@ public final /* synthetic */ class x1 implements Runnable {
                 ((rh.i0[]) this.b)[0].dismiss();
                 return;
             case 26:
-                gf.f.r(((x7) this.b).getContext(), cd.L0(2131744984, null));
+                gf.f.r(((x7) this.b).getContext(), dd.L0(2131744984, null));
                 return;
             case 27:
-                gf.f.r(((y7) this.b).getContext(), cd.L0(2131744984, null));
+                gf.f.r(((y7) this.b).getContext(), dd.L0(2131744984, null));
                 return;
             case 28:
                 RecyclerView recyclerView = (RecyclerView) this.b;
@@ -365,7 +365,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 if (qVar != null) {
                     qVar.d(true);
                 }
-                sVar.a.H7(true);
+                sVar.a.L7(true);
                 return;
         }
     }

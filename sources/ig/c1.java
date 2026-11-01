@@ -14,17 +14,17 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.s5;
 import org.telegram.messenger.t2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.s9;
 import w7.z8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class c1 extends TextureView {
     public boolean D;
@@ -136,30 +136,30 @@ public class c1 extends TextureView {
             if (c1Var == null || c1Var.getPainting() == null) {
                 return;
             }
-            pu0 pu0Var = c1Var.getPainting().g;
+            qu0 qu0Var = c1Var.getPainting().g;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 o1 o1Var = (o1) arrayList.get(i10);
                 if (o1Var.c && !o1Var.b) {
-                    p1Var.b(canvas, pu0Var, o1Var);
+                    p1Var.b(canvas, qu0Var, o1Var);
                 }
             }
             f1 f1Var = p1Var.h;
             if (f1Var != null && f1Var.h != 0.0f) {
                 canvas.save();
-                canvas.rotate((float) (((-r1.h) / 3.141592653589793d) * 180.0d), (p1Var.h.b / pu0Var.a) * canvas.getWidth(), (p1Var.h.c / pu0Var.b) * canvas.getHeight());
+                canvas.rotate((float) (((-r1.h) / 3.141592653589793d) * 180.0d), (p1Var.h.b / qu0Var.a) * canvas.getWidth(), (p1Var.h.c / qu0Var.b) * canvas.getHeight());
             }
             f1 f1Var2 = p1Var.h;
             if (f1Var2 == null || f1Var2.a.o() != 4) {
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
-                canvas2.drawLine(canvas.getWidth() * (p1Var.h.b / pu0Var.a), canvas.getHeight() * (p1Var.h.c / pu0Var.b), canvas.getWidth() * (p1Var.h.i / pu0Var.a), canvas.getHeight() * (p1Var.h.j / pu0Var.b), paint);
-                canvas2.drawLine(canvas2.getWidth() * (p1Var.h.d / pu0Var.a), canvas2.getHeight() * (p1Var.h.e / pu0Var.b), canvas2.getWidth() * (p1Var.h.i / pu0Var.a), canvas2.getHeight() * (p1Var.h.j / pu0Var.b), paint);
+                canvas2.drawLine(canvas.getWidth() * (p1Var.h.b / qu0Var.a), canvas.getHeight() * (p1Var.h.c / qu0Var.b), canvas.getWidth() * (p1Var.h.i / qu0Var.a), canvas.getHeight() * (p1Var.h.j / qu0Var.b), paint);
+                canvas2.drawLine(canvas2.getWidth() * (p1Var.h.d / qu0Var.a), canvas2.getHeight() * (p1Var.h.e / qu0Var.b), canvas2.getWidth() * (p1Var.h.i / qu0Var.a), canvas2.getHeight() * (p1Var.h.j / qu0Var.b), paint);
             }
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
                 o1 o1Var2 = (o1) arrayList.get(i11);
                 if (o1Var2.c && o1Var2.b) {
-                    p1Var.b(canvas2, pu0Var, o1Var2);
+                    p1Var.b(canvas2, qu0Var, o1Var2);
                 }
             }
             f1 f1Var3 = p1Var.h;
@@ -385,11 +385,11 @@ public class c1 extends TextureView {
                             }
                         }
                     } else if (r02.h.a.o() == 4) {
-                        pu0 pu0Var = c1Var.getPainting().g;
+                        qu0 qu0Var = c1Var.getPainting().g;
                         f1 f1Var5 = r02.h;
                         float a11 = p1.a(f14, f15, f1Var5.b, f1Var5.c, f1Var5.i, f1Var5.j);
                         f1 f1Var6 = r02.h;
-                        if (Math.min(a11, p1.a(f14, f15, f1Var6.d, f1Var6.e, f1Var6.i, f1Var6.j)) - (r02.h.f / 2.0f) < Math.min(pu0Var.a, pu0Var.b) * 0.1f) {
+                        if (Math.min(a11, p1.a(f14, f15, f1Var6.d, f1Var6.e, f1Var6.i, f1Var6.j)) - (r02.h.f / 2.0f) < Math.min(qu0Var.a, qu0Var.b) * 0.1f) {
                             f12 = f14;
                             f11 = f15;
                         }
@@ -789,10 +789,10 @@ public class c1 extends TextureView {
         q0 q0Var = this.c;
         float width = q0Var != null ? getWidth() / q0Var.g.a : 1.0f;
         float f7 = width > 0.0f ? width : 1.0f;
-        pu0 pu0Var = getPainting().g;
+        qu0 qu0Var = getPainting().g;
         matrix.preTranslate(getWidth() / 2.0f, getHeight() / 2.0f);
         matrix.preScale(f7, -f7);
-        matrix.preTranslate((-pu0Var.a) / 2.0f, (-pu0Var.b) / 2.0f);
+        matrix.preTranslate((-qu0Var.a) / 2.0f, (-qu0Var.b) / 2.0f);
         if (this.y instanceof g) {
             p1 p1Var = this.f;
             p1Var.getClass();
@@ -831,25 +831,25 @@ public class c1 extends TextureView {
             arrayList2.clear();
             arrayList.clear();
             p1Var.h = new f1(g.p(o10));
-            pu0 pu0Var = c1Var.getPainting().g;
+            qu0 qu0Var = c1Var.getPainting().g;
             f1 f1Var = p1Var.h;
-            float f7 = pu0Var.a;
+            float f7 = qu0Var.a;
             f1Var.b = f7 / 2.0f;
-            float f10 = pu0Var.b;
+            float f10 = qu0Var.b;
             f1Var.c = f10 / 2.0f;
             float min = Math.min(f7, f10) / 5.0f;
             f1Var.e = min;
             f1Var.d = min;
             p1Var.h.f = c1Var.getCurrentWeight();
             p1Var.h.g = org.telegram.messenger.i0.L(32.0f);
-            p1Var.h.l = s0.e(d20.s0).k;
+            p1Var.h.l = s0.e(e20.s0).k;
             if (p1Var.h.a.o() == 4) {
                 f1 f1Var2 = p1Var.h;
-                float f11 = pu0Var.a / 2.0f;
+                float f11 = qu0Var.a / 2.0f;
                 f1Var2.d = f11;
                 f1Var2.b = f11;
                 f1Var2.i = f11 + 1.0f;
-                float f12 = pu0Var.b;
+                float f12 = qu0Var.b;
                 float f13 = f12 / 3.0f;
                 float f14 = 1.0f * f13;
                 f1Var2.c = f14;

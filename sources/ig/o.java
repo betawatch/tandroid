@@ -9,9 +9,9 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final Paint a;
@@ -38,14 +38,14 @@ public final class o extends View {
         int i10 = this.c;
         u uVar = this.e;
         if (i10 == 1) {
-            argb = Color.argb(zs.e4, Color.red(uVar.m1), 0, Color.blue(uVar.m1));
-            argb2 = Color.argb(zs.e4, Color.red(uVar.m1), zs.e4, Color.blue(uVar.m1));
+            argb = Color.argb(at.e4, Color.red(uVar.m1), 0, Color.blue(uVar.m1));
+            argb2 = Color.argb(at.e4, Color.red(uVar.m1), at.e4, Color.blue(uVar.m1));
         } else if (i10 != 2) {
-            argb = Color.argb(zs.e4, 0, Color.green(uVar.m1), Color.blue(uVar.m1));
-            argb2 = Color.argb(zs.e4, zs.e4, Color.green(uVar.m1), Color.blue(uVar.m1));
+            argb = Color.argb(at.e4, 0, Color.green(uVar.m1), Color.blue(uVar.m1));
+            argb2 = Color.argb(at.e4, at.e4, Color.green(uVar.m1), Color.blue(uVar.m1));
         } else {
-            argb = Color.argb(zs.e4, Color.red(uVar.m1), Color.green(uVar.m1), 0);
-            argb2 = Color.argb(zs.e4, Color.red(uVar.m1), Color.green(uVar.m1), zs.e4);
+            argb = Color.argb(at.e4, Color.red(uVar.m1), Color.green(uVar.m1), 0);
+            argb2 = Color.argb(at.e4, Color.red(uVar.m1), Color.green(uVar.m1), at.e4);
         }
         this.a.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{argb, argb2}, (float[]) null, Shader.TileMode.CLAMP));
     }
@@ -55,7 +55,7 @@ public final class o extends View {
         float a2 = w7.u.a(((f7 - L) + (org.telegram.messenger.i0.L(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (L * 2.0f)), 0.0f, 1.0f);
         int i10 = this.c;
         u uVar = this.e;
-        uVar.I0(i0.b.o(i10 != 1 ? i10 != 2 ? Color.argb(zs.e4, (int) (a2 * 255.0f), Color.green(uVar.m1), Color.blue(uVar.m1)) : Color.argb(zs.e4, Color.red(uVar.m1), Color.green(uVar.m1), (int) (a2 * 255.0f)) : Color.argb(zs.e4, Color.red(uVar.m1), (int) (a2 * 255.0f), Color.blue(uVar.m1)), Color.alpha(uVar.m1)), 4);
+        uVar.I0(i0.b.o(i10 != 1 ? i10 != 2 ? Color.argb(at.e4, (int) (a2 * 255.0f), Color.green(uVar.m1), Color.blue(uVar.m1)) : Color.argb(at.e4, Color.red(uVar.m1), Color.green(uVar.m1), (int) (a2 * 255.0f)) : Color.argb(at.e4, Color.red(uVar.m1), (int) (a2 * 255.0f), Color.blue(uVar.m1)), Color.alpha(uVar.m1)), 4);
         invalidate();
     }
 

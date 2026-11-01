@@ -15,13 +15,13 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f8;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.zc0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class l2 extends uu0 implements org.telegram.ui.ActionBar.o3 {
+public final class l2 extends vu0 implements org.telegram.ui.ActionBar.o3 {
     public final Paint f0;
     public boolean g0;
     public final RectF h0;
@@ -40,7 +40,7 @@ public final class l2 extends uu0 implements org.telegram.ui.ActionBar.o3 {
         this.i0 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.uu0, org.telegram.ui.ActionBar.k6
+    @Override // org.telegram.ui.Components.vu0, org.telegram.ui.ActionBar.k6
     public final void addColorKeys(HashSet hashSet) {
         hashSet.add(Integer.valueOf(t6.d6));
         hashSet.add(Integer.valueOf(t6.a7));
@@ -52,7 +52,7 @@ public final class l2 extends uu0 implements org.telegram.ui.ActionBar.o3 {
         hashSet.add(Integer.valueOf(t6.I5));
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         Paint paint;
@@ -129,11 +129,11 @@ public final class l2 extends uu0 implements org.telegram.ui.ActionBar.o3 {
         m2 m2Var = this.j0;
         Rect rect = m2Var.n;
         LaunchActivity launchActivity = LaunchActivity.I1;
-        org.telegram.ui.ActionBar.i3 O = launchActivity != null ? launchActivity.O() : null;
-        if (O != null && rect != null) {
-            int i10 = (int) ((1.0f - m2Var.g0) * ((int) O.G));
+        org.telegram.ui.ActionBar.i3 N = launchActivity != null ? launchActivity.N() : null;
+        if (N != null && rect != null) {
+            int i10 = (int) ((1.0f - m2Var.g0) * ((int) N.G));
             if (motionEvent.getY() >= (getHeight() - rect.bottom) - i10 && motionEvent.getY() <= getHeight() - rect.bottom && !org.telegram.messenger.i0.Q1()) {
-                return O.j(motionEvent.getX(), motionEvent.getY() - ((getHeight() - rect.bottom) - i10), motionEvent.getAction());
+                return N.j(motionEvent.getX(), motionEvent.getY() - ((getHeight() - rect.bottom) - i10), motionEvent.getAction());
             }
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -196,13 +196,13 @@ public final class l2 extends uu0 implements org.telegram.ui.ActionBar.o3 {
         return rectF;
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         setTag(R.id.bulletin_delegate_tag, new mg.u(14));
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
@@ -281,7 +281,7 @@ public final class l2 extends uu0 implements org.telegram.ui.ActionBar.o3 {
         }
     }
 
-    @Override // org.telegram.ui.Components.uu0, org.telegram.ui.ActionBar.k6
+    @Override // org.telegram.ui.Components.vu0, org.telegram.ui.ActionBar.k6
     public final void updateColors() {
         int w02;
         m2 m2Var = this.j0;

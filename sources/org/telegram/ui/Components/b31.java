@@ -1,34 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.j20 b;
-    public final /* synthetic */ String c;
+public final class b31 extends s4.j {
+    public final /* synthetic */ n31 F;
 
-    public /* synthetic */ b31(String str, int i10, org.telegram.messenger.j20 j20Var) {
-        this.a = i10;
-        this.b = j20Var;
-        this.c = str;
+    public b31(n31 n31Var) {
+        this.F = n31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.j20 j20Var = this.b;
-                if (j20Var != null) {
-                    j20Var.a(this.c, Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.a(null, this.c);
-                break;
-            default:
-                this.b.a(null, this.c);
-                break;
-        }
+    @Override // s4.j
+    public final void O() {
+        this.F.b.invalidate();
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.b.invalidate();
     }
 }

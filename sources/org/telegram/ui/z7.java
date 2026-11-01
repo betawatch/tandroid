@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final class z7 implements View.OnClickListener {
                     if (i10 >= 0 && i11 >= 0) {
                         h8Var.P = i10;
                         h8Var.Q = i11;
-                        h8Var.A0();
-                        h8Var.t0();
+                        h8Var.B0();
+                        h8Var.u0();
                         break;
                     }
                 }
@@ -47,17 +47,17 @@ public final class z7 implements View.OnClickListener {
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).getSwipeBack().b(true);
                 break;
             case 2:
-                if (((q41) this.b).a.getImageReceiver().B() != null && !((q41) this.b).a.getImageReceiver().B().k0) {
-                    ((q41) this.b).a.getImageReceiver().B().N(0, false, false);
-                    ((q41) this.b).a.getImageReceiver().B().H(false);
+                if (((o41) this.b).a.getImageReceiver().B() != null && !((o41) this.b).a.getImageReceiver().B().k0) {
+                    ((o41) this.b).a.getImageReceiver().B().N(0, false, false);
+                    ((o41) this.b).a.getImageReceiver().B().H(false);
                     break;
                 }
                 break;
             case 3:
-                gf.f.r((Context) this.b, org.telegram.messenger.cd.L0(2131745273, null));
+                gf.f.r((Context) this.b, org.telegram.messenger.dd.L0(2131745273, null));
                 break;
             default:
-                ((pb1) this.b).K0(true);
+                ((nb1) this.b).L0(true);
                 break;
         }
     }

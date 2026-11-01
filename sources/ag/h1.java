@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.b7;
@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.uh;
 import org.telegram.ui.Components.xy;
@@ -28,9 +28,9 @@ import org.telegram.ui.Components.yh;
 import w7.b6;
 import w7.b9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class h1 extends uh implements k6, us, fe.e {
+public final class h1 extends uh implements k6, vs, fe.e {
     public final f1 D;
     public final xy E;
     public final yh F;
@@ -57,7 +57,7 @@ public final class h1 extends uh implements k6, us, fe.e {
         a1 a1Var = new a1(this, i10);
         org.telegram.ui.ActionBar.n0 n0Var = yhVar.r;
         n0Var.addTextChangedListener(a1Var);
-        n0Var.setHint(cd.L0(2131752656, null));
+        n0Var.setHint(dd.L0(2131752656, null));
         frameLayout.addView(eVar, b6.g());
         FrameLayout.LayoutParams d = b6.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += org.telegram.messenger.i0.m;
@@ -74,7 +74,7 @@ public final class h1 extends uh implements k6, us, fe.e {
         int i11 = 1;
         this.h = true;
         this.f = true;
-        zs.e().h(b1Var, zs.i4, new l(this, i11));
+        at.e().h(b1Var, at.i4, new l(this, i11));
         b1Var.setClipToPadding(false);
         getContext();
         d1 d1Var = new d1(this, org.telegram.messenger.i0.L(9.0f), b1Var, i10);
@@ -105,12 +105,12 @@ public final class h1 extends uh implements k6, us, fe.e {
         }
         int i10 = 0;
         View childAt = b1Var.getChildAt(0);
-        ck0 ck0Var = (ck0) b1Var.G(childAt);
-        if (ck0Var == null) {
+        dk0 dk0Var = (dk0) b1Var.G(childAt);
+        if (dk0Var == null) {
             return -1000;
         }
         int paddingTop = b1Var.getPaddingTop();
-        if (ck0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (dk0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
@@ -182,11 +182,11 @@ public final class h1 extends uh implements k6, us, fe.e {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = b1Var.getChildAt(0);
-        ck0 ck0Var = (ck0) b1Var.G(childAt);
+        dk0 dk0Var = (dk0) b1Var.G(childAt);
         int top = (childAt.getTop() - org.telegram.messenger.i0.m) - org.telegram.messenger.i0.L(8.0f);
-        int i10 = (top <= 0 || ck0Var == null || ck0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || dk0Var == null || dk0Var.b() != 0) ? 0 : top;
         fe.b bVar = this.n;
-        if (top < 0 || ck0Var == null || ck0Var.b() != 0) {
+        if (top < 0 || dk0Var == null || dk0Var.b() != 0) {
             bVar.a(true, true);
             top = i10;
         } else {
@@ -252,7 +252,7 @@ public final class h1 extends uh implements k6, us, fe.e {
     public final /* synthetic */ void E(float f7, int i10) {
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
     }
 

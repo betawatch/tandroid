@@ -1,28 +1,70 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class cb1 extends nb1 {
-    public final /* synthetic */ pb1 o3;
+public final class cb1 extends s4.j {
+    public Runnable F;
+    public int G;
+    public final /* synthetic */ nb1 H;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cb1(pb1 pb1Var, Context context) {
-        super(pb1Var, context);
-        this.o3 = pb1Var;
+    public cb1(nb1 nb1Var) {
+        this.H = nb1Var;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean R0() {
-        ArrayList arrayList = this.o3.b;
-        return (getAdapter() == null || this.V1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((hb1) arrayList.get(0)).c == null || ((hb1) arrayList.get(0)).c.id != 1 ? getAdapter().b() > 1 : getAdapter().b() > 2)) ? false : true;
+    @Override // s4.j
+    public final void F() {
+        if (this.G == -1) {
+            this.G = this.H.getNotificationCenter().q(null, this.G, false);
+            Runnable runnable = this.F;
+            if (runnable != null) {
+                org.telegram.messenger.i0.r(runnable);
+                this.F = null;
+            }
+        }
     }
 
-    @Override // org.telegram.ui.nb1, org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.o3.B0();
+    @Override // s4.j
+    public final void N() {
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            org.telegram.messenger.i0.r(runnable);
+            this.F = null;
+        }
+        bb1 bb1Var = new bb1(this, 0);
+        this.F = bb1Var;
+        org.telegram.messenger.i0.g3(bb1Var);
+    }
+
+    @Override // s4.j, s4.l0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            org.telegram.messenger.i0.r(runnable);
+        }
+        bb1 bb1Var = new bb1(this, 1);
+        this.F = bb1Var;
+        org.telegram.messenger.i0.g3(bb1Var);
+    }
+
+    @Override // s4.j
+    public final void z(s4.c1 c1Var) {
+        nb1 nb1Var = this.H;
+        View view = nb1Var.c1;
+        if (view == c1Var.a) {
+            view.setTranslationX(0.0f);
+            sa1 sa1Var = nb1Var.O;
+            if (sa1Var != null) {
+                sa1Var.F.clear();
+            }
+            View view2 = nb1Var.c1;
+            if (view2 instanceof kb1) {
+                kb1 kb1Var = (kb1) view2;
+                kb1Var.setTopicIcon(kb1Var.c5);
+            }
+            nb1Var.c1 = null;
+        }
     }
 }

@@ -63,24 +63,24 @@ import java.util.concurrent.CountDownLatch;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bk;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d00;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.ck;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e00;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.i9;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.rh;
-import org.telegram.messenger.rz;
-import org.telegram.messenger.sc;
+import org.telegram.messenger.j9;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.sh;
+import org.telegram.messenger.sz;
+import org.telegram.messenger.tc;
 import org.telegram.messenger.time.SunDate;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
@@ -88,29 +88,29 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.a9;
-import org.telegram.ui.Components.bi0;
 import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.eo0;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.fo0;
 import org.telegram.ui.Components.gd0;
-import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.ip;
 import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.lf0;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.qb0;
-import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.rv0;
 import org.telegram.ui.Components.x7;
-import org.telegram.ui.Components.y41;
+import org.telegram.ui.Components.z41;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.c91;
+import org.telegram.ui.a91;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class t6 {
     public static int A;
@@ -279,7 +279,7 @@ public abstract class t6 {
     public static final Paint Gm;
     public static final HashMap H;
     public static TextPaint[] H0;
-    public static bi0 H1;
+    public static ci0 H1;
     public static TextPaint H2;
     public static Drawable H3;
     public static final int H5;
@@ -301,7 +301,7 @@ public abstract class t6 {
     public static final int Hl;
     public static s6 I;
     public static TextPaint I0;
-    public static bi0 I1;
+    public static ci0 I1;
     public static TextPaint I2;
     public static Drawable I3;
     public static final int I5;
@@ -323,7 +323,7 @@ public abstract class t6 {
     public static final int Il;
     public static s6 J;
     public static TextPaint J0;
-    public static bi0 J1;
+    public static ci0 J1;
     public static TextPaint J2;
     public static Drawable J3;
     public static final int J5;
@@ -345,7 +345,7 @@ public abstract class t6 {
     public static final int Jl;
     public static s6 K;
     public static TextPaint K0;
-    public static bi0 K1;
+    public static ci0 K1;
     public static TextPaint K2;
     public static Drawable K3;
     public static final int K5;
@@ -367,7 +367,7 @@ public abstract class t6 {
     public static final int Kl;
     public static final s6 L;
     public static TextPaint L0;
-    public static bi0 L1;
+    public static ci0 L1;
     public static TextPaint L2;
     public static Drawable L3;
     public static final int L5;
@@ -389,7 +389,7 @@ public abstract class t6 {
     public static final int Ll;
     public static s6 M;
     public static TextPaint M0;
-    public static bi0 M1;
+    public static ci0 M1;
     public static TextPaint M2;
     public static Drawable M3;
     public static final int M5;
@@ -411,7 +411,7 @@ public abstract class t6 {
     public static final int Ml;
     public static boolean N;
     public static TextPaint N0;
-    public static bi0 N1;
+    public static ci0 N1;
     public static TextPaint N2;
     public static Drawable N3;
     public static final int N5;
@@ -433,7 +433,7 @@ public abstract class t6 {
     public static final int Nl;
     public static boolean O;
     public static TextPaint O0;
-    public static bi0 O1;
+    public static ci0 O1;
     public static TextPaint O2;
     public static Drawable O3;
     public static Drawable O4;
@@ -772,7 +772,7 @@ public abstract class t6 {
     public static final int ck;
     public static final int cl;
     public static final HashMap cm;
-    public static rh d;
+    public static sh d;
     public static int d0;
     public static Drawable d1;
     public static Paint d2;
@@ -846,7 +846,7 @@ public abstract class t6 {
     public static final SparseIntArray fm;
     public static boolean g;
     public static int g0;
-    public static kl0 g1;
+    public static ll0 g1;
     public static Paint g2;
     public static TextPaint g3;
     public static Drawable g4;
@@ -869,7 +869,7 @@ public abstract class t6 {
     public static final int gl;
     public static final HashSet gm;
     public static String h0;
-    public static kl0 h1;
+    public static ll0 h1;
     public static Paint h2;
     public static Drawable h3;
     public static Drawable h4;
@@ -1176,7 +1176,7 @@ public abstract class t6 {
     public static int tm;
     public static int u;
     public static Paint u0;
-    public static bi0 u1;
+    public static ci0 u1;
     public static TextPaint u2;
     public static Drawable u4;
     public static final int u5;
@@ -1199,7 +1199,7 @@ public abstract class t6 {
     public static float[] um;
     public static int v;
     public static Paint v0;
-    public static bi0 v1;
+    public static ci0 v1;
     public static TextPaint v2;
     public static PorterDuffColorFilter v3;
     public static Drawable v4;
@@ -1223,7 +1223,7 @@ public abstract class t6 {
     public static final z5 vm;
     public static String w;
     public static Paint w0;
-    public static bi0 w1;
+    public static ci0 w1;
     public static TextPaint w2;
     public static PorterDuffColorFilter w3;
     public static Drawable w4;
@@ -1247,7 +1247,7 @@ public abstract class t6 {
     public static final int[] wm;
     public static double x;
     public static Paint x0;
-    public static bi0 x1;
+    public static ci0 x1;
     public static TextPaint x2;
     public static gd0 x3;
     public static Drawable x4;
@@ -1271,7 +1271,7 @@ public abstract class t6 {
     public static WeakReference xm;
     public static double y;
     public static Paint y0;
-    public static bi0 y1;
+    public static ci0 y1;
     public static TextPaint[] y2;
     public static Drawable y3;
     public static Drawable y4;
@@ -1294,7 +1294,7 @@ public abstract class t6 {
     public static final int yl;
     public static Bitmap ym;
     public static Paint z0;
-    public static bi0 z1;
+    public static ci0 z1;
     public static TextPaint z2;
     public static Drawable z3;
     public static Drawable z4;
@@ -1327,7 +1327,7 @@ public abstract class t6 {
     public static final int[] D = new int[4];
     public static final long[] E = new long[4];
     public static final Drawable[] r0 = new Drawable[25];
-    public static final qv0[] u3 = new qv0[6];
+    public static final rv0[] u3 = new rv0[6];
     public static final Drawable[] G4 = new Drawable[2];
     public static final Drawable[] H4 = new Drawable[2];
     public static final Drawable[] I4 = new Drawable[2];
@@ -4466,7 +4466,7 @@ public abstract class t6 {
         s6Var3.S = true;
         s6Var3.Y = n;
         s6Var3.V = 1;
-        s6.b(s6Var3, new int[]{-10972987, -14444461, -3252606, -8428605, -14380627, -14050257, -7842636, -13464881, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-4660851, -328756, -1572, -4108434, -3031781, -1335, -198952, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, -853047, -264993, 0, 0, -135756, -198730, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, -2104672, -937328, -2637335, -2639714, -1270157, -3428124, -6570777, -7223828, -6567550, -1793599, -1855875, -4674838, -1336199, -2900876, -6247730}, new int[]{0, -4532067, -1257580, -1524266, -1646910, -1519483, -1324823, -4138509, -4202516, -2040429, -1458474, -1256030, -3814930, -1000039, -1450082, -3485987}, new int[]{0, -1909081, -1592444, -2969879, -2439762, -1137033, -2119471, -6962197, -4857383, -4270699, -3364639, -2117514, -5000734, -1598028, -2045813, -5853742}, new int[]{0, -6371440, -1319256, -1258616, -1712961, -1186647, -1193816, -4467224, -4203544, -3023977, -1061929, -1255788, -2113811, -806526, -1715305, -3485976}, new int[]{99, 9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "O-wmAfBPSFADAAAA4zINVfD_bro", "RepJ5uE_SVABAAAAr4d0YhgB850", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "fqv01SQemVIBAAAApND8LDRUhRU", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "lp0prF8ISFAEAAAA_p385_CvG0w", "heptcj-hSVACAAAAC9RrMzOa-cs", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "dhf9pceaQVACAAAAbzdVo4SCiZA", "Ujx2TFcJSVACAAAARJ4vLa50MkM", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "dk_wwlghOFACAAAAfz9xrxi6euw"}, new int[]{0, zs.K2, 45, 0, 45, zs.K2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 52, 46, 57, 45, 64, 52, 35, 36, 41, 50, 50, 35, 38, 37, 30});
+        s6.b(s6Var3, new int[]{-10972987, -14444461, -3252606, -8428605, -14380627, -14050257, -7842636, -13464881, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-4660851, -328756, -1572, -4108434, -3031781, -1335, -198952, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, -853047, -264993, 0, 0, -135756, -198730, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, -2104672, -937328, -2637335, -2639714, -1270157, -3428124, -6570777, -7223828, -6567550, -1793599, -1855875, -4674838, -1336199, -2900876, -6247730}, new int[]{0, -4532067, -1257580, -1524266, -1646910, -1519483, -1324823, -4138509, -4202516, -2040429, -1458474, -1256030, -3814930, -1000039, -1450082, -3485987}, new int[]{0, -1909081, -1592444, -2969879, -2439762, -1137033, -2119471, -6962197, -4857383, -4270699, -3364639, -2117514, -5000734, -1598028, -2045813, -5853742}, new int[]{0, -6371440, -1319256, -1258616, -1712961, -1186647, -1193816, -4467224, -4203544, -3023977, -1061929, -1255788, -2113811, -806526, -1715305, -3485976}, new int[]{99, 9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "O-wmAfBPSFADAAAA4zINVfD_bro", "RepJ5uE_SVABAAAAr4d0YhgB850", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "fqv01SQemVIBAAAApND8LDRUhRU", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "lp0prF8ISFAEAAAA_p385_CvG0w", "heptcj-hSVACAAAAC9RrMzOa-cs", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "dhf9pceaQVACAAAAbzdVo4SCiZA", "Ujx2TFcJSVACAAAARJ4vLa50MkM", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "dk_wwlghOFACAAAAfz9xrxi6euw"}, new int[]{0, at.K2, 45, 0, 45, at.K2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{0, 52, 46, 57, 45, 64, 52, 35, 36, 41, 50, 50, 35, 38, 37, 30});
         J1(s6Var3);
         L = s6Var3;
         K = s6Var3;
@@ -4479,7 +4479,7 @@ public abstract class t6 {
         s6Var4.Q = -9009508;
         s6Var4.R = -8214301;
         s6Var4.V = 3;
-        s6.b(s6Var4, new int[]{-7177260, -9860357, -14440464, -8687151, -9848491, -14053142, -9403671, -10044691, -13203974, -12138259, -10179489, -1344335, -1142742, -6127120, -2931932, -1131212, -8417365, -13270557}, new int[]{-6464359, -10267323, -13532789, -5413850, -11898828, -13410942, -13215889, -10914461, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-10465880, -9937588, -14983040, -6736562, -14197445, -13534568, -13144441, -10587280, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-14213586, -15263198, -16310753, -15724781, -15853551, -16051428, -14868183, -14668758, -15854566, -15326427, -15327979, -14411490, -14345453, -14738135, -14543346, -14212843, -15263205, -15854566}, new int[]{-15659501, -14277074, -15459034, -14542297, -14735336, -15129808, -15591910, -15459810, -15260623, -15853800, -15259879, -14477540, -14674936, -15461604, -13820650, -15067635, -14605528, -15260623}, new int[]{-13951445, -15395557, -15985382, -15855853, -16050417, -15525854, -15260627, -15327189, -15788258, -14799314, -15458796, -13952727, -13754603, -14081231, -14478324, -14081004, -15197667, -15788258}, new int[]{-15330777, -15066858, -15915220, -14213847, -15262439, -15260879, -15657695, -16443625, -15459285, -15589601, -14932454, -14740451, -15002870, -15264997, -13821660, -14805234, -14605784, -15459285}, new int[]{11, 12, 13, 14, 15, 16, 17, 18, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, new String[]{"O-wmAfBPSFADAAAA4zINVfD_bro", "RepJ5uE_SVABAAAAr4d0YhgB850", "dk_wwlghOFACAAAAfz9xrxi6euw", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "kO4jyq55SFABAAAA0WEpcLfahXk", "CJNyxPMgSVAEAAAAvW9sMwc51cw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "CJNyxPMgSVAEAAAAvW9sMwc51cw", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "9GcNVISdSVADAAAAUcw5BYjELW4", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "9ShF73d1MFIIAAAAjWnm8_ZMe8Q", "3rX-PaKbSFACAAAAEiHNvcEm6X4", "dk_wwlghOFACAAAAfz9xrxi6euw", "fqv01SQemVIBAAAApND8LDRUhRU"}, new int[]{zs.C3, 45, zs.C3, zs.R1, 45, zs.C3, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{40, 40, 31, 50, 25, 34, 35, 35, 38, 29, 24, 34, 34, 31, 29, 37, 21, 38});
+        s6.b(s6Var4, new int[]{-7177260, -9860357, -14440464, -8687151, -9848491, -14053142, -9403671, -10044691, -13203974, -12138259, -10179489, -1344335, -1142742, -6127120, -2931932, -1131212, -8417365, -13270557}, new int[]{-6464359, -10267323, -13532789, -5413850, -11898828, -13410942, -13215889, -10914461, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-10465880, -9937588, -14983040, -6736562, -14197445, -13534568, -13144441, -10587280, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-14213586, -15263198, -16310753, -15724781, -15853551, -16051428, -14868183, -14668758, -15854566, -15326427, -15327979, -14411490, -14345453, -14738135, -14543346, -14212843, -15263205, -15854566}, new int[]{-15659501, -14277074, -15459034, -14542297, -14735336, -15129808, -15591910, -15459810, -15260623, -15853800, -15259879, -14477540, -14674936, -15461604, -13820650, -15067635, -14605528, -15260623}, new int[]{-13951445, -15395557, -15985382, -15855853, -16050417, -15525854, -15260627, -15327189, -15788258, -14799314, -15458796, -13952727, -13754603, -14081231, -14478324, -14081004, -15197667, -15788258}, new int[]{-15330777, -15066858, -15915220, -14213847, -15262439, -15260879, -15657695, -16443625, -15459285, -15589601, -14932454, -14740451, -15002870, -15264997, -13821660, -14805234, -14605784, -15459285}, new int[]{11, 12, 13, 14, 15, 16, 17, 18, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, new String[]{"O-wmAfBPSFADAAAA4zINVfD_bro", "RepJ5uE_SVABAAAAr4d0YhgB850", "dk_wwlghOFACAAAAfz9xrxi6euw", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "kO4jyq55SFABAAAA0WEpcLfahXk", "CJNyxPMgSVAEAAAAvW9sMwc51cw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "CJNyxPMgSVAEAAAAvW9sMwc51cw", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "9GcNVISdSVADAAAAUcw5BYjELW4", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "9ShF73d1MFIIAAAAjWnm8_ZMe8Q", "3rX-PaKbSFACAAAAEiHNvcEm6X4", "dk_wwlghOFACAAAAfz9xrxi6euw", "fqv01SQemVIBAAAApND8LDRUhRU"}, new int[]{at.C3, 45, at.C3, at.R1, 45, at.C3, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{40, 40, 31, 50, 25, 34, 35, 35, 38, 29, 24, 34, 34, 31, 29, 37, 21, 38});
         J1(s6Var4);
         arrayList.add(s6Var4);
         J = s6Var4;
@@ -4491,7 +4491,7 @@ public abstract class t6 {
         s6Var5.Q = -1;
         s6Var5.R = -9657877;
         s6Var5.V = 5;
-        s6.b(s6Var5, new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{zs.m5, zs.m5, zs.C3, zs.m5, 0, zs.K2, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
+        s6.b(s6Var5, new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{at.m5, at.m5, at.C3, at.m5, 0, at.K2, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
         J1(s6Var5);
         arrayList.add(s6Var5);
         hashMap.put("Arctic Blue", s6Var5);
@@ -4513,7 +4513,7 @@ public abstract class t6 {
         s6Var7.Q = -9143676;
         s6Var7.R = -9067802;
         s6Var7.V = 4;
-        s6.b(s6Var7, new int[]{-9781697, -7505693, -2204034, -10913816, -2375398, -12678921, -11881005, -11880383, -2534026, -1934037, -7115558, -3128522, -1528292, -8812381}, new int[]{-7712108, -4953061, -5288081, -14258547, -9154889, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-9939525, -5948598, -10335844, -13659747, -14054507, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-15330532, -14806760, -15791344, -16184308, -16313063, -15921641, -15656164, -15986420, -15856883, -14871025, -16185078, -14937584, -14869736, -15855598}, new int[]{-14673881, -15724781, -15002342, -15458526, -15987697, -16184820, -16118258, -16250616, -15067624, -15527923, -14804447, -15790836, -15987960, -16316665}, new int[]{-15856877, -14608861, -15528430, -15921391, -15722209, -15197144, -15458015, -15591406, -15528431, -15068401, -16053749, -15594229, -15395825, -15724012}, new int[]{-14804694, -15658986, -14609382, -15656421, -16118509, -15855854, -16315381, -16052981, -14544354, -15791092, -15659241, -16316922, -15988214, -16185077}, new int[]{9, 10, 11, 12, 13, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"YIxYGEALQVADAAAAA3QbEH0AowY", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "O-wmAfBPSFADAAAA4zINVfD_bro", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "fqv01SQemVIBAAAApND8LDRUhRU", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "ptuUd96JSFACAAAATobI23sPpz0", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "Nl8Pg2rBQVACAAAA25Lxtb8SDp0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "9GcNVISdSVADAAAAUcw5BYjELW4", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "dk_wwlghOFACAAAAfz9xrxi6euw"}, new int[]{45, zs.R1, 0, zs.K2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{34, 47, 52, 48, 54, 50, 37, 56, 48, 49, 40, 64, 38, 48});
+        s6.b(s6Var7, new int[]{-9781697, -7505693, -2204034, -10913816, -2375398, -12678921, -11881005, -11880383, -2534026, -1934037, -7115558, -3128522, -1528292, -8812381}, new int[]{-7712108, -4953061, -5288081, -14258547, -9154889, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-9939525, -5948598, -10335844, -13659747, -14054507, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-15330532, -14806760, -15791344, -16184308, -16313063, -15921641, -15656164, -15986420, -15856883, -14871025, -16185078, -14937584, -14869736, -15855598}, new int[]{-14673881, -15724781, -15002342, -15458526, -15987697, -16184820, -16118258, -16250616, -15067624, -15527923, -14804447, -15790836, -15987960, -16316665}, new int[]{-15856877, -14608861, -15528430, -15921391, -15722209, -15197144, -15458015, -15591406, -15528431, -15068401, -16053749, -15594229, -15395825, -15724012}, new int[]{-14804694, -15658986, -14609382, -15656421, -16118509, -15855854, -16315381, -16052981, -14544354, -15791092, -15659241, -16316922, -15988214, -16185077}, new int[]{9, 10, 11, 12, 13, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"YIxYGEALQVADAAAAA3QbEH0AowY", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "O-wmAfBPSFADAAAA4zINVfD_bro", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "-Xc-np9y2VMCAAAARKr0yNNPYW0", "fqv01SQemVIBAAAApND8LDRUhRU", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "ptuUd96JSFACAAAATobI23sPpz0", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "Nl8Pg2rBQVACAAAA25Lxtb8SDp0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "9GcNVISdSVADAAAAUcw5BYjELW4", "9LW_RcoOSVACAAAAFTk3DTyXN-M", "dk_wwlghOFACAAAAfz9xrxi6euw"}, new int[]{45, at.R1, 0, at.K2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{34, 47, 52, 48, 54, 50, 37, 56, 48, 49, 40, 64, 38, 48});
         J1(s6Var7);
         arrayList.add(s6Var7);
         hashMap.put("Night", s6Var7);
@@ -4564,8 +4564,8 @@ public abstract class t6 {
                 f8.f(e10);
             }
         }
-        Collections.sort(F, new bk(27));
-        SharedPreferences d12 = vp.d1();
+        Collections.sort(F, new ck(27));
+        SharedPreferences d12 = wp.d1();
         try {
             HashMap hashMap2 = H;
             s6 s6Var8 = (s6) hashMap2.get("Dark Blue");
@@ -4977,14 +4977,14 @@ public abstract class t6 {
             u1(true);
             return;
         }
-        int i18 = zs.r4;
+        int i18 = at.r4;
         if (i10 == i12) {
-            zs.e().k(i18, new Object[0]);
+            at.e().k(i18, new Object[0]);
         } else {
             if (i10 != i13 || Build.VERSION.SDK_INT < 26) {
                 return;
             }
-            zs.e().k(i18, new Object[0]);
+            at.e().k(i18, new Object[0]);
         }
     }
 
@@ -5089,8 +5089,8 @@ public abstract class t6 {
         if (drawable == null) {
             return;
         }
-        if (drawable instanceof qv0) {
-            ((qv0) drawable).b(i10);
+        if (drawable instanceof rv0) {
+            ((rv0) drawable).b(i10);
             return;
         }
         if (drawable instanceof qb0) {
@@ -5099,8 +5099,8 @@ public abstract class t6 {
         }
         if (drawable instanceof ShapeDrawable) {
             ((ShapeDrawable) drawable).getPaint().setColor(i10);
-        } else if (drawable instanceof kl0) {
-            ((kl0) drawable).b(i10);
+        } else if (drawable instanceof ll0) {
+            ((ll0) drawable).b(i10);
         } else {
             drawable.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
         }
@@ -5160,7 +5160,7 @@ public abstract class t6 {
         int red = (int) (Color.red(HSVToColor) * A10);
         int green = (int) (Color.green(HSVToColor) * A10);
         int blue = (int) (Color.blue(HSVToColor) * A10);
-        return Color.argb(Color.alpha(HSVToColor), red < 0 ? 0 : Math.min(red, zs.e4), green < 0 ? 0 : Math.min(green, zs.e4), blue >= 0 ? Math.min(blue, zs.e4) : 0);
+        return Color.argb(Color.alpha(HSVToColor), red < 0 ? 0 : Math.min(red, at.e4), green < 0 ? 0 : Math.min(green, at.e4), blue >= 0 ? Math.min(blue, at.e4) : 0);
     }
 
     public static int E0(int i10) {
@@ -5272,13 +5272,13 @@ public abstract class t6 {
                 int i11 = 0;
                 while (i11 < 2) {
                     s6 s6Var = i11 == 0 ? K : J;
-                    if (s6Var != null && d20.i(s6Var.E).p()) {
+                    if (s6Var != null && e20.i(s6Var.E).p()) {
                         r6 k10 = s6Var.k(false);
                         TLRPC.TL_theme tL_theme = s6Var.F;
                         if (tL_theme != null) {
                             i10 = s6Var.E;
                         } else if (k10 != null && (tL_theme = k10.r) != null) {
-                            i10 = d20.s0;
+                            i10 = e20.s0;
                         }
                         if (tL_theme.document != null) {
                             A++;
@@ -5515,8 +5515,8 @@ public abstract class t6 {
                 s6Var.G = false;
                 s6Var.g0 = null;
                 s6Var.h0 = null;
-                zs.f(s6Var.E).b(s6Var, zs.Y1);
-                zs.f(s6Var.E).b(s6Var, zs.Z1);
+                at.f(s6Var.E).b(s6Var, at.Y1);
+                at.f(s6Var.E).b(s6Var, at.Z1);
                 b8 G10 = b8.G(s6Var.E);
                 TLRPC.TL_theme tL_theme3 = s6Var.F;
                 G10.X(tL_theme3.document, tL_theme3, 1, 1);
@@ -5590,7 +5590,7 @@ public abstract class t6 {
                             }
                             if (((Drawable) dVar.a) == null) {
                             }
-                            if (!sc.e(32)) {
+                            if (!tc.e(32)) {
                             }
                             return dVar;
                         }
@@ -5627,10 +5627,10 @@ public abstract class t6 {
                             int min = Math.min(point.x, point.y);
                             int max = Math.max(point.x, point.y);
                             if (document != null) {
-                                b8.G(d20.s0);
-                                c10 = d00.f(b8.K(document, null, true, true), min, max, 2);
+                                b8.G(e20.s0);
+                                c10 = e00.f(b8.K(document, null, true, true), min, max, 2);
                             } else {
-                                c10 = d00.c(1.0f, R.raw.default_pattern, min, max, -1, 2);
+                                c10 = e00.c(1.0f, R.raw.default_pattern, min, max, -1, 2);
                             }
                             bitmap = c10;
                             if (bitmap != null) {
@@ -5743,7 +5743,7 @@ public abstract class t6 {
             if (((Drawable) dVar.a) == null) {
             }
         }
-        if (!sc.e(32)) {
+        if (!tc.e(32)) {
             Drawable drawable = (Drawable) dVar.a;
             if (drawable instanceof jb0) {
                 jb0 jb0Var4 = (jb0) drawable;
@@ -5771,7 +5771,7 @@ public abstract class t6 {
     }
 
     public static void J1(s6 s6Var) {
-        Collections.sort(s6Var.b0, new bk(28));
+        Collections.sort(s6Var.b0, new ck(28));
     }
 
     public static void K(Context context, boolean z10) {
@@ -6054,7 +6054,7 @@ public abstract class t6 {
         W2.setTextSize(org.telegram.messenger.i0.L(r0));
         Y2.setTextSize(org.telegram.messenger.i0.L(r0));
         Z2.setTextSize(org.telegram.messenger.i0.L(r0));
-        float f13 = (((tz.W0 * 2) + 10) / f12) - f10;
+        float f13 = (((uz.W0 * 2) + 10) / f12) - f10;
         d3.setTextSize(org.telegram.messenger.i0.L(f13));
         X2.setTextSize(org.telegram.messenger.i0.L(r0));
         U2.setTextSize(org.telegram.messenger.i0.L(f13));
@@ -6065,10 +6065,10 @@ public abstract class t6 {
         M2.setTextSize(org.telegram.messenger.i0.L(13.0f));
         X1.setStrokeWidth(org.telegram.messenger.i0.L(f10));
         Z1.setStrokeWidth(org.telegram.messenger.i0.L(1.1f));
-        s2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, tz.W0) - 2));
-        t2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, tz.W0) - 2));
-        u2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, tz.W0) - 3));
-        v2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, tz.W0)));
+        s2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, uz.W0) - 2));
+        t2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, uz.W0) - 2));
+        u2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, uz.W0) - 3));
+        v2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, uz.W0)));
         f3.setTextSize(org.telegram.messenger.i0.L(15.0f));
         g3.setTextSize(org.telegram.messenger.i0.L(13.0f));
         k2.setStrokeWidth(org.telegram.messenger.i0.L(f12));
@@ -6092,7 +6092,7 @@ public abstract class t6 {
             iArr[0] = (view.getMeasuredWidth() / 2) + iArr[0];
             iArr[1] = (view.getMeasuredHeight() / 2) + iArr[1];
         }
-        zs.e().k(zs.t4, s6Var, Boolean.valueOf(z10), iArr, Integer.valueOf(i10), Boolean.TRUE, null);
+        at.e().k(at.t4, s6Var, Boolean.valueOf(z10), iArr, Integer.valueOf(i10), Boolean.TRUE, null);
     }
 
     public static ShapeDrawable L(int i10, int i11) {
@@ -6154,7 +6154,7 @@ public abstract class t6 {
         if (o != 0) {
             if (k2Var != null) {
                 try {
-                    cc.a0(k2Var).J(R.raw.auto_night_off, o == 3 ? cd.L0(2131753785, "AutoNightSystemModeOff") : cd.L0(2131753790, "AutoNightModeOff"), cd.L0(2131745512, "Settings"), 5000, false, new w5(k2Var, 1)).j();
+                    cc.a0(k2Var).J(R.raw.auto_night_off, o == 3 ? dd.L0(2131753785, "AutoNightSystemModeOff") : dd.L0(2131753790, "AutoNightModeOff"), dd.L0(2131745512, "Settings"), 5000, false, new w5(k2Var, 1)).j();
                 } catch (Exception e10) {
                     f8.g(e10, true);
                 }
@@ -6183,21 +6183,21 @@ public abstract class t6 {
         return z10 ? L0(x02, d6, null) : h0(x02, 2, -1);
     }
 
-    public static void N1(jj jjVar) {
+    public static void N1(kj kjVar) {
         x7 x7Var = d5;
         if (x7Var == null) {
             return;
         }
-        if (x7Var.i == null || jjVar == null) {
+        if (x7Var.i == null || kjVar == null) {
             x7Var.i = null;
             return;
         }
         if (e5 == null) {
             e5 = new HashMap();
         }
-        e5.put(jjVar, d5);
+        e5.put(kjVar, d5);
         d5.e(false, null);
-        org.telegram.messenger.i0.h3(new w5(jjVar, 2), 200L);
+        org.telegram.messenger.i0.h3(new w5(kjVar, 2), 200L);
         d5 = null;
     }
 
@@ -6233,9 +6233,9 @@ public abstract class t6 {
             C2 = new TextPaint(1);
             TextPaint textPaint = new TextPaint(1);
             D2 = textPaint;
-            TextPaint d10 = z20.d(textPaint, 1);
+            TextPaint d10 = a30.d(textPaint, 1);
             E2 = d10;
-            TextPaint d11 = z20.d(d10, 1);
+            TextPaint d11 = a30.d(d10, 1);
             G2 = d11;
             d11.setTypeface(org.telegram.messenger.i0.o());
             S1 = new Paint(1);
@@ -6248,7 +6248,7 @@ public abstract class t6 {
             paint2.setStrokeCap(cap);
             TextPaint textPaint2 = new TextPaint(1);
             H2 = textPaint2;
-            I2 = z20.d(textPaint2, 1);
+            I2 = a30.d(textPaint2, 1);
             Paint paint3 = new Paint();
             U1 = paint3;
             paint3.setPathEffect(k80.c());
@@ -6273,28 +6273,28 @@ public abstract class t6 {
             textPaint3.setTypeface(Typeface.DEFAULT_BOLD);
             TextPaint textPaint4 = new TextPaint(1);
             O2 = textPaint4;
-            P2 = z20.d(textPaint4, 1);
+            P2 = a30.d(textPaint4, 1);
             TextPaint textPaint5 = new TextPaint(1);
             Q2 = textPaint5;
-            TextPaint d12 = z20.d(textPaint5, 1);
+            TextPaint d12 = a30.d(textPaint5, 1);
             R2 = d12;
-            S2 = z20.d(d12, 1);
+            S2 = a30.d(d12, 1);
             J2 = new TextPaint(1);
             TextPaint textPaint6 = new TextPaint(1);
             K2 = textPaint6;
-            L2 = z20.d(textPaint6, 1);
+            L2 = a30.d(textPaint6, 1);
             T2 = new TextPaint(1);
             U2 = new TextPaint(1);
             V2 = new TextPaint(1);
             TextPaint textPaint7 = new TextPaint(1);
             W2 = textPaint7;
-            X2 = z20.d(textPaint7, 1);
+            X2 = a30.d(textPaint7, 1);
             TextPaint textPaint8 = new TextPaint(1);
             Y2 = textPaint8;
-            Z2 = z20.d(textPaint8, 1);
+            Z2 = a30.d(textPaint8, 1);
             TextPaint textPaint9 = new TextPaint(1);
             d3 = textPaint9;
-            c3 = z20.d(textPaint9, 1);
+            c3 = a30.d(textPaint9, 1);
             e3 = new TextPaint(1);
             TextPaint textPaint10 = new TextPaint(1);
             M2 = textPaint10;
@@ -6318,7 +6318,7 @@ public abstract class t6 {
             s2 = new TextPaint(1);
             t2 = new TextPaint(1);
             u2 = new TextPaint(1);
-            TextPaint d13 = z20.d(s2, 1);
+            TextPaint d13 = a30.d(s2, 1);
             v2 = d13;
             d13.setTypeface(org.telegram.messenger.i0.o());
             Paint paint11 = new Paint(1);
@@ -6327,7 +6327,7 @@ public abstract class t6 {
             i2 = new Paint(1);
             TextPaint textPaint11 = new TextPaint(1);
             f3 = textPaint11;
-            g3 = z20.d(textPaint11, 1);
+            g3 = a30.d(textPaint11, 1);
             j2 = new Paint();
             new Paint(1);
             m2 = new Paint(1);
@@ -6417,13 +6417,13 @@ public abstract class t6 {
                         z2.setTextSize(org.telegram.messenger.i0.L(46.0f));
                         A2.setTextSize(org.telegram.messenger.i0.L(38.0f));
                         B2.setTextSize(org.telegram.messenger.i0.L(30.0f));
-                        o2.setTextSize(org.telegram.messenger.i0.L(tz.W0));
+                        o2.setTextSize(org.telegram.messenger.i0.L(uz.W0));
                         x2.setTextSize(org.telegram.messenger.i0.L(14.0f));
                         w2.setTextSize(org.telegram.messenger.i0.L(15.0f));
                         W2.setTextSize(org.telegram.messenger.i0.L(r1));
                         Y2.setTextSize(org.telegram.messenger.i0.L(r1));
                         Z2.setTextSize(org.telegram.messenger.i0.L(r1));
-                        float f10 = (((tz.W0 * 2) + 10) / 3.0f) - 1.0f;
+                        float f10 = (((uz.W0 * 2) + 10) / 3.0f) - 1.0f;
                         a3.setTextSize(org.telegram.messenger.i0.L(f10));
                         b3.setTextSize(org.telegram.messenger.i0.L(r1));
                         V2.setTextSize(org.telegram.messenger.i0.L(12.0f));
@@ -6431,9 +6431,9 @@ public abstract class t6 {
                         c3.setTextSize(org.telegram.messenger.i0.L(r1 - 2.0f));
                         X2.setTextSize(org.telegram.messenger.i0.L(r1));
                         U2.setTextSize(org.telegram.messenger.i0.L(f10));
-                        p2.setTextSize(org.telegram.messenger.i0.L(Math.max(Math.min(10, tz.W0 - 1), tz.W0 - 2)));
-                        q2.setTextSize(org.telegram.messenger.i0.L(Math.max(Math.min(10, tz.W0 - 2), tz.W0 - 3)));
-                        r2.setTextSize(org.telegram.messenger.i0.L(Math.max(Math.min(10, tz.W0 - 2), tz.W0 - 5)));
+                        p2.setTextSize(org.telegram.messenger.i0.L(Math.max(Math.min(10, uz.W0 - 1), uz.W0 - 2)));
+                        q2.setTextSize(org.telegram.messenger.i0.L(Math.max(Math.min(10, uz.W0 - 2), uz.W0 - 3)));
+                        r2.setTextSize(org.telegram.messenger.i0.L(Math.max(Math.min(10, uz.W0 - 2), uz.W0 - 5)));
                     }
                 }
             } catch (Throwable th2) {
@@ -6496,45 +6496,45 @@ public abstract class t6 {
             drawableArr[22] = resources.getDrawable(R.drawable.filled_giveaway_premium);
             drawableArr[23] = resources.getDrawable(R.drawable.filled_giveaway_stars);
             drawableArr[24] = resources.getDrawable(R.drawable.filled_suggest_chat_avatar);
-            bi0 bi0Var = u1;
-            if (bi0Var != null) {
-                bi0Var.setCallback(null);
+            ci0 ci0Var = u1;
+            if (ci0Var != null) {
+                ci0Var.setCallback(null);
                 u1.C(false);
             }
-            bi0 bi0Var2 = v1;
-            if (bi0Var2 != null) {
-                bi0Var2.C(false);
+            ci0 ci0Var2 = v1;
+            if (ci0Var2 != null) {
+                ci0Var2.C(false);
             }
-            bi0 bi0Var3 = w1;
-            if (bi0Var3 != null) {
-                bi0Var3.C(false);
+            ci0 ci0Var3 = w1;
+            if (ci0Var3 != null) {
+                ci0Var3.C(false);
             }
-            bi0 bi0Var4 = x1;
-            if (bi0Var4 != null) {
-                bi0Var4.C(false);
+            ci0 ci0Var4 = x1;
+            if (ci0Var4 != null) {
+                ci0Var4.C(false);
             }
-            bi0 bi0Var5 = y1;
-            if (bi0Var5 != null) {
-                bi0Var5.C(false);
+            ci0 ci0Var5 = y1;
+            if (ci0Var5 != null) {
+                ci0Var5.C(false);
             }
-            bi0 bi0Var6 = z1;
-            if (bi0Var6 != null) {
-                bi0Var6.C(false);
+            ci0 ci0Var6 = z1;
+            if (ci0Var6 != null) {
+                ci0Var6.C(false);
             }
-            u1 = new bi0(R.raw.chats_archiveavatar, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            v1 = new bi0(R.raw.chats_archive, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            w1 = new bi0(R.raw.chats_unarchive, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            x1 = new bi0(R.raw.chats_hide, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            y1 = new bi0(R.raw.chats_unhide, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            z1 = new bi0(R.raw.chat_audio_record_delete, org.telegram.messenger.i0.L(30.0f), org.telegram.messenger.i0.L(30.0f), false, null);
-            H1 = new bi0(R.raw.swipe_mute, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            I1 = new bi0(R.raw.swipe_unmute, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            L1 = new bi0(R.raw.swipe_read, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            M1 = new bi0(R.raw.swipe_unread, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            J1 = new bi0(R.raw.swipe_delete, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            O1 = new bi0(R.raw.swipe_unpin, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            N1 = new bi0(R.raw.swipe_pin, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
-            K1 = new bi0(R.raw.swipe_community_ungroup, org.telegram.messenger.i0.L(28.0f), org.telegram.messenger.i0.L(28.0f), false, null);
+            u1 = new ci0(R.raw.chats_archiveavatar, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            v1 = new ci0(R.raw.chats_archive, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            w1 = new ci0(R.raw.chats_unarchive, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            x1 = new ci0(R.raw.chats_hide, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            y1 = new ci0(R.raw.chats_unhide, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            z1 = new ci0(R.raw.chat_audio_record_delete, org.telegram.messenger.i0.L(30.0f), org.telegram.messenger.i0.L(30.0f), false, null);
+            H1 = new ci0(R.raw.swipe_mute, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            I1 = new ci0(R.raw.swipe_unmute, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            L1 = new ci0(R.raw.swipe_read, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            M1 = new ci0(R.raw.swipe_unread, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            J1 = new ci0(R.raw.swipe_delete, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            O1 = new ci0(R.raw.swipe_unpin, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            N1 = new ci0(R.raw.swipe_pin, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f), false, null);
+            K1 = new ci0(R.raw.swipe_community_ungroup, org.telegram.messenger.i0.L(28.0f), org.telegram.messenger.i0.L(28.0f), false, null);
             l();
         }
     }
@@ -6556,7 +6556,7 @@ public abstract class t6 {
             i12 = i10;
             max = i11;
         }
-        jb0Var.s(d00.c(1.0f, R.raw.default_pattern, i12, max, -16777216, 2), 34);
+        jb0Var.s(e00.c(1.0f, R.raw.default_pattern, i12, max, -16777216, 2), 34);
         jb0Var.t(jb0Var.f());
         return jb0Var;
     }
@@ -6571,7 +6571,7 @@ public abstract class t6 {
         if (L0 == null) {
             TextPaint textPaint = new TextPaint(1);
             L0 = textPaint;
-            TextPaint d10 = z20.d(textPaint, 1);
+            TextPaint d10 = a30.d(textPaint, 1);
             M0 = d10;
             d10.setTypeface(org.telegram.messenger.i0.o());
             w0 = new Paint(1);
@@ -6596,18 +6596,18 @@ public abstract class t6 {
             }
             TextPaint textPaint2 = new TextPaint(1);
             D0 = textPaint2;
-            TextPaint d11 = z20.d(textPaint2, 1);
+            TextPaint d11 = a30.d(textPaint2, 1);
             E0 = d11;
-            TextPaint d12 = z20.d(d11, 1);
+            TextPaint d12 = a30.d(d11, 1);
             G0 = d12;
-            I0 = z20.d(d12, 1);
+            I0 = a30.d(d12, 1);
             J0 = new TextPaint(1);
             K0 = new TextPaint(1);
             TextPaint textPaint3 = new TextPaint(1);
             N0 = textPaint3;
-            TextPaint d13 = z20.d(textPaint3, 1);
+            TextPaint d13 = a30.d(textPaint3, 1);
             O0 = d13;
-            P0 = z20.d(d13, 1);
+            P0 = a30.d(d13, 1);
             Q0 = new TextPaint(1);
             TextPaint textPaint4 = new TextPaint(1);
             R0 = textPaint4;
@@ -6631,8 +6631,8 @@ public abstract class t6 {
             d1 = resources.getDrawable(R.drawable.list_unmute).mutate();
             e1 = resources.getDrawable(R.drawable.mini_ephemeral_hidden_16).mutate();
             f1 = resources.getDrawable(R.drawable.verified_area).mutate();
-            g1 = new kl0(0);
-            h1 = new kl0(1);
+            g1 = new ll0(0);
+            h1 = new ll0(1);
             i1 = resources.getDrawable(R.drawable.verified_check).mutate();
             m1 = resources.getDrawable(R.drawable.filled_chatlist_mention).mutate();
             n1 = resources.getDrawable(R.drawable.filled_chatlist_reaction).mutate();
@@ -6827,7 +6827,7 @@ public abstract class t6 {
         }
         e6 e6Var = new e6();
         e6Var.setEnterFadeDuration(1);
-        e6Var.setExitFadeDuration(zs.e3);
+        e6Var.setExitFadeDuration(at.e3);
         e6Var.addState(new int[]{android.R.attr.state_selected}, mutate2);
         e6Var.addState(new int[0], mutate);
         return e6Var;
@@ -7059,13 +7059,13 @@ public abstract class t6 {
         if (i10 == 0) {
             str = "https://attheme.org?slug=" + m6Var.c;
         } else {
-            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (m6Var.d >> 8)) & 255), Byte.valueOf((byte) (m6Var.d & zs.e4))).toLowerCase();
+            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (m6Var.d >> 8)) & 255), Byte.valueOf((byte) (m6Var.d & at.e4))).toLowerCase();
             int i11 = m6Var.e;
-            String lowerCase2 = i11 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (m6Var.e >> 8)) & 255), Byte.valueOf((byte) (m6Var.e & zs.e4))).toLowerCase() : null;
+            String lowerCase2 = i11 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (m6Var.e >> 8)) & 255), Byte.valueOf((byte) (m6Var.e & at.e4))).toLowerCase() : null;
             int i12 = m6Var.f;
-            String lowerCase3 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (m6Var.f >> 8)) & 255), Byte.valueOf((byte) (m6Var.f & zs.e4))).toLowerCase() : null;
+            String lowerCase3 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (m6Var.f >> 8)) & 255), Byte.valueOf((byte) (m6Var.f & at.e4))).toLowerCase() : null;
             int i13 = m6Var.g;
-            String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (m6Var.g >> 8)) & 255), Byte.valueOf((byte) (m6Var.g & zs.e4))).toLowerCase() : null;
+            String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (m6Var.g >> 8)) & 255), Byte.valueOf((byte) (m6Var.g & at.e4))).toLowerCase() : null;
             if (lowerCase2 == null || lowerCase3 == null) {
                 if (lowerCase2 != null) {
                     StringBuilder i14 = sc.e.i(a1.g.C(lowerCase, "-", lowerCase2), "&rotation=");
@@ -7267,7 +7267,7 @@ public abstract class t6 {
             return;
         }
         int i10 = im.get(vd);
-        boolean z10 = (drawable instanceof jb0) && tz.o() != 0 && i10 == 0;
+        boolean z10 = (drawable instanceof jb0) && uz.o() != 0 && i10 == 0;
         if (z10 && Y != (bitmap = ((jb0) drawable).k)) {
             Y = bitmap;
             Bitmap bitmap2 = Y;
@@ -7344,7 +7344,7 @@ public abstract class t6 {
     }
 
     public static boolean i1(p6 p6Var) {
-        return p6Var != null ? p6Var.e() : tz.H0;
+        return p6Var != null ? p6Var.e() : uz.H0;
     }
 
     public static void j(Drawable drawable) {
@@ -7357,13 +7357,13 @@ public abstract class t6 {
         }
         X = c0;
         b0 = d0;
-        boolean z11 = tz.H0;
+        boolean z11 = uz.H0;
         int i10 = Zc;
         if (z11) {
             int x02 = x0(null, ua, false);
             int x03 = x0(null, Ea, false);
             valueAt = i0.b.k(x03, x02);
-            valueAt2 = i0.b.k(i0.b.o(x03, Math.min(zs.e4, Color.alpha(x03) * 2)), x02);
+            valueAt2 = i0.b.k(i0.b.o(x03, Math.min(at.e4, Color.alpha(x03) * 2)), x02);
             X = valueAt;
             b0 = valueAt2;
         } else {
@@ -7372,7 +7372,7 @@ public abstract class t6 {
             int indexOfKey2 = im.indexOfKey(ad);
             valueAt2 = indexOfKey2 >= 0 ? im.valueAt(indexOfKey2) : b0;
         }
-        if (z11 || !((((z10 = drawable instanceof jb0)) || (drawable instanceof BitmapDrawable)) && tz.o() != 0 && sc.e(32))) {
+        if (z11 || !((((z10 = drawable instanceof jb0)) || (drawable instanceof BitmapDrawable)) && uz.o() != 0 && tc.e(32))) {
             Y = null;
             Z = null;
             int i11 = Fa;
@@ -7512,7 +7512,7 @@ public abstract class t6 {
         f2.setFilterBitmap(true);
         f2.setShader(Z);
         f2.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-        f2.setAlpha(zs.e4);
+        f2.setAlpha(at.e4);
         g2.setFilterBitmap(true);
         g2.setShader(Z);
         ColorMatrix colorMatrix3 = new ColorMatrix(colorMatrix2);
@@ -7520,7 +7520,7 @@ public abstract class t6 {
         j1();
         org.telegram.messenger.i0.n2(colorMatrix3, 0.92f);
         g2.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
-        g2.setAlpha(zs.e4);
+        g2.setAlpha(at.e4);
         h2.setAlpha(0);
     }
 
@@ -7677,11 +7677,11 @@ public abstract class t6 {
         D1(i31, Y4);
         int i32 = 0;
         while (true) {
-            qv0[] qv0VarArr = u3;
-            if (i32 >= qv0VarArr.length) {
+            rv0[] rv0VarArr = u3;
+            if (i32 >= rv0VarArr.length) {
                 break;
             }
-            D1(p9, qv0VarArr[i32]);
+            D1(p9, rv0VarArr[i32]);
             i32++;
         }
         for (int i33 = 0; i33 < 5; i33++) {
@@ -7712,7 +7712,7 @@ public abstract class t6 {
         C1(x02, L4[1]);
         C1(x0(null, da, false), R4);
         if (z11 || b) {
-            if (!tz.H0 || b) {
+            if (!uz.H0 || b) {
                 return;
             }
             i();
@@ -7754,47 +7754,47 @@ public abstract class t6 {
             int length = drawableArr.length;
             int i11 = J7;
             if (i10 >= length) {
-                bi0 bi0Var = u1;
-                bi0Var.Z = true;
+                ci0 ci0Var = u1;
+                ci0Var.Z = true;
                 int i12 = M7;
-                bi0Var.Q(x0(null, i12, true), "Arrow1");
+                ci0Var.Q(x0(null, i12, true), "Arrow1");
                 u1.Q(x0(null, i12, true), "Arrow2");
                 u1.Q(x0(null, i11, true), "Box2");
                 u1.Q(x0(null, i11, true), "Box1");
                 u1.o();
                 C1 = false;
                 u1.J(true);
-                bi0 bi0Var2 = x1;
-                bi0Var2.Z = true;
+                ci0 ci0Var2 = x1;
+                ci0Var2.Z = true;
                 int i13 = e9;
-                bi0Var2.Q(x0(null, i13, true), "Arrow");
+                ci0Var2.Q(x0(null, i13, true), "Arrow");
                 x1.Q(x0(null, i13, true), "Line");
                 x1.o();
-                bi0 bi0Var3 = y1;
-                bi0Var3.Z = true;
-                bi0Var3.Q(x0(null, i13, true), "Arrow");
+                ci0 ci0Var3 = y1;
+                ci0Var3.Z = true;
+                ci0Var3.Q(x0(null, i13, true), "Arrow");
                 y1.Q(x0(null, i13, true), "Line");
                 y1.o();
-                bi0 bi0Var4 = z1;
-                bi0Var4.Z = true;
+                ci0 ci0Var4 = z1;
+                ci0Var4.Z = true;
                 int i14 = c9;
-                bi0Var4.Q(x0(null, i14, true), "Line 1");
+                ci0Var4.Q(x0(null, i14, true), "Line 1");
                 z1.Q(x0(null, i14, true), "Line 2");
                 z1.Q(x0(null, i14, true), "Line 3");
                 z1.Q(x0(null, i13, true), "Cup Red");
                 z1.Q(x0(null, i13, true), "Box");
                 z1.o();
                 B1 = false;
-                bi0 bi0Var5 = v1;
-                bi0Var5.Z = true;
-                bi0Var5.Q(x0(null, i14, true), "Arrow");
+                ci0 ci0Var5 = v1;
+                ci0Var5.Z = true;
+                ci0Var5.Q(x0(null, i14, true), "Arrow");
                 v1.Q(x0(null, i13, true), "Box2");
                 v1.Q(x0(null, i13, true), "Box1");
                 v1.o();
                 A1 = false;
-                bi0 bi0Var6 = w1;
-                bi0Var6.Z = true;
-                bi0Var6.Q(x0(null, i13, true), "Arrow1");
+                ci0 ci0Var6 = w1;
+                ci0Var6.Z = true;
+                ci0Var6.Q(x0(null, i13, true), "Arrow1");
                 w1.Q(x0(null, d9, true), "Arrow2");
                 w1.Q(x0(null, i13, true), "Box2");
                 w1.Q(x0(null, i13, true), "Box1");
@@ -7837,7 +7837,7 @@ public abstract class t6 {
         if (z10) {
             z1(s6Var, true, false, false, false, false);
             if (r6Var.r != null) {
-                vp r12 = vp.r1(r6Var.t);
+                wp r12 = wp.r1(r6Var.t);
                 if (z12 && s6Var == J) {
                     z11 = true;
                 }
@@ -7905,7 +7905,7 @@ public abstract class t6 {
             s6Var.a = str;
             s6Var.F = tL_theme;
             s6Var.b = file.getAbsolutePath();
-            s6Var.E = d20.s0;
+            s6Var.E = e20.s0;
             String[] strArr = new String[1];
             H(T0(new File(s6Var.b), null, strArr), s6Var);
             if (TextUtils.isEmpty(strArr[0])) {
@@ -7974,11 +7974,11 @@ public abstract class t6 {
         if (zArr[i10]) {
             return;
         }
-        if ((z10 || Math.abs((System.currentTimeMillis() / 1000) - D[i10]) >= 3600) && d20.i(i10).p()) {
+        if ((z10 || Math.abs((System.currentTimeMillis() / 1000) - D[i10]) >= 3600) && e20.i(i10).p()) {
             zArr[i10] = true;
             TL_account.getThemes getthemes = new TL_account.getThemes();
             getthemes.format = "android";
-            if (!ui.b0(i10).A0.isEmpty()) {
+            if (!vi.b0(i10).A0.isEmpty()) {
                 getthemes.hash = E[i10];
             }
             if (org.telegram.messenger.v2.a) {
@@ -8142,9 +8142,9 @@ public abstract class t6 {
                 D1(z9, f1);
                 D1(A9, i1);
                 D1(A8, s1);
-                kl0 kl0Var = g1;
+                ll0 ll0Var = g1;
                 int i23 = j9;
-                D1(i23, kl0Var);
+                D1(i23, ll0Var);
                 D1(i23, h1);
                 return;
             }
@@ -8208,9 +8208,9 @@ public abstract class t6 {
                 int i10 = (int) f10;
                 if (!z10) {
                     org.telegram.messenger.r5 r5Var = Utilities.i;
-                    rh rhVar = new rh(m6Var, file, i10, z11, document, z12);
-                    d = rhVar;
-                    r5Var.c(rhVar);
+                    sh shVar = new sh(m6Var, file, i10, z11, document, z12);
+                    d = shVar;
+                    r5Var.c(shVar);
                     return;
                 }
                 Drawable p12 = p1(m6Var, file, i10, z11, document, z12);
@@ -8219,7 +8219,7 @@ public abstract class t6 {
                     j(p12);
                     h(p12);
                 }
-                zs.e().k(zs.z4, new Object[0]);
+                at.e().k(at.z4, new Object[0]);
                 return;
             }
             f11 = k10.p;
@@ -8247,12 +8247,12 @@ public abstract class t6 {
         F(false);
     }
 
-    public static x7 p0(jj jjVar) {
+    public static x7 p0(kj kjVar) {
         HashMap hashMap = e5;
-        if (hashMap == null || jjVar == null) {
+        if (hashMap == null || kjVar == null) {
             return null;
         }
-        return (x7) hashMap.get(jjVar);
+        return (x7) hashMap.get(kjVar);
     }
 
     public static Drawable p1(m6 m6Var, File file, int i10, boolean z10, TLRPC.Document document, boolean z11) {
@@ -8347,7 +8347,7 @@ public abstract class t6 {
     }
 
     public static int r1(float f10, int i10) {
-        return f10 == 1.0f ? i10 : i0.b.o(i10, w7.u.b((int) (Color.alpha(i10) * f10), 0, zs.e4));
+        return f10 == 1.0f ? i10 : i0.b.o(i10, w7.u.b((int) (Color.alpha(i10) * f10), 0, at.e4));
     }
 
     public static void s(Bitmap bitmap, BitmapShader bitmapShader, Matrix matrix, int i10, int i11, float f10, float f11) {
@@ -8460,15 +8460,15 @@ public abstract class t6 {
         int i10 = iArr[0];
         int i11 = iArr[1];
         view2.getLocationOnScreen(iArr);
-        if (view2 instanceof c91) {
+        if (view2 instanceof a91) {
             Bitmap bitmap = Y;
             if (bitmap != null) {
                 float width = bitmap.getWidth();
-                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((c91) view2).I) + i10);
+                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((a91) view2).I) + i10);
             } else {
-                i10 = (int) (i10 + (-((c91) view2).I));
+                i10 = (int) (i10 + (-((a91) view2).I));
             }
-            i11 = (int) (i11 + (-((c91) view2).J));
+            i11 = (int) (i11 + (-((a91) view2).J));
         }
         if (p6Var != null) {
             p6Var.b(i10, i11 - iArr[1], view2.getMeasuredWidth(), view2.getMeasuredHeight());
@@ -8497,7 +8497,7 @@ public abstract class t6 {
         o();
         q();
         k(false, z10);
-        org.telegram.messenger.i0.g3(new i9(3, !O));
+        org.telegram.messenger.i0.g3(new j9(3, !O));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x0045, code lost:
@@ -8506,7 +8506,7 @@ public abstract class t6 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:41:0x0047, code lost:
     
-        r3 = org.telegram.messenger.vp.d1().edit();
+        r3 = org.telegram.messenger.wp.d1().edit();
         r3.putString("theme", r10.m());
         r3.apply();
      */
@@ -8532,7 +8532,7 @@ public abstract class t6 {
         }
         if (s6Var.b == null && s6Var.d == null) {
             if (!z11 && z10) {
-                SharedPreferences.Editor edit = vp.d1().edit();
+                SharedPreferences.Editor edit = wp.d1().edit();
                 edit.remove("theme");
                 edit.commit();
             }
@@ -8546,7 +8546,7 @@ public abstract class t6 {
                 if (I != J) {
                     T = 2000;
                     U = SystemClock.elapsedRealtime();
-                    org.telegram.messenger.i0.h3(new rz(2), 2100L);
+                    org.telegram.messenger.i0.h3(new sz(2), 2100L);
                 }
             }
             I = s6Var;
@@ -8556,7 +8556,7 @@ public abstract class t6 {
             if (M == null || !z10 || Q) {
                 return;
             }
-            vp.r1(s6Var.E).u4(s6Var, s6Var.k(false), z11, false);
+            wp.r1(s6Var.E).u4(s6Var, s6Var.k(false), z11, false);
             return;
         }
         String[] strArr = new String[1];
@@ -8642,32 +8642,32 @@ public abstract class t6 {
         }
     }
 
-    public static qv0 u0(int i10) {
+    public static rv0 u0(int i10) {
         if (i10 < 0 || i10 > 5) {
             return null;
         }
-        qv0[] qv0VarArr = u3;
-        qv0 qv0Var = qv0VarArr[i10];
-        if (qv0Var != null) {
-            return qv0Var;
+        rv0[] rv0VarArr = u3;
+        rv0 rv0Var = rv0VarArr[i10];
+        if (rv0Var != null) {
+            return rv0Var;
         }
         if (i10 == 0) {
-            qv0VarArr[0] = new y41(true);
+            rv0VarArr[0] = new z41(true);
         } else if (i10 == 1) {
-            qv0VarArr[1] = new ip(true);
+            rv0VarArr[1] = new ip(true);
         } else if (i10 == 2) {
-            qv0VarArr[2] = new eo0(true);
+            rv0VarArr[2] = new fo0(true);
         } else if (i10 == 3) {
-            qv0VarArr[3] = new lf0(null, true);
+            rv0VarArr[3] = new lf0(null, true);
         } else if (i10 == 4) {
-            qv0VarArr[4] = new hl0(true);
+            rv0VarArr[4] = new il0(true);
         } else if (i10 == 5) {
-            qv0VarArr[5] = new ip();
+            rv0VarArr[5] = new ip();
         }
-        qv0 qv0Var2 = qv0VarArr[i10];
-        qv0Var2.d();
-        qv0Var2.b(x0(null, p9, false));
-        return qv0Var2;
+        rv0 rv0Var2 = rv0VarArr[i10];
+        rv0Var2.d();
+        rv0Var2.b(x0(null, p9, false));
+        return rv0Var2;
     }
 
     public static void u1(boolean z10) {
@@ -8695,12 +8695,12 @@ public abstract class t6 {
                 str = str.concat(".attheme");
             }
             if (z10) {
-                zs.e().k(zs.u4, new Object[0]);
+                at.e().k(at.u4, new Object[0]);
                 s6 s6Var = new s6();
                 s6Var.a = str;
                 s6Var.F = tL_theme;
                 s6Var.b = file.getAbsolutePath();
-                s6Var.E = d20.s0;
+                s6Var.E = e20.s0;
                 M = D0();
                 O = true;
                 P = false;
@@ -8726,11 +8726,11 @@ public abstract class t6 {
             if (s6Var2 == null) {
                 s6Var2 = new s6();
                 s6Var2.a = str;
-                s6Var2.E = d20.s0;
+                s6Var2.E = e20.s0;
                 ArrayList arrayList = F;
                 arrayList.add(s6Var2);
                 G.add(s6Var2);
-                Collections.sort(arrayList, new bk(27));
+                Collections.sort(arrayList, new ck(27));
             } else {
                 hashMap.remove(str2);
             }
@@ -8776,7 +8776,7 @@ public abstract class t6 {
     }
 
     public static void w1() {
-        SharedPreferences.Editor edit = vp.d1().edit();
+        SharedPreferences.Editor edit = wp.d1().edit();
         edit.putInt("selectedAutoNightType", o);
         edit.putBoolean("autoNightScheduleByLocation", p);
         edit.putFloat("autoNightBrighnessThreshold", q);
@@ -8811,7 +8811,7 @@ public abstract class t6 {
         SparseIntArray sparseIntArray;
         int indexOfKey;
         Integer z02;
-        return (!tz.H0 || (z02 = z0(i10, null)) == null) ? (z10 || (sparseIntArray = jm) == null || (indexOfKey = sparseIntArray.indexOfKey(i10)) < 0) ? y0(im, i10, zArr) : jm.valueAt(indexOfKey) : z02.intValue();
+        return (!uz.H0 || (z02 = z0(i10, null)) == null) ? (z10 || (sparseIntArray = jm) == null || (indexOfKey = sparseIntArray.indexOfKey(i10)) < 0) ? y0(im, i10, zArr) : jm.valueAt(indexOfKey) : z02.intValue();
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(24:0|1|(1:3)(1:160)|(1:5)(1:159)|(1:8)|9|(1:158)(1:13)|(1:15)(1:157)|16|(5:(1:19)(1:42)|(1:21)(1:41)|(1:23)(1:40)|(1:25)(1:39)|(4:28|(2:30|(1:32))|(1:38)(1:36)|37))|43|(12:45|(2:46|(3:48|(2:51|52)|53)(0))|63|64|65|(1:71)|72|(2:74|(2:98|99))(2:104|(3:106|(1:108)|(1:111)))|(6:77|(1:79)|80|(1:82)|(1:84)|85)|87|88|(2:90|91)(1:93))(2:140|(4:143|(2:146|147)|148|141))|62|63|64|65|(3:67|69|71)|72|(0)(0)|(0)|87|88|(0)(0)|(1:(0))) */
@@ -9008,7 +9008,7 @@ public abstract class t6 {
                     hashMap.put(s6Var.m(), s6Var);
                     G.add(s6Var);
                     y1(true, false);
-                    Collections.sort(arrayList, new bk(27));
+                    Collections.sort(arrayList, new ck(27));
                 }
                 I = s6Var;
                 if (s6Var != J) {
@@ -9018,13 +9018,13 @@ public abstract class t6 {
                     hm.clear();
                     t1(false, false);
                 }
-                SharedPreferences.Editor edit = vp.d1().edit();
+                SharedPreferences.Editor edit = wp.d1().edit();
                 edit.putString("theme", K.m());
                 edit.apply();
             }
             fileOutputStream.close();
             if (z10) {
-                vp.r1(s6Var.E).v4(s6Var, s6Var.k(false));
+                wp.r1(s6Var.E).v4(s6Var, s6Var.k(false));
                 return;
             }
             return;
@@ -9329,10 +9329,10 @@ public abstract class t6 {
                 }
                 edit.putString("accents_" + s6Var.d, Base64.encodeToString(serializedData.toByteArray(), 3));
                 if (!z14) {
-                    zs.e().k(zs.q4, new Object[0]);
+                    at.e().k(at.q4, new Object[0]);
                 }
                 if (z13) {
-                    vp.r1(d20.s0).v4(s6Var, s6Var.k(false));
+                    wp.r1(e20.s0).v4(s6Var, s6Var.k(false));
                 }
             }
             edit.putInt("accent_current_" + s6Var.d, s6Var.Y);

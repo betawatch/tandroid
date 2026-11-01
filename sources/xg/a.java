@@ -18,27 +18,27 @@ import e2.j;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.l9;
-import org.telegram.messenger.p20;
-import org.telegram.messenger.sc;
+import org.telegram.messenger.m9;
+import org.telegram.messenger.q20;
+import org.telegram.messenger.tc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.x6;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.mu0;
 import org.telegram.ui.Components.nu0;
 import org.telegram.ui.Components.ou0;
+import org.telegram.ui.Components.pu0;
 import r9.d;
 import w7.b9;
-import xh.e3;
-import xh.h3;
+import xh.f3;
+import xh.i3;
 import xh.m2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements wg.c, p20, mu0, nu0, l9, j, k, d, x6 {
+public final /* synthetic */ class a implements wg.c, q20, nu0, ou0, m9, j, k, d, x6 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a(int i10) {
@@ -64,8 +64,8 @@ public final /* synthetic */ class a implements wg.c, p20, mu0, nu0, l9, j, k, d
         return new za.b(J, cVar);
     }
 
-    @Override // org.telegram.messenger.p20
-    public Boolean a(a51 a51Var, View view, Integer num, Float f7, Float f10) {
+    @Override // org.telegram.messenger.q20
+    public Boolean a(b51 b51Var, View view, Integer num, Float f7, Float f10) {
         switch (this.a) {
             case 15:
                 break;
@@ -331,7 +331,7 @@ public final /* synthetic */ class a implements wg.c, p20, mu0, nu0, l9, j, k, d
         }
     }
 
-    @Override // org.telegram.ui.Components.nu0
+    @Override // org.telegram.ui.Components.ou0
     public void b(Object obj, float f7) {
         switch (this.a) {
             case 17:
@@ -344,10 +344,10 @@ public final /* synthetic */ class a implements wg.c, p20, mu0, nu0, l9, j, k, d
                 break;
             case 18:
             default:
-                ((h3) obj).setSwipeOffsetY(f7);
+                ((i3) obj).setSwipeOffsetY(f7);
                 break;
             case 19:
-                ((e3) obj).setLoadProgress(f7);
+                ((f3) obj).setLoadProgress(f7);
                 break;
         }
     }
@@ -369,11 +369,11 @@ public final /* synthetic */ class a implements wg.c, p20, mu0, nu0, l9, j, k, d
     public int g(p6 p6Var, boolean z10) {
         switch (this.a) {
             case 0:
-                return t6.r1(sc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.tj, p6Var));
+                return t6.r1(tc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.tj, p6Var));
             case 1:
-                return b9.n(sc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.d6, p6Var), t6.w0(t6.Ge, p6Var));
+                return b9.n(tc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.d6, p6Var), t6.w0(t6.Ge, p6Var));
             case 2:
-                return b9.n(sc.e(262144) ? 0.85f : 0.8f, t6.w0(t6.a7, p6Var), t6.w0(t6.d6, p6Var));
+                return b9.n(tc.e(262144) ? 0.85f : 0.8f, t6.w0(t6.a7, p6Var), t6.w0(t6.d6, p6Var));
             case 3:
                 return 855638016;
             case 4:
@@ -385,42 +385,42 @@ public final /* synthetic */ class a implements wg.c, p20, mu0, nu0, l9, j, k, d
             case 7:
                 return t6.r1(0.88f, t6.w0(t6.d6, p6Var));
             case 8:
-                return b9.n(sc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.d6, p6Var), t6.w0(t6.Ml, p6Var));
+                return b9.n(tc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.d6, p6Var), t6.w0(t6.Ml, p6Var));
             case 9:
-                return t6.r1(sc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.d6, p6Var));
+                return t6.r1(tc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.d6, p6Var));
             case 10:
                 return t6.r1(0.78f, t6.w0(t6.h5, p6Var));
             case 11:
                 return t6.r1(0.7f, t6.w0(t6.d6, p6Var));
             case 12:
-                sc.e(262144);
+                tc.e(262144);
                 return 0;
             case 13:
-                return t6.r1(sc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.d6, p6Var));
+                return t6.r1(tc.e(262144) ? 0.85f : 0.76f, t6.w0(t6.d6, p6Var));
             default:
-                if (!sc.e(256)) {
+                if (!tc.e(256)) {
                     return t6.x0(null, t6.G8, false);
                 }
                 return t6.r1(z10 ? 0.85f : 0.825f, t6.x0(null, t6.G8, false));
         }
     }
 
-    @Override // org.telegram.ui.Components.mu0
+    @Override // org.telegram.ui.Components.nu0
     public float get(Object obj) {
         switch (this.a) {
             case 16:
                 return ((m2) obj).c;
             case 17:
             default:
-                return ((h3) obj).getSwipeOffsetY();
+                return ((i3) obj).getSwipeOffsetY();
             case 18:
-                return ((e3) obj).c;
+                return ((f3) obj).c;
         }
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
-        ou0 ou0Var = h3.b0;
+        pu0 pu0Var = i3.b0;
         return Boolean.FALSE;
     }
 }

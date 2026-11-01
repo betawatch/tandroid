@@ -18,18 +18,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.internal.play_billing.s0;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.gs;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.hs;
 import org.telegram.messenger.i0;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.k6;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.vi;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
@@ -46,24 +46,24 @@ import org.telegram.ui.ActionBar.z2;
 import org.telegram.ui.Cells.l3;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.cp;
-import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.ec0;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.ay;
-import org.telegram.ui.i51;
-import org.telegram.ui.pb1;
-import org.telegram.ui.ux;
+import org.telegram.ui.g51;
+import org.telegram.ui.nb1;
+import org.telegram.ui.tx;
+import org.telegram.ui.zx;
 import w7.b6;
 import xh.h1;
 import xh.k1;
 import xh.l1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
+public final /* synthetic */ class a implements p, u1, ResultCallback, tx {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
@@ -78,13 +78,13 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
         this.c = i10;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean G() {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean H() {
         return false;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean N(ay ayVar) {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean O(zx zxVar) {
         return false;
     }
 
@@ -126,7 +126,7 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
                 if (editText.getText() != null) {
                     if (j10 <= 0) {
                         long j11 = -j10;
-                        TLRPC.Chat L0 = vp.r1(i12).L0(Long.valueOf(j11));
+                        TLRPC.Chat L0 = wp.r1(i12).L0(Long.valueOf(j11));
                         String obj3 = editText.getText().toString();
                         String str = L0.title;
                         if (str != null && str.equals(obj3)) {
@@ -134,12 +134,12 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
                             break;
                         } else {
                             L0.title = obj3;
-                            zs.f(i12).k(2, 16);
-                            vp.r1(i12).C(j11, obj3, null);
-                            zs.e().k(zs.P4, 3, Long.valueOf(j10));
+                            at.f(i12).k(2, 16);
+                            wp.r1(i12).C(j11, obj3, null);
+                            at.e().k(at.P4, 3, Long.valueOf(j10));
                         }
                     } else {
-                        TLRPC.User Z1 = vp.r1(i12).Z1(Long.valueOf(j10));
+                        TLRPC.User Z1 = wp.r1(i12).Z1(Long.valueOf(j10));
                         String obj4 = editText.getText().toString();
                         String obj5 = editText2.getText().toString();
                         String str2 = Z1.first_name;
@@ -160,16 +160,16 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
                             Z1.first_name = obj4;
                             updateprofile.last_name = obj5;
                             Z1.last_name = obj5;
-                            TLRPC.User Z12 = vp.r1(i12).Z1(Long.valueOf(d20.i(i12).e()));
+                            TLRPC.User Z12 = wp.r1(i12).Z1(Long.valueOf(e20.i(i12).e()));
                             if (Z12 != null) {
                                 Z12.first_name = updateprofile.first_name;
                                 Z12.last_name = updateprofile.last_name;
                             }
-                            d20.i(i12).v(true);
-                            zs.f(i12).k(46, new Object[0]);
-                            zs.f(i12).k(2, 1);
+                            e20.i(i12).v(true);
+                            at.f(i12).k(46, new Object[0]);
+                            at.f(i12).k(2, 1);
                             ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new c3(13));
-                            zs.e().k(zs.P4, 3, Long.valueOf(j10));
+                            at.e().k(at.P4, 3, Long.valueOf(j10));
                         }
                     }
                     x1Var.dismiss();
@@ -179,12 +179,12 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
             default:
                 Runnable runnable = (Runnable) obj;
                 TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
-                tL_messages_toggleBotInAttachMenu.bot = vp.r1(i12).n1(j10);
+                tL_messages_toggleBotInAttachMenu.bot = wp.r1(i12).n1(j10);
                 tL_messages_toggleBotInAttachMenu.enabled = false;
                 ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.voip.q(i12, 6), 66);
                 ((TLRPC.TL_attachMenuBot) obj2).show_in_side_menu = false;
-                zs.f(i12).k(zs.W4, new Object[0]);
-                ui.b0(i12).i2(ui.c2, j10);
+                at.f(i12).k(at.W4, new Object[0]);
+                vi.b0(i12).i2(vi.c2, j10);
                 if (runnable != null) {
                     runnable.run();
                     break;
@@ -195,7 +195,7 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        e11 e11Var = (e11) this.d;
+        f11 f11Var = (f11) this.d;
         cp cpVar = (cp) this.e;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.b) {
@@ -204,10 +204,10 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
         Drawable drawable = cpVar.b;
         if (drawable instanceof jb0) {
             jb0 jb0Var = (jb0) drawable;
-            jb0Var.s(e11.e((Bitmap) pair.second), this.c >= 0 ? 100 : -100);
-            jb0Var.t(e11Var.L);
+            jb0Var.s(f11.e((Bitmap) pair.second), this.c >= 0 ? 100 : -100);
+            jb0Var.t(f11Var.L);
         }
-        e11Var.invalidate();
+        f11Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -219,33 +219,33 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
     /* JADX WARN: Type inference failed for: r4v19 */
     /* JADX WARN: Type inference failed for: r4v3 */
     /* JADX WARN: Type inference failed for: r4v4, types: [boolean, int] */
-    @Override // org.telegram.ui.ux
-    public boolean y(ay ayVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, pb1 pb1Var) {
+    @Override // org.telegram.ui.tx
+    public boolean z(zx zxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, nb1 nb1Var) {
         int i12;
         String str;
         TLRPC.User user;
         TLRPC.Chat chat;
         ?? r42;
         TLRPC.Chat chat2;
-        ay ayVar2 = (ay) this.d;
+        zx zxVar2 = (zx) this.d;
         final TL_bots.BotVerifierSettings botVerifierSettings = (TL_bots.BotVerifierSettings) this.e;
         if (arrayList.isEmpty()) {
             return false;
         }
-        final long j10 = ((gs) arrayList.get(0)).a;
-        Activity parentActivity = ayVar2.getParentActivity();
+        final long j10 = ((hs) arrayList.get(0)).a;
+        Activity parentActivity = zxVar2.getParentActivity();
         final int i13 = this.c;
-        final h1 h1Var = new h1(pb1Var, ayVar2, j10, i13);
+        final h1 h1Var = new h1(nb1Var, zxVar2, j10, i13);
         if (parentActivity == null) {
             return true;
         }
-        vp r12 = vp.r1(i13);
+        wp r12 = wp.r1(i13);
         final long j11 = this.b;
         r12.Z1(Long.valueOf(j11));
         int i14 = (j10 > 0L ? 1 : (j10 == 0L ? 0 : -1));
         if (i14 >= 0) {
-            TLRPC.User Z1 = vp.r1(i13).Z1(Long.valueOf(j10));
-            str = h20.k(Z1);
+            TLRPC.User Z1 = wp.r1(i13).Z1(Long.valueOf(j10));
+            str = i20.k(Z1);
             i12 = i14;
             if (Z1.bot_verification_icon == botVerifierSettings.icon) {
                 l1.a(parentActivity, i13, j11, j10, botVerifierSettings, h1Var);
@@ -258,7 +258,7 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
             chat2 = Z1;
         } else {
             i12 = i14;
-            TLRPC.Chat L0 = vp.r1(i13).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = wp.r1(i13).L0(Long.valueOf(-j10));
             str = L0 == null ? "" : L0.title;
             if (L0.bot_verification_icon == botVerifierSettings.icon) {
                 l1.a(parentActivity, i13, j11, j10, botVerifierSettings, h1Var);
@@ -270,7 +270,7 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
             r42 = 1;
             chat2 = L0;
         }
-        final z2 h = z20.h(parentActivity, r42, r42, null);
+        final z2 h = a30.h(parentActivity, r42, r42, null);
         LinearLayout e = m5.e(parentActivity, r42);
         TLRPC.User user2 = user;
         TLRPC.Chat chat3 = chat;
@@ -308,14 +308,14 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
         a7.V(textView, i16, null);
         textView.setTextSize(1, 20.0f);
         textView.setGravity(17);
-        if (h20.t(user2)) {
-            textView.setText(cd.L0(2131752928, null));
+        if (i20.t(user2)) {
+            textView.setText(dd.L0(2131752928, null));
         } else if (user2 != null) {
-            textView.setText(cd.L0(2131752921, null));
+            textView.setText(dd.L0(2131752921, null));
         } else if (w3.V(chat3)) {
-            textView.setText(cd.L0(2131752927, null));
+            textView.setText(dd.L0(2131752927, null));
         } else {
-            textView.setText(cd.L0(2131752923, null));
+            textView.setText(dd.L0(2131752923, null));
         }
         textView.setTypeface(i0.o());
         e.addView(textView, b6.k(24.0f, 21.0f, 24.0f, 8.33f, -1, -2));
@@ -323,14 +323,14 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
         a7.V(textView2, i16, null);
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
-        zs.i(textView2);
-        textView2.setText(k6.m(i0.W2(cd.a0(null, null, 2131752922, str)), textView2.getPaint().getFontMetricsInt(), false, null, 0));
+        at.i(textView2);
+        textView2.setText(k6.m(i0.W2(dd.a0(null, null, 2131752922, str)), textView2.getPaint().getFontMetricsInt(), false, null, 0));
         e.addView(textView2, b6.k(24.0f, 0.0f, 24.0f, 22.0f, -1, -2));
-        final int i17 = vp.r1(i13).k6;
+        final int i17 = wp.r1(i13).k6;
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(parentActivity);
         final ec0 ec0Var = new ec0(parentActivity, null);
         ec0Var.setForceForceUseCenter(true);
-        ec0Var.setText(cd.L0(2131752926, null));
+        ec0Var.setText(dd.L0(2131752926, null));
         ec0Var.setLeftPadding(i0.L(2.0f));
         a7.V(editTextBoldCursor, i16, null);
         editTextBoldCursor.setCursorSize(i0.L(20.0f));
@@ -343,8 +343,8 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
         editTextBoldCursor.setSelectAllOnFocus(true);
         a7.D(editTextBoldCursor, t6.ig, null);
         a7.m(editTextBoldCursor, 36, t6.jg, null);
-        editTextBoldCursor.setGravity(cd.X ? 5 : 3);
-        editTextBoldCursor.setOnFocusChangeListener(new i51(ec0Var, editTextBoldCursor, 2));
+        editTextBoldCursor.setGravity(dd.X ? 5 : 3);
+        editTextBoldCursor.setOnFocusChangeListener(new g51(ec0Var, editTextBoldCursor, 2));
         ec0Var.e(editTextBoldCursor);
         ec0Var.addView(editTextBoldCursor, b6.d(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
         e.addView(ec0Var, b6.o(-1, -2));
@@ -365,7 +365,7 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
             TextView textView3 = new TextView(parentActivity);
             a7.V(textView3, t6.B6, null);
             textView3.setTextSize(1, 12.0f);
-            textView3.setText(cd.L0(i12 >= 0 ? 2131752925 : 2131752924, null));
+            textView3.setText(dd.L0(i12 >= 0 ? 2131752925 : 2131752924, null));
             textView3.setPadding(i0.L(14.0f), i0.L(7.0f), i0.L(14.0f), i0.L(27.0f));
             e.addView(textView3, b6.c(-2.0f, -1));
         } else {
@@ -396,8 +396,8 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
                 setcustomverification.enabled = true;
                 setcustomverification.flags = 1 | setcustomverification.flags;
                 int i18 = i13;
-                setcustomverification.bot = vp.r1(i18).n1(j11);
-                setcustomverification.peer = vp.r1(i18).i1(j10);
+                setcustomverification.bot = wp.r1(i18).n1(j11);
+                setcustomverification.peer = wp.r1(i18).i1(j10);
                 if (botVerifierSettings2.can_modify_custom_description) {
                     String obj = editTextBoldCursor2.getText().toString();
                     if (!TextUtils.isEmpty(obj)) {
@@ -438,9 +438,9 @@ public final /* synthetic */ class a implements p, u1, ResultCallback, ux {
         this.e = editText2;
     }
 
-    public /* synthetic */ a(ay ayVar, int i10, long j10, TL_bots.BotVerifierSettings botVerifierSettings) {
+    public /* synthetic */ a(zx zxVar, int i10, long j10, TL_bots.BotVerifierSettings botVerifierSettings) {
         this.a = 3;
-        this.d = ayVar;
+        this.d = zxVar;
         this.c = i10;
         this.b = j10;
         this.e = botVerifierSettings;

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class af0 extends org.telegram.ui.k4 {
     public final /* synthetic */ int h;
@@ -40,14 +40,14 @@ public final class af0 extends org.telegram.ui.k4 {
 
     @Override // android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
-        org.telegram.messenger.jj jjVar;
+        org.telegram.messenger.kj kjVar;
         switch (this.h) {
             case 0:
                 boolean drawChild = super.drawChild(canvas, view, j10);
                 PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (jjVar = MediaController.B().u0) != null) {
+                if (view == pipRoundVideoView.c && (kjVar = MediaController.B().u0) != null) {
                     pipRoundVideoView.E.set(org.telegram.messenger.i0.N(1.5f), org.telegram.messenger.i0.N(1.5f), getMeasuredWidth() - org.telegram.messenger.i0.N(1.5f), getMeasuredHeight() - org.telegram.messenger.i0.N(1.5f));
-                    canvas.drawArc(pipRoundVideoView.E, -90.0f, jjVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.t6.k2);
+                    canvas.drawArc(pipRoundVideoView.E, -90.0f, kjVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.t6.k2);
                 }
                 return drawChild;
             case 1:
@@ -67,12 +67,12 @@ public final class af0 extends org.telegram.ui.k4 {
         switch (this.h) {
             case 1:
                 super.onMeasure(i10, i11);
-                m81 m81Var = (m81) this.n;
-                if (m81Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = m81Var.d.getLayoutParams();
+                n81 n81Var = (n81) this.n;
+                if (n81Var.f != null) {
+                    ViewGroup.LayoutParams layoutParams = n81Var.d.getLayoutParams();
                     layoutParams.width = getMeasuredWidth();
                     layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = m81Var.e;
+                    ImageView imageView = n81Var.e;
                     if (imageView != null) {
                         ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
                         layoutParams2.width = getMeasuredWidth();
@@ -91,7 +91,7 @@ public final class af0 extends org.telegram.ui.k4 {
                     layoutParams3.height = getMeasuredHeight();
                 }
                 TextureView textureView = photoViewer.B2;
-                if (textureView instanceof k61) {
+                if (textureView instanceof l61) {
                     textureView.setPivotX(textureView.getMeasuredWidth() / 2);
                     photoViewer.E2.setPivotX(photoViewer.B2.getMeasuredWidth() / 2);
                 } else {

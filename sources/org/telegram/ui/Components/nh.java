@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class nh extends org.telegram.ui.ActionBar.m1 {
     public final /* synthetic */ ph x;
@@ -77,12 +77,12 @@ public final class nh extends org.telegram.ui.ActionBar.m1 {
         biVar.L1(biVar.s2, 0);
         biVar.W3 = biVar.V3[0];
         biVar.s2.y();
-        if (!(biVar.s2 instanceof xh.i3) || biVar.x3) {
+        if (!(biVar.s2 instanceof xh.j3) || biVar.x3) {
             return;
         }
         int L = biVar.d ? org.telegram.messenger.i0.L(84.0f) : 0;
         for (int i10 = 0; i10 < biVar.r2.size(); i10++) {
-            ((xh.i3) biVar.r2.valueAt(i10)).setMeasureOffsetY(L);
+            ((xh.j3) biVar.r2.valueAt(i10)).setMeasureOffsetY(L);
         }
     }
 
@@ -100,7 +100,7 @@ public final class nh extends org.telegram.ui.ActionBar.m1 {
         }
         phVar.invalidate();
         ah ahVar = biVar.r3;
-        if ((biVar.s2 instanceof xh.i3) && !biVar.x3) {
+        if ((biVar.s2 instanceof xh.j3) && !biVar.x3) {
             if (z10) {
                 ahVar.setVisibility(8);
             } else {

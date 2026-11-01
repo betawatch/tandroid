@@ -25,18 +25,19 @@ import org.telegram.ui.ActionBar.p3;
 import org.telegram.ui.ActionBar.q3;
 import org.telegram.ui.ActionBar.y0;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.voip.a0;
-import org.telegram.ui.Components.voip.j0;
-import org.telegram.ui.Components.voip.s0;
-import org.telegram.ui.Components.voip.t1;
-import org.telegram.ui.dr0;
+import org.telegram.ui.Components.voip.b0;
+import org.telegram.ui.Components.voip.c1;
+import org.telegram.ui.Components.voip.k0;
+import org.telegram.ui.Components.voip.t0;
+import org.telegram.ui.Components.voip.u1;
+import org.telegram.ui.br0;
 import org.telegram.ui.m0;
-import org.telegram.ui.ud1;
+import org.telegram.ui.sd1;
 import org.telegram.ui.un;
 import org.telegram.ui.web.l1;
 import qh.y;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -68,7 +69,7 @@ public final /* synthetic */ class k implements ValueAnimator.AnimatorUpdateList
                 ci.o oVar = (ci.o) obj;
                 un unVar = oVar.F;
                 if (unVar != null) {
-                    unVar.C9();
+                    unVar.H9();
                     if (unVar.X8 != null) {
                         unVar.fragmentView.invalidate();
                         break;
@@ -79,7 +80,7 @@ public final /* synthetic */ class k implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 3:
-                ((dr0) ((a1) obj)).K.e0.invalidate();
+                ((br0) ((a1) obj)).K.e0.invalidate();
                 break;
             case 4:
                 y1 y1Var = (y1) obj;
@@ -202,34 +203,34 @@ public final /* synthetic */ class k implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 20:
-                a0 a0Var = (a0) obj;
-                a0Var.getClass();
-                a0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b0 b0Var = (b0) obj;
+                b0Var.getClass();
+                b0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 21:
-                ud1 ud1Var = (ud1) obj;
-                ud1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sd1 sd1Var = (sd1) obj;
+                sd1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 int L = (i0.q.x - i0.L(36.0f)) - i0.L(52.0f);
-                j0 j0Var = ud1Var.c;
-                j0Var.getLayoutParams().width = i0.L(52.0f) + ((int) (L * ud1Var.E));
-                j0Var.requestLayout();
+                k0 k0Var = sd1Var.c;
+                k0Var.getLayoutParams().width = i0.L(52.0f) + ((int) (L * sd1Var.E));
+                k0Var.requestLayout();
                 break;
             case 22:
-                s0 s0Var = (s0) obj;
-                s0Var.getClass();
-                s0Var.h.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                t0 t0Var = (t0) obj;
+                t0Var.getClass();
+                t0Var.h.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 23:
-                org.telegram.ui.Components.voip.b1 b1Var2 = (org.telegram.ui.Components.voip.b1) obj;
-                b1Var2.getClass();
-                b1Var2.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b1Var2.invalidate();
+                c1 c1Var = (c1) obj;
+                c1Var.getClass();
+                c1Var.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c1Var.invalidate();
                 break;
             case 24:
-                t1 t1Var = (t1) obj;
-                t1Var.getClass();
-                t1Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t1Var.b.invalidate();
+                u1 u1Var = (u1) obj;
+                u1Var.getClass();
+                u1Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u1Var.b.invalidate();
                 break;
             case 25:
                 c2 c2Var = (c2) obj;

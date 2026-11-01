@@ -2,9 +2,9 @@ package org.telegram.messenger.time;
 
 import java.util.Calendar;
 import java.util.TimeZone;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class SunDate {
     private static final double DEGRAD = 0.017453292519943295d;
@@ -47,7 +47,7 @@ public class SunDate {
     }
 
     private static long days_since_2000_Jan_0(int i10, int i11, int i12) {
-        return ((((i10 * 367) - (((((i11 + 9) / 12) + i10) * 7) / 4)) + ((i11 * zs.y4) / 9)) + i12) - 730530;
+        return ((((i10 * 367) - (((((i11 + 9) / 12) + i10) * 7) / 4)) + ((i11 * at.y4) / 9)) + i12) - 730530;
     }
 
     private static double rev180(double d) {

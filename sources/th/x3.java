@@ -5,20 +5,20 @@ import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x3 {
     public int a;
@@ -53,7 +53,7 @@ public final class x3 {
         if (i11 < 200) {
             this.q = true;
         }
-        boolean z10 = w5.v(storyItem) && !d20.i(i10).q();
+        boolean z10 = w5.v(storyItem) && !e20.i(i10).q();
         this.j = z10;
         if (z10 && (storyViews = storyItem.views) != null && storyViews.reactions_count > 0) {
             this.j = false;
@@ -67,7 +67,7 @@ public final class x3 {
             for (int i12 = 0; i12 < storyItem.views.recent_viewers.size(); i12++) {
                 Long l4 = storyItem.views.recent_viewers.get(i12);
                 long longValue = l4.longValue();
-                if (vp.r1(i10).Z1(l4) != null) {
+                if (wp.r1(i10).Z1(l4) != null) {
                     TL_stories.TL_storyView tL_storyView = new TL_stories.TL_storyView();
                     tL_storyView.user_id = longValue;
                     tL_storyView.date = 0;
@@ -98,16 +98,16 @@ public final class x3 {
                 str4 = null;
             } else {
                 str = l3Var.c.trim().toLowerCase();
-                str2 = cd.D0().R0(str, true, false);
+                str2 = dd.D0().R0(str, true, false);
                 str4 = sc.e.h(" ", str);
                 str3 = sc.e.h(" ", str2);
             }
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                TLRPC.User Z1 = vp.r1(this.d).Z1(Long.valueOf(((TL_stories.StoryView) arrayList2.get(i10)).user_id));
+                TLRPC.User Z1 = wp.r1(this.d).Z1(Long.valueOf(((TL_stories.StoryView) arrayList2.get(i10)).user_id));
                 boolean z11 = !l3Var.b || (Z1 != null && Z1.contact);
                 if (z11 && str != null) {
                     String lowerCase = org.telegram.messenger.i5.m(0, Z1.first_name, Z1.last_name).toLowerCase();
-                    String n10 = h20.n(Z1);
+                    String n10 = i20.n(Z1);
                     String N3 = org.telegram.messenger.i0.N3(lowerCase);
                     if ((lowerCase == null || (!lowerCase.startsWith(str) && !lowerCase.contains(str4))) && !N3.startsWith(str2) && !N3.contains(str3) && (n10 == null || (!n10.startsWith(str2) && !n10.contains(str3)))) {
                         z11 = false;
@@ -143,7 +143,7 @@ public final class x3 {
             TL_stories.TL_getStoryReactionsList tL_getStoryReactionsList = new TL_stories.TL_getStoryReactionsList();
             tL_getStoryReactionsList.forwards_first = l3Var.a;
             tL_getStoryReactionsList.id = storyItem.id;
-            tL_getStoryReactionsList.peer = vp.r1(i10).i1(j10);
+            tL_getStoryReactionsList.peer = wp.r1(i10).i1(j10);
             tL_getStoryReactionsList.limit = (this.l || this.i.size() < 20) ? 20 : 100;
             String str = this.n;
             tL_getStoryReactionsList.offset = str;
@@ -190,7 +190,7 @@ public final class x3 {
                                                 TLObject tLObject2 = tLObject;
                                                 if (tLObject2 != null) {
                                                     TL_stories.StoryViewsList storyViewsList = (TL_stories.StoryViewsList) tLObject2;
-                                                    a0.h hVar = vp.r1(i13).O1().M;
+                                                    a0.h hVar = wp.r1(i13).O1().M;
                                                     if (storyViewsList.views != null) {
                                                         for (int i14 = 0; i14 < storyViewsList.views.size(); i14++) {
                                                             TL_stories.StoryView storyView = storyViewsList.views.get(i14);
@@ -199,10 +199,10 @@ public final class x3 {
                                                             }
                                                         }
                                                     }
-                                                    vp.r1(i13).V3(storyViewsList.users, false);
-                                                    vp.r1(i13).P3(storyViewsList.chats, false);
+                                                    wp.r1(i13).V3(storyViewsList.users, false);
+                                                    wp.r1(i13).P3(storyViewsList.chats, false);
                                                     boolean z12 = true;
-                                                    hs.a0(i13).m1(storyViewsList.users, storyViewsList.chats, true, false);
+                                                    is.a0(i13).m1(storyViewsList.users, storyViewsList.chats, true, false);
                                                     if (x3Var2.l) {
                                                         x3Var2.l = false;
                                                         for (int i15 = 0; i15 < arrayList3.size(); i15++) {
@@ -250,7 +250,7 @@ public final class x3 {
                                                         z12 = z11;
                                                     }
                                                     if (z12) {
-                                                        zs.f(i13).k(zs.v5, new Object[0]);
+                                                        at.f(i13).k(at.v5, new Object[0]);
                                                     }
                                                 } else {
                                                     TLRPC.TL_error tL_error2 = tL_error;
@@ -284,9 +284,9 @@ public final class x3 {
                                                 TLObject tLObject3 = tLObject;
                                                 if (tLObject3 != null) {
                                                     TL_stories.TL_storyReactionsList tL_storyReactionsList = (TL_stories.TL_storyReactionsList) tLObject3;
-                                                    vp.r1(i21).V3(tL_storyReactionsList.users, false);
-                                                    vp.r1(i21).P3(tL_storyReactionsList.chats, false);
-                                                    hs.a0(i21).m1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
+                                                    wp.r1(i21).V3(tL_storyReactionsList.users, false);
+                                                    wp.r1(i21).P3(tL_storyReactionsList.chats, false);
+                                                    is.a0(i21).m1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
                                                     if (x3Var3.l) {
                                                         x3Var3.l = false;
                                                         for (int i22 = 0; i22 < arrayList5.size(); i22++) {
@@ -314,7 +314,7 @@ public final class x3 {
                                                     boolean z13 = i23 != i24;
                                                     x3Var3.a = i24;
                                                     if (z13) {
-                                                        zs.f(i21).k(zs.v5, new Object[0]);
+                                                        at.f(i21).k(at.v5, new Object[0]);
                                                     }
                                                 } else {
                                                     TLRPC.TL_error tL_error3 = tL_error;
@@ -362,7 +362,7 @@ public final class x3 {
                                                 TLObject tLObject2 = tLObject;
                                                 if (tLObject2 != null) {
                                                     TL_stories.StoryViewsList storyViewsList = (TL_stories.StoryViewsList) tLObject2;
-                                                    a0.h hVar = vp.r1(i132).O1().M;
+                                                    a0.h hVar = wp.r1(i132).O1().M;
                                                     if (storyViewsList.views != null) {
                                                         for (int i14 = 0; i14 < storyViewsList.views.size(); i14++) {
                                                             TL_stories.StoryView storyView = storyViewsList.views.get(i14);
@@ -371,10 +371,10 @@ public final class x3 {
                                                             }
                                                         }
                                                     }
-                                                    vp.r1(i132).V3(storyViewsList.users, false);
-                                                    vp.r1(i132).P3(storyViewsList.chats, false);
+                                                    wp.r1(i132).V3(storyViewsList.users, false);
+                                                    wp.r1(i132).P3(storyViewsList.chats, false);
                                                     boolean z12 = true;
-                                                    hs.a0(i132).m1(storyViewsList.users, storyViewsList.chats, true, false);
+                                                    is.a0(i132).m1(storyViewsList.users, storyViewsList.chats, true, false);
                                                     if (x3Var22.l) {
                                                         x3Var22.l = false;
                                                         for (int i15 = 0; i15 < arrayList3.size(); i15++) {
@@ -422,7 +422,7 @@ public final class x3 {
                                                         z12 = z11;
                                                     }
                                                     if (z12) {
-                                                        zs.f(i132).k(zs.v5, new Object[0]);
+                                                        at.f(i132).k(at.v5, new Object[0]);
                                                     }
                                                 } else {
                                                     TLRPC.TL_error tL_error2 = tL_error;
@@ -456,9 +456,9 @@ public final class x3 {
                                                 TLObject tLObject3 = tLObject;
                                                 if (tLObject3 != null) {
                                                     TL_stories.TL_storyReactionsList tL_storyReactionsList = (TL_stories.TL_storyReactionsList) tLObject3;
-                                                    vp.r1(i21).V3(tL_storyReactionsList.users, false);
-                                                    vp.r1(i21).P3(tL_storyReactionsList.chats, false);
-                                                    hs.a0(i21).m1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
+                                                    wp.r1(i21).V3(tL_storyReactionsList.users, false);
+                                                    wp.r1(i21).P3(tL_storyReactionsList.chats, false);
+                                                    is.a0(i21).m1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
                                                     if (x3Var3.l) {
                                                         x3Var3.l = false;
                                                         for (int i22 = 0; i22 < arrayList5.size(); i22++) {
@@ -486,7 +486,7 @@ public final class x3 {
                                                     boolean z13 = i23 != i24;
                                                     x3Var3.a = i24;
                                                     if (z13) {
-                                                        zs.f(i21).k(zs.v5, new Object[0]);
+                                                        at.f(i21).k(at.v5, new Object[0]);
                                                     }
                                                 } else {
                                                     TLRPC.TL_error tL_error3 = tL_error;
@@ -518,7 +518,7 @@ public final class x3 {
         }
         TL_stories.TL_stories_getStoryViewsList tL_stories_getStoryViewsList = new TL_stories.TL_stories_getStoryViewsList();
         tL_stories_getStoryViewsList.id = storyItem.id;
-        tL_stories_getStoryViewsList.peer = vp.r1(i10).i1(j10);
+        tL_stories_getStoryViewsList.peer = wp.r1(i10).i1(j10);
         if (this.q) {
             tL_stories_getStoryViewsList.q = "";
             tL_stories_getStoryViewsList.just_contacts = false;
@@ -576,7 +576,7 @@ public final class x3 {
                                             TLObject tLObject2 = tLObject;
                                             if (tLObject2 != null) {
                                                 TL_stories.StoryViewsList storyViewsList = (TL_stories.StoryViewsList) tLObject2;
-                                                a0.h hVar = vp.r1(i132).O1().M;
+                                                a0.h hVar = wp.r1(i132).O1().M;
                                                 if (storyViewsList.views != null) {
                                                     for (int i14 = 0; i14 < storyViewsList.views.size(); i14++) {
                                                         TL_stories.StoryView storyView = storyViewsList.views.get(i14);
@@ -585,10 +585,10 @@ public final class x3 {
                                                         }
                                                     }
                                                 }
-                                                vp.r1(i132).V3(storyViewsList.users, false);
-                                                vp.r1(i132).P3(storyViewsList.chats, false);
+                                                wp.r1(i132).V3(storyViewsList.users, false);
+                                                wp.r1(i132).P3(storyViewsList.chats, false);
                                                 boolean z12 = true;
-                                                hs.a0(i132).m1(storyViewsList.users, storyViewsList.chats, true, false);
+                                                is.a0(i132).m1(storyViewsList.users, storyViewsList.chats, true, false);
                                                 if (x3Var22.l) {
                                                     x3Var22.l = false;
                                                     for (int i15 = 0; i15 < arrayList3.size(); i15++) {
@@ -636,7 +636,7 @@ public final class x3 {
                                                     z12 = z11;
                                                 }
                                                 if (z12) {
-                                                    zs.f(i132).k(zs.v5, new Object[0]);
+                                                    at.f(i132).k(at.v5, new Object[0]);
                                                 }
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
@@ -670,9 +670,9 @@ public final class x3 {
                                             TLObject tLObject3 = tLObject;
                                             if (tLObject3 != null) {
                                                 TL_stories.TL_storyReactionsList tL_storyReactionsList = (TL_stories.TL_storyReactionsList) tLObject3;
-                                                vp.r1(i21).V3(tL_storyReactionsList.users, false);
-                                                vp.r1(i21).P3(tL_storyReactionsList.chats, false);
-                                                hs.a0(i21).m1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
+                                                wp.r1(i21).V3(tL_storyReactionsList.users, false);
+                                                wp.r1(i21).P3(tL_storyReactionsList.chats, false);
+                                                is.a0(i21).m1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
                                                 if (x3Var3.l) {
                                                     x3Var3.l = false;
                                                     for (int i22 = 0; i22 < arrayList5.size(); i22++) {
@@ -700,7 +700,7 @@ public final class x3 {
                                                 boolean z13 = i23 != i24;
                                                 x3Var3.a = i24;
                                                 if (z13) {
-                                                    zs.f(i21).k(zs.v5, new Object[0]);
+                                                    at.f(i21).k(at.v5, new Object[0]);
                                                 }
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;
@@ -748,7 +748,7 @@ public final class x3 {
                                             TLObject tLObject2 = tLObject;
                                             if (tLObject2 != null) {
                                                 TL_stories.StoryViewsList storyViewsList = (TL_stories.StoryViewsList) tLObject2;
-                                                a0.h hVar = vp.r1(i132).O1().M;
+                                                a0.h hVar = wp.r1(i132).O1().M;
                                                 if (storyViewsList.views != null) {
                                                     for (int i14 = 0; i14 < storyViewsList.views.size(); i14++) {
                                                         TL_stories.StoryView storyView = storyViewsList.views.get(i14);
@@ -757,10 +757,10 @@ public final class x3 {
                                                         }
                                                     }
                                                 }
-                                                vp.r1(i132).V3(storyViewsList.users, false);
-                                                vp.r1(i132).P3(storyViewsList.chats, false);
+                                                wp.r1(i132).V3(storyViewsList.users, false);
+                                                wp.r1(i132).P3(storyViewsList.chats, false);
                                                 boolean z12 = true;
-                                                hs.a0(i132).m1(storyViewsList.users, storyViewsList.chats, true, false);
+                                                is.a0(i132).m1(storyViewsList.users, storyViewsList.chats, true, false);
                                                 if (x3Var22.l) {
                                                     x3Var22.l = false;
                                                     for (int i15 = 0; i15 < arrayList3.size(); i15++) {
@@ -808,7 +808,7 @@ public final class x3 {
                                                     z12 = z11;
                                                 }
                                                 if (z12) {
-                                                    zs.f(i132).k(zs.v5, new Object[0]);
+                                                    at.f(i132).k(at.v5, new Object[0]);
                                                 }
                                             } else {
                                                 TLRPC.TL_error tL_error2 = tL_error;
@@ -842,9 +842,9 @@ public final class x3 {
                                             TLObject tLObject3 = tLObject;
                                             if (tLObject3 != null) {
                                                 TL_stories.TL_storyReactionsList tL_storyReactionsList = (TL_stories.TL_storyReactionsList) tLObject3;
-                                                vp.r1(i21).V3(tL_storyReactionsList.users, false);
-                                                vp.r1(i21).P3(tL_storyReactionsList.chats, false);
-                                                hs.a0(i21).m1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
+                                                wp.r1(i21).V3(tL_storyReactionsList.users, false);
+                                                wp.r1(i21).P3(tL_storyReactionsList.chats, false);
+                                                is.a0(i21).m1(tL_storyReactionsList.users, tL_storyReactionsList.chats, true, false);
                                                 if (x3Var3.l) {
                                                     x3Var3.l = false;
                                                     for (int i22 = 0; i22 < arrayList5.size(); i22++) {
@@ -872,7 +872,7 @@ public final class x3 {
                                                 boolean z13 = i23 != i24;
                                                 x3Var3.a = i24;
                                                 if (z13) {
-                                                    zs.f(i21).k(zs.v5, new Object[0]);
+                                                    at.f(i21).k(at.v5, new Object[0]);
                                                 }
                                             } else {
                                                 TLRPC.TL_error tL_error3 = tL_error;

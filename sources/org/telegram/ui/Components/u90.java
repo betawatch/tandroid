@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class u90 extends org.telegram.ui.yr0 {
+public final class u90 extends org.telegram.ui.xr0 {
     public final /* synthetic */ y90 a;
 
     public u90(y90 y90Var) {
@@ -15,11 +15,11 @@ public final class u90 extends org.telegram.ui.yr0 {
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
-    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final org.telegram.ui.gs0 E(org.telegram.messenger.jj jjVar, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    public final org.telegram.ui.fs0 E(org.telegram.messenger.kj kjVar, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         ImageReceiver imageReceiver;
         if (i10 >= 0) {
             y90 y90Var = this.a;
@@ -35,14 +35,14 @@ public final class u90 extends org.telegram.ui.yr0 {
                             if (imageReceiver == null) {
                                 int[] iArr = new int[2];
                                 childAt.getLocationInWindow(iArr);
-                                org.telegram.ui.gs0 gs0Var = new org.telegram.ui.gs0();
-                                gs0Var.b = iArr[0];
-                                gs0Var.c = iArr[1];
-                                gs0Var.d = y90Var.getListView();
-                                gs0Var.a = imageReceiver;
-                                gs0Var.e = imageReceiver.p();
-                                gs0Var.h = imageReceiver.E();
-                                return gs0Var;
+                                org.telegram.ui.fs0 fs0Var = new org.telegram.ui.fs0();
+                                fs0Var.b = iArr[0];
+                                fs0Var.c = iArr[1];
+                                fs0Var.d = y90Var.getListView();
+                                fs0Var.a = imageReceiver;
+                                fs0Var.e = imageReceiver.p();
+                                fs0Var.h = imageReceiver.E();
+                                return fs0Var;
                             }
                         }
                     }
@@ -55,8 +55,8 @@ public final class u90 extends org.telegram.ui.yr0 {
         return null;
     }
 
-    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
-    public final void o(int i10, org.telegram.messenger.x20 x20Var, boolean z10, int i11, int i12, boolean z11) {
+    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
+    public final void o(int i10, org.telegram.messenger.y20 y20Var, boolean z10, int i11, int i12, boolean z11) {
         if (i10 >= 0) {
             y90 y90Var = this.a;
             if (i10 >= y90Var.P.size()) {

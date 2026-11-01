@@ -14,13 +14,13 @@ import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.k9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class a5 extends c0 implements org.telegram.ui.ActionBar.k6, j9 {
     public i3 D;
@@ -82,7 +82,7 @@ public final class a5 extends c0 implements org.telegram.ui.ActionBar.k6, j9 {
         this.x = null;
         this.s.scrollTo(0, 0);
         String source = getSource();
-        if (!TextUtils.isEmpty(source) && (a2 = u.a(source, org.telegram.messenger.i0.L(tz.W0 + 4), false)) != null) {
+        if (!TextUtils.isEmpty(source) && (a2 = u.a(source, org.telegram.messenger.i0.L(uz.W0 + 4), false)) != null) {
             this.x = a2.a;
         }
         this.w.setImageBitmap(this.x);

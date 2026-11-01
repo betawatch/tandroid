@@ -6,32 +6,32 @@ import android.content.Intent;
 import android.os.IBinder;
 import e0.k0;
 import e0.r;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.ot;
-import org.telegram.messenger.us;
+import org.telegram.messenger.pt;
 import org.telegram.messenger.v2;
+import org.telegram.messenger.vs;
 import org.telegram.messenger.w0;
-import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class StoryUploadingService extends Service implements us {
+public class StoryUploadingService extends Service implements vs {
     public r a;
     public String b;
     public float c;
     public int d = -1;
 
     public StoryUploadingService() {
-        zs.e().b(this, zs.B5);
+        at.e().b(this, at.B5);
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         String str;
-        if (i10 != zs.A5) {
-            if (i10 == zs.B5 && (str = this.b) != null && str.equals((String) objArr[0])) {
+        if (i10 != at.A5) {
+            if (i10 == at.B5 && (str = this.b) != null && str.equals((String) objArr[0])) {
                 stopSelf();
                 return;
             }
@@ -69,8 +69,8 @@ public class StoryUploadingService extends Service implements us {
         } catch (Exception unused) {
         }
         new k0(w0.b).b(33, null);
-        zs.e().n(this, zs.B5);
-        zs.f(this.d).n(this, zs.A5);
+        at.e().n(this, at.B5);
+        at.f(this.d).n(this, at.A5);
         if (v2.a) {
             f8.b("upload story destroy");
         }
@@ -78,22 +78,22 @@ public class StoryUploadingService extends Service implements us {
 
     @Override // android.app.Service
     public final int onStartCommand(Intent intent, int i10, int i11) {
-        int i12 = zs.A5;
+        int i12 = at.A5;
         this.b = intent.getStringExtra("path");
         int i13 = this.d;
-        int intExtra = intent.getIntExtra("currentAccount", d20.s0);
+        int intExtra = intent.getIntExtra("currentAccount", e20.s0);
         this.d = intExtra;
-        if (!d20.r(intExtra)) {
+        if (!e20.r(intExtra)) {
             stopSelf();
             return 2;
         }
         if (i13 != this.d) {
             if (i13 != -1) {
-                zs.f(i13).n(this, i12);
+                at.f(i13).n(this, i12);
             }
             int i14 = this.d;
             if (i14 != -1) {
-                zs.f(i14).b(this, i12);
+                at.f(i14).b(this, i12);
             }
         }
         if (this.b == null) {
@@ -104,16 +104,16 @@ public class StoryUploadingService extends Service implements us {
             f8.b("start upload story");
         }
         if (this.a == null) {
-            ot.i();
+            pt.i();
             r rVar = new r(w0.b, null);
             this.a = rVar;
             rVar.F.icon = R.drawable.stat_sys_upload;
             rVar.F.when = System.currentTimeMillis();
             r rVar2 = this.a;
-            rVar2.y = ot.j0;
-            rVar2.g(cd.L0(org.telegram.messenger.beta.R.string.AppName, null));
-            this.a.p(cd.L0(2131744477, null));
-            this.a.f(cd.L0(2131744477, null));
+            rVar2.y = pt.j0;
+            rVar2.g(dd.L0(org.telegram.messenger.beta.R.string.AppName, null));
+            this.a.p(dd.L0(2131744477, null));
+            this.a.f(dd.L0(2131744477, null));
         }
         this.c = 0.0f;
         r rVar3 = this.a;

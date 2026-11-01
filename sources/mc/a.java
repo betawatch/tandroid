@@ -7,11 +7,11 @@ import li.k;
 import nc.g;
 import org.telegram.messenger.i0;
 import org.telegram.ui.e;
-import org.telegram.ui.mg0;
-import org.telegram.ui.sm0;
+import org.telegram.ui.kg0;
+import org.telegram.ui.qm0;
 import w7.l7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class a extends AsyncTask {
     public final /* synthetic */ String a;
@@ -46,12 +46,12 @@ public final class a extends AsyncTask {
         k kVar = bVar.a;
         e eVar = this.c;
         if (kVar != null) {
-            sm0 sm0Var = (sm0) eVar.b;
-            if (sm0Var.Q0) {
+            qm0 qm0Var = (qm0) eVar.b;
+            if (qm0Var.Q0) {
                 return;
             }
-            sm0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) kVar.c, (String) kVar.b);
-            i0.g3(new mg0(eVar, 11));
+            qm0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) kVar.c, (String) kVar.b);
+            i0.g3(new kg0(eVar, 11));
             return;
         }
         Exception exc = bVar.b;

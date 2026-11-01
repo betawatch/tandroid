@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ez implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class ez implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         org.telegram.utils.twidget.w wVar;
-        q81 q81Var;
+        r81 r81Var;
         switch (this.a) {
             case 0:
                 gz gzVar = (gz) this.e;
@@ -43,15 +43,15 @@ public final /* synthetic */ class ez implements Runnable {
                 }
                 break;
             case 1:
-                ((org.telegram.ui.hf0) this.e).E1(this.b, this.c, this.d);
+                ((org.telegram.ui.gf0) this.e).F1(this.b, this.c, this.d);
                 break;
             default:
                 org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) this.e;
                 boolean z13 = this.b;
                 boolean z14 = this.c;
                 boolean z15 = this.d;
-                if (!k0Var.u && (wVar = k0Var.J) != null && (q81Var = wVar.h) != null && q81Var.w && !q81Var.x) {
-                    q81Var.l(z13, z14, z15);
+                if (!k0Var.u && (wVar = k0Var.J) != null && (r81Var = wVar.h) != null && r81Var.w && !r81Var.x) {
+                    r81Var.l(z13, z14, z15);
                     break;
                 }
                 break;

@@ -19,19 +19,19 @@ import android.widget.Magnifier;
 import androidx.core.widget.NestedScrollView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.ui.Components.jq;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.tk;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class w9 {
     public final i9 A;
     public final Rect B;
     public v9 C;
     public w7.x5 D;
-    public tk0 E;
+    public uk0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -362,8 +362,8 @@ public abstract class w9 {
     }
 
     public final void S(ViewGroup viewGroup) {
-        if (viewGroup instanceof tk0) {
-            this.E = (tk0) viewGroup;
+        if (viewGroup instanceof uk0) {
+            this.E = (uk0) viewGroup;
         }
         this.F = viewGroup;
     }
@@ -774,8 +774,8 @@ public abstract class w9 {
         return this.u >= 0 && this.v >= 0;
     }
 
-    public boolean z(jj jjVar) {
-        return jjVar != null && this.w == jjVar.f1();
+    public boolean z(kj kjVar) {
+        return kjVar != null && this.w == kjVar.f1();
     }
 
     public void E(boolean z10) {
@@ -799,6 +799,6 @@ public abstract class w9 {
     public void K(float f7, float f10) {
     }
 
-    public void I(int i10, int i11, jj jjVar) {
+    public void I(int i10, int i11, kj kjVar) {
     }
 }

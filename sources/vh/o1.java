@@ -1,13 +1,13 @@
 package vh;
 
 import android.content.Context;
-import org.telegram.messenger.sc;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.xv0;
+import org.telegram.messenger.tc;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.yv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class o1 extends bw0 {
+public final class o1 extends cw0 {
     public final /* synthetic */ boolean G3;
     public final /* synthetic */ p1 H3;
 
@@ -18,42 +18,42 @@ public final class o1 extends bw0 {
         this.G3 = z10;
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public final boolean D1() {
-        return sc.e(8200);
+        return tc.e(8200);
     }
 
-    @Override // org.telegram.ui.Components.bw0
-    public final xv0[] E1(xv0[] xv0VarArr) {
-        if (xv0VarArr != null && this.G3) {
+    @Override // org.telegram.ui.Components.cw0
+    public final yv0[] E1(yv0[] yv0VarArr) {
+        if (yv0VarArr != null && this.G3) {
             int i10 = 0;
             while (true) {
-                if (i10 >= xv0VarArr.length) {
+                if (i10 >= yv0VarArr.length) {
                     i10 = -1;
                     break;
                 }
-                xv0 xv0Var = xv0VarArr[i10];
-                if (xv0Var != null && xv0Var.b) {
+                yv0 yv0Var = yv0VarArr[i10];
+                if (yv0Var != null && yv0Var.b) {
                     break;
                 }
                 i10++;
             }
             if (i10 >= 0) {
-                int length = xv0VarArr.length;
-                xv0[] xv0VarArr2 = new xv0[length];
-                xv0VarArr2[0] = xv0VarArr[i10];
+                int length = yv0VarArr.length;
+                yv0[] yv0VarArr2 = new yv0[length];
+                yv0VarArr2[0] = yv0VarArr[i10];
                 int i11 = 1;
                 while (i11 < length) {
-                    xv0VarArr2[i11] = xv0VarArr[i11 <= i10 ? i11 - 1 : i11];
+                    yv0VarArr2[i11] = yv0VarArr[i11 <= i10 ? i11 - 1 : i11];
                     i11++;
                 }
-                return xv0VarArr2;
+                return yv0VarArr2;
             }
         }
-        return xv0VarArr;
+        return yv0VarArr;
     }
 
-    @Override // org.telegram.ui.Components.bw0
+    @Override // org.telegram.ui.Components.cw0
     public final void H1(int i10) {
         super.H1(i10);
         this.H3.d(false);

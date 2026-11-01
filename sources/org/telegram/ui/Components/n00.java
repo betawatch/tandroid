@@ -8,20 +8,20 @@ import android.view.View;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n00 extends URLSpan {
     public static final /* synthetic */ int e = 0;
     public final String a;
     public final TLRPC.TL_messageEntityFormattedDate b;
-    public final yz0 c;
+    public final zz0 c;
     public final boolean d;
 
-    public n00(String str, yz0 yz0Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
+    public n00(String str, zz0 zz0Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
         super(str);
         this.a = str;
         this.b = tL_messageEntityFormattedDate;
-        this.c = yz0Var;
+        this.c = zz0Var;
         this.d = false;
     }
 
@@ -49,7 +49,7 @@ public final class n00 extends URLSpan {
                     }
                     int spanStart = r42.getSpanStart(n00Var);
                     int spanEnd = r42.getSpanEnd(n00Var);
-                    String A = z10 ? org.telegram.messenger.cd.A(n00Var.b, System.currentTimeMillis(), Locale.getDefault(), false) : n00Var.a;
+                    String A = z10 ? org.telegram.messenger.dd.A(n00Var.b, System.currentTimeMillis(), Locale.getDefault(), false) : n00Var.a;
                     r42.removeSpan(n00Var);
                     r42.replace(spanStart, spanEnd, A);
                     r42.setSpan(new n00(n00Var, z10), spanStart, A.length() + spanStart, 33);
@@ -70,9 +70,9 @@ public final class n00 extends URLSpan {
         int i10 = textPaint.linkColor;
         int color = textPaint.getColor();
         super.updateDrawState(textPaint);
-        yz0 yz0Var = this.c;
-        if (yz0Var != null) {
-            yz0Var.a(textPaint);
+        zz0 zz0Var = this.c;
+        if (zz0Var != null) {
+            zz0Var.a(textPaint);
         }
         textPaint.setUnderlineText(i10 == color);
     }

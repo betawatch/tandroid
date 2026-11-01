@@ -6,15 +6,15 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dc;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public final q1 a;
@@ -27,7 +27,7 @@ public final class k0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final qz0 k;
+    public final rz0 k;
     public boolean l;
     public boolean m;
     public final dc n;
@@ -63,15 +63,15 @@ public final class k0 {
             a();
         }
         this.d.setTextSize(org.telegram.messenger.i0.L(11.0f));
-        boolean q6 = d20.i(q1Var.Y5).q();
-        this.e = cd.L0(q6 ? 2131748345 : 2131743879, null);
+        boolean q6 = e20.i(q1Var.Y5).q();
+        this.e = dd.L0(q6 ? 2131748345 : 2131743879, null);
         this.i.setStyle(Paint.Style.STROKE);
         this.g = true;
         this.h = q6 ? null : q1Var.getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
         if (b(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new qz0(i0.a.i(i10, "+"), 9.33f, org.telegram.messenger.i0.o());
+            this.k = new rz0(i0.a.i(i10, "+"), 9.33f, org.telegram.messenger.i0.o());
         }
     }
 
@@ -80,10 +80,10 @@ public final class k0 {
         if (tLObject instanceof TLRPC.Chat) {
             int i11 = ((TLRPC.Chat) tLObject).participants_count;
             if (i11 > 1) {
-                return cd.S(null, i11);
+                return dd.S(null, i11);
             }
         } else if ((tLObject instanceof TLRPC.User) && (i10 = ((TLRPC.User) tLObject).bot_active_users) > 1) {
-            return cd.S(null, i10);
+            return dd.S(null, i10);
         }
         return null;
     }
@@ -127,7 +127,7 @@ public final class k0 {
         if (tLObject instanceof TLRPC.Chat) {
             charSequence = ((TLRPC.Chat) tLObject).title;
         } else if (tLObject instanceof TLRPC.User) {
-            charSequence = h20.p((TLRPC.User) tLObject);
+            charSequence = i20.p((TLRPC.User) tLObject);
         } else {
             charSequence = "";
         }
@@ -142,7 +142,7 @@ public final class k0 {
         if (b(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new qz0(b(tLObject), 9.33f, org.telegram.messenger.i0.o());
+            this.k = new rz0(b(tLObject), 9.33f, org.telegram.messenger.i0.o());
         }
     }
 }

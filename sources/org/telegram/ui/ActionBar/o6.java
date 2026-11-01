@@ -16,17 +16,17 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.d00;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e00;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
 import org.telegram.ui.Components.f9;
 import org.telegram.ui.Components.jb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class o6 implements us {
+public final class o6 implements vs {
     public static o6 c;
     public int a;
     public HashMap b;
@@ -53,7 +53,7 @@ public final class o6 implements us {
                 i10++;
             }
             o6 o6Var = new o6();
-            o6Var.a = d20.s0;
+            o6Var.a = e20.s0;
             if (arrayList2 != null) {
                 Utilities.e.c(new mh.k(26, o6Var, arrayList2));
             }
@@ -116,7 +116,7 @@ public final class o6 implements us {
             }
             if (bitmap == null) {
                 Point point = org.telegram.messenger.i0.q;
-                bitmap2 = z10 ? d00.f(file, Math.min(point.x, point.y), Math.max(point.x, point.y), 2) : t6.n1(new FileInputStream(file), 0);
+                bitmap2 = z10 ? e00.f(file, Math.min(point.x, point.y), Math.max(point.x, point.y), 2) : t6.n1(new FileInputStream(file), 0);
             } else {
                 bitmap2 = bitmap;
             }
@@ -148,14 +148,14 @@ public final class o6 implements us {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         HashMap hashMap = this.b;
         if (hashMap == null) {
             return;
         }
         boolean z10 = false;
-        if (i10 == zs.Y1) {
+        if (i10 == at.Y1) {
             n6 n6Var = (n6) hashMap.remove((String) objArr[0]);
             if (n6Var != null) {
                 Utilities.e.c(new mh.k(27, this, n6Var));
@@ -163,7 +163,7 @@ public final class o6 implements us {
             }
             return;
         }
-        if (i10 != zs.Z1 || hashMap.remove((String) objArr[0]) == null) {
+        if (i10 != at.Z1 || hashMap.remove((String) objArr[0]) == null) {
             return;
         }
         org.telegram.messenger.i0.g3(new ag.j0(this, (Object) null, z10, 10));

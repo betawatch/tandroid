@@ -5,16 +5,16 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ga extends org.telegram.ui.Components.sk0 {
+public final class ga extends org.telegram.ui.Components.tk0 {
     public final /* synthetic */ oa c;
 
     public ga(oa oaVar) {
         this.c = oaVar;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 4;
     }
@@ -22,14 +22,14 @@ public final class ga extends org.telegram.ui.Components.sk0 {
     @Override // s4.g0
     public final int b() {
         oa oaVar = this.c;
-        org.telegram.ui.Components.tk0 tk0Var = oaVar.b;
+        org.telegram.ui.Components.uk0 uk0Var = oaVar.b;
         ArrayList arrayList = oaVar.w;
-        if (tk0Var != null) {
-            ArrayList arrayList2 = tk0Var.K2;
+        if (uk0Var != null) {
+            ArrayList arrayList2 = uk0Var.K2;
             if (arrayList2 != null) {
                 arrayList2.clear();
             } else {
-                tk0Var.K2 = new ArrayList();
+                uk0Var.K2 = new ArrayList();
             }
             if (arrayList.size() > 0) {
                 oaVar.b.K2.add(Long.valueOf(org.telegram.messenger.i0.w2(3, arrayList.size() + 3)));
@@ -62,11 +62,11 @@ public final class ga extends org.telegram.ui.Components.sk0 {
         int i11 = c1Var.f;
         View view = c1Var.a;
         if (i11 == 0) {
-            ((org.telegram.ui.Cells.p4) view).setText(org.telegram.messenger.cd.L0(i10 == 0 ? j10 != 0 ? 2131752985 : 2131745515 : 2131743668, null));
+            ((org.telegram.ui.Cells.p4) view).setText(org.telegram.messenger.dd.L0(i10 == 0 ? j10 != 0 ? 2131752985 : 2131745515 : 2131743668, null));
             return;
         }
         if (i11 == 2) {
-            ((org.telegram.ui.Cells.b9) view).setText(org.telegram.messenger.cd.L0(j10 != 0 ? 2131752937 : 2131743667, null));
+            ((org.telegram.ui.Cells.b9) view).setText(org.telegram.messenger.dd.L0(j10 != 0 ? 2131752937 : 2131743667, null));
             return;
         }
         if (i11 == 3) {
@@ -94,22 +94,22 @@ public final class ga extends org.telegram.ui.Components.sk0 {
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
         oa oaVar = this.c;
         if (i10 == 0) {
-            return new org.telegram.ui.Components.ck0(new org.telegram.ui.Cells.p4(oaVar.getParentActivity()));
+            return new org.telegram.ui.Components.dk0(new org.telegram.ui.Cells.p4(oaVar.getParentActivity()));
         }
         if (i10 == 1) {
             na naVar = new na(oaVar, oaVar.getParentActivity());
             naVar.setTag(-33024);
-            return new org.telegram.ui.Components.ck0(naVar);
+            return new org.telegram.ui.Components.dk0(naVar);
         }
         if (i10 == 2) {
-            return new org.telegram.ui.Components.ck0(new org.telegram.ui.Cells.b9(oaVar.getParentActivity()));
+            return new org.telegram.ui.Components.dk0(new org.telegram.ui.Cells.b9(oaVar.getParentActivity()));
         }
         if (i10 == 3) {
-            return new org.telegram.ui.Components.ck0(new ia(oaVar, oaVar.getParentActivity()));
+            return new org.telegram.ui.Components.dk0(new ia(oaVar, oaVar.getParentActivity()));
         }
         if (i10 != 4) {
             return null;
         }
-        return new org.telegram.ui.Components.ck0(new fa(this, oaVar.getParentActivity(), oaVar.getResourceProvider()));
+        return new org.telegram.ui.Components.dk0(new fa(this, oaVar.getParentActivity(), oaVar.getResourceProvider()));
     }
 }

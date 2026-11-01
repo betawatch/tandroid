@@ -4,15 +4,15 @@ import android.graphics.BitmapFactory;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final class l5 implements us {
+public final class l5 implements vs {
     public int D;
     public volatile String E;
     public String F;
@@ -50,10 +50,10 @@ public final class l5 implements us {
             return;
         }
         this.E = str;
-        zs f7 = zs.f(this.a);
-        f7.b(this, zs.U1);
-        f7.b(this, zs.V1);
-        f7.b(this, zs.W1);
+        at f7 = at.f(this.a);
+        f7.b(this, at.U1);
+        f7.b(this, at.V1);
+        f7.b(this, at.W1);
         b8.G(this.a).i0(false, this.c ? 33554432 : this.d ? ConnectionsManager.FileTypeAudio : this.e ? 67108864 : 16777216, this.E, (this.c || this.d || this.e) ? false : true);
     }
 
@@ -174,7 +174,7 @@ public final class l5 implements us {
         Utilities.e.c(new j5(this, 1));
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         TLRPC.InputFile inputFile;
         if (i11 != this.a || this.x || this.y) {
@@ -184,7 +184,7 @@ public final class l5 implements us {
         if (this.E == null || !this.E.equals(str)) {
             return;
         }
-        if (i10 == zs.U1) {
+        if (i10 == at.U1) {
             TLRPC.InputFile inputFile2 = (TLRPC.InputFile) objArr[1];
             if (this.e && !this.H && !TextUtils.isEmpty(this.F)) {
                 this.G = inputFile2;
@@ -201,7 +201,7 @@ public final class l5 implements us {
                 return;
             }
         }
-        if (i10 == zs.V1) {
+        if (i10 == at.V1) {
             if (this.e && this.H && (inputFile = this.G) != null) {
                 c(inputFile, null);
                 return;
@@ -211,7 +211,7 @@ public final class l5 implements us {
             this.s.a();
             return;
         }
-        if (i10 == zs.W1) {
+        if (i10 == at.W1) {
             long longValue = ((Long) objArr[1]).longValue();
             long longValue2 = ((Long) objArr[2]).longValue();
             k5 k5Var = this.s;
@@ -223,10 +223,10 @@ public final class l5 implements us {
     }
 
     public final void e() {
-        zs f7 = zs.f(this.a);
-        f7.n(this, zs.U1);
-        f7.n(this, zs.V1);
-        f7.n(this, zs.W1);
+        at f7 = at.f(this.a);
+        f7.n(this, at.U1);
+        f7.n(this, at.V1);
+        f7.n(this, at.W1);
     }
 
     public l5(int i10, String str, TLRPC.Document document, o3 o3Var) {

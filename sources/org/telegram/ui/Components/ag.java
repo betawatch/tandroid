@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ag extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -135,7 +135,7 @@ public final class ag extends FrameLayout {
                     sb2.append("\n");
                     sb2.append((Object) ((TextView) this.e).getText());
                     sb2.append("\n");
-                    sb2.append(org.telegram.messenger.cd.L0(r02.h ? 2131747908 : 2131747910, null));
+                    sb2.append(org.telegram.messenger.dd.L0(r02.h ? 2131747908 : 2131747910, null));
                     accessibilityNodeInfo.setText(sb2.toString());
                     break;
                 }

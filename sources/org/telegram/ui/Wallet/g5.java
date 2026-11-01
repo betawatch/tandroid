@@ -1,13 +1,13 @@
 package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class g5 implements us {
+public final class g5 implements vs {
     public final /* synthetic */ int a;
     public final /* synthetic */ TL_wallet.walletTransaction[] b;
     public final /* synthetic */ q4 c;
@@ -18,11 +18,11 @@ public final class g5 implements us {
         this.c = q4Var;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         TL_wallet.walletTransaction[] wallettransactionArr;
         TL_wallet.walletTransaction wallettransaction;
-        if (i10 == zs.a4 || i10 == zs.b4) {
+        if (i10 == at.a4 || i10 == at.b4) {
             ArrayList arrayList = k0.x(this.a).B().c;
             int size = arrayList.size();
             int i12 = 0;

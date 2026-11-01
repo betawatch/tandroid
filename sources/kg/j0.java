@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i5;
 import org.telegram.messenger.w3;
 import org.telegram.tgnet.TLRPC;
@@ -32,22 +32,22 @@ import org.telegram.ui.Cells.p4;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.tk0;
 import org.telegram.ui.Components.w80;
-import org.telegram.ui.Components.x41;
+import org.telegram.ui.Components.y41;
 import org.telegram.ui.Components.zz;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class j0 extends sk0 {
+public final class j0 extends tk0 {
     public final /* synthetic */ q0 c;
 
     public j0(q0 q0Var) {
         this.c = q0Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         q0 q0Var = this.c;
         int i10 = q0Var.Z1;
@@ -116,21 +116,21 @@ public final class j0 extends sk0 {
                 p4 p4Var = (p4) view;
                 if (i11 != 11 && i11 != 34) {
                     if (i11 == 2) {
-                        p4Var.setText(cd.L0(2131742816, null));
+                        p4Var.setText(dd.L0(2131742816, null));
                         return;
                     } else {
-                        p4Var.setText(cd.L0(2131749043, null));
+                        p4Var.setText(dd.L0(2131749043, null));
                         return;
                     }
                 }
                 if (q0Var.Q1) {
-                    p4Var.setText(cd.L0(2131752402, null));
+                    p4Var.setText(dd.L0(2131752402, null));
                     return;
                 } else if (q0Var.t2.size() == 1) {
-                    p4Var.setText(cd.L0(2131752399, null));
+                    p4Var.setText(dd.L0(2131752399, null));
                     return;
                 } else {
-                    p4Var.setText(cd.L0(2131752398, null));
+                    p4Var.setText(dd.L0(2131752398, null));
                     return;
                 }
             }
@@ -152,7 +152,7 @@ public final class j0 extends sk0 {
                     j4Var.R = true;
                     j4Var.Q = requirementtocontactpremium;
                     j4Var.g();
-                    j4Var.e(user, i5.m(0, user.first_name, user.last_name), z10 ? cd.L0(2131749136, null) : cd.d0(q0Var.a, user, null, null), ((float) i10) != ((float) q0Var.h2) - 1.0f);
+                    j4Var.e(user, i5.m(0, user.first_name, user.last_name), z10 ? dd.L0(2131749136, null) : dd.d0(q0Var.a, user, null, null), ((float) i10) != ((float) q0Var.h2) - 1.0f);
                     j4Var.c(hashSet.contains(user), false);
                     return;
                 }
@@ -177,7 +177,7 @@ public final class j0 extends sk0 {
             b1Var.setVisibility(0);
             u5 u5Var2 = m0Var.d;
             k0 k0Var = m0Var.f;
-            u5Var2.l(cd.G(k0Var.g, k0Var.h ? "BoostLevelUnlocks" : "BoostLevel", new Object[0]), false);
+            u5Var2.l(dd.G(k0Var.g, k0Var.h ? "BoostLevelUnlocks" : "BoostLevel", new Object[0]), false);
             return;
         }
         if (l0Var != null) {
@@ -192,11 +192,11 @@ public final class j0 extends sk0 {
                 sb2.append(m0Var.e.d);
                 sb2.append("_");
                 int i14 = m0Var.e.e;
-                cd.D0();
-                sb2.append(cd.b1(cd.D0().A.a(i14)));
-                String M0 = cd.M0(sb2.toString());
+                dd.D0();
+                sb2.append(dd.b1(dd.D0().A.a(i14)));
+                String M0 = dd.M0(sb2.toString());
                 if (M0 == null || M0.startsWith("LOC_ERR")) {
-                    M0 = cd.M0(m0Var.e.d + "_other");
+                    M0 = dd.M0(m0Var.e.d + "_other");
                 }
                 if (M0 == null) {
                     M0 = "";
@@ -206,12 +206,12 @@ public final class j0 extends sk0 {
                 if (indexOf >= 0) {
                     spannableStringBuilder = new SpannableStringBuilder(M0);
                     SpannableString spannableString = new SpannableString(a1.g.p(new StringBuilder(), m0Var.e.e, ""));
-                    spannableString.setSpan(new x41(org.telegram.messenger.i0.o()), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new y41(org.telegram.messenger.i0.o()), 0, spannableString.length(), 33);
                     spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) spannableString);
                 }
                 u5Var.l(spannableStringBuilder, false);
             } else {
-                String L0 = cd.L0(l0Var2.b, null);
+                String L0 = dd.L0(l0Var2.b, null);
                 String str = L0 != null ? L0 : "";
                 if (m0Var.e.c != null) {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(str);
@@ -219,7 +219,7 @@ public final class j0 extends sk0 {
                     if (indexOf2 >= 0) {
                         spannableStringBuilder2 = new SpannableStringBuilder(str);
                         SpannableString spannableString2 = new SpannableString(m0Var.e.c);
-                        spannableString2.setSpan(new x41(org.telegram.messenger.i0.o()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new y41(org.telegram.messenger.i0.o()), 0, spannableString2.length(), 33);
                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 2, (CharSequence) spannableString2);
                     }
                     u5Var.l(spannableStringBuilder2, false);
@@ -385,8 +385,8 @@ public final class j0 extends sk0 {
                 linearLayout.setOrientation(1);
                 w80 w80Var = new w80(context);
                 p80 p80Var = new p80(context, null);
-                SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(cd.L0(q0Var.r1() ? 2131753189 : 2131753190, null));
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cd.L0(2131753188, null));
+                SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(dd.L0(q0Var.r1() ? 2131753189 : 2131753190, null));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(dd.L0(2131753188, null));
                 spannableStringBuilder.setSpan(new dh.a(this, i11), 0, spannableStringBuilder.length(), 33);
                 SpannableString spannableString = new SpannableString(">");
                 Drawable mutate = q0Var.getContext().getResources().getDrawable(R.drawable.msg_arrowright).mutate();
@@ -442,7 +442,7 @@ public final class j0 extends sk0 {
                 if (q0Var.s1()) {
                     final int i20 = 1;
                     vh.d dVar = new vh.d(context, q0Var.I0, true);
-                    dVar.i(cd.L0(2131751767, null), false, true);
+                    dVar.i(dd.L0(2131751767, null), false, true);
                     dVar.setOnClickListener(new View.OnClickListener(this) { // from class: kg.h0
                         public final /* synthetic */ j0 b;
 

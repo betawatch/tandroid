@@ -1,9 +1,9 @@
 package fc;
 
 import java.nio.ByteBuffer;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c {
     public final ByteBuffer a;
@@ -36,7 +36,7 @@ public final class c {
         int i14 = this.c;
         int i15 = 8 - (i14 % 8);
         if (i10 <= i15) {
-            a2 = ((i13 << (i14 % 8)) & zs.e4) >> ((i15 - i10) + (i14 % 8));
+            a2 = ((i13 << (i14 % 8)) & at.e4) >> ((i15 - i10) + (i14 % 8));
             this.c = i14 + i10;
         } else {
             int i16 = i10 - i15;

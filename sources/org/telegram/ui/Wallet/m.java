@@ -2,16 +2,16 @@ package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m implements q20 {
+public final /* synthetic */ class m implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -24,7 +24,7 @@ public final /* synthetic */ class m implements q20 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         int i10 = this.a;
         char c10 = 1;
@@ -34,7 +34,7 @@ public final /* synthetic */ class m implements q20 {
         switch (i10) {
             case 0:
                 k0 k0Var = (k0) obj4;
-                j20 j20Var = (j20) obj3;
+                k20 k20Var = (k20) obj3;
                 String str = (String) obj2;
                 byte[] bArr = (byte[]) obj;
                 k0Var.getClass();
@@ -44,10 +44,10 @@ public final /* synthetic */ class m implements q20 {
                     walletuseraddress.address = str;
                     walletuseraddress.public_key = bArr;
                     k0Var.M.put(str, walletuseraddress);
-                    j20Var.a(walletuseraddress, null);
+                    k20Var.a(walletuseraddress, null);
                     break;
                 } else {
-                    j20Var.a(null, null);
+                    k20Var.a(null, null);
                     break;
                 }
             case 1:
@@ -62,14 +62,14 @@ public final /* synthetic */ class m implements q20 {
             case 2:
                 e2 e2Var2 = (e2) obj4;
                 a2 a2Var2 = (a2) obj3;
-                q20 q20Var = (q20) obj2;
+                r20 r20Var = (r20) obj2;
                 String str3 = (String) obj;
                 e2Var2.getClass();
                 a2Var2.m = false;
                 if (a2Var2.r == null && e2Var2.g == a2Var2) {
                     e2Var2.g = null;
                 }
-                q20Var.a(str3);
+                r20Var.a(str3);
                 break;
             case 3:
                 e2 e2Var3 = (e2) obj4;
@@ -90,19 +90,19 @@ public final /* synthetic */ class m implements q20 {
                 }
                 break;
             case 5:
-                z2[] z2VarArr = (z2[]) obj3;
+                a3[] a3VarArr = (a3[]) obj3;
                 org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) obj2;
                 String str4 = (String) obj;
                 ((vh.d) obj4).setLoading(false);
                 if (!TextUtils.isEmpty(str4)) {
-                    new cc(z2VarArr[0].E, p6Var).e0(str4, false);
+                    new cc(a3VarArr[0].E, p6Var).e0(str4, false);
                     break;
                 } else {
-                    z2VarArr[0].dismiss();
+                    a3VarArr[0].dismiss();
                     break;
                 }
             case 6:
-                t8.c0((t8) obj4, (q20) obj3, (p0) obj2, (h0) obj);
+                t8.d0((t8) obj4, (r20) obj3, (p0) obj2, (h0) obj);
                 break;
             case 7:
                 ba baVar = (ba) obj3;
@@ -118,7 +118,7 @@ public final /* synthetic */ class m implements q20 {
                     } else {
                         baVar.h = false;
                         baVar.Z.setLoading(false);
-                        cc.a0(baVar).e0(TextUtils.isEmpty(str5) ? cd.L0(2131743065, null) : "WALLET_CHANGED", false);
+                        cc.a0(baVar).e0(TextUtils.isEmpty(str5) ? dd.L0(2131743065, null) : "WALLET_CHANGED", false);
                         break;
                     }
                 }
@@ -127,24 +127,24 @@ public final /* synthetic */ class m implements q20 {
                 ((org.telegram.ui.Cells.k6) ((View) obj)).z((TLRPC.User) obj4, null, (CharSequence) obj3, (CharSequence) obj2, false, false);
                 break;
             default:
-                z2 z2Var = (z2) obj3;
+                a3 a3Var = (a3) obj3;
                 org.telegram.ui.ActionBar.p6 p6Var2 = (org.telegram.ui.ActionBar.p6) obj2;
                 String str6 = (String) obj;
                 ((vh.d) obj4).setLoading(false);
                 if (str6 != null) {
-                    cc.c0(str6, z2Var.E, p6Var2);
+                    cc.c0(str6, a3Var.E, p6Var2);
                     break;
                 } else {
-                    z2Var.dismiss();
+                    a3Var.dismiss();
                     break;
                 }
         }
     }
 
-    public /* synthetic */ m(q20 q20Var, k0 k0Var, p0 p0Var, t8 t8Var) {
+    public /* synthetic */ m(r20 r20Var, k0 k0Var, p0 p0Var, t8 t8Var) {
         this.a = 6;
         this.b = t8Var;
-        this.c = q20Var;
+        this.c = r20Var;
         this.d = p0Var;
     }
 

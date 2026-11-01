@@ -1,55 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class yi0 extends s4.m0 {
+public final /* synthetic */ class yi0 implements org.telegram.messenger.r20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mj0 b;
+    public final /* synthetic */ nj0 b;
 
-    public /* synthetic */ yi0(mj0 mj0Var, int i10) {
+    public /* synthetic */ yi0(nj0 nj0Var, int i10) {
         this.a = i10;
-        this.b = mj0Var;
+        this.b = nj0Var;
     }
 
-    @Override // s4.m0
-    public final void c(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+    @Override // org.telegram.messenger.r20
+    public final void a(Object obj) {
+        View view = (View) obj;
         switch (this.a) {
             case 0:
-                super.c(rect, view, recyclerView, z0Var);
-                mj0 mj0Var = this.b;
-                if (!mj0Var.q()) {
-                    int R = RecyclerView.R(view);
-                    if (R == 0) {
-                        rect.left = org.telegram.messenger.i0.L(6.0f);
-                    }
-                    rect.right = org.telegram.messenger.i0.L(4.0f);
-                    if (R == mj0Var.a0.b() - 1) {
-                        if ((!mj0Var.U.isEmpty() && !org.telegram.messenger.vp.r1(mj0Var.J).A3()) || mj0Var.q()) {
-                            rect.right = org.telegram.messenger.i0.L(2.0f);
-                            break;
-                        } else {
-                            rect.right = org.telegram.messenger.i0.L(6.0f);
-                            break;
-                        }
-                    }
-                } else {
-                    rect.left = 0;
-                    rect.right = 0;
+                nj0 nj0Var = this.b;
+                ArrayList arrayList = nj0Var.d;
+                nj0Var.b.getClass();
+                int R = RecyclerView.R(view);
+                if (R >= 0 && R < arrayList.size() && (view instanceof lj0)) {
+                    ((lj0) view).f(((ej0) arrayList.get(R)).c, true);
                     break;
                 }
                 break;
             default:
-                int R2 = RecyclerView.R(view);
-                if (R2 == 0) {
-                    rect.left = org.telegram.messenger.i0.L(8.0f);
-                }
-                if (R2 == this.b.a0.b() - 1) {
-                    rect.right = org.telegram.messenger.i0.L(8.0f);
-                    break;
+                if (view instanceof lj0) {
+                    lj0 lj0Var = (lj0) view;
+                    kj0 kj0Var = lj0Var.b;
+                    lj0Var.N = false;
+                    kj0Var.setAlpha(1.0f);
+                    if (!this.b.N0) {
+                        lj0Var.d();
+                        break;
+                    } else {
+                        kj0Var.setScaleX(lj0Var.I * (lj0Var.x ? 0.76f : 1.0f));
+                        kj0Var.setScaleY(lj0Var.I * (lj0Var.x ? 0.76f : 1.0f));
+                        break;
+                    }
                 }
                 break;
         }

@@ -10,10 +10,10 @@ import java.util.regex.Pattern;
 import kg.x;
 import mg.i2;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Cells.c2;
 import org.telegram.ui.Cells.w;
@@ -23,9 +23,9 @@ import org.telegram.ui.Components.ec;
 import org.telegram.ui.Components.hu;
 import org.telegram.ui.Components.jf0;
 import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.voip.s0;
-import org.telegram.ui.Components.voip.t1;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.voip.t0;
+import org.telegram.ui.Components.voip.u1;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -34,10 +34,9 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.p3;
 import ph.d0;
 import ph.m;
-import rh.t0;
 import th.w0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -87,17 +86,17 @@ public final /* synthetic */ class c implements View.OnClickListener {
             case 8:
                 float[] fArr = FragmentContextView.W0;
                 MediaController B = MediaController.B();
-                u61 u61Var = B.E0;
-                if (u61Var != null) {
-                    u61Var.s0(false);
+                v61 v61Var = B.E0;
+                if (v61Var != null) {
+                    v61Var.s0(false);
                 }
                 B.n0();
                 B.m();
-                jj jjVar = B.u0;
-                if (jjVar != null) {
-                    zs f7 = zs.f(jjVar.I1);
-                    jj jjVar2 = B.u0;
-                    f7.k(zs.g2, Integer.valueOf(jjVar2 != null ? jjVar2.f1() : 0));
+                kj kjVar = B.u0;
+                if (kjVar != null) {
+                    at f7 = at.f(kjVar.I1);
+                    kj kjVar2 = B.u0;
+                    f7.k(at.g2, Integer.valueOf(kjVar2 != null ? kjVar2.f1() : 0));
                     break;
                 }
                 break;
@@ -116,7 +115,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 jf0.b(false);
                 break;
             case 10:
-                s0.b();
+                t0.b();
                 break;
             case 11:
                 ((c2) view).c(!r6.b(), true);
@@ -124,7 +123,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
             case 12:
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
                 if (sharedInstance == null) {
-                    t1.a();
+                    u1.a();
                     break;
                 } else {
                     sharedInstance.hangUp();
@@ -144,7 +143,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
             case 17:
                 break;
             case 18:
-                RectF rectF = ProfileActivity.R6;
+                RectF rectF = ProfileActivity.S6;
                 try {
                     view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
                     break;
@@ -165,7 +164,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 int i16 = d0.Y1;
                 break;
             case 23:
-                int i17 = t0.s2;
+                int i17 = rh.t0.s2;
                 break;
             case 24:
                 int i18 = sg.f.e;

@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class MediaRouteVolumeSlider extends m.c0 {
     public final float b;
@@ -49,7 +49,7 @@ public class MediaRouteVolumeSlider extends m.c0 {
     @Override // m.c0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        int i10 = isEnabled() ? zs.e4 : (int) (this.b * 255.0f);
+        int i10 = isEnabled() ? at.e4 : (int) (this.b * 255.0f);
         Drawable drawable = this.d;
         int i11 = this.e;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;

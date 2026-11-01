@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import java.util.Random;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class m9 {
     public float a;
@@ -36,7 +36,7 @@ public class m9 {
     }
 
     public final void a(float f7, float f10, Canvas canvas, Paint paint) {
-        if (!org.telegram.messenger.sc.e(this.r)) {
+        if (!org.telegram.messenger.tc.e(this.r)) {
             return;
         }
         Path path = this.c;
@@ -116,7 +116,7 @@ public class m9 {
 
     public final void d(boolean z10, float f7) {
         this.s = f7;
-        if (org.telegram.messenger.sc.e(this.r)) {
+        if (org.telegram.messenger.tc.e(this.r)) {
             if (z10) {
                 float f10 = this.s;
                 float f11 = this.t;
@@ -139,7 +139,7 @@ public class m9 {
     }
 
     public final void e(float f7, float f10) {
-        if (org.telegram.messenger.sc.e(this.r)) {
+        if (org.telegram.messenger.tc.e(this.r)) {
             for (int i10 = 0; i10 < this.n; i10++) {
                 float[] fArr = this.i;
                 float f11 = fArr[i10];

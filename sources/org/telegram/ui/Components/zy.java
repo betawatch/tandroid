@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class zy extends s4.r {
     public final SparseArray Q;
@@ -13,26 +13,26 @@ public class zy extends s4.r {
     public int S;
     public int T;
     public final int U;
-    public final tk0 V;
+    public final uk0 V;
     public boolean W;
     public boolean X;
 
-    public zy(int i10, int i11, tk0 tk0Var) {
+    public zy(int i10, int i11, uk0 uk0Var) {
         super(i10);
         this.Q = new SparseArray();
         this.R = -1;
         this.W = true;
         this.X = true;
-        this.V = tk0Var;
+        this.V = uk0Var;
         this.U = i11;
     }
 
     public final void B1() {
-        tk0 tk0Var;
+        uk0 uk0Var;
         s4.g0 adapter;
         int i10;
-        tk0 tk0Var2;
-        if (this.S <= 0 || !D1() || (adapter = (tk0Var = this.V).getAdapter()) == null) {
+        uk0 uk0Var2;
+        if (this.S <= 0 || !D1() || (adapter = (uk0Var = this.V).getAdapter()) == null) {
             return;
         }
         int i11 = this.J;
@@ -46,7 +46,7 @@ public class zy extends s4.r {
         while (true) {
             i10 = this.U;
             if (i12 >= b10) {
-                tk0Var2 = tk0Var;
+                uk0Var2 = uk0Var;
                 break;
             }
             int i15 = oVar.i(i12);
@@ -60,7 +60,7 @@ public class zy extends s4.r {
                 SparseArray sparseArray = this.Q;
                 s4.c1 c1Var = (s4.c1) sparseArray.get(d, null);
                 if (c1Var == null) {
-                    c1Var = adapter.a(tk0Var, d);
+                    c1Var = adapter.a(uk0Var, d);
                     View view = c1Var.a;
                     sparseArray.put(d, c1Var);
                     if (view.getLayoutParams() == null) {
@@ -72,22 +72,22 @@ public class zy extends s4.r {
                     adapter.t(c1Var, i12);
                 }
                 s4.o0 o0Var = (s4.o0) view2.getLayoutParams();
-                tk0Var2 = tk0Var;
+                uk0Var2 = uk0Var;
                 view2.measure(s4.n0.s(d(), this.T, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) o0Var).leftMargin + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin, ((ViewGroup.MarginLayoutParams) o0Var).width), s4.n0.s(this.X, this.S, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) o0Var).topMargin + ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) o0Var).height));
                 i14 += view2.getMeasuredHeight();
-                if (i14 >= (this.S - i10) - tk0Var2.getPaddingBottom()) {
+                if (i14 >= (this.S - i10) - uk0Var2.getPaddingBottom()) {
                     break;
                 } else {
                     z11 = false;
                 }
             } else {
-                tk0Var2 = tk0Var;
+                uk0Var2 = uk0Var;
             }
             i12++;
-            tk0Var = tk0Var2;
+            uk0Var = uk0Var2;
             z10 = true;
         }
-        this.R = Math.max(0, ((this.S - i14) - i10) - tk0Var2.getPaddingBottom());
+        this.R = Math.max(0, ((this.S - i14) - i10) - uk0Var2.getPaddingBottom());
     }
 
     public final void C1() {
@@ -165,13 +165,13 @@ public class zy extends s4.r {
         super.w1(i10, view, z10);
     }
 
-    public zy(int i10, org.telegram.ui.i40 i40Var) {
+    public zy(int i10, org.telegram.ui.h40 h40Var) {
         super(i10, false);
         this.Q = new SparseArray();
         this.R = -1;
         this.W = true;
         this.X = true;
-        this.V = i40Var;
+        this.V = h40Var;
         this.U = 0;
     }
 }

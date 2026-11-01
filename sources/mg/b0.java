@@ -1,21 +1,21 @@
 package mg;
 
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q20 b;
-    public final /* synthetic */ q20 c;
+    public final /* synthetic */ r20 b;
+    public final /* synthetic */ r20 c;
 
-    public /* synthetic */ b0(q20 q20Var, q20 q20Var2, int i10) {
+    public /* synthetic */ b0(r20 r20Var, r20 r20Var2, int i10) {
         this.a = i10;
-        this.b = q20Var;
-        this.c = q20Var2;
+        this.b = r20Var;
+        this.c = r20Var2;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate

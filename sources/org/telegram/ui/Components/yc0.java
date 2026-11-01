@@ -6,12 +6,12 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yc0 extends Drawable implements Drawable.Callback {
     public final vg.f a;
     public final RectF b = new RectF();
-    public int c = org.telegram.messenger.zs.e4;
+    public int c = org.telegram.messenger.at.e4;
 
     public yc0(vg.f fVar) {
         this.a = fVar;
@@ -27,7 +27,7 @@ public final class yc0 extends Drawable implements Drawable.Callback {
         float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
         float f7 = this.c / 255.0f;
         qh.t.c(canvas, rectF, min, f7);
-        qh.t.a(canvas, rectF, min, 0, f7);
+        qh.t.a(min, f7, 0, canvas, rectF);
     }
 
     @Override // android.graphics.drawable.Drawable

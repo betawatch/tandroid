@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import org.telegram.messenger.v2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s0 {
     public static boolean i = true;
@@ -71,7 +71,7 @@ public final class s0 {
         ArrayList arrayList = (ArrayList) this.e;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            ((l2.f) this.f).p((s4.a) arrayList.get(i10));
+            ((l2.f) this.f).o((s4.a) arrayList.get(i10));
         }
         m(arrayList);
         this.b = 0;
@@ -86,10 +86,10 @@ public final class s0 {
             s4.a aVar = (s4.a) arrayList.get(i10);
             int i11 = aVar.a;
             if (i11 == 1) {
-                fVar.p(aVar);
+                fVar.o(aVar);
                 fVar.x(aVar.b, aVar.d);
             } else if (i11 == 2) {
-                fVar.p(aVar);
+                fVar.o(aVar);
                 int i12 = aVar.b;
                 int i13 = aVar.d;
                 RecyclerView recyclerView = (RecyclerView) fVar.b;
@@ -97,10 +97,10 @@ public final class s0 {
                 recyclerView.x0 = true;
                 recyclerView.u0.c += i13;
             } else if (i11 == 4) {
-                fVar.p(aVar);
+                fVar.o(aVar);
                 fVar.w(aVar.b, aVar.d, aVar.c);
             } else if (i11 == 8) {
-                fVar.p(aVar);
+                fVar.o(aVar);
                 fVar.y(aVar.b, aVar.d);
             }
         }
@@ -157,7 +157,7 @@ public final class s0 {
 
     public void f(s4.a aVar, int i10) {
         l2.f fVar = (l2.f) this.f;
-        fVar.p(aVar);
+        fVar.o(aVar);
         int i11 = aVar.a;
         if (i11 != 2) {
             if (i11 != 4) {

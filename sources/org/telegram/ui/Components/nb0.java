@@ -11,7 +11,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class nb0 {
     public static final float[] k = new float[4];
@@ -23,7 +23,7 @@ public final class nb0 {
     public int h;
     public final q5.d a = new q5.d(new au(2));
     public final a5.a b = new a5.a(15, (byte) 0);
-    public final org.telegram.messenger.k9 c = new org.telegram.messenger.k9(2);
+    public final org.telegram.messenger.l9 c = new org.telegram.messenger.l9(2);
     public final Matrix i = new Matrix();
     public final RectF j = new RectF();
 
@@ -62,14 +62,14 @@ public final class nb0 {
         Matrix.ScaleToFit scaleToFit = Matrix.ScaleToFit.FILL;
         Matrix matrix = this.i;
         matrix.setRectToRect(rectF2, rectF, scaleToFit);
-        org.telegram.messenger.k9 k9Var = this.c;
-        mb0 mb0Var = (mb0) k9Var.d;
+        org.telegram.messenger.l9 l9Var = this.c;
+        mb0 mb0Var = (mb0) l9Var.d;
         mb0Var.b.set(matrix);
         BitmapShader bitmapShader = mb0Var.d;
         if (bitmapShader != null) {
             bitmapShader.setLocalMatrix(matrix);
         }
-        mb0 mb0Var2 = (mb0) k9Var.e;
+        mb0 mb0Var2 = (mb0) l9Var.e;
         mb0Var2.b.set(matrix);
         BitmapShader bitmapShader2 = mb0Var2.d;
         if (bitmapShader2 != null) {
@@ -86,10 +86,10 @@ public final class nb0 {
     }
 
     public final void d(Matrix matrix) {
-        org.telegram.messenger.k9 k9Var = this.c;
-        float[] fArr = (float[]) k9Var.b;
+        org.telegram.messenger.l9 l9Var = this.c;
+        float[] fArr = (float[]) l9Var.b;
         a(matrix, fArr);
-        mb0 mb0Var = (mb0) k9Var.f;
+        mb0 mb0Var = (mb0) l9Var.f;
         mb0Var.b.set(matrix);
         BitmapShader bitmapShader = mb0Var.d;
         if (bitmapShader != null) {
@@ -141,23 +141,23 @@ public final class nb0 {
         if (lb0Var != null && z10 && Build.VERSION.SDK_INT >= 33) {
             return lb0Var.a(bitmap, bitmap4, bitmap6, i11, i12);
         }
-        org.telegram.messenger.k9 k9Var = this.c;
-        tm tmVar = (tm) k9Var.g;
-        tm tmVar2 = (tm) k9Var.h;
-        mb0 mb0Var = (mb0) k9Var.e;
-        Paint paint = (Paint) k9Var.c;
-        mb0 mb0Var2 = (mb0) k9Var.d;
+        org.telegram.messenger.l9 l9Var = this.c;
+        tm tmVar = (tm) l9Var.g;
+        tm tmVar2 = (tm) l9Var.h;
+        mb0 mb0Var = (mb0) l9Var.e;
+        Paint paint = (Paint) l9Var.c;
+        mb0 mb0Var2 = (mb0) l9Var.d;
         boolean b10 = mb0Var2.b(bitmap);
-        mb0 mb0Var3 = (mb0) k9Var.f;
+        mb0 mb0Var3 = (mb0) l9Var.f;
         boolean b11 = b10 | mb0Var3.b(bitmap4);
         if (i12 >= 0) {
-            if ((mb0Var.b(bitmap6) | b11) || k9Var.a != 1) {
-                k9Var.a = 1;
+            if ((mb0Var.b(bitmap6) | b11) || l9Var.a != 1) {
+                l9Var.a = 1;
                 paint.setShader(new ComposeShader(mb0Var2.d, new ComposeShader(mb0Var.d, mb0Var3.d, PorterDuff.Mode.DST_IN), PorterDuff.Mode.SRC_OVER));
                 return paint;
             }
-        } else if ((tmVar2.R(i0.b.o(-1, ((-i12) * i11) / 100)) | b11 | tmVar.R(-16777216)) || k9Var.a != 2) {
-            k9Var.a = 2;
+        } else if ((tmVar2.R(i0.b.o(-1, ((-i12) * i11) / 100)) | b11 | tmVar.R(-16777216)) || l9Var.a != 2) {
+            l9Var.a = 2;
             paint.setShader(new ComposeShader((rf.h) tmVar.b, new ComposeShader(new ComposeShader(mb0Var2.d, mb0Var3.d, PorterDuff.Mode.DST_IN), (rf.h) tmVar2.b, PorterDuff.Mode.MULTIPLY), PorterDuff.Mode.SRC_OVER));
             return paint;
         }

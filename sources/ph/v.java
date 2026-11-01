@@ -1,13 +1,13 @@
 package ph;
 
 import android.content.Context;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.Components.op0;
+import org.telegram.ui.Components.pp0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ TL_stars.StarGift a;
@@ -31,11 +31,11 @@ public final class v extends org.telegram.ui.ActionBar.k {
             }
             return;
         }
-        String str = vp.r1(d20.s0).U2 + "/auction/" + starGift.auction_slug;
+        String str = wp.r1(e20.s0).U2 + "/auction/" + starGift.auction_slug;
         if (i10 == 3) {
             org.telegram.messenger.i0.g(str);
         } else {
-            op0.N0(context, null, str, false, str).show();
+            pp0.N0(context, null, str, false, str).show();
         }
     }
 }

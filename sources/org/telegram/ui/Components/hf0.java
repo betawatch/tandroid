@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class hf0 extends r10 {
     public float a;
@@ -38,7 +38,7 @@ public final class hf0 extends r10 {
         boolean z10;
         jf0 jf0Var = this.d;
         PhotoViewer photoViewer = jf0Var.V;
-        m61 m61Var = jf0Var.Q;
+        n61 n61Var = jf0Var.Q;
         if (photoViewer != null && ((photoViewer.F2 != null || jf0Var.r != null) && !jf0Var.c0 && !jf0Var.Y && !jf0Var.x && !jf0Var.s.isInProgress() && jf0Var.f0)) {
             jf0Var.V.getClass();
             boolean z11 = motionEvent.getX() >= (((float) jf0Var.t()) * jf0Var.J) * 0.5f;
@@ -57,21 +57,21 @@ public final class hf0 extends r10 {
                         z10 = true;
                     }
                     if (z10) {
-                        m61Var.e(true);
-                        m61Var.d(!z11);
-                        long j11 = m61Var.o + 10000;
-                        m61Var.o = j11;
-                        m61Var.p = org.telegram.messenger.cd.G((int) (j11 / 1000), "Seconds", new Object[0]);
+                        n61Var.e(true);
+                        n61Var.d(!z11);
+                        long j11 = n61Var.o + 10000;
+                        n61Var.o = j11;
+                        n61Var.p = org.telegram.messenger.dd.G((int) (j11 / 1000), "Seconds", new Object[0]);
                         ve0 ve0Var = jf0Var.r;
                         if (ve0Var != null) {
                             ve0Var.i(j10);
                         } else {
-                            u61 u61Var = jf0Var.V.F2;
-                            if (u61Var != null) {
-                                u61Var.p0(j10);
+                            v61 v61Var = jf0Var.V.F2;
+                            if (v61Var != null) {
+                                v61Var.p0(j10);
                             }
                         }
-                        m61Var.g(0L);
+                        n61Var.g(0L);
                         jf0Var.Z = j10 / f7;
                         ih.c cVar = jf0Var.b0;
                         if (cVar != null) {

@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q70 implements org.telegram.messenger.j20 {
+public final /* synthetic */ class q70 implements org.telegram.messenger.k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ org.telegram.ui.ActionBar.z2 c;
@@ -18,7 +18,7 @@ public final /* synthetic */ class q70 implements org.telegram.messenger.j20 {
         this.b = j10;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         TLRPC.Updates updates;
         switch (this.a) {
@@ -29,7 +29,7 @@ public final /* synthetic */ class q70 implements org.telegram.messenger.j20 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
                     TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    org.telegram.messenger.vp.r1(u70Var.a).L3(updates2, false);
+                    org.telegram.messenger.wp.r1(u70Var.a).L3(updates2, false);
                     updates = updates2;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
@@ -42,13 +42,13 @@ public final /* synthetic */ class q70 implements org.telegram.messenger.j20 {
             case 1:
                 ph.q3 q3Var = (ph.q3) this.c;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.d;
-                rh.d3 d3Var = (rh.d3) obj;
+                rh.e3 e3Var = (rh.e3) obj;
                 gf.e eVar = (gf.e) obj2;
                 eVar.d();
-                rh.e6.x(q3Var.a, d3Var.a).h(d3Var.b, tL_starGiftUnique, this.b, null, true, new org.telegram.tgnet.e(q3Var, eVar, tL_starGiftUnique, 6));
+                rh.e6.x(q3Var.a, e3Var.a).h(e3Var.b, tL_starGiftUnique, this.b, null, true, new org.telegram.tgnet.e(q3Var, eVar, tL_starGiftUnique, 6));
                 break;
             default:
-                rh.t7.d1((rh.t7) this.c, (a51) this.d, this.b, (Boolean) obj, (String) obj2);
+                rh.t7.d1((rh.t7) this.c, (b51) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
         }
     }

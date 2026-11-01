@@ -3,9 +3,9 @@ package vh;
 import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.we;
+import org.telegram.messenger.xe;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class m2 extends k2 {
     public final /* synthetic */ int k0 = 0;
@@ -92,8 +92,8 @@ public final class m2 extends k2 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m2(o8 o8Var, int i10, Context context, th.b bVar, we weVar, boolean z10, boolean z11, boolean z12) {
-        super(i10, context, bVar, weVar, z10, 1.39f, z11, z12);
+    public m2(o8 o8Var, int i10, Context context, th.b bVar, xe xeVar, boolean z10, boolean z11, boolean z12) {
+        super(i10, context, bVar, xeVar, z10, 1.39f, z11, z12);
         this.l0 = o8Var;
     }
 }

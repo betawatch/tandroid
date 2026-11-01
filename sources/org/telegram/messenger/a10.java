@@ -1,57 +1,47 @@
 package org.telegram.messenger;
 
-import android.icu.text.Collator;
-import java.util.Comparator;
-import java.util.List;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a10 implements Comparator {
+public final /* synthetic */ class a10 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ u10 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ kj d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ int f;
 
-    public /* synthetic */ a10(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ a10(u10 u10Var, String str, kj kjVar, long j10, int i10, int i11) {
+        this.a = i11;
+        this.b = u10Var;
+        this.c = str;
+        this.d = kjVar;
+        this.e = j10;
+        this.f = i10;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int compare;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                compare = ((Collator) this.b).compare(((m10) obj).b, ((m10) obj2).b);
-                return compare;
+                u10 u10Var = this.b;
+                kj kjVar = this.d;
+                long j10 = this.e;
+                int i10 = this.f;
+                ks.d(this.c, new d10(u10Var, kjVar, j10, i10), new d10(u10Var, kjVar, j10, i10), false);
+                break;
             default:
-                zc zcVar = (zc) this.b;
-                zc zcVar2 = (zc) obj;
-                zc zcVar3 = (zc) obj2;
-                if (zcVar2 != zcVar) {
-                    if (zcVar3 != zcVar) {
-                        List list = t10.M;
-                        int indexOf = list.indexOf(zcVar2.f);
-                        int indexOf2 = list.indexOf(zcVar3.f);
-                        if (indexOf >= 0 && indexOf2 >= 0) {
-                            return indexOf - indexOf2;
-                        }
-                        if (indexOf < 0) {
-                            if (indexOf2 < 0) {
-                                int i10 = zcVar2.k;
-                                int i11 = zcVar3.k;
-                                if (i10 == i11) {
-                                    return zcVar2.a.compareTo(zcVar3.a);
-                                }
-                                if (i10 <= i11) {
-                                    if (i10 >= i11) {
-                                        return 0;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    return 1;
+                u10 u10Var2 = this.b;
+                u10Var2.getClass();
+                String str = this.c;
+                if (str == null) {
+                    str = "und";
                 }
-                return -1;
+                kj kjVar2 = this.d;
+                kjVar2.k.originalLanguage = str;
+                u10Var2.getMessagesStorage().X1(this.e, kjVar2.k);
+                u10Var2.w.remove(Integer.valueOf(this.f));
+                u10Var2.f(kjVar2);
+                break;
         }
     }
 }

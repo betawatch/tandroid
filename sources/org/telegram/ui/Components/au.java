@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.WindowManager;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class au implements p.a, org.telegram.messenger.l9, yg.b, mu0, nu0, org.telegram.messenger.mc, wg.c, r0.m, org.telegram.ui.ActionBar.u1, org.telegram.ui.ActionBar.x6, org.telegram.ui.ActionBar.y6 {
+public final /* synthetic */ class au implements p.a, org.telegram.messenger.m9, yg.b, nu0, ou0, org.telegram.messenger.nc, wg.c, r0.m, org.telegram.ui.ActionBar.u1, org.telegram.ui.ActionBar.x6, org.telegram.ui.ActionBar.y6 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ au(int i10) {
@@ -26,7 +26,7 @@ public final /* synthetic */ class au implements p.a, org.telegram.messenger.l9,
         return bitmap.getConfig() == Bitmap.Config.ALPHA_8 ? bitmap : bitmap.extractAlpha();
     }
 
-    @Override // org.telegram.ui.Components.nu0
+    @Override // org.telegram.ui.Components.ou0
     public void b(Object obj, float f7) {
         switch (this.a) {
             case 4:
@@ -76,9 +76,9 @@ public final /* synthetic */ class au implements p.a, org.telegram.messenger.l9,
                     return;
                 }
             default:
-                do0 do0Var = (do0) obj;
-                do0Var.n = f7;
-                do0Var.invalidate();
+                eo0 eo0Var = (eo0) obj;
+                eo0Var.n = f7;
+                eo0Var.invalidate();
                 break;
         }
     }
@@ -90,12 +90,12 @@ public final /* synthetic */ class au implements p.a, org.telegram.messenger.l9,
 
     @Override // org.telegram.ui.ActionBar.y6
     public void d(int i10, View view) {
-        ((dn0) view).setTextColor(i10);
+        ((en0) view).setTextColor(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.x6
     public int f(View view) {
-        return ((dn0) view).w;
+        return ((en0) view).w;
     }
 
     @Override // wg.c
@@ -104,7 +104,7 @@ public final /* synthetic */ class au implements p.a, org.telegram.messenger.l9,
         return (((int) a1.g.A(qh.y0.b[3], 255.0f, 100.0f, 0.5f)) << 24) | 16777215;
     }
 
-    @Override // org.telegram.ui.Components.mu0
+    @Override // org.telegram.ui.Components.nu0
     public float get(Object obj) {
         switch (this.a) {
             case 3:
@@ -118,7 +118,7 @@ public final /* synthetic */ class au implements p.a, org.telegram.messenger.l9,
             case 14:
                 return ((jf0) obj).L;
             default:
-                return ((do0) obj).n;
+                return ((eo0) obj).n;
         }
     }
 
@@ -149,32 +149,32 @@ public final /* synthetic */ class au implements p.a, org.telegram.messenger.l9,
                 x1Var.dismiss();
                 break;
             case 27:
-                int i11 = cx0.n2;
+                int i11 = dx0.n2;
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public /* synthetic */ void j(ImageReceiver imageReceiver) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
         switch (this.a) {
             case 1:
                 int i10 = vy.U2;
                 break;
             default:
-                int i11 = op0.Q2;
+                int i11 = pp0.Q2;
                 break;
         }
         return 0;
     }
 
-    @Override // org.telegram.messenger.mc
-    public void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        bi0 B;
+    @Override // org.telegram.messenger.nc
+    public void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ci0 B;
         switch (this.a) {
             case 9:
                 if (z10 && !z11 && (B = imageReceiver.B()) != null) {
@@ -191,8 +191,8 @@ public final /* synthetic */ class au implements p.a, org.telegram.messenger.l9,
         }
     }
 
-    @Override // org.telegram.messenger.mc
-    public /* synthetic */ void q(int i10, Drawable drawable) {
+    @Override // org.telegram.messenger.nc
+    public /* synthetic */ void s(int i10, Drawable drawable) {
         int i11 = this.a;
     }
 

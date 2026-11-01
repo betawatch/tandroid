@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class y2 {
     public final int a;
@@ -52,11 +52,11 @@ public final class y2 {
         if (i10 == 3) {
             return 6;
         }
-        return tz.G;
+        return uz.G;
     }
 
     public static String f(int i10) {
-        return i10 == 5 ? cd.G(1, "Minutes", new Object[0]) : i10 == 3 ? cd.G(1, "Days", new Object[0]) : i10 == 6 ? cd.G(2, "Days", new Object[0]) : i10 == 0 ? cd.G(1, "Weeks", new Object[0]) : i10 == 1 ? cd.G(1, "Months", new Object[0]) : cd.L0(2131753851, null);
+        return i10 == 5 ? dd.G(1, "Minutes", new Object[0]) : i10 == 3 ? dd.G(1, "Days", new Object[0]) : i10 == 6 ? dd.G(2, "Days", new Object[0]) : i10 == 0 ? dd.G(1, "Weeks", new Object[0]) : i10 == 1 ? dd.G(1, "Months", new Object[0]) : dd.L0(2131753851, null);
     }
 
     public final int c(int i10) {
@@ -65,17 +65,17 @@ public final class y2 {
         if (!z10) {
             this.b = true;
             for (int i11 = 0; i11 < 4; i11++) {
-                iArr[i11] = tz.q().getInt(i0.a.i(i11, "keep_media_type_"), b(i11));
+                iArr[i11] = uz.q().getInt(i0.a.i(i11, "keep_media_type_"), b(i11));
             }
         }
         int i12 = iArr[i10];
-        return i12 == -1 ? tz.G : i12;
+        return i12 == -1 ? uz.G : i12;
     }
 
     public final ArrayList d(int i10) {
         ArrayList arrayList = new ArrayList();
         HashSet hashSet = new HashSet();
-        String string = d20.i(this.a).k().getString("keep_media_exceptions_" + i10, "");
+        String string = e20.i(this.a).k().getString("keep_media_exceptions_" + i10, "");
         if (TextUtils.isEmpty(string)) {
             return arrayList;
         }
@@ -111,7 +111,7 @@ public final class y2 {
         k8Var.getClass();
         CountDownLatch countDownLatch = new CountDownLatch(1);
         LongSparseArray longSparseArray = new LongSparseArray();
-        k8Var.h(new ul(k8Var, arrayList, longSparseArray, countDownLatch, 7));
+        k8Var.h(new vl(k8Var, arrayList, longSparseArray, countDownLatch, 7));
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
@@ -125,9 +125,9 @@ public final class y2 {
                 i10 = 0;
             } else {
                 long j10 = -keyAt;
-                TLRPC.Chat L0 = vp.r1(i11).L0(Long.valueOf(j10));
+                TLRPC.Chat L0 = wp.r1(i11).L0(Long.valueOf(j10));
                 if (L0 == null) {
-                    L0 = hs.a0(i11).P(j10);
+                    L0 = is.a0(i11).P(j10);
                 }
                 i10 = L0 == null ? -1 : w3.T(L0) ? 2 : 1;
             }
@@ -149,7 +149,7 @@ public final class y2 {
         boolean isEmpty = arrayList.isEmpty();
         int i12 = this.a;
         if (isEmpty) {
-            d20.i(i12).k().edit().remove(i11).apply();
+            e20.i(i12).k().edit().remove(i11).apply();
             return;
         }
         int size = arrayList.size();
@@ -159,7 +159,7 @@ public final class y2 {
             allocate.putLong(((w2) arrayList.get(i13)).a);
             allocate.putInt(((w2) arrayList.get(i13)).b);
         }
-        d20.i(i12).k().edit().putString(i11, Utilities.f(allocate.array())).apply();
+        e20.i(i12).k().edit().putString(i11, Utilities.f(allocate.array())).apply();
         allocate.clear();
     }
 }

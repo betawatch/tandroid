@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.j41;
+import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.mb;
 import rh.h5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n1 implements Runnable {
     public final /* synthetic */ o1 a;
@@ -65,12 +65,12 @@ public final class n1 implements Runnable {
         HashMap hashMap3 = o1Var.H;
         HashMap hashMap4 = o1Var.I;
         ArrayList arrayList = o1Var.F;
-        j41 j41Var = o1Var.e;
+        k41 k41Var = o1Var.e;
         int i13 = o1Var.c;
         if (TextUtils.isEmpty(o1Var.R)) {
             return;
         }
-        vp progressDrawable = j41Var.b.h.getProgressDrawable();
+        vp progressDrawable = k41Var.b.h.getProgressDrawable();
         progressDrawable.e = true;
         progressDrawable.b = System.currentTimeMillis();
         progressDrawable.invalidateSelf();
@@ -79,7 +79,7 @@ public final class n1 implements Runnable {
         o1Var.P = i14;
         ArrayList arrayList2 = new ArrayList(0);
         LongSparseArray longSparseArray = new LongSparseArray(0);
-        HashMap hashMap5 = ui.b0(i13).d0;
+        HashMap hashMap5 = vi.b0(i13).d0;
         if (o1Var.R.length() <= 14) {
             String str2 = o1Var.R;
             int length = str2.length();
@@ -144,13 +144,13 @@ public final class n1 implements Runnable {
         }
         if (hashMap5 != null && !hashMap5.isEmpty() && o1Var.R.length() > i11) {
             String[] G0 = org.telegram.messenger.i0.G0();
-            if (!Arrays.equals(j41Var.a.b(), G0)) {
-                ui.b0(i10).M(G0, false);
+            if (!Arrays.equals(k41Var.a.b(), G0)) {
+                vi.b0(i10).M(G0, false);
             }
-            j41Var.a.i(G0);
-            ui.b0(i10).U(j41Var.a.b(), o1Var.R, false, new ag.b0(this, i14, hashMap5, 18), false);
+            k41Var.a.i(G0);
+            vi.b0(i10).U(k41Var.a.b(), o1Var.R, false, new ag.b0(this, i14, hashMap5, 18), false);
         }
-        ArrayList s02 = ui.b0(i10).s0(0);
+        ArrayList s02 = vi.b0(i10).s0(0);
         int size2 = s02.size();
         int i20 = 0;
         while (i20 < size2) {
@@ -180,7 +180,7 @@ public final class n1 implements Runnable {
             hashMap4 = hashMap;
         }
         HashMap hashMap6 = hashMap4;
-        ArrayList s03 = ui.b0(i10).s0(3);
+        ArrayList s03 = vi.b0(i10).s0(3);
         int size3 = s03.size();
         for (int i21 = 0; i21 < size3; i21++) {
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) s03.get(i21);
@@ -199,7 +199,7 @@ public final class n1 implements Runnable {
             }
         }
         if (!arrayList.isEmpty() || !hashMap6.isEmpty()) {
-            j41Var.b(true);
+            k41Var.b(true);
         }
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = new TLRPC.TL_messages_searchStickerSets();
         tL_messages_searchStickerSets.q = o1Var.R;

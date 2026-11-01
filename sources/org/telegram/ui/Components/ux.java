@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ux extends sk0 {
+public final class ux extends tk0 {
     public boolean D;
     public boolean E;
     public final /* synthetic */ vy F;
@@ -50,10 +50,10 @@ public final class ux extends sk0 {
         if (str2 == null) {
             return;
         }
-        org.telegram.messenger.ui.b0(vyVar.c1).Z1(true, str, str2, new ag.m2(uxVar, str2, arrayList, runnable, 9), z10);
+        org.telegram.messenger.vi.b0(vyVar.c1).Z1(true, str, str2, new ag.m2(uxVar, str2, arrayList, runnable, 9), z10);
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 4;
@@ -205,7 +205,7 @@ public final class ux extends sk0 {
             }
             org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
             if (this.d != 0) {
-                n8Var.a(0, org.telegram.messenger.cd.G(this.f.size(), "EmojiCount", new Object[0]));
+                n8Var.a(0, org.telegram.messenger.dd.G(this.f.size(), "EmojiCount", new Object[0]));
                 return;
             }
             if (!arrayList.isEmpty()) {
@@ -214,10 +214,10 @@ public final class ux extends sk0 {
                 i12 = 2;
             }
             if (i10 == arrayList2.size() + i12) {
-                n8Var.a(0, org.telegram.messenger.cd.L0(2131744893, null));
+                n8Var.a(0, org.telegram.messenger.dd.L0(2131744893, null));
                 return;
             } else {
-                n8Var.a(0, org.telegram.messenger.cd.L0(2131744892, null));
+                n8Var.a(0, org.telegram.messenger.dd.L0(2131744892, null));
                 return;
             }
         }
@@ -242,7 +242,7 @@ public final class ux extends sk0 {
                 str = this.F.getRecentEmoji().get(i13);
                 str2 = str;
             } else {
-                str = i13 < arrayList2.size() ? ((org.telegram.messenger.qi) arrayList2.get(i13)).a : ((org.telegram.messenger.qi) arrayList3.get((i13 - arrayList2.size()) - 1)).a;
+                str = i13 < arrayList2.size() ? ((org.telegram.messenger.ri) arrayList2.get(i13)).a : ((org.telegram.messenger.ri) arrayList3.get((i13 - arrayList2.size()) - 1)).a;
                 str2 = str;
                 z10 = false;
             }
@@ -311,7 +311,7 @@ public final class ux extends sk0 {
         } else if (i10 != 5) {
             jg.l0 l0Var = new jg.l0(this, vyVar.getContext(), 17);
             TextView textView = new TextView(vyVar.getContext());
-            textView.setText(org.telegram.messenger.cd.L0(2131748230, null));
+            textView.setText(org.telegram.messenger.dd.L0(2131748230, null));
             textView.setTextSize(1, 16.0f);
             int i11 = org.telegram.ui.ActionBar.t6.Af;
             org.telegram.ui.ActionBar.a7.V(textView, i11, p6Var);
@@ -329,6 +329,6 @@ public final class ux extends sk0 {
             view4.setLayoutParams(new s4.o0(-1, org.telegram.messenger.i0.L(68.0f)));
             view = view4;
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

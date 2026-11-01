@@ -11,16 +11,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.ru;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.su;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.a7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class j0 extends c0 implements org.telegram.ui.ActionBar.k6 {
     public final ArrayList D;
@@ -57,7 +57,7 @@ public final class j0 extends c0 implements org.telegram.ui.ActionBar.k6 {
         this.x = g2Var;
         final int i12 = 1;
         g2Var.setSelected(true);
-        g2Var.setContentDescription(cd.L0(2131754486, null));
+        g2Var.setContentDescription(dd.L0(2131754486, null));
         g2Var.setOnClickListener(new View.OnClickListener(this) { // from class: bi.f0
             public final /* synthetic */ j0 b;
 
@@ -96,7 +96,7 @@ public final class j0 extends c0 implements org.telegram.ui.ActionBar.k6 {
         addView(g2Var, w7.b6.e(38, 38, 21));
         TextView textView = new TextView(context);
         this.y = textView;
-        textView.setText(cd.L0(2131746029, null));
+        textView.setText(dd.L0(2131746029, null));
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.i0.o());
         textView.setGravity(17);
@@ -323,12 +323,12 @@ public final class j0 extends c0 implements org.telegram.ui.ActionBar.k6 {
                 for (int i33 = 0; i33 < size3; i33++) {
                     g0 g0Var5 = (g0) arrayList.get(i33);
                     int i34 = iArr[i33];
-                    ru ruVar = g0Var5.a;
-                    ruVar.e = Math.max(org.telegram.messenger.i0.L(34.0f), i34);
+                    su suVar = g0Var5.a;
+                    suVar.e = Math.max(org.telegram.messenger.i0.L(34.0f), i34);
                     LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) g0Var5.getLayoutParams();
                     if (layoutParams2 != null) {
                         int i35 = layoutParams2.width;
-                        int i36 = ruVar.e;
+                        int i36 = suVar.e;
                         if (i35 != i36) {
                             layoutParams2.width = i36;
                             g0Var5.setLayoutParams(layoutParams2);
@@ -341,7 +341,7 @@ public final class j0 extends c0 implements org.telegram.ui.ActionBar.k6 {
             L = ((g0) arrayList.get(0)).a.c();
             L2 = org.telegram.messenger.i0.L(8.0f);
         } else {
-            L = org.telegram.messenger.i0.L(tz.W0 + 18);
+            L = org.telegram.messenger.i0.L(uz.W0 + 18);
             L2 = org.telegram.messenger.i0.L(8.0f);
         }
         int paddingBottom = getPaddingBottom() + getPaddingTop() + L2 + L;

@@ -2,12 +2,12 @@ package vh;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j6 implements q20 {
+public final /* synthetic */ class j6 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ r6 b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class j6 implements q20 {
         this.b = r6Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         int i10 = this.a;
         int i11 = 1;
@@ -30,9 +30,9 @@ public final /* synthetic */ class j6 implements q20 {
                 if (w6Var.B1 && w6Var.x1) {
                     w6Var.x1 = false;
                 }
-                q20 q20Var = w6Var.N1;
-                if (q20Var != null) {
-                    q20Var.a(w6Var.j1);
+                r20 r20Var = w6Var.N1;
+                if (r20Var != null) {
+                    r20Var.a(w6Var.j1);
                 }
                 z6 z6Var = w6Var.O1;
                 if (z6Var != null) {

@@ -18,12 +18,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.WeakHashMap;
-import org.telegram.messenger.k9;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.l9;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c extends View {
     public static final long f0 = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public final class c extends View {
     public final RectF F;
     public float G;
     public float H;
-    public final k9 I;
+    public final l9 I;
     public final Path J;
     public float K;
     public final RectF L;
@@ -84,7 +84,7 @@ public final class c extends View {
         this.F = new RectF();
         this.G = Float.NaN;
         this.H = -1.0f;
-        this.I = new k9(3);
+        this.I = new l9(3);
         this.J = new Path();
         this.K = Float.NaN;
         this.L = new RectF();
@@ -317,7 +317,7 @@ public final class c extends View {
                                     canvas2.restore();
                                 } else {
                                     v0 v0Var = x0Var2.n;
-                                    canvas2.drawColor(i0.b.o(v0Var != null ? i0.b.f(0.5f, v0Var.b, v0Var.c) : -12947803, zs.B3));
+                                    canvas2.drawColor(i0.b.o(v0Var != null ? i0.b.f(0.5f, v0Var.b, v0Var.c) : -12947803, at.B3));
                                 }
                                 canvas2.translate(L, L2);
                                 canvas2.scale(f29, f29);
@@ -426,7 +426,7 @@ public final class c extends View {
         r10 = r7;
         r0 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:242:0x0568, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:242:0x056f, code lost:
     
         if (java.lang.Math.abs(r13.y - r11) > 0.003f) goto L238;
      */
@@ -434,16 +434,16 @@ public final class c extends View {
     /* JADX WARN: Removed duplicated region for block: B:141:0x0323  */
     /* JADX WARN: Removed duplicated region for block: B:144:0x0336  */
     /* JADX WARN: Removed duplicated region for block: B:147:0x034d  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0587  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x058e  */
     /* JADX WARN: Removed duplicated region for block: B:168:0x036b  */
     /* JADX WARN: Removed duplicated region for block: B:171:0x038e  */
     /* JADX WARN: Removed duplicated region for block: B:173:0x03a0  */
     /* JADX WARN: Removed duplicated region for block: B:175:0x03b2  */
     /* JADX WARN: Removed duplicated region for block: B:178:0x03fb  */
     /* JADX WARN: Removed duplicated region for block: B:181:0x0408  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x043c  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x0532  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x055f  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0443  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x0539  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x0566  */
     /* JADX WARN: Removed duplicated region for block: B:244:0x040b  */
     /* JADX WARN: Removed duplicated region for block: B:245:0x03fe  */
     /* JADX WARN: Removed duplicated region for block: B:246:0x03b5  */
@@ -735,13 +735,13 @@ public final class c extends View {
                 float height2 = rectF.height() / f7;
                 v0 v0Var = i0Var2.d.n;
                 paint.setColor(v0Var == null ? v0Var.h : 872415231);
-                paint.setAlpha((int) (Color.alpha(i0Var2.d.n == null ? r2.h : 872415231) * f31));
+                paint.setAlpha((int) (Color.alpha(i0Var2.d.n == null ? r3.h : 872415231) * f31));
                 canvas.drawRoundRect(rectF, height2, height2, paint);
                 paint.setColor(872415231);
                 paint.setAlpha((int) (51.0f * f31));
                 canvas.drawRoundRect(rectF, height2, height2, paint);
                 RectF rectF7 = rectF;
-                cVar.I.a(canvas, rectF7, height2, 0, f31);
+                cVar.I.a(height2, f31, 0, canvas, rectF7);
                 RectF rectF8 = rectF7;
                 canvas.save();
                 canvas.clipRect(rectF8);
@@ -750,7 +750,7 @@ public final class c extends View {
                 while (i10 < arrayList2.size()) {
                     b bVar3 = (b) arrayList2.get(i10);
                     int i19 = i10;
-                    float b12 = z20.b(i18, f27, org.telegram.messenger.i0.L(f17), (width2 - (cVar.x / f7)) + org.telegram.messenger.i0.L(8.0f));
+                    float b12 = a30.b(i18, f27, org.telegram.messenger.i0.L(f17), (width2 - (cVar.x / f7)) + org.telegram.messenger.i0.L(8.0f));
                     if (!bVar3.d) {
                         i18++;
                     }
@@ -792,7 +792,7 @@ public final class c extends View {
                         }
                         float f38 = L4 * f21 * min4;
                         if (f38 >= f20) {
-                            U.setAlpha(zs.e4);
+                            U.setAlpha(at.e4);
                             float z19 = c3.i0.z(bVar3.b, width2, min4, width2);
                             float f39 = f38 / f7;
                             U.setBounds((int) (z19 - f39), (int) (rectF8.centerY() - f39), (int) (z19 + f39), (int) (rectF8.centerY() + f39));
@@ -865,13 +865,13 @@ public final class c extends View {
         float height22 = rectF.height() / f7;
         v0 v0Var2 = i0Var2.d.n;
         paint.setColor(v0Var2 == null ? v0Var2.h : 872415231);
-        paint.setAlpha((int) (Color.alpha(i0Var2.d.n == null ? r2.h : 872415231) * f31));
+        paint.setAlpha((int) (Color.alpha(i0Var2.d.n == null ? r3.h : 872415231) * f31));
         canvas.drawRoundRect(rectF, height22, height22, paint);
         paint.setColor(872415231);
         paint.setAlpha((int) (51.0f * f31));
         canvas.drawRoundRect(rectF, height22, height22, paint);
         RectF rectF72 = rectF;
-        cVar.I.a(canvas, rectF72, height22, 0, f31);
+        cVar.I.a(height22, f31, 0, canvas, rectF72);
         RectF rectF82 = rectF72;
         canvas.save();
         canvas.clipRect(rectF82);

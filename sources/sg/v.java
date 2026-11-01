@@ -5,17 +5,17 @@ import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import java.util.ArrayList;
 import kg.i1;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.uq0;
+import org.telegram.ui.Components.vq0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.ay;
+import org.telegram.ui.tw;
 import org.telegram.ui.un;
-import org.telegram.ui.uw;
+import org.telegram.ui.zx;
 import th.c7;
 import th.d2;
 import th.e5;
@@ -42,8 +42,9 @@ import th.z2;
 import th.z5;
 import vh.i6;
 import vh.p2;
+import vh.t0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -75,12 +76,12 @@ public final /* synthetic */ class v implements Runnable {
                 }
                 break;
             case 2:
-                ay ayVar = ((uw) this.b).O0;
-                if (!ayVar.L || !ayVar.i4().I()) {
-                    ayVar.I4(true, true);
+                zx zxVar = ((tw) this.b).O0;
+                if (!zxVar.L || !zxVar.j4().I()) {
+                    zxVar.J4(true, true);
                     break;
                 } else {
-                    ayVar.E0.h();
+                    zxVar.E0.h();
                     break;
                 }
                 break;
@@ -89,7 +90,7 @@ public final /* synthetic */ class v implements Runnable {
                 break;
             case 4:
                 s0 s0Var = ((th.r0) this.b).a;
-                zs.f(s0Var.e).k(zs.G2, Long.valueOf(s0Var.g()));
+                at.f(s0Var.e).k(at.G2, Long.valueOf(s0Var.g()));
                 break;
             case 5:
                 w0 w0Var = (w0) this.b;
@@ -143,9 +144,9 @@ public final /* synthetic */ class v implements Runnable {
                 }
                 break;
             case 12:
-                vh.s0 s0Var2 = (vh.s0) this.b;
-                s0Var2.b(s0Var2.b);
-                s0Var2.c = false;
+                t0 t0Var = (t0) this.b;
+                t0Var.b(t0Var.b);
+                t0Var.c = false;
                 break;
             case 13:
                 ((i6) this.b).run();
@@ -247,9 +248,9 @@ public final /* synthetic */ class v implements Runnable {
                 break;
             case 26:
                 uh.i iVar = (uh.i) this.b;
-                uq0 uq0Var = iVar.W;
+                vq0 vq0Var = iVar.W;
                 q4 q4Var = iVar.a;
-                uq0Var.a(q4Var == null ? "" : q4Var.E);
+                vq0Var.a(q4Var == null ? "" : q4Var.E);
                 break;
             case 27:
                 ((vh.g) this.b).c.W = false;

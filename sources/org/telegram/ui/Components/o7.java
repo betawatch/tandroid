@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o7 extends r7 {
     public final /* synthetic */ int D;
@@ -50,7 +50,7 @@ public final class o7 extends r7 {
                 return h90Var2;
             default:
                 h90 h90Var3 = new h90(this.E);
-                org.telegram.ui.ActionBar.a7.V(h90Var3, org.telegram.ui.ActionBar.t6.Gj, ((nn0) this.F).N);
+                org.telegram.ui.ActionBar.a7.V(h90Var3, org.telegram.ui.ActionBar.t6.Gj, ((on0) this.F).N);
                 h90Var3.setTextSize(1, 12.0f);
                 h90Var3.setEllipsize(TextUtils.TruncateAt.END);
                 h90Var3.setSingleLine(true);

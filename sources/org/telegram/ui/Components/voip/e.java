@@ -17,16 +17,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeProvider;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.z20;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.dc;
-import org.telegram.ui.zd1;
+import org.telegram.ui.xd1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean D;
@@ -46,9 +46,9 @@ public final class e extends View {
     public boolean R;
     public org.telegram.ui.Cells.y S;
     public final Paint T;
-    public final bi0 U;
+    public final ci0 U;
     public final Drawable V;
-    public final a0 W;
+    public final b0 W;
     public final FabBackgroundDrawable a;
     public final Paint a0;
     public final FabBackgroundDrawable b;
@@ -77,12 +77,12 @@ public final class e extends View {
         this.T = new Paint(1);
         Paint paint2 = new Paint(1);
         this.a0 = paint2;
-        a0 a0Var = new a0(org.telegram.messenger.i0.L(45.0f), org.telegram.messenger.i0.L(50.0f), org.telegram.messenger.i0.L(8.0f), 4);
-        this.W = a0Var;
-        a0Var.h = true;
-        a0Var.i = 0.0f;
-        a0Var.d = 0.0f;
-        a0Var.b(0.0d);
+        b0 b0Var = new b0(org.telegram.messenger.i0.L(45.0f), org.telegram.messenger.i0.L(50.0f), org.telegram.messenger.i0.L(8.0f), 4);
+        this.W = b0Var;
+        b0Var.h = true;
+        b0Var.i = 0.0f;
+        b0Var.d = 0.0f;
+        b0Var.b(0.0d);
         paint2.setColor(-16777216);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.I = ViewConfiguration.get(activity).getScaledTouchSlop();
@@ -99,9 +99,9 @@ public final class e extends View {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(org.telegram.messenger.i0.L(11.0f));
         textPaint.setColor(-1);
-        String L0 = cd.L0(2131754716, null);
-        String L02 = cd.L0(2131751604, null);
-        String L03 = cd.L0(2131746068, null);
+        String L0 = dd.L0(2131754716, null);
+        String L02 = dd.L0(2131751604, null);
+        String L03 = dd.L0(2131746068, null);
         int measureText = (int) textPaint.measureText(L0);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
         this.e = new StaticLayout(L0, textPaint, measureText, alignment, 1.0f, 0.0f, false);
@@ -111,11 +111,11 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        bi0 bi0Var = new bi0(R.raw.call_accept, org.telegram.messenger.i0.L(48.0f), org.telegram.messenger.i0.L(48.0f), true, null);
-        this.U = bi0Var;
-        bi0Var.K(1);
-        bi0Var.P(90);
-        bi0Var.R(this);
+        ci0 ci0Var = new ci0(R.raw.call_accept, org.telegram.messenger.i0.L(48.0f), org.telegram.messenger.i0.L(48.0f), true, null);
+        this.U = ci0Var;
+        ci0Var.K(1);
+        ci0Var.P(90);
+        ci0Var.R(this);
         this.V = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
@@ -249,10 +249,10 @@ public final class e extends View {
         canvas.scale(a10, a10, r6.centerX(), r6.top + f11);
         canvas.translate(this.J + org.telegram.messenger.i0.L(46.0f), 0.0f);
         if (!this.R) {
-            a0 a0Var = this.W;
-            a0Var.c();
+            b0 b0Var = this.W;
+            b0Var.c();
             float f12 = (int) f11;
-            a0Var.a(canvas, f12, f12, this);
+            b0Var.a(canvas, f12, f12, this);
         }
         this.a.draw(canvas);
         if (this.R) {
@@ -321,7 +321,7 @@ public final class e extends View {
         super.onMeasure(i10, i11);
         int i12 = this.w;
         this.L = (getMeasuredWidth() / 2.0f) - ((i12 / 2.0f) + org.telegram.messenger.i0.L(46.0f));
-        int y3 = z20.y(28.0f, i12, 2);
+        int y3 = a30.y(28.0f, i12, 2);
         this.c.setBounds(y3, y3, org.telegram.messenger.i0.L(28.0f) + y3, org.telegram.messenger.i0.L(28.0f) + y3);
         this.d.setBounds(y3, y3, org.telegram.messenger.i0.L(28.0f) + y3, org.telegram.messenger.i0.L(28.0f) + y3);
         float L = org.telegram.messenger.i0.L(3.0f);
@@ -361,7 +361,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.O = ofFloat;
                         if (this.Q != null && (Math.abs(y3) < f7 || this.J > this.L * 0.8f)) {
-                            ((zd1) this.Q).b();
+                            ((xd1) this.Q).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.K, 0.0f);
@@ -369,7 +369,7 @@ public final class e extends View {
                         ofFloat2.start();
                         this.P = ofFloat2;
                         if (this.Q != null && (Math.abs(y3) < f7 || (-this.K) > this.L * 0.8f)) {
-                            ((zd1) this.Q).a();
+                            ((xd1) this.Q).a();
                         }
                     }
                 }
@@ -422,11 +422,11 @@ public final class e extends View {
             return;
         }
         this.U.start();
-        a0 a0Var = this.W;
-        if (!a0Var.e) {
+        b0 b0Var = this.W;
+        if (!b0Var.e) {
             invalidate();
         }
-        a0Var.e = true;
+        b0Var.e = true;
         fabBackgroundDrawable.setColor(-1041108);
         ValueAnimator ofInt = ValueAnimator.ofInt(0, 60, 0, 0, 60, 0, 0, 0, 0);
         this.b0 = ofInt;

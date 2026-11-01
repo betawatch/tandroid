@@ -8,15 +8,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.io.File;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.ta;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c0 extends ta {
     public final p6 a;
@@ -59,7 +59,7 @@ public final class c0 extends ta {
         int i10 = t6.vj;
         a7.V(textView, i10, p6Var);
         textView.setTypeface(org.telegram.messenger.i0.o());
-        TextView f7 = z20.f(linearLayout, textView, b6.t(-1, -2, 55, 0, 0, 0, 2), context);
+        TextView f7 = a30.f(linearLayout, textView, b6.t(-1, -2, 55, 0, 0, 0, 2), context);
         this.e = f7;
         f7.setTextSize(1, 13.0f);
         a7.V(f7, i10, p6Var);
@@ -79,7 +79,7 @@ public final class c0 extends ta {
         final int i11 = 1;
         if (i10 == 1) {
             ub ubVar = new ub(getContext(), p6Var, true);
-            ubVar.e(cd.L0(2131753074, null));
+            ubVar.e(dd.L0(2131753074, null));
             final int i12 = 0;
             ubVar.b = new Runnable(this) { // from class: xh.z
                 public final /* synthetic */ c0 b;
@@ -129,7 +129,7 @@ public final class c0 extends ta {
         }
         if (i10 == 2) {
             ub ubVar2 = new ub(getContext(), p6Var, true);
-            ubVar2.e(cd.L0(2131753073, null));
+            ubVar2.e(dd.L0(2131753073, null));
             ubVar2.b = new Runnable(this) { // from class: xh.z
                 public final /* synthetic */ c0 b;
 
@@ -185,9 +185,9 @@ public final class c0 extends ta {
             b0Var.h = false;
             t5Var.getClass();
             t5Var.e(true, 0.0f);
-            bi0 bi0Var = b0Var.l;
-            if (bi0Var != null) {
-                bi0Var.C(true);
+            ci0 ci0Var = b0Var.l;
+            if (ci0Var != null) {
+                ci0Var.C(true);
                 b0Var.l = null;
             }
             t5 t5Var2 = b0Var.i;
@@ -209,7 +209,7 @@ public final class c0 extends ta {
             }
             b0Var.invalidateSelf();
             if (((Long) b10.first).longValue() <= 0) {
-                textView.setText(cd.L0(2131753071, null));
+                textView.setText(dd.L0(2131753071, null));
             } else if (((Long) b10.second).longValue() <= 0) {
                 textView.setText(org.telegram.messenger.i0.i0(((Long) b10.first).longValue(), false, false));
             } else {
@@ -226,13 +226,13 @@ public final class c0 extends ta {
             return true;
         }
         if (e0Var.h) {
-            textView.setText(cd.L0(2131753072, null));
+            textView.setText(dd.L0(2131753072, null));
             setButton(2);
             if (!b0Var.h) {
                 b0Var.h = true;
-                bi0 bi0Var2 = new bi0(R.raw.contact_check, org.telegram.messenger.i0.L(40.0f), org.telegram.messenger.i0.L(40.0f));
-                b0Var.l = bi0Var2;
-                bi0Var2.R(b0Var.a);
+                ci0 ci0Var2 = new ci0(R.raw.contact_check, org.telegram.messenger.i0.L(40.0f), org.telegram.messenger.i0.L(40.0f));
+                b0Var.l = ci0Var2;
+                ci0Var2.R(b0Var.a);
                 b0Var.l.J(true);
                 b0Var.l.start();
                 b0Var.g = 1.0f;

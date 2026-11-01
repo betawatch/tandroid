@@ -1,9 +1,9 @@
 package vh;
 
-import org.telegram.messenger.hs;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.is;
+import org.telegram.messenger.wp;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,27 +27,27 @@ public final /* synthetic */ class q8 implements Runnable {
                 }
                 break;
             case 1:
-                yh.a0 a0Var = (yh.a0) this.c;
-                vp.r1(a0Var.a).O2(this.b, a0Var.l1, true, false, new yh.r(a0Var, 1));
+                yh.z zVar = (yh.z) this.c;
+                wp.r1(zVar.a).O2(this.b, zVar.l1, true, false, new yh.q(zVar, 1));
                 break;
             case 2:
-                yh.e0 e0Var = (yh.e0) this.c;
-                e0Var.i = null;
-                e0Var.g.l(this.b);
-                e0Var.l++;
-                e0Var.a();
-                yh.d0 d0Var = e0Var.h;
-                if (d0Var != null) {
-                    d0Var.b();
+                yh.d0 d0Var = (yh.d0) this.c;
+                d0Var.i = null;
+                d0Var.g.l(this.b);
+                d0Var.l++;
+                d0Var.a();
+                yh.c0 c0Var = d0Var.h;
+                if (c0Var != null) {
+                    c0Var.b();
                     break;
                 }
                 break;
             default:
-                zf.z zVar = (zf.z) this.c;
+                zf.z zVar2 = (zf.z) this.c;
                 long j10 = this.b;
-                zVar.getClass();
+                zVar2.getClass();
                 try {
-                    hs.a0(zVar.s0).b.executeFast("DELETE FROM search_recent WHERE did = " + j10).stepThis().dispose();
+                    is.a0(zVar2.s0).b.executeFast("DELETE FROM search_recent WHERE did = " + j10).stepThis().dispose();
                     break;
                 } catch (Exception e) {
                     org.telegram.messenger.f8.g(e, true);

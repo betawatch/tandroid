@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q5 extends View {
     public ValueAnimator D;
@@ -37,7 +37,7 @@ public final class q5 extends View {
         this.e = new RectF();
         this.f = new float[2];
         this.h = new float[2];
-        this.d = a1.g.r(new StringBuilder(), b6.u0(str.toUpperCase().replace('_', ' ').replace('-', ' ')), "   ·   ");
+        this.d = a1.g.r(new StringBuilder(), b6.v0(str.toUpperCase().replace('_', ' ').replace('-', ' ')), "   ·   ");
         paint.setColor(-16747826);
         paint.setTextSize(org.telegram.messenger.i0.L(12.0f));
         paint.setTypeface(org.telegram.messenger.i0.o1("fonts/rmono.ttf"));

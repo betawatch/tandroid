@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f8 {
     public static boolean j = false;
@@ -105,7 +105,7 @@ public final class f8 {
                 j = true;
                 File file = new File(w0.h(), "malformed_database/");
                 file.mkdirs();
-                hs a02 = hs.a0(d20.s0);
+                is a02 = is.a0(e20.s0);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(a02.c);
                 arrayList.add(a02.d);

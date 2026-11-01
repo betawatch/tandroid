@@ -1,6 +1,6 @@
 package qh;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class y0 {
     public static final float[][] a = {new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 33.0f, 3.8f, 1.0f, -1.0f, 1.0f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 27.0f, 0.79f, 23.0f, 0.86f, 33.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 2.0f, 3.0f}, new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 18.0f, 3.8f, 1.0f, -1.0f, 1.2f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 13.0f, 0.79f, 11.0f, 0.86f, 16.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 1.0f, 1.5f}};

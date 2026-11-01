@@ -14,9 +14,9 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public class NotificationImageProvider extends ContentProvider implements us {
+public class NotificationImageProvider extends ContentProvider implements vs {
     public static String d;
     public static UriMatcher e;
     public final HashSet a = new HashSet();
@@ -28,9 +28,9 @@ public class NotificationImageProvider extends ContentProvider implements us {
         return 0;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.Y1) {
+        if (i10 == at.Y1) {
             synchronized (this.b) {
                 try {
                     String str = (String) objArr[0];
@@ -65,8 +65,8 @@ public class NotificationImageProvider extends ContentProvider implements us {
 
     @Override // android.content.ContentProvider
     public final boolean onCreate() {
-        for (int i10 = 0; i10 < d20.c(); i10++) {
-            zs.f(i10).b(this, zs.Y1);
+        for (int i10 = 0; i10 < e20.c(); i10++) {
+            at.f(i10).b(this, at.Y1);
         }
         return true;
     }
@@ -140,8 +140,8 @@ public class NotificationImageProvider extends ContentProvider implements us {
 
     @Override // android.content.ContentProvider
     public final void shutdown() {
-        for (int i10 = 0; i10 < d20.c(); i10++) {
-            zs.f(i10).n(this, zs.Y1);
+        for (int i10 = 0; i10 < e20.c(); i10++) {
+            at.f(i10).n(this, at.Y1);
         }
     }
 

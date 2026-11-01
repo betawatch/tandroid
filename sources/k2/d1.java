@@ -3,14 +3,14 @@ package k2;
 import android.os.Handler;
 import bi.r6;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.k9;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.gi0;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.o61;
-import org.telegram.ui.Components.u61;
+import org.telegram.messenger.at;
+import org.telegram.messenger.l9;
+import org.telegram.ui.Components.hi0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d1 extends c2.n {
     public final r6 i;
@@ -32,20 +32,20 @@ public final class d1 extends c2.n {
         ByteBuffer order = byteBuffer.asReadOnlyBuffer().order(byteBuffer.order());
         r6 r6Var = this.i;
         float[] fArr2 = (float[]) r6Var.d;
-        k9 k9Var = (k9) r6Var.c;
+        l9 l9Var = (l9) r6Var.c;
         ByteBuffer byteBuffer2 = (ByteBuffer) r6Var.e;
-        u61 u61Var = (u61) r6Var.f;
-        o61 o61Var = u61Var.K;
-        Handler handler = u61Var.a0;
-        if (o61Var != null) {
-            if (order == c2.m.a || !u61Var.I) {
-                handler.postDelayed(new j51(r6Var, 4), 80L);
-            } else if (o61Var.k()) {
+        v61 v61Var = (v61) r6Var.f;
+        p61 p61Var = v61Var.K;
+        Handler handler = v61Var.a0;
+        if (p61Var != null) {
+            if (order == c2.m.a || !v61Var.I) {
+                handler.postDelayed(new k51(r6Var, 4), 80L);
+            } else if (p61Var.k()) {
                 int limit = order.limit();
                 int i10 = 0;
                 if (limit > 8192) {
                     handler.removeCallbacksAndMessages(null);
-                    u61Var.K.B(false, null);
+                    v61Var.K.B(false, null);
                 } else {
                     byteBuffer2.put(order);
                     int i11 = r6Var.a + limit;
@@ -57,20 +57,20 @@ public final class d1 extends c2.n {
                         }
                         byteBuffer2.rewind();
                         r6Var.a = 0;
-                        k9Var.getClass();
+                        l9Var.getClass();
                         float f11 = 0.0f;
                         if (fArr2.length != 1024) {
                             f7 = 0.0f;
                             f10 = 1.0f;
                         } else {
                             for (int i13 = 0; i13 < 1024; i13++) {
-                                ((float[]) k9Var.b)[i13] = fArr2[((int[]) k9Var.h)[i13]];
-                                ((float[]) k9Var.c)[i13] = 0.0f;
+                                ((float[]) l9Var.b)[i13] = fArr2[((int[]) l9Var.h)[i13]];
+                                ((float[]) l9Var.c)[i13] = 0.0f;
                             }
                             int i14 = 1;
-                            while (i14 < ((float[]) k9Var.b).length) {
-                                float f12 = ((float[]) k9Var.g)[i14];
-                                float f13 = ((float[]) k9Var.f)[i14];
+                            while (i14 < ((float[]) l9Var.b).length) {
+                                float f12 = ((float[]) l9Var.g)[i14];
+                                float f13 = ((float[]) l9Var.f)[i14];
                                 float f14 = f11;
                                 int i15 = i10;
                                 float f15 = 1.0f;
@@ -78,11 +78,11 @@ public final class d1 extends c2.n {
                                     float f16 = f11;
                                     int i16 = i15;
                                     while (true) {
-                                        float[] fArr3 = (float[]) k9Var.b;
+                                        float[] fArr3 = (float[]) l9Var.b;
                                         if (i16 < fArr3.length) {
                                             int i17 = i16 + i14;
                                             float f17 = fArr3[i17];
-                                            float[] fArr4 = (float[]) k9Var.c;
+                                            float[] fArr4 = (float[]) l9Var.c;
                                             float f18 = fArr4[i17];
                                             float f19 = (f15 * f17) - (f14 * f18);
                                             float f20 = (f17 * f14) + (f18 * f15);
@@ -106,36 +106,36 @@ public final class d1 extends c2.n {
                             f10 = 1.0f;
                             int i18 = 0;
                             while (true) {
-                                fArr = (float[]) k9Var.d;
+                                fArr = (float[]) l9Var.d;
                                 if (i18 >= fArr.length) {
                                     break;
                                 }
-                                float f22 = ((float[]) k9Var.b)[i18];
-                                float f23 = ((float[]) k9Var.c)[i18];
+                                float f22 = ((float[]) l9Var.b)[i18];
+                                float f23 = ((float[]) l9Var.c)[i18];
                                 fArr[i18] = (float) Math.sqrt((f23 * f23) + (f22 * f22));
                                 i18++;
                             }
-                            if (k9Var.a == 1) {
-                                int length = fArr.length / ((float[]) k9Var.e).length;
-                                for (int i19 = 0; i19 < ((float[]) k9Var.e).length; i19++) {
+                            if (l9Var.a == 1) {
+                                int length = fArr.length / ((float[]) l9Var.e).length;
+                                for (int i19 = 0; i19 < ((float[]) l9Var.e).length; i19++) {
                                     float f24 = f7;
                                     int i20 = 0;
                                     while (i20 < length) {
                                         int i21 = (i19 * length) + i20;
-                                        float[] fArr5 = (float[]) k9Var.d;
+                                        float[] fArr5 = (float[]) l9Var.d;
                                         if (i21 < fArr5.length) {
                                             f24 += fArr5[i21];
                                             i20++;
                                         }
                                     }
-                                    ((float[]) k9Var.e)[i19] = f24 / (i20 + 1);
+                                    ((float[]) l9Var.e)[i19] = f24 / (i20 + 1);
                                 }
                             }
                         }
                         float f25 = f7;
                         for (int i22 = 0; i22 < 1024; i22++) {
-                            float f26 = ((float[]) k9Var.b)[i22];
-                            float f27 = ((float[]) k9Var.c)[i22];
+                            float f26 = ((float[]) l9Var.b)[i22];
+                            float f27 = ((float[]) l9Var.c)[i22];
                             float sqrt = ((float) Math.sqrt((f27 * f27) + (f26 * f26))) / 30.0f;
                             if (sqrt > f10) {
                                 sqrt = f10;
@@ -153,9 +153,9 @@ public final class d1 extends c2.n {
                             }
                         } else {
                             for (int i24 = 0; i24 < 6; i24++) {
-                                int i25 = zs.A2 * i24;
-                                float f28 = ((float[]) k9Var.b)[i25];
-                                float f29 = ((float[]) k9Var.c)[i25];
+                                int i25 = at.A2 * i24;
+                                float f28 = ((float[]) l9Var.b)[i25];
+                                float f29 = ((float[]) l9Var.c)[i25];
                                 float sqrt3 = (float) (Math.sqrt((f29 * f29) + (f28 * f28)) / 30.0d);
                                 fArr6[i24] = sqrt3;
                                 if (sqrt3 > f10) {
@@ -167,7 +167,7 @@ public final class d1 extends c2.n {
                         }
                         if (System.currentTimeMillis() - r6Var.b >= 64) {
                             r6Var.b = System.currentTimeMillis();
-                            handler.postDelayed(new gi0(24, r6Var, fArr6), 130L);
+                            handler.postDelayed(new hi0(25, r6Var, fArr6), 130L);
                         }
                     }
                 }

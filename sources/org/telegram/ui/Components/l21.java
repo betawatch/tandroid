@@ -1,34 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l21 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n21 b;
+public final class l21 {
+    public static final l21 a;
+    public static final l21 b;
+    public static final l21 c;
+    public static final /* synthetic */ l21[] d;
 
-    public /* synthetic */ l21(n21 n21Var, int i10) {
-        this.a = i10;
-        this.b = n21Var;
+    static {
+        l21 l21Var = new l21("TOP", 0);
+        a = l21Var;
+        l21 l21Var2 = new l21("LEFT", 1);
+        b = l21Var2;
+        l21 l21Var3 = new l21("BOTTOM", 2);
+        c = l21Var3;
+        d = new l21[]{l21Var, l21Var2, l21Var3};
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n21 n21Var = this.b;
-                n21Var.U = floatValue;
-                n21Var.h();
-                n21Var.g();
-                break;
-            default:
-                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                n21 n21Var2 = this.b;
-                n21Var2.L = max;
-                n21Var2.h.invalidate();
-                break;
-        }
+    public static l21 valueOf(String str) {
+        return (l21) Enum.valueOf(l21.class, str);
+    }
+
+    public static l21[] values() {
+        return (l21[]) d.clone();
     }
 }

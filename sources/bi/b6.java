@@ -12,13 +12,13 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class b6 extends ViewGroup {
     public final RectF D;
@@ -132,7 +132,7 @@ public final class b6 extends ViewGroup {
         int blue = Color.blue(w02);
         this.r.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.di, p6Var));
         this.s.setColor(Color.argb(20, red, green, blue));
-        this.H = zs.e4;
+        this.H = at.e4;
         int i11 = org.telegram.ui.ActionBar.t6.Ci;
         this.w.setColor(org.telegram.ui.ActionBar.t6.w0(i11, p6Var));
         Paint.Style style = Paint.Style.FILL;

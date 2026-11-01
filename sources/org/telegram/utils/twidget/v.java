@@ -7,12 +7,12 @@ import bi.v6;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.z4;
 import org.telegram.ui.ProfileActivity;
@@ -22,7 +22,7 @@ import vh.n5;
 import vh.o8;
 import vh.u1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class v implements Runnable {
                 }
             case 1:
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", d20.i(i11).n);
+                bundle.putLong("user_id", e20.i(i11).n);
                 ((z4) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 2:
@@ -59,10 +59,10 @@ public final /* synthetic */ class v implements Runnable {
             case 3:
                 sg.f fVar = (sg.f) obj;
                 if (fVar.b) {
-                    q20 q20Var = fVar.d;
+                    r20 r20Var = fVar.d;
                     int i12 = 3;
-                    if (q20Var != null) {
-                        q20Var.a(Boolean.valueOf(i11 < 300));
+                    if (r20Var != null) {
+                        r20Var.a(Boolean.valueOf(i11 < 300));
                         try {
                             fVar.a.performHapticFeedback(3);
                         } catch (Exception unused2) {
@@ -83,19 +83,19 @@ public final /* synthetic */ class v implements Runnable {
                 ArrayList arrayList2 = e5Var.h;
                 e5Var.v(arrayList2);
                 Collections.sort(arrayList2, v6Var);
-                zs.f(i11).k(zs.v5, new Object[0]);
+                at.f(i11).k(at.v5, new Object[0]);
                 break;
             case 5:
                 ((vh.m) obj).a(Integer.valueOf(i11));
                 break;
             case 6:
-                ((q20) obj).a(Integer.valueOf(i11));
+                ((r20) obj).a(Integer.valueOf(i11));
                 break;
             case 7:
                 ((u1) obj).M0(i11);
                 break;
             case 8:
-                vp.r1(i11).V3((ArrayList) obj, true);
+                wp.r1(i11).V3((ArrayList) obj, true);
                 break;
             case 9:
                 o8 o8Var = (o8) obj;
@@ -109,10 +109,10 @@ public final /* synthetic */ class v implements Runnable {
                 }
                 o8Var.V(o8Var.K1, true);
                 CharSequence[] charSequenceArr = {o8Var.c1.getText()};
-                ArrayList W = vp.r1(i13).U4() ? ui.b0(i13).W(charSequenceArr, true, true) : new ArrayList();
-                ArrayList W2 = vp.r1(i13).U4() ? ui.b0(i13).W(new CharSequence[]{o8Var.K1.C0}, true, true) : new ArrayList();
+                ArrayList W = wp.r1(i13).U4() ? vi.b0(i13).W(charSequenceArr, true, true) : new ArrayList();
+                ArrayList W2 = wp.r1(i13).U4() ? vi.b0(i13).W(new CharSequence[]{o8Var.K1.C0}, true, true) : new ArrayList();
                 n5 n5Var = o8Var.K1;
-                n5Var.k = (TextUtils.equals(n5Var.C0, charSequenceArr[0]) && ui.K(W, W2)) ? false : true;
+                n5Var.k = (TextUtils.equals(n5Var.C0, charSequenceArr[0]) && vi.K(W, W2)) ? false : true;
                 o8Var.K1.C0 = new SpannableString(o8Var.c1.getText());
                 o8Var.y();
                 o8Var.x();

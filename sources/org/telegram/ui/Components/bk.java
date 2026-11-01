@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bk implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -67,12 +67,12 @@ public final /* synthetic */ class bk implements View.OnTouchListener {
                             if (x0Var.Z == 5 && (i0Var = x0Var.V) != null) {
                                 i0Var.S(!z10 ? 0.0f : 1.0f);
                             }
-                            org.telegram.messenger.x20 x20Var = d50Var.T;
-                            if (x20Var != null) {
-                                x20Var.t = d50Var.i0;
+                            org.telegram.messenger.y20 y20Var = d50Var.T;
+                            if (y20Var != null) {
+                                y20Var.t = d50Var.i0;
                             }
                             imageView.animate().cancel();
-                            org.telegram.messenger.z20.l(imageView.animate(), d50Var.i0 ? 1.0f : 0.0f, 180L);
+                            org.telegram.messenger.a30.l(imageView.animate(), d50Var.i0 ? 1.0f : 0.0f, 180L);
                         }
                     }
                 } else {
@@ -145,7 +145,7 @@ public final /* synthetic */ class bk implements View.OnTouchListener {
             case 4:
                 y90 y90Var = (y90) this.b;
                 y90Var.getClass();
-                return org.telegram.ui.lt.p().r(motionEvent, y90Var.getListView(), y90Var.x, null, y90Var.a);
+                return org.telegram.ui.kt.p().r(motionEvent, y90Var.getListView(), y90Var.x, null, y90Var.a);
             case 5:
                 ua0 ua0Var = (ua0) this.b;
                 ua0Var.getClass();
@@ -154,11 +154,11 @@ public final /* synthetic */ class bk implements View.OnTouchListener {
                 }
                 return true;
             default:
-                cx0 cx0Var = (cx0) this.b;
-                if (cx0Var.I1) {
+                dx0 dx0Var = (dx0) this.b;
+                if (dx0Var.I1) {
                     return false;
                 }
-                return org.telegram.ui.lt.p().r(motionEvent, cx0Var.j1, cx0Var.y1, cx0Var.d2, cx0Var.I0);
+                return org.telegram.ui.kt.p().r(motionEvent, dx0Var.j1, dx0Var.y1, dx0Var.d2, dx0Var.I0);
         }
     }
 }

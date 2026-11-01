@@ -1,29 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ga1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ la1 b;
+public final class ga1 extends org.telegram.ui.Components.vu0 {
+    public boolean f0;
 
-    public /* synthetic */ ga1(la1 la1Var, int i10) {
-        this.a = i10;
-        this.b = la1Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                la1 la1Var = this.b;
-                la1Var.getClass();
-                new kg.i1((org.telegram.ui.ActionBar.k2) la1Var, 11, false).show();
-                break;
-            default:
-                la1 la1Var2 = this.b;
-                la1Var2.e.requestFocus();
-                org.telegram.messenger.i0.J3(la1Var2.e);
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        Q();
+        if (getKeyboardHeight() != 0 || this.f0) {
+            this.f0 = true;
+            setPadding(0, 0, 0, 0);
+        } else {
+            int i12 = org.telegram.messenger.wp.c1().getInt("kbd_height", org.telegram.messenger.i0.L(200.0f));
+            this.f = i12;
+            setPadding(0, 0, 0, i12);
         }
+        super.onMeasure(i10, i11);
     }
 }

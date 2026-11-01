@@ -3,15 +3,15 @@ package li;
 import android.net.Uri;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.x20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.y20;
 import org.telegram.ui.Components.d50;
 import org.telegram.ui.Components.i50;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.k71;
 import org.telegram.ui.mk;
 import org.telegram.ui.re;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class i0 implements Runnable {
     public final void run() {
         File file;
         mk mkVar;
-        j71 j71Var;
+        k71 k71Var;
         switch (this.a) {
             case 0:
                 x0 x0Var = this.b;
@@ -86,20 +86,20 @@ public final /* synthetic */ class i0 implements Runnable {
                             d50 d50Var3 = (d50) m0Var.a;
                             d50Var3.T = d50Var3.s(file, j12, null);
                             d50 d50Var4 = (d50) m0Var.a;
-                            x20 x20Var = d50Var4.T;
-                            x20Var.a = j13 > 0 ? j13 : -1L;
-                            x20Var.b = j14 < j12 ? j14 : -1L;
-                            zs.f(d50Var4.f).k(zs.s2, Integer.valueOf(((d50) m0Var.a).h), ((d50) m0Var.a).T, file.getAbsolutePath(), new ArrayList());
+                            y20 y20Var = d50Var4.T;
+                            y20Var.a = j13 > 0 ? j13 : -1L;
+                            y20Var.b = j14 < j12 ? j14 : -1L;
+                            at.f(d50Var4.f).k(at.s2, Integer.valueOf(((d50) m0Var.a).h), ((d50) m0Var.a).T, file.getAbsolutePath(), new ArrayList());
                             float max = Math.max(1L, j12);
                             d50 d50Var5 = (d50) m0Var.a;
                             float f7 = j13 / max;
                             float f10 = j14 / max;
                             i50 i50Var = d50Var5.b;
-                            if (i50Var != null && (mkVar = ((re) i50Var).b.Z) != null && (j71Var = mkVar.f1) != null) {
+                            if (i50Var != null && (mkVar = ((re) i50Var).b.Z) != null && (k71Var = mkVar.f1) != null) {
                                 float max2 = Math.max(0.0f, Math.min(1.0f, f7));
-                                j71Var.b = max2;
-                                j71Var.c = Math.max(max2, Math.min(1.0f, f10));
-                                j71Var.invalidate();
+                                k71Var.b = max2;
+                                k71Var.c = Math.max(max2, Math.min(1.0f, f10));
+                                k71Var.invalidate();
                             }
                         }
                     }

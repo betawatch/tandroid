@@ -7,11 +7,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -20,12 +20,12 @@ public abstract class b {
     public static final int[] d = {48000, 44100, 32000};
     public static final int[] e = {24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE};
     public static final int[] f = {2, 1, 2, 3, 3, 4, 4, 5};
-    public static final int[] g = {32, 40, 48, 56, 64, 80, 96, zs.x1, 128, zs.q2, zs.W2, zs.B3, 256, zs.r5, 384, 448, 512, 576, 640};
-    public static final int[] h = {69, 87, zs.p1, zs.F1, zs.V1, zs.E2, 208, zs.S3, zs.B4, zs.T5, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
+    public static final int[] g = {32, 40, 48, 56, 64, 80, 96, at.x1, 128, at.q2, at.W2, at.B3, 256, at.r5, 384, 448, 512, 576, 640};
+    public static final int[] h = {69, 87, at.p1, at.F1, at.V1, at.E2, 208, at.S3, at.B4, at.T5, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
     public static final int[] i = {2002, 2000, 1920, 1601, 1600, 1001, 1000, 960, 800, 800, 480, 400, 400, 2048};
     public static final int[] j = {1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 6, 7, 8, 8};
     public static final int[] k = {-1, 8000, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000, -1, -1, 11025, 22050, 44100, -1, -1, 12000, 24000, 48000, -1, -1};
-    public static final int[] l = {64, zs.x1, 128, zs.W2, zs.B3, 256, 384, 448, 512, 640, 768, 896, 1024, 1152, 1280, 1536, 1920, 2048, 2304, 2560, 2688, 2816, 2823, 2944, 3072, 3840, TLObject.FLAG_12, 6144, 7680};
+    public static final int[] l = {64, at.x1, 128, at.W2, at.B3, 256, 384, 448, 512, 640, 768, 896, 1024, 1152, 1280, 1536, 1920, 2048, 2304, 2560, 2688, 2816, 2823, 2944, 3072, 3840, TLObject.FLAG_12, 6144, 7680};
     public static final int[] m = {8000, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000, 64000, 128000, 22050, 44100, 88200, 176400, 352800, 12000, 24000, 48000, 96000, 192000, 384000};
     public static final int[] n = {5, 8, 10, 12};
     public static final int[] o = {6, 9, 12, 15};
@@ -119,7 +119,7 @@ public abstract class b {
                 if ((j13 & 128) != 0) {
                     return false;
                 }
-                int i20 = (j13 & zs.K1) >> 1;
+                int i20 = (j13 & at.K1) >> 1;
                 if ((i20 >= 2 && i20 <= 7) || (i20 >= 13 && i20 <= 31)) {
                     e2.a.g("FlacFrameReader", "Ignoring frame where first subframe has a reserved type: " + i20);
                     return false;
@@ -227,9 +227,9 @@ public abstract class b {
         bArr[1] = 64;
         bArr[2] = -1;
         bArr[3] = -1;
-        bArr[4] = (byte) ((i10 >> 16) & zs.e4);
-        bArr[5] = (byte) ((i10 >> 8) & zs.e4);
-        bArr[6] = (byte) (i10 & zs.e4);
+        bArr[4] = (byte) ((i10 >> 16) & at.e4);
+        bArr[5] = (byte) ((i10 >> 8) & at.e4);
+        bArr[6] = (byte) (i10 & at.e4);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0060  */
@@ -286,9 +286,9 @@ public abstract class b {
             return ((((i11 == 3 ? u[i13 - 1] : v[i13 - 1]) * 12) / i15) + i16) * 4;
         }
         int i17 = i11 == 3 ? i12 == 2 ? w[i13 - 1] : x[i13 - 1] : y[i13 - 1];
-        int i18 = zs.a2;
+        int i18 = at.a2;
         if (i11 == 3) {
-            return ((i17 * zs.a2) / i15) + i16;
+            return ((i17 * at.a2) / i15) + i16;
         }
         if (i12 == 1) {
             i18 = 72;
@@ -652,7 +652,7 @@ public abstract class b {
     public static int s(int i10, e2.x xVar) {
         switch (i10) {
             case 1:
-                return zs.W2;
+                return at.W2;
             case 2:
             case 3:
             case 4:

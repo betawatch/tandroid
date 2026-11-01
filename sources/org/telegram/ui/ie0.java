@@ -1,26 +1,28 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.content.Context;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ie0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ me0 b;
+public final class ie0 extends zr {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ le0 n;
 
-    public /* synthetic */ ie0(me0 me0Var, int i10) {
-        this.a = i10;
-        this.b = me0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ie0(le0 le0Var, Context context, int i10) {
+        super(context);
+        this.h = i10;
+        this.n = le0Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
+    @Override // org.telegram.ui.zr
+    public final void a() {
+        switch (this.h) {
             case 0:
-                this.b.u0.finishFragment();
+                this.n.h(null);
                 break;
             default:
-                this.b.u0.finishFragment();
+                this.n.h(null);
                 break;
         }
     }

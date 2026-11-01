@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s70 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -28,14 +28,14 @@ public final /* synthetic */ class s70 implements RequestDelegate {
                 u70 u70Var = (u70) this.d;
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) this.e;
                 if (tLObject instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    org.telegram.messenger.vp.r1(u70Var.a).L3(((TLRPC.TL_chatInviteJoinResultOk) tLObject).updates, false);
+                    org.telegram.messenger.wp.r1(u70Var.a).L3(((TLRPC.TL_chatInviteJoinResultOk) tLObject).updates, false);
                 } else if (tLObject instanceof TLRPC.TL_chatInviteJoinResultWebView) {
                     org.telegram.messenger.i0.g3(new n70(u70Var, (TLRPC.TL_chatInviteJoinResultWebView) tLObject, this.b, 0));
                 }
                 org.telegram.messenger.i0.g3(new org.telegram.ui.kp(u70Var, tL_error, this.c, tL_messages_importChatInvite, 3));
                 break;
             case 1:
-                org.telegram.messenger.i0.g3(new hf((org.telegram.ui.ua0) this.d, tLObject, this.b, (String) this.e, this.c, tL_error));
+                org.telegram.messenger.i0.g3(new hf((org.telegram.ui.ta0) this.d, tLObject, this.b, (String) this.e, this.c, tL_error));
                 break;
             default:
                 org.telegram.messenger.i0.g3(new hf((rh.i) this.d, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.c, this.b));
@@ -43,8 +43,8 @@ public final /* synthetic */ class s70 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ s70(org.telegram.ui.ua0 ua0Var, long j10, String str, boolean z10) {
-        this.d = ua0Var;
+    public /* synthetic */ s70(org.telegram.ui.ta0 ta0Var, long j10, String str, boolean z10) {
+        this.d = ta0Var;
         this.b = j10;
         this.e = str;
         this.c = z10;

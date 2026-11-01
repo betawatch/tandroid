@@ -7,16 +7,16 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import bi.t3;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.w8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final w8 a;
@@ -38,12 +38,12 @@ public final class r extends FrameLayout {
         addView(textView, b6.g());
     }
 
-    public final u51 a(k2 k2Var, long j10, int i10, byte[] bArr, int i11, q20 q20Var) {
+    public final v51 a(k2 k2Var, long j10, int i10, byte[] bArr, int i11, r20 r20Var) {
         l lVar = this.c;
         if (lVar != null) {
             return lVar;
         }
-        q qVar = new q(k2Var.getCurrentAccount(), k2Var.getMessagesController().i1(j10), i10, bArr, new gg.c(this, 12), q20Var);
+        q qVar = new q(k2Var.getCurrentAccount(), k2Var.getMessagesController().i1(j10), i10, bArr, new gg.c(this, 12), r20Var);
         i0.h3(new gg.c(qVar, 13), 1000L);
         l lVar2 = new l(k2Var, new k(qVar, 0), i11);
         this.c = lVar2;

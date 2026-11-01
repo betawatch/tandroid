@@ -5,12 +5,12 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class lf0 extends qv0 {
+public final class lf0 extends rv0 {
     public boolean a = false;
     public final Paint b = new Paint(1);
-    public final int c = org.telegram.messenger.d20.s0;
+    public final int c = org.telegram.messenger.e20.s0;
     public long d = 0;
     public boolean e = false;
     public final RectF f = new RectF();
@@ -23,12 +23,12 @@ public final class lf0 extends qv0 {
         this.i = p6Var;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.rv0
     public final void c(boolean z10) {
         this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.rv0
     public final void d() {
         this.d = System.currentTimeMillis();
         this.e = true;
@@ -51,7 +51,7 @@ public final class lf0 extends qv0 {
         rectF.set(0.0f, i10, L, i10 + L);
         float f7 = this.g;
         float f10 = 0.5f;
-        int x10 = (int) (f7 < 0.5f ? org.telegram.messenger.z20.x(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
+        int x10 = (int) (f7 < 0.5f ? org.telegram.messenger.a30.x(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
         int i11 = 0;
         while (i11 < 3) {
             float L3 = org.telegram.messenger.i0.L(9.2f) + (org.telegram.messenger.i0.L(5.0f) * i11);
@@ -60,26 +60,26 @@ public final class lf0 extends qv0 {
             float f12 = this.g;
             float f13 = L3 - (L4 * f12);
             if (i11 == 2) {
-                paint.setAlpha(Math.min(org.telegram.messenger.zs.e4, (int) ((f12 * 255.0f) / f11)));
+                paint.setAlpha(Math.min(org.telegram.messenger.at.e4, (int) ((f12 * 255.0f) / f11)));
             } else if (i11 != 0) {
-                paint.setAlpha(org.telegram.messenger.zs.e4);
+                paint.setAlpha(org.telegram.messenger.at.e4);
             } else if (f12 > f11) {
                 paint.setAlpha((int) ((1.0f - ((f12 - f11) / f11)) * 255.0f));
             } else {
-                paint.setAlpha(org.telegram.messenger.zs.e4);
+                paint.setAlpha(org.telegram.messenger.at.e4);
             }
             canvas.drawCircle(f13, (L / 2) + i10, org.telegram.messenger.i0.L(1.2f), paint);
             i11++;
             f10 = f11;
         }
-        paint.setAlpha(org.telegram.messenger.zs.e4);
+        paint.setAlpha(org.telegram.messenger.at.e4);
         canvas.drawArc(rectF, x10, 360 - (x10 * 2), true, paint);
         paint.setColor(org.telegram.ui.ActionBar.t6.x0(null, z10 ? org.telegram.ui.ActionBar.t6.d6 : org.telegram.ui.ActionBar.t6.s8, false));
         canvas.drawCircle(org.telegram.messenger.i0.L(4.0f), ((L / 2) + i10) - org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(1.0f), paint);
         f();
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.rv0
     public final void e() {
         this.g = 0.0f;
         this.e = false;
@@ -87,7 +87,7 @@ public final class lf0 extends qv0 {
 
     public final void f() {
         if (this.e) {
-            if (org.telegram.messenger.zs.f(this.c).g()) {
+            if (org.telegram.messenger.at.f(this.c).g()) {
                 org.telegram.messenger.i0.h3(new eb0(this, 13), 100L);
                 return;
             }
@@ -124,7 +124,7 @@ public final class lf0 extends qv0 {
         return -2;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.rv0
     public final void b(int i10) {
     }
 

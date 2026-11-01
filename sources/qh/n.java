@@ -5,10 +5,10 @@ import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
     public final TextView a;
@@ -35,7 +35,7 @@ public final class n extends FrameLayout {
         textView2.setTypeface(org.telegram.messenger.i0.o());
         textView2.setGravity(17);
         textView2.setPadding(org.telegram.messenger.i0.L(10.0f), 0, org.telegram.messenger.i0.L(10.0f), 0);
-        textView2.setText(cd.L0(2131743901, null));
+        textView2.setText(dd.L0(2131743901, null));
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColor(620756991);
         gradientDrawable.setCornerRadius(org.telegram.messenger.i0.L(13.0f));

@@ -4,10 +4,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.JsPromptResult;
 import android.widget.TextView;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.ui.Components.mt;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class q0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class q0 implements TextView.OnEditorActionListener {
                 if (obj.length() <= 0 || obj.length() > 12) {
                     org.telegram.messenger.i0.E3(t1Var);
                 } else {
-                    ((q20) this.c).a(obj);
+                    ((r20) this.c).a(obj);
                     org.telegram.ui.ActionBar.x1 x1Var = ((org.telegram.ui.ActionBar.x1[]) this.d)[0];
                     if (x1Var != null) {
                         x1Var.dismiss();

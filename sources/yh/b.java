@@ -1,25 +1,25 @@
 package yh;
 
 import java.io.Serializable;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.o20;
-import org.telegram.ui.Components.a51;
-import rh.e3;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.p20;
+import org.telegram.ui.Components.b51;
+import rh.q2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements o20, fs {
+public final /* synthetic */ class b implements p20, gs {
     public final /* synthetic */ e a;
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public void a(String str) {
         e eVar = this.a;
         eVar.getMessagesController().L0(Long.valueOf(-eVar.b));
-        eVar.showDialog(new ai.a(eVar.getParentActivity(), null, eVar.b, new e3(16, eVar, str)));
+        eVar.showDialog(new ai.a(eVar.getParentActivity(), null, eVar.b, new q2(17, eVar, str)));
     }
 
-    @Override // org.telegram.messenger.o20
+    @Override // org.telegram.messenger.p20
     public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        e.Y(this.a, (a51) obj);
+        e.Z(this.a, (b51) obj);
     }
 }

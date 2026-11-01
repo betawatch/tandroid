@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -31,31 +31,31 @@ public final /* synthetic */ class b4 implements RequestDelegate {
                 i0.g3(new c4((g4) this.d, tLObject, this.c, this.b, (String) this.e, (Runnable) this.f));
                 break;
             case 1:
-                vi viVar = (vi) this.d;
+                wi wiVar = (wi) this.d;
                 TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
                 oh.g gVar = (oh.g) this.f;
-                viVar.getClass();
-                i0.g3(new bh(viVar, tL_error, tLObject, tL_chatInviteImporter, this.b, this.c, gVar, 1));
+                wiVar.getClass();
+                i0.g3(new ch(wiVar, tL_error, tLObject, tL_chatInviteImporter, this.b, this.c, gVar, 1));
                 break;
             case 2:
-                vp vpVar = (vp) this.d;
+                wp wpVar = (wp) this.d;
                 a0.h hVar = (a0.h) this.e;
-                qp qpVar = (qp) this.f;
+                rp rpVar = (rp) this.f;
                 TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers = null;
                 if (tLObject != null) {
                     TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers2 = (TLRPC.TL_channels_sendAsPeers) tLObject;
                     if (!tL_channels_sendAsPeers2.peers.isEmpty()) {
-                        i0.g3(new oi(12, vpVar, tL_channels_sendAsPeers2));
+                        i0.g3(new pi(12, wpVar, tL_channels_sendAsPeers2));
                         tL_channels_sendAsPeers = tL_channels_sendAsPeers2;
                     }
                 }
-                i0.g3(new c4(vpVar, tL_channels_sendAsPeers, hVar, this.c, qpVar, this.b));
+                i0.g3(new c4(wpVar, tL_channels_sendAsPeers, hVar, this.c, rpVar, this.b));
                 break;
             case 3:
-                i0.g3(new c4((x00) this.d, tLObject, this.b, this.c, (HashSet) this.e, (Runnable) this.f));
+                i0.g3(new c4((y00) this.d, tLObject, this.b, this.c, (HashSet) this.e, (Runnable) this.f));
                 break;
             default:
-                i0.g3(new bh((t10) this.d, (p10) this.e, tLObject, this.b, tL_error, this.c, (HashSet) this.f));
+                i0.g3(new ch((u10) this.d, (q10) this.e, tLObject, this.b, tL_error, this.c, (HashSet) this.f));
                 break;
         }
     }
@@ -69,18 +69,18 @@ public final /* synthetic */ class b4 implements RequestDelegate {
         this.f = runnable;
     }
 
-    public /* synthetic */ b4(vp vpVar, a0.h hVar, long j10, qp qpVar, boolean z10) {
+    public /* synthetic */ b4(wp wpVar, a0.h hVar, long j10, rp rpVar, boolean z10) {
         this.a = 2;
-        this.d = vpVar;
+        this.d = wpVar;
         this.e = hVar;
         this.c = j10;
-        this.f = qpVar;
+        this.f = rpVar;
         this.b = z10;
     }
 
-    public /* synthetic */ b4(x00 x00Var, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
+    public /* synthetic */ b4(y00 y00Var, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
         this.a = 3;
-        this.d = x00Var;
+        this.d = y00Var;
         this.b = z10;
         this.c = j10;
         this.e = hashSet;

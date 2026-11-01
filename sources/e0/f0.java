@@ -22,9 +22,9 @@ import java.io.ByteArrayInputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class f0 {
     public static RenderEffect a;
@@ -64,11 +64,11 @@ public abstract class f0 {
             switch (gVar.c()) {
                 case 3:
                 case 4:
-                    i12 = zs.K2;
+                    i12 = at.K2;
                     break;
                 case 5:
                 case 8:
-                    i12 = zs.t4;
+                    i12 = at.t4;
                     break;
                 case 6:
                 case 7:

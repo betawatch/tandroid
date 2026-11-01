@@ -10,13 +10,13 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.ui.Components.p81;
 import org.telegram.ui.Components.q81;
+import org.telegram.ui.Components.r81;
 import org.telegram.ui.web.v1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class k0 {
     public boolean A;
@@ -85,7 +85,7 @@ public final class k0 {
                 i0 i0Var;
                 JSONObject jSONObject;
                 w wVar;
-                q81 q81Var;
+                r81 r81Var;
                 k0 k0Var;
                 m h;
                 int i12;
@@ -154,12 +154,12 @@ public final class k0 {
                             wVar.g(k0Var);
                             return;
                         } else {
-                            if (!wVar.e() || (q81Var = wVar.h) == null) {
+                            if (!wVar.e() || (r81Var = wVar.h) == null) {
                                 return;
                             }
-                            p81 p81Var = q81Var.a;
-                            p81Var.j();
-                            p81Var.h();
+                            q81 q81Var = r81Var.a;
+                            q81Var.j();
+                            q81Var.h();
                             return;
                         }
                     case 2:
@@ -186,7 +186,7 @@ public final class k0 {
                 i0 i0Var;
                 JSONObject jSONObject;
                 w wVar;
-                q81 q81Var;
+                r81 r81Var;
                 k0 k0Var;
                 m h;
                 int i122;
@@ -255,12 +255,12 @@ public final class k0 {
                             wVar.g(k0Var);
                             return;
                         } else {
-                            if (!wVar.e() || (q81Var = wVar.h) == null) {
+                            if (!wVar.e() || (r81Var = wVar.h) == null) {
                                 return;
                             }
-                            p81 p81Var = q81Var.a;
-                            p81Var.j();
-                            p81Var.h();
+                            q81 q81Var = r81Var.a;
+                            q81Var.j();
+                            q81Var.h();
                             return;
                         }
                     case 2:
@@ -287,7 +287,7 @@ public final class k0 {
                 i0 i0Var;
                 JSONObject jSONObject;
                 w wVar;
-                q81 q81Var;
+                r81 r81Var;
                 k0 k0Var;
                 m h;
                 int i122;
@@ -356,12 +356,12 @@ public final class k0 {
                             wVar.g(k0Var);
                             return;
                         } else {
-                            if (!wVar.e() || (q81Var = wVar.h) == null) {
+                            if (!wVar.e() || (r81Var = wVar.h) == null) {
                                 return;
                             }
-                            p81 p81Var = q81Var.a;
-                            p81Var.j();
-                            p81Var.h();
+                            q81 q81Var = r81Var.a;
+                            q81Var.j();
+                            q81Var.h();
                             return;
                         }
                     case 2:
@@ -407,7 +407,7 @@ public final class k0 {
                 i0 i0Var;
                 JSONObject jSONObject;
                 w wVar;
-                q81 q81Var;
+                r81 r81Var;
                 k0 k0Var;
                 m h;
                 int i122;
@@ -476,12 +476,12 @@ public final class k0 {
                             wVar.g(k0Var);
                             return;
                         } else {
-                            if (!wVar.e() || (q81Var = wVar.h) == null) {
+                            if (!wVar.e() || (r81Var = wVar.h) == null) {
                                 return;
                             }
-                            p81 p81Var = q81Var.a;
-                            p81Var.j();
-                            p81Var.h();
+                            q81 q81Var = r81Var.a;
+                            q81Var.j();
+                            q81Var.h();
                             return;
                         }
                     case 2:
@@ -613,7 +613,7 @@ public final class k0 {
                 byte[] bytes2 = this.d.getBytes(charset);
                 byte[] bytes3 = this.z.getBytes(charset);
                 float f7 = this.j;
-                j10 = WidgetSandboxNative.create(bytes, bytes2, bytes3, i10 / f7, f7, this.e, this.f.getBytes(charset), this.g.getBytes(charset), str2.getBytes(charset), cd.L0(2131742892, null).getBytes(charset), this.D, this.b);
+                j10 = WidgetSandboxNative.create(bytes, bytes2, bytes3, i10 / f7, f7, this.e, this.f.getBytes(charset), this.g.getBytes(charset), str2.getBytes(charset), dd.L0(2131742892, null).getBytes(charset), this.D, this.b);
                 try {
                     final String str3 = this.z;
                     this.a.post(new Runnable() { // from class: org.telegram.utils.twidget.e0
@@ -650,7 +650,7 @@ public final class k0 {
                     if (j10 != 0) {
                         b0.a.execute(new d0(j10));
                     }
-                    this.a.post(new v1(5, this, e));
+                    this.a.post(new v1(6, this, e));
                     throw e;
                 }
             } catch (Exception e7) {

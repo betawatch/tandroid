@@ -11,7 +11,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e1(int i10, int i11, long j10, ArrayList arrayList, hs hsVar) {
+    public /* synthetic */ e1(int i10, int i11, long j10, ArrayList arrayList, is isVar) {
         this.a = 4;
-        this.b = hsVar;
+        this.b = isVar;
         this.d = j10;
         this.f = arrayList;
         this.c = i10;
@@ -77,35 +77,35 @@ public final /* synthetic */ class e1 implements Runnable {
         switch (i13) {
             case 0:
                 int i16 = AutoMessageHeardReceiver.a;
-                vp.r1(((c) obj2).a).U3((TLRPC.User) obj, true, false);
-                vp r12 = vp.r1(i15);
+                wp.r1(((c) obj2).a).U3((TLRPC.User) obj, true, false);
+                wp r12 = wp.r1(i15);
                 long j11 = this.d;
                 int i17 = this.e;
                 r12.h3(j11, i17, i17, 0, false, 0L, 0, true, 0);
-                vp.r1(i15).q3(j11, 0L);
+                wp.r1(i15).q3(j11, 0L);
                 return;
             case 1:
                 int i18 = AutoMessageHeardReceiver.a;
-                vp.r1(((c) obj2).a).N3((TLRPC.Chat) obj, true);
-                vp r13 = vp.r1(i15);
+                wp.r1(((c) obj2).a).N3((TLRPC.Chat) obj, true);
+                wp r13 = wp.r1(i15);
                 long j12 = this.d;
                 int i19 = this.e;
                 r13.h3(j12, i19, i19, 0, false, 0L, 0, true, 0);
-                vp.r1(i15).q3(j12, 0L);
+                wp.r1(i15).q3(j12, 0L);
                 return;
             case 2:
-                ui uiVar = (ui) obj2;
+                vi viVar = (vi) obj2;
                 ArrayList arrayList = (ArrayList) obj;
                 try {
                     if (arrayList == null) {
-                        SQLitePreparedStatement executeFast3 = uiVar.getMessagesStorage().b.executeFast("UPDATE stickers_v2 SET date = ?");
+                        SQLitePreparedStatement executeFast3 = viVar.getMessagesStorage().b.executeFast("UPDATE stickers_v2 SET date = ?");
                         executeFast3.requery();
                         executeFast3.bindLong(1, i14);
                         executeFast3.step();
                         executeFast3.dispose();
                         return;
                     }
-                    SQLitePreparedStatement executeFast4 = uiVar.getMessagesStorage().b.executeFast("REPLACE INTO stickers_v2 VALUES(?, ?, ?, ?)");
+                    SQLitePreparedStatement executeFast4 = viVar.getMessagesStorage().b.executeFast("REPLACE INTO stickers_v2 VALUES(?, ?, ?, ?)");
                     executeFast4.requery();
                     int i20 = 4;
                     for (int i21 = 0; i21 < arrayList.size(); i21++) {
@@ -129,19 +129,19 @@ public final /* synthetic */ class e1 implements Runnable {
                     return;
                 }
             case 3:
-                hs hsVar = (hs) obj2;
+                is isVar = (is) obj2;
                 TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) obj;
                 int i23 = this.c;
                 int i24 = i23 & 16;
                 long j13 = this.d;
                 if (i24 != 0) {
                     try {
-                        executeFast = hsVar.b.executeFast("UPDATE topics SET total_messages_count = ? WHERE did = ? AND topic_id = ?");
+                        executeFast = isVar.b.executeFast("UPDATE topics SET total_messages_count = ? WHERE did = ? AND topic_id = ?");
                         try {
                             executeFast.requery();
                             executeFast.bindInteger(1, tL_forumTopic2.totalMessagesCount);
                             executeFast.bindLong(2, j13);
-                            executeFast.bindLong(3, hsVar.u0(4, j13) ? o5.o(tL_forumTopic2.from_id) : tL_forumTopic2.id);
+                            executeFast.bindLong(3, isVar.u0(4, j13) ? o5.o(tL_forumTopic2.from_id) : tL_forumTopic2.id);
                             executeFast.step();
                             executeFast.dispose();
                             break;
@@ -150,14 +150,14 @@ public final /* synthetic */ class e1 implements Runnable {
                             sQLitePreparedStatement = executeFast;
                             sQLiteCursor = null;
                             try {
-                                hsVar.o(e, true);
+                                isVar.o(e, true);
                                 if (sQLitePreparedStatement != null) {
                                     sQLitePreparedStatement.dispose();
                                 }
                                 if (sQLiteCursor != null) {
                                     sQLiteCursor.dispose();
                                 }
-                                hsVar.b.commitTransaction();
+                                isVar.b.commitTransaction();
                                 return;
                             } catch (Throwable th2) {
                                 th = th2;
@@ -167,7 +167,7 @@ public final /* synthetic */ class e1 implements Runnable {
                                 if (sQLiteCursor != null) {
                                     sQLiteCursor.dispose();
                                 }
-                                hsVar.b.commitTransaction();
+                                isVar.b.commitTransaction();
                                 throw th;
                             }
                         } catch (Throwable th3) {
@@ -178,19 +178,19 @@ public final /* synthetic */ class e1 implements Runnable {
                             }
                             if (sQLiteCursor != null) {
                             }
-                            hsVar.b.commitTransaction();
+                            isVar.b.commitTransaction();
                             throw th;
                         }
                     } catch (Exception e10) {
                         e = e10;
                         sQLitePreparedStatement = null;
                         sQLiteCursor = null;
-                        hsVar.o(e, true);
+                        isVar.o(e, true);
                         if (sQLitePreparedStatement != null) {
                         }
                         if (sQLiteCursor != null) {
                         }
-                        hsVar.b.commitTransaction();
+                        isVar.b.commitTransaction();
                         return;
                     } catch (Throwable th4) {
                         th = th4;
@@ -200,13 +200,13 @@ public final /* synthetic */ class e1 implements Runnable {
                         }
                         if (sQLiteCursor != null) {
                         }
-                        hsVar.b.commitTransaction();
+                        isVar.b.commitTransaction();
                         throw th;
                     }
                 } else {
                     executeFast = null;
                 }
-                SQLiteDatabase sQLiteDatabase = hsVar.b;
+                SQLiteDatabase sQLiteDatabase = isVar.b;
                 Locale locale = Locale.US;
                 SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT data, edit_date FROM topics WHERE did = " + j13 + " AND topic_id = " + tL_forumTopic2.id, new Object[0]);
                 try {
@@ -236,9 +236,9 @@ public final /* synthetic */ class e1 implements Runnable {
                                 if ((i23 & 32) != 0) {
                                     tL_forumTopic.hidden = tL_forumTopic2.hidden;
                                 }
-                                executeFast2 = hsVar.b.executeFast("UPDATE topics SET data = ?, pinned = ?, hidden = ?, edit_date = ? WHERE did = ? AND topic_id = ?");
+                                executeFast2 = isVar.b.executeFast("UPDATE topics SET data = ?, pinned = ?, hidden = ?, edit_date = ? WHERE did = ? AND topic_id = ?");
                                 try {
-                                    hsVar.b.beginTransaction();
+                                    isVar.b.beginTransaction();
                                     NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(tL_forumTopic.getObjectSize());
                                     tL_forumTopic.serializeToStream(nativeByteBuffer2);
                                     executeFast2.bindByteBuffer(1, nativeByteBuffer2);
@@ -249,19 +249,19 @@ public final /* synthetic */ class e1 implements Runnable {
                                     executeFast2.bindLong(6, tL_forumTopic.id);
                                     executeFast2.step();
                                     nativeByteBuffer2.reuse();
-                                    i0.g3(new rk(hsVar, j13, tL_forumTopic2, i23, 6));
+                                    i0.g3(new sk(isVar, j13, tL_forumTopic2, i23, 6));
                                     executeFast = executeFast2;
                                     break;
                                 } catch (Exception e11) {
                                     e = e11;
                                     sQLitePreparedStatement = executeFast2;
                                     sQLiteCursor = null;
-                                    hsVar.o(e, true);
+                                    isVar.o(e, true);
                                     if (sQLitePreparedStatement != null) {
                                     }
                                     if (sQLiteCursor != null) {
                                     }
-                                    hsVar.b.commitTransaction();
+                                    isVar.b.commitTransaction();
                                     return;
                                 } catch (Throwable th5) {
                                     th = th5;
@@ -271,7 +271,7 @@ public final /* synthetic */ class e1 implements Runnable {
                                     }
                                     if (sQLiteCursor != null) {
                                     }
-                                    hsVar.b.commitTransaction();
+                                    isVar.b.commitTransaction();
                                     throw th;
                                 }
                             }
@@ -294,8 +294,8 @@ public final /* synthetic */ class e1 implements Runnable {
                         }
                         if ((i23 & 32) != 0) {
                         }
-                        executeFast2 = hsVar.b.executeFast("UPDATE topics SET data = ?, pinned = ?, hidden = ?, edit_date = ? WHERE did = ? AND topic_id = ?");
-                        hsVar.b.beginTransaction();
+                        executeFast2 = isVar.b.executeFast("UPDATE topics SET data = ?, pinned = ?, hidden = ?, edit_date = ? WHERE did = ? AND topic_id = ?");
+                        isVar.b.beginTransaction();
                         NativeByteBuffer nativeByteBuffer22 = new NativeByteBuffer(tL_forumTopic.getObjectSize());
                         tL_forumTopic.serializeToStream(nativeByteBuffer22);
                         executeFast2.bindByteBuffer(1, nativeByteBuffer22);
@@ -306,19 +306,19 @@ public final /* synthetic */ class e1 implements Runnable {
                         executeFast2.bindLong(6, tL_forumTopic.id);
                         executeFast2.step();
                         nativeByteBuffer22.reuse();
-                        i0.g3(new rk(hsVar, j13, tL_forumTopic2, i23, 6));
+                        i0.g3(new sk(isVar, j13, tL_forumTopic2, i23, 6));
                         executeFast = executeFast2;
                     }
                 } catch (Exception e12) {
                     e = e12;
                     sQLitePreparedStatement = executeFast;
                     sQLiteCursor = queryFinalized;
-                    hsVar.o(e, true);
+                    isVar.o(e, true);
                     if (sQLitePreparedStatement != null) {
                     }
                     if (sQLiteCursor != null) {
                     }
-                    hsVar.b.commitTransaction();
+                    isVar.b.commitTransaction();
                     return;
                 } catch (Throwable th6) {
                     th = th6;
@@ -328,21 +328,21 @@ public final /* synthetic */ class e1 implements Runnable {
                     }
                     if (sQLiteCursor != null) {
                     }
-                    hsVar.b.commitTransaction();
+                    isVar.b.commitTransaction();
                     throw th;
                 }
                 break;
             default:
-                hs hsVar2 = (hs) obj2;
+                is isVar2 = (is) obj2;
                 ArrayList arrayList2 = (ArrayList) obj;
                 if (j10 != 0) {
-                    hsVar2.T0(i14, j10, arrayList2);
+                    isVar2.T0(i14, j10, arrayList2);
                     return;
                 }
                 try {
                     a0.h hVar = new a0.h();
                     a0.h hVar2 = new a0.h();
-                    SQLiteDatabase sQLiteDatabase2 = hsVar2.b;
+                    SQLiteDatabase sQLiteDatabase2 = isVar2.b;
                     Locale locale2 = Locale.US;
                     SQLiteCursor queryFinalized2 = sQLiteDatabase2.queryFinalized("SELECT uid, mid, ttl FROM messages_v2 WHERE mid IN (" + TextUtils.join(",", arrayList2) + ") AND is_channel = 0", new Object[0]);
                     while (queryFinalized2.next()) {
@@ -373,7 +373,7 @@ public final /* synthetic */ class e1 implements Runnable {
                             e = e13;
                             sQLiteCursor2 = queryFinalized2;
                             try {
-                                hsVar2.o(e, true);
+                                isVar2.o(e, true);
                                 if (sQLiteCursor2 != null) {
                                     sQLiteCursor2.dispose();
                                     return;
@@ -397,11 +397,11 @@ public final /* synthetic */ class e1 implements Runnable {
                     queryFinalized2.dispose();
                     int m10 = hVar.m();
                     for (int i25 = 0; i25 < m10; i25++) {
-                        hsVar2.T0(i14, hVar.j(i25), (ArrayList) hVar.n(i25));
+                        isVar2.T0(i14, hVar.j(i25), (ArrayList) hVar.n(i25));
                     }
                     int m11 = hVar2.m();
                     for (int i26 = 0; i26 < m11; i26++) {
-                        hsVar2.B(hVar2.j(i26), (SparseArray) hVar2.n(i26));
+                        isVar2.B(hVar2.j(i26), (SparseArray) hVar2.n(i26));
                     }
                     return;
                 } catch (Exception e14) {
@@ -424,18 +424,18 @@ public final /* synthetic */ class e1 implements Runnable {
         this.e = i11;
     }
 
-    public /* synthetic */ e1(ui uiVar, ArrayList arrayList, int i10, int i11, long j10) {
+    public /* synthetic */ e1(vi viVar, ArrayList arrayList, int i10, int i11, long j10) {
         this.a = 2;
-        this.b = uiVar;
+        this.b = viVar;
         this.f = arrayList;
         this.c = i10;
         this.e = i11;
         this.d = j10;
     }
 
-    public /* synthetic */ e1(hs hsVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11) {
+    public /* synthetic */ e1(is isVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11) {
         this.a = 3;
-        this.b = hsVar;
+        this.b = isVar;
         this.c = i10;
         this.f = tL_forumTopic;
         this.d = j10;

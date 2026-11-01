@@ -1,38 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class dt extends org.telegram.ui.ActionBar.k1 {
-    public final /* synthetic */ gt o;
+    public final /* synthetic */ ft o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dt(gt gtVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public dt(ft ftVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = gtVar;
+        this.o = ftVar;
     }
 
     @Override // org.telegram.ui.ActionBar.k1, android.widget.PopupWindow
     public final void dismiss() {
         d(true);
-        lt ltVar = this.o.a;
-        ltVar.k = null;
-        ltVar.K = false;
-        if (ltVar.R) {
-            ltVar.m();
-        }
-        View view = ltVar.h;
-        if (view != null) {
-            if (view instanceof org.telegram.ui.Cells.d8) {
-                ((org.telegram.ui.Cells.d8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.b8) {
-                ((org.telegram.ui.Cells.b8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.h2) {
-                ((org.telegram.ui.Cells.h2) view).setScaled(false);
-            }
-            ltVar.h = null;
+        kt ktVar = this.o.a;
+        ktVar.k = null;
+        ktVar.K = false;
+        if (ktVar.R) {
+            ktVar.m();
         }
     }
 }

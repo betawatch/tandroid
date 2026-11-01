@@ -10,9 +10,9 @@ import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import n4.q;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class l extends cf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -457,7 +457,7 @@ public final class l extends cf.a {
             if (read4 == -1) {
                 break;
             }
-            if (i19 == 255 && (read4 & zs.B3) == 224) {
+            if (i19 == 255 && (read4 & at.B3) == 224) {
                 mVar.mark(2);
                 int read5 = sVar2.a(mVar) ? -1 : mVar.read();
                 if (read5 == -1) {
@@ -521,7 +521,7 @@ public final class l extends cf.a {
                 if (read7 == -1 || read8 == -1) {
                     break;
                 }
-                if (read7 == 255 && (read8 & zs.d4) == (read4 & zs.d4)) {
+                if (read7 == 255 && (read8 & at.d4) == (read4 & at.d4)) {
                     int read9 = sVar2.a(mVar) ? -1 : mVar.read();
                     int read10 = sVar2.a(mVar) ? -1 : mVar.read();
                     if (read9 == -1 || read10 == -1) {
@@ -596,7 +596,7 @@ public final class l extends cf.a {
             if (read == i18 || read2 == i18) {
                 j12 = length;
             } else {
-                if (read == 255 && (read2 & zs.B3) == 224) {
+                if (read == 255 && (read2 & at.B3) == 224) {
                     int read11 = sVar2.a(mVar) ? -1 : mVar.read();
                     int read12 = sVar2.a(mVar) ? -1 : mVar.read();
                     j12 = length;

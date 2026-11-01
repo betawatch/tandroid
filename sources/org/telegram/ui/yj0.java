@@ -1,104 +1,76 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yj0 implements View.OnClickListener {
+public final /* synthetic */ class yj0 implements org.telegram.ui.ActionBar.u1, pt, xk0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ll0 b;
+    public final /* synthetic */ jl0 b;
 
-    public /* synthetic */ yj0(ll0 ll0Var, int i10) {
+    public /* synthetic */ yj0(jl0 jl0Var, int i10) {
         this.a = i10;
-        this.b = ll0Var;
+        this.b = jl0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        ll0 ll0Var = this.b;
-        switch (i10) {
-            case 0:
-                ll0Var.S0 = 2;
-                ll0Var.G1();
-                break;
-            case 1:
-                ll0Var.g1();
-                break;
+    @Override // org.telegram.ui.pt
+    public void c(mt mtVar) {
+        switch (this.a) {
             case 2:
-                ll0Var.S0 = 3;
-                ll0Var.G1();
-                break;
-            case 3:
-                ll0Var.S0 = 1;
-                ll0Var.G1();
-                break;
-            case 4:
-                ll0Var.S0 = 4;
-                ll0Var.G1();
-                break;
-            case 5:
-                if (ll0Var.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
-                    u9 u9Var = new u9(0);
-                    u9Var.M = new kk0(ll0Var);
-                    ll0Var.presentFragment(u9Var);
-                    break;
-                } else {
-                    ll0Var.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 22);
-                    break;
-                }
-            case 6:
-                ll0Var.f = true;
-                ll0Var.L.callOnClick();
-                ll0Var.f = false;
-                break;
-            case 7:
-                ll0Var.S0 = 0;
-                ll0Var.G1();
-                break;
-            case 8:
-                ll0Var.S0 = 4;
-                ll0Var.G1();
-                break;
-            case 9:
-                ll0Var.g1();
-                break;
-            case 10:
-                ll0.f0(ll0Var);
-                break;
-            case 11:
-                ll0.g0(ll0Var);
-                break;
-            case 12:
-                ll0Var.F1();
-                break;
-            case 13:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ll0Var.getParentActivity());
-                String L0 = org.telegram.messenger.cd.L0(2131744257, null);
-                org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-                x1Var.R = L0;
-                x1Var.T = org.telegram.messenger.cd.L0(2131744258, null);
-                alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131751599, null), new ak0(ll0Var, 5));
-                alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
-                ll0Var.showDialog(x1Var);
-                TextView textView = (TextView) x1Var.d(-1);
-                if (textView != null) {
-                    org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.q7, null);
-                    break;
-                }
-                break;
-            case 14:
-                ll0Var.F1();
-                break;
-            case 15:
-                ll0.Z(ll0Var);
+                jl0 jl0Var = this.b;
+                jl0Var.Y[5].setText(mtVar.a);
+                jl0Var.s = mtVar.d;
                 break;
             default:
-                ll0Var.f = true;
-                ll0Var.L.callOnClick();
-                ll0Var.f = false;
+                jl0 jl0Var2 = this.b;
+                jl0Var2.Y[0].setText(mtVar.a);
+                if (jl0Var2.U0.indexOf(mtVar.a) != -1) {
+                    jl0Var2.Z0 = true;
+                    String str = (String) jl0Var2.V0.get(mtVar.a);
+                    jl0Var2.Y[1].setText(str);
+                    String str2 = (String) jl0Var2.X0.get(str);
+                    jl0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    jl0Var2.Z0 = false;
+                }
+                org.telegram.messenger.i0.h3(new vj0(jl0Var2, 3), 300L);
+                jl0Var2.Y[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = jl0Var2.Y[2];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.xk0
+    public void d(String str, String str2) {
+        this.b.B1();
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        switch (this.a) {
+            case 0:
+                jl0 jl0Var = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.w0.b.getPackageName()));
+                    jl0Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    org.telegram.messenger.f8.g(e, true);
+                    return;
+                }
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+            case 3:
+            default:
+                jl0.f0(this.b);
+                break;
+            case 4:
+                gf.f.r(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + org.telegram.messenger.e20.i(this.b.currentAccount).d());
                 break;
         }
     }

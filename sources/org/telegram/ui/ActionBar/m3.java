@@ -7,12 +7,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import vh.o7;
 import vh.o8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class m3 extends j1.b {
     public final /* synthetic */ int o = 0;
@@ -184,7 +184,7 @@ public final class m3 extends j1.b {
                         r4Var.z0 = false;
                         r4Var.G0.e(true, 1.0f);
                         vh.o2 o2Var = ((o7) r4Var.a).a.T0;
-                        o2Var.a.t(cd.L0(2131744680, null), true, true);
+                        o2Var.a.t(dd.L0(2131744680, null), true, true);
                         o2Var.invalidate();
                         r4Var.invalidate();
                     } else {
@@ -238,9 +238,9 @@ public final class m3 extends j1.b {
                             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                             cVar.h(rect);
                             if (TextUtils.isEmpty(str3)) {
-                                str = cd.L0(2131747833, null);
+                                str = dd.L0(2131747833, null);
                             } else {
-                                str = cd.L0(2131747833, null) + ", " + str3;
+                                str = dd.L0(2131747833, null) + ", " + str3;
                             }
                             cVar.j(str);
                             break;
@@ -249,9 +249,9 @@ public final class m3 extends j1.b {
                             rect.set((int) (rectF.left + bounds.left), (int) (rectF.top + org.telegram.messenger.i0.L(24.0f) + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.top + org.telegram.messenger.i0.L(24.0f) + bounds.bottom));
                             cVar.h(rect);
                             if (TextUtils.isEmpty(str3)) {
-                                str2 = cd.L0(2131752041, null);
+                                str2 = dd.L0(2131752041, null);
                             } else {
-                                str2 = cd.L0(2131752041, null) + ", " + str3;
+                                str2 = dd.L0(2131752041, null) + ", " + str3;
                             }
                             cVar.j(str2);
                             break;
@@ -271,7 +271,7 @@ public final class m3 extends j1.b {
                         cVar.p(false);
                     }
                     cVar.h(rect);
-                    cVar.j(cd.L0(2131753099, null));
+                    cVar.j(dd.L0(2131753099, null));
                     break;
                 }
                 break;
@@ -286,7 +286,7 @@ public final class m3 extends j1.b {
                     float f11 = r4Var.j0;
                     rect.set((int) (f7 - f10), (int) (f11 - f10), (int) (f7 + f10), (int) (f11 + f10));
                     cVar.h(rect);
-                    cVar.j((r4Var.r0 && r4Var.A0) ? cd.L0(2131754846, null) : cd.L0(2131754912, null));
+                    cVar.j((r4Var.r0 && r4Var.A0) ? dd.L0(2131754846, null) : dd.L0(2131754912, null));
                     z11 = (r4Var.u0 || r4Var.b()) ? false : true;
                     accessibilityNodeInfo.setEnabled(z11);
                     if (z11) {
@@ -300,7 +300,7 @@ public final class m3 extends j1.b {
                     float f14 = r4Var.j0;
                     rect.set((int) (f12 - f13), (int) (f14 - f13), (int) (f12 + f13), (int) (f14 + f13));
                     cVar.h(rect);
-                    cVar.j(r4Var.b() ? cd.L0(2131745657, null) : r4Var.r0 ? cd.L0(2131754754, null) : r4Var.o0 ? cd.L0(2131754758, null) : cd.L0(2131754747, null));
+                    cVar.j(r4Var.b() ? dd.L0(2131745657, null) : r4Var.r0 ? dd.L0(2131754754, null) : r4Var.o0 ? dd.L0(2131754758, null) : dd.L0(2131754747, null));
                     accessibilityNodeInfo.setEnabled(!r4Var.u0);
                     if (!r4Var.u0) {
                         cVar.b(s0.b.c);
@@ -313,7 +313,7 @@ public final class m3 extends j1.b {
                     float f17 = r4Var.j0;
                     rect.set((int) (f15 - f16), (int) (f17 - f16), (int) (f15 + f16), (int) (f17 + f16));
                     cVar.h(rect);
-                    cVar.j(cd.L0(2131754752, null));
+                    cVar.j(dd.L0(2131754752, null));
                     z11 = (r4Var.u0 || r4Var.b()) ? false : true;
                     accessibilityNodeInfo.setEnabled(z11);
                     if (z11) {

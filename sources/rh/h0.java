@@ -5,12 +5,12 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class h0 implements TextWatcher {
     public final void afterTextChanged(Editable editable) {
         String obj;
         int indexOf;
-        q20 q20Var;
+        r20 r20Var;
         switch (this.a) {
             case 0:
                 i0 i0Var = (i0) this.b;
@@ -44,9 +44,9 @@ public final class h0 implements TextWatcher {
                     p1Var.d(false);
                     String obj2 = n0Var.getText().toString();
                     String str = TextUtils.isEmpty(obj2) ? null : obj2;
-                    j20 j20Var = p1Var.x;
-                    if (j20Var != null) {
-                        j20Var.a(str, -1);
+                    k20 k20Var = p1Var.x;
+                    if (k20Var != null) {
+                        k20Var.a(str, -1);
                     }
                     vh.o1 o1Var = p1Var.h;
                     if (o1Var != null) {
@@ -91,7 +91,7 @@ public final class h0 implements TextWatcher {
                     if (!TextUtils.equals(str4, str5 != null ? str5 : "")) {
                         f5Var.e1();
                         String str6 = f5Var.j2;
-                        if (str6 != null && str6.length() > 3 && !TextUtils.isEmpty(((org.telegram.messenger.q0) vp.r1(f5Var.a).y7.F.b).c)) {
+                        if (str6 != null && str6.length() > 3 && !TextUtils.isEmpty(((org.telegram.messenger.q0) wp.r1(f5Var.a).y7.F.b).c)) {
                             z11 = true;
                         }
                         f5Var.u2 = z11;
@@ -107,13 +107,13 @@ public final class h0 implements TextWatcher {
                 break;
             case 3:
                 vh.t6 t6Var = (vh.t6) this.b;
-                if (!t6Var.n && (q20Var = t6Var.r) != null && editable != null) {
-                    q20Var.a(editable.toString());
+                if (!t6Var.n && (r20Var = t6Var.r) != null && editable != null) {
+                    r20Var.a(editable.toString());
                     break;
                 }
                 break;
             default:
-                ((yh.l) this.b).c0();
+                ((yh.l) this.b).d0();
                 break;
         }
     }

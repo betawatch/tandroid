@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class he extends LinearLayout {
     public static final /* synthetic */ int y = 0;
@@ -47,7 +47,7 @@ public final class he extends LinearLayout {
         ge geVar = new ge(this, context, i10, j10, i11, p6Var);
         this.c = geVar;
         eeVar.setAdapter(geVar);
-        org.telegram.ui.Components.v71 n10 = eeVar.n(-2, true);
+        org.telegram.ui.Components.w71 n10 = eeVar.n(-2, true);
         ei.r rVar = leVar.d1;
         if (rVar != null) {
             rVar.c(eeVar);
@@ -95,7 +95,7 @@ public final class he extends LinearLayout {
             zArr[i10] = true;
             TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions = new TL_stars.TL_payments_getStarsTransactions();
             tL_payments_getStarsTransactions.ton = true;
-            tL_payments_getStarsTransactions.peer = org.telegram.messenger.vp.r1(i11).i1(j10);
+            tL_payments_getStarsTransactions.peer = org.telegram.messenger.wp.r1(i11).i1(j10);
             tL_payments_getStarsTransactions.offset = this.h;
             tL_payments_getStarsTransactions.limit = this.n.isEmpty() ? 5 : 20;
             final int i12 = 0;
@@ -129,8 +129,8 @@ public final class he extends LinearLayout {
                                             int i16 = i14;
                                             if (z12) {
                                                 TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
-                                                org.telegram.messenger.vp.r1(i15).V3(starsStatus.users, false);
-                                                org.telegram.messenger.vp.r1(i15).P3(starsStatus.chats, false);
+                                                org.telegram.messenger.wp.r1(i15).V3(starsStatus.users, false);
+                                                org.telegram.messenger.wp.r1(i15).P3(starsStatus.chats, false);
                                                 heVar2.r.addAll(starsStatus.history);
                                                 heVar2.s = starsStatus.next_offset;
                                                 heVar2.w[i16] = false;
@@ -157,8 +157,8 @@ public final class he extends LinearLayout {
                                             int i18 = i14;
                                             if (z13) {
                                                 TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject3;
-                                                org.telegram.messenger.vp.r1(i17).V3(starsStatus2.users, false);
-                                                org.telegram.messenger.vp.r1(i17).P3(starsStatus2.chats, false);
+                                                org.telegram.messenger.wp.r1(i17).V3(starsStatus2.users, false);
+                                                org.telegram.messenger.wp.r1(i17).P3(starsStatus2.chats, false);
                                                 heVar3.n.addAll(starsStatus2.history);
                                                 heVar3.h = starsStatus2.next_offset;
                                                 heVar3.w[i18] = false;
@@ -201,8 +201,8 @@ public final class he extends LinearLayout {
                                             int i162 = i16;
                                             if (z122) {
                                                 TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
-                                                org.telegram.messenger.vp.r1(i152).V3(starsStatus.users, false);
-                                                org.telegram.messenger.vp.r1(i152).P3(starsStatus.chats, false);
+                                                org.telegram.messenger.wp.r1(i152).V3(starsStatus.users, false);
+                                                org.telegram.messenger.wp.r1(i152).P3(starsStatus.chats, false);
                                                 heVar22.r.addAll(starsStatus.history);
                                                 heVar22.s = starsStatus.next_offset;
                                                 heVar22.w[i162] = false;
@@ -229,8 +229,8 @@ public final class he extends LinearLayout {
                                             int i18 = i16;
                                             if (z132) {
                                                 TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject3;
-                                                org.telegram.messenger.vp.r1(i17).V3(starsStatus2.users, false);
-                                                org.telegram.messenger.vp.r1(i17).P3(starsStatus2.chats, false);
+                                                org.telegram.messenger.wp.r1(i17).V3(starsStatus2.users, false);
+                                                org.telegram.messenger.wp.r1(i17).P3(starsStatus2.chats, false);
                                                 heVar3.n.addAll(starsStatus2.history);
                                                 heVar3.h = starsStatus2.next_offset;
                                                 heVar3.w[i18] = false;
@@ -262,7 +262,7 @@ public final class he extends LinearLayout {
             zArr[i10] = true;
             TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions2 = new TL_stars.TL_payments_getStarsTransactions();
             tL_payments_getStarsTransactions2.ton = false;
-            tL_payments_getStarsTransactions2.peer = org.telegram.messenger.vp.r1(i11).i1(j10);
+            tL_payments_getStarsTransactions2.peer = org.telegram.messenger.wp.r1(i11).i1(j10);
             tL_payments_getStarsTransactions2.offset = this.s;
             tL_payments_getStarsTransactions2.limit = this.r.isEmpty() ? 5 : 20;
             final int i13 = 1;
@@ -296,8 +296,8 @@ public final class he extends LinearLayout {
                                             int i162 = i14;
                                             if (z122) {
                                                 TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
-                                                org.telegram.messenger.vp.r1(i152).V3(starsStatus.users, false);
-                                                org.telegram.messenger.vp.r1(i152).P3(starsStatus.chats, false);
+                                                org.telegram.messenger.wp.r1(i152).V3(starsStatus.users, false);
+                                                org.telegram.messenger.wp.r1(i152).P3(starsStatus.chats, false);
                                                 heVar22.r.addAll(starsStatus.history);
                                                 heVar22.s = starsStatus.next_offset;
                                                 heVar22.w[i162] = false;
@@ -324,8 +324,8 @@ public final class he extends LinearLayout {
                                             int i18 = i14;
                                             if (z132) {
                                                 TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject3;
-                                                org.telegram.messenger.vp.r1(i17).V3(starsStatus2.users, false);
-                                                org.telegram.messenger.vp.r1(i17).P3(starsStatus2.chats, false);
+                                                org.telegram.messenger.wp.r1(i17).V3(starsStatus2.users, false);
+                                                org.telegram.messenger.wp.r1(i17).P3(starsStatus2.chats, false);
                                                 heVar3.n.addAll(starsStatus2.history);
                                                 heVar3.h = starsStatus2.next_offset;
                                                 heVar3.w[i18] = false;
@@ -368,8 +368,8 @@ public final class he extends LinearLayout {
                                             int i162 = i16;
                                             if (z122) {
                                                 TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
-                                                org.telegram.messenger.vp.r1(i152).V3(starsStatus.users, false);
-                                                org.telegram.messenger.vp.r1(i152).P3(starsStatus.chats, false);
+                                                org.telegram.messenger.wp.r1(i152).V3(starsStatus.users, false);
+                                                org.telegram.messenger.wp.r1(i152).P3(starsStatus.chats, false);
                                                 heVar22.r.addAll(starsStatus.history);
                                                 heVar22.s = starsStatus.next_offset;
                                                 heVar22.w[i162] = false;
@@ -396,8 +396,8 @@ public final class he extends LinearLayout {
                                             int i18 = i16;
                                             if (z132) {
                                                 TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject3;
-                                                org.telegram.messenger.vp.r1(i17).V3(starsStatus2.users, false);
-                                                org.telegram.messenger.vp.r1(i17).P3(starsStatus2.chats, false);
+                                                org.telegram.messenger.wp.r1(i17).V3(starsStatus2.users, false);
+                                                org.telegram.messenger.wp.r1(i17).P3(starsStatus2.chats, false);
                                                 heVar3.n.addAll(starsStatus2.history);
                                                 heVar3.h = starsStatus2.next_offset;
                                                 heVar3.w[i18] = false;
@@ -436,11 +436,11 @@ public final class he extends LinearLayout {
             View view = eeVar.getViewPages()[i10];
             if (view instanceof fe) {
                 fe feVar = (fe) view;
-                org.telegram.ui.Components.u51 u51Var = feVar.a;
-                u51Var.f3.O(true);
-                if (u51Var.canScrollVertically(1)) {
-                    for (int i11 = 0; i11 < u51Var.getChildCount(); i11++) {
-                        if (!(u51Var.getChildAt(i11) instanceof org.telegram.ui.Components.zz)) {
+                org.telegram.ui.Components.v51 v51Var = feVar.a;
+                v51Var.f3.O(true);
+                if (v51Var.canScrollVertically(1)) {
+                    for (int i11 = 0; i11 < v51Var.getChildCount(); i11++) {
+                        if (!(v51Var.getChildAt(i11) instanceof org.telegram.ui.Components.zz)) {
                         }
                     }
                 }
@@ -482,7 +482,7 @@ public final class he extends LinearLayout {
         this.x.p();
     }
 
-    public org.telegram.ui.Components.tk0 getCurrentListView() {
+    public org.telegram.ui.Components.uk0 getCurrentListView() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof fe) {
             return ((fe) currentView).a;

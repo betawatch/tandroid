@@ -5,9 +5,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ip extends qv0 {
+public final class ip extends rv0 {
     public final /* synthetic */ int a;
     public boolean b;
     public long c;
@@ -29,7 +29,7 @@ public final class ip extends qv0 {
         paint.setStrokeWidth(org.telegram.messenger.i0.N(1.2f));
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.rv0
     public final void b(int i10) {
         switch (this.a) {
             case 0:
@@ -49,7 +49,7 @@ public final class ip extends qv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.rv0
     public final void c(boolean z10) {
         switch (this.a) {
             case 0:
@@ -60,7 +60,7 @@ public final class ip extends qv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.rv0
     public final void d() {
         switch (this.a) {
             case 0:
@@ -185,7 +185,7 @@ public final class ip extends qv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.rv0
     public final void e() {
         switch (this.a) {
             case 0:
@@ -246,7 +246,7 @@ public final class ip extends qv0 {
         this.c = 0L;
         this.d = false;
         this.h = new RectF();
-        this.f = org.telegram.messenger.zs.e4;
+        this.f = org.telegram.messenger.at.e4;
         if (z10) {
             Paint paint = new Paint(1);
             this.g = paint;

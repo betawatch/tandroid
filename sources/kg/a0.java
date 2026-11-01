@@ -2,18 +2,18 @@ package kg;
 
 import android.view.ViewGroup;
 import java.util.HashSet;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,13 +45,13 @@ public final /* synthetic */ class a0 implements Runnable {
                 HashSet hashSet = q0Var.q2;
                 cc X = cc.X();
                 if (X != null) {
-                    z20.s(hashSet.size() == 1 ? cd.a0(null, null, 2131749153, i5.p((TLRPC.User) hashSet.iterator().next())) : cd.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), X, R.raw.voip_invite, 36);
+                    a30.s(hashSet.size() == 1 ? dd.a0(null, null, 2131749153, i5.p((TLRPC.User) hashSet.iterator().next())) : dd.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), X, R.raw.voip_invite, 36);
                     break;
                 }
                 break;
             case 3:
                 vh.d dVar = q0Var.K2;
-                TLRPC.ChatFull M0 = vp.r1(q0Var.a).M0(-q0Var.S1);
+                TLRPC.ChatFull M0 = wp.r1(q0Var.a).M0(-q0Var.S1);
                 dVar.c(Math.max(M0.boosts_unrestrict - M0.boosts_applied, 0), false);
                 break;
             default:

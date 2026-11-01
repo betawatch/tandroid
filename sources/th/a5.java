@@ -2,9 +2,9 @@ package th;
 
 import java.util.ArrayList;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.w8;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class a5 implements RequestDelegate {
                     d5Var.I = false;
                     TLRPC.Updates updates3 = (TLRPC.Updates) tLObject;
                     if (n5Var.b0) {
-                        vp.r1(i14).L3(updates3, false);
+                        wp.r1(i14).L3(updates3, false);
                         org.telegram.messenger.i0.g3(new b5(d5Var, 1));
                         break;
                     } else {
@@ -146,7 +146,7 @@ public final /* synthetic */ class a5 implements RequestDelegate {
                                             i11 = i14;
                                             storyItem.privacy = arrayList3;
                                             storyItem.pinned = n5Var.I0 == Integer.MAX_VALUE;
-                                            storyItem.dialogId = d20.i(i11).n;
+                                            storyItem.dialogId = e20.i(i11).n;
                                             storyItem.attachPath = d5Var.e;
                                             storyItem.firstFramePath = str;
                                             storyItem.id = tL_updateStoryID.id;
@@ -173,15 +173,15 @@ public final /* synthetic */ class a5 implements RequestDelegate {
                         int i22 = i14;
                         if (d5Var.w) {
                             TL_stories.TL_stories_deleteStories tL_stories_deleteStories = new TL_stories.TL_stories_deleteStories();
-                            tL_stories_deleteStories.peer = vp.r1(i22).i1(j10);
+                            tL_stories_deleteStories.peer = wp.r1(i22).i1(j10);
                             tL_stories_deleteStories.id.add(Integer.valueOf(i16));
                             ConnectionsManager.getInstance(i22).sendRequest(tL_stories_deleteStories, new a5(d5Var, 1));
                         } else {
                             if ((i16 == 0 || z12) && storyItem != null) {
                                 TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
-                                tL_updateStory.peer = vp.r1(i22).y1(j10);
+                                tL_updateStory.peer = wp.r1(i22).y1(j10);
                                 tL_updateStory.story = storyItem;
-                                org.telegram.messenger.i0.g3(new o0(10, d5Var, tL_updateStory));
+                                org.telegram.messenger.i0.g3(new o0(11, d5Var, tL_updateStory));
                             }
                             TLRPC.MessageMedia messageMedia = storyItem.media;
                             if (messageMedia != null && storyItem.attachPath != null) {
@@ -195,7 +195,7 @@ public final /* synthetic */ class a5 implements RequestDelegate {
                                 }
                             }
                             org.telegram.messenger.i0.g3(new a3.i0(d5Var, j10, storyItem, 29));
-                            vp.r1(i22).K3(updates4.updates, updates4.users, updates4.chats, false, updates4.date);
+                            wp.r1(i22).K3(updates4.updates, updates4.users, updates4.chats, false, updates4.date);
                         }
                     }
                 } else if (tLObject instanceof TL_bots.botPreviewMedia) {
@@ -205,7 +205,7 @@ public final /* synthetic */ class a5 implements RequestDelegate {
                     n5Var.d0 = null;
                     break;
                 } else if (tL_error != null && !z11) {
-                    org.telegram.messenger.i0.g3(new o0(11, d5Var, tL_error));
+                    org.telegram.messenger.i0.g3(new o0(12, d5Var, tL_error));
                 }
                 org.telegram.messenger.i0.g3(new b5(d5Var, 1));
                 break;

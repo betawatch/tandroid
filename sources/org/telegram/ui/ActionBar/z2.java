@@ -34,18 +34,18 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class z2 extends Dialog implements g2 {
     public static final /* synthetic */ int h1 = 0;
@@ -191,7 +191,7 @@ public class z2 extends Dialog implements g2 {
         }
     }
 
-    public static int D(z2 z2Var) {
+    public static int C(z2 z2Var) {
         WindowInsets windowInsets;
         int i10;
         int i11;
@@ -276,9 +276,9 @@ public class z2 extends Dialog implements g2 {
         this.f0 = z10;
         if (this.M0 > 0) {
             if (z10) {
-                zs.e().k(zs.j1, Integer.valueOf(this.M0));
+                at.e().k(at.j1, Integer.valueOf(this.M0));
             } else {
-                zs.e().k(zs.k1, Integer.valueOf(this.M0));
+                at.e().k(at.k1, Integer.valueOf(this.M0));
             }
         }
     }
@@ -333,7 +333,7 @@ public class z2 extends Dialog implements g2 {
         }
     }
 
-    public void N(int i10) {
+    public void M(int i10) {
         Integer num;
         if (this.I) {
             return;
@@ -350,7 +350,7 @@ public class z2 extends Dialog implements g2 {
         this.z0.setInterpolator(gr.g);
         int i12 = 3;
         this.z0.addListener(new bi.d5(this, i10, i12));
-        zs.e().k(zs.j1, 512);
+        at.e().k(at.j1, 512);
         this.z0.start();
         if (this.W != 4 || (num = this.X) == null) {
             return;
@@ -529,12 +529,12 @@ public class z2 extends Dialog implements g2 {
                     this.z0.setInterpolator(gr.g);
                 }
                 this.z0.addListener(new r2(this, i10));
-                zs.e().k(zs.j1, 512);
+                at.e().k(at.j1, 512);
                 this.z0.start();
                 wbVar = wb.w;
                 if (wbVar != null && wbVar.l && wbVar.r) {
                     if (j10 <= 0) {
-                        wbVar.c((long) (j10 * 0.6f), vp.d1().getBoolean("view_animations", true));
+                        wbVar.c((long) (j10 * 0.6f), wp.d1().getBoolean("view_animations", true));
                     } else {
                         wbVar.b();
                     }
@@ -745,7 +745,7 @@ public class z2 extends Dialog implements g2 {
     }
 
     @Override // org.telegram.ui.ActionBar.g2
-    public void o(Runnable runnable) {
+    public void n(Runnable runnable) {
         this.H0 = new m2(0, runnable);
     }
 
@@ -921,7 +921,7 @@ public class z2 extends Dialog implements g2 {
 
     public z2(int i10, Context context, p6 p6Var, boolean z10) {
         super(context, R.style.TransparentDialog);
-        this.a = d20.s0;
+        this.a = e20.s0;
         this.J = true;
         y2 y2Var = new y2();
         this.Y = y2Var;
@@ -945,7 +945,7 @@ public class z2 extends Dialog implements g2 {
         this.C0 = 0.0f;
         this.F0 = t6.a7;
         this.K0 = true;
-        this.L0 = new e2.f(null);
+        this.L0 = new e2.f((int[]) null);
         this.T0 = true;
         this.U0 = 51;
         this.X0 = new ei.r();

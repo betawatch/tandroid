@@ -5,10 +5,10 @@ import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import ji.f;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import za.c;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
     public static final /* synthetic */ c D;
@@ -136,9 +136,9 @@ public final class a extends com.googlecode.mp4parser.a {
         i0.s(le.a.c(y, this, this, byteBuffer));
         b bVar = this.a;
         e5.b.r(bVar.a, byteBuffer);
-        byteBuffer.put((byte) (bVar.b & zs.e4));
-        byteBuffer.put((byte) (bVar.c & zs.e4));
-        byteBuffer.put((byte) (bVar.d & zs.e4));
+        byteBuffer.put((byte) (bVar.b & at.e4));
+        byteBuffer.put((byte) (bVar.c & at.e4));
+        byteBuffer.put((byte) (bVar.d & at.e4));
         fc.c cVar = new fc.c(1, byteBuffer);
         cVar.c(bVar.m, 6);
         cVar.c(bVar.e, 2);
@@ -155,7 +155,7 @@ public final class a extends com.googlecode.mp4parser.a {
             e5.b.p(bArr.length, byteBuffer);
             byteBuffer.put(bArr);
         }
-        byteBuffer.put((byte) (bVar.g.size() & zs.e4));
+        byteBuffer.put((byte) (bVar.g.size() & at.e4));
         ArrayList arrayList2 = bVar.g;
         int size2 = arrayList2.size();
         int i12 = 0;

@@ -60,12 +60,12 @@ import l5.s;
 import n4.q;
 import org.telegram.messenger.f8;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 import u2.g0;
 import v0.h;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -474,7 +474,7 @@ public final /* synthetic */ class e implements Runnable {
                 while (i17 < size3) {
                     Object obj5 = arrayList3.get(i17);
                     i17++;
-                    ((u61) ((a2) obj5)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((v61) ((a2) obj5)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 17:

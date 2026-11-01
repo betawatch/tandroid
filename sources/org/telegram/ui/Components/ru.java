@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ru extends op0 {
+public final class ru extends pp0 {
     public final /* synthetic */ cv R2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class ru extends op0 {
         this.R2 = cvVar;
     }
 
-    @Override // org.telegram.ui.Components.op0
+    @Override // org.telegram.ui.Components.pp0
     public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         org.telegram.messenger.i0.h3(new ag.o0(this, hVar, i10, 23), 100L);
     }

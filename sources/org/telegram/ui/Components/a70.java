@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a70 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
@@ -18,9 +18,9 @@ public final /* synthetic */ class a70 implements RequestDelegate {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object i;
 
-    public /* synthetic */ a70(Context context, ro0 ro0Var, long j10, byte[] bArr, org.telegram.messenger.video.a aVar, cc ccVar, org.telegram.messenger.video.d dVar, int i10) {
+    public /* synthetic */ a70(Context context, so0 so0Var, long j10, byte[] bArr, org.telegram.messenger.video.a aVar, cc ccVar, org.telegram.messenger.video.d dVar, int i10) {
         this.b = context;
-        this.e = ro0Var;
+        this.e = so0Var;
         this.c = j10;
         this.f = bArr;
         this.g = aVar;
@@ -36,7 +36,7 @@ public final /* synthetic */ class a70 implements RequestDelegate {
                 org.telegram.messenger.i0.g3(new d70((org.telegram.ui.ActionBar.x1) this.e, tLObject, (org.telegram.messenger.c) this.f, (i70) this.g, this.c, this.b, (org.telegram.ui.ActionBar.k2) this.h, this.d, (TLRPC.Peer) this.i));
                 break;
             default:
-                ro0 ro0Var = (ro0) this.e;
+                so0 so0Var = (so0) this.e;
                 byte[] bArr = (byte[]) this.f;
                 org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
                 cc ccVar = (cc) this.h;
@@ -44,21 +44,21 @@ public final /* synthetic */ class a70 implements RequestDelegate {
                 Context context = this.b;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        org.telegram.messenger.i0.h3(new org.telegram.ui.uz0(aVar, ccVar, context, ro0Var, 1), 200L);
+                        org.telegram.messenger.i0.h3(new org.telegram.ui.tz0(aVar, ccVar, context, so0Var, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            org.telegram.messenger.i0.h3(new ji0(aVar, ccVar, this.d, 28), 200L);
+                            org.telegram.messenger.i0.h3(new ki0(aVar, ccVar, this.d, 28), 200L);
                             break;
                         }
                     } else {
-                        org.telegram.messenger.i0.h3(new org.telegram.ui.uz0(aVar, ccVar, context, ro0Var, 0), 200L);
+                        org.telegram.messenger.i0.h3(new org.telegram.ui.tz0(aVar, ccVar, context, so0Var, 0), 200L);
                         break;
                     }
                 } else {
-                    org.telegram.messenger.i0.g3(new org.telegram.messenger.e10(tLObject, context, ro0Var, this.c, bArr, aVar, ccVar, dVar, 2));
+                    org.telegram.messenger.i0.g3(new org.telegram.messenger.f10(tLObject, context, so0Var, this.c, bArr, aVar, ccVar, dVar, 2));
                     break;
                 }
                 break;

@@ -13,20 +13,20 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a1 extends View implements org.telegram.ui.Cells.j9, c3 {
-    public final m60 a;
+    public final l60 a;
     public final f4 b;
     public z2 c;
     public int d;
     public final int e;
     public TL_iv.pageBlockAuthorDate f;
 
-    public a1(Context context, m60 m60Var, f4 f4Var) {
+    public a1(Context context, l60 l60Var, f4 f4Var) {
         super(context);
         this.e = org.telegram.messenger.i0.L(8.0f);
-        this.a = m60Var;
+        this.a = l60Var;
         this.b = f4Var;
     }
 
@@ -64,7 +64,7 @@ public final class a1 extends View implements org.telegram.ui.Cells.j9, c3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.z20.a(this);
+        return org.telegram.messenger.a30.a(this);
     }
 
     @Override // org.telegram.ui.Cells.j9
@@ -154,7 +154,7 @@ public final class a1 extends View implements org.telegram.ui.Cells.j9, c3 {
                 spannable = null;
                 metricAffectingSpanArr = null;
             }
-            CharSequence a02 = (this.f.published_date == 0 || TextUtils.isEmpty(A)) ? !TextUtils.isEmpty(A) ? org.telegram.messenger.cd.a0(null, null, 2131754056, A) : org.telegram.messenger.cd.D0().h0().format(this.f.published_date * 1000) : org.telegram.messenger.cd.a0(null, null, 2131754040, org.telegram.messenger.cd.D0().h0().format(this.f.published_date * 1000), A);
+            CharSequence a02 = (this.f.published_date == 0 || TextUtils.isEmpty(A)) ? !TextUtils.isEmpty(A) ? org.telegram.messenger.dd.a0(null, null, 2131754056, A) : org.telegram.messenger.dd.D0().h0().format(this.f.published_date * 1000) : org.telegram.messenger.dd.a0(null, null, 2131754040, org.telegram.messenger.dd.D0().h0().format(this.f.published_date * 1000), A);
             if (metricAffectingSpanArr != null) {
                 try {
                     if (metricAffectingSpanArr.length > 0 && (indexOf = TextUtils.indexOf((CharSequence) a02, A)) != -1) {

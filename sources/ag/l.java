@@ -19,13 +19,13 @@ import bi.u3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.tc;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -34,18 +34,18 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.eb;
 import org.telegram.ui.Components.ii;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.v51;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.un;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 import vh.s3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l implements q20 {
+public final /* synthetic */ class l implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -54,13 +54,13 @@ public final /* synthetic */ class l implements q20 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         boolean z10;
-        p51 p51Var;
+        q51 q51Var;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
-        p51 p51Var2;
+        q51 q51Var2;
         int i11 = this.a;
         String str = "";
         int i12 = 0;
@@ -96,20 +96,20 @@ public final /* synthetic */ class l implements q20 {
                 if (x0Var != null) {
                     x0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                u51 u51Var = t1Var.c;
-                if (u51Var == null || (p51Var = u51Var.f3) == null) {
+                v51 v51Var = t1Var.c;
+                if (v51Var == null || (q51Var = v51Var.f3) == null) {
                     z10 = true;
                 } else {
                     z10 = true;
-                    p51Var.O(true);
+                    q51Var.O(true);
                 }
-                t1Var.c0(z10);
+                t1Var.d0(z10);
                 t1Var.T = z10;
                 break;
             case 3:
                 v1 v1Var = (v1) obj2;
                 v1Var.w = v1Var.d[((Integer) obj).intValue()];
-                v1Var.Z(true);
+                v1Var.a0(true);
                 break;
             case 4:
                 z2 z2Var = (z2) obj2;
@@ -302,7 +302,7 @@ public final /* synthetic */ class l implements q20 {
                 break;
             case 16:
                 kg.g2 g2Var = (kg.g2) obj2;
-                boolean e = sc.e(131072);
+                boolean e = tc.e(131072);
                 if (g2Var.e != e) {
                     g2Var.e = e;
                     g2Var.invalidate();
@@ -313,9 +313,9 @@ public final /* synthetic */ class l implements q20 {
                 lh.g.d1((lh.g) obj2, (Pair) obj);
                 break;
             case 18:
-                jj jjVar = (jj) obj2;
+                kj kjVar = (kj) obj2;
                 TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) obj;
-                TLRPC.MessageMedia messageMedia = jjVar.k.media;
+                TLRPC.MessageMedia messageMedia = kjVar.k.media;
                 if (messageMedia instanceof TLRPC.TL_messageMediaGiveawayResults) {
                     TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageMedia;
                     tL_messageMediaGiveaway = new TLRPC.TL_messageMediaGiveaway();
@@ -332,29 +332,29 @@ public final /* synthetic */ class l implements q20 {
                     tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) messageMedia;
                 }
                 TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = tL_messageMediaGiveaway;
-                long j10 = jjVar.k.date * 1000;
+                long j10 = kjVar.k.date * 1000;
                 org.telegram.ui.ActionBar.k2 Q = LaunchActivity.Q();
                 if (Q != null) {
-                    String b10 = mg.p.b(jjVar);
-                    TLRPC.Chat L0 = vp.r1(d20.s0).L0(Long.valueOf(-jjVar.Z0()));
+                    String b10 = mg.p.b(kjVar);
+                    TLRPC.Chat L0 = wp.r1(e20.s0).L0(Long.valueOf(-kjVar.Z0()));
                     boolean z12 = L0 != null && w3.V(L0);
                     eb ebVar = new eb(Q.getParentActivity(), Q.getResourceProvider());
                     if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
                         ebVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                        ebVar.b.setText(cd.L0(2131753371, null));
+                        ebVar.b.setText(dd.L0(2131753371, null));
                     } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
                         if (((TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo).participating) {
                             ebVar.c(R.raw.forward, 30, 30, new String[0]);
-                            ebVar.b.setText(cd.L0(2131753369, null));
+                            ebVar.b.setText(dd.L0(2131753369, null));
                         } else {
                             ebVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                            ebVar.b.setText(cd.L0(2131753370, null));
+                            ebVar.b.setText(dd.L0(2131753370, null));
                         }
                     }
                     ebVar.b.setSingleLine(false);
                     ebVar.b.setMaxLines(2);
                     ub ubVar = new ub(Q.getParentActivity(), Q.getResourceProvider(), true);
-                    ubVar.e(cd.L0(2131749020, null));
+                    ubVar.e(dd.L0(2131749020, null));
                     ubVar.b = new n0(payments_giveawayinfo, z12, b10, j10, tL_messageMediaGiveaway2, Q);
                     ebVar.setButton(ubVar);
                     wb.g(Q, ebVar, 2750).j();
@@ -482,8 +482,8 @@ public final /* synthetic */ class l implements q20 {
                 org.telegram.ui.web.p1 p1Var = (org.telegram.ui.web.p1) obj2;
                 p1Var.r = ((ArrayList) obj).size();
                 ii iiVar2 = p1Var.a;
-                if (iiVar2 != null && (p51Var2 = iiVar2.f3) != null && iiVar2.G) {
-                    p51Var2.O(true);
+                if (iiVar2 != null && (q51Var2 = iiVar2.f3) != null && iiVar2.G) {
+                    q51Var2.O(true);
                     break;
                 }
                 break;

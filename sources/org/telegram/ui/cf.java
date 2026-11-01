@@ -1,50 +1,69 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class cf implements org.telegram.messenger.i20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 b;
+import android.view.View;
 
-    public /* synthetic */ cf(int i10, org.telegram.ui.ActionBar.k2 k2Var) {
-        this.a = i10;
-        this.b = k2Var;
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class cf implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ cf(un unVar, int i10, int i11) {
+        this.a = i11;
+        this.b = unVar;
+        this.c = i10;
     }
 
-    @Override // org.telegram.messenger.i20
-    public final Object run() {
-        org.telegram.ui.ActionBar.k2 k2Var;
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.messenger.kj messageObject;
         switch (this.a) {
             case 0:
-                k2Var = (un) this.b;
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 1:
-                un unVar = (un) this.b;
-                if (org.telegram.messenger.sc.e(65536) && org.telegram.ui.Components.h01.c()) {
-                    org.telegram.ui.Components.h01 h01Var = unVar.x0;
-                    if (h01Var == null || h01Var.e) {
-                        if (unVar.getParentActivity() != null && org.telegram.ui.Components.h01.c() && unVar.z0 != null && unVar.l1 != null) {
-                            org.telegram.ui.Components.h01 h01Var2 = unVar.x0;
-                            if (h01Var2 != null) {
-                                org.telegram.messenger.i0.E2(h01Var2);
-                            }
-                            org.telegram.ui.Components.h01 h01Var3 = new org.telegram.ui.Components.h01(unVar.getParentActivity(), new h0(23, unVar, r2));
-                            unVar.x0 = h01Var3;
-                            org.telegram.ui.Components.h01[] h01VarArr = {h01Var3};
-                            km kmVar = unVar.l1;
-                            kmVar.addView(h01Var3, kmVar.indexOfChild(unVar.z0) + 1, w7.b6.c(-1.0f, -1));
+                this.b.l(this.c, 0, false, 0, true, 0);
+                break;
+            case 2:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            case 3:
+                un unVar = this.b;
+                vj vjVar = unVar.z0;
+                if (vjVar != null) {
+                    int childCount = vjVar.getChildCount();
+                    for (int i10 = 0; i10 < childCount; i10++) {
+                        View childAt = unVar.z0.getChildAt(i10);
+                        if ((childAt instanceof org.telegram.ui.Cells.q1) && (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject.T(unVar.U3)) {
+                            q1Var.C3(this.c, true, true);
                         }
                     }
-                    return unVar.x0;
                 }
-                return null;
-            case 2:
-                ((un) this.b).getClass();
-                return Boolean.valueOf(org.telegram.ui.Components.h01.c() && org.telegram.messenger.sc.e(65536));
+                unVar.U3 = null;
+                break;
+            case 4:
+                this.b.actionBar.getActionBarMenuOnItemClick().b(this.c);
+                break;
+            case 5:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            case 6:
+                un.b0(this.b, this.c);
+                break;
+            case 7:
+                this.b.actionBar.setSubtitle(org.telegram.messenger.dd.G(this.c, "messages", new Object[0]));
+                break;
+            case 8:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            case 9:
+                un.N0(this.b, this.c);
+                break;
             default:
-                k2Var = (ProfileActivity) this.b;
+                un.H1(this.b, this.c);
                 break;
         }
-        return k2Var.getSimpleMenuOverlay();
     }
 }

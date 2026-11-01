@@ -24,11 +24,11 @@ import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class jf0 implements lf.a {
-    public static final ou0 n0 = new ou0(new au(12), new au(13));
-    public static final ou0 o0 = new ou0(new au(14), new au(15));
+    public static final pu0 n0 = new pu0(new au(12), new au(13));
+    public static final pu0 o0 = new pu0(new au(14), new au(15));
     public static final jf0 p0 = new jf0();
     public View D;
     public boolean E;
@@ -42,7 +42,7 @@ public final class jf0 implements lf.a {
     public o1.j N;
     public Float O;
     public boolean P;
-    public rn0 R;
+    public sn0 R;
     public int S;
     public int T;
     public hu U;
@@ -74,7 +74,7 @@ public final class jf0 implements lf.a {
     public boolean y;
     public float a = 1.4f;
     public float J = 1.0f;
-    public final m61 Q = new m61(false);
+    public final n61 Q = new n61(false);
     public final cf0 e0 = new cf0(this, 1);
     public float[] g0 = new float[2];
     public final cf0 h0 = new cf0(this, 2);
@@ -84,36 +84,36 @@ public final class jf0 implements lf.a {
         p0.d(z10, false);
     }
 
-    public static oj0 j(boolean z10, float f7) {
-        oj0 oj0Var = new oj0();
+    public static pj0 j(boolean z10, float f7) {
+        pj0 pj0Var = new pj0();
         float f10 = 1.0f / f7;
         jf0 jf0Var = p0;
         if (jf0Var.P && !z10) {
-            oj0Var.a = jf0Var.K;
-            oj0Var.b = jf0Var.L + org.telegram.messenger.i0.m;
-            oj0Var.c = jf0Var.H;
-            oj0Var.d = jf0Var.I;
-            return oj0Var;
+            pj0Var.a = jf0Var.K;
+            pj0Var.b = jf0Var.L + org.telegram.messenger.i0.m;
+            pj0Var.c = jf0Var.H;
+            pj0Var.d = jf0Var.I;
+            return pj0Var;
         }
         float f11 = ((SharedPreferences) jf0Var.h().a).getFloat("x", -1.0f);
         float f12 = ((SharedPreferences) jf0Var.h().a).getFloat("y", -1.0f);
         float f13 = ((SharedPreferences) jf0Var.h().a).getFloat("scale_factor", 1.0f);
-        oj0Var.c = s(f10) * f13;
-        oj0Var.d = ((int) (s(f10) * f10)) * f13;
+        pj0Var.c = s(f10) * f13;
+        pj0Var.d = ((int) (s(f10) * f10)) * f13;
         if (f11 != -1.0f) {
-            float f14 = oj0Var.c;
+            float f14 = pj0Var.c;
             float f15 = (f14 / 2.0f) + f11;
             float f16 = org.telegram.messenger.i0.q.x;
-            oj0Var.a = f15 >= f16 / 2.0f ? (f16 - f14) - org.telegram.messenger.i0.L(16.0f) : org.telegram.messenger.i0.L(16.0f);
+            pj0Var.a = f15 >= f16 / 2.0f ? (f16 - f14) - org.telegram.messenger.i0.L(16.0f) : org.telegram.messenger.i0.L(16.0f);
         } else {
-            oj0Var.a = (org.telegram.messenger.i0.q.x - oj0Var.c) - org.telegram.messenger.i0.L(16.0f);
+            pj0Var.a = (org.telegram.messenger.i0.q.x - pj0Var.c) - org.telegram.messenger.i0.L(16.0f);
         }
         if (f12 != -1.0f) {
-            oj0Var.b = w7.u.a(f12, org.telegram.messenger.i0.L(16.0f), (org.telegram.messenger.i0.q.y - org.telegram.messenger.i0.L(16.0f)) - oj0Var.d) + org.telegram.messenger.i0.m;
-            return oj0Var;
+            pj0Var.b = w7.u.a(f12, org.telegram.messenger.i0.L(16.0f), (org.telegram.messenger.i0.q.y - org.telegram.messenger.i0.L(16.0f)) - pj0Var.d) + org.telegram.messenger.i0.m;
+            return pj0Var;
         }
-        oj0Var.b = org.telegram.messenger.i0.L(16.0f) + org.telegram.messenger.i0.m;
-        return oj0Var;
+        pj0Var.b = org.telegram.messenger.i0.L(16.0f) + org.telegram.messenger.i0.m;
+        return pj0Var;
     }
 
     public static jf.f k() {
@@ -141,10 +141,10 @@ public final class jf0 implements lf.a {
 
     public static void v(boolean z10) {
         jf0 jf0Var = p0;
-        m61 m61Var = jf0Var.Q;
-        m61Var.e(false);
-        m61Var.d(!z10);
-        m61Var.f(true);
+        n61 n61Var = jf0Var.Q;
+        n61Var.e(false);
+        n61Var.d(!z10);
+        n61Var.f(true);
         ih.c cVar = jf0Var.b0;
         if (cVar != null) {
             cVar.invalidate();
@@ -158,15 +158,15 @@ public final class jf0 implements lf.a {
     public static void w(PhotoViewer photoViewer) {
         jf0 jf0Var = p0;
         jf0Var.V = photoViewer;
-        u61 u61Var = photoViewer.F2;
+        v61 v61Var = photoViewer.F2;
         jf.f fVar = jf0Var.W;
         if (fVar != null) {
             fVar.c();
             jf0Var.W = null;
         }
-        if (u61Var != null && mf.b.a(photoViewer.D) == 1) {
+        if (v61Var != null && mf.b.a(photoViewer.D) == 1) {
             jf.e eVar = new jf.e(photoViewer.D, jf0Var);
-            eVar.c = "photo-viewer-pip-" + u61Var.a;
+            eVar.c = "photo-viewer-pip-" + v61Var.a;
             eVar.e = 1;
             eVar.d = org.telegram.messenger.i0.L(10.0f);
             eVar.j = jf0Var.d;
@@ -175,7 +175,7 @@ public final class jf0 implements lf.a {
             int i11 = jf0Var.T;
             eVar.h = i10;
             eVar.i = i11;
-            eVar.g = u61Var.d;
+            eVar.g = v61Var.d;
             eVar.f = true;
             jf0Var.W = eVar.a();
         }
@@ -294,14 +294,14 @@ public final class jf0 implements lf.a {
                 jf0Var.h = new if0(jf0Var, context, i12);
                 if0 if0Var2 = jf0Var.h;
                 Objects.requireNonNull(if0Var2);
-                jf0Var.R = new rn0(new eb0(if0Var2, 11), true);
+                jf0Var.R = new sn0(new eb0(if0Var2, 11), true);
                 jf0Var.h.setWillNotDraw(false);
                 jf0Var.h.setAlpha(0.0f);
                 View view3 = new View(context);
                 view3.setBackgroundColor(1275068416);
                 jf0Var.h.addView(view3, w7.b6.c(-1.0f, -1));
                 int L2 = org.telegram.messenger.i0.L(8.0f);
-                ImageView e = org.telegram.messenger.z20.e(context, R.drawable.pip_video_close);
+                ImageView e = org.telegram.messenger.a30.e(context, R.drawable.pip_video_close);
                 int i14 = org.telegram.ui.ActionBar.t6.Vg;
                 PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                 org.telegram.ui.ActionBar.a7.t(e, i14, null, mode);
@@ -393,12 +393,12 @@ public final class jf0 implements lf.a {
     }
 
     public final void a() {
-        org.telegram.ui.rq0 rq0Var;
+        org.telegram.ui.pq0 pq0Var;
         PhotoViewer photoViewer = this.V;
-        if (photoViewer == null || (rq0Var = photoViewer.c4) == null) {
+        if (photoViewer == null || (pq0Var = photoViewer.c4) == null) {
             return;
         }
-        rq0Var.cancelRewind();
+        pq0Var.cancelRewind();
     }
 
     @Override // lf.a
@@ -452,22 +452,22 @@ public final class jf0 implements lf.a {
         if (this.r != null) {
             return r0.getCurrentPosition();
         }
-        u61 u61Var = this.V.F2;
-        if (u61Var == null) {
+        v61 v61Var = this.V.F2;
+        if (v61Var == null) {
             return 0L;
         }
-        return u61Var.S();
+        return v61Var.S();
     }
 
     public final long f() {
         if (this.r != null) {
             return r0.getVideoDuration();
         }
-        u61 u61Var = this.V.F2;
-        if (u61Var == null) {
+        v61 v61Var = this.V.F2;
+        if (v61Var == null) {
             return 0L;
         }
-        return u61Var.U();
+        return v61Var.U();
     }
 
     @Override // lf.a
@@ -524,21 +524,21 @@ public final class jf0 implements lf.a {
         return this.V.w3.getBitmap();
     }
 
-    public final float o() {
+    public final float n() {
         if (this.O == null) {
             this.O = Float.valueOf(this.T / this.S);
             Point point = org.telegram.messenger.i0.q;
             this.a = (Math.min(point.x, point.y) - org.telegram.messenger.i0.L(32.0f)) / t();
             float f7 = this.O.floatValue() < 1.0f ? 0.6f : 0.45f;
-            m61 m61Var = this.Q;
-            m61Var.q = f7;
-            m61Var.a();
+            n61 n61Var = this.Q;
+            n61Var.q = f7;
+            n61Var.a();
         }
         return this.O.floatValue();
     }
 
     public final int p() {
-        return (int) (s(r0) * o());
+        return (int) (s(r0) * n());
     }
 
     @Override // lf.a
@@ -558,7 +558,7 @@ public final class jf0 implements lf.a {
     }
 
     public final int t() {
-        return s(o());
+        return s(n());
     }
 
     public final void u() {
@@ -607,11 +607,11 @@ public final class jf0 implements lf.a {
         if (ve0Var != null) {
             d02 = ve0Var.G;
         } else {
-            u61 u61Var = photoViewer.F2;
-            if (u61Var == null) {
+            v61 v61Var = photoViewer.F2;
+            if (v61Var == null) {
                 return;
             } else {
-                d02 = u61Var.d0();
+                d02 = v61Var.d0();
             }
         }
         cf0 cf0Var = this.e0;
@@ -631,6 +631,6 @@ public final class jf0 implements lf.a {
     }
 
     @Override // lf.a
-    public final /* synthetic */ void n(Canvas canvas) {
+    public final /* synthetic */ void o(Canvas canvas) {
     }
 }

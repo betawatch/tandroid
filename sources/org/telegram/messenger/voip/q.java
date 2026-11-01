@@ -1,15 +1,15 @@
 package org.telegram.messenger.voip;
 
 import java.util.regex.Pattern;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.wd;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.xd;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class q implements RequestDelegate {
                 break;
             case 3:
                 if (tLObject instanceof TLRPC.TL_updates) {
-                    vp.r1(i11).L3((TLRPC.TL_updates) tLObject, false);
+                    wp.r1(i11).L3((TLRPC.TL_updates) tLObject, false);
                     break;
                 }
                 break;
@@ -49,7 +49,7 @@ public final /* synthetic */ class q implements RequestDelegate {
                 org.telegram.messenger.i0.g3(new x5(i11, 1, tLObject));
                 break;
             default:
-                org.telegram.messenger.i0.g3(new wd(i11, 13));
+                org.telegram.messenger.i0.g3(new xd(i11, 13));
                 break;
         }
     }

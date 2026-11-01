@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class an implements org.telegram.messenger.jp {
+public final class an implements org.telegram.messenger.kp {
     public final /* synthetic */ bj a;
     public final /* synthetic */ un b;
     public final /* synthetic */ fn c;
@@ -13,13 +13,13 @@ public final class an implements org.telegram.messenger.jp {
         this.b = unVar;
     }
 
-    @Override // org.telegram.messenger.jp
+    @Override // org.telegram.messenger.kp
     public final void a() {
         this.a.c(false);
         this.c.a.presentFragment(this.b);
     }
 
-    @Override // org.telegram.messenger.jp
+    @Override // org.telegram.messenger.kp
     public final void g(boolean z10) {
         this.a.c(false);
         this.c.a.presentFragment(this.b);

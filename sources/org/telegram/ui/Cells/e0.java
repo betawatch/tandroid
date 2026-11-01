@@ -10,10 +10,10 @@ import android.graphics.RadialGradient;
 import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e0 extends Drawable {
     public final Drawable a;
@@ -29,7 +29,7 @@ public final class e0 extends Drawable {
         Paint paint2 = new Paint(1);
         this.c = paint2;
         this.d = new Paint();
-        this.e = zs.e4;
+        this.e = at.e4;
         Drawable f7 = i0.a.f(context, R.drawable.msg_folders_bots);
         this.a = f7;
         f7.setColorFilter(new PorterDuffColorFilter(-13628751, PorterDuff.Mode.SRC_IN));
@@ -144,7 +144,7 @@ public final class e0 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        int max = Math.max(0, Math.min(zs.e4, i10));
+        int max = Math.max(0, Math.min(at.e4, i10));
         if (this.e != max) {
             this.e = max;
             invalidateSelf();

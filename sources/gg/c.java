@@ -32,20 +32,20 @@ import kg.i1;
 import kg.k2;
 import kg.x0;
 import kg.z1;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.vi;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Wallet.a7;
 import org.telegram.ui.Wallet.z6;
-import org.telegram.ui.pb1;
-import org.telegram.ui.u61;
+import org.telegram.ui.nb1;
+import org.telegram.ui.s61;
 import org.telegram.ui.un;
 import s4.a0;
 import v7.t6;
 import vh.s3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -65,14 +65,14 @@ public final /* synthetic */ class c implements Runnable {
         Object obj2 = this.b;
         switch (i10) {
             case 0:
-                pb1 pb1Var = (pb1) obj2;
-                if (pb1Var.getParentLayout() != null) {
-                    pb1Var.H = true;
+                nb1 nb1Var = (nb1) obj2;
+                if (nb1Var.getParentLayout() != null) {
+                    nb1Var.H = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", pb1Var.a);
+                    bundle.putLong("chat_id", nb1Var.a);
                     un unVar = new un(bundle);
                     unVar.Ca = true;
-                    pb1Var.presentFragment(unVar);
+                    nb1Var.presentFragment(unVar);
                     return;
                 }
                 return;
@@ -202,7 +202,7 @@ public final /* synthetic */ class c implements Runnable {
                 s3Var.s();
                 return;
             case 16:
-                ui.b0(d20.s0).d(2, null, ((t2) obj2).f.document, (int) (System.currentTimeMillis() / 1000), false);
+                vi.b0(e20.s0).d(2, null, ((t2) obj2).f.document, (int) (System.currentTimeMillis() / 1000), false);
                 return;
             case 17:
                 org.telegram.messenger.i0.J3(((g3) obj2).q0);
@@ -232,12 +232,12 @@ public final /* synthetic */ class c implements Runnable {
                 return;
             case 22:
                 kg.q0 q0Var2 = ((kg.j0) obj2).c;
-                q0Var2.o1.presentFragment(u61.f0(q0Var2.n1(), true));
+                q0Var2.o1.presentFragment(s61.g0(q0Var2.n1(), true));
                 return;
             case 23:
-                ei0 ei0Var = ((x0) obj2).F;
-                ei0Var.getAnimatedDrawable().N(0, true, false);
-                ei0Var.d();
+                fi0 fi0Var = ((x0) obj2).F;
+                fi0Var.getAnimatedDrawable().N(0, true, false);
+                fi0Var.d();
                 return;
             case 24:
                 ((i1) ((kg.f1) obj2).c).I0();

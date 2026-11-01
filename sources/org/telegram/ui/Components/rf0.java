@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class rf0 extends FrameLayout {
     public final n5 a;
@@ -30,61 +30,61 @@ public abstract class rf0 extends FrameLayout {
         org.telegram.ui.ActionBar.a7.V(n5Var, i10, null);
         n5Var.setSingleLine(true);
         n5Var.setEllipsize(TextUtils.TruncateAt.END);
-        n5Var.setGravity((org.telegram.messenger.cd.X ? 5 : 3) | 16);
+        n5Var.setGravity((org.telegram.messenger.dd.X ? 5 : 3) | 16);
         TextView textView = new TextView(getContext());
         this.b = textView;
         textView.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.a7.V(textView, i10, null);
-        textView.setGravity((org.telegram.messenger.cd.X ? 5 : 3) | 16);
+        textView.setGravity((org.telegram.messenger.dd.X ? 5 : 3) | 16);
         org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(this, getContext(), 1);
         this.c = a2Var;
         a2Var.setTextSize(org.telegram.messenger.i0.L(14.0f));
         org.telegram.ui.ActionBar.a7.Z(a2Var, i10, null);
-        a2Var.setGravity(org.telegram.messenger.cd.X ? 3 : 5);
+        a2Var.setGravity(org.telegram.messenger.dd.X ? 3 : 5);
         a2Var.setOnClickListener(new db0(this, 6));
-        boolean z10 = org.telegram.messenger.cd.X;
+        boolean z10 = org.telegram.messenger.dd.X;
         addView(n5Var, w7.b6.d(-2, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 16, 0.0f, z10 ? 16 : 0, 0.0f));
-        addView(textView, w7.b6.d(-2, -1.0f, (org.telegram.messenger.cd.X ? 5 : 3) | 48, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(a2Var, w7.b6.d(-2, -1.0f, (org.telegram.messenger.cd.X ? 3 : 5) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(textView, w7.b6.d(-2, -1.0f, (org.telegram.messenger.dd.X ? 5 : 3) | 48, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(a2Var, w7.b6.d(-2, -1.0f, (org.telegram.messenger.dd.X ? 3 : 5) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
     public final void a(String str, ArrayList arrayList, int i10, int i11, int i12, boolean z10) {
         n5 n5Var = this.a;
         if (arrayList != null) {
-            org.telegram.messenger.zs.i(n5Var);
+            org.telegram.messenger.at.i(n5Var);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-            org.telegram.messenger.ui.g(arrayList, str, spannableStringBuilder, -1);
+            org.telegram.messenger.vi.g(arrayList, str, spannableStringBuilder, -1);
             CharSequence m10 = org.telegram.messenger.k6.m(spannableStringBuilder, n5Var.getPaint().getFontMetricsInt(), false, null, 0);
-            org.telegram.messenger.jj.A5(m10, arrayList, n5Var.getPaint().getFontMetricsInt(), false);
+            org.telegram.messenger.kj.A5(m10, arrayList, n5Var.getPaint().getFontMetricsInt(), false);
             n5Var.setText(m10);
         } else {
             n5Var.setText(org.telegram.messenger.k6.m(str, n5Var.getPaint().getFontMetricsInt(), false, null, 0));
         }
         String format = String.format("%d", Integer.valueOf(i10));
-        SpannableStringBuilder spannableStringBuilder2 = org.telegram.messenger.cd.X ? new SpannableStringBuilder(a1.g.k(i10, "% – ")) : new SpannableStringBuilder(i0.a.j(i10, " – ", "%"));
-        spannableStringBuilder2.setSpan(new x41(org.telegram.messenger.i0.o()), 3, format.length() + 3, 33);
+        SpannableStringBuilder spannableStringBuilder2 = org.telegram.messenger.dd.X ? new SpannableStringBuilder(a1.g.k(i10, "% – ")) : new SpannableStringBuilder(i0.a.j(i10, " – ", "%"));
+        spannableStringBuilder2.setSpan(new y41(org.telegram.messenger.i0.o()), 3, format.length() + 3, 33);
         this.b.setText(spannableStringBuilder2);
         org.telegram.ui.Cells.a2 a2Var = this.c;
         if (i12 == 0) {
             if (this.d.p1.quiz) {
-                a2Var.c(org.telegram.messenger.cd.G(i11, "Answer", new Object[0]), z10, true);
+                a2Var.c(org.telegram.messenger.dd.G(i11, "Answer", new Object[0]), z10, true);
                 return;
             } else {
-                a2Var.c(org.telegram.messenger.cd.G(i11, "Vote", new Object[0]), z10, true);
+                a2Var.c(org.telegram.messenger.dd.G(i11, "Vote", new Object[0]), z10, true);
                 return;
             }
         }
         if (i12 == 1) {
-            a2Var.c(org.telegram.messenger.cd.L0(2131747186, null), z10, true);
+            a2Var.c(org.telegram.messenger.dd.L0(2131747186, null), z10, true);
         } else {
-            a2Var.c(org.telegram.messenger.cd.L0(2131747190, null), z10, true);
+            a2Var.c(org.telegram.messenger.dd.L0(2131747190, null), z10, true);
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        boolean z11 = org.telegram.messenger.cd.X;
+        boolean z11 = org.telegram.messenger.dd.X;
         n5 n5Var = this.a;
         TextView textView = this.b;
         if (z11) {

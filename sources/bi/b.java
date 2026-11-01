@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -77,8 +77,8 @@ public final /* synthetic */ class b implements Runnable {
                                 d4Var.H3 = true;
                                 break;
                             } else {
-                                TL_iv.pageTableCell o10 = z5Var.o(left, top);
-                                if (o10 != null) {
+                                TL_iv.pageTableCell n10 = z5Var.n(left, top);
+                                if (n10 != null) {
                                     z60 z60Var = d4Var.q4;
                                     if (z60Var != null) {
                                         d4Var.q4 = null;
@@ -88,9 +88,9 @@ public final /* synthetic */ class b implements Runnable {
                                     d4Var.C0();
                                     d4Var.requestDisallowInterceptTouchEvent(true);
                                     d4Var.I3 = true;
-                                    d4Var.K3 = o10;
-                                    d4Var.L3 = o10;
-                                    z5Var.y(o10, o10);
+                                    d4Var.K3 = n10;
+                                    d4Var.L3 = n10;
+                                    z5Var.y(n10, n10);
                                     try {
                                         z5Var.performHapticFeedback(0);
                                     } catch (Exception unused2) {

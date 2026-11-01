@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e20 extends FrameLayout {
     public float a;
@@ -22,7 +22,7 @@ public final class e20 extends FrameLayout {
     public boolean c;
     public AnimatorSet d;
     public final d20 e;
-    public final org.telegram.messenger.rz f;
+    public final org.telegram.messenger.sz f;
     public final /* synthetic */ float h;
     public final /* synthetic */ g20 n;
 
@@ -32,7 +32,7 @@ public final class e20 extends FrameLayout {
         this.n = g20Var;
         this.h = f7;
         this.e = new d20(this);
-        this.f = new org.telegram.messenger.rz(21);
+        this.f = new org.telegram.messenger.sz(21);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -323,8 +323,8 @@ public final class e20 extends FrameLayout {
         }
         this.c = false;
         g20 g20Var12 = this.n;
-        ei0 ei0Var = g20Var12.V;
-        bi0 bi0Var = g20Var12.w;
+        fi0 fi0Var = g20Var12.V;
+        ci0 ci0Var = g20Var12.w;
         jg.l0 l0Var = g20Var12.b;
         e20 e20Var2 = g20Var12.a;
         kg.f0 f0Var = g20Var12.c;
@@ -348,10 +348,10 @@ public final class e20 extends FrameLayout {
         g20Var12.d();
         g20.d0 = null;
         AnimatorSet animatorSet = new AnimatorSet();
-        int i13 = bi0Var.a0;
+        int i13 = ci0Var.a0;
         if (i13 < 33) {
             e20Var = e20Var3;
-            j10 = (long) (((1.0f - (i13 / 33.0f)) * bi0Var.r()) / 2.0f);
+            j10 = (long) (((1.0f - (i13 / 33.0f)) * ci0Var.r()) / 2.0f);
         } else {
             e20Var = e20Var3;
             j10 = 0;
@@ -381,7 +381,7 @@ public final class e20 extends FrameLayout {
         ofFloat9.setStartDelay((long) (f29 * 0.7f));
         ofFloat9.setDuration((long) (f29 * 0.3f));
         animatorSet.playTogether(ofFloat9);
-        org.telegram.messenger.i0.h3(new org.telegram.messenger.rz(20), 370L);
+        org.telegram.messenger.i0.h3(new org.telegram.messenger.sz(20), 370L);
         long j11 = j10 + 530;
         ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(f0Var, (Property<kg.f0, Float>) property, 1.0f, 1.05f);
         ofFloat10.setDuration(j11);
@@ -415,9 +415,9 @@ public final class e20 extends FrameLayout {
         animatorSet.playTogether(ofFloat15);
         animatorSet.addListener(new f20(g20Var12, e20Var4, l0Var2, windowManager, frameLayout, w7Var));
         animatorSet.start();
-        bi0Var.P(66);
-        ei0Var.i();
-        ei0Var.d();
+        ci0Var.P(66);
+        fi0Var.i();
+        fi0Var.d();
         return false;
     }
 }

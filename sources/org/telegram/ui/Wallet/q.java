@@ -8,27 +8,27 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.voip.ConferenceCall;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.a01;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.yz0;
 import org.telegram.ui.Components.zz0;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.f11;
-import org.telegram.ui.m90;
+import org.telegram.ui.d01;
+import org.telegram.ui.l90;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements j20 {
+public final /* synthetic */ class q implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class q implements j20 {
     /* JADX WARN: Removed duplicated region for block: B:283:0x0527  */
     /* JADX WARN: Removed duplicated region for block: B:285:0x052c  */
     /* JADX WARN: Removed duplicated region for block: B:287:0x0531  */
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -106,7 +106,7 @@ public final /* synthetic */ class q implements j20 {
                 return;
             case 1:
                 k0 k0Var2 = (k0) this.b;
-                f11 f11Var = (f11) this.c;
+                d01 d01Var = (d01) this.c;
                 h0 h0Var = (h0) this.d;
                 byte[] bArr6 = (byte[]) this.e;
                 Vector vector = (Vector) obj;
@@ -119,13 +119,13 @@ public final /* synthetic */ class q implements j20 {
                     if (tL_error != null && (str4 = tL_error.text) != null) {
                         str = str4;
                     }
-                    f11Var.a(str);
+                    d01Var.a(str);
                     return;
                 }
                 int size = vector.objects.size();
                 if (size != 3) {
                     k0.j("enable backup: expected three backup holders");
-                    f11Var.a("INVALID_BACKUP_HOLDERS_COUNT");
+                    d01Var.a("INVALID_BACKUP_HOLDERS_COUNT");
                     return;
                 }
                 byte[][] bArr7 = new byte[size][];
@@ -141,7 +141,7 @@ public final /* synthetic */ class q implements j20 {
                         bArr3 = null;
                         try {
                             k0.k("enable backup", e);
-                            f11Var.a(e.getMessage() == null ? str2 : e.getMessage());
+                            d01Var.a(e.getMessage() == null ? str2 : e.getMessage());
                             byte b10 = 0;
                             if (bArr != null) {
                             }
@@ -206,7 +206,7 @@ public final /* synthetic */ class q implements j20 {
                     }
                     try {
                         if (org.telegram.messenger.v2.a) {
-                            byte[] bArr9 = new byte[zs.s3];
+                            byte[] bArr9 = new byte[at.s3];
                             c11 = 1;
                             try {
                                 int length = bArr3.length;
@@ -394,20 +394,20 @@ public final /* synthetic */ class q implements j20 {
                         for (int i19 = 0; i19 < size; i19++) {
                             if (bArr12[i19] == null) {
                                 k0.j("part " + i19 + " is null");
-                                f11Var.a("PART_" + i19 + "_NULL");
+                                d01Var.a("PART_" + i19 + "_NULL");
                                 return;
                             }
                         }
                         TL_wallet.enableBackup enablebackup = new TL_wallet.enableBackup();
                         enablebackup.parts = new ArrayList<>(Arrays.asList(bArr12));
                         enablebackup.new_public_key = bArr6;
-                        k0Var2.U(h0Var, false, new j((Object) k0Var2, (Object) f11Var, (Object) enablebackup, 7));
+                        k0Var2.U(h0Var, false, new j((Object) k0Var2, (Object) d01Var, (Object) enablebackup, 7));
                         return;
                     } catch (Exception e12) {
                         e = e12;
                         bArr = c10;
                         k0.k("enable backup", e);
-                        f11Var.a(e.getMessage() == null ? str2 : e.getMessage());
+                        d01Var.a(e.getMessage() == null ? str2 : e.getMessage());
                         byte b102 = 0;
                         if (bArr != null) {
                             Arrays.fill(bArr, (byte) 0);
@@ -433,7 +433,7 @@ public final /* synthetic */ class q implements j20 {
                     bArr = c10;
                     bArr3 = null;
                     k0.k("enable backup", e);
-                    f11Var.a(e.getMessage() == null ? str2 : e.getMessage());
+                    d01Var.a(e.getMessage() == null ? str2 : e.getMessage());
                     byte b1022 = 0;
                     if (bArr != null) {
                     }
@@ -455,18 +455,18 @@ public final /* synthetic */ class q implements j20 {
                 }
                 break;
             case 2:
-                ((k0) this.b).U((h0) this.c, true, new q((q20) this.d, (q20) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
+                ((k0) this.b).U((h0) this.c, true, new q((r20) this.d, (r20) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
                 return;
             case 3:
-                q20 q20Var = (q20) this.b;
-                q20 q20Var2 = (q20) this.c;
+                r20 r20Var = (r20) this.b;
+                r20 r20Var2 = (r20) this.c;
                 byte[] bArr13 = (byte[]) this.d;
                 TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) this.e;
                 WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
                 String str7 = (String) obj2;
                 if (importedWalletProof == null) {
-                    q20Var.a(str7 != null ? str7 : "NULL_ERROR");
-                    q20Var2.a(null);
+                    r20Var.a(str7 != null ? str7 : "NULL_ERROR");
+                    r20Var2.a(null);
                     return;
                 }
                 TL_wallet.replaceWallet replacewallet = new TL_wallet.replaceWallet();
@@ -479,13 +479,13 @@ public final /* synthetic */ class q implements j20 {
                 walletownershipproof.timestamp = importedWalletProof.timestamp;
                 replacewallet.wallet = inputwalletimported;
                 replacewallet.password = inputCheckPasswordSRP;
-                q20Var2.a(replacewallet);
+                r20Var2.a(replacewallet);
                 return;
             case 4:
                 a0 a0Var = (a0) this.b;
                 TL_wallet.nftItem nftitem = (TL_wallet.nftItem) this.c;
                 String str8 = (String) this.d;
-                j20 j20Var = (j20) this.e;
+                k20 k20Var = (k20) this.e;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str9 = (String) obj2;
                 if (wallettransaction != null) {
@@ -496,7 +496,7 @@ public final /* synthetic */ class q implements j20 {
                 if (a0Var.a) {
                     return;
                 }
-                j20Var.a(wallettransaction, str9);
+                k20Var.a(wallettransaction, str9);
                 return;
             case 5:
                 j0 j0Var = (j0) this.b;
@@ -505,7 +505,7 @@ public final /* synthetic */ class q implements j20 {
                 String str12 = (String) this.e;
                 TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
                 j0Var.getClass();
-                if (walletuseraddress == null || walletuseraddress.user_id == 0 || vp.r1(j0Var.l.a).Z1(Long.valueOf(walletuseraddress.user_id)) == null) {
+                if (walletuseraddress == null || walletuseraddress.user_id == 0 || wp.r1(j0Var.l.a).Z1(Long.valueOf(walletuseraddress.user_id)) == null) {
                     return;
                 }
                 ArrayList arrayList = j0Var.b;
@@ -531,73 +531,73 @@ public final /* synthetic */ class q implements j20 {
                 }
                 return;
             case 6:
-                f11 f11Var2 = (f11) this.b;
+                d01 d01Var2 = (d01) this.b;
                 h0 h0Var2 = (h0) this.c;
                 a2 a2Var = (a2) this.d;
                 u1 u1Var = (u1) this.e;
                 TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tonconnectchallenge == null || tL_error2 != null) {
-                    f11Var2.a(e2.z(tL_error2, "registerKey"));
+                    d01Var2.a(e2.z(tL_error2, "registerKey"));
                     return;
                 } else {
-                    Utilities.e.c(new m90(h0Var2, a2Var, tonconnectchallenge, f11Var2, u1Var, 24));
+                    Utilities.e.c(new l90(h0Var2, a2Var, tonconnectchallenge, d01Var2, u1Var, 24));
                     return;
                 }
             case 7:
                 e2 e2Var = (e2) this.b;
                 a2 a2Var2 = (a2) this.c;
                 h0 h0Var3 = (h0) this.d;
-                q20 q20Var3 = (q20) this.e;
+                r20 r20Var3 = (r20) this.e;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
                 String str13 = (String) obj2;
                 if (sendtransfer != null && str13 == null && e2Var.A(a2Var2) && !e2Var.j(a2Var2)) {
-                    Utilities.e.c(new m90(e2Var, sendtransfer, a2Var2, q20Var3, h0Var3, 25));
+                    Utilities.e.c(new l90(e2Var, sendtransfer, a2Var2, r20Var3, h0Var3, 25));
                     return;
                 }
                 if (str13 == null) {
                     str13 = "Transfer unavailable or request expired";
                 }
-                e2Var.y(a2Var2, h0Var3, null, 0, str13, q20Var3);
+                e2Var.y(a2Var2, h0Var3, null, 0, str13, r20Var3);
                 return;
             case 8:
                 e2 e2Var2 = (e2) this.b;
                 a2 a2Var3 = (a2) this.c;
                 h0 h0Var4 = (h0) this.d;
-                f11 f11Var3 = (f11) this.e;
+                d01 d01Var3 = (d01) this.e;
                 String str14 = (String) obj;
                 String str15 = (String) obj2;
                 if (str14 != null) {
                     try {
                         if (e2Var2.A(a2Var3) && !e2Var2.j(a2Var3)) {
-                            e2Var2.y(a2Var3, h0Var4, new JSONObject().put("internalBoc", str14), -1, null, f11Var3);
+                            e2Var2.y(a2Var3, h0Var4, new JSONObject().put("internalBoc", str14), -1, null, d01Var3);
                             return;
                         }
                     } catch (JSONException e14) {
-                        e2Var2.y(a2Var3, h0Var4, null, 0, e2.i("sign message response", e14), f11Var3);
+                        e2Var2.y(a2Var3, h0Var4, null, 0, e2.i("sign message response", e14), d01Var3);
                         return;
                     }
                 }
                 str15 = "Request expired or wallet changed";
-                e2Var2.y(a2Var3, h0Var4, null, 0, str15, f11Var3);
+                e2Var2.y(a2Var3, h0Var4, null, 0, str15, d01Var3);
                 return;
             case 9:
                 boolean[] zArr = (boolean[]) this.b;
-                z2[] z2VarArr = (z2[]) this.c;
+                a3[] a3VarArr = (a3[]) this.c;
                 org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) this.d;
                 nh.p pVar = (nh.p) this.e;
                 String str16 = (String) obj;
                 String str17 = (String) obj2;
                 zArr[0] = false;
                 if (str17 != null) {
-                    new cc(z2VarArr[0].E, p6Var).e0(str17, false);
+                    new cc(a3VarArr[0].E, p6Var).e0(str17, false);
                     return;
                 }
                 pVar.setPadding(org.telegram.messenger.i0.L(19.0f), org.telegram.messenger.i0.L(9.0f), org.telegram.messenger.i0.L(15.0f), org.telegram.messenger.i0.L(8.0f));
                 SpannableString spannableString = new SpannableString(str16);
-                yz0 yz0Var = new yz0();
-                yz0Var.a |= 256;
-                spannableString.setSpan(new zz0(yz0Var, 0), 0, spannableString.length(), 33);
+                zz0 zz0Var = new zz0();
+                zz0Var.a |= 256;
+                spannableString.setSpan(new a01(zz0Var, 0), 0, spannableString.length(), 33);
                 pVar.setText(spannableString);
                 pVar.setTextIsSelectable(true);
                 pVar.setOnClickListener(null);
@@ -612,7 +612,7 @@ public final /* synthetic */ class q implements j20 {
                 pVar.c((pVar.getWidth() / 2.0f) - pVar.getPaddingLeft(), ((pVar.getHeight() / 2.0f) - pVar.getPaddingTop()) + pVar.getScrollY());
                 return;
             default:
-                ba.c0((ba) this.c, (k0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
+                ba.d0((ba) this.c, (k0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
                 return;
         }
     }

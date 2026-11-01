@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class sy extends g9 {
     public final /* synthetic */ ty G;
@@ -24,7 +24,7 @@ public final class sy extends g9 {
         if (z10) {
             return;
         }
-        if (!org.telegram.messenger.ui.b0(vyVar.c1).u0[z10 ? 1 : 0].contains(Long.valueOf(((TLRPC.StickerSetCovered) getTag()).set.id)) || vyVar.s1 == null) {
+        if (!org.telegram.messenger.vi.b0(vyVar.c1).u0[z10 ? 1 : 0].contains(Long.valueOf(((TLRPC.StickerSetCovered) getTag()).set.id)) || vyVar.s1 == null) {
             return;
         }
         canvas.drawCircle(canvas.getWidth() - org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(14.0f), org.telegram.messenger.i0.L(3.0f), vyVar.s1);

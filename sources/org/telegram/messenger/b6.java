@@ -13,11 +13,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class b6 extends f1 implements us {
+public final class b6 extends f1 implements vs {
     public static volatile b6[] T = new b6[4];
     public int D;
     public boolean E;
@@ -71,7 +71,7 @@ public final class b6 extends f1 implements us {
         this.H = new ArrayList();
         this.I = new SparseArray();
         this.S = new mg.c2(this, 3);
-        SharedPreferences sharedPreferences = vp.r1(this.currentAccount).f7;
+        SharedPreferences sharedPreferences = wp.r1(this.currentAccount).f7;
         a6 a6Var = new a6(sharedPreferences.getString("preset0", "1_1_1_1_1048576_512000_512000_524288_0_0_1_1_50_0"), "1_1_1_1_1048576_512000_512000_524288_0_0_1_1_50_0");
         this.J = a6Var;
         a6Var.e = false;
@@ -208,7 +208,7 @@ public final class b6 extends f1 implements us {
         return i10 == 8 ? 2 : 0;
     }
 
-    public final void a(String str, jj jjVar, z5 z5Var) {
+    public final void a(String str, kj kjVar, z5 z5Var) {
         if (this.w) {
             this.x.put(str, z5Var);
             return;
@@ -221,14 +221,14 @@ public final class b6 extends f1 implements us {
             hashMap.put(str, arrayList);
         }
         arrayList.add(new WeakReference(z5Var));
-        if (jjVar != null) {
+        if (kjVar != null) {
             HashMap hashMap2 = this.r;
             ArrayList arrayList2 = (ArrayList) hashMap2.get(str);
             if (arrayList2 == null) {
                 arrayList2 = new ArrayList();
                 hashMap2.put(str, arrayList2);
             }
-            arrayList2.add(jjVar);
+            arrayList2.add(kjVar);
         }
         this.s.put(z5Var.getObserverTag(), str);
     }
@@ -262,15 +262,15 @@ public final class b6 extends f1 implements us {
         if (message == null || (message.media instanceof TLRPC.TL_messageMediaStory)) {
             return f() ? 2 : 0;
         }
-        boolean L4 = jj.L4(message);
-        if (L4 || jj.t3(message) || jj.j4(message) || (jj.o1(message) instanceof TLRPC.TL_messageMediaGame)) {
+        boolean L4 = kj.L4(message);
+        if (L4 || kj.t3(message) || kj.j4(message) || (kj.o1(message) instanceof TLRPC.TL_messageMediaGame)) {
             i10 = 4;
-        } else if (jj.R4(message)) {
+        } else if (kj.R4(message)) {
             i10 = 2;
-        } else if (jj.S3(message) || jj.w4(message) || jj.L2(message)) {
+        } else if (kj.S3(message) || kj.w4(message) || kj.L2(message)) {
             i10 = 1;
         } else {
-            if (jj.G0(message) == null) {
+            if (kj.G0(message) == null) {
                 return 0;
             }
             i10 = 8;
@@ -313,7 +313,7 @@ public final class b6 extends f1 implements us {
                 long[] jArr = n10.b;
                 int i11 = iArr[c10];
                 long max = i10 == 2 ? Math.max(524288L, jArr[x(i10)]) : jArr[x(i10)];
-                long q12 = jj.q1(jj.o1(message));
+                long q12 = kj.q1(kj.o1(message));
                 return (L4 || !n10.c || q12 <= max || max <= 2097152) ? ((i10 != 1 || (q12 != 0 && q12 <= max)) && (i10 == 2 || (i11 & i10) != 0)) ? 1 : 0 : (i11 & i10) != 0 ? 2 : 0;
             }
             c10 = 0;
@@ -325,7 +325,7 @@ public final class b6 extends f1 implements us {
             int i112 = iArr2[c10];
             if (i10 == 2) {
             }
-            long q122 = jj.q1(jj.o1(message));
+            long q122 = kj.q1(kj.o1(message));
             if (L4) {
             }
         }
@@ -338,7 +338,7 @@ public final class b6 extends f1 implements us {
         int i1122 = iArr22[c10];
         if (i10 == 2) {
         }
-        long q1222 = jj.q1(jj.o1(message));
+        long q1222 = kj.q1(kj.o1(message));
         if (L4) {
         }
     }
@@ -370,26 +370,26 @@ public final class b6 extends f1 implements us {
         return false;
     }
 
-    public final boolean d(jj jjVar) {
+    public final boolean d(kj kjVar) {
         TL_stories.StoryItem storyItem;
         TLRPC.MessageMedia messageMedia;
-        if (jjVar.D == 23) {
-            int i10 = tz.a;
-            return (!sc.e(1024) || (storyItem = ((TLRPC.TL_messageMediaStory) jj.n1(jjVar)).storyItem) == null || (messageMedia = storyItem.media) == null || messageMedia.document == null || !storyItem.isPublic) ? false : true;
+        if (kjVar.D == 23) {
+            int i10 = uz.a;
+            return (!tc.e(1024) || (storyItem = ((TLRPC.TL_messageMediaStory) kj.n1(kjVar)).storyItem) == null || (messageMedia = storyItem.media) == null || messageMedia.document == null || !storyItem.isPublic) ? false : true;
         }
-        if (jjVar.Y0 != null) {
+        if (kjVar.Y0 != null) {
             return true;
         }
-        return !jjVar.x3() && e(jjVar) == 1;
+        return !kjVar.x3() && e(kjVar) == 1;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         a0.h hVar = this.F;
-        int i12 = zs.Z1;
+        int i12 = at.Z1;
         SparseArray sparseArray = this.s;
         HashMap hashMap = this.n;
-        if (i10 == i12 || i10 == zs.S1) {
+        if (i10 == i12 || i10 == at.S1) {
             String str = (String) objArr[0];
             Integer num = (Integer) objArr[1];
             this.w = true;
@@ -399,7 +399,7 @@ public final class b6 extends f1 implements us {
                 for (int i13 = 0; i13 < size; i13++) {
                     WeakReference weakReference = (WeakReference) arrayList.get(i13);
                     if (weakReference.get() != null) {
-                        ((z5) weakReference.get()).C(num.intValue() == 1);
+                        ((z5) weakReference.get()).D(num.intValue() == 1);
                         if (num.intValue() != 1) {
                             sparseArray.remove(((z5) weakReference.get()).getObserverTag());
                         }
@@ -414,7 +414,7 @@ public final class b6 extends f1 implements us {
             h(num.intValue(), str);
             return;
         }
-        if (i10 == zs.Y1 || i10 == zs.R1) {
+        if (i10 == at.Y1 || i10 == at.R1) {
             this.w = true;
             String str2 = (String) objArr[0];
             HashMap hashMap2 = this.r;
@@ -422,7 +422,7 @@ public final class b6 extends f1 implements us {
             if (arrayList2 != null) {
                 int size2 = arrayList2.size();
                 for (int i14 = 0; i14 < size2; i14++) {
-                    ((jj) arrayList2.get(i14)).x0 = true;
+                    ((kj) arrayList2.get(i14)).x0 = true;
                 }
                 hashMap2.remove(str2);
             }
@@ -432,7 +432,7 @@ public final class b6 extends f1 implements us {
                 for (int i15 = 0; i15 < size3; i15++) {
                     WeakReference weakReference2 = (WeakReference) arrayList3.get(i15);
                     if (weakReference2.get() != null) {
-                        ((z5) weakReference2.get()).M(str2);
+                        ((z5) weakReference2.get()).N(str2);
                         sparseArray.remove(((z5) weakReference2.get()).getObserverTag());
                     }
                 }
@@ -443,7 +443,7 @@ public final class b6 extends f1 implements us {
             h(0, str2);
             return;
         }
-        if (i10 == zs.X1) {
+        if (i10 == at.X1) {
             this.w = true;
             ArrayList arrayList4 = (ArrayList) hashMap.get((String) objArr[0]);
             if (arrayList4 != null) {
@@ -461,7 +461,7 @@ public final class b6 extends f1 implements us {
             u();
             return;
         }
-        if (i10 == zs.W1) {
+        if (i10 == at.W1) {
             this.w = true;
             String str3 = (String) objArr[0];
             ArrayList arrayList5 = (ArrayList) hashMap.get(str3);
@@ -477,7 +477,7 @@ public final class b6 extends f1 implements us {
                         long longValue = l11.longValue();
                         long longValue2 = l12.longValue();
                         bool.getClass();
-                        z5Var.n(longValue, longValue2);
+                        z5Var.o(longValue, longValue2);
                     }
                 }
             }
@@ -487,34 +487,34 @@ public final class b6 extends f1 implements us {
                 ArrayList arrayList6 = (ArrayList) getSendMessagesHelper().a.get(str3);
                 if (arrayList6 != null) {
                     for (int i18 = 0; i18 < arrayList6.size(); i18++) {
-                        cz czVar = (cz) arrayList6.get(i18);
-                        if (czVar.n == null) {
-                            long j10 = czVar.a;
+                        dz dzVar = (dz) arrayList6.get(i18);
+                        if (dzVar.n == null) {
+                            long j10 = dzVar.a;
                             Long l13 = (Long) hVar.f(j10);
-                            if (czVar.e == 4) {
+                            if (dzVar.e == 4) {
                                 if (l13 != null && l13.longValue() + 4000 >= System.currentTimeMillis()) {
                                 }
-                                jj jjVar = (jj) czVar.E.get(str3 + "_i");
-                                if (jjVar != null && jj.L4(jjVar.k)) {
+                                kj kjVar = (kj) dzVar.E.get(str3 + "_i");
+                                if (kjVar != null && kj.L4(kjVar.k)) {
                                     getMessagesController().z4(5, 0, j10, 0, null);
-                                } else if (jjVar == null || jjVar.F0() == null) {
+                                } else if (kjVar == null || kjVar.F0() == null) {
                                     getMessagesController().z4(4, 0, j10, 0, null);
                                 } else {
                                     getMessagesController().z4(3, 0, j10, 0, null);
                                 }
                                 hVar.k(Long.valueOf(System.currentTimeMillis()), j10);
                             } else {
-                                czVar.m.F0();
+                                dzVar.m.F0();
                                 if (l13 == null || l13.longValue() + 4000 < System.currentTimeMillis()) {
-                                    if (czVar.m.h4()) {
+                                    if (dzVar.m.h4()) {
                                         getMessagesController().z4(8, 0, j10, 0, null);
-                                    } else if (jj.L4(czVar.m.k)) {
+                                    } else if (kj.L4(dzVar.m.k)) {
                                         getMessagesController().z4(5, 0, j10, 0, null);
-                                    } else if (jj.R4(czVar.m.k)) {
+                                    } else if (kj.R4(dzVar.m.k)) {
                                         getMessagesController().z4(9, 0, j10, 0, null);
-                                    } else if (czVar.m.F0() != null) {
+                                    } else if (dzVar.m.F0() != null) {
                                         getMessagesController().z4(3, 0, j10, 0, null);
-                                    } else if (czVar.g != null) {
+                                    } else if (dzVar.g != null) {
                                         getMessagesController().z4(4, 0, j10, 0, null);
                                     }
                                     hVar.k(Long.valueOf(System.currentTimeMillis()), j10);
@@ -552,29 +552,29 @@ public final class b6 extends f1 implements us {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int e(jj jjVar) {
+    public final int e(kj kjVar) {
         TLRPC.Message message;
         int i10;
         char c10;
         int e;
         a6 n10;
-        t61 t61Var;
+        u61 u61Var;
         long q12;
-        if (jjVar == null || (message = jjVar.k) == null) {
+        if (kjVar == null || (message = kjVar.k) == null) {
             return 0;
         }
         if (message.media instanceof TLRPC.TL_messageMediaStory) {
             return f() ? 2 : 0;
         }
-        boolean L4 = jj.L4(message);
-        if (L4 || jj.t3(message) || jj.j4(message) || (jj.o1(message) instanceof TLRPC.TL_messageMediaGame)) {
+        boolean L4 = kj.L4(message);
+        if (L4 || kj.t3(message) || kj.j4(message) || (kj.o1(message) instanceof TLRPC.TL_messageMediaGame)) {
             i10 = 4;
-        } else if (jj.R4(message)) {
+        } else if (kj.R4(message)) {
             i10 = 2;
-        } else if (jj.S3(message) || jj.w4(message) || jj.L2(message)) {
+        } else if (kj.S3(message) || kj.w4(message) || kj.L2(message)) {
             i10 = 1;
         } else {
-            if (jj.G0(message) == null) {
+            if (kj.G0(message) == null) {
                 return 0;
             }
             i10 = 8;
@@ -617,12 +617,12 @@ public final class b6 extends f1 implements us {
                 long[] jArr = n10.b;
                 int i11 = iArr[c10];
                 long max = i10 == 2 ? Math.max(524288L, jArr[x(i10)]) : jArr[x(i10)];
-                t61Var = jjVar.b3;
-                if (t61Var != null) {
-                    q12 = t61Var.g.size;
+                u61Var = kjVar.b3;
+                if (u61Var != null) {
+                    q12 = u61Var.g.size;
                 } else {
-                    t61 t61Var2 = jjVar.c3;
-                    q12 = t61Var2 != null ? t61Var2.g.size : jj.q1(jj.o1(message));
+                    u61 u61Var2 = kjVar.c3;
+                    q12 = u61Var2 != null ? u61Var2.g.size : kj.q1(kj.o1(message));
                 }
                 return (L4 || !n10.c || q12 <= max || max <= 2097152) ? ((i10 != 1 || (q12 != 0 && q12 <= max)) && (i10 == 2 || (i11 & i10) != 0)) ? 1 : 0 : (i11 & i10) != 0 ? 2 : 0;
             }
@@ -635,8 +635,8 @@ public final class b6 extends f1 implements us {
             int i112 = iArr2[c10];
             if (i10 == 2) {
             }
-            t61Var = jjVar.b3;
-            if (t61Var != null) {
+            u61Var = kjVar.b3;
+            if (u61Var != null) {
             }
             if (L4) {
             }
@@ -650,8 +650,8 @@ public final class b6 extends f1 implements us {
         int i1122 = iArr22[c10];
         if (i10 == 2) {
         }
-        t61Var = jjVar.b3;
-        if (t61Var != null) {
+        u61Var = kjVar.b3;
+        if (u61Var != null) {
         }
         if (L4) {
         }
@@ -779,9 +779,9 @@ public final class b6 extends f1 implements us {
             hashMap.remove(str);
             this.h.remove(new Pair(Long.valueOf(c6Var.c), Integer.valueOf(c6Var.b)));
             if (i10 == 0 || i10 == 2) {
-                hs messagesStorage = getMessagesStorage();
+                is messagesStorage = getMessagesStorage();
                 long j10 = c6Var.c;
-                messagesStorage.a.c(new gq(messagesStorage, c6Var.b, j10, 6));
+                messagesStorage.a.c(new hq(messagesStorage, c6Var.b, j10, 6));
             }
             int i11 = c6Var.b;
             if (i11 == 1) {
@@ -823,13 +823,13 @@ public final class b6 extends f1 implements us {
 
     public final void i(int i10, long j10) {
         SparseArray sparseArray = this.I;
-        jj jjVar = (jj) sparseArray.get(i10);
-        if (jjVar == null || jj.B0(jjVar.k) != j10) {
+        kj kjVar = (kj) sparseArray.get(i10);
+        if (kjVar == null || kj.B0(kjVar.k) != j10) {
             return;
         }
         sparseArray.remove(i10);
         if (sparseArray.size() == 0) {
-            getNotificationCenter().k(zs.b5, new Object[0]);
+            getNotificationCenter().k(at.b5, new Object[0]);
         }
     }
 
@@ -845,25 +845,25 @@ public final class b6 extends f1 implements us {
                         if (i12 >= arrayList3.size()) {
                             break;
                         }
-                        if (((jj) arrayList.get(i10)).f1() == ((jj) arrayList3.get(i12)).f1() && jj.B0(((jj) arrayList3.get(i12)).k) == jj.B0(((jj) arrayList.get(i10)).k)) {
+                        if (((kj) arrayList.get(i10)).f1() == ((kj) arrayList3.get(i12)).f1() && kj.B0(((kj) arrayList3.get(i12)).k) == kj.B0(((kj) arrayList.get(i10)).k)) {
                             arrayList3.remove(i12);
                             break;
                         }
                         i12++;
                     }
                 } else {
-                    if (((jj) arrayList.get(i10)).f1() == ((jj) arrayList2.get(i11)).f1() && jj.B0(((jj) arrayList2.get(i11)).k) == jj.B0(((jj) arrayList.get(i10)).k)) {
+                    if (((kj) arrayList.get(i10)).f1() == ((kj) arrayList2.get(i11)).f1() && kj.B0(((kj) arrayList2.get(i11)).k) == kj.B0(((kj) arrayList.get(i10)).k)) {
                         arrayList2.remove(i11);
                         break;
                     }
                     i11++;
                 }
             }
-            ((jj) arrayList.get(i10)).P = false;
-            b8.G(this.currentAccount).X(((jj) arrayList.get(i10)).F0(), arrayList.get(i10), 0, 0);
-            b8.G(this.currentAccount).f(((jj) arrayList.get(i10)).F0());
+            ((kj) arrayList.get(i10)).P = false;
+            b8.G(this.currentAccount).X(((kj) arrayList.get(i10)).F0(), arrayList.get(i10), 0, 0);
+            b8.G(this.currentAccount).f(((kj) arrayList.get(i10)).F0());
         }
-        getNotificationCenter().k(zs.b5, new Object[0]);
+        getNotificationCenter().k(at.b5, new Object[0]);
         getMessagesStorage().a.c(new e4(3, this, arrayList));
     }
 
@@ -974,23 +974,23 @@ public final class b6 extends f1 implements us {
     public final void t(int i10) {
         int m10 = m();
         if ((m10 & 1) != 0 && (i10 & 1) != 0 && this.b.isEmpty()) {
-            hs messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new yp(messagesStorage, 1, 6));
+            is messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new zp(messagesStorage, 1, 6));
         }
         if ((m10 & 2) != 0 && (i10 & 2) != 0 && this.c.isEmpty()) {
-            hs messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new yp(messagesStorage2, 2, 6));
+            is messagesStorage2 = getMessagesStorage();
+            messagesStorage2.a.c(new zp(messagesStorage2, 2, 6));
         }
         if ((m10 & 4) != 0 && (i10 & 4) != 0 && this.e.isEmpty()) {
-            hs messagesStorage3 = getMessagesStorage();
-            messagesStorage3.a.c(new yp(messagesStorage3, 4, 6));
+            is messagesStorage3 = getMessagesStorage();
+            messagesStorage3.a.c(new zp(messagesStorage3, 4, 6));
         }
         int i11 = 8;
         if ((m10 & 8) == 0 || (i10 & 8) == 0 || !this.d.isEmpty()) {
             return;
         }
-        hs messagesStorage4 = getMessagesStorage();
-        messagesStorage4.a.c(new yp(messagesStorage4, i11, 6));
+        is messagesStorage4 = getMessagesStorage();
+        messagesStorage4.a.c(new zp(messagesStorage4, i11, 6));
     }
 
     public final void u() {
@@ -1097,8 +1097,8 @@ public final class b6 extends f1 implements us {
     public final void y() {
         ArrayList arrayList = this.G;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (getFileLoader().T(((jj) arrayList.get(size)).S0())) {
-                getFileLoader().X(((jj) arrayList.get(size)).F0(), arrayList.get(size), 2, 0);
+            if (getFileLoader().T(((kj) arrayList.get(size)).S0())) {
+                getFileLoader().X(((kj) arrayList.get(size)).F0(), arrayList.get(size), 2, 0);
             }
         }
     }

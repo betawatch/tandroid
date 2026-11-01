@@ -18,7 +18,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import java.io.ByteArrayInputStream;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.w0;
@@ -29,13 +29,13 @@ import org.telegram.ui.Components.hu;
 import org.telegram.ui.Components.iq;
 import org.telegram.ui.Components.jg;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.mr0;
-import org.telegram.ui.ns0;
+import org.telegram.ui.lr0;
+import org.telegram.ui.ms0;
+import org.telegram.ui.qr0;
 import org.telegram.ui.r1;
-import org.telegram.ui.rr0;
-import org.telegram.ui.we1;
+import org.telegram.ui.ue1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class i extends WebViewClient {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final class i extends WebViewClient {
         if (!TextUtils.isEmpty(str)) {
             Uri parse = Uri.parse(str);
             if ("tg".equals(parse.getScheme())) {
-                ((we1) this.b).finishFragment(false);
+                ((ue1) this.b).finishFragment(false);
                 try {
                     Intent intent = new Intent("android.intent.action.VIEW", parse);
                     intent.setComponent(new ComponentName(w0.b.getPackageName(), LaunchActivity.class.getName()));
@@ -100,11 +100,11 @@ public final class i extends WebViewClient {
                 break;
             case 3:
                 super.onPageFinished(webView, str);
-                mr0 mr0Var = (mr0) obj;
-                View view = mr0Var.r;
-                if (!mr0Var.y) {
-                    mr0Var.n.setVisibility(4);
-                    mr0Var.h.setVisibility(4);
+                lr0 lr0Var = (lr0) obj;
+                View view = lr0Var.r;
+                if (!lr0Var.y) {
+                    lr0Var.n.setVisibility(4);
+                    lr0Var.h.setVisibility(4);
                     view.setEnabled(true);
                     view.setAlpha(1.0f);
                     break;
@@ -112,14 +112,14 @@ public final class i extends WebViewClient {
                 break;
             case 4:
                 super.onPageFinished(webView, str);
-                we1 we1Var = (we1) obj;
-                iq iqVar = we1Var.c;
+                ue1 ue1Var = (ue1) obj;
+                iq iqVar = ue1Var.c;
                 if (iqVar != null && iqVar.getVisibility() == 0) {
                     AnimatorSet animatorSet = new AnimatorSet();
-                    we1Var.b.getContentView().setVisibility(0);
-                    we1Var.b.setEnabled(true);
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(we1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(we1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(we1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(we1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(we1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(we1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
-                    animatorSet.addListener(new ns0(this, 23));
+                    ue1Var.b.getContentView().setVisibility(0);
+                    ue1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(ue1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(ue1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(ue1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(ue1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(ue1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(ue1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    animatorSet.addListener(new ms0(this, 23));
                     animatorSet.setDuration(150L);
                     animatorSet.start();
                     break;
@@ -201,9 +201,9 @@ public final class i extends WebViewClient {
                     if (launchActivity == null || !launchActivity.isFinishing()) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ((r1) obj).getContext(), null);
                         x1 x1Var = alertDialog$Builder.a;
-                        x1Var.R = cd.L0(2131752104, null);
-                        x1Var.T = i0.T2(cd.L0(2131752105, null), new rr0(this, 8));
-                        alertDialog$Builder.k(cd.L0(2131747847, null), null);
+                        x1Var.R = dd.L0(2131752104, null);
+                        x1Var.T = i0.T2(dd.L0(2131752105, null), new qr0(this, 8));
+                        alertDialog$Builder.k(dd.L0(2131747847, null), null);
                         alertDialog$Builder.p();
                     }
                     return true;
@@ -217,9 +217,9 @@ public final class i extends WebViewClient {
                     if (i0.M1(huVar.getContext())) {
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, huVar.getContext(), huVar.I0);
                         x1 x1Var2 = alertDialog$Builder2.a;
-                        x1Var2.R = cd.L0(2131752104, null);
-                        x1Var2.T = i0.T2(cd.L0(2131752105, null), new ho(this, 11));
-                        alertDialog$Builder2.k(cd.L0(2131747847, null), null);
+                        x1Var2.R = dd.L0(2131752104, null);
+                        x1Var2.T = i0.T2(dd.L0(2131752105, null), new ho(this, 11));
+                        alertDialog$Builder2.k(dd.L0(2131747847, null), null);
                         alertDialog$Builder2.p();
                     }
                     return true;
@@ -248,7 +248,7 @@ public final class i extends WebViewClient {
                 return null;
             case 3:
                 String uri = webResourceRequest.getUrl().toString();
-                if (!((mr0) this.b).y || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
+                if (!((lr0) this.b).y || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
                     return null;
                 }
                 Utilities.j.c(new jg(this, uri, webResourceRequest, 15));
@@ -276,7 +276,7 @@ public final class i extends WebViewClient {
                     break;
                 }
             case 3:
-                if (!((mr0) this.b).y) {
+                if (!((lr0) this.b).y) {
                     break;
                 } else {
                     gf.f.r(webView.getContext(), str);

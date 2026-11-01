@@ -8,11 +8,11 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.t5;
 import w7.z8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
@@ -54,7 +54,7 @@ public abstract class i extends FrameLayout {
 
     public final void b() {
         j jVar = this.h;
-        oj0 selectionBounds = jVar.getSelectionBounds();
+        pj0 selectionBounds = jVar.getSelectionBounds();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
         layoutParams.leftMargin = (int) selectionBounds.a;
         layoutParams.topMargin = (int) selectionBounds.b;

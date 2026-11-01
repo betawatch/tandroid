@@ -6,12 +6,12 @@ import java.util.ArrayDeque;
 import java.util.TimerTask;
 import org.telegram.messenger.i0;
 import org.telegram.ui.Components.ho;
-import org.telegram.ui.ld0;
-import org.telegram.ui.mg0;
-import org.telegram.ui.zy;
+import org.telegram.ui.kd0;
+import org.telegram.ui.kg0;
+import org.telegram.ui.yy;
 import vh.d0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class r extends TimerTask {
     public final /* synthetic */ int a;
@@ -62,13 +62,13 @@ public final class r extends TimerTask {
                 i0.g3(new ho(this, 25));
                 break;
             case 3:
-                if (((ld0) this.b).N != null) {
-                    i0.g3(new zy(this, 25));
+                if (((kd0) this.b).N != null) {
+                    i0.g3(new yy(this, 25));
                     break;
                 }
                 break;
             case 4:
-                i0.g3(new mg0(this, 8));
+                i0.g3(new kg0(this, 8));
                 break;
             default:
                 i0.g3(new d0(this, 6));

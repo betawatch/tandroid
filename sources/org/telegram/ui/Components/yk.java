@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yk extends FrameLayout {
     public final HashMap a;
@@ -21,15 +21,15 @@ public final class yk extends FrameLayout {
     }
 
     public final void a() {
-        org.telegram.messenger.ga gaVar = this.b.F;
-        if (gaVar == null) {
+        org.telegram.messenger.ha haVar = this.b.F;
+        if (haVar == null) {
             return;
         }
-        n2.u g10 = gaVar.g();
+        n2.u g10 = haVar.g();
         for (Map.Entry entry : this.a.entrySet()) {
-            org.telegram.messenger.fa faVar = (org.telegram.messenger.fa) entry.getKey();
+            org.telegram.messenger.ga gaVar = (org.telegram.messenger.ga) entry.getKey();
             View view = (View) entry.getValue();
-            Point a02 = g10.a0(faVar.a());
+            Point a02 = g10.a0(gaVar.a());
             view.setTranslationX(a02.x - (view.getMeasuredWidth() / 2));
             view.setTranslationY(org.telegram.messenger.i0.L(22.0f) + (a02.y - view.getMeasuredHeight()));
         }

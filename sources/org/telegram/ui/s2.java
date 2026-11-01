@@ -14,14 +14,14 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class s2 extends FrameLayout implements org.telegram.ui.Components.oy0, org.telegram.ui.Cells.j9 {
-    public final m60 a;
+public final class s2 extends FrameLayout implements org.telegram.ui.Components.py0, org.telegram.ui.Cells.j9 {
+    public final l60 a;
     public final f4 b;
     public final r2 c;
     public z2 d;
-    public final org.telegram.ui.Components.py0 e;
+    public final org.telegram.ui.Components.qy0 e;
     public int f;
     public int h;
     public int n;
@@ -29,34 +29,34 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
     public TL_iv.pageBlockTable s;
     public final androidx.emoji2.text.n w;
 
-    public s2(Context context, m60 m60Var, f4 f4Var) {
+    public s2(Context context, l60 l60Var, f4 f4Var) {
         super(context);
         this.w = new androidx.emoji2.text.n(this);
-        this.a = m60Var;
+        this.a = l60Var;
         this.b = f4Var;
-        r2 r2Var = new r2(this, context, m60Var);
+        r2 r2Var = new r2(this, context, l60Var);
         this.c = r2Var;
         float f7 = 18;
         r2Var.setPadding(org.telegram.messenger.i0.L(f7), 0, org.telegram.messenger.i0.L(f7), 0);
         r2Var.setClipToPadding(false);
         addView(r2Var, w7.b6.c(-2.0f, -1));
-        org.telegram.ui.Components.py0 py0Var = new org.telegram.ui.Components.py0(context, this, ((h4) m60Var).P0);
-        this.e = py0Var;
-        py0Var.setOrientation(0);
-        py0Var.setRowOrderPreserved(true);
-        r2Var.addView(py0Var, new FrameLayout.LayoutParams(-2, -2));
+        org.telegram.ui.Components.qy0 qy0Var = new org.telegram.ui.Components.qy0(context, this, ((h4) l60Var).P0);
+        this.e = qy0Var;
+        qy0Var.setOrientation(0);
+        qy0Var.setRowOrderPreserved(true);
+        r2Var.addView(qy0Var, new FrameLayout.LayoutParams(-2, -2));
         setWillNotDraw(false);
     }
 
     public final void a() {
         int i10 = this.d == null ? 0 : 1;
-        org.telegram.ui.Components.py0 py0Var = this.e;
-        int childCount = py0Var.getChildCount();
+        org.telegram.ui.Components.qy0 qy0Var = this.e;
+        int childCount = qy0Var.getChildCount();
         for (int i11 = 0; i11 < childCount; i11++) {
-            org.telegram.ui.Components.iy0 d = py0Var.d(i11);
-            org.telegram.ui.Components.hy0 hy0Var = d.b;
-            if (hy0Var != null) {
-                hy0Var.j((org.telegram.messenger.i0.L(18.0f) + (d.b() + this.f)) - this.c.getScrollX());
+            org.telegram.ui.Components.jy0 d = qy0Var.d(i11);
+            org.telegram.ui.Components.iy0 iy0Var = d.b;
+            if (iy0Var != null) {
+                iy0Var.j((org.telegram.messenger.i0.L(18.0f) + (d.b() + this.f)) - this.c.getScrollX());
                 d.b.h(d.c() + this.h);
                 d.b.g(d.j + 10);
                 d.r = i10;
@@ -65,8 +65,8 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         }
     }
 
-    @Override // org.telegram.ui.Components.oy0
-    public final org.telegram.ui.Components.hy0 c(TL_iv.pageTableCell pagetablecell, int i10) {
+    @Override // org.telegram.ui.Components.py0
+    public final org.telegram.ui.Components.iy0 c(TL_iv.pageTableCell pagetablecell, int i10) {
         if (pagetablecell == null) {
             return null;
         }
@@ -84,27 +84,27 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.oy0
-    public final void g(org.telegram.ui.Components.hy0 hy0Var, int i10) {
-        if (!(hy0Var instanceof z2)) {
+    @Override // org.telegram.ui.Components.py0
+    public final void g(org.telegram.ui.Components.iy0 iy0Var, int i10) {
+        if (!(iy0Var instanceof z2)) {
             return;
         }
-        m60 m60Var = this.a;
-        if (m60Var.E.isEmpty() || m60Var.F == null) {
+        l60 l60Var = this.a;
+        if (l60Var.E.isEmpty() || l60Var.F == null) {
             return;
         }
-        z2 z2Var = (z2) hy0Var;
+        z2 z2Var = (z2) iy0Var;
         String lowerCase = z2Var.d.getText().toString().toLowerCase();
         int i11 = 0;
         while (true) {
-            int indexOf = lowerCase.indexOf(m60Var.F, i11);
+            int indexOf = lowerCase.indexOf(l60Var.F, i11);
             if (indexOf < 0) {
                 return;
             }
-            int length = m60Var.F.length() + indexOf;
+            int length = l60Var.F.length() + indexOf;
             if (indexOf == 0 || org.telegram.messenger.i0.K1(lowerCase.charAt(indexOf - 1))) {
                 HashMap hashMap = this.b.D;
-                String str = m60Var.F + this.s + z2Var.r + indexOf;
+                String str = l60Var.F + this.s + z2Var.r + indexOf;
                 StaticLayout staticLayout = z2Var.d;
                 hashMap.put(str, Integer.valueOf(staticLayout.getLineTop(staticLayout.getLineForOffset(indexOf)) + i10));
             }
@@ -116,17 +116,17 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         return h4.u1;
     }
 
-    @Override // org.telegram.ui.Components.oy0
+    @Override // org.telegram.ui.Components.py0
     public Paint getHeaderPaint() {
         return h4.v1;
     }
 
-    @Override // org.telegram.ui.Components.oy0
+    @Override // org.telegram.ui.Components.py0
     public Paint getLinePaint() {
         return h4.t1;
     }
 
-    @Override // org.telegram.ui.Components.oy0
+    @Override // org.telegram.ui.Components.py0
     public Paint getStripPaint() {
         return h4.w1;
     }
@@ -137,12 +137,12 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         if (z2Var != null) {
             arrayList.add(z2Var);
         }
-        org.telegram.ui.Components.py0 py0Var = this.e;
-        int childCount = py0Var.getChildCount();
+        org.telegram.ui.Components.qy0 qy0Var = this.e;
+        int childCount = qy0Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            org.telegram.ui.Components.hy0 hy0Var = py0Var.d(i10).b;
-            if (hy0Var != null) {
-                arrayList.add(hy0Var);
+            org.telegram.ui.Components.iy0 iy0Var = qy0Var.d(i10).b;
+            if (iy0Var != null) {
+                arrayList.add(iy0Var);
             }
         }
     }
@@ -160,12 +160,12 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         if (z2Var != null) {
             z2Var.i(this);
         }
-        org.telegram.ui.Components.py0 py0Var = this.e;
-        int childCount = py0Var.getChildCount();
+        org.telegram.ui.Components.qy0 qy0Var = this.e;
+        int childCount = qy0Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            org.telegram.ui.Components.hy0 hy0Var = py0Var.d(i10).b;
-            if (hy0Var != null) {
-                hy0Var.i(this);
+            org.telegram.ui.Components.iy0 iy0Var = qy0Var.d(i10).b;
+            if (iy0Var != null) {
+                iy0Var.i(this);
             }
         }
     }
@@ -177,12 +177,12 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         if (z2Var != null) {
             z2Var.f(this);
         }
-        org.telegram.ui.Components.py0 py0Var = this.e;
-        int childCount = py0Var.getChildCount();
+        org.telegram.ui.Components.qy0 qy0Var = this.e;
+        int childCount = qy0Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            org.telegram.ui.Components.hy0 hy0Var = py0Var.d(i10).b;
-            if (hy0Var != null) {
-                hy0Var.f(this);
+            org.telegram.ui.Components.iy0 iy0Var = qy0Var.d(i10).b;
+            if (iy0Var != null) {
+                iy0Var.f(this);
             }
         }
     }
@@ -193,22 +193,22 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
             return;
         }
         z2 z2Var = this.d;
-        m60 m60Var = this.a;
+        l60 l60Var = this.a;
         if (z2Var != null) {
             canvas.save();
             canvas.translate(this.n, 0);
-            h4.t(m60Var, canvas, this, 0);
+            h4.t(l60Var, canvas, this, 0);
             this.d.d(canvas, this);
             canvas.restore();
         }
-        h4.s(canvas, m60Var, this.s, getMeasuredHeight());
+        h4.s(canvas, l60Var, this.s, getMeasuredHeight());
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.cd.L0(2131754855, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.dd.L0(2131754855, null));
         if (this.d != null) {
             sb2.append(", ");
             sb2.append(this.d.d.getText());
@@ -242,17 +242,17 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         TL_iv.pageBlockTable pageblocktable = this.s;
         if (pageblocktable != null) {
             int i14 = pageblocktable.level;
-            m60 m60Var = this.a;
+            l60 l60Var = this.a;
             if (i14 > 0) {
                 int L2 = org.telegram.messenger.i0.L(i14 * 14);
                 this.f = L2;
-                m60Var.getClass();
+                l60Var.getClass();
                 int L3 = org.telegram.messenger.i0.L(18) + L2;
                 this.n = L3;
                 L = size - L3;
             } else {
                 this.f = 0;
-                m60Var.getClass();
+                l60Var.getClass();
                 this.n = org.telegram.messenger.i0.L(18);
                 L = size - org.telegram.messenger.i0.L(36);
             }
@@ -289,14 +289,14 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         MotionEvent motionEvent2;
-        org.telegram.ui.Components.py0 py0Var = this.e;
-        int childCount = py0Var.getChildCount();
+        org.telegram.ui.Components.qy0 qy0Var = this.e;
+        int childCount = qy0Var.getChildCount();
         int i10 = 0;
         while (i10 < childCount) {
-            org.telegram.ui.Components.iy0 d = py0Var.d(i10);
-            org.telegram.ui.Components.hy0 hy0Var = d.b;
-            if (hy0Var instanceof z2) {
-                z2 z2Var = (z2) hy0Var;
+            org.telegram.ui.Components.jy0 d = qy0Var.d(i10);
+            org.telegram.ui.Components.iy0 iy0Var = d.b;
+            if (iy0Var instanceof z2) {
+                z2 z2Var = (z2) iy0Var;
                 r2 r2Var = this.c;
                 MotionEvent motionEvent3 = motionEvent;
                 motionEvent2 = motionEvent3;
@@ -319,14 +319,14 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
         int i11 = org.telegram.ui.ActionBar.t6.d6;
         ((h4) this.a).getClass();
         org.telegram.messenger.i0.z3(this.c, org.telegram.ui.ActionBar.t6.x0(null, i11, false));
-        org.telegram.ui.Components.py0 py0Var = this.e;
-        py0Var.P.clear();
-        py0Var.K.clear();
-        py0Var.h();
-        py0Var.setDrawLines(this.s.bordered);
-        py0Var.setStriped(this.s.striped);
+        org.telegram.ui.Components.qy0 qy0Var = this.e;
+        qy0Var.P.clear();
+        qy0Var.K.clear();
+        qy0Var.h();
+        qy0Var.setDrawLines(this.s.bordered);
+        qy0Var.setStriped(this.s.striped);
         f4 f4Var = this.b;
-        py0Var.setRtl(f4Var != null && f4Var.G);
+        qy0Var.setRtl(f4Var != null && f4Var.G);
         if (this.s.rows.isEmpty()) {
             i10 = 0;
         } else {
@@ -357,14 +357,14 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Components.
                     i18 = 1;
                 }
                 if (pagetablecell.text != null) {
-                    py0Var.b(pagetablecell, i15, i14, i17);
+                    qy0Var.b(pagetablecell, i15, i14, i17);
                 } else {
-                    py0Var.a(i15, i14, i17, i18);
+                    qy0Var.a(i15, i14, i17, i18);
                 }
                 i15 += i17;
             }
         }
-        py0Var.setColumnCount(i10);
+        qy0Var.setColumnCount(i10);
         this.r = true;
         requestLayout();
     }

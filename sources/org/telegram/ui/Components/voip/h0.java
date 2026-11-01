@@ -1,43 +1,46 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import org.telegram.ui.ud1;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class h0 extends GestureDetector.SimpleOnGestureListener {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ ud1 c;
+public final class h0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m0 b;
 
-    public h0(ud1 ud1Var) {
-        this.c = ud1Var;
+    public /* synthetic */ h0(m0 m0Var, int i10) {
+        this.a = i10;
+        this.b = m0Var;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        this.a = true;
-        return super.onDown(motionEvent);
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        float x10 = motionEvent.getX() - motionEvent2.getX();
-        float y3 = motionEvent.getY() - motionEvent2.getY();
-        if (Math.abs(x10) > org.telegram.messenger.i0.a1(true, 0.4f) && Math.abs(x10) / 3.0f > y3 && this.a && !this.b) {
-            this.a = false;
-            org.telegram.ui.a0 a0Var = new org.telegram.ui.a0(this, x10, 2);
-            ud1 ud1Var = this.c;
-            ValueAnimator valueAnimator = ud1Var.U;
-            if (valueAnimator != null) {
-                this.b = true;
-                org.telegram.messenger.i0.h3(a0Var, (valueAnimator.getDuration() - ud1Var.U.getCurrentPlayTime()) + 50);
-            } else {
-                a0Var.run();
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                m0 m0Var = this.b;
+                if (m0Var.getParent() != null) {
+                    ((ViewGroup) m0Var.getParent()).removeView(m0Var);
+                    break;
+                }
+                break;
+            case 1:
+                m0 m0Var2 = this.b;
+                if (m0Var2.getParent() != null) {
+                    ((ViewGroup) m0Var2.getParent()).removeView(m0Var2);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                m0 m0Var3 = this.b;
+                if (m0Var3.getParent() != null) {
+                    ((ViewGroup) m0Var3.getParent()).removeView(m0Var3);
+                    break;
+                }
+                break;
         }
-        return super.onScroll(motionEvent, motionEvent2, f7, f10);
     }
 }

@@ -18,20 +18,20 @@ import java.nio.MappedByteBuffer;
 import java.util.Iterator;
 import java.util.Locale;
 import m.p3;
+import org.telegram.messenger.at;
 import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Cells.k3;
 import org.telegram.ui.Cells.m3;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.LaunchActivity;
 import v7.r6;
 import v7.x7;
 import v7.y7;
 import w7.m8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final /* synthetic */ class d implements Runnable {
             case 3:
                 ag.f fVar = (ag.f) this.b;
                 fVar.b.f3.O(true);
-                fVar.Z(true);
+                fVar.a0(true);
                 return;
             case 4:
                 org.telegram.messenger.i0.g(((TL_account.TL_businessChatLink) this.b).link);
@@ -140,32 +140,32 @@ public final /* synthetic */ class d implements Runnable {
                 return;
             case 5:
                 j1 j1Var = (j1) this.b;
-                p51 p51Var = j1Var.W1;
-                if (p51Var != null) {
-                    p51Var.O(true);
+                q51 q51Var = j1Var.W1;
+                if (q51Var != null) {
+                    q51Var.O(true);
                 }
                 j1Var.d1(true);
                 return;
             case 6:
                 t1 t1Var = (t1) ((a6.i) this.b).b;
                 t1Var.c.f3.O(true);
-                t1Var.f0();
+                t1Var.g0();
                 return;
             case 7:
                 v1 v1Var = (v1) this.b;
                 v1Var.b.f3.O(true);
-                v1Var.Z(true);
+                v1Var.a0(true);
                 return;
             case 8:
                 h2 h2Var = (h2) this.b;
                 h2Var.a.f3.O(true);
-                h2Var.c0(true);
+                h2Var.d0(true);
                 return;
             case 9:
                 ((m2) this.b).a(Boolean.FALSE);
                 return;
             case 10:
-                zs.f(((i3) this.b).a).k(zs.F1, new Object[0]);
+                at.f(((i3) this.b).a).k(at.F1, new Object[0]);
                 return;
             case 11:
                 ((androidx.activity.m) this.b).invalidateOptionsMenu();

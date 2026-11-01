@@ -1,108 +1,130 @@
 package org.telegram.messenger;
 
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class eo implements Runnable {
+public final /* synthetic */ class eo implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vp b;
+    public final /* synthetic */ f1 b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ TLObject g;
 
-    public /* synthetic */ eo(vp vpVar, int i10) {
+    public /* synthetic */ eo(f1 f1Var, Object obj, Object obj2, Object obj3, Object obj4, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = vpVar;
+        this.b = f1Var;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.f = obj4;
+        this.g = tLObject;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        vp vpVar = this.b;
-        switch (i10) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                vpVar.e2 = false;
-                break;
-            case 1:
-                vpVar.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
-                break;
-            case 2:
-                vpVar.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_19));
-                vpVar.f5();
-                break;
-            case 3:
-                vpVar.getNotificationCenter().k(2, 4);
-                break;
-            case 4:
-                vpVar.getNotificationCenter().k(2, 4);
-                break;
-            case 5:
-                vpVar.P1.clear();
-                vpVar.Q1.b();
-                vpVar.R1.clear();
-                vpVar.S1.clear();
-                vpVar.e1.clear();
-                vpVar.f1.clear();
-                vpVar.g1.clear();
-                vpVar.b1.b();
-                vpVar.c1.b();
-                vpVar.h1 = 0L;
-                vpVar.i1 = 0L;
-                vpVar.j1 = 0L;
-                vpVar.u0.clear();
-                vpVar.v0.clear();
-                vpVar.f2 = false;
-                vpVar.m2 = null;
-                vpVar.n2 = null;
-                break;
-            case 6:
-                f8.b("cleanup: isUpdating = false");
-                vpVar.getConnectionsManager().setIsUpdating(false);
-                vpVar.W0.b();
-                vpVar.X0.clear();
-                vpVar.Z0.b();
-                vpVar.Y0.clear();
-                vpVar.z0.clear();
-                vpVar.A0.b();
-                vpVar.B0.clear();
-                vpVar.C0.b();
-                break;
-            case 7:
-                vpVar.getNotificationCenter().k(zs.Q2, new Object[0]);
-                vpVar.getNotificationCenter().k(zs.O2, new Object[0]);
-                vpVar.getNotificationCenter().k(3, new Object[0]);
-                break;
-            case 8:
-                vpVar.g4();
-                break;
-            case 9:
-                vpVar.j2 = false;
-                break;
-            case 10:
-                q20 q20Var = vpVar.I7;
-                if (q20Var != null) {
-                    q20Var.a(Boolean.TRUE);
-                    vpVar.I7 = null;
+                wp wpVar = (wp) this.b;
+                Context context = (Context) this.c;
+                org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) this.d;
+                as asVar = (as) this.e;
+                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.f;
+                TLRPC.TL_channels_convertToGigagroup tL_channels_convertToGigagroup = (TLRPC.TL_channels_convertToGigagroup) this.g;
+                wpVar.getClass();
+                if (tL_error != null) {
+                    i0.g3(new hn(wpVar, asVar, context, x1Var, tL_error, k2Var, tL_channels_convertToGigagroup, 1));
+                    break;
+                } else {
+                    if (context != null) {
+                        i0.g3(new gn(1, context, x1Var));
+                    }
+                    wpVar.L3((TLRPC.Updates) tLObject, false);
+                    i0.g3(new a(asVar, 27));
                     break;
                 }
-                break;
-            case 11:
-                vpVar.getNotificationCenter().k(zs.O2, new Object[0]);
-                break;
-            case 12:
-                q20 q20Var2 = vpVar.I7;
-                if (q20Var2 != null) {
-                    q20Var2.a(Boolean.TRUE);
-                    vpVar.I7 = null;
-                    break;
-                }
-                break;
             default:
-                q20 q20Var3 = vpVar.I7;
-                if (q20Var3 != null) {
-                    q20Var3.a(Boolean.FALSE);
-                    vpVar.I7 = null;
+                final u10 u10Var = (u10) this.b;
+                final TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
+                final String str = (String) this.d;
+                final s10 s10Var = (s10) this.e;
+                final bi.e eVar = (bi.e) this.f;
+                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.g;
+                u10Var.getClass();
+                if (!(tLObject instanceof TLRPC.TL_messages_translateResult)) {
+                    final int i10 = 1;
+                    i0.g3(new Runnable() { // from class: org.telegram.messenger.j10
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i10) {
+                                case 0:
+                                    u10 u10Var2 = u10Var;
+                                    u10Var2.getClass();
+                                    TL_stories.StoryItem storyItem2 = storyItem;
+                                    storyItem2.translatedLng = str;
+                                    storyItem2.translatedText = null;
+                                    u10Var2.getMessagesController().O1().k.h(storyItem2.dialogId, storyItem2);
+                                    u10Var2.J.remove(s10Var);
+                                    eVar.run();
+                                    break;
+                                default:
+                                    u10 u10Var3 = u10Var;
+                                    u10Var3.getClass();
+                                    TL_stories.StoryItem storyItem3 = storyItem;
+                                    storyItem3.translatedLng = str;
+                                    storyItem3.translatedText = null;
+                                    u10Var3.getMessagesController().O1().k.h(storyItem3.dialogId, storyItem3);
+                                    u10Var3.J.remove(s10Var);
+                                    eVar.run();
+                                    break;
+                            }
+                        }
+                    });
                     break;
+                } else {
+                    ArrayList<TLRPC.TL_textWithEntities> arrayList = ((TLRPC.TL_messages_translateResult) tLObject).result;
+                    if (arrayList.size() > 0) {
+                        i0.g3(new hn(u10Var, storyItem, str, tL_textWithEntities, arrayList.get(0), s10Var, eVar, 4));
+                        break;
+                    } else {
+                        final int i11 = 0;
+                        i0.g3(new Runnable() { // from class: org.telegram.messenger.j10
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i11) {
+                                    case 0:
+                                        u10 u10Var2 = u10Var;
+                                        u10Var2.getClass();
+                                        TL_stories.StoryItem storyItem2 = storyItem;
+                                        storyItem2.translatedLng = str;
+                                        storyItem2.translatedText = null;
+                                        u10Var2.getMessagesController().O1().k.h(storyItem2.dialogId, storyItem2);
+                                        u10Var2.J.remove(s10Var);
+                                        eVar.run();
+                                        break;
+                                    default:
+                                        u10 u10Var3 = u10Var;
+                                        u10Var3.getClass();
+                                        TL_stories.StoryItem storyItem3 = storyItem;
+                                        storyItem3.translatedLng = str;
+                                        storyItem3.translatedText = null;
+                                        u10Var3.getMessagesController().O1().k.h(storyItem3.dialogId, storyItem3);
+                                        u10Var3.J.remove(s10Var);
+                                        eVar.run();
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    }
                 }
-                break;
         }
     }
 }

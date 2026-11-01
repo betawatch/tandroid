@@ -2,12 +2,12 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Components.t80;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.ay;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -47,11 +47,11 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 5:
                 k6 k6Var = (k6) this.b;
-                if (!(k6Var.getParent() instanceof tk0)) {
+                if (!(k6Var.getParent() instanceof uk0)) {
                     k6Var.callOnClick();
                     break;
                 } else {
-                    ((tk0) k6Var.getParent()).getOnItemClickListener().f(RecyclerView.R(k6Var), k6Var);
+                    ((uk0) k6Var.getParent()).getOnItemClickListener().f(RecyclerView.R(k6Var), k6Var);
                     break;
                 }
             case 6:
@@ -82,9 +82,9 @@ public final /* synthetic */ class f implements Runnable {
                     }
                 }
             case 10:
-                ay ayVar = (ay) this.b;
+                zx zxVar = (zx) this.b;
                 wb.e();
-                ayVar.presentFragment(new SessionsActivity(0));
+                zxVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
                 org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) this.b;

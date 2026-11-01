@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j7 extends f7 {
     public final ArrayList f;
@@ -19,7 +19,7 @@ public final class j7 extends f7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -57,7 +57,7 @@ public final class j7 extends f7 {
         s6 s6Var2 = x6Var.a;
         boolean z10 = s6Var2 != null && s6Var2.a == s6Var.a;
         if (s6Var.a == Long.MAX_VALUE) {
-            H = org.telegram.messenger.cd.L0(2131752647, null);
+            H = org.telegram.messenger.dd.L0(2131752647, null);
             x6Var.getImageView().getAvatarDrawable().g(14);
             x6Var.getImageView().e(null, x6Var.getImageView().getAvatarDrawable());
         } else {
@@ -85,7 +85,7 @@ public final class j7 extends f7 {
                 epVar2.b(-1, org.telegram.ui.ActionBar.t6.d6, org.telegram.ui.ActionBar.t6.k7);
                 x6Var.n.setDrawUnchecked(false);
                 x6Var.n.setDrawBackgroundAsArc(3);
-                x6Var.addView(x6Var.n, w7.b6.d(24, 24.0f, (org.telegram.messenger.cd.X ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
+                x6Var.addView(x6Var.n, w7.b6.d(24, 24.0f, (org.telegram.messenger.dd.X ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
             }
             x6Var.n.a(contains, z10);
         }
@@ -93,6 +93,6 @@ public final class j7 extends f7 {
 
     @Override // s4.g0
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.ck0(i10 == 1 ? new x6(this.h.getContext(), null) : null);
+        return new org.telegram.ui.Components.dk0(i10 == 1 ? new x6(this.h.getContext(), null) : null);
     }
 }

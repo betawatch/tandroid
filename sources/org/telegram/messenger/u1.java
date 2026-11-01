@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class u1 implements c5.o, c5.c {
     public static final c5.p k;
@@ -101,12 +101,12 @@ public final class u1 implements c5.o, c5.c {
             return;
         }
         boolean z10 = n;
-        int i11 = zs.j5;
+        int i11 = at.j5;
         if (z10) {
             n = false;
-            zs.e().m(i11, new Object[0]);
+            at.e().m(i11, new Object[0]);
         }
-        zs.e().m(i11, new Object[0]);
+        at.e().m(i11, new Object[0]);
     }
 
     public static String g(String str, int i10, long j10, boolean z10) {
@@ -184,7 +184,7 @@ public final class u1 implements c5.o, c5.c {
             return;
         }
         n = true;
-        zs.e().m(zs.j5, new Object[0]);
+        at.e().m(at.j5, new Object[0]);
     }
 
     @Override // c5.c
@@ -294,7 +294,7 @@ public final class u1 implements c5.o, c5.c {
                         return;
                     }
                     f8.b("BillingController.launchBillingFlow, checked consumables: OK");
-                    final ek ekVar = new ek(u1Var, activity2, cVar2, inputStorePaymentPurpose2, list3, aVar2, 2);
+                    final fk fkVar = new fk(u1Var, activity2, cVar2, inputStorePaymentPurpose2, list3, aVar2, 2);
                     final AtomicInteger atomicInteger = new AtomicInteger(0);
                     final ArrayList arrayList = new ArrayList();
                     Iterator it = list2.iterator();
@@ -322,12 +322,12 @@ public final class u1 implements c5.o, c5.c {
                                                 Purchase purchase2 = Purchase.this;
                                                 ArrayList arrayList2 = arrayList;
                                                 AtomicInteger atomicInteger2 = atomicInteger;
-                                                ek ekVar2 = ekVar;
+                                                fk fkVar2 = fkVar;
                                                 if (i11 == 0) {
                                                     f8.b("BillingController.launchBillingFlow, consumed " + purchase2.c() + ": OK");
                                                     arrayList2.add(str);
                                                     if (atomicInteger2.get() == arrayList2.size()) {
-                                                        ekVar2.run();
+                                                        fkVar2.run();
                                                         return;
                                                     }
                                                     return;
@@ -335,7 +335,7 @@ public final class u1 implements c5.o, c5.c {
                                                 f8.b("BillingController.launchBillingFlow, consumed " + purchase2.c() + ": " + gVar2.a + " " + gVar2.c);
                                                 arrayList2.add(null);
                                                 if (atomicInteger2.get() == arrayList2.size()) {
-                                                    ekVar2.run();
+                                                    fkVar2.run();
                                                 }
                                             }
                                         }, hVar);
@@ -346,11 +346,11 @@ public final class u1 implements c5.o, c5.c {
                             atomicInteger.incrementAndGet();
                             c3.a a2 = c5.g.a();
                             a2.b = 0;
-                            u1Var.n(a2.a(), Collections.singletonList(purchase), new mg(arrayList, atomicInteger, ekVar, 8));
+                            u1Var.n(a2.a(), Collections.singletonList(purchase), new ng(arrayList, atomicInteger, fkVar, 8));
                         }
                     }
                     if (atomicInteger.get() == 0) {
-                        ekVar.run();
+                        fkVar.run();
                     }
                 }
             });
@@ -359,10 +359,10 @@ public final class u1 implements c5.o, c5.c {
         if (z10) {
             f8.b("BillingController.launchBillingFlow, consumables checked, launching flow...");
         }
-        boolean p5 = d20.i(cVar.a).p();
+        boolean p5 = e20.i(cVar.a).p();
         boolean z11 = false;
         if (p5) {
-            encodeToString = Base64.encodeToString(String.valueOf(d20.i(cVar.a).e()).getBytes(d9.j.a), 0);
+            encodeToString = Base64.encodeToString(String.valueOf(e20.i(cVar.a).e()).getBytes(d9.j.a), 0);
         } else {
             encodeToString = Base64.encodeToString(("account-" + cVar.a).getBytes(d9.j.a), 0);
         }
@@ -459,7 +459,7 @@ public final class u1 implements c5.o, c5.c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void n(c5.g gVar, List list, final mg mgVar) {
+    public final void n(c5.g gVar, List list, final ng ngVar) {
         int i10;
         u1 u1Var;
         TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose;
@@ -474,26 +474,26 @@ public final class u1 implements c5.o, c5.c {
             if (i11 == 1) {
                 TLRPC.TL_help_saveAppLog tL_help_saveAppLog = new TLRPC.TL_help_saveAppLog();
                 TLRPC.TL_inputAppEvent tL_inputAppEvent = new TLRPC.TL_inputAppEvent();
-                tL_inputAppEvent.time = ConnectionsManager.getInstance(d20.s0).getCurrentTime();
+                tL_inputAppEvent.time = ConnectionsManager.getInstance(e20.s0).getCurrentTime();
                 tL_inputAppEvent.type = "premium.promo_screen_fail";
                 tL_inputAppEvent.data = new TLRPC.TL_jsonNull();
                 tL_help_saveAppLog.events.add(tL_inputAppEvent);
-                ConnectionsManager.getInstance(d20.s0).sendRequest(tL_help_saveAppLog, new ag.c3(4));
+                ConnectionsManager.getInstance(e20.s0).sendRequest(tL_help_saveAppLog, new ag.c3(4));
             }
             Runnable runnable = u1Var2.h;
             if (runnable != null) {
                 runnable.run();
                 u1Var2.h = null;
             }
-            if (mgVar != null) {
-                mgVar.run();
+            if (ngVar != null) {
+                ngVar.run();
                 return;
             }
             return;
         }
         if (list == null || list.isEmpty()) {
-            if (mgVar != null) {
-                mgVar.run();
+            if (ngVar != null) {
+                ngVar.run();
                 return;
             }
             return;
@@ -548,7 +548,7 @@ public final class u1 implements c5.o, c5.c {
                                         break;
                                     }
                                     c a2 = c.a(i13);
-                                    if (d20.i(a2.a).e() == parseLong) {
+                                    if (e20.i(a2.a).e() == parseLong) {
                                         cVar = a2;
                                         break;
                                     }
@@ -570,7 +570,7 @@ public final class u1 implements c5.o, c5.c {
                                     u1Var = this;
                                     f8.b("BillingController.onPurchasesUpdatedInternal: " + purchase.a() + " purchase is purchased and acknowledged: consuming");
                                     atomicInteger.incrementAndGet();
-                                    u1Var.e(purchase, (TLRPC.InputStorePaymentPurpose) obj2, new l1(atomicInteger2, atomicInteger, mgVar, 2));
+                                    u1Var.e(purchase, (TLRPC.InputStorePaymentPurpose) obj2, new l1(atomicInteger2, atomicInteger, ngVar, 2));
                                 } else {
                                     StringBuilder sb2 = new StringBuilder("BillingController.onPurchasesUpdatedInternal: ");
                                     sb2.append(purchase.a());
@@ -605,7 +605,7 @@ public final class u1 implements c5.o, c5.c {
                                             c5.g gVar3 = gVar2;
                                             AtomicInteger atomicInteger3 = atomicInteger2;
                                             AtomicInteger atomicInteger4 = atomicInteger;
-                                            Runnable runnable2 = mgVar;
+                                            Runnable runnable2 = ngVar;
                                             i0.g3(new q1(x1VarArr2, 1));
                                             u1Var3.b.remove(purchase2.c());
                                             if (!(tLObject instanceof TLRPC.Updates)) {
@@ -620,7 +620,7 @@ public final class u1 implements c5.o, c5.c {
                                                 }
                                                 if (tL_error != null) {
                                                     i16 = 1;
-                                                    zs.e().m(zs.k5, tL_payments_assignPlayMarketTransaction2, tL_error);
+                                                    at.e().m(at.k5, tL_payments_assignPlayMarketTransaction2, tL_error);
                                                 } else {
                                                     i16 = 1;
                                                 }
@@ -629,16 +629,16 @@ public final class u1 implements c5.o, c5.c {
                                             }
                                             f8.b("BillingController.onPurchasesUpdatedInternal: " + purchase2.a() + " purchase is purchased and now assigned");
                                             if (tL_payments_assignPlayMarketTransaction2.purpose instanceof TLRPC.TL_inputStorePaymentAuthCode) {
-                                                ArrayList z02 = vp.z0((TLRPC.Updates) tLObject, TL_update.TL_updateSentPhoneCode.class);
+                                                ArrayList z02 = wp.z0((TLRPC.Updates) tLObject, TL_update.TL_updateSentPhoneCode.class);
                                                 int size = z02.size();
                                                 int i17 = 0;
                                                 while (i17 < size) {
                                                     Object obj3 = z02.get(i17);
                                                     i17++;
-                                                    i0.g3(new mg(cVar3, tL_payments_assignPlayMarketTransaction2, (TL_update.TL_updateSentPhoneCode) obj3, 9));
+                                                    i0.g3(new ng(cVar3, tL_payments_assignPlayMarketTransaction2, (TL_update.TL_updateSentPhoneCode) obj3, 9));
                                                 }
                                             }
-                                            vp.r1(cVar3.a).L3((TLRPC.Updates) tLObject, false);
+                                            wp.r1(cVar3.a).L3((TLRPC.Updates) tLObject, false);
                                             ArrayList b11 = purchase2.b();
                                             int size2 = b11.size();
                                             int i18 = 0;
@@ -705,10 +705,10 @@ public final class u1 implements c5.o, c5.c {
             i12 = i10;
             gVar2 = gVar;
         }
-        if (atomicInteger.get() != 0 || mgVar == null) {
+        if (atomicInteger.get() != 0 || ngVar == null) {
             return;
         }
-        mgVar.run();
+        ngVar.run();
     }
 
     public final void o(List list, t1 t1Var) {

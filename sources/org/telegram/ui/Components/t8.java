@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t8 {
     public float A;
@@ -345,7 +345,7 @@ public final class t8 {
             i10 = 2;
             f7 = 0.0f;
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(f16, f16, f17, f18, org.telegram.messenger.zs.e4, 31);
+            canvas2.saveLayerAlpha(f16, f16, f17, f18, org.telegram.messenger.at.e4, 31);
         } else {
             canvas2 = canvas;
             i10 = 2;
@@ -370,7 +370,7 @@ public final class t8 {
                                 if (i31 == 0) {
                                     if (this.l) {
                                         f13 = f19;
-                                        i18 = org.telegram.messenger.z20.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), i10);
+                                        i18 = org.telegram.messenger.a30.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), i10);
                                     } else {
                                         f13 = f19;
                                         i18 = L2;
@@ -400,7 +400,7 @@ public final class t8 {
                                         f15 = this.e;
                                     } else if (i33 == i10) {
                                         if (this.l) {
-                                            i17 = org.telegram.messenger.z20.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), i10);
+                                            i17 = org.telegram.messenger.a30.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), i10);
                                         } else {
                                             i17 = L2;
                                         }
@@ -409,7 +409,7 @@ public final class t8 {
                                         float f22 = this.e;
                                         imageReceiver2.K0 = (int) c3.i0.z(f13, f22, i35, i34 * f22);
                                     } else if (i33 == -1 && this.l) {
-                                        int y3 = org.telegram.messenger.z20.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), i10) + (i23 * i30);
+                                        int y3 = org.telegram.messenger.a30.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), i10) + (i23 * i30);
                                         float f23 = this.e;
                                         imageReceiver2.K0 = (int) c3.i0.z(1.0f, f23, c10 + r5, y3 * f23);
                                     }
@@ -505,7 +505,7 @@ public final class t8 {
                     if (imageReceiver3.K()) {
                         if (i39 == 0) {
                             if (this.l) {
-                                i15 = org.telegram.messenger.z20.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), 2);
+                                i15 = org.telegram.messenger.a30.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), 2);
                             } else {
                                 i15 = L2;
                             }
@@ -531,7 +531,7 @@ public final class t8 {
                                         f12 = this.e;
                                     } else if (i41 == 2) {
                                         if (this.l) {
-                                            i14 = org.telegram.messenger.z20.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), 2);
+                                            i14 = org.telegram.messenger.a30.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), 2);
                                         } else {
                                             i14 = L2;
                                         }
@@ -541,7 +541,7 @@ public final class t8 {
                                         imageReceiver3.K0 = (int) c3.i0.z(1.0f, f27, i43, i42 * f27);
                                     } else {
                                         if (i41 == -1 && this.l) {
-                                            int y10 = org.telegram.messenger.z20.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), 2) + (i23 * i38);
+                                            int y10 = org.telegram.messenger.a30.y(z13 ? 8.0f : 4.0f, this.p - (i28 * i23), 2) + (i23 * i38);
                                             float f28 = this.e;
                                             imageReceiver3.K0 = (int) c3.i0.z(1.0f, f28, c10 + r10, y10 * f28);
                                             z10 = false;
@@ -644,7 +644,7 @@ public final class t8 {
                                                                 s8VarArr9[i12].b.c(r2.f.amplitude * 15.0f);
                                                             }
                                                         } else {
-                                                            long currentTime = ConnectionsManager.getInstance(org.telegram.messenger.d20.s0).getCurrentTime();
+                                                            long currentTime = ConnectionsManager.getInstance(org.telegram.messenger.e20.s0).getCurrentTime();
                                                             s8 s8Var5 = s8VarArr9[i12];
                                                             imageReceiver = imageReceiver3;
                                                             if (currentTime - s8Var5.d <= 5) {
@@ -972,20 +972,20 @@ public final class t8 {
         if (tLObject instanceof TLRPC.GroupCallParticipant) {
             TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) tLObject;
             s8Var.f = groupCallParticipant;
-            long C1 = org.telegram.messenger.jj.C1(groupCallParticipant.peer);
+            long C1 = org.telegram.messenger.kj.C1(groupCallParticipant.peer);
             if (org.telegram.messenger.o5.E(C1)) {
-                user = org.telegram.messenger.vp.r1(i11).Z1(Long.valueOf(C1));
+                user = org.telegram.messenger.wp.r1(i11).Z1(Long.valueOf(C1));
                 s8VarArr[i10].a.r(user);
                 chat = null;
             } else {
-                TLRPC.Chat L0 = org.telegram.messenger.vp.r1(i11).L0(Long.valueOf(-C1));
+                TLRPC.Chat L0 = org.telegram.messenger.wp.r1(i11).L0(Long.valueOf(-C1));
                 s8VarArr[i10].a.q(L0);
                 chat = L0;
                 user = null;
             }
             if (this.k != 4) {
                 s8VarArr[i10].d = groupCallParticipant.active_date;
-            } else if (C1 == org.telegram.messenger.d20.i(org.telegram.messenger.c.a(i11).a).e()) {
+            } else if (C1 == org.telegram.messenger.e20.i(org.telegram.messenger.c.a(i11).a).e()) {
                 s8VarArr[i10].d = 0L;
             } else if (this.m) {
                 s8VarArr[i10].d = groupCallParticipant.lastActiveDate;
@@ -1027,12 +1027,12 @@ public final class t8 {
             TLRPC.Document document = messageMedia.document;
             if (document != null) {
                 TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(document.thumbs, 50, true, null, false);
-                s8VarArr[i10].e.r0(org.telegram.messenger.ic.c(org.telegram.messenger.b8.w(storyItem.media.document.thumbs, 50, true, w9, true), storyItem.media.document), a1.g.i(b10, b10, "_"), org.telegram.messenger.ic.c(w9, storyItem.media.document), a1.g.i(b10, b10, "_"), null, 0L, null, storyItem, 0);
+                s8VarArr[i10].e.r0(org.telegram.messenger.jc.c(org.telegram.messenger.b8.w(storyItem.media.document.thumbs, 50, true, w9, true), storyItem.media.document), a1.g.i(b10, b10, "_"), org.telegram.messenger.jc.c(w9, storyItem.media.document), a1.g.i(b10, b10, "_"), null, 0L, null, storyItem, 0);
             } else {
                 TLRPC.Photo photo = messageMedia.photo;
                 if (photo != null) {
                     TLRPC.PhotoSize w10 = org.telegram.messenger.b8.w(photo.sizes, 50, true, null, false);
-                    s8VarArr[i10].e.r0(org.telegram.messenger.ic.i(org.telegram.messenger.b8.w(storyItem.media.photo.sizes, 50, true, w10, true), storyItem.media.photo), a1.g.i(b10, b10, "_"), org.telegram.messenger.ic.i(w10, storyItem.media.photo), a1.g.i(b10, b10, "_"), null, 0L, null, storyItem, 0);
+                    s8VarArr[i10].e.r0(org.telegram.messenger.jc.i(org.telegram.messenger.b8.w(storyItem.media.photo.sizes, 50, true, w10, true), storyItem.media.photo), a1.g.i(b10, b10, "_"), org.telegram.messenger.jc.i(w10, storyItem.media.photo), a1.g.i(b10, b10, "_"), null, 0L, null, storyItem, 0);
                 }
             }
         } else if (user == null) {

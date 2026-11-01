@@ -2,20 +2,25 @@ package org.telegram.ui;
 
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x31 implements View.OnClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ c41 b;
+    public final /* synthetic */ org.telegram.ui.Components.ag a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ a41 c;
 
-    public x31(c41 c41Var, TLRPC.TL_authorization tL_authorization) {
-        this.b = c41Var;
-        this.a = tL_authorization;
+    public x31(a41 a41Var, org.telegram.ui.Components.ag agVar, TLRPC.TL_authorization tL_authorization) {
+        this.c = a41Var;
+        this.a = agVar;
+        this.b = tL_authorization;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        c41.I0(this.b, this.a.ip);
+        ((Switch) this.a.f).c(!r0.h, true);
+        this.b.encrypted_requests_disabled = !((Switch) r4.f).h;
+        a41.J0(this.c);
     }
 }

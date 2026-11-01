@@ -10,20 +10,20 @@ import bi.d4;
 import bi.v3;
 import java.util.ArrayList;
 import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.as;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zr;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.is;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.gf;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.im;
@@ -34,18 +34,18 @@ import org.telegram.ui.Components.qx;
 import org.telegram.ui.Components.sf;
 import org.telegram.ui.aj;
 import org.telegram.ui.bj;
-import org.telegram.ui.er0;
+import org.telegram.ui.cr0;
 import org.telegram.ui.fj;
 import org.telegram.ui.fn;
 import org.telegram.ui.ge;
 import org.telegram.ui.he;
+import org.telegram.ui.iq0;
 import org.telegram.ui.km;
-import org.telegram.ui.kq0;
 import org.telegram.ui.p4;
 import org.telegram.ui.un;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d3 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class d3 implements Runnable {
         switch (i11) {
             case 0:
                 try {
-                    SQLiteDatabase sQLiteDatabase = ((hs) obj).b;
+                    SQLiteDatabase sQLiteDatabase = ((is) obj).b;
                     sQLiteDatabase.executeFast("DELETE FROM business_replies WHERE topic_id = " + i14).stepThis().dispose();
                     sQLiteDatabase.executeFast("DELETE FROM quick_replies_messages WHERE topic_id = " + i14).stepThis().dispose();
                     break;
@@ -113,7 +113,7 @@ public final /* synthetic */ class d3 implements Runnable {
                         x1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: gf.b
                             @Override // android.content.DialogInterface.OnCancelListener
                             public final void onCancel(DialogInterface dialogInterface) {
-                                ConnectionsManager.getInstance(d20.s0).cancelRequest(i14, true);
+                                ConnectionsManager.getInstance(e20.s0).cancelRequest(i14, true);
                             }
                         });
                         x1VarArr[0].show();
@@ -152,13 +152,13 @@ public final /* synthetic */ class d3 implements Runnable {
                 jVar.P.start();
                 break;
             case 7:
-                er0 er0Var = (er0) obj;
-                ig.q1 q1Var = er0Var.t1;
-                er0Var.r0(q1Var, null);
+                cr0 cr0Var = (cr0) obj;
+                ig.q1 q1Var = cr0Var.t1;
+                cr0Var.r0(q1Var, null);
                 ig.s0.e(i14).j(q1Var.c);
                 break;
             case 8:
-                zs.f(i14).k(zs.s3, Boolean.FALSE);
+                at.f(i14).k(at.s3, Boolean.FALSE);
                 ((jg.v2) obj).h();
                 break;
             case 9:
@@ -188,10 +188,10 @@ public final /* synthetic */ class d3 implements Runnable {
                 ConnectionsManager.lambda$onUpdateConfig$21(i14, (TLRPC.TL_config) obj);
                 break;
             case 12:
-                vp.r1(i14).T2(0, ((TLRPC.Chat) obj).id, true);
+                wp.r1(i14).T2(0, ((TLRPC.Chat) obj).id, true);
                 break;
             case 13:
-                ((p4) ((org.telegram.ui.e) obj).b).Z(i14, true);
+                ((p4) ((org.telegram.ui.e) obj).b).a0(i14, true);
                 break;
             case 14:
                 org.telegram.ui.Cells.q1 q1Var2 = ((org.telegram.ui.Cells.d1) obj).a;
@@ -227,40 +227,40 @@ public final /* synthetic */ class d3 implements Runnable {
                 heVar.c(i14);
                 break;
             case 16:
-                ((fj) obj).a.k(this.b, 0, true, 0, true, 0);
+                ((fj) obj).a.l(this.b, 0, true, 0, true, 0);
                 break;
             case 17:
                 un unVar = ((aj) obj).g;
-                if (unVar.Rb == i14) {
-                    unVar.bb();
+                if (unVar.Sb == i14) {
+                    unVar.gb();
                     break;
                 }
                 break;
             case 18:
                 un unVar2 = ((bj) obj).g;
-                if (unVar2.Rb == i14) {
-                    unVar2.bb();
+                if (unVar2.Sb == i14) {
+                    unVar2.gb();
                     break;
                 }
                 break;
             case 19:
                 un unVar3 = ((aj) obj).g;
-                if (unVar3.Rb == i14) {
-                    unVar3.bb();
+                if (unVar3.Sb == i14) {
+                    unVar3.gb();
                     break;
                 }
                 break;
             case 20:
                 un unVar4 = ((bj) obj).g;
-                if (unVar4.Rb == i14) {
-                    unVar4.bb();
+                if (unVar4.Sb == i14) {
+                    unVar4.gb();
                     break;
                 }
                 break;
             case 21:
                 un unVar5 = ((bj) obj).g;
-                if (unVar5.Rb == i14) {
-                    unVar5.bb();
+                if (unVar5.Sb == i14) {
+                    unVar5.gb();
                     break;
                 }
                 break;
@@ -273,22 +273,22 @@ public final /* synthetic */ class d3 implements Runnable {
                 ConnectionsManager.getInstance(i10).cancelRequest(i14, true);
                 break;
             case 24:
-                zs.f(i14).k(4, new Object[0]);
-                org.telegram.messenger.i0.h3(new org.telegram.ui.Components.q1((zr) obj, 1), 250L);
+                at.f(i14).k(4, new Object[0]);
+                org.telegram.messenger.i0.h3(new org.telegram.ui.Components.q1((as) obj, 1), 250L);
                 break;
             case 25:
                 p80 p80Var2 = (p80) obj;
                 ArrayList v = i5.r(i14).v(11);
-                String L0 = cd.L0(2131751242, null);
+                String L0 = dd.L0(2131751242, null);
                 if (v != null && !v.isEmpty()) {
                     int i16 = 0;
                     while (true) {
                         if (i16 < v.size()) {
                             if (v.get(i16) instanceof TLRPC.TL_privacyValueAllowContacts) {
-                                L0 = cd.L0(2131751242, null);
+                                L0 = dd.L0(2131751242, null);
                             } else {
                                 if ((v.get(i16) instanceof TLRPC.TL_privacyValueAllowAll) || (v.get(i16) instanceof TLRPC.TL_privacyValueDisallowAll)) {
-                                    L0 = cd.L0(2131751243, null);
+                                    L0 = dd.L0(2131751243, null);
                                 }
                                 i16++;
                             }
@@ -305,26 +305,26 @@ public final /* synthetic */ class d3 implements Runnable {
                 vh.p2 p2Var = ncVar.c1;
                 if (ncVar.a1 != i14) {
                     ncVar.setTimer(i14);
-                    q20 q20Var = ncVar.q1;
-                    if (q20Var != null) {
-                        q20Var.a(Integer.valueOf(i14));
+                    r20 r20Var = ncVar.q1;
+                    if (r20Var != null) {
+                        r20Var.a(Integer.valueOf(i14));
                     }
                     if (i14 == 0) {
-                        charSequence = cd.L0(ncVar.p1 ? 2131744153 : 2131744158, null);
+                        charSequence = dd.L0(ncVar.p1 ? 2131744153 : 2131744158, null);
                         p2Var.h = ncVar.getMeasuredWidth();
                         p2Var.p(false);
                         p2Var.k(13.0f, 4.0f, 10.0f, 4.0f);
                         p2Var.e0 = org.telegram.messenger.i0.L(0);
                         p2Var.d0 = -org.telegram.messenger.i0.L(1.0f);
                     } else if (i14 == Integer.MAX_VALUE) {
-                        charSequence = cd.L0(ncVar.p1 ? 2131744152 : 2131744157, null);
+                        charSequence = dd.L0(ncVar.p1 ? 2131744152 : 2131744157, null);
                         p2Var.h = ncVar.getMeasuredWidth();
                         p2Var.p(false);
                         p2Var.k(13.0f, 4.0f, 10.0f, 4.0f);
                         p2Var.e0 = org.telegram.messenger.i0.L(0);
                         p2Var.d0 = -org.telegram.messenger.i0.L(1.0f);
                     } else if (i14 > 0) {
-                        SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(cd.G(i14, ncVar.p1 ? "TimerPeriodVideoSetSeconds" : "TimerPeriodPhotoSetSeconds", new Object[0]));
+                        SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(dd.G(i14, ncVar.p1 ? "TimerPeriodVideoSetSeconds" : "TimerPeriodPhotoSetSeconds", new Object[0]));
                         p2Var.p(true);
                         p2Var.h = vh.p2.a(W2, p2Var.getTextPaint());
                         p2Var.k(12.0f, 7.0f, 11.0f, 7.0f);
@@ -332,11 +332,11 @@ public final /* synthetic */ class d3 implements Runnable {
                         p2Var.d0 = 0.0f;
                         charSequence = W2;
                     }
-                    p2Var.setTranslationY(((-Math.min(org.telegram.messenger.i0.L(34.0f), ncVar.getEditTextHeight())) - org.telegram.messenger.i0.L(14.0f)) * (ncVar instanceof kq0 ? -1.0f : 1.0f));
+                    p2Var.setTranslationY(((-Math.min(org.telegram.messenger.i0.L(34.0f), ncVar.getEditTextHeight())) - org.telegram.messenger.i0.L(14.0f)) * (ncVar instanceof iq0 ? -1.0f : 1.0f));
                     p2Var.s(charSequence);
-                    bi0 bi0Var = new bi0(i14 > 0 ? R.raw.fire_on : R.raw.fire_off, org.telegram.messenger.i0.L(34.0f), org.telegram.messenger.i0.L(34.0f));
-                    bi0Var.start();
-                    p2Var.j(bi0Var);
+                    ci0 ci0Var = new ci0(i14 > 0 ? R.raw.fire_on : R.raw.fire_off, org.telegram.messenger.i0.L(34.0f), org.telegram.messenger.i0.L(34.0f));
+                    ci0Var.start();
+                    p2Var.j(ci0Var);
                     p2Var.u();
                     ncVar.n1 = false;
                     org.telegram.messenger.i0.r(ncVar.o1);

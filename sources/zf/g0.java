@@ -16,8 +16,8 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
@@ -26,12 +26,12 @@ import org.telegram.ui.ActionBar.c7;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.br;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class g0 extends tk0 implements k6 {
+public final class g0 extends uk0 implements k6 {
     public static final e0[] j3 = {new e0(R.drawable.search_media_filled, 2131745425, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new e0(R.drawable.search_links_filled, 2131745428, new TLRPC.TL_inputMessagesFilterUrl(), 2), new e0(R.drawable.search_files_filled, 2131745432, new TLRPC.TL_inputMessagesFilterDocument(), 1), new e0(R.drawable.search_music_filled, 2131745423, new TLRPC.TL_inputMessagesFilterMusic(), 3), new e0(R.drawable.search_voice_filled, 2131745420, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
     public static final Pattern k3 = Pattern.compile("20[0-9]{1,2}");
     public static final Pattern l3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
@@ -77,7 +77,7 @@ public final class g0 extends tk0 implements k6 {
             return;
         }
         calendar.add(2, 1);
-        arrayList.add(new c0(timeInMillis2, cd.D0().u0().format(timeInMillis2), calendar.getTimeInMillis() - 1));
+        arrayList.add(new c0(timeInMillis2, dd.D0().u0().format(timeInMillis2), calendar.getTimeInMillis() - 1));
     }
 
     public static void B1(String str, ArrayList arrayList) {
@@ -89,7 +89,7 @@ public final class g0 extends tk0 implements k6 {
         if (trim.length() < 3) {
             return;
         }
-        if (cd.L0(2131745725, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
+        if (dd.L0(2131745725, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
             Calendar calendar = Calendar.getInstance();
             int i10 = calendar.get(1);
             int i11 = calendar.get(2);
@@ -97,10 +97,10 @@ public final class g0 extends tk0 implements k6 {
             calendar.set(i10, i11, i12, 0, 0, 0);
             long timeInMillis = calendar.getTimeInMillis();
             calendar.set(i10, i11, i12 + 1, 0, 0, 0);
-            arrayList.add(new c0(timeInMillis, cd.L0(2131745725, null), calendar.getTimeInMillis() - 1));
+            arrayList.add(new c0(timeInMillis, dd.L0(2131745725, null), calendar.getTimeInMillis() - 1));
             return;
         }
-        if (cd.L0(2131745724, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
+        if (dd.L0(2131745724, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
             Calendar calendar2 = Calendar.getInstance();
             int i13 = calendar2.get(1);
             int i14 = calendar2.get(2);
@@ -108,7 +108,7 @@ public final class g0 extends tk0 implements k6 {
             calendar2.set(i13, i14, i15, 0, 0, 0);
             long timeInMillis2 = calendar2.getTimeInMillis() - 86400000;
             calendar2.set(i13, i14, i15 + 1, 0, 0, 0);
-            arrayList.add(new c0(timeInMillis2, cd.L0(2131745724, null), calendar2.getTimeInMillis() - 86400001));
+            arrayList.add(new c0(timeInMillis2, dd.L0(2131745724, null), calendar2.getTimeInMillis() - 86400001));
             return;
         }
         Calendar calendar3 = Calendar.getInstance();
@@ -117,7 +117,7 @@ public final class g0 extends tk0 implements k6 {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
             for (int i17 = 0; i17 < 7; i17++) {
                 calendar3.set(7, i17);
-                if (cd.D0().A0().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
+                if (dd.D0().A0().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
                     i16 = i17;
                     break;
                 }
@@ -136,7 +136,7 @@ public final class g0 extends tk0 implements k6 {
             calendar4.set(i18, i19, i20, 0, 0, 0);
             long timeInMillis4 = calendar4.getTimeInMillis();
             calendar4.set(i18, i19, i20 + 1, 0, 0, 0);
-            arrayList.add(new c0(timeInMillis4, cd.D0().A0().format(timeInMillis4), calendar4.getTimeInMillis() - 1));
+            arrayList.add(new c0(timeInMillis4, dd.D0().A0().format(timeInMillis4), calendar4.getTimeInMillis() - 1));
             return;
         }
         Matcher matcher = n3.matcher(trim);
@@ -185,7 +185,7 @@ public final class g0 extends tk0 implements k6 {
                 calendar5.set(i21, parseInt4, parseInt3, 0, 0, 0);
                 long timeInMillis5 = calendar5.getTimeInMillis();
                 calendar5.set(i21, parseInt4, parseInt3 + 1, 0, 0, 0);
-                arrayList.add(new c0(timeInMillis5, cd.D0().C0().format(timeInMillis5), calendar5.getTimeInMillis() - 1));
+                arrayList.add(new c0(timeInMillis5, dd.D0().C0().format(timeInMillis5), calendar5.getTimeInMillis() - 1));
                 return;
             }
             return;
@@ -256,14 +256,14 @@ public final class g0 extends tk0 implements k6 {
                 long timeInMillis9 = calendar8.getTimeInMillis();
                 if (timeInMillis9 <= timeInMillis8) {
                     calendar8.add(2, 1);
-                    arrayList.add(new c0(timeInMillis9, cd.D0().u0().format(timeInMillis9), calendar8.getTimeInMillis() - 1));
+                    arrayList.add(new c0(timeInMillis9, dd.D0().u0().format(timeInMillis9), calendar8.getTimeInMillis() - 1));
                 }
             }
         }
     }
 
     public static int C1(String str) {
-        String[] strArr = {cd.L0(2131749096, null).toLowerCase(), cd.L0(2131750830, null).toLowerCase(), cd.L0(2131748698, null).toLowerCase(), cd.L0(2131754173, null).toLowerCase(), cd.L0(2131748677, null).toLowerCase(), cd.L0(2131749074, null).toLowerCase(), cd.L0(2131749076, null).toLowerCase(), cd.L0(2131753895, null).toLowerCase(), cd.L0(2131745582, null).toLowerCase(), cd.L0(2131747846, null).toLowerCase(), cd.L0(2131747851, null).toLowerCase(), cd.L0(2131751606, null).toLowerCase()};
+        String[] strArr = {dd.L0(2131749096, null).toLowerCase(), dd.L0(2131750830, null).toLowerCase(), dd.L0(2131748698, null).toLowerCase(), dd.L0(2131754173, null).toLowerCase(), dd.L0(2131748677, null).toLowerCase(), dd.L0(2131749074, null).toLowerCase(), dd.L0(2131749076, null).toLowerCase(), dd.L0(2131753895, null).toLowerCase(), dd.L0(2131745582, null).toLowerCase(), dd.L0(2131747846, null).toLowerCase(), dd.L0(2131747851, null).toLowerCase(), dd.L0(2131751606, null).toLowerCase()};
         String[] strArr2 = new String[12];
         Calendar calendar = Calendar.getInstance();
         for (int i10 = 1; i10 <= 12; i10++) {
@@ -297,9 +297,9 @@ public final class g0 extends tk0 implements k6 {
                     calendar.set(i14, i11, i10 + 2, 0, 0, 0);
                     long timeInMillis3 = calendar.getTimeInMillis() - 1;
                     if (i14 == i13) {
-                        arrayList.add(new c0(timeInMillis2, cd.D0().p0().format(timeInMillis2), timeInMillis3));
+                        arrayList.add(new c0(timeInMillis2, dd.D0().p0().format(timeInMillis2), timeInMillis3));
                     } else {
-                        arrayList.add(new c0(timeInMillis2, cd.D0().C0().format(timeInMillis2), timeInMillis3));
+                        arrayList.add(new c0(timeInMillis2, dd.D0().C0().format(timeInMillis2), timeInMillis3));
                     }
                 }
             }
@@ -319,7 +319,7 @@ public final class g0 extends tk0 implements k6 {
                 Object obj = arrayList.get(i10);
                 if (obj instanceof TLRPC.User) {
                     TLRPC.User user = (TLRPC.User) obj;
-                    e0 e0Var = new e0(R.drawable.search_users_filled, 4, d20.i(d20.s0).f().id == user.id ? cd.L0(2131745918, null) : i5.m(10, user.first_name, user.last_name));
+                    e0 e0Var = new e0(R.drawable.search_users_filled, 4, e20.i(e20.s0).f().id == user.id ? dd.L0(2131745918, null) : i5.m(10, user.first_name, user.last_name));
                     e0Var.f = user;
                     arrayList4.add(e0Var);
                 } else if (obj instanceof TLRPC.Chat) {
@@ -346,7 +346,7 @@ public final class g0 extends tk0 implements k6 {
             arrayList4.add(new e0(R.drawable.chats_archive, 2131754150, null, 7));
         }
         if (getAdapter() != null) {
-            b2.u uVar = new b2.u(9, getAdapter(), false);
+            b2.u uVar = new b2.u(10, getAdapter(), false);
             s4.n.c(this.i3, true).b(uVar);
             if (arrayList4.isEmpty() || !uVar.b) {
                 return;
@@ -370,7 +370,7 @@ public final class g0 extends tk0 implements k6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -378,7 +378,7 @@ public final class g0 extends tk0 implements k6 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onTouchEvent(motionEvent);

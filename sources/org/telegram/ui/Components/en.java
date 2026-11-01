@@ -6,7 +6,7 @@ import android.view.ActionMode;
 import android.view.Menu;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class en extends org.telegram.ui.Cells.e6 {
     public final /* synthetic */ int F;
@@ -27,7 +27,7 @@ public final class en extends org.telegram.ui.Cells.e6 {
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.un.t8(menu, ((org.telegram.ui.un) jnVar.b.W1).h, false, true, true, true);
+            org.telegram.ui.un.x8(menu, ((org.telegram.ui.un) jnVar.b.W1).h, false, true, true, true);
         }
     }
 

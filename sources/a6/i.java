@@ -81,24 +81,24 @@ import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.mn0;
+import org.telegram.ui.Components.nn0;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.er0;
+import org.telegram.ui.cr0;
 import td.m;
 import v7.k5;
 import x2.o;
 import zf.l1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be.a, m0, b4, l0, w0, OnSuccessListener, OnCompleteListener, d9.k, SuccessContinuation, mn0, x, jg.c, z {
+public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be.a, m0, b4, l0, w0, OnSuccessListener, OnCompleteListener, d9.k, SuccessContinuation, nn0, x, jg.c, z {
     public static i c;
     public final /* synthetic */ int a;
     public Object b;
@@ -135,7 +135,7 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
         if (lVar != lVar.k() || !rVar.O || (callback = rVar.f.getCallback()) == null || rVar.Z) {
             return true;
         }
-        callback.onMenuOpened(zs.t1, lVar);
+        callback.onMenuOpened(at.t1, lVar);
         return true;
     }
 
@@ -309,9 +309,9 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
     @Override // bi.b4
     public void T() {
         k2 k2Var = (k2) this.b;
-        k2.d0(k2Var, false, true);
+        k2.e0(k2Var, false, true);
         int i10 = k2Var.I0;
-        k2Var.B0(i10 != 2 ? i10 : 0, true);
+        k2Var.C0(i10 != 2 ? i10 : 0, true);
     }
 
     @Override // bi.b4
@@ -377,8 +377,8 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
     @Override // bi.b4
     public void Z() {
         k2 k2Var = (k2) this.b;
-        k2Var.D0();
-        k2Var.G0();
+        k2Var.E0();
+        k2Var.H0();
     }
 
     @Override // k2.z
@@ -488,12 +488,12 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
             frameLayout.getLocationOnScreen(new int[2]);
             if (f7 >= r3[1]) {
                 z10 = true;
-                k2.d0(k2Var, z10, true);
+                k2.e0(k2Var, z10, true);
                 return z10;
             }
         }
         z10 = false;
-        k2.d0(k2Var, z10, true);
+        k2.e0(k2Var, z10, true);
         return z10;
     }
 
@@ -590,10 +590,10 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
 
     @Override // jg.c
     public jg.j g0() {
-        return ((er0) this.b).B0;
+        return ((cr0) this.b).B0;
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public CharSequence getContentDescription() {
         fg.k kVar = (fg.k) this.b;
         float f7 = kVar.b;
@@ -670,7 +670,7 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
         throw new IllegalStateException("GoogleApiClient is not connected yet.");
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public void k(boolean z10, float f7) {
         fg.k kVar = (fg.k) this.b;
         float f10 = kVar.b;
@@ -875,7 +875,7 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
             k2Var.y0.h(p32);
             k2Var.y0.invalidate();
         }
-        k2Var.G0();
+        k2Var.H0();
         Runnable runnable = k2Var.M0;
         i0.r(runnable);
         i0.h3(runnable, 1000L);
@@ -899,10 +899,10 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
 
     @Override // bi.b4
     public void p(int i10) {
-        ((k2) this.b).s0(74, i10);
+        ((k2) this.b).t0(74, i10);
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public /* synthetic */ int p0() {
         return 0;
     }
@@ -924,14 +924,14 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
     public void r() {
         k2 k2Var = (k2) this.b;
         q3 q3Var = k2Var.P.u3;
-        k2Var.B0((q3Var != null && q3Var.x() && k2Var.P.F4()) ? 1 : 0, true);
-        k2Var.C0();
-        k2Var.A0();
+        k2Var.C0((q3Var != null && q3Var.x() && k2Var.P.F4()) ? 1 : 0, true);
+        k2Var.D0();
+        k2Var.B0();
     }
 
     @Override // jg.c
     public void s() {
-        ((er0) this.b).q0(null, true);
+        ((cr0) this.b).q0(null, true);
     }
 
     @Override // com.google.android.gms.common.api.internal.w0
@@ -1032,8 +1032,8 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
     public void u() {
         k2 k2Var = (k2) this.b;
         k2Var.I0 = k2Var.K0;
-        k2.d0(k2Var, false, false);
-        k2Var.B0(2, true);
+        k2.e0(k2Var, false, false);
+        k2Var.C0(2, true);
     }
 
     @Override // bi.b4
@@ -1141,7 +1141,7 @@ public final class i implements n0, s, l1, a0, androidx.activity.result.b, p, be
     public void A() {
     }
 
-    @Override // org.telegram.ui.Components.mn0
+    @Override // org.telegram.ui.Components.nn0
     public void C() {
     }
 

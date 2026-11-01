@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r80 extends View {
     public final Drawable a;
@@ -64,7 +64,7 @@ public final class r80 extends View {
             float L = org.telegram.messenger.i0.L(4.0f);
             Paint paint = this.c;
             paint.setStrokeWidth(L);
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.zs.e4, 31);
+            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.at.e4, 31);
             drawable.draw(canvas);
             if (this.e) {
                 canvas.drawLine(width3 - org.telegram.messenger.i0.L(4.0f), height2 - org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.T1(width3 - org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f) + width2, d), org.telegram.messenger.i0.T1(height2 - org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f) + height, d), paint);

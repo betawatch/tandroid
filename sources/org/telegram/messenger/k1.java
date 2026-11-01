@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.io.File;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class k1 {
     public static k1 m;
@@ -90,7 +90,7 @@ public final class k1 {
         }
         this.h = true;
         this.g = false;
-        new org.telegram.ui.web.c1(new j1(0, this, runnable)).execute("https://telegram.org/dl/android/apk-public-beta.json");
+        new org.telegram.ui.web.c1(new j1(0, this, runnable)).execute("null");
     }
 
     public final void b(boolean z10) {
@@ -99,7 +99,7 @@ public final class k1 {
         }
         this.j = true;
         this.k = 0.0f;
-        zs.e().k(zs.R4, new Object[0]);
+        at.e().k(at.R4, new Object[0]);
         if (TextUtils.isEmpty(this.f)) {
             if (z10) {
                 this.j = false;
@@ -111,14 +111,14 @@ public final class k1 {
         }
         final int i10 = 0;
         final int i11 = 1;
-        HttpGetFileTask overrideExtension = new HttpGetFileTask(new q20(this) { // from class: org.telegram.messenger.i1
+        HttpGetFileTask overrideExtension = new HttpGetFileTask(new r20(this) { // from class: org.telegram.messenger.i1
             public final /* synthetic */ k1 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.q20
+            @Override // org.telegram.messenger.r20
             public final void a(Object obj) {
                 switch (i10) {
                     case 0:
@@ -126,18 +126,18 @@ public final class k1 {
                         break;
                     default:
                         this.b.k = ((Float) obj).floatValue();
-                        zs.e().k(zs.R4, new Object[0]);
+                        at.e().k(at.R4, new Object[0]);
                         break;
                 }
             }
-        }, new q20(this) { // from class: org.telegram.messenger.i1
+        }, new r20(this) { // from class: org.telegram.messenger.i1
             public final /* synthetic */ k1 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.q20
+            @Override // org.telegram.messenger.r20
             public final void a(Object obj) {
                 switch (i11) {
                     case 0:
@@ -145,7 +145,7 @@ public final class k1 {
                         break;
                     default:
                         this.b.k = ((Float) obj).floatValue();
-                        zs.e().k(zs.R4, new Object[0]);
+                        at.e().k(at.R4, new Object[0]);
                         break;
                 }
             }

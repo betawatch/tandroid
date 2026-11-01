@@ -10,9 +10,9 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegram.messenger.us {
+public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegram.messenger.vs {
     public org.telegram.ui.Cells.m6 D;
     public final ArrayList E;
     public TLRPC.Chat a;
@@ -20,7 +20,7 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
     public final long c;
     public ArrayList d;
     public FrameLayout e;
-    public org.telegram.ui.Components.tk0 f;
+    public org.telegram.ui.Components.uk0 f;
     public wp h;
     public final ArrayList n;
     public LinearLayout r;
@@ -38,7 +38,7 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
         this.c = bundle.getLong("chat_id", 0L);
     }
 
-    public final void Z(int i10, boolean z10) {
+    public final void a0(int i10, boolean z10) {
         if (this.s == i10) {
             return;
         }
@@ -102,13 +102,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
     public final View createView(Context context) {
         final int i10 = 1;
         setHasOwnBackground(true);
-        this.simpleActionBar.setTitle(org.telegram.messenger.cd.L0(2131746402, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.dd.L0(2131746402, null));
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new ag.e(this, 28));
         FrameLayout frameLayout = new FrameLayout(context);
         this.n.addAll(getMediaDataController().n);
         org.telegram.ui.Cells.p4 p4Var = new org.telegram.ui.Cells.p4(context);
-        p4Var.setText(org.telegram.messenger.cd.L0(2131753759, null));
+        p4Var.setText(org.telegram.messenger.dd.L0(2131753759, null));
         LinearLayout linearLayout = new LinearLayout(context);
         this.r = linearLayout;
         linearLayout.setOrientation(1);
@@ -116,13 +116,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
         org.telegram.ui.Cells.m6 m6Var = new org.telegram.ui.Cells.m6(context, null);
         this.x = m6Var;
         final int i11 = 0;
-        m6Var.c(org.telegram.messenger.cd.L0(2131754291, null), false, true);
+        m6Var.c(org.telegram.messenger.dd.L0(2131754291, null), false, true);
         org.telegram.ui.Cells.m6 m6Var2 = new org.telegram.ui.Cells.m6(context, null);
         this.y = m6Var2;
-        m6Var2.c(org.telegram.messenger.cd.L0(2131745310, null), false, true);
+        m6Var2.c(org.telegram.messenger.dd.L0(2131745310, null), false, true);
         org.telegram.ui.Cells.m6 m6Var3 = new org.telegram.ui.Cells.m6(context, null);
         this.D = m6Var3;
-        m6Var3.c(org.telegram.messenger.cd.L0(2131748191, null), false, false);
+        m6Var3.c(org.telegram.messenger.dd.L0(2131748191, null), false, false);
         this.r.addView(p4Var, w7.b6.o(-1, -2));
         this.r.addView(this.x, w7.b6.o(-1, -2));
         this.r.addView(this.y, w7.b6.o(-1, -2));
@@ -150,13 +150,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i12) {
                                     case 0:
-                                        xpVar.Z(2, true);
+                                        xpVar.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar.Z(1, true);
+                                        xpVar.a0(1, true);
                                         break;
                                     default:
-                                        xpVar.Z(0, true);
+                                        xpVar.a0(0, true);
                                         break;
                                 }
                             }
@@ -170,13 +170,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i13) {
                                     case 0:
-                                        xpVar2.Z(2, true);
+                                        xpVar2.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar2.Z(1, true);
+                                        xpVar2.a0(1, true);
                                         break;
                                     default:
-                                        xpVar2.Z(0, true);
+                                        xpVar2.a0(0, true);
                                         break;
                                 }
                             }
@@ -190,13 +190,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i14) {
                                     case 0:
-                                        xpVar3.Z(2, true);
+                                        xpVar3.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar3.Z(1, true);
+                                        xpVar3.a0(1, true);
                                         break;
                                     default:
-                                        xpVar3.Z(0, true);
+                                        xpVar3.a0(0, true);
                                         break;
                                 }
                             }
@@ -223,13 +223,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i12) {
                                     case 0:
-                                        xpVar.Z(2, true);
+                                        xpVar.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar.Z(1, true);
+                                        xpVar.a0(1, true);
                                         break;
                                     default:
-                                        xpVar.Z(0, true);
+                                        xpVar.a0(0, true);
                                         break;
                                 }
                             }
@@ -243,13 +243,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i13) {
                                     case 0:
-                                        xpVar2.Z(2, true);
+                                        xpVar2.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar2.Z(1, true);
+                                        xpVar2.a0(1, true);
                                         break;
                                     default:
-                                        xpVar2.Z(0, true);
+                                        xpVar2.a0(0, true);
                                         break;
                                 }
                             }
@@ -263,13 +263,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i14) {
                                     case 0:
-                                        xpVar3.Z(2, true);
+                                        xpVar3.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar3.Z(1, true);
+                                        xpVar3.a0(1, true);
                                         break;
                                     default:
-                                        xpVar3.Z(0, true);
+                                        xpVar3.a0(0, true);
                                         break;
                                 }
                             }
@@ -297,13 +297,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i122) {
                                     case 0:
-                                        xpVar.Z(2, true);
+                                        xpVar.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar.Z(1, true);
+                                        xpVar.a0(1, true);
                                         break;
                                     default:
-                                        xpVar.Z(0, true);
+                                        xpVar.a0(0, true);
                                         break;
                                 }
                             }
@@ -317,13 +317,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i13) {
                                     case 0:
-                                        xpVar2.Z(2, true);
+                                        xpVar2.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar2.Z(1, true);
+                                        xpVar2.a0(1, true);
                                         break;
                                     default:
-                                        xpVar2.Z(0, true);
+                                        xpVar2.a0(0, true);
                                         break;
                                 }
                             }
@@ -337,13 +337,13 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                             public final void run() {
                                 switch (i14) {
                                     case 0:
-                                        xpVar3.Z(2, true);
+                                        xpVar3.a0(2, true);
                                         break;
                                     case 1:
-                                        xpVar3.Z(1, true);
+                                        xpVar3.a0(1, true);
                                         break;
                                     default:
-                                        xpVar3.Z(0, true);
+                                        xpVar3.a0(0, true);
                                         break;
                                 }
                             }
@@ -359,14 +359,14 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
         org.telegram.ui.ActionBar.a7.R(m6Var4, org.telegram.ui.ActionBar.t6.i0(x02, org.telegram.ui.ActionBar.t6.x0(null, i14, false)), org.telegram.ui.ActionBar.a7.N(i13), org.telegram.ui.ActionBar.a7.N(i14), null);
         org.telegram.ui.ActionBar.a7.R(this.y, org.telegram.ui.ActionBar.t6.i0(org.telegram.ui.ActionBar.t6.x0(null, i13, false), org.telegram.ui.ActionBar.t6.x0(null, i14, false)), org.telegram.ui.ActionBar.a7.N(i13), org.telegram.ui.ActionBar.a7.N(i14), null);
         org.telegram.ui.ActionBar.a7.R(this.D, org.telegram.ui.ActionBar.t6.i0(org.telegram.ui.ActionBar.t6.x0(null, i13, false), org.telegram.ui.ActionBar.t6.x0(null, i14, false)), org.telegram.ui.ActionBar.a7.N(i13), org.telegram.ui.ActionBar.a7.N(i14), null);
-        Z(this.w, false);
-        org.telegram.ui.Components.tk0 tk0Var = new org.telegram.ui.Components.tk0(context, null);
-        this.f = tk0Var;
-        tk0Var.setLayoutManager(new s4.a0());
-        org.telegram.ui.Components.tk0 tk0Var2 = this.f;
+        a0(this.w, false);
+        org.telegram.ui.Components.uk0 uk0Var = new org.telegram.ui.Components.uk0(context, null);
+        this.f = uk0Var;
+        uk0Var.setLayoutManager(new s4.a0());
+        org.telegram.ui.Components.uk0 uk0Var2 = this.f;
         wp wpVar = new wp(this, context);
         this.h = wpVar;
-        tk0Var2.setAdapter(wpVar);
+        uk0Var2.setAdapter(wpVar);
         this.f.setOnItemClickListener(new g(this, 5));
         frameLayout.addView(this.f, w7.b6.g());
         this.f.r1();
@@ -377,19 +377,19 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
         return this.e;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         if (i11 != this.currentAccount) {
             return;
         }
-        if (i10 == org.telegram.messenger.zs.V4) {
+        if (i10 == org.telegram.messenger.at.V4) {
             ArrayList arrayList = this.n;
             arrayList.clear();
             arrayList.addAll(getMediaDataController().n);
             this.h.f();
             return;
         }
-        if (i10 == org.telegram.messenger.zs.y1 && ((Long) objArr[0]).longValue() == (-this.c)) {
+        if (i10 == org.telegram.messenger.at.y1 && ((Long) objArr[0]).longValue() == (-this.c)) {
             org.telegram.ui.ActionBar.z4 z4Var = this.parentLayout;
             if (z4Var == null || z4Var.getLastFragment() != this) {
                 removeSelfFromStack();
@@ -400,7 +400,7 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
     }
 
     @Override // org.telegram.ui.ActionBar.k2
-    public final org.telegram.ui.Components.tk0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.uk0 getListViewForSimpleGlass() {
         return this.f;
     }
 
@@ -416,34 +416,34 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
 
     @Override // org.telegram.ui.ActionBar.k2
     public final boolean onFragmentCreate() {
-        org.telegram.messenger.vp messagesController = getMessagesController();
+        org.telegram.messenger.wp messagesController = getMessagesController();
         long j10 = this.c;
         TLRPC.Chat L0 = messagesController.L0(Long.valueOf(j10));
         this.a = L0;
         if (L0 == null) {
-            TLRPC.Chat P = org.telegram.messenger.hs.a0(this.currentAccount).P(j10);
+            TLRPC.Chat P = org.telegram.messenger.is.a0(this.currentAccount).P(j10);
             this.a = P;
             if (P == null) {
                 return false;
             }
             getMessagesController().N3(this.a, true);
             if (this.b == null) {
-                TLRPC.ChatFull F0 = org.telegram.messenger.hs.a0(this.currentAccount).F0(this.c, org.telegram.messenger.w3.T(this.a), new CountDownLatch(1), false, false, 0);
+                TLRPC.ChatFull F0 = org.telegram.messenger.is.a0(this.currentAccount).F0(this.c, org.telegram.messenger.w3.T(this.a), new CountDownLatch(1), false, false, 0);
                 this.b = F0;
                 if (F0 == null) {
                     return false;
                 }
             }
         }
-        getNotificationCenter().c(this, org.telegram.messenger.zs.V4);
-        getNotificationCenter().c(this, org.telegram.messenger.zs.y1);
+        getNotificationCenter().c(this, org.telegram.messenger.at.V4);
+        getNotificationCenter().c(this, org.telegram.messenger.at.y1);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.vp messagesController = getMessagesController();
+        org.telegram.messenger.wp messagesController = getMessagesController();
         int i10 = this.s;
         ArrayList arrayList = this.d;
         messagesController.getClass();
@@ -463,9 +463,9 @@ public final class xp extends org.telegram.ui.ActionBar.k2 implements org.telegr
                 tL_chatReactionsSome.reactions.add(tL_reactionEmoji);
             }
         }
-        messagesController.getConnectionsManager().sendRequest(tL_messages_setChatAvailableReactions, new org.telegram.messenger.qj(messagesController, j10, tL_messages_setChatAvailableReactions, 4));
-        getNotificationCenter().n(this, org.telegram.messenger.zs.V4);
-        getNotificationCenter().n(this, org.telegram.messenger.zs.y1);
+        messagesController.getConnectionsManager().sendRequest(tL_messages_setChatAvailableReactions, new org.telegram.messenger.rj(messagesController, j10, tL_messages_setChatAvailableReactions, 4));
+        getNotificationCenter().n(this, org.telegram.messenger.at.V4);
+        getNotificationCenter().n(this, org.telegram.messenger.at.y1);
     }
 
     @Override // org.telegram.ui.ActionBar.k2

@@ -8,10 +8,10 @@ import android.graphics.RenderNode;
 import android.support.v4.media.session.w;
 import g.y;
 import java.util.ArrayList;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.vi;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f {
     public final boolean a;
@@ -29,7 +29,7 @@ public final class f {
     public Rect m;
 
     public f(boolean z10) {
-        boolean e = sc.e(262144);
+        boolean e = tc.e(262144);
         this.a = e;
         this.c = true;
         this.d = (e || z10) ? 1 : 8;
@@ -174,7 +174,7 @@ public final class f {
                 if (i13 <= 0) {
                     return;
                 }
-                long p5 = ui.p(ui.p(0L, i10), i11);
+                long p5 = vi.p(vi.p(0L, i10), i11);
                 int i17 = 0;
                 boolean z11 = false;
                 while (true) {
@@ -183,12 +183,12 @@ public final class f {
                         break;
                     }
                     RenderNode renderNode = renderNodeArr[i17];
-                    p5 = ui.p(p5, renderNode.getUniqueId());
+                    p5 = vi.p(p5, renderNode.getUniqueId());
                     for (int i18 = 0; i18 < this.k; i18++) {
                         e eVar4 = (e) arrayList.get(i18);
                         RenderNode d = d(i17, i18);
                         Rect rect3 = eVar4.d;
-                        p5 = ui.p(ui.p(ui.p(ui.p(ui.p(p5, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
+                        p5 = vi.p(vi.p(vi.p(vi.p(vi.p(p5, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
                     }
                     if (!renderNode.hasDisplayList()) {
                         z11 = true;

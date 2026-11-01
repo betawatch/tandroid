@@ -1,22 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ga0 extends org.telegram.ui.Components.hn0 {
-    public final /* synthetic */ ma0 a;
+public final class ga0 extends EditText {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ga0(ma0 ma0Var, Context context) {
+    public /* synthetic */ ga0(Context context, int i10) {
         super(context);
-        this.a = ma0Var;
+        this.a = i10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.a.getClass();
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
+                break;
+            default:
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

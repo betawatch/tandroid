@@ -14,17 +14,17 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cb;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.db;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.md;
 import org.telegram.messenger.nd;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.od;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -39,15 +39,15 @@ import org.telegram.ui.Cells.x4;
 import org.telegram.ui.Cells.y4;
 import org.telegram.ui.Cells.z4;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.qb0;
-import org.telegram.ui.sb0;
+import org.telegram.ui.pb0;
+import org.telegram.ui.rb0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class h0 extends c {
     public final int K;
@@ -62,7 +62,7 @@ public class h0 extends c {
     public final int T;
     public final long U;
     public int V;
-    public jj W;
+    public kj W;
     public TLRPC.TL_channelLocation X;
     public ArrayList Y;
     public boolean Z;
@@ -73,7 +73,7 @@ public class h0 extends c {
     public TLRPC.TL_messageMediaVenue e0;
     public boolean f0;
     public final boolean g0;
-    public qb0 h0;
+    public pb0 h0;
     public boolean i0;
     public boolean j0;
     public boolean k0;
@@ -81,7 +81,7 @@ public class h0 extends c {
 
     public h0(Context context, int i10, long j10, boolean z10, p6 p6Var, boolean z11, boolean z12, boolean z13) {
         super(z11, z13);
-        this.K = d20.s0;
+        this.K = e20.s0;
         this.V = -1;
         this.Y = new ArrayList();
         this.c0 = true;
@@ -95,11 +95,11 @@ public class h0 extends c {
         this.b0 = p6Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         if (i10 == 6) {
-            if (nd.f(this.K).h(this.U) == null && this.O == null) {
+            if (od.f(this.K).h(this.U) == null && this.O == null) {
                 return false;
             }
         } else if (i10 != 1 && i10 != 3 && i10 != 8 && i10 != 12 && i10 != 7) {
@@ -117,7 +117,7 @@ public class h0 extends c {
             }
             this.Z = true;
             R();
-            nd.d(location, this.e ? 1 : 0, this);
+            od.d(location, this.e ? 1 : 0, this);
             return;
         }
         if (i10 != 4) {
@@ -129,7 +129,7 @@ public class h0 extends c {
                 }
                 this.Z = true;
                 R();
-                nd.d(location2, this.d ? 2 : 0, this);
+                od.d(location2, this.d ? 2 : 0, this);
                 return;
             }
             return;
@@ -144,7 +144,7 @@ public class h0 extends c {
         }
         this.Z = true;
         R();
-        nd.d(location4, 0, this);
+        od.d(location4, 0, this);
     }
 
     public final Object J(int i10) {
@@ -170,12 +170,12 @@ public class h0 extends c {
             }
             return tL_messageMediaVenue;
         }
-        jj jjVar = this.W;
+        kj kjVar = this.W;
         ArrayList arrayList = this.s;
-        if (jjVar == null) {
+        if (kjVar == null) {
             int i12 = 2;
             if (i11 == 2) {
-                md h = nd.f(this.K).h(this.U);
+                nd h = od.f(this.K).h(this.U);
                 if (h != null && h.d != Integer.MAX_VALUE) {
                     i12 = 3;
                 }
@@ -209,7 +209,7 @@ public class h0 extends c {
             }
         } else {
             if (i10 == 1) {
-                return jjVar;
+                return kjVar;
             }
             if (i10 > 4 && i10 < arrayList.size() + 4) {
                 return this.Y.get(i10 - 5);
@@ -286,9 +286,9 @@ public class h0 extends c {
 
     public void O(ArrayList arrayList) {
         this.Y = new ArrayList(arrayList);
-        long e = d20.i(this.K).e();
+        long e = e20.i(this.K).e();
         for (int i10 = 0; i10 < this.Y.size(); i10++) {
-            if (((sb0) this.Y.get(i10)).a == e || ((sb0) this.Y.get(i10)).b.out) {
+            if (((rb0) this.Y.get(i10)).a == e || ((rb0) this.Y.get(i10)).b.out) {
                 this.Y.remove(i10);
                 break;
             }
@@ -330,18 +330,18 @@ public class h0 extends c {
         if (u6Var != null) {
             int i10 = this.T;
             if (i10 == 8) {
-                this.N.b(cd.L0(2131745528, null), !TextUtils.isEmpty(this.Q) ? this.Q : !TextUtils.isEmpty(this.R) ? this.R : this.Z ? cd.L0(2131748789, null) : cd.L0(2131743902, null));
+                this.N.b(dd.L0(2131745528, null), !TextUtils.isEmpty(this.Q) ? this.Q : !TextUtils.isEmpty(this.R) ? this.R : this.Z ? dd.L0(2131748789, null) : dd.L0(2131743902, null));
                 this.N.setHasLocation(true);
                 return;
             }
             str = "";
             if (i10 != 4 && this.P == null) {
                 if (this.O != null) {
-                    u6Var.b(cd.L0(2131745628, null), cd.a0(null, null, 2131754693, cd.G((int) this.O.getAccuracy(), "Meters", new Object[0])));
+                    u6Var.b(dd.L0(2131745628, null), dd.a0(null, null, 2131754693, dd.G((int) this.O.getAccuracy(), "Meters", new Object[0])));
                     this.N.setHasLocation(true);
                     return;
                 } else {
-                    u6Var.b(cd.L0(2131745628, null), this.j0 ? "" : cd.L0(2131748789, null));
+                    u6Var.b(dd.L0(2131745628, null), this.j0 ? "" : dd.L0(2131748789, null));
                     this.N.setHasLocation(!this.j0);
                     return;
                 }
@@ -351,7 +351,7 @@ public class h0 extends c {
             } else if (TextUtils.isEmpty(this.R)) {
                 Location location = this.P;
                 if ((location == null && this.O == null) || this.Z) {
-                    str = cd.L0(2131748789, null);
+                    str = dd.L0(2131748789, null);
                 } else if (location != null) {
                     str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(this.P.getLongitude()));
                 } else {
@@ -359,18 +359,18 @@ public class h0 extends c {
                     if (location2 != null) {
                         str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location2.getLatitude()), Double.valueOf(this.O.getLongitude()));
                     } else if (!this.j0) {
-                        str = cd.L0(2131748789, null);
+                        str = dd.L0(2131748789, null);
                     }
                 }
             } else {
                 str = this.R;
             }
             if (this.f0) {
-                this.N.b(cd.L0(2131753937, null), str);
+                this.N.b(dd.L0(2131753937, null), str);
             } else if (i10 == 4) {
-                this.N.b(cd.L0(2131752211, null), str);
+                this.N.b(dd.L0(2131752211, null), str);
             } else {
-                this.N.b(cd.L0(2131745607, null), str);
+                this.N.b(dd.L0(2131745607, null), str);
             }
             this.N.setHasLocation(true);
         }
@@ -389,7 +389,7 @@ public class h0 extends c {
                 }
                 r1 = 2 + i11;
             } else if (i10 == 2) {
-                md h = nd.f(this.K).h(this.U);
+                nd h = od.f(this.K).h(this.U);
                 int size = this.Y.size() + 2;
                 if (h != null && h.d != Integer.MAX_VALUE) {
                     i11 = 1;
@@ -442,7 +442,7 @@ public class h0 extends c {
             return 8;
         }
         if (i12 != 4) {
-            md h = (i12 == 2 || i12 == 1) ? nd.f(this.K).h(this.U) : null;
+            nd h = (i12 == 2 || i12 == 1) ? od.f(this.K).h(this.U) : null;
             if (this.W != null) {
                 if (this.Y.isEmpty()) {
                     return i10 == 2 ? 9 : 8;
@@ -556,10 +556,10 @@ public class h0 extends c {
             case 2:
                 p4 p4Var = (p4) view;
                 if (this.W == null) {
-                    p4Var.setText(cd.L0(2131748314, null));
+                    p4Var.setText(dd.L0(2131748314, null));
                     break;
                 } else {
-                    p4Var.setText(cd.L0(2131748847, null));
+                    p4Var.setText(dd.L0(2131748847, null));
                     break;
                 }
             case 3:
@@ -616,49 +616,49 @@ public class h0 extends c {
                     TLRPC.TL_channelLocation tL_channelLocation = this.X;
                     long j10 = this.U;
                     if (tL_channelLocation == null) {
-                        jj jjVar = this.W;
-                        if (jjVar != null && i10 == 1) {
-                            v7Var.b(jjVar, this.O, this.j0);
+                        kj kjVar = this.W;
+                        if (kjVar != null && i10 == 1) {
+                            v7Var.b(kjVar, this.O, this.j0);
                             break;
                         } else {
-                            int i16 = i10 - (jjVar != null ? 5 : 2);
-                            md h = nd.f(this.K).h(j10);
+                            int i16 = i10 - (kjVar != null ? 5 : 2);
+                            nd h = od.f(this.K).h(j10);
                             if (h != null && h.d != Integer.MAX_VALUE) {
                                 i16--;
                             }
                             if (i16 >= 0 && i16 < this.Y.size()) {
-                                sb0 sb0Var = (sb0) this.Y.get(i16);
+                                rb0 rb0Var = (rb0) this.Y.get(i16);
                                 Location location = this.O;
                                 TextView textView = v7Var.f;
                                 g9 g9Var = v7Var.c;
                                 u5 u5Var = v7Var.d;
                                 Location location2 = v7Var.y;
-                                v7Var.x = sb0Var;
-                                if (o5.E(sb0Var.a)) {
-                                    TLRPC.User Z1 = vp.r1(v7Var.E).Z1(Long.valueOf(sb0Var.a));
+                                v7Var.x = rb0Var;
+                                if (o5.E(rb0Var.a)) {
+                                    TLRPC.User Z1 = wp.r1(v7Var.E).Z1(Long.valueOf(rb0Var.a));
                                     if (Z1 != null) {
                                         v7Var.n.r(Z1);
                                         u5Var.l(i5.m(0, Z1.first_name, Z1.last_name), false);
                                         g9Var.e(Z1, v7Var.n);
                                     }
                                 } else {
-                                    TLRPC.Chat L0 = vp.r1(v7Var.E).L0(Long.valueOf(-sb0Var.a));
+                                    TLRPC.Chat L0 = wp.r1(v7Var.E).L0(Long.valueOf(-rb0Var.a));
                                     if (L0 != null) {
                                         v7Var.n.q(L0);
                                         u5Var.l(L0.title, false);
                                         g9Var.e(L0, v7Var.n);
                                     }
                                 }
-                                cb a2 = sb0Var.e.a();
+                                db a2 = rb0Var.e.a();
                                 location2.setLatitude(a2.a);
                                 location2.setLongitude(a2.b);
-                                int i17 = sb0Var.b.edit_date;
-                                String D = cd.D(i17 != 0 ? i17 : r11.date);
+                                int i17 = rb0Var.b.edit_date;
+                                String D = dd.D(i17 != 0 ? i17 : r11.date);
                                 if (location == null) {
                                     textView.setText(D);
                                     break;
                                 } else {
-                                    textView.setText(D + " - " + cd.y(location2.distanceTo(location), 0, null));
+                                    textView.setText(D + " - " + dd.y(location2.distanceTo(location), 0, null));
                                     break;
                                 }
                             }
@@ -667,19 +667,19 @@ public class h0 extends c {
                         TextView textView2 = v7Var.f;
                         Location location3 = v7Var.y;
                         g9 g9Var2 = v7Var.c;
-                        v7Var.E = d20.s0;
+                        v7Var.E = e20.s0;
                         String str = tL_channelLocation.address;
                         v7Var.n = null;
                         String str2 = "";
                         if (o5.E(j10)) {
-                            TLRPC.User Z12 = vp.r1(v7Var.E).Z1(Long.valueOf(j10));
+                            TLRPC.User Z12 = wp.r1(v7Var.E).Z1(Long.valueOf(j10));
                             if (Z12 != null) {
                                 v7Var.n = new r8(0, Z12);
-                                str2 = h20.p(Z12);
+                                str2 = i20.p(Z12);
                                 g9Var2.e(Z12, v7Var.n);
                             }
                         } else {
-                            TLRPC.Chat L02 = vp.r1(v7Var.E).L0(Long.valueOf(-j10));
+                            TLRPC.Chat L02 = wp.r1(v7Var.E).L0(Long.valueOf(-j10));
                             if (L02 != null) {
                                 r8 r8Var = new r8(L02);
                                 v7Var.n = r8Var;
@@ -821,7 +821,7 @@ public class h0 extends c {
                 view = this.h0;
                 break;
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 
     public void K() {

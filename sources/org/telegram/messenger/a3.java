@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.util.Pair;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a3 implements n20 {
+public final /* synthetic */ class a3 implements o20 {
     public final /* synthetic */ b3 a;
     public final /* synthetic */ Pair b;
     public final /* synthetic */ Object c;
@@ -20,7 +20,7 @@ public final /* synthetic */ class a3 implements n20 {
         this.e = obj2;
     }
 
-    @Override // org.telegram.messenger.n20
+    @Override // org.telegram.messenger.o20
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         Boolean bool = (Boolean) obj;
         Long l4 = (Long) obj3;
@@ -34,7 +34,7 @@ public final /* synthetic */ class a3 implements n20 {
             }
             long currentTimeMillis = System.currentTimeMillis();
             b3Var.d.put(pair, Long.valueOf(currentTimeMillis));
-            if (b3Var instanceof uo) {
+            if (b3Var instanceof vo) {
                 b3Var.h(pair.hashCode(), currentTimeMillis);
             }
         }

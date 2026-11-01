@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class go {
     public final org.telegram.ui.ActionBar.b1 a;
@@ -44,7 +44,7 @@ public final class go {
             num = 1;
             actionBarPopupWindow$ActionBarPopupWindowLayout = eoVar;
             i11 = 1;
-            org.telegram.ui.ActionBar.b1 c10 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, org.telegram.messenger.cd.L0(2131753756, null), false, p6Var);
+            org.telegram.ui.ActionBar.b1 c10 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, org.telegram.messenger.dd.L0(2131753756, null), false, p6Var);
             this.a = c10;
             c10.setOnClickListener(new y7(yf0Var, 1));
         } else {
@@ -52,7 +52,7 @@ public final class go {
             i11 = 1;
             num = 1;
         }
-        org.telegram.ui.ActionBar.b1 c11 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_tone_on, org.telegram.messenger.cd.L0(2131745293, null), false, p6Var);
+        org.telegram.ui.ActionBar.b1 c11 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_tone_on, org.telegram.messenger.dd.L0(2131745293, null), false, p6Var);
         this.b = c11;
         final int i12 = 0;
         c11.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bo
@@ -67,21 +67,21 @@ public final class go {
                 switch (i12) {
                     case 0:
                         this.b.a();
-                        foVar.y();
+                        foVar.x();
                         break;
                     case 1:
                         go goVar = this.b;
                         goVar.a();
-                        foVar.E(goVar.l);
+                        foVar.y(goVar.l);
                         break;
                     case 2:
                         go goVar2 = this.b;
                         goVar2.a();
-                        foVar.E(goVar2.k);
+                        foVar.y(goVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        foVar.x();
+                        foVar.v();
                         break;
                     case 4:
                         this.b.a();
@@ -94,7 +94,7 @@ public final class go {
                 }
             }
         });
-        org.telegram.ui.ActionBar.b1 c12 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, org.telegram.messenger.cd.L0(2131748326, null), false, p6Var);
+        org.telegram.ui.ActionBar.b1 c12 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, org.telegram.messenger.dd.L0(2131748326, null), false, p6Var);
         this.d = c12;
         c12.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bo
             public final /* synthetic */ go b;
@@ -108,21 +108,21 @@ public final class go {
                 switch (i11) {
                     case 0:
                         this.b.a();
-                        foVar.y();
+                        foVar.x();
                         break;
                     case 1:
                         go goVar = this.b;
                         goVar.a();
-                        foVar.E(goVar.l);
+                        foVar.y(goVar.l);
                         break;
                     case 2:
                         go goVar2 = this.b;
                         goVar2.a();
-                        foVar.E(goVar2.k);
+                        foVar.y(goVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        foVar.x();
+                        foVar.v();
                         break;
                     case 4:
                         this.b.a();
@@ -135,7 +135,7 @@ public final class go {
                 }
             }
         });
-        org.telegram.ui.ActionBar.b1 c13 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, org.telegram.messenger.cd.L0(2131748326, null), false, p6Var);
+        org.telegram.ui.ActionBar.b1 c13 = org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, org.telegram.messenger.dd.L0(2131748326, null), false, p6Var);
         this.e = c13;
         final int i13 = 2;
         c13.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bo
@@ -150,21 +150,21 @@ public final class go {
                 switch (i13) {
                     case 0:
                         this.b.a();
-                        foVar.y();
+                        foVar.x();
                         break;
                     case 1:
                         go goVar = this.b;
                         goVar.a();
-                        foVar.E(goVar.l);
+                        foVar.y(goVar.l);
                         break;
                     case 2:
                         go goVar2 = this.b;
                         goVar2.a();
-                        foVar.E(goVar2.k);
+                        foVar.y(goVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        foVar.x();
+                        foVar.v();
                         break;
                     case 4:
                         this.b.a();
@@ -179,9 +179,9 @@ public final class go {
         });
         Integer num2 = num;
         int i14 = i11;
-        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_period, org.telegram.messenger.cd.L0(2131748323, null), false, p6Var).setOnClickListener(new co(this, context, p6Var, i10, foVar, 0));
+        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_period, org.telegram.messenger.dd.L0(2131748323, null), false, p6Var).setOnClickListener(new co(this, context, p6Var, i10, foVar, 0));
         final int i15 = 3;
-        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, org.telegram.messenger.cd.L0(2131747933, null), false, p6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bo
+        org.telegram.ui.ActionBar.t0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, org.telegram.messenger.dd.L0(2131747933, null), false, p6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bo
             public final /* synthetic */ go b;
 
             {
@@ -193,21 +193,21 @@ public final class go {
                 switch (i15) {
                     case 0:
                         this.b.a();
-                        foVar.y();
+                        foVar.x();
                         break;
                     case 1:
                         go goVar = this.b;
                         goVar.a();
-                        foVar.E(goVar.l);
+                        foVar.y(goVar.l);
                         break;
                     case 2:
                         go goVar2 = this.b;
                         goVar2.a();
-                        foVar.E(goVar2.k);
+                        foVar.y(goVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        foVar.x();
+                        foVar.v();
                         break;
                     case 4:
                         this.b.a();
@@ -235,21 +235,21 @@ public final class go {
                 switch (i16) {
                     case 0:
                         this.b.a();
-                        foVar.y();
+                        foVar.x();
                         break;
                     case 1:
                         go goVar = this.b;
                         goVar.a();
-                        foVar.E(goVar.l);
+                        foVar.y(goVar.l);
                         break;
                     case 2:
                         go goVar2 = this.b;
                         goVar2.a();
-                        foVar.E(goVar2.k);
+                        foVar.y(goVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        foVar.x();
+                        foVar.v();
                         break;
                     case 4:
                         this.b.a();
@@ -292,21 +292,21 @@ public final class go {
                 switch (i18) {
                     case 0:
                         this.b.a();
-                        foVar.y();
+                        foVar.x();
                         break;
                     case 1:
                         go goVar = this.b;
                         goVar.a();
-                        foVar.E(goVar.l);
+                        foVar.y(goVar.l);
                         break;
                     case 2:
                         go goVar2 = this.b;
                         goVar2.a();
-                        foVar.E(goVar2.k);
+                        foVar.y(goVar2.k);
                         break;
                     case 3:
                         this.b.a();
-                        foVar.x();
+                        foVar.v();
                         break;
                     case 4:
                         this.b.a();
@@ -329,23 +329,23 @@ public final class go {
         int i14 = (i12 - (i13 * 3600)) / 60;
         if (i11 != 0) {
             sb2.append(i11);
-            sb2.append(org.telegram.messenger.cd.L0(2131745709, null));
+            sb2.append(org.telegram.messenger.dd.L0(2131745709, null));
         }
         if (i13 != 0) {
             if (sb2.length() > 0) {
                 sb2.append(" ");
             }
             sb2.append(i13);
-            sb2.append(org.telegram.messenger.cd.L0(2131745708, null));
+            sb2.append(org.telegram.messenger.dd.L0(2131745708, null));
         }
         if (i14 != 0) {
             if (sb2.length() > 0) {
                 sb2.append(" ");
             }
             sb2.append(i14);
-            sb2.append(org.telegram.messenger.cd.L0(2131745707, null));
+            sb2.append(org.telegram.messenger.dd.L0(2131745707, null));
         }
-        return org.telegram.messenger.cd.a0("MuteForButton", null, 2131748324, sb2.toString());
+        return org.telegram.messenger.dd.a0("MuteForButton", null, 2131748324, sb2.toString());
     }
 
     public static void c(org.telegram.ui.ActionBar.b1 b1Var, int i10) {
@@ -378,7 +378,7 @@ public final class go {
         org.telegram.ui.ActionBar.k1 k1Var = new org.telegram.ui.ActionBar.k1(eoVar, -2, -2);
         this.h = k1Var;
         k1Var.e = true;
-        k1Var.c = org.telegram.messenger.zs.x3;
+        k1Var.c = org.telegram.messenger.at.x3;
         k1Var.setOutsideTouchable(true);
         this.h.setClippingEnabled(true);
         this.h.setAnimationStyle(R.style.PopupContextAnimation);
@@ -414,21 +414,21 @@ public final class go {
             return;
         }
         int i13 = this.g;
-        boolean q22 = org.telegram.messenger.vp.r1(i13).q2(j10, j11, null);
+        boolean q22 = org.telegram.messenger.wp.r1(i13).q2(j10, j11, null);
         org.telegram.ui.ActionBar.b1 b1Var = this.c;
         org.telegram.ui.ActionBar.b1 b1Var2 = this.b;
         if (q22) {
-            b1Var.j(org.telegram.messenger.cd.L0(2131743873, null), R.drawable.msg_unmute, null);
+            b1Var.j(org.telegram.messenger.dd.L0(2131743873, null), R.drawable.msg_unmute, null);
             i10 = org.telegram.ui.ActionBar.t6.x6;
             b1Var2.setVisibility(8);
         } else {
-            b1Var.j(org.telegram.messenger.cd.L0(2131748321, null), R.drawable.msg_mute, null);
+            b1Var.j(org.telegram.messenger.dd.L0(2131748321, null), R.drawable.msg_mute, null);
             int i14 = org.telegram.ui.ActionBar.t6.q7;
             b1Var2.setVisibility(0);
-            if (org.telegram.messenger.vp.r1(i13).r2(j10, j11)) {
-                b1Var2.j(org.telegram.messenger.cd.L0(2131745295, null), R.drawable.msg_tone_off, null);
+            if (org.telegram.messenger.wp.r1(i13).r2(j10, j11)) {
+                b1Var2.j(org.telegram.messenger.dd.L0(2131745295, null), R.drawable.msg_tone_off, null);
             } else {
-                b1Var2.j(org.telegram.messenger.cd.L0(2131745293, null), R.drawable.msg_tone_on, null);
+                b1Var2.j(org.telegram.messenger.dd.L0(2131745293, null), R.drawable.msg_tone_on, null);
             }
             i10 = i14;
         }
@@ -439,7 +439,7 @@ public final class go {
             i11 = 0;
             i12 = 0;
         } else {
-            SharedPreferences sharedPreferences = org.telegram.messenger.vp.r1(i13).e7;
+            SharedPreferences sharedPreferences = org.telegram.messenger.wp.r1(i13).e7;
             i12 = sharedPreferences.getInt("last_selected_mute_until_time", 0);
             i11 = sharedPreferences.getInt("last_selected_mute_until_time2", 0);
         }
@@ -447,7 +447,7 @@ public final class go {
         if (i12 != 0) {
             this.l = i12;
             b1Var3.setVisibility(0);
-            b1Var3.getImageView().setImageDrawable(f11.a(i12));
+            b1Var3.getImageView().setImageDrawable(g11.a(i12));
             b1Var3.setText(b(i12));
         } else {
             b1Var3.setVisibility(8);
@@ -456,7 +456,7 @@ public final class go {
         if (i11 != 0) {
             this.k = i11;
             b1Var4.setVisibility(0);
-            b1Var4.getImageView().setImageDrawable(f11.a(i11));
+            b1Var4.getImageView().setImageDrawable(g11.a(i11));
             b1Var4.setText(b(i11));
         } else {
             b1Var4.setVisibility(8);
@@ -470,7 +470,7 @@ public final class go {
         } else {
             frameLayout.setVisibility(0);
             textView.setVisibility(0);
-            textView.setText(org.telegram.messenger.i0.R2(org.telegram.messenger.cd.G(hashSet.size(), "TopicNotificationsExceptions", new Object[0]), org.telegram.ui.ActionBar.t6.n6, 1, null, null));
+            textView.setText(org.telegram.messenger.i0.R2(org.telegram.messenger.dd.G(hashSet.size(), "TopicNotificationsExceptions", new Object[0]), org.telegram.ui.ActionBar.t6.n6, 1, null, null));
         }
     }
 }

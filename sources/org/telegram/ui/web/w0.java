@@ -2,10 +2,10 @@ package org.telegram.ui.web;
 
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class w0 {
     public final String a;
@@ -34,19 +34,19 @@ public final class w0 {
                 break;
             case -1367724422:
                 if (string.equals("cancel")) {
-                    this.b = cd.L0(2131752589, null);
+                    this.b = dd.L0(2131752589, null);
                     return;
                 }
                 break;
             case 3548:
                 if (string.equals("ok")) {
-                    this.b = cd.L0(2131747847, null);
+                    this.b = dd.L0(2131747847, null);
                     return;
                 }
                 break;
             case 94756344:
                 if (string.equals("close")) {
-                    this.b = cd.L0(2131752041, null);
+                    this.b = dd.L0(2131752041, null);
                     return;
                 }
                 break;

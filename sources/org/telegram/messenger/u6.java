@@ -9,7 +9,7 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.jb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u6 implements org.telegram.ui.ActionBar.u1, ResultCallback {
     public final /* synthetic */ boolean a;
@@ -18,11 +18,11 @@ public final /* synthetic */ class u6 implements org.telegram.ui.ActionBar.u1, R
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ u6(a7 a7Var, w6 w6Var, int i10, jj jjVar, boolean z10) {
+    public /* synthetic */ u6(a7 a7Var, w6 w6Var, int i10, kj kjVar, boolean z10) {
         this.c = a7Var;
         this.d = w6Var;
         this.b = i10;
-        this.e = jjVar;
+        this.e = kjVar;
         this.a = z10;
     }
 
@@ -30,17 +30,17 @@ public final /* synthetic */ class u6 implements org.telegram.ui.ActionBar.u1, R
     public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
         a7 a7Var = (a7) this.c;
         w6 w6Var = (w6) this.d;
-        jj jjVar = (jj) this.e;
+        kj kjVar = (kj) this.e;
         if (w6Var.getText().toString().length() > this.b) {
             i0.E3(w6Var);
             return;
         }
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
         CharSequence[] charSequenceArr = {w6Var.getText()};
-        tL_textWithEntities.entities = ui.b0(a7Var.a).W(charSequenceArr, true, true);
+        tL_textWithEntities.entities = vi.b0(a7Var.a).W(charSequenceArr, true, true);
         CharSequence charSequence = charSequenceArr[0];
         tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
-        a7Var.a(jjVar, tL_textWithEntities, this.a);
+        a7Var.a(kjVar, tL_textWithEntities, this.a);
         x1Var.dismiss();
     }
 

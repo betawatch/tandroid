@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.w3;
 import org.telegram.tgnet.TLObject;
@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.g00;
+import org.telegram.ui.f00;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v0 extends LinearLayout implements k6 {
     public ShapeDrawable a;
@@ -76,21 +76,21 @@ public final class v0 extends LinearLayout implements k6 {
             eqVar.e = L;
             eqVar.f = L2;
             g9Var.setImageDrawable(eqVar);
-            textView2.setText(cd.a0(null, null, 2131749353, str));
-            textView.setText(cd.L0(2131749354, null));
+            textView2.setText(dd.a0(null, null, 2131749353, str));
+            textView.setText(dd.L0(2131749354, null));
             return;
         }
         r8 r8Var = this.d;
         r8Var.q(chat);
         g9Var.e(chat, r8Var);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cd.a0(null, null, 2131749351, str + "@" + w3.K(chat, false)));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(dd.a0(null, null, 2131749351, str + "@" + w3.K(chat, false)));
         spannableStringBuilder.append((CharSequence) "  d");
-        g00 g00Var = new g00(8);
-        g00Var.f = t6.x0(null, t6.zk, false);
-        g00Var.n = false;
-        spannableStringBuilder.setSpan(g00Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+        f00 f00Var = new f00(8);
+        f00Var.f = t6.x0(null, t6.zk, false);
+        f00Var.n = false;
+        spannableStringBuilder.setSpan(f00Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
         textView2.setText(spannableStringBuilder);
-        textView.setText(cd.L0(2131749352, null));
+        textView.setText(dd.L0(2131749352, null));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

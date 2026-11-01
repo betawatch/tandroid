@@ -2,17 +2,17 @@ package m4;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.ma;
+import org.telegram.messenger.at;
+import org.telegram.messenger.is;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.na;
 import org.telegram.messenger.oa;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.pa;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -67,34 +67,34 @@ public final /* synthetic */ class y0 implements Runnable {
                 }
                 break;
             case 1:
-                na naVar = (na) obj3;
+                oa oaVar = (oa) obj3;
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj2;
                 ArrayList arrayList = (ArrayList) obj;
-                int i14 = ((oa) obj5).a;
+                int i14 = ((pa) obj5).a;
                 int i15 = ((int[]) obj4)[0];
-                int i16 = naVar.d;
-                HashMap hashMap = naVar.b;
+                int i16 = oaVar.d;
+                HashMap hashMap = oaVar.b;
                 if (i15 == i16) {
-                    naVar.d = -1;
-                    naVar.f = false;
-                    naVar.g = messages_messages.next_rate;
+                    oaVar.d = -1;
+                    oaVar.f = false;
+                    oaVar.g = messages_messages.next_rate;
                     int size = arrayList.size();
                     int i17 = 0;
                     while (i17 < size) {
                         Object obj6 = arrayList.get(i17);
                         i17++;
-                        jj jjVar = (jj) obj6;
+                        kj kjVar = (kj) obj6;
                         int i18 = i13;
-                        ma maVar = new ma(jjVar.k);
-                        Integer num = (Integer) hashMap.get(maVar);
+                        na naVar = new na(kjVar.k);
+                        Integer num = (Integer) hashMap.get(naVar);
                         if (num == null) {
-                            int i19 = naVar.j;
-                            naVar.j = i19 - 1;
+                            int i19 = oaVar.j;
+                            oaVar.j = i19 - 1;
                             num = Integer.valueOf(i19);
-                            hashMap.put(maVar, num);
-                            naVar.a.add(jjVar);
+                            hashMap.put(naVar, num);
+                            oaVar.a.add(kjVar);
                         }
-                        TLRPC.Message message = jjVar.k;
+                        TLRPC.Message message = kjVar.k;
                         message.realId = message.id;
                         message.id = num.intValue();
                         i13 = i18;
@@ -102,15 +102,15 @@ public final /* synthetic */ class y0 implements Runnable {
                     int i20 = i13;
                     if (!messages_messages.messages.isEmpty()) {
                         TLRPC.Message message2 = (TLRPC.Message) i0.a.g(1, messages_messages.messages);
-                        naVar.h = message2.realId;
-                        naVar.i = message2.peer_id;
+                        oaVar.h = message2.realId;
+                        oaVar.i = message2.peer_id;
                     }
-                    hs.a0(i14).m1(messages_messages.users, messages_messages.chats, true, true);
-                    vp.r1(i14).V3(messages_messages.users, false);
-                    vp.r1(i14).P3(messages_messages.chats, false);
-                    naVar.n = messages_messages.messages.size() < 21;
-                    naVar.m = Math.max(messages_messages.count, messages_messages.messages.size());
-                    zs f7 = zs.f(i14);
+                    is.a0(i14).m1(messages_messages.users, messages_messages.chats, true, true);
+                    wp.r1(i14).V3(messages_messages.users, false);
+                    wp.r1(i14).P3(messages_messages.chats, false);
+                    oaVar.n = messages_messages.messages.size() < 21;
+                    oaVar.m = Math.max(messages_messages.count, messages_messages.messages.size());
+                    at f7 = at.f(i14);
                     Integer valueOf = Integer.valueOf(arrayList.size());
                     Integer valueOf2 = Integer.valueOf(i20);
                     Integer valueOf3 = Integer.valueOf(i11);
@@ -132,12 +132,12 @@ public final /* synthetic */ class y0 implements Runnable {
                     objArr[13] = 0;
                     objArr[14] = 7;
                     f7.k(14, objArr);
-                    zs f10 = zs.f(i14);
+                    at f10 = at.f(i14);
                     Integer valueOf5 = Integer.valueOf(i11);
-                    Integer valueOf6 = Integer.valueOf(naVar.m);
-                    Boolean valueOf7 = Boolean.valueOf(naVar.n);
-                    Integer valueOf8 = Integer.valueOf(naVar.b());
-                    Integer valueOf9 = Integer.valueOf(naVar.l);
+                    Integer valueOf6 = Integer.valueOf(oaVar.m);
+                    Boolean valueOf7 = Boolean.valueOf(oaVar.n);
+                    Integer valueOf8 = Integer.valueOf(oaVar.b());
+                    Integer valueOf9 = Integer.valueOf(oaVar.l);
                     Object[] objArr2 = new Object[6];
                     objArr2[0] = valueOf5;
                     objArr2[1] = valueOf6;
@@ -150,51 +150,51 @@ public final /* synthetic */ class y0 implements Runnable {
                 }
                 break;
             default:
-                ui uiVar = (ui) obj5;
+                vi viVar = (vi) obj5;
                 boolean[] zArr = (boolean[]) obj4;
                 TLRPC.StickerSet stickerSet = (TLRPC.StickerSet) obj3;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
                 Runnable runnable = (Runnable) obj;
-                long[] jArr = uiVar.X;
-                ArrayList[] arrayListArr = uiVar.G;
+                long[] jArr = viVar.X;
+                ArrayList[] arrayListArr = viVar.G;
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    uiVar.g1(stickerSet.id, false);
+                    viVar.g1(stickerSet.id, false);
                     stickerSet.archived = false;
                     int i21 = this.b;
                     arrayListArr[i21].add(i12, tL_messages_stickerSet);
-                    uiVar.I.k(tL_messages_stickerSet, stickerSet.id);
-                    uiVar.J.k(tL_messages_stickerSet, stickerSet.id);
+                    viVar.I.k(tL_messages_stickerSet, stickerSet.id);
+                    viVar.J.k(tL_messages_stickerSet, stickerSet.id);
                     String str = stickerSet.short_name;
                     if (str != null) {
-                        uiVar.N.put(str.toLowerCase(), tL_messages_stickerSet);
+                        viVar.N.put(str.toLowerCase(), tL_messages_stickerSet);
                     }
-                    uiVar.T.l(stickerSet.id);
-                    long q6 = ui.q(arrayListArr[i21]);
+                    viVar.T.l(stickerSet.id);
+                    long q6 = vi.q(arrayListArr[i21]);
                     jArr[i21] = q6;
-                    uiVar.J1(i21, uiVar.Y[i21], q6, arrayListArr[i21]);
+                    viVar.J1(i21, viVar.Y[i21], q6, arrayListArr[i21]);
                     if (runnable != null) {
                         runnable.run();
                     }
-                    uiVar.getNotificationCenter().k(60, Integer.valueOf(i21), Boolean.TRUE);
+                    viVar.getNotificationCenter().k(60, Integer.valueOf(i21), Boolean.TRUE);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ y0(oa oaVar, int[] iArr, na naVar, TLRPC.messages_Messages messages_messages, ArrayList arrayList, int i10, int i11) {
-        this.d = oaVar;
+    public /* synthetic */ y0(pa paVar, int[] iArr, oa oaVar, TLRPC.messages_Messages messages_messages, ArrayList arrayList, int i10, int i11) {
+        this.d = paVar;
         this.e = iArr;
-        this.f = naVar;
+        this.f = oaVar;
         this.h = messages_messages;
         this.n = arrayList;
         this.b = i10;
         this.c = i11;
     }
 
-    public /* synthetic */ y0(ui uiVar, boolean[] zArr, TLRPC.StickerSet stickerSet, int i10, int i11, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, Runnable runnable) {
-        this.d = uiVar;
+    public /* synthetic */ y0(vi viVar, boolean[] zArr, TLRPC.StickerSet stickerSet, int i10, int i11, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, Runnable runnable) {
+        this.d = viVar;
         this.e = zArr;
         this.f = stickerSet;
         this.b = i10;

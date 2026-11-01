@@ -5,10 +5,10 @@ import b2.v0;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final byte[] a = {0, 0, 0, 1};
@@ -189,7 +189,7 @@ public abstract class g {
                             int parseInt5 = Integer.parseInt(split[3]);
                             if (parseInt3 == 0) {
                                 if (parseInt4 == 0) {
-                                    i10 = zs.g4;
+                                    i10 = at.g4;
                                 }
                                 i10 = -1;
                             } else if (parseInt3 != 1) {
@@ -454,11 +454,11 @@ public abstract class g {
                                                     break;
                                                 default:
                                                     switch (parseInt2) {
-                                                        case zs.T /* 30 */:
+                                                        case at.T /* 30 */:
                                                             i14 = 256;
                                                             i17 = -1;
                                                             break;
-                                                        case zs.U /* 31 */:
+                                                        case at.U /* 31 */:
                                                             i17 = -1;
                                                             i14 = 512;
                                                             break;
@@ -486,11 +486,11 @@ public abstract class g {
                                                                             i14 = 16384;
                                                                             i17 = -1;
                                                                             break;
-                                                                        case zs.o0 /* 51 */:
+                                                                        case at.o0 /* 51 */:
                                                                             i14 = 32768;
                                                                             i17 = -1;
                                                                             break;
-                                                                        case zs.p0 /* 52 */:
+                                                                        case at.p0 /* 52 */:
                                                                             i14 = 65536;
                                                                             i17 = -1;
                                                                             break;
@@ -708,15 +708,15 @@ public abstract class g {
                                         i20 = 256;
                                     } else if (parseInt15 != 51) {
                                         switch (parseInt15) {
-                                            case zs.x0 /* 60 */:
+                                            case at.x0 /* 60 */:
                                                 i21 = -1;
                                                 i20 = 2048;
                                                 break;
-                                            case zs.y0 /* 61 */:
+                                            case at.y0 /* 61 */:
                                                 i21 = -1;
                                                 i20 = TLObject.FLAG_12;
                                                 break;
-                                            case zs.z0 /* 62 */:
+                                            case at.z0 /* 62 */:
                                                 i20 = 8192;
                                                 break;
                                             default:

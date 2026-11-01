@@ -3,8 +3,8 @@ package mg;
 import android.app.Activity;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -24,11 +24,11 @@ public final /* synthetic */ class e0 implements RequestDelegate {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ e0(c5.m mVar, c5.g gVar, j20 j20Var, Activity activity, TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, List list, int i10) {
+    public /* synthetic */ e0(c5.m mVar, c5.g gVar, k20 k20Var, Activity activity, TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, List list, int i10) {
         this.a = i10;
         this.e = mVar;
         this.c = gVar;
-        this.f = j20Var;
+        this.f = k20Var;
         this.d = activity;
         this.g = inputStorePaymentPurpose;
         this.b = list;
@@ -41,7 +41,7 @@ public final /* synthetic */ class e0 implements RequestDelegate {
                 org.telegram.messenger.i0.g3(new bi.n(tL_error, (o0) this.e, tLObject, (List) this.b, (c5.g) this.c, (o0) this.f, (k2) this.d, (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.g, 1));
                 break;
             case 1:
-                org.telegram.messenger.i0.g3(new bi.n(tL_error, (q20) this.e, tLObject, (List) this.b, (c5.g) this.c, (q20) this.f, (k2) this.d, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 2));
+                org.telegram.messenger.i0.g3(new bi.n(tL_error, (r20) this.e, tLObject, (List) this.b, (c5.g) this.c, (r20) this.f, (k2) this.d, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 2));
                 break;
             case 2:
                 org.telegram.messenger.i0.g3(new bi.n((UserInfoActivity) this.e, tL_error, (TLObject) this.b, (TL_account.TL_birthday) this.c, (TLRPC.UserFull) this.f, tLObject, (int[]) this.d, (ArrayList) this.g));

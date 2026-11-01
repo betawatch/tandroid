@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class kk extends org.telegram.ui.Components.lo {
     public final /* synthetic */ un f;
@@ -16,19 +16,19 @@ public final class kk extends org.telegram.ui.Components.lo {
     @Override // org.telegram.ui.Components.lo
     public final void a(boolean z10) {
         un unVar = this.f;
-        unVar.B7();
-        unVar.z7();
-        unVar.C7();
+        unVar.F7();
         unVar.D7();
-        dl dlVar = unVar.wb;
+        unVar.G7();
+        unVar.H7();
+        dl dlVar = unVar.xb;
         if (dlVar != null) {
             dlVar.setTranslationY(unVar.P9 + getCurrentHeight());
         }
         if (!z10) {
-            unVar.A9();
+            unVar.F9();
         } else {
             unVar.W9 = true;
-            unVar.Dc();
+            unVar.Ic();
         }
     }
 }

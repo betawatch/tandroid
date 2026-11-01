@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stars;
@@ -25,8 +25,8 @@ import org.telegram.ui.Components.fc;
 import org.telegram.ui.Components.g0;
 import org.telegram.ui.Components.z;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.k3;
-import org.telegram.ui.m90;
+import org.telegram.ui.Wallet.m2;
+import org.telegram.ui.l90;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 import org.telegram.ui.web.d0;
 import org.telegram.ui.web.x0;
@@ -38,9 +38,9 @@ import rh.e4;
 import vh.p2;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements j20 {
+public final /* synthetic */ class e implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class e implements j20 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:78:0x034f  */
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -70,12 +70,12 @@ public final /* synthetic */ class e implements j20 {
         Object obj5 = this.b;
         switch (i11) {
             case 0:
-                ((ConnectionsManager) obj5).lambda$sendRequestTypedAndProcessUpdates$5((Executor) obj4, (j20) obj3, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                ((ConnectionsManager) obj5).lambda$sendRequestTypedAndProcessUpdates$5((Executor) obj4, (k20) obj3, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
                 g0 g0Var = (g0) obj5;
                 ((gf.e) obj4).c(false);
-                org.telegram.messenger.e Q1 = vp.r1(g0Var.a).Q1();
+                org.telegram.messenger.e Q1 = wp.r1(g0Var.a).Q1();
                 Q1.b.remove((TL_aicompose.TL_aiComposeTone) obj3);
                 Q1.d();
                 Q1.c();
@@ -97,7 +97,7 @@ public final /* synthetic */ class e implements j20 {
                         break;
                     }
                 } else {
-                    org.telegram.messenger.e Q12 = vp.r1(rVar.a).Q1();
+                    org.telegram.messenger.e Q12 = wp.r1(rVar.a).Q1();
                     ArrayList arrayList = Q12.b;
                     if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
                         long j10 = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).id;
@@ -106,7 +106,7 @@ public final /* synthetic */ class e implements j20 {
                                 rVar.dismiss();
                                 T = LaunchActivity.T();
                                 if (T == null) {
-                                    cc.a0(T).p(aiComposeTone.emoji_id, cd.L0(2131754958, null), cd.a0(null, null, 2131754959, aiComposeTone.title)).j();
+                                    cc.a0(T).p(aiComposeTone.emoji_id, dd.L0(2131754958, null), dd.a0(null, null, 2131754959, aiComposeTone.title)).j();
                                     break;
                                 }
                             }
@@ -126,7 +126,7 @@ public final /* synthetic */ class e implements j20 {
                 ((gf.e) obj4).c(false);
                 ((x1) obj3).dismiss();
                 zVar.dismiss();
-                org.telegram.messenger.e Q13 = vp.r1(zVar.a).Q1();
+                org.telegram.messenger.e Q13 = wp.r1(zVar.a).Q1();
                 Q13.b.remove(zVar.b2);
                 Q13.d();
                 Q13.c();
@@ -143,7 +143,7 @@ public final /* synthetic */ class e implements j20 {
                     if (d0Var != null) {
                         d0Var.c();
                     }
-                    i0.h3(new k3(23, botWebViewContainer$BotWebViewProxy, arrayList2), 500L);
+                    i0.h3(new m2(24, botWebViewContainer$BotWebViewProxy, arrayList2), 500L);
                     break;
                 } else {
                     z0Var.y(x0Var, "prepared_message_failed", z0.A(str, "error"));
@@ -208,9 +208,9 @@ public final /* synthetic */ class e implements j20 {
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (updates != null && tL_error2 == null) {
-                    vp.r1(b0Var.a).L3(updates, false);
+                    wp.r1(b0Var.a).L3(updates, false);
                 }
-                i0.g3(new m90(b0Var, eVar, x1Var, updates, tL_error2, 29));
+                i0.g3(new l90(b0Var, eVar, x1Var, updates, tL_error2, 29));
                 break;
             default:
                 e4 e4Var = (e4) obj5;

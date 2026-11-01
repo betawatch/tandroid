@@ -1,27 +1,14 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.Drawable;
+import android.text.StaticLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class iu implements mc {
-    public final /* synthetic */ ju a;
-
-    public iu(ju juVar) {
-        this.a = juVar;
-    }
-
-    @Override // org.telegram.messenger.mc
-    public final void j(ImageReceiver imageReceiver) {
-        ju juVar = this.a;
-        juVar.m(juVar.S, true);
-    }
-
-    @Override // org.telegram.messenger.mc
-    public final /* synthetic */ void q(int i10, Drawable drawable) {
-    }
-
-    @Override // org.telegram.messenger.mc
-    public final void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-    }
+public final class iu {
+    public StaticLayout a;
+    public int b;
+    public int c;
+    public int d;
+    public float e;
+    public float f;
 }

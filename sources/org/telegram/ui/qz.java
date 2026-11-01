@@ -1,32 +1,25 @@
 package org.telegram.ui;
 
 import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class qz extends FrameLayout {
-    public ImageView a;
-    public TextView b;
-    public int c;
-    public boolean d;
-    public Boolean e;
+public final class qz extends ImageSpan {
+    public int a;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextView textView = this.b;
-        super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.t6.k0);
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        if (paint.getColor() != this.a && getDrawable() != null) {
+            Drawable drawable = getDrawable();
+            int color = paint.getColor();
+            this.a = color;
+            drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(48.0f), TLObject.FLAG_30));
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
     }
 }

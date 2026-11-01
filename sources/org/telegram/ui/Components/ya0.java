@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ya0 extends View implements org.telegram.ui.ActionBar.k6 {
     public final ArrayList a;
@@ -24,7 +24,7 @@ public final class ya0 extends View implements org.telegram.ui.ActionBar.k6 {
     public float n;
     public float r;
     public final RectF s;
-    public org.telegram.messenger.q20 w;
+    public org.telegram.messenger.r20 w;
 
     public ya0(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
         super(context);
@@ -103,7 +103,7 @@ public final class ya0 extends View implements org.telegram.ui.ActionBar.k6 {
     @Override // android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int i10;
-        org.telegram.messenger.q20 q20Var;
+        org.telegram.messenger.r20 r20Var;
         ArrayList arrayList = this.a;
         if (arrayList.size() > 1) {
             float x10 = motionEvent.getX();
@@ -124,8 +124,8 @@ public final class ya0 extends View implements org.telegram.ui.ActionBar.k6 {
                 if (i10 != -1) {
                     return true;
                 }
-            } else if (motionEvent.getAction() == 1 && i10 != -1 && (q20Var = this.w) != null) {
-                q20Var.a(Integer.valueOf(i10));
+            } else if (motionEvent.getAction() == 1 && i10 != -1 && (r20Var = this.w) != null) {
+                r20Var.a(Integer.valueOf(i10));
             }
         }
         return false;
@@ -182,8 +182,8 @@ public final class ya0 extends View implements org.telegram.ui.ActionBar.k6 {
         this.h = drawable;
     }
 
-    public void setOnTabClick(org.telegram.messenger.q20 q20Var) {
-        this.w = q20Var;
+    public void setOnTabClick(org.telegram.messenger.r20 r20Var) {
+        this.w = r20Var;
     }
 
     public void setSelectedTab(float f7) {

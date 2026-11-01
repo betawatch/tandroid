@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class qe0 extends LinearLayout {
     public final /* synthetic */ int a = 0;
@@ -20,10 +20,10 @@ public final class qe0 extends LinearLayout {
         setOrientation(0);
         setGravity(17);
         setPadding(org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(3.0f));
-        LinearLayout a2 = a(R.drawable.msg_replace, org.telegram.messenger.cd.L0(2131746286, null));
+        LinearLayout a2 = a(R.drawable.msg_replace, org.telegram.messenger.dd.L0(2131746286, null));
         this.c = a2;
         addView(a2, w7.b6.o(-2, -1));
-        LinearLayout a10 = a(R.drawable.media_button_restore, org.telegram.messenger.cd.L0(2131751336, null));
+        LinearLayout a10 = a(R.drawable.media_button_restore, org.telegram.messenger.dd.L0(2131751336, null));
         this.b = a10;
         addView(a10, w7.b6.o(-2, -1));
     }
@@ -34,7 +34,7 @@ public final class qe0 extends LinearLayout {
         linearLayout.setOrientation(0);
         linearLayout.setGravity(17);
         linearLayout.setPadding(org.telegram.messenger.i0.L(25.0f), org.telegram.messenger.i0.L(7.0f), org.telegram.messenger.i0.L(25.0f), org.telegram.messenger.i0.L(7.0f));
-        linearLayout.addView(org.telegram.messenger.z20.e(context, i10), w7.b6.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
+        linearLayout.addView(org.telegram.messenger.a30.e(context, i10), w7.b6.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
         TextView textView = new TextView(context);
         textView.setGravity(16);
         textView.setText(str);

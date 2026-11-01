@@ -9,7 +9,7 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import m2.t;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d extends InputConnectionWrapper {
     public final /* synthetic */ e a;
@@ -45,7 +45,7 @@ public final class d extends InputConnectionWrapper {
                     int i10 = bundle.getInt(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS");
                     Bundle bundle2 = (Bundle) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_OPTS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_OPTS");
                     if (uri != null && clipDescription != null) {
-                        z10 = eVar.p(new t(uri, clipDescription, uri2), i10, bundle2);
+                        z10 = eVar.o(new t(uri, clipDescription, uri2), i10, bundle2);
                     }
                     if (resultReceiver != null) {
                         resultReceiver.send(z10 ? 1 : 0, null);

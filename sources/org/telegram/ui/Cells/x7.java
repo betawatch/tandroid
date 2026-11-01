@@ -11,11 +11,11 @@ import android.widget.FrameLayout;
 import java.util.Arrays;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x7 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final org.telegram.ui.ActionBar.p6 a;
@@ -25,7 +25,7 @@ public final class x7 extends FrameLayout implements org.telegram.ui.ActionBar.k
     public final h0 e;
     public int f;
     public int h;
-    public q20 n;
+    public r20 n;
     public w7 r;
     public CharSequence s;
     public float w;
@@ -146,10 +146,10 @@ public final class x7 extends FrameLayout implements org.telegram.ui.ActionBar.k
         return i10;
     }
 
-    public final void d(int i10, w7 w7Var, q20 q20Var) {
+    public final void d(int i10, w7 w7Var, r20 r20Var) {
         this.f = i10;
         this.r = w7Var;
-        this.n = q20Var;
+        this.n = r20Var;
         this.e.e(false, b(i10));
         e(i10, false);
     }

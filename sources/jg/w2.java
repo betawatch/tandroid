@@ -7,17 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.ic;
+import org.telegram.messenger.jc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.t5;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class w2 extends j {
     public final TLRPC.Document q0;
@@ -25,11 +25,11 @@ public class w2 extends j {
     public final int s0;
     public boolean t0;
     public final t5 u0;
-    public final pu0 v0;
+    public final qu0 v0;
     public final l0 w0;
     public final ImageReceiver x0;
 
-    public w2(Context context, PointF pointF, float f7, float f10, pu0 pu0Var, TLRPC.Document document, Object obj) {
+    public w2(Context context, PointF pointF, float f7, float f10, qu0 qu0Var, TLRPC.Document document, Object obj) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -37,7 +37,7 @@ public class w2 extends j {
         setRotation(f7);
         setScale(f10);
         this.q0 = document;
-        this.v0 = pu0Var;
+        this.v0 = qu0Var;
         this.r0 = obj;
         int i10 = 0;
         while (true) {
@@ -62,7 +62,7 @@ public class w2 extends j {
         imageReceiver.R0 = true;
         imageReceiver.J0 = true;
         imageReceiver.H0(l0Var);
-        this.x0.t0(ic.b(document), null, ic.c(b8.w(document.thumbs, 90, false, null, false), document), null, "webp", obj, 1);
+        this.x0.t0(jc.b(document), null, jc.c(b8.w(document.thumbs, 90, false, null, false), document), null, "webp", obj, 1);
         this.x0.g1 = new ig.c0(this, 16);
         k();
     }
@@ -78,13 +78,13 @@ public class w2 extends j {
         return this.s0;
     }
 
-    public pu0 getBaseSize() {
+    public qu0 getBaseSize() {
         return this.v0;
     }
 
     public long getDuration() {
         ImageReceiver imageReceiver = this.x0;
-        bi0 B = imageReceiver.B();
+        ci0 B = imageReceiver.B();
         if (B != null) {
             return B.r();
         }
@@ -99,16 +99,16 @@ public class w2 extends j {
     }
 
     @Override // jg.j
-    public oj0 getSelectionBounds() {
+    public pj0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new oj0();
+            return new pj0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.5f) * getMeasuredWidth();
         float f7 = scale / 2.0f;
         float f10 = scale * scaleX;
-        return new oj0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
+        return new pj0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
     }
 
     public TLRPC.Document getSticker() {
@@ -117,9 +117,9 @@ public class w2 extends j {
 
     @Override // jg.j
     public final void k() {
-        pu0 pu0Var = this.v0;
-        float f7 = pu0Var.a / 2.0f;
-        float f10 = pu0Var.b / 2.0f;
+        qu0 qu0Var = this.v0;
+        float f7 = qu0Var.a / 2.0f;
+        float f10 = qu0Var.b / 2.0f;
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
         m();
@@ -139,8 +139,8 @@ public class w2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        pu0 pu0Var = this.v0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) pu0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) pu0Var.b, TLObject.FLAG_30));
+        qu0 qu0Var = this.v0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) qu0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) qu0Var.b, TLObject.FLAG_30));
     }
 
     public final void r(boolean z10) {
@@ -152,7 +152,7 @@ public class w2 extends j {
         this.w0.invalidate();
     }
 
-    public void q(bi0 bi0Var) {
+    public void q(ci0 ci0Var) {
     }
 
     public w2(Context context, w2 w2Var, PointF pointF) {

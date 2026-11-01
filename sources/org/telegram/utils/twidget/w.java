@@ -9,24 +9,24 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.json.JSONObject;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.fe;
-import org.telegram.messenger.gr;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.ge;
+import org.telegram.messenger.hr;
+import org.telegram.messenger.is;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.x1;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.p81;
+import org.telegram.ui.Components.hl0;
 import org.telegram.ui.Components.q81;
+import org.telegram.ui.Components.r81;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.r2;
-import org.telegram.ui.Wallet.u2;
+import org.telegram.ui.Wallet.s2;
+import org.telegram.ui.Wallet.v2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class w {
     public boolean A;
@@ -36,7 +36,7 @@ public final class w {
     public t7.u e;
     public k0 f;
     public i0 g;
-    public q81 h;
+    public r81 h;
     public int i;
     public int j;
     public int k;
@@ -132,15 +132,15 @@ public final class w {
 
     public final void f(JSONObject jSONObject) {
         k2 T;
-        gl0 gl0Var;
+        hl0 hl0Var;
         if (this.e != null) {
             m h = p.h(this);
             String optString = jSONObject.optString("kind");
             View view = null;
             if (!"openLink".equals(optString) && !"openTelegramLink".equals(optString)) {
                 if ("haptic".equals(optString)) {
-                    if (h != null && h.y > 0 && (gl0Var = h.x) != null) {
-                        view = gl0Var.V;
+                    if (h != null && h.y > 0 && (hl0Var = h.x) != null) {
+                        view = hl0Var.V;
                     }
                     if (view != null) {
                         String optString2 = jSONObject.optString("haptic");
@@ -163,12 +163,12 @@ public final class w {
             }
             p.i = true;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, T.getResourceProvider());
-            String L0 = cd.L0(2131742897, null);
+            String L0 = dd.L0(2131742897, null);
             x1 x1Var = alertDialog$Builder.a;
             x1Var.R = L0;
-            x1Var.T = cd.a0(null, null, 2131742898, optString3);
-            alertDialog$Builder.k(cd.L0(2131747833, null), new org.telegram.ui.web.k0(1, parentActivity, optString3));
-            alertDialog$Builder.h(cd.L0(2131752589, null), null);
+            x1Var.T = dd.a0(null, null, 2131742898, optString3);
+            alertDialog$Builder.k(dd.L0(2131747833, null), new org.telegram.ui.web.k0(1, parentActivity, optString3));
+            alertDialog$Builder.h(dd.L0(2131752589, null), null);
             x1Var.setOnDismissListener(new jg.z(7));
             if (T.showDialog(x1Var) == null) {
                 p.i = false;
@@ -180,7 +180,7 @@ public final class w {
     public final void g(k0 k0Var) {
         i0 i0Var;
         m h;
-        q81 q81Var;
+        r81 r81Var;
         if (k0Var == this.f && (i0Var = k0Var.F) != null) {
             if (this.g == null || k0Var.v) {
                 this.g = null;
@@ -191,33 +191,33 @@ public final class w {
                 int max = Math.max(1, i0Var.e);
                 boolean z11 = max != this.i;
                 this.i = max;
-                q81 q81Var2 = this.h;
-                if (q81Var2 != null) {
-                    p81 p81Var = q81Var2.a;
+                r81 r81Var2 = this.h;
+                if (r81Var2 != null) {
+                    q81 q81Var = r81Var2.a;
                     if (z11) {
-                        p81Var.j();
+                        q81Var.j();
                     }
-                    p81Var.h();
+                    q81Var.h();
                 }
                 if ((z11 || objArr != false) && this.e != null && (h = p.h(this)) != null && this.i > 0) {
                     int f7 = p.f(this.k);
                     int max2 = Math.max(50, Math.min(600, p.f(this.i)));
                     boolean z12 = this.l;
                     if (f7 > 0 && h.f == 0 && !h.k && p.l(h.a()).a(f7, max2, z12)) {
-                        hs a02 = hs.a0(h.b);
-                        a02.a.c(new gr(a02, h.c, h.d, f7, max2, z12 ? 1 : 0, 1));
+                        is a02 = is.a0(h.b);
+                        a02.a.c(new hr(a02, h.c, h.d, f7, max2, z12 ? 1 : 0, 1));
                     }
-                    gl0 gl0Var = h.v;
-                    if (gl0Var != null) {
-                        gl0Var.p0("frame off screen");
+                    hl0 hl0Var = h.v;
+                    if (hl0Var != null) {
+                        hl0Var.p0("frame off screen");
                     }
                 }
-                if (!e() || z11 || (q81Var = this.h) == null) {
+                if (!e() || z11 || (r81Var = this.h) == null) {
                     return;
                 }
-                p81 p81Var2 = q81Var.a;
-                p81Var2.j();
-                p81Var2.h();
+                q81 q81Var2 = r81Var.a;
+                q81Var2.j();
+                q81Var2.h();
             }
         }
     }
@@ -242,7 +242,7 @@ public final class w {
             if (mVar.u != null && a2.equals(mVar.a())) {
                 w wVar = mVar.u;
                 try {
-                    str2 = cd.D0().y.toLanguageTag();
+                    str2 = dd.D0().y.toLanguageTag();
                 } catch (Exception unused2) {
                     str2 = null;
                 }
@@ -253,9 +253,9 @@ public final class w {
         }
         if ("local".equals(str)) {
             p.d.put(a2, h);
-            org.telegram.ui.Components.voip.m0 m0Var = p.e;
-            org.telegram.messenger.i0.r(m0Var);
-            org.telegram.messenger.i0.h3(m0Var, 1000L);
+            org.telegram.ui.Components.voip.n0 n0Var = p.e;
+            org.telegram.messenger.i0.r(n0Var);
+            org.telegram.messenger.i0.h3(n0Var, 1000L);
         }
     }
 
@@ -269,7 +269,7 @@ public final class w {
         if (h != null) {
             long j11 = h.n;
             if (j11 != 0) {
-                user = vp.r1(h.b).Z1(Long.valueOf(j11));
+                user = wp.r1(h.b).Z1(Long.valueOf(j11));
                 k2 T = LaunchActivity.T();
                 if (h != null || !p.D(h) || user == null || !user.bot) {
                     a(5, null, j10);
@@ -283,18 +283,18 @@ public final class w {
                 int i10 = h.b;
                 p6 resourceProvider = T.getResourceProvider();
                 k kVar = new k(h, this, j10, bytes);
-                ArrayList arrayList = u2.a;
-                r2 r2Var = new r2(new boolean[]{false}, kVar);
+                ArrayList arrayList = v2.a;
+                s2 s2Var = new s2(new boolean[]{false}, kVar);
                 org.telegram.ui.Wallet.k0 x10 = org.telegram.ui.Wallet.k0.x(i10);
                 boolean[] zArr = {false};
-                fe feVar = new fe(zArr, context, i10, user, jSONObject, resourceProvider, r2Var, 15);
+                ge geVar = new ge(zArr, context, i10, user, jSONObject, resourceProvider, s2Var, 15);
                 if (x10.G()) {
-                    feVar.run();
+                    geVar.run();
                     return;
                 }
-                u2.a.add(feVar);
-                x10.m0(feVar);
-                org.telegram.messenger.i0.h3(new org.telegram.ui.Wallet.g(feVar, zArr, r2Var, 8), 10000L);
+                v2.a.add(geVar);
+                x10.m0(geVar);
+                org.telegram.messenger.i0.h3(new org.telegram.ui.Wallet.g(geVar, zArr, s2Var, 8), 10000L);
                 return;
             }
         }

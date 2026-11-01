@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import org.telegram.ui.ActionBar.t6;
 import w7.k8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b extends k8 {
     public final Paint a = new Paint(1);
@@ -24,21 +24,21 @@ public final class b extends k8 {
     @Override // w7.k8
     public final void b(Canvas canvas, hi.a aVar) {
         f fVar = this.c;
-        e eVar = fVar.M;
+        e eVar = fVar.P;
         int i10 = fVar.c;
         if (i10 == 0) {
             return;
         }
-        int r12 = t6.r1(i10 / 255.0f, fVar.s);
-        if (Color.alpha(fVar.r) > 0 && i10 == 255) {
-            float f7 = fVar.R;
+        int r12 = t6.r1(i10 / 255.0f, fVar.y);
+        if (Color.alpha(fVar.x) > 0 && i10 == 255) {
+            float f7 = fVar.U;
             if (f7 > 0.0f) {
-                float f10 = fVar.P;
-                float f11 = fVar.Q;
-                int r13 = t6.r1(f7, fVar.r);
+                float f10 = fVar.S;
+                float f11 = fVar.T;
+                int r13 = t6.r1(f7, fVar.x);
                 Paint paint = this.b;
                 paint.setShadowLayer(f10, 0.0f, f11, r13);
-                eVar.c(canvas, paint, fVar.O);
+                eVar.c(canvas, paint, fVar.R);
             }
         }
         Rect rect = eVar.m;

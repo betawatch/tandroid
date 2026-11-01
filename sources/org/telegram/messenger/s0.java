@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class s0 {
     public final l2.f A;
@@ -99,7 +99,7 @@ public final class s0 {
         this.m = c("need_age_video_verification", false);
         this.n = d(800, "stars_stargift_resale_commission_permille");
         this.o = d(800, "ton_stargift_resale_commission_permille");
-        this.p = d(zs.J1, "stars_stargift_resale_amount_min");
+        this.p = d(at.J1, "stars_stargift_resale_amount_min");
         this.q = d(35000, "stars_stargift_resale_amount_max");
         this.r = e(10000000L, "ton_stargift_resale_amount_min");
         this.s = e(10000000000000L, "ton_stargift_resale_amount_max");
@@ -122,9 +122,9 @@ public final class s0 {
         this.G = d(12, "poll_answers_max");
         this.H = d(12, "poll_countries_max");
         this.I = d(100, "poll_answer_length_max");
-        d(zs.e4, "poll_question_length_max");
-        d(zs.e3, "poll_solution_length_max");
-        this.J = d(zs.X4, "poll_caption_length_max");
+        d(at.e4, "poll_question_length_max");
+        d(at.e3, "poll_solution_length_max");
+        this.J = d(at.X4, "poll_caption_length_max");
         this.K = g(300L, "poll_answer_delete_period");
         this.L = d(20, "bots_create_limit_default");
         this.M = d(40, "bots_create_limit_premium");

@@ -6,20 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import jg.d2;
 import jg.r0;
-import org.telegram.messenger.dj;
+import org.telegram.messenger.at;
 import org.telegram.messenger.ej;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.hg;
-import org.telegram.ui.Components.vu0;
+import org.telegram.ui.Components.wu0;
 import org.telegram.ui.rh;
 import org.telegram.ui.un;
 import s4.c1;
 import vh.b4;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class k extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final class k extends AnimatorListenerAdapter {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ k(vu0 vu0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
+    public /* synthetic */ k(wu0 wu0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
         this.a = i11;
-        this.e = vu0Var;
+        this.e = wu0Var;
         this.b = viewGroup;
         this.d = viewGroup2;
         this.c = i10;
@@ -66,15 +66,15 @@ public final class k extends AnimatorListenerAdapter {
                         q1Var.mb = false;
                         q1Var.setVisibility(0);
                     }
-                    ej currentMessagesGroup = q1Var.getCurrentMessagesGroup();
+                    fj currentMessagesGroup = q1Var.getCurrentMessagesGroup();
                     if (currentMessagesGroup != null) {
-                        dj djVar = currentMessagesGroup.m;
-                        djVar.n = 1.0f;
-                        djVar.h = 0.0f;
-                        djVar.f = 0.0f;
-                        djVar.g = 0.0f;
-                        djVar.e = 0.0f;
-                        djVar.j = false;
+                        ej ejVar = currentMessagesGroup.m;
+                        ejVar.n = 1.0f;
+                        ejVar.h = 0.0f;
+                        ejVar.f = 0.0f;
+                        ejVar.g = 0.0f;
+                        ejVar.e = 0.0f;
+                        ejVar.j = false;
                     }
                 }
                 if (oVar.z.remove(c1Var)) {
@@ -178,7 +178,7 @@ public final class k extends AnimatorListenerAdapter {
             case 2:
                 super.onAnimationStart(animator);
                 i10 = ((k2) ((un) this.e)).currentAccount;
-                this.c = zs.f(i10).q(null, this.c, true);
+                this.c = at.f(i10).q(null, this.c, true);
                 break;
             default:
                 b4 b4Var = (b4) this.e;

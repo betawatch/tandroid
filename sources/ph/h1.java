@@ -15,23 +15,23 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.r5;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.x20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.y20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.kf0;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.yv0;
+import org.telegram.ui.xv0;
 import rh.e6;
 import th.o7;
 import vh.f5;
@@ -43,9 +43,9 @@ import vh.o8;
 import vh.s7;
 import vh.t5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h1 implements q20 {
+public final /* synthetic */ class h1 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -54,20 +54,25 @@ public final /* synthetic */ class h1 implements q20 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.q20
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00cb, code lost:
+    
+        if (android.text.TextUtils.isEmpty(r2.K1.y) == false) goto L46;
+     */
+    @Override // org.telegram.messenger.r20
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void a(Object obj) {
         String str;
         String str2;
-        int i10;
+        int i10 = 2;
         int i11 = 0;
-        int i12 = 0;
-        int i13 = 1;
         switch (this.a) {
             case 0:
                 ((i1) this.b).a();
                 break;
             case 1:
-                ((r3) this.b).i0(((Boolean) obj).booleanValue());
+                ((r3) this.b).j0(((Boolean) obj).booleanValue());
                 break;
             case 2:
                 p3 p3Var = (p3) this.b;
@@ -99,10 +104,10 @@ public final /* synthetic */ class h1 implements q20 {
                 Long l4 = (Long) obj;
                 if (!k2Var.isFinished) {
                     if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
-                        k2Var.presentFragment(ProfileActivity.z4(l4.longValue()), true);
+                        k2Var.presentFragment(ProfileActivity.A4(l4.longValue()), true);
                         break;
                     } else {
-                        org.telegram.messenger.i0.g3(new org.telegram.ui.Components.voip.m0(29));
+                        org.telegram.messenger.i0.g3(new org.telegram.ui.Components.voip.n0(29));
                         break;
                     }
                 }
@@ -144,10 +149,10 @@ public final /* synthetic */ class h1 implements q20 {
                 break;
             case 8:
                 rh.b0 b0Var = (rh.b0) this.b;
-                int i14 = rh.b0.p2[((Integer) obj).intValue()];
-                if (b0Var.g2 != i14) {
-                    b0Var.g2 = i14;
-                    b0Var.Y1.setText(cd.G(i14 / 3600, "GiftOfferHours", new Object[0]));
+                int i12 = rh.b0.p2[((Integer) obj).intValue()];
+                if (b0Var.g2 != i12) {
+                    b0Var.g2 = i12;
+                    b0Var.Y1.setText(dd.G(i12 / 3600, "GiftOfferHours", new Object[0]));
                 }
                 b0Var.e1(true);
                 break;
@@ -181,14 +186,14 @@ public final /* synthetic */ class h1 implements q20 {
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
                 if (starGift != null) {
                     if (!(starGift instanceof TL_stars.TL_starGiftUnique)) {
-                        int i15 = starGift.availability_remains;
-                        textView.setText(i15 <= 0 ? cd.H(',', "Gift2Availability2ValueNone", starGift.availability_total) : cd.K("Gift2Availability4Value", i15, ',', cd.E(starGift.availability_total, ',')));
+                        int i13 = starGift.availability_remains;
+                        textView.setText(i13 <= 0 ? dd.H(',', "Gift2Availability2ValueNone", starGift.availability_total) : dd.K("Gift2Availability4Value", i13, ',', dd.E(starGift.availability_total, ',')));
                         break;
                     } else {
                         if (starGift.availability_remains <= 0) {
-                            str = cd.H(',', "Gift2QuantityIssuedNone", starGift.availability_total);
+                            str = dd.H(',', "Gift2QuantityIssuedNone", starGift.availability_total);
                         } else {
-                            str = cd.H(',', "Gift2QuantityIssued1", starGift.availability_issued) + cd.H(',', "Gift2QuantityIssued2", starGift.availability_total);
+                            str = dd.H(',', "Gift2QuantityIssued1", starGift.availability_issued) + dd.H(',', "Gift2QuantityIssued2", starGift.availability_total);
                         }
                         textView.setText(str);
                         break;
@@ -213,7 +218,7 @@ public final /* synthetic */ class h1 implements q20 {
                     }
                     s0Var.c();
                     s0Var.k();
-                    zs.f(s0Var.e).k(zs.G2, Long.valueOf(s0Var.f.id));
+                    at.f(s0Var.e).k(at.G2, Long.valueOf(s0Var.f.id));
                     break;
                 }
                 break;
@@ -263,7 +268,7 @@ public final /* synthetic */ class h1 implements q20 {
                     arrayList3.add(str5);
                     mVar.i(true);
                 }
-                org.telegram.messenger.i0.h3(new th.o0(27, mVar, str5), 120L);
+                org.telegram.messenger.i0.h3(new th.o0(28, mVar, str5), 120L);
                 break;
             case 19:
                 ((vh.k) this.b).x(((Integer) obj).intValue());
@@ -280,10 +285,10 @@ public final /* synthetic */ class h1 implements q20 {
                 break;
             case 21:
                 vh.k0 k0Var = (vh.k0) this.b;
-                x20 x20Var = (x20) obj;
-                jj jjVar = k0Var.c;
-                if (jjVar != null) {
-                    jjVar.p0 = x20Var;
+                y20 y20Var = (y20) obj;
+                kj kjVar = k0Var.c;
+                if (kjVar != null) {
+                    kjVar.p0 = y20Var;
                     MediaController.B().h0(k0Var.c, false, true, false);
                     break;
                 }
@@ -291,7 +296,7 @@ public final /* synthetic */ class h1 implements q20 {
             case 22:
                 vh.z1 z1Var = (vh.z1) this.b;
                 z1Var.h(-1.0f);
-                org.telegram.messenger.i0.h3(new vh.d1(i13, z1Var, (Runnable) obj), 80L);
+                org.telegram.messenger.i0.h3(new vh.r0(i10, z1Var, (Runnable) obj), 80L);
                 break;
             case 23:
                 ((vh.k2) this.b).s.animate().translationY(((-((Integer) obj).intValue()) / 2.0f) + org.telegram.messenger.i0.L(80.0f)).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.m1.w).start();
@@ -303,7 +308,7 @@ public final /* synthetic */ class h1 implements q20 {
                 if (view2 instanceof vh.x2) {
                     iiVar.getClass();
                     int R = RecyclerView.R(view2);
-                    a51 G = iiVar.f3.G(R);
+                    b51 G = iiVar.f3.G(R);
                     if (G != null) {
                         vh.x2 x2Var = (vh.x2) view2;
                         x2Var.setPosition(y2Var.b(R));
@@ -332,36 +337,37 @@ public final /* synthetic */ class h1 implements q20 {
             case 26:
                 s7 s7Var = (s7) ((vh.b4) this.b);
                 o8 o8Var = s7Var.j2;
-                o8Var.X0.p((jj) obj);
+                o8Var.X0.p((kj) obj);
                 n5 n5Var = o8Var.K1;
                 if (n5Var != null && o8Var.O1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(n5Var.y);
                     boolean z10 = !isEmpty;
                     ((kf0) o8Var.j1.c).a(!o8Var.X0.k(), false);
                     o8Var.j1.setVisibility(0);
-                    o8Var.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new yv0(14, s7Var, z10)).start();
+                    o8Var.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new xv0(14, s7Var, z10)).start();
                 }
                 if (o8Var.A0.j()) {
                     ArrayList arrayList4 = o8Var.A0.h;
                     int size = arrayList4.size();
                     while (true) {
-                        if (i12 < size) {
-                            Object obj2 = arrayList4.get(i12);
-                            i12++;
+                        if (i11 < size) {
+                            Object obj2 = arrayList4.get(i11);
+                            i11++;
                             n5 n5Var2 = ((vh.w) obj2).n;
                             if (n5Var2 != null && n5Var2.K) {
-                                i10 = TextUtils.isEmpty(o8Var.K1.y) ? -1 : 2;
+                                break;
                             }
                         }
                     }
                 }
+                i10 = -1;
                 o8Var.k0(i10, true, true);
                 break;
             case 27:
                 m5 m5Var = (m5) obj;
-                k61 k61Var = ((k4) this.b).n;
-                if (k61Var != null) {
-                    k61Var.setHDRInfo(m5Var);
+                l61 l61Var = ((k4) this.b).n;
+                if (l61Var != null) {
+                    l61Var.setHDRInfo(m5Var);
                     break;
                 }
                 break;
@@ -369,7 +375,7 @@ public final /* synthetic */ class h1 implements q20 {
                 f5 f5Var = (f5) this.b;
                 Long l10 = (Long) obj;
                 f5Var.w2 = false;
-                TLRPC.User Z1 = l10 != null ? vp.r1(f5Var.a).Z1(l10) : null;
+                TLRPC.User Z1 = l10 != null ? wp.r1(f5Var.a).Z1(l10) : null;
                 f5Var.v2 = Z1;
                 f5Var.x2 = Z1 == null;
                 if (Z1 != null) {

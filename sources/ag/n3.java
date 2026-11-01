@@ -7,14 +7,14 @@ import j$.time.ZoneId;
 import j$.time.format.TextStyle;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n3 {
     public static volatile n3[] e = new n3[4];
@@ -151,7 +151,7 @@ public final class n3 {
             return "";
         }
         if (z10) {
-            String displayName = of2.getRules().getOffset(Instant.now()).getDisplayName(TextStyle.FULL, cd.D0().y);
+            String displayName = of2.getRules().getOffset(Instant.now()).getDisplayName(TextStyle.FULL, dd.D0().y);
             str2 = "GMT";
             if (displayName.length() != 1 || displayName.charAt(0) != 'Z') {
                 str2 = "GMT".concat(displayName);
@@ -171,7 +171,7 @@ public final class n3 {
         }
         this.b = true;
         int i10 = this.a;
-        SharedPreferences sharedPreferences = vp.r1(i10).f7;
+        SharedPreferences sharedPreferences = wp.r1(i10).f7;
         TLRPC.help_timezonesList help_timezoneslist = null;
         String string = sharedPreferences.getString("timezones", null);
         if (string != null) {
@@ -183,7 +183,7 @@ public final class n3 {
         if (help_timezoneslist != null) {
             arrayList.addAll(help_timezoneslist.timezones);
         }
-        zs.f(i10).k(zs.r3, new Object[0]);
+        at.f(i10).k(at.r3, new Object[0]);
         TLRPC.TL_help_getTimezonesList tL_help_getTimezonesList = new TLRPC.TL_help_getTimezonesList();
         tL_help_getTimezonesList.hash = help_timezoneslist != null ? help_timezoneslist.hash : 0;
         ConnectionsManager.getInstance(i10).sendRequest(tL_help_getTimezonesList, new k0(2, this, sharedPreferences));

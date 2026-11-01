@@ -4,19 +4,20 @@ import android.graphics.Color;
 import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.RuntimeShader;
+import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.i0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g {
     public final RenderNode a;
     public final RuntimeShader b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
+    public RenderEffect c;
+    public RenderEffect[] d;
+    public float[] e;
+    public float[] f;
+    public int g;
     public float h;
     public float i;
     public float j;
@@ -25,77 +26,103 @@ public final class g {
     public float m;
     public float n;
     public float o;
-    public int p;
+    public float p;
+    public int q;
 
     public g(RenderNode renderNode) {
         this.a = renderNode;
         RuntimeShader runtimeShader = new RuntimeShader(i0.y2(null, R.raw.liquid_glass_shader));
         this.b = runtimeShader;
-        renderNode.setRenderEffect(RenderEffect.createRuntimeShaderEffect(runtimeShader, "img"));
+        RenderEffect createRuntimeShaderEffect = RenderEffect.createRuntimeShaderEffect(runtimeShader, "img");
+        this.c = createRuntimeShaderEffect;
+        renderNode.setRenderEffect(createRuntimeShaderEffect);
     }
 
-    public final void a(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, int i10) {
-        float f18;
-        float f19;
+    public final void a(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, int i10, float f18, float f19, int i11) {
         float f20;
         float f21;
-        float width = this.a.getWidth();
-        float height = this.a.getHeight();
-        float f22 = (0.0f + f7) / 2.0f;
-        float f23 = (0.0f + f10) / 2.0f;
-        float f24 = f10 - 0.0f;
-        float f25 = (f7 - 0.0f) / 2.0f;
-        float f26 = f24 / 2.0f;
-        float f27 = f11 + f14;
-        if (f27 > f24) {
-            float f28 = f11 / f27;
-            f18 = f24 * f28;
-            f19 = (1.0f - f28) * f24;
+        float f22;
+        float f23;
+        int length;
+        float f24 = f11 + f14;
+        if (f24 > f10) {
+            float f25 = f11 / f24;
+            f20 = f10 * f25;
+            f21 = (1.0f - f25) * f10;
         } else {
-            f18 = f11;
-            f19 = f14;
+            f20 = f11;
+            f21 = f14;
         }
-        float f29 = f12 + f13;
-        if (f29 > f24) {
-            float f30 = f12 / f29;
-            f21 = f24 * (1.0f - f30);
-            f20 = f24 * f30;
+        float f26 = f12 + f13;
+        if (f26 > f10) {
+            float f27 = f12 / f26;
+            f22 = f10 * f27;
+            f23 = (1.0f - f27) * f10;
         } else {
-            f20 = f12;
-            f21 = f13;
+            f22 = f12;
+            f23 = f13;
         }
-        if (Math.abs(this.c - width) > 0.1f || Math.abs(this.d - height) > 0.1f || Math.abs(this.e - f22) > 0.1f || Math.abs(this.f - f23) > 0.1f || Math.abs(this.g - f25) > 0.1f || Math.abs(this.h - f26) > 0.1f || Math.abs(this.i - f18) > 0.1f || Math.abs(this.j - f20) > 0.1f || Math.abs(this.k - f21) > 0.1f || Math.abs(this.l - f19) > 0.1f || Math.abs(this.m - f15) > 0.1f || Math.abs(this.n - f16) > 0.1f || Math.abs(this.o - f17) > 0.1f || this.p != i10) {
-            this.p = i10;
+        if (this.g != i11 || Math.abs(this.h - f7) > 0.1f || Math.abs(this.i - f10) > 0.1f || Math.abs(this.j - f20) > 0.1f || Math.abs(this.k - f22) > 0.1f || Math.abs(this.l - f23) > 0.1f || Math.abs(this.m - f21) > 0.1f || Math.abs(this.n - f15) > 0.1f || Math.abs(this.o - f16) > 0.1f || Math.abs(this.p - f17) > 0.1f || this.q != i10) {
+            this.q = i10;
             float alpha = Color.alpha(i10) / 255.0f;
-            RuntimeShader runtimeShader = this.b;
-            this.c = width;
-            this.d = height;
-            runtimeShader.setFloatUniform("resolution", width, height);
-            RuntimeShader runtimeShader2 = this.b;
-            this.e = f22;
-            this.f = f23;
-            runtimeShader2.setFloatUniform("center", f22, f23);
-            RuntimeShader runtimeShader3 = this.b;
-            this.g = f25;
-            this.h = f26;
-            runtimeShader3.setFloatUniform("size", f25, f26);
-            RuntimeShader runtimeShader4 = this.b;
-            this.k = f21;
+            float f28 = 1.0f / i11;
+            this.g = i11;
+            this.h = f7;
+            this.i = f10;
+            this.l = f23;
+            this.k = f22;
+            this.m = f21;
             this.j = f20;
-            this.l = f19;
-            this.i = f18;
-            runtimeShader4.setFloatUniform("radius", f21, f20, f19, f18);
-            RuntimeShader runtimeShader5 = this.b;
-            this.m = f15;
-            runtimeShader5.setFloatUniform("thickness", f15);
-            RuntimeShader runtimeShader6 = this.b;
-            this.n = f16;
-            runtimeShader6.setFloatUniform("refract_intensity", f16);
-            RuntimeShader runtimeShader7 = this.b;
-            this.o = f17;
-            runtimeShader7.setFloatUniform("refract_index", f17);
+            this.n = f15;
+            this.b.setFloatUniform("size", (f7 / 2.0f) * f28, (f10 / 2.0f) * f28);
+            this.b.setFloatUniform("radius", f23 * f28, f22 * f28, f21 * f28, f20 * f28);
+            this.b.setFloatUniform("thickness", f15 * f28);
+            RuntimeShader runtimeShader = this.b;
+            this.o = f16;
+            runtimeShader.setFloatUniform("refract_intensity", f16);
+            RuntimeShader runtimeShader2 = this.b;
+            this.p = f17;
+            runtimeShader2.setFloatUniform("refract_index", f17);
             this.b.setFloatUniform("foreground_color_premultiplied", (Color.red(i10) / 255.0f) * alpha, (Color.green(i10) / 255.0f) * alpha, (Color.blue(i10) / 255.0f) * alpha, alpha);
-            this.a.setRenderEffect(RenderEffect.createRuntimeShaderEffect(this.b, "img"));
+            int i12 = (i11 * i11) + 1;
+            RenderEffect[] renderEffectArr = this.d;
+            if (renderEffectArr == null || renderEffectArr.length != i12) {
+                this.d = new RenderEffect[i12];
+                this.e = new float[i12];
+                this.f = new float[i12];
+            } else {
+                Arrays.fill(renderEffectArr, (Object) null);
+            }
+        }
+        float f29 = i11;
+        float f30 = ((f7 / 2.0f) - f18) / f29;
+        float f31 = ((f10 / 2.0f) - f19) / f29;
+        if (f18 == ((int) f18) && f19 == ((int) f19)) {
+            int i13 = (int) (-f19);
+            int i14 = i13 % i11;
+            if (i14 == 0) {
+                i14 = 0;
+            } else if ((((i13 ^ i11) >> 31) | 1) <= 0) {
+                i14 += i11;
+            }
+            int i15 = (int) (-f18);
+            int i16 = i15 % i11;
+            length = (i14 * i11) + (i16 != 0 ? (((i15 ^ i11) >> 31) | 1) > 0 ? i16 : i16 + i11 : 0);
+        } else {
+            length = this.d.length - 1;
+        }
+        RenderEffect renderEffect = this.d[length];
+        if (renderEffect == null || this.e[length] != f30 || this.f[length] != f31) {
+            this.b.setFloatUniform("center", f30, f31);
+            renderEffect = RenderEffect.createRuntimeShaderEffect(this.b, "img");
+            this.d[length] = renderEffect;
+            this.e[length] = f30;
+            this.f[length] = f31;
+        }
+        if (this.c != renderEffect) {
+            RenderNode renderNode = this.a;
+            this.c = renderEffect;
+            renderNode.setRenderEffect(renderEffect);
         }
     }
 }

@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n1 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a = 1;
@@ -13,10 +13,10 @@ public final /* synthetic */ class n1 implements DialogInterface.OnCancelListene
     public final /* synthetic */ int[] c;
     public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ n1(int i10, int[] iArr, org.telegram.ui.f70 f70Var) {
+    public /* synthetic */ n1(int i10, int[] iArr, org.telegram.ui.y60 y60Var) {
         this.b = i10;
         this.c = iArr;
-        this.d = f70Var;
+        this.d = y60Var;
     }
 
     @Override // android.content.DialogInterface.OnCancelListener

@@ -8,9 +8,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bk;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.ck;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x5 implements Runnable {
     public final /* synthetic */ int a;
@@ -184,14 +184,14 @@ public final /* synthetic */ class x5 implements Runnable {
                         }
                     }
                     t6.y1(true, false);
-                    Collections.sort(t6.F, new bk(27));
+                    Collections.sort(t6.F, new ck(27));
                     if (z12) {
-                        zs.e().k(zs.o4, new Object[0]);
+                        at.e().k(at.o4, new Object[0]);
                     }
                     if (z11) {
                         o6.a(true);
                     }
-                    ui b02 = ui.b0(i11);
+                    vi b02 = vi.b0(i11);
                     SharedPreferences.Editor edit = org.telegram.messenger.w0.b.getSharedPreferences("emojithemes_config_" + i11, 0).edit();
                     edit.putInt("count", arrayList.size());
                     for (int i17 = 0; i17 < arrayList.size(); i17++) {
@@ -203,7 +203,7 @@ public final /* synthetic */ class x5 implements Runnable {
                     edit.apply();
                     if (arrayList.isEmpty()) {
                         b02.A0.clear();
-                        zs.e().k(zs.U4, new Object[0]);
+                        at.e().k(at.U4, new Object[0]);
                         break;
                     } else {
                         ArrayList arrayList4 = new ArrayList();
@@ -225,7 +225,7 @@ public final /* synthetic */ class x5 implements Runnable {
                 int i19 = this.c;
                 Pattern pattern = LaunchActivity.D1;
                 if (tLObject2 instanceof TLRPC.TL_boolTrue) {
-                    ui.b0(i19).E0(false, true, null);
+                    vi.b0(i19).E0(false, true, null);
                     break;
                 }
                 break;
@@ -234,7 +234,7 @@ public final /* synthetic */ class x5 implements Runnable {
                 int i20 = this.c;
                 Pattern pattern2 = LaunchActivity.D1;
                 if (tLObject3 instanceof TLRPC.TL_boolTrue) {
-                    ui.b0(i20).E0(false, true, null);
+                    vi.b0(i20).E0(false, true, null);
                     break;
                 }
                 break;

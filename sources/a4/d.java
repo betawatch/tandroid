@@ -7,19 +7,19 @@ import java.util.HashMap;
 import kg.y1;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.b1;
-import org.telegram.messenger.bj;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.cj;
 import org.telegram.messenger.f0;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.jj;
 import org.telegram.messenger.k6;
 import org.telegram.messenger.k7;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import s4.c1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Comparator {
     public final /* synthetic */ int a;
@@ -131,13 +131,13 @@ public final /* synthetic */ class d implements Comparator {
                 }
                 return j14 < j15 ? -1 : 0;
             case 19:
-                jj jjVar = (jj) obj;
-                jj jjVar2 = (jj) obj2;
+                kj kjVar = (kj) obj;
+                kj kjVar2 = (kj) obj2;
                 String[] strArr = MediaController.U1;
-                int f12 = jjVar.f1();
-                int f13 = jjVar2.f1();
-                long j16 = jjVar.k.grouped_id;
-                long j17 = jjVar2.k.grouped_id;
+                int f12 = kjVar.f1();
+                int f13 = kjVar2.f1();
+                long j16 = kjVar.k.grouped_id;
+                long j17 = kjVar2.k.grouped_id;
                 if (f12 >= 0 || f13 >= 0) {
                     if (j16 == 0 || j16 != j17) {
                         return Integer.compare(f12, f13);
@@ -152,8 +152,8 @@ public final /* synthetic */ class d implements Comparator {
                 return -compare;
             case 20:
                 String[] strArr2 = MediaController.U1;
-                long j18 = ((ef) obj).D;
-                long j19 = ((ef) obj2).D;
+                long j18 = ((ff) obj).D;
+                long j19 = ((ff) obj2).D;
                 if (j18 < j19) {
                     return 1;
                 }
@@ -207,7 +207,7 @@ public final /* synthetic */ class d implements Comparator {
                 top2 = ((String) obj).length();
                 break;
             default:
-                return ((bj) obj).a - ((bj) obj2).a;
+                return ((cj) obj).a - ((cj) obj2).a;
         }
         return top - top2;
     }

@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ex;
-import org.telegram.ui.Components.ok0;
-import org.telegram.ui.e50;
-import org.telegram.ui.i31;
+import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.r11;
+import org.telegram.ui.Components.s11;
+import org.telegram.ui.d50;
+import org.telegram.ui.g31;
 import s4.n;
 import zf.k;
 import zf.m;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a extends n {
     public final /* synthetic */ int b;
@@ -41,6 +43,8 @@ public final class a extends n {
                 break;
             case 4:
                 break;
+            case 5:
+                break;
             default:
                 if (((k) ((m) this.d).N.get(i10)).a == ((k) this.c.get(i11)).a) {
                 }
@@ -66,16 +70,18 @@ public final class a extends n {
             case 1:
                 return ((Integer) this.c.get(i10)).equals(((ex) this.d).n.get(i11));
             case 2:
-                return Objects.equals(this.c.get(i10), ((ok0) this.d).n.get(i11));
+                return Objects.equals(this.c.get(i10), ((pk0) this.d).n.get(i11));
             case 3:
-                e50 e50Var = (e50) this.d;
+                return ((s11) this.c.get(i10)).a() == ((s11) ((r11) this.d).c.get(i11)).a();
+            case 4:
+                d50 d50Var = (d50) this.d;
                 ArrayList arrayList = this.c;
-                if (i10 >= arrayList.size() || i11 >= e50Var.e.size()) {
+                if (i10 >= arrayList.size() || i11 >= d50Var.e.size()) {
                     return false;
                 }
-                return ((v3) arrayList.get(i10)).equals(e50Var.e.get(i11));
-            case 4:
-                return ((Long) this.c.get(i10)).equals(((i31) this.d).v0.get(i11));
+                return ((v3) arrayList.get(i10)).equals(d50Var.e.get(i11));
+            case 5:
+                return ((Long) this.c.get(i10)).equals(((g31) this.d).v0.get(i11));
             default:
                 k kVar = (k) ((m) this.d).N.get(i10);
                 k kVar2 = (k) this.c.get(i11);
@@ -95,11 +101,13 @@ public final class a extends n {
             case 1:
                 return ((ex) this.d).n.size();
             case 2:
-                return ((ok0) this.d).n.size();
+                return ((pk0) this.d).n.size();
             case 3:
-                return ((e50) this.d).e.size();
+                return ((r11) this.d).c.size();
             case 4:
-                return ((i31) this.d).v0.size();
+                return ((d50) this.d).e.size();
+            case 5:
+                return ((g31) this.d).v0.size();
             default:
                 return this.c.size();
         }
@@ -117,6 +125,8 @@ public final class a extends n {
             case 3:
                 return this.c.size();
             case 4:
+                return this.c.size();
+            case 5:
                 return this.c.size();
             default:
                 return ((m) this.d).N.size();

@@ -13,15 +13,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.ns0;
+import org.telegram.ui.ms0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z5 extends FrameLayout {
     public final TextView a;
@@ -41,18 +41,18 @@ public final class z5 extends FrameLayout {
         this.b = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(20.0f), -1));
         frameLayout.setCameraDistance(org.telegram.messenger.i0.L(8000.0f));
-        addView(frameLayout, w7.b6.d(zs.p3, 244.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.b6.d(at.p3, 244.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.c = frameLayout2;
         frameLayout.addView(frameLayout2, w7.b6.c(-1.0f, -1));
         FrameLayout frameLayout3 = new FrameLayout(context);
-        frameLayout2.addView(frameLayout3, w7.b6.d(zs.u2, 164.0f, 49, 0.0f, 24.0f, 0.0f, 0.0f));
+        frameLayout2.addView(frameLayout3, w7.b6.d(at.u2, 164.0f, 49, 0.0f, 24.0f, 0.0f, 0.0f));
         final int i10 = 0;
         qh.f c10 = qh.g.c("ton://transfer/".concat(str), 768, ac.d.d, 1.0f, new ColorDrawable(0));
         frameLayout3.addView(new ih.c(context, c10), w7.b6.c(-1.0f, -1));
         float f7 = c10 == null ? 0.0f : c10.l / c10.b;
         if (f7 > 0.0f) {
-            if (tz.o() == 0 || sc.f() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.getDeviceConfigurationInfo().reqGlEsVersion < 196608) {
+            if (uz.o() == 0 || tc.f() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.getDeviceConfigurationInfo().reqGlEsVersion < 196608) {
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.FIT_XY);
                 imageView.setImageResource(R.drawable.mini_gram_72);
@@ -65,7 +65,7 @@ public final class z5 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setText(cd.L0(2131743178, null));
+        textView.setText(dd.L0(2131743178, null));
         textView.setTextColor(-15556886);
         textView.setTextSize(1, 14.0f);
         textView.setGravity(17);
@@ -106,13 +106,13 @@ public final class z5 extends FrameLayout {
         textView2.setText(spannableStringBuilder);
         textView2.setTextColor(-16777216);
         textView2.setTextSize(1, 18.0f);
-        textView2.setTypeface(b6.q0(context));
+        textView2.setTypeface(b6.r0(context));
         textView2.setGravity(17);
         textView2.setIncludeFontPadding(false);
         textView2.setMaxLines(4);
         textView2.setLineSpacing(0.0f, 1.0f);
         TextView l4 = org.telegram.ui.Cells.f1.l(this.d, textView2, w7.b6.d(-1, 112.0f, 55, 8.0f, 32.0f, 8.0f, 0.0f), context);
-        l4.setText(cd.L0(2131743226, null));
+        l4.setText(dd.L0(2131743226, null));
         l4.setTextColor(-15556886);
         l4.setTextSize(1, 14.0f);
         l4.setTypeface(org.telegram.messenger.i0.o1("fonts/rmedium.ttf"));
@@ -123,7 +123,7 @@ public final class z5 extends FrameLayout {
         mutate.setBounds(0, 0, org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(16.0f));
         l4.setCompoundDrawables(mutate, null, null, null);
         TextView l10 = org.telegram.ui.Cells.f1.l(this.d, l4, w7.b6.d(-2, 28.0f, 49, 0.0f, 149.0f, 0.0f, 0.0f), context);
-        l10.setText(cd.L0(2131743039, null));
+        l10.setText(dd.L0(2131743039, null));
         l10.setTextColor(-15556886);
         l10.setTextSize(1, 14.0f);
         l10.setTypeface(org.telegram.messenger.i0.o1("fonts/rmedium.ttf"));
@@ -206,7 +206,7 @@ public final class z5 extends FrameLayout {
         ofFloat.setDuration(420L);
         this.n.setInterpolator(gr.h);
         this.n.addUpdateListener(new r3(this, i10));
-        this.n.addListener(new ns0(this, 18));
+        this.n.addListener(new ms0(this, 18));
         this.n.start();
     }
 }

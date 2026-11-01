@@ -4,13 +4,13 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import vh.s3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i1 implements p6 {
     public final TextPaint a;
@@ -32,8 +32,8 @@ public final class i1 implements p6 {
         this.d = new Paint(3);
         Paint paint = new Paint(3);
         this.e = paint;
-        textPaint.setTextSize(org.telegram.messenger.i0.L(Math.max(16, tz.W0) - 2));
-        textPaint2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, tz.W0) - 2));
+        textPaint.setTextSize(org.telegram.messenger.i0.L(Math.max(16, uz.W0) - 2));
+        textPaint2.setTextSize(org.telegram.messenger.i0.L(Math.max(16, uz.W0) - 2));
         textPaint3.setTextSize(org.telegram.messenger.i0.L(15.0f));
         textPaint3.setTypeface(org.telegram.messenger.i0.o());
         paint.setColor(352321536);
@@ -75,7 +75,7 @@ public final class i1 implements p6 {
 
     @Override // org.telegram.ui.ActionBar.p6
     public final boolean e() {
-        return tz.H0;
+        return uz.H0;
     }
 
     @Override // org.telegram.ui.ActionBar.p6

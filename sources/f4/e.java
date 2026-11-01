@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -30,7 +30,7 @@ import w7.m9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -1137,28 +1137,28 @@ public final class e implements m {
         String group4 = matcher2.group(2);
         group4.getClass();
         switch (group4.hashCode()) {
-            case zs.n1 /* 102 */:
+            case at.n1 /* 102 */:
                 if (group4.equals("f")) {
                     c10 = 0;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case zs.p1 /* 104 */:
+            case at.p1 /* 104 */:
                 if (group4.equals("h")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case zs.u1 /* 109 */:
+            case at.u1 /* 109 */:
                 if (group4.equals("m")) {
                     c10 = 2;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case zs.B1 /* 116 */:
+            case at.B1 /* 116 */:
                 if (group4.equals("t")) {
                     c10 = 3;
                     break;

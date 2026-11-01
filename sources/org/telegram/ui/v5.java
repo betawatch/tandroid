@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class v5 extends hg.c {
     public final /* synthetic */ x5 d;
@@ -16,7 +16,7 @@ public final class v5 extends hg.c {
         this.d = x5Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 1 || i10 == 2 || i10 == 4;
@@ -43,7 +43,7 @@ public final class v5 extends hg.c {
             String str = null;
             if (d22 instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) d22;
-                str = user.self ? org.telegram.messenger.cd.L0(2131745918, null) : org.telegram.messenger.i5.m(0, user.first_name, user.last_name);
+                str = user.self ? org.telegram.messenger.dd.L0(2131745918, null) : org.telegram.messenger.i5.m(0, user.first_name, user.last_name);
             } else if (d22 instanceof TLRPC.Chat) {
                 str = ((TLRPC.Chat) d22).title;
             }
@@ -65,7 +65,7 @@ public final class v5 extends hg.c {
                 view = new org.telegram.ui.Cells.c7(viewGroup.getContext(), (org.telegram.ui.Cells.f1) null);
             } else if (i10 == 4) {
                 org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(viewGroup.getContext());
-                p8Var.k(org.telegram.messenger.cd.L0(2131747931, null), false);
+                p8Var.k(org.telegram.messenger.dd.L0(2131747931, null), false);
                 p8Var.g(-1, org.telegram.ui.ActionBar.t6.p7);
                 org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d6, p8Var, null);
                 view = p8Var;
@@ -73,7 +73,7 @@ public final class v5 extends hg.c {
             return sc.e.o(view2, view2, -1, -2);
         }
         org.telegram.ui.Cells.p8 p8Var2 = new org.telegram.ui.Cells.p8(viewGroup.getContext());
-        p8Var2.o(R.drawable.msg_contact_add, org.telegram.messenger.cd.L0(2131747939, null), true);
+        p8Var2.o(R.drawable.msg_contact_add, org.telegram.messenger.dd.L0(2131747939, null), true);
         p8Var2.g(org.telegram.ui.ActionBar.t6.v6, org.telegram.ui.ActionBar.t6.u6);
         org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d6, p8Var2, null);
         view = p8Var2;

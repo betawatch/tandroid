@@ -4,17 +4,17 @@ import android.text.TextUtils;
 import android.widget.LinearLayout;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.n20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.o20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.f11;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k7 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class k7 implements Runnable {
         Object obj4 = this.b;
         switch (i12) {
             case 0:
-                ((WalletEngine2) obj4).lambda$prepareRotateKey$34((n20) obj3, (WalletEngine2.PreparedRotation) obj2, (String) obj);
+                ((WalletEngine2) obj4).lambda$prepareRotateKey$34((o20) obj3, (WalletEngine2.PreparedRotation) obj2, (String) obj);
                 break;
             case 1:
                 ((WalletEngine2) obj4).lambda$rotateKey$52((WalletEngine2.RotationCallbacks) obj3, (byte[]) obj2, (String) obj);
@@ -61,9 +61,9 @@ public final /* synthetic */ class k7 implements Runnable {
                 if (wallettransaction.pending || wallettransaction.failed || TextUtils.isEmpty(wallettransaction.id)) {
                     wallettransaction.pending = false;
                     wallettransaction.failed = true;
-                    q20 q20Var = (q20) k0Var.q.remove(wallettransaction);
-                    if (q20Var != null) {
-                        q20Var.a(Boolean.FALSE);
+                    r20 r20Var = (r20) k0Var.q.remove(wallettransaction);
+                    if (r20Var != null) {
+                        r20Var.a(Boolean.FALSE);
                     }
                     if (nftitem != null && (c0Var = k0Var.o) != null) {
                         c0.a(c0Var, wallettransaction);
@@ -108,14 +108,14 @@ public final /* synthetic */ class k7 implements Runnable {
                 break;
             case 7:
                 byte[] bArr = (byte[]) obj4;
-                f11 f11Var = (f11) obj3;
+                d01 d01Var = (d01) obj3;
                 String str = (String) obj;
                 u1 u1Var = (u1) obj2;
                 if (bArr != null) {
                     u1Var.a(bArr);
                     break;
                 } else {
-                    f11Var.a(str);
+                    d01Var.a(str);
                     break;
                 }
             case 8:
@@ -127,19 +127,19 @@ public final /* synthetic */ class k7 implements Runnable {
                 String t10 = k0Var3.t();
                 byte[] y3 = k0Var3.y();
                 byte[] bArr2 = y3 != null ? (byte[]) y3.clone() : null;
-                f11 f11Var2 = new f11(10, z1Var, kVar);
+                d01 d01Var2 = new d01(11, z1Var, kVar);
                 if (t10 != null && bArr2 != null) {
-                    k0Var3.z(new e1(e2Var, (Object) f11Var2, (TLObject) tonconnectsession, t10, bArr2, (Object) z1Var, 1), true, false);
+                    k0Var3.z(new e1(e2Var, (Object) d01Var2, (TLObject) tonconnectsession, t10, bArr2, (Object) z1Var, 1), true, false);
                     break;
                 } else {
-                    f11Var2.a("Wallet is not ready");
+                    d01Var2.a("Wallet is not ready");
                     break;
                 }
             case 9:
                 e2 e2Var2 = (e2) obj4;
                 h0 h0Var = (h0) obj3;
                 a2 a2Var = (a2) obj2;
-                f11 f11Var3 = (f11) obj;
+                d01 d01Var3 = (d01) obj;
                 try {
                     jSONObject = WalletEngine2.signData(h0Var, a2Var.a, a2Var.h, a2Var.g, new JSONObject(a2Var.k), e2.n(a2Var.a.manifest.url), e2Var2.f.getCurrentTime());
                     i10 = null;
@@ -147,20 +147,20 @@ public final /* synthetic */ class k7 implements Runnable {
                     i10 = e2.i("sign data", e);
                     jSONObject = null;
                 }
-                org.telegram.messenger.i0.g3(new org.telegram.ui.v8(e2Var2, a2Var, h0Var, f11Var3, jSONObject, i10, 9));
+                org.telegram.messenger.i0.g3(new org.telegram.ui.v8(e2Var2, a2Var, h0Var, d01Var3, jSONObject, i10, 9));
                 break;
             case 10:
-                t2 t2Var = (t2) obj4;
+                u2 u2Var = (u2) obj4;
                 vh.d dVar2 = (vh.d) obj3;
                 int[] iArr = (int[]) obj2;
                 vh.d dVar3 = (vh.d) obj;
-                boolean a2 = t2Var.a();
-                dVar2.setText(cd.L0(iArr[0] == 2 ? 2131743016 : 2131743194, null));
-                dVar2.setEnabled((a2 || t2Var.d || ((i11 = iArr[0]) != 1 && i11 != 2)) ? false : true);
-                dVar3.setEnabled((a2 || t2Var.d) ? false : true);
+                boolean a2 = u2Var.a();
+                dVar2.setText(dd.L0(iArr[0] == 2 ? 2131743016 : 2131743194, null));
+                dVar2.setEnabled((a2 || u2Var.d || ((i11 = iArr[0]) != 1 && i11 != 2)) ? false : true);
+                dVar3.setEnabled((a2 || u2Var.d) ? false : true);
                 break;
             case 11:
-                b6.j0((b6) obj4, (LinearLayout) obj3, (k0) obj2, (z60) obj);
+                b6.k0((b6) obj4, (LinearLayout) obj3, (k0) obj2, (z60) obj);
                 break;
             case 12:
                 boolean[] zArr2 = (boolean[]) obj3;
@@ -175,16 +175,16 @@ public final /* synthetic */ class k7 implements Runnable {
                 }
                 break;
             case 13:
-                ((WalletEngine2) obj4).lambda$decryptTransactionComment$45((String) obj, (byte[]) obj3, (j20) obj2);
+                ((WalletEngine2) obj4).lambda$decryptTransactionComment$45((String) obj, (byte[]) obj3, (k20) obj2);
                 break;
             case 14:
-                ((WalletEngine2) obj4).lambda$signMessage$10((j20) obj3, (String) obj, (String) obj2);
+                ((WalletEngine2) obj4).lambda$signMessage$10((k20) obj3, (String) obj, (String) obj2);
                 break;
             case 15:
-                ((WalletEngine2) obj4).lambda$prepareRotateKey$35((byte[]) obj2, (String) obj, (n20) obj3);
+                ((WalletEngine2) obj4).lambda$prepareRotateKey$35((byte[]) obj2, (String) obj, (o20) obj3);
                 break;
             default:
-                WalletEngine2.lambda$emulateSend$15((AtomicBoolean) obj4, (j20) obj3, (TL_wallet.walletTransaction) obj2, (String) obj);
+                WalletEngine2.lambda$emulateSend$15((AtomicBoolean) obj4, (k20) obj3, (TL_wallet.walletTransaction) obj2, (String) obj);
                 break;
         }
     }
@@ -197,19 +197,19 @@ public final /* synthetic */ class k7 implements Runnable {
         this.e = obj3;
     }
 
-    public /* synthetic */ k7(WalletEngine2 walletEngine2, String str, byte[] bArr, j20 j20Var) {
+    public /* synthetic */ k7(WalletEngine2 walletEngine2, String str, byte[] bArr, k20 k20Var) {
         this.a = 13;
         this.b = walletEngine2;
         this.c = str;
         this.d = bArr;
-        this.e = j20Var;
+        this.e = k20Var;
     }
 
-    public /* synthetic */ k7(WalletEngine2 walletEngine2, byte[] bArr, String str, n20 n20Var) {
+    public /* synthetic */ k7(WalletEngine2 walletEngine2, byte[] bArr, String str, o20 o20Var) {
         this.a = 15;
         this.b = walletEngine2;
         this.e = bArr;
         this.c = str;
-        this.d = n20Var;
+        this.d = o20Var;
     }
 }

@@ -7,13 +7,13 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.ui.Components.x51;
+import org.telegram.messenger.dd;
+import org.telegram.ui.Components.y51;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y1 extends View implements org.telegram.ui.ActionBar.k6 {
-    public final x51 a;
+    public final y51 a;
     public final org.telegram.ui.ActionBar.p6 b;
     public int c;
     public int d;
@@ -24,13 +24,13 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.k6 {
     public y1(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
         super(context);
         this.b = p6Var;
-        x51 x51Var = new x51();
-        this.a = x51Var;
-        x51Var.setCallback(this);
-        x51Var.n = cd.L0(2131743853, null);
-        x51Var.o = cd.L0(2131743854, null);
-        x51Var.p = cd.L0(2131743852, null);
-        x51Var.j = new f(this, 1);
+        y51 y51Var = new y51();
+        this.a = y51Var;
+        y51Var.setCallback(this);
+        y51Var.n = dd.L0(2131743853, null);
+        y51Var.o = dd.L0(2131743854, null);
+        y51Var.p = dd.L0(2131743852, null);
+        y51Var.j = new f(this, 1);
     }
 
     public final void a(Canvas canvas) {
@@ -67,9 +67,9 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.k6 {
         int L2 = org.telegram.messenger.i0.L(6.0f);
         int L3 = org.telegram.messenger.i0.L(18.0f) + this.c;
         int L4 = org.telegram.messenger.i0.L(6.0f) + this.d;
-        x51 x51Var = this.a;
-        x51Var.setBounds(L, L2, L3, L4);
-        x51Var.draw(canvas);
+        y51 y51Var = this.a;
+        y51Var.setBounds(L, L2, L3, L4);
+        y51Var.draw(canvas);
     }
 
     @Override // android.view.View

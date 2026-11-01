@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.se;
 import org.telegram.ui.Components.zf;
-import org.telegram.ui.ah0;
-import org.telegram.ui.gh0;
-import org.telegram.ui.kh0;
+import org.telegram.ui.eh0;
+import org.telegram.ui.ih0;
+import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -34,7 +34,7 @@ public final class f extends AnimatorListenerAdapter {
         se seVar;
         org.telegram.ui.Cells.q1 q1Var;
         ViewGroup viewGroup;
-        ah0 ah0Var;
+        yg0 yg0Var;
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) this.d;
@@ -73,46 +73,46 @@ public final class f extends AnimatorListenerAdapter {
                 break;
             default:
                 Runnable runnable = (Runnable) this.d;
-                kh0 kh0Var = (kh0) this.e;
-                gh0 gh0Var = kh0Var.J;
+                ih0 ih0Var = (ih0) this.e;
+                eh0 eh0Var = ih0Var.J;
                 boolean z11 = this.b;
                 float f7 = z11 ? 1.0f : 0.0f;
-                kh0Var.D = f7;
-                kh0Var.x = false;
-                kh0Var.y = false;
-                kh0Var.G.setAlpha(f7);
+                ih0Var.D = f7;
+                ih0Var.x = false;
+                ih0Var.y = false;
+                ih0Var.G.setAlpha(f7);
                 if (z11) {
-                    kh0Var.w = false;
-                    kh0Var.s = false;
+                    ih0Var.w = false;
+                    ih0Var.s = false;
                 }
-                se seVar2 = kh0Var.R;
+                se seVar2 = ih0Var.R;
                 if (seVar2 != null) {
                     seVar2.setAlpha(1.0f);
                 }
-                org.telegram.ui.Cells.q1 q1Var2 = kh0Var.q0;
+                org.telegram.ui.Cells.q1 q1Var2 = ih0Var.q0;
                 if (q1Var2 != null) {
                     q1Var2.setVisibility(0);
                 }
-                zf zfVar = kh0Var.V;
-                if (zfVar != null && !kh0Var.r) {
+                zf zfVar = ih0Var.V;
+                if (zfVar != null && !ih0Var.r) {
                     zfVar.setAlpha(1.0f);
                 }
-                if (!z11 && (ah0Var = kh0Var.W) != null) {
-                    ah0Var.setAlpha(0.0f);
+                if (!z11 && (yg0Var = ih0Var.W) != null) {
+                    yg0Var.setAlpha(0.0f);
                 }
-                if (!this.c && (viewGroup = kh0Var.Y) != null) {
-                    viewGroup.setAlpha(kh0Var.D);
+                if (!this.c && (viewGroup = ih0Var.Y) != null) {
+                    viewGroup.setAlpha(ih0Var.D);
                 }
-                gh0Var.invalidate();
-                gh0Var.setAlpha(kh0Var.D);
-                kh0Var.E.invalidate();
-                kh0Var.F.invalidate();
+                eh0Var.invalidate();
+                eh0Var.setAlpha(ih0Var.D);
+                ih0Var.E.invalidate();
+                ih0Var.F.invalidate();
                 if (runnable != null) {
-                    if (!z11 && (q1Var = kh0Var.q0) != null && q1Var.isAttachedToWindow()) {
-                        kh0Var.q0.post(runnable);
+                    if (!z11 && (q1Var = ih0Var.q0) != null && q1Var.isAttachedToWindow()) {
+                        ih0Var.q0.post(runnable);
                         break;
-                    } else if (!z11 && (seVar = kh0Var.R) != null && seVar.isAttachedToWindow()) {
-                        kh0Var.R.post(runnable);
+                    } else if (!z11 && (seVar = ih0Var.R) != null && seVar.isAttachedToWindow()) {
+                        ih0Var.R.post(runnable);
                         break;
                     } else {
                         org.telegram.messenger.i0.g3(runnable);
@@ -123,8 +123,8 @@ public final class f extends AnimatorListenerAdapter {
         }
     }
 
-    public f(kh0 kh0Var, boolean z10, boolean z11, Runnable runnable) {
-        this.e = kh0Var;
+    public f(ih0 ih0Var, boolean z10, boolean z11, Runnable runnable) {
+        this.e = ih0Var;
         this.b = z10;
         this.c = z11;
         this.d = runnable;

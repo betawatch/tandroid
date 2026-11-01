@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class j7 extends tk0 {
+public final class j7 extends uk0 {
     public boolean e3;
     public final /* synthetic */ w7 f3;
 
@@ -14,13 +14,13 @@ public final class j7 extends tk0 {
         this.f3 = w7Var;
     }
 
-    @Override // org.telegram.ui.Components.tk0
+    @Override // org.telegram.ui.Components.uk0
     public final boolean E0(float f7) {
         w7 w7Var = this.f3;
         return f7 < w7Var.u1.getY() - ((float) w7Var.o1.getTop());
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         w7 w7Var = this.f3;
@@ -43,7 +43,7 @@ public final class j7 extends tk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.e3) {
             return;

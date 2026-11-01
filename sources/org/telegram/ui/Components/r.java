@@ -11,9 +11,9 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class r extends ha implements org.telegram.messenger.us {
+public final class r extends ha implements org.telegram.messenger.vs {
     public final TL_aicompose.AiComposeTone P1;
     public final org.telegram.messenger.e Q1;
     public final ImageView R1;
@@ -23,7 +23,7 @@ public final class r extends ha implements org.telegram.messenger.us {
     public final FrameLayout V1;
     public final FrameLayout W1;
     public final vh.d X1;
-    public p51 Y1;
+    public q51 Y1;
     public int Z1;
     public final TL_aicompose.aiComposeToneExample[] a2;
     public int b2;
@@ -32,11 +32,11 @@ public final class r extends ha implements org.telegram.messenger.us {
         super(context, null, false, false, 2, p6Var);
         int i10 = 0;
         this.Z1 = 0;
-        org.telegram.messenger.e Q1 = org.telegram.messenger.vp.r1(this.a).Q1();
+        org.telegram.messenger.e Q1 = org.telegram.messenger.wp.r1(this.a).Q1();
         this.Q1 = Q1;
         Q1.b();
         this.P1 = aiComposeTone;
-        TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = new TL_aicompose.aiComposeToneExample[((org.telegram.messenger.l0) org.telegram.messenger.vp.r1(this.a).y7.P.a).c];
+        TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = new TL_aicompose.aiComposeToneExample[((org.telegram.messenger.l0) org.telegram.messenger.wp.r1(this.a).y7.P.a).c];
         this.a2 = aicomposetoneexampleArr;
         if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
             aicomposetoneexampleArr[0] = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).example_english;
@@ -83,9 +83,9 @@ public final class r extends ha implements org.telegram.messenger.us {
         int i13 = org.telegram.ui.ActionBar.t6.a7;
         this.a0 = i13;
         v0(org.telegram.ui.ActionBar.t6.w0(i13, this.I0));
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i14 = this.t0;
-        tk0Var.setPadding(i14, 0, i14, org.telegram.messenger.i0.L(66.0f));
+        uk0Var.setPadding(i14, 0, i14, org.telegram.messenger.i0.L(66.0f));
         this.k1.setClipToPadding(false);
         this.k1.r1();
         this.k1.setOnItemClickListener(new k(this, 1));
@@ -117,11 +117,11 @@ public final class r extends ha implements org.telegram.messenger.us {
         d.leftMargin = i17 + i18;
         d.rightMargin += i18;
         this.b.addView(frameLayout4, d);
-        vh.d i19 = org.telegram.messenger.z20.i(24, context, p6Var, true);
+        vh.d i19 = org.telegram.messenger.a30.i(24, context, p6Var, true);
         this.X1 = i19;
-        i19.setText(org.telegram.messenger.cd.L0(d1() ? 2131754980 : 2131755005, null));
+        i19.setText(org.telegram.messenger.dd.L0(d1() ? 2131754980 : 2131755005, null));
         i19.setOnClickListener(new ag.i(this, aiComposeTone, p6Var, 5));
-        frameLayout3.addView(i19, w7.b6.e(-1, 48, org.telegram.messenger.zs.E1));
+        frameLayout3.addView(i19, w7.b6.e(-1, 48, org.telegram.messenger.at.E1));
         this.Y1.O(false);
     }
 
@@ -133,7 +133,7 @@ public final class r extends ha implements org.telegram.messenger.us {
             }
             int L = org.telegram.messenger.i0.L((int) (Math.random() * 50.0d));
             int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.cd.L0(2131748789, null));
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.L0(2131748789, null));
             u80 u80Var = new u80(null, L, 0, null);
             u80Var.f = org.telegram.messenger.i0.L(6.0f);
             u80Var.h = 0.5f;
@@ -144,11 +144,11 @@ public final class r extends ha implements org.telegram.messenger.us {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(tk0Var, getContext(), this.a, 0, true, new d(this, 1), this.I0);
-        this.Y1 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(uk0Var, getContext(), this.a, 0, true, new d(this, 1), this.I0);
+        this.Y1 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha
@@ -189,17 +189,17 @@ public final class r extends ha implements org.telegram.messenger.us {
         return false;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == org.telegram.messenger.zs.Y3) {
-            this.X1.setText(org.telegram.messenger.cd.L0(d1() ? 2131754980 : 2131755005, null));
+        if (i10 == org.telegram.messenger.at.Y3) {
+            this.X1.setText(org.telegram.messenger.dd.L0(d1() ? 2131754980 : 2131755005, null));
         }
     }
 
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
         super.dismiss();
-        org.telegram.messenger.zs.f(this.a).n(this, org.telegram.messenger.zs.Y3);
+        org.telegram.messenger.at.f(this.a).n(this, org.telegram.messenger.at.Y3);
     }
 
     @Override // org.telegram.ui.ActionBar.z2
@@ -220,6 +220,6 @@ public final class r extends ha implements org.telegram.messenger.us {
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog
     public final void show() {
         super.show();
-        org.telegram.messenger.zs.f(this.a).c(this, org.telegram.messenger.zs.Y3);
+        org.telegram.messenger.at.f(this.a).c(this, org.telegram.messenger.at.Y3);
     }
 }

@@ -12,13 +12,13 @@ import java.io.File;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.w0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c extends ih.f {
     public final String b;
@@ -62,7 +62,7 @@ public final class c extends ih.f {
         this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, i0.L(34.0f), TextUtils.TruncateAt.END), textPaint, i0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
     }
 
-    public static b d(View view, String str, String str2, TLRPC.Document document, jj jjVar) {
+    public static b d(View view, String str, String str2, TLRPC.Document document, kj kjVar) {
         b bVar = new b();
         bVar.a.setColor(t6.x0(null, t6.G6, false));
         bVar.b.setColor(t6.x0(null, t6.y6, false));
@@ -71,12 +71,12 @@ public final class c extends ih.f {
         bVar.c = radialProgress2;
         radialProgress2.setCircleRadius(i0.L(21.0f));
         bVar.c.g(t6.We, t6.Xe, t6.id, t6.jd);
-        if (jj.J3(document)) {
-            if (jj.W2(document)) {
+        if (kj.J3(document)) {
+            if (kj.W2(document)) {
                 TLRPC.PhotoSize w9 = b8.w(document.thumbs, i0.L(22.0f), true, null, false);
-                bVar.c.j(b8.w(document.thumbs, i0.L(44.0f), true, w9, true), w9, document, jjVar);
+                bVar.c.j(b8.w(document.thumbs, i0.L(44.0f), true, w9, true), w9, document, kjVar);
             } else {
-                String t02 = jj.t0(document, true);
+                String t02 = kj.t0(document, true);
                 if (TextUtils.isEmpty(t02)) {
                     bVar.c.i(null, null, null);
                 } else {

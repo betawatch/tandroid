@@ -3,9 +3,9 @@ package rh;
 import android.content.Context;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.c70;
 import org.telegram.ui.ba;
 import org.telegram.ui.le;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r {
     public static volatile r[] m = new r[4];
@@ -83,17 +83,17 @@ public final class r {
         return h == null ? TL_stars.StarsAmount.ofStars(0L) : h.status.current_balance;
     }
 
-    public final n d(long j10) {
+    public final o d(long j10) {
         Long valueOf = Long.valueOf(j10);
         HashMap hashMap = this.g;
-        n nVar = (n) hashMap.get(valueOf);
-        if (nVar != null) {
-            return nVar;
+        o oVar = (o) hashMap.get(valueOf);
+        if (oVar != null) {
+            return oVar;
         }
         Long valueOf2 = Long.valueOf(j10);
-        n nVar2 = new n(this.a, j10);
-        hashMap.put(valueOf2, nVar2);
-        return nVar2;
+        o oVar2 = new o(this.a, j10);
+        hashMap.put(valueOf2, oVar2);
+        return oVar2;
     }
 
     public final p e(long j10) {
@@ -109,13 +109,13 @@ public final class r {
         return pVar2;
     }
 
-    public final void f(Context context, long j10, long j11, q20 q20Var) {
-        n nVar = (n) this.g.get(Long.valueOf(j10));
-        if (nVar != null) {
-            ArrayList arrayList = nVar.e;
+    public final void f(Context context, long j10, long j11, r20 r20Var) {
+        o oVar = (o) this.g.get(Long.valueOf(j10));
+        if (oVar != null) {
+            ArrayList arrayList = oVar.e;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 if (!((TL_payments.connectedBotStarRef) arrayList.get(i10)).revoked && ((TL_payments.connectedBotStarRef) arrayList.get(i10)).bot_id == j11) {
-                    q20Var.a((TL_payments.connectedBotStarRef) arrayList.get(i10));
+                    r20Var.a((TL_payments.connectedBotStarRef) arrayList.get(i10));
                     return;
                 }
             }
@@ -123,9 +123,9 @@ public final class r {
         org.telegram.ui.ActionBar.x1 x1Var = new org.telegram.ui.ActionBar.x1(3, context, null);
         TL_payments.getConnectedStarRefBot getconnectedstarrefbot = new TL_payments.getConnectedStarRefBot();
         int i11 = this.a;
-        getconnectedstarrefbot.peer = vp.r1(i11).i1(j10);
-        getconnectedstarrefbot.bot = vp.r1(i11).n1(j11);
-        int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(getconnectedstarrefbot, new c70(this, x1Var, j11, q20Var));
+        getconnectedstarrefbot.peer = wp.r1(i11).i1(j10);
+        getconnectedstarrefbot.bot = wp.r1(i11).n1(j11);
+        int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(getconnectedstarrefbot, new c70(this, x1Var, j11, r20Var));
         x1Var.i0 = true;
         x1Var.setOnCancelListener(new ba(this, sendRequest, 9));
         x1Var.r(200L);
@@ -140,7 +140,7 @@ public final class r {
         TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
         tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.t6.I.q();
         int i10 = this.a;
-        tL_payments_getStarsRevenueStats.peer = vp.r1(i10).i1(j10);
+        tL_payments_getStarsRevenueStats.peer = wp.r1(i10).i1(j10);
         ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueStats, new j(this, j10, 0));
         return tL_payments_starsRevenueStats;
     }
@@ -165,8 +165,8 @@ public final class r {
         tL_payments_getStarsRevenueStats.ton = true;
         tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.t6.I.q();
         int i10 = this.a;
-        tL_payments_getStarsRevenueStats.peer = vp.r1(i10).i1(j10);
-        TLRPC.ChatFull M0 = vp.r1(i10).M0(-j10);
+        tL_payments_getStarsRevenueStats.peer = wp.r1(i10).i1(j10);
+        TLRPC.ChatFull M0 = wp.r1(i10).M0(-j10);
         ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueStats, new j(this, j10, 1), null, null, 0, M0 != null ? M0.stats_dc : ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
         return tL_payments_starsRevenueStats;
     }
@@ -227,7 +227,7 @@ public final class r {
         zArr[i10] = true;
         TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions = new TL_stars.TL_payments_getStarsTransactions();
         int i11 = this.a;
-        tL_payments_getStarsTransactions.peer = vp.r1(i11).i1(j10);
+        tL_payments_getStarsTransactions.peer = wp.r1(i11).i1(j10);
         tL_payments_getStarsTransactions.inbound = i10 == 1;
         tL_payments_getStarsTransactions.outbound = i10 == 2;
         String str = k10.c[i10];
@@ -244,7 +244,7 @@ public final class r {
             TLRPC.TL_payments_starsRevenueStats h = h(o10, true);
             if (h != null) {
                 h.status = tL_updateStarsRevenueStatus.status;
-                zs.f(this.a).k(zs.C3, Long.valueOf(o10));
+                at.f(this.a).k(at.C3, Long.valueOf(o10));
             }
             l(o10);
             return;

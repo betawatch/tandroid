@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ue implements TextWatcher {
     public boolean a;
@@ -109,7 +109,7 @@ public final class ue implements TextWatcher {
                     qeVar.c();
                 }
                 chatActivityEnterView.z();
-                if (chatActivityEnterView.a2 && !chatActivityEnterView.o0 && !org.telegram.messenger.vp.r1(chatActivityEnterView.Q).A3() && !org.telegram.messenger.d20.i(chatActivityEnterView.Q).q() && chatActivityEnterView.d0 > org.telegram.messenger.vp.r1(chatActivityEnterView.Q).U4 && chatActivityEnterView.d0 < org.telegram.messenger.vp.r1(chatActivityEnterView.Q).V4) {
+                if (chatActivityEnterView.a2 && !chatActivityEnterView.o0 && !org.telegram.messenger.wp.r1(chatActivityEnterView.Q).A3() && !org.telegram.messenger.e20.i(chatActivityEnterView.Q).q() && chatActivityEnterView.d0 > org.telegram.messenger.wp.r1(chatActivityEnterView.Q).U4 && chatActivityEnterView.d0 < org.telegram.messenger.wp.r1(chatActivityEnterView.Q).V4) {
                     chatActivityEnterView.o0 = true;
                     if (this.e) {
                         chatActivityEnterView.o1();
@@ -154,7 +154,7 @@ public final class ue implements TextWatcher {
         }
         ChatActivityEnterView chatActivityEnterView = this.f;
         gf gfVar = chatActivityEnterView.U0;
-        boolean z10 = (gfVar == null ? org.telegram.messenger.vp.c1().getInt("selected_page", 0) : gfVar.getCurrentPage()) != 0 && (chatActivityEnterView.J2 || chatActivityEnterView.K2);
+        boolean z10 = (gfVar == null ? org.telegram.messenger.wp.c1().getInt("selected_page", 0) : gfVar.getCurrentPage()) != 0 && (chatActivityEnterView.J2 || chatActivityEnterView.K2);
         if (((i11 == 0 && !TextUtils.isEmpty(charSequence)) || (i11 != 0 && TextUtils.isEmpty(charSequence))) && z10) {
             chatActivityEnterView.b1(false, true);
         }

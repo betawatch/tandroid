@@ -7,10 +7,10 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.animation.LinearInterpolator;
 import android.widget.LinearLayout;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import rh.s8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d0 extends LinearLayout {
     public s8 a;
@@ -58,14 +58,14 @@ public final class d0 extends LinearLayout {
             this.d = g0Var.f.b;
             Paint paint = this.c;
             paint.setColor(b11);
-            paint.setAlpha(zs.L1);
+            paint.setAlpha(at.L1);
             canvas2 = canvas;
             canvas2.drawRect(getWidth() * e, 0.0f, getWidth(), getHeight(), paint);
         } else {
             canvas2 = canvas;
         }
         if (this.a == null) {
-            this.a = new s8(1, zs.Z3);
+            this.a = new s8(1, at.Z3);
         }
         this.a.f(0, 0, getWidth(), getHeight());
         s8 s8Var = this.a;

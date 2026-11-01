@@ -3,18 +3,18 @@ package bi;
 import android.text.Editable;
 import java.io.File;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.cg;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.dg;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ic;
 import org.telegram.messenger.j8;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.js;
-import org.telegram.messenger.rb;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.sb;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.bi;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -44,11 +44,11 @@ public final /* synthetic */ class k0 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r13v11, types: [org.telegram.messenger.cd] */
+    /* JADX WARN: Type inference failed for: r13v11, types: [org.telegram.messenger.dd] */
     /* JADX WARN: Type inference failed for: r6v0 */
     /* JADX WARN: Type inference failed for: r6v15 */
     /* JADX WARN: Type inference failed for: r6v3, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r7v12, types: [org.telegram.messenger.cd] */
+    /* JADX WARN: Type inference failed for: r7v12, types: [org.telegram.messenger.dd] */
     /* JADX WARN: Type inference failed for: r9v20 */
     /* JADX WARN: Type inference failed for: r9v22 */
     /* JADX WARN: Type inference failed for: r9v27 */
@@ -114,20 +114,20 @@ public final /* synthetic */ class k0 implements Runnable {
                     break;
                 }
             case 2:
-                rb rbVar = (rb) obj4;
+                sb sbVar = (sb) obj4;
                 File file = (File) obj3;
                 String str4 = (String) obj2;
-                rbVar.getClass();
+                sbVar.getClass();
                 if (file != null && ((str4.endsWith(".mp4") || str4.endsWith(".jpg")) && (E = b8.E(obj)) != null)) {
-                    jj jjVar = obj instanceof jj ? (jj) obj : null;
+                    kj kjVar = obj instanceof kj ? (kj) obj : null;
                     long j10 = E.a;
-                    if (js.l(j10 >= 0 ? 1 : org.telegram.messenger.w3.V(vp.r1(i14).L0(Long.valueOf(-j10))) ? 4 : 2, E, jjVar, i14)) {
+                    if (ks.l(j10 >= 0 ? 1 : org.telegram.messenger.w3.V(wp.r1(i14).L0(Long.valueOf(-j10))) ? 4 : 2, E, kjVar, i14)) {
                         org.telegram.messenger.i0.e(file.toString());
                     }
                 }
-                zs.f(i14).k(zs.Y1, str4, file);
-                hc hcVar = rbVar.b;
-                hcVar.s.c(new cg(hcVar, str4, this.c, file, 5));
+                at.f(i14).k(at.Y1, str4, file);
+                ic icVar = sbVar.b;
+                icVar.s.c(new dg(icVar, str4, this.c, file, 5));
                 break;
             case 3:
                 aj ajVar = (aj) obj4;
@@ -139,7 +139,7 @@ public final /* synthetic */ class k0 implements Runnable {
                     org.telegram.messenger.i0.g3(new ag.g3(ajVar, ajVar.h, new ArrayList(), new ArrayList(), 14));
                     break;
                 } else {
-                    String R0 = cd.D0().R0(lowerCase, true, false);
+                    String R0 = dd.D0().R0(lowerCase, true, false);
                     if (lowerCase.equals(R0) || R0.length() == 0) {
                         R0 = null;
                     }
@@ -159,12 +159,12 @@ public final /* synthetic */ class k0 implements Runnable {
                         aj ajVar3 = ajVar2;
                         String lowerCase2 = org.telegram.messenger.i5.m(r62, f5Var.i, f5Var.j).toLowerCase();
                         ArrayList arrayList5 = arrayList2;
-                        String R02 = cd.D0().R0(lowerCase2, true, r62);
+                        String R02 = dd.D0().R0(lowerCase2, true, r62);
                         TLRPC.User user = f5Var.m;
                         if (user != null) {
                             strArr = strArr2;
                             String lowerCase3 = org.telegram.messenger.i5.m(r62, user.first_name, user.last_name).toLowerCase();
-                            str2 = cd.D0().R0(lowerCase2, true, r62);
+                            str2 = dd.D0().R0(lowerCase2, true, r62);
                             str = lowerCase3;
                         } else {
                             strArr = strArr2;
@@ -182,7 +182,7 @@ public final /* synthetic */ class k0 implements Runnable {
                             if ((str == null || !(str.startsWith(str5) || sc.e.y(" ", str5, str))) && (str2 == null || !(str2.startsWith(str5) || sc.e.y(" ", str5, str2)))) {
                                 str3 = str;
                                 TLRPC.User user2 = f5Var.m;
-                                r92 = (user2 == null || (n10 = h20.n(user2)) == null || !n10.startsWith(str5)) ? (lowerCase2.startsWith(str5) || sc.e.y(" ", str5, lowerCase2) || (R02 != null && (R02.startsWith(str5) || sc.e.y(" ", str5, R02)))) ? 3 : z10 : 2;
+                                r92 = (user2 == null || (n10 = i20.n(user2)) == null || !n10.startsWith(str5)) ? (lowerCase2.startsWith(str5) || sc.e.y(" ", str5, lowerCase2) || (R02 != null && (R02.startsWith(str5) || sc.e.y(" ", str5, R02)))) ? 3 : z10 : 2;
                             } else {
                                 str3 = str;
                                 r92 = 1;
@@ -200,7 +200,7 @@ public final /* synthetic */ class k0 implements Runnable {
                                     TLRPC.User user3 = f5Var.m;
                                     arrayList4.add(org.telegram.messenger.i0.r0(user3.first_name, user3.last_name, str5));
                                 } else {
-                                    arrayList4.add(org.telegram.messenger.i0.r0("@" + h20.n(f5Var.m), null, "@" + str5));
+                                    arrayList4.add(org.telegram.messenger.i0.r0("@" + i20.n(f5Var.m), null, "@" + str5));
                                 }
                                 TLRPC.User user4 = f5Var.m;
                                 if (user4 != null) {
@@ -230,9 +230,9 @@ public final /* synthetic */ class k0 implements Runnable {
                             arrayList = arrayList6;
                         } else {
                             arrayList = arrayList6;
-                            TLRPC.User Z1 = vp.r1(i14).Z1(Long.valueOf(tL_contact.user_id));
+                            TLRPC.User Z1 = wp.r1(i14).Z1(Long.valueOf(tL_contact.user_id));
                             String lowerCase4 = org.telegram.messenger.i5.m(0, Z1.first_name, Z1.last_name).toLowerCase();
-                            String R03 = cd.D0().R0(lowerCase4, true, false);
+                            String R03 = dd.D0().R0(lowerCase4, true, false);
                             if (lowerCase4.equals(R03)) {
                                 R03 = null;
                             }
@@ -245,7 +245,7 @@ public final /* synthetic */ class k0 implements Runnable {
                                     c10 = 1;
                                 } else {
                                     i10 = i19;
-                                    String n11 = h20.n(Z1);
+                                    String n11 = i20.n(Z1);
                                     if (n11 != null && n11.startsWith(str7)) {
                                         c10 = 2;
                                     }
@@ -257,7 +257,7 @@ public final /* synthetic */ class k0 implements Runnable {
                                     if (c10 == 1) {
                                         arrayList4.add(org.telegram.messenger.i0.r0(Z1.first_name, Z1.last_name, str7));
                                     } else {
-                                        arrayList4.add(org.telegram.messenger.i0.r0("@" + h20.n(Z1), null, "@" + str7));
+                                        arrayList4.add(org.telegram.messenger.i0.r0("@" + i20.n(Z1), null, "@" + str7));
                                     }
                                     arrayList3.add(Z1);
                                     i19 = i10 + 1;
@@ -323,8 +323,8 @@ public final /* synthetic */ class k0 implements Runnable {
         this.h = h1Var;
     }
 
-    public /* synthetic */ k0(rb rbVar, File file, String str, int i10, Object obj, int i11) {
-        this.d = rbVar;
+    public /* synthetic */ k0(sb sbVar, File file, String str, int i10, Object obj, int i11) {
+        this.d = sbVar;
         this.e = file;
         this.f = str;
         this.b = i10;

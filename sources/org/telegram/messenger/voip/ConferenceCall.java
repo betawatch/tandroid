@@ -10,19 +10,19 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.o5;
 import org.telegram.messenger.u3;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class ConferenceCall {
     public static final int PERMISSION_ADD = 1;
@@ -49,7 +49,7 @@ public class ConferenceCall {
     private final Runnable pollRunnable = new b(this, 2);
     private final int[] pollRequestId = new int[2];
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static final class CallParticipant {
         int permissions;
         long public_key_id;
@@ -63,7 +63,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static final class CallState {
         int height;
         CallParticipant[] participants;
@@ -101,7 +101,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static final class CallVerificationState {
         byte[] emoji_hash;
         int height;
@@ -120,7 +120,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static final class CallVerificationWords {
         int height;
         String[] words;
@@ -327,7 +327,7 @@ public class ConferenceCall {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkEmojiHash$0() {
-        zs.f(this.currentAccount).k(zs.R3, new Object[0]);
+        at.f(this.currentAccount).k(at.R3, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -345,7 +345,7 @@ public class ConferenceCall {
         sharedInstance.groupCall.m.clear();
         u3 u3Var3 = sharedInstance.groupCall;
         u3Var3.m.addAll(sharedInstance.conference.getShadyJoiningParticipants(u3Var3.e));
-        zs.f(this.currentAccount).k(zs.w2, 0L, Long.valueOf(this.groupCall.id), Boolean.FALSE);
+        at.f(this.currentAccount).k(at.w2, 0L, Long.valueOf(this.groupCall.id), Boolean.FALSE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -381,12 +381,12 @@ public class ConferenceCall {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String lambda$poll$9(CallParticipant callParticipant) {
-        return "[" + callParticipant.user_id + "]: " + o5.l(d20.s0, callParticipant.user_id);
+        return "[" + callParticipant.user_id + "]: " + o5.l(e20.s0, callParticipant.user_id);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processUpdates$4(TLObject tLObject) {
-        vp.r1(this.currentAccount).L3((TLRPC.Updates) tLObject, false);
+        wp.r1(this.currentAccount).L3((TLRPC.Updates) tLObject, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -469,7 +469,7 @@ public class ConferenceCall {
             return false;
         }
         TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-        ArrayList z02 = vp.z0(updates, TL_update.TL_updateGroupCallChainBlocks.class);
+        ArrayList z02 = wp.z0(updates, TL_update.TL_updateGroupCallChainBlocks.class);
         int size = z02.size();
         boolean z10 = false;
         int i10 = 0;

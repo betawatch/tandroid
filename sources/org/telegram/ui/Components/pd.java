@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class pd extends FrameLayout {
     public final /* synthetic */ int a;
@@ -44,8 +44,8 @@ public final class pd extends FrameLayout {
             case 1:
                 ChatActivityEnterView chatActivityEnterView = this.b;
                 if (view != null && view == chatActivityEnterView.E0) {
-                    return chatActivityEnterView.b0(canvas, new org.telegram.messenger.i20() { // from class: org.telegram.ui.Components.qd
-                        @Override // org.telegram.messenger.i20
+                    return chatActivityEnterView.b0(canvas, new org.telegram.messenger.j20() { // from class: org.telegram.ui.Components.qd
+                        @Override // org.telegram.messenger.j20
                         public final Object run() {
                             Boolean valueOf;
                             valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.drawChild(canvas, view, j10));

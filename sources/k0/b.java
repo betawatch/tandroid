@@ -25,7 +25,7 @@ import l2.f;
 import l5.j;
 import m.p3;
 import m5.e;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import q5.d;
 import r2.k;
 import r2.l;
@@ -34,7 +34,7 @@ import v0.m;
 import v0.o;
 import xa.n;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class b implements k {
     public Context a;
@@ -168,7 +168,7 @@ public final class b implements k {
     public i f() {
         String string;
         Context context = this.a;
-        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), zs.Q1);
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), at.Q1);
         ArrayList arrayList = new ArrayList();
         ServiceInfo[] serviceInfoArr = packageInfo.services;
         if (serviceInfoArr != null) {

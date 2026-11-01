@@ -12,9 +12,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import n4.q;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import s4.o0;
 import x7.z;
 import z3.l;
@@ -23,7 +23,7 @@ import z7.s;
 import z7.w;
 import zf.k;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e {
     public static String A(String str, String str2) {
@@ -180,9 +180,9 @@ public abstract /* synthetic */ class e {
         return hashMap;
     }
 
-    public static ck0 o(View view, View view2, int i10, int i11) {
+    public static dk0 o(View view, View view2, int i10, int i11) {
         view.setLayoutParams(new o0(i10, i11));
-        return new ck0(view2);
+        return new dk0(view2);
     }
 
     public static v7.e p(HashMap hashMap, int i10) {
@@ -212,7 +212,7 @@ public abstract /* synthetic */ class e {
 
     public static void u(TextView textView, int i10, float f7, String str, int i11) {
         textView.setTextSize(i10, f7);
-        textView.setText(cd.L0(i11, str));
+        textView.setText(dd.L0(i11, str));
     }
 
     public static void v(HashMap hashMap) {

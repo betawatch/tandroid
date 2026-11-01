@@ -1,33 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.d20;
-import org.telegram.messenger.l20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.m20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.f11;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements l20 {
+public final /* synthetic */ class s implements m20 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ k0 b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ s(k0 k0Var, q20 q20Var, byte[] bArr, h0 h0Var) {
+    public /* synthetic */ s(k0 k0Var, r20 r20Var, byte[] bArr, h0 h0Var) {
         this.b = k0Var;
-        this.c = q20Var;
+        this.c = r20Var;
         this.d = bArr;
         this.e = h0Var;
     }
 
-    @Override // org.telegram.messenger.l20
+    @Override // org.telegram.messenger.m20
     public final void a(Object obj, Object obj2, Object obj3) {
         switch (this.a) {
             case 0:
-                q20 q20Var = (q20) this.c;
+                r20 r20Var = (r20) this.c;
                 byte[] bArr = (byte[]) this.d;
                 h0 h0Var = (h0) this.e;
                 TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
@@ -37,7 +37,7 @@ public final /* synthetic */ class s implements l20 {
                 if (tL_error == null || !"WALLET_PROOF_EXPIRED".equalsIgnoreCase(tL_error.text)) {
                     if (tL_error == null) {
                         k0Var.l0(walletState);
-                        new p0(i10, k0.w(), k0Var.t()).p(d20.i(i10).e(), bArr, h0Var, q20Var);
+                        new p0(i10, k0.w(), k0Var.t()).p(e20.i(i10).e(), bArr, h0Var, r20Var);
                         k0Var.R();
                         break;
                     } else {
@@ -45,7 +45,7 @@ public final /* synthetic */ class s implements l20 {
                         if (str == null) {
                             str = "NULL_ERROR";
                         }
-                        q20Var.a(str);
+                        r20Var.a(str);
                         break;
                     }
                 }
@@ -55,14 +55,14 @@ public final /* synthetic */ class s implements l20 {
                 TLRPC.User user = (TLRPC.User) this.d;
                 String str2 = (String) this.e;
                 String str3 = (String) obj;
-                q20 q20Var2 = (q20) obj3;
+                r20 r20Var2 = (r20) obj3;
                 String str4 = baVar.f;
                 k0 k0Var2 = this.b;
                 if (!k0.b(str4, k0Var2.t())) {
-                    q20Var2.a("WALLET_CHANGED");
+                    r20Var2.a("WALLET_CHANGED");
                     break;
                 } else {
-                    k0Var2.d0(user, str2, 0L, str3, null, baVar.e, null, new f11(17, baVar, q20Var2), null, null);
+                    k0Var2.d0(user, str2, 0L, str3, null, baVar.e, null, new d01(18, baVar, r20Var2), null, null);
                     break;
                 }
         }

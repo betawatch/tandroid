@@ -9,11 +9,11 @@ import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
 import n6.l;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MusicPlayerService;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Components.w7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class h extends s {
     public final /* synthetic */ int g;
@@ -40,9 +40,9 @@ public final class h extends s {
                 }
                 break;
             default:
-                jj jjVar = MediaController.B().u0;
-                if (jjVar != null) {
-                    MediaController.B().i0(jjVar, (j10 / 1000) / ((float) jjVar.L0()));
+                kj kjVar = MediaController.B().u0;
+                if (kjVar != null) {
+                    MediaController.B().i0(kjVar, (j10 / 1000) / ((float) kjVar.L0()));
                     boolean z10 = MusicPlayerService.w;
                     ((MusicPlayerService) obj).f(j10);
                     break;
@@ -56,12 +56,12 @@ public final class h extends s {
         switch (this.g) {
             case 1:
                 MusicPlayerService musicPlayerService = (MusicPlayerService) this.h;
-                tz.E(i10 != 1 ? (i10 == 2 || i10 == 3) ? 1 : 0 : 2);
+                uz.E(i10 != 1 ? (i10 == 2 || i10 == 3) ? 1 : 0 : 2);
                 boolean z10 = MusicPlayerService.w;
                 musicPlayerService.g();
-                jj jjVar = MediaController.B().u0;
-                if (jjVar != null) {
-                    musicPlayerService.a(jjVar, false);
+                kj kjVar = MediaController.B().u0;
+                if (kjVar != null) {
+                    musicPlayerService.a(kjVar, false);
                     break;
                 }
                 break;
@@ -77,20 +77,20 @@ public final class h extends s {
             case 1:
                 MusicPlayerService musicPlayerService = (MusicPlayerService) this.h;
                 if (i10 == 1 || i10 == 2) {
-                    if (!tz.N0) {
+                    if (!uz.N0) {
                         MediaController.B().l0(2);
                     }
-                } else if (tz.N0) {
+                } else if (uz.N0) {
                     MediaController.B().l0(0);
                 }
                 boolean z10 = MusicPlayerService.w;
                 a0 a0Var = musicPlayerService.c;
                 if (a0Var != null) {
-                    a0Var.F(tz.N0 ? 1 : 0);
+                    a0Var.F(uz.N0 ? 1 : 0);
                 }
-                jj jjVar = MediaController.B().u0;
-                if (jjVar != null) {
-                    musicPlayerService.a(jjVar, false);
+                kj kjVar = MediaController.B().u0;
+                if (kjVar != null) {
+                    musicPlayerService.a(kjVar, false);
                     break;
                 }
                 break;
@@ -118,8 +118,8 @@ public final class h extends s {
                 }
                 break;
             default:
-                jj jjVar = MediaController.B().u0;
-                if (jjVar != null && jjVar.I3()) {
+                kj kjVar = MediaController.B().u0;
+                if (kjVar != null && kjVar.I3()) {
                     MediaController.B().U(false);
                     break;
                 }
@@ -145,8 +145,8 @@ public final class h extends s {
                 }
                 break;
             default:
-                jj jjVar = MediaController.B().u0;
-                if (jjVar != null && jjVar.I3()) {
+                kj kjVar = MediaController.B().u0;
+                if (kjVar != null && kjVar.I3()) {
                     MediaController.B().V();
                     break;
                 }
@@ -218,7 +218,7 @@ public final class h extends s {
             default:
                 MusicPlayerService musicPlayerService = (MusicPlayerService) obj;
                 if ("org.telegram.android.musicplayer.repeat".equals(str)) {
-                    tz.E((tz.S0 + 1) % 3);
+                    uz.E((uz.S0 + 1) % 3);
                     boolean z10 = MusicPlayerService.w;
                     musicPlayerService.g();
                     w7 w7Var = w7.P2;
@@ -226,7 +226,7 @@ public final class h extends s {
                         w7Var.c1();
                     }
                 } else if ("org.telegram.android.musicplayer.shuffle".equals(str)) {
-                    if (tz.N0) {
+                    if (uz.N0) {
                         MediaController.B().l0(0);
                     } else {
                         MediaController.B().l0(2);
@@ -234,17 +234,17 @@ public final class h extends s {
                     boolean z11 = MusicPlayerService.w;
                     a0 a0Var = musicPlayerService.c;
                     if (a0Var != null) {
-                        a0Var.F(tz.N0 ? 1 : 0);
+                        a0Var.F(uz.N0 ? 1 : 0);
                     }
                     w7 w7Var2 = w7.P2;
                     if (w7Var2 != null) {
                         w7Var2.c1();
                     }
                 }
-                jj jjVar = MediaController.B().u0;
-                if (jjVar != null) {
+                kj kjVar = MediaController.B().u0;
+                if (kjVar != null) {
                     boolean z12 = MusicPlayerService.w;
-                    musicPlayerService.a(jjVar, false);
+                    musicPlayerService.a(kjVar, false);
                     break;
                 }
                 break;

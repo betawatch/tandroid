@@ -10,7 +10,7 @@ import java.util.List;
 import org.telegram.tgnet.TLObject;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final p a;
@@ -225,7 +225,7 @@ public final class q implements f0 {
                         b2.k0 k0Var5 = parse != null ? new b2.k0(parse, null, g0Var4.a != null ? new b2.h0(g0Var4) : uri, null, list3, null, x1Var, -9223372036854775807L) : uri;
                         b2.p0 p0Var3 = new b2.p0("", new b2.f0(d0Var3), k0Var5, new b2.j0(i0Var), b2.s0.L, l0Var3);
                         k0Var5.getClass();
-                        aVarArr[i11] = new y0(p0Var3, bVar, d0Var2, kVar.u(p0Var3), aVar, TLObject.FLAG_20, xVar2);
+                        aVarArr[i11] = new y0(p0Var3, bVar, d0Var2, kVar.s(p0Var3), aVar, TLObject.FLAG_20, xVar2);
                     } else {
                         hf.b bVar2 = this.b;
                         bVar2.getClass();

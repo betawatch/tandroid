@@ -4,21 +4,21 @@ import ag.g3;
 import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.k2;
-import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.m30;
-import org.telegram.ui.Components.sp0;
+import org.telegram.ui.Components.tp0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.d9;
-import org.telegram.ui.kv0;
+import org.telegram.ui.jv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class w implements RequestDelegate {
         switch (i10) {
             case 0:
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
-                q20 q20Var = (q20) obj;
+                r20 r20Var = (r20) obj;
                 if (tLObject instanceof Vector) {
                     Vector vector = (Vector) tLObject;
                     ArrayList arrayList = new ArrayList();
@@ -61,10 +61,10 @@ public final /* synthetic */ class w implements RequestDelegate {
                     boolean isEmpty = arrayList2.isEmpty();
                     int i13 = this.b;
                     if (isEmpty || !k0.h()) {
-                        org.telegram.messenger.i0.g3(new a0(chat, i13, arrayList, q20Var, 1));
+                        org.telegram.messenger.i0.g3(new a0(chat, i13, arrayList, r20Var, 1));
                         break;
                     } else {
-                        org.telegram.messenger.u1.i().o(arrayList2, new i0(arrayList, chat, i13, q20Var, 0));
+                        org.telegram.messenger.u1.i().o(arrayList2, new i0(arrayList, chat, i13, r20Var, 0));
                         break;
                     }
                 }
@@ -82,22 +82,22 @@ public final /* synthetic */ class w implements RequestDelegate {
                 org.telegram.messenger.i0.g3(new i2.g1(tLObject, this.b, (HashSet) obj2, tL_error, (k2) obj, 5));
                 break;
             case 5:
-                org.telegram.messenger.i0.g3(new g3((k2) obj2, tLObject, this.b, (q20) obj, 18));
+                org.telegram.messenger.i0.g3(new g3((k2) obj2, tLObject, this.b, (r20) obj, 18));
                 break;
             case 6:
                 org.telegram.messenger.i0.g3(new g3((m30) obj2, this.b, tLObject, (String) obj, 20));
                 break;
             case 7:
-                org.telegram.messenger.i0.g3(new g3((sp0) obj2, this.b, tLObject, (String) obj, 22));
+                org.telegram.messenger.i0.g3(new g3((tp0) obj2, this.b, tLObject, (String) obj, 22));
                 break;
             case 8:
-                RectF rectF = ProfileActivity.R6;
-                org.telegram.messenger.i0.h3(new kv0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i11);
+                RectF rectF = ProfileActivity.S6;
+                org.telegram.messenger.i0.h3(new jv0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i11);
                 break;
             default:
                 zf.z zVar = (zf.z) obj2;
                 zVar.getClass();
-                org.telegram.messenger.i0.g3(new c11(zVar, this.b, tLObject, (String) obj, 24));
+                org.telegram.messenger.i0.g3(new d11(zVar, this.b, tLObject, (String) obj, 24));
                 break;
         }
     }

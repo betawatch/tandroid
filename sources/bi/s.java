@@ -4,12 +4,12 @@ import android.text.SpannableString;
 import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.vx;
-import org.telegram.ui.Components.w41;
+import org.telegram.ui.Components.x41;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class s implements vx {
     public final /* synthetic */ t a;
@@ -152,7 +152,7 @@ public final class s implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void o(w41 w41Var) {
+    public final /* synthetic */ void o(x41 x41Var) {
     }
 
     @Override // org.telegram.ui.Components.vx
@@ -172,7 +172,7 @@ public final class s implements vx {
     }
 
     @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, fj fjVar, boolean z10, int i10) {
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, gj gjVar, boolean z10, int i10) {
     }
 
     @Override // org.telegram.ui.Components.vx

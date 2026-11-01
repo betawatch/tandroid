@@ -7,11 +7,11 @@ import android.text.TextUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class o7 implements q4 {
     public final /* synthetic */ o8 a;
@@ -82,12 +82,12 @@ public final class o7 implements q4 {
             if (Build.VERSION.SDK_INT >= 33) {
                 z11 = (activity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") == 0 && activity.checkSelfPermission("android.permission.READ_MEDIA_VIDEO") == 0) ? false : true;
                 if (z11) {
-                    activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, zs.z1);
+                    activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, at.z1);
                 }
             } else {
                 z11 = activity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0;
                 if (z11) {
-                    activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, zs.z1);
+                    activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, at.z1);
                 }
             }
             z10 = !z11;
@@ -209,7 +209,7 @@ public final class o7 implements q4 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void h(q20 q20Var) {
+    public final void h(r20 r20Var) {
         boolean z10;
         FileOutputStream fileOutputStream;
         o8 o8Var = this.a;
@@ -252,7 +252,7 @@ public final class o7 implements q4 {
             if (o4Var != null) {
                 o4Var.c(true);
             }
-            o8Var.P1 = CameraController.getInstance().takePicture(o8Var.G1, true, o8Var.B0.getCameraSessionObject(), new rh.e3(9, this, q20Var));
+            o8Var.P1 = CameraController.getInstance().takePicture(o8Var.G1, true, o8Var.B0.getCameraSessionObject(), new rh.q2(10, this, r20Var));
             return;
         }
         o8Var.P1 = false;
@@ -267,8 +267,8 @@ public final class o7 implements q4 {
             o8Var.K1 = m10;
             x6.a(i10, m10);
             o8Var.L1 = false;
-            if (q20Var != null) {
-                q20Var.a(new m7(this, 1));
+            if (r20Var != null) {
+                r20Var.a(new m7(this, 1));
                 return;
             } else {
                 o8Var.J(1, true);
@@ -281,11 +281,11 @@ public final class o7 implements q4 {
             o8Var.K1 = a2;
             x6.a(i10, a2);
             o8Var.L1 = false;
-            if (q20Var != null) {
-                q20Var.a(null);
+            if (r20Var != null) {
+                r20Var.a(null);
             }
-        } else if (q20Var != null) {
-            q20Var.a(null);
+        } else if (r20Var != null) {
+            r20Var.a(null);
         }
         o8Var.l0(true);
     }

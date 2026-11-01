@@ -1,40 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.LinkMovementMethod;
-import android.text.style.CharacterStyle;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.view.TextureView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class k51 extends LinkMovementMethod {
-    public final /* synthetic */ UndoView a;
+public final /* synthetic */ class k51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public k51(UndoView undoView) {
-        this.a = undoView;
+    public /* synthetic */ k51(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
-    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
-        CharacterStyle[] characterStyleArr;
-        try {
-            if (motionEvent.getAction() != 0 || ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) != null && characterStyleArr.length != 0)) {
-                if (motionEvent.getAction() != 1) {
-                    return super.onTouchEvent(textView, spannable, motionEvent);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                UndoView undoView = (UndoView) obj;
+                int i11 = UndoView.i0;
+                undoView.getClass();
+                try {
+                    undoView.f.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
+                    return;
                 }
-                CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
-                if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
-                    this.a.b(characterStyleArr2[0]);
+            case 1:
+                ((y51) obj).invalidateSelf();
+                break;
+            case 2:
+                gz gzVar = ((l61) obj).b;
+                if (gzVar != null) {
+                    gzVar.c(false, true, false);
+                    break;
                 }
-                Selection.removeSelection(spannable);
-                return true;
-            }
-            return false;
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
-            return false;
+                break;
+            case 3:
+                v61 v61Var = (v61) obj;
+                i2.i0 i0Var = v61Var.d;
+                if (i0Var != null) {
+                    TextureView textureView = v61Var.n;
+                    i0Var.F1();
+                    if (textureView != null && textureView == i0Var.X) {
+                        i0Var.F1();
+                        i0Var.s1();
+                        i0Var.x1(null);
+                        i0Var.q1(0, 0);
+                    }
+                    v61Var.d.z1(v61Var.n);
+                    ArrayList arrayList = v61Var.N;
+                    if (arrayList != null) {
+                        v61Var.k0(arrayList, v61Var.O);
+                    } else if (v61Var.U) {
+                        v61Var.l0(v61Var.Q, v61Var.S, v61Var.R, v61Var.T);
+                    } else {
+                        v61Var.j0(v61Var.Q, v61Var.S);
+                    }
+                    v61Var.h0();
+                    break;
+                }
+                break;
+            case 4:
+                v61 v61Var2 = (v61) ((bi.r6) obj).f;
+                v61Var2.a0.removeCallbacksAndMessages(null);
+                v61Var2.K.B(false, null);
+                break;
+            case 5:
+                ((x61) obj).g = false;
+                break;
+            case 6:
+                ((n81) ((li.e) ((org.telegram.ui.ActionBar.l1) obj).b).b).w.b();
+                break;
+            default:
+                ((j81) obj).d(false, true);
+                break;
         }
     }
 }

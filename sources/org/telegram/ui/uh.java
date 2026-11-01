@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uh implements org.telegram.messenger.i20 {
+public final /* synthetic */ class uh implements org.telegram.messenger.j20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -19,7 +19,7 @@ public final /* synthetic */ class uh implements org.telegram.messenger.i20 {
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x007b  */
     /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.messenger.i20
+    @Override // org.telegram.messenger.j20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -27,15 +27,15 @@ public final /* synthetic */ class uh implements org.telegram.messenger.i20 {
         View childAt;
         switch (this.a) {
             case 0:
-                return un.s0((un) this.b, (Context) this.c);
+                return un.r0((un) this.b, (Context) this.c);
             case 1:
-                org.telegram.ui.Components.p51 p51Var = (org.telegram.ui.Components.p51) this.b;
-                Object obj = ((org.telegram.ui.Components.a51) this.c).G;
-                org.telegram.ui.Components.tk0 tk0Var = p51Var.d;
+                org.telegram.ui.Components.q51 q51Var = (org.telegram.ui.Components.q51) this.b;
+                Object obj = ((org.telegram.ui.Components.b51) this.c).G;
+                org.telegram.ui.Components.uk0 uk0Var = q51Var.d;
                 int i10 = 0;
                 while (true) {
-                    if (i10 < p51Var.D.size()) {
-                        org.telegram.ui.Components.a51 G = p51Var.G(i10);
+                    if (i10 < q51Var.D.size()) {
+                        org.telegram.ui.Components.b51 G = q51Var.G(i10);
                         if (G == null || G.G != obj) {
                             i10++;
                         }
@@ -44,36 +44,36 @@ public final /* synthetic */ class uh implements org.telegram.messenger.i20 {
                     }
                 }
                 if (i10 != -1) {
-                    for (int i11 = 0; i11 < tk0Var.getChildCount(); i11++) {
-                        childAt = tk0Var.getChildAt(i11);
+                    for (int i11 = 0; i11 < uk0Var.getChildCount(); i11++) {
+                        childAt = uk0Var.getChildAt(i11);
                         int R = RecyclerView.R(childAt);
                         if (R != -1 && R == i10) {
-                            if (childAt instanceof s61) {
+                            if (childAt instanceof q61) {
                                 return null;
                             }
-                            return (s61) childAt;
+                            return (q61) childAt;
                         }
                     }
                 }
                 childAt = null;
-                if (childAt instanceof s61) {
+                if (childAt instanceof q61) {
                 }
                 break;
             default:
-                u61 u61Var = (u61) this.b;
-                g61 g61Var = (g61) this.c;
-                int childCount = u61Var.S.getChildCount();
+                s61 s61Var = (s61) this.b;
+                e61 e61Var = (e61) this.c;
+                int childCount = s61Var.S.getChildCount();
                 for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt2 = u61Var.S.getChildAt(i12);
-                    if (childAt2 instanceof f61) {
-                        f61 f61Var = (f61) childAt2;
-                        if (f61Var.r == g61Var) {
-                            return f61Var;
+                    View childAt2 = s61Var.S.getChildAt(i12);
+                    if (childAt2 instanceof d61) {
+                        d61 d61Var = (d61) childAt2;
+                        if (d61Var.r == e61Var) {
+                            return d61Var;
                         }
                     }
                 }
-                u61Var.S.setItemAnimator(null);
-                u61Var.B0.f();
+                s61Var.S.setItemAnimator(null);
+                s61Var.B0.f();
                 return null;
         }
     }

@@ -10,18 +10,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.yz0;
+import org.telegram.ui.Components.a01;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.zz0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public abstract class l4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -90,35 +90,35 @@ public abstract class l4 {
                             }
                             i10 = -1;
                             break;
-                        case zs.i1 /* 97 */:
+                        case at.i1 /* 97 */:
                             if (str3.equals("a")) {
                                 i10 = 4;
                                 break;
                             }
                             i10 = -1;
                             break;
-                        case zs.j1 /* 98 */:
+                        case at.j1 /* 98 */:
                             if (str3.equals("b")) {
                                 i10 = 5;
                                 break;
                             }
                             i10 = -1;
                             break;
-                        case zs.q1 /* 105 */:
+                        case at.q1 /* 105 */:
                             if (str3.equals("i")) {
                                 i10 = 6;
                                 break;
                             }
                             i10 = -1;
                             break;
-                        case zs.A1 /* 115 */:
+                        case at.A1 /* 115 */:
                             if (str3.equals("s")) {
                                 i10 = 7;
                                 break;
                             }
                             i10 = -1;
                             break;
-                        case zs.C1 /* 117 */:
+                        case at.C1 /* 117 */:
                             if (str3.equals("u")) {
                                 i10 = 8;
                                 break;
@@ -252,7 +252,7 @@ public abstract class l4 {
                                     }
                                     i11 = -1;
                                     break;
-                                case zs.x1 /* 112 */:
+                                case at.x1 /* 112 */:
                                     if (str3.equals("p")) {
                                         i11 = 3;
                                         break;
@@ -679,35 +679,35 @@ public abstract class l4 {
                                                             }
                                                             i15 = -1;
                                                             break;
-                                                        case zs.i1 /* 97 */:
+                                                        case at.i1 /* 97 */:
                                                             if (str4.equals("a")) {
                                                                 i15 = 4;
                                                                 break;
                                                             }
                                                             i15 = -1;
                                                             break;
-                                                        case zs.j1 /* 98 */:
+                                                        case at.j1 /* 98 */:
                                                             if (str4.equals("b")) {
                                                                 i15 = 5;
                                                                 break;
                                                             }
                                                             i15 = -1;
                                                             break;
-                                                        case zs.q1 /* 105 */:
+                                                        case at.q1 /* 105 */:
                                                             if (str4.equals("i")) {
                                                                 i15 = 6;
                                                                 break;
                                                             }
                                                             i15 = -1;
                                                             break;
-                                                        case zs.A1 /* 115 */:
+                                                        case at.A1 /* 115 */:
                                                             if (str4.equals("s")) {
                                                                 i15 = 7;
                                                                 break;
                                                             }
                                                             i15 = -1;
                                                             break;
-                                                        case zs.C1 /* 117 */:
+                                                        case at.C1 /* 117 */:
                                                             if (str4.equals("u")) {
                                                                 i15 = 8;
                                                                 break;
@@ -1678,19 +1678,19 @@ public abstract class l4 {
                 i23 = Math.min(length, i10);
             } else {
                 int nextSpanTransition = spanned.nextSpanTransition(i23, length, CharacterStyle.class);
-                zz0[] zz0VarArr = (zz0[]) spanned.getSpans(i23, nextSpanTransition, zz0.class);
-                int length3 = zz0VarArr.length;
+                a01[] a01VarArr = (a01[]) spanned.getSpans(i23, nextSpanTransition, a01.class);
+                int length3 = a01VarArr.length;
                 int i25 = i22;
                 int i26 = i25;
                 while (i25 < length3) {
-                    yz0 yz0Var = zz0VarArr[i25].b;
-                    if (yz0Var != null) {
-                        i26 |= yz0Var.a;
+                    zz0 zz0Var = a01VarArr[i25].b;
+                    if (zz0Var != null) {
+                        i26 |= zz0Var.a;
                     }
                     i25++;
                 }
-                g51[] g51VarArr = (g51[]) spanned.getSpans(i23, nextSpanTransition, g51.class);
-                String url = g51VarArr.length > 0 ? g51VarArr[i22].getURL() : null;
+                h51[] h51VarArr = (h51[]) spanned.getSpans(i23, nextSpanTransition, h51.class);
+                String url = h51VarArr.length > 0 ? h51VarArr[i22].getURL() : null;
                 org.telegram.ui.Components.o5[] o5VarArr = (org.telegram.ui.Components.o5[]) spanned.getSpans(i23, nextSpanTransition, org.telegram.ui.Components.o5.class);
                 if (o5VarArr.length > 0) {
                     org.telegram.ui.Components.o5 o5Var = o5VarArr[i22];
@@ -2050,9 +2050,9 @@ public abstract class l4 {
             spannableStringBuilder.setSpan(new org.telegram.ui.Components.o5(j10, (Paint.FontMetricsInt) null), length, length2, 33);
         }
         if (i10 != 0) {
-            yz0 yz0Var = new yz0();
-            yz0Var.a = i10 & 114975;
-            spannableStringBuilder.setSpan(new zz0(yz0Var, org.telegram.messenger.i0.L(tz.W0)), length, length2, 33);
+            zz0 zz0Var = new zz0();
+            zz0Var.a = i10 & 114975;
+            spannableStringBuilder.setSpan(new a01(zz0Var, org.telegram.messenger.i0.L(uz.W0)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(s6.k(str2), length, length2, 33);

@@ -1,12 +1,12 @@
 package rh;
 
 import java.util.HashMap;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class j implements RequestDelegate {
                                     hashMap.put(Long.valueOf(j11), null);
                                 }
                                 rVar2.d.put(Long.valueOf(j11), Long.valueOf(System.currentTimeMillis()));
-                                zs.f(rVar2.a).k(zs.C3, Long.valueOf(j11));
+                                at.f(rVar2.a).k(at.C3, Long.valueOf(j11));
                                 break;
                             default:
                                 HashMap hashMap2 = rVar2.c;
@@ -52,7 +52,7 @@ public final /* synthetic */ class j implements RequestDelegate {
                                     hashMap2.put(Long.valueOf(j11), null);
                                 }
                                 rVar2.b.put(Long.valueOf(j11), Long.valueOf(System.currentTimeMillis()));
-                                zs.f(rVar2.a).k(zs.C3, Long.valueOf(j11));
+                                at.f(rVar2.a).k(at.C3, Long.valueOf(j11));
                                 break;
                         }
                     }
@@ -78,7 +78,7 @@ public final /* synthetic */ class j implements RequestDelegate {
                                     hashMap.put(Long.valueOf(j112), null);
                                 }
                                 rVar22.d.put(Long.valueOf(j112), Long.valueOf(System.currentTimeMillis()));
-                                zs.f(rVar22.a).k(zs.C3, Long.valueOf(j112));
+                                at.f(rVar22.a).k(at.C3, Long.valueOf(j112));
                                 break;
                             default:
                                 HashMap hashMap2 = rVar22.c;
@@ -88,7 +88,7 @@ public final /* synthetic */ class j implements RequestDelegate {
                                     hashMap2.put(Long.valueOf(j112), null);
                                 }
                                 rVar22.b.put(Long.valueOf(j112), Long.valueOf(System.currentTimeMillis()));
-                                zs.f(rVar22.a).k(zs.C3, Long.valueOf(j112));
+                                at.f(rVar22.a).k(at.C3, Long.valueOf(j112));
                                 break;
                         }
                     }

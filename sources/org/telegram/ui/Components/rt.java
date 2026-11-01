@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class rt extends mt {
     public Drawable Y1;
@@ -45,7 +45,7 @@ public final class rt extends mt {
     public final void o(ActionMode actionMode, Menu menu) {
         wt wtVar = this.a2;
         if (wtVar.a()) {
-            org.telegram.ui.un.t8(menu, null, wtVar.L == 3, true, true, true);
+            org.telegram.ui.un.x8(menu, null, wtVar.L == 3, true, true, true);
         } else {
             wtVar.i(actionMode, menu);
         }
@@ -55,8 +55,8 @@ public final class rt extends mt {
     public final void onSelectionChanged(int i10, int i11) {
         super.onSelectionChanged(i10, i11);
         wt wtVar = this.a2;
-        bl0 bl0Var = wtVar.c;
-        if (bl0Var != null) {
+        cl0 cl0Var = wtVar.c;
+        if (cl0Var != null) {
             boolean z10 = false;
             boolean z11 = i11 != i10;
             if (wtVar.a() && z11) {
@@ -66,10 +66,10 @@ public final class rt extends mt {
             if (wtVar.n != z10) {
                 wtVar.n = z10;
                 if (z10) {
-                    this.Y1 = bl0Var.d;
-                    bl0Var.a(R.drawable.msg_edit, true);
+                    this.Y1 = cl0Var.d;
+                    cl0Var.a(R.drawable.msg_edit, true);
                 } else {
-                    bl0Var.b(this.Y1, true);
+                    cl0Var.b(this.Y1, true);
                     this.Y1 = null;
                 }
             }

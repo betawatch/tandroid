@@ -49,13 +49,13 @@ import m.w2;
 import m.x1;
 import m.x2;
 import m.z2;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import r0.h0;
 import w7.t;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class SearchView extends w1 implements k.b {
     public static final f w0;
@@ -100,7 +100,7 @@ public class SearchView extends w1 implements k.b {
     public final q2 u0;
     public final WeakHashMap v0;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static class SearchAutoComplete extends l {
         public int e;
         public SearchView f;
@@ -116,7 +116,7 @@ public class SearchView extends w1 implements k.b {
             int i10 = configuration.screenWidthDp;
             int i11 = configuration.screenHeightDp;
             if (i10 < 960 || i11 < 720 || configuration.orientation != 2) {
-                return i10 < 600 ? (i10 < 640 || i11 < 480) ? zs.q2 : zs.W2 : zs.W2;
+                return i10 < 600 ? (i10 < 640 || i11 < 480) ? at.q2 : at.W2 : at.W2;
             }
             return 256;
         }
@@ -901,14 +901,14 @@ public class SearchView extends w1 implements k.b {
         this.M = imageView4;
         ImageView imageView5 = (ImageView) findViewById(R.id.search_mag_icon);
         this.T = imageView5;
-        findViewById.setBackground(kVar.w(10));
-        findViewById2.setBackground(kVar.w(14));
-        imageView.setImageDrawable(kVar.w(13));
-        imageView2.setImageDrawable(kVar.w(7));
-        imageView3.setImageDrawable(kVar.w(4));
-        imageView4.setImageDrawable(kVar.w(16));
-        imageView5.setImageDrawable(kVar.w(13));
-        this.U = kVar.w(12);
+        findViewById.setBackground(kVar.v(10));
+        findViewById2.setBackground(kVar.v(14));
+        imageView.setImageDrawable(kVar.v(13));
+        imageView2.setImageDrawable(kVar.v(7));
+        imageView3.setImageDrawable(kVar.v(4));
+        imageView4.setImageDrawable(kVar.v(16));
+        imageView5.setImageDrawable(kVar.v(13));
+        this.U = kVar.v(12);
         t.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
         this.V = obtainStyledAttributes.getResourceId(15, R.layout.abc_search_dropdown_item_icons_2line);
         this.W = obtainStyledAttributes.getResourceId(5, 0);

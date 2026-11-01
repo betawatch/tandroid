@@ -11,14 +11,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.qq;
-import org.telegram.ui.ns0;
+import org.telegram.ui.ms0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a7 extends FrameLayout {
     public int D;
@@ -54,7 +54,7 @@ public final class a7 extends FrameLayout {
     public lg.h f;
     public long f0;
     public float g0;
-    public ei0 h;
+    public fi0 h;
     public float h0;
     public float i0;
     public final w6 j0;
@@ -205,7 +205,7 @@ public final class a7 extends FrameLayout {
         this.a = L;
         this.b = i10;
         PowerManager powerManager = (PowerManager) context.getSystemService("power");
-        if ((powerManager == null || !powerManager.isPowerSaveMode()) && tz.o() != 0) {
+        if ((powerManager == null || !powerManager.isPowerSaveMode()) && uz.o() != 0) {
             ActivityManager activityManager = (ActivityManager) context.getSystemService("activity");
             ConfigurationInfo deviceConfigurationInfo = activityManager == null ? null : activityManager.getDeviceConfigurationInfo();
             if (deviceConfigurationInfo != null && deviceConfigurationInfo.reqGlEsVersion >= 196608) {
@@ -368,15 +368,15 @@ public final class a7 extends FrameLayout {
     }
 
     public final void g() {
-        ei0 ei0Var = new ei0(getContext());
-        this.h = ei0Var;
-        ei0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        ei0 ei0Var2 = this.h;
+        fi0 fi0Var = new fi0(getContext());
+        this.h = fi0Var;
+        fi0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        fi0 fi0Var2 = this.h;
         int i10 = this.b;
-        ei0Var2.f(R.raw.wallet_diamond_blue, i10, i10, null);
+        fi0Var2.f(R.raw.wallet_diamond_blue, i10, i10, null);
         this.h.getAnimatedDrawable().K(0);
         this.c = this.h;
-        setOnClickListener(new i3(this, 4));
+        setOnClickListener(new j3(this, 4));
         setClickable(!this.y);
     }
 
@@ -415,7 +415,7 @@ public final class a7 extends FrameLayout {
                     ofFloat.setDuration(350L);
                     this.I.setInterpolator(gr.h);
                     this.I.addUpdateListener(new r3(this, 4));
-                    this.I.addListener(new ns0(this, 20));
+                    this.I.addListener(new ms0(this, 20));
                     this.I.start();
                 } else {
                     this.i0 = 1.0f;
@@ -493,15 +493,15 @@ public final class a7 extends FrameLayout {
         int i10 = this.k0 + 1;
         this.k0 = i10;
         if (this.f == null) {
-            ei0 ei0Var = this.h;
-            if (ei0Var != null) {
+            fi0 fi0Var = this.h;
+            if (fi0Var != null) {
                 if (!z10) {
-                    this.x = ei0Var.b();
+                    this.x = fi0Var.b();
                     this.h.i();
                     return;
                 } else {
                     if (!this.w || this.x) {
-                        ei0Var.d();
+                        fi0Var.d();
                     }
                     this.w = true;
                     return;
@@ -537,9 +537,9 @@ public final class a7 extends FrameLayout {
             hVar.f = this.T + this.L;
             return;
         }
-        ei0 ei0Var = this.h;
-        if (ei0Var != null) {
-            ei0Var.setRotationY(this.T + this.L);
+        fi0 fi0Var = this.h;
+        if (fi0Var != null) {
+            fi0Var.setRotationY(this.T + this.L);
         }
     }
 
@@ -697,9 +697,9 @@ public final class a7 extends FrameLayout {
         this.b0 = f7;
         i();
         setEnabled(false);
-        ei0 ei0Var = this.h;
-        if (ei0Var != null) {
-            ei0Var.getAnimatedDrawable().K(1);
+        fi0 fi0Var = this.h;
+        if (fi0Var != null) {
+            fi0Var.getAnimatedDrawable().K(1);
         }
     }
 
@@ -710,9 +710,9 @@ public final class a7 extends FrameLayout {
             hVar.g = f7 + this.M;
             return;
         }
-        ei0 ei0Var = this.h;
-        if (ei0Var != null) {
-            ei0Var.setRotation(f7 + this.M);
+        fi0 fi0Var = this.h;
+        if (fi0Var != null) {
+            fi0Var.setRotation(f7 + this.M);
         }
     }
 
@@ -748,9 +748,9 @@ public final class a7 extends FrameLayout {
             hVar.g = this.K + this.M;
             return;
         }
-        ei0 ei0Var = this.h;
-        if (ei0Var != null) {
-            ei0Var.setRotation(this.K + this.M);
+        fi0 fi0Var = this.h;
+        if (fi0Var != null) {
+            fi0Var.setRotation(this.K + this.M);
         }
     }
 

@@ -2,9 +2,9 @@ package c2;
 
 import e2.l0;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class t extends n {
     /* JADX WARN: Removed duplicated region for block: B:16:0x0046  */
@@ -46,7 +46,7 @@ public final class t extends n {
                             while (position < limit) {
                                 short h = (short) (l0.h(byteBuffer.getFloat(position), -1.0f, 1.0f) * 32767.0f);
                                 l4.put((byte) (h & 255));
-                                l4.put((byte) ((h >> 8) & zs.e4));
+                                l4.put((byte) ((h >> 8) & at.e4));
                                 position += 4;
                             }
                         } else if (i10 == 21) {
@@ -86,7 +86,7 @@ public final class t extends n {
                             while (position < limit) {
                                 short max = (short) (Math.max(-1.0d, Math.min(byteBuffer.getDouble(position), 1.0d)) * 32767.0d);
                                 l4.put((byte) (max & 255));
-                                l4.put((byte) ((max >> 8) & zs.e4));
+                                l4.put((byte) ((max >> 8) & at.e4));
                                 position += 8;
                             }
                         }

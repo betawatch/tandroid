@@ -20,25 +20,25 @@ import java.util.ArrayList;
 import java.util.Collection;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.ic;
 import org.telegram.messenger.jc;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.kc;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.u10;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class w5 {
     public static u10 b;
@@ -48,7 +48,7 @@ public abstract class w5 {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static qz0 i;
+    public static rz0 i;
     public static int j;
     public static BitmapDrawable m;
     public static final u10[] a = new u10[2];
@@ -63,7 +63,7 @@ public abstract class w5 {
     public static final Path t = new Path();
 
     public static void a(org.telegram.ui.ActionBar.u5 u5Var) {
-        String L0 = cd.L0(2131743826, null);
+        String L0 = dd.L0(2131743826, null);
         if (L0.indexOf("…") <= 0) {
             u5Var.l(L0, false);
             return;
@@ -77,7 +77,7 @@ public abstract class w5 {
     }
 
     public static void b(TL_stories.StoryItem storyItem, TLRPC.User user) {
-        if (user == null || storyItem.dialogId != d20.i(d20.s0).n || v(storyItem)) {
+        if (user == null || storyItem.dialogId != e20.i(e20.s0).n || v(storyItem)) {
             return;
         }
         if (storyItem.views == null) {
@@ -138,7 +138,7 @@ public abstract class w5 {
 
     public static SpannableStringBuilder e(Object[] objArr, int i10, boolean z10) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) cd.a0(null, null, i10, objArr));
+        spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) dd.a0(null, null, i10, objArr));
         dq dqVar = new dq(R.drawable.msg_mini_bomb, 0);
         if (z10) {
             dqVar.H = 0.8f;
@@ -152,7 +152,7 @@ public abstract class w5 {
 
     public static SpannableStringBuilder f() {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) cd.L0(2131744753, null));
+        spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) dd.L0(2131744753, null));
         spannableStringBuilder.setSpan(new dq(R.drawable.msg_mini_replystory2, 0), 0, 1, 0);
         return spannableStringBuilder;
     }
@@ -184,7 +184,7 @@ public abstract class w5 {
     }
 
     public static void h(long j10, Canvas canvas, ImageReceiver imageReceiver, t5 t5Var) {
-        i(j10, canvas, imageReceiver, d20.i(d20.s0).e() != j10 && vp.r1(d20.s0).O1().K(j10), t5Var);
+        i(j10, canvas, imageReceiver, e20.i(e20.s0).e() != j10 && wp.r1(e20.s0).O1().K(j10), t5Var);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:198:0x0454, code lost:
@@ -237,7 +237,7 @@ public abstract class w5 {
         RectF rectF2;
         boolean z12;
         boolean z13;
-        jc jcVar;
+        kc kcVar;
         float f14;
         Paint paint;
         Paint paint2;
@@ -257,7 +257,7 @@ public abstract class w5 {
         float z15;
         u10 u10Var;
         float z16;
-        e5 O1 = vp.r1(d20.s0).O1();
+        e5 O1 = wp.r1(e20.s0).O1();
         boolean z17 = t5Var.b;
         RectF rectF3 = t5Var.F;
         boolean z18 = t5Var.E;
@@ -267,7 +267,7 @@ public abstract class w5 {
             z17 = false;
         }
         boolean z19 = O1.j.get(j10, 0) == 1;
-        boolean z20 = org.telegram.messenger.w3.b0(d20.s0, j10) && !t5Var.D;
+        boolean z20 = org.telegram.messenger.w3.b0(e20.s0, j10) && !t5Var.D;
         boolean z21 = t5Var.r ? !O1.h.isEmpty() : z10;
         if (t5Var.d != null) {
             O1.E(t5Var.c, j10);
@@ -377,7 +377,7 @@ public abstract class w5 {
             i13 = 3;
             f12 = 0.08f;
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(rectF4.left - org.telegram.messenger.i0.L(15.0f), rectF4.top - org.telegram.messenger.i0.L(15.0f), rectF4.right + org.telegram.messenger.i0.L(15.0f), rectF4.bottom + org.telegram.messenger.i0.L(15.0f), zs.e4, 31);
+            canvas2.saveLayerAlpha(rectF4.left - org.telegram.messenger.i0.L(15.0f), rectF4.top - org.telegram.messenger.i0.L(15.0f), rectF4.right + org.telegram.messenger.i0.L(15.0f), rectF4.bottom + org.telegram.messenger.i0.L(15.0f), at.e4, 31);
         } else {
             f7 = W1;
             canvas2 = canvas;
@@ -509,10 +509,10 @@ public abstract class w5 {
                         }
                         canvas2 = canvas;
                         rectF2 = rectF;
-                        jcVar = null;
+                        kcVar = null;
                         z12 = true;
                         z13 = false;
-                        imageReceiver3.h(canvas2, jcVar);
+                        imageReceiver3.h(canvas2, kcVar);
                         t5Var3.w = f10 > 0.5f ? z12 : z13;
                         if (f18 > 0.0f) {
                             float f27 = f7 + t5Var3.G;
@@ -607,8 +607,8 @@ public abstract class w5 {
                 }
                 canvas2 = canvas;
             }
-            jcVar = null;
-            imageReceiver3.h(canvas2, jcVar);
+            kcVar = null;
+            imageReceiver3.h(canvas2, kcVar);
             t5Var3.w = f10 > 0.5f ? z12 : z13;
             if (f18 > 0.0f) {
             }
@@ -686,8 +686,8 @@ public abstract class w5 {
         rectF2 = rectF;
         z12 = true;
         z13 = false;
-        jcVar = null;
-        imageReceiver3.h(canvas2, jcVar);
+        kcVar = null;
+        imageReceiver3.h(canvas2, kcVar);
         t5Var3.w = f10 > 0.5f ? z12 : z13;
         if (f18 > 0.0f) {
         }
@@ -718,7 +718,7 @@ public abstract class w5 {
     public static void k(float f7, float f10, Canvas canvas, RectF rectF, boolean z10) {
         Canvas canvas2;
         if (i == null) {
-            i = new qz0(cd.L0(2131748835, null), 9.66f, org.telegram.messenger.i0.o());
+            i = new rz0(dd.L0(2131748835, null), 9.66f, org.telegram.messenger.i0.o());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -751,10 +751,10 @@ public abstract class w5 {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF4 = f;
             canvas.drawRoundRect(rectF4, rectF4.height() / 2.0f, f.height() / 2.0f, h);
-            qz0 qz0Var = i;
+            rz0 rz0Var = i;
             RectF rectF5 = f;
             canvas2 = canvas;
-            qz0Var.c(rectF5.left + W1, rectF5.centerY(), f7, -1, canvas2);
+            rz0Var.c(rectF5.left + W1, rectF5.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }
@@ -871,7 +871,7 @@ public abstract class w5 {
                 peerStories2 = e5Var.z(j11);
             }
             if (peerStories2 != null) {
-                if (j11 != d20.i(e5Var.a).e() || Utilities.x((Collection) e5Var.b.f(j11))) {
+                if (j11 != e20.i(e5Var.a).e() || Utilities.x((Collection) e5Var.b.f(j11))) {
                     int i12 = 0;
                     while (true) {
                         if (i12 >= peerStories2.stories.size()) {
@@ -901,7 +901,7 @@ public abstract class w5 {
             paint7.setAlpha((int) ((1.0f - f7) * 255.0f));
             l(canvas, rectF2, paint7, -90.0f, 90.0f, t5Var, z10);
             l(canvas, rectF2, paint7, 90.0f, 270.0f, t5Var, z10);
-            paint7.setAlpha(zs.e4);
+            paint7.setAlpha(at.e4);
             return;
         }
         Paint paint9 = paint7;
@@ -965,7 +965,7 @@ public abstract class w5 {
                 l(canvas, rectF4, paint11, f15, f16, t5Var, z10);
                 rectF4 = rectF4;
                 paint6 = paint11;
-                paint6.setAlpha(zs.e4);
+                paint6.setAlpha(at.e4);
             }
             i13 = i15 + 1;
             t5Var2 = t5Var;
@@ -982,11 +982,11 @@ public abstract class w5 {
         ArrayList<TLRPC.PhotoSize> arrayList;
         ArrayList<TLRPC.PhotoSize> arrayList2;
         TLRPC.Document document;
-        if (peerStories == null || peerStories.stories.isEmpty() || org.telegram.messenger.o5.o(peerStories.peer) == d20.i(d20.s0).n) {
+        if (peerStories == null || peerStories.stories.isEmpty() || org.telegram.messenger.o5.o(peerStories.peer) == e20.i(e20.s0).n) {
             runnable.run();
             return null;
         }
-        e5 e5Var = vp.r1(d20.s0).h0;
+        e5 e5Var = wp.r1(e20.s0).h0;
         int i10 = e5Var.f.get(org.telegram.messenger.o5.o(peerStories.peer));
         int i11 = 0;
         while (true) {
@@ -1012,20 +1012,20 @@ public abstract class w5 {
                 return null;
             }
             TLRPC.PhotoSize w9 = b8.w(arrayList, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false);
-            b8.G(d20.s0);
+            b8.G(e20.s0);
             File K = b8.K(w9, "", false, true);
             if (K != null && K.exists()) {
                 runnable.run();
                 return null;
             }
         } else {
-            b8.G(d20.s0);
+            b8.G(e20.s0);
             File K2 = b8.K(storyItem2.media.document, "", false, true);
             if (K2 != null && K2.exists()) {
                 runnable.run();
                 return null;
             }
-            b8.G(d20.s0);
+            b8.G(e20.s0);
             File K3 = b8.K(storyItem2.media.document, "", true, true);
             if (K3 != null) {
                 try {
@@ -1046,9 +1046,9 @@ public abstract class w5 {
         x0Var.b = false;
         x0Var.a = o10;
         x0Var.c = e5Var;
-        x0Var.d = new o0(19, x0Var, runnable);
+        x0Var.d = new o0(20, x0Var, runnable);
         Runnable[] runnableArr = {r2};
-        o0 o0Var = new o0(20, runnableArr, x0Var);
+        o0 o0Var = new o0(21, runnableArr, x0Var);
         org.telegram.messenger.i0.h3(o0Var, 3000L);
         s5 s5Var = new s5(runnableArr, x0Var);
         x0Var.e = s5Var;
@@ -1062,9 +1062,9 @@ public abstract class w5 {
                 ((o0) x0Var.d).run();
                 return null;
             }
-            ((s5) x0Var.e).u0(null, null, ic.i(b8.w(arrayList2, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), photo2), s10, null, null, null, 0L, null, storyItem2, 0);
+            ((s5) x0Var.e).u0(null, null, jc.i(b8.w(arrayList2, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), photo2), s10, null, null, null, 0L, null, storyItem2, 0);
         } else {
-            ((s5) x0Var.e).r0(ic.b(document), sc.e.A(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
+            ((s5) x0Var.e).r0(jc.b(document), sc.e.A(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
         }
         return x0Var;
     }
@@ -1086,7 +1086,7 @@ public abstract class w5 {
 
     public static Drawable p() {
         if (m == null) {
-            Bitmap createBitmap = Bitmap.createBitmap(360, zs.K2, Bitmap.Config.ARGB_8888);
+            Bitmap createBitmap = Bitmap.createBitmap(360, at.K2, Bitmap.Config.ARGB_8888);
             createBitmap.eraseColor(-7829368);
             Canvas canvas = new Canvas(createBitmap);
             TextPaint textPaint = new TextPaint(1);
@@ -1122,7 +1122,7 @@ public abstract class w5 {
             return 0;
         }
         if (j10 <= 0) {
-            TLRPC.Chat L0 = vp.r1(d20.s0).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = wp.r1(e20.s0).L0(Long.valueOf(-j10));
             if (L0 == null || (tL_recentStory = L0.stories_max_id) == null || tL_recentStory.max_id <= 0 || L0.stories_unavailable) {
                 return 0;
             }
@@ -1133,8 +1133,8 @@ public abstract class w5 {
             }
             return tL_recentStory3.max_id > i10 ? 1 : 2;
         }
-        TLRPC.User Z1 = vp.r1(d20.s0).Z1(Long.valueOf(j10));
-        if (j10 == d20.i(d20.s0).n || Z1 == null || (tL_recentStory2 = Z1.stories_max_id) == null || tL_recentStory2.max_id <= 0 || Z1.stories_unavailable) {
+        TLRPC.User Z1 = wp.r1(e20.s0).Z1(Long.valueOf(j10));
+        if (j10 == e20.i(e20.s0).n || Z1 == null || (tL_recentStory2 = Z1.stories_max_id) == null || tL_recentStory2.max_id <= 0 || Z1.stories_unavailable) {
             return 0;
         }
         int i11 = e5Var.f.get(j10, 0);
@@ -1171,7 +1171,7 @@ public abstract class w5 {
     }
 
     public static CharSequence u(TextView textView, boolean z10) {
-        String L0 = z10 ? cd.L0(2131744691, null) : cd.L0(2131743826, null);
+        String L0 = z10 ? dd.L0(2131744691, null) : dd.L0(2131743826, null);
         if (L0.indexOf("…") <= 0) {
             return L0;
         }
@@ -1184,7 +1184,7 @@ public abstract class w5 {
     }
 
     public static boolean v(TL_stories.StoryItem storyItem) {
-        return storyItem != null && ConnectionsManager.getInstance(d20.s0).getCurrentTime() > storyItem.expire_date + 86400;
+        return storyItem != null && ConnectionsManager.getInstance(e20.s0).getCurrentTime() > storyItem.expire_date + 86400;
     }
 
     public static boolean w(int i10, TL_stories.StoryItem storyItem) {
@@ -1199,7 +1199,7 @@ public abstract class w5 {
         }
         TLRPC.MessageMedia messageMedia = storyItem.media;
         if (messageMedia != null && (document = messageMedia.document) != null) {
-            imageReceiver.r0(ic.c(b8.w(document.thumbs, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), storyItem.media.document), "320_320", null, null, hc.m(storyItem.media.document.thumbs), 0L, null, storyItem, 0);
+            imageReceiver.r0(jc.c(b8.w(document.thumbs, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), storyItem.media.document), "320_320", null, null, ic.m(storyItem.media.document.thumbs), 0L, null, storyItem, 0);
             imageReceiver.a(new t7(storyItem));
             return;
         }
@@ -1214,7 +1214,7 @@ public abstract class w5 {
         if (photo == null || (arrayList = photo.sizes) == null) {
             imageReceiver.f();
         } else {
-            imageReceiver.u0(null, null, ic.i(b8.w(arrayList, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), photo), "320_320", null, null, hc.m(photo.sizes), 0L, null, storyItem, 0);
+            imageReceiver.u0(null, null, jc.i(b8.w(arrayList, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), photo), "320_320", null, null, ic.m(photo.sizes), 0L, null, storyItem, 0);
             imageReceiver.a(new t7(storyItem));
         }
     }
@@ -1227,14 +1227,14 @@ public abstract class w5 {
         TLRPC.MessageMedia messageMedia = storyItem.media;
         TLRPC.Document document = messageMedia.document;
         if (document != null) {
-            imageReceiver.r0(ic.c(b8.w(document.thumbs, 1000, false, null, false), storyItem.media.document), "100_100", null, null, hc.m(storyItem.media.document.thumbs), 0L, null, storyItem, 0);
+            imageReceiver.r0(jc.c(b8.w(document.thumbs, 1000, false, null, false), storyItem.media.document), "100_100", null, null, ic.m(storyItem.media.document.thumbs), 0L, null, storyItem, 0);
             return;
         }
         TLRPC.Photo photo = messageMedia.photo;
         if (photo == null || (arrayList = photo.sizes) == null) {
             imageReceiver.f();
         } else {
-            imageReceiver.u0(null, null, ic.i(b8.w(arrayList, 1000, false, null, false), photo), "100_100", null, null, hc.m(photo.sizes), 0L, null, storyItem, 0);
+            imageReceiver.u0(null, null, jc.i(b8.w(arrayList, 1000, false, null, false), photo), "100_100", null, null, ic.m(photo.sizes), 0L, null, storyItem, 0);
         }
     }
 }

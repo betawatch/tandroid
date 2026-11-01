@@ -5,7 +5,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y5 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,13 +33,13 @@ public final /* synthetic */ class y5 implements Runnable {
                         if (byteBufferValue != null) {
                             TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                             if (TLdeserialize != null) {
-                                TLdeserialize.readAttachPath(byteBufferValue, d20.i(b6Var.currentAccount).n);
-                                jj jjVar = new jj(b6Var.currentAccount, TLdeserialize, false, false);
-                                arrayList3.add(jjVar);
+                                TLdeserialize.readAttachPath(byteBufferValue, e20.i(b6Var.currentAccount).n);
+                                kj kjVar = new kj(b6Var.currentAccount, TLdeserialize, false, false);
+                                arrayList3.add(kjVar);
                                 if (intValue == 0) {
-                                    arrayList.add(jjVar);
+                                    arrayList.add(kjVar);
                                 } else {
-                                    arrayList2.add(jjVar);
+                                    arrayList2.add(kjVar);
                                 }
                             }
                             byteBufferValue.reuse();
@@ -51,16 +51,16 @@ public final /* synthetic */ class y5 implements Runnable {
                 }
                 b6Var.getFileLoader().l(arrayList);
                 b6Var.getFileLoader().l(arrayList2);
-                i0.g3(new mg(b6Var, arrayList, arrayList2, 18));
+                i0.g3(new ng(b6Var, arrayList, arrayList2, 18));
                 break;
             case 1:
                 b6 b6Var2 = this.b;
-                b6Var2.getNotificationCenter().b(b6Var2, zs.Z1);
-                b6Var2.getNotificationCenter().b(b6Var2, zs.Y1);
-                b6Var2.getNotificationCenter().b(b6Var2, zs.X1);
-                b6Var2.getNotificationCenter().b(b6Var2, zs.W1);
-                b6Var2.getNotificationCenter().b(b6Var2, zs.R1);
-                b6Var2.getNotificationCenter().b(b6Var2, zs.S1);
+                b6Var2.getNotificationCenter().b(b6Var2, at.Z1);
+                b6Var2.getNotificationCenter().b(b6Var2, at.Y1);
+                b6Var2.getNotificationCenter().b(b6Var2, at.X1);
+                b6Var2.getNotificationCenter().b(b6Var2, at.W1);
+                b6Var2.getNotificationCenter().b(b6Var2, at.R1);
+                b6Var2.getNotificationCenter().b(b6Var2, at.S1);
                 b6Var2.s(false);
                 break;
             default:

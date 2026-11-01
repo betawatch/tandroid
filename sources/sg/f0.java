@@ -8,15 +8,15 @@ import android.graphics.Rect;
 import android.view.View;
 import j$.util.Objects;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.jc;
 import org.telegram.messenger.v5;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.f5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f0 {
     public final ImageReceiver a;
@@ -28,7 +28,7 @@ public final class f0 {
     public int j;
     public PorterDuffColorFilter k;
     public final Rect c = new Rect();
-    public final int d = d20.s0;
+    public final int d = e20.s0;
     public float h = 1.0f;
 
     public f0(View view) {
@@ -111,14 +111,14 @@ public final class f0 {
         boolean z10 = this.i;
         String str = z10 ? "60_60_firstframe" : "60_60";
         if (o0Var.f != null) {
-            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(this.d).r.get(o0Var.f);
+            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) vi.b0(this.d).r.get(o0Var.f);
             if (tL_availableReaction != null) {
-                imageReceiver.r0(ic.b(tL_availableReaction.select_animation), str, null, null, v5.f(tL_availableReaction.select_animation, t6.m6, 0.2f, null), 0L, "tgs", o0Var, 0);
+                imageReceiver.r0(jc.b(tL_availableReaction.select_animation), str, null, null, v5.f(tL_availableReaction.select_animation, t6.m6, 0.2f, null), 0L, "tgs", o0Var, 0);
                 return;
             }
             return;
         }
-        f5 f5Var2 = new f5(z10 ? 13 : 1, d20.s0, o0Var.g);
+        f5 f5Var2 = new f5(z10 ? 13 : 1, e20.s0, o0Var.g);
         this.b = f5Var2;
         if (this.g) {
             f5Var2.a(this.f);

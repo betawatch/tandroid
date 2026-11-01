@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class zzyt extends zzsn implements zztt {
     private static final zzyt zzb;
@@ -177,10 +177,10 @@ public final class zzyt extends zzsn implements zztt {
             case 29:
                 i10 = 31;
                 break;
-            case zs.T /* 30 */:
+            case at.T /* 30 */:
                 i10 = 32;
                 break;
-            case zs.U /* 31 */:
+            case at.U /* 31 */:
                 i10 = 33;
                 break;
             case 32:
@@ -240,25 +240,25 @@ public final class zzyt extends zzsn implements zztt {
             case 50:
                 i10 = 52;
                 break;
-            case zs.o0 /* 51 */:
+            case at.o0 /* 51 */:
                 i10 = 53;
                 break;
-            case zs.p0 /* 52 */:
+            case at.p0 /* 52 */:
                 i10 = 54;
                 break;
-            case zs.q0 /* 53 */:
+            case at.q0 /* 53 */:
                 i10 = 55;
                 break;
-            case zs.r0 /* 54 */:
+            case at.r0 /* 54 */:
                 i10 = 56;
                 break;
-            case zs.s0 /* 55 */:
+            case at.s0 /* 55 */:
                 i10 = 57;
                 break;
-            case zs.t0 /* 56 */:
+            case at.t0 /* 56 */:
                 i10 = 58;
                 break;
-            case zs.u0 /* 57 */:
+            case at.u0 /* 57 */:
                 i10 = 59;
                 break;
             default:

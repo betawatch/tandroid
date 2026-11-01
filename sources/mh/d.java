@@ -8,19 +8,19 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i0;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.i5;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.r8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final j a;
@@ -45,7 +45,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         String str;
         String str2;
         r8 r8Var = new r8((p6) null);
-        int i10 = d20.s0;
+        int i10 = e20.s0;
         this.l = 1.0f;
         this.m = true;
         this.o = 0.0f;
@@ -58,10 +58,10 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         this.d = j10;
         r8Var.p = 1.0f;
         if (o5.E(j10)) {
-            TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(j10));
+            TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(j10));
             r8Var.r(Z1);
-            if (h20.B(Z1)) {
-                str2 = cd.L0(2131745918, null);
+            if (i20.B(Z1)) {
+                str2 = dd.L0(2131745918, null);
                 r8Var.g(1);
                 r8Var.p = 0.75f;
                 imageReceiver = imageReceiver2;
@@ -81,7 +81,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
             imageReceiver.i0(Z1, r8Var, null);
         } else {
             imageReceiver = imageReceiver2;
-            TLRPC.Chat L0 = vp.r1(i10).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-j10));
             str = L0 != null ? L0.title : "";
             r8Var.q(L0);
             imageReceiver.i0(L0, r8Var, null);

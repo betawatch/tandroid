@@ -1,29 +1,31 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class sb {
-    public static final /* synthetic */ int[] a;
+public final class sb {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ic b;
 
-    static {
-        Bitmap.CompressFormat compressFormat;
-        int[] iArr = new int[Bitmap.CompressFormat.values().length];
-        a = iArr;
-        try {
-            iArr[Bitmap.CompressFormat.WEBP.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            int[] iArr2 = a;
-            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
-            iArr2[compressFormat.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[Bitmap.CompressFormat.WEBP_LOSSLESS.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
+    public sb(ic icVar, int i10) {
+        this.b = icVar;
+        this.a = i10;
+    }
+
+    public final void a(d9 d9Var, final String str, final long j10, final long j11, final boolean z10) {
+        this.b.u.put(str, new long[]{j10, j11});
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j12 = d9Var.S;
+        if (j12 == 0 || j12 < elapsedRealtime - 100 || j10 == j11) {
+            d9Var.S = elapsedRealtime;
+            final int i10 = this.a;
+            i0.g3(new Runnable() { // from class: org.telegram.messenger.nb
+                @Override // java.lang.Runnable
+                public final void run() {
+                    at.f(i10).k(at.W1, str, Long.valueOf(j10), Long.valueOf(j11), Boolean.valueOf(z10));
+                }
+            });
         }
     }
 }

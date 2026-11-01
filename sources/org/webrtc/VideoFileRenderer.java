@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.u41;
+import org.telegram.messenger.at;
+import org.telegram.ui.Components.v41;
 import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public class VideoFileRenderer implements VideoSink {
     private static final String TAG = "VideoFileRenderer";
@@ -99,8 +99,8 @@ public class VideoFileRenderer implements VideoSink {
     /* renamed from: renderFrameOnRenderThread, reason: merged with bridge method [inline-methods] */
     public void lambda$onFrame$0(VideoFrame videoFrame) {
         VideoFrame.Buffer buffer = videoFrame.getBuffer();
-        int i10 = videoFrame.getRotation() % zs.K2 == 0 ? this.outputFileWidth : this.outputFileHeight;
-        int i11 = videoFrame.getRotation() % zs.K2 == 0 ? this.outputFileHeight : this.outputFileWidth;
+        int i10 = videoFrame.getRotation() % at.K2 == 0 ? this.outputFileWidth : this.outputFileHeight;
+        int i11 = videoFrame.getRotation() % at.K2 == 0 ? this.outputFileHeight : this.outputFileWidth;
         float width = buffer.getWidth() / buffer.getHeight();
         float f7 = i10 / i11;
         int width2 = buffer.getWidth();
@@ -114,7 +114,7 @@ public class VideoFileRenderer implements VideoSink {
         videoFrame.release();
         VideoFrame.I420Buffer i420 = cropAndScale.toI420();
         cropAndScale.release();
-        this.fileThreadHandler.post(new u41(this, i420, videoFrame, 12));
+        this.fileThreadHandler.post(new v41(this, i420, videoFrame, 12));
     }
 
     @Override // org.webrtc.VideoSink

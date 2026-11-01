@@ -8,7 +8,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ol extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class ol extends ViewOutlineProvider {
                     outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), i11);
                     break;
                 } else {
-                    outline.setOval(0, 0, org.telegram.messenger.i0.f3(unVar.P9(), unVar.G9()), org.telegram.messenger.i0.f3(unVar.P9(), unVar.G9()));
+                    outline.setOval(0, 0, org.telegram.messenger.i0.f3(unVar.U9(), unVar.L9()), org.telegram.messenger.i0.f3(unVar.U9(), unVar.L9()));
                     break;
                 }
             case 1:
@@ -104,30 +104,30 @@ public final class ol extends ViewOutlineProvider {
                 outline.setRoundRect(0, ((org.telegram.ui.Components.ua0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), org.telegram.messenger.i0.L(8.0f));
                 break;
             case 5:
-                org.telegram.ui.Components.voip.b1 b1Var = (org.telegram.ui.Components.voip.b1) obj;
-                float f12 = b1Var.Q;
+                org.telegram.ui.Components.voip.c1 c1Var = (org.telegram.ui.Components.voip.c1) obj;
+                float f12 = c1Var.Q;
                 if (f12 >= 0.0f) {
                     if (f12 < 1.0f) {
                         outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
                         break;
                     } else {
-                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), b1Var.Q);
+                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), c1Var.Q);
                         break;
                     }
-                } else if (b1Var.M) {
-                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), b1Var.M ? org.telegram.messenger.i0.L(4.0f) : 0.0f);
+                } else if (c1Var.M) {
+                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), c1Var.M ? org.telegram.messenger.i0.L(4.0f) : 0.0f);
                     break;
                 } else {
                     outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
                     break;
                 }
             case 6:
-                org.telegram.ui.Components.voip.y1 y1Var = (org.telegram.ui.Components.voip.y1) obj;
-                if (y1Var.b < 1.0f) {
-                    outline.setRect((int) y1Var.O, (int) y1Var.N, (int) (view.getMeasuredWidth() - y1Var.O), (int) (view.getMeasuredHeight() - y1Var.N));
+                org.telegram.ui.Components.voip.z1 z1Var = (org.telegram.ui.Components.voip.z1) obj;
+                if (z1Var.b < 1.0f) {
+                    outline.setRect((int) z1Var.O, (int) z1Var.N, (int) (view.getMeasuredWidth() - z1Var.O), (int) (view.getMeasuredHeight() - z1Var.N));
                     break;
                 } else {
-                    outline.setRoundRect((int) y1Var.O, (int) y1Var.N, (int) (view.getMeasuredWidth() - y1Var.O), (int) (view.getMeasuredHeight() - y1Var.N), y1Var.b);
+                    outline.setRoundRect((int) z1Var.O, (int) z1Var.N, (int) (view.getMeasuredWidth() - z1Var.O), (int) (view.getMeasuredHeight() - z1Var.N), z1Var.b);
                     break;
                 }
             case 7:
@@ -136,7 +136,7 @@ public final class ol extends ViewOutlineProvider {
                 outline.setRoundRect(L4, org.telegram.messenger.i0.L(12.0f) + lVar.getBottom(), view.getWidth() - org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(16.0f) + view.getMeasuredHeight(), org.telegram.messenger.i0.L(16.0f));
                 break;
             default:
-                vg.e eVar = ((vg.f) obj).M;
+                vg.e eVar = ((vg.f) obj).P;
                 vg.f.l(outline, eVar.m, eVar.b);
                 break;
         }

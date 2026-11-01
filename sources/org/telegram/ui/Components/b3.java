@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -54,16 +54,16 @@ public final /* synthetic */ class b3 implements View.OnClickListener {
                 int i12 = htVar.a;
                 int i13 = htVar.b;
                 Editable text = mtVar.getText();
-                yz0 yz0Var = new yz0();
-                yz0Var.a |= 128;
-                yz0Var.b = i12;
-                yz0Var.c = i13;
+                zz0 zz0Var = new zz0();
+                zz0Var.a |= 128;
+                zz0Var.b = i12;
+                zz0Var.c = i13;
                 TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = new TLRPC.TL_messageEntityFormattedDate();
                 tL_messageEntityFormattedDate.date = c10;
                 tL_messageEntityFormattedDate.flags = i11;
                 tL_messageEntityFormattedDate.applyFlags();
                 try {
-                    text.setSpan(new n00(text.subSequence(i12, i13).toString(), yz0Var, tL_messageEntityFormattedDate), i12, i13, 33);
+                    text.setSpan(new n00(text.subSequence(i12, i13).toString(), zz0Var, tL_messageEntityFormattedDate), i12, i13, 33);
                 } catch (Exception unused) {
                 }
                 kt ktVar = mtVar.N1;
@@ -80,7 +80,7 @@ public final /* synthetic */ class b3 implements View.OnClickListener {
                 String[] strArr = (String[]) obj3;
                 int[] iArr2 = (int[]) obj2;
                 Runnable runnable = (Runnable) obj;
-                if (org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).q()) {
+                if (org.telegram.messenger.e20.i(org.telegram.messenger.e20.s0).q()) {
                     z60 F = z60.F(z2Var.c, p6Var, frameLayout2);
                     for (int i14 = 0; i14 < iArr.length; i14++) {
                         F.c(0, strArr[i14], new w2(iArr2, iArr[i14], runnable), false);
@@ -89,7 +89,7 @@ public final /* synthetic */ class b3 implements View.OnClickListener {
                     F.Z();
                     break;
                 } else {
-                    new cc(frameLayout, p6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.i0.x2(org.telegram.messenger.cd.L0(2131748512, null), new org.telegram.messenger.rz(6))).j();
+                    new cc(frameLayout, p6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.i0.x2(org.telegram.messenger.dd.L0(2131748512, null), new org.telegram.messenger.sz(6))).j();
                     break;
                 }
         }

@@ -6,9 +6,9 @@ import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jj implements org.telegram.messenger.q20 {
+public final /* synthetic */ class jj implements org.telegram.messenger.r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ int c;
@@ -23,12 +23,12 @@ public final /* synthetic */ class jj implements org.telegram.messenger.q20 {
         this.c = i10;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         org.telegram.messenger.c accountInstance;
         switch (this.a) {
             case 0:
-                ((xj) this.d).Q.o((ArrayList) this.e, this.b, this.c, ((Long) obj).longValue());
+                ((xj) this.d).Q.p((ArrayList) this.e, this.b, this.c, ((Long) obj).longValue());
                 break;
             case 1:
                 th.w1 w1Var = (th.w1) this.d;
@@ -46,16 +46,16 @@ public final /* synthetic */ class jj implements org.telegram.messenger.q20 {
                 org.telegram.ui.ActionBar.k2 k2Var = z2Var.s0.f;
                 accountInstance = z2Var.getAccountInstance();
                 long j11 = j10;
-                org.telegram.messenger.qz.S(this.c, z2Var.k1, 0L, l4.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, z2Var.x1.a, k2Var, null, this.b);
+                org.telegram.messenger.rz.S(this.c, z2Var.k1, 0L, l4.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, z2Var.x1.a, k2Var, null, this.b);
                 z2Var.K1.setFieldText("");
                 z2Var.i0(l4.longValue() <= 0);
-                org.telegram.messenger.ui.b0(z2Var.l2).v0(j11, false);
+                org.telegram.messenger.vi.b0(z2Var.l2).v0(j11, false);
                 break;
             default:
                 th.r4 r4Var = (th.r4) this.d;
                 List list = (List) this.e;
                 th.u4 u4Var = r4Var.q;
-                TLObject e22 = org.telegram.messenger.vp.r1(r4Var.c).e2(r4Var.D);
+                TLObject e22 = org.telegram.messenger.wp.r1(r4Var.c).e2(r4Var.D);
                 r4Var.G = false;
                 if (e22 == null) {
                     r4Var.J = 0;

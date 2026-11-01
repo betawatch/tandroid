@@ -1,6 +1,6 @@
 package og;
 
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.a7;
@@ -9,15 +9,15 @@ import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.r8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f extends e {
     @Override // og.e, og.d
     public final void d() {
-        this.c.setLayoutParams(b6.d(40, 40.0f, (cd.X ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        boolean z10 = cd.X;
+        this.c.setLayoutParams(b6.d(40, 40.0f, (dd.X ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        boolean z10 = dd.X;
         this.d.setLayoutParams(b6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 69.0f, 0.0f, z10 ? 69.0f : 20.0f, 0.0f));
-        boolean z11 = cd.X;
+        boolean z11 = dd.X;
         this.e.setLayoutParams(b6.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 69.0f, 0.0f, z11 ? 69.0f : 20.0f, 0.0f));
     }
 
@@ -29,10 +29,10 @@ public final class f extends e {
         if (z10) {
             TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway;
             r8Var.g(26);
-            cVar.k(cd.H(',', "BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
-            setSubtitle(cd.G(tL_prepaidStarsGiveaway.quantity, "AmongWinners", new Object[0]));
+            cVar.k(dd.H(',', "BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
+            setSubtitle(dd.G(tL_prepaidStarsGiveaway.quantity, "AmongWinners", new Object[0]));
         } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            cVar.k(cd.L0(2131753328, null));
+            cVar.k(dd.L0(2131753328, null));
             r8Var.g(16);
             TL_stories.TL_prepaidGiveaway tL_prepaidGiveaway = (TL_stories.TL_prepaidGiveaway) prepaidGiveaway;
             int i10 = tL_prepaidGiveaway.months;
@@ -43,7 +43,7 @@ public final class f extends e {
             } else {
                 r8Var.i(-6631068, -11945404);
             }
-            setSubtitle(cd.G(prepaidGiveaway.quantity, "BoostingPreparedGiveawaySubscriptionsPlural", cd.G(tL_prepaidGiveaway.months, "Months", new Object[0])));
+            setSubtitle(dd.G(prepaidGiveaway.quantity, "BoostingPreparedGiveawaySubscriptionsPlural", dd.G(tL_prepaidGiveaway.months, "Months", new Object[0])));
         }
         g9 g9Var = this.c;
         g9Var.setImageDrawable(r8Var);

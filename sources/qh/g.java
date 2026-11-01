@@ -13,14 +13,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import java.util.HashMap;
 import java.util.Random;
-import org.telegram.messenger.i00;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.j00;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g {
     public static final float S;
@@ -133,12 +133,12 @@ public final class g {
             HashMap hashMap = new HashMap();
             hashMap.put(vb.b.a, dVar);
             hashMap.put(vb.b.c, 0);
-            i00 i00Var = new i00();
+            j00 j00Var = new j00();
             if (colorDrawable != null) {
-                i00Var.g = colorDrawable;
+                j00Var.g = colorDrawable;
             }
             f fVar = new f();
-            Bitmap a2 = i00Var.a(str, i10, i10, hashMap, null, f7, 0, -1);
+            Bitmap a2 = j00Var.a(str, i10, i10, hashMap, null, f7, 0, -1);
             fVar.b = a2.getWidth();
             int i11 = ((b4.d) cc.b.b(str, dVar, hashMap).f).b;
             fVar.e = i11;
@@ -153,7 +153,7 @@ public final class g {
                     float f11 = i14 + 0.5f;
                     float f12 = fVar.f;
                     int i15 = (int) ((f11 * f12) + f10);
-                    int b10 = (int) z20.b(i13, 0.5f, f12, f10);
+                    int b10 = (int) a30.b(i13, 0.5f, f12, f10);
                     boolean z10 = false;
                     for (int i16 = -1; i16 <= 1 && !z10; i16++) {
                         z10 = Color.alpha(a2.getPixel(Math.max(0, Math.min(fVar.b - 1, ((int) ((((float) i16) * fVar.f) * 0.3f)) + i15)), b10)) > 40;
@@ -176,7 +176,7 @@ public final class g {
             Rect rect = fVar.c;
             int i19 = fVar.b;
             rect.set(0, 0, i19, i19);
-            int i20 = i00Var.f;
+            int i20 = j00Var.f;
             fVar.l = i20;
             int round = Math.round(i20 / fVar.f) + 2;
             int i21 = (fVar.e - round) / 2;
@@ -189,12 +189,12 @@ public final class g {
     }
 
     public static int d(float f7) {
-        return Math.max(0, Math.min(zs.e4, Math.round(f7 * 255.0f)));
+        return Math.max(0, Math.min(at.e4, Math.round(f7 * 255.0f)));
     }
 
     public static float h(f fVar, float f7) {
         float f10 = 1.0f - f7;
-        return z20.b(fVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
+        return a30.b(fVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
     }
 
     public static boolean i(f fVar, int i10, int i11) {
@@ -305,7 +305,7 @@ public final class g {
                         float f11 = fVar.g;
                         float f12 = fVar.f;
                         fArr[i16] = ((i18 + 0.5f) * f12) + f11;
-                        fVar.o[i16] = z20.b(i17, 0.5f, f12, f11);
+                        fVar.o[i16] = a30.b(i17, 0.5f, f12, f11);
                         float f13 = hypot * 0.5f;
                         fVar.p[i16] = i22 ? f13 * 0.85f : f13 + (floor * 0.06f);
                         fVar.q[i16] = fVar.h[i21];
@@ -455,7 +455,7 @@ public final class g {
             return;
         }
         float f33 = 1.0f;
-        if (this.q == 2 && this.o < 1.0f && canvas.isHardwareAccelerated() && (Build.VERSION.SDK_INT < 29 || tz.o() != 2)) {
+        if (this.q == 2 && this.o < 1.0f && canvas.isHardwareAccelerated() && (Build.VERSION.SDK_INT < 29 || uz.o() != 2)) {
             if (this.p == 0) {
                 this.p = currentTimeMillis;
             }
@@ -692,7 +692,7 @@ public final class g {
                             }
                         } else {
                             paint4.setColor(gVar.y);
-                            paint4.setAlpha(zs.e4);
+                            paint4.setAlpha(at.e4);
                             float f59 = fArr9[i20];
                             float f60 = fArr11[i20];
                             float f61 = f59 / 2.0f;
@@ -1194,7 +1194,7 @@ public final class g {
                                     paint2.setAlpha((int) (x10 * 255.0f));
                                     f fVar2 = this.n;
                                     canvas.drawBitmap(fVar.a, rect, rectF, paint2);
-                                    paint2.setAlpha(zs.e4);
+                                    paint2.setAlpha(at.e4);
                                 }
                             }
                             f17 = f7;
@@ -1240,14 +1240,14 @@ public final class g {
                     canvas.scale(l10, l10, (f48 + f50) / 2.0f, (f49 + f51) / 2.0f);
                     canvas.clipRect(f48 - 1.0f, f49 - 1.0f, f50 + 1.0f, f51 + 1.0f);
                     rectF.set(f43, f42, f43 + f11, f42 + f11);
-                    paint2.setAlpha(zs.e4);
+                    paint2.setAlpha(at.e4);
                     canvas.drawBitmap(fVar.a, fVar.c, rectF, paint2);
                     canvas.restore();
                 }
                 i23++;
                 i12 = 1;
             }
-            paint2.setAlpha(zs.e4);
+            paint2.setAlpha(at.e4);
             return;
         }
         m(fVar);

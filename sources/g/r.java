@@ -51,14 +51,14 @@ import m.j1;
 import m.k1;
 import m.l3;
 import m.s3;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.webrtc.MediaStreamTrack;
 import r0.h0;
 import r0.k0;
 import v7.k7;
 import w7.v6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class r extends g implements l.j, LayoutInflater.Factory2 {
     public static final a0.l q0 = new a0.l(0);
@@ -437,7 +437,7 @@ public final class r extends g implements l.j, LayoutInflater.Factory2 {
         }
         Window.Callback callback = this.f.getCallback();
         if (callback != null && !this.Z) {
-            callback.onPanelClosed(zs.t1, lVar);
+            callback.onPanelClosed(at.t1, lVar);
         }
         this.T = false;
     }
@@ -638,19 +638,19 @@ public final class r extends g implements l.j, LayoutInflater.Factory2 {
         Context context = this.e;
         int[] iArr = f.a.j;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(iArr);
-        if (!obtainStyledAttributes.hasValue(zs.C1)) {
+        if (!obtainStyledAttributes.hasValue(at.C1)) {
             obtainStyledAttributes.recycle();
             throw new IllegalStateException("You need to use a Theme.AppCompat theme (or descendant) with this activity.");
         }
-        if (obtainStyledAttributes.getBoolean(zs.K1, false)) {
+        if (obtainStyledAttributes.getBoolean(at.K1, false)) {
             c(1);
-        } else if (obtainStyledAttributes.getBoolean(zs.C1, false)) {
-            c(zs.t1);
+        } else if (obtainStyledAttributes.getBoolean(at.C1, false)) {
+            c(at.t1);
         }
-        if (obtainStyledAttributes.getBoolean(zs.D1, false)) {
-            c(zs.u1);
+        if (obtainStyledAttributes.getBoolean(at.D1, false)) {
+            c(at.u1);
         }
-        if (obtainStyledAttributes.getBoolean(zs.E1, false)) {
+        if (obtainStyledAttributes.getBoolean(at.E1, false)) {
             c(10);
         }
         this.R = obtainStyledAttributes.getBoolean(0, false);
@@ -672,7 +672,7 @@ public final class r extends g implements l.j, LayoutInflater.Factory2 {
             this.s = j1Var;
             j1Var.setWindowCallback(this.f.getCallback());
             if (this.P) {
-                ((ActionBarOverlayLayout) this.s).d(zs.u1);
+                ((ActionBarOverlayLayout) this.s).d(at.u1);
             }
             if (this.M) {
                 ((ActionBarOverlayLayout) this.s).d(2);
@@ -758,19 +758,19 @@ public final class r extends g implements l.j, LayoutInflater.Factory2 {
             contentFrameLayout2.requestLayout();
         }
         TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(iArr);
-        obtainStyledAttributes2.getValue(zs.I1, contentFrameLayout2.getMinWidthMajor());
-        obtainStyledAttributes2.getValue(zs.J1, contentFrameLayout2.getMinWidthMinor());
-        if (obtainStyledAttributes2.hasValue(zs.G1)) {
-            obtainStyledAttributes2.getValue(zs.G1, contentFrameLayout2.getFixedWidthMajor());
+        obtainStyledAttributes2.getValue(at.I1, contentFrameLayout2.getMinWidthMajor());
+        obtainStyledAttributes2.getValue(at.J1, contentFrameLayout2.getMinWidthMinor());
+        if (obtainStyledAttributes2.hasValue(at.G1)) {
+            obtainStyledAttributes2.getValue(at.G1, contentFrameLayout2.getFixedWidthMajor());
         }
-        if (obtainStyledAttributes2.hasValue(zs.H1)) {
-            obtainStyledAttributes2.getValue(zs.H1, contentFrameLayout2.getFixedWidthMinor());
+        if (obtainStyledAttributes2.hasValue(at.H1)) {
+            obtainStyledAttributes2.getValue(at.H1, contentFrameLayout2.getFixedWidthMinor());
         }
         if (obtainStyledAttributes2.hasValue(120)) {
             obtainStyledAttributes2.getValue(120, contentFrameLayout2.getFixedHeightMajor());
         }
-        if (obtainStyledAttributes2.hasValue(zs.F1)) {
-            obtainStyledAttributes2.getValue(zs.F1, contentFrameLayout2.getFixedHeightMinor());
+        if (obtainStyledAttributes2.hasValue(at.F1)) {
+            obtainStyledAttributes2.getValue(at.F1, contentFrameLayout2.getFixedHeightMinor());
         }
         obtainStyledAttributes2.recycle();
         contentFrameLayout2.requestLayout();
@@ -779,7 +779,7 @@ public final class r extends g implements l.j, LayoutInflater.Factory2 {
         if (this.Z || o10.h != null) {
             return;
         }
-        r(zs.t1);
+        r(at.t1);
     }
 
     public final void l() {
@@ -903,7 +903,7 @@ public final class r extends g implements l.j, LayoutInflater.Factory2 {
                     if (this.Z) {
                         return;
                     }
-                    callback.onPanelClosed(zs.t1, o(0).h);
+                    callback.onPanelClosed(at.t1, o(0).h);
                     return;
                 }
                 if (callback == null || this.Z) {
@@ -920,7 +920,7 @@ public final class r extends g implements l.j, LayoutInflater.Factory2 {
                 if (lVar2 == null || o10.o || !callback.onPreparePanel(0, o10.g, lVar2)) {
                     return;
                 }
-                callback.onMenuOpened(zs.t1, o10.h);
+                callback.onMenuOpened(at.t1, o10.h);
                 ActionBarOverlayLayout actionBarOverlayLayout5 = (ActionBarOverlayLayout) this.s;
                 actionBarOverlayLayout5.e();
                 ActionMenuView actionMenuView5 = ((l3) actionBarOverlayLayout5.e).a.a;

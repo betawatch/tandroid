@@ -1,77 +1,46 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vp b;
-    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ wp b;
+    public final /* synthetic */ rf.q c;
 
-    public /* synthetic */ tl(vp vpVar, SparseArray sparseArray, int i10) {
+    public /* synthetic */ tl(wp wpVar, rf.q qVar, int i10) {
         this.a = i10;
-        this.b = vpVar;
-        this.c = sparseArray;
+        this.b = wpVar;
+        this.c = qVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        SparseArray sparseArray = this.c;
-        vp vpVar = this.b;
-        char c10 = 2;
+        rf.q qVar = this.c;
+        wp wpVar = this.b;
         switch (i10) {
             case 0:
-                int i11 = 0;
-                while (i11 < sparseArray.size()) {
-                    int keyAt = sparseArray.keyAt(i11);
-                    long[] jArr = (long[]) sparseArray.valueAt(i11);
-                    vpVar.getSendMessagesHelper().d0((int) jArr[1]);
-                    zs notificationCenter = vpVar.getNotificationCenter();
-                    Integer valueOf = Integer.valueOf((int) jArr[1]);
-                    Integer valueOf2 = Integer.valueOf(keyAt);
-                    Long valueOf3 = Long.valueOf(jArr[0]);
-                    Boolean bool = Boolean.FALSE;
-                    char c11 = c10;
-                    Object[] objArr = new Object[7];
-                    objArr[0] = valueOf;
-                    objArr[1] = valueOf2;
-                    objArr[c11] = null;
-                    objArr[3] = valueOf3;
-                    objArr[4] = 0L;
-                    objArr[5] = -1;
-                    objArr[6] = bool;
-                    notificationCenter.k(21, objArr);
-                    zs notificationCenter2 = vpVar.getNotificationCenter();
-                    Integer valueOf4 = Integer.valueOf((int) jArr[1]);
-                    Integer valueOf5 = Integer.valueOf(keyAt);
-                    Long valueOf6 = Long.valueOf(jArr[0]);
-                    Object[] objArr2 = new Object[7];
-                    objArr2[0] = valueOf4;
-                    objArr2[1] = valueOf5;
-                    objArr2[c11] = null;
-                    objArr2[3] = valueOf6;
-                    objArr2[4] = 0L;
-                    objArr2[5] = -1;
-                    objArr2[6] = bool;
-                    notificationCenter2.k(22, objArr2);
-                    i11++;
-                    c10 = c11;
+                a0.h hVar = qVar.c;
+                int m10 = hVar.m();
+                for (int i11 = 0; i11 < m10; i11++) {
+                    wpVar.getNotificationCenter().k(49, Long.valueOf(hVar.j(i11)), hVar.n(i11), Boolean.FALSE);
+                }
+                break;
+            case 1:
+                a0.h hVar2 = qVar.c;
+                int m11 = hVar2.m();
+                for (int i12 = 0; i12 < m11; i12++) {
+                    wpVar.getNotificationCenter().k(49, Long.valueOf(hVar2.j(i12)), hVar2.n(i12), Boolean.FALSE);
                 }
                 break;
             default:
-                for (int i12 = 0; i12 < sparseArray.size(); i12++) {
-                    int keyAt2 = sparseArray.keyAt(i12);
-                    long[] jArr2 = (long[]) sparseArray.valueAt(i12);
-                    vpVar.getSendMessagesHelper().d0((int) jArr2[1]);
-                    zs notificationCenter3 = vpVar.getNotificationCenter();
-                    Integer valueOf7 = Integer.valueOf((int) jArr2[1]);
-                    Integer valueOf8 = Integer.valueOf(keyAt2);
-                    Long valueOf9 = Long.valueOf(jArr2[0]);
-                    Boolean bool2 = Boolean.FALSE;
-                    notificationCenter3.k(21, valueOf7, valueOf8, null, valueOf9, 0L, -1, bool2);
-                    vpVar.getNotificationCenter().k(22, Integer.valueOf((int) jArr2[1]), Integer.valueOf(keyAt2), null, Long.valueOf(jArr2[0]), 0L, -1, bool2);
+                a0.h hVar3 = qVar.c;
+                if (!hVar3.i()) {
+                    int m12 = hVar3.m();
+                    for (int i13 = 0; i13 < m12; i13++) {
+                        wpVar.getNotificationCenter().k(1, Long.valueOf(hVar3.j(i13)), hVar3.n(i13), Boolean.FALSE, 0);
+                    }
+                    break;
                 }
                 break;
         }

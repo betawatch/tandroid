@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c60 extends org.telegram.ui.ActionBar.z2 {
     public static final /* synthetic */ int e2 = 0;
@@ -125,10 +125,10 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
         p50Var.setClipToPadding(false);
         p50Var.setNestedScrollingEnabled(true);
         p50Var.setOnScrollListener(new q50(this, a0Var));
-        p50Var.setOnItemClickListener(new gk0() { // from class: org.telegram.ui.Components.l50
+        p50Var.setOnItemClickListener(new hk0() { // from class: org.telegram.ui.Components.l50
             /* JADX WARN: Removed duplicated region for block: B:34:0x0088  */
             /* JADX WARN: Removed duplicated region for block: B:63:? A[RETURN, SYNTHETIC] */
-            @Override // org.telegram.ui.Components.gk0
+            @Override // org.telegram.ui.Components.hk0
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -141,7 +141,7 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
                 c60 c60Var = c60.this;
                 int i12 = c60Var.o1;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported2 = tL_chatInviteExported;
-                if (i11 == i12 && tL_chatInviteExported2.admin_id == org.telegram.messenger.d20.i(c60Var.a).n) {
+                if (i11 == i12 && tL_chatInviteExported2.admin_id == org.telegram.messenger.e20.i(c60Var.a).n) {
                     return;
                 }
                 int i13 = c60Var.t1;
@@ -165,7 +165,7 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
                         tL_chatInviteImporter = null;
                         user = (TLRPC.User) hashMap2.get(Long.valueOf(j11));
                         if (user == null) {
-                            org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).U3(user, false, false);
+                            org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).U3(user, false, false);
                             if (!z12 || tL_chatInviteExported2.subscription_pricing == null) {
                                 org.telegram.messenger.i0.h3(new jg(c60Var, user, k2Var, 8), 100L);
                                 c60Var.dismiss();
@@ -189,7 +189,7 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
                             }
                             org.telegram.ui.ActionBar.x1 x1Var = new org.telegram.ui.ActionBar.x1(3, context2, null);
                             x1Var.r(120L);
-                            org.telegram.messenger.vp.r1(c60Var.a).J0(org.telegram.messenger.vp.r1(c60Var.a).L0(Long.valueOf(j12)), user, new org.telegram.messenger.rl(c60Var, x1Var, context2, j12, tL_chatInviteExported2, tL_chatInviteImporter, 1));
+                            org.telegram.messenger.wp.r1(c60Var.a).J0(org.telegram.messenger.wp.r1(c60Var.a).L0(Long.valueOf(j12)), user, new org.telegram.messenger.sl(c60Var, x1Var, context2, j12, tL_chatInviteExported2, tL_chatInviteImporter, 1));
                             return;
                         }
                         return;
@@ -213,17 +213,17 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
         textView.setGravity(16);
         textView.setTypeface(org.telegram.messenger.i0.o());
         if (z10) {
-            textView.setText(org.telegram.messenger.cd.L0(2131749159, null));
+            textView.setText(org.telegram.messenger.dd.L0(2131749159, null));
             this.T1 = false;
             textView.setVisibility(4);
             textView.setAlpha(0.0f);
         } else {
             if (tL_chatInviteExported.expired) {
-                textView.setText(org.telegram.messenger.cd.L0(2131750876, null));
+                textView.setText(org.telegram.messenger.dd.L0(2131750876, null));
             } else if (tL_chatInviteExported.revoked) {
-                textView.setText(org.telegram.messenger.cd.L0(2131746031, null));
+                textView.setText(org.telegram.messenger.dd.L0(2131746031, null));
             } else {
-                textView.setText(org.telegram.messenger.cd.L0(2131749159, null));
+                textView.setText(org.telegram.messenger.dd.L0(2131749159, null));
             }
             this.T1 = true;
         }
@@ -238,8 +238,8 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
         K0();
         if (hashMap == null || hashMap.get(Long.valueOf(tL_chatInviteExported.admin_id)) == null) {
             TLRPC.TL_users_getUsers tL_users_getUsers = new TLRPC.TL_users_getUsers();
-            tL_users_getUsers.id.add(org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).n1(tL_chatInviteExported.admin_id));
-            ConnectionsManager.getInstance(org.telegram.messenger.d20.s0).sendRequest(tL_users_getUsers, new x1(this, 5));
+            tL_users_getUsers.id.add(org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).n1(tL_chatInviteExported.admin_id));
+            ConnectionsManager.getInstance(org.telegram.messenger.e20.s0).sendRequest(tL_users_getUsers, new x1(this, 5));
         }
         updateColors();
     }
@@ -259,9 +259,9 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
         }
         int i10 = 0;
         View childAt = p50Var.getChildAt(0);
-        ck0 ck0Var = (ck0) p50Var.G(childAt);
+        dk0 dk0Var = (dk0) p50Var.G(childAt);
         int top = childAt.getTop();
-        if (top < 0 || ck0Var == null || ck0Var.b() != 0) {
+        if (top < 0 || dk0Var == null || dk0Var.b() != 0) {
             c60Var.L0(true);
         } else {
             c60Var.L0(false);
@@ -285,7 +285,7 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
     /* JADX WARN: Type inference failed for: r16v2 */
     /* JADX WARN: Type inference failed for: r16v3 */
     /* JADX WARN: Type inference failed for: r16v8 */
-    /* JADX WARN: Type inference failed for: r1v17, types: [android.view.View, org.telegram.ui.Components.wy0] */
+    /* JADX WARN: Type inference failed for: r1v17, types: [android.view.View, org.telegram.ui.Components.xy0] */
     /* JADX WARN: Type inference failed for: r2v13, types: [android.view.View, android.widget.TextView, org.telegram.ui.Components.p80] */
     /* JADX WARN: Type inference failed for: r7v2, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
     public static void M0(Context context, int i10, long j10, TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant, org.telegram.ui.ActionBar.p6 p6Var) {
@@ -306,12 +306,12 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
         r8 r8Var = new r8((org.telegram.ui.ActionBar.p6) null);
         if (j10 >= 0) {
             z10 = 0;
-            TLRPC.User Z1 = org.telegram.messenger.vp.r1(i10).Z1(Long.valueOf(j10));
+            TLRPC.User Z1 = org.telegram.messenger.wp.r1(i10).Z1(Long.valueOf(j10));
             r8Var.r(Z1);
             g9Var.e(Z1, r8Var);
         } else {
             z10 = 0;
-            TLRPC.Chat L0 = org.telegram.messenger.vp.r1(i10).L0(Long.valueOf(-j10));
+            TLRPC.Chat L0 = org.telegram.messenger.wp.r1(i10).L0(Long.valueOf(-j10));
             r8Var.q(L0);
             g9Var.e(L0, r8Var);
         }
@@ -338,7 +338,7 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
         TextView textView = new TextView(context);
         org.telegram.messenger.m5.m(textView, org.telegram.ui.ActionBar.t6.j5, p6Var, 1, 20.0f);
         org.telegram.messenger.m5.l(textView, 17, null, 2131744989);
-        TextView f10 = org.telegram.messenger.z20.f(f7, textView, w7.b6.t(-1, -2, 17, 20, 0, 20, 4), context);
+        TextView f10 = org.telegram.messenger.a30.f(f7, textView, w7.b6.t(-1, -2, 17, 20, 0, 20, 4), context);
         f10.setTextSize(1, 14.0f);
         f10.setGravity(17);
         int i13 = org.telegram.ui.ActionBar.t6.B6;
@@ -348,7 +348,7 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
             obj = "min";
             Object[] objArr = new Object[1];
             objArr[z10] = Long.valueOf(tL_starsSubscriptionPricing.amount);
-            f10.setText(rh.h8.Z0(z10, org.telegram.messenger.cd.a0(null, null, 2131745001, objArr), 0.8f, null));
+            f10.setText(rh.h8.a1(z10, org.telegram.messenger.dd.a0(null, null, 2131745001, objArr), 0.8f, null));
             i11 = i13;
         } else {
             obj = "min";
@@ -359,20 +359,20 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
             Object[] objArr2 = new Object[2];
             objArr2[z11 ? 1 : 0] = Long.valueOf(tL_starsSubscriptionPricing.amount);
             objArr2[1] = obj2;
-            f10.setText(rh.h8.Z0(z11, String.format(locale, "⭐%1$d/%2$s", objArr2), 0.8f, null));
+            f10.setText(rh.h8.a1(z11, String.format(locale, "⭐%1$d/%2$s", objArr2), 0.8f, null));
         }
-        TextView f11 = org.telegram.messenger.z20.f(f7, f10, w7.b6.t(-1, -2, 17, 20, 0, 20, 4), context);
+        TextView f11 = org.telegram.messenger.a30.f(f7, f10, w7.b6.t(-1, -2, 17, 20, 0, 20, 4), context);
         f11.setTextSize(1, 14.0f);
         f11.setGravity(17);
         org.telegram.ui.ActionBar.a7.V(f11, i11, p6Var);
         int i15 = tL_starsSubscriptionPricing.period;
         if (i15 == 2592000) {
-            f11.setText(org.telegram.messenger.cd.a0(null, null, 2131745076, org.telegram.messenger.u1.i().f((int) ((tL_starsSubscriptionPricing.amount / 1000.0d) * org.telegram.messenger.vp.r1(i10).d6), "USD")));
+            f11.setText(org.telegram.messenger.dd.a0(null, null, 2131745076, org.telegram.messenger.u1.i().f((int) ((tL_starsSubscriptionPricing.amount / 1000.0d) * org.telegram.messenger.wp.r1(i10).d6), "USD")));
         } else {
-            f11.setText(String.format(Locale.US, "appx. %1$s per %2$s", org.telegram.messenger.u1.i().f((int) (org.telegram.messenger.vp.r1(i10).d6 * (tL_starsSubscriptionPricing.amount / 1000.0d)), "USD"), i15 == 300 ? "5min" : obj));
+            f11.setText(String.format(Locale.US, "appx. %1$s per %2$s", org.telegram.messenger.u1.i().f((int) (org.telegram.messenger.wp.r1(i10).d6 * (tL_starsSubscriptionPricing.amount / 1000.0d)), "USD"), i15 == 300 ? "5min" : obj));
         }
         f7.addView(f11, w7.b6.t(-1, -2, 17, 20, 0, 20, 4));
-        ?? wy0Var = new wy0(context, p6Var);
+        ?? xy0Var = new xy0(context, p6Var);
         ?? p80Var = new p80(context, p6Var);
         p80Var.setPadding(org.telegram.messenger.i0.L(12.66f), org.telegram.messenger.i0.L(9.33f), org.telegram.messenger.i0.L(12.66f), org.telegram.messenger.i0.L(9.33f));
         p80Var.setEllipsize(TextUtils.TruncateAt.END);
@@ -383,9 +383,9 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
         p80Var.setSingleLine(true);
         p80Var.setDisablePaddingsOffsetY(true);
         org.telegram.ui.e5 e5Var = new org.telegram.ui.e5(24.0f, i10, p80Var);
-        TLRPC.User Z12 = org.telegram.messenger.vp.r1(i10).Z1(Long.valueOf(tL_chatInviteImporter.user_id));
+        TLRPC.User Z12 = org.telegram.messenger.wp.r1(i10).Z1(Long.valueOf(tL_chatInviteImporter.user_id));
         boolean z12 = Z12 == null;
-        String p5 = org.telegram.messenger.h20.p(Z12);
+        String p5 = org.telegram.messenger.i20.p(Z12);
         e5Var.e(Z12);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x  " + ((Object) p5));
         spannableStringBuilder.setSpan(e5Var, 0, 1, 33);
@@ -395,23 +395,23 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
             str = null;
         } else {
             str = null;
-            wy0Var.l(p80Var, org.telegram.messenger.cd.L0(2131745077, null));
+            xy0Var.l(p80Var, org.telegram.messenger.dd.L0(2131745077, null));
         }
-        wy0Var.c(org.telegram.messenger.cd.L0(2131745072, str), org.telegram.messenger.cd.a0(null, null, 2131742808, org.telegram.messenger.cd.D0().r0().format(new Date(tL_chatInviteImporter.date * 1000)), org.telegram.messenger.cd.D0().o0().format(new Date(tL_chatInviteImporter.date * 1000))), null, null);
+        xy0Var.c(org.telegram.messenger.dd.L0(2131745072, str), org.telegram.messenger.dd.a0(null, null, 2131742808, org.telegram.messenger.dd.D0().r0().format(new Date(tL_chatInviteImporter.date * 1000)), org.telegram.messenger.dd.D0().o0().format(new Date(tL_chatInviteImporter.date * 1000))), null, null);
         int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
         if (channelParticipant != null) {
-            wy0Var.c(org.telegram.messenger.cd.L0(channelParticipant.subscription_until_date > currentTime ? 2131745073 : 2131745075, null), org.telegram.messenger.cd.a0(null, null, 2131742808, org.telegram.messenger.cd.D0().r0().format(new Date(channelParticipant.subscription_until_date * 1000)), org.telegram.messenger.cd.D0().o0().format(new Date(channelParticipant.subscription_until_date * 1000))), null, null);
+            xy0Var.c(org.telegram.messenger.dd.L0(channelParticipant.subscription_until_date > currentTime ? 2131745073 : 2131745075, null), org.telegram.messenger.dd.a0(null, null, 2131742808, org.telegram.messenger.dd.D0().r0().format(new Date(channelParticipant.subscription_until_date * 1000)), org.telegram.messenger.dd.D0().o0().format(new Date(channelParticipant.subscription_until_date * 1000))), null, null);
         }
-        f7.addView(wy0Var, w7.b6.k(0.0f, 17.0f, 0.0f, 0.0f, -1, -2));
+        f7.addView(xy0Var, w7.b6.k(0.0f, 17.0f, 0.0f, 0.0f, -1, -2));
         p80 p80Var2 = new p80(context, p6Var);
         org.telegram.ui.ActionBar.a7.V(p80Var2, org.telegram.ui.ActionBar.t6.z6, p6Var);
         org.telegram.ui.ActionBar.a7.H(p80Var2, i16, p6Var);
         p80Var2.setTextSize(1, 14.0f);
-        p80Var2.setText(org.telegram.messenger.i0.T2(org.telegram.messenger.cd.L0(2131744944, null), new i20(context, 1)));
+        p80Var2.setText(org.telegram.messenger.i0.T2(org.telegram.messenger.dd.L0(2131744944, null), new i20(context, 1)));
         p80Var2.setGravity(17);
         f7.addView(p80Var2, w7.b6.k(14.0f, 15.0f, 14.0f, 15.0f, -1, -2));
         vh.d dVar = new vh.d(context, p6Var, true);
-        dVar.i(org.telegram.messenger.cd.L0(2131747847, null), false, true);
+        dVar.i(org.telegram.messenger.dd.L0(2131747847, null), false, true);
         f7.addView(dVar, w7.b6.o(-1, 48));
         dVar.setOnClickListener(new j2(z2VarArr, 2));
         k10.N = f7;
@@ -498,18 +498,18 @@ public final class c60 extends org.telegram.ui.ActionBar.z2 {
         TLRPC.TL_messages_getChatInviteImporters tL_messages_getChatInviteImporters = new TLRPC.TL_messages_getChatInviteImporters();
         tL_messages_getChatInviteImporters.flags |= 2;
         tL_messages_getChatInviteImporters.link = tL_chatInviteExported.link;
-        tL_messages_getChatInviteImporters.peer = org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).i1(-this.X1);
+        tL_messages_getChatInviteImporters.peer = org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).i1(-this.X1);
         tL_messages_getChatInviteImporters.requested = z11;
         tL_messages_getChatInviteImporters.subscription_expired = z10;
         if (arrayList4.isEmpty()) {
             tL_messages_getChatInviteImporters.offset_user = new TLRPC.TL_inputUserEmpty();
         } else {
             TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList4.get(arrayList4.size() - 1);
-            tL_messages_getChatInviteImporters.offset_user = org.telegram.messenger.vp.r1(this.a).p1((TLRPC.User) this.j1.get(Long.valueOf(tL_chatInviteImporter.user_id)));
+            tL_messages_getChatInviteImporters.offset_user = org.telegram.messenger.wp.r1(this.a).p1((TLRPC.User) this.j1.get(Long.valueOf(tL_chatInviteImporter.user_id)));
             tL_messages_getChatInviteImporters.offset_date = tL_chatInviteImporter.date;
         }
         this.H1 = true;
-        ConnectionsManager.getInstance(org.telegram.messenger.d20.s0).sendRequest(tL_messages_getChatInviteImporters, new RequestDelegate() { // from class: org.telegram.ui.Components.m50
+        ConnectionsManager.getInstance(org.telegram.messenger.e20.s0).sendRequest(tL_messages_getChatInviteImporters, new RequestDelegate() { // from class: org.telegram.ui.Components.m50
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
                 final c60 c60Var = c60.this;

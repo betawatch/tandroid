@@ -82,9 +82,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import jg.r0;
 import k2.r;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.w0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.k9;
@@ -96,7 +96,7 @@ import org.telegram.ui.PhotoViewer;
 import p4.y;
 import p4.z;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class b implements h, wd.b, m1, b0, s, OnCompleteListener, com.google.android.gms.internal.clearcut.h, g, g2.g, n, fe.e, j4.b0, Continuation, ai {
     public static volatile b d;
@@ -298,10 +298,10 @@ public class b implements h, wd.b, m1, b0, s, OnCompleteListener, com.google.and
             if (selectedPhotos.isEmpty()) {
                 return;
             }
-            ef efVar = (ef) selectedPhotos.values().iterator().next();
-            String str = efVar.h;
+            ff ffVar = (ff) selectedPhotos.values().iterator().next();
+            String str = ffVar.h;
             if (str == null) {
-                str = efVar.I;
+                str = ffVar.I;
             }
             r0 r0Var = (r0) this.c;
             r0Var.d0(r0Var.f0(str, true));
@@ -864,7 +864,7 @@ public class b implements h, wd.b, m1, b0, s, OnCompleteListener, com.google.and
             if (v12.E == null || v12.e0 == null || !v12.U1()) {
                 return;
             }
-            new cc(v12.e0, new th.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? cd.a0(null, null, 2131752102, str) : cd.L0(2131752103, null)).j();
+            new cc(v12.e0, new th.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? dd.a0(null, null, 2131752102, str) : dd.L0(2131752103, null)).j();
         }
     }
 

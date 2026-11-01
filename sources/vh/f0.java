@@ -8,11 +8,11 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.ye;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.ze;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f0 extends View {
     public final Paint a;
@@ -47,7 +47,7 @@ public final class f0 extends View {
         int currentWidth;
         int currentHeight;
         boolean z10;
-        ye yeVar;
+        ze zeVar;
         float f7;
         float f10;
         g0 g0Var = this.d;
@@ -87,10 +87,10 @@ public final class f0 extends View {
                 g0Var.b.getLocationOnScreen(iArr);
             }
             canvas.translate(iArr[0] * f12, iArr[1] * f12);
-            ye yeVar2 = g0Var.b.G0;
-            if (yeVar2 != null) {
-                f10 = yeVar2.e;
-                f7 = yeVar2.f;
+            ze zeVar2 = g0Var.b.G0;
+            if (zeVar2 != null) {
+                f10 = zeVar2.e;
+                f7 = zeVar2.f;
             } else {
                 f7 = 1.0f;
                 f10 = 1.0f;
@@ -104,9 +104,9 @@ public final class f0 extends View {
         if (f12 > 0.0f) {
             float contentWidth = g0Var.b.getContentWidth();
             float contentHeight = g0Var.b.getContentHeight();
-            ye yeVar3 = g0Var.b.G0;
-            float f13 = yeVar3 != null ? yeVar3.e : 1.0f;
-            float f14 = yeVar3 != null ? yeVar3.f : 1.0f;
+            ze zeVar3 = g0Var.b.G0;
+            float f13 = zeVar3 != null ? zeVar3.e : 1.0f;
+            float f14 = zeVar3 != null ? zeVar3.f : 1.0f;
             float T12 = (org.telegram.messenger.i0.T1(1.0f, f13, f12) * contentWidth) / 2.0f;
             float T13 = (org.telegram.messenger.i0.T1(1.0f, f14, f12) * contentHeight) / 2.0f;
             float T14 = org.telegram.messenger.i0.T1(1.0f, 4.0f, f11);
@@ -130,17 +130,17 @@ public final class f0 extends View {
         canvas.translate(gVar.d * 1.0f, gVar.e * 1.0f);
         float f17 = (gVar.f / z11) * containerWidth;
         jg.e2 e2Var = g0Var.b;
-        float T15 = (e2Var == null || (yeVar = e2Var.G0) == null) ? org.telegram.messenger.i0.T1(1.0f, f17, f11) : org.telegram.messenger.i0.T1(yeVar.c, f17, f11);
+        float T15 = (e2Var == null || (zeVar = e2Var.G0) == null) ? org.telegram.messenger.i0.T1(1.0f, f17, f11) : org.telegram.messenger.i0.T1(zeVar.c, f17, f11);
         canvas.scale(T15, T15);
         canvas.translate(gVar.b * f15 * 1.0f, gVar.c * f16 * 1.0f);
         float e = g0Var.d.e(false, i10) + g0Var.b.getOrientation() + gVar.g;
-        ye yeVar4 = g0Var.b.G0;
-        canvas.rotate(yeVar4 == null ? org.telegram.messenger.i0.T1(0.0f, e, g0Var.s) : org.telegram.messenger.i0.T1(yeVar4.d + yeVar4.k, e, g0Var.s));
+        ze zeVar4 = g0Var.b.G0;
+        canvas.rotate(zeVar4 == null ? org.telegram.messenger.i0.T1(0.0f, e, g0Var.s) : org.telegram.messenger.i0.T1(zeVar4.d + zeVar4.k, e, g0Var.s));
         canvas.rotate(g0Var.b.getOrientation());
         org.telegram.ui.Components.t5 t5Var = g0Var.c;
         if (g0Var.E) {
-            ye yeVar5 = g0Var.b.G0;
-            if (yeVar5 != null && yeVar5.l) {
+            ze zeVar5 = g0Var.b.G0;
+            if (zeVar5 != null && zeVar5.l) {
                 z10 = true;
             }
             z10 = false;
@@ -157,7 +157,7 @@ public final class f0 extends View {
         Paint paint2 = e2Var2.F0;
         Bitmap bitmap = e2Var2.A0;
         if (bitmap != null) {
-            paint2.setAlpha(zs.e4);
+            paint2.setAlpha(at.e4);
             canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint2);
         }
         canvas.restore();

@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class if0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final class if0 extends FrameLayout {
             case 1:
                 super.dispatchDraw(canvas);
                 jf0 jf0Var = this.b;
-                rn0 rn0Var = jf0Var.R;
-                if (rn0Var != null && rn0Var.a()) {
+                sn0 sn0Var = jf0Var.R;
+                if (sn0Var != null && sn0Var.a()) {
                     jf0Var.R.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     jf0Var.R.draw(canvas);
                     break;
@@ -44,7 +44,7 @@ public final class if0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer;
-        org.telegram.ui.rq0 rq0Var;
+        org.telegram.ui.pq0 pq0Var;
         switch (this.a) {
             case 0:
                 int actionMasked = motionEvent.getActionMasked();
@@ -64,8 +64,8 @@ public final class if0 extends FrameLayout {
                     jf0Var.f0 = false;
                     jf0Var.a();
                     org.telegram.messenger.i0.r(jf0Var.h0);
-                } else if (actionMasked == 2 && (photoViewer = jf0Var.V) != null && (rq0Var = photoViewer.c4) != null && rq0Var.rewinding) {
-                    rq0Var.setX(motionEvent.getX());
+                } else if (actionMasked == 2 && (photoViewer = jf0Var.V) != null && (pq0Var = photoViewer.c4) != null && pq0Var.rewinding) {
+                    pq0Var.setX(motionEvent.getX());
                 }
                 if (jf0Var.D != null) {
                     MotionEvent obtain = MotionEvent.obtain(motionEvent);
@@ -168,9 +168,9 @@ public final class if0 extends FrameLayout {
         switch (this.a) {
             case 1:
                 jf0 jf0Var = this.b;
-                m61 m61Var = jf0Var.Q;
-                if (m61Var.j) {
-                    m61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                n61 n61Var = jf0Var.Q;
+                if (n61Var.j) {
+                    n61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     jf0Var.Q.draw(canvas);
                 }
                 PhotoViewer photoViewer = jf0Var.V;

@@ -2,14 +2,14 @@ package ph;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m2 implements j20 {
+public final /* synthetic */ class m2 implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ r3 b;
     public final /* synthetic */ String[] c;
@@ -26,7 +26,7 @@ public final /* synthetic */ class m2 implements j20 {
     /* JADX WARN: Type inference failed for: r2v25, types: [int] */
     /* JADX WARN: Type inference failed for: r2v27 */
     /* JADX WARN: Type inference failed for: r2v28 */
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         int i10 = this.a;
         boolean z10 = false;
@@ -52,7 +52,7 @@ public final /* synthetic */ class m2 implements j20 {
                         Integer num = (Integer) h3Var.o.get(Long.valueOf(stargiftattributepattern.document.id));
                         int intValue = num == null ? 0 : num.intValue();
                         int i12 = e3.b;
-                        a51 K = a51.K(e3.class);
+                        b51 K = b51.K(e3.class);
                         K.G = stargiftattributepattern;
                         K.l = lowerCase;
                         K.z = intValue;
@@ -64,7 +64,7 @@ public final /* synthetic */ class m2 implements j20 {
                     }
                 }
                 if (arrayList2.isEmpty()) {
-                    arrayList2.add(x2.i(cd.L0(2131750017, null)));
+                    arrayList2.add(x2.i(dd.L0(2131750017, null)));
                     break;
                 }
                 break;
@@ -86,7 +86,7 @@ public final /* synthetic */ class m2 implements j20 {
                         Integer num2 = (Integer) h3Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                         int intValue2 = num2 == null ? 0 : num2.intValue();
                         int i14 = v2.b;
-                        a51 K2 = a51.K(v2.class);
+                        b51 K2 = b51.K(v2.class);
                         K2.G = stargiftattributebackdrop;
                         K2.l = lowerCase2;
                         K2.z = intValue2;
@@ -98,7 +98,7 @@ public final /* synthetic */ class m2 implements j20 {
                     }
                 }
                 if (arrayList3.isEmpty()) {
-                    arrayList3.add(x2.i(cd.L0(2131750024, null)));
+                    arrayList3.add(x2.i(dd.L0(2131750024, null)));
                     break;
                 }
                 break;
@@ -121,7 +121,7 @@ public final /* synthetic */ class m2 implements j20 {
                         Integer num3 = (Integer) h3Var3.m.get(Long.valueOf(stargiftattributemodel.document.id));
                         ?? intValue3 = num3 == null ? z13 : num3.intValue();
                         int i16 = b3.b;
-                        a51 K3 = a51.K(b3.class);
+                        b51 K3 = b51.K(b3.class);
                         K3.G = stargiftattributemodel;
                         K3.l = lowerCase3;
                         K3.z = intValue3;
@@ -134,7 +134,7 @@ public final /* synthetic */ class m2 implements j20 {
                     z10 = z13;
                 }
                 if (arrayList4.isEmpty()) {
-                    arrayList4.add(x2.i(cd.L0(2131750019, null)));
+                    arrayList4.add(x2.i(dd.L0(2131750019, null)));
                     break;
                 }
                 break;

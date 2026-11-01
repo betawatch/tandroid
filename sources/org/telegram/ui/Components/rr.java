@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rr implements Predicate {
     public final /* synthetic */ int a;
@@ -37,13 +37,13 @@ public final /* synthetic */ class rr implements Predicate {
         switch (this.a) {
             case 0:
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.b;
-                TLRPC.Peer peer = ((org.telegram.messenger.jj) obj).k.from_id;
+                TLRPC.Peer peer = ((org.telegram.messenger.kj) obj).k.from_id;
                 if ((inputPeer != null || peer != null) && (inputPeer == null || peer == null || (!(inputPeer instanceof TLRPC.TL_inputPeerChat) || !(peer instanceof TLRPC.TL_peerChat) ? !(inputPeer instanceof TLRPC.TL_inputPeerChannel) || !(peer instanceof TLRPC.TL_peerChannel) ? !(inputPeer instanceof TLRPC.TL_inputPeerUser) || !(peer instanceof TLRPC.TL_peerUser) || inputPeer.user_id != peer.user_id : inputPeer.channel_id != peer.channel_id : inputPeer.chat_id != peer.chat_id))) {
                 }
             default:
-                org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) obj;
+                org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) obj;
                 TLObject tLObject = this.b;
-                if (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || jjVar.k.from_id.user_id != ((TLRPC.Chat) tLObject).id : jjVar.k.from_id.user_id != ((TLRPC.User) tLObject).id) {
+                if (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || kjVar.k.from_id.user_id != ((TLRPC.Chat) tLObject).id : kjVar.k.from_id.user_id != ((TLRPC.User) tLObject).id) {
                 }
                 break;
         }

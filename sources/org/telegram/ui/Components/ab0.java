@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class ab0 extends FrameLayout {
     public final ew D;
@@ -20,7 +20,7 @@ public abstract class ab0 extends FrameLayout {
     public TLRPC.Peer a;
     public final boolean b;
     public final org.telegram.ui.un c;
-    public final org.telegram.messenger.nj d;
+    public final org.telegram.messenger.oj d;
     public final ya0 e;
     public final fa0 f;
     public ValueAnimator h;
@@ -31,7 +31,7 @@ public abstract class ab0 extends FrameLayout {
     public final int x;
     public boolean y;
 
-    public ab0(Context context, org.telegram.ui.un unVar, tg.b bVar, org.telegram.messenger.nj njVar, TLRPC.User user, TLRPC.Chat chat, int i10, wa0 wa0Var, int i11, final boolean z10) {
+    public ab0(Context context, org.telegram.ui.un unVar, tg.b bVar, org.telegram.messenger.oj ojVar, TLRPC.User user, TLRPC.Chat chat, int i10, wa0 wa0Var, int i11, final boolean z10) {
         super(context);
         this.D = new ew(this, 5);
         this.E = new ArrayList(10);
@@ -41,25 +41,25 @@ public abstract class ab0 extends FrameLayout {
         this.G = bVar;
         this.n = user;
         this.r = chat;
-        this.d = njVar;
+        this.d = ojVar;
         this.F = wa0Var;
         this.f = new fa0(this, context, wa0Var);
         ya0 ya0Var = new ya0(context, wa0Var);
         this.e = ya0Var;
         vg.f c10 = bVar.c(ya0Var, null, false);
         c10.o(w7.b9.k(wa0Var));
-        c10.M.e = true;
+        c10.P.e = true;
         c10.p(org.telegram.messenger.i0.L(8.0f));
         c10.q(org.telegram.messenger.i0.L(16.0f));
         ya0Var.setBackground(c10);
         int i12 = 0;
         for (int i13 = 0; i13 < 3; i13++) {
-            if (i13 == 0 && njVar.a != null) {
-                this.e.a(0, org.telegram.messenger.cd.L0(2131748562, null));
-            } else if (i13 == 1 && njVar.b != null && !z10) {
-                this.e.a(1, org.telegram.messenger.cd.L0(2131748566, null));
-            } else if (i13 == 2 && njVar.c != null && !z10) {
-                this.e.a(2, org.telegram.messenger.cd.L0(2131748565, null));
+            if (i13 == 0 && ojVar.a != null) {
+                this.e.a(0, org.telegram.messenger.dd.L0(2131748562, null));
+            } else if (i13 == 1 && ojVar.b != null && !z10) {
+                this.e.a(1, org.telegram.messenger.dd.L0(2131748566, null));
+            } else if (i13 == 2 && ojVar.c != null && !z10) {
+                this.e.a(2, org.telegram.messenger.dd.L0(2131748565, null));
             }
             if (i13 == i11) {
                 i12 = this.e.a.size() - 1;
@@ -69,7 +69,7 @@ public abstract class ab0 extends FrameLayout {
         this.f.setPosition(i12);
         this.e.setSelectedTab(i12);
         addView(this.e, w7.b6.e(-1, 66, 87));
-        addView(this.f, w7.b6.d(-1, -1.0f, org.telegram.messenger.zs.E1, 0.0f, 0.0f, 0.0f, 66.0f));
+        addView(this.f, w7.b6.d(-1, -1.0f, org.telegram.messenger.at.E1, 0.0f, 0.0f, 0.0f, 66.0f));
         this.e.setOnTabClick(new r2(this, 6));
         setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ea0
             @Override // android.view.View.OnTouchListener
@@ -128,13 +128,13 @@ public abstract class ab0 extends FrameLayout {
             org.telegram.ui.hl hlVar = (org.telegram.ui.hl) this;
             org.telegram.ui.un unVar = hlVar.H;
             unVar.Ya = null;
-            unVar.l7();
-            org.telegram.messenger.nj njVar = unVar.v5;
-            if (njVar != null) {
+            unVar.p7();
+            org.telegram.messenger.oj ojVar = unVar.v5;
+            if (ojVar != null) {
                 if (unVar.B5 == null) {
-                    unVar.B5 = njVar.d;
+                    unVar.B5 = ojVar.d;
                 }
-                org.telegram.ui.kn knVar = njVar.d;
+                org.telegram.ui.kn knVar = ojVar.d;
                 if (knVar == null) {
                     unVar.B5 = null;
                 }
@@ -149,8 +149,8 @@ public abstract class ab0 extends FrameLayout {
                             org.telegram.ui.kn knVar3 = unVar.v5.d;
                             unVar.B5 = knVar3;
                             knVar3.f = false;
-                            if (unVar.Jb == 2) {
-                                unVar.Vb(unVar.D5, knVar3);
+                            if (unVar.Kb == 2) {
+                                unVar.ac(unVar.D5, knVar3);
                             }
                         }
                     }
@@ -158,25 +158,25 @@ public abstract class ab0 extends FrameLayout {
                 org.telegram.ui.kn knVar4 = unVar.B5;
                 if (knVar4 != null) {
                     knVar4.f = false;
-                    org.telegram.messenger.nj njVar2 = unVar.v5;
-                    knVar4.b = njVar2.e;
-                    knVar4.c = njVar2.f;
+                    org.telegram.messenger.oj ojVar2 = unVar.v5;
+                    knVar4.b = ojVar2.e;
+                    knVar4.c = ojVar2.f;
                     knVar4.f();
-                    if (unVar.Jb == 2) {
-                        unVar.Vb(unVar.D5, unVar.B5);
+                    if (unVar.Kb == 2) {
+                        unVar.ac(unVar.D5, unVar.B5);
                     }
                 } else {
                     ArrayList arrayList = new ArrayList();
-                    org.telegram.messenger.lj ljVar = unVar.v5.b;
-                    if (ljVar != null) {
-                        ljVar.b(arrayList);
+                    org.telegram.messenger.mj mjVar = unVar.v5.b;
+                    if (mjVar != null) {
+                        mjVar.b(arrayList);
                     }
-                    unVar.s8();
+                    unVar.w8();
                 }
             }
-            if (unVar.zb && z10) {
+            if (unVar.Ab && z10) {
                 org.telegram.messenger.i0.h3(new org.telegram.ui.gl(hlVar, 1), 50L);
-                unVar.zb = false;
+                unVar.Ab = false;
             }
             Activity parentActivity = unVar.getParentActivity();
             i10 = ((org.telegram.ui.ActionBar.k2) unVar).classGuid;

@@ -1,12 +1,12 @@
 package org.telegram.ui.ActionBar;
 
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.iy;
 import org.telegram.ui.Components.vp;
-import org.telegram.ui.a21;
+import org.telegram.ui.y11;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h0 extends vp {
     public final /* synthetic */ int h;
@@ -25,9 +25,9 @@ public final class h0 extends vp {
             case 1:
                 return t6.w0(t6.yf, ((iy) this.i).G.Z1);
             case 2:
-                return t6.w0(t6.Q5, ((hm0) this.i).e);
+                return t6.w0(t6.Q5, ((im0) this.i).e);
             case 3:
-                return t6.w0(t6.yf, ((a21) this.i).F.Z0);
+                return t6.w0(t6.yf, ((y11) this.i).F.Z0);
             default:
                 return t6.w0(t6.yf, (p6) this.i);
         }
@@ -50,10 +50,10 @@ public final class h0 extends vp {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(a21 a21Var) {
+    public h0(y11 y11Var) {
         super(1.25f);
         this.h = 3;
-        this.i = a21Var;
+        this.i = y11Var;
         this.f = org.telegram.messenger.i0.L(7.0f);
     }
 }

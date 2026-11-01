@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class lw implements z4.e {
     public final /* synthetic */ boolean a;
@@ -21,7 +21,7 @@ public final class lw implements z4.e {
             int i11 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
             if (vyVar.A1 != i11) {
                 vyVar.A1 = i11;
-                org.telegram.messenger.vp.c1().edit().putInt("selected_page", i11).commit();
+                org.telegram.messenger.wp.c1().edit().putInt("selected_page", i11).commit();
             }
         }
         vyVar.M(i10 == 0, true);

@@ -42,26 +42,26 @@ import kotlin.jvm.internal.p;
 import n4.q;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.is;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.qq;
 import org.webrtc.MediaStreamTrack;
 import v0.n;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -161,7 +161,7 @@ public final /* synthetic */ class f implements Runnable {
                 TL_account.connectedBots connectedbots = tLObject instanceof TL_account.connectedBots ? (TL_account.connectedBots) tLObject : null;
                 kVar.c = connectedbots;
                 if (connectedbots != null) {
-                    vp.r1(kVar.a).V3(kVar.c.users, false);
+                    wp.r1(kVar.a).V3(kVar.c.users, false);
                 }
                 kVar.b = System.currentTimeMillis();
                 kVar.f = true;
@@ -174,18 +174,18 @@ public final /* synthetic */ class f implements Runnable {
                 j1Var.dismiss();
                 return;
             case 9:
-                vp.r1(((t1) obj2).currentAccount).L3((TLRPC.Updates) ((TLObject) obj), false);
+                wp.r1(((t1) obj2).currentAccount).L3((TLRPC.Updates) ((TLObject) obj), false);
                 return;
             case 10:
                 h2 h2Var = (h2) obj2;
                 h2Var.getClass();
-                h2Var.b0(((a51) obj).d);
+                h2Var.c0(((b51) obj).d);
                 return;
             case 11:
                 h3 h3Var = (h3) obj;
                 try {
                     try {
-                        sQLitePreparedStatement2 = ((hs) obj2).b.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?);");
+                        sQLitePreparedStatement2 = ((is) obj2).b.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?);");
                         sQLitePreparedStatement2.requery();
                         sQLitePreparedStatement2.bindInteger(1, h3Var.a);
                         sQLitePreparedStatement2.bindString(2, h3Var.b);
@@ -213,9 +213,9 @@ public final /* synthetic */ class f implements Runnable {
                 int i12 = i3Var.a;
                 if (tLObject2 instanceof TLRPC.TL_messages_quickReplies) {
                     TLRPC.TL_messages_quickReplies tL_messages_quickReplies = (TLRPC.TL_messages_quickReplies) tLObject2;
-                    vp.r1(i12).V3(tL_messages_quickReplies.users, false);
-                    vp.r1(i12).P3(tL_messages_quickReplies.chats, false);
-                    hs.a0(i12).m1(tL_messages_quickReplies.users, tL_messages_quickReplies.chats, true, true);
+                    wp.r1(i12).V3(tL_messages_quickReplies.users, false);
+                    wp.r1(i12).P3(tL_messages_quickReplies.chats, false);
+                    is.a0(i12).m1(tL_messages_quickReplies.users, tL_messages_quickReplies.chats, true, true);
                     ArrayList arrayList3 = new ArrayList();
                     for (int i13 = 0; i13 < tL_messages_quickReplies.quick_replies.size(); i13++) {
                         TLRPC.TL_quickReply tL_quickReply = tL_messages_quickReplies.quick_replies.get(i13);
@@ -237,9 +237,9 @@ public final /* synthetic */ class f implements Runnable {
                             }
                         }
                         if (message != null) {
-                            jj jjVar = new jj(i12, message, false, true);
-                            h3Var2.e = jjVar;
-                            jjVar.r0(false);
+                            kj kjVar = new kj(i12, message, false, true);
+                            h3Var2.e = kjVar;
+                            kjVar.r0(false);
                             h3Var2.e.l(tL_quickReply.shortcut_id, tL_quickReply.shortcut);
                         }
                         arrayList3.add(h3Var2);
@@ -253,14 +253,14 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 i3Var.f = true;
                 i3Var.l();
-                zs.f(i12).k(zs.F1, new Object[0]);
+                at.f(i12).k(at.F1, new Object[0]);
                 return;
             case 13:
-                hs hsVar = (hs) obj;
+                is isVar = (is) obj;
                 ArrayList arrayList4 = ((i3) obj2).b;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase = hsVar.b;
+                        SQLiteDatabase sQLiteDatabase = isVar.b;
                         sQLiteDatabase.executeFast("DELETE FROM business_replies").stepThis().dispose();
                         sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?)");
                         for (int i15 = 0; i15 < arrayList4.size(); i15++) {
@@ -301,13 +301,13 @@ public final /* synthetic */ class f implements Runnable {
                 ((v0.h) obj2).onResult((n) obj);
                 return;
             case 17:
-                j20 j20Var = (j20) obj;
+                k20 k20Var = (k20) obj;
                 u a2 = u.a(((String[]) obj2)[0], org.telegram.messenger.i0.L(26.0f), false);
                 if (a2 == null) {
-                    a2 = u.a(cd.L0(2131754007, null), org.telegram.messenger.i0.L(26.0f), false);
+                    a2 = u.a(dd.L0(2131754007, null), org.telegram.messenger.i0.L(26.0f), false);
                     z10 = true;
                 }
-                org.telegram.messenger.i0.g3(new j0(j20Var, a2 != null ? a2.a : null, z10, i11));
+                org.telegram.messenger.i0.g3(new j0(k20Var, a2 != null ? a2.a : null, z10, i11));
                 return;
             case 18:
                 z zVar = (z) obj2;
@@ -327,11 +327,11 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 zVar.a2 = richMessage;
                 zVar.U1.set(richMessage);
-                dVar.i(cd.L0(2131754061, null), true, true);
+                dVar.i(dd.L0(2131754061, null), true, true);
                 zVar.d1();
-                p51 p51Var = zVar.R1;
-                if (p51Var != null) {
-                    p51Var.O(true);
+                q51 q51Var = zVar.R1;
+                if (q51Var != null) {
+                    q51Var.O(true);
                     return;
                 }
                 return;
@@ -386,7 +386,7 @@ public final /* synthetic */ class f implements Runnable {
                                     }
                                 }
                                 if (TextUtils.isEmpty(str2)) {
-                                    str2 = "document_" + tz.p();
+                                    str2 = "document_" + uz.p();
                                 }
                                 String replace22 = str2.replace('/', '_').replace('\\', '_');
                                 openInputStream = d4Var.getContext().getContentResolver().openInputStream(uri);
@@ -530,7 +530,7 @@ public final /* synthetic */ class f implements Runnable {
                         }
                         l5Var.y = true;
                         l5Var.e();
-                        if (!TextUtils.isEmpty(l5Var.F) && jj.W2(document) && (w9 = b8.w(document.thumbs, zs.r5, false, null, false)) != null) {
+                        if (!TextUtils.isEmpty(l5Var.F) && kj.W2(document) && (w9 = b8.w(document.thumbs, at.r5, false, null, false)) != null) {
                             b8.G(i19).f0(l5Var.F, w9);
                             File file2 = new File(l5Var.F);
                             b8.G(i19);

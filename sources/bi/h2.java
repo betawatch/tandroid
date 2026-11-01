@@ -5,16 +5,16 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class h2 extends Drawable {
     public boolean c;
     public final Paint a = new Paint(1);
     public final org.telegram.ui.Components.t5 b = new org.telegram.ui.Components.t5(new a3.d(this, 22), 420, gr.h, 0);
-    public int d = zs.e4;
+    public int d = at.e4;
 
     public h2(int i10) {
         a(i10);

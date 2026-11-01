@@ -5,9 +5,9 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.os.SystemClock;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z5 implements SensorEventListener {
     @Override // android.hardware.SensorEventListener
@@ -41,8 +41,8 @@ public final class z5 implements SensorEventListener {
             if (B.J()) {
                 return;
             }
-            jj jjVar = B.u0;
-            if (jjVar != null && (jj.R4(jjVar.k) || B.u0.h4())) {
+            kj kjVar = B.u0;
+            if (kjVar != null && (kj.R4(kjVar.k) || B.u0.h4())) {
                 return;
             }
         }

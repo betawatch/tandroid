@@ -1,9 +1,9 @@
 package lc;
 
 import javax.security.auth.x500.X500Principal;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class e {
     public final String a;
@@ -69,10 +69,10 @@ public final class e {
             switch (c10) {
                 default:
                     switch (c10) {
-                        case zs.w0 /* 59 */:
-                        case zs.x0 /* 60 */:
-                        case zs.y0 /* 61 */:
-                        case zs.z0 /* 62 */:
+                        case at.w0 /* 59 */:
+                        case at.x0 /* 60 */:
+                        case at.y0 /* 61 */:
+                        case at.z0 /* 62 */:
                             break;
                         default:
                             int a2 = a(i12);
@@ -104,7 +104,7 @@ public final class e {
                                 this.c = i17;
                                 int a10 = a(i17);
                                 this.c++;
-                                if ((a10 & zs.W2) != 128) {
+                                if ((a10 & at.W2) != 128) {
                                     return '?';
                                 }
                                 i10 = (i10 << 6) + (a10 & 63);

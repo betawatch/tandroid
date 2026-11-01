@@ -12,11 +12,11 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.xu0;
+import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e9 implements l9, Vector.TLDeserializer, OnCompleteListener, org.telegram.ui.ActionBar.u1, xu0 {
+public final /* synthetic */ class e9 implements m9, Vector.TLDeserializer, OnCompleteListener, org.telegram.ui.ActionBar.u1, yu0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e9(int i10) {
@@ -52,7 +52,7 @@ public final /* synthetic */ class e9 implements l9, Vector.TLDeserializer, OnCo
     public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
         switch (this.a) {
             case 25:
-                int i11 = tz.a;
+                int i11 = uz.a;
                 break;
             default:
                 x1Var.dismiss();
@@ -60,7 +60,7 @@ public final /* synthetic */ class e9 implements l9, Vector.TLDeserializer, OnCo
         }
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
         switch (this.a) {
             case 12:
@@ -74,24 +74,24 @@ public final /* synthetic */ class e9 implements l9, Vector.TLDeserializer, OnCo
         }
     }
 
-    @Override // org.telegram.ui.Components.xu0
+    @Override // org.telegram.ui.Components.yu0
     public void m(int i10) {
         if (i10 == 0) {
-            tz.A(3);
+            uz.A(3);
             return;
         }
         if (i10 == 1) {
-            tz.A(0);
+            uz.A(0);
         } else if (i10 == 2) {
-            tz.A(1);
+            uz.A(1);
         } else if (i10 == 3) {
-            tz.A(2);
+            uz.A(2);
         }
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task task) {
-        tz.j = SystemClock.elapsedRealtime();
+        uz.j = SystemClock.elapsedRealtime();
         if (task.isSuccessful()) {
             String str = (String) task.getResult();
             if (TextUtils.isEmpty(str)) {
@@ -103,15 +103,15 @@ public final /* synthetic */ class e9 implements l9, Vector.TLDeserializer, OnCo
         if (v2.a) {
             f8.b("Failed to get regid");
         }
-        tz.h = "__FIREBASE_FAILED__";
+        uz.h = "__FIREBASE_FAILED__";
         PushListenerController.sendRegistrationToServer(2, null);
     }
 
-    public /* synthetic */ e9(eu euVar) {
+    public /* synthetic */ e9(fu fuVar) {
         this.a = 22;
     }
 
-    @Override // org.telegram.ui.Components.xu0
-    public /* synthetic */ void s() {
+    @Override // org.telegram.ui.Components.yu0
+    public /* synthetic */ void r() {
     }
 }

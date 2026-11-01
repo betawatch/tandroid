@@ -2,17 +2,17 @@ package kg;
 
 import android.view.KeyEvent;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.eu0;
+import org.telegram.ui.du0;
 import th.e7;
 import th.f7;
 import th.k7;
 import th.o7;
 import th.z2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f1 implements z4.e {
     public final /* synthetic */ int a;
@@ -33,17 +33,17 @@ public final class f1 implements z4.e {
             case 0:
                 i1 i1Var = (i1) callback;
                 ArrayList arrayList = i1Var.k1;
-                if (((eu0) arrayList.get(i10)).a == 0) {
-                    i1Var.E1.setTitle(cd.L0(2131751350, null));
+                if (((du0) arrayList.get(i10)).a == 0) {
+                    i1Var.E1.setTitle(dd.L0(2131751350, null));
                     i1Var.E1.requestLayout();
-                } else if (((eu0) arrayList.get(i10)).a == 14) {
-                    i1Var.E1.setTitle(cd.L0(2131743831, null));
+                } else if (((du0) arrayList.get(i10)).a == 14) {
+                    i1Var.E1.setTitle(dd.L0(2131743831, null));
                     i1Var.E1.requestLayout();
-                } else if (((eu0) arrayList.get(i10)).a == 40) {
-                    i1Var.E1.setTitle(cd.L0(2131750838, null));
+                } else if (((du0) arrayList.get(i10)).a == 40) {
+                    i1Var.E1.setTitle(dd.L0(2131750838, null));
                     i1Var.E1.requestLayout();
-                } else if (((eu0) arrayList.get(i10)).a == 28) {
-                    i1Var.E1.setTitle(cd.L0(2131744277, null));
+                } else if (((du0) arrayList.get(i10)).a == 28) {
+                    i1Var.E1.setTitle(dd.L0(2131744277, null));
                     i1Var.E1.requestLayout();
                 }
                 d();
@@ -91,7 +91,7 @@ public final class f1 implements z4.e {
                 qVar.I0 = i10;
                 qVar.J0 = i11 > 0 ? i10 + 1 : i10 - 1;
                 qVar.K0 = f7;
-                long j10 = d20.i(qVar.y0).n;
+                long j10 = e20.i(qVar.y0).n;
                 int i12 = qVar.I0;
                 if (i12 >= 0 && (qVar.x0 != null ? qVar.w0 == j10 : !(i12 >= qVar.A0.size() || ((Long) qVar.A0.get(qVar.I0)).longValue() != j10))) {
                     ((f7) qVar.B0).d(1.0f - qVar.K0);
@@ -167,9 +167,9 @@ public final class f1 implements z4.e {
             i12++;
         }
         int i14 = i1Var.x1;
-        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((eu0) arrayList.get(i1Var.x1)).a) == 0 || i11 == 14 || i11 == 28);
+        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((du0) arrayList.get(i1Var.x1)).a) == 0 || i11 == 14 || i11 == 28);
         int i15 = i1Var.y1;
-        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((eu0) arrayList.get(i1Var.y1)).a) == 0 || i10 == 14 || i10 == 28);
+        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((du0) arrayList.get(i1Var.y1)).a) == 0 || i10 == 14 || i10 == 28);
         if (z10 && z11) {
             i1Var.m1 = 1.0f;
             float f10 = i1Var.z1;

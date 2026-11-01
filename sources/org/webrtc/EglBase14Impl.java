@@ -12,7 +12,7 @@ import android.os.Build;
 import android.view.Surface;
 import org.webrtc.EglBase14;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 class EglBase14Impl implements EglBase14 {
     private static final int CURRENT_SDK_VERSION = Build.VERSION.SDK_INT;
@@ -24,7 +24,7 @@ class EglBase14Impl implements EglBase14 {
     private EGLSurface eglSurface;
     private EGLSurface eglSurfaceBackground;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static class Context implements EglBase14.Context {
         private final EGLContext egl14Context;
 

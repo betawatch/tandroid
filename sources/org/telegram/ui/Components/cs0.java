@@ -1,21 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class cs0 extends op0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 R2;
+public final class cs0 implements org.telegram.ui.Cells.n7 {
+    public final /* synthetic */ au0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cs0(Context context, String str, String str2, org.telegram.ui.ActionBar.p6 p6Var, org.telegram.ui.ActionBar.k2 k2Var) {
-        super(context, null, str, false, str2, false, p6Var);
-        this.R2 = k2Var;
+    public cs0(au0 au0Var) {
+        this.a = au0Var;
     }
 
-    @Override // org.telegram.ui.Components.op0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        org.telegram.messenger.i0.h3(new ji0(this.R2, hVar, i10, 4), 100L);
+    @Override // org.telegram.ui.Cells.n7
+    public final void a(String str, boolean z10) {
+        au0 au0Var = this.a;
+        org.telegram.ui.ActionBar.k2 k2Var = au0Var.x1;
+        if (!z10) {
+            au0Var.Z0(str);
+            return;
+        }
+        org.telegram.ui.ActionBar.z2 h = org.telegram.messenger.a30.h(k2Var.getParentActivity(), false, 1, null);
+        h.O = str;
+        h.P = false;
+        CharSequence[] charSequenceArr = {org.telegram.messenger.dd.L0(2131747833, "Open"), org.telegram.messenger.dd.L0(2131751767, "Copy")};
+        eg.j jVar = new eg.j(7, this, str);
+        h.L = charSequenceArr;
+        h.K = jVar;
+        k2Var.showDialog(h);
+    }
+
+    @Override // org.telegram.ui.Cells.n7
+    public final void b(TLRPC.WebPage webPage, org.telegram.messenger.kj kjVar) {
+        au0 au0Var = this.a;
+        hu.K0(au0Var.x1, kjVar, au0Var.t1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    }
+
+    @Override // org.telegram.ui.Cells.n7
+    public final boolean c() {
+        return !this.a.E1;
     }
 }

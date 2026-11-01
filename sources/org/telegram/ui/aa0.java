@@ -1,88 +1,43 @@
 package org.telegram.ui;
 
-import android.view.Window;
-import java.lang.ref.WeakReference;
+import android.content.ComponentName;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class aa0 {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public boolean c;
-    public final Object d;
+public enum aa0 {
+    h("DefaultIcon", R.drawable.icon_background_sa, R.mipmap.icon_foreground_sa, 2131754237, false),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF39("VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, 2131754233, false),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF59("AquaIcon", R.drawable.icon_4_background_sa, R.mipmap.icon_foreground_sa, 2131754239, false),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF79("PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, 2131754235, true),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF99("TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, 2131754234, true),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF119("NoxIcon", R.mipmap.icon_2_background_sa, R.mipmap.icon_foreground_sa, 2131754236, true);
 
-    public /* synthetic */ aa0(Object obj, int i10) {
-        this.a = i10;
-        this.d = obj;
+    public final String a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final boolean e;
+    public ComponentName f;
+
+    aa0(String str, int i10, int i11, int i12, boolean z10) {
+        this.a = str;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = z10;
     }
 
-    public void a() {
-        if (this.b) {
-            return;
+    public final ComponentName a(Context context) {
+        if (this.f == null) {
+            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
         }
-        this.b = true;
-        Runnable runnable = (Runnable) this.d;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    public void b() {
-        switch (this.a) {
-            case 0:
-                c(false);
-                this.c = true;
-                break;
-            default:
-                c(false);
-                this.c = true;
-                break;
-        }
-    }
-
-    public void c(boolean z10) {
-        switch (this.a) {
-            case 0:
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
-                    if (launchActivity != null) {
-                        int i10 = launchActivity.C1 + (z10 ? 1 : -1);
-                        launchActivity.C1 = i10;
-                        l0 l0Var = launchActivity.w0;
-                        if (l0Var != null) {
-                            l0Var.setVisibility(i10 > 0 ? 8 : 0);
-                        }
-                        launchActivity.getWindow();
-                        break;
-                    }
-                }
-                break;
-            default:
-                c5.e eVar = (c5.e) this.d;
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    if (z10) {
-                        eVar.a++;
-                    } else {
-                        eVar.a--;
-                    }
-                    boolean z11 = eVar.a > 0;
-                    if (eVar.b != z11) {
-                        eVar.b = z11;
-                        Window window = (Window) ((WeakReference) ((mg.l) eVar.c).b).get();
-                        if (window != null) {
-                            window.getDecorView().setVisibility(z11 ? 8 : 0);
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
-    }
-
-    public aa0(LaunchActivity launchActivity, boolean z10) {
-        this.a = 0;
-        this.d = new WeakReference(launchActivity);
+        return this.f;
     }
 }

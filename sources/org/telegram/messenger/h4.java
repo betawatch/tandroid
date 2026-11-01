@@ -18,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class h4 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -82,7 +82,7 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
         TLRPC.ChatPhoto chatPhoto;
         boolean z10;
         Bitmap decodeFile;
-        jj jjVar;
+        kj kjVar;
         TLRPC.Dialog dialog;
         int i11;
         int i12;
@@ -106,12 +106,12 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
         c cVar = this.d;
         if (this.i) {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_deleted);
-            remoteViews.setTextViewText(R.id.widget_deleted_text, cd.L0(2131742900, null));
+            remoteViews.setTextViewText(R.id.widget_deleted_text, dd.L0(2131742900, null));
             return remoteViews;
         }
         if (i10 >= arrayList.size()) {
             RemoteViews remoteViews2 = new RemoteViews(context.getPackageName(), R.layout.widget_edititem);
-            remoteViews2.setTextViewText(R.id.widget_edititem_text, cd.L0(2131744283, null));
+            remoteViews2.setTextViewText(R.id.widget_edititem_text, dd.L0(2131744283, null));
             Bundle bundle = new Bundle();
             bundle.putInt("appWidgetId", this.c);
             bundle.putInt("appWidgetType", 0);
@@ -124,10 +124,10 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
         Long l4 = (Long) arrayList.get(i10);
         CharSequence charSequence5 = "";
         if (o5.E(l4.longValue())) {
-            user = vp.r1(cVar.a).Z1(l4);
+            user = wp.r1(cVar.a).Z1(l4);
             if (user != null) {
-                str = h20.B(user) ? cd.L0(2131745918, null) : h20.z(user) ? cd.L0(2131746281, null) : h20.x(user) ? cd.L0(2131749337, null) : i5.m(0, user.first_name, user.last_name);
-                if (h20.z(user) || h20.B(user) || (userProfilePhoto = user.photo) == null || (fileLocation = userProfilePhoto.photo_small) == null || fileLocation.volume_id == 0 || fileLocation.local_id == 0) {
+                str = i20.B(user) ? dd.L0(2131745918, null) : i20.z(user) ? dd.L0(2131746281, null) : i20.x(user) ? dd.L0(2131749337, null) : i5.m(0, user.first_name, user.last_name);
+                if (i20.z(user) || i20.B(user) || (userProfilePhoto = user.photo) == null || (fileLocation = userProfilePhoto.photo_small) == null || fileLocation.volume_id == 0 || fileLocation.local_id == 0) {
                     chat = null;
                     fileLocation = null;
                 } else {
@@ -141,11 +141,11 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
         } else {
             int i14 = cVar.a;
             int i15 = cVar.a;
-            TLRPC.Chat L02 = vp.r1(i14).L0(Long.valueOf(-l4.longValue()));
+            TLRPC.Chat L02 = wp.r1(i14).L0(Long.valueOf(-l4.longValue()));
             if (L02 != null) {
                 if (w3.p0(L02)) {
                     String i16 = gg.e.i(i15, L02, false);
-                    TLRPC.Chat L03 = vp.r1(i15).L0(Long.valueOf(L02.linked_monoforum_id));
+                    TLRPC.Chat L03 = wp.r1(i15).L0(Long.valueOf(L02.linked_monoforum_id));
                     if (L03 == null || (chatPhoto = L03.photo) == null || (fileLocation2 = chatPhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
                         fileLocation2 = null;
                     }
@@ -173,15 +173,15 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
         remoteViews3.setTextViewText(R.id.shortcut_widget_item_text, str);
         if (fileLocation != null) {
             try {
-                b8.G(d20.s0);
+                b8.G(e20.s0);
                 decodeFile = BitmapFactory.decodeFile(b8.K(fileLocation, null, true, true).toString());
             } catch (Throwable th2) {
                 th = th2;
                 z10 = true;
                 f8.g(th, z10);
-                jjVar = (jj) this.h.f(l4.longValue());
+                kjVar = (kj) this.h.f(l4.longValue());
                 dialog = (TLRPC.Dialog) this.g.f(l4.longValue());
-                if (jjVar != null) {
+                if (kjVar != null) {
                 }
                 if (dialog != null) {
                 }
@@ -208,9 +208,9 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
             if (decodeFile == null) {
                 if (user != null) {
                     r8Var = new org.telegram.ui.Components.r8(0, user);
-                    if (h20.z(user)) {
+                    if (i20.z(user)) {
                         r8Var.g(12);
-                    } else if (h20.B(user)) {
+                    } else if (i20.B(user)) {
                         r8Var.g(1);
                     }
                 } else {
@@ -241,9 +241,9 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
             th = th3;
             z10 = true;
             f8.g(th, z10);
-            jjVar = (jj) this.h.f(l4.longValue());
+            kjVar = (kj) this.h.f(l4.longValue());
             dialog = (TLRPC.Dialog) this.g.f(l4.longValue());
-            if (jjVar != null) {
+            if (kjVar != null) {
             }
             if (dialog != null) {
             }
@@ -259,21 +259,21 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
             remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i10 == getCount() ? 8 : i12);
             return remoteViews3;
         }
-        jjVar = (jj) this.h.f(l4.longValue());
+        kjVar = (kj) this.h.f(l4.longValue());
         dialog = (TLRPC.Dialog) this.g.f(l4.longValue());
-        if (jjVar != null) {
-            long Z0 = jjVar.Z0();
+        if (kjVar != null) {
+            long Z0 = kjVar.Z0();
             if (o5.E(Z0)) {
-                user2 = vp.r1(cVar.a).Z1(Long.valueOf(Z0));
+                user2 = wp.r1(cVar.a).Z1(Long.valueOf(Z0));
                 L0 = null;
             } else {
-                L0 = vp.r1(cVar.a).L0(Long.valueOf(-Z0));
+                L0 = wp.r1(cVar.a).L0(Long.valueOf(-Z0));
                 user2 = null;
             }
             int color = context.getResources().getColor(R.color.widget_text);
-            if (jjVar.k instanceof TLRPC.TL_messageService) {
+            if (kjVar.k instanceof TLRPC.TL_messageService) {
                 if (w3.T(chat)) {
-                    TLRPC.MessageAction messageAction = jjVar.k.action;
+                    TLRPC.MessageAction messageAction = kjVar.k.action;
                     charSequence4 = charSequence5;
                     if (!(messageAction instanceof TLRPC.TL_messageActionHistoryClear)) {
                         charSequence4 = charSequence5;
@@ -281,79 +281,79 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
                     color = context.getResources().getColor(R.color.widget_action_text);
                     charSequence3 = charSequence4;
                 }
-                charSequence4 = jjVar.v;
+                charSequence4 = kjVar.v;
                 color = context.getResources().getColor(R.color.widget_action_text);
                 charSequence3 = charSequence4;
             } else {
                 String str2 = "📎 ";
                 if (chat == null || L0 != null || (w3.T(chat) && !w3.n0(chat))) {
-                    TLRPC.Message message = jjVar.k;
+                    TLRPC.Message message = kjVar.k;
                     TLRPC.MessageMedia messageMedia = message.media;
                     if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && (messageMedia.photo instanceof TLRPC.TL_photoEmpty) && messageMedia.ttl_seconds != 0) {
-                        charSequence3 = cd.L0(2131753947, null);
+                        charSequence3 = dd.L0(2131753947, null);
                     } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (messageMedia.document instanceof TLRPC.TL_documentEmpty) && messageMedia.ttl_seconds != 0) {
-                        charSequence3 = cd.L0(2131753932, null);
-                    } else if (jjVar.z != null) {
-                        if (jj.L4(message)) {
+                        charSequence3 = dd.L0(2131753932, null);
+                    } else if (kjVar.z != null) {
+                        if (kj.L4(message)) {
                             str2 = "📹 ";
-                        } else if (jj.R4(jjVar.k)) {
+                        } else if (kj.R4(kjVar.k)) {
                             str2 = "🎤 ";
-                        } else if (jjVar.I3()) {
+                        } else if (kjVar.I3()) {
                             str2 = "🎧 ";
-                        } else if (jj.S3(jjVar.k)) {
+                        } else if (kj.S3(kjVar.k)) {
                             str2 = "🖼 ";
                         }
                         StringBuilder t10 = a1.g.t(str2);
-                        t10.append((Object) jjVar.z);
+                        t10.append((Object) kjVar.z);
                         charSequence3 = t10.toString();
                     } else {
                         if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
                             charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text;
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
-                            charSequence = "🎮 " + jjVar.k.media.game.title;
-                        } else if (jjVar.D == 14) {
-                            charSequence = c3.i0.n("🎧 ", jjVar.x1(true), " - ", jjVar.z1(true));
+                            charSequence = "🎮 " + kjVar.k.media.game.title;
+                        } else if (kjVar.D == 14) {
+                            charSequence = c3.i0.n("🎧 ", kjVar.x1(true), " - ", kjVar.z1(true));
                         } else {
-                            charSequence = jjVar.v;
-                            i0.x1(charSequence, jjVar.Y1, null);
+                            charSequence = kjVar.v;
+                            i0.x1(charSequence, kjVar.Y1, null);
                         }
                         CharSequence charSequence6 = charSequence;
                         charSequence3 = charSequence6;
-                        if (jjVar.k.media != null) {
+                        if (kjVar.k.media != null) {
                             charSequence3 = charSequence6;
-                            if (!jjVar.F3()) {
+                            if (!kjVar.F3()) {
                                 color = context.getResources().getColor(R.color.widget_action_text);
                                 charSequence3 = charSequence6;
                             }
                         }
                     }
                 } else {
-                    String L04 = jjVar.P3() ? cd.L0(2131750512, null) : user2 != null ? h20.j(user2, true).replace("\n", "") : "DELETED";
-                    CharSequence charSequence7 = jjVar.z;
+                    String L04 = kjVar.P3() ? dd.L0(2131750512, null) : user2 != null ? i20.j(user2, true).replace("\n", "") : "DELETED";
+                    CharSequence charSequence7 = kjVar.z;
                     try {
                         if (charSequence7 != null) {
                             String charSequence8 = charSequence7.toString();
                             if (charSequence8.length() > 150) {
-                                charSequence8 = charSequence8.substring(0, zs.g2);
+                                charSequence8 = charSequence8.substring(0, at.g2);
                             }
-                            if (jj.L4(jjVar.k)) {
+                            if (kj.L4(kjVar.k)) {
                                 str2 = "📹 ";
-                            } else if (jj.R4(jjVar.k)) {
+                            } else if (kj.R4(kjVar.k)) {
                                 str2 = "🎤 ";
-                            } else if (jjVar.I3()) {
+                            } else if (kjVar.I3()) {
                                 str2 = "🎧 ";
-                            } else if (jj.S3(jjVar.k)) {
+                            } else if (kj.S3(kjVar.k)) {
                                 str2 = "🖼 ";
                             }
                             StringBuilder t11 = a1.g.t(str2);
                             t11.append(charSequence8.replace('\n', ' '));
                             valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", t11.toString(), L04));
-                        } else if (jjVar.k.media == null || jjVar.F3()) {
-                            String str3 = jjVar.k.message;
+                        } else if (kjVar.k.media == null || kjVar.F3()) {
+                            String str3 = kjVar.k.message;
                             if (str3 != null) {
                                 if (str3.length() > 150) {
                                     c10 = 0;
-                                    str3 = str3.substring(0, zs.g2);
+                                    str3 = str3.substring(0, at.g2);
                                 } else {
                                     c10 = 0;
                                 }
@@ -366,18 +366,18 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
                             }
                         } else {
                             color = context.getResources().getColor(R.color.widget_action_text);
-                            TLRPC.MessageMedia messageMedia2 = jjVar.k.media;
+                            TLRPC.MessageMedia messageMedia2 = kjVar.k.media;
                             if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
                                 charSequence2 = a1.g.n("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
                             } else if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
                                 charSequence2 = a1.g.n("🎮 \u2068", messageMedia2.game.title, "\u2069");
                             } else {
-                                if (jjVar.D == 14) {
+                                if (kjVar.D == 14) {
                                     c11 = 1;
-                                    charSequence2 = org.telegram.ui.Cells.f1.o("🎧 \u2068", jjVar.x1(true), " - ", jjVar.z1(true), "\u2069");
+                                    charSequence2 = org.telegram.ui.Cells.f1.o("🎧 \u2068", kjVar.x1(true), " - ", kjVar.z1(true), "\u2069");
                                 } else {
                                     c11 = 1;
-                                    charSequence2 = jjVar.v.toString();
+                                    charSequence2 = kjVar.v.toString();
                                 }
                                 c12 = ' ';
                                 c13 = '\n';
@@ -413,14 +413,14 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
                     spannableStringBuilder = valueOf;
                 }
             }
-            remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, cd.a1(jjVar.k.date));
+            remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, dd.a1(kjVar.k.date));
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, charSequence3.toString());
             remoteViews3.setTextColor(R.id.shortcut_widget_item_message, color);
         } else {
             if (dialog == null || (i11 = dialog.last_message_date) == 0) {
                 remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, "");
             } else {
-                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, cd.a1(i11));
+                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, dd.a1(i11));
             }
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, "");
         }
@@ -431,7 +431,7 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
             i12 = 0;
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_badge, String.format("%d", Integer.valueOf(i13)));
             remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 0);
-            if (vp.r1(cVar.a).q2(dialog.id, 0L, null)) {
+            if (wp.r1(cVar.a).q2(dialog.id, 0L, null)) {
                 remoteViews3.setBoolean(R.id.shortcut_widget_item_badge, "setEnabled", false);
                 remoteViews3.setInt(R.id.shortcut_widget_item_badge, "setBackgroundResource", R.drawable.widget_badge_muted_background);
             } else {
@@ -477,26 +477,26 @@ public final class h4 implements RemoteViewsService.RemoteViewsFactory {
         c cVar = this.d;
         if (cVar != null) {
             int i10 = cVar.a;
-            if (d20.i(i10).p()) {
+            if (e20.i(i10).p()) {
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
                 a0.h hVar2 = new a0.h();
-                hs a02 = hs.a0(i10);
+                is a02 = is.a0(i10);
                 int i11 = this.c;
                 a0.h hVar3 = this.g;
                 CountDownLatch countDownLatch = new CountDownLatch(1);
-                a02.a.c(new rr(a02, i11, arrayList, 0, hVar3, hVar2, arrayList3, arrayList2, countDownLatch));
+                a02.a.c(new sr(a02, i11, arrayList, 0, hVar3, hVar2, arrayList3, arrayList2, countDownLatch));
                 try {
                     countDownLatch.await();
                 } catch (Exception e) {
                     a02.o(e, true);
                 }
-                vp.r1(i10).V3(arrayList2, true);
-                vp.r1(i10).P3(arrayList3, true);
+                wp.r1(i10).V3(arrayList2, true);
+                wp.r1(i10).P3(arrayList3, true);
                 hVar.b();
                 int m10 = hVar2.m();
                 for (int i12 = 0; i12 < m10; i12++) {
-                    hVar.k(new jj(cVar.a, (TLRPC.Message) hVar2.n(i12), (a0.h) null, (a0.h) null, false, true), hVar2.j(i12));
+                    hVar.k(new kj(cVar.a, (TLRPC.Message) hVar2.n(i12), (a0.h) null, (a0.h) null, false, true), hVar2.j(i12));
                 }
             }
         }

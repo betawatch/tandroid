@@ -2,9 +2,9 @@ package jg;
 
 import android.view.View;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.er0;
+import org.telegram.ui.cr0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 e0Var.N0(new v(r0Var2, 0));
                 e0Var.setOnDismissListener(new w(r0Var2, i10));
                 e0Var.show();
-                PhotoViewer photoViewer = ((er0) r0Var2).X1;
+                PhotoViewer photoViewer = ((cr0) r0Var2).X1;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.v0();

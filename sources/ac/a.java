@@ -48,20 +48,20 @@ import m.p3;
 import m1.j;
 import n2.o;
 import n2.x;
-import org.telegram.messenger.hf;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.pz;
+import org.telegram.messenger.jf;
+import org.telegram.messenger.qz;
 import org.telegram.messenger.u;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g1;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.b40;
-import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Wallet.z0;
 import org.telegram.ui.a5;
-import org.telegram.ui.ko0;
+import org.telegram.ui.io0;
 import org.telegram.ui.r4;
 import org.telegram.ui.t4;
 import org.telegram.ui.v4;
@@ -74,9 +74,9 @@ import w7.d0;
 import z3.k;
 import z3.n;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class a implements ko0, q {
+public final class a implements io0, q {
     public static a e;
     public boolean a;
     public Object b;
@@ -89,7 +89,7 @@ public final class a implements ko0, q {
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(j(uVarArr[0], 0, zs.e4, 0, zs.X4), j(uVarArr[1], 0, zs.e4, zs.g2, zs.X4), j(uVarArr[2], 0, zs.e4, zs.X4, zs.X4), j(uVarArr[0], zs.e4, 0, 1000, 400), j(uVarArr[1], zs.e4, 0, 1000, 400), j(uVarArr[2], zs.e4, 0, 1000, 400));
+        animatorSet.playTogether(j(uVarArr[0], 0, at.e4, 0, at.X4), j(uVarArr[1], 0, at.e4, at.g2, at.X4), j(uVarArr[2], 0, at.e4, at.X4, at.X4), j(uVarArr[0], at.e4, 0, 1000, 400), j(uVarArr[1], at.e4, 0, 1000, 400), j(uVarArr[2], at.e4, 0, 1000, 400));
         animatorSet.addListener(new g1(this, view));
     }
 
@@ -376,7 +376,7 @@ public final class a implements ko0, q {
             try {
                 try {
                     v vVar = (v) this.b;
-                    i0.g3(new c11(y0Var.c, vVar, y0Var.a, "websocket error: " + z0.a(wVar), 13));
+                    i0.g3(new d11(y0Var.c, vVar, y0Var.a, "websocket error: " + z0.a(wVar), 13));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
@@ -385,7 +385,7 @@ public final class a implements ko0, q {
         }
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public boolean e() {
         return ((b40) this.d).b.e();
     }
@@ -650,7 +650,7 @@ public final class a implements ko0, q {
         return b11;
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public void u0(int i10, boolean z10, boolean z11) {
         ArrayList arrayList = (ArrayList) this.c;
         b40 b40Var = (b40) this.d;
@@ -662,23 +662,23 @@ public final class a implements ko0, q {
         ArrayList arrayList2 = new ArrayList();
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             Object obj = hashMap.get(arrayList.get(i11));
-            pz pzVar = new pz();
-            arrayList2.add(pzVar);
-            if (obj instanceof hf) {
-                hf hfVar = (hf) obj;
-                String str = hfVar.h;
+            qz qzVar = new qz();
+            arrayList2.add(qzVar);
+            if (obj instanceof jf) {
+                jf jfVar = (jf) obj;
+                String str = jfVar.h;
                 if (str != null) {
-                    pzVar.c = str;
+                    qzVar.c = str;
                 } else {
-                    pzVar.l = hfVar;
+                    qzVar.l = jfVar;
                 }
-                pzVar.k = hfVar.s;
-                pzVar.e = hfVar.c;
-                CharSequence charSequence = hfVar.I;
-                pzVar.d = charSequence != null ? charSequence.toString() : null;
-                pzVar.i = hfVar.n;
-                pzVar.j = hfVar.r;
-                pzVar.h = hfVar.x;
+                qzVar.k = jfVar.s;
+                qzVar.e = jfVar.c;
+                CharSequence charSequence = jfVar.I;
+                qzVar.d = charSequence != null ? charSequence.toString() : null;
+                qzVar.i = jfVar.n;
+                qzVar.j = jfVar.r;
+                qzVar.h = jfVar.x;
             }
         }
         b40.a(b40Var, false, arrayList2);
@@ -752,15 +752,15 @@ public final class a implements ko0, q {
         this.b = new AtomicMarkableReference(new y9.d(z10 ? TLObject.FLAG_13 : 1024), false);
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public /* synthetic */ void h0() {
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public void y() {
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public void B(Editable editable) {
     }
 }

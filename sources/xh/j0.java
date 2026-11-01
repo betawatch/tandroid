@@ -9,8 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.Iterator;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.gr;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class j0 extends LinearLayout implements hh.a, fe.l {
     public final p6 a;
@@ -196,7 +196,7 @@ public abstract class j0 extends LinearLayout implements hh.a, fe.l {
         boolean z10 = tL_replyKeyboardMarkup.resize;
         this.f = !z10;
         float f10 = 4.0f;
-        this.h = z10 ? 44 : (int) Math.max(44.0f, (z20.A(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.i0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.i0.p);
+        this.h = z10 ? 44 : (int) Math.max(44.0f, (a30.A(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.i0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.i0.p);
         int i11 = 0;
         while (i11 < tL_replyKeyboardMarkup.rows.size()) {
             TL_keyboard.KeyboardButtonRow keyboardButtonRow = tL_replyKeyboardMarkup.rows.get(i11);
@@ -243,7 +243,7 @@ public abstract class j0 extends LinearLayout implements hh.a, fe.l {
         if (!this.f || (tL_replyKeyboardMarkup = this.c) == null || tL_replyKeyboardMarkup.rows.isEmpty()) {
             return;
         }
-        int max = !this.f ? 44 : (int) Math.max(44.0f, (z20.A(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.i0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.i0.p);
+        int max = !this.f ? 44 : (int) Math.max(44.0f, (a30.A(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.i0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.i0.p);
         this.h = max;
         int L = org.telegram.messenger.i0.L(max);
         Iterator it = this.y.iterator();

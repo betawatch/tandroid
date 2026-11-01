@@ -4,16 +4,16 @@ import java.util.Comparator;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u20 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.vp b;
+    public final /* synthetic */ org.telegram.messenger.wp b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ u20(org.telegram.messenger.vp vpVar, int i10, int i11) {
+    public /* synthetic */ u20(org.telegram.messenger.wp wpVar, int i10, int i11) {
         this.a = i11;
-        this.b = vpVar;
+        this.b = wpVar;
         this.c = i10;
     }
 
@@ -48,9 +48,9 @@ public final /* synthetic */ class u20 implements Comparator {
                 TLObject tLObject = (TLObject) obj;
                 TLObject tLObject2 = (TLObject) obj2;
                 boolean z10 = tLObject2 instanceof TLRPC.TL_contact;
-                org.telegram.messenger.vp vpVar = this.b;
-                TLRPC.User Z1 = z10 ? vpVar.Z1(Long.valueOf(((TLRPC.TL_contact) tLObject2).user_id)) : null;
-                TLRPC.User Z12 = tLObject instanceof TLRPC.TL_contact ? vpVar.Z1(Long.valueOf(((TLRPC.TL_contact) tLObject).user_id)) : null;
+                org.telegram.messenger.wp wpVar = this.b;
+                TLRPC.User Z1 = z10 ? wpVar.Z1(Long.valueOf(((TLRPC.TL_contact) tLObject2).user_id)) : null;
+                TLRPC.User Z12 = tLObject instanceof TLRPC.TL_contact ? wpVar.Z1(Long.valueOf(((TLRPC.TL_contact) tLObject).user_id)) : null;
                 int i16 = this.c;
                 if (Z1 != null) {
                     if (Z1.self) {
@@ -110,9 +110,9 @@ public final /* synthetic */ class u20 implements Comparator {
                 break;
             case 1:
                 Long valueOf = Long.valueOf(((TLRPC.TL_contact) obj2).user_id);
-                org.telegram.messenger.vp vpVar2 = this.b;
-                TLRPC.User Z13 = vpVar2.Z1(valueOf);
-                TLRPC.User Z14 = vpVar2.Z1(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                org.telegram.messenger.wp wpVar2 = this.b;
+                TLRPC.User Z13 = wpVar2.Z1(valueOf);
+                TLRPC.User Z14 = wpVar2.Z1(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
                 int i17 = this.c;
                 if (Z13 != null) {
                     if (Z13.self) {
@@ -172,9 +172,9 @@ public final /* synthetic */ class u20 implements Comparator {
                 break;
             default:
                 Long valueOf2 = Long.valueOf(((TLRPC.TL_contact) obj2).user_id);
-                org.telegram.messenger.vp vpVar3 = this.b;
-                TLRPC.User Z15 = vpVar3.Z1(valueOf2);
-                TLRPC.User Z16 = vpVar3.Z1(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                org.telegram.messenger.wp wpVar3 = this.b;
+                TLRPC.User Z15 = wpVar3.Z1(valueOf2);
+                TLRPC.User Z16 = wpVar3.Z1(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
                 int i18 = this.c;
                 if (Z15 != null) {
                     if (Z15.self) {

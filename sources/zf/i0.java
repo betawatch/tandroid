@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Cells.x4;
 import org.telegram.ui.Cells.z3;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class i0 extends c {
     public final Context K;
@@ -27,7 +27,7 @@ public abstract class i0 extends c {
         new zz(context, null).setIsSingleCell(true);
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -92,10 +92,10 @@ public abstract class i0 extends c {
         if (i12 != 0) {
             if (i12 == 1) {
                 if (i10 != 0 || arrayList.isEmpty()) {
-                    ((z3) view).setText(cd.L0(2131748314, null));
+                    ((z3) view).setText(dd.L0(2131748314, null));
                     return;
                 } else {
-                    ((z3) view).setText(cd.L0(2131748762, null));
+                    ((z3) view).setText(dd.L0(2131748762, null));
                     return;
                 }
             }
@@ -131,6 +131,6 @@ public abstract class i0 extends c {
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
         p6 p6Var = this.L;
         Context context = this.K;
-        return new ck0(i10 == 0 ? new x4(context, p6Var) : new z3(context, p6Var));
+        return new dk0(i10 == 0 ? new x4(context, p6Var) : new z3(context, p6Var));
     }
 }

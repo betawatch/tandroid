@@ -16,27 +16,27 @@ import java.util.Comparator;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.o20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.p20;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Components.zz;
-import org.telegram.ui.ny;
-import org.telegram.ui.rv0;
+import org.telegram.ui.my;
+import org.telegram.ui.qv0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q3 extends ha {
     public static final /* synthetic */ int c2 = 0;
@@ -80,10 +80,10 @@ public final class q3 extends ha {
         this.S1 = z2Var;
         z2Var.setSorting(p3Var.c.p);
         linearLayout.addView(z2Var, b6.t(-2, -2, 16, 0, 0, 6, 0));
-        z2Var.setOnClickListener(new rv0(21, this, p3Var));
+        z2Var.setOnClickListener(new qv0(21, this, p3Var));
         z2 z2Var2 = new z2(context, this.I0);
         this.T1 = z2Var2;
-        z2Var2.setValue(cd.L0(2131750396, null));
+        z2Var2.setValue(dd.L0(2131750396, null));
         linearLayout.addView(z2Var2, b6.t(-2, -2, 16, 0, 0, 6, 0));
         z2Var2.setOnClickListener(new View.OnClickListener(this) { // from class: ph.n3
             public final /* synthetic */ q3 b;
@@ -155,12 +155,12 @@ public final class q3 extends ha {
                             int i16 = q3Var.a;
                             final int i17 = 0;
                             Context context2 = context;
-                            ny nyVar = new ny(context2, i16, 0, false, new j20() { // from class: ph.i3
+                            my myVar = new my(context2, i16, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i18 = i17;
                                     boolean z10 = false;
@@ -186,7 +186,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var2.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -198,7 +198,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList3.isEmpty()) {
-                                                arrayList3.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList3.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -220,7 +220,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var3.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -232,7 +232,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -255,7 +255,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -268,19 +268,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i17) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var2 = p3Var2.c;
                                             HashSet hashSet = h3Var2.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -304,7 +304,7 @@ public final class q3 extends ha {
                                             z60Var.u();
                                             break;
                                         case 1:
-                                            int i19 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i19 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var3 = p3Var2.c;
                                             HashSet hashSet2 = h3Var3.k;
                                             if (hashSet2.contains(Integer.valueOf(i19))) {
@@ -328,7 +328,7 @@ public final class q3 extends ha {
                                             z60Var.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -354,7 +354,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 6);
-                            nyVar.f3.r = false;
+                            myVar.f3.r = false;
                             FrameLayout frameLayout = new FrameLayout(context2);
                             ImageView imageView = new ImageView(context2);
                             imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -369,19 +369,19 @@ public final class q3 extends ha {
                             a7.m(mtVar, 30, t6.G6, q3Var.I0);
                             mtVar.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar.setCursorWidth(1.5f);
-                            mtVar.setHint(cd.L0(2131750018, null));
+                            mtVar.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar, t6.E8, q3Var.I0);
                             mtVar.setBackground(null);
                             frameLayout.addView(mtVar, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar.addTextChangedListener(new ag.u2(14, strArr, nyVar));
+                            mtVar.addTextChangedListener(new ag.u2(14, strArr, myVar));
                             if (arrayList.size() > 8) {
                                 z60Var.r(frameLayout, b6.o(-1, 44));
                                 z60Var.k();
                             }
                             if (!h3Var.j.isEmpty()) {
-                                z60Var.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 0), false);
+                                z60Var.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 0), false);
                             }
-                            z60Var.q(nyVar);
+                            z60Var.q(myVar);
                             z60Var.Z();
                             break;
                         }
@@ -440,12 +440,12 @@ public final class q3 extends ha {
                             });
                             int i19 = q3Var.a;
                             Context context3 = context;
-                            ny nyVar2 = new ny(context3, i19, 0, false, new j20() { // from class: ph.i3
+                            my myVar2 = new my(context3, i19, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i182 = i14;
                                     boolean z10 = false;
@@ -471,7 +471,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -483,7 +483,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList3.isEmpty()) {
-                                                arrayList3.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList3.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -505,7 +505,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var3.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -517,7 +517,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -540,7 +540,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -553,19 +553,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i14) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var22 = p3Var2.c;
                                             HashSet hashSet = h3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -589,7 +589,7 @@ public final class q3 extends ha {
                                             z60Var2.u();
                                             break;
                                         case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var3 = p3Var2.c;
                                             HashSet hashSet2 = h3Var3.k;
                                             if (hashSet2.contains(Integer.valueOf(i192))) {
@@ -613,7 +613,7 @@ public final class q3 extends ha {
                                             z60Var2.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -639,7 +639,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 7);
-                            nyVar2.f3.r = false;
+                            myVar2.f3.r = false;
                             FrameLayout frameLayout2 = new FrameLayout(context3);
                             ImageView imageView2 = new ImageView(context3);
                             imageView2.setScaleType(ImageView.ScaleType.CENTER);
@@ -654,19 +654,19 @@ public final class q3 extends ha {
                             a7.m(mtVar2, 30, t6.G6, q3Var.I0);
                             mtVar2.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar2.setCursorWidth(1.5f);
-                            mtVar2.setHint(cd.L0(2131750018, null));
+                            mtVar2.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar2, t6.E8, q3Var.I0);
                             mtVar2.setBackground(null);
                             frameLayout2.addView(mtVar2, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar2.addTextChangedListener(new ag.u2(15, strArr2, nyVar2));
+                            mtVar2.addTextChangedListener(new ag.u2(15, strArr2, myVar2));
                             if (arrayList2.size() > 8) {
                                 z60Var2.r(frameLayout2, b6.o(-1, 44));
                                 z60Var2.k();
                             }
                             if (!h3Var2.k.isEmpty()) {
-                                z60Var2.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 1), false);
+                                z60Var2.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 1), false);
                             }
-                            z60Var2.q(nyVar2);
+                            z60Var2.q(myVar2);
                             z60Var2.Z();
                             break;
                         }
@@ -723,12 +723,12 @@ public final class q3 extends ha {
                                 }
                             });
                             Context context4 = context;
-                            ny nyVar3 = new ny(context4, q3Var.a, 0, false, new j20() { // from class: ph.i3
+                            my myVar3 = new my(context4, q3Var.a, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i182 = i13;
                                     boolean z10 = false;
@@ -754,7 +754,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -766,7 +766,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList32.isEmpty()) {
-                                                arrayList32.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList32.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -788,7 +788,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -800,7 +800,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -823,7 +823,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -836,19 +836,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var22 = p3Var2.c;
                                             HashSet hashSet = h3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -872,7 +872,7 @@ public final class q3 extends ha {
                                             z60Var3.u();
                                             break;
                                         case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var32 = p3Var2.c;
                                             HashSet hashSet2 = h3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i192))) {
@@ -896,7 +896,7 @@ public final class q3 extends ha {
                                             z60Var3.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -922,7 +922,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 8);
-                            nyVar3.f3.r = false;
+                            myVar3.f3.r = false;
                             FrameLayout frameLayout3 = new FrameLayout(context4);
                             ImageView imageView3 = new ImageView(context4);
                             imageView3.setScaleType(ImageView.ScaleType.CENTER);
@@ -937,19 +937,19 @@ public final class q3 extends ha {
                             a7.m(mtVar3, 30, t6.G6, q3Var.I0);
                             mtVar3.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar3.setCursorWidth(1.5f);
-                            mtVar3.setHint(cd.L0(2131750018, null));
+                            mtVar3.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar3, t6.E8, q3Var.I0);
                             mtVar3.setBackground(null);
                             frameLayout3.addView(mtVar3, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar3.addTextChangedListener(new ag.u2(16, strArr3, nyVar3));
+                            mtVar3.addTextChangedListener(new ag.u2(16, strArr3, myVar3));
                             if (arrayList3.size() > 8) {
                                 z60Var3.r(frameLayout3, b6.o(-1, 44));
                                 z60Var3.k();
                             }
                             if (!h3Var3.l.isEmpty()) {
-                                z60Var3.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 2), false);
+                                z60Var3.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 2), false);
                             }
-                            z60Var3.q(nyVar3);
+                            z60Var3.q(myVar3);
                             z60Var3.Z();
                             break;
                         }
@@ -959,7 +959,7 @@ public final class q3 extends ha {
         });
         z2 z2Var3 = new z2(context, this.I0);
         this.U1 = z2Var3;
-        z2Var3.setValue(cd.L0(2131750397, null));
+        z2Var3.setValue(dd.L0(2131750397, null));
         linearLayout.addView(z2Var3, b6.t(-2, -2, 16, 0, 0, 6, 0));
         final int i12 = 1;
         z2Var3.setOnClickListener(new View.OnClickListener(this) { // from class: ph.n3
@@ -1032,12 +1032,12 @@ public final class q3 extends ha {
                             int i16 = q3Var.a;
                             final int i17 = 0;
                             Context context2 = context;
-                            ny nyVar = new ny(context2, i16, 0, false, new j20() { // from class: ph.i3
+                            my myVar = new my(context2, i16, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i182 = i17;
                                     boolean z10 = false;
@@ -1063,7 +1063,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1075,7 +1075,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList32.isEmpty()) {
-                                                arrayList32.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList32.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -1097,7 +1097,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1109,7 +1109,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -1132,7 +1132,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1145,19 +1145,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i17) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var22 = p3Var2.c;
                                             HashSet hashSet = h3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -1181,7 +1181,7 @@ public final class q3 extends ha {
                                             z60Var.u();
                                             break;
                                         case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var32 = p3Var2.c;
                                             HashSet hashSet2 = h3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i192))) {
@@ -1205,7 +1205,7 @@ public final class q3 extends ha {
                                             z60Var.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -1231,7 +1231,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 6);
-                            nyVar.f3.r = false;
+                            myVar.f3.r = false;
                             FrameLayout frameLayout = new FrameLayout(context2);
                             ImageView imageView = new ImageView(context2);
                             imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -1246,19 +1246,19 @@ public final class q3 extends ha {
                             a7.m(mtVar, 30, t6.G6, q3Var.I0);
                             mtVar.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar.setCursorWidth(1.5f);
-                            mtVar.setHint(cd.L0(2131750018, null));
+                            mtVar.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar, t6.E8, q3Var.I0);
                             mtVar.setBackground(null);
                             frameLayout.addView(mtVar, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar.addTextChangedListener(new ag.u2(14, strArr, nyVar));
+                            mtVar.addTextChangedListener(new ag.u2(14, strArr, myVar));
                             if (arrayList.size() > 8) {
                                 z60Var.r(frameLayout, b6.o(-1, 44));
                                 z60Var.k();
                             }
                             if (!h3Var.j.isEmpty()) {
-                                z60Var.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 0), false);
+                                z60Var.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 0), false);
                             }
-                            z60Var.q(nyVar);
+                            z60Var.q(myVar);
                             z60Var.Z();
                             break;
                         }
@@ -1317,12 +1317,12 @@ public final class q3 extends ha {
                             });
                             int i19 = q3Var.a;
                             Context context3 = context;
-                            ny nyVar2 = new ny(context3, i19, 0, false, new j20() { // from class: ph.i3
+                            my myVar2 = new my(context3, i19, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i182 = i14;
                                     boolean z10 = false;
@@ -1348,7 +1348,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1360,7 +1360,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList32.isEmpty()) {
-                                                arrayList32.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList32.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -1382,7 +1382,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1394,7 +1394,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -1417,7 +1417,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1430,19 +1430,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i14) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var22 = p3Var2.c;
                                             HashSet hashSet = h3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -1466,7 +1466,7 @@ public final class q3 extends ha {
                                             z60Var2.u();
                                             break;
                                         case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var32 = p3Var2.c;
                                             HashSet hashSet2 = h3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i192))) {
@@ -1490,7 +1490,7 @@ public final class q3 extends ha {
                                             z60Var2.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -1516,7 +1516,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 7);
-                            nyVar2.f3.r = false;
+                            myVar2.f3.r = false;
                             FrameLayout frameLayout2 = new FrameLayout(context3);
                             ImageView imageView2 = new ImageView(context3);
                             imageView2.setScaleType(ImageView.ScaleType.CENTER);
@@ -1531,19 +1531,19 @@ public final class q3 extends ha {
                             a7.m(mtVar2, 30, t6.G6, q3Var.I0);
                             mtVar2.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar2.setCursorWidth(1.5f);
-                            mtVar2.setHint(cd.L0(2131750018, null));
+                            mtVar2.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar2, t6.E8, q3Var.I0);
                             mtVar2.setBackground(null);
                             frameLayout2.addView(mtVar2, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar2.addTextChangedListener(new ag.u2(15, strArr2, nyVar2));
+                            mtVar2.addTextChangedListener(new ag.u2(15, strArr2, myVar2));
                             if (arrayList2.size() > 8) {
                                 z60Var2.r(frameLayout2, b6.o(-1, 44));
                                 z60Var2.k();
                             }
                             if (!h3Var2.k.isEmpty()) {
-                                z60Var2.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 1), false);
+                                z60Var2.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 1), false);
                             }
-                            z60Var2.q(nyVar2);
+                            z60Var2.q(myVar2);
                             z60Var2.Z();
                             break;
                         }
@@ -1600,12 +1600,12 @@ public final class q3 extends ha {
                                 }
                             });
                             Context context4 = context;
-                            ny nyVar3 = new ny(context4, q3Var.a, 0, false, new j20() { // from class: ph.i3
+                            my myVar3 = new my(context4, q3Var.a, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i182 = i13;
                                     boolean z10 = false;
@@ -1631,7 +1631,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1643,7 +1643,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList32.isEmpty()) {
-                                                arrayList32.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList32.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -1665,7 +1665,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1677,7 +1677,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -1700,7 +1700,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1713,19 +1713,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var22 = p3Var2.c;
                                             HashSet hashSet = h3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -1749,7 +1749,7 @@ public final class q3 extends ha {
                                             z60Var3.u();
                                             break;
                                         case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var32 = p3Var2.c;
                                             HashSet hashSet2 = h3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i192))) {
@@ -1773,7 +1773,7 @@ public final class q3 extends ha {
                                             z60Var3.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -1799,7 +1799,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 8);
-                            nyVar3.f3.r = false;
+                            myVar3.f3.r = false;
                             FrameLayout frameLayout3 = new FrameLayout(context4);
                             ImageView imageView3 = new ImageView(context4);
                             imageView3.setScaleType(ImageView.ScaleType.CENTER);
@@ -1814,19 +1814,19 @@ public final class q3 extends ha {
                             a7.m(mtVar3, 30, t6.G6, q3Var.I0);
                             mtVar3.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar3.setCursorWidth(1.5f);
-                            mtVar3.setHint(cd.L0(2131750018, null));
+                            mtVar3.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar3, t6.E8, q3Var.I0);
                             mtVar3.setBackground(null);
                             frameLayout3.addView(mtVar3, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar3.addTextChangedListener(new ag.u2(16, strArr3, nyVar3));
+                            mtVar3.addTextChangedListener(new ag.u2(16, strArr3, myVar3));
                             if (arrayList3.size() > 8) {
                                 z60Var3.r(frameLayout3, b6.o(-1, 44));
                                 z60Var3.k();
                             }
                             if (!h3Var3.l.isEmpty()) {
-                                z60Var3.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 2), false);
+                                z60Var3.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 2), false);
                             }
-                            z60Var3.q(nyVar3);
+                            z60Var3.q(myVar3);
                             z60Var3.Z();
                             break;
                         }
@@ -1836,7 +1836,7 @@ public final class q3 extends ha {
         });
         z2 z2Var4 = new z2(context, this.I0);
         this.V1 = z2Var4;
-        z2Var4.setValue(cd.L0(2131750389, null));
+        z2Var4.setValue(dd.L0(2131750389, null));
         linearLayout.addView(z2Var4, b6.t(-2, -2, 16, 0, 0, 0, 0));
         z2Var4.setOnClickListener(new View.OnClickListener(this) { // from class: ph.n3
             public final /* synthetic */ q3 b;
@@ -1908,12 +1908,12 @@ public final class q3 extends ha {
                             int i16 = q3Var.a;
                             final int i17 = 0;
                             Context context2 = context;
-                            ny nyVar = new ny(context2, i16, 0, false, new j20() { // from class: ph.i3
+                            my myVar = new my(context2, i16, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i182 = i17;
                                     boolean z10 = false;
@@ -1939,7 +1939,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1951,7 +1951,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList32.isEmpty()) {
-                                                arrayList32.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList32.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -1973,7 +1973,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1985,7 +1985,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -2008,7 +2008,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2021,19 +2021,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i17) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var22 = p3Var2.c;
                                             HashSet hashSet = h3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -2057,7 +2057,7 @@ public final class q3 extends ha {
                                             z60Var.u();
                                             break;
                                         case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var32 = p3Var2.c;
                                             HashSet hashSet2 = h3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i192))) {
@@ -2081,7 +2081,7 @@ public final class q3 extends ha {
                                             z60Var.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -2107,7 +2107,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 6);
-                            nyVar.f3.r = false;
+                            myVar.f3.r = false;
                             FrameLayout frameLayout = new FrameLayout(context2);
                             ImageView imageView = new ImageView(context2);
                             imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -2122,19 +2122,19 @@ public final class q3 extends ha {
                             a7.m(mtVar, 30, t6.G6, q3Var.I0);
                             mtVar.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar.setCursorWidth(1.5f);
-                            mtVar.setHint(cd.L0(2131750018, null));
+                            mtVar.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar, t6.E8, q3Var.I0);
                             mtVar.setBackground(null);
                             frameLayout.addView(mtVar, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar.addTextChangedListener(new ag.u2(14, strArr, nyVar));
+                            mtVar.addTextChangedListener(new ag.u2(14, strArr, myVar));
                             if (arrayList.size() > 8) {
                                 z60Var.r(frameLayout, b6.o(-1, 44));
                                 z60Var.k();
                             }
                             if (!h3Var.j.isEmpty()) {
-                                z60Var.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 0), false);
+                                z60Var.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 0), false);
                             }
-                            z60Var.q(nyVar);
+                            z60Var.q(myVar);
                             z60Var.Z();
                             break;
                         }
@@ -2193,12 +2193,12 @@ public final class q3 extends ha {
                             });
                             int i19 = q3Var.a;
                             Context context3 = context;
-                            ny nyVar2 = new ny(context3, i19, 0, false, new j20() { // from class: ph.i3
+                            my myVar2 = new my(context3, i19, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i182 = i14;
                                     boolean z10 = false;
@@ -2224,7 +2224,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -2236,7 +2236,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList32.isEmpty()) {
-                                                arrayList32.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList32.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -2258,7 +2258,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -2270,7 +2270,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -2293,7 +2293,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2306,19 +2306,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i14) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var22 = p3Var2.c;
                                             HashSet hashSet = h3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -2342,7 +2342,7 @@ public final class q3 extends ha {
                                             z60Var2.u();
                                             break;
                                         case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var32 = p3Var2.c;
                                             HashSet hashSet2 = h3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i192))) {
@@ -2366,7 +2366,7 @@ public final class q3 extends ha {
                                             z60Var2.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -2392,7 +2392,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 7);
-                            nyVar2.f3.r = false;
+                            myVar2.f3.r = false;
                             FrameLayout frameLayout2 = new FrameLayout(context3);
                             ImageView imageView2 = new ImageView(context3);
                             imageView2.setScaleType(ImageView.ScaleType.CENTER);
@@ -2407,19 +2407,19 @@ public final class q3 extends ha {
                             a7.m(mtVar2, 30, t6.G6, q3Var.I0);
                             mtVar2.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar2.setCursorWidth(1.5f);
-                            mtVar2.setHint(cd.L0(2131750018, null));
+                            mtVar2.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar2, t6.E8, q3Var.I0);
                             mtVar2.setBackground(null);
                             frameLayout2.addView(mtVar2, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar2.addTextChangedListener(new ag.u2(15, strArr2, nyVar2));
+                            mtVar2.addTextChangedListener(new ag.u2(15, strArr2, myVar2));
                             if (arrayList2.size() > 8) {
                                 z60Var2.r(frameLayout2, b6.o(-1, 44));
                                 z60Var2.k();
                             }
                             if (!h3Var2.k.isEmpty()) {
-                                z60Var2.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 1), false);
+                                z60Var2.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 1), false);
                             }
-                            z60Var2.q(nyVar2);
+                            z60Var2.q(myVar2);
                             z60Var2.Z();
                             break;
                         }
@@ -2476,12 +2476,12 @@ public final class q3 extends ha {
                                 }
                             });
                             Context context4 = context;
-                            ny nyVar3 = new ny(context4, q3Var.a, 0, false, new j20() { // from class: ph.i3
+                            my myVar3 = new my(context4, q3Var.a, 0, false, new k20() { // from class: ph.i3
                                 /* JADX WARN: Multi-variable type inference failed */
                                 /* JADX WARN: Type inference failed for: r2v25, types: [int] */
                                 /* JADX WARN: Type inference failed for: r2v27 */
                                 /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.j20
+                                @Override // org.telegram.messenger.k20
                                 public final void a(Object obj, Object obj2) {
                                     int i182 = i13;
                                     boolean z10 = false;
@@ -2507,7 +2507,7 @@ public final class q3 extends ha {
                                                     Integer num = (Integer) h3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i20 = b3.b;
-                                                    a51 K = a51.K(b3.class);
+                                                    b51 K = b51.K(b3.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -2519,7 +2519,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList32.isEmpty()) {
-                                                arrayList32.add(x2.i(cd.L0(2131750019, null)));
+                                                arrayList32.add(x2.i(dd.L0(2131750019, null)));
                                                 break;
                                             }
                                             break;
@@ -2541,7 +2541,7 @@ public final class q3 extends ha {
                                                     Integer num2 = (Integer) h3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i22 = v2.b;
-                                                    a51 K2 = a51.K(v2.class);
+                                                    b51 K2 = b51.K(v2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -2553,7 +2553,7 @@ public final class q3 extends ha {
                                                 }
                                             }
                                             if (arrayList4.isEmpty()) {
-                                                arrayList4.add(x2.i(cd.L0(2131750024, null)));
+                                                arrayList4.add(x2.i(dd.L0(2131750024, null)));
                                                 break;
                                             }
                                             break;
@@ -2576,7 +2576,7 @@ public final class q3 extends ha {
                                                     Integer num3 = (Integer) h3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z13 : num3.intValue();
                                                     int i24 = e3.b;
-                                                    a51 K3 = a51.K(e3.class);
+                                                    b51 K3 = b51.K(e3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2589,19 +2589,19 @@ public final class q3 extends ha {
                                                 z10 = z13;
                                             }
                                             if (arrayList5.isEmpty()) {
-                                                arrayList5.add(x2.i(cd.L0(2131750017, null)));
+                                                arrayList5.add(x2.i(dd.L0(2131750017, null)));
                                                 break;
                                             }
                                             break;
                                     }
                                 }
-                            }, new o20() { // from class: ph.j3
-                                @Override // org.telegram.messenger.o20
+                            }, new p20() { // from class: ph.j3
+                                @Override // org.telegram.messenger.p20
                                 public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    a51 a51Var = (a51) obj;
+                                    b51 b51Var = (b51) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j10 = ((TL_stars.starGiftAttributeModel) a51Var.G).document.id;
+                                            long j10 = ((TL_stars.starGiftAttributeModel) b51Var.G).document.id;
                                             h3 h3Var22 = p3Var2.c;
                                             HashSet hashSet = h3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j10))) {
@@ -2625,7 +2625,7 @@ public final class q3 extends ha {
                                             z60Var3.u();
                                             break;
                                         case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) a51Var.G).backdrop_id;
+                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) b51Var.G).backdrop_id;
                                             h3 h3Var32 = p3Var2.c;
                                             HashSet hashSet2 = h3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i192))) {
@@ -2649,7 +2649,7 @@ public final class q3 extends ha {
                                             z60Var3.u();
                                             break;
                                         default:
-                                            long j12 = ((TL_stars.starGiftAttributePattern) a51Var.G).document.id;
+                                            long j12 = ((TL_stars.starGiftAttributePattern) b51Var.G).document.id;
                                             h3 h3Var4 = p3Var2.c;
                                             HashSet hashSet3 = h3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j12))) {
@@ -2675,7 +2675,7 @@ public final class q3 extends ha {
                                     }
                                 }
                             }, null, q3Var.I0, 8);
-                            nyVar3.f3.r = false;
+                            myVar3.f3.r = false;
                             FrameLayout frameLayout3 = new FrameLayout(context4);
                             ImageView imageView3 = new ImageView(context4);
                             imageView3.setScaleType(ImageView.ScaleType.CENTER);
@@ -2690,19 +2690,19 @@ public final class q3 extends ha {
                             a7.m(mtVar3, 30, t6.G6, q3Var.I0);
                             mtVar3.setCursorSize(org.telegram.messenger.i0.L(19.0f));
                             mtVar3.setCursorWidth(1.5f);
-                            mtVar3.setHint(cd.L0(2131750018, null));
+                            mtVar3.setHint(dd.L0(2131750018, null));
                             a7.V(mtVar3, t6.E8, q3Var.I0);
                             mtVar3.setBackground(null);
                             frameLayout3.addView(mtVar3, b6.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            mtVar3.addTextChangedListener(new ag.u2(16, strArr3, nyVar3));
+                            mtVar3.addTextChangedListener(new ag.u2(16, strArr3, myVar3));
                             if (arrayList3.size() > 8) {
                                 z60Var3.r(frameLayout3, b6.o(-1, 44));
                                 z60Var3.k();
                             }
                             if (!h3Var3.l.isEmpty()) {
-                                z60Var3.c(R.drawable.msg_select, cd.L0(2131745687, null), new k3(p3Var2, 2), false);
+                                z60Var3.c(R.drawable.msg_select, dd.L0(2131745687, null), new k3(p3Var2, 2), false);
                             }
-                            z60Var3.q(nyVar3);
+                            z60Var3.q(myVar3);
                             z60Var3.Z();
                             break;
                         }
@@ -2717,7 +2717,7 @@ public final class q3 extends ha {
         this.k1.setLayoutManager(rVar);
         this.k1.setOnItemClickListener(new org.telegram.ui.web.k0(6, this, p3Var));
         this.k1.setPadding(org.telegram.messenger.i0.L(8.0f) + this.t0, 0, org.telegram.messenger.i0.L(8.0f) + this.t0, 0);
-        this.k1.setOnScrollListener(new bu0(this, i13));
+        this.k1.setOnScrollListener(new cu0(this, i13));
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
@@ -2741,8 +2741,8 @@ public final class q3 extends ha {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        o3 o3Var = new o3(this, tk0Var, getContext(), this.a, new ag.a(this, 28), this.I0, 0);
+    public final tk0 L0(uk0 uk0Var) {
+        o3 o3Var = new o3(this, uk0Var, getContext(), this.a, new ag.a(this, 28), this.I0, 0);
         this.a2 = o3Var;
         return o3Var;
     }
@@ -2750,7 +2750,7 @@ public final class q3 extends ha {
     @Override // org.telegram.ui.Components.ha
     public final CharSequence O0() {
         String str = this.P1;
-        return str != null ? str : cd.L0(2131749780, null);
+        return str != null ? str : dd.L0(2131749780, null);
     }
 
     @Override // org.telegram.ui.Components.ha
@@ -2771,16 +2771,16 @@ public final class q3 extends ha {
 
     public final void d1() {
         int R;
-        a51 G;
+        b51 G;
         int i10 = 0;
         boolean z10 = false;
         boolean z11 = false;
         while (true) {
-            tk0 tk0Var = this.k1;
-            if (i10 >= tk0Var.getChildCount()) {
+            uk0 uk0Var = this.k1;
+            if (i10 >= uk0Var.getChildCount()) {
                 break;
             }
-            View childAt = tk0Var.getChildAt(i10);
+            View childAt = uk0Var.getChildAt(i10);
             if ((childAt instanceof zz) && (R = RecyclerView.R(childAt) - 1) >= 0 && (G = this.a2.G(R)) != null) {
                 if (G.d < 10) {
                     z10 = true;

@@ -2,9 +2,9 @@ package jg;
 
 import android.content.Context;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class l1 extends s4.g0 {
     public final /* synthetic */ Context c;
@@ -37,6 +37,6 @@ public final class l1 extends s4.g0 {
 
     @Override // s4.g0
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        return new ck0(new m1(this.d, this.c));
+        return new dk0(new m1(this.d, this.c));
     }
 }

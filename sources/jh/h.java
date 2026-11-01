@@ -2,12 +2,12 @@ package jh;
 
 import android.graphics.Canvas;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.b30;
+import org.telegram.messenger.c30;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.ic;
+import org.telegram.messenger.jc;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h extends ih.f {
     public final TLRPC.MessageMedia b;
@@ -22,8 +22,8 @@ public final class h extends ih.f {
             return;
         }
         int min = Math.min(2, (int) Math.ceil(i0.p));
-        int i10 = b30.i;
-        imageReceiver.s0(ic.p(b30.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 38, 38, 13, min)), null, null, null, null, null, 0);
+        int i10 = c30.i;
+        imageReceiver.s0(jc.p(c30.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 38, 38, 13, min)), null, null, null, null, null, 0);
     }
 
     @Override // ih.f

@@ -8,9 +8,9 @@ import android.net.Uri;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public class NotificationBadge$SamsungHomeBadger implements ls {
+public class NotificationBadge$SamsungHomeBadger implements ms {
     public static final String[] a = {"_id", "class"};
     public static NotificationBadge$DefaultBadger b;
 
@@ -24,7 +24,7 @@ public class NotificationBadge$SamsungHomeBadger implements ls {
         return contentValues;
     }
 
-    @Override // org.telegram.messenger.ls
+    @Override // org.telegram.messenger.ms
     public final void a(int i10) {
         try {
             if (b == null) {
@@ -37,18 +37,18 @@ public class NotificationBadge$SamsungHomeBadger implements ls {
         ContentResolver contentResolver = w0.b.getContentResolver();
         Cursor cursor = null;
         try {
-            cursor = contentResolver.query(parse, a, "package=?", new String[]{os.d.getPackageName()}, null);
+            cursor = contentResolver.query(parse, a, "package=?", new String[]{ps.d.getPackageName()}, null);
             if (cursor != null) {
-                String className = os.d.getClassName();
+                String className = ps.d.getClassName();
                 boolean z10 = false;
                 while (cursor.moveToNext()) {
-                    contentResolver.update(parse, c(os.d, i10, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
+                    contentResolver.update(parse, c(ps.d, i10, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
                     if (className.equals(cursor.getString(cursor.getColumnIndex("class")))) {
                         z10 = true;
                     }
                 }
                 if (!z10) {
-                    contentResolver.insert(parse, c(os.d, i10, true));
+                    contentResolver.insert(parse, c(ps.d, i10, true));
                 }
             }
             if (cursor == null || cursor.isClosed()) {
@@ -59,7 +59,7 @@ public class NotificationBadge$SamsungHomeBadger implements ls {
         }
     }
 
-    @Override // org.telegram.messenger.ls
+    @Override // org.telegram.messenger.ms
     public final List b() {
         return Arrays.asList("com.sec.android.app.launcher", "com.sec.android.app.twlauncher");
     }

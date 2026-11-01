@@ -1,76 +1,71 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes.dex */
-public final /* synthetic */ class pf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q20 b;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.vs0;
+import org.telegram.ui.StickersActivity;
 
-    public /* synthetic */ pf(q20 q20Var, int i10) {
-        this.a = i10;
-        this.b = q20Var;
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class pf implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ pf(Object obj, int i10, int i11, Object obj2, int i12) {
+        this.a = i12;
+        this.d = obj;
+        this.b = i10;
+        this.c = i11;
+        this.e = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        q20 q20Var = this.b;
-        switch (i10) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                if (q20Var != null) {
-                    q20Var.a(null);
-                    break;
-                }
+                i0.g3(new bi.u0(this.b, this.c, 6, (vi) this.d, (StickersActivity) this.e, tLObject));
                 break;
             case 1:
-                if (q20Var != null) {
-                    q20Var.a(null);
-                    break;
-                }
-                break;
-            case 2:
-                if (q20Var != null) {
-                    q20Var.a(null);
-                    break;
-                }
-                break;
-            case 3:
-                if (q20Var != null) {
-                    q20Var.a(null);
-                    break;
-                }
-                break;
-            case 4:
-                if (q20Var != null) {
-                    q20Var.a(null);
-                    break;
-                }
-                break;
-            case 5:
-                if (q20Var != null) {
-                    q20Var.a(null);
-                    break;
-                }
-                break;
-            case 6:
-                q20Var.a(null);
-                break;
-            case 7:
-                if (q20Var != null) {
-                    q20Var.a(null);
-                    break;
-                }
-                break;
-            case 8:
-                if (q20Var != null) {
-                    q20Var.a(null);
-                    break;
+                wp wpVar = (wp) this.d;
+                Runnable runnable = (Runnable) this.e;
+                if (tL_error == null) {
+                    TLRPC.messages_Dialogs messages_dialogs = (TLRPC.messages_Dialogs) tLObject;
+                    wpVar.G3(messages_dialogs, null, null, this.b, 0, this.c, 0, false, false, false);
+                    if (runnable != null && messages_dialogs.dialogs.isEmpty()) {
+                        i0.g3(runnable);
+                        break;
+                    }
                 }
                 break;
             default:
-                int i11 = ShortcutResultReceiver.a;
-                q20Var.a(Boolean.TRUE);
+                vs0 vs0Var = (vs0) this.d;
+                String str = (String) this.e;
+                ArrayList arrayList = new ArrayList();
+                if (tL_error == null) {
+                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                    for (int i10 = 0; i10 < messages_messages.messages.size(); i10++) {
+                        TLRPC.Message message = messages_messages.messages.get(i10);
+                        int i11 = this.b;
+                        if (i11 == 0 || message.id <= i11) {
+                            arrayList.add(new kj(vs0Var.w.x1.getCurrentAccount(), message, false, true));
+                        }
+                    }
+                }
+                i0.g3(new ag.g3(vs0Var, this.c, arrayList, str, 26));
                 break;
         }
+    }
+
+    public /* synthetic */ pf(vi viVar, int i10, StickersActivity stickersActivity, int i11) {
+        this.a = 0;
+        this.d = viVar;
+        this.b = i10;
+        this.e = stickersActivity;
+        this.c = i11;
     }
 }

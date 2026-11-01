@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -185,7 +185,7 @@ public class NumberTextView extends View {
                         canvas.translate(0.0f, this.e * L);
                     }
                 } else {
-                    textPaint.setAlpha(org.telegram.messenger.zs.e4);
+                    textPaint.setAlpha(org.telegram.messenger.at.e4);
                 }
             } else if (f11 < 0.0f) {
                 if (staticLayout != null) {
@@ -200,11 +200,11 @@ public class NumberTextView extends View {
                         textPaint.setAlpha((int) ((this.e + 1.0f) * 255.0f));
                         canvas.translate(0.0f, this.e * L);
                     } else {
-                        textPaint.setAlpha(org.telegram.messenger.zs.e4);
+                        textPaint.setAlpha(org.telegram.messenger.at.e4);
                     }
                 }
             } else if (staticLayout2 != null) {
-                textPaint.setAlpha(org.telegram.messenger.zs.e4);
+                textPaint.setAlpha(org.telegram.messenger.at.e4);
             }
             if (staticLayout2 != null) {
                 staticLayout2.draw(canvas);

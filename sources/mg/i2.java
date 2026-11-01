@@ -20,21 +20,21 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.telegram.messenger.o5;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
@@ -49,18 +49,18 @@ import org.telegram.ui.Components.ep;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.jk0;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.kk0;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.m10;
-import org.telegram.ui.t10;
+import org.telegram.ui.l10;
+import org.telegram.ui.s10;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class i2 extends ha implements us {
+public class i2 extends ha implements vs {
     public static b2 B2;
     public int A2;
     public final int P1;
@@ -69,7 +69,7 @@ public class i2 extends ha implements us {
     public final bi.t0 S1;
     public final e2 T1;
     public final ep U1;
-    public final m10 V1;
+    public final l10 V1;
     public final FrameLayout W1;
     public final ArrayList X1;
     public final ArrayList Y1;
@@ -92,10 +92,10 @@ public class i2 extends ha implements us {
     public int p2;
     public eq q2;
     public String r2;
-    public t10 s2;
-    public q20 t2;
+    public s10 s2;
+    public r20 t2;
     public final HashSet u2;
-    public j20 v2;
+    public k20 v2;
     public eq w2;
     public eq x2;
     public boolean y2;
@@ -145,7 +145,7 @@ public class i2 extends ha implements us {
         this.R1 = f2Var;
         a7.i(i13, f2Var, p6Var);
         f2Var.setOnSearchTextChange(new x1(this, 3));
-        f2Var.b.r(cd.L0((!hashSet.isEmpty() || i11 == 1 || i11 == 2 || i11 == 3 || i11 == 4) ? 2131745853 : 2131749659, null), false);
+        f2Var.b.r(dd.L0((!hashSet.isEmpty() || i11 == 1 || i11 == 2 || i11 == 3 || i11 == 4) ? 2131745853 : 2131749659, null), false);
         bi.t0 t0Var = new bi.t0(this, getContext(), i14);
         this.S1 = t0Var;
         ViewGroup viewGroup = this.b;
@@ -157,12 +157,12 @@ public class i2 extends ha implements us {
         ViewGroup viewGroup3 = this.b;
         int i17 = this.t0;
         viewGroup3.addView(t0Var, b6.f(1.0f, -1, 55, i17, 0, i17, 0));
-        m10 m10Var = new m10(getContext(), p6Var, (tk0) null);
-        this.V1 = m10Var;
-        m10Var.setClickable(true);
-        m10Var.setOrientation(1);
-        m10Var.setPadding(org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f));
-        a7.i(i13, m10Var, p6Var);
+        l10 l10Var = new l10(getContext(), p6Var, (uk0) null);
+        this.V1 = l10Var;
+        l10Var.setClickable(true);
+        l10Var.setOrientation(1);
+        l10Var.setPadding(org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(10.0f));
+        a7.i(i13, l10Var, p6Var);
         if (i11 == 4) {
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setPadding(org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(4.0f));
@@ -205,14 +205,14 @@ public class i2 extends ha implements us {
                     }
                 }
             });
-            m10Var.addView(linearLayout, b6.t(-2, -2, 17, 0, 0, 0, 8));
+            l10Var.addView(linearLayout, b6.t(-2, -2, 17, 0, 0, 0, 8));
         }
         g2 g2Var = new g2(this, getContext(), p6Var, 0);
         this.Q1 = g2Var;
         if (i11 == 4) {
             f7 = 0.0f;
-            m10Var.setAlpha(0.0f);
-            m10Var.setVisibility(8);
+            l10Var.setAlpha(0.0f);
+            l10Var.setVisibility(8);
         } else {
             f7 = 0.0f;
         }
@@ -236,11 +236,11 @@ public class i2 extends ha implements us {
                 }
             }
         });
-        m10Var.addView(g2Var, b6.r(-1, 48, 87));
+        l10Var.addView(g2Var, b6.r(-1, 48, 87));
         if (i11 == 4) {
             ViewGroup viewGroup4 = this.b;
             int i21 = this.t0;
-            viewGroup4.addView(m10Var, b6.f(-2.0f, -1, 87, i21, 0, i21, 0));
+            viewGroup4.addView(l10Var, b6.f(-2.0f, -1, 87, i21, 0, i21, 0));
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.W1 = frameLayout;
@@ -248,16 +248,16 @@ public class i2 extends ha implements us {
         int i22 = this.t0;
         viewGroup5.addView(frameLayout, b6.f(300.0f, -1, 87, i22, 0, i22, org.telegram.messenger.i0.L(68.0f)));
         ng.i iVar2 = this.h2;
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         iVar2.n = arrayList;
-        iVar2.f = tk0Var;
+        iVar2.f = uk0Var;
         int i23 = this.t0;
-        tk0Var.setPadding(i23, 0, i23, org.telegram.messenger.i0.L(i11 != 1 ? 60.0f : f7));
+        uk0Var.setPadding(i23, 0, i23, org.telegram.messenger.i0.L(i11 != 1 ? 60.0f : f7));
         this.k1.j(new ag.u(this, 7));
         this.k1.setOnItemClickListener(new m4.s0(this, i11, p6Var, i10));
         int i24 = 4;
         if (i11 == 4) {
-            this.k1.setOnItemLongClickListener((jk0) new i2.q(this, i11, i24));
+            this.k1.setOnItemLongClickListener((kk0) new i2.q(this, i11, i24));
         }
         s4.j jVar = new s4.j();
         jVar.n(350L);
@@ -278,7 +278,7 @@ public class i2 extends ha implements us {
         n1(false);
         j1(false);
         if (arrayList2.isEmpty()) {
-            arrayList2.addAll(ui.b0(this.a).i1);
+            arrayList2.addAll(vi.b0(this.a).i1);
         }
         p1(false, true);
         if (i11 == 0 || i11 == 2) {
@@ -337,7 +337,7 @@ public class i2 extends ha implements us {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
+    public final tk0 L0(uk0 uk0Var) {
         ng.i iVar = new ng.i(getContext(), this.I0, false);
         this.h2 = iVar;
         iVar.s = true;
@@ -353,13 +353,13 @@ public class i2 extends ha implements us {
         int i10 = this.P1;
         if (i10 != 0) {
             if (i10 == 1) {
-                return cd.L0(2131749616, null);
+                return dd.L0(2131749616, null);
             }
             if (i10 != 2) {
-                return i10 != 4 ? cd.L0(2131749609, null) : cd.L0(2131743451, null);
+                return i10 != 4 ? dd.L0(2131749609, null) : dd.L0(2131743451, null);
             }
         }
-        return cd.L0(2131749610, null);
+        return dd.L0(2131749610, null);
     }
 
     @Override // org.telegram.ui.Components.ha
@@ -392,7 +392,7 @@ public class i2 extends ha implements us {
             Object obj = arrayList2.get(i11);
             i11++;
             TLRPC.User user = (TLRPC.User) obj;
-            if (user != null && !user.bot && !h20.A(user.id)) {
+            if (user != null && !user.bot && !i20.A(user.id)) {
                 long j10 = user.id;
                 if (j10 != 0 && !this.u2.contains(Long.valueOf(j10))) {
                     Long valueOf = Long.valueOf(user.id);
@@ -414,17 +414,17 @@ public class i2 extends ha implements us {
         return L;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.S2) {
+        if (i10 == at.S2) {
             dismiss();
             return;
         }
-        if (i10 == zs.O) {
+        if (i10 == at.O) {
             org.telegram.messenger.i0.g3(new w1(this, 0));
-        } else if (i10 == zs.S0) {
+        } else if (i10 == at.S0) {
             org.telegram.messenger.i0.g3(new w1(this, 6));
-        } else if (i10 == zs.E0) {
+        } else if (i10 == at.E0) {
             org.telegram.messenger.i0.g3(new w1(this, 10));
         }
     }
@@ -489,9 +489,9 @@ public class i2 extends ha implements us {
                         i2 i2Var = this.b;
                         HashSet hashSet = i2Var.Z1;
                         hashSet.add(Long.valueOf(j10));
-                        j20 j20Var = i2Var.v2;
-                        if (j20Var != null) {
-                            j20Var.a(Boolean.FALSE, hashSet);
+                        k20 k20Var = i2Var.v2;
+                        if (k20Var != null) {
+                            k20Var.a(Boolean.FALSE, hashSet);
                             i2Var.v2 = null;
                         }
                         i2Var.dismiss();
@@ -500,9 +500,9 @@ public class i2 extends ha implements us {
                         i2 i2Var2 = this.b;
                         HashSet hashSet2 = i2Var2.Z1;
                         hashSet2.add(Long.valueOf(j10));
-                        j20 j20Var2 = i2Var2.v2;
-                        if (j20Var2 != null) {
-                            j20Var2.a(Boolean.TRUE, hashSet2);
+                        k20 k20Var2 = i2Var2.v2;
+                        if (k20Var2 != null) {
+                            k20Var2.a(Boolean.TRUE, hashSet2);
                             i2Var2.v2 = null;
                         }
                         i2Var2.dismiss();
@@ -525,9 +525,9 @@ public class i2 extends ha implements us {
                         i2 i2Var = this.b;
                         HashSet hashSet = i2Var.Z1;
                         hashSet.add(Long.valueOf(j10));
-                        j20 j20Var = i2Var.v2;
-                        if (j20Var != null) {
-                            j20Var.a(Boolean.FALSE, hashSet);
+                        k20 k20Var = i2Var.v2;
+                        if (k20Var != null) {
+                            k20Var.a(Boolean.FALSE, hashSet);
                             i2Var.v2 = null;
                         }
                         i2Var.dismiss();
@@ -536,9 +536,9 @@ public class i2 extends ha implements us {
                         i2 i2Var2 = this.b;
                         HashSet hashSet2 = i2Var2.Z1;
                         hashSet2.add(Long.valueOf(j10));
-                        j20 j20Var2 = i2Var2.v2;
-                        if (j20Var2 != null) {
-                            j20Var2.a(Boolean.TRUE, hashSet2);
+                        k20 k20Var2 = i2Var2.v2;
+                        if (k20Var2 != null) {
+                            k20Var2.a(Boolean.TRUE, hashSet2);
                             i2Var2.v2 = null;
                         }
                         i2Var2.dismiss();
@@ -553,7 +553,7 @@ public class i2 extends ha implements us {
 
     public final int h1() {
         if (this.P1 == 4) {
-            return Math.max(0, (vp.r1(this.a).Q6 - this.u2.size()) - 1);
+            return Math.max(0, (wp.r1(this.a).Q6 - this.u2.size()) - 1);
         }
         return 10;
     }
@@ -588,10 +588,10 @@ public class i2 extends ha implements us {
                     return;
                 }
                 if (i10 == 4) {
-                    j20 j20Var = this.v2;
-                    if (j20Var != null) {
+                    k20 k20Var = this.v2;
+                    if (k20Var != null) {
                         ep epVar = this.U1;
-                        j20Var.a(Boolean.valueOf(epVar != null && epVar.a.q), hashSet);
+                        k20Var.a(Boolean.valueOf(epVar != null && epVar.a.q), hashSet);
                         this.v2 = null;
                     }
                     dismiss();
@@ -600,8 +600,8 @@ public class i2 extends ha implements us {
                 List c10 = k0.c(k0.b(arrayList2.size(), arrayList));
                 if (arrayList2.size() == 1) {
                     long j10 = ((TLRPC.User) arrayList2.get(0)).id;
-                    if (h20.b(vp.r1(d20.s0).a2(j10))) {
-                        z20.s(cd.a0(null, null, 2131743768, o5.t(j10)), new cc(this.c, this.I0), R.raw.error, 36);
+                    if (i20.b(wp.r1(e20.s0).a2(j10))) {
+                        a30.s(dd.a0(null, null, 2131743768, o5.t(j10)), new cc(this.c, this.I0), R.raw.error, 36);
                         return;
                     }
                     ph.l1 l1Var = new ph.l1(getContext(), this.a, j10, c10, new x1(this, r5 ? 1 : 0));
@@ -614,7 +614,7 @@ public class i2 extends ha implements us {
     }
 
     public final void m1() {
-        String H = this.P1 == 4 ? cd.H(',', "UserSelectorLimit", h1()) : cd.L0(2131753272, null);
+        String H = this.P1 == 4 ? dd.H(',', "UserSelectorLimit", h1()) : dd.L0(2131753272, null);
         p6 p6Var = this.I0;
         p2 p2Var = this.c;
         new cc(p2Var, p6Var).Q(R.raw.chats_infotip, 36, H).k(true);
@@ -631,15 +631,15 @@ public class i2 extends ha implements us {
         int i10 = this.P1;
         HashSet hashSet = this.Z1;
         if (i10 == 4) {
-            spannableStringBuilder.append((CharSequence) cd.L0(2131752623, null));
+            spannableStringBuilder.append((CharSequence) dd.L0(2131752623, null));
         } else if (hashSet.size() != 0) {
-            spannableStringBuilder.append((CharSequence) cd.L0(2131749670, "GiftPremiumProceedBtn"));
-        } else if (cd.X) {
-            spannableStringBuilder.append((CharSequence) cd.L0(2131749683, "GiftPremiumChooseRecipientsBtn"));
+            spannableStringBuilder.append((CharSequence) dd.L0(2131749670, "GiftPremiumProceedBtn"));
+        } else if (dd.X) {
+            spannableStringBuilder.append((CharSequence) dd.L0(2131749683, "GiftPremiumChooseRecipientsBtn"));
             spannableStringBuilder.append((CharSequence) "d").setSpan(this.m2, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         } else {
             spannableStringBuilder.append((CharSequence) "d").setSpan(this.m2, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) cd.L0(2131749683, "GiftPremiumChooseRecipientsBtn"));
+            spannableStringBuilder.append((CharSequence) dd.L0(2131749683, "GiftPremiumChooseRecipientsBtn"));
         }
         g2Var.c(hashSet.size(), true);
         g2Var.i(spannableStringBuilder, z10, false);
@@ -689,7 +689,7 @@ public class i2 extends ha implements us {
                     this.x2 = eqVar;
                 }
                 eq eqVar2 = this.x2;
-                String L0 = cd.L0(2131750116, null);
+                String L0 = dd.L0(2131750116, null);
                 ng.h hVar2 = new ng.h(3, true);
                 hVar2.i = 5;
                 hVar2.r = eqVar2;
@@ -697,7 +697,7 @@ public class i2 extends ha implements us {
                 hVar2.h = "";
                 arrayList3.add(hVar2);
             }
-            if (this.z2 && i12 == 3 && ((org.telegram.messenger.j0) vp.r1(this.a).y7.j0.b).c) {
+            if (this.z2 && i12 == 3 && ((org.telegram.messenger.j0) wp.r1(this.a).y7.j0.b).c) {
                 if (this.w2 == null) {
                     Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.filled_wallet_move).mutate();
                     f7 = 40.0f;
@@ -716,7 +716,7 @@ public class i2 extends ha implements us {
                 String t10 = org.telegram.ui.Wallet.k0.x(this.a).t();
                 int i13 = this.A2;
                 if (i13 > 0) {
-                    str = cd.G(i13, "Gift2ExportTONUnlocksIn", new Object[0]);
+                    str = dd.G(i13, "Gift2ExportTONUnlocksIn", new Object[0]);
                 } else if (t10 == null || t10.length() < 20) {
                     str = "";
                 } else {
@@ -742,7 +742,7 @@ public class i2 extends ha implements us {
                     str = spannableStringBuilder;
                 }
                 eq eqVar4 = this.w2;
-                String L02 = cd.L0(2131750113, null);
+                String L02 = dd.L0(2131750113, null);
                 ng.h hVar3 = new ng.h(3, true);
                 hVar3.i = 4;
                 hVar3.r = eqVar4;
@@ -753,7 +753,7 @@ public class i2 extends ha implements us {
                 f7 = 40.0f;
                 f10 = 24.0f;
             }
-            if (this.z2 && i12 == 3 && !((org.telegram.messenger.j0) vp.r1(this.a).y7.j0.b).c) {
+            if (this.z2 && i12 == 3 && !((org.telegram.messenger.j0) wp.r1(this.a).y7.j0.b).c) {
                 if (this.q2 == null) {
                     Drawable mutate3 = getContext().getResources().getDrawable(R.drawable.fragment).mutate();
                     mutate3.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
@@ -765,9 +765,9 @@ public class i2 extends ha implements us {
                     this.q2 = eqVar5;
                 }
                 eq eqVar6 = this.q2;
-                String L03 = cd.L0(2131749999, null);
+                String L03 = dd.L0(2131749999, null);
                 int i17 = this.A2;
-                String G = i17 > 0 ? cd.G(i17, "Gift2ExportTONUnlocksIn", new Object[0]) : "";
+                String G = i17 > 0 ? dd.G(i17, "Gift2ExportTONUnlocksIn", new Object[0]) : "";
                 ng.h hVar4 = new ng.h(3, true);
                 hVar4.i = 2;
                 hVar4.r = eqVar6;
@@ -775,13 +775,13 @@ public class i2 extends ha implements us {
                 hVar4.h = G;
                 arrayList3.add(hVar4);
             }
-            TLRPC.UserFull a2 = vp.r1(this.a).a2(d20.i(this.a).e());
+            TLRPC.UserFull a2 = wp.r1(this.a).a2(e20.i(this.a).e());
             if (a2 == null) {
-                vp.r1(this.a).U2(d20.i(this.a).f(), 0, true, null);
+                wp.r1(this.a).U2(e20.i(this.a).f(), 0, true, null);
             }
             if ((i12 == 0 || i12 == 2) && a2 != null && a2.birthday == null) {
                 L = org.telegram.messenger.i0.L(50.0f);
-                String L04 = cd.L0(2131749585, null);
+                String L04 = dd.L0(2131749585, null);
                 ng.h hVar5 = new ng.h(9, false);
                 hVar5.i = 1;
                 hVar5.j = R.drawable.menu_birthday;
@@ -791,7 +791,7 @@ public class i2 extends ha implements us {
                 L = 0;
             }
             if (this.s2 != null && i12 == 4) {
-                String L05 = cd.L0(2131743446, null);
+                String L05 = dd.L0(2131743446, null);
                 ng.h hVar6 = new ng.h(9, false);
                 hVar6.i = 3;
                 hVar6.j = R.drawable.msg2_link2;
@@ -800,12 +800,12 @@ public class i2 extends ha implements us {
             }
             org.telegram.messenger.w1 w1Var2 = this.n2;
             if (w1Var2 != null) {
-                L = d1(cd.L0(2131753704, null), arrayList3, w1Var2.b) + d1(cd.L0(2131753711, null), arrayList3, w1Var2.c) + L + d1(cd.L0(2131753705, null), arrayList3, w1Var2.d);
+                L = d1(dd.L0(2131753704, null), arrayList3, w1Var2.b) + d1(dd.L0(2131753711, null), arrayList3, w1Var2.c) + L + d1(dd.L0(2131753705, null), arrayList3, w1Var2.d);
             }
-            if ((i12 == 0 || i12 == 2) && (f11 = d20.i(this.a).f()) != null) {
-                arrayList3.add(ng.h.b(cd.L0(2131750108, null)));
+            if ((i12 == 0 || i12 == 2) && (f11 = e20.i(this.a).f()) != null) {
+                arrayList3.add(ng.h.b(dd.L0(2131750108, null)));
                 ng.h c10 = ng.h.c(f11, hashSet3.contains(Long.valueOf(f11.id)));
-                c10.h = cd.L0(2131750109, null);
+                c10.h = dd.L0(2131750109, null);
                 arrayList3.add(c10);
             }
             ArrayList arrayList4 = new ArrayList();
@@ -822,10 +822,10 @@ public class i2 extends ha implements us {
                     Object obj = arrayList5.get(i18);
                     i18++;
                     HashSet hashSet4 = hashSet2;
-                    TLRPC.User Z1 = vp.r1(this.a).Z1(Long.valueOf(((TLRPC.TL_topPeer) obj).peer.user_id));
+                    TLRPC.User Z1 = wp.r1(this.a).Z1(Long.valueOf(((TLRPC.TL_topPeer) obj).peer.user_id));
                     if (Z1 != null) {
                         long j11 = Z1.id;
-                        if (j11 != 0 && !Z1.self && !Z1.bot && !h20.A(j11) && !h20.x(Z1) && ((w1Var2 == null || !w1Var2.a(Z1.id)) && !hashSet4.contains(Long.valueOf(Z1.id)))) {
+                        if (j11 != 0 && !Z1.self && !Z1.bot && !i20.A(j11) && !i20.x(Z1) && ((w1Var2 == null || !w1Var2.a(Z1.id)) && !hashSet4.contains(Long.valueOf(Z1.id)))) {
                             if (hashSet3.contains(Long.valueOf(Z1.id))) {
                                 arrayList4.add(Long.valueOf(Z1.id));
                             }
@@ -842,7 +842,7 @@ public class i2 extends ha implements us {
                 j10 = 0;
                 if (!arrayList6.isEmpty()) {
                     L += org.telegram.messenger.i0.L(32.0f);
-                    hVar = ng.h.b(cd.L0(2131749681, null));
+                    hVar = ng.h.b(dd.L0(2131749681, null));
                     arrayList3.add(hVar);
                     arrayList3.addAll(arrayList6);
                     ArrayList arrayList7 = this.e2;
@@ -856,7 +856,7 @@ public class i2 extends ha implements us {
                         ArrayList arrayList8 = new ArrayList();
                         for (TLRPC.TL_contact tL_contact : (List) this.d2.get(str2)) {
                             int i20 = i19;
-                            long e = d20.i(this.a).e();
+                            long e = e20.i(this.a).e();
                             ArrayList arrayList9 = arrayList7;
                             int i21 = size;
                             long j12 = tL_contact.user_id;
@@ -866,8 +866,8 @@ public class i2 extends ha implements us {
                             } else {
                                 arrayList = arrayList9;
                                 w1Var = w1Var2;
-                                TLRPC.User Z12 = vp.r1(this.a).Z1(Long.valueOf(tL_contact.user_id));
-                                if (Z12 != null && !Z12.bot && !h20.A(Z12.id)) {
+                                TLRPC.User Z12 = wp.r1(this.a).Z1(Long.valueOf(tL_contact.user_id));
+                                if (Z12 != null && !Z12.bot && !i20.A(Z12.id)) {
                                     i10 += org.telegram.messenger.i0.L(56.0f);
                                     if (hashSet3.contains(Long.valueOf(Z12.id))) {
                                         arrayList4.add(Long.valueOf(Z12.id));
@@ -901,7 +901,7 @@ public class i2 extends ha implements us {
                         size = i23;
                     }
                     if (hVar != null && arrayList4.size() > 0 && !hashSet3.isEmpty()) {
-                        String L06 = cd.L0(2131751458, null);
+                        String L06 = dd.L0(2131751458, null);
                         ag.t0 t0Var = new ag.t0(9, this, arrayList4);
                         hVar.h = L06;
                         hVar.m = t0Var;
@@ -916,7 +916,7 @@ public class i2 extends ha implements us {
             while (i11 < size) {
             }
             if (hVar != null) {
-                String L062 = cd.L0(2131751458, null);
+                String L062 = dd.L0(2131751458, null);
                 ag.t0 t0Var2 = new ag.t0(9, this, arrayList4);
                 hVar.h = L062;
                 hVar.m = t0Var2;
@@ -932,7 +932,7 @@ public class i2 extends ha implements us {
                 TLObject tLObject = (TLObject) obj3;
                 if (tLObject instanceof TLRPC.User) {
                     TLRPC.User user = (TLRPC.User) tLObject;
-                    if (!user.bot && !h20.A(user.id)) {
+                    if (!user.bot && !i20.A(user.id)) {
                         long j13 = user.id;
                         i10 = org.telegram.messenger.i0.L(56.0f) + i10;
                         if (!hashSet2.contains(Long.valueOf(user.id))) {
@@ -980,19 +980,19 @@ public class i2 extends ha implements us {
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        zs.f(this.a).c(this, zs.S2);
-        zs.f(this.a).c(this, zs.E0);
-        zs.f(this.a).c(this, zs.O);
-        zs.f(this.a).c(this, zs.S0);
+        at.f(this.a).c(this, at.S2);
+        at.f(this.a).c(this, at.E0);
+        at.f(this.a).c(this, at.O);
+        at.f(this.a).c(this, at.S0);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        zs.f(this.a).n(this, zs.S2);
-        zs.f(this.a).n(this, zs.E0);
-        zs.f(this.a).n(this, zs.O);
-        zs.f(this.a).n(this, zs.S0);
+        at.f(this.a).n(this, at.S2);
+        at.f(this.a).n(this, at.E0);
+        at.f(this.a).n(this, at.O);
+        at.f(this.a).n(this, at.S0);
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: SimplifyVisitor
@@ -1022,7 +1022,7 @@ public class i2 extends ha implements us {
             r1 = r0
             r3 = r1
         L8:
-            org.telegram.ui.Components.tk0 r4 = r9.k1
+            org.telegram.ui.Components.uk0 r4 = r9.k1
             int r5 = r4.getChildCount()
             if (r1 >= r5) goto L57
             android.view.View r4 = r4.getChildAt(r1)
@@ -1090,10 +1090,10 @@ public class i2 extends ha implements us {
             if (eqVar2 != null) {
                 t6.C1(w02, eqVar2.a);
             }
-            tk0 tk0Var = this.k1;
-            if (tk0Var != null) {
-                for (int i10 = 0; i10 < tk0Var.getChildCount(); i10++) {
-                    tk0Var.getChildAt(i10).invalidate();
+            uk0 uk0Var = this.k1;
+            if (uk0Var != null) {
+                for (int i10 = 0; i10 < uk0Var.getChildCount(); i10++) {
+                    uk0Var.getChildAt(i10).invalidate();
                 }
             }
         } catch (Exception e) {

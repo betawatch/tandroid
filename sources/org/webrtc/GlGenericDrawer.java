@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 import org.telegram.messenger.f8;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public class GlGenericDrawer implements RendererCommon.GlDrawer {
     private static final String DEFAULT_VERTEX_SHADER_STRING = "varying vec2 tc;\nattribute vec4 in_pos;\nattribute vec4 in_tc;\nuniform mat4 tex_mat;\nvoid main() {\n  gl_Position = in_pos;\n  tc = (tex_mat * in_tc).xy;\n}\n";
@@ -38,14 +38,14 @@ public class GlGenericDrawer implements RendererCommon.GlDrawer {
     private float[] textureMatrix;
     private final String vertexShader;
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface ShaderCallbacks {
         void onNewShader(GlShader glShader);
 
         void onPrepareShader(GlShader glShader, float[] fArr, int i10, int i11, int i12, int i13);
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public interface TextureCallback {
         void run(Bitmap bitmap, int i10);
     }

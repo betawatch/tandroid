@@ -11,18 +11,18 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class xc extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final int a;
     public final org.telegram.ui.ActionBar.p6 b;
     public final ArrayList c;
-    public final w71 d;
+    public final u71 d;
     public final org.telegram.ui.Components.zz e;
     public boolean f;
     public final vc h;
     public boolean n;
-    public org.telegram.messenger.q20 r;
+    public org.telegram.messenger.r20 r;
     public String s;
     public TLRPC.WallPaper w;
     public final HashMap x;
@@ -40,20 +40,20 @@ public final class xc extends FrameLayout implements org.telegram.ui.ActionBar.k
         zzVar.setViewType(14);
         zzVar.setVisibility(0);
         addView(zzVar, w7.b6.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
-        w71 w71Var = new w71(2, activity, p6Var);
-        this.d = w71Var;
-        w71Var.setClipToPadding(false);
-        w71Var.setPadding(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(13.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(6.0f));
+        u71 u71Var = new u71(2, activity, p6Var);
+        this.d = u71Var;
+        u71Var.setClipToPadding(false);
+        u71Var.setPadding(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(13.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(6.0f));
         getContext();
         s4.a0 a0Var = new s4.a0();
         a0Var.j1(0);
-        w71Var.setLayoutManager(a0Var);
-        w71Var.setAlpha(0.0f);
+        u71Var.setLayoutManager(a0Var);
+        u71Var.setAlpha(0.0f);
         vc vcVar = new vc(this, i10, p6Var);
         this.h = vcVar;
-        w71Var.setAdapter(vcVar);
-        addView(w71Var, w7.b6.c(130.0f, -1));
-        w71Var.setOnItemClickListener(new g(this, 3));
+        u71Var.setAdapter(vcVar);
+        addView(u71Var, w7.b6.c(130.0f, -1));
+        u71Var.setOnItemClickListener(new g(this, 3));
         org.telegram.messenger.g4 f7 = org.telegram.messenger.g4.f(i10);
         f7.m(true);
         f7.m(false);
@@ -89,14 +89,14 @@ public final class xc extends FrameLayout implements org.telegram.ui.ActionBar.k
             }
             i11++;
         }
-        w71 w71Var = this.d;
-        if (i10 >= 0 && !z10 && (w71Var.getLayoutManager() instanceof s4.a0)) {
-            ((s4.a0) w71Var.getLayoutManager()).h1(i10, (org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(83.0f)) / 2);
+        u71 u71Var = this.d;
+        if (i10 >= 0 && !z10 && (u71Var.getLayoutManager() instanceof s4.a0)) {
+            ((s4.a0) u71Var.getLayoutManager()).h1(i10, (org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(83.0f)) / 2);
         }
-        for (int i12 = 0; i12 < w71Var.getChildCount(); i12++) {
-            View childAt = w71Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.e11) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.e11) childAt).g(((org.telegram.ui.Components.cp) arrayList.get(R)).d, true);
+        for (int i12 = 0; i12 < u71Var.getChildCount(); i12++) {
+            View childAt = u71Var.getChildAt(i12);
+            if ((childAt instanceof org.telegram.ui.Components.f11) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.f11) childAt).g(((org.telegram.ui.Components.cp) arrayList.get(R)).d, true);
             }
         }
     }
@@ -118,8 +118,8 @@ public final class xc extends FrameLayout implements org.telegram.ui.ActionBar.k
         }
     }
 
-    public void setOnEmoticonSelected(org.telegram.messenger.q20 q20Var) {
-        this.r = q20Var;
+    public void setOnEmoticonSelected(org.telegram.messenger.r20 r20Var) {
+        this.r = r20Var;
     }
 
     public void setWithRemovedStub(boolean z10) {
@@ -149,11 +149,11 @@ public final class xc extends FrameLayout implements org.telegram.ui.ActionBar.k
             }
             i10++;
         }
-        w71 w71Var = this.d;
-        if (w71Var == null) {
+        u71 u71Var = this.d;
+        if (u71Var == null) {
             return;
         }
-        org.telegram.messenger.i0.d0(w71Var, new tc(this, 0));
+        org.telegram.messenger.i0.d0(u71Var, new tc(this, 0));
         if (!z10 || (vcVar = this.h) == null) {
             return;
         }

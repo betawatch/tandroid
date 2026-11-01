@@ -11,7 +11,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class v extends androidx.activity.m implements e0.b {
     public boolean L;
@@ -143,7 +143,7 @@ public abstract class v extends androidx.activity.m implements e0.b {
         printWriter.print(" mStopped=");
         printWriter.print(this.N);
         if (getApplication() != null) {
-            new m5.e(this, f()).o(str3, printWriter);
+            new m5.e(this, f()).E(str3, printWriter);
         }
         ((u) this.J.b).d.w(str, fileDescriptor, printWriter, strArr);
     }

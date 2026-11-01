@@ -7,11 +7,11 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.t9;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.u9;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ha;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.f11;
+import org.telegram.ui.d01;
 import rh.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onClick(View view) {
-        t9 t9Var;
+        u9 u9Var;
         ArrayList arrayList;
         int i10 = this.a;
         TLObject tLObject = null;
@@ -64,12 +64,12 @@ public final /* synthetic */ class n implements View.OnClickListener {
                 w wVar = (w) obj3;
                 p6 p6Var = (p6) obj;
                 Runnable runnable = (Runnable) obj2;
-                t9 t9Var2 = wVar.e2;
-                if (t9Var2 != null && !t9Var2.f()) {
+                u9 u9Var2 = wVar.e2;
+                if (u9Var2 != null && !u9Var2.f()) {
                     long j11 = this.b;
                     Context context2 = this.c;
-                    if ((j11 == 0 || j11 == d20.i(wVar.a).e()) && (arrayList = (t9Var = wVar.e2).h) != null) {
-                        new d0(context2, p6Var, j11, t9Var.d, arrayList, runnable, false).show();
+                    if ((j11 == 0 || j11 == e20.i(wVar.a).e()) && (arrayList = (u9Var = wVar.e2).h) != null) {
+                        new d0(context2, p6Var, j11, u9Var.d, arrayList, runnable, false).show();
                     } else {
                         new t(context2, wVar.a, wVar.e2.d, null, j11, runnable, false, false).show();
                     }
@@ -119,7 +119,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
                             break;
                         } else {
                             kg.m mVar3 = g4Var.W1;
-                            final TLRPC.User Z1 = vp.r1(i12).Z1(Long.valueOf(g4Var.R1));
+                            final TLRPC.User Z1 = wp.r1(i12).Z1(Long.valueOf(g4Var.R1));
                             if (Z1 == null) {
                                 dVar.setLoading(false);
                                 break;
@@ -136,11 +136,11 @@ public final /* synthetic */ class n implements View.OnClickListener {
                                         if (!(tLObject instanceof TLRPC.TL_premiumGiftCodeOption)) {
                                             TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) tLObject;
                                             if (!"XTR".equalsIgnoreCase(tL_premiumGiftCodeOption.currency)) {
-                                                mg.k0.k(new ArrayList(Arrays.asList(Z1)), tL_premiumGiftCodeOption, null, g4Var.d1(), new kg.q1(g4Var, 8), new f11(24, g4Var, Z1), new h1(g4Var, 3));
+                                                mg.k0.k(new ArrayList(Arrays.asList(Z1)), tL_premiumGiftCodeOption, null, g4Var.d1(), new kg.q1(g4Var, 8), new d01(25, g4Var, Z1), new h1(g4Var, 3));
                                                 break;
                                             } else {
-                                                e6.y(i12, false).g(g4Var.R1, tL_premiumGiftCodeOption, g4Var.d1(), new j20() { // from class: ph.v3
-                                                    @Override // org.telegram.messenger.j20
+                                                e6.y(i12, false).g(g4Var.R1, tL_premiumGiftCodeOption, g4Var.d1(), new k20() { // from class: ph.v3
+                                                    @Override // org.telegram.messenger.k20
                                                     public final void a(Object obj4, Object obj5) {
                                                         int i14 = i11;
                                                         TLRPC.User user = Z1;
@@ -158,7 +158,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
                                                                     g4Var2.dismiss();
                                                                     org.telegram.messenger.i0.h3(new x3(1, user), 250L);
                                                                 } else if (!TextUtils.isEmpty(str)) {
-                                                                    new cc(g4Var2.E, g4Var2.I0).Q(R.raw.error, 36, cd.a0(null, null, 2131743903, str)).j();
+                                                                    new cc(g4Var2.E, g4Var2.I0).Q(R.raw.error, 36, dd.a0(null, null, 2131743903, str)).j();
                                                                 }
                                                                 g4Var2.g2.setLoading(false);
                                                                 break;
@@ -172,7 +172,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
                                                                     g4Var2.dismiss();
                                                                     org.telegram.messenger.i0.h3(new x3(2, user), 250L);
                                                                 } else if (!TextUtils.isEmpty(str)) {
-                                                                    new cc(g4Var2.E, g4Var2.I0).Q(R.raw.error, 36, cd.a0(null, null, 2131743903, str)).j();
+                                                                    new cc(g4Var2.E, g4Var2.I0).Q(R.raw.error, 36, dd.a0(null, null, 2131743903, str)).j();
                                                                 }
                                                                 g4Var2.g2.setLoading(false);
                                                                 break;
@@ -187,7 +187,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
                                                 if (!org.telegram.messenger.v2.b()) {
                                                     if (org.telegram.messenger.u1.i().k() && mVar3.h != null) {
                                                         TLRPC.TL_inputStorePaymentGiftPremium tL_inputStorePaymentGiftPremium = new TLRPC.TL_inputStorePaymentGiftPremium();
-                                                        tL_inputStorePaymentGiftPremium.user_id = vp.r1(i12).p1(Z1);
+                                                        tL_inputStorePaymentGiftPremium.user_id = wp.r1(i12).p1(Z1);
                                                         tL_inputStorePaymentGiftPremium.currency = mVar3.h.a().c;
                                                         tL_inputStorePaymentGiftPremium.amount = (long) (Math.pow(10.0d, org.telegram.messenger.u1.i().h(tL_inputStorePaymentGiftPremium.currency)) * (r3.b / Math.pow(10.0d, 6.0d)));
                                                         org.telegram.messenger.u1.i().d(mVar3.a.store_product, new ig.i(g4Var, i11));
@@ -213,8 +213,8 @@ public final /* synthetic */ class n implements View.OnClickListener {
                                                     }
                                                 }
                                             } else {
-                                                e6.y(i12, false).g(g4Var.R1, tL_premiumGiftOption, g4Var.d1(), new j20() { // from class: ph.v3
-                                                    @Override // org.telegram.messenger.j20
+                                                e6.y(i12, false).g(g4Var.R1, tL_premiumGiftOption, g4Var.d1(), new k20() { // from class: ph.v3
+                                                    @Override // org.telegram.messenger.k20
                                                     public final void a(Object obj4, Object obj5) {
                                                         int i14 = i13;
                                                         TLRPC.User user = Z1;
@@ -232,7 +232,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
                                                                     g4Var2.dismiss();
                                                                     org.telegram.messenger.i0.h3(new x3(1, user), 250L);
                                                                 } else if (!TextUtils.isEmpty(str)) {
-                                                                    new cc(g4Var2.E, g4Var2.I0).Q(R.raw.error, 36, cd.a0(null, null, 2131743903, str)).j();
+                                                                    new cc(g4Var2.E, g4Var2.I0).Q(R.raw.error, 36, dd.a0(null, null, 2131743903, str)).j();
                                                                 }
                                                                 g4Var2.g2.setLoading(false);
                                                                 break;
@@ -246,7 +246,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
                                                                     g4Var2.dismiss();
                                                                     org.telegram.messenger.i0.h3(new x3(2, user), 250L);
                                                                 } else if (!TextUtils.isEmpty(str)) {
-                                                                    new cc(g4Var2.E, g4Var2.I0).Q(R.raw.error, 36, cd.a0(null, null, 2131743903, str)).j();
+                                                                    new cc(g4Var2.E, g4Var2.I0).Q(R.raw.error, 36, dd.a0(null, null, 2131743903, str)).j();
                                                                 }
                                                                 g4Var2.g2.setLoading(false);
                                                                 break;

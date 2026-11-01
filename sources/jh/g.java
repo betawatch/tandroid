@@ -12,17 +12,17 @@ import android.text.TextUtils;
 import bi.s0;
 import c3.i0;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.jc;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.se;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g extends Drawable {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final class g extends Drawable {
                 e6Var.draw(canvas);
                 break;
             default:
-                ((qz0) this.b).c(getBounds().centerX() - (((qz0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, t6.w0(t6.G6, (p6) this.c), canvas);
+                ((rz0) this.b).c(getBounds().centerX() - (((rz0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, t6.w0(t6.G6, (p6) this.c), canvas);
                 break;
         }
     }
@@ -184,7 +184,7 @@ public final class g extends Drawable {
     public void onBoundsChange(Rect rect) {
         switch (this.a) {
             case 0:
-                ((ImageReceiver) this.b).y0(org.telegram.messenger.i0.L(2.0f) + rect.left, org.telegram.messenger.i0.L(2.0f) + rect.top, z20.w(2.0f, rect.left, rect.right - org.telegram.messenger.i0.L(2.0f)), z20.w(2.0f, rect.top, rect.bottom - org.telegram.messenger.i0.L(2.0f)));
+                ((ImageReceiver) this.b).y0(org.telegram.messenger.i0.L(2.0f) + rect.left, org.telegram.messenger.i0.L(2.0f) + rect.top, a30.w(2.0f, rect.left, rect.right - org.telegram.messenger.i0.L(2.0f)), a30.w(2.0f, rect.top, rect.bottom - org.telegram.messenger.i0.L(2.0f)));
                 break;
             default:
                 super.onBoundsChange(rect);

@@ -1,9 +1,9 @@
 package rh;
 
 import android.content.Context;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n8 extends v8 {
     public final /* synthetic */ boolean m0;
@@ -25,7 +25,7 @@ public final class n8 extends v8 {
         y8Var.N0(j10);
         vh.d dVar = y8Var.t1;
         if (dVar != null) {
-            dVar.i(h8.X0(false, cd.a0(null, null, 2131745065, cd.E(j10, ',')), y8Var.J1), true, true);
+            dVar.i(h8.Y0(false, dd.a0(null, null, 2131745065, dd.E(j10, ',')), y8Var.J1), true, true);
         }
         if (this.m0) {
             th.h0 h0Var = y8Var.x1;

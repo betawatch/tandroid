@@ -1,10 +1,10 @@
 package rh;
 
 import j$.util.Objects;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x5 {
     public final long a;
@@ -19,12 +19,12 @@ public final class x5 {
         return new x5(j10, i10);
     }
 
-    public static x5 b(jj jjVar) {
-        if (jjVar == null) {
+    public static x5 b(kj kjVar) {
+        if (kjVar == null) {
             return null;
         }
-        TLRPC.Message message = jjVar.k;
-        return (message == null || !(message.isThreadMessage || jjVar.k3()) || jjVar.k.fwd_from == null) ? new x5(jj.B0(jjVar.k), jjVar.f1()) : new x5(jjVar.Z0(), jjVar.k.fwd_from.saved_from_msg_id);
+        TLRPC.Message message = kjVar.k;
+        return (message == null || !(message.isThreadMessage || kjVar.k3()) || kjVar.k.fwd_from == null) ? new x5(kj.B0(kjVar.k), kjVar.f1()) : new x5(kjVar.Z0(), kjVar.k.fwd_from.saved_from_msg_id);
     }
 
     public final boolean equals(Object obj) {

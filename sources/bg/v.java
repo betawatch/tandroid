@@ -7,11 +7,11 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class v extends i {
     public final Matrix D1;
@@ -729,14 +729,14 @@ public class v extends i {
                         Paint paint = gVar3.c;
                         paint.setAlpha(i32);
                         canvas.drawPath(gVar3.f, paint);
-                        paint.setAlpha(zs.e4);
+                        paint.setAlpha(at.e4);
                     }
                     canvas.restore();
                     canvas.restore();
                 }
                 f11 = 0.0f;
             }
-            i10 = zs.e4;
+            i10 = at.e4;
             float[] fArr4 = ((cg.e) this.h0).b;
             int i242 = ((int) (f35 / (fArr4.length >= 2 ? f7 : fArr4[1] * f34))) + 1;
             int max2 = Math.max(0, (this.F - i242) - 1);

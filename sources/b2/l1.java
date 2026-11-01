@@ -1,9 +1,9 @@
 package b2;
 
 import j$.util.Objects;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class l1 {
     public static final String h;
@@ -140,7 +140,7 @@ public final class l1 {
 
     public final int hashCode() {
         Object obj = this.a;
-        int hashCode = (zs.u3 + (obj == null ? 0 : obj.hashCode())) * 31;
+        int hashCode = (at.u3 + (obj == null ? 0 : obj.hashCode())) * 31;
         Object obj2 = this.b;
         int hashCode2 = (((hashCode + (obj2 != null ? obj2.hashCode() : 0)) * 31) + this.c) * 31;
         long j10 = this.d;

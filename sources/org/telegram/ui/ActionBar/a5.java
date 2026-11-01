@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class a5 extends Drawable {
     public final Paint a;
@@ -36,7 +36,7 @@ public class a5 extends Drawable {
         this.h = true;
         this.i = new DecelerateInterpolator();
         new RectF();
-        this.o = zs.e4;
+        this.o = at.e4;
         paint.setStrokeWidth(org.telegram.messenger.i0.L(2.0f));
         paint2.setStrokeWidth(org.telegram.messenger.i0.p * 1.66f);
         paint2.setStrokeCap(Paint.Cap.ROUND);
@@ -119,7 +119,7 @@ public class a5 extends Drawable {
         boolean z10 = this.h;
         Paint paint = this.a;
         if (z10) {
-            canvas.rotate(this.f * (this.c ? -180 : zs.K2), org.telegram.messenger.i0.L(9.0f), 0.0f);
+            canvas.rotate(this.f * (this.c ? -180 : at.K2), org.telegram.messenger.i0.L(9.0f), 0.0f);
             paint.setColor(i11);
             paint.setAlpha(this.o);
             canvas.drawLine(this.l ? c3.i0.z(1.0f, this.f, paint.getStrokeWidth() / 2.0f, org.telegram.messenger.i0.L(0.5f) * this.f) : 0.0f, 0.0f, ((org.telegram.messenger.i0.L(18.0f) - (org.telegram.messenger.i0.L(3.0f) * this.f)) - 0.0f) - (this.l ? (1.0f - this.f) * (paint.getStrokeWidth() / 2.0f) : 0.0f), 0.0f, paint);
@@ -135,7 +135,7 @@ public class a5 extends Drawable {
                 abs = (org.telegram.messenger.i0.L(0.25f) * this.f) + L2;
             }
         } else {
-            canvas.rotate(this.f * (this.c ? -225 : zs.R1), org.telegram.messenger.i0.L(9.0f), 0.0f);
+            canvas.rotate(this.f * (this.c ? -225 : at.R1), org.telegram.messenger.i0.L(9.0f), 0.0f);
             if (this.n) {
                 paint.setColor(i11);
                 paint.setAlpha(this.o);

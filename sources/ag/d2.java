@@ -17,15 +17,15 @@ import org.telegram.ui.Cells.ta;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.iv;
 import org.telegram.ui.Components.n8;
-import org.telegram.ui.c60;
+import org.telegram.ui.b60;
 import org.telegram.ui.kd;
-import org.telegram.ui.me1;
-import org.telegram.ui.ne1;
+import org.telegram.ui.ke1;
+import org.telegram.ui.le1;
 import org.telegram.ui.oo;
-import org.telegram.ui.wd0;
+import org.telegram.ui.vd0;
 import th.w5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d2 extends g9 {
     public final /* synthetic */ int G;
@@ -88,7 +88,7 @@ public final class d2 extends g9 {
                 super.onDraw(canvas);
                 ta taVar = (ta) this.H;
                 Object obj = taVar.h;
-                if ((obj instanceof me1) || (obj instanceof ne1)) {
+                if ((obj instanceof ke1) || (obj instanceof le1)) {
                     canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, taVar.s.n);
                     canvas2 = canvas;
                     canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), taVar.s.n);
@@ -205,14 +205,14 @@ public final class d2 extends g9 {
                 }
                 break;
             case 8:
-                kg.f0 f0Var3 = ((c60) this.H).e;
+                kg.f0 f0Var3 = ((b60) this.H).e;
                 if (f0Var3 != null) {
                     f0Var3.invalidate();
                 }
                 super.invalidate();
                 break;
             case 9:
-                kg.f0 f0Var4 = ((wd0) this.H).h;
+                kg.f0 f0Var4 = ((vd0) this.H).h;
                 if (f0Var4 != null) {
                     f0Var4.invalidate();
                 }
@@ -252,14 +252,14 @@ public final class d2 extends g9 {
                 }
                 break;
             case 8:
-                kg.f0 f0Var3 = ((c60) this.H).e;
+                kg.f0 f0Var3 = ((b60) this.H).e;
                 if (f0Var3 != null) {
                     f0Var3.invalidate();
                 }
                 super.invalidate(i10, i11, i12, i13);
                 break;
             case 9:
-                kg.f0 f0Var4 = ((wd0) this.H).h;
+                kg.f0 f0Var4 = ((vd0) this.H).h;
                 if (f0Var4 != null) {
                     f0Var4.invalidate();
                 }

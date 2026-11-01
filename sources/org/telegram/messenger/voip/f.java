@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.x1;
 import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.c01;
+import org.telegram.ui.b01;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,10 +69,10 @@ public final /* synthetic */ class f implements Runnable {
             case 2:
                 Activity activity = (Activity) obj5;
                 p6 p6Var = (p6) obj3;
-                c01 c01Var = new c01(activity, p6Var, this.b, (byte[]) obj6);
-                c01Var.N0((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) ((TLObject) obj4));
-                c01Var.r1 = new xa.n((un) obj2, activity, p6Var, (jj) obj);
-                c01Var.show();
+                b01 b01Var = new b01(activity, p6Var, this.b, (byte[]) obj6);
+                b01Var.N0((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) ((TLObject) obj4));
+                b01Var.r1 = new xa.n((un) obj2, activity, p6Var, (kj) obj);
+                b01Var.show();
                 break;
             default:
                 un unVar2 = (un) obj5;
@@ -84,7 +84,7 @@ public final /* synthetic */ class f implements Runnable {
                     TLRPC.User Z1 = unVar2.getMessagesController().Z1(Long.valueOf(unVar2.getUserConfig().e()));
                     TLRPC.TL_photos_photo tL_photos_photo2 = (TLRPC.TL_photos_photo) tLObject;
                     ArrayList<TLRPC.PhotoSize> arrayList = tL_photos_photo2.photo.sizes;
-                    TLRPC.PhotoSize w9 = b8.w(arrayList, zs.g2, false, null, false);
+                    TLRPC.PhotoSize w9 = b8.w(arrayList, at.g2, false, null, false);
                     TLRPC.PhotoSize w10 = b8.w(arrayList, 800, false, null, false);
                     TLRPC.VideoSize x10 = tL_photos_photo2.photo.video_sizes.isEmpty() ? null : b8.x(1000, tL_photos_photo2.photo.video_sizes);
                     TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
@@ -115,7 +115,7 @@ public final /* synthetic */ class f implements Runnable {
                         sb3.append(w9.location.volume_id);
                         sb3.append("_");
                         z10 = true;
-                        hc.D().S(p5, a1.g.p(sb3, w9.location.local_id, "@50_50"), ic.m(unVar.getCurrentAccount(), 1, Z1));
+                        ic.D().S(p5, a1.g.p(sb3, w9.location.local_id, "@50_50"), jc.m(unVar.getCurrentAccount(), 1, Z1));
                     }
                     if (x10 != null && str != null) {
                         b8.G(unVar.getCurrentAccount());
@@ -134,21 +134,21 @@ public final /* synthetic */ class f implements Runnable {
                     a2.profile_photo = tL_photos_photo.photo;
                     unVar.getMessagesStorage().j2(a2, false);
                     un unVar3 = unVar;
-                    cc.a0(unVar3).V(Collections.singletonList(Z1), org.telegram.messenger.i0.W2(cd.L0(2131754219, null)), org.telegram.messenger.i0.T2(cd.L0(2131754220, null), new mg.t0(j10, unVar3)), null).j();
+                    cc.a0(unVar3).V(Collections.singletonList(Z1), org.telegram.messenger.i0.W2(dd.L0(2131754219, null)), org.telegram.messenger.i0.T2(dd.L0(2131754220, null), new mg.t0(j10, unVar3)), null).j();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ f(TLObject tLObject, Activity activity, p6 p6Var, long j10, byte[] bArr, un unVar, jj jjVar) {
+    public /* synthetic */ f(TLObject tLObject, Activity activity, p6 p6Var, long j10, byte[] bArr, un unVar, kj kjVar) {
         this.e = tLObject;
         this.c = activity;
         this.d = p6Var;
         this.b = j10;
         this.f = bArr;
         this.h = unVar;
-        this.n = jjVar;
+        this.n = kjVar;
     }
 
     public /* synthetic */ f(TLRPC.TL_error tL_error, un unVar, TLObject tLObject, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j10) {

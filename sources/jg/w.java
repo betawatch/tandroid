@@ -1,18 +1,18 @@
 package jg;
 
 import android.content.DialogInterface;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.vs;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.er0;
+import org.telegram.ui.cr0;
 import rh.j7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
-    public final /* synthetic */ us c;
+    public final /* synthetic */ vs c;
 
     public /* synthetic */ w(int i10, j7 j7Var) {
         this.b = i10;
@@ -24,7 +24,7 @@ public final /* synthetic */ class w implements DialogInterface.OnDismissListene
         switch (this.a) {
             case 0:
                 r0 r0Var = (r0) this.c;
-                PhotoViewer photoViewer = ((er0) r0Var).X1;
+                PhotoViewer photoViewer = ((cr0) r0Var).X1;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.v0();
@@ -33,7 +33,7 @@ public final /* synthetic */ class w implements DialogInterface.OnDismissListene
                 r0Var.A0(this.b);
                 break;
             default:
-                zs.f(this.b).n((j7) this.c, zs.A3);
+                at.f(this.b).n((j7) this.c, at.A3);
                 break;
         }
     }

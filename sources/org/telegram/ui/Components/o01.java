@@ -1,19 +1,21 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class o01 extends s4.s0 {
-    public final /* synthetic */ ThemeEditorView.EditorAlert a;
+public final class o01 extends uk0 {
+    public final /* synthetic */ ThemeEditorView.EditorAlert e3;
 
-    public o01(ThemeEditorView.EditorAlert editorAlert) {
-        this.a = editorAlert;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o01(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context, null);
+        this.e3 = editorAlert;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ThemeEditorView.EditorAlert.I0(this.a);
+    @Override // org.telegram.ui.Components.uk0
+    public final boolean E0(float f7) {
+        return f7 >= ((float) ((org.telegram.messenger.i0.L(48.0f) + this.e3.v1) + org.telegram.messenger.i0.m));
     }
 }

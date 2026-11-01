@@ -19,22 +19,22 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.f51;
 import org.telegram.ui.Components.k80;
 import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.up;
-import org.telegram.ui.Components.x41;
+import org.telegram.ui.Components.y41;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class f0 extends View {
     public int D;
@@ -69,9 +69,9 @@ public abstract class f0 extends View {
         this.E = imageReceiver;
         imageReceiver.J0 = true;
         imageReceiver.A0 = true;
-        imageReceiver.s1 = zs.X4;
+        imageReceiver.s1 = at.X4;
         int w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.i6, p6Var);
-        int i11 = tz.Y0;
+        int i11 = uz.Y0;
         this.K = i11;
         y a02 = org.telegram.ui.ActionBar.t6.a0(w02, i11, i11);
         this.J = a02;
@@ -133,7 +133,7 @@ public abstract class f0 extends View {
             if (!Objects.equals(this.d, "setup")) {
                 this.d = "setup";
                 imageReceiver.w0(new up(new e0(getContext())));
-                int L = org.telegram.messenger.i0.L(tz.Y0) - org.telegram.messenger.i0.L(2.0f);
+                int L = org.telegram.messenger.i0.L(uz.Y0) - org.telegram.messenger.i0.L(2.0f);
                 int L2 = org.telegram.messenger.i0.L(4.0f);
                 if (!this.G) {
                     L2 = L;
@@ -146,11 +146,11 @@ public abstract class f0 extends View {
                 this.d = o10;
                 if (tLObject instanceof TLRPC.TL_photo) {
                     TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-                    imageReceiver.q0(ic.i(org.telegram.messenger.b8.w(photo.sizes, 400, false, null, false), photo), "400_400", null, "jpg", botInfo, 0);
+                    imageReceiver.q0(jc.i(org.telegram.messenger.b8.w(photo.sizes, 400, false, null, false), photo), "400_400", null, "jpg", botInfo, 0);
                 } else if (tLObject instanceof TLRPC.Document) {
                     TLRPC.Document document = (TLRPC.Document) tLObject;
                     TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(document.thumbs, 400, false, null, false);
-                    if (tz.o() != 0) {
+                    if (uz.o() != 0) {
                         ArrayList<TLRPC.PhotoSize> arrayList = document.thumbs;
                         int size = arrayList.size();
                         f7 = 2.0f;
@@ -162,7 +162,7 @@ public abstract class f0 extends View {
                             float f12 = f11;
                             TLRPC.PhotoSize photoSize2 = photoSize;
                             if (photoSize2 instanceof TLRPC.TL_photoStrippedSize) {
-                                bitmapDrawable2 = new BitmapDrawable(getResources(), hc.F("b", photoSize2.bytes));
+                                bitmapDrawable2 = new BitmapDrawable(getResources(), ic.F("b", photoSize2.bytes));
                             }
                             f11 = f12;
                         }
@@ -173,8 +173,8 @@ public abstract class f0 extends View {
                     }
                     f10 = f11;
                     z11 = true;
-                    imageReceiver.u0(ic.b(document), "g", ic.d(jj.J0(document), document), null, ic.c(w9, document), "86_86_b", bitmapDrawable, document.size, "mp4", botInfo, 0);
-                    int L3 = org.telegram.messenger.i0.L(tz.Y0) - org.telegram.messenger.i0.L(f7);
+                    imageReceiver.u0(jc.b(document), "g", jc.d(kj.J0(document), document), null, jc.c(w9, document), "86_86_b", bitmapDrawable, document.size, "mp4", botInfo, 0);
+                    int L3 = org.telegram.messenger.i0.L(uz.Y0) - org.telegram.messenger.i0.L(f7);
                     int L4 = org.telegram.messenger.i0.L(f10);
                     if (!this.G) {
                         L4 = L3;
@@ -202,7 +202,7 @@ public abstract class f0 extends View {
                             org.telegram.messenger.m5.p(null, null, 2131748706, objArr, spannableStringBuilder);
                             z13 = false;
                         } else {
-                            String L0 = cd.L0(2131753060, null);
+                            String L0 = dd.L0(2131753060, null);
                             if (z10) {
                                 spannableStringBuilder.append((CharSequence) L0);
                                 spannableStringBuilder.append((CharSequence) "\n\n");
@@ -214,9 +214,9 @@ public abstract class f0 extends View {
                                 }
                             }
                             z13 = false;
-                            jj.d(spannableStringBuilder, false);
+                            kj.d(spannableStringBuilder, false);
                             if (z10) {
-                                spannableStringBuilder.setSpan(new x41(org.telegram.messenger.i0.o()), 0, L0.length(), 33);
+                                spannableStringBuilder.setSpan(new y41(org.telegram.messenger.i0.o()), 0, L0.length(), 33);
                             }
                         }
                         org.telegram.messenger.k6.l(spannableStringBuilder, org.telegram.ui.ActionBar.t6.o2.getFontMetricsInt(), z13);
@@ -252,7 +252,7 @@ public abstract class f0 extends View {
                 f7 = 2.0f;
                 f10 = 4.0f;
                 z11 = true;
-                int L32 = org.telegram.messenger.i0.L(tz.Y0) - org.telegram.messenger.i0.L(f7);
+                int L32 = org.telegram.messenger.i0.L(uz.Y0) - org.telegram.messenger.i0.L(f7);
                 int L42 = org.telegram.messenger.i0.L(f10);
                 if (!this.G) {
                 }
@@ -345,7 +345,7 @@ public abstract class f0 extends View {
         y yVar = this.J;
         if (yVar != null) {
             int i12 = this.K;
-            int i13 = tz.Y0;
+            int i13 = uz.Y0;
             if (i12 != i13) {
                 this.K = i13;
                 org.telegram.ui.ActionBar.t6.G1(yVar, i13, i13);
@@ -463,8 +463,8 @@ public abstract class f0 extends View {
                     if (q80Var != null) {
                         try {
                             ClickableSpan clickableSpan = (ClickableSpan) q80Var.i;
-                            if (clickableSpan instanceof e51) {
-                                String url = ((e51) clickableSpan).getURL();
+                            if (clickableSpan instanceof f51) {
+                                String url = ((f51) clickableSpan).getURL();
                                 if (!url.startsWith("@")) {
                                     if (!url.startsWith("#")) {
                                         if (!url.startsWith("/")) {
@@ -475,12 +475,12 @@ public abstract class f0 extends View {
                                 }
                                 d0 d0Var = this.w;
                                 if (d0Var != null) {
-                                    ((org.telegram.ui.y0) d0Var).r(url);
+                                    ((org.telegram.ui.y0) d0Var).s(url);
                                 }
                             } else if (clickableSpan instanceof URLSpan) {
                                 d0 d0Var2 = this.w;
                                 if (d0Var2 != null) {
-                                    ((org.telegram.ui.y0) d0Var2).r(((URLSpan) clickableSpan).getURL());
+                                    ((org.telegram.ui.y0) d0Var2).s(((URLSpan) clickableSpan).getURL());
                                 }
                             } else if (clickableSpan != null) {
                                 clickableSpan.onClick(this);

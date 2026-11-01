@@ -3,19 +3,19 @@ package rh;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d2 implements j20 {
+public final /* synthetic */ class d2 implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ e4 b;
     public final /* synthetic */ TL_stars.TL_starGiftUnique c;
@@ -26,7 +26,7 @@ public final /* synthetic */ class d2 implements j20 {
         this.c = tL_starGiftUnique;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -80,7 +80,7 @@ public final /* synthetic */ class d2 implements j20 {
                                         break;
                                     }
                                 } else {
-                                    vp.r1(e4Var2.a).L3((TLRPC.Updates) tLObject, false);
+                                    wp.r1(e4Var2.a).L3((TLRPC.Updates) tLObject, false);
                                     final int i12 = 1;
                                     final TL_stars.TL_starGiftUnique tL_starGiftUnique2 = tL_starGiftUnique;
                                     final sf.a aVar2 = aVar;
@@ -127,7 +127,7 @@ public final /* synthetic */ class d2 implements j20 {
                                                     if (runnable3 != null) {
                                                         runnable3.run();
                                                     }
-                                                    e4Var3.k().Q(R.raw.contact_check, 36, cd.a0(null, null, 2131750037, e4Var3.z1())).j();
+                                                    e4Var3.k().Q(R.raw.contact_check, 36, dd.a0(null, null, 2131750037, e4Var3.z1())).j();
                                                     break;
                                             }
                                         }
@@ -168,7 +168,7 @@ public final /* synthetic */ class d2 implements j20 {
                                         break;
                                     }
                                 } else {
-                                    vp.r1(e4Var3.a).L3((TLRPC.Updates) tLObject, false);
+                                    wp.r1(e4Var3.a).L3((TLRPC.Updates) tLObject, false);
                                     final int i14 = 0;
                                     final TL_stars.TL_starGiftUnique tL_starGiftUnique3 = tL_starGiftUnique;
                                     final sf.a aVar3 = aVar;
@@ -215,7 +215,7 @@ public final /* synthetic */ class d2 implements j20 {
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    e4Var32.k().Q(R.raw.contact_check, 36, cd.a0(null, null, 2131750037, e4Var32.z1())).j();
+                                                    e4Var32.k().Q(R.raw.contact_check, 36, dd.a0(null, null, 2131750037, e4Var32.z1())).j();
                                                     break;
                                             }
                                         }
@@ -228,7 +228,7 @@ public final /* synthetic */ class d2 implements j20 {
                 });
                 break;
             case 1:
-                q20 q20Var = (q20) obj;
+                r20 r20Var = (r20) obj;
                 Boolean bool = (Boolean) obj2;
                 e4 e4Var2 = this.b;
                 ph.p3 p3Var = e4Var2.O2;
@@ -241,18 +241,18 @@ public final /* synthetic */ class d2 implements j20 {
                 HashSet hashSet = new HashSet();
                 int i11 = 0;
                 while (true) {
-                    y2[] y2VarArr = e4Var2.X1.M.n;
-                    if (i11 >= y2VarArr.length) {
+                    z2[] z2VarArr = e4Var2.X1.M.n;
+                    if (i11 >= z2VarArr.length) {
                         ph.q3 q3Var = new ph.q3(e4Var2.getContext(), tL_starGiftUnique2.title, e4Var2.O2);
                         q3Var.Y1.addAll(hashSet);
                         q3Var.a2.O(true);
                         q3Var.Z1 = bool.booleanValue();
-                        q3Var.W1.set(org.telegram.messenger.i0.W2(cd.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
-                        q3Var.X1 = new e1(q20Var, 0);
+                        q3Var.W1.set(org.telegram.messenger.i0.W2(dd.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
+                        q3Var.X1 = new e1(r20Var, 0);
                         q3Var.show();
                         break;
                     } else {
-                        TL_stars.StarGift starGift = y2VarArr[i11].h;
+                        TL_stars.StarGift starGift = z2VarArr[i11].h;
                         if ((starGift != null ? starGift : null) != null) {
                             if (starGift == null) {
                                 starGift = null;
@@ -313,7 +313,7 @@ public final /* synthetic */ class d2 implements j20 {
                                         break;
                                     }
                                 } else {
-                                    vp.r1(e4Var22.a).L3((TLRPC.Updates) tLObject, false);
+                                    wp.r1(e4Var22.a).L3((TLRPC.Updates) tLObject, false);
                                     final int i122 = 1;
                                     final TL_stars.TL_starGiftUnique tL_starGiftUnique22 = tL_starGiftUnique3;
                                     final sf.a aVar22 = aVar2;
@@ -360,7 +360,7 @@ public final /* synthetic */ class d2 implements j20 {
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    e4Var32.k().Q(R.raw.contact_check, 36, cd.a0(null, null, 2131750037, e4Var32.z1())).j();
+                                                    e4Var32.k().Q(R.raw.contact_check, 36, dd.a0(null, null, 2131750037, e4Var32.z1())).j();
                                                     break;
                                             }
                                         }
@@ -401,7 +401,7 @@ public final /* synthetic */ class d2 implements j20 {
                                         break;
                                     }
                                 } else {
-                                    vp.r1(e4Var32.a).L3((TLRPC.Updates) tLObject, false);
+                                    wp.r1(e4Var32.a).L3((TLRPC.Updates) tLObject, false);
                                     final int i14 = 0;
                                     final TL_stars.TL_starGiftUnique tL_starGiftUnique32 = tL_starGiftUnique3;
                                     final sf.a aVar3 = aVar2;
@@ -448,7 +448,7 @@ public final /* synthetic */ class d2 implements j20 {
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    e4Var322.k().Q(R.raw.contact_check, 36, cd.a0(null, null, 2131750037, e4Var322.z1())).j();
+                                                    e4Var322.k().Q(R.raw.contact_check, 36, dd.a0(null, null, 2131750037, e4Var322.z1())).j();
                                                     break;
                                             }
                                         }

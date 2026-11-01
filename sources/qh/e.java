@@ -4,11 +4,11 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e {
     public static final e[] f = new e[4];
@@ -20,7 +20,7 @@ public final class e {
 
     public e(int i10) {
         this.a = i10;
-        String string = vp.r1(i10).f7.getString("qrBackdrops", null);
+        String string = wp.r1(i10).f7.getString("qrBackdrops", null);
         if (TextUtils.isEmpty(string)) {
             return;
         }

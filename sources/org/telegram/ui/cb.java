@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class cb extends org.telegram.ui.Components.ko {
     public final /* synthetic */ int s;
@@ -29,7 +29,7 @@ public final class cb extends org.telegram.ui.Components.ko {
                 break;
             default:
                 if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                    ((un) this.w).I7(true);
+                    ((un) this.w).M7(true);
                 }
                 break;
         }
@@ -49,7 +49,7 @@ public final class cb extends org.telegram.ui.Components.ko {
             default:
                 boolean dispatchTouchEvent2 = super.dispatchTouchEvent(motionEvent);
                 if (motionEvent.getAction() == 0 && !dispatchTouchEvent2) {
-                    ((un) this.w).I7(true);
+                    ((un) this.w).M7(true);
                 }
                 return dispatchTouchEvent2;
         }

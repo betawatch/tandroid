@@ -6,9 +6,9 @@ import c3.i0;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g extends cf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -34,7 +34,7 @@ public final class g extends cf.a {
     public static hf.b c(e eVar) {
         b b10 = eVar.b();
         eVar.c(3, b.c);
-        return new hf.b(16, eVar.d(zs.e3, b10), eVar.c((int) eVar.a.e(), b10));
+        return new hf.b(16, eVar.d(at.e3, b10), eVar.c((int) eVar.a.e(), b10));
     }
 
     public static String e(e eVar) {
@@ -81,7 +81,7 @@ public final class g extends cf.a {
                         eVar.d(20, b.c);
                     }
                     byte v = hVar.v();
-                    eVar.d(zs.e3, b10);
+                    eVar.d(at.e3, b10);
                     int e = (int) eVar.a.e();
                     byte[] bArr = new byte[e];
                     int i13 = 0;

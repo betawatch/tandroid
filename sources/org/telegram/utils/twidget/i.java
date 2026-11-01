@@ -1,11 +1,11 @@
 package org.telegram.utils.twidget;
 
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements j20 {
+public final /* synthetic */ class i implements k20 {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ org.telegram.messenger.voip.g b;
     public final /* synthetic */ w c;
@@ -18,7 +18,7 @@ public final /* synthetic */ class i implements j20 {
         this.d = j10;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         TLRPC.TL_messages_botWidgetQueryAnswer tL_messages_botWidgetQueryAnswer = (TLRPC.TL_messages_botWidgetQueryAnswer) obj;
         TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;

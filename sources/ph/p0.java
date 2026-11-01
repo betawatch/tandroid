@@ -9,10 +9,10 @@ import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.Components.e30;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,28 +45,28 @@ public final /* synthetic */ class p0 implements Runnable {
                 new e30(context).show();
                 break;
             case 5:
-                gf.f.r(context, cd.L0(2131744984, null));
+                gf.f.r(context, dd.L0(2131744984, null));
                 break;
             case 6:
-                gf.f.r(context, cd.L0(2131744984, null));
+                gf.f.r(context, dd.L0(2131744984, null));
                 break;
             case 7:
-                gf.f.r(context, cd.L0(2131747750, null));
+                gf.f.r(context, dd.L0(2131747750, null));
                 break;
             case 8:
-                gf.f.r(context, cd.L0(2131745037, null));
+                gf.f.r(context, dd.L0(2131745037, null));
                 break;
             case 9:
-                gf.f.r(context, cd.L0(2131744984, null));
+                gf.f.r(context, dd.L0(2131744984, null));
                 break;
             case 10:
-                gf.f.r(context, cd.L0(2131745062, null));
+                gf.f.r(context, dd.L0(2131745062, null));
                 break;
             case 11:
                 new e30(context).show();
                 break;
             default:
-                gf.f.r(context, cd.L0(2131752506, null));
+                gf.f.r(context, dd.L0(2131752506, null));
                 break;
         }
     }

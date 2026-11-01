@@ -7,9 +7,9 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u0 extends i {
     public final /* synthetic */ int n = 3;
@@ -168,7 +168,7 @@ public final class u0 extends i {
                     canvas.drawCircle(L2, f19, (N - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint3);
                     canvas.drawCircle(f10, f19, N, paint2);
                     canvas.drawCircle(f10, f19, (N - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint3);
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
                     float f20 = L2 + min2;
                     float f21 = f11 - min2;
                     canvas.drawLine(L2, f20, L2, f21, paint);
@@ -229,7 +229,7 @@ public final class u0 extends i {
                     canvas.drawCircle(L5, f32, (N2 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint7);
                     canvas.drawCircle(f23, f32, N2, paint6);
                     canvas.drawCircle(f23, f32, (N2 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint7);
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
                     float f33 = L5 + min4;
                     float f34 = f24 - min4;
                     canvas.drawLine(L5, f33, L5, f34, paint5);
@@ -290,7 +290,7 @@ public final class u0 extends i {
                     canvas.drawCircle(L8, f45, (N3 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint11);
                     canvas.drawCircle(f36, f45, N3, paint10);
                     canvas.drawCircle(f36, f45, (N3 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint11);
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
                     float f46 = L8 + min6;
                     float f47 = f37 - min6;
                     canvas.drawLine(L8, f46, L8, f47, paint9);
@@ -351,7 +351,7 @@ public final class u0 extends i {
                     canvas.drawCircle(L11, f58, (N4 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint15);
                     canvas.drawCircle(f49, f58, N4, paint14);
                     canvas.drawCircle(f49, f58, (N4 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint15);
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
                     float f59 = L11 + min8;
                     float f60 = f50 - min8;
                     canvas.drawLine(L11, f59, L11, f60, paint13);
@@ -412,7 +412,7 @@ public final class u0 extends i {
                     canvas.drawCircle(L14, f71, (N5 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint19);
                     canvas.drawCircle(f62, f71, N5, paint18);
                     canvas.drawCircle(f62, f71, (N5 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint19);
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
                     float f72 = L14 + min10;
                     float f73 = f63 - min10;
                     canvas.drawLine(L14, f72, L14, f73, paint17);
@@ -477,7 +477,7 @@ public final class u0 extends i {
                     canvas2.drawCircle(L17, f84, (N6 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint23);
                     canvas2.drawCircle(f75, f84, N6, paint22);
                     canvas2.drawCircle(f75, f84, (N6 - org.telegram.messenger.i0.L(1.0f)) + 1.0f, paint23);
-                    canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
                     float f85 = L17 + min12;
                     float f86 = f76 - min12;
                     canvas.drawLine(L17, f85, L17, f86, paint21);

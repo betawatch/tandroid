@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import kg.j2;
-import org.telegram.ui.Components.bi0;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.ci0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.go0;
-import org.telegram.ui.jx0;
+import org.telegram.ui.eo0;
+import org.telegram.ui.ix0;
 import th.f3;
 import th.h5;
 import th.i5;
@@ -29,10 +29,10 @@ import vh.p6;
 import vh.r6;
 import vh.v4;
 import vh.z3;
-import xh.i3;
+import xh.j3;
 import xh.m2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -106,10 +106,10 @@ public final class r extends AnimatorListenerAdapter {
                 break;
             case 8:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                jx0 jx0Var = profileStoriesView.h;
+                ix0 ix0Var = profileStoriesView.h;
                 profileStoriesView.G = 1.0f;
-                jx0Var.R = 1.0f;
-                jx0Var.invalidate();
+                ix0Var.R = 1.0f;
+                ix0Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 9:
@@ -164,7 +164,7 @@ public final class r extends AnimatorListenerAdapter {
                 xVar.invalidate();
                 break;
             case 15:
-                k2 k2Var = (k2) ((go0) obj).c;
+                k2 k2Var = (k2) ((eo0) obj).c;
                 k2Var.F.setVisibility(8);
                 k2Var.d.setVisibility(8);
                 break;
@@ -174,7 +174,7 @@ public final class r extends AnimatorListenerAdapter {
                 p2Var.invalidate();
                 break;
             case 17:
-                org.telegram.messenger.i0.E2((mj0) obj);
+                org.telegram.messenger.i0.E2((nj0) obj);
                 break;
             case 18:
                 super.onAnimationEnd(animator);
@@ -214,7 +214,7 @@ public final class r extends AnimatorListenerAdapter {
                 ((m2) obj).E.setVisibility(8);
                 break;
             case 25:
-                ((i3) obj).I.setVisibility(8);
+                ((j3) obj).I.setVisibility(8);
                 break;
         }
     }
@@ -225,9 +225,9 @@ public final class r extends AnimatorListenerAdapter {
             case 11:
                 super.onAnimationStart(animator);
                 i5 i5Var = (i5) this.b;
-                bi0 bi0Var = ((h5) i5Var.a.get(i5Var.d)).c;
-                bi0Var.L = 2;
-                bi0Var.start();
+                ci0 ci0Var = ((h5) i5Var.a.get(i5Var.d)).c;
+                ci0Var.L = 2;
+                ci0Var.start();
                 break;
             default:
                 super.onAnimationStart(animator);

@@ -24,10 +24,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
-import org.telegram.ui.Components.n61;
+import org.telegram.ui.Components.o61;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class i0 extends b2.h implements p {
     public final c3.m0 A;
@@ -92,7 +92,7 @@ public final class i0 extends b2.h implements p {
     public final u2.f0 r;
     public long r0;
     public final j2.g s;
-    public n61 s0;
+    public o61 s0;
     public final Looper t;
     public final ArrayList t0;
     public final y2.c u;
@@ -2046,9 +2046,9 @@ public final class i0 extends b2.h implements p {
             return;
         }
         this.Z = new e2.y(i10, i11);
-        n61 n61Var = this.s0;
-        if (n61Var != null) {
-            n61Var.execute(new u(this, i10, i11, 0));
+        o61 o61Var = this.s0;
+        if (o61Var != null) {
+            o61Var.execute(new u(this, i10, i11, 0));
             return;
         }
         this.m.e(24, new v(i10, i11, 0));

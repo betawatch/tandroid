@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class be0 extends FrameLayout {
     public final org.telegram.ui.ActionBar.p6 D;
@@ -67,32 +67,32 @@ public final class be0 extends FrameLayout {
         cropAreaView.invalidate();
     }
 
-    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, eg.g gVar, k61 k61Var, org.telegram.messenger.ye yeVar) {
-        org.telegram.messenger.ye yeVar2;
+    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, eg.g gVar, l61 l61Var, org.telegram.messenger.ze zeVar) {
+        org.telegram.messenger.ze zeVar2;
         requestLayout();
         this.f = false;
         this.e.w0(null);
         eg.q qVar = this.b;
         ImageView imageView = qVar.b;
         qVar.y = z10;
-        qVar.d = k61Var;
+        qVar.d = l61Var;
         qVar.e = gVar;
         qVar.K = i10;
         qVar.x = bitmap;
         CropAreaView cropAreaView = qVar.a;
-        cropAreaView.setIsVideo(k61Var != null);
-        if (bitmap == null && k61Var == null) {
+        cropAreaView.setIsVideo(l61Var != null);
+        if (bitmap == null && l61Var == null) {
             qVar.L = null;
             imageView.setImageDrawable(null);
-            yeVar2 = yeVar;
+            zeVar2 = zeVar;
         } else {
             int currentWidth = qVar.getCurrentWidth();
             int currentHeight = qVar.getCurrentHeight();
             eg.o oVar = qVar.L;
             if (oVar == null || !z11) {
                 qVar.L = new eg.o(qVar, currentWidth, currentHeight);
-                yeVar2 = yeVar;
-                cropAreaView.getViewTreeObserver().addOnPreDrawListener(new eg.l(qVar, yeVar2, currentHeight, currentWidth, 1));
+                zeVar2 = zeVar;
+                cropAreaView.getViewTreeObserver().addOnPreDrawListener(new eg.l(qVar, zeVar2, currentHeight, currentWidth, 1));
             } else {
                 float f7 = currentWidth;
                 oVar.e *= oVar.a / f7;
@@ -108,19 +108,19 @@ public final class be0 extends FrameLayout {
                 float[] fArr = qVar2.H;
                 matrix.postTranslate(fArr[2], fArr[5]);
                 qVar2.r(false);
-                yeVar2 = yeVar;
+                zeVar2 = zeVar;
             }
-            imageView.setImageBitmap(k61Var == null ? qVar.x : null);
+            imageView.setImageBitmap(l61Var == null ? qVar.x : null);
         }
         eg.f fVar = this.c;
         fVar.setFreeform(z10);
         fVar.b(0.0f);
         fVar.setMirrored(false);
         fVar.setRotated(false);
-        if (yeVar2 != null) {
-            fVar.b(yeVar2.d);
-            fVar.setRotated(yeVar2.k != 0);
-            fVar.setMirrored(yeVar2.l);
+        if (zeVar2 != null) {
+            fVar.b(zeVar2.d);
+            fVar.setRotated(zeVar2.k != 0);
+            fVar.setMirrored(zeVar2.l);
         } else {
             fVar.setRotated(false);
             fVar.setMirrored(false);
@@ -135,9 +135,9 @@ public final class be0 extends FrameLayout {
         if (this.f && view == (qVar = this.b)) {
             RectF actualRect = qVar.getActualRect();
             int L = org.telegram.messenger.i0.L(32.0f);
-            org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) this.a;
-            bq0Var.getClass();
-            int L2 = org.telegram.messenger.i0.L(2.0f) + (((int) (((r1.S7.getMeasuredWidth() - org.telegram.messenger.i0.L(32.0f)) * bq0Var.a.w8) + org.telegram.messenger.i0.L(16.0f))) - (L / 2));
+            org.telegram.ui.zp0 zp0Var = (org.telegram.ui.zp0) this.a;
+            zp0Var.getClass();
+            int L2 = org.telegram.messenger.i0.L(2.0f) + (((int) (((r1.S7.getMeasuredWidth() - org.telegram.messenger.i0.L(32.0f)) * zp0Var.a.w8) + org.telegram.messenger.i0.L(16.0f))) - (L / 2));
             int measuredHeight = getMeasuredHeight() - org.telegram.messenger.i0.L(156.0f);
             float f7 = actualRect.left;
             float f10 = this.r;
@@ -158,7 +158,7 @@ public final class be0 extends FrameLayout {
                 canvas.drawCircle(actualRect.centerX(), actualRect.centerY(), actualRect.width() / 2.0f, paint);
             }
             paint.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.ng, this.D));
-            paint.setAlpha(Math.min(org.telegram.messenger.zs.e4, (int) (this.r * 255.0f * this.n)));
+            paint.setAlpha(Math.min(org.telegram.messenger.at.e4, (int) (this.r * 255.0f * this.n)));
             canvas.drawCircle(L2 + r1, org.telegram.messenger.i0.L(8.0f) + measuredHeight + L, org.telegram.messenger.i0.L(3.0f), paint);
         }
         return drawChild;
@@ -198,7 +198,7 @@ public final class be0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.O(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.bq0) this.a).f();
+                    ((org.telegram.ui.zp0) this.a).f();
                 }
                 return true;
             }
@@ -228,7 +228,7 @@ public final class be0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.O(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.bq0) this.a).f();
+                    ((org.telegram.ui.zp0) this.a).f();
                 }
                 return true;
             }

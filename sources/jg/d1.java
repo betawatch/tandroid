@@ -5,11 +5,11 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Components.w9;
 import vh.s3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d1 extends org.telegram.ui.Cells.s0 {
     public final w9 t2;
@@ -24,7 +24,7 @@ public final class d1 extends org.telegram.ui.Cells.s0 {
         TextPaint textPaint = new TextPaint(1);
         this.u2 = textPaint;
         textPaint.setTypeface(org.telegram.messenger.i0.o());
-        textPaint.setTextSize(org.telegram.messenger.i0.L(Math.max(16, tz.W0) - 2));
+        textPaint.setTextSize(org.telegram.messenger.i0.L(Math.max(16, uz.W0) - 2));
         textPaint.setColor(-1);
     }
 

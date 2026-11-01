@@ -9,17 +9,17 @@ import android.text.Editable;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.Iterator;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.h6;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g3 extends j {
     public String A0;
@@ -40,7 +40,7 @@ public final class g3 extends j {
         this.t0 = i10;
         e3 e3Var = new e3(this, context);
         this.q0 = e3Var;
-        zs.i(e3Var);
+        at.i(e3Var);
         e3Var.setGravity(19);
         e3Var.setBackgroundColor(0);
         e3Var.setPadding(org.telegram.messenger.i0.L(7.0f), org.telegram.messenger.i0.L(7.0f), org.telegram.messenger.i0.L(7.0f), org.telegram.messenger.i0.L(7.0f));
@@ -105,18 +105,18 @@ public final class g3 extends j {
     }
 
     @Override // jg.j
-    public oj0 getSelectionBounds() {
+    public pj0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new oj0();
+            return new pj0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.i0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.i0.L(52.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = z20.x(L, 2.0f, getPositionX(), scaleX);
+        float x10 = a30.x(L, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         e3 e3Var = this.q0;
-        return new oj0(x10, (positionY - (((L2 - e3Var.getExtendedPaddingTop()) - org.telegram.messenger.i0.N(4.0f)) / 2.0f)) * scaleX, ((L * scaleX) + x10) - x10, (L2 - e3Var.getExtendedPaddingBottom()) * scaleX);
+        return new pj0(x10, (positionY - (((L2 - e3Var.getExtendedPaddingTop()) - org.telegram.messenger.i0.N(4.0f)) / 2.0f)) * scaleX, ((L * scaleX) + x10) - x10, (L2 - e3Var.getExtendedPaddingBottom()) * scaleX);
     }
 
     @Override // jg.j
@@ -222,7 +222,7 @@ public final class g3 extends j {
         if (e3Var.getText().length() > 0) {
             e3Var.setHint((CharSequence) null);
         } else {
-            e3Var.setHint(cd.L0(2131744218, null));
+            e3Var.setHint(dd.L0(2131744218, null));
             e3Var.setHintTextColor(1627389951);
         }
     }
@@ -316,7 +316,7 @@ public final class g3 extends j {
         int align2 = getAlign();
         if (align2 == 1) {
             i10 = 4;
-        } else if (align2 == 2 ? !cd.X : cd.X) {
+        } else if (align2 == 2 ? !dd.X : dd.X) {
             i10 = 3;
         }
         this.q0.setTextAlignment(i10);

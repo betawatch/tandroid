@@ -12,9 +12,9 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
@@ -22,7 +22,7 @@ import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class z5 extends c0 implements org.telegram.ui.ActionBar.k6, j9 {
     public boolean D;
@@ -52,12 +52,12 @@ public final class z5 extends c0 implements org.telegram.ui.ActionBar.k6, j9 {
         n1Var.setAllowNewlines(false);
         n1Var.setInputType(147457);
         n1Var.setGravity(49);
-        n1Var.setTextSize(1, Math.max(8, tz.W0 - 2));
+        n1Var.setTextSize(1, Math.max(8, uz.W0 - 2));
         n1Var.setIncludeFontPadding(false);
         n1Var.setMinHeight(0);
         n1Var.setBackground(null);
         n1Var.setPadding(org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(2.0f), 0);
-        n1Var.setHint(cd.L0(2131753989, null));
+        n1Var.setHint(dd.L0(2131753989, null));
         n1Var.setCenterEmptyHint(true);
         n1Var.setListener(new k6.h(this, 12));
         n1Var.setDelegate(new a1.c(this, 14));
@@ -403,7 +403,7 @@ public final class z5 extends c0 implements org.telegram.ui.ActionBar.k6, j9 {
         return m10.a;
     }
 
-    public final TL_iv.pageTableCell o(int i10, int i11) {
+    public final TL_iv.pageTableCell n(int i10, int i11) {
         if (this.F == null) {
             return null;
         }

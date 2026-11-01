@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class m6 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final l0 a;
@@ -23,9 +23,9 @@ public class m6 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
         l0Var.setBackground(org.telegram.ui.ActionBar.j6.f(i10, 24.0f));
         l0Var.setImportantForAccessibility(1);
         w7.e6.b(l0Var, 0.02f, 1.2f);
-        if (org.telegram.messenger.cd.X) {
+        if (org.telegram.messenger.dd.X) {
             TextView textView = new TextView(context);
-            textView.setText(org.telegram.messenger.cd.L0(2131752098, null));
+            textView.setText(org.telegram.messenger.dd.L0(2131752098, null));
             textView.setGravity(17);
             sc.e.t(textView, 1, 14.0f);
             org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.Gi, null);
@@ -37,7 +37,7 @@ public class m6 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
         e6Var.n(0.25f, 300L, grVar);
         e6Var.setCallback(l0Var);
         e6Var.w(org.telegram.messenger.i0.L(14.0f));
-        e6Var.t(org.telegram.messenger.cd.L0(2131752098, null), true, true);
+        e6Var.t(org.telegram.messenger.dd.L0(2131752098, null), true, true);
         e6Var.b = 5;
         e6Var.x(org.telegram.messenger.i0.o());
         int i11 = org.telegram.ui.ActionBar.t6.Gi;
@@ -51,11 +51,11 @@ public class m6 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
         e6Var2.u(org.telegram.ui.ActionBar.t6.w(org.telegram.ui.ActionBar.t6.x0(null, i10, false), org.telegram.ui.ActionBar.t6.r1(0.7f, org.telegram.ui.ActionBar.t6.x0(null, i11, false))));
         e6Var2.t("", true, true);
         l0Var.setContentDescription(TextUtils.concat(e6Var.i, "\t", e6Var2.i));
-        addView(l0Var, w7.b6.d(-1, 48.0f, org.telegram.messenger.zs.E1, 16.0f, 16.0f, 16.0f, 16.0f));
+        addView(l0Var, w7.b6.d(-1, 48.0f, org.telegram.messenger.at.E1, 16.0f, 16.0f, 16.0f, 16.0f));
     }
 
     public final void a(long j10, boolean z10) {
-        String L0 = z10 ? org.telegram.messenger.cd.L0(2131752098, null) : org.telegram.messenger.cd.L0(2131752050, null);
+        String L0 = z10 ? org.telegram.messenger.dd.L0(2131752098, null) : org.telegram.messenger.dd.L0(2131752050, null);
         org.telegram.ui.Components.e6 e6Var = this.b;
         e6Var.t(L0, true, true);
         String i02 = j10 <= 0 ? "" : org.telegram.messenger.i0.i0(j10, false, false);

@@ -8,18 +8,18 @@ import android.os.Looper;
 import android.view.TextureView;
 import android.view.View;
 import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.qr;
-import org.telegram.messenger.sc;
+import org.telegram.messenger.rr;
+import org.telegram.messenger.tc;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.w5;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
@@ -101,7 +101,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
             if (i13 == 1) {
                 i10 = z10 ? 90 : -90;
             } else if (i13 == 3) {
-                i10 = z10 ? zs.t4 : -270;
+                i10 = z10 ? at.t4 : -270;
             }
             i12 += i10;
         }
@@ -317,9 +317,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                             throw th2;
                         }
                     }
-                    qr qrVar = new qr(this, i10, i11, i19, i18, 2);
-                    this.updateScreenRunnable = qrVar;
-                    postOrRun(qrVar);
+                    rr rrVar = new rr(this, i10, i11, i19, i18, 2);
+                    this.updateScreenRunnable = rrVar;
+                    postOrRun(rrVar);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -398,7 +398,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
     }
 
     public void setBackgroundRenderer(TextureView textureView) {
-        if (sc.e(512)) {
+        if (tc.e(512)) {
             this.backgroundRenderer = textureView;
             if (textureView != null) {
                 textureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() { // from class: org.webrtc.TextureViewRenderer.1
@@ -570,7 +570,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         requestLayout();
     }
 
-    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;

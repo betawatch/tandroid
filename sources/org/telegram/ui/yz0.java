@@ -1,32 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class yz0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b01 b;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
 
-    public /* synthetic */ yz0(b01 b01Var, int i10) {
-        this.a = i10;
-        this.b = b01Var;
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes3.dex */
+public final class yz0 extends org.telegram.ui.Cells.m3 {
+    public final /* synthetic */ a01 E;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yz0(a01 a01Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, "", true, false, 1024, p6Var);
+        this.E = a01Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                b01 b01Var = this.b;
-                c01 c01Var = b01Var.w;
-                if (b01Var.a != 0) {
-                    c01Var.onBackPressed();
-                    break;
-                } else {
-                    c01Var.dismiss();
-                    break;
-                }
-            default:
-                org.telegram.messenger.i0.J3(this.b.n.d);
-                break;
+    @Override // org.telegram.ui.Cells.m3
+    public final void b(Editable editable) {
+        a01 a01Var = this.E;
+        vh.d dVar = a01Var.s;
+        if (dVar != null) {
+            dVar.setEnabled(a01Var.d.optional || !TextUtils.isEmpty(a01Var.n.getText()));
         }
     }
 }

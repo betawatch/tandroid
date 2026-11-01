@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class qb0 extends Drawable {
     public pb0 a;
@@ -20,8 +20,8 @@ public final class qb0 extends Drawable {
     public qb0() {
         Paint paint = new Paint(1);
         this.b = paint;
-        this.c = org.telegram.messenger.zs.e4;
-        this.d = org.telegram.messenger.zs.e4;
+        this.c = org.telegram.messenger.at.e4;
+        this.d = org.telegram.messenger.at.e4;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(org.telegram.messenger.i0.L(1.0f));

@@ -14,23 +14,23 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.wb;
-import org.telegram.ui.Components.x41;
+import org.telegram.ui.Components.y41;
 import org.telegram.ui.hk;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
+public final class w6 extends org.telegram.ui.ActionBar.z2 implements vs {
     public static final /* synthetic */ int U1 = 0;
     public final ArrayList A1;
     public boolean B1;
@@ -43,9 +43,9 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
     public final Paint I1;
     public ArrayList J1;
     public e6 K1;
-    public q20 L1;
+    public r20 L1;
     public j6 M1;
-    public q20 N1;
+    public r20 N1;
     public z6 O1;
     public final boolean P1;
     public boolean Q1;
@@ -117,7 +117,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
         this.P1 = true;
         this.Q1 = false;
         this.H1 = i10;
-        String string = vp.r1(this.a).f7.getString("story_prv_contacts", null);
+        String string = wp.r1(this.a).f7.getString("story_prv_contacts", null);
         if (string != null) {
             String[] split = string.split(",");
             arrayList3.clear();
@@ -128,7 +128,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
                 }
             }
         }
-        String string2 = vp.r1(this.a).f7.getString("story_prv_grpcontacts", null);
+        String string2 = wp.r1(this.a).f7.getString("story_prv_grpcontacts", null);
         if (string2 != null) {
             String[] split2 = string2.split(";");
             hashMap2.clear();
@@ -160,7 +160,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
         }
         boolean z12 = z11;
         ?? r23 = c11;
-        String string3 = vp.r1(this.a).f7.getString("story_prv_everyoneexcept", null);
+        String string3 = wp.r1(this.a).f7.getString("story_prv_everyoneexcept", null);
         if (string3 != null) {
             String[] split4 = string3.split(",");
             arrayList.clear();
@@ -171,7 +171,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
                 }
             }
         }
-        String string4 = vp.r1(this.a).f7.getString("story_prv_grpeveryoneexcept", null);
+        String string4 = wp.r1(this.a).f7.getString("story_prv_grpeveryoneexcept", null);
         if (string4 != null) {
             String[] split5 = string4.split(";");
             hashMap.clear();
@@ -190,7 +190,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
                 }
             }
         }
-        String string5 = vp.r1(this.a).f7.getString("story_prv_excluded", null);
+        String string5 = wp.r1(this.a).f7.getString("story_prv_excluded", null);
         if (string5 != null) {
             String[] split7 = string5.split(",");
             arrayList2.clear();
@@ -203,14 +203,14 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
         }
         this.q1 = R0(arrayList3, hashMap2).size();
         this.m1 = R0(arrayList, hashMap).size();
-        this.t1 = !vp.r1(this.a).f7.getBoolean("story_noforwards", r23);
-        this.u1 = vp.r1(this.a).f7.getBoolean("story_keep", z12);
+        this.t1 = !wp.r1(this.a).f7.getBoolean("story_noforwards", r23);
+        this.u1 = wp.r1(this.a).f7.getBoolean("story_keep", z12);
         P0(context);
         this.i1.setAdapter(new x5(this, context, 0));
-        hs a02 = hs.a0(this.a);
-        a02.a.c(new d1(15, this, a02));
-        vp.r1(this.a).O1().S();
-        vp.r1(this.a).O1().U();
+        is a02 = is.a0(this.a);
+        a02.a.c(new r0(16, this, a02));
+        wp.r1(this.a).O1().S();
+        wp.r1(this.a).O1().U();
     }
 
     public static ArrayList J0(w6 w6Var) {
@@ -230,7 +230,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
     public static int K0(w6 w6Var, TLRPC.Chat chat) {
         Integer num;
         int i10;
-        TLRPC.ChatFull M0 = vp.r1(w6Var.a).M0(chat.id);
+        TLRPC.ChatFull M0 = wp.r1(w6Var.a).M0(chat.id);
         if (M0 != null && (i10 = M0.participants_count) > 0) {
             return i10;
         }
@@ -263,9 +263,9 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
 
     @Override // org.telegram.ui.ActionBar.z2
     public final void L() {
-        zs.f(this.a).n(this, zs.O);
-        zs.f(this.a).n(this, zs.a3);
-        zs.f(this.a).n(this, zs.c3);
+        at.f(this.a).n(this, at.O);
+        at.f(this.a).n(this, at.a3);
+        at.f(this.a).n(this, at.c3);
         super.L();
     }
 
@@ -293,7 +293,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
     public final void N0(u6 u6Var, Runnable runnable, boolean z10) {
         ArrayList arrayList = new ArrayList();
         if (this.J1 != null) {
-            vp r12 = vp.r1(this.a);
+            wp r12 = wp.r1(this.a);
             for (int i10 = 0; i10 < this.J1.size(); i10++) {
                 String str = (String) this.J1.get(i10);
                 TLObject e22 = r12.e2(str);
@@ -317,7 +317,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
             }
             e6 e6Var = this.K1;
             if (e6Var != null) {
-                e6Var.a(u6Var, this.s1, this.t1, this.u1, this.x1, this.j1, this.y1, new d1(17, dVar, runnable), new d0(dVar, 13));
+                e6Var.a(u6Var, this.s1, this.t1, this.u1, this.x1, this.j1, this.y1, new r0(18, dVar, runnable), new d0(dVar, 13));
                 return;
             } else {
                 runnable.run();
@@ -330,15 +330,15 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
             SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i11)));
-            spannableString.setSpan(new x41(org.telegram.messenger.i0.o()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new y41(org.telegram.messenger.i0.o()), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.I0);
-        String L0 = cd.L0(2131744515, null);
+        String L0 = dd.L0(2131744515, null);
         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
         x1Var.R = L0;
-        x1Var.T = org.telegram.messenger.i0.J2(cd.L0(2131744514, null), spannableStringBuilder, "%s");
-        alertDialog$Builder.k(cd.L0(2131746758, null), new q5.a(this, u6Var, runnable, 9));
+        x1Var.T = org.telegram.messenger.i0.J2(dd.L0(2131744514, null), spannableStringBuilder, "%s");
+        alertDialog$Builder.k(dd.L0(2131746758, null), new q5.a(this, u6Var, runnable, 9));
         i0.a.s(null, 2131752589, alertDialog$Builder, null);
     }
 
@@ -349,11 +349,11 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
         if (arrayList2 == null || arrayList2.isEmpty()) {
             org.telegram.messenger.i5.r(this.a).A(0L, false);
         }
-        vp r12 = vp.r1(this.a);
+        wp r12 = wp.r1(this.a);
         if (arrayList2 != null) {
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList2.get(i10);
-                if (tL_contact != null && (Z1 = r12.Z1(Long.valueOf(tL_contact.user_id))) != null && !h20.B(Z1) && !Z1.bot && Z1.id != 777000) {
+                if (tL_contact != null && (Z1 = r12.Z1(Long.valueOf(tL_contact.user_id))) != null && !i20.B(Z1) && !Z1.bot && Z1.id != 777000) {
                     arrayList.add(Z1);
                 }
             }
@@ -363,9 +363,9 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
 
     public final void P0(Context context) {
         wb.a(this.c, new mg.u(11));
-        zs.f(this.a).c(this, zs.O);
-        zs.f(this.a).c(this, zs.a3);
-        zs.f(this.a).c(this, zs.c3);
+        at.f(this.a).c(this, at.O);
+        at.f(this.a).c(this, at.a3);
+        at.f(this.a).c(this, at.c3);
         int i10 = org.telegram.ui.ActionBar.t6.h5;
         this.I1.setColor(org.telegram.ui.ActionBar.t6.w0(i10, this.I0));
         Q(i10);
@@ -374,7 +374,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
         this.i1 = hkVar;
         int i11 = this.t0;
         hkVar.setPadding(i11, 0, i11, 0);
-        this.b.addView(this.i1, w7.b6.e(-1, -1, zs.E1));
+        this.b.addView(this.i1, w7.b6.e(-1, -1, at.E1));
     }
 
     public final void Q0(boolean z10) {
@@ -498,14 +498,14 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         hk hkVar = this.i1;
         if (hkVar == null) {
             return;
         }
         int i12 = 0;
-        if (i10 == zs.O) {
+        if (i10 == at.O) {
             View[] viewPages = hkVar.getViewPages();
             View view = viewPages[0];
             if (view instanceof r6) {
@@ -518,8 +518,8 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
             }
             return;
         }
-        if (i10 != zs.a3) {
-            if (i10 == zs.c3) {
+        if (i10 != at.a3) {
+            if (i10 == at.c3) {
                 View[] viewPages2 = hkVar.getViewPages();
                 while (i12 < viewPages2.length) {
                     View view3 = viewPages2[i12];
@@ -554,13 +554,13 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
         u6 u6Var;
-        q20 q20Var = this.L1;
+        r20 r20Var = this.L1;
         ArrayList arrayList = this.n1;
         HashMap hashMap = this.l1;
         ArrayList arrayList2 = this.k1;
         HashMap hashMap2 = this.p1;
         ArrayList arrayList3 = this.o1;
-        if (q20Var != null) {
+        if (r20Var != null) {
             int i10 = this.E1;
             if (i10 == 3) {
                 u6Var = new u6(this.E1, this.a, new ArrayList(R0(arrayList3, hashMap2)));
@@ -603,7 +603,7 @@ public final class w6 extends org.telegram.ui.ActionBar.z2 implements us {
             sb3.append(",");
             sb3.append(TextUtils.join(",", (Iterable) entry2.getValue()));
         }
-        vp.r1(this.a).f7.edit().putString("story_prv_everyoneexcept", TextUtils.join(",", arrayList2)).putString("story_prv_grpeveryoneexcept", sb3.toString()).putString("story_prv_contacts", TextUtils.join(",", arrayList3)).putString("story_prv_grpcontacts", sb2.toString()).putString("story_prv_excluded", TextUtils.join(",", arrayList)).putBoolean("story_noforwards", !this.t1).putBoolean("story_keep", this.u1).apply();
+        wp.r1(this.a).f7.edit().putString("story_prv_everyoneexcept", TextUtils.join(",", arrayList2)).putString("story_prv_grpeveryoneexcept", sb3.toString()).putString("story_prv_contacts", TextUtils.join(",", arrayList3)).putString("story_prv_grpcontacts", sb2.toString()).putString("story_prv_excluded", TextUtils.join(",", arrayList)).putBoolean("story_noforwards", !this.t1).putBoolean("story_keep", this.u1).apply();
         super.dismiss();
     }
 

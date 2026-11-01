@@ -1,20 +1,48 @@
 package org.telegram.ui;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class t90 implements Consumer {
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        ((Boolean) obj).getClass();
+public final class t90 implements kf.b {
+    public final z90 a;
+    public final /* synthetic */ LaunchActivity b;
+
+    public t90(LaunchActivity launchActivity) {
+        this.b = launchActivity;
         Pattern pattern = LaunchActivity.D1;
+        this.a = new z90(launchActivity, false);
     }
 
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    @Override // kf.b
+    public final void b() {
+        Pattern pattern = LaunchActivity.D1;
+        this.b.getWindow();
+    }
+
+    @Override // kf.b
+    public final void d() {
+        this.a.c(false);
+    }
+
+    @Override // kf.b
+    public final void f() {
+        Pattern pattern = LaunchActivity.D1;
+        LaunchActivity launchActivity = this.b;
+        launchActivity.getClass();
+        this.a.c(true);
+        launchActivity.getWindow();
+    }
+
+    @Override // kf.b
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // kf.b
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // kf.b
+    public final /* synthetic */ void e() {
     }
 }

@@ -24,10 +24,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0 {
-    public org.telegram.messenger.jj D;
+public final class b40 implements org.telegram.messenger.vs, org.telegram.ui.yn0 {
+    public org.telegram.messenger.kj D;
     public String E;
     public boolean F;
     public boolean H;
@@ -55,7 +55,7 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
     public String w;
     public String x;
     public String y;
-    public final int d = org.telegram.messenger.d20.s0;
+    public final int d = org.telegram.messenger.e20.s0;
     public boolean G = true;
     public boolean J = true;
     public boolean K = true;
@@ -68,35 +68,35 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
     }
 
     public static void a(b40 b40Var, boolean z10, ArrayList arrayList) {
-        org.telegram.messenger.jj jjVar;
+        org.telegram.messenger.kj kjVar;
         Bitmap K;
         ImageReceiver imageReceiver = b40Var.e;
         int i10 = b40Var.d;
         if (arrayList.isEmpty()) {
             return;
         }
-        org.telegram.messenger.pz pzVar = (org.telegram.messenger.pz) arrayList.get(0);
+        org.telegram.messenger.qz qzVar = (org.telegram.messenger.qz) arrayList.get(0);
         Bitmap bitmap = null;
-        if ((pzVar.o || pzVar.k != null) && !pzVar.p) {
+        if ((qzVar.o || qzVar.k != null) && !qzVar.p) {
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
             tL_message.id = 0;
             tL_message.message = "";
             tL_message.media = new TLRPC.TL_messageMediaEmpty();
             tL_message.action = new TLRPC.TL_messageActionEmpty();
             tL_message.dialog_id = 0L;
-            jjVar = new org.telegram.messenger.jj(org.telegram.messenger.d20.s0, tL_message, false, false);
-            jjVar.k.attachPath = new File(org.telegram.messenger.b8.z(4), org.telegram.messenger.tz.p() + "_avatar.mp4").getAbsolutePath();
-            jjVar.p0 = pzVar.k;
-            jjVar.s = pzVar.v;
-            bitmap = org.telegram.messenger.hc.K(pzVar.e, null, 800.0f, 800.0f, true);
+            kjVar = new org.telegram.messenger.kj(org.telegram.messenger.e20.s0, tL_message, false, false);
+            kjVar.k.attachPath = new File(org.telegram.messenger.b8.z(4), org.telegram.messenger.uz.p() + "_avatar.mp4").getAbsolutePath();
+            kjVar.p0 = qzVar.k;
+            kjVar.s = qzVar.v;
+            bitmap = org.telegram.messenger.ic.K(qzVar.e, null, 800.0f, 800.0f, true);
         } else {
-            String str = pzVar.c;
+            String str = qzVar.c;
             if (str != null) {
-                K = org.telegram.messenger.hc.K(str, null, 800.0f, 800.0f, true);
+                K = org.telegram.messenger.ic.K(str, null, 800.0f, 800.0f, true);
             } else {
-                org.telegram.messenger.hf hfVar = pzVar.l;
-                if (hfVar != null) {
-                    TLRPC.Photo photo = hfVar.K;
+                org.telegram.messenger.jf jfVar = qzVar.l;
+                if (jfVar != null) {
+                    TLRPC.Photo photo = jfVar.K;
                     if (photo != null) {
                         TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(photo.sizes, org.telegram.messenger.i0.Z0(false), false, null, false);
                         if (w9 != null) {
@@ -111,34 +111,34 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
                                 }
                             }
                             if (K2 != null) {
-                                K = org.telegram.messenger.hc.K(K2.getAbsolutePath(), null, 800.0f, 800.0f, true);
+                                K = org.telegram.messenger.ic.K(K2.getAbsolutePath(), null, 800.0f, 800.0f, true);
                             } else {
-                                org.telegram.messenger.zs.f(i10).b(b40Var, org.telegram.messenger.zs.Y1);
-                                org.telegram.messenger.zs.f(i10).b(b40Var, org.telegram.messenger.zs.Z1);
+                                org.telegram.messenger.at.f(i10).b(b40Var, org.telegram.messenger.at.Y1);
+                                org.telegram.messenger.at.f(i10).b(b40Var, org.telegram.messenger.at.Z1);
                                 b40Var.w = org.telegram.messenger.b8.r(null, w9.location);
-                                imageReceiver.q0(org.telegram.messenger.ic.i(w9, pzVar.l.K), null, null, "jpg", null, 1);
+                                imageReceiver.q0(org.telegram.messenger.jc.i(w9, qzVar.l.K), null, null, "jpg", null, 1);
                             }
                         }
                         K = null;
-                    } else if (hfVar.C != null) {
-                        File file = new File(org.telegram.messenger.b8.z(4), Utilities.a(pzVar.l.C) + "." + org.telegram.messenger.hc.B(pzVar.l.C, "jpg"));
+                    } else if (jfVar.C != null) {
+                        File file = new File(org.telegram.messenger.b8.z(4), Utilities.a(qzVar.l.C) + "." + org.telegram.messenger.ic.B(qzVar.l.C, "jpg"));
                         b40Var.E = file.getAbsolutePath();
                         if (!file.exists() || file.length() == 0) {
-                            b40Var.w = pzVar.l.C;
-                            org.telegram.messenger.zs.f(i10).b(b40Var, org.telegram.messenger.zs.R1);
-                            org.telegram.messenger.zs.f(i10).b(b40Var, org.telegram.messenger.zs.S1);
-                            imageReceiver.o0(pzVar.l.C, null, null, "jpg", 1L);
+                            b40Var.w = qzVar.l.C;
+                            org.telegram.messenger.at.f(i10).b(b40Var, org.telegram.messenger.at.R1);
+                            org.telegram.messenger.at.f(i10).b(b40Var, org.telegram.messenger.at.S1);
+                            imageReceiver.o0(qzVar.l.C, null, null, "jpg", 1L);
                         } else {
-                            K = org.telegram.messenger.hc.K(file.getAbsolutePath(), null, 800.0f, 800.0f, true);
+                            K = org.telegram.messenger.ic.K(file.getAbsolutePath(), null, 800.0f, 800.0f, true);
                         }
                     }
                 }
-                jjVar = null;
+                kjVar = null;
             }
-            jjVar = null;
+            kjVar = null;
             bitmap = K;
         }
-        b40Var.r(z10, bitmap, jjVar);
+        b40Var.r(z10, bitmap, kjVar);
     }
 
     public final void b() {
@@ -153,7 +153,7 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
         }
         a40 a40Var = this.b;
         if (a40Var != null) {
-            a40Var.T();
+            a40Var.U();
         }
     }
 
@@ -184,14 +184,14 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
         }
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         a40 a40Var;
         org.telegram.ui.ActionBar.k2 k2Var;
-        int i12 = org.telegram.messenger.zs.W1;
-        int i13 = org.telegram.messenger.zs.V1;
+        int i12 = org.telegram.messenger.at.W1;
+        int i13 = org.telegram.messenger.at.V1;
         int i14 = this.d;
-        int i15 = org.telegram.messenger.zs.U1;
+        int i15 = org.telegram.messenger.at.U1;
         if (i10 == i15 || i10 == i13) {
             String str = (String) objArr[0];
             if (str.equals(this.w)) {
@@ -209,11 +209,11 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
                 }
             }
             if (this.w == null && this.x == null && this.D == null) {
-                org.telegram.messenger.zs.f(i14).n(this, i15);
-                org.telegram.messenger.zs.f(i14).n(this, i12);
-                org.telegram.messenger.zs.f(i14).n(this, i13);
+                org.telegram.messenger.at.f(i14).n(this, i15);
+                org.telegram.messenger.at.f(i14).n(this, i12);
+                org.telegram.messenger.at.f(i14).n(this, i13);
                 if (i10 == i15 && (a40Var = this.b) != null) {
-                    a40Var.U(this.M, this.N, this.P, this.y, this.h, this.n, this.s, this.O);
+                    a40Var.V(this.M, this.N, this.P, this.y, this.h, this.n, this.s, this.O);
                 }
                 c();
                 return;
@@ -229,58 +229,58 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
             float min = Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue());
             a40 a40Var2 = this.b;
             this.W = min;
-            a40Var2.H(min);
+            a40Var2.I(min);
             return;
         }
-        int i16 = org.telegram.messenger.zs.S1;
-        int i17 = org.telegram.messenger.zs.R1;
-        int i18 = org.telegram.messenger.zs.Z1;
-        int i19 = org.telegram.messenger.zs.Y1;
+        int i16 = org.telegram.messenger.at.S1;
+        int i17 = org.telegram.messenger.at.R1;
+        int i18 = org.telegram.messenger.at.Z1;
+        int i19 = org.telegram.messenger.at.Y1;
         if (i10 == i19 || i10 == i18 || i10 == i17 || i10 == i16) {
             String str4 = (String) objArr[0];
             this.W = 1.0f;
             if (str4.equals(this.w)) {
-                org.telegram.messenger.zs.f(i14).n(this, i19);
-                org.telegram.messenger.zs.f(i14).n(this, i18);
-                org.telegram.messenger.zs.f(i14).n(this, i17);
-                org.telegram.messenger.zs.f(i14).n(this, i16);
+                org.telegram.messenger.at.f(i14).n(this, i19);
+                org.telegram.messenger.at.f(i14).n(this, i18);
+                org.telegram.messenger.at.f(i14).n(this, i17);
+                org.telegram.messenger.at.f(i14).n(this, i16);
                 this.w = null;
                 if (i10 == i19 || i10 == i17) {
-                    r(false, org.telegram.messenger.hc.K(this.E, null, 800.0f, 800.0f, true), null);
+                    r(false, org.telegram.messenger.ic.K(this.E, null, 800.0f, 800.0f, true), null);
                     return;
                 }
                 this.e.w0(null);
                 a40 a40Var3 = this.b;
                 if (a40Var3 != null) {
-                    a40Var3.T();
+                    a40Var3.U();
                     return;
                 }
                 return;
             }
             return;
         }
-        int i20 = org.telegram.messenger.zs.c2;
-        int i21 = org.telegram.messenger.zs.b2;
-        int i22 = org.telegram.messenger.zs.a2;
+        int i20 = org.telegram.messenger.at.c2;
+        int i21 = org.telegram.messenger.at.b2;
+        int i22 = org.telegram.messenger.at.a2;
         if (i10 == i20) {
-            if (((org.telegram.messenger.jj) objArr[0]) != this.D || this.a == null) {
+            if (((org.telegram.messenger.kj) objArr[0]) != this.D || this.a == null) {
                 return;
             }
-            org.telegram.messenger.zs.f(i14).n(this, i22);
-            org.telegram.messenger.zs.f(i14).n(this, i20);
-            org.telegram.messenger.zs.f(i14).n(this, i21);
+            org.telegram.messenger.at.f(i14).n(this, i22);
+            org.telegram.messenger.at.f(i14).n(this, i20);
+            org.telegram.messenger.at.f(i14).n(this, i21);
             c();
             return;
         }
         if (i10 != i21) {
-            if (i10 == i22 && ((org.telegram.messenger.jj) objArr[0]) == this.D && (k2Var = this.a) != null) {
+            if (i10 == i22 && ((org.telegram.messenger.kj) objArr[0]) == this.D && (k2Var = this.a) != null) {
                 this.x = (String) objArr[1];
                 k2Var.getFileLoader().h0(this.x, false, false, (int) this.D.p0.q, 33554432, false);
                 return;
             }
             return;
         }
-        if (((org.telegram.messenger.jj) objArr[0]) != this.D || this.a == null) {
+        if (((org.telegram.messenger.kj) objArr[0]) != this.D || this.a == null) {
             return;
         }
         String str5 = (String) objArr[1];
@@ -292,7 +292,7 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
             if (this.P > longValue3) {
                 this.P = longValue3;
             }
-            Bitmap s10 = org.telegram.messenger.qz.s(str5, (long) (this.P * 1000.0d), null, true);
+            Bitmap s10 = org.telegram.messenger.rz.s(str5, (long) (this.P * 1000.0d), null, true);
             if (s10 != null) {
                 org.telegram.messenger.b8.G(i14);
                 File K = org.telegram.messenger.b8.K(this.n, null, true, true);
@@ -310,20 +310,20 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
                     }
                     K2.delete();
                 }
-                this.h = org.telegram.messenger.hc.Y(s10, 800.0f, 800.0f, 80, org.telegram.messenger.zs.r5, org.telegram.messenger.zs.r5);
-                TLRPC.PhotoSize Y = org.telegram.messenger.hc.Y(s10, 150.0f, 150.0f, 80, org.telegram.messenger.zs.g2, org.telegram.messenger.zs.g2);
+                this.h = org.telegram.messenger.ic.Y(s10, 800.0f, 800.0f, 80, org.telegram.messenger.at.r5, org.telegram.messenger.at.r5);
+                TLRPC.PhotoSize Y = org.telegram.messenger.ic.Y(s10, 150.0f, 150.0f, 80, org.telegram.messenger.at.g2, org.telegram.messenger.at.g2);
                 this.n = Y;
                 if (Y != null) {
                     try {
                         org.telegram.messenger.b8.G(i14);
-                        org.telegram.messenger.hc.D().O(new BitmapDrawable(BitmapFactory.decodeFile(org.telegram.messenger.b8.K(this.n, null, true, true).getAbsolutePath())), this.n.location.volume_id + "_" + this.n.location.local_id + "@50_50", true);
+                        org.telegram.messenger.ic.D().O(new BitmapDrawable(BitmapFactory.decodeFile(org.telegram.messenger.b8.K(this.n, null, true, true).getAbsolutePath())), this.n.location.volume_id + "_" + this.n.location.local_id + "@50_50", true);
                     } catch (Throwable unused) {
                     }
                 }
             }
-            org.telegram.messenger.zs.f(i14).n(this, i22);
-            org.telegram.messenger.zs.f(i14).n(this, i20);
-            org.telegram.messenger.zs.f(i14).n(this, i21);
+            org.telegram.messenger.at.f(i14).n(this, i22);
+            org.telegram.messenger.at.f(i14).n(this, i20);
+            org.telegram.messenger.at.f(i14).n(this, i21);
             this.y = str5;
             this.x = str5;
             this.D = null;
@@ -342,7 +342,7 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
             this.c = biVar;
             int i11 = this.Q ? 2 : 1;
             a40 a40Var = this.b;
-            if (a40Var == null || !a40Var.x()) {
+            if (a40Var == null || !a40Var.y()) {
                 ctVar = null;
             } else {
                 a40 a40Var2 = this.b;
@@ -360,9 +360,9 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
             int i12 = biVar.K2;
             TextView textView = biVar.d3;
             if (i12 == 2) {
-                textView.setText(org.telegram.messenger.cd.L0(2131752121, null));
+                textView.setText(org.telegram.messenger.dd.L0(2131752121, null));
             } else {
-                textView.setText(org.telegram.messenger.cd.L0(2131752123, null));
+                textView.setText(org.telegram.messenger.dd.L0(2131752123, null));
             }
             if (chatAttachAlertPhotoLayout != null) {
                 bi biVar2 = chatAttachAlertPhotoLayout.b;
@@ -374,9 +374,9 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
         }
         int i13 = this.U;
         if (i13 == 1) {
-            this.c.d3.setText(org.telegram.messenger.cd.a0("SetPhotoFor", null, 2131745535, this.L.first_name));
+            this.c.d3.setText(org.telegram.messenger.dd.a0("SetPhotoFor", null, 2131745535, this.L.first_name));
         } else if (i13 == 2) {
-            this.c.d3.setText(org.telegram.messenger.cd.a0("SuggestPhotoFor", null, 2131744432, this.L.first_name));
+            this.c.d3.setText(org.telegram.messenger.dd.a0("SuggestPhotoFor", null, 2131744432, this.L.first_name));
         }
     }
 
@@ -495,17 +495,17 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
         Activity parentActivity = k2Var.getParentActivity();
         if (Build.VERSION.SDK_INT < 33 || parentActivity == null) {
             if (parentActivity != null && parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
-                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, org.telegram.messenger.zs.h2);
+                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, org.telegram.messenger.at.h2);
                 return;
             }
         } else if (parentActivity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0 || parentActivity.checkSelfPermission("android.permission.READ_MEDIA_VIDEO") != 0) {
-            parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, org.telegram.messenger.zs.h2);
+            parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, org.telegram.messenger.at.h2);
             return;
         }
-        org.telegram.ui.yn0 yn0Var = new org.telegram.ui.yn0(this.Q ? 3 : 1, false, false, null);
-        yn0Var.y = this.J;
-        yn0Var.V = new l2.f(this, 16);
-        this.a.presentFragment(yn0Var);
+        org.telegram.ui.wn0 wn0Var = new org.telegram.ui.wn0(this.Q ? 3 : 1, false, false, null);
+        wn0Var.y = this.J;
+        wn0Var.V = new l2.f(this, 16);
+        this.a.presentFragment(wn0Var);
     }
 
     public final void n(boolean z10, final Runnable runnable, DialogInterface.OnDismissListener onDismissListener, int i10) {
@@ -536,15 +536,15 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
             this.a.showDialog(biVar2);
             return;
         }
-        org.telegram.ui.ActionBar.z2 h = org.telegram.messenger.z20.h(this.a.getParentActivity(), false, 1, null);
+        org.telegram.ui.ActionBar.z2 h = org.telegram.messenger.a30.h(this.a.getParentActivity(), false, 1, null);
         if (i10 == 1) {
-            h.O = org.telegram.messenger.cd.a0("SetPhotoFor", null, 2131745535, this.L.first_name);
+            h.O = org.telegram.messenger.dd.a0("SetPhotoFor", null, 2131745535, this.L.first_name);
             h.P = true;
         } else if (i10 == 2) {
-            h.O = org.telegram.messenger.cd.a0("SuggestPhotoFor", null, 2131744432, this.L.first_name);
+            h.O = org.telegram.messenger.dd.a0("SuggestPhotoFor", null, 2131744432, this.L.first_name);
             h.P = true;
         } else {
-            h.O = org.telegram.messenger.cd.L0(2131752123, null);
+            h.O = org.telegram.messenger.dd.L0(2131752123, null);
             h.P = true;
         }
         ArrayList arrayList = new ArrayList();
@@ -649,11 +649,11 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
 
     public final void o(String str, String str2, Pair pair, boolean z10) {
         ArrayList arrayList = new ArrayList();
-        org.telegram.messenger.ef efVar = new org.telegram.messenger.ef(0, str, ((Integer) pair.first).intValue(), false, 0, 0);
-        efVar.k(pair);
-        efVar.b = z10;
-        efVar.c = str2;
-        arrayList.add(efVar);
+        org.telegram.messenger.ff ffVar = new org.telegram.messenger.ff(0, str, ((Integer) pair.first).intValue(), false, 0, 0);
+        ffVar.k(pair);
+        ffVar.b = z10;
+        ffVar.c = str2;
+        arrayList.add(ffVar);
         PhotoViewer.v1().N2(null, this.a, null);
         PhotoViewer.v1().j2(arrayList, 0, 1, false, new y30(this, arrayList), null);
         PhotoViewer.v1().P = true;
@@ -669,22 +669,22 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
-        org.telegram.ui.lo0 lo0Var = new org.telegram.ui.lo0(0, null, hashMap, arrayList, 1, false, null, this.R);
+        org.telegram.ui.jo0 jo0Var = new org.telegram.ui.jo0(0, null, hashMap, arrayList, 1, false, null, this.R);
         ac.a aVar = new ac.a();
         aVar.d = this;
         aVar.b = hashMap;
         aVar.c = arrayList;
-        lo0Var.s0 = aVar;
-        lo0Var.j0(1, false);
-        lo0Var.p0 = this.b.getInitialSearchString();
+        jo0Var.s0 = aVar;
+        jo0Var.k0(1, false);
+        jo0Var.p0 = this.b.getInitialSearchString();
         if (this.S) {
-            this.a.showAsSheet(lo0Var);
+            this.a.showAsSheet(jo0Var);
         } else {
-            this.a.presentFragment(lo0Var);
+            this.a.presentFragment(jo0Var);
         }
     }
 
-    public final void r(boolean z10, Bitmap bitmap, org.telegram.messenger.jj jjVar) {
+    public final void r(boolean z10, Bitmap bitmap, org.telegram.messenger.kj kjVar) {
         if (bitmap == null) {
             return;
         }
@@ -692,9 +692,9 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
         this.M = null;
         this.D = null;
         this.y = null;
-        this.O = jjVar == null ? null : jjVar.s;
-        this.h = org.telegram.messenger.hc.Y(bitmap, 800.0f, 800.0f, 80, org.telegram.messenger.zs.r5, org.telegram.messenger.zs.r5);
-        TLRPC.PhotoSize Y = org.telegram.messenger.hc.Y(bitmap, 150.0f, 150.0f, 80, org.telegram.messenger.zs.g2, org.telegram.messenger.zs.g2);
+        this.O = kjVar == null ? null : kjVar.s;
+        this.h = org.telegram.messenger.ic.Y(bitmap, 800.0f, 800.0f, 80, org.telegram.messenger.at.r5, org.telegram.messenger.at.r5);
+        TLRPC.PhotoSize Y = org.telegram.messenger.ic.Y(bitmap, 150.0f, 150.0f, 80, org.telegram.messenger.at.g2, org.telegram.messenger.at.g2);
         this.n = Y;
         int i10 = this.d;
         if (Y != null) {
@@ -702,13 +702,13 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
                 org.telegram.messenger.b8.G(i10);
                 Bitmap decodeFile = BitmapFactory.decodeFile(org.telegram.messenger.b8.K(this.n, null, true, true).getAbsolutePath());
                 this.r = decodeFile;
-                org.telegram.messenger.hc.D().O(new BitmapDrawable(decodeFile), this.n.location.volume_id + "_" + this.n.location.local_id + "@50_50", true);
+                org.telegram.messenger.ic.D().O(new BitmapDrawable(decodeFile), this.n.location.volume_id + "_" + this.n.location.local_id + "@50_50", true);
             } catch (Throwable unused) {
             }
         }
         bitmap.recycle();
         if (this.h != null) {
-            org.telegram.messenger.d20.i(i10).v(false);
+            org.telegram.messenger.e20.i(i10).v(false);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(org.telegram.messenger.b8.z(4));
             sb2.append("/");
@@ -716,83 +716,83 @@ public final class b40 implements org.telegram.messenger.us, org.telegram.ui.ao0
             sb2.append("_");
             this.w = a1.g.p(sb2, this.h.location.local_id, ".jpg");
             if (this.K) {
-                if (jjVar == null || jjVar.p0 == null) {
+                if (kjVar == null || kjVar.p0 == null) {
                     a40 a40Var = this.b;
                     if (a40Var != null) {
-                        a40Var.O(z10, false);
+                        a40Var.P(z10, false);
                     }
                     this.s = false;
                 } else {
-                    if (this.I && !org.telegram.messenger.vp.r1(i10).v7) {
+                    if (this.I && !org.telegram.messenger.wp.r1(i10).v7) {
                         a40 a40Var2 = this.b;
                         if (a40Var2 != null) {
-                            a40Var2.O(z10, true);
+                            a40Var2.P(z10, true);
                         }
                         a40 a40Var3 = this.b;
                         if (a40Var3 != null) {
-                            a40Var3.U(null, null, 0.0d, null, this.h, this.n, this.s, null);
-                            this.b.U(null, null, this.P, this.y, this.h, this.n, this.s, this.O);
+                            a40Var3.V(null, null, 0.0d, null, this.h, this.n, this.s, null);
+                            this.b.V(null, null, this.P, this.y, this.h, this.n, this.s, this.O);
                             c();
                             return;
                         }
                         return;
                     }
-                    this.D = jjVar;
-                    org.telegram.messenger.x20 x20Var = jjVar.p0;
-                    long j10 = x20Var.a;
+                    this.D = kjVar;
+                    org.telegram.messenger.y20 y20Var = kjVar.p0;
+                    long j10 = y20Var.a;
                     if (j10 < 0) {
                         j10 = 0;
                     }
-                    this.P = (x20Var.c - j10) / 1000000.0d;
-                    x20Var.Z = false;
-                    org.telegram.messenger.zs.f(i10).b(this, org.telegram.messenger.zs.a2);
-                    org.telegram.messenger.zs.f(i10).b(this, org.telegram.messenger.zs.c2);
-                    org.telegram.messenger.zs.f(i10).b(this, org.telegram.messenger.zs.b2);
-                    MediaController.B().h0(jjVar, true, true, false);
+                    this.P = (y20Var.c - j10) / 1000000.0d;
+                    y20Var.Z = false;
+                    org.telegram.messenger.at.f(i10).b(this, org.telegram.messenger.at.a2);
+                    org.telegram.messenger.at.f(i10).b(this, org.telegram.messenger.at.c2);
+                    org.telegram.messenger.at.f(i10).b(this, org.telegram.messenger.at.b2);
+                    MediaController.B().h0(kjVar, true, true, false);
                     this.w = null;
                     a40 a40Var4 = this.b;
                     if (a40Var4 != null) {
-                        a40Var4.O(z10, true);
+                        a40Var4.P(z10, true);
                     }
                     this.s = true;
                 }
-                org.telegram.messenger.zs.f(i10).b(this, org.telegram.messenger.zs.U1);
-                org.telegram.messenger.zs.f(i10).b(this, org.telegram.messenger.zs.W1);
-                org.telegram.messenger.zs.f(i10).b(this, org.telegram.messenger.zs.V1);
+                org.telegram.messenger.at.f(i10).b(this, org.telegram.messenger.at.U1);
+                org.telegram.messenger.at.f(i10).b(this, org.telegram.messenger.at.W1);
+                org.telegram.messenger.at.f(i10).b(this, org.telegram.messenger.at.V1);
                 if (this.w != null) {
                     org.telegram.messenger.b8.G(i10).i0(false, 16777216, this.w, true);
                 }
             }
             a40 a40Var5 = this.b;
             if (a40Var5 != null) {
-                a40Var5.U(null, null, 0.0d, null, this.h, this.n, this.s, null);
+                a40Var5.V(null, null, 0.0d, null, this.h, this.n, this.s, null);
             }
         }
     }
 
-    public final void s(org.telegram.messenger.ef efVar) {
+    public final void s(org.telegram.messenger.ff ffVar) {
         Bitmap K;
-        String str = efVar.h;
+        String str = ffVar.h;
         if (str == null) {
-            str = efVar.I;
+            str = ffVar.I;
         }
-        org.telegram.messenger.jj jjVar = null;
-        if ((efVar.b || efVar.s != null) && !efVar.d()) {
+        org.telegram.messenger.kj kjVar = null;
+        if ((ffVar.b || ffVar.s != null) && !ffVar.d()) {
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
             tL_message.id = 0;
             tL_message.message = "";
             tL_message.media = new TLRPC.TL_messageMediaEmpty();
             tL_message.action = new TLRPC.TL_messageActionEmpty();
             tL_message.dialog_id = 0L;
-            org.telegram.messenger.jj jjVar2 = new org.telegram.messenger.jj(org.telegram.messenger.d20.s0, tL_message, false, false);
-            jjVar2.k.attachPath = new File(org.telegram.messenger.b8.z(4), org.telegram.messenger.tz.p() + "_avatar.mp4").getAbsolutePath();
-            jjVar2.p0 = efVar.s;
-            jjVar2.s = efVar.S;
-            K = org.telegram.messenger.hc.K(efVar.c, null, 800.0f, 800.0f, true);
-            jjVar = jjVar2;
+            org.telegram.messenger.kj kjVar2 = new org.telegram.messenger.kj(org.telegram.messenger.e20.s0, tL_message, false, false);
+            kjVar2.k.attachPath = new File(org.telegram.messenger.b8.z(4), org.telegram.messenger.uz.p() + "_avatar.mp4").getAbsolutePath();
+            kjVar2.p0 = ffVar.s;
+            kjVar2.s = ffVar.S;
+            K = org.telegram.messenger.ic.K(ffVar.c, null, 800.0f, 800.0f, true);
+            kjVar = kjVar2;
         } else {
-            K = org.telegram.messenger.hc.K(str, null, 800.0f, 800.0f, true);
+            K = org.telegram.messenger.ic.K(str, null, 800.0f, 800.0f, true);
         }
-        r(false, K, jjVar);
+        r(false, K, kjVar);
     }
 }

@@ -7,13 +7,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class v implements Runnable {
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
                         frameLayout.addView(imageView, w7.b6.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
                         TextView textView = new TextView(xVar.getContext());
-                        textView.setText(cd.L0(2131744723, null));
+                        textView.setText(dd.L0(2131744723, null));
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
                         frameLayout.addView(textView, w7.b6.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
@@ -85,11 +85,11 @@ public final /* synthetic */ class v implements Runnable {
                             F.q(h5Var);
                             F.o();
                         }
-                        F.T = zs.x3;
-                        F.c(R.drawable.menu_camera_retake, cd.L0(2131744829, null), new v(xVar, 4), false);
-                        F.c(R.drawable.msg_delete, cd.L0(2131751599, null), new v(xVar, 5), true);
+                        F.T = at.x3;
+                        F.c(R.drawable.menu_camera_retake, dd.L0(2131744829, null), new v(xVar, 4), false);
+                        F.c(R.drawable.msg_delete, dd.L0(2131751599, null), new v(xVar, 5), true);
                         F.o();
-                        F.r(frameLayout, w7.b6.o(zs.x3, -2));
+                        F.r(frameLayout, w7.b6.o(at.x3, -2));
                         F.p = new r5.a(13);
                         F.i = 1;
                         F.V = true;

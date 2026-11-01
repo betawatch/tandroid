@@ -7,10 +7,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.a7;
@@ -18,18 +18,18 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.c7;
 import org.telegram.ui.Cells.p4;
 import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.tk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class i1 extends sk0 {
+public final class i1 extends tk0 {
     public final /* synthetic */ o1 c;
 
     public i1(o1 o1Var) {
         this.c = o1Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 3;
     }
@@ -71,7 +71,7 @@ public final class i1 extends sk0 {
             p4 p4Var = (p4) view;
             p4Var.setTextSize(15.0f);
             p4Var.setPadding(0, 0, 0, org.telegram.messenger.i0.L(2.0f));
-            p4Var.setText(cd.L0(2131753295, null));
+            p4Var.setText(dd.L0(2131753295, null));
             return;
         }
         if (i11 == 0) {
@@ -80,8 +80,8 @@ public final class i1 extends sk0 {
             TLRPC.Chat chat = o1Var.R1;
             p80 p80Var = n1Var.e;
             try {
-                SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(cd.G((int) vp.r1(d20.s0).r0, "BoostingReassignBoostTextPluralWithLink", chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder R2 = org.telegram.messenger.i0.R2(cd.L0(2131753320, "BoostingReassignBoostTextLink"), t6.Uc, 2, new l1(o1Var, i12), null);
+                SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(dd.G((int) wp.r1(e20.s0).r0, "BoostingReassignBoostTextPluralWithLink", chat == null ? "" : chat.title, "%3$s"));
+                SpannableStringBuilder R2 = org.telegram.messenger.i0.R2(dd.L0(2131753320, "BoostingReassignBoostTextLink"), t6.Uc, 2, new l1(o1Var, i12), null);
                 int indexOf = TextUtils.indexOf(W2, "%3$s");
                 W2.replace(indexOf, indexOf + 4, (CharSequence) R2);
                 p80Var.setText(W2, TextView.BufferType.EDITABLE);

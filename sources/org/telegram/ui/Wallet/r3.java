@@ -7,7 +7,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bi;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -56,11 +56,11 @@ public final /* synthetic */ class r3 implements ValueAnimator.AnimatorUpdateLis
                         s6Var.b.setTranslationY(r7.getHeight() * interpolation);
                     }
                     if (s6Var.p != null && !rectF2.isEmpty()) {
-                        org.telegram.ui.Cells.s0 B8 = s6Var.e.B8(s6Var.f);
+                        org.telegram.ui.Cells.s0 F8 = s6Var.e.F8(s6Var.f);
                         org.telegram.ui.Cells.s0 s0Var = s6Var.p;
-                        if (B8 != s0Var) {
+                        if (F8 != s0Var) {
                             s0Var.I0.i(false);
-                            s6Var.p = B8;
+                            s6Var.p = F8;
                         }
                         org.telegram.ui.Cells.s0 s0Var2 = s6Var.p;
                         if (s0Var2 != null && !s6Var.s) {
@@ -136,7 +136,7 @@ public final /* synthetic */ class r3 implements ValueAnimator.AnimatorUpdateLis
             case 8:
                 r9 r9Var = (r9) this.b;
                 r9Var.getClass();
-                r9Var.x0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                r9Var.y0(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 9:
                 q9 q9Var = (q9) this.b;

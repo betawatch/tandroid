@@ -9,14 +9,14 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import org.telegram.messenger.at;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.v2;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.ei0;
 import org.telegram.ui.Components.f6;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.kp;
 import org.telegram.ui.Components.kq;
@@ -26,12 +26,12 @@ import org.telegram.ui.Components.t5;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class x0 extends FrameLayout implements s80 {
     public final org.telegram.ui.Components.voip.g D;
     public boolean E;
-    public final ei0 F;
+    public final fi0 F;
     public boolean G;
     public boolean H;
     public lq I;
@@ -164,7 +164,7 @@ public class x0 extends FrameLayout implements s80 {
                 if (z10) {
                     paint.setColor(t6.w0(t6.Ci, p6Var));
                 }
-                paint.setAlpha(zs.e4);
+                paint.setAlpha(at.e4);
                 float f13 = i10;
                 canvas.drawRoundRect(rectF, f13, f13, paint);
             }
@@ -213,7 +213,7 @@ public class x0 extends FrameLayout implements s80 {
         invalidate();
     }
 
-    public ei0 getIconView() {
+    public fi0 getIconView() {
         return this.F;
     }
 
@@ -243,13 +243,13 @@ public class x0 extends FrameLayout implements s80 {
     }
 
     public void setIcon(int i10) {
-        ei0 ei0Var = this.F;
-        ei0Var.f(i10, 24, 24, null);
+        fi0 fi0Var = this.F;
+        fi0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.g gVar = this.D;
         gVar.g = 2.0f;
         gVar.p = new gg.c(this, 23);
         invalidate();
-        ei0Var.setVisibility(0);
+        fi0Var.setVisibility(0);
     }
 
     @Override // org.telegram.ui.Components.s80
@@ -295,17 +295,17 @@ public class x0 extends FrameLayout implements s80 {
         w0Var.setTextColor(-1);
         w0Var.setTextSize(org.telegram.messenger.i0.L(14.0f));
         w0Var.setTypeface(org.telegram.messenger.i0.o());
-        ei0 ei0Var = new ei0(context);
-        this.F = ei0Var;
-        ei0Var.setColorFilter(-1);
-        ei0Var.setVisibility(8);
+        fi0 fi0Var = new fi0(context);
+        this.F = fi0Var;
+        fi0Var.setColorFilter(-1);
+        fi0Var.setVisibility(8);
         jg.l0 l0Var = new jg.l0(this, context, 4);
         this.w = l0Var;
         l0Var.addView(f7, b6.e(-2, -2, 17));
         int o10 = i0.b.o(-1, 120);
         l0Var.setBackground(t6.k0(i10, i10, i10, i10, 0, o10, o10));
         f7.addView(w0Var, b6.r(-2, -2, 16));
-        f7.addView(ei0Var, b6.q(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        f7.addView(fi0Var, b6.q(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(l0Var);
         setOutlineProvider(rf.e0.b);
         setClipToOutline(true);

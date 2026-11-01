@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ho implements Runnable {
     public final /* synthetic */ int a;
@@ -20,10 +20,10 @@ public final /* synthetic */ class ho implements Runnable {
         oo ooVar = this.b;
         switch (i10) {
             case 0:
-                oo.Z(ooVar);
+                oo.a0(ooVar);
                 break;
             case 1:
-                oo.e0(ooVar);
+                oo.f0(ooVar);
                 break;
             case 2:
                 ooVar.b.dismiss();
@@ -34,7 +34,7 @@ public final /* synthetic */ class ho implements Runnable {
                 break;
             default:
                 ooVar.e.setImageDrawable(ooVar.r);
-                ooVar.b0.o(R.drawable.msg_addphoto, org.telegram.messenger.cd.L0(2131752212, "ChatSetPhotoOrVideo"), true);
+                ooVar.b0.o(R.drawable.msg_addphoto, org.telegram.messenger.dd.L0(2131752212, "ChatSetPhotoOrVideo"), true);
                 TLRPC.User user = ooVar.C0;
                 if (user != null) {
                     user.photo = null;
@@ -42,7 +42,7 @@ public final /* synthetic */ class ho implements Runnable {
                 }
                 ooVar.O0 = true;
                 if (ooVar.R0 == null) {
-                    ooVar.R0 = new org.telegram.ui.Components.bi0(R.raw.camera_outline, org.telegram.messenger.i0.L(50.0f), org.telegram.messenger.i0.L(50.0f), false, null);
+                    ooVar.R0 = new org.telegram.ui.Components.ci0(R.raw.camera_outline, org.telegram.messenger.i0.L(50.0f), org.telegram.messenger.i0.L(50.0f), false, null);
                 }
                 ooVar.b0.e.setTranslationX(-org.telegram.messenger.i0.L(8.0f));
                 ooVar.b0.e.setAnimation(ooVar.R0);

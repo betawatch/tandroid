@@ -25,14 +25,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.s9;
 import org.telegram.ui.Components.y60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class x extends FrameLayout implements y60 {
     public static final /* synthetic */ int x0 = 0;
@@ -450,7 +450,7 @@ public abstract class x extends FrameLayout implements y60 {
                 matrix.postRotate(-25.0f);
                 this.E.setLocalMatrix(matrix);
                 Paint paint = this.w;
-                paint.setAlpha(zs.e4);
+                paint.setAlpha(at.e4);
                 Path path = this.x;
                 path.rewind();
                 q qVar5 = wVar4.h;
@@ -1268,7 +1268,7 @@ public abstract class x extends FrameLayout implements y60 {
         }
         this.d = cameraView;
         if (cameraView != null) {
-            addView(cameraView, w7.b6.e(-1, -1, zs.E1));
+            addView(cameraView, w7.b6.e(-1, -1, at.E1));
         }
         CameraView cameraView3 = this.d;
         if (cameraView3 != null) {

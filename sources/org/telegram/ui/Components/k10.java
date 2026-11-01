@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k10 extends ViewGroup {
     public AnimatorSet a;
@@ -122,7 +122,7 @@ public final class k10 extends ViewGroup {
             y3 = org.telegram.messenger.i0.L(372.0f) / 3;
         } else {
             Point point = org.telegram.messenger.i0.q;
-            y3 = org.telegram.messenger.z20.y(158.0f, Math.min(point.x, point.y), 3);
+            y3 = org.telegram.messenger.a30.y(158.0f, Math.min(point.x, point.y), 3);
         }
         if (L - i16 < y3) {
             L2 += org.telegram.messenger.i0.L(40.0f);
@@ -142,7 +142,7 @@ public final class k10 extends ViewGroup {
                 this.a.playTogether(arrayList);
                 i12 = i18;
                 this.a.addListener(new j10(this, i12));
-                this.f = org.telegram.messenger.zs.f(l10Var.a).q(null, this.f, true);
+                this.f = org.telegram.messenger.at.f(l10Var.a).q(null, this.f, true);
                 this.a.start();
                 this.b = true;
             } else {

@@ -6,10 +6,10 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.ui.bd0;
+import org.telegram.messenger.dd;
+import org.telegram.ui.ad0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f3 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -44,16 +44,16 @@ public final class f3 implements TextWatcher {
                 g3Var.s();
                 break;
             case 1:
-                bd0 bd0Var = (bd0) view;
+                ad0 ad0Var = (ad0) view;
                 if (this.b) {
-                    if (bd0Var.f.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        if (bd0Var.D) {
-                            bd0Var.f.callOnClick();
+                    if (ad0Var.f.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
+                        if (ad0Var.D) {
+                            ad0Var.f.callOnClick();
                         }
-                        org.telegram.messenger.i0.Y3(bd0Var.f, true, 0.1f, true, true);
+                        org.telegram.messenger.i0.Y3(ad0Var.f, true, 0.1f, true, true);
                         break;
-                    } else if (bd0Var.f.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        org.telegram.messenger.i0.Y3(bd0Var.f, false, 0.1f, true, true);
+                    } else if (ad0Var.f.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
+                        org.telegram.messenger.i0.Y3(ad0Var.f, false, 0.1f, true, true);
                         break;
                     }
                 }
@@ -63,7 +63,7 @@ public final class f3 implements TextWatcher {
                 if (isEmpty != this.b) {
                     TextView textView = (TextView) view;
                     this.b = isEmpty;
-                    textView.setText(cd.L0(isEmpty ? 2131746336 : 2131754486, null));
+                    textView.setText(dd.L0(isEmpty ? 2131746336 : 2131754486, null));
                     break;
                 }
                 break;
@@ -104,9 +104,9 @@ public final class f3 implements TextWatcher {
         this.b = TextUtils.isEmpty(a2Var.getText());
     }
 
-    public f3(bd0 bd0Var, boolean z10) {
+    public f3(ad0 ad0Var, boolean z10) {
         this.a = 1;
-        this.c = bd0Var;
+        this.c = ad0Var;
         this.b = z10;
     }
 

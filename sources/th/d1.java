@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.l40;
+import org.telegram.ui.k40;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d1 extends View {
     public final int a;
@@ -60,7 +60,7 @@ public final class d1 extends View {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, f7);
         this.r = ofFloat;
         ofFloat.addUpdateListener(new qh.e0(this, 16));
-        this.r.addListener(new l40(this, f7, b1Var, 3));
+        this.r.addListener(new k40(this, f7, b1Var, 3));
         this.r.setInterpolator(gr.h);
         this.r.setDuration(320L);
         this.r.start();
@@ -101,15 +101,15 @@ public final class d1 extends View {
             if (i11 >= size) {
                 break;
             }
-            bi0 bi0Var = (bi0) arrayList.get(i11);
-            if (bi0Var.a0 >= bi0Var.e[0]) {
+            ci0 ci0Var = (ci0) arrayList.get(i11);
+            if (ci0Var.a0 >= ci0Var.e[0]) {
                 arrayList.remove(i11);
                 i11--;
             } else {
                 float f13 = L / 2.0f;
-                bi0Var.setBounds((int) (((org.telegram.messenger.i0.L(15.0f) * T1) + rectF.left) - f13), (int) (rectF.centerY() - f13), (int) sc.e.d(org.telegram.messenger.i0.L(15.0f), T1, rectF.left, f13), (int) (rectF.centerY() + f13));
-                bi0Var.setAlpha((int) (d1Var.n * 255.0f));
-                bi0Var.draw(canvas2);
+                ci0Var.setBounds((int) (((org.telegram.messenger.i0.L(15.0f) * T1) + rectF.left) - f13), (int) (rectF.centerY() - f13), (int) sc.e.d(org.telegram.messenger.i0.L(15.0f), T1, rectF.left, f13), (int) (rectF.centerY() + f13));
+                ci0Var.setAlpha((int) (d1Var.n * 255.0f));
+                ci0Var.draw(canvas2);
             }
             i11++;
         }
@@ -140,9 +140,9 @@ public final class d1 extends View {
             Paint paint = c1Var.e;
             int i13 = (int) (T12 * f17);
             paint.setAlpha(i13);
-            bi0 bi0Var2 = c1Var.d;
-            if (bi0Var2 != null) {
-                bi0Var2.setAlpha(i13);
+            ci0 ci0Var2 = c1Var.d;
+            if (ci0Var2 != null) {
+                ci0Var2.setAlpha(i13);
             }
             imageReceiver.setAlpha(T12);
             canvas2.save();
@@ -166,7 +166,7 @@ public final class d1 extends View {
             c1Var.g.c(org.telegram.messenger.i0.L(18.0f), f22, T12, -1, canvas3);
             canvas2 = canvas3;
             canvas2.restore();
-            if (bi0Var2 != null) {
+            if (ci0Var2 != null) {
                 canvas2.save();
                 canvas2.translate(org.telegram.messenger.i0.L(4.0f) * f20, 0.0f);
                 canvas2.rotate(f21);
@@ -175,8 +175,8 @@ public final class d1 extends View {
                 int L5 = org.telegram.messenger.i0.L(f16);
                 int i15 = (-L5) / 2;
                 int i16 = L5 / 2;
-                bi0Var2.setBounds(i15, org.telegram.messenger.i0.L(8.0f) + i15, i16, org.telegram.messenger.i0.L(8.0f) + i16);
-                bi0Var2.draw(canvas2);
+                ci0Var2.setBounds(i15, org.telegram.messenger.i0.L(8.0f) + i15, i16, org.telegram.messenger.i0.L(8.0f) + i16);
+                ci0Var2.draw(canvas2);
                 canvas2.restore();
             }
             if (e >= 1.0f || d >= 1.0f) {

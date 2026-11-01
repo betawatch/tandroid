@@ -2,8 +2,8 @@ package mg;
 
 import android.os.Bundle;
 import java.util.ArrayList;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -11,10 +11,10 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.z60;
+import org.telegram.ui.ty0;
 import org.telegram.ui.un;
-import org.telegram.ui.uy0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -62,8 +62,8 @@ public final /* synthetic */ class n0 implements Runnable {
                 String str = w0Var.n2;
                 s0 s0Var = new s0(this.b, this.c, w0Var, prepaidGiveaway, tL_prepaidStarsGiveaway);
                 o0 o0Var = new o0(w0Var, 6);
-                vp r12 = vp.r1(d20.s0);
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(d20.s0);
+                wp r12 = wp.r1(e20.s0);
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(e20.s0);
                 if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
                     tL_inputStorePaymentStarsGiveaway = new TLRPC.TL_inputStorePaymentPremiumGiveaway();
                     tL_inputStorePaymentStarsGiveaway.only_new_subscribers = z10;
@@ -142,7 +142,7 @@ public final /* synthetic */ class n0 implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((k2) obj2).presentFragment(new uy0(bundle, (p6) obj));
+                ((k2) obj2).presentFragment(new ty0(bundle, (p6) obj));
                 break;
         }
     }

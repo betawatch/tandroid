@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d70 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -62,12 +62,12 @@ public final /* synthetic */ class d70 implements Runnable {
                         k70.A1 = SystemClock.elapsedRealtime();
                         int i11 = cVar.a;
                         k70.C1 = i11;
-                        org.telegram.messenger.vp.r1(i11).P3(joinaspeers.chats, false);
-                        org.telegram.messenger.vp.r1(cVar.a).V3(joinaspeers.users, false);
+                        org.telegram.messenger.wp.r1(i11).P3(joinaspeers.chats, false);
+                        org.telegram.messenger.wp.r1(cVar.a).V3(joinaspeers.users, false);
                         k70.L0(context, j10, joinaspeers.peers, k2Var, this.c, peer, i70Var);
                         break;
                     } else {
-                        i70Var.a(org.telegram.messenger.vp.r1(cVar.a).i1(org.telegram.messenger.jj.C1(joinaspeers.peers.get(0))), false, false, false);
+                        i70Var.a(org.telegram.messenger.wp.r1(cVar.a).i1(org.telegram.messenger.kj.C1(joinaspeers.peers.get(0))), false, false, false);
                         break;
                     }
                 }
@@ -94,10 +94,10 @@ public final /* synthetic */ class d70 implements Runnable {
                     e = e10;
                     i10 = org.telegram.ui.Wallet.e2.i("decode request", e);
                     a2Var = null;
-                    org.telegram.messenger.i0.g3(new org.telegram.messenger.qb(e2Var, a2Var, sVar, i10, this.b, this.c, h0Var));
+                    org.telegram.messenger.i0.g3(new org.telegram.messenger.rb(e2Var, a2Var, sVar, i10, this.b, this.c, h0Var));
                     return;
                 }
-                org.telegram.messenger.i0.g3(new org.telegram.messenger.qb(e2Var, a2Var, sVar, i10, this.b, this.c, h0Var));
+                org.telegram.messenger.i0.g3(new org.telegram.messenger.rb(e2Var, a2Var, sVar, i10, this.b, this.c, h0Var));
             default:
                 org.telegram.ui.ActionBar.x1 x1Var2 = (org.telegram.ui.ActionBar.x1) this.d;
                 Context context2 = (Context) this.n;

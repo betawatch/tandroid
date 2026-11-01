@@ -4,15 +4,15 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,11 +22,11 @@ public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e1(Context context, int i10, org.telegram.messenger.t9 t9Var, long j10, Runnable runnable) {
+    public /* synthetic */ e1(Context context, int i10, org.telegram.messenger.u9 u9Var, long j10, Runnable runnable) {
         this.a = 1;
         this.d = context;
         this.b = i10;
-        this.e = t9Var;
+        this.e = u9Var;
         this.c = j10;
         this.f = runnable;
     }
@@ -62,7 +62,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     break;
                 }
             case 1:
-                new ph.g4((Context) obj3, this.b, ((org.telegram.messenger.t9) obj2).d, null, this.c, (Runnable) obj, false, false).show();
+                new ph.g4((Context) obj3, this.b, ((org.telegram.messenger.u9) obj2).d, null, this.c, (Runnable) obj, false, false).show();
                 break;
             case 2:
                 rh.q qVar = (rh.q) obj2;
@@ -74,15 +74,15 @@ public final /* synthetic */ class e1 implements Runnable {
                 zArr[i12] = false;
                 if (tLObject instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
-                    vp.r1(i13).V3(starsStatus.users, false);
-                    vp.r1(i13).P3(starsStatus.chats, false);
+                    wp.r1(i13).V3(starsStatus.users, false);
+                    wp.r1(i13).P3(starsStatus.chats, false);
                     arrayListArr[i12].addAll(starsStatus.history);
                     zArr2[i12] = !arrayListArr[i12].isEmpty() || zArr2[i12];
                     boolean[] zArr3 = qVar.e;
                     boolean z10 = (starsStatus.flags & 1) == 0;
                     zArr3[i12] = z10;
                     qVar.c[i12] = z10 ? null : starsStatus.next_offset;
-                    zs.f(i13).k(zs.D3, Long.valueOf(j10));
+                    at.f(i13).k(at.D3, Long.valueOf(j10));
                     break;
                 }
                 break;
@@ -103,8 +103,8 @@ public final /* synthetic */ class e1 implements Runnable {
                 HashSet hashSet = e5Var.t;
                 if (tLObject2 != null) {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject2;
-                    vp.r1(i15).V3(tL_stories_stories.users, false);
-                    vp.r1(i15).P3(tL_stories_stories.chats, false);
+                    wp.r1(i15).V3(tL_stories_stories.users, false);
+                    wp.r1(i15).P3(tL_stories_stories.chats, false);
                     while (true) {
                         if (i11 < tL_stories_stories.stories.size()) {
                             if (tL_stories_stories.stories.get(i11).id == i12) {
@@ -132,7 +132,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 } else {
                     storyItem.dialogId = j10;
                     TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
-                    tL_updateStory.peer = vp.r1(i15).y1(j10);
+                    tL_updateStory.peer = wp.r1(i15).y1(j10);
                     tL_updateStory.story = storyItem;
                     e5Var.c0(tL_updateStory);
                     break;

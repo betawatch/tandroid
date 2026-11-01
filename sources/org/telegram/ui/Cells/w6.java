@@ -14,16 +14,16 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.qs;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class w6 extends FrameLayout {
     public int a;
@@ -198,14 +198,14 @@ public final class w6 extends FrameLayout {
         g9Var.setRoundRadius(org.telegram.messenger.i0.L(10.0f));
         if (tLObject instanceof TL_account.TL_connectedBot) {
             TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) tLObject;
-            TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(tL_connectedBot.bot_id));
+            TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(tL_connectedBot.bot_id));
             r8Var.r(Z1);
             g9Var.setRoundRadius(org.telegram.messenger.i0.L(21.0f));
             g9Var.e(Z1, r8Var);
-            textView4.setText(h20.p(Z1));
-            textView3.setText(cd.L0(2131745577, null));
+            textView4.setText(i20.p(Z1));
+            textView3.setText(dd.L0(2131745577, null));
             if (TLObject.hasFlag(tL_connectedBot.flags, 2)) {
-                textView2.setText(cd.a0(null, null, 2131745575, cd.x(tL_connectedBot.date, false)));
+                textView2.setText(dd.a0(null, null, 2131745575, dd.x(tL_connectedBot.date, false)));
                 return;
             }
             return;
@@ -231,10 +231,10 @@ public final class w6 extends FrameLayout {
             textView4.setText(sb2);
             if ((tL_authorization.flags & 1) != 0) {
                 setTag(Integer.valueOf(org.telegram.ui.ActionBar.t6.I6));
-                a12 = cd.L0(2131747842, null);
+                a12 = dd.L0(2131747842, null);
             } else {
                 setTag(Integer.valueOf(org.telegram.ui.ActionBar.t6.A6));
-                a12 = cd.a1(tL_authorization.date_active);
+                a12 = dd.a1(tL_authorization.date_active);
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             if (tL_authorization.country.length() != 0) {
@@ -258,18 +258,18 @@ public final class w6 extends FrameLayout {
         }
         if (tLObject instanceof TLRPC.TL_webAuthorization) {
             TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) tLObject;
-            TLRPC.User Z12 = vp.r1(i10).Z1(Long.valueOf(tL_webAuthorization.bot_id));
+            TLRPC.User Z12 = wp.r1(i10).Z1(Long.valueOf(tL_webAuthorization.bot_id));
             textView4.setText(tL_webAuthorization.domain);
             if (Z12 != null) {
                 r8Var.r(Z12);
-                str = h20.j(Z12, true);
+                str = i20.j(Z12, true);
                 g9Var.e(Z12, r8Var);
             } else {
                 str = "";
             }
             int i11 = org.telegram.ui.ActionBar.t6.A6;
             setTag(Integer.valueOf(i11));
-            textView.setText(cd.a1(tL_webAuthorization.date_active));
+            textView.setText(dd.a1(tL_webAuthorization.date_active));
             org.telegram.ui.ActionBar.a7.V(textView, i11, null);
             StringBuilder sb4 = new StringBuilder();
             if (tL_webAuthorization.ip.length() != 0) {
@@ -308,7 +308,7 @@ public final class w6 extends FrameLayout {
         setContentAlpha(1.0f - this.s.e(false, 0.0f));
         if (this.r) {
             int i10 = this.a == 1 ? 49 : 72;
-            canvas.drawLine(cd.X ? 0.0f : org.telegram.messenger.i0.L(i10), getMeasuredHeight() - 1, getMeasuredWidth() - (cd.X ? org.telegram.messenger.i0.L(i10) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+            canvas.drawLine(dd.X ? 0.0f : org.telegram.messenger.i0.L(i10), getMeasuredHeight() - 1, getMeasuredWidth() - (dd.X ? org.telegram.messenger.i0.L(i10) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
         }
     }
 

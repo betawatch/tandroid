@@ -7,23 +7,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class eb extends ta {
-    public final ei0 a;
+    public final fi0 a;
     public TextView b;
     public int c;
 
     public eb(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
         super(context, p6Var);
-        ei0 ei0Var = new ei0(context);
-        this.a = ei0Var;
-        ei0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ei0Var, w7.b6.h(56.0f, 48.0f, 8388627));
+        fi0 fi0Var = new fi0(context);
+        this.a = fi0Var;
+        fi0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(fi0Var, w7.b6.h(56.0f, 48.0f, 8388627));
         kg.t1 t1Var = new kg.t1(1, context, null);
         t1Var.setDisablePaddingsOffset(true);
         this.b = t1Var;
-        org.telegram.messenger.zs.i(t1Var);
+        org.telegram.messenger.at.i(t1Var);
         this.b.setSingleLine();
         this.b.setTypeface(Typeface.SANS_SERIF);
         this.b.setTextSize(1, 15.0f);
@@ -36,10 +36,10 @@ public class eb extends ta {
     }
 
     public final void c(int i10, int i11, int i12, String... strArr) {
-        ei0 ei0Var = this.a;
-        ei0Var.f(i10, i11, i12, null);
+        fi0 fi0Var = this.a;
+        fi0Var.f(i10, i11, i12, null);
         for (String str : strArr) {
-            ei0Var.h(this.c, str);
+            fi0Var.h(this.c, str);
         }
     }
 
@@ -48,11 +48,11 @@ public class eb extends ta {
     }
 
     public final void e(TLRPC.Document document, String... strArr) {
-        ei0 ei0Var = this.a;
-        ei0Var.setAutoRepeat(true);
-        ei0Var.g(36, 36, document);
+        fi0 fi0Var = this.a;
+        fi0Var.setAutoRepeat(true);
+        fi0Var.g(36, 36, document);
         for (String str : strArr) {
-            ei0Var.h(this.c, str);
+            fi0Var.h(this.c, str);
         }
     }
 

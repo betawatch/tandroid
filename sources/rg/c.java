@@ -3,14 +3,14 @@ package rg;
 import android.content.Context;
 import android.graphics.Canvas;
 import mg.k0;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.pa;
 import org.telegram.ui.Components.r8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c extends pa {
     public final a b0;
@@ -28,7 +28,7 @@ public final class c extends pa {
     @Override // org.telegram.ui.Cells.pa, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
-            canvas.drawLine(cd.X ? 0.0f : i0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (cd.X ? i0.L(70.0f) : 0), getMeasuredHeight() - 1, t6.k0);
+            canvas.drawLine(dd.X ? 0.0f : i0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (dd.X ? i0.L(70.0f) : 0), getMeasuredHeight() - 1, t6.k0);
         }
     }
 

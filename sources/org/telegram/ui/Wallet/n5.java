@@ -5,7 +5,7 @@ import android.view.ViewTreeObserver;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ii;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n5 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class n5 implements ViewTreeObserver.OnPreDrawListe
             case 0:
                 b6 b6Var = (b6) ((fg.i) this.b).c;
                 if (b6Var.F) {
-                    b6Var.R0();
+                    b6Var.S0();
                     break;
                 }
                 break;
@@ -51,7 +51,7 @@ public final /* synthetic */ class n5 implements ViewTreeObserver.OnPreDrawListe
                     p5Var.a = m10;
                     p5Var.b = y3;
                     p5Var.c = height;
-                    b6Var2.S0();
+                    b6Var2.T0();
                     break;
                 }
                 break;
@@ -84,7 +84,7 @@ public final /* synthetic */ class n5 implements ViewTreeObserver.OnPreDrawListe
                     r9Var.x.setTranslationY((((max / 2.0f) + paddingTop) - r4.getTop()) - (r9Var.x.getHeight() / 2.0f));
                 }
                 if (r9Var.a0 != null || r9Var.b0 < 1.0f) {
-                    r9Var.F0();
+                    r9Var.G0();
                     break;
                 }
                 break;

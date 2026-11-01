@@ -20,19 +20,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.us;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
+public class i5 extends FrameLayout implements fe.e, vs, k6, b5 {
     public CharSequence D;
     public CharSequence E;
     public boolean F;
@@ -45,7 +45,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
     public wg.d M;
     public wg.a N;
     public tg.b O;
-    public i20 P;
+    public j20 P;
     public s5 Q;
     public t0 R;
     public final fe.b S;
@@ -106,7 +106,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         f5 f5Var = new f5(this, context);
         this.b = f5Var;
         f5Var.setVisibility(8);
-        f5Var.setContentDescription(cd.L0(2131754878, null));
+        f5Var.setContentDescription(dd.L0(2131754878, null));
         f5Var.setOnClickListener(new e5(this, 0));
         addView(f5Var, w7.b6.e(46, 46, 51));
     }
@@ -203,7 +203,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         this.T.a(true, t());
         g();
         this.b.b(true, t());
-        zs.e().k(zs.r4, new Object[0]);
+        at.e().k(at.r4, new Object[0]);
     }
 
     public final void D() {
@@ -250,7 +250,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         }
         vg.f c10 = bVar.c(s5Var, null, false);
         c10.o(this.M);
-        z20.u(c10, org.telegram.messenger.i0.L(23.0f), 6.0f);
+        a30.u(c10, org.telegram.messenger.i0.L(23.0f), 6.0f);
         return c10;
     }
 
@@ -261,9 +261,9 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         invalidate();
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == zs.n4) {
+        if (i10 == at.n4) {
             updateColors();
         }
     }
@@ -471,9 +471,9 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
     }
 
     public s5 getMenuOverlay() {
-        i20 i20Var = this.P;
-        if (i20Var != null) {
-            return (s5) i20Var.run();
+        j20 j20Var = this.P;
+        if (j20Var != null) {
+            return (s5) j20Var.run();
         }
         return null;
     }
@@ -487,6 +487,11 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
     @Override // org.telegram.ui.ActionBar.b5
     public p6 getMenuResourcesProvider() {
         return this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b5
+    public /* bridge */ /* synthetic */ int getMenuRise() {
+        return 0;
     }
 
     @Override // org.telegram.ui.ActionBar.b5
@@ -673,15 +678,15 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         }
         vg.f c10 = bVar.c(this, null, false);
         c10.o(aVar);
-        z20.u(c10, org.telegram.messenger.i0.L(23.0f), 6.0f);
+        a30.u(c10, org.telegram.messenger.i0.L(23.0f), 6.0f);
         this.H = c10;
         vg.f c11 = bVar.c(this, null, false);
         c11.o(aVar);
-        z20.u(c11, org.telegram.messenger.i0.L(23.0f), 6.0f);
+        a30.u(c11, org.telegram.messenger.i0.L(23.0f), 6.0f);
         this.I = c11;
         vg.f c12 = bVar.c(this, null, false);
         c12.o(aVar);
-        z20.u(c12, org.telegram.messenger.i0.L(23.0f), 6.0f);
+        a30.u(c12, org.telegram.messenger.i0.L(23.0f), 6.0f);
         this.J = c12;
         this.K = org.telegram.messenger.i0.L(23.0f);
         invalidate();
@@ -711,7 +716,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.c0 = true;
-        zs.e().c(this, zs.n4);
+        at.e().c(this, at.n4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -719,7 +724,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         super.onDetachedFromWindow();
         this.c0 = false;
         this.b0 = false;
-        zs.e().n(this, zs.n4);
+        at.e().n(this, at.n4);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -867,7 +872,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         this.w = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.w.setImageResource(R.drawable.ic_close_white);
-        this.w.setContentDescription(cd.L0(2131752099, null));
+        this.w.setContentDescription(dd.L0(2131752099, null));
         this.w.setOnClickListener(new e5(this, i10));
         this.r.addView(this.w, w7.b6.d(42, 42.0f, 21, 0.0f, 0.0f, 2.0f, 0.0f));
         D();
@@ -902,7 +907,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         this.T.a(false, t());
         g();
         this.b.b(false, t());
-        zs.e().k(zs.r4, new Object[0]);
+        at.e().k(at.r4, new Object[0]);
     }
 
     public final boolean s() {
@@ -999,7 +1004,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
     public void setMenuGlassFrostedProgress(float f7) {
         hi.d dVar = this.o0;
         if (dVar != null) {
-            dVar.b(f7);
+            dVar.k(f7);
         }
     }
 
@@ -1007,8 +1012,8 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
         this.m0 = z10;
     }
 
-    public void setMenuOverlayProvider(i20 i20Var) {
-        this.P = i20Var;
+    public void setMenuOverlayProvider(j20 j20Var) {
+        this.P = j20Var;
     }
 
     public void setOccupyStatusBar(boolean z10) {
@@ -1243,7 +1248,7 @@ public class i5 extends FrameLayout implements fe.e, us, k6, b5 {
     }
 
     public final void y(int i10, boolean z10) {
-        String E = cd.E(i10, ' ');
+        String E = dd.E(i10, ' ');
         l();
         this.f.c(E, z10 && t() && this.G, true);
     }

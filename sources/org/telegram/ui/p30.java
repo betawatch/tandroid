@@ -1,45 +1,43 @@
 package org.telegram.ui;
 
-import android.widget.LinearLayout;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class p30 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.ac0 b;
-    public final /* synthetic */ l30 c;
-    public final /* synthetic */ m30 d;
+public final class p30 extends ps0 {
+    public final /* synthetic */ a50 T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p30(LaunchActivity launchActivity, org.telegram.ui.Components.ac0 ac0Var, l30 l30Var, m30 m30Var) {
-        super(launchActivity);
-        this.b = ac0Var;
-        this.c = l30Var;
-        this.d = m30Var;
-        this.a = false;
+    public p30(a50 a50Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
+        this.T = a50Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        org.telegram.ui.Components.ac0 ac0Var = this.b;
-        ac0Var.setItemCount(5);
-        l30 l30Var = this.c;
-        l30Var.setItemCount(5);
-        m30 m30Var = this.d;
-        m30Var.setItemCount(5);
-        ac0Var.getLayoutParams().height = org.telegram.messenger.i0.L(54.0f) * 5;
-        l30Var.getLayoutParams().height = org.telegram.messenger.i0.L(54.0f) * 5;
-        m30Var.getLayoutParams().height = org.telegram.messenger.i0.L(54.0f) * 5;
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
+    @Override // org.telegram.ui.ps0
+    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
+        a50 a50Var = this.T;
+        z20 z20Var = a50Var.i1;
+        a30 a30Var = a50Var.t4;
+        if (f7 > 0.0f) {
+            float x10 = a50Var.b.getX() + a30Var.getX();
+            float y3 = a50Var.b.getY() + a30Var.getY();
+            RectF rectF = org.telegram.messenger.i0.P;
+            rectF.set(x10, y3, z20Var.getMeasuredWidth() + x10, z20Var.getMeasuredHeight() + y3);
+            canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
+            canvas.translate(x10, y3);
+            a30Var.draw(canvas);
+            canvas.restore();
         }
-        super.requestLayout();
+    }
+
+    @Override // org.telegram.ui.ps0
+    public final void e() {
+        z20 z20Var = this.T.i1;
+        super.e();
+        for (int i10 = 0; i10 < z20Var.getChildCount(); i10++) {
+            z20Var.getChildAt(i10).invalidate();
+        }
     }
 }

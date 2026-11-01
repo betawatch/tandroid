@@ -4,16 +4,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ap extends org.telegram.ui.Components.sk0 {
+public final class ap extends org.telegram.ui.Components.tk0 {
     public final /* synthetic */ bp c;
 
     public ap(bp bpVar) {
         this.c = bpVar;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -40,14 +40,14 @@ public final class ap extends org.telegram.ui.Components.sk0 {
         if (i11 == 0) {
             org.telegram.ui.Cells.p4 p4Var = (org.telegram.ui.Cells.p4) view;
             org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d6, p4Var, bpVar.n2);
-            p4Var.setText(org.telegram.messenger.cd.L0(2131743670, null));
+            p4Var.setText(org.telegram.messenger.dd.L0(2131743670, null));
             return;
         }
         if (i11 != 1) {
             if (i11 != 2) {
                 return;
             }
-            ((org.telegram.ui.Cells.b9) view).setText(org.telegram.messenger.cd.L0(2131743669, null));
+            ((org.telegram.ui.Cells.b9) view).setText(org.telegram.messenger.dd.L0(2131743669, null));
             return;
         }
         TLRPC.TL_username tL_username = (TLRPC.TL_username) cpVar.N.get(i10 - 1);
@@ -67,14 +67,14 @@ public final class ap extends org.telegram.ui.Components.sk0 {
         bp bpVar = this.c;
         org.telegram.ui.ActionBar.p6 p6Var = bpVar.n2;
         if (i10 == 0) {
-            return new org.telegram.ui.Components.ck0(new org.telegram.ui.Cells.p4(bpVar.getContext(), p6Var));
+            return new org.telegram.ui.Components.dk0(new org.telegram.ui.Cells.p4(bpVar.getContext(), p6Var));
         }
         if (i10 == 1) {
-            return new org.telegram.ui.Components.ck0(new fa(this, bpVar.getContext(), p6Var));
+            return new org.telegram.ui.Components.dk0(new fa(this, bpVar.getContext(), p6Var));
         }
         if (i10 != 2) {
             return null;
         }
-        return new org.telegram.ui.Components.ck0(new org.telegram.ui.Cells.b9(12, bpVar.getContext(), p6Var));
+        return new org.telegram.ui.Components.dk0(new org.telegram.ui.Cells.b9(12, bpVar.getContext(), p6Var));
     }
 }

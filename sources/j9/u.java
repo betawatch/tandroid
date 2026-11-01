@@ -18,7 +18,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.oi;
+import org.telegram.messenger.pi;
 import org.telegram.messenger.s1;
 import org.telegram.messenger.t1;
 import org.telegram.messenger.u1;
@@ -28,15 +28,15 @@ import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.hm;
 import org.telegram.ui.jr;
+import org.telegram.ui.ky;
 import org.telegram.ui.lr;
-import org.telegram.ui.ly;
 import org.telegram.ui.pr;
 import org.telegram.ui.un;
 import s4.c1;
 import s4.l0;
 import v7.p8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -517,12 +517,12 @@ public final class u implements Runnable {
                         ((cp) arrayList2.get(i15)).a.m(0);
                     }
                 }
-                i0.g3(new oi(i10, this, arrayList2));
+                i0.g3(new pi(i10, this, arrayList2));
                 return;
             case 25:
                 un unVar = ((hm) this.c).b;
                 if (this == unVar.Z5) {
-                    unVar.ob((CharSequence) this.b, false);
+                    unVar.tb((CharSequence) this.b, false);
                     unVar.Z5 = null;
                     return;
                 }
@@ -548,13 +548,13 @@ public final class u implements Runnable {
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
                 i0.a4(prVar.c);
-                jr A0 = prVar.A0();
-                prVar.F0();
-                prVar.E0(A0);
+                jr B0 = prVar.B0();
+                prVar.G0();
+                prVar.F0(B0);
                 return;
             case 27:
                 ((wb) this.b).j();
-                ((ly) this.c).E = null;
+                ((ky) this.c).E = null;
                 return;
             case 28:
                 s4.t tVar2 = (s4.t) this.b;

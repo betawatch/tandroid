@@ -9,7 +9,7 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.io.StreamCorruptedException;
 import java.util.TimeZone;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
 /* loaded from: classes2.dex */
 public final class a implements Externalizable {
@@ -147,12 +147,12 @@ public final class a implements Externalizable {
     public static void c(long j10, DataOutput dataOutput) {
         if (j10 >= -4575744000L && j10 < 10413792000L && j10 % 900 == 0) {
             int i10 = (int) ((j10 + 4575744000L) / 900);
-            dataOutput.writeByte((i10 >>> 16) & zs.e4);
-            dataOutput.writeByte((i10 >>> 8) & zs.e4);
-            dataOutput.writeByte(i10 & zs.e4);
+            dataOutput.writeByte((i10 >>> 16) & at.e4);
+            dataOutput.writeByte((i10 >>> 8) & at.e4);
+            dataOutput.writeByte(i10 & at.e4);
             return;
         }
-        dataOutput.writeByte(zs.e4);
+        dataOutput.writeByte(at.e4);
         dataOutput.writeLong(j10);
     }
 

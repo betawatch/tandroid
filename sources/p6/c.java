@@ -10,15 +10,15 @@ import com.google.android.gms.common.api.l;
 import m.p3;
 import n6.g;
 import n6.p;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class c extends g {
     public final p U;
 
     public c(Context context, Looper looper, p3 p3Var, p pVar, k kVar, l lVar) {
-        super(context, looper, zs.t4, p3Var, kVar, lVar, 0);
+        super(context, looper, at.t4, p3Var, kVar, lVar, 0);
         this.U = pVar;
     }
 

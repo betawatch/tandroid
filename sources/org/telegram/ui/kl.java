@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class kl extends org.telegram.ui.ActionBar.u5 {
     public final /* synthetic */ int M0;
@@ -38,7 +38,7 @@ public final class kl extends org.telegram.ui.ActionBar.u5 {
         switch (this.M0) {
             case 2:
                 super.onAttachedToWindow();
-                ((rn0) this.N0).s.a();
+                ((pn0) this.N0).s.a();
                 break;
             default:
                 super.onAttachedToWindow();
@@ -51,7 +51,7 @@ public final class kl extends org.telegram.ui.ActionBar.u5 {
         switch (this.M0) {
             case 2:
                 super.onDetachedFromWindow();
-                ((rn0) this.N0).s.b();
+                ((pn0) this.N0).s.b();
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -66,7 +66,7 @@ public final class kl extends org.telegram.ui.ActionBar.u5 {
                 int rightDrawableX = getRightDrawableX();
                 super.onDraw(canvas);
                 if (rightDrawableX != getRightDrawableX()) {
-                    ((ProfileActivity) this.N0).p5();
+                    ((ProfileActivity) this.N0).q5();
                     break;
                 }
                 break;

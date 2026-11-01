@@ -17,14 +17,14 @@ import android.view.ViewGroup;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class w2 extends FrameLayout implements k6 {
     public float D;
@@ -95,7 +95,7 @@ public abstract class w2 extends FrameLayout implements k6 {
         this.h.setDuration((int) ((Math.max(0.0f, r1) / org.telegram.messenger.i0.a1(false, 0.8f)) * 250.0f));
         this.h.setInterpolator(gr.f);
         this.h.addListener(new v2(this, i10));
-        zs.e().k(zs.j1, 512);
+        at.e().k(at.j1, 512);
         this.h.start();
     }
 
@@ -120,7 +120,7 @@ public abstract class w2 extends FrameLayout implements k6 {
                 return;
             }
             int R = z10 ? z2Var.R() : 0;
-            float max = (z2Var.w || (i10 >= 29 && z2.D(z2Var) > 0)) ? z2Var.s ? Math.max(0.0f, Math.min(R - z2Var.E0, z2Var.b.getTranslationY())) : Math.max(0.0f, z2Var.R() - (z2Var.b.getMeasuredHeight() - z2Var.b.getTranslationY())) : 0.0f;
+            float max = (z2Var.w || (i10 >= 29 && z2.C(z2Var) > 0)) ? z2Var.s ? Math.max(0.0f, Math.min(R - z2Var.E0, z2Var.b.getTranslationY())) : Math.max(0.0f, z2Var.R() - (z2Var.b.getMeasuredHeight() - z2Var.b.getTranslationY())) : 0.0f;
             int alpha = paint.getAlpha();
             if (z2Var.V0) {
                 f7 *= z2Var.b.getAlpha();
@@ -319,7 +319,7 @@ public abstract class w2 extends FrameLayout implements k6 {
             super.dispatchDraw(canvas);
         } else {
             float f7 = 0.0f;
-            if (z2Var.w || (i13 >= 29 && z2.D(z2Var) > 0)) {
+            if (z2Var.w || (i13 >= 29 && z2.C(z2Var) > 0)) {
                 f7 = Math.max(0.0f, z2Var.R() - (z2Var.b.getMeasuredHeight() - z2Var.b.getTranslationY()));
             }
             int R = z2Var.n ? z2Var.R() : 0;
@@ -403,7 +403,7 @@ public abstract class w2 extends FrameLayout implements k6 {
             z10 = false;
         } else {
             float f7 = 0.0f;
-            if (z2Var.w || (Build.VERSION.SDK_INT >= 29 && z2.D(z2Var) > 0)) {
+            if (z2Var.w || (Build.VERSION.SDK_INT >= 29 && z2.C(z2Var) > 0)) {
                 f7 = Math.max(0.0f, z2Var.R() - (z2Var.b.getMeasuredHeight() - z2Var.b.getTranslationY()));
             }
             int R = z2Var.n ? z2Var.R() : 0;
@@ -466,7 +466,7 @@ public abstract class w2 extends FrameLayout implements k6 {
                 } else if (!z2Var.x) {
                     measuredHeight = (int) (measuredHeight - (((1.0f - z2Var.S0) * z2Var.h.getSystemWindowInsetBottom()) - (z2Var.n ? 0 : z2Var.R())));
                     if (Build.VERSION.SDK_INT >= 29) {
-                        measuredHeight -= z2.D(z2Var);
+                        measuredHeight -= z2.C(z2Var);
                     }
                 }
             } else {
@@ -514,7 +514,7 @@ public abstract class w2 extends FrameLayout implements k6 {
                     if (i28 == -1) {
                         i28 = 51;
                     }
-                    int i29 = i28 & zs.x1;
+                    int i29 = i28 & at.x1;
                     int i30 = i28 & 7;
                     if (i30 == i25) {
                         i16 = (((i15 - i14) - measuredWidth2) / 2) + layoutParams.leftMargin;
@@ -619,7 +619,7 @@ public abstract class w2 extends FrameLayout implements k6 {
             z2Var.S = z2Var.h.getSystemWindowInsetLeft();
             z2Var.T = z2Var.h.getSystemWindowInsetRight();
             if (Build.VERSION.SDK_INT >= 29) {
-                z2Var.R += z2.D(z2Var);
+                z2Var.R += z2.C(z2Var);
             }
             if (z2Var.d && rect.bottom != 0 && rect.top != 0) {
                 z2Var.R -= z2Var.f;
@@ -631,7 +631,7 @@ public abstract class w2 extends FrameLayout implements k6 {
                 if (z2Var.h != null && !z2Var.x) {
                     int systemWindowInsetBottom = (int) ((1.0f - z2Var.S0) * r3.getSystemWindowInsetBottom());
                     if (Build.VERSION.SDK_INT >= 29) {
-                        systemWindowInsetBottom += z2.D(z2Var);
+                        systemWindowInsetBottom += z2.C(z2Var);
                     }
                     if (z2Var.y) {
                     }

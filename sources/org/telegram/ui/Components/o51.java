@@ -1,26 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.ColorDrawable;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class o51 extends ColorDrawable {
-    public final int a;
-    public final org.telegram.ui.ActionBar.p6 b;
+public final class o51 extends View {
+    public int a;
 
-    public o51(int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(org.telegram.ui.ActionBar.t6.w0(i10, p6Var));
-        this.a = i10;
-        this.b = p6Var;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
     }
 
-    @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.t6.w0(this.a, this.b);
-        if (getColor() != w02) {
-            setColor(w02);
+    public void setHeight(int i10) {
+        if (this.a == i10) {
+            return;
         }
-        super.draw(canvas);
+        this.a = i10;
+        requestLayout();
     }
 }

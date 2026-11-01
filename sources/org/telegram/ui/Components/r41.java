@@ -1,26 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class r41 implements ValueAnimator.AnimatorUpdateListener {
-    public int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ w41 c;
+public final class r41 implements bx0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ x41 b;
 
-    public r41(w41 w41Var, int i10) {
-        this.c = w41Var;
-        this.b = i10;
+    public r41(x41 x41Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = x41Var;
+        this.a = inputStickerSet;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
-        w41 w41Var = this.c;
-        w41Var.N = true;
-        w41Var.n.scrollBy(0, floatValue - this.a);
-        w41Var.N = false;
-        this.a = floatValue;
+    @Override // org.telegram.ui.Components.bx0
+    public final void a() {
+        x41 x41Var = this.b;
+        s4.g0 adapter = x41Var.n.getAdapter();
+        w41 w41Var = x41Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i10 = 0;
+        if (adapter == w41Var) {
+            while (i10 < w41Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) w41Var.e.get(i10);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    w41Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i10++;
+            }
+            return;
+        }
+        zf.o1 o1Var = x41Var.w;
+        ArrayList arrayList = o1Var.E;
+        while (i10 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                o1Var.F(stickerSetCovered2, null);
+                return;
+            }
+            i10++;
+        }
     }
 }

@@ -4,10 +4,10 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.SurfaceView;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.tz;
-import org.telegram.ui.Components.fi0;
+import org.telegram.messenger.uz;
+import org.telegram.ui.Components.gi0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x6 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class x6 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         z2 H;
-        fi0 fi0Var;
+        gi0 gi0Var;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
@@ -49,14 +49,14 @@ public final class x6 extends AnimatorListenerAdapter {
                     imageReceiver2.setAlpha(1.0f);
                     l7Var.c.O0(true, true);
                 }
-                if (l7Var.d != null && (H = o7Var.H()) != null && (fi0Var = H.X0.d) != null) {
-                    fi0 fi0Var2 = l7Var.d;
-                    fi0Var2.getClass();
-                    fi0Var2.c = fi0Var.c;
-                    fi0Var2.f = fi0Var.f;
-                    fi0Var2.b = fi0Var.b;
-                    fi0Var2.a = System.currentTimeMillis();
-                    fi0Var2.c();
+                if (l7Var.d != null && (H = o7Var.H()) != null && (gi0Var = H.X0.d) != null) {
+                    gi0 gi0Var2 = l7Var.d;
+                    gi0Var2.getClass();
+                    gi0Var2.c = gi0Var.c;
+                    gi0Var2.f = gi0Var.f;
+                    gi0Var2.b = gi0Var.b;
+                    gi0Var2.a = System.currentTimeMillis();
+                    gi0Var2.c();
                 }
                 k2.t0 t0Var = o7Var.G0;
                 if (t0Var != null) {
@@ -129,7 +129,7 @@ public final class x6 extends AnimatorListenerAdapter {
                     o7Var3.w1 = false;
                     o7Var3.C();
                     org.telegram.messenger.i0.h3(new i2(o7Var3, 1), 30L);
-                } else if (!tz.U) {
+                } else if (!uz.U) {
                     if (o7Var3.u1 == null && o7Var3.w != null) {
                         i5 i5Var2 = new i5(o7Var3.w.getContext(), o7Var3.s);
                         o7Var3.u1 = i5Var2;
@@ -141,7 +141,7 @@ public final class x6 extends AnimatorListenerAdapter {
                         i5Var3.setOnClickListener(new rh.s(this, 15));
                         o7Var3.u1.animate().alpha(1.0f).setDuration(150L).setListener(new h7(this, 1)).start();
                     }
-                    tz.G(true);
+                    uz.G(true);
                 }
                 o7Var3.d0();
                 o7Var3.J0.e();

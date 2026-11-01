@@ -5,7 +5,7 @@ import android.content.Context;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k9 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class k9 implements Runnable {
         int i10 = 0;
         switch (this.a) {
             case 0:
-                this.b.c0();
+                this.b.d0();
                 break;
             case 1:
                 u9 u9Var = this.b;
@@ -39,7 +39,7 @@ public final /* synthetic */ class k9 implements Runnable {
                 u9 u9Var2 = this.b;
                 CameraView cameraView = u9Var2.d;
                 if (cameraView != null) {
-                    u9Var2.g0(cameraView.getTextureView().getBitmap());
+                    u9Var2.h0(cameraView.getTextureView().getBitmap());
                     break;
                 }
                 break;

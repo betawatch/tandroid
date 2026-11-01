@@ -9,9 +9,9 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a7;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.o5;
 import rh.e6;
 import rh.h8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h4 extends View {
     public final rh.g4 a;
@@ -37,7 +37,7 @@ public final class h4 extends View {
         rh.g4 g4Var = new rh.g4(i10, this, p6Var);
         this.a = g4Var;
         g4Var.y.setCallback(this);
-        zs.i(this);
+        at.i(this);
     }
 
     public final void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, TLRPC.TL_textWithEntities tL_textWithEntities, String str, boolean z10) {
@@ -67,7 +67,7 @@ public final class h4 extends View {
             imageReceiver.X(0);
             imageReceiver.e();
             imageReceiver.W(0);
-            h8.b1(imageReceiver, g4Var.m.document, zs.v1);
+            h8.c1(imageReceiver, g4Var.m.document, at.v1);
         }
         boolean z11 = tL_starGiftUnique.burned;
         g4Var.L = z11;
@@ -77,17 +77,17 @@ public final class h4 extends View {
             paint2.setShader(null);
             paint2.setColor(w02);
             g4Var.M = a7.b;
-            f1Var.f(11, cd.L0(2131749902, null), true);
+            f1Var.f(11, dd.L0(2131749902, null), true);
         } else {
             f1Var.e(g4Var.k, true, false);
-            f1Var.f(11, cd.L0(2131749903, null), true);
+            f1Var.f(11, dd.L0(2131749903, null), true);
         }
         if (g4Var.S) {
             imageReceiver.P();
             d5Var.a();
             g4Var.y.d.P();
         }
-        g4Var.O = z20.C(64.0f, (org.telegram.messenger.i0.q.y - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.i0.m, (int) (org.telegram.messenger.i0.Q1() ? org.telegram.messenger.i0.Q0() * 0.6f : (org.telegram.messenger.i0.q.x * 0.62f) - org.telegram.messenger.i0.L(34.0f)));
+        g4Var.O = a30.C(64.0f, (org.telegram.messenger.i0.q.y - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.i0.m, (int) (org.telegram.messenger.i0.Q1() ? org.telegram.messenger.i0.Q0() * 0.6f : (org.telegram.messenger.i0.q.x * 0.62f) - org.telegram.messenger.i0.L(34.0f)));
         if (!org.telegram.messenger.i0.Q1()) {
             g4Var.O = (int) (g4Var.O * 1.2f);
         }

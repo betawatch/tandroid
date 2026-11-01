@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ss extends zf.d {
     public final /* synthetic */ ContactsActivity O;
@@ -18,7 +18,7 @@ public final class ss extends zf.d {
     /* JADX WARN: Removed duplicated region for block: B:32:0x005f  */
     /* JADX WARN: Removed duplicated region for block: B:6:0x0031  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
-    @Override // org.telegram.ui.Components.ok0
+    @Override // org.telegram.ui.Components.pk0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -55,7 +55,7 @@ public final class ss extends zf.d {
                 i13 = 1;
             }
             ContactsActivity contactsActivity = this.O;
-            ContactsActivity.f0(contactsActivity);
+            ContactsActivity.g0(contactsActivity);
             p5Var = contactsActivity.n;
             if (p5Var != null) {
                 ss ssVar = contactsActivity.b;
@@ -64,7 +64,7 @@ public final class ss extends zf.d {
                 }
                 p5Var.Y(z12, true);
             }
-            contactsActivity.j0();
+            contactsActivity.k0();
             return i13;
         }
         this.I = this.D.isEmpty();
@@ -82,20 +82,20 @@ public final class ss extends zf.d {
         if (z11) {
         }
         ContactsActivity contactsActivity2 = this.O;
-        ContactsActivity.f0(contactsActivity2);
+        ContactsActivity.g0(contactsActivity2);
         p5Var = contactsActivity2.n;
         if (p5Var != null) {
         }
-        contactsActivity2.j0();
+        contactsActivity2.k0();
         return i13;
     }
 
-    @Override // org.telegram.ui.Components.ok0, s4.g0
+    @Override // org.telegram.ui.Components.pk0, s4.g0
     public final void f() {
         X(false);
         ContactsActivity contactsActivity = this.O;
-        org.telegram.ui.Components.tk0 tk0Var = contactsActivity.d;
-        if (tk0Var == null || tk0Var.getAdapter() != this) {
+        org.telegram.ui.Components.uk0 uk0Var = contactsActivity.d;
+        if (uk0Var == null || uk0Var.getAdapter() != this) {
             return;
         }
         int b10 = b();

@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.w3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.g9;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout implements k6 {
     public final p6 a;
@@ -71,7 +71,7 @@ public final class d0 extends FrameLayout implements k6 {
             TLObject tLObject = e0Var.f;
             if (tLObject instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) tLObject;
-                if (d20.i(d20.s0).f().id == user.id) {
+                if (e20.i(e20.s0).f().id == user.id) {
                     eq N3 = t6.N(org.telegram.messenger.i0.L(32.0f), R.drawable.chats_saved);
                     int L3 = org.telegram.messenger.i0.L(16.0f);
                     int L4 = org.telegram.messenger.i0.L(16.0f);

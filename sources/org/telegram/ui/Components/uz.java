@@ -12,9 +12,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegram.messenger.us {
+public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegram.messenger.vs {
     public static final /* synthetic */ int t1 = 0;
     public int i1;
     public final ag.b1 j1;
@@ -24,24 +24,24 @@ public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegr
     public final View n1;
     public int o1;
     public boolean p1;
-    public org.telegram.ui.tt q1;
+    public org.telegram.ui.st q1;
     public final ArrayList r1;
     public final ArrayList s1;
 
-    public uz(org.telegram.ui.ay ayVar, ArrayList arrayList) {
-        super(ayVar.getParentActivity(), false);
+    public uz(org.telegram.ui.zx zxVar, ArrayList arrayList) {
+        super(zxVar.getParentActivity(), false);
         O();
         this.s1 = arrayList;
-        this.r1 = new ArrayList(ayVar.getMessagesController().P0);
+        this.r1 = new ArrayList(zxVar.getMessagesController().P0);
         int i10 = 0;
         while (i10 < this.r1.size()) {
-            if (((org.telegram.messenger.ap) this.r1.get(i10)).e()) {
+            if (((org.telegram.messenger.bp) this.r1.get(i10)).e()) {
                 this.r1.remove(i10);
                 i10--;
             }
             i10++;
         }
-        Activity parentActivity = ayVar.getParentActivity();
+        Activity parentActivity = zxVar.getParentActivity();
         org.telegram.ui.Cells.u0 u0Var = new org.telegram.ui.Cells.u0(this, parentActivity);
         this.b = u0Var;
         u0Var.setWillNotDraw(false);
@@ -83,10 +83,10 @@ public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegr
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setPadding(org.telegram.messenger.i0.L(24.0f), 0, org.telegram.messenger.i0.L(24.0f), 0);
         textView.setGravity(16);
-        textView.setText(org.telegram.messenger.cd.L0(2131750794, null));
+        textView.setText(org.telegram.messenger.dd.L0(2131750794, null));
         textView.setTypeface(org.telegram.messenger.i0.o());
         this.b.addView(textView, w7.b6.d(-1, 50.0f, 51, 0.0f, 0.0f, 40.0f, 0.0f));
-        org.telegram.messenger.zs.e().c(this, org.telegram.messenger.zs.i4);
+        org.telegram.messenger.at.e().c(this, org.telegram.messenger.at.i4);
     }
 
     public static void I0(uz uzVar) {
@@ -104,9 +104,9 @@ public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegr
         }
         int i10 = 0;
         View childAt = b1Var.getChildAt(0);
-        ck0 ck0Var = (ck0) b1Var.G(childAt);
+        dk0 dk0Var = (dk0) b1Var.G(childAt);
         int top = childAt.getTop();
-        if (top < 0 || ck0Var == null || ck0Var.b() != 0) {
+        if (top < 0 || dk0Var == null || dk0Var.b() != 0) {
             uzVar.K0(true);
         } else {
             uzVar.K0(false);
@@ -121,7 +121,7 @@ public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegr
         }
     }
 
-    public static ArrayList J0(org.telegram.ui.ActionBar.k2 k2Var, org.telegram.messenger.ap apVar, ArrayList arrayList, boolean z10, boolean z11) {
+    public static ArrayList J0(org.telegram.ui.ActionBar.k2 k2Var, org.telegram.messenger.bp bpVar, ArrayList arrayList, boolean z10, boolean z11) {
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
@@ -137,7 +137,7 @@ public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegr
                     continue;
                 }
             }
-            if (apVar == null || ((!z10 || !apVar.h.contains(Long.valueOf(longValue))) && (z10 || !apVar.i.contains(Long.valueOf(longValue))))) {
+            if (bpVar == null || ((!z10 || !bpVar.h.contains(Long.valueOf(longValue))) && (z10 || !bpVar.i.contains(Long.valueOf(longValue))))) {
                 arrayList2.add(Long.valueOf(longValue));
                 if (z11) {
                     break;
@@ -173,9 +173,9 @@ public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegr
         this.m1.start();
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == org.telegram.messenger.zs.i4) {
+        if (i10 == org.telegram.messenger.at.i4) {
             org.telegram.messenger.i0.d0(this.j1, new ag.z0(11));
         }
     }
@@ -183,7 +183,7 @@ public final class uz extends org.telegram.ui.ActionBar.z2 implements org.telegr
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
         super.dismiss();
-        org.telegram.messenger.zs.e().n(this, org.telegram.messenger.zs.i4);
+        org.telegram.messenger.at.e().n(this, org.telegram.messenger.at.i4);
     }
 
     @Override // org.telegram.ui.ActionBar.z2

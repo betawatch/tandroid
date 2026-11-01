@@ -9,18 +9,18 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e2 extends View {
-    public final /* synthetic */ m60 a;
+    public final /* synthetic */ l60 a;
     public final /* synthetic */ f4 b;
     public final /* synthetic */ f2 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e2(f2 f2Var, Context context, m60 m60Var, f4 f4Var) {
+    public e2(f2 f2Var, Context context, l60 l60Var, f4 f4Var) {
         super(context);
         this.c = f2Var;
-        this.a = m60Var;
+        this.a = l60Var;
         this.b = f4Var;
     }
 
@@ -48,12 +48,12 @@ public final class e2 extends View {
         if (pageblockpreformatted != null) {
             CharSequence charSequence = f2Var.h;
             f4 f4Var = this.b;
-            m60 m60Var = this.a;
+            l60 l60Var = this.a;
             if (charSequence == null) {
                 TL_iv.RichText richText = pageblockpreformatted.text;
                 int L = org.telegram.messenger.i0.L(5000.0f);
                 HashSet hashSet = h4.c1;
-                CharSequence A = h4.A(m60Var, f4Var.E, this, richText, richText, pageblockpreformatted, L);
+                CharSequence A = h4.A(l60Var, f4Var.E, this, richText, richText, pageblockpreformatted, L);
                 f2Var.h = A;
                 TL_iv.pageBlockPreformatted pageblockpreformatted2 = f2Var.f;
                 if (pageblockpreformatted2.diff) {
@@ -62,7 +62,7 @@ public final class e2 extends View {
                     f2Var.h = di.l.b(f2Var.h, f2Var.f.language);
                 }
             }
-            z2 o10 = h4.o(m60Var, this, f2Var.h, null, org.telegram.messenger.i0.L(5000.0f), 0, f2Var.f, f4Var);
+            z2 o10 = h4.o(l60Var, this, f2Var.h, null, org.telegram.messenger.i0.L(5000.0f), 0, f2Var.f, f4Var);
             f2Var.c = o10;
             if (o10 != null) {
                 i12 = o10.d.getHeight();

@@ -13,14 +13,15 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import java.util.HashSet;
+import org.telegram.messenger.i0;
 import org.telegram.messenger.m5;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.voip.i0;
-import org.telegram.ui.do0;
+import org.telegram.ui.Components.voip.j0;
+import org.telegram.ui.bo0;
 import r0.j1;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout implements k6 {
     public float D;
@@ -33,9 +34,9 @@ public final class e extends FrameLayout implements k6 {
     public float K;
     public boolean L;
     public hh.g a;
-    public final do0 b;
+    public final bo0 b;
     public final FrameLayout c;
-    public final i0 d;
+    public final j0 d;
     public boolean e;
     public vg.f f;
     public vg.f h;
@@ -55,18 +56,18 @@ public final class e extends FrameLayout implements k6 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         addView(frameLayout, b6.e(-1, -2, 80));
-        i0 i0Var = new i0(this, context, 13);
-        this.d = i0Var;
-        addView(i0Var, b6.e(-1, -2, 80));
-        this.b = new do0(this, context, 16);
+        j0 j0Var = new j0(this, context, 13);
+        this.d = j0Var;
+        addView(j0Var, b6.e(-1, -2, 80));
+        this.b = new bo0(this, context, 16);
     }
 
     public final void a(boolean z10) {
         e();
-        int round = Math.round(this.s) + org.telegram.messenger.i0.L(9.0f) + this.F;
+        int round = Math.round(this.s) + i0.L(9.0f) + this.F;
         if (this.r != round || z10) {
             this.r = round;
-            int L = org.telegram.messenger.i0.L(29.0f);
+            int L = i0.L(29.0f);
             float measuredHeight = getMeasuredHeight() - this.w;
             float measuredWidth = getMeasuredWidth();
             float measuredHeight2 = getMeasuredHeight();
@@ -97,10 +98,10 @@ public final class e extends FrameLayout implements k6 {
         j1 j1Var = ((hh.i) this.a).r;
         int i10 = j1Var != null ? j1Var.a.f(2).d : 0;
         float c10 = ((hh.i) this.a).c();
-        i0 i0Var = this.d;
-        int childCount = i0Var.getChildCount();
+        j0 j0Var = this.d;
+        int childCount = j0Var.getChildCount();
         for (int i11 = 0; i11 < childCount; i11++) {
-            KeyEvent.Callback childAt = i0Var.getChildAt(i11);
+            KeyEvent.Callback childAt = j0Var.getChildAt(i11);
             if (childAt instanceof hh.a) {
                 hh.a aVar = (hh.a) childAt;
                 aVar.c(i10);
@@ -116,13 +117,13 @@ public final class e extends FrameLayout implements k6 {
         this.w = ((hh.i) this.a).c();
         int i11 = 0;
         this.x = ((hh.i) this.a).s != 1;
-        i0 i0Var = this.d;
-        boolean z10 = i0Var.getVisibility() == 0;
+        j0 j0Var = this.d;
+        boolean z10 = j0Var.getVisibility() == 0;
         boolean z11 = this.x;
         if (z10 != z11) {
-            i0Var.setVisibility(z11 ? 0 : 8);
+            j0Var.setVisibility(z11 ? 0 : 8);
         }
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) i0Var.getLayoutParams();
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) j0Var.getLayoutParams();
         int i12 = layoutParams.height;
         int i13 = ((hh.i) this.a).x;
         if (i12 != i13) {
@@ -142,7 +143,7 @@ public final class e extends FrameLayout implements k6 {
                     i11 = roundedCorner2.getRadius();
                 }
             }
-            this.h.s(org.telegram.messenger.i0.L(29.0f), org.telegram.messenger.i0.L(29.0f), i11, i10, true);
+            this.h.s(i0.L(29.0f), i0.L(29.0f), i11, i10, true);
         }
     }
 
@@ -155,7 +156,7 @@ public final class e extends FrameLayout implements k6 {
         int i10 = this.F;
         Rect rect = this.G;
         rect.set(round, 0, measuredWidth, i10);
-        rect.inset(0, -org.telegram.messenger.i0.L(7.0f));
+        rect.inset(0, -i0.L(7.0f));
         rect.offset(0, measuredHeight + ((int) this.K));
         this.f.setBounds(rect);
         if (this.e) {
@@ -172,7 +173,7 @@ public final class e extends FrameLayout implements k6 {
         boolean z10 = view == this.d;
         if (z10) {
             canvas.save();
-            canvas.clipPath(this.h.M.k);
+            canvas.clipPath(this.h.P.k);
         }
         boolean drawChild = super.drawChild(canvas, view, j10);
         if (z10) {
@@ -182,7 +183,7 @@ public final class e extends FrameLayout implements k6 {
     }
 
     public final void e() {
-        this.c.setTranslationY((-this.s) - org.telegram.messenger.i0.L(9.0f));
+        this.c.setTranslationY((-this.s) - i0.L(9.0f));
         this.d.setTranslationY(r0.getMeasuredHeight() - this.w);
     }
 
@@ -195,7 +196,7 @@ public final class e extends FrameLayout implements k6 {
     }
 
     public float getInputBubbleBottom() {
-        return (getMeasuredHeight() - this.s) - org.telegram.messenger.i0.L(9.0f);
+        return (getMeasuredHeight() - this.s) - i0.L(9.0f);
     }
 
     public float getInputBubbleHeight() {
@@ -273,17 +274,17 @@ public final class e extends FrameLayout implements k6 {
 
     public void setInputIslandBubbleDrawable(vg.f fVar) {
         this.f = fVar;
-        fVar.p(org.telegram.messenger.i0.L(7.0f));
-        this.f.q(org.telegram.messenger.i0.L(22.0f));
+        fVar.p(i0.L(7.0f));
+        this.f.q(i0.L(22.0f));
     }
 
     public void setUnderKeyboardBackgroundDrawable(vg.f fVar) {
         this.h = fVar;
-        fVar.O = true;
-        fVar.r(org.telegram.messenger.i0.L(29.0f), org.telegram.messenger.i0.L(29.0f), 0.0f, 0.0f);
-        this.h.t(org.telegram.messenger.i0.L(32.0f));
+        fVar.R = true;
+        fVar.r(i0.L(29.0f), i0.L(29.0f), 0.0f, 0.0f);
+        this.h.t(i0.L(32.0f));
         vg.f fVar2 = this.h;
-        fVar2.M.g = 0.4f;
+        fVar2.P.g = 0.4f;
         fVar2.m();
     }
 

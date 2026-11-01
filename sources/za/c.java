@@ -72,27 +72,27 @@ import l.j;
 import l.x;
 import n6.l;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Components.ai;
-import org.telegram.ui.Components.jn0;
+import org.telegram.ui.Components.kn0;
 import org.telegram.ui.Components.mg;
 import org.telegram.ui.Components.q4;
-import org.telegram.ui.er0;
-import org.telegram.ui.kh0;
+import org.telegram.ui.cr0;
+import org.telegram.ui.ih0;
 import v7.d8;
 import v7.t6;
 import w7.z8;
 import x2.o;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class c implements s, ai, a0, jn0, q4, m0, androidx.activity.result.b, w0, OnSuccessListener, e, x, c2, z, j {
+public final class c implements s, ai, a0, kn0, q4, m0, androidx.activity.result.b, w0, OnSuccessListener, e, x, c2, z, j {
     public static volatile c c;
     public final /* synthetic */ int a;
     public Object b;
@@ -189,7 +189,7 @@ public final class c implements s, ai, a0, jn0, q4, m0, androidx.activity.result
         if (callback == null) {
             return true;
         }
-        callback.onMenuOpened(zs.t1, lVar);
+        callback.onMenuOpened(at.t1, lVar);
         return true;
     }
 
@@ -197,7 +197,7 @@ public final class c implements s, ai, a0, jn0, q4, m0, androidx.activity.result
     public void C(mg mgVar) {
         int i10;
         i10 = ((k2) ((w) this.b)).currentAccount;
-        zs.f(i10).d(mgVar);
+        at.f(i10).d(mgVar);
     }
 
     @Override // org.telegram.ui.Components.ai
@@ -227,11 +227,11 @@ public final class c implements s, ai, a0, jn0, q4, m0, androidx.activity.result
     public void G(float f7) {
         switch (this.a) {
             case 25:
-                er0 er0Var = (er0) this.b;
-                s0.e(er0Var.y1).k(String.valueOf(h.a.indexOf(er0Var.F0.getCurrentBrush())), f7);
-                q1 q1Var = er0Var.t1;
+                cr0 cr0Var = (cr0) this.b;
+                s0.e(cr0Var.y1).k(String.valueOf(h.a.indexOf(cr0Var.F0.getCurrentBrush())), f7);
+                q1 q1Var = cr0Var.t1;
                 q1Var.c = f7;
-                er0Var.r0(q1Var, null);
+                cr0Var.r0(q1Var, null);
                 break;
             default:
                 ((v2) this.b).setOutlineWidth(f7);
@@ -297,10 +297,10 @@ public final class c implements s, ai, a0, jn0, q4, m0, androidx.activity.result
     @Override // org.telegram.ui.Components.q4
     public void K(int i10, int i11, boolean z10) {
         bi.k2 k2Var = (bi.k2) this.b;
-        k2Var.w0(i10, i11, z10);
-        kh0 kh0Var = k2Var.O0;
-        if (kh0Var != null) {
-            kh0Var.h();
+        k2Var.x0(i10, i11, z10);
+        ih0 ih0Var = k2Var.O0;
+        if (ih0Var != null) {
+            ih0Var.h();
             k2Var.O0 = null;
         }
     }
@@ -435,24 +435,24 @@ public final class c implements s, ai, a0, jn0, q4, m0, androidx.activity.result
         }
     }
 
-    @Override // org.telegram.ui.Components.jn0
+    @Override // org.telegram.ui.Components.kn0
     public void c(float f7) {
         b0 b0Var = (b0) this.b;
-        jj jjVar = b0Var.P;
-        if (jjVar == null) {
+        kj kjVar = b0Var.P;
+        if (kjVar == null) {
             return;
         }
-        jjVar.b0 = f7;
+        kjVar.b0 = f7;
         MediaController.B().i0(b0Var.P, f7);
     }
 
-    @Override // org.telegram.ui.Components.jn0
+    @Override // org.telegram.ui.Components.kn0
     public void d(float f7) {
-        jj jjVar = ((b0) this.b).P;
-        if (jjVar == null) {
+        kj kjVar = ((b0) this.b).P;
+        if (kjVar == null) {
             return;
         }
-        jjVar.b0 = f7;
+        kjVar.b0 = f7;
     }
 
     @Override // k2.z
@@ -493,9 +493,9 @@ public final class c implements s, ai, a0, jn0, q4, m0, androidx.activity.result
     public float get() {
         switch (this.a) {
             case 25:
-                er0 er0Var = (er0) this.b;
-                int i10 = er0Var.y1;
-                h currentBrush = er0Var.F0.getCurrentBrush();
+                cr0 cr0Var = (cr0) this.b;
+                int i10 = cr0Var.y1;
+                h currentBrush = cr0Var.F0.getCurrentBrush();
                 return currentBrush == null ? s0.e(i10).i : s0.e(i10).f(String.valueOf(h.a.indexOf(currentBrush)), currentBrush.d());
             default:
                 return ((v2) this.b).F;

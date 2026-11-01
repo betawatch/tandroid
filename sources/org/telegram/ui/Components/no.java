@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class no implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -25,12 +25,12 @@ public final /* synthetic */ class no implements View.OnClickListener {
             case 0:
                 bi biVar = dpVar.O1;
                 if (biVar.s2 != biVar.a2) {
-                    dpVar.Q1.setText(org.telegram.messenger.cd.L0(2131745554, null));
+                    dpVar.Q1.setText(org.telegram.messenger.dd.L0(2131745554, null));
                     bi biVar2 = dpVar.O1;
                     biVar2.E1(biVar2.a2);
                     break;
                 } else {
-                    dpVar.Q1.setText(org.telegram.messenger.cd.L0(2131752138, null));
+                    dpVar.Q1.setText(org.telegram.messenger.dd.L0(2131752138, null));
                     bi biVar3 = dpVar.O1;
                     if (biVar3.i2 == null) {
                         Context context = biVar3.getContext();
@@ -62,7 +62,7 @@ public final /* synthetic */ class no implements View.OnClickListener {
                     boolean z10 = dpVar.D1;
                     fa faVar2 = qiVar2.w;
                     ((ArrayList) faVar2.e).clear();
-                    WallpapersListActivity.D0((ArrayList) faVar2.e, z10);
+                    WallpapersListActivity.E0((ArrayList) faVar2.e, z10);
                     faVar2.f();
                     break;
                 }

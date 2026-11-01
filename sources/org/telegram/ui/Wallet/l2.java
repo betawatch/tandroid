@@ -6,7 +6,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l2 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -21,16 +21,16 @@ public final /* synthetic */ class l2 implements DialogInterface.OnDismissListen
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                t2 t2Var = (t2) this.b;
-                if (!t2Var.e) {
-                    t2Var.e = true;
-                    qq qqVar = t2Var.h;
+                u2 u2Var = (u2) this.b;
+                if (!u2Var.e) {
+                    u2Var.e = true;
+                    qq qqVar = u2Var.h;
                     if (qqVar != null) {
                         qqVar.run();
                     }
-                    if (!t2Var.f) {
-                        t2Var.f = true;
-                        t2Var.b.c();
+                    if (!u2Var.f) {
+                        u2Var.f = true;
+                        u2Var.b.c();
                         break;
                     }
                 }

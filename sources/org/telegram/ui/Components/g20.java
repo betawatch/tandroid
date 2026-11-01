@@ -26,9 +26,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class g20 implements org.telegram.messenger.us {
+public final class g20 implements org.telegram.messenger.vs {
     public static g20 d0 = null;
     public static boolean e0 = true;
     public boolean D;
@@ -44,7 +44,7 @@ public final class g20 implements org.telegram.messenger.us {
     public final c20 S;
     public final c20 T;
     public final m20 U;
-    public final ei0 V;
+    public final fi0 V;
     public boolean W;
     public boolean X;
     public boolean Y;
@@ -60,7 +60,7 @@ public final class g20 implements org.telegram.messenger.us {
     public WindowManager n;
     public WindowManager.LayoutParams r;
     public final u8 s;
-    public final bi0 w;
+    public final ci0 w;
     public boolean x;
     public boolean y;
     public float E = 0.0f;
@@ -92,7 +92,7 @@ public final class g20 implements org.telegram.messenger.us {
         int i14 = 20;
         u8Var.setDelegate(new ho(this, i14));
         g(false);
-        e20Var.addView(u8Var, w7.b6.e(org.telegram.messenger.zs.t1, 36, 49));
+        e20Var.addView(u8Var, w7.b6.e(org.telegram.messenger.at.t1, 36, 49));
         int i15 = 19;
         jg.l0 l0Var = new jg.l0(this, context, i15);
         this.b = l0Var;
@@ -101,15 +101,15 @@ public final class g20 implements org.telegram.messenger.us {
         l0Var.addView(f0Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
-        ei0 ei0Var = new ei0(context);
-        this.V = ei0Var;
-        ei0Var.setScaleType(ImageView.ScaleType.CENTER);
-        bi0 bi0Var = new bi0(R.raw.group_pip_delete_icon, org.telegram.messenger.i0.L(40.0f), org.telegram.messenger.i0.L(40.0f), true, null);
-        this.w = bi0Var;
-        bi0Var.h = true;
-        ei0Var.setAnimation(bi0Var);
-        ei0Var.setColorFilter(-1);
-        frameLayout.addView(ei0Var, w7.b6.d(40, 40.0f, 17, 0.0f, 0.0f, 0.0f, 25.0f));
+        fi0 fi0Var = new fi0(context);
+        this.V = fi0Var;
+        fi0Var.setScaleType(ImageView.ScaleType.CENTER);
+        ci0 ci0Var = new ci0(R.raw.group_pip_delete_icon, org.telegram.messenger.i0.L(40.0f), org.telegram.messenger.i0.L(40.0f), true, null);
+        this.w = ci0Var;
+        ci0Var.h = true;
+        fi0Var.setAnimation(ci0Var);
+        fi0Var.setColorFilter(-1);
+        frameLayout.addView(fi0Var, w7.b6.d(40, 40.0f, 17, 0.0f, 0.0f, 0.0f, 25.0f));
         org.telegram.ui.w7 w7Var = new org.telegram.ui.w7(this, context, i11);
         this.e = w7Var;
         w7Var.setOnClickListener(new h0(this, i15));
@@ -121,7 +121,7 @@ public final class g20 implements org.telegram.messenger.us {
         k20Var.x = true;
         k20Var.setOrientation(1);
         k20Var.y = i10;
-        paint.setAlpha(org.telegram.messenger.zs.J3);
+        paint.setAlpha(org.telegram.messenger.at.J3);
         j20 j20Var = new j20(context);
         j20Var.setPadding(org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f));
         g9 g9Var = new g9(context);
@@ -141,17 +141,17 @@ public final class g20 implements org.telegram.messenger.us {
         textView.setMaxLines(2);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTypeface(org.telegram.messenger.i0.o());
-        TextView f7 = org.telegram.messenger.z20.f(linearLayout, textView, w7.b6.o(-1, -2), context);
+        TextView f7 = org.telegram.messenger.a30.f(linearLayout, textView, w7.b6.o(-1, -2), context);
         k20Var.b = f7;
         f7.setTextSize(12.0f);
-        f7.setTextColor(i0.b.o(-1, org.telegram.messenger.zs.j2));
+        f7.setTextColor(i0.b.o(-1, org.telegram.messenger.at.j2));
         linearLayout.addView(f7, w7.b6.o(-1, -2));
         j20Var.addView(linearLayout, w7.b6.d(-1, -2.0f, 16, 55.0f, 0.0f, 0.0f, 0.0f));
         k20Var.addView(j20Var, w7.b6.t(-1, -2, 0, 10, 10, 10, 10));
-        org.telegram.ui.Components.voip.b2 b2Var = new org.telegram.ui.Components.voip.b2(context, 44.0f);
-        k20Var.c = b2Var;
-        b2Var.setTextSize(12);
-        b2Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.h20
+        org.telegram.ui.Components.voip.c2 c2Var = new org.telegram.ui.Components.voip.c2(context, 44.0f);
+        k20Var.c = c2Var;
+        c2Var.setTextSize(12);
+        c2Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.h20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i12) {
@@ -189,17 +189,17 @@ public final class g20 implements org.telegram.messenger.us {
                     default:
                         Context context3 = k20Var.getContext();
                         Context context4 = context;
-                        org.telegram.ui.b50.v1(context3, new i20(context4, 0), Settings.canDrawOverlays(context4), false);
+                        org.telegram.ui.a50.v1(context3, new i20(context4, 0), Settings.canDrawOverlays(context4), false);
                         break;
                 }
             }
         });
-        b2Var.setCheckable(true);
-        b2Var.a(i0.b.o(-1, 38), i0.b.o(-1, 76));
-        org.telegram.ui.Components.voip.b2 b2Var2 = new org.telegram.ui.Components.voip.b2(context, 44.0f);
-        k20Var.d = b2Var2;
-        b2Var2.setTextSize(12);
-        b2Var2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.h20
+        c2Var.setCheckable(true);
+        c2Var.a(i0.b.o(-1, 38), i0.b.o(-1, 76));
+        org.telegram.ui.Components.voip.c2 c2Var2 = new org.telegram.ui.Components.voip.c2(context, 44.0f);
+        k20Var.d = c2Var2;
+        c2Var2.setTextSize(12);
+        c2Var2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.h20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i13) {
@@ -237,15 +237,15 @@ public final class g20 implements org.telegram.messenger.us {
                     default:
                         Context context3 = k20Var.getContext();
                         Context context4 = context;
-                        org.telegram.ui.b50.v1(context3, new i20(context4, 0), Settings.canDrawOverlays(context4), false);
+                        org.telegram.ui.a50.v1(context3, new i20(context4, 0), Settings.canDrawOverlays(context4), false);
                         break;
                 }
             }
         });
-        org.telegram.ui.Components.voip.b2 b2Var3 = new org.telegram.ui.Components.voip.b2(context, 44.0f);
-        b2Var3.setTextSize(12);
-        b2Var3.c(R.drawable.calls_decline, -1, -3257782, 0.3f, false, org.telegram.messenger.cd.L0(2131743390, null), false, false);
-        b2Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.h20
+        org.telegram.ui.Components.voip.c2 c2Var3 = new org.telegram.ui.Components.voip.c2(context, 44.0f);
+        c2Var3.setTextSize(12);
+        c2Var3.c(R.drawable.calls_decline, -1, -3257782, 0.3f, false, org.telegram.messenger.dd.L0(2131743390, null), false, false);
+        c2Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.h20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i11) {
@@ -283,19 +283,19 @@ public final class g20 implements org.telegram.messenger.us {
                     default:
                         Context context3 = k20Var.getContext();
                         Context context4 = context;
-                        org.telegram.ui.b50.v1(context3, new i20(context4, 0), Settings.canDrawOverlays(context4), false);
+                        org.telegram.ui.a50.v1(context3, new i20(context4, 0), Settings.canDrawOverlays(context4), false);
                         break;
                 }
             }
         });
-        org.telegram.ui.Components.voip.y0 y0Var = new org.telegram.ui.Components.voip.y0(context);
-        y0Var.setChildSize(68);
-        y0Var.setUseStartPadding(false);
-        y0Var.addView(b2Var, w7.b6.c(63.0f, 68));
-        y0Var.addView(b2Var2, w7.b6.c(63.0f, 68));
-        y0Var.addView(b2Var3, w7.b6.c(63.0f, 68));
+        org.telegram.ui.Components.voip.z0 z0Var = new org.telegram.ui.Components.voip.z0(context);
+        z0Var.setChildSize(68);
+        z0Var.setUseStartPadding(false);
+        z0Var.addView(c2Var, w7.b6.c(63.0f, 68));
+        z0Var.addView(c2Var2, w7.b6.c(63.0f, 68));
+        z0Var.addView(c2Var3, w7.b6.c(63.0f, 68));
         k20Var.setWillNotDraw(false);
-        k20Var.addView(y0Var, w7.b6.t(-1, -2, 0, 6, 0, 6, 0));
+        k20Var.addView(z0Var, w7.b6.t(-1, -2, 0, 6, 0, 6, 0));
         this.f = k20Var;
         w7Var.addView(k20Var, w7.b6.c(-2.0f, -2));
     }
@@ -319,13 +319,13 @@ public final class g20 implements org.telegram.messenger.us {
 
     public static boolean c() {
         VoIPService sharedInstance;
-        if (org.telegram.ui.Components.voip.s0.d0.V || d0 != null) {
+        if (org.telegram.ui.Components.voip.t0.d0.V || d0 != null) {
             return true;
         }
         if (!org.telegram.messenger.w0.F || (sharedInstance = VoIPService.getSharedInstance()) == null || sharedInstance.groupCall == null || sharedInstance.isHangingUp() || e0) {
             return false;
         }
-        return org.telegram.messenger.w0.y || !org.telegram.ui.b50.v5;
+        return org.telegram.messenger.w0.y || !org.telegram.ui.a50.v5;
     }
 
     public static void j(Context context) {
@@ -333,7 +333,7 @@ public final class g20 implements org.telegram.messenger.us {
         boolean z10 = (sharedInstance == null || sharedInstance.groupCall == null || sharedInstance.isHangingUp()) ? false : true;
         Context context2 = org.telegram.messenger.w0.b;
         Typeface typeface = org.telegram.messenger.i0.a;
-        if (!Settings.canDrawOverlays(context2) || !z10 || e0 || (!org.telegram.messenger.w0.y && org.telegram.ui.b50.v5)) {
+        if (!Settings.canDrawOverlays(context2) || !z10 || e0 || (!org.telegram.messenger.w0.y && org.telegram.ui.a50.v5)) {
             g20 g20Var = d0;
             if (g20Var != null) {
                 g20Var.e(false);
@@ -343,7 +343,7 @@ public final class g20 implements org.telegram.messenger.us {
                 e20Var.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new a20(e20Var, g20Var2.b, g20Var2.d, windowManager, g20Var2.e)).start();
                 d0.d();
                 d0 = null;
-                org.telegram.messenger.zs.e().k(org.telegram.messenger.zs.F2, new Object[0]);
+                org.telegram.messenger.at.e().k(org.telegram.messenger.at.F2, new Object[0]);
                 return;
             }
             return;
@@ -379,9 +379,9 @@ public final class g20 implements org.telegram.messenger.us {
             d0.a.setScaleY(0.5f);
             d0.a.setAlpha(0.0f);
             d0.a.animate().alpha(0.7f).scaleY(1.0f).scaleX(1.0f).setDuration(350L).setInterpolator(new OvershootInterpolator()).start();
-            org.telegram.messenger.zs.f(d0.h).b(d0, org.telegram.messenger.zs.w2);
-            org.telegram.messenger.zs.e().b(d0, org.telegram.messenger.zs.O4);
-            org.telegram.messenger.zs.e().b(d0, org.telegram.messenger.zs.D2);
+            org.telegram.messenger.at.f(d0.h).b(d0, org.telegram.messenger.at.w2);
+            org.telegram.messenger.at.e().b(d0, org.telegram.messenger.at.O4);
+            org.telegram.messenger.at.e().b(d0, org.telegram.messenger.at.D2);
         }
         u8 u8Var = d0.s;
         if (u8Var.getTag() != null) {
@@ -413,17 +413,17 @@ public final class g20 implements org.telegram.messenger.us {
     }
 
     public final void d() {
-        org.telegram.messenger.zs.f(this.h).n(this, org.telegram.messenger.zs.w2);
-        org.telegram.messenger.zs.e().n(this, org.telegram.messenger.zs.O4);
-        org.telegram.messenger.zs.e().n(this, org.telegram.messenger.zs.F2);
-        org.telegram.messenger.zs.e().n(this, org.telegram.messenger.zs.D2);
+        org.telegram.messenger.at.f(this.h).n(this, org.telegram.messenger.at.w2);
+        org.telegram.messenger.at.e().n(this, org.telegram.messenger.at.O4);
+        org.telegram.messenger.at.e().n(this, org.telegram.messenger.at.F2);
+        org.telegram.messenger.at.e().n(this, org.telegram.messenger.at.D2);
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == org.telegram.messenger.zs.w2 || i10 == org.telegram.messenger.zs.O4) {
+        if (i10 == org.telegram.messenger.at.w2 || i10 == org.telegram.messenger.at.O4) {
             g(true);
-        } else if (i10 == org.telegram.messenger.zs.D2) {
+        } else if (i10 == org.telegram.messenger.at.D2) {
             j(org.telegram.messenger.w0.b);
         }
     }
@@ -513,7 +513,7 @@ public final class g20 implements org.telegram.messenger.us {
         while (i10 < 2) {
             if (i12 < size) {
                 TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList.get(i12);
-                if (org.telegram.messenger.jj.C1(groupCallParticipant.peer) != selfId && SystemClock.uptimeMillis() - groupCallParticipant.lastSpeakTime <= 500) {
+                if (org.telegram.messenger.kj.C1(groupCallParticipant.peer) != selfId && SystemClock.uptimeMillis() - groupCallParticipant.lastSpeakTime <= 500) {
                     u8Var.b(i10, i11, groupCallParticipant);
                 }
                 i12++;

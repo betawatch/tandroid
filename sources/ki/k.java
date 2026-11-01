@@ -22,11 +22,11 @@ import ki.i;
 import ki.j;
 import ki.k;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.me;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.ne;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class k {
     public static final hb.a H = new hb.a(10);
@@ -275,10 +275,10 @@ public final class k {
         if (jVar != null) {
             this.k.execute(new c(this, jVar, exc));
         }
-        MediaController mediaController = ((me) this.f.b).a;
+        MediaController mediaController = ((ne) this.f.b).a;
         String[] strArr = MediaController.U1;
         f8.e("AudioRecorderV2 failed", exc);
-        zs.f(mediaController.g1).k(zs.m2, Integer.valueOf(mediaController.f1));
+        at.f(mediaController.g1).k(at.m2, Integer.valueOf(mediaController.f1));
         mediaController.x(false);
         org.telegram.utils.recorder.audio.d dVar = this.n;
         if (dVar != null) {
@@ -370,8 +370,8 @@ public final class k {
             return;
         }
         this.h.b("recording rejected as too short: durationMs=" + j10);
-        MediaController mediaController = ((me) this.f.b).a;
-        zs.f(mediaController.g1).k(zs.t2, Integer.valueOf(mediaController.f1), Boolean.FALSE, Integer.valueOf((int) j10));
+        MediaController mediaController = ((ne) this.f.b).a;
+        at.f(mediaController.g1).k(at.t2, Integer.valueOf(mediaController.f1), Boolean.FALSE, Integer.valueOf((int) j10));
         mediaController.x(false);
         k(2);
         s(10);
@@ -416,7 +416,7 @@ public final class k {
     public final void m() {
         ae.j e = e();
         m5.e eVar = this.f;
-        MediaController mediaController = ((me) eVar.b).a;
+        MediaController mediaController = ((ne) eVar.b).a;
         int i10 = e.a;
         e0.h hVar = (e0.h) eVar.c;
         int i11 = hVar.a;
@@ -427,11 +427,11 @@ public final class k {
                 System.currentTimeMillis();
                 String[] strArr = MediaController.U1;
                 if (!mediaController.H1) {
-                    zs.f(mediaController.g1).k(zs.l2, Integer.valueOf(mediaController.f1), Boolean.TRUE);
+                    at.f(mediaController.g1).k(at.l2, Integer.valueOf(mediaController.f1), Boolean.TRUE);
                 }
             } else if (!z10 && i11 == 6) {
                 mediaController.Y(true);
-                zs.f(mediaController.g1).k(zs.p2, new Object[0]);
+                at.f(mediaController.g1).k(at.p2, new Object[0]);
             }
             if (hVar.b) {
                 if (i10 == 3 || i10 == 5) {

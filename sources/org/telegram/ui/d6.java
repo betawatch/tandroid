@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d6 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class d6 implements Runnable {
                     }
                     i10++;
                 }
-                Collections.sort(arrayList3, new org.telegram.messenger.bk(29));
+                Collections.sort(arrayList3, new org.telegram.messenger.ck(29));
                 org.telegram.messenger.i0.g3(new d6(y6Var, arrayList4, arrayList5, arrayList3, bVar, 1));
                 break;
             default:
@@ -115,7 +115,7 @@ public final /* synthetic */ class d6 implements Runnable {
                             z11 = false;
                         }
                         if (z11) {
-                            Collections.sort(arrayList8, new org.telegram.messenger.bk(29));
+                            Collections.sort(arrayList8, new org.telegram.messenger.ck(29));
                         }
                     } else {
                         z10 = z12;
@@ -142,8 +142,8 @@ public final /* synthetic */ class d6 implements Runnable {
                     if (j6Var != null) {
                         j6Var.setCacheModel(bVar2);
                     }
-                    y6Var2.z0(z14);
-                    y6Var2.x0();
+                    y6Var2.A0(z14);
+                    y6Var2.y0();
                     if (y6Var2.X != null && !y6Var2.K && System.currentTimeMillis() - y6Var2.a0 > 120) {
                         l6 l6Var = y6Var2.X;
                         long j10 = y6Var2.G;

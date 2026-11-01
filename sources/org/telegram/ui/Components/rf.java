@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class rf extends mt {
     public jc Y1;
@@ -49,7 +49,7 @@ public abstract class rf extends mt {
 
     public final void I(Uri uri, String str) {
         org.telegram.ui.un unVar = this.Z1.P2;
-        Utilities.e.c(new li.s(this, uri, org.telegram.messenger.i0.q0(MimeTypeMap.getSingleton().getExtensionFromMimeType(str), unVar != null && unVar.z()), 28));
+        Utilities.e.c(new li.s(this, uri, org.telegram.messenger.i0.q0(MimeTypeMap.getSingleton().getExtensionFromMimeType(str), unVar != null && unVar.A()), 28));
     }
 
     public final void J(File file, ArrayList arrayList) {
@@ -58,10 +58,10 @@ public abstract class rf extends mt {
         if (unVar == null || unVar.getParentActivity() == null) {
             return;
         }
-        org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) arrayList.get(0);
+        org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) arrayList.get(0);
         if (!chatActivityEnterView.z2) {
             PhotoViewer.v1().N2(null, unVar, chatActivityEnterView.W3);
-            PhotoViewer.v1().j2(arrayList, 0, 2, false, new qf(this, efVar, file), chatActivityEnterView.P2);
+            PhotoViewer.v1().j2(arrayList, 0, 2, false, new qf(this, ffVar, file), chatActivityEnterView.P2);
         } else {
             org.telegram.messenger.i0.v1(this);
             org.telegram.messenger.i0.h3(new c5.w(this, arrayList, file, false, 7), 100L);
@@ -69,8 +69,8 @@ public abstract class rf extends mt {
     }
 
     public final void K(m2.t tVar, boolean z10, int i10, int i11) {
-        org.telegram.messenger.jj threadMessage;
-        org.telegram.messenger.jj threadMessage2;
+        org.telegram.messenger.kj threadMessage;
+        org.telegram.messenger.kj threadMessage2;
         ChatActivityEnterView chatActivityEnterView = this.Z1;
         org.telegram.ui.un unVar = chatActivityEnterView.P2;
         pe peVar = chatActivityEnterView.L0;
@@ -80,7 +80,7 @@ public abstract class rf extends mt {
         }
         org.telegram.ui.kn knVar = chatActivityEnterView.V2;
         if (knVar != null && unVar != null && knVar.f) {
-            unVar.kc();
+            unVar.pc();
             return;
         }
         t0.h hVar = (t0.h) tVar.b;
@@ -88,16 +88,16 @@ public abstract class rf extends mt {
             org.telegram.messenger.c cVar = chatActivityEnterView.R;
             Uri a2 = hVar.a();
             long j10 = chatActivityEnterView.Q2;
-            org.telegram.messenger.jj jjVar = chatActivityEnterView.T2;
+            org.telegram.messenger.kj kjVar = chatActivityEnterView.T2;
             threadMessage2 = chatActivityEnterView.getThreadMessage();
-            org.telegram.messenger.qz.T(cVar, null, null, a2, null, "image/gif", j10, jjVar, threadMessage2, null, chatActivityEnterView.V2, z10, tVar, unVar != null ? unVar.P8() : null);
+            org.telegram.messenger.rz.T(cVar, null, null, a2, null, "image/gif", j10, kjVar, threadMessage2, null, chatActivityEnterView.V2, z10, tVar, unVar != null ? unVar.T8() : null);
         } else {
             org.telegram.messenger.c cVar2 = chatActivityEnterView.R;
             Uri a10 = hVar.a();
             long j11 = chatActivityEnterView.Q2;
-            org.telegram.messenger.jj jjVar2 = chatActivityEnterView.T2;
+            org.telegram.messenger.kj kjVar2 = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
-            org.telegram.messenger.qz.Y(cVar2, a10, j11, jjVar2, threadMessage, tVar, null, z10, 0, unVar != null ? unVar.P8() : null);
+            org.telegram.messenger.rz.Y(cVar2, a10, j11, kjVar2, threadMessage, tVar, null, z10, 0, unVar != null ? unVar.T8() : null);
         }
         sf sfVar = chatActivityEnterView.Z2;
         if (sfVar != null) {
@@ -415,8 +415,8 @@ public abstract class rf extends mt {
         super.setOffsetY(f7);
         ChatActivityEnterView chatActivityEnterView = this.Z1;
         if (chatActivityEnterView.m1.getForeground() != null) {
-            uu0 uu0Var = chatActivityEnterView.m1;
-            uu0Var.invalidateDrawable(uu0Var.getForeground());
+            vu0 vu0Var = chatActivityEnterView.m1;
+            vu0Var.invalidateDrawable(vu0Var.getForeground());
         }
     }
 }

@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.ui.Components.ix0;
+import org.telegram.ui.Components.jx0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.h0;
 import org.telegram.ui.Wallet.o0;
@@ -16,7 +16,7 @@ import org.telegram.ui.Wallet.p0;
 import org.telegram.ui.o6;
 import org.telegram.ui.y6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -46,14 +46,14 @@ public final /* synthetic */ class o implements Runnable {
                 ((VideoPlayerHolderBase) this.d).lambda$seekTo$12(this.c, this.b, (Runnable) this.e);
                 return;
             case 1:
-                y6.Y((y6) this.d, this.b, this.c, (o6) this.e);
+                y6.Z((y6) this.d, this.b, this.c, (o6) this.e);
                 return;
             case 2:
                 ProfileActivity profileActivity = (ProfileActivity) this.d;
                 long j10 = this.c;
                 ArrayList arrayList = (ArrayList) this.e;
                 boolean z10 = this.b;
-                RectF rectF = ProfileActivity.R6;
+                RectF rectF = ProfileActivity.S6;
                 profileActivity.getMessagesController().O1().r0(j10, arrayList, z10, null);
                 return;
             default:
@@ -78,7 +78,7 @@ public final /* synthetic */ class o implements Runnable {
                         synchronized (p0.f) {
                             try {
                                 p0Var.c(j11);
-                                ix0 r10 = p0Var.r();
+                                jx0 r10 = p0Var.r();
                                 if (r10.c == z11) {
                                     if (((LinkedHashMap) r10.e).isEmpty()) {
                                     }

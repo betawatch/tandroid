@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -32,7 +32,7 @@ public final /* synthetic */ class k2 implements Runnable {
         org.telegram.ui.Wallet.h0 h0Var;
         org.telegram.ui.Wallet.h0 h0Var2;
         Object obj;
-        ix0 r10;
+        jx0 r10;
         switch (this.a) {
             case 0:
                 gf.f.p((Context) this.d, Uri.parse((String) this.e), this.b == 0, this.c, (gf.e) this.f);
@@ -43,14 +43,14 @@ public final /* synthetic */ class k2 implements Runnable {
                 boolean z10 = this.c;
                 TLRPC.Document document = (TLRPC.Document) this.e;
                 Runnable runnable = (Runnable) this.f;
-                HashSet hashSet = org.telegram.messenger.vp.r1(w7Var.a).G1().b;
+                HashSet hashSet = org.telegram.messenger.wp.r1(w7Var.a).G1().b;
                 if (z10) {
                     hashSet.add(Long.valueOf(j10));
                 } else {
                     hashSet.remove(Long.valueOf(j10));
                 }
-                long e = org.telegram.messenger.d20.i(w7Var.a).e();
-                TLRPC.UserFull a2 = org.telegram.messenger.vp.r1(w7Var.a).a2(e);
+                long e = org.telegram.messenger.e20.i(w7Var.a).e();
+                TLRPC.UserFull a2 = org.telegram.messenger.wp.r1(w7Var.a).a2(e);
                 if (a2 != null) {
                     if (z10) {
                         a2.flags2 |= TLObject.FLAG_21;
@@ -62,8 +62,8 @@ public final /* synthetic */ class k2 implements Runnable {
                             a2.saved_music = null;
                         }
                     }
-                    org.telegram.messenger.hs.a0(w7Var.a).j2(a2, true);
-                    org.telegram.messenger.zs.f(w7Var.a).k(org.telegram.messenger.zs.V3, Long.valueOf(e));
+                    org.telegram.messenger.is.a0(w7Var.a).j2(a2, true);
+                    org.telegram.messenger.at.f(w7Var.a).k(org.telegram.messenger.at.V3, Long.valueOf(e));
                 }
                 runnable.run();
                 return;
@@ -72,7 +72,7 @@ public final /* synthetic */ class k2 implements Runnable {
                 long j11 = this.b;
                 String str = (String) this.e;
                 boolean z11 = this.c;
-                org.telegram.messenger.q20 q20Var = (org.telegram.messenger.q20) this.f;
+                org.telegram.messenger.r20 r20Var = (org.telegram.messenger.r20) this.f;
                 try {
                     obj = org.telegram.ui.Wallet.p0.f;
                     synchronized (obj) {
@@ -97,7 +97,7 @@ public final /* synthetic */ class k2 implements Runnable {
                                         if (!p0Var.q().edit().putInt("lastUsageDate", r10.b).commit()) {
                                             throw new IOException("usage write");
                                         }
-                                        org.telegram.messenger.i0.g3(new org.telegram.ui.Components.voip.m0(20));
+                                        org.telegram.messenger.i0.g3(new org.telegram.ui.Components.voip.n0(20));
                                     }
                                 }
                             } catch (Exception e10) {
@@ -113,14 +113,14 @@ public final /* synthetic */ class k2 implements Runnable {
                             h0Var.close();
                         }
                         h0Var2 = null;
-                        org.telegram.messenger.i0.g3(new ag.a3(p0Var, h0Var2, q20Var, j11, 14));
+                        org.telegram.messenger.i0.g3(new ag.a3(p0Var, h0Var2, r20Var, j11, 14));
                         return;
                     }
-                    org.telegram.messenger.i0.g3(new ag.a3(p0Var, h0Var2, q20Var, j11, 14));
+                    org.telegram.messenger.i0.g3(new ag.a3(p0Var, h0Var2, r20Var, j11, 14));
                     return;
                 }
                 h0Var2 = null;
-                org.telegram.messenger.i0.g3(new ag.a3(p0Var, h0Var2, q20Var, j11, 14));
+                org.telegram.messenger.i0.g3(new ag.a3(p0Var, h0Var2, r20Var, j11, 14));
                 return;
         }
     }
@@ -133,11 +133,11 @@ public final /* synthetic */ class k2 implements Runnable {
         this.f = runnable;
     }
 
-    public /* synthetic */ k2(org.telegram.ui.Wallet.p0 p0Var, long j10, String str, boolean z10, org.telegram.messenger.q20 q20Var) {
+    public /* synthetic */ k2(org.telegram.ui.Wallet.p0 p0Var, long j10, String str, boolean z10, org.telegram.messenger.r20 r20Var) {
         this.d = p0Var;
         this.b = j10;
         this.e = str;
         this.c = z10;
-        this.f = q20Var;
+        this.f = r20Var;
     }
 }

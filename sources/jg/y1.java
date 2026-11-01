@@ -13,15 +13,15 @@ import android.widget.LinearLayout;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.m5;
-import org.telegram.ui.Components.bi0;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.ci0;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Components.gr;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y1 extends LinearLayout {
-    public final ei0[] a;
+    public final fi0[] a;
     public x1 b;
     public final Paint c;
     public final int d;
@@ -35,7 +35,7 @@ public final class y1 extends LinearLayout {
     public y1(Context context, boolean z10) {
         super(context);
         List list = ig.h.a;
-        this.a = new ei0[list.size() + 2];
+        this.a = new fi0[list.size() + 2];
         final int i10 = 1;
         Paint paint = new Paint(1);
         this.c = paint;
@@ -56,14 +56,14 @@ public final class y1 extends LinearLayout {
             if (i12 >= list2.size() + 2) {
                 return;
             }
-            ei0[] ei0VarArr = this.a;
+            fi0[] fi0VarArr = this.a;
             Object[] objArr = i12 == 0;
             Object[] objArr2 = i12 == list2.size() + 1;
-            ei0 ei0Var = new ei0(getContext());
-            ei0Var.setPadding(org.telegram.messenger.i0.L(objArr != false ? 0.0f : 8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(objArr2 != false ? 0.0f : 8.0f), org.telegram.messenger.i0.L(8.0f));
-            ei0Var.setLayoutParams(b6.l(1.0f, 0, 40));
-            ei0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            ei0VarArr[i13] = ei0Var;
+            fi0 fi0Var = new fi0(getContext());
+            fi0Var.setPadding(org.telegram.messenger.i0.L(objArr != false ? 0.0f : 8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(objArr2 != false ? 0.0f : 8.0f), org.telegram.messenger.i0.L(8.0f));
+            fi0Var.setLayoutParams(b6.l(1.0f, 0, 40));
+            fi0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            fi0VarArr[i13] = fi0Var;
             if (i12 == 0) {
                 this.a[i13].setOnClickListener(new View.OnClickListener(this) { // from class: jg.v1
                     public final /* synthetic */ y1 b;
@@ -122,18 +122,18 @@ public final class y1 extends LinearLayout {
 
     public final void a(int i10) {
         if (i10 >= 0) {
-            ei0[] ei0VarArr = this.a;
-            if (i10 >= ei0VarArr.length) {
+            fi0[] fi0VarArr = this.a;
+            if (i10 >= fi0VarArr.length) {
                 return;
             }
             if (this.r == null || this.h != i10) {
-                ei0 ei0Var = ei0VarArr[i10];
-                if (ei0Var != null) {
-                    Drawable drawable = ei0Var.getDrawable();
-                    if (drawable instanceof bi0) {
-                        bi0 bi0Var = (bi0) drawable;
-                        bi0Var.M(0);
-                        bi0Var.start();
+                fi0 fi0Var = fi0VarArr[i10];
+                if (fi0Var != null) {
+                    Drawable drawable = fi0Var.getDrawable();
+                    if (drawable instanceof ci0) {
+                        ci0 ci0Var = (ci0) drawable;
+                        ci0Var.M(0);
+                        ci0Var.start();
                     }
                 }
                 ValueAnimator valueAnimator = this.r;
@@ -145,7 +145,7 @@ public final class y1 extends LinearLayout {
                 }
                 if (this.e) {
                     this.e = false;
-                    org.telegram.messenger.i0.Q3(ei0VarArr[this.d + 1], R.drawable.msg_add);
+                    org.telegram.messenger.i0.Q3(fi0VarArr[this.d + 1], R.drawable.msg_add);
                 }
                 this.h = i10;
                 this.n = 0.0f;
@@ -193,27 +193,27 @@ public final class y1 extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         int i10 = this.f;
-        ei0[] ei0VarArr = this.a;
-        ei0 ei0Var = ei0VarArr[i10];
+        fi0[] fi0VarArr = this.a;
+        fi0 fi0Var = fi0VarArr[i10];
         int i11 = this.h;
-        ei0 ei0Var2 = i11 != -1 ? ei0VarArr[i11] : null;
+        fi0 fi0Var2 = i11 != -1 ? fi0VarArr[i11] : null;
         float f7 = 0.0f;
-        float f10 = ei0Var2 != null ? this.n : 0.0f;
+        float f10 = fi0Var2 != null ? this.n : 0.0f;
         float f11 = 1.0f;
         if (f10 > 0.25f && f10 < 0.75f) {
             f11 = (f10 <= 0.25f || f10 >= 0.5f) ? m5.y(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
         }
-        float L = (org.telegram.messenger.i0.L(3.0f) * f11) + (Math.min((ei0Var.getWidth() - ei0Var.getPaddingLeft()) - ei0Var.getPaddingRight(), (ei0Var.getHeight() - ei0Var.getPaddingTop()) - ei0Var.getPaddingBottom()) / 2.0f) + org.telegram.messenger.i0.L(3.0f);
-        float width = (ei0Var.getWidth() / 2.0f) + ei0Var.getX();
+        float L = (org.telegram.messenger.i0.L(3.0f) * f11) + (Math.min((fi0Var.getWidth() - fi0Var.getPaddingLeft()) - fi0Var.getPaddingRight(), (fi0Var.getHeight() - fi0Var.getPaddingTop()) - fi0Var.getPaddingBottom()) / 2.0f) + org.telegram.messenger.i0.L(3.0f);
+        float width = (fi0Var.getWidth() / 2.0f) + fi0Var.getX();
         int i12 = this.f;
         int i13 = this.d;
         float L2 = (i12 == i13 + 1 ? org.telegram.messenger.i0.L(4.0f) : 0.0f) + width;
-        float width2 = ei0Var2 != null ? (ei0Var2.getWidth() / 2.0f) + ei0Var2.getX() : 0.0f;
+        float width2 = fi0Var2 != null ? (fi0Var2.getWidth() / 2.0f) + fi0Var2.getX() : 0.0f;
         int i14 = this.h;
         if (i14 != -1 && i14 == i13 + 1) {
             f7 = org.telegram.messenger.i0.L(4.0f);
         }
-        canvas.drawCircle(org.telegram.messenger.i0.T1(L2, width2 + f7, f10), (ei0Var.getHeight() / 2.0f) + ei0Var.getY(), L, this.c);
+        canvas.drawCircle(org.telegram.messenger.i0.T1(L2, width2 + f7, f10), (fi0Var.getHeight() / 2.0f) + fi0Var.getY(), L, this.c);
     }
 
     public void setDelegate(x1 x1Var) {

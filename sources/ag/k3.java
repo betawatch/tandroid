@@ -10,18 +10,18 @@ import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 import java.util.HashSet;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k3 extends LinearLayout implements k6 {
     public final /* synthetic */ int a = 0;
@@ -48,36 +48,36 @@ public final class k3 extends LinearLayout implements k6 {
         j3Var.setTextSize(1, 12.0f);
         j3Var.setLineSpacing(org.telegram.messenger.i0.L(2.0f), 1.0f);
         j3Var.setGravity(1);
-        ei0 ei0Var = new ei0(activity);
-        ei0Var.setScaleType(ImageView.ScaleType.CENTER);
-        ei0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        fi0 fi0Var = new fi0(activity);
+        fi0Var.setScaleType(ImageView.ScaleType.CENTER);
+        fi0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         j3Var.setMaxWidth(org.telegram.messenger.i0.L(160.0f));
         int i11 = 22;
         if (i10 == 9) {
-            ei0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(cd.L0(2131742922, null));
-            j3Var.setText(cd.L0(2131742923, null));
+            fi0Var.setImageResource(R.drawable.large_greeting);
+            textView.setText(dd.L0(2131742922, null));
+            j3Var.setText(dd.L0(2131742923, null));
             j3Var.setMaxWidth(Math.min(org.telegram.messenger.i0.L(160.0f), vh.p2.a(j3Var.getText(), j3Var.getPaint())));
         } else if ("hello".equalsIgnoreCase(str)) {
-            ei0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(cd.L0(2131752765, null));
-            j3Var.setText(cd.L0(2131752766, null));
+            fi0Var.setImageResource(R.drawable.large_greeting);
+            textView.setText(dd.L0(2131752765, null));
+            j3Var.setText(dd.L0(2131752766, null));
             j3Var.setMaxWidth(Math.min(org.telegram.messenger.i0.L(160.0f), vh.p2.a(j3Var.getText(), j3Var.getPaint())));
         } else if ("away".equalsIgnoreCase(str)) {
-            ei0Var.setImageResource(R.drawable.large_away);
-            textView.setText(cd.L0(2131752833, null));
-            j3Var.setText(cd.L0(2131752834, null));
+            fi0Var.setImageResource(R.drawable.large_away);
+            textView.setText(dd.L0(2131752833, null));
+            j3Var.setText(dd.L0(2131752834, null));
             j3Var.setMaxWidth(Math.min(org.telegram.messenger.i0.L(160.0f), vh.p2.a(j3Var.getText(), j3Var.getPaint())));
         } else {
             if (i10 == 5) {
-                ei0Var.setImageResource(R.drawable.large_quickreplies);
-                h3 c10 = i3.f(d20.s0).c(j10);
+                fi0Var.setImageResource(R.drawable.large_quickreplies);
+                h3 c10 = i3.f(e20.s0).c(j10);
                 String str2 = c10 == null ? str : c10.b;
-                textView.setText(cd.L0(2131752667, null));
+                textView.setText(dd.L0(2131752667, null));
                 j3Var.setMaxWidth(org.telegram.messenger.i0.L(208.0f));
                 j3Var.setTextAlignment(2);
                 j3Var.setGravity(3);
-                j3Var.setText(org.telegram.messenger.i0.W2(cd.a0(null, null, 2131752669, str2)));
+                j3Var.setText(org.telegram.messenger.i0.W2(dd.a0(null, null, 2131752669, str2)));
                 j3Var.setPadding(org.telegram.messenger.i0.L(28.0f), 0, 0, 0);
                 j3 j3Var2 = new j3(activity, 0);
                 this.e = j3Var2;
@@ -85,13 +85,13 @@ public final class k3 extends LinearLayout implements k6 {
                 j3Var2.setTextAlignment(2);
                 j3Var2.setGravity(3);
                 j3Var2.setTextSize(1, 13.0f);
-                j3Var2.setText(org.telegram.messenger.i0.W2(cd.L0(2131752668, null)));
+                j3Var2.setText(org.telegram.messenger.i0.W2(dd.L0(2131752668, null)));
                 j3Var2.setPadding(org.telegram.messenger.i0.L(28.0f), 0, 0, 0);
             }
             i11 = 12;
         }
         int i12 = i11;
-        addView(ei0Var, b6.t(78, 78, 49, 20, 17, 20, 9));
+        addView(fi0Var, b6.t(78, 78, 49, 20, 17, 20, 9));
         addView(textView, b6.t(-2, -2, 49, 20, 0, 20, 6));
         addView(j3Var, b6.t(-2, -2, 49, i12, 0, i12, ((j3) this.e) == null ? 19 : 9));
         View view = (j3) this.e;
@@ -172,7 +172,7 @@ public final class k3 extends LinearLayout implements k6 {
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity(5);
         addView(textView, b6.t(-2, -2, 19, 8, 0, 0, 0));
-        addView(new Space(context), b6.p(0, -2, 1.0f, zs.E1));
+        addView(new Space(context), b6.p(0, -2, 1.0f, at.E1));
         addView(textView2, b6.t(-2, -2, 21, 8, 0, 0, 0));
         imageView.setImageResource(p0Var.a);
         textView.setText(p0Var.b);

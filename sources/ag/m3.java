@@ -7,27 +7,27 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p5;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.t8;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.v51;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
-    public u51 a;
+public final class m3 extends org.telegram.ui.ActionBar.k2 implements vs {
+    public v51 a;
     public LinearLayout b;
     public e0 c;
     public boolean d;
@@ -36,8 +36,8 @@ public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
     public boolean h;
     public String n;
 
-    public static void Y(m3 m3Var, a51 a51Var, View view) {
-        if (a51Var.d == -1) {
+    public static void Z(m3 m3Var, b51 b51Var, View view) {
+        if (b51Var.d == -1) {
             boolean z10 = m3Var.h;
             m3Var.h = !z10;
             if (!z10) {
@@ -55,14 +55,14 @@ public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
         if (view.isEnabled()) {
             n3 b10 = n3.b(m3Var.currentAccount);
             ArrayList arrayList = b10.d;
-            int i10 = a51Var.d;
+            int i10 = b51Var.d;
             if (i10 >= 0) {
                 b10.g();
                 if (i10 >= arrayList.size()) {
                     return;
                 }
                 b10.g();
-                TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(a51Var.d);
+                TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(b51Var.d);
                 m3Var.h = false;
                 String str2 = tL_timezone.id;
                 m3Var.n = str2;
@@ -78,24 +78,24 @@ public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
         }
     }
 
-    public static void Z(m3 m3Var, ArrayList arrayList, p51 p51Var) {
+    public static void a0(m3 m3Var, ArrayList arrayList, q51 q51Var) {
         boolean z10 = m3Var.d && !TextUtils.isEmpty(m3Var.e);
         n3 b10 = n3.b(m3Var.currentAccount);
         ArrayList arrayList2 = b10.d;
         if (!z10) {
-            p51Var.V();
-            String L0 = cd.L0(2131744145, null);
-            a51 a51Var = new a51(9);
-            a51Var.d = -1;
-            a51Var.l = L0;
-            a51Var.L(m3Var.h);
-            arrayList.add(a51Var);
-            p51Var.U();
-            arrayList.add(a51.C(cd.a0(null, null, 2131744144, b10.d(m3Var.n, true))));
+            q51Var.V();
+            String L0 = dd.L0(2131744145, null);
+            b51 b51Var = new b51(9);
+            b51Var.d = -1;
+            b51Var.l = L0;
+            b51Var.L(m3Var.h);
+            arrayList.add(b51Var);
+            q51Var.U();
+            arrayList.add(b51.C(dd.a0(null, null, 2131744144, b10.d(m3Var.n, true))));
         }
-        p51Var.V();
+        q51Var.V();
         if (!z10) {
-            arrayList.add(a51.u(cd.L0(2131744143, null)));
+            arrayList.add(b51.u(dd.L0(2131744143, null)));
         }
         boolean z11 = true;
         int i10 = 0;
@@ -117,21 +117,21 @@ public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
                 }
             }
             String f7 = n3.f(tL_timezone);
-            a51 a51Var2 = new a51(10);
-            a51Var2.d = i10;
-            a51Var2.l = e;
-            a51Var2.n = f7;
-            a51Var2.L(TextUtils.equals(tL_timezone.id, m3Var.n));
-            a51Var2.g = !m3Var.h || z10;
-            arrayList.add(a51Var2);
+            b51 b51Var2 = new b51(10);
+            b51Var2.d = i10;
+            b51Var2.l = e;
+            b51Var2.n = f7;
+            b51Var2.L(TextUtils.equals(tL_timezone.id, m3Var.n));
+            b51Var2.g = !m3Var.h || z10;
+            arrayList.add(b51Var2);
             z11 = false;
             i10++;
         }
-        p51Var.U();
+        q51Var.U();
         if (z11) {
-            arrayList.add(a51.m(m3Var.b));
+            arrayList.add(b51.m(m3Var.b));
         } else {
-            arrayList.add(a51.C(null));
+            arrayList.add(b51.C(null));
         }
     }
 
@@ -139,16 +139,16 @@ public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(cd.L0(2131744141, null));
+        this.simpleActionBar.setTitle(dd.L0(2131744141, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new e(this, 8));
         p5 b10 = this.simpleActionBar.o().b(1, R.drawable.outline_header_search);
         b10.N();
         b10.B0 = new l3(this, 0);
-        b10.setSearchFieldHint(cd.L0(2131745853, null));
+        b10.setSearchFieldHint(dd.L0(2131745853, null));
         FrameLayout frameLayout = new FrameLayout(context);
-        u51 u51Var = new u51(this, new a(this, 8), new a1.c(this, 5), null);
-        this.a = u51Var;
-        u51Var.r1();
+        v51 v51Var = new v51(this, new a(this, 8), new a1.c(this, 5), null);
+        this.a = v51Var;
+        v51Var.r1();
         this.a.setSectionsDrawBackground(true);
         frameLayout.addView(this.a, b6.c(-1.0f, -1));
         this.a.setOnScrollListener(new u(this, 2));
@@ -158,10 +158,10 @@ public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
         this.b.setMinimumHeight(org.telegram.messenger.i0.L(500.0f));
         g9 g9Var = new g9(context);
         g9Var.getImageReceiver().z1 = false;
-        ui.b0(this.currentAccount).c2(g9Var, "RestrictedEmoji", "🌖", "130_130");
-        this.b.addView(g9Var, b6.t(zs.O1, zs.O1, 49, 0, 42, 0, 12));
+        vi.b0(this.currentAccount).c2(g9Var, "RestrictedEmoji", "🌖", "130_130");
+        this.b.addView(g9Var, b6.t(at.O1, at.O1, 49, 0, 42, 0, 12));
         TextView textView = new TextView(context);
-        textView.setText(cd.L0(2131744142, null));
+        textView.setText(dd.L0(2131744142, null));
         a7.V(textView, t6.y6, this.resourceProvider);
         textView.setTextSize(1, 15.0f);
         this.b.addView(textView, b6.t(-2, -2, 49, 0, 0, 0, 0));
@@ -169,18 +169,18 @@ public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
         return frameLayout;
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        u51 u51Var;
-        p51 p51Var;
-        if (i10 != zs.r3 || (u51Var = this.a) == null || (p51Var = u51Var.f3) == null) {
+        v51 v51Var;
+        q51 q51Var;
+        if (i10 != at.r3 || (v51Var = this.a) == null || (q51Var = v51Var.f3) == null) {
             return;
         }
-        p51Var.O(true);
+        q51Var.O(true);
     }
 
     @Override // org.telegram.ui.ActionBar.k2
-    public final tk0 getListViewForSimpleGlass() {
+    public final uk0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -194,13 +194,13 @@ public final class m3 extends org.telegram.ui.ActionBar.k2 implements us {
         String c10 = n3.b(this.currentAccount).c();
         this.f = c10;
         this.h = TextUtils.equals(c10, this.n);
-        getNotificationCenter().c(this, zs.r3);
+        getNotificationCenter().c(this, at.r3);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.k2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, zs.r3);
+        getNotificationCenter().n(this, at.r3);
         super.onFragmentDestroy();
     }
 

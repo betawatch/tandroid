@@ -27,29 +27,30 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.is;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.w5;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ew;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.q81;
-import org.telegram.ui.Components.vq0;
-import org.telegram.ui.Wallet.k3;
-import org.telegram.ui.f11;
-import org.telegram.ui.yn0;
+import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.r81;
+import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Wallet.m2;
+import org.telegram.ui.d01;
+import org.telegram.ui.wn0;
 import org.telegram.ui.zh;
 import ph.f2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,7 +63,93 @@ public final /* synthetic */ class v1 implements Runnable {
         this.c = obj2;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00bc  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private final void a() {
+        String str;
+        ArrayList arrayList;
+        is isVar = (is) this.b;
+        org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) this.c;
+        long j10 = mVar.c;
+        int i10 = mVar.d;
+        ArrayList arrayList2 = new ArrayList();
+        SQLiteCursor sQLiteCursor = null;
+        r13 = null;
+        r13 = null;
+        String str2 = null;
+        sQLiteCursor = null;
+        try {
+            try {
+                SQLiteDatabase sQLiteDatabase = isVar.b;
+                Locale locale = Locale.US;
+                SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT local FROM widget_state WHERE uid = " + j10 + " AND mid = " + i10, new Object[0]);
+                try {
+                    if (queryFinalized.next() && !queryFinalized.isNull(0)) {
+                        str2 = queryFinalized.stringValue(0);
+                    }
+                    queryFinalized.dispose();
+                    SQLiteCursor queryFinalized2 = isVar.b.queryFinalized("SELECT width, height, anchor FROM widget_heights WHERE uid = " + j10 + " AND mid = " + i10 + " ORDER BY date DESC", new Object[0]);
+                    while (queryFinalized2.next()) {
+                        try {
+                            arrayList2.add(new int[]{queryFinalized2.intValue(0), queryFinalized2.intValue(1), queryFinalized2.intValue(2)});
+                        } catch (Exception e) {
+                            e = e;
+                            String str3 = str2;
+                            sQLiteCursor = queryFinalized2;
+                            str = str3;
+                            isVar.o(e, true);
+                            if (sQLiteCursor != null) {
+                                sQLiteCursor.dispose();
+                            }
+                            str2 = str;
+                            Object[] objArr = {str2, arrayList2};
+                            arrayList = (ArrayList) objArr[1];
+                            if (!arrayList.isEmpty()) {
+                            }
+                            org.telegram.messenger.i0.g3(new v1(5, mVar, objArr));
+                        } catch (Throwable th2) {
+                            th = th2;
+                            sQLiteCursor = queryFinalized2;
+                            if (sQLiteCursor != null) {
+                                sQLiteCursor.dispose();
+                            }
+                            throw th;
+                        }
+                    }
+                    queryFinalized2.dispose();
+                } catch (Exception e7) {
+                    e = e7;
+                    str = str2;
+                    sQLiteCursor = queryFinalized;
+                } catch (Throwable th3) {
+                    th = th3;
+                    sQLiteCursor = queryFinalized;
+                }
+            } catch (Exception e10) {
+                e = e10;
+                str = null;
+            }
+            Object[] objArr2 = {str2, arrayList2};
+            arrayList = (ArrayList) objArr2[1];
+            if (!arrayList.isEmpty()) {
+                org.telegram.utils.twidget.n l4 = org.telegram.utils.twidget.p.l(mVar.a());
+                synchronized (l4) {
+                    if (l4.a.isEmpty()) {
+                        for (int i11 = 0; i11 < arrayList.size() && i11 < 4; i11++) {
+                            l4.a.add((int[]) arrayList.get(i11));
+                        }
+                    }
+                }
+            }
+            org.telegram.messenger.i0.g3(new v1(5, mVar, objArr2));
+        } catch (Throwable th4) {
+            th = th4;
+        }
+    }
+
+    private final void b() {
         r2.c cVar = (r2.c) this.b;
         v1 v1Var = (v1) this.c;
         cVar.c.x();
@@ -73,7 +160,7 @@ public final /* synthetic */ class v1 implements Runnable {
         }
     }
 
-    private final void b() {
+    private final void c() {
         qa.a aVar;
         r9.p pVar = (r9.p) this.b;
         qa.b bVar = (qa.b) this.c;
@@ -88,216 +175,143 @@ public final /* synthetic */ class v1 implements Runnable {
         aVar.i(bVar);
     }
 
-    private final void c() {
-        r9.o oVar = (r9.o) this.b;
-        qa.b bVar = (qa.b) this.c;
-        synchronized (oVar) {
-            try {
-                if (oVar.b == null) {
-                    oVar.a.add(bVar);
-                } else {
-                    oVar.b.add(bVar.get());
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x02c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:143:0x0281, code lost:
     
-        if (r9 == null) goto L140;
+        if (r8 == null) goto L134;
      */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x04cb  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0129  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00e8  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
+        w5 w5Var;
         String str;
-        ArrayList arrayList;
-        String str2;
         org.telegram.utils.twidget.w wVar;
         RLottieNative rLottieNative;
         qh.f fVar;
-        SQLiteCursor sQLiteCursor = null;
-        r3 = null;
-        r3 = null;
-        Bitmap bitmap = null;
-        r3 = null;
-        r3 = null;
-        String str3 = null;
-        sQLiteCursor = null;
         int i10 = 2;
-        final int i11 = 0;
-        r6 = false;
-        r6 = false;
-        r6 = false;
         boolean z10 = false;
+        z10 = false;
+        z10 = false;
+        z10 = false;
         switch (this.a) {
             case 0:
-                ((w1) this.b).m.remove((k3) this.c);
+                w1 w1Var = (w1) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                int i11 = w1Var.a;
+                w1Var.g = true;
+                if (tLObject instanceof TLRPC.TL_messages_webPage) {
+                    TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject;
+                    wp.r1(i11).V3(tL_messages_webPage.users, false);
+                    wp.r1(i11).P3(tL_messages_webPage.chats, false);
+                    w1Var.h = tL_messages_webPage.webpage;
+                } else {
+                    if (tLObject instanceof TLRPC.TL_webPage) {
+                        TLRPC.TL_webPage tL_webPage = (TLRPC.TL_webPage) tLObject;
+                        if (tL_webPage.cached_page instanceof TL_iv.TL_page) {
+                            w1Var.h = tL_webPage;
+                        }
+                    }
+                    w1Var.h = null;
+                }
+                TLRPC.WebPage webPage = w1Var.h;
+                if (webPage != null && webPage.cached_page == null) {
+                    w1Var.h = null;
+                }
+                if (!uz.w0 && w1Var.h != null && (w5Var = w1Var.l) != null) {
+                    w5Var.run();
+                }
+                w1Var.c();
                 return;
             case 1:
+                ((w1) this.b).m.remove((m2) this.c);
+                return;
+            case 2:
                 org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) this.b;
                 TLRPC.TL_messageMediaWidget tL_messageMediaWidget = (TLRPC.TL_messageMediaWidget) this.c;
                 mVar.s = tL_messageMediaWidget;
                 mVar.r = tL_messageMediaWidget.public_data_hash;
                 org.telegram.utils.twidget.p.c(mVar, org.telegram.utils.twidget.p.A(tL_messageMediaWidget.chat_data), org.telegram.utils.twidget.p.A(tL_messageMediaWidget.public_data));
                 return;
-            case 2:
+            case 3:
                 ((org.telegram.utils.twidget.i) this.b).a(null, (TLRPC.TL_error) this.c);
                 return;
-            case 3:
-                hs hsVar = (hs) this.b;
-                org.telegram.utils.twidget.m mVar2 = (org.telegram.utils.twidget.m) this.c;
-                long j10 = mVar2.c;
-                int i12 = mVar2.d;
-                ArrayList arrayList2 = new ArrayList();
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = hsVar.b;
-                        Locale locale = Locale.US;
-                        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT local FROM widget_state WHERE uid = " + j10 + " AND mid = " + i12, new Object[0]);
-                        try {
-                            if (queryFinalized.next() && !queryFinalized.isNull(0)) {
-                                str3 = queryFinalized.stringValue(0);
-                            }
-                            queryFinalized.dispose();
-                            SQLiteCursor queryFinalized2 = hsVar.b.queryFinalized("SELECT width, height, anchor FROM widget_heights WHERE uid = " + j10 + " AND mid = " + i12 + " ORDER BY date DESC", new Object[0]);
-                            while (queryFinalized2.next()) {
-                                try {
-                                    arrayList2.add(new int[]{queryFinalized2.intValue(0), queryFinalized2.intValue(1), queryFinalized2.intValue(2)});
-                                } catch (Exception e) {
-                                    e = e;
-                                    str = str3;
-                                    sQLiteCursor = queryFinalized2;
-                                    hsVar.o(e, true);
-                                    if (sQLiteCursor != null) {
-                                        sQLiteCursor.dispose();
-                                    }
-                                    str3 = str;
-                                    Object[] objArr = {str3, arrayList2};
-                                    arrayList = (ArrayList) objArr[1];
-                                    int i13 = 4;
-                                    if (!arrayList.isEmpty()) {
-                                    }
-                                    org.telegram.messenger.i0.g3(new v1(i13, mVar2, objArr));
-                                    return;
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    sQLiteCursor = queryFinalized2;
-                                    if (sQLiteCursor != null) {
-                                        sQLiteCursor.dispose();
-                                    }
-                                    throw th;
-                                }
-                            }
-                            queryFinalized2.dispose();
-                        } catch (Exception e7) {
-                            e = e7;
-                            str = str3;
-                            sQLiteCursor = queryFinalized;
-                        } catch (Throwable th3) {
-                            th = th3;
-                            sQLiteCursor = queryFinalized;
-                        }
-                    } catch (Exception e10) {
-                        e = e10;
-                        str = null;
-                    }
-                    Object[] objArr2 = {str3, arrayList2};
-                    arrayList = (ArrayList) objArr2[1];
-                    int i132 = 4;
-                    if (!arrayList.isEmpty()) {
-                        org.telegram.utils.twidget.n l4 = org.telegram.utils.twidget.p.l(mVar2.a());
-                        synchronized (l4) {
-                            if (l4.a.isEmpty()) {
-                                while (i11 < arrayList.size() && i11 < 4) {
-                                    l4.a.add((int[]) arrayList.get(i11));
-                                    i11++;
-                                }
-                            }
-                        }
-                    }
-                    org.telegram.messenger.i0.g3(new v1(i132, mVar2, objArr2));
-                    return;
-                } catch (Throwable th4) {
-                    th = th4;
-                }
-                break;
             case 4:
-                org.telegram.utils.twidget.m mVar3 = (org.telegram.utils.twidget.m) this.b;
-                String str4 = (String) ((Object[]) this.c)[0];
+                a();
+                return;
+            case 5:
+                org.telegram.utils.twidget.m mVar2 = (org.telegram.utils.twidget.m) this.b;
+                String str2 = (String) ((Object[]) this.c)[0];
                 HashMap hashMap = org.telegram.utils.twidget.p.c;
-                mVar3.A = true;
-                String a2 = mVar3.a();
-                if (str4 != null && !hashMap.containsKey(a2)) {
+                mVar2.A = true;
+                String a2 = mVar2.a();
+                if (str2 != null && !hashMap.containsKey(a2)) {
                     try {
                         JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("local", new JSONObject(str4));
+                        jSONObject.put("local", new JSONObject(str2));
                         hashMap.put(a2, jSONObject);
-                    } catch (Exception e11) {
-                        f8.g(e11, true);
+                    } catch (Exception e) {
+                        f8.g(e, true);
                     }
                 }
-                org.telegram.utils.twidget.w wVar2 = mVar3.u;
+                org.telegram.utils.twidget.w wVar2 = mVar2.u;
                 if (wVar2 != null) {
                     JSONObject jSONObject2 = (JSONObject) hashMap.get(a2);
                     try {
-                        str2 = cd.D0().y.toLanguageTag();
+                        str = dd.D0().y.toLanguageTag();
                     } catch (Exception unused) {
-                        str2 = null;
+                        str = null;
                     }
-                    String jSONObject3 = jSONObject2 != null ? jSONObject2.toString() : null;
-                    wVar2.t = str2;
-                    wVar2.u = jSONObject3;
+                    r3 = jSONObject2 != null ? jSONObject2.toString() : null;
+                    wVar2.t = str;
+                    wVar2.u = r3;
                 }
-                gl0 gl0Var = mVar3.v;
-                if (gl0Var != null && (wVar2 == null || wVar2.i <= 0)) {
-                    gl0Var.p0("cached heights read");
+                hl0 hl0Var = mVar2.v;
+                if (hl0Var != null && (wVar2 == null || wVar2.i <= 0)) {
+                    hl0Var.p0("cached heights read");
                 }
-                if (mVar3.B) {
-                    mVar3.B = false;
-                    if (mVar3.y > 0 && wVar2 != null) {
-                        org.telegram.utils.twidget.p.y(mVar3);
+                if (mVar2.B) {
+                    mVar2.B = false;
+                    if (mVar2.y > 0 && wVar2 != null) {
+                        org.telegram.utils.twidget.p.y(mVar2);
                     }
                 }
                 org.telegram.utils.twidget.p.o();
                 return;
-            case 5:
+            case 6:
                 org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) this.b;
                 k0Var.M = ((Exception) this.c).toString();
                 if (k0Var.u || (wVar = k0Var.J) == null) {
                     return;
                 }
-                String str5 = k0Var.M;
+                String str3 = k0Var.M;
                 if (wVar.e != null) {
-                    f8.d("widget " + wVar.a + ": " + str5);
+                    f8.d("widget " + wVar.a + ": " + str3);
                 }
-                q81 q81Var = wVar.h;
-                if (q81Var != null) {
-                    q81Var.a.h();
+                r81 r81Var = wVar.h;
+                if (r81Var != null) {
+                    r81Var.a.h();
                     return;
                 }
                 return;
-            case 6:
+            case 7:
                 p2.b bVar = (p2.b) this.b;
                 Uri uri = (Uri) this.c;
                 bVar.s = false;
                 bVar.b(uri);
                 return;
-            case 7:
+            case 8:
                 ph.b bVar2 = (ph.b) this.b;
                 View.OnClickListener onClickListener = (View.OnClickListener) this.c;
                 bVar2.getClass();
                 onClickListener.onClick(bVar2);
                 return;
-            case 8:
+            case 9:
                 ((ph.w0) this.b).k().f0((TLRPC.TL_error) this.c, false);
                 return;
-            case 9:
+            case 10:
                 ph.c1 c1Var = (ph.c1) this.b;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
                 c1Var.getClass();
@@ -306,17 +320,17 @@ public final /* synthetic */ class v1 implements Runnable {
                 }
                 c1Var.F.setVisibility(8);
                 return;
-            case 10:
-                vq0 vq0Var = (vq0) this.b;
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
-                vq0Var.h(tL_starGiftCollection.title, new f11(23, vq0Var, tL_starGiftCollection));
-                return;
             case 11:
+                wq0 wq0Var = (wq0) this.b;
+                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
+                wq0Var.h(tL_starGiftCollection.title, new d01(24, wq0Var, tL_starGiftCollection));
+                return;
+            case 12:
                 f2 f2Var = (f2) this.b;
                 org.telegram.messenger.i0.g((String) this.c);
                 cc.a0(f2Var.a.a).k(false).j();
                 return;
-            case 12:
+            case 13:
                 qh.r rVar = (qh.r) this.b;
                 if (((TLRPC.Document) this.c) != null) {
                     rVar.e();
@@ -325,27 +339,27 @@ public final /* synthetic */ class v1 implements Runnable {
                     rVar.getClass();
                     return;
                 }
-            case 13:
+            case 14:
                 qh.s sVar = (qh.s) this.b;
                 File file = (File) this.c;
-                int i14 = sVar.c;
+                int i12 = sVar.c;
                 try {
                     rLottieNative = RLottieNative.a(file.getAbsolutePath(), null, null, null, 0, null);
                     if (rLottieNative != null) {
                         try {
                             Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                            Bitmap createBitmap = Bitmap.createBitmap(i14, i14, config);
+                            Bitmap createBitmap = Bitmap.createBitmap(i12, i12, config);
                             rLottieNative.c(0, createBitmap, true);
-                            Bitmap createBitmap2 = Bitmap.createBitmap(i14, i14, config);
+                            Bitmap createBitmap2 = Bitmap.createBitmap(i12, i12, config);
                             Paint paint = new Paint(2);
                             paint.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                             new Canvas(createBitmap2).drawBitmap(createBitmap, 0.0f, 0.0f, paint);
                             createBitmap.recycle();
                             createBitmap2.setHasMipMap(true);
                             rLottieNative.d();
-                            bitmap = createBitmap2;
-                        } catch (Throwable th5) {
-                            th = th5;
+                            r3 = createBitmap2;
+                        } catch (Throwable th2) {
+                            th = th2;
                             try {
                                 f8.g(th, true);
                                 break;
@@ -356,30 +370,30 @@ public final /* synthetic */ class v1 implements Runnable {
                             }
                         }
                     }
-                } catch (Throwable th6) {
-                    th = th6;
+                } catch (Throwable th3) {
+                    th = th3;
                     rLottieNative = null;
                 }
-                org.telegram.messenger.i0.g3(new v1(14, sVar, bitmap));
+                org.telegram.messenger.i0.g3(new v1(15, sVar, r3));
                 return;
-            case 14:
+            case 15:
                 qh.s sVar2 = (qh.s) this.b;
-                Bitmap bitmap2 = (Bitmap) this.c;
+                Bitmap bitmap = (Bitmap) this.c;
                 sVar2.h = true;
                 if (sVar2.e) {
-                    if (bitmap2 != null) {
-                        bitmap2.recycle();
+                    if (bitmap != null) {
+                        bitmap.recycle();
                         return;
                     }
                     return;
                 } else {
-                    if (bitmap2 != null) {
-                        sVar2.d.a(bitmap2);
+                    if (bitmap != null) {
+                        sVar2.d.a(bitmap);
                         return;
                     }
                     return;
                 }
-            case 15:
+            case 16:
                 qh.y yVar = (qh.y) this.b;
                 m4.c cVar = (m4.c) this.c;
                 if (yVar.V) {
@@ -388,7 +402,7 @@ public final /* synthetic */ class v1 implements Runnable {
                 yVar.e();
                 yVar.a.c((String) cVar.b);
                 return;
-            case 16:
+            case 17:
                 ew ewVar = (ew) this.b;
                 m4.c cVar2 = (m4.c) this.c;
                 qh.y yVar2 = (qh.y) ewVar.b;
@@ -399,98 +413,99 @@ public final /* synthetic */ class v1 implements Runnable {
                 yVar2.h0 = false;
                 yVar2.performHapticFeedback(3, 2);
                 PointF[] pointFArr = (PointF[]) cVar2.c;
-                r5 = pointFArr.length < 3 ? 0 : 1;
-                if (r5 != 0) {
+                r4 = pointFArr.length < 3 ? 0 : 1;
+                if (r4 != 0) {
                     yVar2.m0 = pointFArr;
                     yVar2.invalidate();
                 }
-                org.telegram.messenger.i0.h3(new v1(15, yVar2, cVar2), r5 != 0 ? 450L : 0L);
-                return;
-            case 17:
-                qh.i0.Y((qh.i0) this.b, (AnimatorSet) this.c);
+                org.telegram.messenger.i0.h3(new v1(16, yVar2, cVar2), r4 != 0 ? 450L : 0L);
                 return;
             case 18:
+                qh.i0.Z((qh.i0) this.b, (AnimatorSet) this.c);
+                return;
+            case 19:
                 qh.i0 i0Var = (qh.i0) this.b;
-                Bitmap bitmap3 = (Bitmap) this.c;
+                Bitmap bitmap2 = (Bitmap) this.c;
                 File file2 = new File(org.telegram.messenger.i0.E0(), "qr_code_" + System.currentTimeMillis() + ".png");
                 try {
                     FileOutputStream fileOutputStream = new FileOutputStream(file2);
                     try {
-                        z10 = bitmap3.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
+                        z10 = bitmap2.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
                         fileOutputStream.close();
                     } finally {
                     }
-                } catch (Exception e12) {
-                    f8.g(e12, true);
+                } catch (Exception e7) {
+                    f8.g(e7, true);
                 }
-                bitmap3.recycle();
+                bitmap2.recycle();
                 if (z10) {
-                    org.telegram.messenger.i0.g3(new v1(20, i0Var, file2));
+                    org.telegram.messenger.i0.g3(new v1(21, i0Var, file2));
                     return;
                 }
                 return;
-            case 19:
+            case 20:
                 final qh.i0 i0Var2 = (qh.i0) this.b;
                 qh.y yVar3 = (qh.y) this.c;
                 if (qh.y.d(i0Var2.getParentActivity())) {
                     yVar3.e();
                     zh zhVar = new zh(12);
-                    q20 q20Var = new q20() { // from class: qh.c0
-                        @Override // org.telegram.messenger.q20
+                    final int i13 = z10 ? 1 : 0;
+                    r20 r20Var = new r20() { // from class: qh.c0
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj) {
-                            int i15 = i11;
+                            int i14 = i13;
                             i0 i0Var3 = i0Var2;
-                            switch (i15) {
+                            switch (i14) {
                                 case 0:
-                                    String str6 = (String) obj;
+                                    String str4 = (String) obj;
                                     if (i0Var3.getParentActivity() != null) {
-                                        gf.f.r(i0Var3.getParentActivity(), str6);
+                                        gf.f.r(i0Var3.getParentActivity(), str4);
                                         break;
                                     }
                                     break;
                                 default:
                                     x0 x0Var = i0Var3.d;
                                     if (x0Var != null && !i0Var3.isFinished) {
-                                        x0Var.d1(R.drawable.msg_download, cd.L0(2131746486, null), null);
+                                        x0Var.d1(R.drawable.msg_download, dd.L0(2131746486, null), null);
                                         break;
                                     }
                                     break;
                             }
                         }
                     };
-                    yn0 yn0Var = new yn0(10, false, false, null);
-                    yn0Var.G = 1;
-                    yn0Var.H = false;
-                    yn0Var.y = false;
-                    yn0Var.V = new q5.d(zhVar, i0Var2, q20Var, i10);
-                    i0Var2.presentFragment(yn0Var);
+                    wn0 wn0Var = new wn0(10, false, false, null);
+                    wn0Var.G = 1;
+                    wn0Var.H = false;
+                    wn0Var.y = false;
+                    wn0Var.V = new q5.d(zhVar, i0Var2, r20Var, i10);
+                    i0Var2.presentFragment(wn0Var);
                     return;
                 }
                 return;
-            case 20:
+            case 21:
                 final qh.i0 i0Var3 = (qh.i0) this.b;
                 File file3 = (File) this.c;
                 Activity parentActivity = i0Var3.getParentActivity();
                 if (parentActivity == null) {
                     return;
                 }
-                MediaController.d0(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new q20() { // from class: qh.c0
-                    @Override // org.telegram.messenger.q20
+                MediaController.d0(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new r20() { // from class: qh.c0
+                    @Override // org.telegram.messenger.r20
                     public final void a(Object obj) {
-                        int i15 = r2;
+                        int i14 = r2;
                         i0 i0Var32 = i0Var3;
-                        switch (i15) {
+                        switch (i14) {
                             case 0:
-                                String str6 = (String) obj;
+                                String str4 = (String) obj;
                                 if (i0Var32.getParentActivity() != null) {
-                                    gf.f.r(i0Var32.getParentActivity(), str6);
+                                    gf.f.r(i0Var32.getParentActivity(), str4);
                                     break;
                                 }
                                 break;
                             default:
                                 x0 x0Var = i0Var32.d;
                                 if (x0Var != null && !i0Var32.isFinished) {
-                                    x0Var.d1(R.drawable.msg_download, cd.L0(2131746486, null), null);
+                                    x0Var.d1(R.drawable.msg_download, dd.L0(2131746486, null), null);
                                     break;
                                 }
                                 break;
@@ -498,7 +513,7 @@ public final /* synthetic */ class v1 implements Runnable {
                     }
                 });
                 return;
-            case 21:
+            case 22:
                 qh.x0 x0Var = (qh.x0) this.b;
                 qh.f fVar2 = (qh.f) this.c;
                 qh.g gVar = x0Var.s0;
@@ -517,75 +532,65 @@ public final /* synthetic */ class v1 implements Runnable {
                     gVar.o = 1.0f;
                     return;
                 }
-                int i15 = (Build.VERSION.SDK_INT >= 29 ? 1 : 0) ^ 1;
+                int i14 = (Build.VERSION.SDK_INT >= 29 ? 1 : 0) ^ 1;
                 if (gVar.o < 1.0f && (fVar = gVar.n) != null) {
                     fVar3 = fVar;
                 }
                 gVar.n = fVar3;
                 gVar.m = fVar2;
                 gVar.o = 0.0f;
-                gVar.q = i15;
+                gVar.q = i14;
                 gVar.p = System.currentTimeMillis();
                 boolean[] zArr = gVar.s;
                 if (zArr != null) {
                     int length = zArr.length;
-                    int i16 = gVar.n.e;
-                    if (length >= i16 * i16) {
+                    int i15 = gVar.n.e;
+                    if (length >= i15 * i15) {
                         Arrays.fill(zArr, false);
-                        gVar.G = i15 == 1;
+                        gVar.G = i14 == 1;
                         return;
                     }
                 }
-                int i17 = gVar.n.e;
-                gVar.s = new boolean[i17 * i17];
-                gVar.G = i15 == 1;
-                return;
-            case 22:
-                ((q20) this.b).a((qh.f) this.c);
+                int i16 = gVar.n.e;
+                gVar.s = new boolean[i16 * i16];
+                gVar.G = i14 == 1;
                 return;
             case 23:
-                CarResultStub.lambda$notifyResults$1((Map.Entry) this.b, this.c);
+                ((r20) this.b).a((qh.f) this.c);
                 return;
             case 24:
-                a();
+                CarResultStub.lambda$notifyResults$1((Map.Entry) this.b, this.c);
                 return;
             case 25:
+                b();
+                return;
+            case 26:
                 r2.r rVar2 = (r2.r) this.b;
                 rVar2.T.set(rVar2.w((hf.b) this.c, rVar2.N, 0));
                 return;
-            case 26:
+            case 27:
                 JobInfoSchedulerService jobInfoSchedulerService = (JobInfoSchedulerService) this.b;
                 JobParameters jobParameters = (JobParameters) this.c;
-                int i18 = JobInfoSchedulerService.a;
+                int i17 = JobInfoSchedulerService.a;
                 jobInfoSchedulerService.jobFinished(jobParameters, false);
-                return;
-            case 27:
-                b();
                 return;
             case 28:
                 c();
                 return;
             default:
-                rh.n nVar = (rh.n) this.b;
-                TLObject tLObject = (TLObject) this.c;
-                int i19 = nVar.a;
-                ArrayList arrayList3 = nVar.e;
-                nVar.i = 0;
-                if (tLObject instanceof TL_payments.connectedStarRefBots) {
-                    TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-                    vp.r1(i19).V3(connectedstarrefbots.users, false);
-                    if (nVar.c <= 0) {
-                        arrayList3.clear();
+                r9.o oVar = (r9.o) this.b;
+                qa.b bVar3 = (qa.b) this.c;
+                synchronized (oVar) {
+                    try {
+                        if (oVar.b == null) {
+                            oVar.a.add(bVar3);
+                        } else {
+                            oVar.b.add(bVar3.get());
+                        }
+                    } catch (Throwable th4) {
+                        throw th4;
                     }
-                    nVar.c = connectedstarrefbots.count;
-                    arrayList3.addAll(connectedstarrefbots.connected_bots);
-                    nVar.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList3.size() >= nVar.c;
-                } else {
-                    nVar.h = true;
-                    nVar.d = true;
                 }
-                nVar.g = false;
-                zs.f(i19).k(zs.L3, Long.valueOf(nVar.b));
                 return;
         }
     }

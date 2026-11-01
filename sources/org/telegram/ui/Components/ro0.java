@@ -1,55 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ro0 extends th.b {
-    public final /* synthetic */ int g;
+public final class ro0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pp0 b;
 
-    public /* synthetic */ ro0(int i10) {
-        this.g = i10;
+    public /* synthetic */ ro0(pp0 pp0Var, int i10) {
+        this.a = i10;
+        this.b = pp0Var;
     }
 
-    @Override // th.b
-    public void k() {
-        switch (this.g) {
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bb bbVar;
+        switch (this.a) {
             case 0:
-                int i10 = org.telegram.ui.ActionBar.t6.a7;
-                int i11 = org.telegram.ui.ActionBar.t6.h5;
-                int h = h(i11);
-                SparseIntArray sparseIntArray = this.b;
-                sparseIntArray.put(i10, h);
-                sparseIntArray.put(org.telegram.ui.ActionBar.t6.d7, -15264235);
-                sparseIntArray.put(org.telegram.ui.ActionBar.t6.Le, org.telegram.ui.ActionBar.t6.r1(0.45f, -1));
-                sparseIntArray.put(org.telegram.ui.ActionBar.t6.i5, 352321535);
-                sparseIntArray.put(org.telegram.ui.ActionBar.t6.wf, h(i11));
+                pp0 pp0Var = this.b;
+                if (i11 != 0) {
+                    pp0.I0(pp0Var);
+                    pp0Var.i2 = pp0Var.h2;
+                }
+                wb wbVar = wb.w;
+                if (wbVar != null && (bbVar = wbVar.e) != null && (bbVar.getParent() instanceof View) && ((View) wb.w.e.getParent()).getParent() == pp0Var.t1) {
+                    wb.e();
+                    break;
+                }
                 break;
-            case 2:
-                this.b.put(org.telegram.ui.ActionBar.t6.d7, 352321535);
+            case 1:
+                if (i11 != 0) {
+                    pp0 pp0Var2 = this.b;
+                    pp0.I0(pp0Var2);
+                    pp0Var2.i2 = pp0Var2.h2;
+                    break;
+                }
                 break;
-            case 3:
-                this.b.append(org.telegram.ui.ActionBar.t6.h5, -14671840);
+            default:
+                if (i11 != 0) {
+                    pp0 pp0Var3 = this.b;
+                    pp0.I0(pp0Var3);
+                    pp0Var3.i2 = pp0Var3.h2;
+                    break;
+                }
                 break;
         }
-    }
-
-    public ro0() {
-        this.g = 1;
-        this.b.put(org.telegram.ui.ActionBar.t6.d6, -14537933);
-        this.b.put(org.telegram.ui.ActionBar.t6.h5, -14537933);
-        this.b.put(org.telegram.ui.ActionBar.t6.a7, -13616313);
-        this.b.put(org.telegram.ui.ActionBar.t6.e7, -14142917);
-        this.b.put(org.telegram.ui.ActionBar.t6.f7, -8090220);
-        this.b.put(org.telegram.ui.ActionBar.t6.Qi, -14142917);
-        this.b.put(org.telegram.ui.ActionBar.t6.G8, -13616313);
-        this.b.put(org.telegram.ui.ActionBar.t6.H8, -14733761);
-        this.b.put(org.telegram.ui.ActionBar.t6.F8, -1);
-        this.b.put(org.telegram.ui.ActionBar.t6.E8, -1);
-        this.b.put(org.telegram.ui.ActionBar.t6.tj, -231982259);
-        this.b.put(org.telegram.ui.ActionBar.t6.v6, -11683585);
-        this.b.put(org.telegram.ui.ActionBar.t6.u6, -10637330);
-        this.b.put(org.telegram.ui.ActionBar.t6.W6, -12692893);
-        this.b.put(org.telegram.ui.ActionBar.t6.i7, -15033089);
     }
 }

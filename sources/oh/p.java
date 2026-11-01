@@ -18,10 +18,10 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import lg.s;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.a7;
@@ -31,12 +31,12 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.ug0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.vg0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class p extends Dialog {
     public final o D;
@@ -47,7 +47,7 @@ public final class p extends Dialog {
     public final TextView d;
     public final TextView e;
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final ug0 h;
+    public final vg0 h;
     public final m n;
     public TLRPC.TL_chatInviteImporter r;
     public ValueAnimator s;
@@ -56,7 +56,7 @@ public final class p extends Dialog {
     public float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p(q qVar, Activity activity, tk0 tk0Var, p6 p6Var, boolean z10) {
+    public p(q qVar, Activity activity, uk0 uk0Var, p6 p6Var, boolean z10) {
         super(activity, R.style.TransparentDialog2);
         this.E = qVar;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.popup_fixed_alert2).mutate();
@@ -85,11 +85,11 @@ public final class p extends Dialog {
         oVar.addView(actionBarPopupWindow$ActionBarPopupWindowLayout);
         m mVar = new m(getContext());
         this.n = mVar;
-        ug0 ug0Var = new ug0(activity, k2Var.getActionBar(), tk0Var, mVar);
-        this.h = ug0Var;
-        ug0Var.setCreateThumbFromParent(true);
-        oVar.addView(ug0Var);
-        mVar.setProfileGalleryView(ug0Var);
+        vg0 vg0Var = new vg0(activity, k2Var.getActionBar(), uk0Var, mVar);
+        this.h = vg0Var;
+        vg0Var.setCreateThumbFromParent(true);
+        oVar.addView(vg0Var);
+        mVar.setProfileGalleryView(vg0Var);
         oVar.addView(mVar);
         textView.setMaxLines(1);
         a7.V(textView, t6.G6, k2Var.getResourceProvider());
@@ -105,7 +105,7 @@ public final class p extends Dialog {
         b1Var.c(i12, i13);
         int i14 = t6.I5;
         b1Var.h(1.0f, i14);
-        b1Var.j(cd.L0(z10 ? 2131754378 : 2131754373, null), R.drawable.msg_requests, null);
+        b1Var.j(dd.L0(z10 ? 2131754378 : 2131754373, null), R.drawable.msg_requests, null);
         final int i15 = 0;
         b1Var.setOnClickListener(new View.OnClickListener(this) { // from class: oh.l
             public final /* synthetic */ p b;
@@ -147,7 +147,7 @@ public final class p extends Dialog {
         b1 b1Var2 = new b1(0, activity, p6Var, false, false);
         b1Var2.c(i12, i13);
         b1Var2.h(1.0f, i14);
-        b1Var2.j(cd.L0(2131745618, null), R.drawable.msg_msgbubble3, null);
+        b1Var2.j(dd.L0(2131745618, null), R.drawable.msg_msgbubble3, null);
         b1Var2.setOnClickListener(new View.OnClickListener(this) { // from class: oh.l
             public final /* synthetic */ p b;
 
@@ -188,7 +188,7 @@ public final class p extends Dialog {
         b1 b1Var3 = new b1(0, activity, p6Var, false, true);
         b1Var3.c(t6.q7, t6.p7);
         b1Var3.h(1.0f, i14);
-        b1Var3.j(cd.L0(2131751369, null), R.drawable.msg_remove, null);
+        b1Var3.j(dd.L0(2131751369, null), R.drawable.msg_remove, null);
         final int i16 = 2;
         b1Var3.setOnClickListener(new View.OnClickListener(this) { // from class: oh.l
             public final /* synthetic */ p b;
@@ -263,13 +263,13 @@ public final class p extends Dialog {
         }
         int[] iArr = new int[2];
         this.w.getLocationOnScreen(iArr);
-        ug0 ug0Var = this.h;
-        float width = (this.w.getWidth() * 1.0f) / ug0Var.getMeasuredWidth();
+        vg0 vg0Var = this.h;
+        float width = (this.w.getWidth() * 1.0f) / vg0Var.getMeasuredWidth();
         float width2 = (this.w.getWidth() / 2.0f) / width;
         int i10 = 0;
         float f7 = 1.0f - width;
-        float left = iArr[0] - (ug0Var.getLeft() + ((int) ((ug0Var.getMeasuredWidth() * f7) / 2.0f)));
-        float top = iArr[1] - (ug0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
+        float left = iArr[0] - (vg0Var.getLeft() + ((int) ((vg0Var.getMeasuredWidth() * f7) / 2.0f)));
+        float top = iArr[1] - (vg0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
         int i11 = (-this.f.getTop()) / 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
@@ -282,7 +282,7 @@ public final class p extends Dialog {
 
     public final void f() {
         BitmapDrawable bitmapDrawable = this.x;
-        int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : zs.e4;
+        int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : at.e4;
         Resources resources = getContext().getResources();
         o oVar = this.D;
         int measuredWidth = (int) (oVar.getMeasuredWidth() / 6.0f);
@@ -298,7 +298,7 @@ public final class p extends Dialog {
         if (visibleDialog != null) {
             visibleDialog.getWindow().getDecorView().draw(canvas);
         }
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / zs.K2));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / at.K2));
         BitmapDrawable bitmapDrawable2 = new BitmapDrawable(resources, createBitmap);
         this.x = bitmapDrawable2;
         bitmapDrawable2.setAlpha(alpha);

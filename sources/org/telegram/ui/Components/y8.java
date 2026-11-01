@@ -18,9 +18,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.pb1;
+import org.telegram.ui.nb1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class y8 {
     public static void a(org.telegram.ui.un unVar, int i10, TLRPC.Chat chat, TLRPC.User user, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11, int i12) {
@@ -125,7 +125,7 @@ public abstract class y8 {
                                 z4Var2 = parentLayout;
                                 list = fragmentStack;
                                 i13 = size;
-                            } else if (unVar.M9()) {
+                            } else if (unVar.R9()) {
                                 z4Var2 = parentLayout;
                                 list = fragmentStack;
                                 i13 = size;
@@ -142,7 +142,7 @@ public abstract class y8 {
                                 z4Var3 = parentLayout;
                                 list = fragmentStack;
                                 j13 = a2;
-                                if (j13 != j10 || (j10 == 0 && org.telegram.messenger.h20.B(user))) {
+                                if (j13 != j10 || (j10 == 0 && org.telegram.messenger.i20.B(user))) {
                                     z4Var2 = z4Var3;
                                     i13 = size;
                                 } else {
@@ -291,7 +291,7 @@ public abstract class y8 {
                                 r8Var = r82;
                             }
                             k2Var.getCurrentAccount();
-                            g9Var.j(org.telegram.messenger.ic.a(1, chat2), "50_50", r8Var, chat2);
+                            g9Var.j(org.telegram.messenger.jc.a(1, chat2), "50_50", r8Var, chat2);
                             textView.setText(chat2.title);
                         } else {
                             if (user2 != null) {
@@ -299,29 +299,29 @@ public abstract class y8 {
                                 if (userProfilePhoto == null || (drawable = userProfilePhoto.strippedBitmap) == null) {
                                     drawable = r8Var;
                                 }
-                                if (x8Var3.a == cls3 && org.telegram.messenger.h20.B(user2)) {
-                                    str = org.telegram.messenger.cd.L0(2131745918, null);
+                                if (x8Var3.a == cls3 && org.telegram.messenger.i20.B(user2)) {
+                                    str = org.telegram.messenger.dd.L0(2131745918, null);
                                     r8Var.g(1);
                                     g9Var.setImageDrawable(r8Var);
-                                } else if (org.telegram.messenger.h20.z(user2)) {
-                                    str = org.telegram.messenger.cd.L0(2131746281, null);
+                                } else if (org.telegram.messenger.i20.z(user2)) {
+                                    str = org.telegram.messenger.dd.L0(2131746281, null);
                                     r8Var.g(12);
                                     g9Var.setImageDrawable(r8Var);
                                 } else {
-                                    if (org.telegram.messenger.h20.x(user2)) {
-                                        str = org.telegram.messenger.cd.L0(2131749337, null);
+                                    if (org.telegram.messenger.i20.x(user2)) {
+                                        str = org.telegram.messenger.dd.L0(2131749337, null);
                                         k2Var.getCurrentAccount();
                                         r8Var.r(user2);
                                         cls2 = cls3;
                                         z12 = true;
-                                        g9Var.j(org.telegram.messenger.ic.l(k2Var.getCurrentAccount(), 1, user2), "50_50", r8Var, user2);
+                                        g9Var.j(org.telegram.messenger.jc.l(k2Var.getCurrentAccount(), 1, user2), "50_50", r8Var, user2);
                                     } else {
                                         cls2 = cls3;
                                         z12 = true;
-                                        String p5 = org.telegram.messenger.h20.p(user2);
+                                        String p5 = org.telegram.messenger.i20.p(user2);
                                         k2Var.getCurrentAccount();
                                         r8Var.r(user2);
-                                        g9Var.j(org.telegram.messenger.ic.l(k2Var.getCurrentAccount(), 1, user2), "50_50", drawable, user2);
+                                        g9Var.j(org.telegram.messenger.jc.l(k2Var.getCurrentAccount(), 1, user2), "50_50", drawable, user2);
                                         str = p5;
                                     }
                                     textView.setText(str);
@@ -339,7 +339,7 @@ public abstract class y8 {
                                 g9Var.setImageDrawable(parentActivity.getDrawable(R.drawable.msg_viewchats).mutate());
                                 g9Var.u(org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(24.0f));
                                 g9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.F8, p6Var), PorterDuff.Mode.MULTIPLY));
-                                textView.setText(org.telegram.messenger.cd.L0(2131754301, null));
+                                textView.setText(org.telegram.messenger.dd.L0(2131754301, null));
                                 z13 = true;
                                 z14 = z19;
                             }
@@ -397,7 +397,7 @@ public abstract class y8 {
                 org.telegram.ui.ActionBar.k1 k1Var = new org.telegram.ui.ActionBar.k1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                 atomicReference3.set(k1Var);
                 k1Var.e = z22;
-                k1Var.c = org.telegram.messenger.zs.x3;
+                k1Var.c = org.telegram.messenger.at.x3;
                 k1Var.setOutsideTouchable(z22);
                 k1Var.setClippingEnabled(z22);
                 k1Var.setAnimationStyle(R.style.PopupContextAnimation);
@@ -442,22 +442,22 @@ public abstract class y8 {
                     i10 = 2;
                     i15 = -1;
                 }
-                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof pb1)) {
+                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof nb1)) {
                     x8 x8Var5 = new x8();
                     arrayList.add(x8Var5);
                     x8Var5.b = -1;
-                    x8Var5.a = pb1.class;
-                    x8Var5.c = org.telegram.messenger.vp.r1(k2Var.getCurrentAccount()).L0(Long.valueOf(-j10));
+                    x8Var5.a = nb1.class;
+                    x8Var5.c = org.telegram.messenger.wp.r1(k2Var.getCurrentAccount()).L0(Long.valueOf(-j10));
                 } else {
                     x8 x8Var6 = new x8();
                     arrayList.add(x8Var6);
                     x8Var6.b = i15 + 1;
-                    x8Var6.a = org.telegram.ui.ay.class;
+                    x8Var6.a = org.telegram.ui.zx.class;
                     x8 x8Var7 = new x8();
                     arrayList.add(x8Var7);
                     x8Var7.b = -1;
-                    x8Var7.a = pb1.class;
-                    x8Var7.c = org.telegram.messenger.vp.r1(k2Var.getCurrentAccount()).L0(Long.valueOf(-j10));
+                    x8Var7.a = nb1.class;
+                    x8Var7.c = org.telegram.messenger.wp.r1(k2Var.getCurrentAccount()).L0(Long.valueOf(-j10));
                 }
                 Collections.sort(arrayList, new org.telegram.ui.f6(9));
             }

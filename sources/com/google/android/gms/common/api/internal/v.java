@@ -3,17 +3,17 @@ package com.google.android.gms.common.api.internal;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import m4.t1;
-import org.telegram.messenger.tz;
-import org.telegram.ui.Components.e71;
+import org.telegram.messenger.uz;
 import org.telegram.ui.Components.f71;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.mg0;
-import org.telegram.ui.mr0;
+import org.telegram.ui.kg0;
+import org.telegram.ui.lr0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class v implements e71 {
+public final class v implements f71 {
     public int a;
     public boolean b;
     public Object c;
@@ -48,7 +48,7 @@ public final class v implements e71 {
 
     public void c(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = f71.f0;
+        Object obj = g71.f0;
         if (i10 == 2) {
             Drawable[] drawableArr = PhotoViewer.U8;
             photoViewer.v0();
@@ -57,14 +57,14 @@ public final class v implements e71 {
                 photoViewer.t0();
                 photoViewer.V7 = -1L;
             }
-            mr0 mr0Var = photoViewer.f0;
-            if (mr0Var == null || !mr0Var.y) {
-                u61 u61Var = photoViewer.F2;
-                if (u61Var == null || !u61Var.d0()) {
+            lr0 lr0Var = photoViewer.f0;
+            if (lr0Var == null || !lr0Var.y) {
+                v61 v61Var = photoViewer.F2;
+                if (v61Var == null || !v61Var.d0()) {
                     z10 = false;
                 }
             } else {
-                z10 = mr0Var.G;
+                z10 = lr0Var.G;
             }
             this.b = z10;
             if (z10) {
@@ -77,16 +77,16 @@ public final class v implements e71 {
 
     public void d(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        mg0 mg0Var = (mg0) this.c;
-        if (mg0Var != null) {
-            org.telegram.messenger.i0.r(mg0Var);
-            ((mg0) this.c).run();
+        kg0 kg0Var = (kg0) this.c;
+        if (kg0Var != null) {
+            org.telegram.messenger.i0.r(kg0Var);
+            ((kg0) this.c).run();
         }
         Drawable[] drawableArr = PhotoViewer.U8;
         photoViewer.v0();
         int i11 = photoViewer.c2;
         if (i11 == 1 && photoViewer.z2 != null) {
-            Object obj = f71.f0;
+            Object obj = g71.f0;
             if (i10 == 2) {
                 photoViewer.t0();
                 photoViewer.V7 = photoViewer.v8;
@@ -114,11 +114,11 @@ public final class v implements e71 {
 
     public void f(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        u61 u61Var = photoViewer.F2;
-        if (u61Var == null) {
+        v61 v61Var = photoViewer.F2;
+        if (v61Var == null) {
             return;
         }
-        if (u61Var.d0()) {
+        if (v61Var.d0()) {
             photoViewer.H2 = false;
             photoViewer.F2.g0();
             photoViewer.e0.invalidate();
@@ -149,11 +149,11 @@ public final class v implements e71 {
     public void h(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
         this.a = (int) (photoViewer.i8 * f7);
-        if (tz.o() != 2) {
-            if (((mg0) this.c) == null) {
-                mg0 mg0Var = new mg0(this, 18);
-                this.c = mg0Var;
-                org.telegram.messenger.i0.h3(mg0Var, 100L);
+        if (uz.o() != 2) {
+            if (((kg0) this.c) == null) {
+                kg0 kg0Var = new kg0(this, 18);
+                this.c = kg0Var;
+                org.telegram.messenger.i0.h3(kg0Var, 100L);
                 return;
             }
             return;

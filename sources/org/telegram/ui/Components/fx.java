@@ -7,7 +7,7 @@ import android.view.animation.OvershootInterpolator;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class fx extends ts {
     public int M;
@@ -31,7 +31,7 @@ public final class fx extends ts {
             return;
         }
         boolean z10 = true;
-        boolean z11 = arrayList.size() <= 4 || org.telegram.messenger.tz.o() == 0 || !org.telegram.messenger.sc.e(16388);
+        boolean z11 = arrayList.size() <= 4 || org.telegram.messenger.uz.o() == 0 || !org.telegram.messenger.tc.e(16388);
         if (!z11) {
             boolean z12 = vyVar.v2 > 0 && SystemClock.elapsedRealtime() - vyVar.v2 < hxVar.z1();
             for (int i13 = 0; i13 < this.O.size(); i13++) {
@@ -62,11 +62,11 @@ public final class fx extends ts {
             ey eyVar = (ey) arrayList.get(i10);
             f5 f5Var = eyVar.b;
             if (f5Var != null) {
-                org.telegram.messenger.jc jcVar = eyVar.f[this.K];
+                org.telegram.messenger.kc kcVar = eyVar.f[this.K];
                 ag.c2 c2Var = f5Var.k;
                 if (c2Var != null) {
                     c2Var.setAlpha(f5Var.l);
-                    f5Var.k.h(canvas, jcVar);
+                    f5Var.k.h(canvas, kcVar);
                 }
             }
             i10++;
@@ -182,9 +182,9 @@ public final class fx extends ts {
                 this.R.m3.P.invalidate();
                 return;
             }
-            org.telegram.messenger.jc[] jcVarArr = ((ey) arrayList.get(i10)).f;
-            if (jcVarArr != null) {
-                jcVarArr[this.K].a();
+            org.telegram.messenger.kc[] kcVarArr = ((ey) arrayList.get(i10)).f;
+            if (kcVarArr != null) {
+                kcVarArr[this.K].a();
             }
             i10++;
         }
@@ -199,22 +199,22 @@ public final class fx extends ts {
         for (int i10 = 0; i10 < this.O.size(); i10++) {
             ey eyVar = (ey) this.O.get(i10);
             o5 span = eyVar.getSpan();
-            org.telegram.messenger.jc[] jcVarArr = eyVar.f;
+            org.telegram.messenger.kc[] kcVarArr = eyVar.f;
             if (span != null && (f5Var = (f5) vyVar.d2.get(eyVar.d.getDocumentId())) != null && f5Var.k != null) {
                 f5Var.s(j10);
                 ag.c2 c2Var = f5Var.k;
                 int i11 = this.K;
-                org.telegram.messenger.jc e02 = c2Var.e0(jcVarArr[i11], i11);
-                jcVarArr[i11] = e02;
+                org.telegram.messenger.kc e02 = c2Var.e0(kcVarArr[i11], i11);
+                kcVarArr[i11] = e02;
                 e02.c = j10;
                 e02.b = 1.0f;
-                f5Var.setAlpha(org.telegram.messenger.zs.e4);
+                f5Var.setAlpha(org.telegram.messenger.at.e4);
                 int height = (int) (eyVar.getHeight() * 0.03f);
                 Rect rect = org.telegram.messenger.i0.Q;
                 rect.set((eyVar.getPaddingLeft() + eyVar.getLeft()) - this.N, height, (eyVar.getRight() - eyVar.getPaddingRight()) - this.N, ((eyVar.getMeasuredHeight() + height) - eyVar.getPaddingTop()) - eyVar.getPaddingBottom());
-                jcVarArr[i11].b(rect);
+                kcVarArr[i11].b(rect);
                 eyVar.b = f5Var;
-                jcVarArr[i11].z = f5Var.c() ? vyVar.e2 : null;
+                kcVarArr[i11].z = f5Var.c() ? vyVar.e2 : null;
                 arrayList.add(eyVar);
             }
         }

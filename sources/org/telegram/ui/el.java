@@ -8,26 +8,26 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class el implements org.telegram.ui.Components.lj0 {
+public final class el implements org.telegram.ui.Components.mj0 {
     public final /* synthetic */ un a;
 
     public el(un unVar) {
         this.a = unVar;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public final /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public final /* synthetic */ boolean f() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public final /* synthetic */ boolean h() {
         return false;
     }
@@ -36,7 +36,7 @@ public final class el implements org.telegram.ui.Components.lj0 {
     
         if (r5 == null) goto L26;
      */
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -46,19 +46,19 @@ public final class el implements org.telegram.ui.Components.lj0 {
         HashSet hashSet;
         int i10;
         int i11;
-        org.telegram.messenger.jj jjVar;
+        org.telegram.messenger.kj kjVar;
         TLRPC.Message message;
         un unVar = this.a;
         SparseArray[] sparseArrayArr = unVar.m6;
-        if (unVar.wb == null) {
+        if (unVar.xb == null) {
             return;
         }
         if (unVar.a() == unVar.getUserConfig().e() && !unVar.getUserConfig().q()) {
             new kg.i1((org.telegram.ui.ActionBar.k2) unVar, 24, true).show();
-            unVar.H7(false);
+            unVar.L7(false);
             return;
         }
-        boolean contains = unVar.wb.getSelectedReactions().contains(o0Var);
+        boolean contains = unVar.xb.getSelectedReactions().contains(o0Var);
         HashSet hashSet2 = new HashSet();
         int i12 = 0;
         boolean z13 = false;
@@ -70,12 +70,12 @@ public final class el implements org.telegram.ui.Components.lj0 {
             int i14 = i13;
             int i15 = 0;
             while (i15 < sparseArrayArr[i12].size()) {
-                org.telegram.messenger.jj jjVar2 = (org.telegram.messenger.jj) sparseArrayArr[i12].valueAt(i15);
-                if (jjVar2.z2()) {
-                    org.telegram.messenger.ej k92 = unVar.k9(jjVar2);
-                    if (k92 != null && !hashSet2.contains(Long.valueOf(k92.a))) {
-                        hashSet2.add(Long.valueOf(k92.a));
-                        jjVar2 = k92.c();
+                org.telegram.messenger.kj kjVar2 = (org.telegram.messenger.kj) sparseArrayArr[i12].valueAt(i15);
+                if (kjVar2.z2()) {
+                    org.telegram.messenger.fj p9 = unVar.p9(kjVar2);
+                    if (p9 != null && !hashSet2.contains(Long.valueOf(p9.a))) {
+                        hashSet2.add(Long.valueOf(p9.a));
+                        kjVar2 = p9.c();
                     }
                     z12 = contains;
                     hashSet = hashSet2;
@@ -86,13 +86,13 @@ public final class el implements org.telegram.ui.Components.lj0 {
                     contains = z12;
                     i12 = i10;
                 }
-                if (jjVar2.v2(o0Var) == contains) {
+                if (kjVar2.v2(o0Var) == contains) {
                     hashSet = hashSet2;
-                    jjVar = jjVar2;
+                    kjVar = kjVar2;
                     z12 = contains;
                     i10 = i12;
                     i11 = i15;
-                    unVar.qb(unVar.A8(jjVar2.f1(), false), jjVar, null, null, 0.0f, 0.0f, o0Var, false, false, false, true);
+                    unVar.vb(unVar.E8(kjVar2.f1(), false), kjVar, null, null, 0.0f, 0.0f, o0Var, false, false, false, true);
                     if (!z12) {
                         i14++;
                     }
@@ -101,28 +101,28 @@ public final class el implements org.telegram.ui.Components.lj0 {
                     hashSet = hashSet2;
                     i10 = i12;
                     i11 = i15;
-                    jjVar = jjVar2;
+                    kjVar = kjVar2;
                 }
-                if (jjVar.k != null) {
+                if (kjVar.k != null) {
                     boolean z17 = unVar.C0.N;
                     if (z17) {
-                        org.telegram.messenger.jj jjVar3 = (org.telegram.messenger.jj) unVar.E6[0].get(jjVar.f1());
-                        if (jjVar3 != null && (message = jjVar3.k) != null) {
-                            message.reactions = jjVar.k.reactions;
+                        org.telegram.messenger.kj kjVar3 = (org.telegram.messenger.kj) unVar.E6[0].get(kjVar.f1());
+                        if (kjVar3 != null && (message = kjVar3.k) != null) {
+                            message.reactions = kjVar.k.reactions;
                         }
                     } else if (!z17 && unVar.E3 != null) {
                         z15 = true;
                     }
                 }
-                if (unVar.C0.N && !jjVar.v2(unVar.E3)) {
-                    org.telegram.messenger.ej k93 = unVar.k9(jjVar);
-                    if (k93 != null) {
-                        ArrayList arrayList = k93.d;
+                if (unVar.C0.N && !kjVar.v2(unVar.E3)) {
+                    org.telegram.messenger.fj p92 = unVar.p9(kjVar);
+                    if (p92 != null) {
+                        ArrayList arrayList = p92.d;
                         for (int i16 = 0; i16 < arrayList.size(); i16++) {
-                            unVar.getMediaDataController().M1(((org.telegram.messenger.jj) arrayList.get(i16)).f1());
+                            unVar.getMediaDataController().M1(((org.telegram.messenger.kj) arrayList.get(i16)).f1());
                         }
                     } else {
-                        unVar.getMediaDataController().M1(jjVar.f1());
+                        unVar.getMediaDataController().M1(kjVar.f1());
                     }
                     zf.b1 b1Var = unVar.a4;
                     if (b1Var != null) {
@@ -142,20 +142,20 @@ public final class el implements org.telegram.ui.Components.lj0 {
             i13 = i14;
         }
         if (z13) {
-            unVar.Ec(z14);
+            unVar.Jc(z14);
         }
-        unVar.H7(true);
+        unVar.L7(true);
         if (i13 > 0) {
             long j10 = o0Var.g;
             if (j10 == 0) {
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).r.get(o0Var.f);
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.vi.b0(org.telegram.messenger.e20.s0).r.get(o0Var.f);
                 if (tL_availableReaction == null) {
                     return;
                 } else {
                     e = tL_availableReaction.activate_animation;
                 }
             } else {
-                e = org.telegram.ui.Components.f5.e(org.telegram.messenger.d20.s0, j10);
+                e = org.telegram.ui.Components.f5.e(org.telegram.messenger.e20.s0, j10);
             }
             if (e == null) {
                 return;
@@ -164,11 +164,11 @@ public final class el implements org.telegram.ui.Components.lj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public final /* synthetic */ void t() {
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public final /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

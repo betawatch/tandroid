@@ -24,10 +24,10 @@ import android.util.SparseArray;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import java.util.Iterator;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import v7.r7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -537,7 +537,7 @@ public class MediaRouteButton extends View {
                                             break;
                                         }
                                         ActivityInfo activityInfo = it.next().activityInfo;
-                                        if (activityInfo != null && (applicationInfo2 = activityInfo.applicationInfo) != null && (applicationInfo2.flags & zs.N1) != 0) {
+                                        if (activityInfo != null && (applicationInfo2 = activityInfo.applicationInfo) != null && (applicationInfo2.flags & at.N1) != 0) {
                                             context.startActivity(putExtra);
                                             z10 = true;
                                             break;
@@ -565,7 +565,7 @@ public class MediaRouteButton extends View {
                     while (true) {
                         if (it2.hasNext()) {
                             ActivityInfo activityInfo2 = it2.next().activityInfo;
-                            if (activityInfo2 != null && (applicationInfo = activityInfo2.applicationInfo) != null && (applicationInfo.flags & zs.N1) != 0) {
+                            if (activityInfo2 != null && (applicationInfo = activityInfo2.applicationInfo) != null && (applicationInfo.flags & at.N1) != 0) {
                                 context.sendBroadcast(putExtra2);
                                 break;
                             }

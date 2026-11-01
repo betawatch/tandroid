@@ -5,23 +5,23 @@ import android.content.Context;
 import android.text.style.CharacterStyle;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class il extends UndoView {
     public final /* synthetic */ int j0 = 0;
     public final /* synthetic */ Object k0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public il(y20 y20Var, Context context) {
+    public il(x20 x20Var, Context context) {
         super(context);
-        this.k0 = y20Var;
+        this.k0 = x20Var;
     }
 
     @Override // org.telegram.ui.Components.UndoView
     public void b(CharacterStyle characterStyle) {
         switch (this.j0) {
             case 0:
-                ((un) this.k0).c8(characterStyle, false, null, null);
+                ((un) this.k0).g8(characterStyle, false, null, null);
                 break;
         }
     }
@@ -31,7 +31,7 @@ public final class il extends UndoView {
         switch (this.j0) {
             case 1:
                 super.invalidate();
-                ((y20) this.k0).invalidate();
+                ((x20) this.k0).invalidate();
                 break;
             default:
                 super.invalidate();

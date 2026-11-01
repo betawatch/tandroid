@@ -1,8 +1,8 @@
 package z7;
 
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g5 implements ja.d {
     public static final g5 a = new g5();
@@ -104,36 +104,36 @@ public final class g5 implements ja.d {
     public static final ja.c S0 = new ja.c("onDeviceDocumentCroppingLoadLogEvent", i0.a.o(sc.e.n(w.class, new s(99))));
     public static final ja.c T0 = new ja.c("onDeviceDocumentCroppingLogEvent", i0.a.o(sc.e.n(w.class, new s(100))));
     public static final ja.c U0 = new ja.c("aggregatedOnDeviceDocumentCroppingLogEvent", i0.a.o(sc.e.n(w.class, new s(101))));
-    public static final ja.c V0 = new ja.c("onDeviceDocumentEnhancementCreateLogEvent", i0.a.o(sc.e.n(w.class, new s(zs.n1))));
-    public static final ja.c W0 = new ja.c("onDeviceDocumentEnhancementLoadLogEvent", i0.a.o(sc.e.n(w.class, new s(zs.o1))));
-    public static final ja.c X0 = sc.e.f(zs.p1, ja.c.a("onDeviceDocumentEnhancementLogEvent"));
-    public static final ja.c Y0 = sc.e.f(zs.q1, ja.c.a("aggregatedOnDeviceDocumentEnhancementLogEvent"));
-    public static final ja.c Z0 = sc.e.f(zs.r1, ja.c.a("scannerAutoZoomEvent"));
-    public static final ja.c a1 = sc.e.f(zs.s1, ja.c.a("lowLightAutoExposureComputationEvent"));
-    public static final ja.c b1 = sc.e.f(zs.t1, ja.c.a("lowLightFrameProcessEvent"));
-    public static final ja.c c1 = sc.e.f(zs.u1, ja.c.a("lowLightSceneDetectionEvent"));
-    public static final ja.c d1 = sc.e.f(zs.v1, ja.c.a("onDeviceStainRemovalLogEvent"));
-    public static final ja.c e1 = sc.e.f(zs.w1, ja.c.a("aggregatedOnDeviceStainRemovalLogEvent"));
-    public static final ja.c f1 = sc.e.f(zs.x1, ja.c.a("stainRemovalOptionalModuleLogEvent"));
-    public static final ja.c g1 = sc.e.f(zs.y1, ja.c.a("onDeviceShadowRemovalLogEvent"));
-    public static final ja.c h1 = sc.e.f(zs.z1, ja.c.a("aggregatedOnDeviceShadowRemovalLogEvent"));
-    public static final ja.c i1 = sc.e.f(zs.A1, ja.c.a("shadowRemovalOptionalModuleLogEvent"));
-    public static final ja.c j1 = sc.e.f(zs.B1, ja.c.a("onDeviceDigitalInkSegmentationLogEvent"));
-    public static final ja.c k1 = sc.e.f(zs.C1, ja.c.a("onDeviceDocumentScannerStartLogEvent"));
-    public static final ja.c l1 = sc.e.f(zs.D1, ja.c.a("onDeviceDocumentScannerFinishLogEvent"));
-    public static final ja.c m1 = sc.e.f(zs.E1, ja.c.a("onDeviceDocumentScannerUiStartLogEvent"));
+    public static final ja.c V0 = new ja.c("onDeviceDocumentEnhancementCreateLogEvent", i0.a.o(sc.e.n(w.class, new s(at.n1))));
+    public static final ja.c W0 = new ja.c("onDeviceDocumentEnhancementLoadLogEvent", i0.a.o(sc.e.n(w.class, new s(at.o1))));
+    public static final ja.c X0 = sc.e.f(at.p1, ja.c.a("onDeviceDocumentEnhancementLogEvent"));
+    public static final ja.c Y0 = sc.e.f(at.q1, ja.c.a("aggregatedOnDeviceDocumentEnhancementLogEvent"));
+    public static final ja.c Z0 = sc.e.f(at.r1, ja.c.a("scannerAutoZoomEvent"));
+    public static final ja.c a1 = sc.e.f(at.s1, ja.c.a("lowLightAutoExposureComputationEvent"));
+    public static final ja.c b1 = sc.e.f(at.t1, ja.c.a("lowLightFrameProcessEvent"));
+    public static final ja.c c1 = sc.e.f(at.u1, ja.c.a("lowLightSceneDetectionEvent"));
+    public static final ja.c d1 = sc.e.f(at.v1, ja.c.a("onDeviceStainRemovalLogEvent"));
+    public static final ja.c e1 = sc.e.f(at.w1, ja.c.a("aggregatedOnDeviceStainRemovalLogEvent"));
+    public static final ja.c f1 = sc.e.f(at.x1, ja.c.a("stainRemovalOptionalModuleLogEvent"));
+    public static final ja.c g1 = sc.e.f(at.y1, ja.c.a("onDeviceShadowRemovalLogEvent"));
+    public static final ja.c h1 = sc.e.f(at.z1, ja.c.a("aggregatedOnDeviceShadowRemovalLogEvent"));
+    public static final ja.c i1 = sc.e.f(at.A1, ja.c.a("shadowRemovalOptionalModuleLogEvent"));
+    public static final ja.c j1 = sc.e.f(at.B1, ja.c.a("onDeviceDigitalInkSegmentationLogEvent"));
+    public static final ja.c k1 = sc.e.f(at.C1, ja.c.a("onDeviceDocumentScannerStartLogEvent"));
+    public static final ja.c l1 = sc.e.f(at.D1, ja.c.a("onDeviceDocumentScannerFinishLogEvent"));
+    public static final ja.c m1 = sc.e.f(at.E1, ja.c.a("onDeviceDocumentScannerUiStartLogEvent"));
     public static final ja.c n1 = sc.e.f(120, ja.c.a("onDeviceDocumentScannerUiFinishLogEvent"));
-    public static final ja.c o1 = sc.e.f(zs.F1, ja.c.a("documentScannerUiOptionalModuleSessionStartLogEvent"));
-    public static final ja.c p1 = sc.e.f(zs.G1, ja.c.a("documentScannerUiOptionalModuleSessionFinishLogEvent"));
-    public static final ja.c q1 = sc.e.f(zs.H1, ja.c.a("onDeviceDocumentScannerUiCreateLogEvent"));
-    public static final ja.c r1 = sc.e.f(zs.I1, ja.c.a("onDeviceSubjectSegmentationCreateLogEvent"));
-    public static final ja.c s1 = sc.e.f(zs.J1, ja.c.a("onDeviceSubjectSegmentationLoadLogEvent"));
-    public static final ja.c t1 = sc.e.f(zs.K1, ja.c.a("onDeviceSubjectSegmentationInferenceLogEvent"));
-    public static final ja.c u1 = sc.e.f(zs.L1, ja.c.a("aggregatedOnDeviceSubjectSegmentationLogEvent"));
+    public static final ja.c o1 = sc.e.f(at.F1, ja.c.a("documentScannerUiOptionalModuleSessionStartLogEvent"));
+    public static final ja.c p1 = sc.e.f(at.G1, ja.c.a("documentScannerUiOptionalModuleSessionFinishLogEvent"));
+    public static final ja.c q1 = sc.e.f(at.H1, ja.c.a("onDeviceDocumentScannerUiCreateLogEvent"));
+    public static final ja.c r1 = sc.e.f(at.I1, ja.c.a("onDeviceSubjectSegmentationCreateLogEvent"));
+    public static final ja.c s1 = sc.e.f(at.J1, ja.c.a("onDeviceSubjectSegmentationLoadLogEvent"));
+    public static final ja.c t1 = sc.e.f(at.K1, ja.c.a("onDeviceSubjectSegmentationInferenceLogEvent"));
+    public static final ja.c u1 = sc.e.f(at.L1, ja.c.a("aggregatedOnDeviceSubjectSegmentationLogEvent"));
     public static final ja.c v1 = sc.e.f(128, ja.c.a("subjectSegmentationOptionalModuleLogEvent"));
-    public static final ja.c w1 = sc.e.f(zs.N1, ja.c.a("documentScannerUiModuleScreenViewEvent"));
-    public static final ja.c x1 = sc.e.f(zs.O1, ja.c.a("documentScannerUiModuleScreenClickEvent"));
-    public static final ja.c y1 = sc.e.f(zs.P1, ja.c.a("documentScannerUiModuleScreenErrorEvent"));
+    public static final ja.c w1 = sc.e.f(at.N1, ja.c.a("documentScannerUiModuleScreenViewEvent"));
+    public static final ja.c x1 = sc.e.f(at.O1, ja.c.a("documentScannerUiModuleScreenClickEvent"));
+    public static final ja.c y1 = sc.e.f(at.P1, ja.c.a("documentScannerUiModuleScreenErrorEvent"));
 
     @Override // ja.a
     public final void a(Object obj, Object obj2) {

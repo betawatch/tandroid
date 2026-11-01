@@ -9,12 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.tz;
-import org.telegram.ui.Components.tk0;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.uz;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class h7 {
     public static fg.l a;
@@ -48,16 +48,16 @@ public abstract class h7 {
             TextView textView = new TextView(launchActivity);
             lVar2.y = textView;
             textView.setTextSize(1, 20.0f);
-            textView.setText(cd.L0(2131751647, null));
+            textView.setText(dd.L0(2131751647, null));
             textView.setTypeface(org.telegram.messenger.i0.o());
             textView.setPadding(org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(19.0f), org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(19.0f));
             linearLayout.addView(textView, w7.b6.o(-1, -2));
-            tk0 tk0Var = new tk0(launchActivity, null);
-            lVar2.D = tk0Var;
-            tk0Var.setLayoutManager(new s4.a0());
-            tk0Var.setAdapter(new fg.j(lVar2, launchActivity));
-            tk0Var.setOnItemClickListener(new ag.y0(lVar2, 3));
-            linearLayout.addView(tk0Var, w7.b6.l(1.0f, -1, 0));
+            uk0 uk0Var = new uk0(launchActivity, null);
+            lVar2.D = uk0Var;
+            uk0Var.setLayoutManager(new s4.a0());
+            uk0Var.setAdapter(new fg.j(lVar2, launchActivity));
+            uk0Var.setOnItemClickListener(new ag.y0(lVar2, 3));
+            linearLayout.addView(uk0Var, w7.b6.l(1.0f, -1, 0));
             lVar2.addView(linearLayout, w7.b6.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             lVar2.d();
             lVar2.setFitsSystemWindows(true);
@@ -76,8 +76,8 @@ public abstract class h7 {
             a = null;
         }
         if (z11) {
-            tz.x1 = z10;
-            tz.y();
+            uz.x1 = z10;
+            uz.y();
         }
     }
 }

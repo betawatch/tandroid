@@ -17,19 +17,19 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.at;
 import org.telegram.messenger.b8;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.hc;
 import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0, org.telegram.messenger.z5 {
     public final RadialProgress2 D;
@@ -48,7 +48,7 @@ public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
     public StaticLayout Q;
     public StaticLayout R;
     public y3 S;
-    public jj T;
+    public kj T;
     public TLRPC.Document U;
     public int V;
     public boolean W;
@@ -95,12 +95,12 @@ public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
     }
 
     @Override // org.telegram.messenger.z5
-    public final void C(boolean z10) {
+    public final void D(boolean z10) {
         m(true);
     }
 
     @Override // org.telegram.messenger.z5
-    public final void M(String str) {
+    public final void N(String str) {
         this.D.p(true, 1.0f);
         m(true);
     }
@@ -176,7 +176,7 @@ public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
         File file = TextUtils.isEmpty(str2) ? null : new File(str2);
         String lowerCase = (document == null || (str = document.mime_type) == null) ? "" : str.toLowerCase();
         boolean z10 = k() && file != null && file.exists() && (lowerCase.startsWith("image/") || lowerCase.equals("video/mp4"));
-        boolean W2 = jj.W2(document);
+        boolean W2 = kj.W2(document);
         this.L = z10 || W2;
         int L = org.telegram.messenger.i0.L(16.0f) + (this.M ? 0 : this.c);
         this.K = L;
@@ -191,23 +191,23 @@ public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
         ImageReceiver imageReceiver = this.E;
         if (z10) {
             imageReceiver.y0(this.K, org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(86.0f), org.telegram.messenger.i0.L(86.0f));
-            imageReceiver.q0(ic.g(str2), "86_86", null, null, document, 1);
+            imageReceiver.q0(jc.g(str2), "86_86", null, null, document, 1);
             return;
         }
         if (!W2) {
             imageReceiver.f();
             return;
         }
-        TLRPC.PhotoSize w9 = b8.w(document.thumbs, zs.r5, false, null, true);
+        TLRPC.PhotoSize w9 = b8.w(document.thumbs, at.r5, false, null, true);
         y3 y3Var = this.S;
-        jj jjVar = y3Var == null ? null : y3Var.a.p3;
+        kj kjVar = y3Var == null ? null : y3Var.a.p3;
         imageReceiver.y0(this.K, org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(86.0f), org.telegram.messenger.i0.L(86.0f));
-        ic c10 = w9 != null ? ic.c(w9, document) : null;
-        BitmapDrawable m10 = hc.m(document.thumbs);
-        if (jjVar == null) {
-            jjVar = this.T;
+        jc c10 = w9 != null ? jc.c(w9, document) : null;
+        BitmapDrawable m10 = ic.m(document.thumbs);
+        if (kjVar == null) {
+            kjVar = this.T;
         }
-        imageReceiver.q0(c10, "86_86", m10, null, jjVar, 1);
+        imageReceiver.q0(c10, "86_86", m10, null, kjVar, 1);
     }
 
     @Override // bi.o0
@@ -353,7 +353,7 @@ public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
                 radialProgress2.setIcon(2, false, z10);
             } else {
                 this.P = 2;
-                Float w9 = hc.D().w(r10);
+                Float w9 = ic.D().w(r10);
                 radialProgress2.p(z10, w9 != null ? w9.floatValue() : 0.0f);
                 radialProgress2.setIcon(3, true, z10);
             }
@@ -452,7 +452,7 @@ public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         Object[] objArr;
-        jj jjVar;
+        kj kjVar;
         if (motionEvent.getX() >= this.K && motionEvent.getX() <= getWidth() - org.telegram.messenger.i0.L(12.0f) && motionEvent.getY() >= org.telegram.messenger.i0.L(10.0f)) {
             if (motionEvent.getY() <= org.telegram.messenger.i0.L(this.L ? 96.0f : 54.0f)) {
                 objArr = true;
@@ -508,21 +508,21 @@ public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
                                         activity = (Activity) context;
                                     }
                                 }
-                                if (activity != null && (jjVar = this.T) != null) {
-                                    org.telegram.messenger.i0.u2(jjVar, activity, this.r, false);
+                                if (activity != null && (kjVar = this.T) != null) {
+                                    org.telegram.messenger.i0.u2(kjVar, activity, this.r, false);
                                 }
                             } else {
                                 RadialProgress2 radialProgress2 = this.D;
                                 int i11 = this.n;
                                 if (i10 == 1 && j() != null) {
                                     y3 y3Var2 = this.S;
-                                    jj jjVar2 = y3Var2 != null ? y3Var2.a.p3 : null;
+                                    kj kjVar2 = y3Var2 != null ? y3Var2.a.p3 : null;
                                     b8 G = b8.G(i11);
                                     TLRPC.Document j10 = j();
-                                    if (jjVar2 == null) {
-                                        jjVar2 = this.T;
+                                    if (kjVar2 == null) {
+                                        kjVar2 = this.T;
                                     }
-                                    G.X(j10, jjVar2, 1, 1);
+                                    G.X(j10, kjVar2, 1, 1);
                                     this.P = 2;
                                     radialProgress2.setIcon(3, true, true);
                                 } else if (this.P == 2 && j() != null) {
@@ -561,6 +561,6 @@ public final class e1 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
     }
 
     @Override // org.telegram.messenger.z5
-    public final void n(long j10, long j11) {
+    public final void o(long j10, long j11) {
     }
 }

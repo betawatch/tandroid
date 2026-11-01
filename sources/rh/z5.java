@@ -4,14 +4,14 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.qb;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.nc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class z5 {
     public final org.telegram.ui.ActionBar.k2 a;
@@ -89,7 +89,7 @@ public final class z5 {
         final int i12 = 1;
         ub ubVar = new ub(t10, k2Var.getResourceProvider(), true, false);
         this.e = ubVar;
-        ubVar.e(cd.L0(2131745041, null));
+        ubVar.e(dd.L0(2131745041, null));
         ubVar.b = new Runnable(this) { // from class: rh.y5
             public final /* synthetic */ z5 b;
 

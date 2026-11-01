@@ -10,11 +10,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.cq;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.hq0;
-import org.telegram.ui.tc1;
-import org.telegram.ui.y20;
+import org.telegram.ui.fq0;
+import org.telegram.ui.rc1;
+import org.telegram.ui.x20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g0 extends ImageView {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final class g0 extends ImageView {
         switch (this.a) {
             case 2:
                 super.invalidate();
-                y20 y20Var = (y20) this.b;
-                y20Var.f0.invalidate();
-                y20Var.invalidate();
+                x20 x20Var = (x20) this.b;
+                x20Var.f0.invalidate();
+                x20Var.invalidate();
                 break;
             default:
                 super.invalidate();
@@ -88,7 +88,7 @@ public final class g0 extends ImageView {
             case 4:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((tc1) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((rc1) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -137,9 +137,9 @@ public final class g0 extends ImageView {
                         ((vh.p2) obj).setTranslationY(f7);
                     }
                 }
-                hq0 hq0Var = photoViewer.g1;
-                if (hq0Var != null) {
-                    hq0Var.setTranslationY(f7);
+                fq0 fq0Var = photoViewer.g1;
+                if (fq0Var != null) {
+                    fq0Var.setTranslationY(f7);
                 }
                 r80 r80Var = photoViewer.f1;
                 if (r80Var != null) {

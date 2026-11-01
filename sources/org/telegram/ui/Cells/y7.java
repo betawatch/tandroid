@@ -3,9 +3,9 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.r61;
+import org.telegram.ui.p61;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y7 extends org.telegram.ui.Components.g9 {
     public final /* synthetic */ org.telegram.ui.ActionBar.p6 G;
@@ -21,8 +21,8 @@ public final class y7 extends org.telegram.ui.Components.g9 {
     @Override // org.telegram.ui.Components.g9, android.view.View
     public final void onDraw(Canvas canvas) {
         a8 a8Var = this.H;
-        r61 r61Var = a8Var.w;
-        if (r61Var == null || !(r61Var.a instanceof TL_stats.TL_postInteractionCountersStory)) {
+        p61 p61Var = a8Var.w;
+        if (p61Var == null || !(p61Var.a instanceof TL_stats.TL_postInteractionCountersStory)) {
             super.onDraw(canvas);
             return;
         }

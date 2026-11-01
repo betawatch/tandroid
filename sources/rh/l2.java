@@ -6,12 +6,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.w71;
-import org.telegram.ui.yv0;
+import org.telegram.ui.Components.x71;
+import org.telegram.ui.xv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class l2 extends w71 {
+public final class l2 extends x71 {
     public final /* synthetic */ e4 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -20,7 +20,7 @@ public final class l2 extends w71 {
         this.V = e4Var;
     }
 
-    @Override // org.telegram.ui.Components.w71
+    @Override // org.telegram.ui.Components.x71
     public final void F(View view, float f7) {
         View view2;
         ph.w0 w0Var;
@@ -72,13 +72,13 @@ public final class l2 extends w71 {
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.w71
+    @Override // org.telegram.ui.Components.x71
     public final void G() {
         super.G();
         int i10 = this.b;
         e4 e4Var = this.V;
         if (i10 != e4Var.I1(false)) {
-            org.telegram.messenger.i0.g3(new yv0(7, this, this.b > e4Var.I1(false)));
+            org.telegram.messenger.i0.g3(new xv0(7, this, this.b > e4Var.I1(false)));
         }
     }
 
@@ -91,12 +91,12 @@ public final class l2 extends w71 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.w71
+    @Override // org.telegram.ui.Components.x71
     public final float getAvailableTranslationX() {
         return Math.max(1, getMeasuredWidth() - (this.V.t0 * 2));
     }
 
-    @Override // org.telegram.ui.Components.w71
+    @Override // org.telegram.ui.Components.x71
     public final boolean i(MotionEvent motionEvent) {
         f4.d dVar = this.V.T2;
         return dVar == null || dVar.c(0);

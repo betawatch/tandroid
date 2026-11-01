@@ -4,37 +4,37 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class wr {
     public int a;
     public int b;
-    public qz0 c;
+    public rz0 c;
     public int d;
     public boolean e;
     public int f;
     public int g;
 
-    public static wr b(org.telegram.ui.Cells.v2 v2Var, org.telegram.messenger.ap apVar) {
+    public static wr b(org.telegram.ui.Cells.v2 v2Var, org.telegram.messenger.bp bpVar) {
         wr wrVar = new wr();
-        wrVar.a = apVar.a;
-        wrVar.b = apVar.m;
-        String str = apVar.b;
+        wrVar.a = bpVar.a;
+        wrVar.b = bpVar.m;
+        String str = bpVar.b;
         if (str == null) {
             str = "";
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
-        qz0 qz0Var = new qz0(spannableStringBuilder, 10.0f, org.telegram.messenger.i0.o());
-        qz0Var.r(v2Var);
-        wrVar.c = qz0Var;
-        wrVar.c.q(org.telegram.messenger.jj.A5(org.telegram.messenger.k6.m(spannableStringBuilder, qz0Var.a.getFontMetricsInt(), false, null, 0), apVar.c, wrVar.c.a.getFontMetricsInt(), false));
+        rz0 rz0Var = new rz0(spannableStringBuilder, 10.0f, org.telegram.messenger.i0.o());
+        rz0Var.r(v2Var);
+        wrVar.c = rz0Var;
+        wrVar.c.q(org.telegram.messenger.kj.A5(org.telegram.messenger.k6.m(spannableStringBuilder, rz0Var.a.getFontMetricsInt(), false, null, 0), bpVar.c, wrVar.c.a.getFontMetricsInt(), false));
         wrVar.c.o(26);
         int L = org.telegram.messenger.i0.L(9.32f);
-        qz0 qz0Var2 = wrVar.c;
-        wrVar.g = L + ((int) qz0Var2.c);
-        qz0Var2.i();
+        rz0 rz0Var2 = wrVar.c;
+        wrVar.g = L + ((int) rz0Var2.c);
+        rz0Var2.i();
         int[] iArr = org.telegram.ui.ActionBar.t6.r8;
-        int i10 = iArr[apVar.m % iArr.length];
+        int i10 = iArr[bpVar.m % iArr.length];
         wrVar.f = i10;
         wrVar.e = true;
         wrVar.d = org.telegram.ui.ActionBar.t6.x0(null, i10, false);

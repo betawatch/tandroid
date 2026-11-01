@@ -23,7 +23,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class hg0 extends View {
     public final HashSet D;
@@ -265,7 +265,7 @@ public final class hg0 extends View {
             case 3:
                 i11 = new eg0(this, fg0.n);
                 i11.t = true;
-                i11.x = org.telegram.messenger.zs.e3;
+                i11.x = org.telegram.messenger.at.e3;
                 break;
             case 4:
                 i11 = new eg0(this, fg0.r);
@@ -284,7 +284,7 @@ public final class hg0 extends View {
             case 7:
                 i11 = new eg0(this, fg0.x);
                 i11.t = true;
-                i11.v = org.telegram.messenger.zs.X4;
+                i11.v = org.telegram.messenger.at.X4;
                 break;
             case 8:
                 i11 = new eg0(this, fg0.y);
@@ -295,7 +295,7 @@ public final class hg0 extends View {
                 i11 = new eg0(this, fg0.D);
                 i11.t = true;
                 i11.u = R.raw.profile_leave;
-                i11.x = org.telegram.messenger.zs.X4;
+                i11.x = org.telegram.messenger.at.X4;
                 break;
             case 10:
                 i11 = new eg0(this, fg0.E);
@@ -315,7 +315,7 @@ public final class hg0 extends View {
             case 13:
                 i11 = new eg0(this, fg0.H);
                 i11.t = true;
-                i11.x = org.telegram.messenger.zs.X4;
+                i11.x = org.telegram.messenger.at.X4;
                 break;
         }
         if (i11 != null) {
@@ -597,7 +597,7 @@ public final class hg0 extends View {
                     int i14 = this.r;
                     ArrayList arrayList2 = this.n;
                     if (i14 == arrayList2.size()) {
-                        vg.f c10 = this.h.c(this, kg0.o, false);
+                        vg.f c10 = this.h.c(this, lg0.o, false);
                         c10.q(roundRadius);
                         arrayList2.add(c10);
                     }
@@ -671,9 +671,9 @@ public final class hg0 extends View {
                         eg0Var10.m = eg0Var10.l.b.getLineCount() >= 3 ? 0.75f : eg0Var10.l.b.getLineCount() >= 2 ? 0.85f : 1.0f;
                         float max2 = Math.max(0.0f, org.telegram.messenger.i0.N(1.33f) + c3.i0.g(eg0Var10.l.i(), eg0Var10.m, f27, 3.0f));
                         rect.set((int) (centerX3 - f31), (int) max2, (int) (centerX3 + f31), (int) (max2 + L));
-                        bi0 bi0Var = eg0Var10.k;
-                        if (bi0Var != null) {
-                            bi0Var.setBounds(rect);
+                        ci0 ci0Var = eg0Var10.k;
+                        if (ci0Var != null) {
+                            ci0Var.setBounds(rect);
                         }
                         Drawable drawable = eg0Var10.i;
                         if (drawable != null) {
@@ -689,9 +689,9 @@ public final class hg0 extends View {
                         f10 = f27;
                         float f33 = f24;
                         canvas.scale(f32, f32, centerX2, a1.g.A(eg0Var10.l.i(), eg0Var10.m, f33, i17));
-                        qz0 qz0Var = eg0Var10.l;
+                        rz0 rz0Var = eg0Var10.l;
                         f11 = l4;
-                        qz0Var.c(centerX2 - (qz0Var.k() / f33), i17, b11, f30, canvas);
+                        rz0Var.c(centerX2 - (rz0Var.k() / f33), i17, b11, f30, canvas);
                         canvas.restore();
                         float f34 = eg0Var10.q;
                         if (f34 != 1.0f) {
@@ -699,15 +699,15 @@ public final class hg0 extends View {
                         }
                         float f35 = (1.0f - a2) * b11;
                         float f36 = a2 * b11;
-                        bi0 bi0Var2 = eg0Var10.k;
-                        if (bi0Var2 == null) {
+                        ci0 ci0Var2 = eg0Var10.k;
+                        if (ci0Var2 == null) {
                             h(canvas, eg0Var10.j, f35);
                             h(canvas, eg0Var10.i, f36);
                         } else if (eg0Var10.a == 1) {
                             h(canvas, eg0Var10.j, f35);
                             h(canvas, eg0Var10.k, f36);
                         } else {
-                            h(canvas, bi0Var2, b11);
+                            h(canvas, ci0Var2, b11);
                         }
                         canvas.restore();
                         if (eg0Var10.x > 0) {
@@ -831,7 +831,7 @@ public final class hg0 extends View {
                         if (i12 == 0) {
                             int i13 = eg0Var5.a;
                             RectF rectF = eg0Var5.d;
-                            ProfileActivity.l0(((org.telegram.ui.bv0) gg0Var).b, i13, rectF.left, rectF.top);
+                            ProfileActivity.m0(((org.telegram.ui.av0) gg0Var).b, i13, rectF.left, rectF.top);
                         } else {
                             postDelayed(new at(28, this, eg0Var5), i12);
                         }
@@ -851,12 +851,12 @@ public final class hg0 extends View {
         if (!z10) {
             fg0 fg0Var = this.G ? fg0.e : fg0.f;
             eg0Var.d(0, fg0Var.b, fg0Var.c);
-            eg0Var.c(org.telegram.messenger.cd.L0(fg0Var.a, null));
+            eg0Var.c(org.telegram.messenger.dd.L0(fg0Var.a, null));
         } else if (this.G) {
-            eg0Var.c(org.telegram.messenger.cd.L0(2131746702, null));
+            eg0Var.c(org.telegram.messenger.dd.L0(2131746702, null));
             eg0Var.d(R.raw.profile_unmuting, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24);
         } else {
-            eg0Var.c(org.telegram.messenger.cd.L0(2131746701, null));
+            eg0Var.c(org.telegram.messenger.dd.L0(2131746701, null));
             eg0Var.d(R.raw.profile_muting, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24);
         }
     }

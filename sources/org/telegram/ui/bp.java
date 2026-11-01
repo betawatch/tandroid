@@ -10,9 +10,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class bp extends org.telegram.ui.Components.tk0 {
+public final class bp extends org.telegram.ui.Components.uk0 {
     public static final /* synthetic */ int i3 = 0;
     public final ap e3;
     public boolean f3;
@@ -33,7 +33,7 @@ public final class bp extends org.telegram.ui.Components.tk0 {
         new s4.x(new ja(this, 1)).h(this);
     }
 
-    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int R;
@@ -59,7 +59,7 @@ public final class bp extends org.telegram.ui.Components.tk0 {
         super.dispatchDraw(canvas2);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
     }

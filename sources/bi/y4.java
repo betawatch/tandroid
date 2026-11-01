@@ -12,17 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.b30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.c30;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.k9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class y4 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0 {
     public static final /* synthetic */ int M = 0;
@@ -155,10 +155,10 @@ public final class y4 extends c0 implements org.telegram.ui.ActionBar.k6, j9, o0
             return;
         }
         this.I = str;
-        int i13 = vp.r1(this.n).m3;
+        int i13 = wp.r1(this.n).m3;
         this.H = i13;
         if (i13 == 2) {
-            imageReceiver.q0(ic.p(b30.b(map.geo, i11, i12, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.i0.p)))), null, null, null, null, 0);
+            imageReceiver.q0(jc.p(c30.b(map.geo, i11, i12, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.i0.p)))), null, null, null, null, 0);
             return;
         }
         TLRPC.GeoPoint geoPoint = map.geo;

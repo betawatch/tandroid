@@ -8,10 +8,10 @@ import org.telegram.ui.Components.mv;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Wallet.d4;
 import org.telegram.ui.Wallet.g6;
-import org.telegram.ui.ud1;
+import org.telegram.ui.sd1;
 import vh.o8;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -59,14 +59,14 @@ public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateList
                 mvVar.b.invalidate();
                 break;
             case 3:
-                ud1 ud1Var = (ud1) obj;
-                ud1Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sd1 sd1Var = (sd1) obj;
+                sd1Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float L = f10 + i0.L(28.0f);
                 float L2 = f7 + i0.L(52.0f);
-                float f11 = ud1Var.D;
-                ud1Var.G = L - (L * f11);
-                ud1Var.H = L2 - (f11 * L2);
-                ud1Var.invalidate();
+                float f11 = sd1Var.D;
+                sd1Var.G = L - (L * f11);
+                sd1Var.H = L2 - (f11 * L2);
+                sd1Var.invalidate();
                 break;
             case 4:
                 PhotoViewer photoViewer = (PhotoViewer) obj;

@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class vc extends org.telegram.ui.Components.sk0 {
+public final class vc extends org.telegram.ui.Components.tk0 {
     public final /* synthetic */ int c;
     public final /* synthetic */ org.telegram.ui.ActionBar.p6 d;
     public final /* synthetic */ xc e;
@@ -27,7 +27,7 @@ public final class vc extends org.telegram.ui.Components.sk0 {
         this.d = p6Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -49,7 +49,7 @@ public final class vc extends org.telegram.ui.Components.sk0 {
         int h;
         int intValue;
         String[] split;
-        org.telegram.ui.Components.e11 e11Var = (org.telegram.ui.Components.e11) c1Var.a;
+        org.telegram.ui.Components.f11 f11Var = (org.telegram.ui.Components.f11) c1Var.a;
         xc xcVar = this.e;
         ArrayList arrayList = xcVar.c;
         org.telegram.ui.ActionBar.s6 i11 = ((org.telegram.ui.Components.cp) arrayList.get(i10)).a.i(((org.telegram.ui.Components.cp) arrayList.get(i10)).c);
@@ -212,11 +212,11 @@ public final class vc extends org.telegram.ui.Components.sk0 {
                     z10 = true;
                     i11.T = true;
                     org.telegram.ui.Components.cp cpVar = (org.telegram.ui.Components.cp) arrayList.get(i10);
-                    e11Var.setEnabled(z10);
-                    org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.i5, e11Var, null);
-                    e11Var.f(cpVar, 0L, false);
-                    e11Var.g(cpVar.d, false);
-                    e11Var.setFallbackWallpaper(cpVar.a.b ? null : xcVar.w);
+                    f11Var.setEnabled(z10);
+                    org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.i5, f11Var, null);
+                    f11Var.f(cpVar, 0L, false);
+                    f11Var.g(cpVar.d, false);
+                    f11Var.setFallbackWallpaper(cpVar.a.b ? null : xcVar.w);
                 }
                 if (!hashMap.containsKey(i11)) {
                     hashMap.put(i11, i11.e);
@@ -230,16 +230,16 @@ public final class vc extends org.telegram.ui.Components.sk0 {
         }
         z10 = true;
         org.telegram.ui.Components.cp cpVar2 = (org.telegram.ui.Components.cp) arrayList.get(i10);
-        e11Var.setEnabled(z10);
-        org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.i5, e11Var, null);
-        e11Var.f(cpVar2, 0L, false);
-        e11Var.g(cpVar2.d, false);
-        e11Var.setFallbackWallpaper(cpVar2.a.b ? null : xcVar.w);
+        f11Var.setEnabled(z10);
+        org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.i5, f11Var, null);
+        f11Var.f(cpVar2, 0L, false);
+        f11Var.g(cpVar2.d, false);
+        f11Var.setFallbackWallpaper(cpVar2.a.b ? null : xcVar.w);
     }
 
     @Override // s4.g0
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.ck0(new uc(this.c, 3, viewGroup.getContext(), this.d));
+        return new org.telegram.ui.Components.dk0(new uc(this.c, 3, viewGroup.getContext(), this.d));
     }
 
     @Override // s4.g0
@@ -252,8 +252,8 @@ public final class vc extends org.telegram.ui.Components.sk0 {
             return;
         }
         org.telegram.ui.Components.cp cpVar = (org.telegram.ui.Components.cp) arrayList.get(b10);
-        org.telegram.ui.Components.e11 e11Var = (org.telegram.ui.Components.e11) view;
-        e11Var.g(cpVar.d, false);
-        e11Var.setFallbackWallpaper(cpVar.a.b ? null : xcVar.w);
+        org.telegram.ui.Components.f11 f11Var = (org.telegram.ui.Components.f11) view;
+        f11Var.g(cpVar.d, false);
+        f11Var.setFallbackWallpaper(cpVar.a.b ? null : xcVar.w);
     }
 }

@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ca extends uu0 {
+public final class ca extends vu0 {
     public final /* synthetic */ boolean f0;
     public final /* synthetic */ boolean g0;
     public final /* synthetic */ ha h0;
@@ -22,7 +22,7 @@ public final class ca extends uu0 {
         this.g0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         ha haVar = this.h0;
         haVar.W0(canvas, this);
@@ -53,7 +53,7 @@ public final class ca extends uu0 {
     /* JADX WARN: Removed duplicated region for block: B:31:0x0091  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00bd  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00ad  */
-    @Override // org.telegram.ui.Components.uu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -88,7 +88,7 @@ public final class ca extends uu0 {
                 if (i21 == -1) {
                     i21 = 51;
                 }
-                int i22 = i21 & org.telegram.messenger.zs.x1;
+                int i22 = i21 & org.telegram.messenger.at.x1;
                 int i23 = i21 & 7;
                 if (i23 == 1) {
                     i14 = (((i12 - i10) - measuredWidth) / 2) + layoutParams.leftMargin;

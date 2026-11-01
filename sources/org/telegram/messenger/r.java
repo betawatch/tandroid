@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.Window;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -38,13 +38,13 @@ public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateList
                     return;
                 }
             case 1:
-                ((u61) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).X != 1 ? 1.0f : 0.2f));
+                ((v61) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).X != 1 ? 1.0f : 0.2f));
                 break;
             default:
-                qv qvVar = (qv) this.b;
+                rv rvVar = (rv) this.b;
                 View view = (View) this.c;
-                qvVar.getClass();
-                qvVar.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rvVar.getClass();
+                rvVar.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (view != null) {
                     view.invalidate();
                     break;

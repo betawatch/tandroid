@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yj extends s4.s {
     public boolean S;
@@ -22,23 +22,23 @@ public final class yj extends s4.s {
     @Override // s4.s
     public final boolean B1(int i10) {
         int i11;
-        org.telegram.messenger.jj jjVar;
-        org.telegram.messenger.ej k92;
+        org.telegram.messenger.kj kjVar;
+        org.telegram.messenger.fj p9;
         byte b10;
         un unVar = this.T;
         fm fmVar = unVar.C0;
         int i12 = fmVar.J;
-        if (i10 >= i12 && i10 < fmVar.K && (i11 = i10 - i12) >= 0 && i11 < fmVar.L().size() && (k92 = unVar.k9((jjVar = (org.telegram.messenger.jj) unVar.C0.L().get(i11)))) != null) {
-            ArrayList arrayList = k92.e;
-            org.telegram.messenger.bj d = k92.d(jjVar);
+        if (i10 >= i12 && i10 < fmVar.K && (i11 = i10 - i12) >= 0 && i11 < fmVar.L().size() && (p9 = unVar.p9((kjVar = (org.telegram.messenger.kj) unVar.C0.L().get(i11)))) != null) {
+            ArrayList arrayList = p9.e;
+            org.telegram.messenger.cj d = p9.d(kjVar);
             if (d.a != d.b && (b10 = d.c) == d.d && b10 != 0) {
                 int size = arrayList.size();
                 for (int i13 = 0; i13 < size; i13++) {
-                    org.telegram.messenger.bj bjVar = (org.telegram.messenger.bj) arrayList.get(i13);
-                    if (bjVar != d) {
-                        byte b11 = bjVar.c;
+                    org.telegram.messenger.cj cjVar = (org.telegram.messenger.cj) arrayList.get(i13);
+                    if (cjVar != d) {
+                        byte b11 = cjVar.c;
                         byte b12 = d.c;
-                        if (b11 <= b12 && bjVar.d >= b12) {
+                        if (b11 <= b12 && cjVar.d >= b12) {
                             return true;
                         }
                     }
@@ -172,15 +172,15 @@ public final class yj extends s4.s {
         if (!z10) {
             i11 = super.o0(i10, eVar, z0Var);
         }
-        if (!unVar.Sc.f) {
+        if (!unVar.Tc.f) {
             SparseArray[] sparseArrayArr = unVar.m6;
-            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((org.telegram.messenger.w3.T(unVar.e) && !unVar.e.megagroup) || (unVar.v4 && !org.telegram.messenger.h20.u(unVar.f))) && (i12 = unVar.f4) != 3 && i12 != 9 && i12 != 1 && unVar.z0.getScrollState() == 1)) {
+            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((org.telegram.messenger.w3.T(unVar.e) && !unVar.e.megagroup) || (unVar.v4 && !org.telegram.messenger.i20.u(unVar.f))) && (i12 = unVar.f4) != 3 && i12 != 9 && i12 != 1 && unVar.z0.getScrollState() == 1)) {
                 vj vjVar = unVar.z0;
-                if (!vjVar.V1 && !vjVar.b2 && !unVar.M9()) {
+                if (!vjVar.V1 && !vjVar.b2 && !unVar.R9()) {
                     if (unVar.ga == 0.0f && unVar.ia != null) {
-                        ArrayList arrayList = unVar.Ab;
+                        ArrayList arrayList = unVar.Bb;
                         if (arrayList != null && !arrayList.isEmpty()) {
-                            unVar.ia.h((TLRPC.Chat) unVar.Ab.get(0));
+                            unVar.ia.h((TLRPC.Chat) unVar.Bb.get(0));
                         } else if (unVar.v4) {
                             unVar.ia.i();
                         } else {
@@ -231,7 +231,7 @@ public final class yj extends s4.s {
             unVar.z0.setOverScrollMode(2);
         }
         if (unVar.ia != null) {
-            fe.b bVar = unVar.Qc;
+            fe.b bVar = unVar.Rc;
             if (unVar.ga > 0.0f && unVar.z0.getScrollState() == 1) {
                 z11 = true;
             }

@@ -21,11 +21,11 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.GCMParameterSpec;
 import org.json.JSONObject;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.o5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g1 {
     public final int a;
@@ -181,7 +181,7 @@ public final class g1 {
                 f1 f1Var = new f1();
                 f1Var.a = uuid;
                 f1Var.b = j10;
-                f1Var.c = o5.m(d20.i(this.a).f());
+                f1Var.c = o5.m(e20.i(this.a).f());
                 long currentTimeMillis = System.currentTimeMillis();
                 f1Var.e = currentTimeMillis;
                 f1Var.d = currentTimeMillis;
@@ -244,7 +244,7 @@ public final class g1 {
         if (this.d && optString == null && !e.keys().hasNext()) {
             HashSet hashSet = new HashSet();
             for (int i10 = 0; i10 < 4; i10++) {
-                d20 i11 = d20.i(i10);
+                e20 i11 = e20.i(i10);
                 if (i11.p()) {
                     hashSet.add(Long.valueOf(i11.e()));
                 }
@@ -275,7 +275,7 @@ public final class g1 {
         ArrayList arrayList = new ArrayList();
         HashSet hashSet = new HashSet();
         for (int i10 = 0; i10 < 4; i10++) {
-            d20 i11 = d20.i(i10);
+            e20 i11 = e20.i(i10);
             if (i11.p()) {
                 hashSet.add(Long.valueOf(i11.e()));
             }
@@ -299,7 +299,7 @@ public final class g1 {
         }
         HashSet hashSet = new HashSet();
         for (int i10 = 0; i10 < 4; i10++) {
-            d20 i11 = d20.i(i10);
+            e20 i11 = e20.i(i10);
             if (i11.p()) {
                 hashSet.add(Long.valueOf(i11.e()));
             }
@@ -310,7 +310,7 @@ public final class g1 {
             throw new RuntimeException("STORAGE_NOT_FOUND");
         }
         f1Var.b = this.c;
-        f1Var.c = o5.m(d20.i(this.a).f());
+        f1Var.c = o5.m(e20.i(this.a).f());
         f1Var.e = System.currentTimeMillis();
         k(i12);
         this.e = f1Var.a;

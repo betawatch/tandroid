@@ -10,10 +10,10 @@ import org.telegram.messenger.m5;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.p80;
-import org.telegram.ui.eu0;
+import org.telegram.ui.du0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h1 extends LinearLayout {
     public int a;
@@ -36,8 +36,8 @@ public final class h1 extends LinearLayout {
         a aVar;
         this.n = i1Var;
         setOrientation(1);
-        eu0 eu0Var = (eu0) i1Var.k1.get(i10);
-        int i11 = eu0Var.a;
+        du0 du0Var = (du0) i1Var.k1.get(i10);
+        int i11 = du0Var.a;
         if (i11 == 0) {
             a bVar = new b(context, i1Var.I0);
             bVar.b.setOnScrollListener(new a1(i1Var, 1));
@@ -47,7 +47,7 @@ public final class h1 extends LinearLayout {
             lVar.b.setOnScrollListener(new a1(i1Var, 0));
             aVar = lVar;
         } else {
-            aVar = i11 == 5 ? new b1(context, i1Var.a) : i11 == 10 ? new v0(context, i1Var.I0) : new k2(context, i1Var.t1, i1Var.a, eu0Var.a, i1Var.I0);
+            aVar = i11 == 5 ? new b1(context, i1Var.a) : i11 == 10 ? new v0(context, i1Var.I0) : new k2(context, i1Var.t1, i1Var.a, du0Var.a, i1Var.I0);
         }
         this.f = aVar;
         addView(aVar);

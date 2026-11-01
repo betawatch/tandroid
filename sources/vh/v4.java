@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.io.File;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.e20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.jo;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class v4 extends FrameLayout {
     public ValueAnimator D;
@@ -47,7 +47,7 @@ public abstract class v4 extends FrameLayout {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.b = n5.x(d20.s0, true);
+        this.b = n5.x(e20.s0, true);
         u4 u4Var = new u4(this, context);
         this.a = u4Var;
         u4Var.setScaleX(0.0f);

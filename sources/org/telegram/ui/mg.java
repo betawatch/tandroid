@@ -1,58 +1,102 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.app.Activity;
+import android.text.SpannableStringBuilder;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mg implements View.OnKeyListener {
+public final /* synthetic */ class mg implements org.telegram.messenger.r20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ mg(Object obj, int i10) {
+    public /* synthetic */ mg(Object obj, long j10, long j11, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.d = obj;
+        this.b = j10;
+        this.c = j11;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0089 A[LOOP:1: B:19:0x0085->B:21:0x0089, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00bd  */
+    @Override // org.telegram.messenger.r20
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Object obj) {
+        org.telegram.ui.ActionBar.p6 p6Var;
+        SpannableStringBuilder spannableStringBuilder;
+        int size;
+        int i10;
+        int i11 = this.a;
+        Object obj2 = this.d;
+        switch (i11) {
             case 0:
-                un unVar = (un) this.b;
-                unVar.getClass();
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor.length() == 0) {
-                    unVar.Ia();
-                    break;
-                }
+                un.c0((un) obj2, this.b, this.c, (Long) obj);
                 break;
             case 1:
-                ll0 ll0Var = (ll0) this.b;
-                if (i10 != 67) {
-                    ll0Var.getClass();
-                    break;
-                } else if (ll0Var.Y[2].length() == 0) {
-                    ll0Var.Y[1].requestFocus();
-                    EditTextBoldCursor editTextBoldCursor2 = ll0Var.Y[1];
-                    editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-                    ll0Var.Y[1].dispatchKeyEvent(keyEvent);
+                nj njVar = (nj) obj2;
+                Long l4 = (Long) obj;
+                un unVar = njVar.b;
+                if (unVar.getParentActivity() != null) {
+                    Activity parentActivity = unVar.getParentActivity();
+                    String L0 = org.telegram.messenger.dd.L0(2131746306, null);
+                    int i12 = org.telegram.messenger.w3.p0(unVar.e) ? 2131746310 : 2131746311;
+                    long j10 = this.b;
+                    SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(org.telegram.messenger.dd.a0(null, null, i12, org.telegram.messenger.o5.t(j10)));
+                    String H = l4.longValue() > 0 ? org.telegram.messenger.dd.H(',', "RemoveMessageFeeRefund", (int) l4.longValue()) : null;
+                    String L02 = org.telegram.messenger.dd.L0(2131751817, null);
+                    ih ihVar = new ih(njVar, j10, this.c, l4, 1);
+                    p6Var = ((org.telegram.ui.ActionBar.k2) unVar).resourceProvider;
+                    org.telegram.ui.Components.s4.h0(parentActivity, L0, W2, H, L02, ihVar, p6Var, true);
                     break;
                 }
                 break;
             default:
-                xs0 xs0Var = (xs0) this.b;
-                EditTextBoldCursor editTextBoldCursor3 = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor3.length() == 0) {
-                    ImageView imageView = xs0Var.f;
-                    if (imageView != null) {
-                        imageView.callOnClick();
-                        break;
+                rh.b3 b3Var = (rh.b3) obj2;
+                ArrayList arrayList = (ArrayList) obj;
+                org.telegram.ui.Components.n5 n5Var = b3Var.E;
+                if (this.b == this.c) {
+                    b3Var.d0 = arrayList;
+                    n5Var.animate().alpha(b3Var.s ? 0.0f : b3Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.gr.h).setDuration(420L).start();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                        if ((arrayList.get(i13) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i13)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
+                            arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i13));
+                            if (arrayList2.size() >= 3) {
+                                spannableStringBuilder = new SpannableStringBuilder();
+                                size = arrayList2.size();
+                                i10 = 0;
+                                while (i10 < size) {
+                                    Object obj3 = arrayList2.get(i10);
+                                    i10++;
+                                    spannableStringBuilder.append((CharSequence) "x");
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.o5(((TL_stars.starGiftAttributeModel) obj3).document, n5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                }
+                                if (spannableStringBuilder.length() > 0) {
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                }
+                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.H2(org.telegram.messenger.dd.L0(2131749763, null), false, org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f)));
+                                n5Var.setText(spannableStringBuilder);
+                                break;
+                            }
+                        }
                     }
+                    spannableStringBuilder = new SpannableStringBuilder();
+                    size = arrayList2.size();
+                    i10 = 0;
+                    while (i10 < size) {
+                    }
+                    if (spannableStringBuilder.length() > 0) {
+                    }
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.i0.H2(org.telegram.messenger.dd.L0(2131749763, null), false, org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f)));
+                    n5Var.setText(spannableStringBuilder);
                 }
                 break;
         }
-        return true;
     }
 }

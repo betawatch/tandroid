@@ -13,14 +13,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.jc;
 import org.telegram.ui.Components.eq;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a extends View implements org.telegram.ui.ActionBar.k6 {
     public final ImageReceiver a;
@@ -36,7 +36,7 @@ public final class a extends View implements org.telegram.ui.ActionBar.k6 {
     public float w;
     public final org.telegram.ui.ActionBar.p6 x;
 
-    public a(Context context, ef efVar, String str, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+    public a(Context context, ff ffVar, String str, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
         super(context);
         String str2;
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -54,7 +54,7 @@ public final class a extends View implements org.telegram.ui.ActionBar.k6 {
         textPaint.setColor(org.telegram.ui.ActionBar.t6.w0(i11, p6Var));
         textPaint.setTextSize(org.telegram.messenger.i0.L(16.0f));
         textPaint2.setColor(org.telegram.ui.ActionBar.t6.w0(i11, p6Var));
-        textPaint2.setAlpha(zs.n1);
+        textPaint2.setAlpha(at.n1);
         textPaint2.setTextSize(org.telegram.messenger.i0.L(13.0f));
         String str3 = "";
         String str4 = "" + ((Object) str);
@@ -69,26 +69,26 @@ public final class a extends View implements org.telegram.ui.ActionBar.k6 {
         int L2 = org.telegram.messenger.i0.L(18.0f);
         eqVar.e = L;
         eqVar.f = L2;
-        if (efVar == null || (str2 = efVar.c) == null) {
-            if (efVar != null) {
-                int i12 = efVar.C;
-                String str5 = efVar.I;
+        if (ffVar == null || (str2 = ffVar.c) == null) {
+            if (ffVar != null) {
+                int i12 = ffVar.C;
+                String str5 = ffVar.I;
                 if (str5 != null) {
-                    if (efVar.b) {
-                        imageReceiver.s0(ic.g("vthumb://" + i12 + ":" + str5), "30.0_30.0", null, null, eqVar, null, 0);
+                    if (ffVar.b) {
+                        imageReceiver.s0(jc.g("vthumb://" + i12 + ":" + str5), "30.0_30.0", null, null, eqVar, null, 0);
                     } else {
-                        imageReceiver.s0(ic.g("thumb://" + i12 + ":" + str5), "30.0_30.0", null, null, eqVar, null, 0);
+                        imageReceiver.s0(jc.g("thumb://" + i12 + ":" + str5), "30.0_30.0", null, null, eqVar, null, 0);
                     }
                 }
             }
             imageReceiver.w0(eqVar);
         } else {
-            imageReceiver.s0(ic.g(str2), "30.0_30.0", null, null, eqVar, null, 0);
+            imageReceiver.s0(jc.g(str2), "30.0_30.0", null, null, eqVar, null, 0);
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) str4);
         if (i10 > 0) {
-            str3 = " " + cd.H(',', "Media", i10);
+            str3 = " " + dd.H(',', "Media", i10);
         }
         sb2.append(str3);
         setContentDescription(sb2.toString());
@@ -167,7 +167,7 @@ public final class a extends View implements org.telegram.ui.ActionBar.k6 {
             int w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.E8, this.x);
             this.d.setColor(w02);
             textPaint.setColor(w02);
-            textPaint.setAlpha(zs.n1);
+            textPaint.setAlpha(at.n1);
             invalidate();
         } catch (Exception e) {
             org.telegram.messenger.f8.g(e, true);

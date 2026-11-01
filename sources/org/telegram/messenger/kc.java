@@ -1,63 +1,71 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.BitmapShader;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class kc {
-    public String a;
-    public final boolean b;
-    public Bitmap c;
-    public Drawable d;
-    public int e;
-
-    public kc(Bitmap bitmap, String str, int i10) {
-        this.c = bitmap;
-        this.a = str;
-        this.e = i10;
-        if (str != null) {
-            hc.D().H(this.a);
-        }
-    }
+    public Paint A;
+    public Path B;
+    public boolean a;
+    public float b;
+    public long c;
+    public int d;
+    public BitmapShader e;
+    public org.telegram.ui.Components.s5 f;
+    public ci0 g;
+    public int[] h;
+    public BitmapShader i;
+    public Drawable j;
+    public BitmapShader k;
+    public Drawable l;
+    public Drawable m;
+    public BitmapShader n;
+    public Drawable o;
+    public float p;
+    public float q;
+    public BitmapShader r;
+    public float s;
+    public float t;
+    public float u;
+    public float v;
+    public boolean w;
+    public Drawable x;
+    public RectF y;
+    public ColorFilter z;
 
     public final void a() {
-        Bitmap bitmap;
-        if (this.a == null) {
-            if (this.b && (bitmap = this.c) != null) {
-                bitmap.recycle();
-            }
-            this.c = null;
-            this.d = null;
-            return;
+        this.f = null;
+        this.g = null;
+        for (int i10 = 0; i10 < 4; i10++) {
+            int[] iArr = this.h;
+            iArr[i10] = iArr[i10];
         }
-        boolean p5 = hc.D().p(this.a);
-        if (!hc.D().J(this.a, false) && p5) {
-            Bitmap bitmap2 = this.c;
-            if (bitmap2 != null) {
-                bitmap2.recycle();
-            } else {
-                Drawable drawable = this.d;
-                if (drawable != null) {
-                    if (drawable instanceof bi0) {
-                        ((bi0) drawable).C(false);
-                    } else if (drawable instanceof org.telegram.ui.Components.s5) {
-                        ((org.telegram.ui.Components.s5) drawable).u();
-                    } else if (drawable instanceof BitmapDrawable) {
-                        ((BitmapDrawable) drawable).getBitmap().recycle();
-                    }
-                }
-            }
-        }
-        this.a = null;
-        this.c = null;
-        this.d = null;
+        this.j = null;
+        this.i = null;
+        this.l = null;
+        this.k = null;
+        this.m = null;
+        this.n = null;
+        this.e = null;
+        this.o = null;
+        this.x = null;
+        this.z = null;
     }
 
-    public kc(Bitmap bitmap) {
-        this.c = bitmap;
-        this.b = true;
+    public final void b(Rect rect) {
+        if (rect != null) {
+            this.u = rect.left;
+            this.v = rect.top;
+            this.t = rect.width();
+            this.s = rect.height();
+        }
     }
 }

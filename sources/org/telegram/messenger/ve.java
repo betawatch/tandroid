@@ -1,62 +1,27 @@
 package org.telegram.messenger;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import org.telegram.ui.u60;
-import org.telegram.ui.v60;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class ve extends TimerTask {
+public final /* synthetic */ class ve implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ float c;
 
-    public /* synthetic */ ve(int i10, Object obj, Object obj2) {
+    public /* synthetic */ ve(String str, int i10, float f7) {
         this.a = i10;
-        this.c = obj;
-        this.b = obj2;
+        this.b = str;
+        this.c = f7;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
+    @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                synchronized (((MediaController) this.c).v1) {
-                    i0.g3(new t6(23, this, (jj) this.b));
-                }
-                return;
-            case 1:
-                try {
-                    ((Timer) ((org.telegram.ui.Components.pj) this.c).h).cancel();
-                    ((org.telegram.ui.Components.pj) this.c).h = null;
-                } catch (Exception e) {
-                    f8.g(e, true);
-                }
-                Utilities.g.c(new org.telegram.ui.xs(1, (org.telegram.ui.Components.pj) this.c, (String) this.b));
-                return;
-            case 2:
-                v60 v60Var = (v60) this.c;
-                try {
-                    v60Var.f.cancel();
-                    v60Var.f = null;
-                } catch (Exception e7) {
-                    f8.g(e7, true);
-                }
-                i0.g3(new u60(this, (String) this.b, 0));
-                return;
+                w0.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
+                break;
             default:
-                zf.f1 f1Var = (zf.f1) this.c;
-                try {
-                    f1Var.n.cancel();
-                    f1Var.n = null;
-                } catch (Exception e10) {
-                    f8.g(e10, true);
-                }
-                String str = (String) this.b;
-                f1Var.getClass();
-                i0.g3(new yh.o(6, f1Var, str));
-                return;
+                w0.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
+                break;
         }
     }
 }

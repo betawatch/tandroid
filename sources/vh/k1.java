@@ -13,18 +13,18 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.ix;
-import org.telegram.ui.i31;
+import org.telegram.ui.g31;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class k1 extends s4.g0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -92,7 +92,7 @@ public final class k1 extends s4.g0 {
         j1Var4.n(true);
         org.telegram.messenger.i0.r(d0Var);
         int i13 = u1.y1;
-        ui b02 = ui.b0(u1Var2.a);
+        vi b02 = vi.b0(u1Var2.a);
         this.y = 0;
         ArrayList arrayList4 = this.s;
         arrayList4.clear();
@@ -123,7 +123,7 @@ public final class k1 extends s4.g0 {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = this.F;
                 tL_messages_stickerSet2.documents = i02;
                 tL_messages_stickerSet2.set = new TLRPC.TL_stickerSet();
-                this.F.set.title = cd.L0(2131750842, null);
+                this.F.set.title = dd.L0(2131750842, null);
                 arrayList5.add(this.F);
             }
             ArrayList<TLRPC.Document> i03 = b02.i0(0, false);
@@ -136,7 +136,7 @@ public final class k1 extends s4.g0 {
                     i03.add(0, u1Var2.l1);
                 }
                 this.G.set = new TLRPC.TL_stickerSet();
-                this.G.set.title = cd.L0(2131746379, null);
+                this.G.set.title = dd.L0(2131746379, null);
                 arrayList5.add(this.G);
             }
         }
@@ -184,7 +184,7 @@ public final class k1 extends s4.g0 {
                 while (i16 < arrayList8.size()) {
                     TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList8.get(i16);
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        tL_messages_stickerSet = ui.b0(u1Var2.a).m0(ui.Z(stickerSetCovered.set), false);
+                        tL_messages_stickerSet = vi.b0(u1Var2.a).m0(vi.Z(stickerSetCovered.set), false);
                         if (tL_messages_stickerSet != null) {
                             l1Var2 = l1Var3;
                             j1Var2 = j1Var4;
@@ -269,7 +269,7 @@ public final class k1 extends s4.g0 {
                                     } else {
                                         arrayList2 = arrayList9;
                                         i11 = i19;
-                                        ArrayList j10 = org.telegram.messenger.k6.j(jj.V(document, null, null), null);
+                                        ArrayList j10 = org.telegram.messenger.k6.j(kj.V(document, null, null), null);
                                         j1Var3 = j1Var4;
                                         int i20 = 0;
                                         while (i20 < j10.size()) {
@@ -449,7 +449,7 @@ public final class k1 extends s4.g0 {
                 int i13 = this.K;
                 if (i1Var.b != i13) {
                     i1Var.b = i13;
-                    i31.D(d20.s0, i1Var.a);
+                    g31.D(e20.s0, i1Var.a);
                     return;
                 }
                 return;
@@ -458,16 +458,16 @@ public final class k1 extends s4.g0 {
         }
         ArrayList arrayList2 = this.s;
         TLRPC.Document document = i10 >= arrayList2.size() ? null : (TLRPC.Document) arrayList2.get(i10);
-        a1 a1Var = (a1) view;
+        b1 b1Var = (b1) view;
         if (document == u1Var.l1) {
-            a1Var.setSticker(null);
-            if (a1Var.a == null) {
+            b1Var.setSticker(null);
+            if (b1Var.a == null) {
                 ShapeDrawable d02 = org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(28.0f), -1);
                 int i14 = org.telegram.ui.ActionBar.t6.Bf;
                 org.telegram.ui.ActionBar.w6 L = org.telegram.ui.ActionBar.a7.L(0.12f, i14);
-                org.telegram.ui.ActionBar.a7.l(a1Var, d02, L.a, -1, 2, L.d, u1Var.I0, PorterDuff.Mode.SRC_IN);
+                org.telegram.ui.ActionBar.a7.l(b1Var, d02, L.a, -1, 2, L.d, u1Var.I0, PorterDuff.Mode.SRC_IN);
                 Drawable mutate = l1Var.getResources().getDrawable(R.drawable.filled_add_sticker).mutate();
-                org.telegram.ui.ActionBar.a7.y(a1Var, mutate, i14, u1Var.I0, PorterDuff.Mode.MULTIPLY);
+                org.telegram.ui.ActionBar.a7.y(b1Var, mutate, i14, u1Var.I0, PorterDuff.Mode.MULTIPLY);
                 eq eqVar = new eq(d02, mutate);
                 int L2 = org.telegram.messenger.i0.L(56.0f);
                 int L3 = org.telegram.messenger.i0.L(56.0f);
@@ -478,9 +478,9 @@ public final class k1 extends s4.g0 {
                 eqVar.e = L4;
                 eqVar.f = L5;
                 eqVar.r = true;
-                a1Var.a = eqVar;
+                b1Var.a = eqVar;
             }
-            a1Var.setDrawable(a1Var.a);
+            b1Var.setDrawable(b1Var.a);
             return;
         }
         ArrayList arrayList3 = this.w;
@@ -490,36 +490,36 @@ public final class k1 extends s4.g0 {
         }
         int i15 = l1Var.a;
         if (i15 != 0) {
-            a1Var.a(null, i15 == 1);
-            a1Var.setSticker(document);
+            b1Var.a(null, i15 == 1);
+            b1Var.setSticker(document);
             return;
         }
         if (document != null) {
-            a1Var.setSticker(null);
-            a1Var.a(document, l1Var.a == 1);
+            b1Var.setSticker(null);
+            b1Var.a(document, l1Var.a == 1);
             return;
         }
-        a1Var.setSticker(null);
+        b1Var.setSticker(null);
         boolean z10 = l1Var.a == 1;
-        if (a1Var.h == longValue) {
+        if (b1Var.h == longValue) {
             return;
         }
-        org.telegram.ui.Components.f5 f5Var = a1Var.d;
+        org.telegram.ui.Components.f5 f5Var = b1Var.d;
         if (f5Var != null) {
-            f5Var.n(a1Var);
+            f5Var.n(b1Var);
         }
         if (longValue == 0) {
-            a1Var.b = false;
-            a1Var.h = 0L;
-            a1Var.d = null;
+            b1Var.b = false;
+            b1Var.h = 0L;
+            b1Var.d = null;
             return;
         }
-        a1Var.b = true;
-        a1Var.h = longValue;
-        org.telegram.ui.Components.f5 m10 = org.telegram.ui.Components.f5.m(a1Var.c, longValue, null, sc.e(z10 ? 1 : 16388) ? 3 : 13);
-        a1Var.d = m10;
-        if (a1Var.w) {
-            m10.a(a1Var);
+        b1Var.b = true;
+        b1Var.h = longValue;
+        org.telegram.ui.Components.f5 m10 = org.telegram.ui.Components.f5.m(b1Var.c, longValue, null, tc.e(z10 ? 1 : 16388) ? 3 : 13);
+        b1Var.d = m10;
+        if (b1Var.w) {
+            m10.a(b1Var);
         }
     }
 
@@ -545,16 +545,16 @@ public final class k1 extends s4.g0 {
             TextView textView = new TextView(context2);
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
-            textView.setText(cd.L0(z10 ? 2131748230 : 2131748165, null));
+            textView.setText(dd.L0(z10 ? 2131748230 : 2131748165, null));
             i1Var.addView(textView, w7.b6.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
             n8Var = i1Var;
         } else if (i10 == 4) {
             org.telegram.ui.ActionBar.f5 f5Var = new org.telegram.ui.ActionBar.f5(u1Var, l1Var.getContext());
-            f5Var.f = new v0(u1Var, 2);
+            f5Var.f = new w0(u1Var, 2);
             n8Var = f5Var;
         } else {
-            n8Var = new a1(l1Var.getContext(), l1Var.b);
+            n8Var = new b1(l1Var.getContext(), l1Var.b);
         }
-        return new ck0(n8Var);
+        return new dk0(n8Var);
     }
 }

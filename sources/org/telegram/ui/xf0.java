@@ -1,37 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kg0 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteExported c;
-    public final /* synthetic */ TLRPC.TL_error d;
-    public final /* synthetic */ TLObject e;
-    public final /* synthetic */ boolean f;
+public final class xf0 implements Runnable {
+    public final /* synthetic */ ig0 a;
 
-    public /* synthetic */ xf0(kg0 kg0Var, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_error tL_error, TLObject tLObject, boolean z10, int i10) {
-        this.a = i10;
-        this.b = kg0Var;
-        this.c = tL_chatInviteExported;
-        this.d = tL_error;
-        this.e = tLObject;
-        this.f = z10;
+    public xf0(ig0 ig0Var) {
+        this.a = ig0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                kg0 kg0Var = this.b;
-                kg0Var.getNotificationCenter().d(new xf0(kg0Var, this.c, this.d, this.e, this.f, 1));
-                break;
-            default:
-                kg0.Y(this.b, this.c, this.d, this.e, this.f);
-                break;
+        ig0 ig0Var = this.a;
+        if (ig0Var.b == null) {
+            return;
         }
+        for (int i10 = 0; i10 < ig0Var.b.getChildCount(); i10++) {
+            View childAt = ig0Var.b.getChildAt(i10);
+            if (childAt instanceof fg0) {
+                fg0 fg0Var = (fg0) childAt;
+                if (fg0Var.I) {
+                    fg0Var.b(fg0Var.n, fg0Var.r);
+                }
+            }
+        }
+        org.telegram.messenger.i0.h3(this, 500L);
     }
 }

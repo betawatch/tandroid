@@ -5,9 +5,9 @@ import android.graphics.PorterDuff;
 import android.text.SpannableStringBuilder;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.k6;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.o5;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class h0 extends FrameLayout {
     public final nh.p a;
@@ -37,9 +37,9 @@ public final class h0 extends FrameLayout {
         pVar.r = false;
         pVar.setTextSize(1, 14.0f);
         pVar.setTypeface(org.telegram.messenger.i0.o());
-        zs.i(pVar);
+        at.i(pVar);
         addView(pVar, b6.e(-2, -2, 17));
-        zs.i(pVar);
+        at.i(pVar);
         setTag(keyboardButton);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = keyboardButton.style;

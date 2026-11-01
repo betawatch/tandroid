@@ -1,63 +1,114 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class qi0 extends hg.b {
-    public int c;
-    public int d;
-    public CharSequence e;
-    public CharSequence f;
-    public ui0 g;
-    public int h;
-    public boolean i;
+public final class qi0 extends org.telegram.ui.Components.tk0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public pi0 f;
+    public final zf.m1 h;
+    public final /* synthetic */ NotificationsCustomSettingsActivity n;
 
-    public static qi0 b(int i10, String str, boolean z10) {
-        qi0 qi0Var = new qi0(1, true);
-        qi0Var.c = i10;
-        qi0Var.e = str;
-        qi0Var.i = z10;
-        return qi0Var;
+    public qi0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, Context context) {
+        this.n = notificationsCustomSettingsActivity;
+        this.c = context;
+        zf.m1 m1Var = new zf.m1(true);
+        this.h = m1Var;
+        m1Var.a = new st(this, 25);
     }
 
-    public static qi0 c(int i10, String str, String str2) {
-        qi0 qi0Var = new qi0(5, true);
-        qi0Var.c = i10;
-        qi0Var.e = str;
-        qi0Var.f = str2;
-        return qi0Var;
+    @Override // org.telegram.ui.Components.tk0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
     }
 
-    public static qi0 d(int i10, String str) {
-        qi0 qi0Var = new qi0(4, true);
-        qi0Var.c = i10;
-        qi0Var.e = str;
-        return qi0Var;
-    }
-
-    @Override // hg.b
-    public final boolean a(hg.b bVar) {
-        if (this == bVar) {
-            return true;
+    public final Object E(int i10) {
+        if (i10 >= 0 && i10 < this.d.size()) {
+            return this.d.get(i10);
         }
-        if (qi0.class != bVar.getClass()) {
-            return false;
+        int e = sc.e.e(1, i10, this.d);
+        zf.m1 m1Var = this.h;
+        ArrayList arrayList = m1Var.e;
+        if (e < 0 || e >= arrayList.size()) {
+            return null;
         }
-        qi0 qi0Var = (qi0) bVar;
-        return this.c == qi0Var.c && this.d == qi0Var.d && this.h == qi0Var.h && this.i == qi0Var.i && Objects.equals(this.e, qi0Var.e) && Objects.equals(this.f, qi0Var.f) && this.g == qi0Var.g;
+        return m1Var.e.get(e);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void F(String str) {
+        if (this.f != null) {
+            Utilities.g.a(this.f);
+            this.f = null;
         }
-        if (obj != null && qi0.class == obj.getClass()) {
-            qi0 qi0Var = (qi0) obj;
-            if (this.c == qi0Var.c && this.h == qi0Var.h && ((this.a == 8 || (this.d == qi0Var.d && Objects.equals(this.e, qi0Var.e) && (this.a == 6 || Objects.equals(this.f, qi0Var.f)))) && this.g == qi0Var.g)) {
-                return true;
+        if (str != null) {
+            org.telegram.messenger.r5 r5Var = Utilities.g;
+            pi0 pi0Var = new pi0(this, str, 0);
+            this.f = pi0Var;
+            r5Var.d(pi0Var, 300L);
+            return;
+        }
+        this.d.clear();
+        this.e.clear();
+        this.h.f(null, null);
+        zf.m1 m1Var = this.h;
+        int i10 = this.n.s;
+        m1Var.g(null, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
+        f();
+    }
+
+    @Override // s4.g0
+    public final int b() {
+        int size = this.d.size();
+        ArrayList arrayList = this.h.e;
+        return !arrayList.isEmpty() ? arrayList.size() + 1 + size : size;
+    }
+
+    @Override // s4.g0
+    public final int d(int i10) {
+        return i10 == this.d.size() ? 1 : 0;
+    }
+
+    @Override // s4.g0
+    public final void t(s4.c1 c1Var, int i10) {
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                return;
             }
+            ((org.telegram.ui.Cells.z3) view).setText(org.telegram.messenger.dd.L0(2131754376, "AddToExceptions"));
+            return;
         }
-        return false;
+        org.telegram.ui.Cells.pa paVar = (org.telegram.ui.Cells.pa) view;
+        if (i10 < this.d.size()) {
+            paVar.f((si0) this.d.get(i10), (CharSequence) this.e.get(i10), i10 != this.d.size() - 1);
+            paVar.setAddButtonVisible(false);
+        } else {
+            int e = sc.e.e(1, i10, this.d);
+            ArrayList arrayList = this.h.e;
+            paVar.d((TLObject) arrayList.get(e), null, org.telegram.messenger.dd.L0(2131747908, "NotificationsOn"), e != arrayList.size() - 1);
+            paVar.setAddButtonVisible(true);
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.c1 w(ViewGroup viewGroup, int i10) {
+        View paVar;
+        if (i10 != 0) {
+            paVar = new org.telegram.ui.Cells.z3(this.c, null);
+            paVar.setBackgroundColor(0);
+            paVar.setTag(-33024);
+        } else {
+            paVar = new org.telegram.ui.Cells.pa(4, 0, this.c, null, false, true);
+        }
+        return new org.telegram.ui.Components.dk0(paVar);
     }
 }

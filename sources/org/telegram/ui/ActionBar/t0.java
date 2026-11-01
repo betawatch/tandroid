@@ -39,26 +39,26 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.WeakHashMap;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bi0;
-import org.telegram.ui.Components.ei0;
-import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.ci0;
+import org.telegram.ui.Components.fi0;
+import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.Components.xf0;
 import org.telegram.ui.Components.yf0;
 import org.telegram.ui.Components.z60;
+import org.telegram.ui.s71;
 import org.telegram.ui.sh;
-import org.telegram.ui.u71;
 import org.telegram.ui.uh;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class t0 extends FrameLayout {
     public int D;
@@ -112,12 +112,12 @@ public class t0 extends FrameLayout {
     public int s0;
     public tg.b t0;
     public wg.d u0;
-    public i20 v0;
+    public j20 v0;
     public AnimatorSet w;
     public AnimatorSet w0;
     public View x;
     public ArrayList x0;
-    public final ei0 y;
+    public final fi0 y;
     public HashMap y0;
 
     public t0(Context context, int i10, int i11) {
@@ -130,7 +130,7 @@ public class t0 extends FrameLayout {
         b1Var.setMinimumWidth(org.telegram.messenger.i0.L(196.0f));
         viewGroup.addView(b1Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) b1Var.getLayoutParams();
-        if (cd.X) {
+        if (dd.X) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -148,11 +148,11 @@ public class t0 extends FrameLayout {
         return null;
     }
 
-    public final void A(bi0 bi0Var, String str) {
+    public final void A(ci0 ci0Var, String str) {
         r0 r0Var = new r0(0);
         r0Var.b = 29;
         r0Var.c = 0;
-        r0Var.d = bi0Var;
+        r0Var.d = ci0Var;
         r0Var.e = str;
         r0Var.f = true;
         G(r0Var);
@@ -322,10 +322,10 @@ public class t0 extends FrameLayout {
         if (actionBarPopupWindow$ActionBarPopupWindowLayout == null) {
             return;
         }
-        u71 u71Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
-        int childCount = u71Var.getChildCount();
+        s71 s71Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
+        int childCount = s71Var.getChildCount();
         for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = u71Var.getChildAt(i11);
+            View childAt = s71Var.getChildAt(i11);
             if (childAt instanceof TextView) {
                 ((TextView) childAt).setTextColor(i10);
             } else if (childAt instanceof b1) {
@@ -375,13 +375,13 @@ public class t0 extends FrameLayout {
             return;
         }
         findViewWithTag.setAlpha(0.0f);
-        z20.m(findViewWithTag.animate().alpha(1.0f), gr.f, 150L);
+        a30.m(findViewWithTag.animate().alpha(1.0f), gr.f, 150L);
         findViewWithTag.setVisibility(0);
     }
 
     public boolean T(boolean z10) {
         y yVar;
-        ei0 iconView;
+        fi0 iconView;
         Animator e;
         k();
         p0 p0Var = this.H;
@@ -642,8 +642,8 @@ public class t0 extends FrameLayout {
                         if (bVar != null) {
                             vg.f c11 = bVar.c(this.b, null, true);
                             c11.o(this.u0);
-                            z20.u(c11, org.telegram.messenger.i0.L(12.0f), 8.0f);
-                            c11.M.e = true;
+                            a30.u(c11, org.telegram.messenger.i0.L(12.0f), 8.0f);
+                            c11.P.e = true;
                             frameLayout.setBackground(c11);
                         } else {
                             Drawable mutate = getContext().getDrawable(R.drawable.popup_fixed_alert2).mutate();
@@ -698,7 +698,7 @@ public class t0 extends FrameLayout {
                 });
                 this.d.setOnDismissListener(new jg.t(i10, this));
                 Point point = org.telegram.messenger.i0.q;
-                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(z20.c(40.0f, point.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(a30.c(40.0f, point.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31));
                 if (r6 != null && r6.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     r6.getLayoutParams().width = org.telegram.messenger.i0.L(16.0f) + childAt.getMeasuredWidth();
                 }
@@ -860,7 +860,7 @@ public class t0 extends FrameLayout {
         b1Var.setTag(Integer.valueOf(i10));
         this.b.addView(b1Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) b1Var.getLayoutParams();
-        if (cd.X) {
+        if (dd.X) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -887,7 +887,7 @@ public class t0 extends FrameLayout {
         TextView textView = new TextView(getContext());
         a7.V(textView, t6.E8, this.m0);
         textView.setBackgroundDrawable(t6.N0(false));
-        if (cd.X) {
+        if (dd.X) {
             textView.setGravity(21);
         } else {
             textView.setGravity(16);
@@ -901,7 +901,7 @@ public class t0 extends FrameLayout {
         textView.setText(str);
         this.b.addView(textView);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) textView.getLayoutParams();
-        if (cd.X) {
+        if (dd.X) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -920,11 +920,11 @@ public class t0 extends FrameLayout {
     }
 
     public View getContentView() {
-        ei0 ei0Var = this.y;
-        return ei0Var != null ? ei0Var : this.E;
+        fi0 fi0Var = this.y;
+        return fi0Var != null ? fi0Var : this.E;
     }
 
-    public ei0 getIconView() {
+    public fi0 getIconView() {
         return this.y;
     }
 
@@ -953,9 +953,9 @@ public class t0 extends FrameLayout {
     }
 
     public s5 getSubMenuOverlay() {
-        i20 i20Var = this.v0;
-        if (i20Var != null) {
-            return (s5) i20Var.run();
+        j20 j20Var = this.v0;
+        if (j20Var != null) {
+            return (s5) j20Var.run();
         }
         return null;
     }
@@ -983,15 +983,15 @@ public class t0 extends FrameLayout {
         return i10;
     }
 
-    public final b1 h(int i10, f11 f11Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public final b1 h(int i10, g11 g11Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         p();
         b1 b1Var = new b1(0, getContext(), this.m0, false, false);
-        b1Var.j(str, i10, f11Var);
+        b1Var.j(str, i10, g11Var);
         b1Var.setMinimumWidth(org.telegram.messenger.i0.L(196.0f));
         b1Var.setRightIcon(R.drawable.msg_arrowright);
         this.b.addView(b1Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) b1Var.getLayoutParams();
-        if (cd.X) {
+        if (dd.X) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -1167,7 +1167,7 @@ public class t0 extends FrameLayout {
             this.h.setSingleLine(true);
             this.h.setEllipsize(TextUtils.TruncateAt.END);
             this.h.setVisibility(8);
-            this.h.setGravity(cd.X ? 5 : 3);
+            this.h.setGravity(dd.X ? 5 : 3);
             n0 n0Var = new n0(this, getContext(), i10);
             this.e = n0Var;
             n0Var.setScrollContainer(false);
@@ -1199,7 +1199,7 @@ public class t0 extends FrameLayout {
             this.f = linearLayout;
             linearLayout.setOrientation(0);
             this.f.setVisibility(0);
-            if (cd.X) {
+            if (dd.X) {
                 this.F.addView(this.f, w7.b6.d(-2, 32.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
                 this.F.addView(this.e, w7.b6.d(-1, 36.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
                 this.F.addView(this.h, w7.b6.d(-2, 36.0f, 21, 0.0f, 5.5f, 48.0f, 0.0f));
@@ -1221,7 +1221,7 @@ public class t0 extends FrameLayout {
             this.s.setScaleX(0.0f);
             this.s.setScaleY(0.0f);
             this.s.setOnClickListener(new z(this, i10));
-            this.s.setContentDescription(cd.L0(2131752099, null));
+            this.s.setContentDescription(dd.L0(2131752099, null));
             this.F.addView(this.s, w7.b6.e(48, -1, 21));
         }
     }
@@ -1532,14 +1532,14 @@ public class t0 extends FrameLayout {
     }
 
     public void setIcon(Drawable drawable) {
-        ei0 ei0Var = this.y;
-        if (ei0Var == null) {
+        fi0 fi0Var = this.y;
+        if (fi0Var == null) {
             return;
         }
-        if (drawable instanceof bi0) {
-            ei0Var.setAnimation((bi0) drawable);
+        if (drawable instanceof ci0) {
+            fi0Var.setAnimation((ci0) drawable);
         } else {
-            ei0Var.setImageDrawable(drawable);
+            fi0Var.setImageDrawable(drawable);
         }
         this.D = 0;
     }
@@ -1549,12 +1549,12 @@ public class t0 extends FrameLayout {
             this.r0 = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
             this.s0 = i10;
         }
-        ei0 ei0Var = this.y;
-        if (ei0Var != null) {
-            ColorFilter colorFilter = ei0Var.getColorFilter();
+        fi0 fi0Var = this.y;
+        if (fi0Var != null) {
+            ColorFilter colorFilter = fi0Var.getColorFilter();
             PorterDuffColorFilter porterDuffColorFilter = this.r0;
             if (colorFilter != porterDuffColorFilter) {
-                ei0Var.setColorFilter(porterDuffColorFilter);
+                fi0Var.setColorFilter(porterDuffColorFilter);
             }
         }
         TextView textView = this.E;
@@ -1593,15 +1593,15 @@ public class t0 extends FrameLayout {
         super.setOnClickListener(onClickListener);
     }
 
-    public void setOnMenuDismiss(final q20 q20Var) {
+    public void setOnMenuDismiss(final r20 r20Var) {
         k1 k1Var = this.d;
         if (k1Var != null) {
             k1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.ActionBar.a0
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public final void onDismiss() {
-                    q20 q20Var2 = q20Var;
-                    if (q20Var2 != null) {
-                        q20Var2.a(Boolean.valueOf(t0.this.T));
+                    r20 r20Var2 = r20Var;
+                    if (r20Var2 != null) {
+                        r20Var2.a(Boolean.valueOf(t0.this.T));
                     }
                 }
             });
@@ -1621,10 +1621,10 @@ public class t0 extends FrameLayout {
         if (actionBarPopupWindow$ActionBarPopupWindowLayout == null) {
             return;
         }
-        u71 u71Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
-        int childCount = u71Var.getChildCount();
+        s71 s71Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
+        int childCount = s71Var.getChildCount();
         for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = u71Var.getChildAt(i11);
+            View childAt = s71Var.getChildAt(i11);
             if (childAt instanceof b1) {
                 ((b1) childAt).setSelectorColor(i10);
             }
@@ -1701,8 +1701,8 @@ public class t0 extends FrameLayout {
         this.M = i10;
     }
 
-    public void setSubMenuOverlayProvider(i20 i20Var) {
-        this.v0 = i20Var;
+    public void setSubMenuOverlayProvider(j20 j20Var) {
+        this.v0 = j20Var;
     }
 
     public void setText(CharSequence charSequence) {
@@ -1788,7 +1788,7 @@ public class t0 extends FrameLayout {
                     b1Var.setTag(Integer.valueOf(r0Var.b));
                     this.b.addView(b1Var);
                     LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) b1Var.getLayoutParams();
-                    if (cd.X) {
+                    if (dd.X) {
                         layoutParams.gravity = 5;
                     }
                     layoutParams.width = -1;
@@ -1813,7 +1813,7 @@ public class t0 extends FrameLayout {
                     b1Var2.getRightIcon().setVisibility(r0Var.m);
                     this.b.addView(b1Var2);
                     LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) b1Var2.getLayoutParams();
-                    if (cd.X) {
+                    if (dd.X) {
                         layoutParams2.gravity = 5;
                     }
                     layoutParams2.width = -1;
@@ -1882,7 +1882,7 @@ public class t0 extends FrameLayout {
         this.f0 = true;
         this.g0 = new ArrayList();
         this.h0 = -1;
-        this.i0 = new e2.f(null);
+        this.i0 = new e2.f((int[]) null);
         this.m0 = p6Var;
         if (i10 != 0) {
             setBackgroundDrawable(t6.h0(i10, z10 ? 5 : 1, -1));
@@ -1902,22 +1902,22 @@ public class t0 extends FrameLayout {
             addView(textView, w7.b6.c(-1.0f, -2));
             return;
         }
-        ei0 ei0Var = new ei0(context);
-        this.y = ei0Var;
-        ei0Var.setScaleType(ImageView.ScaleType.CENTER);
-        ei0Var.setImportantForAccessibility(2);
-        addView(ei0Var, w7.b6.c(-1.0f, -1));
+        fi0 fi0Var = new fi0(context);
+        this.y = fi0Var;
+        fi0Var.setScaleType(ImageView.ScaleType.CENTER);
+        fi0Var.setImportantForAccessibility(2);
+        addView(fi0Var, w7.b6.c(-1.0f, -1));
         if (i11 != 0) {
-            ei0Var.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
+            fi0Var.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
         }
     }
 
     public void setIcon(int i10) {
-        ei0 ei0Var = this.y;
-        if (ei0Var == null) {
+        fi0 fi0Var = this.y;
+        if (fi0Var == null) {
             return;
         }
         this.D = i10;
-        ei0Var.setImageResource(i10);
+        fi0Var.setImageResource(i10);
     }
 }

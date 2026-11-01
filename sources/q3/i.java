@@ -14,11 +14,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.utils.twidget.t;
 import v7.r6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class i extends w7.l {
     public static final t b = new t(10);
@@ -182,7 +182,7 @@ public final class i extends w7.l {
         if (i16 == 4) {
             E = xVar.E();
             if (!z10) {
-                E = (((E >> 24) & zs.e4) << 21) | (E & zs.e4) | (((E >> 8) & zs.e4) << 7) | (((E >> 16) & zs.e4) << 14);
+                E = (((E >> 24) & at.e4) << 21) | (E & at.e4) | (((E >> 8) & at.e4) << 7) | (((E >> 16) & at.e4) << 14);
             }
         } else {
             E = i16 == 3 ? xVar.E() : xVar.D();

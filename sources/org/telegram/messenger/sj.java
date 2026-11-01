@@ -1,209 +1,189 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sj implements RequestDelegate {
+public final /* synthetic */ class sj implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vp b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ wp b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
+    public final /* synthetic */ a0.h h;
+    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
 
-    public /* synthetic */ sj(vp vpVar, long j10, int i10) {
-        this.a = i10;
-        this.b = vpVar;
-        this.c = j10;
+    public /* synthetic */ sj(wp wpVar, int i10, ArrayList arrayList, boolean z10, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, a0.h hVar, TLRPC.TL_messages_dialogs tL_messages_dialogs, int i11) {
+        this.a = i11;
+        this.b = wpVar;
+        this.c = i10;
+        this.d = arrayList;
+        this.e = z10;
+        this.f = tL_messages_peerDialogs;
+        this.h = hVar;
+        this.n = tL_messages_dialogs;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0164  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        boolean z10;
+        int i10;
+        int i11;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        int i12;
         switch (this.a) {
             case 0:
-                long j10 = this.c;
-                vp vpVar = this.b;
-                if (j10 == 0) {
-                    vpVar.getClass();
-                    break;
-                } else {
-                    vpVar.getMessagesStorage().q1(j10);
-                    break;
-                }
-            case 1:
-                i0.g3(new zl(this.b, this.c, tLObject));
-                break;
-            case 2:
-                boolean z10 = tLObject instanceof TLRPC.TL_channels_channelParticipants;
-                vp vpVar2 = this.b;
-                if (!z10) {
-                    vpVar2.getClass();
-                    break;
-                } else {
-                    vpVar2.F3(this.c, (TLRPC.TL_channels_channelParticipants) tLObject);
-                    break;
-                }
-            case 3:
-                vp vpVar3 = this.b;
-                vpVar3.getClass();
-                if (tL_error == null) {
-                    vpVar3.L3((TLRPC.Updates) tLObject, false);
-                }
-                long j11 = this.c;
-                if (j11 != 0) {
-                    vpVar3.getMessagesStorage().q1(j11);
-                    break;
-                }
-                break;
-            case 4:
-                vp vpVar4 = this.b;
-                vpVar4.getClass();
-                if (tL_error == null) {
-                    vpVar4.L3((TLRPC.Updates) tLObject, false);
-                }
-                long j12 = this.c;
-                if (j12 != 0) {
-                    vpVar4.getMessagesStorage().q1(j12);
-                    break;
-                }
-                break;
-            case 5:
-                vp vpVar5 = this.b;
-                if (tL_error == null) {
-                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
-                    vpVar5.J3(tL_messages_affectedMessages.pts, -1, tL_messages_affectedMessages.pts_count);
-                }
-                long j13 = this.c;
-                if (j13 != 0) {
-                    vpVar5.getMessagesStorage().q1(j13);
-                    break;
-                }
-                break;
-            case 6:
-                long j14 = this.c;
-                vp vpVar6 = this.b;
-                if (j14 == 0) {
-                    vpVar6.getClass();
-                    break;
-                } else {
-                    vpVar6.getMessagesStorage().q1(j14);
-                    break;
-                }
-            case 7:
-                vp vpVar7 = this.b;
-                if (tL_error == null) {
-                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages2 = (TLRPC.TL_messages_affectedMessages) tLObject;
-                    vpVar7.J3(tL_messages_affectedMessages2.pts, -1, tL_messages_affectedMessages2.pts_count);
-                }
-                long j15 = this.c;
-                if (j15 != 0) {
-                    vpVar7.getMessagesStorage().q1(j15);
-                    break;
-                }
-                break;
-            case 8:
-                this.b.getMessagesStorage().q1(this.c);
-                break;
-            case 9:
-                if (tL_error == null) {
-                    i0.g3(new zl(this.b, tLObject, this.c));
-                    break;
-                }
-                break;
-            case 10:
-                long j16 = this.c;
-                vp vpVar8 = this.b;
-                if (j16 == 0) {
-                    vpVar8.getClass();
-                    break;
-                } else {
-                    vpVar8.getMessagesStorage().q1(j16);
-                    break;
-                }
-            case 11:
-                long j17 = this.c;
-                vp vpVar9 = this.b;
-                if (j17 == 0) {
-                    vpVar9.getClass();
-                    break;
-                } else {
-                    vpVar9.getMessagesStorage().q1(j17);
-                    break;
-                }
-            case 12:
-                if (tLObject != null) {
-                    TLRPC.TL_chatOnlines tL_chatOnlines = (TLRPC.TL_chatOnlines) tLObject;
-                    vp vpVar10 = this.b;
-                    hs messagesStorage = vpVar10.getMessagesStorage();
-                    int i10 = tL_chatOnlines.onlines;
-                    r5 r5Var = messagesStorage.a;
-                    long j18 = this.c;
-                    r5Var.c(new gq(messagesStorage, i10, j18, 7));
-                    i0.g3(new d4(vpVar10, j18, tL_chatOnlines, 19));
-                    break;
-                }
-                break;
-            case 13:
-                vp vpVar11 = this.b;
-                vpVar11.getClass();
-                if (tL_error == null) {
-                    vpVar11.L3((TLRPC.Updates) tLObject, false);
-                }
-                long j19 = this.c;
-                if (j19 != 0) {
-                    vpVar11.getMessagesStorage().q1(j19);
-                    break;
-                }
-                break;
-            case 14:
-                if (tL_error == null) {
-                    vp vpVar12 = this.b;
-                    vpVar12.getMessagesController().L3((TLRPC.Updates) tLObject, false);
-                    i0.h3(new wk(vpVar12, this.c, 20), 1000L);
-                    break;
-                }
-                break;
-            case 15:
-                vp vpVar13 = this.b;
-                if (tL_error != null) {
-                    vpVar13.getClass();
-                    break;
-                } else {
-                    vpVar13.getMessagesController().L3((TLRPC.Updates) tLObject, false);
-                    i0.h3(new wk(vpVar13, this.c, 19), 1000L);
-                    break;
-                }
-            case 16:
-                long j20 = this.c;
-                vp vpVar14 = this.b;
-                if (j20 != 0) {
-                    vpVar14.getMessagesStorage().q1(j20);
-                } else {
-                    vpVar14.getClass();
-                }
-                if (tLObject != null) {
-                    vpVar14.L3((TLRPC.Updates) tLObject, false);
-                    break;
-                }
+                i0.g3(new sj(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1));
                 break;
             default:
-                boolean z11 = tLObject instanceof TLRPC.TL_boolTrue;
-                vp vpVar15 = this.b;
-                long j21 = this.c;
-                if (!z11) {
-                    vpVar15.getClass();
-                    if (tL_error != null && tL_error.code == 400) {
-                        vpVar15.T2(0, -j21, true);
-                        break;
+                wp wpVar = this.b;
+                ArrayList arrayList3 = wpVar.y;
+                a0.h hVar = wpVar.Q;
+                SparseIntArray sparseIntArray = wpVar.o2;
+                int i13 = this.c;
+                sparseIntArray.delete(i13);
+                ArrayList arrayList4 = this.d;
+                wpVar.r(arrayList4);
+                ArrayList V0 = wpVar.V0(i13);
+                int i14 = 0;
+                int i15 = 0;
+                boolean z11 = false;
+                int i16 = this.e;
+                while (i14 < V0.size()) {
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) V0.get(i14);
+                    if (!(dialog instanceof TLRPC.TL_dialogFolder)) {
+                        if (o5.C(dialog.id)) {
+                            if (i16 < arrayList4.size()) {
+                                arrayList4.add(i16, dialog);
+                            } else {
+                                arrayList4.add(dialog);
+                            }
+                            i16++;
+                        } else if (dialog.pinned) {
+                            i15 = Math.max(dialog.pinnedNum, i15);
+                            dialog.pinned = false;
+                            dialog.pinnedNum = 0;
+                            i16++;
+                            z11 = true;
+                        } else if (dialog.id != wpVar.z2) {
+                            ArrayList arrayList5 = new ArrayList();
+                            if (arrayList4.isEmpty()) {
+                                TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = this.f;
+                                wpVar.V3(tL_messages_peerDialogs.users, false);
+                                wpVar.P3(tL_messages_peerDialogs.chats, false);
+                                ArrayList arrayList6 = new ArrayList();
+                                ArrayList arrayList7 = new ArrayList();
+                                int size = arrayList4.size();
+                                int i17 = 0;
+                                z10 = false;
+                                ArrayList arrayList8 = arrayList4;
+                                while (i17 < size) {
+                                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList8.get(i17);
+                                    dialog2.pinnedNum = (size - i17) + i15;
+                                    ArrayList arrayList9 = arrayList7;
+                                    arrayList5.add(Long.valueOf(dialog2.id));
+                                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) hVar.f(dialog2.id);
+                                    if (dialog3 != null) {
+                                        dialog3.pinned = true;
+                                        dialog3.pinnedNum = dialog2.pinnedNum;
+                                        arrayList6.add(Long.valueOf(dialog2.id));
+                                        arrayList7 = arrayList9;
+                                        arrayList7.add(Integer.valueOf(dialog2.pinnedNum));
+                                        arrayList = arrayList8;
+                                        i10 = size;
+                                        i11 = i17;
+                                    } else {
+                                        i10 = size;
+                                        arrayList7 = arrayList9;
+                                        i11 = i17;
+                                        hVar.k(dialog2, dialog2.id);
+                                        ArrayList arrayList10 = (ArrayList) this.h.f(dialog2.id);
+                                        wpVar.R.k(arrayList10, dialog2.id);
+                                        if (arrayList10 != null) {
+                                            int i18 = 0;
+                                            arrayList8 = arrayList8;
+                                            while (i18 < arrayList10.size()) {
+                                                kj kjVar = (kj) arrayList10.get(i18);
+                                                if (kjVar != null) {
+                                                    i12 = i18;
+                                                    if (kjVar.k.peer_id.channel_id == 0) {
+                                                        wpVar.U.put(kjVar.f1(), kjVar);
+                                                        wpVar.N = Math.min(wpVar.N, kjVar.k.date);
+                                                        long j10 = kjVar.k.random_id;
+                                                        if (j10 != 0) {
+                                                            arrayList2 = arrayList8;
+                                                            wpVar.S.k(kjVar, j10);
+                                                        }
+                                                    }
+                                                    arrayList2 = arrayList8;
+                                                } else {
+                                                    arrayList2 = arrayList8;
+                                                    i12 = i18;
+                                                }
+                                                i18 = i12 + 1;
+                                                arrayList8 = arrayList2;
+                                            }
+                                        }
+                                        arrayList = arrayList8;
+                                        wpVar.t7.d(dialog2.id);
+                                        z10 = true;
+                                    }
+                                    i17 = i11 + 1;
+                                    size = i10;
+                                    arrayList8 = arrayList;
+                                    z11 = true;
+                                }
+                                is messagesStorage = wpVar.getMessagesStorage();
+                                messagesStorage.a.c(new fq(messagesStorage, arrayList6, arrayList7, 0));
+                            } else {
+                                z10 = false;
+                            }
+                            if (z11) {
+                                if (z10) {
+                                    arrayList3.clear();
+                                    int m10 = hVar.m();
+                                    for (int i19 = 0; i19 < m10; i19++) {
+                                        TLRPC.Dialog dialog4 = (TLRPC.Dialog) hVar.n(i19);
+                                        if (wpVar.D0.h(dialog4.id) < 0) {
+                                            arrayList3.add(dialog4);
+                                        }
+                                    }
+                                }
+                                wpVar.Q4(null);
+                                wpVar.getNotificationCenter().k(3, new Object[0]);
+                            }
+                            is messagesStorage2 = wpVar.getMessagesStorage();
+                            messagesStorage2.a.c(new aq(messagesStorage2, arrayList5, i13));
+                            wpVar.getMessagesStorage().d1(this.n, 1);
+                            wpVar.getUserConfig().y(i13, true);
+                            wpVar.getUserConfig().v(false);
+                            break;
+                        }
                     }
-                } else {
-                    long j22 = -j21;
-                    if (vpVar15.M0(j22) == null) {
-                        vpVar15.T2(0, j22, true);
-                        break;
-                    }
+                    i14++;
+                    i16 = i16;
                 }
-                break;
+                ArrayList arrayList52 = new ArrayList();
+                if (arrayList4.isEmpty()) {
+                }
+                if (z11) {
+                }
+                is messagesStorage22 = wpVar.getMessagesStorage();
+                messagesStorage22.a.c(new aq(messagesStorage22, arrayList52, i13));
+                wpVar.getMessagesStorage().d1(this.n, 1);
+                wpVar.getUserConfig().y(i13, true);
+                wpVar.getUserConfig().v(false);
         }
     }
 }

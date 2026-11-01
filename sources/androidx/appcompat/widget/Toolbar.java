@@ -46,14 +46,14 @@ import m.s3;
 import m.u;
 import m.v;
 import m.z0;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import r0.h0;
 import v7.r7;
 import w7.t;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int D;
@@ -225,7 +225,7 @@ public class Toolbar extends ViewGroup {
             uVar.setImageDrawable(this.f);
             this.n.setContentDescription(this.h);
             h3 h = h();
-            h.a = (this.D & zs.x1) | 8388611;
+            h.a = (this.D & at.x1) | 8388611;
             h.b = 2;
             this.n.setLayoutParams(h);
             this.n.setOnClickListener(new w(this, 7));
@@ -277,7 +277,7 @@ public class Toolbar extends ViewGroup {
             actionMenuView2.getClass();
             actionMenuView2.K = m0Var;
             h3 h = h();
-            h.a = (this.D & zs.x1) | 8388613;
+            h.a = (this.D & at.x1) | 8388613;
             this.a.setLayoutParams(h);
             b(this.a, false);
         }
@@ -287,7 +287,7 @@ public class Toolbar extends ViewGroup {
         if (this.d == null) {
             this.d = new u(getContext(), null, R.attr.toolbarNavigationButtonStyle);
             h3 h = h();
-            h.a = (this.D & zs.x1) | 8388611;
+            h.a = (this.D & at.x1) | 8388611;
             this.d.setLayoutParams(h);
         }
     }
@@ -482,7 +482,7 @@ public class Toolbar extends ViewGroup {
             l3Var.f = getNavigationIcon();
             k G = k.G(getContext(), null, f.a.a, R.attr.actionBarStyle);
             TypedArray typedArray = (TypedArray) G.c;
-            l3Var.o = G.w(15);
+            l3Var.o = G.v(15);
             CharSequence text = typedArray.getText(27);
             if (!TextUtils.isEmpty(text)) {
                 l3Var.g = true;
@@ -501,14 +501,14 @@ public class Toolbar extends ViewGroup {
                     setSubtitle(text2);
                 }
             }
-            Drawable w9 = G.w(20);
-            if (w9 != null) {
-                l3Var.e = w9;
+            Drawable v = G.v(20);
+            if (v != null) {
+                l3Var.e = v;
                 l3Var.c();
             }
-            Drawable w10 = G.w(17);
-            if (w10 != null) {
-                l3Var.d = w10;
+            Drawable v10 = G.v(17);
+            if (v10 != null) {
+                l3Var.d = v10;
                 l3Var.c();
             }
             if (l3Var.f == null && (drawable = l3Var.o) != null) {
@@ -589,9 +589,9 @@ public class Toolbar extends ViewGroup {
         h3 h3Var = (h3) view.getLayoutParams();
         int measuredHeight = view.getMeasuredHeight();
         int i11 = i10 > 0 ? (measuredHeight - i10) / 2 : 0;
-        int i12 = h3Var.a & zs.x1;
+        int i12 = h3Var.a & at.x1;
         if (i12 != 16 && i12 != 48 && i12 != 80) {
-            i12 = this.M & zs.x1;
+            i12 = this.M & at.x1;
         }
         if (i12 == 48) {
             return getPaddingTop() - i11;
@@ -808,7 +808,7 @@ public class Toolbar extends ViewGroup {
                     h3 h3Var4 = (h3) z0Var2.getLayoutParams();
                     int i29 = i16;
                     boolean z13 = (!s10 && this.b.getMeasuredWidth() > 0) || (s11 && this.c.getMeasuredWidth() > 0);
-                    i17 = this.M & zs.x1;
+                    i17 = this.M & at.x1;
                     int i30 = max;
                     if (i17 != 48) {
                         paddingTop = getPaddingTop() + ((ViewGroup.MarginLayoutParams) h3Var3).topMargin + this.H;
@@ -960,7 +960,7 @@ public class Toolbar extends ViewGroup {
         int i292 = i16;
         if (s10) {
         }
-        i17 = this.M & zs.x1;
+        i17 = this.M & at.x1;
         int i302 = max;
         if (i17 != 48) {
         }
@@ -1630,7 +1630,7 @@ public class Toolbar extends ViewGroup {
         }
         this.K = typedArray.getDimensionPixelOffset(10, TLObject.FLAG_31);
         this.L = typedArray.getDimensionPixelOffset(6, TLObject.FLAG_31);
-        this.f = G.w(4);
+        this.f = G.v(4);
         this.h = typedArray.getText(3);
         CharSequence text = typedArray.getText(21);
         if (!TextUtils.isEmpty(text)) {
@@ -1642,27 +1642,27 @@ public class Toolbar extends ViewGroup {
         }
         this.s = getContext();
         setPopupTheme(typedArray.getResourceId(17, 0));
-        Drawable w9 = G.w(16);
-        if (w9 != null) {
-            setNavigationIcon(w9);
+        Drawable v = G.v(16);
+        if (v != null) {
+            setNavigationIcon(v);
         }
         CharSequence text3 = typedArray.getText(15);
         if (!TextUtils.isEmpty(text3)) {
             setNavigationContentDescription(text3);
         }
-        Drawable w10 = G.w(11);
-        if (w10 != null) {
-            setLogo(w10);
+        Drawable v10 = G.v(11);
+        if (v10 != null) {
+            setLogo(v10);
         }
         CharSequence text4 = typedArray.getText(12);
         if (!TextUtils.isEmpty(text4)) {
             setLogoDescription(text4);
         }
         if (typedArray.hasValue(29)) {
-            setTitleTextColor(G.v(29));
+            setTitleTextColor(G.u(29));
         }
         if (typedArray.hasValue(20)) {
-            setSubtitleTextColor(G.v(20));
+            setSubtitleTextColor(G.u(20));
         }
         if (typedArray.hasValue(14)) {
             getMenuInflater().inflate(typedArray.getResourceId(14, 0), getMenu());

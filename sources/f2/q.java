@@ -13,10 +13,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class q {
     public static final byte[] a = {0, 0, 0, 1};
@@ -230,14 +230,14 @@ public abstract class q {
             int e = uVar.e(8);
             int i13 = 0;
             while (e == 255) {
-                i13 += zs.e4;
+                i13 += at.e4;
                 e = uVar.e(8);
             }
             int i14 = i13 + e;
             int e7 = uVar.e(8);
             int i15 = 0;
             while (e7 == 255) {
-                i15 += zs.e4;
+                i15 += at.e4;
                 e7 = uVar.e(8);
             }
             int i16 = i15 + e7;

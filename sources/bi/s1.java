@@ -1,21 +1,21 @@
 package bi;
 
-import org.telegram.messenger.us;
-import org.telegram.ui.Components.tu0;
+import org.telegram.messenger.vs;
+import org.telegram.ui.Components.uu0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s1 implements tu0 {
+public final /* synthetic */ class s1 implements uu0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ us b;
+    public final /* synthetic */ vs b;
 
-    public /* synthetic */ s1(us usVar, int i10) {
+    public /* synthetic */ s1(vs vsVar, int i10) {
         this.a = i10;
-        this.b = usVar;
+        this.b = vsVar;
     }
 
-    @Override // org.telegram.ui.Components.tu0
-    public final void K(int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.uu0
+    public final void L(int i10, boolean z10) {
         switch (this.a) {
             case 0:
                 ((k2) this.b).getClass();

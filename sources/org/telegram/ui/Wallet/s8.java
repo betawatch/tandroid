@@ -8,11 +8,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s8 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
     public final org.telegram.ui.ActionBar.p6 a;
@@ -32,7 +32,7 @@ public final class s8 extends LinearLayout implements org.telegram.ui.ActionBar.
         this.b = textView;
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(org.telegram.messenger.i0.o1("fonts/rmono.ttf"));
-        TextView f10 = z20.f(f7, textView, w7.b6.t(-1, -2, 55, 0, 0, 0, 2), context);
+        TextView f10 = a30.f(f7, textView, w7.b6.t(-1, -2, 55, 0, 0, 0, 2), context);
         this.c = f10;
         f10.setTextSize(1, 14.0f);
         f7.addView(f10, w7.b6.t(-1, -2, 55, 0, 0, 0, 0));

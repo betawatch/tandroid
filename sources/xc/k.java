@@ -2,13 +2,13 @@ package xc;
 
 import java.util.Arrays;
 import java.util.Map;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class k {
     public static final char[] r;
-    public static final int[] s = {8364, zs.N1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, zs.J5, zs.X1, 381, zs.Z1, zs.a2, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, zs.K5, zs.n2, 382, 376};
+    public static final int[] s = {8364, at.N1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, at.J5, at.X1, 381, at.Z1, at.a2, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, at.K5, at.n2, 382, 376};
     public final a a;
     public final b b;
     public f2.f d;

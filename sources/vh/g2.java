@@ -6,33 +6,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.ck0;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.ff;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.oi;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.dg0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.bg0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class g2 extends ak0 {
+public final class g2 extends bk0 {
     public final /* synthetic */ k2 c;
 
     public g2(k2 k2Var) {
         this.c = k2Var;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
 
-    @Override // org.telegram.ui.Components.ak0
+    @Override // org.telegram.ui.Components.bk0
     public final String F(int i10) {
-        ef efVar;
+        ff ffVar;
         int i11 = i10 - 2;
         k2 k2Var = this.c;
         if (k2Var.c0) {
@@ -42,42 +42,42 @@ public final class g2 extends ak0 {
             i11 = i10 - 3;
         } else if (k2Var.d0) {
             if (i11 >= 0 && i11 < k2Var.b0.size()) {
-                return cd.e0(((n5) k2Var.b0.get(i11)).d / 1000, true);
+                return dd.e0(((n5) k2Var.b0.get(i11)).d / 1000, true);
             }
             i11 -= k2Var.b0.size();
         }
         ArrayList arrayList = k2Var.f0;
-        if (arrayList == null || i11 < 0 || i11 >= arrayList.size() || (efVar = (ef) k2Var.f0.get(i11)) == null) {
+        if (arrayList == null || i11 < 0 || i11 >= arrayList.size() || (ffVar = (ff) k2Var.f0.get(i11)) == null) {
             return null;
         }
-        long j10 = efVar.D;
+        long j10 = ffVar.D;
         if (Build.VERSION.SDK_INT <= 28) {
             j10 /= 1000;
         }
-        return cd.e0(j10, true);
+        return dd.e0(j10, true);
     }
 
-    @Override // org.telegram.ui.Components.ak0
-    public final void G(tk0 tk0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.bk0
+    public final void G(uk0 uk0Var, float f7, int[] iArr) {
         int e = e();
-        float width = (tk0Var.getWidth() - tk0Var.getPaddingLeft()) - tk0Var.getPaddingRight();
+        float width = (uk0Var.getWidth() - uk0Var.getPaddingLeft()) - uk0Var.getPaddingRight();
         k2 k2Var = this.c;
         oi oiVar = k2Var.e;
         float f10 = oiVar.J;
         int i10 = (int) (((int) (width / f10)) * k2Var.O);
         int ceil = (int) Math.ceil(e / f10);
-        float W1 = (org.telegram.messenger.i0.W1(f7, 0, Math.max(0, r2 - ((org.telegram.messenger.i0.q.y - tk0Var.getPaddingTop()) - tk0Var.getPaddingBottom()))) / (ceil * i10)) * ceil;
+        float W1 = (org.telegram.messenger.i0.W1(f7, 0, Math.max(0, r2 - ((org.telegram.messenger.i0.q.y - uk0Var.getPaddingTop()) - uk0Var.getPaddingBottom()))) / (ceil * i10)) * ceil;
         int round = Math.round(W1);
         iArr[0] = Math.max(0, oiVar.J * round) + 2;
-        iArr[1] = tk0Var.getPaddingTop() + ((int) ((W1 - round) * i10));
+        iArr[1] = uk0Var.getPaddingTop() + ((int) ((W1 - round) * i10));
     }
 
-    @Override // org.telegram.ui.Components.ak0
-    public final float H(tk0 tk0Var) {
+    @Override // org.telegram.ui.Components.bk0
+    public final float H(uk0 uk0Var) {
         int e = e();
-        float width = (tk0Var.getWidth() - tk0Var.getPaddingLeft()) - tk0Var.getPaddingRight();
+        float width = (uk0Var.getWidth() - uk0Var.getPaddingLeft()) - uk0Var.getPaddingRight();
         float f7 = this.c.e.J;
-        return (Math.max(0, tk0Var.computeVerticalScrollOffset() - r2.getPadding()) - tk0Var.getPaddingTop()) / ((((int) Math.ceil(e / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (org.telegram.messenger.i0.q.y - tk0Var.getPaddingTop()));
+        return (Math.max(0, uk0Var.computeVerticalScrollOffset() - r2.getPadding()) - uk0Var.getPaddingTop()) / ((((int) Math.ceil(e / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (org.telegram.messenger.i0.q.y - uk0Var.getPaddingTop()));
     }
 
     @Override // s4.g0
@@ -142,25 +142,25 @@ public final class g2 extends ak0 {
             if (arrayList3 == null || i13 < 0 || i13 >= arrayList3.size()) {
                 return;
             }
-            ef efVar = (ef) k2Var.f0.get(i13);
-            h2Var.f(arrayList.indexOf(efVar), !arrayList.isEmpty() || k2Var.Q, h2Var.S == efVar);
-            h2Var.S = efVar;
-            h2Var.g((efVar == null || !efVar.b || efVar.d()) ? null : org.telegram.messenger.i0.g0(efVar.E, false, false));
+            ff ffVar = (ff) k2Var.f0.get(i13);
+            h2Var.f(arrayList.indexOf(ffVar), !arrayList.isEmpty() || k2Var.Q, h2Var.S == ffVar);
+            h2Var.S = ffVar;
+            h2Var.g((ffVar == null || !ffVar.b || ffVar.d()) ? null : org.telegram.messenger.i0.g0(ffVar.E, false, false));
             h2Var.F = null;
-            if (efVar == null) {
+            if (ffVar == null) {
                 h2Var.O = null;
-            } else if (efVar.b) {
+            } else if (ffVar.b) {
                 StringBuilder sb2 = new StringBuilder();
-                z20.q(null, 2131753933, sb2, ", ");
-                sb2.append(cd.z(efVar.E));
+                a30.q(null, 2131753933, sb2, ", ");
+                sb2.append(dd.z(ffVar.E));
                 h2Var.O = sb2.toString();
             } else {
-                h2Var.O = cd.L0(2131753948, null);
+                h2Var.O = dd.L0(2131753948, null);
             }
-            h2Var.b(efVar);
+            h2Var.b(ffVar);
             h2Var.invalidate();
             if (k2Var.M) {
-                h2Var.I.setOnClickListener(new rh.e7(this, efVar, h2Var, 7));
+                h2Var.I.setOnClickListener(new rh.e7(this, ffVar, h2Var, 7));
             }
         }
     }
@@ -174,20 +174,20 @@ public final class g2 extends ak0 {
         } else if (i10 == 1) {
             Context context = k2Var.getContext();
             boolean z10 = k2Var.L;
-            dg0 dg0Var = new dg0(context, 21);
-            dg0Var.setPadding(org.telegram.messenger.i0.L(z10 ? 14.0f : 16.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(10.0f));
+            bg0 bg0Var = new bg0(context, 21);
+            bg0Var.setPadding(org.telegram.messenger.i0.L(z10 ? 14.0f : 16.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(10.0f));
             TextView textView = new TextView(context);
             textView.setTextSize(1, 16.0f);
             textView.setTextColor(-1);
             textView.setTypeface(org.telegram.messenger.i0.o());
             textView.setText(k2Var.getTitle());
-            dg0Var.addView(textView, w7.b6.d(-1, -1.0f, zs.E1, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
-            k2Var.i0 = dg0Var;
-            view = dg0Var;
+            bg0Var.addView(textView, w7.b6.d(-1, -1.0f, at.E1, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
+            k2Var.i0 = bg0Var;
+            view = bg0Var;
         } else {
             view = new h2(k2Var.getContext(), k2Var.b, k2Var.O, k2Var.M);
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 
     @Override // s4.g0
@@ -197,10 +197,10 @@ public final class g2 extends ak0 {
         if (c1Var.f == 2) {
             h2 h2Var = (h2) c1Var.a;
             Object obj = h2Var.S;
-            if (!(obj instanceof ef)) {
+            if (!(obj instanceof ff)) {
                 h2Var.f(-1, false, false);
             } else {
-                h2Var.f(arrayList.indexOf((ef) obj), !arrayList.isEmpty() || k2Var.Q, false);
+                h2Var.f(arrayList.indexOf((ff) obj), !arrayList.isEmpty() || k2Var.Q, false);
             }
         }
     }

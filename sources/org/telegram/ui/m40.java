@@ -1,102 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import org.telegram.messenger.beta.R;
+import android.view.View;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class m40 extends Dialog {
-    public final ih.c a;
-    public final bi.t0 b;
-    public Bitmap c;
-    public Paint d;
-    public BitmapShader e;
-    public final Matrix f;
-    public float h;
-    public ValueAnimator n;
-    public boolean r;
+public final /* synthetic */ class m40 implements org.telegram.ui.Components.l5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public m40(Context context, bi.t0 t0Var) {
-        super(context, R.style.TransparentDialog);
-        this.f = new Matrix();
-        this.b = t0Var;
-        t0Var.setVisibility(4);
-        org.telegram.messenger.i0.l2(new org.telegram.ui.Components.vg(18, this, t0Var), 14.0f);
-        ih.c cVar = new ih.c(this, context, t0Var);
-        this.a = cVar;
-        cVar.setOnClickListener(new a(this, 28));
+    public /* synthetic */ m40(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void b(float f7, k40 k40Var) {
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.n = null;
+    @Override // org.telegram.ui.Components.l5
+    public final void invalidate() {
+        switch (this.a) {
+            case 0:
+                Iterator it = ((n40) this.b).i.iterator();
+                while (it.hasNext()) {
+                    ((View) it.next()).invalidate();
+                }
+                break;
+            default:
+                q21 q21Var = (q21) this.b;
+                q21Var.getClass();
+                if (!sg.e0.b && q21Var.getParent() != null) {
+                    ((View) q21Var.getParent()).invalidate();
+                    break;
+                }
+                break;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
-        this.n = ofFloat;
-        ofFloat.addUpdateListener(new a3(this, 13));
-        this.n.addListener(new l40(this, f7, k40Var, 0));
-        this.n.setDuration(420L);
-        this.n.setInterpolator(org.telegram.ui.Components.gr.h);
-        this.n.start();
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        if (this.r) {
-            return;
-        }
-        this.r = true;
-        b(0.0f, new k40(this, 0));
-        try {
-            WindowManager.LayoutParams attributes = getWindow().getAttributes();
-            attributes.flags |= 16;
-            getWindow().setAttributes(attributes);
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
-        }
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = org.telegram.messenger.zs.E1;
-        attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
-        attributes.softInputMode = 48;
-        attributes.flags = (-2013069056) | i10;
-        boolean z10 = org.telegram.messenger.v2.a;
-        attributes.flags = i10 | (-2013060864);
-        org.telegram.messenger.i0.h2();
-        attributes.flags |= 1152;
-        if (Build.VERSION.SDK_INT >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        super.show();
-        b(1.0f, null);
-        org.telegram.messenger.i0.h3(new k40(this, 1), 16L);
     }
 }

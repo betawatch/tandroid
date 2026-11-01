@@ -1,9 +1,9 @@
 package rh;
 
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -11,9 +11,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.aw;
+import org.telegram.ui.zv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f5 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -79,22 +79,22 @@ public final /* synthetic */ class f5 implements Runnable {
                             }
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, o8Var.b, bVar);
-                            String L0 = cd.L0(2131748836, null);
+                            String L0 = dd.L0(2131748836, null);
                             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                             x1Var.R = L0;
-                            x1Var.T = cd.L0(2131748837, null);
+                            x1Var.T = dd.L0(2131748837, null);
                             i0.a.w(null, 2131747847, alertDialog$Builder, null);
                             break;
                         }
                     }
                 } else {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject3;
-                    vp.r1(i14).L3(updates, false);
+                    wp.r1(i14).L3(updates, false);
                     vh.t7 t7Var = o8Var.B0;
                     if (t7Var != null) {
                         t7Var.destroy(true, null);
                     }
-                    ArrayList y02 = vp.y0(updates, TL_update.TL_updateStoryID.class);
+                    ArrayList y02 = wp.y0(updates, TL_update.TL_updateStoryID.class);
                     int size = y02.size();
                     int i15 = 0;
                     while (true) {
@@ -113,7 +113,7 @@ public final /* synthetic */ class f5 implements Runnable {
                             i11 = -1;
                         }
                     }
-                    ArrayList y03 = vp.y0(updates, TL_stories.TL_updateStory.class);
+                    ArrayList y03 = wp.y0(updates, TL_stories.TL_updateStory.class);
                     int size2 = y03.size();
                     int i16 = i10;
                     while (i16 < size2) {
@@ -132,13 +132,13 @@ public final /* synthetic */ class f5 implements Runnable {
                                             s0Var.e();
                                             if (th.s0.W != null) {
                                                 th.s0.W = null;
-                                                zs f7 = zs.f(i14);
+                                                at f7 = at.f(i14);
                                                 Object[] objArr = new Object[1];
                                                 objArr[i10] = Long.valueOf(th.s0.W.g());
-                                                f7.k(zs.G2, objArr);
+                                                f7.k(at.G2, objArr);
                                             }
                                         }
-                                        org.telegram.messenger.i0.h3(new aw(o8Var, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
+                                        org.telegram.messenger.i0.h3(new zv(o8Var, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
                                         break;
                                     }
                                 }

@@ -4,15 +4,15 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ne implements View.OnTouchListener {
     public final /* synthetic */ int a = 0;
     public final Rect b = new Rect();
-    public final /* synthetic */ org.telegram.messenger.us c;
+    public final /* synthetic */ org.telegram.messenger.vs c;
 
-    public ne(org.telegram.ui.yn0 yn0Var) {
-        this.c = yn0Var;
+    public ne(org.telegram.ui.wn0 wn0Var) {
+        this.c = wn0Var;
     }
 
     @Override // android.view.View.OnTouchListener
@@ -33,23 +33,23 @@ public final class ne implements View.OnTouchListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.yn0 yn0Var = (org.telegram.ui.yn0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (k1Var = yn0Var.I) != null && k1Var.isShowing()) {
+                org.telegram.ui.wn0 wn0Var = (org.telegram.ui.wn0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (k1Var = wn0Var.I) != null && k1Var.isShowing()) {
                     Rect rect2 = this.b;
                     view.getHitRect(rect2);
                     if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        yn0Var.I.d(true);
+                        wn0Var.I.d(true);
                         break;
                     }
                 }
                 break;
             default:
-                org.telegram.ui.lo0 lo0Var = (org.telegram.ui.lo0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (k1Var2 = lo0Var.m0) != null && k1Var2.isShowing()) {
+                org.telegram.ui.jo0 jo0Var = (org.telegram.ui.jo0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (k1Var2 = jo0Var.m0) != null && k1Var2.isShowing()) {
                     Rect rect3 = this.b;
                     view.getHitRect(rect3);
                     if (!rect3.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        lo0Var.m0.d(true);
+                        jo0Var.m0.d(true);
                         break;
                     }
                 }
@@ -58,8 +58,8 @@ public final class ne implements View.OnTouchListener {
         return false;
     }
 
-    public ne(org.telegram.ui.lo0 lo0Var) {
-        this.c = lo0Var;
+    public ne(org.telegram.ui.jo0 jo0Var) {
+        this.c = jo0Var;
     }
 
     public ne(ChatActivityEnterView chatActivityEnterView) {

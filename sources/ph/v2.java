@@ -10,28 +10,28 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.x41;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.y41;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class v2 extends z41 {
+public final class v2 extends a51 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        z41.h(new v2());
+        a51.h(new v2());
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
         w2 w2Var = (w2) view;
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) a51Var.G;
-        int i10 = a51Var.z;
-        String str = (String) a51Var.l;
-        boolean z11 = a51Var.e;
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) b51Var.G;
+        int i10 = b51Var.z;
+        String str = (String) b51Var.l;
+        boolean z11 = b51Var.e;
         w2Var.getClass();
         ShapeDrawable L = t6.L(org.telegram.messenger.i0.L(20.0f), stargiftattributebackdrop.center_color | (-16777216));
         CharSequence charSequence = stargiftattributebackdrop.name;
@@ -43,15 +43,15 @@ public final class v2 extends z41 {
             spannableStringBuilder.append((CharSequence) "  ");
             int length = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) Integer.toString(i10));
-            spannableStringBuilder.setSpan(new x41(org.telegram.messenger.i0.o()), length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new y41(org.telegram.messenger.i0.o()), length, spannableStringBuilder.length(), 33);
             charSequence = spannableStringBuilder;
         }
         w2Var.j(charSequence, 0, L);
         w2Var.setChecked(z11);
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final View d(Context context, tk0 tk0Var, int i10, p6 p6Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final View d(Context context, uk0 uk0Var, int i10, p6 p6Var) {
         w2 w2Var = new w2(0, context, p6Var, false, false);
         w2Var.setPadding(org.telegram.messenger.i0.L(18.0f), 0, org.telegram.messenger.i0.L(18.0f), 0);
         w2Var.c(t6.E8, t6.F8);

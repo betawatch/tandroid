@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class hm {
     public long i;
@@ -19,7 +19,7 @@ public final class hm {
     public float q;
     public float r;
     public float s;
-    public qz0 u;
+    public rz0 u;
     public long v;
     public final org.telegram.ui.ActionBar.c5 x;
     public final m.c3 y;
@@ -77,11 +77,11 @@ public final class hm {
             if (i10 >= size) {
                 break;
             }
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) arrayList2.get(i10);
-            org.telegram.messenger.bj bjVar = (org.telegram.messenger.bj) hashMap.get(efVar);
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) arrayList2.get(i10);
+            org.telegram.messenger.cj cjVar = (org.telegram.messenger.cj) hashMap.get(ffVar);
             long j12 = j11;
             int i11 = i10;
-            hmVar.i = Math.max(hmVar.i, efVar.N);
+            hmVar.i = Math.max(hmVar.i, ffVar.N);
             int size2 = arrayList.size();
             int i12 = 0;
             while (true) {
@@ -89,7 +89,7 @@ public final class hm {
                     break;
                 }
                 gm gmVar2 = (gm) arrayList.get(i12);
-                if (gmVar2.b == efVar) {
+                if (gmVar2.b == ffVar) {
                     gmVar = gmVar2;
                     break;
                 }
@@ -97,11 +97,11 @@ public final class hm {
             }
             if (gmVar == null) {
                 gm gmVar3 = new gm(hmVar);
-                gm.a(gmVar3, efVar);
-                gm.b(gmVar3, dmVar, bjVar, z10);
+                gm.a(gmVar3, ffVar);
+                gm.b(gmVar3, dmVar, cjVar, z10);
                 arrayList.add(gmVar3);
             } else {
-                gm.b(gmVar, dmVar, bjVar, z10);
+                gm.b(gmVar, dmVar, cjVar, z10);
             }
             i10 = i11 + 1;
             j11 = j12;

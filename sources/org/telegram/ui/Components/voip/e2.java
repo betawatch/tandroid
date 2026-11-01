@@ -1,48 +1,55 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.w5;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f2 b;
+public final class e2 extends View {
+    public final TextPaint a;
+    public final Paint b;
+    public final float c;
+    public final String d;
+    public volatile Bitmap e;
 
-    public /* synthetic */ e2(f2 f2Var, int i10) {
-        this.a = i10;
-        this.b = f2Var;
+    public e2(Context context, String str) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        this.b = new Paint(1);
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTextSize(org.telegram.messenger.i0.L(13.0f));
+        textPaint.setColor(-1);
+        textPaint.setTypeface(org.telegram.messenger.i0.o());
+        this.c = textPaint.measureText(str);
+        this.d = str;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                f2 f2Var = this.b;
-                f2Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                f2Var.d = intValue;
-                f2Var.e = intValue;
-                f2Var.f = intValue;
-                f2Var.h = intValue;
-                f2Var.n = intValue;
-                f2Var.invalidate();
-                break;
-            default:
-                f2 f2Var2 = this.b;
-                f2Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f2Var2.d = org.telegram.messenger.i0.W1(floatValue, f2Var2.F, org.telegram.messenger.i0.L(56.0f));
-                f2Var2.e = org.telegram.messenger.i0.W1(floatValue, f2Var2.F, org.telegram.messenger.i0.L(36.0f));
-                f2Var2.f = org.telegram.messenger.i0.W1(floatValue, f2Var2.F, org.telegram.messenger.i0.L(60.0f));
-                f2Var2.h = org.telegram.messenger.i0.W1(floatValue, f2Var2.F, org.telegram.messenger.i0.L(36.0f));
-                f2Var2.n = org.telegram.messenger.i0.W1(floatValue, f2Var2.F, org.telegram.messenger.i0.L(64.0f));
-                f2Var2.r = org.telegram.messenger.i0.W1(floatValue, 0, org.telegram.messenger.i0.L(50.0f));
-                f2Var2.s = org.telegram.messenger.i0.W1(floatValue, 0, org.telegram.messenger.i0.L(20.0f));
-                f2Var2.w = org.telegram.messenger.i0.W1(floatValue, 0, 0);
-                f2Var2.x = org.telegram.messenger.i0.W1(floatValue, 0, org.telegram.messenger.i0.L(-20.0f));
-                f2Var2.y = org.telegram.messenger.i0.W1(floatValue, 0, org.telegram.messenger.i0.L(-40.0f));
-                f2Var2.invalidate();
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e != null) {
+            canvas.drawBitmap(this.e, 0.0f, 0.0f, this.b);
         }
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (z10) {
+            Utilities.e.c(new w5(this, 11));
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + ((int) this.c), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
     }
 }

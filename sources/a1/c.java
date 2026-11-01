@@ -50,15 +50,15 @@ import java.util.Collection;
 import java.util.List;
 import n4.q;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.gs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.hs;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.o20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.is;
+import org.telegram.messenger.p20;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -70,18 +70,18 @@ import org.telegram.ui.Cells.l5;
 import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Cells.t8;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.s4;
 import org.telegram.ui.Components.z60;
-import org.telegram.ui.ay;
-import org.telegram.ui.pb1;
-import org.telegram.ui.ux;
+import org.telegram.ui.nb1;
+import org.telegram.ui.tx;
+import org.telegram.ui.zx;
 import v7.u7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i5.e, kt, q0, ux, a6, l1, n, fe.e, c3.g, o {
+public final /* synthetic */ class c implements OnSuccessListener, i, p20, u1, i5.e, kt, q0, tx, a6, l1, n, fe.e, c3.g, o {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -90,13 +90,13 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean G() {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean H() {
         return false;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean N(ay ayVar) {
+    @Override // org.telegram.ui.tx
+    public /* synthetic */ boolean O(zx zxVar) {
         return false;
     }
 
@@ -168,28 +168,28 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                         ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new c3(1));
                         if ("hello".equals(c10.b)) {
                             ConnectionsManager.getInstance(i12).sendRequest(new TL_account.updateBusinessGreetingMessage(), null);
-                            TLRPC.UserFull a2 = vp.r1(i12).a2(d20.i(i12).e());
+                            TLRPC.UserFull a2 = wp.r1(i12).a2(e20.i(i12).e());
                             if (a2 != null) {
                                 a2.flags2 &= -5;
                                 a2.business_greeting_message = null;
-                                hs.a0(i12).j2(a2, true);
+                                is.a0(i12).j2(a2, true);
                             }
                         } else if ("away".equals(c10.b)) {
                             ConnectionsManager.getInstance(i12).sendRequest(new TL_account.updateBusinessAwayMessage(), null);
-                            TLRPC.UserFull a22 = vp.r1(i12).a2(d20.i(i12).e());
+                            TLRPC.UserFull a22 = wp.r1(i12).a2(e20.i(i12).e());
                             if (a22 != null) {
                                 a22.flags2 &= -9;
                                 a22.business_away_message = null;
-                                hs.a0(i12).j2(a22, true);
+                                is.a0(i12).j2(a22, true);
                             }
                         }
                     }
                     f7.l();
-                    hs a02 = hs.a0(i12);
+                    is a02 = is.a0(i12);
                     a02.a.c(new r0(a02, arrayList, 1));
-                    zs.f(i12).k(zs.F1, new Object[0]);
+                    at.f(i12).k(at.F1, new Object[0]);
                 }
-                z2.b0(z2Var);
+                z2.c0(z2Var);
                 break;
             default:
                 ((n4) this.b).run();
@@ -227,60 +227,62 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
             return;
         }
         ArrayList arrayList = eVar.a;
-        if (u7.a(i10, 4) || u7.a(i10, 2)) {
-            gi.a e = rVar.e();
-            ViewGroup viewGroup = bVar.l;
-            if (viewGroup != null) {
-                e.b(viewGroup.getY(), bVar.k.getWidth(), bVar.l.getY() + bVar.l.getHeight());
+        if (r.f().a) {
+            if (u7.a(i10, 4) || u7.a(i10, 2)) {
+                gi.a e = rVar.e();
+                ViewGroup viewGroup = bVar.m;
+                if (viewGroup != null) {
+                    e.b(viewGroup.getY(), bVar.l.getWidth(), bVar.m.getY() + bVar.m.getHeight());
+                }
+                eVar.b = e.b;
+                while (eVar.b > arrayList.size()) {
+                    arrayList.add(new ei.c(arrayList.size()));
+                }
+                for (int i11 = 0; i11 < eVar.b; i11++) {
+                    ei.c cVar = (ei.c) arrayList.get(i11);
+                    cVar.a.set(e.c(i11));
+                    cVar.b(eVar.m, eVar.n, eVar.o);
+                    cVar.c(eVar.k);
+                    int i12 = eVar.p;
+                    int i13 = eVar.q;
+                    int i14 = eVar.r;
+                    int i15 = eVar.s;
+                    cVar.u = i12;
+                    cVar.v = i13;
+                    cVar.w = i14;
+                    cVar.x = i15;
+                }
             }
-            eVar.b = e.b;
-            while (eVar.b > arrayList.size()) {
-                arrayList.add(new ei.c(arrayList.size()));
+            eVar.c = bVar.n;
+            eVar.d = bVar.l;
+            boolean z10 = rVar.j > 0;
+            boolean z11 = !z10;
+            if (eVar.l != z11) {
+                eVar.l = z11;
+                int i16 = !z10 ? 5 : 1;
+                eVar.m = i16;
+                int i17 = z10 ? 1 : 10;
+                eVar.n = i17;
+                eVar.o = Math.max(i16, i17);
+                for (int i18 = 0; i18 < eVar.b; i18++) {
+                    ((ei.c) arrayList.get(i18)).b(eVar.m, eVar.n, eVar.o);
+                }
+                eVar.f();
             }
-            for (int i11 = 0; i11 < eVar.b; i11++) {
-                ei.c cVar = (ei.c) arrayList.get(i11);
-                cVar.a.set(e.c(i11));
-                cVar.b(eVar.m, eVar.n, eVar.o);
-                cVar.c(eVar.k);
-                int i12 = eVar.p;
-                int i13 = eVar.q;
-                int i14 = eVar.r;
-                int i15 = eVar.s;
-                cVar.u = i12;
-                cVar.v = i13;
-                cVar.w = i14;
-                cVar.x = i15;
-            }
-        }
-        eVar.c = bVar.m;
-        eVar.d = bVar.k;
-        boolean z10 = rVar.j > 0;
-        boolean z11 = !z10;
-        if (eVar.l != z11) {
-            eVar.l = z11;
-            int i16 = !z10 ? 5 : 1;
-            eVar.m = i16;
-            int i17 = z10 ? 1 : 10;
-            eVar.n = i17;
-            eVar.o = Math.max(i16, i17);
-            for (int i18 = 0; i18 < eVar.b; i18++) {
-                ((ei.c) arrayList.get(i18)).b(eVar.m, eVar.n, eVar.o);
-            }
+            int i19 = rVar.k;
+            int i20 = rVar.l;
+            eVar.t = i19;
+            eVar.u = i20;
             eVar.f();
-        }
-        int i19 = rVar.k;
-        int i20 = rVar.l;
-        eVar.t = i19;
-        eVar.u = i20;
-        eVar.f();
-        eVar.e();
-        Runnable runnable = bVar.i;
-        if (runnable != null) {
-            runnable.run();
+            eVar.e();
+            Runnable runnable = bVar.j;
+            if (runnable != null) {
+                runnable.run();
+            }
         }
     }
 
-    @Override // org.telegram.messenger.o20
+    @Override // org.telegram.messenger.p20
     public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         int i10;
         int i11 = this.a;
@@ -290,16 +292,16 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
         switch (i11) {
             case 2:
                 h2 h2Var = (h2) obj3;
-                a51 a51Var = (a51) obj;
+                b51 b51Var = (b51) obj;
                 View view = (View) obj2;
                 float floatValue = ((Float) serializable).floatValue();
-                int i14 = a51Var.d;
+                int i14 = b51Var.d;
                 if (i14 == -1) {
                     boolean z10 = !h2Var.d;
                     h2Var.d = z10;
                     ((t8) view).setChecked(z10);
                     h2Var.a.f3.O(true);
-                    h2Var.c0(true);
+                    h2Var.d0(true);
                     break;
                 } else if (i14 == -2) {
                     m3 m3Var = new m3(null);
@@ -307,9 +309,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                     m3Var.c = new ag.e0(h2Var, view);
                     h2Var.presentFragment(m3Var);
                     break;
-                } else if (a51Var.a == 5 && i14 >= 0 && i14 < h2Var.f.length) {
-                    if (!cd.X ? floatValue < view.getMeasuredWidth() - i0.L(76.0f) : floatValue > i0.L(76.0f)) {
-                        int i15 = (a51Var.d + 6) % 7;
+                } else if (b51Var.a == 5 && i14 >= 0 && i14 < h2Var.f.length) {
+                    if (!dd.X ? floatValue < view.getMeasuredWidth() - i0.L(76.0f) : floatValue > i0.L(76.0f)) {
+                        int i15 = (b51Var.d + 6) % 7;
                         int i16 = 0;
                         for (int i17 = 0; i17 < h2Var.f[i15].size(); i17++) {
                             if (((g2) h2Var.f[i15].get(i17)).b > i16) {
@@ -317,7 +319,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                             }
                         }
                         int max = Math.max(0, i16 - 1439);
-                        int i18 = (a51Var.d + 1) % 7;
+                        int i18 = (b51Var.d + 1) % 7;
                         int i19 = 1440;
                         for (int i20 = 0; i20 < h2Var.f[i18].size(); i20++) {
                             if (((g2) h2Var.f[i18].get(i20)).a < i19) {
@@ -325,8 +327,8 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                             }
                         }
                         int i21 = i19 + 1439;
-                        CharSequence charSequence = a51Var.l;
-                        ArrayList arrayList = h2Var.f[a51Var.d];
+                        CharSequence charSequence = b51Var.l;
+                        ArrayList arrayList = h2Var.f[b51Var.d];
                         int i22 = 0;
                         while (i13 < 7) {
                             ArrayList arrayList2 = h2Var.f[i13];
@@ -337,32 +339,32 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                         }
                         j2 j2Var = new j2(charSequence, arrayList, max, i21, 28 - i22);
                         j2Var.f = new a3.d(h2Var, 8);
-                        j2Var.h = new f(10, h2Var, a51Var);
+                        j2Var.h = new f(10, h2Var, b51Var);
                         h2Var.presentFragment(j2Var);
                         break;
                     } else {
-                        if (h2Var.f[a51Var.d].isEmpty()) {
+                        if (h2Var.f[b51Var.d].isEmpty()) {
                             ((l5) view).setChecked(true);
-                            h2Var.f[a51Var.d].add(new g2(0, 1439));
-                            h2Var.b0(a51Var.d);
+                            h2Var.f[b51Var.d].add(new g2(0, 1439));
+                            h2Var.c0(b51Var.d);
                         } else {
-                            h2Var.f[a51Var.d].clear();
+                            h2Var.f[b51Var.d].clear();
                             ((l5) view).setChecked(false);
                         }
-                        ((l5) view).setValue(h2.e0(h2Var.f[a51Var.d]));
-                        h2Var.c0(true);
+                        ((l5) view).setValue(h2.f0(h2Var.f[b51Var.d]));
+                        h2Var.d0(true);
                         break;
                     }
                 }
                 break;
             case 3:
                 final j2 j2Var2 = (j2) obj3;
-                a51 a51Var2 = (a51) obj;
+                b51 b51Var2 = (b51) obj;
                 final View view2 = (View) obj2;
                 int i23 = j2Var2.c;
                 int i24 = j2Var2.d;
                 ArrayList arrayList3 = j2Var2.b;
-                int i25 = a51Var2.d;
+                int i25 = b51Var2.d;
                 if (i25 == -1) {
                     j2Var2.r = !j2Var2.r;
                     arrayList3.clear();
@@ -371,7 +373,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                     }
                     t8 t8Var = (t8) view2;
                     boolean z11 = j2Var2.r;
-                    a51Var2.e = z11;
+                    b51Var2.e = z11;
                     t8Var.setChecked(z11);
                     boolean z12 = j2Var2.r;
                     t8Var.b(t6.x0(null, z12 ? t6.f6 : t6.e6, false), z12);
@@ -382,8 +384,8 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                         break;
                     }
                 } else if (i25 == -2) {
-                    if (arrayList3.isEmpty() || j2Var2.Y()) {
-                        if (j2Var2.Y()) {
+                    if (arrayList3.isEmpty() || j2Var2.Z()) {
+                        if (j2Var2.Z()) {
                             arrayList3.clear();
                         }
                         int j10 = Utilities.j(480, i24 - 1, i23);
@@ -399,33 +401,33 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                     }
                     j2Var2.n.f3.O(true);
                     break;
-                } else if (a51Var2.a == 3 && (i10 = i25 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (b51Var2.a == 3 && (i10 = i25 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i27 = i10 - 1;
                     g2 g2Var = i27 >= 0 ? (g2) arrayList3.get(i27) : null;
                     final g2 g2Var2 = (g2) arrayList3.get(i10);
                     int i28 = i10 + 1;
                     g2 g2Var3 = i28 < arrayList3.size() ? (g2) arrayList3.get(i28) : null;
-                    int i29 = a51Var2.d % 3;
+                    int i29 = b51Var2.d % 3;
                     if (i29 == 0) {
                         Activity parentActivity = j2Var2.getParentActivity();
-                        String L0 = cd.L0(2131752750, null);
+                        String L0 = dd.L0(2131752750, null);
                         int i30 = g2Var2.a;
                         if (g2Var != null) {
                             i23 = g2Var.b + 1;
                         }
-                        s4.W(parentActivity, L0, i30, i23, g2Var2.b - 1, new q20() { // from class: ag.i2
-                            @Override // org.telegram.messenger.q20
+                        s4.W(parentActivity, L0, i30, i23, g2Var2.b - 1, new r20() { // from class: ag.i2
+                            @Override // org.telegram.messenger.r20
                             public final void a(Object obj4) {
                                 Integer num = (Integer) obj4;
                                 switch (i13) {
                                     case 0:
                                         j2 j2Var3 = j2Var2;
-                                        boolean Z = j2Var3.Z();
+                                        boolean a02 = j2Var3.a0();
                                         p8 p8Var = (p8) view2;
                                         int intValue = num.intValue();
                                         g2Var2.a = intValue;
                                         p8Var.w(g2.a(intValue), true);
-                                        if (Z != j2Var3.Z()) {
+                                        if (a02 != j2Var3.a0()) {
                                             j2Var3.n.f3.O(true);
                                         }
                                         a3.d dVar3 = j2Var3.f;
@@ -436,12 +438,12 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                                         break;
                                     default:
                                         j2 j2Var4 = j2Var2;
-                                        boolean Z2 = j2Var4.Z();
+                                        boolean a03 = j2Var4.a0();
                                         p8 p8Var2 = (p8) view2;
                                         int intValue2 = num.intValue();
                                         g2Var2.b = intValue2;
                                         p8Var2.w(g2.a(intValue2), true);
-                                        if (Z2 != j2Var4.Z()) {
+                                        if (a03 != j2Var4.a0()) {
                                             j2Var4.n.f3.O(true);
                                         }
                                         a3.d dVar4 = j2Var4.f;
@@ -456,25 +458,25 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                         break;
                     } else if (i29 == 1) {
                         Activity parentActivity2 = j2Var2.getParentActivity();
-                        String L02 = cd.L0(2131752756, null);
+                        String L02 = dd.L0(2131752756, null);
                         int i31 = g2Var2.b;
                         int i32 = g2Var2.a + 1;
                         if (g2Var3 != null) {
                             i24 = g2Var3.a - 1;
                         }
-                        s4.W(parentActivity2, L02, i31, i32, i24, new q20() { // from class: ag.i2
-                            @Override // org.telegram.messenger.q20
+                        s4.W(parentActivity2, L02, i31, i32, i24, new r20() { // from class: ag.i2
+                            @Override // org.telegram.messenger.r20
                             public final void a(Object obj4) {
                                 Integer num = (Integer) obj4;
                                 switch (i12) {
                                     case 0:
                                         j2 j2Var3 = j2Var2;
-                                        boolean Z = j2Var3.Z();
+                                        boolean a02 = j2Var3.a0();
                                         p8 p8Var = (p8) view2;
                                         int intValue = num.intValue();
                                         g2Var2.a = intValue;
                                         p8Var.w(g2.a(intValue), true);
-                                        if (Z != j2Var3.Z()) {
+                                        if (a02 != j2Var3.a0()) {
                                             j2Var3.n.f3.O(true);
                                         }
                                         a3.d dVar3 = j2Var3.f;
@@ -485,12 +487,12 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                                         break;
                                     default:
                                         j2 j2Var4 = j2Var2;
-                                        boolean Z2 = j2Var4.Z();
+                                        boolean a03 = j2Var4.a0();
                                         p8 p8Var2 = (p8) view2;
                                         int intValue2 = num.intValue();
                                         g2Var2.b = intValue2;
                                         p8Var2.w(g2.a(intValue2), true);
-                                        if (Z2 != j2Var4.Z()) {
+                                        if (a03 != j2Var4.a0()) {
                                             j2Var4.n.f3.O(true);
                                         }
                                         a3.d dVar4 = j2Var4.f;
@@ -526,7 +528,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
                 }
                 break;
             case 5:
-                m3.Y((m3) obj3, (a51) obj, (View) obj2);
+                m3.Z((m3) obj3, (b51) obj, (View) obj2);
                 break;
         }
     }
@@ -600,14 +602,14 @@ public final /* synthetic */ class c implements OnSuccessListener, i, o20, u1, i
         ((Switch) this.b).invalidate();
     }
 
-    @Override // org.telegram.ui.ux
-    public boolean y(ay ayVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, pb1 pb1Var) {
+    @Override // org.telegram.ui.tx
+    public boolean z(zx zxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, nb1 nb1Var) {
         bi.s4 s4Var = (bi.s4) this.b;
-        if (arrayList.isEmpty() || ((gs) arrayList.get(0)).a <= 0) {
+        if (arrayList.isEmpty() || ((hs) arrayList.get(0)).a <= 0) {
             return false;
         }
-        s4Var.run(((gs) arrayList.get(0)).a);
-        ayVar.finishFragment();
+        s4Var.run(((hs) arrayList.get(0)).a);
+        zxVar.finishFragment();
         return true;
     }
 

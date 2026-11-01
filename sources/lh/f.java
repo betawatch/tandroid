@@ -5,43 +5,43 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class f extends z41 {
+public final class f extends a51 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        z41.h(new f());
+        a51.h(new f());
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
         qg.b bVar = (qg.b) view;
-        bVar.w = (TLRPC.TL_help_country) a51Var.G;
+        bVar.w = (TLRPC.TL_help_country) b51Var.G;
         bVar.f();
         bVar.setDivider(z10);
-        bVar.c(a51Var.e, false);
+        bVar.c(b51Var.e, false);
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final boolean c(a51 a51Var, a51 a51Var2) {
-        return a51Var.I(a51Var2);
+    @Override // org.telegram.ui.Components.a51
+    public final boolean c(b51 b51Var, b51 b51Var2) {
+        return b51Var.I(b51Var2);
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final View d(Context context, tk0 tk0Var, int i10, p6 p6Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final View d(Context context, uk0 uk0Var, int i10, p6 p6Var) {
         qg.b bVar = new qg.b(context, p6Var);
         bVar.setBackground(null);
         return bVar;
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final boolean e(a51 a51Var, a51 a51Var2) {
-        return a51Var.J(a51Var2);
+    @Override // org.telegram.ui.Components.a51
+    public final boolean e(b51 b51Var, b51 b51Var2) {
+        return b51Var.J(b51Var2);
     }
 }

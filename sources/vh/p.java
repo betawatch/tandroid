@@ -12,32 +12,32 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.m9;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.s9;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.jo;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class p extends k {
     public static final int[] P1 = {21600, 43200, 86400, 172800};
-    public q20 A1;
-    public q20 B1;
+    public r20 A1;
+    public r20 B1;
     public n C1;
     public float D1;
     public float E1;
@@ -82,13 +82,13 @@ public abstract class p extends k {
     public final RectF t1;
     public final RectF u1;
     public final Path v1;
-    public qz0 w1;
+    public rz0 w1;
     public Path x1;
     public Paint y1;
-    public qz0 z1;
+    public rz0 z1;
 
-    public p(Context context, FrameLayout frameLayout, uu0 uu0Var, FrameLayout frameLayout2, th.b bVar, s9 s9Var) {
-        super(context, frameLayout, uu0Var, frameLayout2, bVar, s9Var);
+    public p(Context context, FrameLayout frameLayout, vu0 vu0Var, FrameLayout frameLayout2, th.b bVar, s9 s9Var) {
+        super(context, frameLayout, vu0Var, frameLayout2, bVar, s9Var);
         this.V0 = true;
         int i10 = 0;
         this.W0 = 0;
@@ -146,7 +146,7 @@ public abstract class p extends k {
         imageView.setBackground(org.telegram.ui.ActionBar.t6.h0(1090519039, 1, org.telegram.messenger.i0.L(18.0f)));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setContentDescription(cd.L0(2131754736, null));
+        imageView.setContentDescription(dd.L0(2131754736, null));
         addView(imageView, w7.b6.d(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 6.0f));
         imageView.setOnClickListener(new rh.s(e8Var, 18));
         ImageView imageView2 = new ImageView(context);
@@ -156,7 +156,7 @@ public abstract class p extends k {
         imageView2.setImageDrawable(jVar);
         imageView2.setBackground(org.telegram.ui.ActionBar.t6.h0(1090519039, 1, org.telegram.messenger.i0.L(18.0f)));
         imageView2.setScaleType(scaleType);
-        imageView2.setContentDescription(cd.L0(2131744609, null));
+        imageView2.setContentDescription(dd.L0(2131744609, null));
         A(86400, false);
         addView(imageView2, w7.b6.d(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 6.0f));
         imageView2.setOnClickListener(new rh.e7(e8Var, frameLayout, bVar, 6));
@@ -184,12 +184,12 @@ public abstract class p extends k {
     public final void B() {
         if (this.Y0) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.a);
-            String L0 = cd.L0(2131744524, null);
+            String L0 = dd.L0(2131744524, null);
             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
             x1Var.R = L0;
-            x1Var.T = cd.L0(2131744525, null);
-            alertDialog$Builder.k(cd.L0(2131746336, null), new rh.d0(this, 23));
-            alertDialog$Builder.h(cd.L0(2131752589, null), null);
+            x1Var.T = dd.L0(2131744525, null);
+            alertDialog$Builder.k(dd.L0(2131746336, null), new rh.d0(this, 23));
+            alertDialog$Builder.h(dd.L0(2131752589, null), null);
             TextView textView = (TextView) alertDialog$Builder.p().d(-1);
             if (textView != null) {
                 org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.q7, this.a);
@@ -289,10 +289,10 @@ public abstract class p extends k {
                         imageView.setVisibility(4);
                         this.S0.setVisibility(4);
                         oVar.g = true;
-                        bi0 bi0Var = oVar.h;
-                        bi0Var.T(true, 0.0f);
+                        ci0 ci0Var = oVar.h;
+                        ci0Var.T(true, 0.0f);
                         if (oVar.f) {
-                            bi0Var.start();
+                            ci0Var.start();
                         }
                         n nVar2 = this.C1;
                         if (nVar2 != null) {
@@ -344,9 +344,9 @@ public abstract class p extends k {
             this.K1 = false;
             this.L1 = false;
             oVar.g = false;
-            bi0 bi0Var2 = oVar.h;
-            bi0Var2.stop();
-            bi0Var2.T(true, 0.0f);
+            ci0 ci0Var2 = oVar.h;
+            ci0Var2.stop();
+            ci0Var2.T(true, 0.0f);
             this.N1 = true;
             this.d1 = System.currentTimeMillis();
             this.J0 = true;
@@ -382,12 +382,12 @@ public abstract class p extends k {
 
     @Override // vh.k
     public int getCaptionDefaultLimit() {
-        return vp.r1(this.U).W4;
+        return wp.r1(this.U).W4;
     }
 
     @Override // vh.k
     public int getCaptionPremiumLimit() {
-        return vp.r1(this.U).X4;
+        return wp.r1(this.U).X4;
     }
 
     public int getTimelineHeight() {
@@ -445,7 +445,7 @@ public abstract class p extends k {
                 paint = c10;
                 f7 = 12.0f;
                 f11 = f14;
-                canvas.saveLayerAlpha(rectF.left, rectF.top, rectF.right, rectF.bottom, zs.e4, 31);
+                canvas.saveLayerAlpha(rectF.left, rectF.top, rectF.right, rectF.bottom, at.e4, 31);
                 canvas3 = canvas;
             } else {
                 f7 = 12.0f;
@@ -455,7 +455,7 @@ public abstract class p extends k {
             }
             if (f11 > 0.0f) {
                 if (this.w1 == null) {
-                    this.w1 = new qz0(cd.L0(2131745331, null), 15.0f, null);
+                    this.w1 = new rz0(dd.L0(2131745331, null), 15.0f, null);
                 }
                 if (this.x1 == null) {
                     Path path = new Path();
@@ -487,7 +487,7 @@ public abstract class p extends k {
             }
             if (d10 > 0.0f) {
                 if (this.z1 == null) {
-                    this.z1 = new qz0(cd.L0(2131752570, str), f12, org.telegram.messenger.i0.o());
+                    this.z1 = new rz0(dd.L0(2131752570, str), f12, org.telegram.messenger.i0.o());
                 }
                 this.z1.p = (int) ((rectF.width() - org.telegram.messenger.i0.L(116.0f)) - e6Var.c());
                 float width = ((rectF.width() / 4.0f) * f13) + (rectF.centerX() - (this.z1.k() / 2.0f));
@@ -524,7 +524,7 @@ public abstract class p extends k {
         float z12 = c3.i0.z(1.0f, this.b1, org.telegram.messenger.i0.L(30.0f) * e, org.telegram.messenger.i0.L(41.0f)) * f13 * f7;
         float T1 = org.telegram.messenger.i0.T1(sc.e.z(1.0f, d10, getWidth() * 0.35f * this.b1, rectF.right - org.telegram.messenger.i0.L(20.0f)), rectF.left + org.telegram.messenger.i0.L(20.0f), d);
         float L = rectF.bottom - org.telegram.messenger.i0.L(20.0f);
-        boolean e7 = sc.e(360928);
+        boolean e7 = tc.e(360928);
         Paint paint = this.f1;
         if (e7) {
             float L2 = org.telegram.messenger.i0.L(47.0f);
@@ -689,12 +689,12 @@ public abstract class p extends k {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         o oVar = this.Z0;
-        bi0 bi0Var = oVar.h;
+        ci0 ci0Var = oVar.h;
         oVar.f = true;
         if (oVar.g) {
-            bi0Var.start();
+            ci0Var.start();
         }
-        bi0Var.R(oVar.i);
+        ci0Var.R(oVar.i);
     }
 
     @Override // vh.k, android.view.ViewGroup, android.view.View
@@ -702,9 +702,9 @@ public abstract class p extends k {
         super.onDetachedFromWindow();
         o oVar = this.Z0;
         oVar.f = false;
-        bi0 bi0Var = oVar.h;
-        bi0Var.stop();
-        bi0Var.R(null);
+        ci0 ci0Var = oVar.h;
+        ci0Var.stop();
+        ci0Var.R(null);
     }
 
     public void setAmplitude(double d) {
@@ -716,16 +716,16 @@ public abstract class p extends k {
         int i10 = z10 ? R.drawable.input_video_story_remove : R.drawable.input_video_story;
         ImageView imageView = this.R0;
         imageView.setImageResource(i10);
-        imageView.setContentDescription(cd.L0(z10 ? 2131754788 : 2131754736, null));
+        imageView.setContentDescription(dd.L0(z10 ? 2131754788 : 2131754736, null));
         this.Y0 = z10;
     }
 
-    public void setOnPeriodUpdate(q20 q20Var) {
-        this.A1 = q20Var;
+    public void setOnPeriodUpdate(r20 r20Var) {
+        this.A1 = r20Var;
     }
 
-    public void setOnPremiumHint(q20 q20Var) {
-        this.B1 = q20Var;
+    public void setOnPremiumHint(r20 r20Var) {
+        this.B1 = r20Var;
     }
 
     public void setPeriod(int i10) {

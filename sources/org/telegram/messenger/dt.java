@@ -1,123 +1,70 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
+import android.content.Intent;
 import java.util.ArrayList;
-import java.util.HashMap;
+import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dt implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ot b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ pt b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ dt(ot otVar, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = otVar;
-        this.c = j10;
-        this.d = i10;
+    public /* synthetic */ dt(pt ptVar, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = ptVar;
+        this.c = arrayList;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x011c  */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        boolean z10;
-        int i10;
-        boolean z11;
         switch (this.a) {
             case 0:
-                ot otVar = this.b;
-                a0.h hVar = otVar.c;
-                ArrayList arrayList = otVar.a;
-                a0.h hVar2 = otVar.E;
-                long j10 = this.c;
-                nt ntVar = (nt) hVar2.f(j10);
-                int i11 = this.d;
-                if (ntVar != null) {
-                    HashMap hashMap = ntVar.c;
-                    hashMap.remove(Integer.valueOf(i11));
-                    if (hashMap.isEmpty()) {
-                        hVar2.l(j10);
-                        otVar.D.remove(ntVar);
-                        hs messagesStorage = otVar.getMessagesStorage();
-                        messagesStorage.a.c(new cq(messagesStorage, j10, 4));
-                        z10 = true;
-                        i10 = 0;
-                        while (i10 < arrayList.size()) {
-                            jj jjVar = (jj) arrayList.get(i10);
-                            if (jjVar != null && jjVar.N && jjVar.f1() == i11) {
-                                arrayList.remove(i10);
-                                i10--;
-                                SparseArray sparseArray = (SparseArray) hVar.f(jj.B0(jjVar.k));
-                                if (sparseArray != null) {
-                                    sparseArray.remove(jjVar.f1());
-                                }
-                                if (sparseArray != null && sparseArray.size() <= 0) {
-                                    hVar.l(jj.B0(jjVar.k));
-                                }
-                                z10 = true;
-                            }
-                            i10++;
-                        }
-                        if (!z10) {
-                            otVar.Z(false);
-                            break;
-                        }
-                    } else {
-                        hs messagesStorage2 = otVar.getMessagesStorage();
-                        messagesStorage2.a.c(new hr(4, messagesStorage2, ntVar));
-                    }
+                pt ptVar = this.b;
+                ptVar.x = this.c;
+                Intent intent = new Intent(w0.b, (Class<?>) PopupNotificationActivity.class);
+                intent.putExtra("force", true);
+                intent.putExtra("currentAccount", ptVar.currentAccount);
+                intent.setFlags(268763140);
+                w0.b.startActivity(intent);
+                w0.b.sendBroadcast(new Intent("android.intent.action.CLOSE_SYSTEM_DIALOGS"));
+                break;
+            case 1:
+                pt ptVar2 = this.b;
+                ArrayList arrayList = this.c;
+                int size = arrayList.size();
+                for (int i10 = 0; i10 < size; i10++) {
+                    ptVar2.w.remove(arrayList.get(i10));
                 }
-                z10 = false;
-                i10 = 0;
-                while (i10 < arrayList.size()) {
+                at.e().k(at.d4, new Object[0]);
+                break;
+            case 2:
+                pt ptVar3 = this.b;
+                ArrayList arrayList2 = this.c;
+                int size2 = arrayList2.size();
+                for (int i11 = 0; i11 < size2; i11++) {
+                    ptVar3.w.remove(arrayList2.get(i11));
                 }
-                if (!z10) {
+                at.e().k(at.d4, new Object[0]);
+                break;
+            case 3:
+                pt ptVar4 = this.b;
+                ArrayList arrayList3 = this.c;
+                int size3 = arrayList3.size();
+                for (int i12 = 0; i12 < size3; i12++) {
+                    ptVar4.w.remove(arrayList3.get(i12));
                 }
+                at.e().k(at.d4, new Object[0]);
                 break;
             default:
-                ot otVar2 = this.b;
-                a0.h hVar3 = otVar2.c;
-                ArrayList arrayList2 = otVar2.a;
-                a0.h hVar4 = otVar2.E;
-                long j11 = this.c;
-                nt ntVar2 = (nt) hVar4.f(j11);
-                if (ntVar2 != null) {
-                    hVar4.l(j11);
-                    otVar2.D.remove(ntVar2);
-                    hs messagesStorage3 = otVar2.getMessagesStorage();
-                    messagesStorage3.a.c(new cq(messagesStorage3, j11, 4));
-                    z11 = true;
-                } else {
-                    z11 = false;
+                pt ptVar5 = this.b;
+                ArrayList arrayList4 = this.c;
+                int size4 = arrayList4.size();
+                for (int i13 = 0; i13 < size4; i13++) {
+                    ptVar5.w.remove(arrayList4.get(i13));
                 }
-                int i12 = 0;
-                while (i12 < arrayList2.size()) {
-                    jj jjVar2 = (jj) arrayList2.get(i12);
-                    if (jjVar2 != null && jjVar2.N && jjVar2.f1() <= this.d) {
-                        arrayList2.remove(i12);
-                        i12--;
-                        SparseArray sparseArray2 = (SparseArray) hVar3.f(jj.B0(jjVar2.k));
-                        if (sparseArray2 != null) {
-                            sparseArray2.remove(jjVar2.f1());
-                        }
-                        if (sparseArray2 != null && sparseArray2.size() <= 0) {
-                            hVar3.l(jj.B0(jjVar2.k));
-                        }
-                        z11 = true;
-                    }
-                    i12++;
-                }
-                if (z11) {
-                    otVar2.Z(false);
-                    otVar2.d0();
-                    break;
-                }
+                at.e().k(at.d4, new Object[0]);
                 break;
         }
     }

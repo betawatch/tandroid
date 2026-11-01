@@ -14,13 +14,13 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.r20;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.rz0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x8 extends View implements org.telegram.ui.ActionBar.k6 {
     public PorterDuffColorFilter a;
@@ -32,7 +32,7 @@ public final class x8 extends View implements org.telegram.ui.ActionBar.k6 {
     public final org.telegram.ui.Components.t5 h;
     public float n;
     public w8 r;
-    public q20 s;
+    public r20 s;
     public final /* synthetic */ y8 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -99,7 +99,7 @@ public final class x8 extends View implements org.telegram.ui.ActionBar.k6 {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         w8 w8Var;
-        q20 q20Var;
+        r20 r20Var;
         if (motionEvent.getAction() == 0) {
             w8 w8Var2 = this.r;
             if (w8Var2 != null) {
@@ -123,8 +123,8 @@ public final class x8 extends View implements org.telegram.ui.ActionBar.k6 {
                 w8Var3.q.c(true);
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (motionEvent.getAction() == 1 && (w8Var = this.r) != null && !w8Var.p && w8Var.b.contains(motionEvent.getX(), motionEvent.getY()) && (q20Var = this.s) != null) {
-                q20Var.a(Long.valueOf(this.r.j));
+            if (motionEvent.getAction() == 1 && (w8Var = this.r) != null && !w8Var.p && w8Var.b.contains(motionEvent.getX(), motionEvent.getY()) && (r20Var = this.s) != null) {
+                r20Var.a(Long.valueOf(this.r.j));
             }
             w8 w8Var4 = this.r;
             if (w8Var4 != null) {
@@ -151,8 +151,8 @@ public final class x8 extends View implements org.telegram.ui.ActionBar.k6 {
         }
     }
 
-    public void setOnSenderClickListener(q20 q20Var) {
-        this.s = q20Var;
+    public void setOnSenderClickListener(r20 r20Var) {
+        this.s = r20Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -251,7 +251,7 @@ public final class x8 extends View implements org.telegram.ui.ActionBar.k6 {
             r92.a = (arrayList3.size() - r82) - i12;
             long j10 = t8Var3.d;
             Paint paint = r92.h;
-            r92.o = new qz0(h8.T0(i0.a.k(j10, ',', new StringBuilder("⭐️")), 0.85f, dqVarArr), 12.0f, org.telegram.messenger.i0.o1("fonts/num.otf"));
+            r92.o = new rz0(h8.U0(i0.a.k(j10, ',', new StringBuilder("⭐️")), 0.85f, dqVarArr), 12.0f, org.telegram.messenger.i0.o1("fonts/num.otf"));
             boolean z13 = x8Var.c;
             int i15 = y8Var.j1;
             if (z13) {
@@ -271,7 +271,7 @@ public final class x8 extends View implements org.telegram.ui.ActionBar.k6 {
             if (this.c) {
                 int i17 = i12 + 1;
                 r92.v = i17;
-                r92.u = new qz0(i0.a.i(i17, ""), 10.0f, org.telegram.messenger.i0.o1("fonts/num.otf"));
+                r92.u = new rz0(i0.a.i(i17, ""), 10.0f, org.telegram.messenger.i0.o1("fonts/num.otf"));
                 if (i17 > 0 && r92.s == null) {
                     Drawable mutate = x8Var.getContext().getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
                     r92.s = mutate;
@@ -291,12 +291,12 @@ public final class x8 extends View implements org.telegram.ui.ActionBar.k6 {
                     r92.p = z14;
                     if (z14) {
                         r22 = null;
-                        t10 = cd.L0(2131745066, null);
+                        t10 = dd.L0(2131745066, null);
                     } else {
                         r22 = null;
                         t10 = org.telegram.messenger.o5.t(r92.j);
                     }
-                    r92.n = new qz0(t10, 12.0f, r22);
+                    r92.n = new rz0(t10, 12.0f, r22);
                     x8Var.invalidate();
                     i12++;
                     arrayList3 = arrayList;

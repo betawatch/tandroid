@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ne1;
+import org.telegram.ui.le1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class wo implements ai {
     public final /* synthetic */ dp a;
@@ -37,22 +37,22 @@ public final class wo implements ai {
             if (selectedPhotos.isEmpty()) {
                 return;
             }
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) selectedPhotos.values().iterator().next();
-            String str = efVar.h;
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) selectedPhotos.values().iterator().next();
+            String str = ffVar.h;
             if (str == null) {
-                str = efVar.I;
+                str = ffVar.I;
             }
             if (str != null) {
                 File file = new File(org.telegram.messenger.b8.z(4), Utilities.b.nextInt() + ".jpg");
                 Point c12 = org.telegram.messenger.i0.c1();
-                Bitmap K = org.telegram.messenger.hc.K(str, null, (float) c12.x, (float) c12.y, true);
+                Bitmap K = org.telegram.messenger.ic.K(str, null, (float) c12.x, (float) c12.y, true);
                 K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                to toVar = new to(new ne1(file, file, ""), K, false, 2);
+                to toVar = new to(new le1(file, file, ""), K, false, 2);
                 toVar.W1 = dpVar.V1;
                 toVar.G1 = false;
                 toVar.F1 = false;
                 toVar.o1 = 0.2f;
-                toVar.g1(dpVar.r1.a());
+                toVar.h1(dpVar.r1.a());
                 toVar.J1 = new vo(this, 0);
                 dp.I0(dpVar, toVar);
             }
@@ -72,7 +72,7 @@ public final class wo implements ai {
         to toVar = new to(obj, null, true, 3);
         dp dpVar = this.a;
         toVar.W1 = dpVar.V1;
-        toVar.g1(dpVar.r1.a());
+        toVar.h1(dpVar.r1.a());
         toVar.J1 = new vo(this, 1);
         dp.I0(dpVar, toVar);
     }

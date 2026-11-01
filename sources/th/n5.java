@@ -7,25 +7,25 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.a8;
 import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Components.ak0;
 import org.telegram.ui.Components.az;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.r9;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.zj0;
-import org.telegram.ui.nx0;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.mx0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class n5 implements k7 {
-    public final tk0 a;
-    public final nx0 b;
+    public final uk0 a;
+    public final mx0 b;
     public final int[] c;
     public final boolean d;
     public m5 e;
@@ -35,15 +35,15 @@ public final class n5 implements k7 {
     public boolean r;
     public int s;
 
-    public n5(tk0 tk0Var, boolean z10) {
+    public n5(uk0 uk0Var, boolean z10) {
         this.c = new int[2];
-        this.a = tk0Var;
+        this.a = uk0Var;
         this.d = z10;
         this.b = null;
     }
 
-    public static n5 a(tk0 tk0Var) {
-        return new n5(tk0Var, false);
+    public static n5 a(uk0 uk0Var) {
+        return new n5(uk0Var, false);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -78,9 +78,9 @@ public final class n5 implements k7 {
     @Override // th.k7
     public final void d(long j10, int i10, i2 i2Var) {
         ArrayList arrayList;
-        tk0 tk0Var = this.a;
-        if (tk0Var != null && (tk0Var.getParent() instanceof m)) {
-            m mVar = (m) tk0Var.getParent();
+        uk0 uk0Var = this.a;
+        if (uk0Var != null && (uk0Var.getParent() instanceof m)) {
+            m mVar = (m) uk0Var.getParent();
             if (mVar.k(j10)) {
                 mVar.b0.add(i2Var);
                 return;
@@ -90,18 +90,18 @@ public final class n5 implements k7 {
             }
         }
         int i11 = 0;
-        if (tk0Var == null || !(tk0Var.getParent() instanceof y3)) {
+        if (uk0Var == null || !(uk0Var.getParent() instanceof y3)) {
             if (this.d) {
-                e5 O1 = vp.r1(d20.s0).O1();
+                e5 O1 = wp.r1(e20.s0).O1();
                 ArrayList arrayList2 = O1.h;
                 O1.v(arrayList2);
                 Collections.sort(arrayList2, O1.J);
-                zs.f(O1.a).k(zs.v5, new Object[0]);
+                at.f(O1.a).k(at.v5, new Object[0]);
             }
             i2Var.run();
             return;
         }
-        y3 y3Var = (y3) tk0Var.getParent();
+        y3 y3Var = (y3) uk0Var.getParent();
         az azVar = y3Var.y;
         u3 u3Var = y3Var.x;
         if (u3Var != null && (arrayList = u3Var.c) != null && azVar != null) {
@@ -129,7 +129,7 @@ public final class n5 implements k7 {
                 int N0 = azVar.N0();
                 if (i11 < L0 || i11 > N0) {
                     azVar.h1(i11, org.telegram.messenger.i0.L(60.0f));
-                    tk0Var.post(i2Var);
+                    uk0Var.post(i2Var);
                     return;
                 }
             }
@@ -144,9 +144,9 @@ public final class n5 implements k7 {
         l7Var.b = null;
         l7Var.c = null;
         l7Var.e = null;
-        tk0 tk0Var = this.a;
-        m mVar = (tk0Var == null || !(tk0Var.getParent() instanceof m)) ? null : (m) tk0Var.getParent();
-        ViewGroup viewGroup = (mVar == null || mVar.g()) ? tk0Var : mVar.r;
+        uk0 uk0Var = this.a;
+        m mVar = (uk0Var == null || !(uk0Var.getParent() instanceof m)) ? null : (m) uk0Var.getParent();
+        ViewGroup viewGroup = (mVar == null || mVar.g()) ? uk0Var : mVar.r;
         ViewGroup viewGroup2 = this.b;
         if (viewGroup2 != null) {
             viewGroup = viewGroup2;
@@ -221,11 +221,11 @@ public final class n5 implements k7 {
                         b(l7Var);
                         return true;
                     }
-                } else if ((childAt instanceof org.telegram.ui.Cells.s7) && tk0Var != null) {
+                } else if ((childAt instanceof org.telegram.ui.Cells.s7) && uk0Var != null) {
                     org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) childAt;
-                    jj messageObject = s7Var.getMessageObject();
+                    kj messageObject = s7Var.getMessageObject();
                     if ((s7Var.getStyle() == 1 && i11 == 0) || (messageObject != null && messageObject.x4() && messageObject.f1() == i11 && messageObject.l.dialogId == j10)) {
-                        zj0 fastScroll = tk0Var.getFastScroll();
+                        ak0 fastScroll = uk0Var.getFastScroll();
                         int[] iArr = new int[2];
                         if (fastScroll != null) {
                             fastScroll.getLocationInWindow(iArr);
@@ -331,9 +331,9 @@ public final class n5 implements k7 {
         return false;
     }
 
-    public n5(nx0 nx0Var) {
+    public n5(mx0 mx0Var) {
         this.c = new int[2];
-        this.b = nx0Var;
+        this.b = mx0Var;
         this.a = null;
     }
 }

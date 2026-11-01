@@ -1,83 +1,124 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import java.util.Timer;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u60 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.ve b;
-    public final /* synthetic */ String c;
+public final class u60 extends org.telegram.ui.Components.tk0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public Timer f;
+    public boolean h;
+    public final /* synthetic */ x60 n;
 
-    public /* synthetic */ u60(org.telegram.messenger.ve veVar, String str, int i10) {
-        this.a = i10;
-        this.b = veVar;
-        this.c = str;
+    public u60(x60 x60Var, Context context) {
+        this.n = x60Var;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                Utilities.g.c(new u60(this.b, this.c, 1));
-                break;
-            default:
-                org.telegram.messenger.ve veVar = this.b;
-                String str = this.c;
-                v60 v60Var = (v60) veVar.c;
-                String lowerCase = str.trim().toLowerCase();
-                if (!lowerCase.isEmpty()) {
-                    boolean z10 = true;
-                    String R0 = org.telegram.messenger.cd.D0().R0(lowerCase, true, false);
-                    if (lowerCase.equals(R0) || R0.isEmpty()) {
-                        R0 = null;
-                    }
-                    int i10 = (R0 != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i10];
-                    strArr[0] = lowerCase;
-                    if (R0 != null) {
-                        strArr[1] = R0;
-                    }
-                    ArrayList arrayList = new ArrayList();
-                    ArrayList arrayList2 = new ArrayList();
-                    int i11 = 0;
-                    while (i11 < v60Var.n.w.size()) {
-                        org.telegram.messenger.f5 f5Var = (org.telegram.messenger.f5) v60Var.n.w.get(i11);
-                        String lowerCase2 = org.telegram.messenger.i5.m(0, f5Var.i, f5Var.j).toLowerCase();
-                        String R02 = org.telegram.messenger.cd.D0().R0(lowerCase2, z10, false);
-                        if (lowerCase2.equals(R02)) {
-                            R02 = null;
-                        }
-                        int i12 = 0;
-                        boolean z11 = false;
-                        while (true) {
-                            if (i12 < i10) {
-                                String str2 = strArr[i12];
-                                if (lowerCase2.startsWith(str2) || sc.e.y(" ", str2, lowerCase2) || (R02 != null && (R02.startsWith(str2) || sc.e.y(" ", str2, R02)))) {
-                                    z11 = true;
-                                }
-                                if (z11) {
-                                    arrayList2.add(org.telegram.messenger.i0.r0(f5Var.i, f5Var.j, str2));
-                                    arrayList.add(f5Var);
-                                } else {
-                                    i12++;
-                                }
-                            }
-                        }
-                        i11++;
-                        z10 = true;
-                    }
-                    org.telegram.messenger.i0.g3(new qq(v60Var, arrayList, arrayList2, 12));
-                    break;
-                } else {
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    v60Var.getClass();
-                    org.telegram.messenger.i0.g3(new qq(v60Var, arrayList3, arrayList4, 12));
-                    break;
-                }
-                break;
+    @Override // s4.g0
+    public final void A(s4.c1 c1Var) {
+        View view = c1Var.a;
+        if (view instanceof org.telegram.ui.Cells.s4) {
+            ((org.telegram.ui.Cells.s4) view).a.getImageReceiver().c();
         }
+    }
+
+    @Override // org.telegram.ui.Components.tk0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f != 2;
+    }
+
+    public final void E(String str) {
+        try {
+            Timer timer = this.f;
+            if (timer != null) {
+                timer.cancel();
+            }
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
+        }
+        if (str == null) {
+            this.d.clear();
+            this.e.clear();
+            f();
+        } else {
+            Timer timer2 = new Timer();
+            this.f = timer2;
+            timer2.schedule(new org.telegram.messenger.we(2, this, str), 200L, 300L);
+        }
+    }
+
+    @Override // s4.g0
+    public final int b() {
+        return this.h ? this.d.size() : this.n.w.size() + 2;
+    }
+
+    @Override // s4.g0
+    public final int d(int i10) {
+        if (this.h) {
+            return 0;
+        }
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == 1 ? 2 : 0;
+    }
+
+    @Override // s4.g0
+    public final void f() {
+        super.f();
+        x60 x60Var = this.n;
+        u60 u60Var = x60Var.s;
+        if (u60Var == null || x60Var.y) {
+            return;
+        }
+        x60Var.r.setVisibility(u60Var.b() == 2 ? 0 : 4);
+    }
+
+    @Override // s4.g0
+    public final void t(s4.c1 c1Var, int i10) {
+        org.telegram.messenger.f5 f5Var;
+        CharSequence charSequence;
+        if (c1Var.f == 0) {
+            org.telegram.ui.Cells.s4 s4Var = (org.telegram.ui.Cells.s4) c1Var.a;
+            boolean z10 = this.h;
+            x60 x60Var = this.n;
+            if (z10) {
+                f5Var = (org.telegram.messenger.f5) this.d.get(i10);
+                charSequence = (CharSequence) this.e.get(i10);
+            } else {
+                f5Var = (org.telegram.messenger.f5) x60Var.w.get(i10 - 2);
+                charSequence = null;
+            }
+            s4Var.a(f5Var, charSequence);
+            boolean containsKey = x60Var.D.containsKey(f5Var.b);
+            org.telegram.ui.Components.ep epVar = s4Var.e;
+            if (epVar != null) {
+                epVar.a(containsKey, false);
+            }
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.c1 w(ViewGroup viewGroup, int i10) {
+        View view;
+        Context context = this.c;
+        if (i10 == 1) {
+            org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(context);
+            int i11 = org.telegram.ui.ActionBar.t6.G6;
+            p8Var.g(i11, i11);
+            p8Var.u(org.telegram.messenger.dd.L0(2131745445, null), "", false, R.drawable.msg_shareout, false);
+            view = p8Var;
+        } else {
+            view = i10 == 2 ? new org.telegram.ui.Cells.c7(context, (org.telegram.ui.Cells.f1) null) : new org.telegram.ui.Cells.s4(context, true);
+        }
+        return new org.telegram.ui.Components.dk0(view);
     }
 }

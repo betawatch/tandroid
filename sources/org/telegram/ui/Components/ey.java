@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ey extends ImageView {
     public int a;
@@ -16,13 +16,13 @@ public final class ey extends ImageView {
     public boolean c;
     public o5 d;
     public ix e;
-    public final org.telegram.messenger.jc[] f;
+    public final org.telegram.messenger.kc[] f;
     public float h;
     public ValueAnimator n;
 
     public ey(Context context) {
         super(context);
-        this.f = new org.telegram.messenger.jc[2];
+        this.f = new org.telegram.messenger.kc[2];
         setScaleType(ImageView.ScaleType.CENTER);
         int i10 = org.telegram.ui.ActionBar.t6.i6;
         org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.t6.a0(org.telegram.ui.ActionBar.t6.x0(null, i10, false), org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f));
@@ -88,7 +88,7 @@ public final class ey extends ImageView {
                 this.n = ofFloat;
                 ofFloat.addUpdateListener(new a6(this, 21));
                 this.n.addListener(new w5(this, 25));
-                org.telegram.messenger.z20.j(5.0f, this.n);
+                org.telegram.messenger.a30.j(5.0f, this.n);
                 this.n.setDuration(350L);
                 this.n.start();
             }

@@ -1,45 +1,57 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import android.icu.text.Collator;
+import java.util.Comparator;
+import java.util.List;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b10 implements Runnable {
+public final /* synthetic */ class b10 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t10 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ b10(t10 t10Var, long j10, int i10) {
+    public /* synthetic */ b10(Object obj, int i10) {
         this.a = i10;
-        this.b = t10Var;
-        this.c = j10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        long j10 = this.c;
-        t10 t10Var = this.b;
-        switch (i10) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int compare;
+        switch (this.a) {
             case 0:
-                zs.f(t10Var.currentAccount).k(zs.O1, Long.valueOf(j10));
-                break;
+                compare = ((Collator) this.b).compare(((n10) obj).b, ((n10) obj2).b);
+                return compare;
             default:
-                ArrayList arrayList = (ArrayList) t10Var.n.R.f(j10);
-                if (arrayList != null) {
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        jj jjVar = (jj) arrayList.get(i11);
-                        if (jjVar == null || jjVar.k == null) {
-                            arrayList2.add(null);
-                        } else {
-                            arrayList2.add(t10Var.getMessagesStorage().e0(jjVar.f1(), jj.B0(jjVar.k)));
+                ad adVar = (ad) this.b;
+                ad adVar2 = (ad) obj;
+                ad adVar3 = (ad) obj2;
+                if (adVar2 != adVar) {
+                    if (adVar3 != adVar) {
+                        List list = u10.M;
+                        int indexOf = list.indexOf(adVar2.f);
+                        int indexOf2 = list.indexOf(adVar3.f);
+                        if (indexOf >= 0 && indexOf2 >= 0) {
+                            return indexOf - indexOf2;
+                        }
+                        if (indexOf < 0) {
+                            if (indexOf2 < 0) {
+                                int i10 = adVar2.k;
+                                int i11 = adVar3.k;
+                                if (i10 == i11) {
+                                    return adVar2.a.compareTo(adVar3.a);
+                                }
+                                if (i10 <= i11) {
+                                    if (i10 >= i11) {
+                                        return 0;
+                                    }
+                                }
+                            }
                         }
                     }
-                    i0.g3(new mg(t10Var, arrayList2, arrayList, 5));
-                    break;
+                    return 1;
                 }
-                break;
+                return -1;
         }
     }
 }

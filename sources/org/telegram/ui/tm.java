@@ -6,7 +6,7 @@ import java.util.Locale;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.u1, e2.j {
     public final /* synthetic */ int a = 2;
@@ -54,7 +54,7 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.u1, e
                 } else {
                     Activity parentActivity = unVar.getParentActivity();
                     i11 = ((org.telegram.ui.ActionBar.k2) unVar).currentAccount;
-                    ThemeActivity.G0(i11, parentActivity, new ag.e0(26, fnVar, e0Var), unVar.getResourceProvider());
+                    ThemeActivity.H0(i11, parentActivity, new ag.e0(26, fnVar, e0Var), unVar.getResourceProvider());
                     break;
                 }
             default:
@@ -68,16 +68,16 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.u1, e
                 int value = ac0Var3.getValue();
                 int value2 = ac0Var2.getValue();
                 int value3 = ac0Var.getValue();
-                ll0 ll0Var = (ll0) b0Var.c;
+                jl0 jl0Var = (jl0) b0Var.c;
                 int i13 = b0Var.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) b0Var.d;
                 if (i13 == 8) {
-                    int[] iArr = ll0Var.y;
+                    int[] iArr = jl0Var.y;
                     iArr[0] = value;
                     iArr[1] = value2 + 1;
                     iArr[2] = value3;
                 } else {
-                    ll0Var.getClass();
+                    jl0Var.getClass();
                 }
                 editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;

@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class s3 implements Runnable {
     public final /* synthetic */ u3 a;
@@ -26,14 +26,14 @@ public final class s3 implements Runnable {
             if (uptimeMillis - ((TLRPC.GroupCallParticipant) hVar.f(j10)).lastSpeakTime >= 500) {
                 hVar.l(j10);
                 if (j10 > 0) {
-                    TLRPC.User Z1 = vp.r1(u3Var.C.a).Z1(Long.valueOf(j10));
+                    TLRPC.User Z1 = wp.r1(u3Var.C.a).Z1(Long.valueOf(j10));
                     StringBuilder s10 = a1.g.s(j10, "remove from speaking ", " ");
                     s10.append(Z1 != null ? Z1.first_name : null);
                     Log.d("GroupCall", s10.toString());
                     i10 = i11;
                 } else {
                     i10 = i11;
-                    TLRPC.Chat L0 = vp.r1(u3Var.C.a).L0(Long.valueOf(-j10));
+                    TLRPC.Chat L0 = wp.r1(u3Var.C.a).L0(Long.valueOf(-j10));
                     StringBuilder s11 = a1.g.s(j10, "remove from speaking ", " ");
                     s11.append(L0 != null ? L0.title : null);
                     Log.d("GroupCall", s11.toString());
@@ -47,7 +47,7 @@ public final class s3 implements Runnable {
             i0.h3(u3Var.Q, 550L);
         }
         if (z10) {
-            zs.f(u3Var.C.a).k(zs.y2, Long.valueOf(u3Var.c), Long.valueOf(u3Var.b.id), Boolean.FALSE);
+            at.f(u3Var.C.a).k(at.y2, Long.valueOf(u3Var.c), Long.valueOf(u3Var.b.id), Boolean.FALSE);
         }
     }
 }

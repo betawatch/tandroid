@@ -4,35 +4,35 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.ix0;
+import org.telegram.ui.Components.jx0;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ q20 b;
+    public final /* synthetic */ r20 b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ n0(p0 p0Var, String str, h0 h0Var, long j10, long j11, q20 q20Var) {
+    public /* synthetic */ n0(p0 p0Var, String str, h0 h0Var, long j10, long j11, r20 r20Var) {
         this.e = p0Var;
         this.f = str;
         this.h = h0Var;
         this.c = j10;
         this.d = j11;
-        this.b = q20Var;
+        this.b = r20Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +57,7 @@ public final /* synthetic */ class n0 implements Runnable {
                 h0 h0Var = (h0) this.h;
                 long j10 = this.c;
                 ?? r72 = this.d;
-                q20 q20Var = this.b;
+                r20 r20Var = this.b;
                 ArrayList arrayList2 = new ArrayList();
                 LinkedHashMap linkedHashMap2 = new LinkedHashMap();
                 try {
@@ -88,7 +88,7 @@ public final /* synthetic */ class n0 implements Runnable {
                     try {
                         p0Var.c(j10);
                         try {
-                            ix0 r10 = p0Var.r();
+                            jx0 r10 = p0Var.r();
                             try {
                                 if (!((LinkedHashMap) r10.e).isEmpty() && r10.a != r72) {
                                     throw new o0("USER_MISMATCH");
@@ -145,7 +145,7 @@ public final /* synthetic */ class n0 implements Runnable {
                                 }
                                 str = message;
                                 p0Var.e(arrayList);
-                                org.telegram.messenger.i0.g3(new ag.a3(p0Var, q20Var, j10, str, 13));
+                                org.telegram.messenger.i0.g3(new ag.a3(p0Var, r20Var, j10, str, 13));
                                 return;
                             } catch (Throwable th6) {
                                 th = th6;
@@ -161,7 +161,7 @@ public final /* synthetic */ class n0 implements Runnable {
                                 throw th;
                             }
                             p0Var.e(arrayList);
-                            org.telegram.messenger.i0.g3(new ag.a3(p0Var, q20Var, j10, str, 13));
+                            org.telegram.messenger.i0.g3(new ag.a3(p0Var, r20Var, j10, str, 13));
                             return;
                         } catch (Throwable th7) {
                             th = th7;
@@ -180,24 +180,24 @@ public final /* synthetic */ class n0 implements Runnable {
                 break;
             default:
                 rh.e4 e4Var = (rh.e4) this.e;
-                q20 q20Var2 = this.b;
+                r20 r20Var2 = this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.f;
                 TLObject tLObject = (TLObject) this.h;
                 long j11 = this.c;
                 long j12 = this.d;
-                q20Var2.a(tL_error);
+                r20Var2.a(tL_error);
                 org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.Updates)) {
                         cc.a0(T).f0(tL_error, false);
                     } else if (j11 < 0 || j12 < 0) {
-                        wb I = cc.a0(T).I(R.raw.forward, cd.L0(2131749906, null), org.telegram.messenger.i0.W2(cd.a0(null, null, 2131749907, e4Var.z1(), org.telegram.messenger.o5.t(j11))));
+                        wb I = cc.a0(T).I(R.raw.forward, dd.L0(2131749906, null), org.telegram.messenger.i0.W2(dd.a0(null, null, 2131749907, e4Var.z1(), org.telegram.messenger.o5.t(j11))));
                         I.t = true;
                         I.j();
                     } else {
-                        un ha = un.ha(j11);
-                        ha.whenFullyVisible(new rh.v1(e4Var, ha, j11, 0));
-                        T.presentFragment(ha);
+                        un ma2 = un.ma(j11);
+                        ma2.whenFullyVisible(new rh.v1(e4Var, ma2, j11, 0));
+                        T.presentFragment(ma2);
                     }
                 }
                 rh.e6.y(e4Var.a, false).P(j11);
@@ -206,9 +206,9 @@ public final /* synthetic */ class n0 implements Runnable {
         }
     }
 
-    public /* synthetic */ n0(rh.e4 e4Var, q20 q20Var, TLRPC.TL_error tL_error, TLObject tLObject, long j10, long j11) {
+    public /* synthetic */ n0(rh.e4 e4Var, r20 r20Var, TLRPC.TL_error tL_error, TLObject tLObject, long j10, long j11) {
         this.e = e4Var;
-        this.b = q20Var;
+        this.b = r20Var;
         this.f = tL_error;
         this.h = tLObject;
         this.c = j10;

@@ -9,9 +9,9 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q3 extends View {
     public float D;
@@ -54,7 +54,7 @@ public final class q3 extends View {
             float min = Math.min(org.telegram.messenger.i0.L(176.0f), f11) / 2.0f;
             float f13 = x10 - max;
             float f14 = x10 + max;
-            canvas.saveLayerAlpha(f13, 0.0f, f14, f11, zs.e4, 31);
+            canvas.saveLayerAlpha(f13, 0.0f, f14, f11, at.e4, 31);
             matrix.reset();
             matrix.postTranslate(x10, min);
             k3Var.e.setLocalMatrix(matrix);

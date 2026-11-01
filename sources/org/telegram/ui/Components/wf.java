@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class wf extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public final vh.j D;
@@ -98,7 +98,7 @@ public final class wf extends FrameLayout implements org.telegram.ui.ActionBar.k
         this.c = org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(5.0f), chatActivityEnterView.e0(org.telegram.ui.ActionBar.t6.eg));
         textPaint.setTextSize(org.telegram.messenger.i0.L(14.0f));
         this.d = context.getDrawable(R.drawable.tooltip_arrow);
-        this.e = org.telegram.messenger.cd.L0(2131745330, "SlideUpToLock");
+        this.e = org.telegram.messenger.dd.L0(2131745330, "SlideUpToLock");
         float L = org.telegram.messenger.i0.L(3.0f);
         float L2 = org.telegram.messenger.i0.L(3.0f);
         this.E = getResources().getDrawable(R.drawable.input_mic).mutate();
@@ -129,19 +129,19 @@ public final class wf extends FrameLayout implements org.telegram.ui.ActionBar.k
         p2Var.l(1.0f, 0.0f);
         this.b.p(true);
         ChatActivityEnterView chatActivityEnterView = this.b0;
-        this.b.s(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.L0(chatActivityEnterView.c1 ? chatActivityEnterView.O ? 2131743608 : 2131743609 : chatActivityEnterView.O ? 2131743536 : 2131743537, null)));
+        this.b.s(org.telegram.messenger.i0.W2(org.telegram.messenger.dd.L0(chatActivityEnterView.c1 ? chatActivityEnterView.O ? 2131743608 : 2131743609 : chatActivityEnterView.O ? 2131743536 : 2131743537, null)));
         vh.p2 p2Var2 = this.b;
         p2Var2.h = vh.p2.a(p2Var2.getText(), this.b.getTextPaint());
         if (chatActivityEnterView.O) {
             vh.p2 p2Var3 = this.b;
             p2Var3.getClass();
-            bi0 bi0Var = new bi0(R.raw.fire_on, org.telegram.messenger.i0.L(34.0f), org.telegram.messenger.i0.L(34.0f));
-            bi0Var.start();
-            p2Var3.j(bi0Var);
+            ci0 ci0Var = new ci0(R.raw.fire_on, org.telegram.messenger.i0.L(34.0f), org.telegram.messenger.i0.L(34.0f));
+            ci0Var.start();
+            p2Var3.j(ci0Var);
         } else {
-            org.telegram.messenger.vp.d1().edit().putInt("voiceoncehint", org.telegram.messenger.vp.d1().getInt("voiceoncehint", 0) + 1).apply();
+            org.telegram.messenger.wp.d1().edit().putInt("voiceoncehint", org.telegram.messenger.wp.d1().getInt("voiceoncehint", 0) + 1).apply();
         }
-        addView(this.b, w7.b6.d(-1, -1.0f, org.telegram.messenger.zs.E1, 0.0f, 0.0f, 54.0f, 58.0f));
+        addView(this.b, w7.b6.d(-1, -1.0f, org.telegram.messenger.at.E1, 0.0f, 0.0f, 54.0f, 58.0f));
         vh.p2 p2Var4 = this.b;
         p2Var4.l0 = new uf(this, p2Var4, 0);
         p2Var4.u();
@@ -272,10 +272,10 @@ public final class wf extends FrameLayout implements org.telegram.ui.ActionBar.k
                         chatActivityEnterView2.g4 = f40;
                         if (f40 >= f15) {
                             chatActivityEnterView2.g4 = f15;
-                            int i12 = org.telegram.messenger.tz.a;
-                            SharedPreferences.Editor edit = org.telegram.messenger.vp.d1().edit();
-                            int i13 = org.telegram.messenger.tz.O + 1;
-                            org.telegram.messenger.tz.O = i13;
+                            int i12 = org.telegram.messenger.uz.a;
+                            SharedPreferences.Editor edit = org.telegram.messenger.wp.d1().edit();
+                            int i13 = org.telegram.messenger.uz.O + 1;
+                            org.telegram.messenger.uz.O = i13;
                             edit.putInt("lockRecordAudioVideoHint", i13);
                             edit.apply();
                         }
@@ -435,8 +435,8 @@ public final class wf extends FrameLayout implements org.telegram.ui.ActionBar.k
                     Canvas canvas2 = canvas;
                     int saveLayerAlpha = canvas2.saveLayerAlpha(centerX2 - org.telegram.messenger.i0.L(24.0f), centerY2 - org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(24.0f) + centerX2, org.telegram.messenger.i0.L(24.0f) + centerY2, (int) (alpha * (1.0f - i16)), 31);
                     Paint paint5 = this.w;
-                    paint5.setAlpha(org.telegram.messenger.zs.e4);
-                    paint4.setAlpha(org.telegram.messenger.zs.e4);
+                    paint5.setAlpha(org.telegram.messenger.at.e4);
+                    paint4.setAlpha(org.telegram.messenger.at.e4);
                     float f56 = 1.0f - L;
                     canvas2.translate(0.0f, org.telegram.messenger.i0.N(2.0f) * f56);
                     canvas2.rotate(f38, centerX2, centerY2);
@@ -630,8 +630,8 @@ public final class wf extends FrameLayout implements org.telegram.ui.ActionBar.k
                 Canvas canvas22 = canvas;
                 int saveLayerAlpha2 = canvas22.saveLayerAlpha(centerX22 - org.telegram.messenger.i0.L(24.0f), centerY22 - org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(24.0f) + centerX22, org.telegram.messenger.i0.L(24.0f) + centerY22, (int) (alpha2 * (1.0f - i162)), 31);
                 Paint paint52 = this.w;
-                paint52.setAlpha(org.telegram.messenger.zs.e4);
-                paint42.setAlpha(org.telegram.messenger.zs.e4);
+                paint52.setAlpha(org.telegram.messenger.at.e4);
+                paint42.setAlpha(org.telegram.messenger.at.e4);
                 float f562 = 1.0f - L;
                 canvas22.translate(0.0f, org.telegram.messenger.i0.N(2.0f) * f562);
                 canvas22.rotate(f38, centerX22, centerY22);
@@ -722,22 +722,22 @@ public final class wf extends FrameLayout implements org.telegram.ui.ActionBar.k
                     if (p2Var != null && p2Var.V) {
                         a();
                     }
-                    nj0 nj0Var = chatActivityEnterView.h1;
-                    if (nj0Var != null) {
-                        nj0Var.setPlaying(false);
+                    oj0 oj0Var = chatActivityEnterView.h1;
+                    if (oj0Var != null) {
+                        oj0Var.setPlaying(false);
                     }
                     if (!MediaController.B().K() || (chatActivityEnterView.h1.getAudioLeft() <= 0.01f && chatActivityEnterView.h1.getAudioRight() >= 0.99f)) {
                         tfVar.run();
                     } else {
                         cd cdVar = new cd(4, this, tfVar);
-                        if (org.telegram.messenger.vp.d1().getBoolean("trimvoicehint", true)) {
+                        if (org.telegram.messenger.wp.d1().getBoolean("trimvoicehint", true)) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), chatActivityEnterView.W3);
-                            String L0 = org.telegram.messenger.cd.L0(2131746363, null);
+                            String L0 = org.telegram.messenger.dd.L0(2131746363, null);
                             org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                             x1Var.R = L0;
-                            x1Var.T = org.telegram.messenger.cd.L0(2131746364, null);
-                            alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131747847, null), new t(cdVar, 19));
-                            alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
+                            x1Var.T = org.telegram.messenger.dd.L0(2131746364, null);
+                            alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), new t(cdVar, 19));
+                            alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, null), null);
                             alertDialog$Builder.p();
                         } else {
                             cdVar.run();
@@ -752,7 +752,7 @@ public final class wf extends FrameLayout implements org.telegram.ui.ActionBar.k
                 boolean z10 = !chatActivityEnterView.O;
                 chatActivityEnterView.O = z10;
                 this.D.d(1, z10, true);
-                org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(chatActivityEnterView.Q);
+                org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(chatActivityEnterView.Q);
                 long j10 = chatActivityEnterView.Q2;
                 org.telegram.ui.un unVar = chatActivityEnterView.P2;
                 b02.e2(j10, (unVar == null || !unVar.v4) ? 0L : unVar.b(), chatActivityEnterView.O);

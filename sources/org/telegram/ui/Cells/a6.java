@@ -4,54 +4,54 @@ import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.we;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.xe;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a6 extends FrameLayout {
     public y5[] a;
-    public we[] b;
+    public xe[] b;
     public int c;
     public z5 d;
     public Paint e;
 
-    public final void a(int i10, we weVar) {
+    public final void a(int i10, xe xeVar) {
         y5[] y5VarArr = this.a;
-        this.b[i10] = weVar;
-        if (weVar == null) {
+        this.b[i10] = xeVar;
+        if (xeVar == null) {
             y5VarArr[i10].setVisibility(4);
             return;
         }
-        ef efVar = weVar.d;
+        ff ffVar = xeVar.d;
         y5 y5Var = y5VarArr[i10];
         org.telegram.ui.Components.g9 g9Var = y5Var.b;
         g9Var.r();
-        if (efVar != null) {
-            int i11 = efVar.C;
-            String str = efVar.I;
+        if (ffVar != null) {
+            int i11 = ffVar.C;
+            String str = ffVar.I;
             if (str != null) {
-                g9Var.s(efVar.J, efVar.K, true);
-                if (efVar.b) {
+                g9Var.s(ffVar.J, ffVar.K, true);
+                if (ffVar.b) {
                     g9Var.h("vthumb://" + i11 + ":" + str, null, org.telegram.ui.ActionBar.t6.R4);
                 } else {
                     g9Var.h("thumb://" + i11 + ":" + str, null, org.telegram.ui.ActionBar.t6.R4);
                 }
-                ((TextView) y5Var.c).setText(weVar.c);
-                ((TextView) y5Var.d).setText(String.format("%d", Integer.valueOf(weVar.e.size())));
+                ((TextView) y5Var.c).setText(xeVar.c);
+                ((TextView) y5Var.d).setText(String.format("%d", Integer.valueOf(xeVar.e.size())));
             }
         }
         g9Var.setImageDrawable(org.telegram.ui.ActionBar.t6.R4);
-        ((TextView) y5Var.c).setText(weVar.c);
-        ((TextView) y5Var.d).setText(String.format("%d", Integer.valueOf(weVar.e.size())));
+        ((TextView) y5Var.c).setText(xeVar.c);
+        ((TextView) y5Var.d).setText(String.format("%d", Integer.valueOf(xeVar.e.size())));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int A = org.telegram.messenger.i0.Q1() ? z20.A(4.0f, this.c - 1, org.telegram.messenger.i0.L(490.0f) - org.telegram.messenger.i0.L(12.0f)) / this.c : z20.A(4.0f, this.c - 1, org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(12.0f)) / this.c;
+        int A = org.telegram.messenger.i0.Q1() ? a30.A(4.0f, this.c - 1, org.telegram.messenger.i0.L(490.0f) - org.telegram.messenger.i0.L(12.0f)) / this.c : a30.A(4.0f, this.c - 1, org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(12.0f)) / this.c;
         for (int i12 = 0; i12 < this.c; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
             layoutParams.topMargin = org.telegram.messenger.i0.L(4.0f);
@@ -61,7 +61,7 @@ public final class a6 extends FrameLayout {
             layoutParams.gravity = 51;
             viewArr[i12].setLayoutParams(layoutParams);
         }
-        super.onMeasure(i10, z20.B(4.0f, A, TLObject.FLAG_30));
+        super.onMeasure(i10, a30.B(4.0f, A, TLObject.FLAG_30));
     }
 
     public void setAlbumsCount(int i10) {

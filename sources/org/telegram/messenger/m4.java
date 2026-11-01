@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.app.Activity;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ji0;
+import org.telegram.ui.hi0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m4 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -38,35 +38,35 @@ public final /* synthetic */ class m4 implements Runnable {
                 i5Var.F(hashMap, true, this.b, this.c, false, false, this.d);
                 break;
             default:
-                org.telegram.ui.ay ayVar = (org.telegram.ui.ay) obj2;
+                org.telegram.ui.zx zxVar = (org.telegram.ui.zx) obj2;
                 Activity activity = (Activity) obj;
-                if (ayVar.getParentActivity() != null) {
+                if (zxVar.getParentActivity() != null) {
                     int i11 = 0;
-                    ayVar.t2 = false;
+                    zxVar.t2 = false;
                     boolean z10 = this.b;
                     boolean z11 = this.c;
                     boolean z12 = this.d;
                     if (z10 || z11 || z12) {
-                        ayVar.A0 = true;
-                        if (!z10 || !ji0.J0(activity)) {
-                            if (!z11 || !ayVar.U1 || !ayVar.getUserConfig().U || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
+                        zxVar.A0 = true;
+                        if (!z10 || !hi0.J0(activity)) {
+                            if (!z11 || !zxVar.U1 || !zxVar.getUserConfig().U || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
                                 if (!z12 || !activity.shouldShowRequestPermissionRationale("android.permission.WRITE_EXTERNAL_STORAGE")) {
-                                    ayVar.t3(true);
+                                    zxVar.u3(true);
                                     break;
                                 } else if (activity instanceof org.telegram.ui.f5) {
-                                    org.telegram.ui.ActionBar.x1 v = ((org.telegram.ui.f5) activity).v(R.raw.permission_request_folder, cd.L0(2131747315, null));
-                                    ayVar.T1 = v;
-                                    ayVar.showDialog(v);
+                                    org.telegram.ui.ActionBar.x1 v = ((org.telegram.ui.f5) activity).v(R.raw.permission_request_folder, dd.L0(2131747315, null));
+                                    zxVar.T1 = v;
+                                    zxVar.showDialog(v);
                                     break;
                                 }
                             } else {
-                                org.telegram.ui.ActionBar.x1 x1Var = org.telegram.ui.Components.s4.v(activity, new org.telegram.ui.lv(ayVar, i11)).a;
-                                ayVar.T1 = x1Var;
-                                ayVar.showDialog(x1Var);
+                                org.telegram.ui.ActionBar.x1 x1Var = org.telegram.ui.Components.s4.v(activity, new org.telegram.ui.kv(zxVar, i11)).a;
+                                zxVar.T1 = x1Var;
+                                zxVar.showDialog(x1Var);
                                 break;
                             }
                         } else {
-                            w7.c6.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new org.telegram.ui.Components.um(new org.telegram.ui.Components.vg(16, ayVar, activity), 1));
+                            w7.c6.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new org.telegram.ui.Components.um(new org.telegram.ui.Components.vg(17, zxVar, activity), 1));
                             break;
                         }
                     }
@@ -75,8 +75,8 @@ public final /* synthetic */ class m4 implements Runnable {
         }
     }
 
-    public /* synthetic */ m4(org.telegram.ui.ay ayVar, boolean z10, boolean z11, boolean z12, Activity activity) {
-        this.e = ayVar;
+    public /* synthetic */ m4(org.telegram.ui.zx zxVar, boolean z10, boolean z11, boolean z12, Activity activity) {
+        this.e = zxVar;
         this.b = z10;
         this.c = z11;
         this.d = z12;

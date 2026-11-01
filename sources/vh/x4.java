@@ -2,13 +2,13 @@ package vh;
 
 import android.os.Bundle;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x4 extends z4 {
     public final /* synthetic */ TLRPC.User b;
@@ -21,19 +21,19 @@ public final class x4 extends z4 {
 
     @Override // vh.z4
     public final String a() {
-        return cd.L0(2131743572, null);
+        return dd.L0(2131743572, null);
     }
 
     @Override // vh.z4
     public final String b() {
-        return h20.p(this.b);
+        return i20.p(this.b);
     }
 
     @Override // vh.z4
     public final void c(org.telegram.ui.ActionBar.k2 k2Var) {
         TLRPC.User user = this.b;
-        if (user.id != d20.i(d20.s0).e()) {
-            k2Var.presentFragment(ProfileActivity.z4(user.id));
+        if (user.id != e20.i(e20.s0).e()) {
+            k2Var.presentFragment(ProfileActivity.A4(user.id));
             return;
         }
         Bundle bundle = new Bundle();

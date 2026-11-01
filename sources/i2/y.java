@@ -1,14 +1,14 @@
 package i2;
 
 import android.os.Bundle;
-import org.telegram.messenger.l9;
+import org.telegram.messenger.m9;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.wb;
-import org.telegram.ui.pf0;
+import org.telegram.ui.of0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements e2.o, e2.j, p.a, l9 {
+public final /* synthetic */ class y implements e2.o, e2.j, p.a, m9 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
 
@@ -49,11 +49,11 @@ public final /* synthetic */ class y implements e2.o, e2.j, p.a, l9 {
         }
     }
 
-    @Override // org.telegram.messenger.l9
+    @Override // org.telegram.messenger.m9
     public Object l(Object obj) {
         Bundle g10 = a1.g.g("afterSignup", this.b);
-        pf0 pf0Var = new pf0();
-        pf0Var.q0(g10);
-        return pf0Var;
+        of0 of0Var = new of0();
+        of0Var.r0(g10);
+        return of0Var;
     }
 }

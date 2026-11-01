@@ -31,15 +31,15 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bk;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.ck;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Components.ct;
-import org.telegram.ui.u71;
+import org.telegram.ui.s71;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s4 {
     public static final e4 p = new e4();
@@ -59,7 +59,7 @@ public final class s4 {
     public MenuItem.OnMenuItemClickListener g = p;
     public boolean h = true;
     public final f4 l = new f4(this);
-    public final bk m = new bk(25);
+    public final ck m = new ck(25);
 
     static {
         Integer valueOf = Integer.valueOf(R.id.menu_regular);
@@ -148,7 +148,7 @@ public final class s4 {
                 textView.setPaddingRelative(org.telegram.messenger.i0.L(11.0f), 0, 0, 0);
                 linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, org.telegram.messenger.i0.L(!z10 ? 42.0f : 48.0f)));
                 linearLayout.addView(new Space(context), new LinearLayout.LayoutParams(-1, 1, 1.0f));
-                ImageView e = z20.e(context, R.drawable.msg_mini_lock3);
+                ImageView e = a30.e(context, R.drawable.msg_mini_lock3);
                 e.setScaleType(ImageView.ScaleType.CENTER);
                 if (i12 == 2) {
                     if (i10 < 0) {
@@ -191,7 +191,7 @@ public final class s4 {
         textView.setPaddingRelative(org.telegram.messenger.i0.L(11.0f), 0, 0, 0);
         linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, org.telegram.messenger.i0.L(!z10 ? 42.0f : 48.0f)));
         linearLayout.addView(new Space(context), new LinearLayout.LayoutParams(-1, 1, 1.0f));
-        ImageView e7 = z20.e(context, R.drawable.msg_mini_lock3);
+        ImageView e7 = a30.e(context, R.drawable.msg_mini_lock3);
         e7.setScaleType(ImageView.ScaleType.CENTER);
         if (i12 == 2) {
         }
@@ -279,16 +279,16 @@ public final class s4 {
         q4Var.J = null;
         q4Var.N = false;
         q4Var.n();
-        u71 u71Var = q4Var.g;
-        u71Var.removeAllViews();
-        u71Var.setPaddingRelative(0, 0, 0, 0);
+        s71 s71Var = q4Var.g;
+        s71Var.removeAllViews();
+        s71Var.setPaddingRelative(0, 0, 0, 0);
         o4 o4Var = q4Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) o4Var.getAdapter();
         arrayAdapter.clear();
         o4Var.setAdapter((ListAdapter) arrayAdapter);
         q4Var.f.removeAllViews();
         q4Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(org.telegram.messenger.i0.L(400.0f), z20.A(16.0f, 2, rect.width()));
+        int min = Math.min(org.telegram.messenger.i0.L(400.0f), a30.A(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
         int i12 = min;
@@ -322,7 +322,7 @@ public final class s4 {
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(q4Var.L);
-                u71Var.addView(b10);
+                s71Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
@@ -338,18 +338,18 @@ public final class s4 {
             i10 = 0;
         } else {
             i10 = 0;
-            u71Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            s71Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        u71Var.measure(i10, i10);
-        q4Var.J = new Size(u71Var.getMeasuredWidth(), u71Var.getMeasuredHeight());
+        s71Var.measure(i10, i10);
+        q4Var.J = new Size(s71Var.getMeasuredWidth(), s71Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) o4Var.getAdapter();
             arrayAdapter2.clear();
             if (s4Var.j != null) {
-                Collections.sort(linkedList, new bk(26));
+                Collections.sort(linkedList, new ck(26));
             }
             int size3 = linkedList.size();
-            boolean A3 = vp.r1(d20.s0).A3();
+            boolean A3 = wp.r1(e20.s0).A3();
             int i15 = 0;
             while (i15 < size3) {
                 MenuItem menuItem4 = (MenuItem) linkedList.get(i15);

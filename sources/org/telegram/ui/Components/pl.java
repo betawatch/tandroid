@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class pl extends tk0 {
+public final class pl extends uk0 {
     public final /* synthetic */ int e3;
     public final /* synthetic */ ChatAttachAlertPhotoLayout f3;
 
@@ -17,7 +17,7 @@ public final class pl extends tk0 {
         this.f3 = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.e3) {
             case 1:
@@ -29,7 +29,7 @@ public final class pl extends tk0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.e3) {
             case 1:
@@ -42,7 +42,7 @@ public final class pl extends tk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.e3) {
             case 1:
@@ -54,7 +54,7 @@ public final class pl extends tk0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public void requestLayout() {
         switch (this.e3) {
             case 0:

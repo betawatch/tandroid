@@ -2,16 +2,16 @@ package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.d70;
-import org.telegram.ui.j70;
+import org.telegram.ui.i70;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o1 implements j20 {
+public final /* synthetic */ class o1 implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ e2 b;
     public final /* synthetic */ long c;
@@ -26,7 +26,7 @@ public final /* synthetic */ class o1 implements j20 {
         this.d = i10;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
         final long j10;
         final int i10;
@@ -34,7 +34,7 @@ public final /* synthetic */ class o1 implements j20 {
         TL_wallet.tonConnectSession tonconnectsession;
         switch (this.a) {
             case 0:
-                final j70 j70Var = (j70) this.e;
+                final i70 i70Var = (i70) this.e;
                 final TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 final e2 e2Var = this.b;
@@ -60,11 +60,11 @@ public final /* synthetic */ class o1 implements j20 {
                     if (tonconnectrequest != null && (tonconnectsession = tonconnectpending.session) != null && tonconnectsession.id == j10 && tonconnectrequest.expires > e2Var.f.getCurrentTime()) {
                         final String t10 = k0Var.t();
                         final byte[] bArr = k0Var.y() != null ? (byte[]) k0Var.y().clone() : null;
-                        k0Var.z(new j20() { // from class: org.telegram.ui.Wallet.t1
-                            @Override // org.telegram.messenger.j20
+                        k0Var.z(new k20() { // from class: org.telegram.ui.Wallet.t1
+                            @Override // org.telegram.messenger.k20
                             public final void a(Object obj3, Object obj4) {
                                 e2 e2Var2 = e2.this;
-                                j70 j70Var2 = j70Var;
+                                i70 i70Var2 = i70Var;
                                 TL_wallet.tonConnectPending tonconnectpending2 = tonconnectpending;
                                 TL_wallet.tonConnectRequest tonconnectrequest4 = tonconnectrequest;
                                 String str = t10;
@@ -76,39 +76,39 @@ public final /* synthetic */ class o1 implements j20 {
                                 e2Var2.getClass();
                                 if (h0Var != null && str2 == null) {
                                     h0 b10 = h0Var.b();
-                                    Utilities.e.c(new d70(e2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new ih.s(24, b10, j70Var2), j11, i12));
+                                    Utilities.e.c(new d70(e2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new ih.s(24, b10, i70Var2), j11, i12));
                                 } else {
                                     e2Var2.h = false;
                                     if (str2 == null) {
                                         str2 = "Recovery phrase is unavailable";
                                     }
-                                    j70Var2.a(null, str2);
+                                    i70Var2.a(null, str2);
                                 }
                             }
                         }, true, false);
                         break;
                     } else {
                         e2Var.h = false;
-                        j70Var.a(null, "This request has expired or has already been answered");
+                        i70Var.a(null, "This request has expired or has already been answered");
                         break;
                     }
                 } else {
                     e2Var.h = false;
-                    j70Var.a(null, e2.z(tL_error, "getPending"));
+                    i70Var.a(null, e2.z(tL_error, "getPending"));
                     break;
                 }
                 break;
             default:
-                q20 q20Var = (q20) this.e;
+                r20 r20Var = (r20) this.e;
                 TLRPC.Bool bool = (TLRPC.Bool) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 e2 e2Var2 = this.b;
                 e2Var2.getClass();
                 if (tL_error2 != null || !(bool instanceof TLRPC.TL_boolTrue)) {
-                    q20Var.a(e2.z(tL_error2, "closeSession"));
+                    r20Var.a(e2.z(tL_error2, "closeSession"));
                     break;
                 } else {
-                    e2Var2.e(this.d, this.c, q20Var);
+                    e2Var2.e(this.d, this.c, r20Var);
                     break;
                 }
                 break;

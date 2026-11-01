@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j8 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ float a;
@@ -28,7 +28,7 @@ public final class j8 implements ValueAnimator.AnimatorUpdateListener {
         lVar = ((org.telegram.ui.ActionBar.k2) o8Var).actionBar;
         lVar.getTitleTextView().setAlpha(o8Var.N);
         if (o8Var.F && !this.c) {
-            o8Var.m0(false, 1.0f - o8Var.N);
+            o8Var.n0(false, 1.0f - o8Var.N);
         }
         o8Var.r.setTranslationY(T1);
         o8Var.y.setTranslationY(T1);

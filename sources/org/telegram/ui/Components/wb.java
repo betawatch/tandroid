@@ -7,7 +7,7 @@ import j$.util.Objects;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class wb {
     public static wb w;
@@ -68,7 +68,7 @@ public class wb {
             i10++;
         }
         if (wbVar != null) {
-            wbVar.c(0L, org.telegram.messenger.vp.d1().getBoolean("view_animations", true));
+            wbVar.c(0L, org.telegram.messenger.wp.d1().getBoolean("view_animations", true));
         }
     }
 
@@ -89,7 +89,7 @@ public class wb {
         }
         if (k2Var instanceof org.telegram.ui.un) {
             bb.access$000(taVar, -2, 1);
-        } else if (k2Var instanceof org.telegram.ui.ay) {
+        } else if (k2Var instanceof org.telegram.ui.zx) {
             bb.access$000(taVar, -1, 0);
         }
         return new wb(k2Var, k2Var.getBulletinLayoutContainer(), taVar, i10);
@@ -102,7 +102,7 @@ public class wb {
     }
 
     public final void b() {
-        c(0L, org.telegram.messenger.vp.d1().getBoolean("view_animations", true));
+        c(0L, org.telegram.messenger.wp.d1().getBoolean("view_animations", true));
     }
 
     public final void c(long j10, boolean z10) {

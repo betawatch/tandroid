@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class gi implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a = 1;
@@ -10,8 +10,8 @@ public final class gi implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public gi(b50 b50Var, org.telegram.messenger.v3 v3Var, boolean z10) {
-        this.d = b50Var;
+    public gi(a50 a50Var, org.telegram.messenger.v3 v3Var, boolean z10) {
+        this.d = a50Var;
         this.c = v3Var;
         this.b = z10;
     }
@@ -33,26 +33,26 @@ public final class gi implements ViewTreeObserver.OnPreDrawListener {
                     return true;
                 }
                 this.b = true;
-                return unVar.D8();
+                return unVar.H8();
             default:
-                b50 b50Var = (b50) this.d;
-                i40 i40Var = b50Var.H1;
-                i40Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                b50Var.h4 = null;
-                y20 y20Var = b50Var.R3;
+                a50 a50Var = (a50) this.d;
+                h40 h40Var = a50Var.H1;
+                h40Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                a50Var.h4 = null;
+                x20 x20Var = a50Var.R3;
                 org.telegram.messenger.v3 v3Var = (org.telegram.messenger.v3) this.c;
-                y20Var.j(v3Var);
-                if (b50Var.j2) {
-                    b50Var.j2 = false;
-                    b50Var.Q0(true);
+                x20Var.j(v3Var);
+                if (a50Var.j2) {
+                    a50Var.j2 = false;
+                    a50Var.Q0(true);
                     if (this.b && v3Var != null) {
-                        i40Var.v0(0);
+                        h40Var.v0(0);
                     }
-                    b50Var.j2 = true;
+                    a50Var.j2 = true;
                 } else {
-                    b50Var.Q0(true);
+                    a50Var.Q0(true);
                 }
-                b50Var.b.requestLayout();
+                a50Var.b.requestLayout();
                 return false;
         }
     }

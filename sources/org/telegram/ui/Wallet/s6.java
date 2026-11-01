@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s6 {
     public final ViewGroup a;
@@ -72,14 +72,14 @@ public final class s6 {
                         if (!s6Var.v && !s6Var.u) {
                             s6Var.e();
                             s6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.s0 B8 = s6Var.e.B8(s6Var.f);
-                            if (B8 != null && B8.getWidth() > 0) {
+                            org.telegram.ui.Cells.s0 F8 = s6Var.e.F8(s6Var.f);
+                            if (F8 != null && F8.getWidth() > 0) {
                                 org.telegram.ui.Cells.s0 s0Var = s6Var.p;
-                                if (s0Var != B8) {
+                                if (s0Var != F8) {
                                     if (s0Var != null) {
                                         s0Var.I0.i(false);
                                     }
-                                    s6Var.p = B8;
+                                    s6Var.p = F8;
                                 }
                                 c4 c4Var = s6Var.p.I0.m;
                                 if (s6Var.t && q6Var.n && c4Var != null && c4Var.n && c4Var.getWidth() > 0 && !s6Var.p.isLayoutRequested()) {
@@ -167,14 +167,14 @@ public final class s6 {
                         if (!s6Var.v && !s6Var.u) {
                             s6Var.e();
                             s6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.s0 B8 = s6Var.e.B8(s6Var.f);
-                            if (B8 != null && B8.getWidth() > 0) {
+                            org.telegram.ui.Cells.s0 F8 = s6Var.e.F8(s6Var.f);
+                            if (F8 != null && F8.getWidth() > 0) {
                                 org.telegram.ui.Cells.s0 s0Var = s6Var.p;
-                                if (s0Var != B8) {
+                                if (s0Var != F8) {
                                     if (s0Var != null) {
                                         s0Var.I0.i(false);
                                     }
-                                    s6Var.p = B8;
+                                    s6Var.p = F8;
                                 }
                                 c4 c4Var = s6Var.p.I0.m;
                                 if (s6Var.t && q6Var2.n && c4Var != null && c4Var.n && c4Var.getWidth() > 0 && !s6Var.p.isLayoutRequested()) {
@@ -245,14 +245,14 @@ public final class s6 {
                         if (!s6Var.v && !s6Var.u) {
                             s6Var.e();
                             s6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.s0 B8 = s6Var.e.B8(s6Var.f);
-                            if (B8 != null && B8.getWidth() > 0) {
+                            org.telegram.ui.Cells.s0 F8 = s6Var.e.F8(s6Var.f);
+                            if (F8 != null && F8.getWidth() > 0) {
                                 org.telegram.ui.Cells.s0 s0Var = s6Var.p;
-                                if (s0Var != B8) {
+                                if (s0Var != F8) {
                                     if (s0Var != null) {
                                         s0Var.I0.i(false);
                                     }
-                                    s6Var.p = B8;
+                                    s6Var.p = F8;
                                 }
                                 c4 c4Var = s6Var.p.I0.m;
                                 if (s6Var.t && q6Var2.n && c4Var != null && c4Var.n && c4Var.getWidth() > 0 && !s6Var.p.isLayoutRequested()) {
@@ -364,7 +364,7 @@ public final class s6 {
             }
         }
         this.g.run();
-        org.telegram.messenger.i0.h3(new k3(10, this, viewGroup), 650L);
+        org.telegram.messenger.i0.h3(new m2(11, this, viewGroup), 650L);
     }
 
     public final void b(float f7, float f10, float f11) {

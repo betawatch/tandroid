@@ -2,9 +2,9 @@ package i0;
 
 import android.graphics.Color;
 import c3.i0;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final ThreadLocal a = new ThreadLocal();
@@ -165,12 +165,12 @@ public abstract class b {
 
     public static int i(float f7, int i10, int i11) {
         int alpha = Color.alpha(i11);
-        int i12 = zs.e4;
+        int i12 = at.e4;
         if (alpha != 255) {
             throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(i11));
         }
         double d = f7;
-        if (g(o(i10, zs.e4), i11) < d) {
+        if (g(o(i10, at.e4), i11) < d) {
             return -1;
         }
         int i13 = 0;
@@ -204,7 +204,7 @@ public abstract class b {
     public static int k(int i10, int i11) {
         int alpha = Color.alpha(i11);
         int alpha2 = Color.alpha(i10);
-        int i12 = 255 - (((255 - alpha2) * (255 - alpha)) / zs.e4);
+        int i12 = 255 - (((255 - alpha2) * (255 - alpha)) / at.e4);
         return Color.argb(i12, l(Color.red(i10), alpha2, Color.red(i11), alpha, i12), l(Color.green(i10), alpha2, Color.green(i11), alpha, i12), l(Color.blue(i10), alpha2, Color.blue(i11), alpha, i12));
     }
 
@@ -212,14 +212,14 @@ public abstract class b {
         if (i14 == 0) {
             return 0;
         }
-        return a.e(zs.e4, i11, i12 * i13, (i10 * zs.e4) * i11) / (i14 * zs.e4);
+        return a.e(at.e4, i11, i12 * i13, (i10 * at.e4) * i11) / (i14 * at.e4);
     }
 
     public static int m(int i10) {
         if (i10 < 0) {
             return 0;
         }
-        return Math.min(i10, zs.e4);
+        return Math.min(i10, at.e4);
     }
 
     public static double n(double d) {

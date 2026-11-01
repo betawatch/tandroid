@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zn implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -50,8 +50,8 @@ public final /* synthetic */ class zn implements View.OnClickListener {
                     }
                     org.telegram.messenger.i3 G0 = ooVar.getMessagesController().G0();
                     final long j11 = this.b;
-                    G0.a(j11, new org.telegram.messenger.q20() { // from class: org.telegram.ui.io
-                        @Override // org.telegram.messenger.q20
+                    G0.a(j11, new org.telegram.messenger.r20() { // from class: org.telegram.ui.io
+                        @Override // org.telegram.messenger.r20
                         public final void a(Object obj3) {
                             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj3;
                             oo ooVar2 = oo.this;
@@ -76,7 +76,7 @@ public final /* synthetic */ class zn implements View.OnClickListener {
                             }
                             TLRPC.TL_channels_toggleAutotranslation tL_channels_toggleAutotranslation = new TLRPC.TL_channels_toggleAutotranslation();
                             ooVar2.getMessagesController();
-                            tL_channels_toggleAutotranslation.channel = org.telegram.messenger.vp.h1(ooVar2.w0);
+                            tL_channels_toggleAutotranslation.channel = org.telegram.messenger.wp.h1(ooVar2.w0);
                             tL_channels_toggleAutotranslation.enabled = z11;
                             ooVar2.M.setChecked(z11);
                             zArr2[0] = false;
@@ -106,25 +106,25 @@ public final /* synthetic */ class zn implements View.OnClickListener {
                             arrayList.add(Long.valueOf(hVar.j(i11)));
                             i11++;
                         }
-                        iy iyVar = (iy) m60Var.d2.b;
-                        ArrayList arrayList2 = iyVar.e;
+                        hy hyVar = (hy) m60Var.d2.b;
+                        ArrayList arrayList2 = hyVar.e;
                         arrayList2.clear();
                         arrayList2.addAll(arrayList);
-                        iyVar.d0();
-                        hy hyVar = iyVar.f;
-                        if (hyVar != null) {
-                            hyVar.a();
+                        hyVar.e0();
+                        gy gyVar = hyVar.f;
+                        if (gyVar != null) {
+                            gyVar.a();
                         }
                         m60Var.dismiss();
                         break;
                     } else {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(W);
-                        String G = org.telegram.messenger.cd.G(hVar.m(), "AddManyMembersAlertTitle", new Object[0]);
+                        String G = org.telegram.messenger.dd.G(hVar.m(), "AddManyMembersAlertTitle", new Object[0]);
                         org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder.a;
                         x1Var2.R = G;
                         StringBuilder sb2 = new StringBuilder();
                         for (int i12 = 0; i12 < hVar.m(); i12++) {
-                            TLRPC.User Z1 = org.telegram.messenger.vp.r1(m60Var.a).Z1(Long.valueOf(hVar.j(i12)));
+                            TLRPC.User Z1 = org.telegram.messenger.wp.r1(m60Var.a).Z1(Long.valueOf(hVar.j(i12)));
                             if (Z1 != null) {
                                 if (sb2.length() > 0) {
                                     sb2.append(", ");
@@ -134,51 +134,51 @@ public final /* synthetic */ class zn implements View.OnClickListener {
                                 sb2.append("**");
                             }
                         }
-                        TLRPC.Chat L0 = org.telegram.messenger.vp.r1(m60Var.a).L0(Long.valueOf(j10));
+                        TLRPC.Chat L0 = org.telegram.messenger.wp.r1(m60Var.a).L0(Long.valueOf(j10));
                         if (hVar.m() > 5) {
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.G(hVar.m(), "AddManyMembersAlertNamesText", L0.title)));
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.i0.W2(org.telegram.messenger.dd.G(hVar.m(), "AddManyMembersAlertNamesText", L0.title)));
                             String format = String.format("%d", Integer.valueOf(hVar.m()));
                             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
                             if (indexOf >= 0) {
-                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.x41(org.telegram.messenger.i0.o()), indexOf, format.length() + indexOf, 33);
+                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.y41(org.telegram.messenger.i0.o()), indexOf, format.length() + indexOf, 33);
                             }
                             x1Var2.T = spannableStringBuilder;
                         } else {
-                            x1Var2.T = org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0("AddMembersAlertNamesText", null, 2131754399, sb2, L0.title));
+                            x1Var2.T = org.telegram.messenger.i0.W2(org.telegram.messenger.dd.a0("AddMembersAlertNamesText", null, 2131754399, sb2, L0.title));
                         }
-                        alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131754486, null), new org.telegram.ui.Components.px(m60Var, 6));
-                        alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
+                        alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131754486, null), new org.telegram.ui.Components.px(m60Var, 6));
+                        alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, null), null);
                         alertDialog$Builder.p();
                         break;
                     }
                 }
                 break;
             case 4:
-                ay ayVar = (ay) obj2;
+                zx zxVar = (zx) obj2;
                 boolean hasUnread = ((org.telegram.ui.Cells.v2) obj).getHasUnread();
                 long j12 = this.b;
                 if (hasUnread) {
-                    ayVar.u4(j12);
+                    zxVar.v4(j12);
                 } else {
-                    ayVar.getMessagesController().i3(j12, null, 0L);
+                    zxVar.getMessagesController().i3(j12, null, 0L);
                 }
-                ayVar.finishPreviewFragment();
+                zxVar.finishPreviewFragment();
                 break;
             case 5:
-                sm0 sm0Var = (sm0) obj2;
-                sm0Var.getClass();
+                qm0 qm0Var = (qm0) obj2;
+                qm0Var.getClass();
                 long longValue = ((Long) ((TextView) obj).getTag()).longValue();
-                Long l4 = sm0Var.H0;
+                Long l4 = qm0Var.H0;
                 if (l4 == null || longValue != l4.longValue()) {
-                    sm0Var.f[0].setText(org.telegram.messenger.cd.D0().q(this.b, false, true, true, sm0Var.C0.invoice.currency));
+                    qm0Var.f[0].setText(org.telegram.messenger.dd.D0().q(this.b, false, true, true, qm0Var.C0.invoice.currency));
                 } else {
-                    sm0Var.m0 = true;
-                    sm0Var.f[0].setText("");
-                    sm0Var.m0 = false;
-                    sm0Var.H0 = 0L;
-                    sm0Var.Q0();
+                    qm0Var.m0 = true;
+                    qm0Var.f[0].setText("");
+                    qm0Var.m0 = false;
+                    qm0Var.H0 = 0L;
+                    qm0Var.R0();
                 }
-                EditTextBoldCursor editTextBoldCursor = sm0Var.f[0];
+                EditTextBoldCursor editTextBoldCursor = qm0Var.f[0];
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 break;
             default:

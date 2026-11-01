@@ -1,67 +1,102 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pk implements Runnable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ vp b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wp b;
     public final /* synthetic */ ArrayList c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
 
-    public /* synthetic */ pk(vp vpVar, long j10, long j11, ArrayList arrayList) {
-        this.b = vpVar;
+    public /* synthetic */ pk(wp wpVar, long j10, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = wpVar;
         this.d = j10;
-        this.e = j11;
         this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        vp vpVar = this.b;
+        long j10 = this.d;
+        ArrayList arrayList = this.c;
+        wp wpVar = this.b;
         switch (i10) {
             case 0:
-                hs messagesStorage = vpVar.getMessagesStorage();
-                int i11 = (int) this.e;
-                long j10 = this.d;
-                ArrayList arrayList = this.c;
-                vpVar.getMessagesStorage().R1(j10, -j10, arrayList, messagesStorage.P0(j10, arrayList, false, true, 5, i11));
+                is messagesStorage = wpVar.getMessagesStorage();
+                long j11 = this.d;
+                ArrayList arrayList2 = this.c;
+                wpVar.getMessagesStorage().R1(j11, -j11, arrayList2, messagesStorage.P0(j11, arrayList2, false, true, 0, 0));
                 break;
             case 1:
-                vp vpVar2 = this.b;
-                ArrayList arrayList2 = this.c;
-                long j11 = this.d;
-                i0.g3(new ok(vpVar2, arrayList2, j11, 1));
-                hs messagesStorage2 = vpVar2.getMessagesStorage();
-                long j12 = this.e;
-                messagesStorage2.E(arrayList2, j12);
-                vpVar2.getMessagesStorage().R1(j12, j11, arrayList2, vpVar2.getMessagesStorage().P0(j12, arrayList2, false, true, 0, 0));
+                wpVar.getNotificationCenter().k(7, arrayList, Long.valueOf(j10), Boolean.FALSE);
+                if (j10 == 0) {
+                    int size = arrayList.size();
+                    for (int i11 = 0; i11 < size; i11++) {
+                        kj kjVar = (kj) wpVar.U.get(((Integer) arrayList.get(i11)).intValue());
+                        if (kjVar != null) {
+                            kjVar.Z = true;
+                        }
+                    }
+                    break;
+                } else {
+                    ArrayList arrayList3 = (ArrayList) wpVar.R.f(-j10);
+                    if (arrayList3 != null) {
+                        for (int i12 = 0; i12 < arrayList3.size(); i12++) {
+                            kj kjVar2 = (kj) arrayList3.get(i12);
+                            int size2 = arrayList.size();
+                            int i13 = 0;
+                            while (true) {
+                                if (i13 >= size2) {
+                                    break;
+                                } else if (kjVar2.f1() == ((Integer) arrayList.get(i13)).intValue()) {
+                                    kjVar2.Z = true;
+                                } else {
+                                    i13++;
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                if (arrayList != null) {
+                    wpVar.getClass();
+                    for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                        TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) arrayList.get(i14);
+                        wp messagesController = wpVar.getMessagesController();
+                        int i15 = tL_forumTopic.top_message;
+                        TLRPC.Message message = tL_forumTopic.topMessage;
+                        int i16 = message != null ? message.date : 0;
+                        long j12 = this.d;
+                        messagesController.h3(j12, i15, 0, i16, false, wpVar.x2(j12) ? o5.o(tL_forumTopic.from_id) : tL_forumTopic.id, 0, true, 0);
+                        wpVar.getMessagesStorage().d2(-j12, wpVar.x2(j12) ? o5.o(tL_forumTopic.from_id) : tL_forumTopic.id, tL_forumTopic.top_message, 0);
+                    }
+                }
+                wpVar.getMessagesStorage().a.c(new ak(wpVar, 19));
+                break;
+            case 3:
+                wpVar.i5(0, -j10, arrayList);
+                wpVar.getNotificationCenter().k(3, new Object[0]);
+                break;
+            case 4:
+                i0.g3(new pk(this.b, this.d, this.c, 5));
                 break;
             default:
-                x00 x00Var = vpVar.getMessagesController().r7;
-                long j13 = this.d;
-                long j14 = this.e;
-                x00Var.B(0, j13, j14, false);
-                vpVar.getMessagesStorage().h2(0, j13, j14, false);
-                vpVar.getNotificationCenter().k(zs.Z4, Long.valueOf(j13), Long.valueOf(j14), 0, this.c);
+                wpVar.i5(0, j10, arrayList);
+                wpVar.getNotificationCenter().k(3, new Object[0]);
                 break;
         }
     }
 
-    public /* synthetic */ pk(vp vpVar, long j10, ArrayList arrayList, long j11) {
-        this.b = vpVar;
-        this.d = j10;
-        this.c = arrayList;
-        this.e = j11;
-    }
-
-    public /* synthetic */ pk(vp vpVar, ArrayList arrayList, long j10, long j11) {
-        this.b = vpVar;
+    public /* synthetic */ pk(wp wpVar, ArrayList arrayList, long j10, int i10) {
+        this.a = i10;
+        this.b = wpVar;
         this.c = arrayList;
         this.d = j10;
-        this.e = j11;
     }
 }

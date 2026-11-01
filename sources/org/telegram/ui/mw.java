@@ -1,40 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class mw extends FragmentContextView {
-    public final /* synthetic */ int X0;
-    public final /* synthetic */ ay Y0;
+public final class mw extends org.telegram.ui.Components.h6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ zx c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mw(ay ayVar, Context context, ay ayVar2, int i10) {
-        super(context, ayVar2, true);
-        this.X0 = i10;
+    public mw(zx zxVar, int i10) {
+        super("animationValue", 0);
+        this.b = i10;
         switch (i10) {
             case 1:
-                this.Y0 = ayVar;
-                super(context, ayVar2, false);
+                this.c = zxVar;
+                super("viewPagerTranslation", 0);
                 break;
             default:
-                this.Y0 = ayVar;
+                this.c = zxVar;
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.X0) {
+    @Override // org.telegram.ui.Components.h6
+    public final void c(Object obj, float f7) {
+        switch (this.b) {
             case 0:
-                ay ayVar = this.Y0;
-                ayVar.J1.i(ayVar.G1, i10 == 0, true);
+                ((zx) obj).O4(f7);
                 break;
             default:
-                ay ayVar2 = this.Y0;
-                ayVar2.J1.i(ayVar2.I1, i10 == 0, true);
+                zx zxVar = this.c;
+                zxVar.I0 = f7;
+                ((View) obj).setTranslationY(zxVar.J0 + f7);
+                zxVar.R3();
                 break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.N);
+            default:
+                return Float.valueOf(this.c.I0);
         }
     }
 }

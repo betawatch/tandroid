@@ -1,9 +1,9 @@
 package y8;
 
 import android.os.Parcel;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class a extends b8.b implements d0 {
     public a() {
@@ -64,7 +64,7 @@ public abstract class a extends b8.b implements d0 {
             case 21:
             case 24:
             case 25:
-            case zs.U /* 31 */:
+            case at.U /* 31 */:
             case 32:
             case 33:
             default:
@@ -81,7 +81,7 @@ public abstract class a extends b8.b implements d0 {
                 throw sc.e.j(parcel);
             case 29:
                 throw sc.e.j(parcel);
-            case zs.T /* 30 */:
+            case at.T /* 30 */:
                 throw sc.e.j(parcel);
             case 34:
                 throw sc.e.j(parcel);

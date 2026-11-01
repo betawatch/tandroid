@@ -10,10 +10,10 @@ import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class u0 {
     public final CountDownLatch a = new CountDownLatch(1);
@@ -36,7 +36,7 @@ public final class u0 {
             KeyguardManager keyguardManager = (KeyguardManager) this.e.getSystemService("keyguard");
             Intent intent = null;
             if (keyguardManager != null) {
-                intent = keyguardManager.createConfirmDeviceCredentialIntent(cd.L0(2131742996, null), null);
+                intent = keyguardManager.createConfirmDeviceCredentialIntent(dd.L0(2131742996, null), null);
             }
             if (intent == null) {
                 c("AUTH_UNAVAILABLE");
@@ -65,7 +65,7 @@ public final class u0 {
         this.h = new CancellationSignal();
         final int i10 = 0;
         final int i11 = 1;
-        this.i = new AlertDialog.Builder(this.e).setTitle(cd.L0(2131742996, null)).setMessage(cd.L0(2131743015, null)).setNegativeButton(cd.L0(2131752589, null), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.r0
+        this.i = new AlertDialog.Builder(this.e).setTitle(dd.L0(2131742996, null)).setMessage(dd.L0(2131743015, null)).setNegativeButton(dd.L0(2131752589, null), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.r0
             public final /* synthetic */ u0 b;
 
             {
@@ -83,7 +83,7 @@ public final class u0 {
                         break;
                 }
             }
-        }).setPositiveButton(cd.L0(2131742991, null), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.r0
+        }).setPositiveButton(dd.L0(2131742991, null), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.r0
             public final /* synthetic */ u0 b;
 
             {
@@ -121,7 +121,7 @@ public final class u0 {
 
     public final void d() {
         this.h = new CancellationSignal();
-        new BiometricPrompt.Builder(this.e).setTitle(cd.L0(2131742996, null)).setAllowedAuthenticators(32783).build().authenticate(this.h, this.e.getMainExecutor(), new t0(this));
+        new BiometricPrompt.Builder(this.e).setTitle(dd.L0(2131742996, null)).setAllowedAuthenticators(32783).build().authenticate(this.h, this.e.getMainExecutor(), new t0(this));
     }
 
     public final void e() {

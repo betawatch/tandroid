@@ -15,15 +15,15 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.oa;
 import org.telegram.ui.Components.r10;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class n8 extends uu0 {
+public final class n8 extends vu0 {
     public final m2.t f0;
     public final ScaleGestureDetector g0;
     public boolean h0;
@@ -100,7 +100,7 @@ public final class n8 extends uu0 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v5 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -296,7 +296,7 @@ public final class n8 extends uu0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.uu0
+    @Override // org.telegram.ui.Components.vu0
     public int getBottomPadding() {
         int height = getHeight();
         o8 o8Var = this.n0;
@@ -313,7 +313,7 @@ public final class n8 extends uu0 {
         return (height - o8Var.b0) - o8Var.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         vy emojiView;
@@ -366,10 +366,10 @@ public final class n8 extends uu0 {
             if (vyVar != null) {
                 vyVar.layout(o8Var.Y, (measuredHeight - o8Var.b0) - vyVar.getMeasuredHeight(), measuredWidth - o8Var.a0, measuredHeight - o8Var.b0);
             }
-            mj0 mj0Var = o8Var.v1.I1;
-            if (mj0Var != null) {
+            nj0 nj0Var = o8Var.v1.I1;
+            if (nj0Var != null) {
                 int i21 = o8Var.Y;
-                mj0Var.layout(i21, o8Var.Z, mj0Var.getMeasuredWidth() + i21, o8Var.v1.I1.getMeasuredHeight() + o8Var.Z);
+                nj0Var.layout(i21, o8Var.Z, nj0Var.getMeasuredWidth() + i21, o8Var.v1.I1.getMeasuredHeight() + o8Var.Z);
                 ph.k kVar = o8Var.v1.I1.getReactionsWindow() != null ? o8Var.v1.I1.getReactionsWindow().c : null;
                 if (kVar != null) {
                     int i22 = o8Var.Y;
@@ -449,9 +449,9 @@ public final class n8 extends uu0 {
             if (vyVar != null) {
                 vyVar.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(o8Var.v1.Y1.getLayoutParams().height, TLObject.FLAG_30));
             }
-            mj0 mj0Var = o8Var.v1.I1;
-            if (mj0Var != null) {
-                measureChild(mj0Var, i10, i11);
+            nj0 nj0Var = o8Var.v1.I1;
+            if (nj0Var != null) {
+                measureChild(nj0Var, i10, i11);
                 if (o8Var.v1.I1.getReactionsWindow() != null) {
                     measureChild(o8Var.v1.I1.getReactionsWindow().c, i10, i11);
                 }

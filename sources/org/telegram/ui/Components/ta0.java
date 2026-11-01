@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ta0 implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ org.telegram.ui.x7 a;
@@ -18,7 +18,7 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ boolean A1(org.telegram.ui.Cells.q1 q1Var, org.telegram.messenger.jj jjVar) {
+    public final /* synthetic */ boolean A1(org.telegram.ui.Cells.q1 q1Var, org.telegram.messenger.kj kjVar) {
         return false;
     }
 
@@ -28,7 +28,7 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ org.telegram.ui.qs0 H1() {
+    public final /* synthetic */ org.telegram.ui.ps0 H1() {
         return null;
     }
 
@@ -51,12 +51,12 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
         URLSpan uRLSpan = (URLSpan) characterStyle;
         String url = uRLSpan.getURL();
         ab0 ab0Var = ua0Var.c0;
-        org.telegram.messenger.nj njVar = ab0Var.d;
-        njVar.w = uRLSpan;
-        njVar.v = null;
+        org.telegram.messenger.oj ojVar = ab0Var.d;
+        ojVar.w = uRLSpan;
+        ojVar.v = null;
         org.telegram.ui.un unVar = ab0Var.c;
         if (unVar != null && url != null) {
-            unVar.ob(url, true);
+            unVar.tb(url, true);
         }
         ua0.b(ua0Var, q1Var);
     }
@@ -92,8 +92,8 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ boolean S0(org.telegram.messenger.jj jjVar) {
-        return org.telegram.ui.Cells.f1.a(jjVar);
+    public final /* synthetic */ boolean S0(org.telegram.messenger.kj kjVar) {
+        return org.telegram.ui.Cells.f1.a(kjVar);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -127,8 +127,8 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
         if (ua0Var.a != 2) {
             return false;
         }
-        org.telegram.messenger.nj njVar = ua0Var.c0.d;
-        return (njVar.n || njVar.i) ? false : true;
+        org.telegram.messenger.oj ojVar = ua0Var.c0.d;
+        return (ojVar.n || ojVar.i) ? false : true;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -177,11 +177,11 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
         if (ua0Var.a != 2 || i10 != 1) {
             return false;
         }
-        org.telegram.messenger.nj njVar = ua0Var.c0.d;
-        if (njVar.n) {
+        org.telegram.messenger.oj ojVar = ua0Var.c0.d;
+        if (ojVar.n) {
             return false;
         }
-        TLRPC.WebPage webPage = njVar.v;
+        TLRPC.WebPage webPage = ojVar.v;
         return webPage == null || (webPage instanceof TLRPC.TL_webPagePending);
     }
 
@@ -201,7 +201,7 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ boolean w0(org.telegram.messenger.jj jjVar) {
+    public final /* synthetic */ boolean w0(org.telegram.messenger.kj kjVar) {
         return true;
     }
 
@@ -221,11 +221,11 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
         if (ua0Var.a != 2) {
             return null;
         }
-        org.telegram.messenger.nj njVar = ua0Var.c0.d;
-        if (njVar.n) {
+        org.telegram.messenger.oj ojVar = ua0Var.c0.d;
+        if (ojVar.n) {
             return null;
         }
-        return njVar.w;
+        return ojVar.w;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -245,7 +245,7 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ void J(org.telegram.messenger.gj gjVar) {
+    public final /* synthetic */ void J(org.telegram.messenger.hj hjVar) {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -261,7 +261,7 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ void O(org.telegram.messenger.jj jjVar) {
+    public final /* synthetic */ void O(org.telegram.messenger.kj kjVar) {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -317,7 +317,7 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ void v1(org.telegram.messenger.jj jjVar) {
+    public final /* synthetic */ void v1(org.telegram.messenger.kj kjVar) {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -365,7 +365,7 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ void F1(org.telegram.ui.Cells.q1 q1Var, org.telegram.messenger.c20 c20Var) {
+    public final /* synthetic */ void F1(org.telegram.ui.Cells.q1 q1Var, org.telegram.messenger.d20 d20Var) {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -473,6 +473,6 @@ public final class ta0 implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ void z1(org.telegram.messenger.jj jjVar, String str, String str2, String str3, String str4, int i10, int i11) {
+    public final /* synthetic */ void z1(org.telegram.messenger.kj kjVar, String str, String str2, String str3, String str4, int i10, int i11) {
     }
 }

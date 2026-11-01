@@ -1,199 +1,66 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cq implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hs b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int D;
+    public final /* synthetic */ boolean E;
+    public final /* synthetic */ boolean F;
+    public final /* synthetic */ is a;
+    public final /* synthetic */ l00 b;
+    public final /* synthetic */ m00 c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int w;
+    public final /* synthetic */ int x;
+    public final /* synthetic */ long y;
 
-    public /* synthetic */ cq(hs hsVar, long j10, int i10) {
-        this.a = i10;
-        this.b = hsVar;
-        this.c = j10;
+    public /* synthetic */ cq(is isVar, l00 l00Var, m00 m00Var, long j10, long j11, int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j12, int i17, boolean z10, boolean z11) {
+        this.a = isVar;
+        this.b = l00Var;
+        this.c = m00Var;
+        this.d = j10;
+        this.e = j11;
+        this.f = i10;
+        this.h = i11;
+        this.n = i12;
+        this.r = i13;
+        this.s = i14;
+        this.w = i15;
+        this.x = i16;
+        this.y = j12;
+        this.D = i17;
+        this.E = z10;
+        this.F = z11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        long e;
-        SQLiteCursor queryFinalized;
-        SQLiteCursor queryFinalized2;
-        int i10 = this.a;
-        SQLiteCursor sQLiteCursor = null;
-        long j10 = this.c;
-        hs hsVar = this.b;
-        switch (i10) {
-            case 0:
-                hsVar.getClass();
-                try {
-                    hsVar.b.executeFast("DELETE FROM dialog_photos WHERE uid = " + j10).stepThis().dispose();
-                    hsVar.b.executeFast("DELETE FROM dialog_photos_count WHERE uid = " + j10).stepThis().dispose();
-                    return;
-                } catch (Exception e7) {
-                    hsVar.o(e7, true);
-                    return;
-                }
-            case 1:
-                hsVar.getClass();
-                try {
-                    hsVar.b.executeFast("DELETE FROM wallpapers2 WHERE uid = " + j10).stepThis().dispose();
-                    return;
-                } catch (Exception e10) {
-                    hsVar.o(e10, true);
-                    return;
-                }
-            case 2:
-                hsVar.getClass();
-                try {
-                    SQLiteDatabase sQLiteDatabase = hsVar.b;
-                    Locale locale = Locale.US;
-                    sQLiteDatabase.executeFast("DELETE FROM topics WHERE did = " + j10).stepThis().dispose();
-                    return;
-                } catch (SQLiteException e11) {
-                    e11.printStackTrace();
-                    return;
-                }
-            case 3:
-                hs hsVar2 = this.b;
-                try {
-                    try {
-                        e = hsVar2.getUserConfig().e();
-                        queryFinalized = hsVar2.b.queryFinalized("SELECT mid FROM messages_topics WHERE uid = ? AND topic_id = ?", Long.valueOf(e), Long.valueOf(j10));
-                    } catch (Exception e12) {
-                        e = e12;
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                }
-                try {
-                    ArrayList arrayList = new ArrayList();
-                    while (queryFinalized.next()) {
-                        arrayList.add(Integer.valueOf(queryFinalized.intValue(0)));
-                    }
-                    queryFinalized.dispose();
-                    queryFinalized = hsVar2.b.queryFinalized("SELECT mid, data FROM messages_v2 WHERE uid = ?", Long.valueOf(e));
-                    while (queryFinalized.next()) {
-                        int intValue = queryFinalized.intValue(0);
-                        if (!arrayList.contains(Integer.valueOf(intValue))) {
-                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(1);
-                            if (jj.R1(e, TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false)) == j10) {
-                                arrayList.add(Integer.valueOf(intValue));
-                            }
-                            byteBufferValue.reuse();
-                        }
-                    }
-                    queryFinalized.dispose();
-                    if (arrayList.isEmpty()) {
-                        return;
-                    }
-                    hsVar2.Q0(0, 0, e, arrayList, true);
-                    hsVar2.R1(e, -e, arrayList, null);
-                    try {
-                        tr trVar = new tr(hsVar2, e, arrayList, 7);
-                        hsVar2 = hsVar2;
-                        i0.g3(trVar);
-                        return;
-                    } catch (Exception e13) {
-                        e = e13;
-                        hsVar2 = hsVar2;
-                        hsVar2.o(e, true);
-                        if (sQLiteCursor != null) {
-                            sQLiteCursor.dispose();
-                            return;
-                        }
-                        return;
-                    }
-                } catch (Exception e14) {
-                    e = e14;
-                    sQLiteCursor = queryFinalized;
-                } catch (Throwable th3) {
-                    th = th3;
-                    sQLiteCursor = queryFinalized;
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    throw th;
-                }
-            case 4:
-                hsVar.getClass();
-                try {
-                    hsVar.b.executeFast("DELETE FROM story_pushes WHERE uid = " + j10).stepThis().dispose();
-                    return;
-                } catch (Exception e15) {
-                    hsVar.o(e15, true);
-                    return;
-                }
-            case 5:
-                hsVar.getClass();
-                try {
-                    hsVar.b.executeFast("DELETE FROM media_counts_v2 WHERE uid = " + j10).stepThis().dispose();
-                    return;
-                } catch (Exception e16) {
-                    hsVar.o(e16, true);
-                    return;
-                }
-            case 6:
-                hsVar.getClass();
-                try {
-                    hsVar.b.executeFast("DELETE FROM pending_tasks WHERE id = " + j10).stepThis().dispose();
-                    return;
-                } catch (Exception e17) {
-                    hsVar.o(e17, true);
-                    return;
-                }
-            default:
-                long j11 = this.c;
-                boolean z10 = true;
-                try {
-                    try {
-                        queryFinalized2 = hsVar.b.queryFinalized("SELECT uid, data FROM channel_admins_v3 WHERE did = " + j11, new Object[0]);
-                    } catch (Throwable th4) {
-                        th = th4;
-                    }
-                } catch (Exception e18) {
-                    e = e18;
-                }
-                try {
-                    a0.h hVar = new a0.h();
-                    while (queryFinalized2.next()) {
-                        NativeByteBuffer byteBufferValue2 = queryFinalized2.byteBufferValue(1);
-                        if (byteBufferValue2 != null) {
-                            TLRPC.ChannelParticipant TLdeserialize = TLRPC.ChannelParticipant.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
-                            byteBufferValue2.reuse();
-                            if (TLdeserialize != null) {
-                                hVar.k(TLdeserialize, queryFinalized2.longValue(0));
-                            }
-                        }
-                    }
-                    queryFinalized2.dispose();
-                    vp messagesController = hsVar.getMessagesController();
-                    messagesController.getClass();
-                    i0.g3(new qg(messagesController, j11, hVar, z10));
-                } catch (Exception e19) {
-                    e = e19;
-                    sQLiteCursor = queryFinalized2;
-                    hsVar.o(e, true);
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    return;
-                } catch (Throwable th5) {
-                    th = th5;
-                    sQLiteCursor = queryFinalized2;
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    throw th;
-                }
-                return;
-        }
+        is isVar = this.a;
+        l00 l00Var = this.b;
+        m00 m00Var = this.c;
+        long j10 = this.d;
+        long j11 = this.e;
+        int i10 = this.f;
+        int i11 = this.h;
+        int i12 = this.n;
+        int i13 = this.r;
+        int i14 = this.s;
+        int i15 = this.w;
+        int i16 = this.x;
+        long j12 = this.y;
+        int i17 = this.D;
+        boolean z10 = this.E;
+        boolean z11 = this.F;
+        m00.a(l00Var);
+        l00 d = m00.d(m00Var, "MessagesStorage.getMessages");
+        kr f02 = isVar.f0(j10, j11, i10, i11, i12, i13, i14, i15, i16, j12, i17, z10, z11, m00Var);
+        m00.a(d);
+        Utilities.d.c(new pi(27, m00.d(m00Var, "MessagesStorage.getMessages: stageQueue.postRunnable"), f02));
     }
 }

@@ -13,9 +13,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class i60 extends sk0 {
+public final class i60 extends tk0 {
     public ArrayList c = new ArrayList();
     public ArrayList d = new ArrayList();
     public final zf.m1 e;
@@ -30,7 +30,7 @@ public final class i60 extends sk0 {
         m1Var.a = new px(this, 7);
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -82,7 +82,7 @@ public final class i60 extends sk0 {
         View view = c1Var.a;
         CharSequence charSequence2 = null;
         if (i11 == 0) {
-            ((org.telegram.ui.Cells.i4) view).setText(org.telegram.messenger.cd.L0(2131749544, null));
+            ((org.telegram.ui.Cells.i4) view).setText(org.telegram.messenger.dd.L0(2131749544, null));
             return;
         }
         if (i11 != 1) {
@@ -181,12 +181,12 @@ public final class i60 extends sk0 {
             i4Var.b = textView;
             sc.e.t(textView, 1, 14.0f);
             org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.Oi, null);
-            textView.setGravity((org.telegram.messenger.cd.X ? 5 : 3) | 16);
-            i4Var.addView(textView, w7.b6.d(-1, -1.0f, (org.telegram.messenger.cd.X ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+            textView.setGravity((org.telegram.messenger.dd.X ? 5 : 3) | 16);
+            i4Var.addView(textView, w7.b6.d(-1, -1.0f, (org.telegram.messenger.dd.X ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
             view = i4Var;
         } else {
             view = new View(context);
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

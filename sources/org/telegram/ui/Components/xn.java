@@ -21,7 +21,7 @@ import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class xn extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
     public static final /* synthetic */ int L = 0;
@@ -43,7 +43,7 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
     public g9 n;
     public final org.telegram.ui.ActionBar.p6 r;
     public boolean s;
-    public ei0 w;
+    public fi0 w;
     public TextView x;
     public bi.j6 y;
 
@@ -70,26 +70,26 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
         g9 g9Var = new g9(context);
         this.h = g9Var;
         g9Var.getImageReceiver().R0 = true;
-        frameLayout.addView(this.h, w7.b6.c(112.0f, org.telegram.messenger.zs.x1));
+        frameLayout.addView(this.h, w7.b6.c(112.0f, org.telegram.messenger.at.x1));
         w7.e6.a(this.h);
         g9 g9Var2 = new g9(context);
         this.n = g9Var2;
         g9Var2.getImageReceiver().R0 = true;
-        frameLayout.addView(this.n, w7.b6.c(112.0f, org.telegram.messenger.zs.x1));
+        frameLayout.addView(this.n, w7.b6.c(112.0f, org.telegram.messenger.at.x1));
         this.n.setVisibility(8);
         this.n.setAlpha(0.0f);
         w7.e6.a(this.n);
         e();
         updateColors();
-        String L0 = org.telegram.messenger.cd.L0(2131748210, null);
-        String L02 = org.telegram.messenger.cd.L0(2131748208, null);
+        String L0 = org.telegram.messenger.dd.L0(2131748210, null);
+        String L02 = org.telegram.messenger.dd.L0(2131748208, null);
         textView.setText(L0);
         textView2.setText(L02);
         textView2.setMaxWidth(vh.p2.a(textView2.getText(), textView2.getPaint()));
         this.h.setContentDescription(textView2.getText());
         this.a = document;
         if (document == null) {
-            org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i10);
+            org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(i10);
             TLRPC.Document document2 = b02.y0;
             b02.n1();
             this.a = document2;
@@ -147,7 +147,7 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
             }
             i12++;
         }
-        if (org.telegram.messenger.jj.K2(document, true) && i11 == 0 && i10 == 0) {
+        if (org.telegram.messenger.kj.K2(document, true) && i11 == 0 && i10 == 0) {
             i11 = 512;
             i10 = 512;
         }
@@ -178,9 +178,9 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
         this.E = z11;
         if (z10) {
             if (this.w == null) {
-                ei0 ei0Var = new ei0(getContext());
-                this.w = ei0Var;
-                ei0Var.setScaleType(ImageView.ScaleType.CENTER);
+                fi0 fi0Var = new fi0(getContext());
+                this.w = fi0Var;
+                fi0Var.setScaleType(ImageView.ScaleType.CENTER);
                 this.w.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.w.setBackground(org.telegram.ui.ActionBar.t6.L(org.telegram.messenger.i0.L(78.0f), 469762048));
                 if (z11) {
@@ -229,11 +229,11 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
     public final void d(CharSequence charSequence, CharSequence charSequence2) {
         this.H = true;
         if (TextUtils.isEmpty(charSequence == null ? null : charSequence.toString().trim())) {
-            charSequence = org.telegram.messenger.cd.L0(2131748210, null);
+            charSequence = org.telegram.messenger.dd.L0(2131748210, null);
         }
         this.b.setText(charSequence);
         if (TextUtils.isEmpty(charSequence2 == null ? null : charSequence2.toString().trim())) {
-            charSequence2 = org.telegram.messenger.cd.L0(2131748208, null);
+            charSequence2 = org.telegram.messenger.dd.L0(2131748208, null);
         }
         TextView textView = this.c;
         textView.setText(charSequence2);
@@ -267,11 +267,11 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
         if (!this.D) {
             addView(this.b, w7.b6.t(-2, -2, 1, 20, 6, 20, 6));
             addView(this.c, w7.b6.t(-2, -2, 1, 20, 6, 20, 6));
-            addView(this.f, w7.b6.t(org.telegram.messenger.zs.x1, org.telegram.messenger.zs.x1, 1, 16, 10, 16, 16));
+            addView(this.f, w7.b6.t(org.telegram.messenger.at.x1, org.telegram.messenger.at.x1, 1, 16, 10, 16, 16));
             return;
         }
         addView(this.w, w7.b6.t(78, 78, 49, 20, 9, 20, 9));
-        boolean A3 = org.telegram.messenger.vp.r1(this.e).A3();
+        boolean A3 = org.telegram.messenger.wp.r1(this.e).A3();
         addView(this.x, w7.b6.t(-2, -2, 49, 20, 0, 20, A3 ? 13 : 9));
         if (A3) {
             return;
@@ -287,7 +287,7 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.a == null) {
-            org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(this.e);
+            org.telegram.messenger.vi b02 = org.telegram.messenger.vi.b0(this.e);
             TLRPC.Document document = b02.y0;
             b02.n1();
             this.a = document;
@@ -350,13 +350,13 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
         }
         this.s = true;
         this.n.b();
-        org.telegram.messenger.c00 f7 = org.telegram.messenger.v5.f(document, org.telegram.ui.ActionBar.t6.Zc, 1.0f, null);
+        org.telegram.messenger.d00 f7 = org.telegram.messenger.v5.f(document, org.telegram.ui.ActionBar.t6.Zc, 1.0f, null);
         if (f7 != null) {
-            this.h.p(org.telegram.messenger.ic.b(document), b(document), f7, document);
+            this.h.p(org.telegram.messenger.jc.b(document), b(document), f7, document);
             document2 = document;
         } else {
             document2 = document;
-            this.h.l(org.telegram.messenger.ic.b(document), b(document), org.telegram.messenger.ic.c(org.telegram.messenger.b8.w(document.thumbs, 90, false, null, false), document), null, 0, document2);
+            this.h.l(org.telegram.messenger.jc.b(document), b(document), org.telegram.messenger.jc.c(org.telegram.messenger.b8.w(document.thumbs, 90, false, null, false), document), null, 0, document2);
         }
         this.h.setOnClickListener(new un(this, document2, 0));
     }
@@ -380,7 +380,7 @@ public abstract class xn extends LinearLayout implements org.telegram.ui.ActionB
         }
         this.s = true;
         this.n.b();
-        this.h.l(org.telegram.messenger.ic.g(str), "256_256", null, null, 0, null);
+        this.h.l(org.telegram.messenger.jc.g(str), "256_256", null, null, 0, null);
     }
 
     @Override // org.telegram.ui.ActionBar.k6

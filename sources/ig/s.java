@@ -19,8 +19,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import bi.g6;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
@@ -29,12 +29,12 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.s5;
-import org.telegram.ui.c91;
-import org.telegram.ui.m91;
-import org.telegram.ui.n81;
+import org.telegram.ui.a91;
+import org.telegram.ui.k91;
+import org.telegram.ui.l81;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class s extends FrameLayout {
     public final /* synthetic */ int a = 1;
@@ -65,11 +65,11 @@ public final class s extends FrameLayout {
         this.c = i10;
         ((o) this.e).c = i10;
         if (i10 == 0) {
-            textView.setText(cd.L0(2131747680, null).toUpperCase());
+            textView.setText(dd.L0(2131747680, null).toUpperCase());
         } else if (i10 == 1) {
-            textView.setText(cd.L0(2131747682, null).toUpperCase());
+            textView.setText(dd.L0(2131747682, null).toUpperCase());
         } else if (i10 == 2) {
-            textView.setText(cd.L0(2131747683, null).toUpperCase());
+            textView.setText(dd.L0(2131747683, null).toUpperCase());
         }
         b();
     }
@@ -78,7 +78,7 @@ public final class s extends FrameLayout {
         u uVar = (u) this.h;
         this.b = true;
         o oVar = (o) this.e;
-        oVar.d = i0.b.o(oVar.e.m1, zs.e4);
+        oVar.d = i0.b.o(oVar.e.m1, at.e4);
         oVar.a();
         oVar.invalidate();
         EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.f;
@@ -186,18 +186,18 @@ public final class s extends FrameLayout {
                 break;
             case 2:
                 Paint paint = (Paint) obj;
-                m91 m91Var = (m91) this.h;
-                n81 n81Var = m91Var.a;
+                k91 k91Var = (k91) this.h;
+                l81 l81Var = k91Var.a;
                 if (this.b) {
                     RectF rectF = org.telegram.messenger.i0.P;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
-                    t6.t(this, m91Var.y0, n81Var);
-                    Paint d = n81Var.d("paintChatActionBackground");
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
+                    t6.t(this, k91Var.y0, l81Var);
+                    Paint d = l81Var.d("paintChatActionBackground");
                     ColorFilter colorFilter = d.getColorFilter();
                     d.setColorFilter((ColorMatrixColorFilter) this.f);
-                    c91 c91Var = m91Var.y0;
-                    if (c91Var != null && (c91Var.getBackground() instanceof jb0) && m91Var.m1 < 0.0f) {
+                    a91 a91Var = k91Var.y0;
+                    if (a91Var != null && (a91Var.getBackground() instanceof jb0) && k91Var.m1 < 0.0f) {
                         f7 = 0.33f;
                     }
                     int alpha = d.getAlpha();
@@ -205,10 +205,10 @@ public final class s extends FrameLayout {
                     canvas.drawRect(rectF, d);
                     d.setAlpha(alpha);
                     d.setColorFilter(colorFilter);
-                    if (m91Var.N1) {
-                        float f10 = m91Var.o1;
+                    if (k91Var.N1) {
+                        float f10 = k91Var.o1;
                         if (f10 > 0.0f) {
-                            canvas.drawColor(i0.b.o(-16777216, (int) (f10 * 255.0f * m91Var.p1)));
+                            canvas.drawColor(i0.b.o(-16777216, (int) (f10 * 255.0f * k91Var.p1)));
                         }
                     }
                     canvas.save();
@@ -292,7 +292,7 @@ public final class s extends FrameLayout {
         editTextBoldCursor.setGravity(17);
         editTextBoldCursor.setSingleLine();
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setImeActionLabel(cd.L0(2131751355, null), 6);
+        editTextBoldCursor.setImeActionLabel(dd.L0(2131751355, null), 6);
         editTextBoldCursor.setInputType(2);
         editTextBoldCursor.setTypeface(org.telegram.messenger.i0.o());
         editTextBoldCursor.addTextChangedListener(new u2(this));
@@ -302,9 +302,9 @@ public final class s extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(m91 m91Var, Context context, boolean z10) {
+    public s(k91 k91Var, Context context, boolean z10) {
         super(context);
-        this.h = m91Var;
+        this.h = k91Var;
         this.b = z10;
         Paint paint = new Paint(3);
         this.e = paint;

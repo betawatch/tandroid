@@ -1,41 +1,54 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class av0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cv0 b;
+import android.os.Bundle;
+import android.widget.LinearLayout;
 
-    public /* synthetic */ av0(cv0 cv0Var, int i10) {
-        this.a = i10;
-        this.b = cv0Var;
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* loaded from: classes3.dex */
+public abstract class av0 extends LinearLayout {
+    public boolean a() {
+        return this instanceof org.telegram.ui.vc0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                cv0 cv0Var = this.b;
-                cv0Var.V0 = false;
-                if (!cv0Var.Y0 && cv0Var.W0) {
-                    cv0Var.C(true);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.V0 = false;
-                break;
-            case 2:
-                cv0 cv0Var2 = this.b;
-                cv0Var2.Y0 = false;
-                if (!cv0Var2.V0 && cv0Var2.W0) {
-                    cv0Var2.C(true);
-                    break;
-                }
-                break;
-            default:
-                this.b.Y0 = false;
-                break;
-        }
+    public boolean b() {
+        return this instanceof org.telegram.ui.vc0;
+    }
+
+    public boolean c(boolean z10) {
+        return true;
+    }
+
+    public String getHeaderName() {
+        return "";
+    }
+
+    public void h(String str) {
+    }
+
+    public void k(Bundle bundle) {
+    }
+
+    public void l(Bundle bundle) {
+    }
+
+    public void d() {
+    }
+
+    public void f() {
+    }
+
+    public void g() {
+    }
+
+    public void i() {
+    }
+
+    public void j() {
+    }
+
+    public void updateColors() {
+    }
+
+    public void m(Bundle bundle, boolean z10) {
     }
 }

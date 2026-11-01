@@ -2,22 +2,22 @@ package vh;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.m20;
-import org.telegram.messenger.r20;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.us;
-import org.telegram.messenger.zs;
-import org.telegram.ui.Components.qp0;
+import org.telegram.messenger.at;
+import org.telegram.messenger.n20;
+import org.telegram.messenger.s20;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.vs;
+import org.telegram.ui.Components.rp0;
 import org.telegram.ui.hk;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class u1 extends org.telegram.ui.ActionBar.z2 implements us {
+public class u1 extends org.telegram.ui.ActionBar.z2 implements vs {
     public static int y1 = 1;
     public String i1;
     public int j1;
-    public final w0 k1;
-    public final x0 l1;
+    public final x0 k1;
+    public final y0 l1;
     public final hk m1;
     public final t1 n1;
     public float o1;
@@ -27,9 +27,9 @@ public class u1 extends org.telegram.ui.ActionBar.z2 implements us {
     public int s1;
     public qh.d t1;
     public float u1;
-    public m20 v1;
+    public n20 v1;
     public ag.n w1;
-    public r20 x1;
+    public s20 x1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public u1(Context context, org.telegram.ui.ActionBar.p6 p6Var, boolean z10, boolean z11) {
@@ -37,8 +37,8 @@ public class u1 extends org.telegram.ui.ActionBar.z2 implements us {
         int i10 = 1;
         this.i1 = null;
         this.j1 = -1;
-        this.k1 = new w0();
-        this.l1 = new x0();
+        this.k1 = new x0();
+        this.l1 = new y0();
         this.o1 = -1.0f;
         this.p1 = z10;
         this.q1 = z11;
@@ -48,33 +48,33 @@ public class u1 extends org.telegram.ui.ActionBar.z2 implements us {
         this.x = true;
         int i11 = 0;
         G0(false);
-        this.b = new qp0(this, context);
+        this.b = new rp0(this, context);
         hk hkVar = new hk(this, context, 7);
         this.m1 = hkVar;
         hkVar.b = z10 ? 0 : y1;
-        hkVar.setAdapter(new y0(this, z10, context));
+        hkVar.setAdapter(new z0(this, z10, context));
         this.b.addView(hkVar, w7.b6.e(-1, -1, 87));
-        new r2(this.b, false, new v0(this, i11));
+        new r2(this.b, false, new w0(this, i11));
         if (!z10) {
             t1 t1Var = new t1(context);
             this.n1 = t1Var;
-            t1Var.G = new v0(this, i10);
+            t1Var.G = new w0(this, i10);
             t1Var.F = hkVar.b;
             t1Var.invalidate();
             this.b.addView(t1Var, w7.b6.e(-1, -2, 87));
         }
-        zs.f(this.a).c(this, zs.x0);
-        zs.f(this.a).c(this, zs.B0);
+        at.f(this.a).c(this, at.x0);
+        at.f(this.a).c(this, at.B0);
         boolean z12 = org.telegram.messenger.f8.j;
         if (!z10) {
-            ui.b0(this.a).B(5);
-            ui.b0(this.a).w();
-            ui.b0(this.a).V0(0, true, true, false);
+            vi.b0(this.a).B(5);
+            vi.b0(this.a).w();
+            vi.b0(this.a).V0(0, true, true, false);
         }
-        ui.b0(this.a).B(0);
-        ui.b0(this.a).V0(0, false, true, false);
-        ui.b0(this.a).V0(2, false, true, false);
-        ui.b0(this.a).V0(7, false, true, false);
+        vi.b0(this.a).B(0);
+        vi.b0(this.a).V0(0, false, true, false);
+        vi.b0(this.a).V0(2, false, true, false);
+        vi.b0(this.a).V0(7, false, true, false);
     }
 
     @Override // org.telegram.ui.ActionBar.z2
@@ -118,8 +118,8 @@ public class u1 extends org.telegram.ui.ActionBar.z2 implements us {
         }
     }
 
-    public final void N0(r20 r20Var) {
-        this.x1 = r20Var;
+    public final void N0(s20 s20Var) {
+        this.x1 = s20Var;
         for (View view : this.m1.getViewPages()) {
             if (view instanceof l1) {
                 k1 k1Var = ((l1) view).c;
@@ -135,10 +135,10 @@ public class u1 extends org.telegram.ui.ActionBar.z2 implements us {
         return this.b.getMeasuredHeight() <= 0 ? org.telegram.messenger.i0.q.y : (int) (this.b.getMeasuredHeight() - this.m1.getY());
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = zs.x0;
-        int i13 = zs.B0;
+        int i12 = at.x0;
+        int i13 = at.B0;
         if (i10 == i12 || i10 == i13) {
             for (View view : this.m1.getViewPages()) {
                 if (view instanceof l1) {
@@ -156,8 +156,8 @@ public class u1 extends org.telegram.ui.ActionBar.z2 implements us {
 
     @Override // org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
     public final void dismiss() {
-        zs.f(this.a).n(this, zs.x0);
-        zs.f(this.a).n(this, zs.B0);
+        at.f(this.a).n(this, at.x0);
+        at.f(this.a).n(this, at.B0);
         L0();
         super.dismiss();
         boolean z10 = org.telegram.messenger.f8.j;

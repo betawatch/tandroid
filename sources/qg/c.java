@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.c2;
@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout implements k6 {
     public int a;
@@ -37,11 +37,11 @@ public class c extends FrameLayout implements k6 {
         this.b = p6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        z20.n(textView, 1, 20.0f);
-        textView.setGravity(cd.X ? 5 : 3);
+        a30.n(textView, 1, 20.0f);
+        textView.setGravity(dd.X ? 5 : 3);
         int i10 = t6.j5;
         a7.V(textView, i10, p6Var);
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         addView(textView, b6.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
@@ -53,7 +53,7 @@ public class c extends FrameLayout implements k6 {
         c2Var.a(w02);
         c2Var.b(t6.w0(i10, p6Var));
         c2Var.k = 220.0f;
-        addView(imageView, b6.d(24, 24.0f, (cd.X ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, b6.d(24, 24.0f, (dd.X ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new ag.g(this, 28));
     }
 
@@ -81,7 +81,7 @@ public class c extends FrameLayout implements k6 {
 
     public void setCloseImageVisible(boolean z10) {
         this.c.setVisibility(z10 ? 0 : 8);
-        boolean z11 = cd.X;
+        boolean z11 = dd.X;
         this.d.setLayoutParams(b6.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
     }
 

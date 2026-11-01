@@ -13,32 +13,32 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import java.util.HashSet;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.ov0;
+import org.telegram.ui.Components.pv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class w extends View implements k6 {
     public final org.telegram.ui.Cells.y D;
     public boolean E;
     public int F;
-    public bi0 G;
+    public ci0 G;
     public int H;
     public int I;
     public final RectF a;
     public final Paint b;
     public final TextPaint c;
     public final t d;
-    public final bi0 e;
+    public final ci0 e;
     public boolean f;
     public float h;
     public String n;
@@ -56,9 +56,9 @@ public final class w extends View implements k6 {
         this.c = textPaint;
         t tVar = new t(this);
         this.d = tVar;
-        bi0 bi0Var = new bi0(R.raw.bot_webview_sheet_to_cross, org.telegram.messenger.i0.L(20.0f), org.telegram.messenger.i0.L(20.0f));
-        this.e = bi0Var;
-        this.n = cd.L0(2131752891, null);
+        ci0 ci0Var = new ci0(R.raw.bot_webview_sheet_to_cross, org.telegram.messenger.i0.L(20.0f), org.telegram.messenger.i0.L(20.0f));
+        this.e = ci0Var;
+        this.n = dd.L0(2131752891, null);
         this.E = true;
         updateColors();
         tVar.n = true;
@@ -74,9 +74,9 @@ public final class w extends View implements k6 {
         org.telegram.ui.Cells.y k02 = t6.k0(L, L, L, L, 0, x02, x02);
         this.D = k02;
         k02.setCallback(this);
-        bi0Var.setCallback(this);
-        bi0Var.R(this);
-        setContentDescription(cd.L0(2131754917, "AccDescrBotMenu"));
+        ci0Var.setCallback(this);
+        ci0Var.R(this);
+        setContentDescription(dd.L0(2131754917, "AccDescrBotMenu"));
     }
 
     @Override // org.telegram.ui.ActionBar.k6
@@ -117,7 +117,7 @@ public final class w extends View implements k6 {
                         this.c.setAlpha((int) (255.0f * interpolation));
                     }
                     if (this.E) {
-                        this.a.set(0.0f, 0.0f, z20.b(this.s, org.telegram.messenger.i0.L(4.0f), interpolation, org.telegram.messenger.i0.L(40.0f)), getMeasuredHeight());
+                        this.a.set(0.0f, 0.0f, a30.b(this.s, org.telegram.messenger.i0.L(4.0f), interpolation, org.telegram.messenger.i0.L(40.0f)), getMeasuredHeight());
                         canvas.drawRoundRect(this.a, org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(16.0f), this.b);
                         int x02 = t6.x0(null, t6.Ei, false);
                         if (x02 != this.F) {
@@ -133,11 +133,11 @@ public final class w extends View implements k6 {
                     if (this.x) {
                         canvas.save();
                         canvas.translate(org.telegram.messenger.i0.L(9.5f), org.telegram.messenger.i0.L(6.0f));
-                        bi0 bi0Var = this.e;
-                        bi0Var.setBounds(0, 0, bi0Var.b, bi0Var.c);
-                        bi0Var.draw(canvas);
+                        ci0 ci0Var = this.e;
+                        ci0Var.setBounds(0, 0, ci0Var.b, ci0Var.c);
+                        ci0Var.draw(canvas);
                         canvas.restore();
-                        if (bi0Var.k0) {
+                        if (ci0Var.k0) {
                             invalidate();
                         }
                     } else {
@@ -220,7 +220,7 @@ public final class w extends View implements k6 {
             textPaint.setTextSize(L);
             this.I = size;
             int i12 = (int) (org.telegram.messenger.i0.q.x * 0.6f);
-            StaticLayout c10 = ov0.c(org.telegram.messenger.k6.m(this.n, textPaint.getFontMetricsInt(), false, null, 0), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, i12, 1, true);
+            StaticLayout c10 = pv0.c(org.telegram.messenger.k6.m(this.n, textPaint.getFontMetricsInt(), false, null, 0), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, i12, 1, true);
             this.r = c10;
             this.s = c10.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
@@ -246,11 +246,11 @@ public final class w extends View implements k6 {
             return;
         }
         if (this.y != z10) {
-            bi0 bi0Var = this.e;
-            bi0Var.stop();
-            bi0Var.h = true;
-            bi0Var.P(z10 ? bi0Var.e[0] : 1);
-            bi0Var.start();
+            ci0 ci0Var = this.e;
+            ci0Var.stop();
+            ci0Var.h = true;
+            ci0Var.P(z10 ? ci0Var.e[0] : 1);
+            ci0Var.start();
             this.y = z10;
         }
     }
@@ -269,15 +269,15 @@ public final class w extends View implements k6 {
             t tVar = this.d;
             tVar.k = x02;
             tVar.j = x02;
-            bi0 bi0Var = this.e;
-            if (bi0Var != null) {
-                if (bi0Var == this.G) {
+            ci0 ci0Var = this.e;
+            if (ci0Var != null) {
+                if (ci0Var == this.G) {
                     if (x02 != this.H) {
                     }
                 }
-                this.G = bi0Var;
+                this.G = ci0Var;
                 this.H = x02;
-                bi0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
+                ci0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
             }
             int alpha = textPaint.getAlpha();
             textPaint.setColor(x02);

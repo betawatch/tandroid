@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dt implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -30,23 +30,23 @@ public final /* synthetic */ class dt implements ViewTreeObserver.OnPreDrawListe
                 ((x60) this.b).invalidate();
                 break;
             default:
-                ku0 ku0Var = (ku0) this.b;
-                if (ku0Var.a && ku0Var.b > 0) {
-                    ku0Var.f("PRE_DRAW_BEFORE", null, 0, 0, true);
+                lu0 lu0Var = (lu0) this.b;
+                if (lu0Var.a && lu0Var.b > 0) {
+                    lu0Var.f("PRE_DRAW_BEFORE", null, 0, 0, true);
                 }
-                ku0Var.p();
-                if (ku0Var.g0 && (recyclerView = ku0Var.E) != null && !recyclerView.c0()) {
-                    float o10 = ku0Var.o();
+                lu0Var.p();
+                if (lu0Var.g0 && (recyclerView = lu0Var.E) != null && !recyclerView.c0()) {
+                    float o10 = lu0Var.o();
                     if (!Float.isInfinite(o10)) {
-                        ku0Var.g0 = false;
-                        ku0Var.t(ku0Var.E, Math.round(o10 - ku0Var.U));
-                        ku0Var.B();
+                        lu0Var.g0 = false;
+                        lu0Var.t(lu0Var.E, Math.round(o10 - lu0Var.U));
+                        lu0Var.B();
                     }
                 }
-                if (ku0Var.a && ku0Var.b > 0) {
-                    ku0Var.f("PRE_DRAW_AFTER", null, 0, 0, true);
-                    ku0Var.b--;
-                    ku0Var.c++;
+                if (lu0Var.a && lu0Var.b > 0) {
+                    lu0Var.f("PRE_DRAW_AFTER", null, 0, 0, true);
+                    lu0Var.b--;
+                    lu0Var.c++;
                     break;
                 }
                 break;

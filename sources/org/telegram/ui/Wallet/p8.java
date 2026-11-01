@@ -3,15 +3,15 @@ package org.telegram.ui.Wallet;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.r20;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.wb;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p8 implements q20 {
+public final /* synthetic */ class p8 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ t8 b;
     public final /* synthetic */ gf.e c;
@@ -22,7 +22,7 @@ public final /* synthetic */ class p8 implements q20 {
         this.c = eVar;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         int i10 = this.a;
         gf.e eVar = this.c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class p8 implements q20 {
                     }
                 }
                 if (str == null) {
-                    wb I = cc.a0(t8Var).I(R.raw.contact_check, cd.L0(2131743217, null), cd.L0(2131743215, null));
+                    wb I = cc.a0(t8Var).I(R.raw.contact_check, dd.L0(2131743217, null), dd.L0(2131743215, null));
                     I.j = 5000;
                     I.j();
                     break;

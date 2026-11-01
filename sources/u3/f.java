@@ -35,12 +35,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import v7.t6;
 import z3.k;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -120,7 +120,7 @@ public final class f implements o {
         o0 = new UUID(72057594037932032L, -9223371306706625679L);
         HashMap hashMap = new HashMap();
         i0.o(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
-        i0.o(zs.K2, hashMap, "htc_video_rotA-180", zs.t4, "htc_video_rotA-270");
+        i0.o(at.K2, hashMap, "htc_video_rotA-180", at.t4, "htc_video_rotA-270");
         p0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 
@@ -495,20 +495,20 @@ public final class f implements o {
                     int i22 = bVar.f;
                     Object obj2 = gVar.a;
                     switch (i22) {
-                        case zs.P1 /* 131 */:
-                        case zs.S1 /* 136 */:
-                        case zs.l2 /* 155 */:
-                        case zs.p2 /* 159 */:
-                        case zs.G2 /* 176 */:
-                        case zs.J2 /* 179 */:
-                        case zs.Q2 /* 186 */:
-                        case zs.s3 /* 215 */:
-                        case zs.H3 /* 231 */:
-                        case zs.N3 /* 238 */:
-                        case zs.P3 /* 240 */:
-                        case zs.Q3 /* 241 */:
-                        case zs.W3 /* 247 */:
-                        case zs.a4 /* 251 */:
+                        case at.P1 /* 131 */:
+                        case at.S1 /* 136 */:
+                        case at.l2 /* 155 */:
+                        case at.p2 /* 159 */:
+                        case at.G2 /* 176 */:
+                        case at.J2 /* 179 */:
+                        case at.Q2 /* 186 */:
+                        case at.s3 /* 215 */:
+                        case at.H3 /* 231 */:
+                        case at.N3 /* 238 */:
+                        case at.P3 /* 240 */:
+                        case at.Q3 /* 241 */:
+                        case at.W3 /* 247 */:
+                        case at.a4 /* 251 */:
                         case 16871:
                         case 16980:
                         case 17029:
@@ -545,13 +545,13 @@ public final class f implements o {
                         case 2274716:
                             i10 = 3;
                             break;
-                        case zs.q2 /* 160 */:
-                        case zs.w2 /* 166 */:
-                        case zs.E2 /* 174 */:
-                        case zs.N2 /* 183 */:
-                        case zs.R2 /* 187 */:
-                        case zs.B3 /* 224 */:
-                        case zs.C3 /* 225 */:
+                        case at.q2 /* 160 */:
+                        case at.w2 /* 166 */:
+                        case at.E2 /* 174 */:
+                        case at.N2 /* 183 */:
+                        case at.R2 /* 187 */:
+                        case at.B3 /* 224 */:
+                        case at.C3 /* 225 */:
                         case 16868:
                         case 18407:
                         case 19899:
@@ -572,9 +572,9 @@ public final class f implements o {
                         case 524531317:
                             i10 = 1;
                             break;
-                        case zs.r2 /* 161 */:
-                        case zs.t2 /* 163 */:
-                        case zs.v2 /* 165 */:
+                        case at.r2 /* 161 */:
+                        case at.t2 /* 163 */:
+                        case at.v2 /* 165 */:
                         case 16877:
                         case 16981:
                         case 18402:
@@ -583,7 +583,7 @@ public final class f implements o {
                         case 30322:
                             i10 = 4;
                             break;
-                        case zs.L2 /* 181 */:
+                        case at.L2 /* 181 */:
                         case 17545:
                         case 21969:
                         case 21970:
@@ -1105,9 +1105,9 @@ public final class f implements o {
                                                     } else if (Float.compare(eVar.w, 90.0f) == 0) {
                                                         intValue = 90;
                                                     } else if (Float.compare(eVar.w, -180.0f) == 0 || Float.compare(eVar.w, 180.0f) == 0) {
-                                                        intValue = zs.K2;
+                                                        intValue = at.K2;
                                                     } else if (Float.compare(eVar.w, -90.0f) == 0) {
-                                                        intValue = zs.t4;
+                                                        intValue = at.t4;
                                                     }
                                                 }
                                                 wVar.y = eVar.n;
@@ -1292,18 +1292,18 @@ public final class f implements o {
                                                     int i35 = 0;
                                                     int i36 = 1;
                                                     while (true) {
-                                                        int i37 = a12[i36] & zs.e4;
+                                                        int i37 = a12[i36] & at.e4;
                                                         if (i37 == 255) {
-                                                            i35 += zs.e4;
+                                                            i35 += at.e4;
                                                             i36++;
                                                         } else {
                                                             int i38 = i36 + 1;
                                                             int i39 = i35 + i37;
                                                             int i40 = 0;
                                                             while (true) {
-                                                                int i41 = a12[i38] & zs.e4;
+                                                                int i41 = a12[i38] & at.e4;
                                                                 if (i41 == 255) {
-                                                                    i40 += zs.e4;
+                                                                    i40 += at.e4;
                                                                     i38++;
                                                                 } else {
                                                                     int i42 = i38 + 1;
@@ -2233,7 +2233,7 @@ public final class f implements o {
                                             eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
-                                        case zs.T /* 30 */:
+                                        case at.T /* 30 */:
                                             str6 = "video/mpeg2";
                                             D = -1;
                                             i12 = -1;
@@ -2263,7 +2263,7 @@ public final class f implements o {
                                             eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
-                                        case zs.U /* 31 */:
+                                        case at.U /* 31 */:
                                             str6 = "audio/eac3";
                                             D = -1;
                                             i12 = -1;
@@ -2927,10 +2927,10 @@ public final class f implements o {
                 int i20 = (xVar2.c + i10) - this.a0;
                 xVar3.K(4);
                 byte[] bArr3 = xVar3.a;
-                bArr3[0] = (byte) ((i20 >> 24) & zs.e4);
-                bArr3[1] = (byte) ((i20 >> 16) & zs.e4);
-                bArr3[2] = (byte) ((i20 >> 8) & zs.e4);
-                bArr3[3] = (byte) (i20 & zs.e4);
+                bArr3[0] = (byte) ((i20 >> 24) & at.e4);
+                bArr3[1] = (byte) ((i20 >> 16) & at.e4);
+                bArr3[2] = (byte) ((i20 >> 8) & at.e4);
+                bArr3[3] = (byte) (i20 & at.e4);
                 k0Var.g(xVar3, 4, 2);
                 this.b0 += 4;
             }

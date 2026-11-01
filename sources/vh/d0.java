@@ -17,17 +17,17 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ku0;
+import org.telegram.ui.Components.lu0;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 l1 l1Var = k1Var.N;
                 u1 u1Var = l1Var.s;
                 int i12 = u1.y1;
-                ui b02 = ui.b0(u1Var.a);
+                vi b02 = vi.b0(u1Var.a);
                 String str = k1Var.H;
                 if (!"premium".equalsIgnoreCase(str)) {
                     if (l1Var.a == 1 && org.telegram.messenger.k6.d(k1Var.H)) {
@@ -110,7 +110,7 @@ public final /* synthetic */ class d0 implements Runnable {
                     String[] G0 = org.telegram.messenger.i0.G0();
                     String[] strArr = k1Var.J;
                     if (strArr == null || !Arrays.equals(G0, strArr)) {
-                        ui.b0(u1Var.a).M(G0, false);
+                        vi.b0(u1Var.a).M(G0, false);
                     }
                     k1Var.J = G0;
                     b02.V(G0, k1Var.H, false, new q5.a(k1Var, str, b02, 8), false, false, false, true, 50);
@@ -129,7 +129,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 k1Var.y = i02.size() + k1Var.y;
                 k1Var.I = k1Var.H;
                 k1Var.f();
-                b1.z1(l1Var.b, 0, 0);
+                c1.z1(l1Var.b, 0, 0);
                 l1Var.f.c(false);
                 l1Var.e.n(false);
                 return;
@@ -198,7 +198,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 }
                 return;
             case 14:
-                ((t6) ((qg.g) this.b).n).fullScroll(zs.O1);
+                ((t6) ((qg.g) this.b).n).fullScroll(at.O1);
                 return;
             case 15:
                 n8 n8Var = (n8) this.b;
@@ -219,12 +219,12 @@ public final /* synthetic */ class d0 implements Runnable {
                 if (o8Var2.Q1 || o8Var2.P1 || o8Var2.B0 == null || o8Var2.f0 != 0 || o8Var2.m1 == null) {
                     return;
                 }
-                String L0 = cd.L0(t7Var.isFrontface() ? 2131744728 : 2131744727, null);
+                String L0 = dd.L0(t7Var.isFrontface() ? 2131744728 : 2131744727, null);
                 p2 p2Var = o8Var2.m1;
                 p2Var.h = p2.a(L0, p2Var.getTextPaint());
                 o8Var2.m1.s(L0);
                 o8Var2.m1.u();
-                vp.d1().edit().putInt("storysvddualhint", vp.d1().getInt("storysvddualhint", 0) + 1).apply();
+                wp.d1().edit().putInt("storysvddualhint", wp.d1().getInt("storysvddualhint", 0) + 1).apply();
                 return;
             case 19:
                 ((org.telegram.ui.Components.g9) this.b).setVisibility(8);
@@ -409,15 +409,15 @@ public final /* synthetic */ class d0 implements Runnable {
                 } catch (Exception e10) {
                     org.telegram.messenger.f8.g(e10, true);
                 }
-                org.telegram.messenger.i0.g3(new d1(18, x8Var2, bitmap));
+                org.telegram.messenger.i0.g3(new r0(19, x8Var2, bitmap));
                 return;
             case 23:
                 wh.g gVar = (wh.g) this.b;
-                ku0 ku0Var = gVar.U;
-                if (ku0Var == null || gVar.a0 == -1) {
+                lu0 lu0Var = gVar.U;
+                if (lu0Var == null || gVar.a0 == -1) {
                     return;
                 }
-                ku0Var.a();
+                lu0Var.a();
                 return;
             case 24:
                 ((x2.o) this.b).k();

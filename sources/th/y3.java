@@ -17,33 +17,33 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.gt;
-import org.telegram.messenger.ot;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.ht;
+import org.telegram.messenger.pt;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.az;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.wj0;
+import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBar.k6, us {
+public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBar.k6, vs {
     public e4 D;
     public x3 E;
     public x3 F;
     public z4 G;
     public int H;
     public boolean I;
-    public final wj0 J;
+    public final xj0 J;
     public final o7 K;
     public final k3 L;
     public final l3 M;
@@ -93,7 +93,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         g3 g3Var = new g3(this, context, bVar);
         this.r = g3Var;
         g3Var.setClipToPadding(false);
-        this.J = new wj0(g3Var, true);
+        this.J = new xj0(g3Var, true);
         az azVar = new az(0, g3Var);
         this.y = azVar;
         g3Var.setLayoutManager(azVar);
@@ -105,7 +105,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         new HashMap();
         addView(g3Var);
         this.d = new a5.a(g3Var);
-        g3Var.setOnScrollListener(new bu0(this, 23));
+        g3Var.setOnScrollListener(new cu0(this, 23));
         g3Var.setOnItemClickListener(new mg.q0(22, this, o7Var));
         g3Var.setOnItemLongClickListener(new j3(this, o7Var));
         u3Var.E();
@@ -127,7 +127,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         frameLayout.addView(textView);
         k3 k3Var = new k3(this, getContext(), bVar);
         this.L = k3Var;
-        k3Var.setHint(cd.L0(2131745853, null));
+        k3Var.setHint(dd.L0(2131745853, null));
         frameLayout.addView(k3Var, w7.b6.d(-1, -1.0f, 51, 0.0f, 36.0f, 0.0f, 0.0f));
         addView(frameLayout);
     }
@@ -159,7 +159,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         if (storyItem == null) {
             return;
         }
-        SparseArray sparseArray = (SparseArray) vp.r1(i10).h0.x.f(storyItem.dialogId);
+        SparseArray sparseArray = (SparseArray) wp.r1(i10).h0.x.f(storyItem.dialogId);
         x3 x3Var = sparseArray == null ? null : (x3) sparseArray.get(storyItem.id);
         TL_stories.StoryViews storyViews = storyItem.views;
         int i11 = storyViews == null ? 0 : storyViews.views_count;
@@ -170,7 +170,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
             x3 x3Var2 = new x3(i10, j10, storyItem);
             x3Var2.c();
             if (sparseArray == null) {
-                a0.h hVar = vp.r1(i10).h0.x;
+                a0.h hVar = wp.r1(i10).h0.x;
                 long j11 = storyItem.dialogId;
                 sparseArray = new SparseArray();
                 hVar.k(sparseArray, j11);
@@ -193,10 +193,10 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
             return true;
         }
         int i10 = this.w;
-        if (vp.r1(i10).O1().N(storyView) || vp.r1(i10).G0.indexOfKey(storyView.user_id) >= 0) {
+        if (wp.r1(i10).O1().N(storyView) || wp.r1(i10).G0.indexOfKey(storyView.user_id) >= 0) {
             return false;
         }
-        TLRPC.User Z1 = vp.r1(i10).Z1(Long.valueOf(storyView.user_id));
+        TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(storyView.user_id));
         e4 e4Var = this.D;
         if (e4Var == null) {
             return true;
@@ -215,14 +215,14 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         return u6Var.b(Z1);
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         int R;
         int i12 = 0;
-        if (i10 == zs.v5) {
+        if (i10 == at.v5) {
             if (this.D.b != null) {
                 int i13 = this.w;
-                TL_stories.PeerStories y3 = vp.r1(i13).h0.y(d20.i(i13).n);
+                TL_stories.PeerStories y3 = wp.r1(i13).h0.y(e20.i(i13).n);
                 if (y3 != null) {
                     while (i12 < y3.stories.size()) {
                         TL_stories.StoryItem storyItem = y3.stories.get(i12);
@@ -242,7 +242,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
             }
             return;
         }
-        if (i10 != zs.a3) {
+        if (i10 != at.a3) {
             return;
         }
         while (true) {
@@ -365,12 +365,12 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         if (e4Var == null || e4Var.a == null) {
             return;
         }
-        ot t10 = ot.t(this.w);
+        pt t10 = pt.t(this.w);
         int i10 = e4Var.a.id;
         if (j10 != t10.getUserConfig().e()) {
             return;
         }
-        ot.k0.c(new gt(t10, i10, 5));
+        pt.k0.c(new ht(t10, i10, 5));
     }
 
     public float getTopOffset() {
@@ -408,14 +408,14 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
             }
         }
         boolean z12 = l3Var.a;
-        bl0 bl0Var = p3Var.w;
+        cl0 cl0Var = p3Var.w;
         if (z12) {
             x3 x3Var = this.E;
             i10 = (x3Var == null || !x3Var.f) ? R.drawable.menu_views_reactions3 : R.drawable.menu_views_reposts3;
         } else {
             i10 = R.drawable.menu_views_recent3;
         }
-        bl0Var.a(i10, z10);
+        cl0Var.a(i10, z10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:114:0x01d9  */
@@ -445,7 +445,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
                 j10 = 0;
             }
             int i12 = this.w;
-            SparseArray sparseArray = (SparseArray) vp.r1(i12).h0.x.f(storyItem.dialogId);
+            SparseArray sparseArray = (SparseArray) wp.r1(i12).h0.x.f(storyItem.dialogId);
             x3 x3Var = sparseArray != null ? (x3) sparseArray.get(storyItem.id) : null;
             this.F = x3Var;
             TL_stories.StoryViews storyViews2 = storyItem.views;
@@ -464,7 +464,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
                 } else {
                     SparseArray sparseArray2 = new SparseArray();
                     sparseArray2.put(storyItem.id, this.F);
-                    vp.r1(i12).h0.x.k(sparseArray2, storyItem.dialogId);
+                    wp.r1(i12).h0.x.k(sparseArray2, storyItem.dialogId);
                 }
             } else {
                 x3Var.e(l3Var, this.T, this.S);
@@ -482,7 +482,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
                 }
             }
             x3 x3Var5 = this.E;
-            if (x3Var5 == null || !x3Var5.j || d20.i(i12).q()) {
+            if (x3Var5 == null || !x3Var5.j || e20.i(i12).q()) {
                 x3 x3Var6 = this.E;
                 if (x3Var6.e || x3Var6.m || !x3Var6.g.isEmpty() || !this.E.i.isEmpty() || !TextUtils.isEmpty(this.E.s.c)) {
                     TL_stories.StoryViews storyViews3 = storyItem.views;
@@ -490,7 +490,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
                         this.R = false;
                         this.S = false;
                         this.T = false;
-                        textView.setText(cd.L0(this.E.f ? 2131746402 : 2131743563, null));
+                        textView.setText(dd.L0(this.E.f ? 2131746402 : 2131743563, null));
                         k3Var.setVisibility(8);
                         p3Var.setVisibility(8);
                         this.e = 46;
@@ -498,7 +498,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
                         p3Var.setVisibility(0);
                         x3 x3Var7 = this.E;
                         if (x3Var7.k) {
-                            textView.setText(cd.L0(x3Var7.f ? 2131746402 : 2131743563, null));
+                            textView.setText(dd.L0(x3Var7.f ? 2131746402 : 2131743563, null));
                             this.R = false;
                             this.S = false;
                             this.T = false;
@@ -509,7 +509,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
                                     this.R = false;
                                     this.S = false;
                                     this.T = false;
-                                    textView.setText(cd.L0(this.E.f ? 2131746402 : 2131743563, null));
+                                    textView.setText(dd.L0(this.E.f ? 2131746402 : 2131743563, null));
                                 }
                             }
                             this.R = !this.E.f && storyItem.views.views_count >= 15;
@@ -518,7 +518,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
                             boolean z11 = org.telegram.messenger.v2.a;
                             this.S = i14 >= 5;
                             this.T = (storyItem.dialogId < j10 || storyViews4.views_count < 20 || storyItem.contacts || storyItem.close_friends || storyItem.selected_contacts) ? false : true;
-                            textView.setText(cd.L0(this.E.f ? 2131746402 : 2131743563, null));
+                            textView.setText(dd.L0(this.E.f ? 2131746402 : 2131743563, null));
                         }
                         k3Var.setVisibility(this.R ? 0 : 8);
                         this.e = this.R ? 96 : 46;
@@ -528,13 +528,13 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
             this.R = false;
             this.S = false;
             this.T = false;
-            textView.setText(cd.L0(this.E.f ? 2131746402 : 2131743563, null));
+            textView.setText(dd.L0(this.E.f ? 2131746402 : 2131743563, null));
             k3Var.setVisibility(8);
             p3Var.setVisibility(8);
             this.e = 46;
         } else {
             this.e = 46;
-            textView.setText(cd.L0(2131743826, null));
+            textView.setText(dd.L0(2131743826, null));
             k3Var.setVisibility(8);
             p3Var.setVisibility(8);
         }
@@ -564,8 +564,8 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         }
         this.x.E();
         int i10 = this.w;
-        zs.f(i10).c(this, zs.v5);
-        zs.f(i10).c(this, zs.a3);
+        at.f(i10).c(this, at.v5);
+        at.f(i10).c(this, at.a3);
         setTag(R.id.bulletin_delegate_tag, new org.telegram.ui.Components.k7(this, 9));
     }
 
@@ -578,8 +578,8 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
             x3Var.r.remove(this);
         }
         int i10 = this.w;
-        zs.f(i10).n(this, zs.v5);
-        zs.f(i10).n(this, zs.a3);
+        at.f(i10).n(this, at.v5);
+        at.f(i10).n(this, at.a3);
         setTag(R.id.bulletin_delegate_tag, null);
     }
 

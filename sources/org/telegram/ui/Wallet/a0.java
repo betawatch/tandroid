@@ -1,9 +1,9 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a0 implements Runnable {
     public volatile boolean a;
@@ -11,15 +11,15 @@ public final class a0 implements Runnable {
     public final /* synthetic */ String c;
     public final /* synthetic */ TL_wallet.nftItem d;
     public final /* synthetic */ String e;
-    public final /* synthetic */ j20 f;
+    public final /* synthetic */ k20 f;
     public final /* synthetic */ k0 h;
 
-    public a0(k0 k0Var, String str, TL_wallet.nftItem nftitem, String str2, j20 j20Var) {
+    public a0(k0 k0Var, String str, TL_wallet.nftItem nftitem, String str2, k20 k20Var) {
         this.h = k0Var;
         this.c = str;
         this.d = nftitem;
         this.e = str2;
-        this.f = j20Var;
+        this.f = k20Var;
     }
 
     @Override // java.lang.Runnable

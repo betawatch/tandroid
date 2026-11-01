@@ -5,17 +5,17 @@ import android.graphics.Canvas;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.bj;
-import org.telegram.messenger.dj;
+import org.telegram.messenger.cj;
 import org.telegram.messenger.ej;
+import org.telegram.messenger.fj;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.aa0;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import vh.s3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class c1 extends tk0 {
+public final class c1 extends uk0 {
     public final ArrayList e3;
     public final ArrayList f3;
     public final ArrayList g3;
@@ -36,7 +36,7 @@ public final class c1 extends tk0 {
 
     /* JADX WARN: Removed duplicated region for block: B:210:0x048c  */
     /* JADX WARN: Removed duplicated region for block: B:213:0x049d A[SYNTHETIC] */
-    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -49,13 +49,13 @@ public final class c1 extends tk0 {
         float f11;
         int i12;
         ArrayList arrayList;
-        ej currentMessagesGroup;
+        fj currentMessagesGroup;
         int i13;
         canvas.save();
         this.E1.setEmpty();
         int childCount = getChildCount();
         int i14 = 0;
-        ej ejVar = null;
+        fj fjVar = null;
         while (true) {
             f7 = 0.0f;
             i10 = 4;
@@ -69,9 +69,9 @@ public final class c1 extends tk0 {
             if (childAt.getVisibility() != 4) {
                 if (childAt instanceof org.telegram.ui.Cells.q1) {
                     org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                    ej currentMessagesGroup2 = q1Var.getCurrentMessagesGroup();
-                    if (currentMessagesGroup2 == null || currentMessagesGroup2 != ejVar) {
-                        bj currentPosition = q1Var.getCurrentPosition();
+                    fj currentMessagesGroup2 = q1Var.getCurrentMessagesGroup();
+                    if (currentMessagesGroup2 == null || currentMessagesGroup2 != fjVar) {
+                        cj currentPosition = q1Var.getCurrentPosition();
                         aa0 backgroundDrawable = q1Var.getBackgroundDrawable();
                         if ((backgroundDrawable.f || q1Var.w2()) && (currentPosition == null || (2 & currentPosition.l) != 0)) {
                             int y3 = (int) q1Var.getY();
@@ -114,7 +114,7 @@ public final class c1 extends tk0 {
                             backgroundDrawable.draw(canvas);
                             canvas.restore();
                         }
-                        ejVar = currentMessagesGroup2;
+                        fjVar = currentMessagesGroup2;
                     }
                 } else if (childAt instanceof org.telegram.ui.Cells.s0) {
                     org.telegram.ui.Cells.s0 s0Var = (org.telegram.ui.Cells.s0) childAt;
@@ -141,20 +141,20 @@ public final class c1 extends tk0 {
                     if (childAt3 instanceof org.telegram.ui.Cells.q1) {
                         org.telegram.ui.Cells.q1 q1Var3 = (org.telegram.ui.Cells.q1) childAt3;
                         if (childAt3.getY() <= getHeight() && childAt3.getY() + childAt3.getHeight() >= f7 && q1Var3.getVisibility() != i10 && q1Var3.getVisibility() != 8 && (currentMessagesGroup = q1Var3.getCurrentMessagesGroup()) != null) {
-                            dj djVar = currentMessagesGroup.m;
-                            if ((i17 != 0 || currentMessagesGroup.d.size() != z10) && ((i17 != z10 || djVar.i) && ((i17 != 0 || !q1Var3.getMessageObject().Z) && ((i17 != z10 || q1Var3.getMessageObject().Z) && ((i17 != i11 || q1Var3.xa) && (i17 == i11 || !q1Var3.xa)))))) {
+                            ej ejVar = currentMessagesGroup.m;
+                            if ((i17 != 0 || currentMessagesGroup.d.size() != z10) && ((i17 != z10 || ejVar.i) && ((i17 != 0 || !q1Var3.getMessageObject().Z) && ((i17 != z10 || q1Var3.getMessageObject().Z) && ((i17 != i11 || q1Var3.xa) && (i17 == i11 || !q1Var3.xa)))))) {
                                 if (!arrayList2.contains(currentMessagesGroup)) {
-                                    djVar.a = 0;
-                                    djVar.b = 0;
-                                    djVar.c = 0;
-                                    djVar.d = 0;
-                                    djVar.l = false;
-                                    djVar.k = false;
-                                    djVar.m = q1Var3;
+                                    ejVar.a = 0;
+                                    ejVar.b = 0;
+                                    ejVar.c = 0;
+                                    ejVar.d = 0;
+                                    ejVar.l = false;
+                                    ejVar.k = false;
+                                    ejVar.m = q1Var3;
                                     arrayList2.add(currentMessagesGroup);
                                 }
-                                djVar.k = q1Var3.F2();
-                                djVar.l = q1Var3.E2();
+                                ejVar.k = q1Var3.F2();
+                                ejVar.l = q1Var3.E2();
                                 int backgroundDrawableLeft = q1Var3.getBackgroundDrawableLeft() + q1Var3.getLeft();
                                 int backgroundDrawableRight = q1Var3.getBackgroundDrawableRight() + q1Var3.getLeft();
                                 int backgroundDrawableTop = q1Var3.getBackgroundDrawableTop() + q1Var3.getPaddingTop() + q1Var3.getTop();
@@ -168,23 +168,23 @@ public final class c1 extends tk0 {
                                 }
                                 int i20 = backgroundDrawableBottom;
                                 if (q1Var3.xa) {
-                                    djVar.m = q1Var3;
+                                    ejVar.m = q1Var3;
                                 }
-                                int i21 = djVar.b;
+                                int i21 = ejVar.b;
                                 if (i21 == 0 || i19 < i21) {
-                                    djVar.b = i19;
+                                    ejVar.b = i19;
                                 }
-                                int i22 = djVar.d;
+                                int i22 = ejVar.d;
                                 if (i22 == 0 || i20 > i22) {
-                                    djVar.d = i20;
+                                    ejVar.d = i20;
                                 }
-                                int i23 = djVar.a;
+                                int i23 = ejVar.a;
                                 if (i23 == 0 || backgroundDrawableLeft < i23) {
-                                    djVar.a = backgroundDrawableLeft;
+                                    ejVar.a = backgroundDrawableLeft;
                                 }
-                                int i24 = djVar.c;
+                                int i24 = ejVar.c;
                                 if (i24 == 0 || backgroundDrawableRight > i24) {
-                                    djVar.c = backgroundDrawableRight;
+                                    ejVar.c = backgroundDrawableRight;
                                 }
                                 i18++;
                                 i11 = 2;
@@ -198,38 +198,38 @@ public final class c1 extends tk0 {
                 }
                 int i25 = 0;
                 while (i25 < arrayList2.size()) {
-                    ej ejVar2 = (ej) arrayList2.get(i25);
-                    dj djVar2 = ejVar2.m;
-                    float P1 = djVar2.m.P1(z10);
-                    float f13 = djVar2.a + P1 + djVar2.e;
-                    float f14 = djVar2.b + djVar2.f;
-                    float f15 = djVar2.g + djVar2.c + P1;
-                    float f16 = djVar2.d + djVar2.h;
-                    if (!djVar2.j) {
-                        f14 += djVar2.m.getTranslationY();
-                        f16 += djVar2.m.getTranslationY();
+                    fj fjVar2 = (fj) arrayList2.get(i25);
+                    ej ejVar2 = fjVar2.m;
+                    float P1 = ejVar2.m.P1(z10);
+                    float f13 = ejVar2.a + P1 + ejVar2.e;
+                    float f14 = ejVar2.b + ejVar2.f;
+                    float f15 = ejVar2.g + ejVar2.c + P1;
+                    float f16 = ejVar2.d + ejVar2.h;
+                    if (!ejVar2.j) {
+                        f14 += ejVar2.m.getTranslationY();
+                        f16 += ejVar2.m.getTranslationY();
                     }
-                    boolean z11 = (djVar2.m.getScaleX() == 1.0f && djVar2.m.getScaleY() == 1.0f) ? false : z10;
+                    boolean z11 = (ejVar2.m.getScaleX() == 1.0f && ejVar2.m.getScaleY() == 1.0f) ? false : z10;
                     if (z11) {
                         canvas.save();
                         arrayList = arrayList2;
-                        canvas.scale(djVar2.m.getScaleX(), djVar2.m.getScaleY(), c3.i0.B(f15, f13, f10, f13), c3.i0.B(f16, f14, f10, f14));
+                        canvas.scale(ejVar2.m.getScaleX(), ejVar2.m.getScaleY(), c3.i0.B(f15, f13, f10, f13), c3.i0.B(f16, f14, f10, f14));
                     } else {
                         arrayList = arrayList2;
                     }
                     float f17 = f10;
                     float f18 = f14;
                     float f19 = f16;
-                    djVar2.m.I0(canvas, (int) f13, (int) f14, (int) f15, (int) f16, djVar2.k, djVar2.l, false, 0);
-                    djVar2.m = null;
-                    djVar2.o = ejVar2.c;
+                    ejVar2.m.I0(canvas, (int) f13, (int) f14, (int) f15, (int) f16, ejVar2.k, ejVar2.l, false, 0);
+                    ejVar2.m = null;
+                    ejVar2.o = fjVar2.c;
                     if (z11) {
                         canvas.restore();
                         for (int i26 = 0; i26 < childCount; i26++) {
                             View childAt4 = getChildAt(i26);
                             if (childAt4 instanceof org.telegram.ui.Cells.q1) {
                                 org.telegram.ui.Cells.q1 q1Var4 = (org.telegram.ui.Cells.q1) childAt4;
-                                if (q1Var4.getCurrentMessagesGroup() == ejVar2) {
+                                if (q1Var4.getCurrentMessagesGroup() == fjVar2) {
                                     int left = q1Var4.getLeft();
                                     int top = q1Var4.getTop();
                                     childAt4.setPivotX(((f15 - f13) / f17) + (f13 - left));
@@ -294,16 +294,16 @@ public final class c1 extends tk0 {
                 float P13 = q1Var7.P1(false) + q1Var7.getLeft();
                 float y11 = q1Var7.getY();
                 canvas.save();
-                ej currentMessagesGroup3 = q1Var7.getCurrentMessagesGroup();
+                fj currentMessagesGroup3 = q1Var7.getCurrentMessagesGroup();
                 if (currentMessagesGroup3 != null) {
-                    dj djVar3 = currentMessagesGroup3.m;
-                    if (djVar3.j) {
+                    ej ejVar3 = currentMessagesGroup3.m;
+                    if (ejVar3.j) {
                         float P14 = q1Var7.P1(true);
-                        float f20 = djVar3.a + P14 + djVar3.e;
-                        float f21 = djVar3.b + djVar3.f;
-                        float f22 = djVar3.c + P14 + djVar3.g;
-                        float f23 = djVar3.d + djVar3.h;
-                        if (!djVar3.j) {
+                        float f20 = ejVar3.a + P14 + ejVar3.e;
+                        float f21 = ejVar3.b + ejVar3.f;
+                        float f22 = ejVar3.c + P14 + ejVar3.g;
+                        float f23 = ejVar3.d + ejVar3.h;
+                        if (!ejVar3.j) {
                             f21 += q1Var7.getTranslationY();
                             f23 += q1Var7.getTranslationY();
                         }
@@ -335,16 +335,16 @@ public final class c1 extends tk0 {
                     float P15 = q1Var8.P1(false) + q1Var8.getLeft();
                     float y12 = q1Var8.getY();
                     canvas.save();
-                    ej currentMessagesGroup4 = q1Var8.getCurrentMessagesGroup();
+                    fj currentMessagesGroup4 = q1Var8.getCurrentMessagesGroup();
                     if (currentMessagesGroup4 != null) {
-                        dj djVar4 = currentMessagesGroup4.m;
-                        if (djVar4.j) {
+                        ej ejVar4 = currentMessagesGroup4.m;
+                        if (ejVar4.j) {
                             float P16 = q1Var8.P1(true);
-                            float f24 = djVar4.a + P16 + djVar4.e;
-                            float f25 = djVar4.b + djVar4.f;
-                            float f26 = djVar4.c + P16 + djVar4.g;
-                            float f27 = djVar4.d + djVar4.h;
-                            if (!djVar4.j) {
+                            float f24 = ejVar4.a + P16 + ejVar4.e;
+                            float f25 = ejVar4.b + ejVar4.f;
+                            float f26 = ejVar4.c + P16 + ejVar4.g;
+                            float f27 = ejVar4.d + ejVar4.h;
+                            if (!ejVar4.j) {
                                 f25 += q1Var8.getTranslationY();
                                 f27 += q1Var8.getTranslationY();
                             }
@@ -377,7 +377,7 @@ public final class c1 extends tk0 {
     /* JADX WARN: Removed duplicated region for block: B:205:0x0048  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0087  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0093  */
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -392,7 +392,7 @@ public final class c1 extends tk0 {
         int b11;
         int i11;
         s3 s3Var = this.j3;
-        ej ejVar = s3Var.t0;
+        fj fjVar = s3Var.t0;
         if (view instanceof org.telegram.ui.Cells.q1) {
             q1Var = (org.telegram.ui.Cells.q1) view;
         } else {
@@ -428,7 +428,7 @@ public final class c1 extends tk0 {
                 }
                 if (q1Var != null) {
                     q1Var.getMessageObject();
-                    bj currentPosition = q1Var.getCurrentPosition();
+                    cj currentPosition = q1Var.getCurrentPosition();
                     if (currentPosition != null || q1Var.getTransitionParams().x0) {
                         if (currentPosition == null || currentPosition.h || (currentPosition.a == 0 && currentPosition.c == 0)) {
                             if (currentPosition == null || currentPosition.h) {
@@ -452,19 +452,19 @@ public final class c1 extends tk0 {
                     }
                     ImageReceiver avatarImage = q1Var.getAvatarImage();
                     if (avatarImage != null) {
-                        boolean z11 = this.V1 || (ejVar != null && ejVar.m.j);
+                        boolean z11 = this.V1 || (fjVar != null && fjVar.m.j);
                         int top = z11 ? view.getTop() : (int) view.getY();
                         if (!q1Var.l() || (b11 = s3Var.r0.T(view).b()) < 0) {
                             f10 = 0.0f;
                             z10 = true;
                         } else {
-                            if (ejVar == null || currentPosition == null) {
+                            if (fjVar == null || currentPosition == null) {
                                 f10 = 0.0f;
                                 z10 = true;
                                 i11 = b11 - 1;
                             } else {
-                                int indexOf = ejVar.e.indexOf(currentPosition);
-                                int size = ejVar.e.size();
+                                int indexOf = fjVar.e.indexOf(currentPosition);
+                                int size = fjVar.e.size();
                                 z10 = true;
                                 if ((currentPosition.l & 8) != 0) {
                                     i11 = (b11 - size) + indexOf;
@@ -473,7 +473,7 @@ public final class c1 extends tk0 {
                                     int i13 = indexOf + 1;
                                     while (i13 < size) {
                                         f10 = f11;
-                                        if (((bj) ejVar.e.get(i13)).c > currentPosition.d) {
+                                        if (((cj) fjVar.e.get(i13)).c > currentPosition.d) {
                                             break;
                                         }
                                         i11--;
@@ -513,15 +513,15 @@ public final class c1 extends tk0 {
                             int i14 = 0;
                             while (i14 < 20) {
                                 i14++;
-                                if (ejVar == null || currentPosition == null) {
+                                if (fjVar == null || currentPosition == null) {
                                     i10 = top2;
                                     b10++;
                                 } else {
-                                    int indexOf2 = ejVar.e.indexOf(currentPosition);
+                                    int indexOf2 = fjVar.e.indexOf(currentPosition);
                                     if (indexOf2 < 0) {
                                         break;
                                     }
-                                    ejVar.e.size();
+                                    fjVar.e.size();
                                     if ((currentPosition.l & 4) != 0) {
                                         b10 = b10 + indexOf2 + 1;
                                     } else {
@@ -529,7 +529,7 @@ public final class c1 extends tk0 {
                                         int i15 = indexOf2 - 1;
                                         while (i15 >= 0) {
                                             i10 = top2;
-                                            if (((bj) ejVar.e.get(i15)).d < currentPosition.c) {
+                                            if (((cj) fjVar.e.get(i15)).d < currentPosition.c) {
                                                 break;
                                             }
                                             b10++;

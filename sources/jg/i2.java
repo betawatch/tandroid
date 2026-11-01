@@ -13,16 +13,16 @@ import android.graphics.Rect;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.t5;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i2 extends j {
     public boolean A0;
@@ -31,7 +31,7 @@ public final class i2 extends j {
     public final int q0;
     public boolean r0;
     public final t5 s0;
-    public final pu0 t0;
+    public final qu0 t0;
     public final TextureView u0;
     public final Bitmap v0;
     public final Rect w0;
@@ -39,7 +39,7 @@ public final class i2 extends j {
     public float y0;
     public final Path z0;
 
-    public i2(Context context, PointF pointF, pu0 pu0Var, String str) {
+    public i2(Context context, PointF pointF, qu0 qu0Var, String str) {
         super(context, pointF);
         this.q0 = -1;
         this.r0 = false;
@@ -55,7 +55,7 @@ public final class i2 extends j {
         new Paint(1).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         setRotation(0.0f);
         setScale(1.0f);
-        this.t0 = pu0Var;
+        this.t0 = qu0Var;
         Bitmap decodeFile = BitmapFactory.decodeFile(str);
         this.v0 = decodeFile;
         if (decodeFile != null) {
@@ -135,28 +135,28 @@ public final class i2 extends j {
         return this.q0;
     }
 
-    public pu0 getBaseSize() {
+    public qu0 getBaseSize() {
         return this.t0;
     }
 
     @Override // jg.j
-    public oj0 getSelectionBounds() {
+    public pj0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new oj0();
+            return new pj0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.i0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.i0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = z20.x(L, 2.0f, getPositionX(), scaleX);
-        return new oj0(x10, z20.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
+        float x10 = a30.x(L, 2.0f, getPositionX(), scaleX);
+        return new pj0(x10, a30.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
     }
 
     @Override // jg.j
     public final void k() {
-        pu0 pu0Var = this.t0;
-        float f7 = pu0Var.a / 2.0f;
-        float f10 = pu0Var.b / 2.0f;
+        qu0 qu0Var = this.t0;
+        float f7 = qu0Var.a / 2.0f;
+        float f10 = qu0Var.b / 2.0f;
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
         m();
@@ -174,9 +174,9 @@ public final class i2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        pu0 pu0Var = this.t0;
-        int i12 = (int) pu0Var.a;
-        int i13 = (int) pu0Var.b;
+        qu0 qu0Var = this.t0;
+        int i12 = (int) qu0Var.a;
+        int i13 = (int) qu0Var.b;
         TextureView textureView = this.u0;
         if (textureView != null) {
             float f7 = this.y0;

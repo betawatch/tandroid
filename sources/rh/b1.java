@@ -3,28 +3,28 @@ package rh;
 import android.graphics.Bitmap;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.l20;
-import org.telegram.messenger.us;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.m20;
+import org.telegram.messenger.vs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.ob0;
-import org.telegram.ui.cj0;
+import org.telegram.ui.aj0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b1 implements l20 {
+public final /* synthetic */ class b1 implements m20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ us b;
+    public final /* synthetic */ vs b;
 
-    public /* synthetic */ b1(us usVar, int i10) {
+    public /* synthetic */ b1(vs vsVar, int i10) {
         this.a = i10;
-        this.b = usVar;
+        this.b = vsVar;
     }
 
-    @Override // org.telegram.messenger.l20
+    @Override // org.telegram.messenger.m20
     public final void a(Object obj, Object obj2, Object obj3) {
         int i10;
         vh.r rVar;
@@ -35,7 +35,7 @@ public final /* synthetic */ class b1 implements l20 {
             case 1:
                 e4 e4Var = (e4) this.b;
                 ArrayList arrayList = (ArrayList) obj;
-                j20 j20Var = (j20) obj2;
+                k20 k20Var = (k20) obj2;
                 Runnable runnable = (Runnable) obj3;
                 ph.p3 p3Var = e4Var.O2;
                 if (p3Var != null) {
@@ -52,7 +52,7 @@ public final /* synthetic */ class b1 implements l20 {
                     tL_inputSavedStarGiftSlug.slug = ((TL_stars.StarGift) obj4).slug;
                     craftstargift.stargift.add(tL_inputSavedStarGiftSlug);
                 }
-                ConnectionsManager.getInstance(e4Var.a).sendRequestTyped(craftstargift, new a3.b(1), new cj0(e4Var, j20Var, arrayList, runnable, 2));
+                ConnectionsManager.getInstance(e4Var.a).sendRequestTyped(craftstargift, new a3.b(1), new aj0(e4Var, k20Var, arrayList, runnable, 2));
                 break;
             default:
                 vh.o8 o8Var = (vh.o8) this.b;
@@ -114,7 +114,7 @@ public final /* synthetic */ class b1 implements l20 {
                     int i13 = 0;
                     while (true) {
                         if (i13 < arrayList2.size()) {
-                            vh.n5 l4 = vh.n5.l((ef) arrayList2.get(i13));
+                            vh.n5 l4 = vh.n5.l((ff) arrayList2.get(i13));
                             l4.M0 = (Bitmap) arrayList3.get(i13);
                             l4.J0 = o8Var.v0;
                             l4.K0 = o8Var.w0;
@@ -161,8 +161,8 @@ public final /* synthetic */ class b1 implements l20 {
                         vh.k7 k7Var = o8Var.d1;
                         if (k7Var != null) {
                             vh.d0 d0Var = k7Var.h;
-                            if (!k7Var.I && !k7Var.M && (i10 = vp.d1().getInt("multistorieshint", 0)) < 3) {
-                                vp.d1().edit().putInt("multistorieshint", i10 + 1).apply();
+                            if (!k7Var.I && !k7Var.M && (i10 = wp.d1().getInt("multistorieshint", 0)) < 3) {
+                                wp.d1().edit().putInt("multistorieshint", i10 + 1).apply();
                                 org.telegram.messenger.i0.r(d0Var);
                                 k7Var.I = true;
                                 k7Var.invalidate();

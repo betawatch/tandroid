@@ -16,12 +16,12 @@ import kotlin.jvm.internal.i;
 import m.p3;
 import n6.p;
 import n7.l1;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import s6.h;
 import v8.o;
 import y8.w0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final class d {
                 n6.l.h(eVar2, "Setting the API options is required.");
                 return new v(context, looper, commonSettings, eVar2.a, 0, eVar2.b, eVar2.c, kVar, lVar);
             case 3:
-                return new s(context, looper, zs.r2, commonSettings, kVar, lVar, 0);
+                return new s(context, looper, at.r2, commonSettings, kVar, lVar, 0);
             case 4:
             case 6:
             case 11:
@@ -73,9 +73,9 @@ public final class d {
                     case 13:
                         return new r7.k(context, looper, kVar, lVar, commonSettings);
                     case 14:
-                        return new h(context, looper, zs.f5, commonSettings, kVar, lVar, 0);
+                        return new h(context, looper, at.f5, commonSettings, kVar, lVar, 0);
                     case 19:
-                        return new j7.e(context, looper, zs.K1, commonSettings, kVar, lVar, 0);
+                        return new j7.e(context, looper, at.K1, commonSettings, kVar, lVar, 0);
                     default:
                         throw new UnsupportedOperationException("buildClient must be implemented");
                 }
@@ -84,7 +84,7 @@ public final class d {
             case 7:
                 return new b8.a(context, looper, kVar, lVar, commonSettings);
             case 8:
-                return new l1(context, looper, zs.e2, commonSettings, kVar, lVar, 0);
+                return new l1(context, looper, at.e2, commonSettings, kVar, lVar, 0);
             case 9:
                 commonSettings.getClass();
                 Integer num = (Integer) commonSettings.h;

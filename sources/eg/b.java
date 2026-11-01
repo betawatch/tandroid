@@ -11,10 +11,10 @@ import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.eb0;
 import org.telegram.ui.Components.ff0;
 import org.telegram.ui.Components.jf0;
-import org.telegram.ui.Components.voip.s0;
+import org.telegram.ui.Components.voip.t0;
 import w7.u;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b implements ScaleGestureDetector.OnScaleGestureListener {
     public final /* synthetic */ int a;
@@ -44,16 +44,16 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                     return;
                 }
             default:
-                s0 s0Var = (s0) this.b;
-                WindowManager.LayoutParams layoutParams3 = s0Var.c;
-                int f7 = (int) (s0Var.f() * s0Var.P);
+                t0 t0Var = (t0) this.b;
+                WindowManager.LayoutParams layoutParams3 = t0Var.c;
+                int f7 = (int) (t0Var.f() * t0Var.P);
                 layoutParams3.width = f7;
-                s0Var.M = f7;
-                WindowManager.LayoutParams layoutParams4 = s0Var.c;
-                int e = (int) (s0Var.e() * s0Var.P);
+                t0Var.M = f7;
+                WindowManager.LayoutParams layoutParams4 = t0Var.c;
+                int e = (int) (t0Var.e() * t0Var.P);
                 layoutParams4.height = e;
-                s0Var.N = e;
-                i0.S3(s0Var.b, s0Var.d, s0Var.c);
+                t0Var.N = e;
+                i0.S3(t0Var.b, t0Var.d, t0Var.c);
                 break;
         }
     }
@@ -108,24 +108,24 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 jVar2.h();
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                s0Var.P = u.a(scaleGestureDetector.getScaleFactor() * s0Var.P, 0.6f, s0Var.a);
-                s0Var.M = (int) (s0Var.f() * s0Var.P);
-                s0Var.N = (int) (s0Var.e() * s0Var.P);
+                t0 t0Var = (t0) this.b;
+                t0Var.P = u.a(scaleGestureDetector.getScaleFactor() * t0Var.P, 0.6f, t0Var.a);
+                t0Var.M = (int) (t0Var.f() * t0Var.P);
+                t0Var.N = (int) (t0Var.e() * t0Var.P);
                 i0.g3(new w5(this, 5));
-                o1.j jVar3 = s0Var.S;
-                jVar3.b = s0Var.Q;
+                o1.j jVar3 = t0Var.S;
+                jVar3.b = t0Var.Q;
                 jVar3.c = true;
-                jVar3.m.i = scaleGestureDetector.getFocusX() >= ((float) i0.q.x) / 2.0f ? (r5 - s0Var.M) - i0.L(16.0f) : i0.L(16.0f);
-                o1.j jVar4 = s0Var.S;
+                jVar3.m.i = scaleGestureDetector.getFocusX() >= ((float) i0.q.x) / 2.0f ? (r5 - t0Var.M) - i0.L(16.0f) : i0.L(16.0f);
+                o1.j jVar4 = t0Var.S;
                 if (!jVar4.f) {
                     jVar4.h();
                 }
-                o1.j jVar5 = s0Var.T;
-                jVar5.b = s0Var.R;
+                o1.j jVar5 = t0Var.T;
+                jVar5.b = t0Var.R;
                 jVar5.c = true;
-                jVar5.m.i = u.a(scaleGestureDetector.getFocusY() - (s0Var.N / 2.0f), i0.L(16.0f), (r4.y - s0Var.N) - i0.L(16.0f));
-                o1.j jVar6 = s0Var.T;
+                jVar5.m.i = u.a(scaleGestureDetector.getFocusY() - (t0Var.N / 2.0f), i0.L(16.0f), (r4.y - t0Var.N) - i0.L(16.0f));
+                o1.j jVar6 = t0Var.T;
                 if (!jVar6.f) {
                     jVar6.h();
                     break;
@@ -154,14 +154,14 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 i0.S3(jf0Var.b, jf0Var.d, jf0Var.c);
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                if (s0Var.H) {
-                    s0Var.H = false;
+                t0 t0Var = (t0) this.b;
+                if (t0Var.H) {
+                    t0Var.H = false;
                 }
-                s0Var.I = true;
-                s0Var.c.width = (int) (s0Var.f() * s0Var.a);
-                s0Var.c.height = (int) (s0Var.e() * s0Var.a);
-                i0.S3(s0Var.b, s0Var.d, s0Var.c);
+                t0Var.I = true;
+                t0Var.c.width = (int) (t0Var.f() * t0Var.a);
+                t0Var.c.height = (int) (t0Var.e() * t0Var.a);
+                i0.S3(t0Var.b, t0Var.d, t0Var.c);
                 break;
         }
         return true;
@@ -196,20 +196,20 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                     }
                 }
             default:
-                s0 s0Var = (s0) this.b;
-                if (!s0Var.S.f && !s0Var.T.f) {
+                t0 t0Var = (t0) this.b;
+                if (!t0Var.S.f && !t0Var.T.f) {
                     b();
                     break;
                 } else {
                     ArrayList arrayList2 = new ArrayList();
                     ff0 ff0Var2 = new ff0(this, arrayList2, 1);
-                    o1.j jVar3 = s0Var.S;
+                    o1.j jVar3 = t0Var.S;
                     if (jVar3.f) {
                         jVar3.a(ff0Var2);
                     } else {
                         arrayList2.add(jVar3);
                     }
-                    o1.j jVar4 = s0Var.T;
+                    o1.j jVar4 = t0Var.T;
                     if (!jVar4.f) {
                         arrayList2.add(jVar4);
                         break;

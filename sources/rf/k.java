@@ -11,13 +11,13 @@ import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.wh0;
+import org.telegram.ui.Components.xh0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static SpannableStringBuilder a(String str) {
@@ -88,7 +88,7 @@ public abstract class k {
                 }
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(fromHtml.toString());
-            ui.g(arrayList, spannableStringBuilder, spannableStringBuilder, -1);
+            vi.g(arrayList, spannableStringBuilder, spannableStringBuilder, -1);
             for (Object obj2 : spans) {
                 if (obj2 instanceof URLSpan) {
                     int spanStart2 = fromHtml.getSpanStart(obj2);
@@ -98,11 +98,11 @@ public abstract class k {
                     if (charSequence.equals(url)) {
                         spannableStringBuilder.setSpan(new URLSpan(url), spanStart2, spanEnd2, 33);
                     } else {
-                        spannableStringBuilder.setSpan(new g51(url, null), spanStart2, spanEnd2, 33);
+                        spannableStringBuilder.setSpan(new h51(url, null), spanStart2, spanEnd2, 33);
                     }
                 }
             }
-            ui.a(null, spannableStringBuilder, arrayList);
+            vi.a(null, spannableStringBuilder, arrayList);
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                 j jVar2 = (j) arrayList2.get(i11);
                 int spanStart3 = fromHtml.getSpanStart(jVar2);
@@ -111,7 +111,7 @@ public abstract class k {
             }
             for (int i12 = 0; i12 < arrayList3.size(); i12++) {
                 j jVar3 = (j) arrayList3.get(i12);
-                wh0.c(spannableStringBuilder, fromHtml.getSpanStart(jVar3), fromHtml.getSpanEnd(jVar3), jVar3.a == 3);
+                xh0.c(spannableStringBuilder, fromHtml.getSpanStart(jVar3), fromHtml.getSpanEnd(jVar3), jVar3.a == 3);
             }
             return spannableStringBuilder;
         } catch (Exception e) {

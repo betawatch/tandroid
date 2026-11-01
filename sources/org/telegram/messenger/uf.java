@@ -1,91 +1,117 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
 import java.util.ArrayList;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uf implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ui b;
+    public final /* synthetic */ int b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ boolean d;
     public final /* synthetic */ int e;
+    public final /* synthetic */ f1 f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ uf(ui uiVar, boolean z10, int i10, ArrayList arrayList) {
-        this.b = uiVar;
+    public /* synthetic */ uf(vi viVar, boolean z10, int i10, ArrayList arrayList, boolean z11, int i11) {
+        this.f = viVar;
         this.c = z10;
-        this.e = i10;
-        this.d = arrayList;
+        this.b = i10;
+        this.h = arrayList;
+        this.d = z11;
+        this.e = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        int i11 = this.e;
-        ArrayList arrayList = this.d;
-        boolean z10 = this.c;
-        ui uiVar = this.b;
-        switch (i10) {
+        int i10;
+        int i11 = this.a;
+        int i12 = 3;
+        int i13 = this.e;
+        boolean z10 = this.d;
+        boolean z11 = this.c;
+        Object obj = this.h;
+        int i14 = this.b;
+        f1 f1Var = this.f;
+        switch (i11) {
             case 0:
-                SharedPreferences.Editor edit = vp.r1(uiVar.currentAccount).g7.edit();
-                if (z10) {
-                    uiVar.j0 = false;
-                    uiVar.k0 = true;
-                    edit.putLong("lastGifLoadTime", System.currentTimeMillis()).apply();
-                } else {
-                    uiVar.g0[i11] = false;
-                    uiVar.h0[i11] = true;
-                    if (i11 == 0) {
-                        edit.putLong("lastStickersLoadTime", System.currentTimeMillis()).apply();
-                    } else if (i11 == 1) {
-                        edit.putLong("lastStickersLoadTimeMask", System.currentTimeMillis()).apply();
-                    } else if (i11 == 3) {
-                        edit.putLong("lastStickersLoadTimeGreet", System.currentTimeMillis()).apply();
-                    } else if (i11 == 5) {
-                        edit.putLong("lastStickersLoadTimeEmojiPacks", System.currentTimeMillis()).apply();
-                    } else if (i11 == 7) {
-                        edit.putLong("lastStickersLoadTimePremiumStickers", System.currentTimeMillis()).apply();
+                vi viVar = (vi) f1Var;
+                ArrayList arrayList = (ArrayList) obj;
+                try {
+                    SQLiteDatabase sQLiteDatabase = viVar.getMessagesStorage().b;
+                    if (z11) {
+                        i10 = viVar.getMessagesController().f3;
                     } else {
-                        edit.putLong("lastStickersLoadTimeFavs", System.currentTimeMillis()).apply();
+                        if (i14 != 3 && i14 != 7) {
+                            i10 = i14 == 2 ? viVar.getMessagesController().e3 : viVar.getMessagesController().d3;
+                        }
+                        i10 = at.e3;
                     }
-                }
-                if (arrayList != null) {
+                    sQLiteDatabase.beginTransaction();
+                    SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("REPLACE INTO web_recent_v3 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    int size = arrayList.size();
+                    int i15 = z11 ? 2 : i14 == 0 ? 3 : i14 == 1 ? 4 : i14 == 3 ? 6 : i14 == 5 ? 7 : i14 == 7 ? 8 : 5;
                     if (z10) {
-                        uiVar.i0 = arrayList;
-                    } else {
-                        uiVar.f0[i11] = arrayList;
+                        sQLiteDatabase.executeFast("DELETE FROM web_recent_v3 WHERE type = " + i15).stepThis().dispose();
                     }
-                    if (i11 == 3) {
-                        uiVar.n1();
+                    int i16 = 0;
+                    while (i16 < size && i16 != i10) {
+                        TLRPC.Document document = (TLRPC.Document) arrayList.get(i16);
+                        executeFast.requery();
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append("");
+                        int i17 = i13;
+                        sb2.append(document.id);
+                        executeFast.bindString(1, sb2.toString());
+                        executeFast.bindInteger(2, i15);
+                        executeFast.bindString(i12, "");
+                        executeFast.bindString(4, "");
+                        executeFast.bindString(5, "");
+                        executeFast.bindInteger(6, 0);
+                        executeFast.bindInteger(7, 0);
+                        executeFast.bindInteger(8, 0);
+                        executeFast.bindInteger(9, i17 != 0 ? i17 : size - i16);
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
+                        document.serializeToStream(nativeByteBuffer);
+                        executeFast.bindByteBuffer(10, nativeByteBuffer);
+                        executeFast.step();
+                        nativeByteBuffer.reuse();
+                        i16++;
+                        i13 = i17;
+                        i12 = 3;
                     }
-                    uiVar.getNotificationCenter().k(86, Boolean.valueOf(z10), Integer.valueOf(i11));
-                    break;
+                    executeFast.dispose();
+                    sQLiteDatabase.commitTransaction();
+                    if (!z10 && arrayList.size() >= i10) {
+                        sQLiteDatabase.beginTransaction();
+                        while (i10 < arrayList.size()) {
+                            sQLiteDatabase.executeFast("DELETE FROM web_recent_v3 WHERE id = '" + ((TLRPC.Document) arrayList.get(i10)).id + "' AND type = " + i15).stepThis().dispose();
+                            i10++;
+                        }
+                        sQLiteDatabase.commitTransaction();
+                        break;
+                    }
+                } catch (Exception e) {
+                    f8.g(e, true);
+                    return;
                 }
                 break;
             default:
-                if (z10) {
-                    uiVar.i0 = arrayList;
-                    uiVar.j0 = false;
-                    uiVar.k0 = true;
-                } else {
-                    uiVar.f0[i11] = arrayList;
-                    uiVar.g0[i11] = false;
-                    uiVar.h0[i11] = true;
-                }
-                if (i11 == 3) {
-                    uiVar.n1();
-                }
-                uiVar.getNotificationCenter().k(86, Boolean.valueOf(z10), Integer.valueOf(i11));
-                uiVar.V0(i11, z10, false, false);
+                ((wp) f1Var).getNotificationCenter().k(18, Integer.valueOf(i14), Integer.valueOf(((TLRPC.messages_Messages) obj).messages.size()), Boolean.valueOf(z11), Boolean.valueOf(z10), Integer.valueOf(i13));
                 break;
         }
     }
 
-    public /* synthetic */ uf(ui uiVar, boolean z10, ArrayList arrayList, int i10) {
-        this.b = uiVar;
+    public /* synthetic */ uf(wp wpVar, int i10, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i11) {
+        this.f = wpVar;
+        this.b = i10;
+        this.h = messages_messages;
         this.c = z10;
-        this.d = arrayList;
-        this.e = i10;
+        this.d = z11;
+        this.e = i11;
     }
 }

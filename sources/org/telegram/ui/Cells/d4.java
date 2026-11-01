@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.e51;
-import org.telegram.ui.jw0;
+import org.telegram.ui.c51;
+import org.telegram.ui.iw0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d4 extends RadialProgressView {
     public final /* synthetic */ int N = 0;
@@ -41,8 +41,8 @@ public final class d4 extends RadialProgressView {
                 break;
             case 1:
                 ProfileActivity profileActivity = (ProfileActivity) this.P;
-                jw0 jw0Var = profileActivity.e0;
-                if (jw0Var != null && jw0Var.getImageReceiver().L()) {
+                iw0 iw0Var = profileActivity.e0;
+                if (iw0Var != null && iw0Var.getImageReceiver().L()) {
                     int i10 = (int) (profileActivity.e0.getImageReceiver().h1 * 85.0f);
                     Paint paint2 = this.O;
                     paint2.setAlpha(i10);
@@ -51,10 +51,10 @@ public final class d4 extends RadialProgressView {
                 super.onDraw(canvas);
                 break;
             default:
-                e51 e51Var = (e51) this.P;
-                org.telegram.ui.Components.g9 g9Var2 = e51Var.G;
+                c51 c51Var = (c51) this.P;
+                org.telegram.ui.Components.g9 g9Var2 = c51Var.G;
                 if (g9Var2 != null && g9Var2.getImageReceiver().L()) {
-                    int i11 = (int) (e51Var.G.getImageReceiver().h1 * 85.0f);
+                    int i11 = (int) (c51Var.G.getImageReceiver().h1 * 85.0f);
                     Paint paint3 = this.O;
                     paint3.setAlpha(i11);
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint3);
@@ -65,9 +65,9 @@ public final class d4 extends RadialProgressView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d4(e51 e51Var, Context context) {
+    public d4(c51 c51Var, Context context) {
         super(context, null);
-        this.P = e51Var;
+        this.P = c51Var;
         Paint paint = new Paint(1);
         this.O = paint;
         paint.setColor(1426063360);

@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class tu extends ts {
     public int M;
@@ -26,7 +26,7 @@ public final class tu extends ts {
             return;
         }
         boolean z10 = true;
-        boolean z11 = arrayList.size() <= 3 || org.telegram.messenger.tz.o() == 0;
+        boolean z11 = arrayList.size() <= 3 || org.telegram.messenger.uz.o() == 0;
         if (!z11) {
             for (int i12 = 0; i12 < this.N.size(); i12++) {
                 vu vuVar = (vu) this.N.get(i12);
@@ -106,18 +106,18 @@ public final class tu extends ts {
         for (int i10 = 0; i10 < this.N.size(); i10++) {
             vu vuVar = (vu) this.N.get(i10);
             o5 o5Var = vuVar.c;
-            org.telegram.messenger.jc[] jcVarArr = vuVar.a;
+            org.telegram.messenger.kc[] kcVarArr = vuVar.a;
             if (o5Var != null && (f5Var = (f5) cvVar.i1.get(o5Var.getDocumentId())) != null && f5Var.k != null) {
                 f5Var.s(j10);
                 ag.c2 c2Var = f5Var.k;
                 int i11 = this.K;
-                org.telegram.messenger.jc e02 = c2Var.e0(jcVarArr[i11], i11);
-                jcVarArr[i11] = e02;
+                org.telegram.messenger.kc e02 = c2Var.e0(kcVarArr[i11], i11);
+                kcVarArr[i11] = e02;
                 e02.c = j10;
-                f5Var.setAlpha(org.telegram.messenger.zs.e4);
+                f5Var.setAlpha(org.telegram.messenger.at.e4);
                 Rect rect = org.telegram.messenger.i0.Q;
                 rect.set(vuVar.getPaddingLeft() + vuVar.getLeft(), vuVar.getPaddingTop(), vuVar.getRight() - vuVar.getPaddingRight(), vuVar.getMeasuredHeight() - vuVar.getPaddingBottom());
-                jcVarArr[i11].b(rect);
+                kcVarArr[i11].b(rect);
                 int w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.G6, cvVar.I0);
                 if (w02 != cvVar.L1 || cvVar.K1 == null) {
                     cvVar.L1 = w02;

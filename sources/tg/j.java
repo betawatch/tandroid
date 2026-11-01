@@ -7,25 +7,25 @@ import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 import g.y;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.m50;
-import org.telegram.ui.nb1;
+import org.telegram.ui.l50;
+import org.telegram.ui.lb1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j implements ug.a {
     public final ViewGroup c;
-    public final m50 d;
+    public final l50 d;
     public final ViewGroup e;
     public boolean h;
     public final RectF a = new RectF();
     public final PointF b = new PointF();
     public final RectF f = new RectF();
 
-    public j(ViewGroup viewGroup, ViewGroup viewGroup2, m50 m50Var) {
+    public j(ViewGroup viewGroup, ViewGroup viewGroup2, l50 l50Var) {
         this.c = viewGroup;
-        this.d = m50Var;
+        this.d = l50Var;
         this.e = viewGroup2;
     }
 
@@ -45,12 +45,12 @@ public final class j implements ug.a {
                     View childAt = viewGroup.getChildAt(i10);
                     RectF rectF2 = this.a;
                     if (zg.h.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
-                        m50 m50Var = this.d;
-                        int i11 = m50Var.a;
-                        Object obj = m50Var.b;
+                        l50 l50Var = this.d;
+                        int i11 = l50Var.a;
+                        Object obj = l50Var.b;
                         switch (i11) {
                             case 0:
-                                ((tk0) obj).drawChild(canvas, childAt, uptimeMillis);
+                                ((uk0) obj).drawChild(canvas, childAt, uptimeMillis);
                                 break;
                             case 1:
                                 ProfileActivity profileActivity = (ProfileActivity) obj;
@@ -61,7 +61,7 @@ public final class j implements ug.a {
                                     break;
                                 }
                             default:
-                                ((nb1) obj).drawChild(canvas, childAt, uptimeMillis);
+                                ((lb1) obj).drawChild(canvas, childAt, uptimeMillis);
                                 break;
                         }
                     }

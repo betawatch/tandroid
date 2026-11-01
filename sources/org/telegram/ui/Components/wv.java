@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class wv extends tk0 {
+public final class wv extends uk0 {
     public boolean e3;
     public boolean f3;
     public final /* synthetic */ vy g3;
@@ -16,14 +16,14 @@ public final class wv extends tk0 {
         this.g3 = vyVar;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.lt p5 = org.telegram.ui.lt.p();
+        org.telegram.ui.kt p5 = org.telegram.ui.kt.p();
         vy vyVar = this.g3;
         return super.onInterceptTouchEvent(motionEvent) || p5.q(motionEvent, vyVar.h0, vyVar.g2, this.n2);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         vy vyVar = this.g3;
         if (vyVar.q0 && vyVar.n0.G > 1) {
@@ -38,7 +38,7 @@ public final class wv extends tk0 {
         vy.f(vyVar, true);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         if (this.f3) {
@@ -48,7 +48,7 @@ public final class wv extends tk0 {
         this.f3 = true;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.e3) {
             return;

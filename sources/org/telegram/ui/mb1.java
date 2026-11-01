@@ -1,244 +1,118 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class mb1 extends org.telegram.ui.Cells.v2 {
-    public boolean a5;
-    public int b5;
-    public TLRPC.TL_forumTopic c5;
-    public org.telegram.ui.Components.f5 d5;
-    public Drawable e5;
-    public boolean f5;
-    public boolean g5;
-    public boolean h5;
-    public Boolean i5;
-    public float j5;
-    public ValueAnimator k5;
-    public final /* synthetic */ pb1 l5;
+public final class mb1 extends s4.u {
+    public boolean d;
+    public final /* synthetic */ nb1 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mb1(pb1 pb1Var, Context context, boolean z10) {
-        super(context, z10);
-        this.l5 = pb1Var;
-        this.b5 = -1;
-        this.y = false;
-        this.I = pb1Var.isInPreviewMode() ? 11 : 50;
-        this.U = 24.0f;
-        this.J = 64;
-        this.K = 76;
-        this.n1 = true;
+    public mb1(nb1 nb1Var) {
+        this.e = nb1Var;
     }
 
-    @Override // org.telegram.ui.Cells.v2
-    public final boolean L() {
-        return this.h5;
+    @Override // s4.u
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        c1Var.a.setPressed(false);
     }
 
-    public final void m0() {
-        Drawable drawable = this.e5;
-        boolean z10 = drawable instanceof gg.d;
-        pb1 pb1Var = this.l5;
-        if (z10) {
-            ((gg.d) drawable).a(i0.b.f(this.j5, pb1Var.getThemedColor(org.telegram.ui.ActionBar.t6.R9), pb1Var.getThemedColor(org.telegram.ui.ActionBar.t6.L7)));
-        }
-        Drawable[] drawableArr = this.h0;
-        if (drawableArr != null) {
-            Drawable drawable2 = drawableArr[0];
-            if (drawable2 instanceof gg.d) {
-                ((gg.d) drawable2).a(i0.b.f(this.j5, pb1Var.getThemedColor(org.telegram.ui.ActionBar.t6.R9), pb1Var.getThemedColor(org.telegram.ui.ActionBar.t6.L7)));
-            }
-        }
-        invalidate();
-    }
-
-    public final void n0(boolean z10) {
-        boolean z11 = this.i5 != null;
-        ValueAnimator valueAnimator = this.k5;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.k5 = null;
-        }
-        this.i5 = Boolean.valueOf(z10);
-        if (!z11) {
-            this.j5 = z10 ? 1.0f : 0.0f;
-            m0();
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.j5, z10 ? 1.0f : 0.0f);
-        this.k5 = ofFloat;
-        ofFloat.addUpdateListener(new u01(this, 14));
-        this.k5.setInterpolator(org.telegram.ui.Components.gr.g);
-        this.k5.start();
-    }
-
-    @Override // org.telegram.ui.Cells.v2, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.f5 = true;
-        org.telegram.ui.Components.f5 f5Var = this.d5;
-        if (f5Var != null) {
-            f5Var.a(this);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.v2, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.f5 = false;
-        org.telegram.ui.Components.f5 f5Var = this.d5;
-        if (f5Var != null) {
-            f5Var.n(this);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.v2, android.view.View
-    public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.mh0 mh0Var;
-        org.telegram.ui.Cells.n2 n2Var;
-        pb1 pb1Var = this.l5;
-        if (pb1Var.getMessagesController().x2(-pb1Var.a)) {
-            super.onDraw(canvas);
-            return;
-        }
-        this.F3 = (!this.k0 || (n2Var = this.q2) == null) ? 0.0f : n2Var.getProgress() * org.telegram.messenger.i0.L(30.0f);
-        canvas.save();
-        float f7 = this.F3;
-        int i10 = -org.telegram.messenger.i0.L(4.0f);
-        this.E3 = i10;
-        canvas.translate(f7, i10);
-        canvas.drawColor(pb1Var.getThemedColor(org.telegram.ui.ActionBar.t6.d6));
-        super.onDraw(canvas);
-        canvas.restore();
-        canvas.save();
-        canvas.translate(this.w1, 0.0f);
-        if (this.a5) {
-            int L = this.t2 ? 0 : org.telegram.messenger.i0.L(this.I);
-            if (org.telegram.messenger.cd.X) {
-                canvas.drawLine(0.0f - this.w1, getMeasuredHeight() - 1, getMeasuredWidth() - L, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
-            } else {
-                canvas.drawLine(L - this.w1, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
-            }
-        }
-        if ((!this.g5 || (mh0Var = this.e2) == null || mh0Var.C != 0.0f) && (this.d5 != null || this.e5 != null)) {
-            int L2 = org.telegram.messenger.i0.L(10.0f);
-            int L3 = org.telegram.messenger.i0.L(10.0f);
-            int L4 = org.telegram.messenger.i0.L(28.0f);
-            org.telegram.ui.Components.f5 f5Var = this.d5;
-            if (f5Var != null) {
-                if (org.telegram.messenger.cd.X) {
-                    f5Var.setBounds((getWidth() - L2) - L4, L3, getWidth() - L2, L4 + L3);
-                } else {
-                    f5Var.setBounds(L2, L3, L2 + L4, L4 + L3);
+    @Override // s4.u
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        nb1 nb1Var = this.e;
+        ArrayList arrayList = nb1Var.b;
+        int l4 = s4.u.l(0, 0);
+        int b10 = c1Var.b();
+        if (b10 >= 0 && b10 < arrayList.size() && ((fb1) arrayList.get(b10)).c != null && org.telegram.messenger.w3.y(15, nb1Var.g())) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((fb1) arrayList.get(b10)).c;
+            if (nb1Var.a0.isEmpty()) {
+                View view = c1Var.a;
+                if ((view instanceof kb1) && tL_forumTopic.id == 1) {
+                    this.d = true;
+                    ((kb1) view).setSliding(true);
+                    return s4.u.l(0, 4);
                 }
-                this.d5.draw(canvas);
-            } else {
-                if (org.telegram.messenger.cd.X) {
-                    this.e5.setBounds((getWidth() - L2) - L4, L3, getWidth() - L2, L4 + L3);
-                } else {
-                    this.e5.setBounds(L2, L3, L2 + L4, L4 + L3);
-                }
-                this.e5.draw(canvas);
+            }
+            if (tL_forumTopic.pinned) {
+                return s4.u.l(3, 0);
             }
         }
-        canvas.restore();
+        return l4;
     }
 
-    public void setAnimatedEmojiDrawable(org.telegram.ui.Components.f5 f5Var) {
-        org.telegram.ui.Components.f5 f5Var2 = this.d5;
-        if (f5Var2 == f5Var) {
+    @Override // s4.u
+    public final boolean k() {
+        return !this.e.a0.isEmpty();
+    }
+
+    @Override // s4.u
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        int b10;
+        nb1 nb1Var = this.e;
+        ArrayList arrayList = nb1Var.b;
+        if (c1Var.f != c1Var2.f || (b10 = c1Var2.b()) < 0 || b10 >= arrayList.size() || ((fb1) arrayList.get(b10)).c == null || !((fb1) arrayList.get(b10)).c.pinned) {
+            return false;
+        }
+        eb1 eb1Var = nb1Var.r;
+        int b11 = c1Var.b();
+        int b12 = c1Var2.b();
+        nb1 nb1Var2 = eb1Var.d;
+        ArrayList arrayList2 = nb1Var2.b;
+        arrayList2.add(b12, (fb1) arrayList2.remove(b11));
+        s4.l0 itemAnimator = nb1Var2.N.getItemAnimator();
+        cb1 cb1Var = nb1Var2.I0;
+        if (itemAnimator != cb1Var) {
+            nb1Var2.N.setItemAnimator(cb1Var);
+        }
+        eb1Var.j(b11, b12);
+        return true;
+    }
+
+    @Override // s4.u
+    public final void p(s4.c1 c1Var, int i10) {
+        nb1 nb1Var = this.e;
+        if (i10 != 0) {
+            nb1Var.N.I0(false);
+            c1Var.a.setPressed(true);
             return;
         }
-        if (f5Var2 != null && this.f5) {
-            f5Var2.n(this);
-        }
-        if (f5Var != null) {
-            f5Var.setColorFilter(org.telegram.ui.ActionBar.t6.v3);
-        }
-        this.d5 = f5Var;
-        if (f5Var == null || !this.f5) {
-            return;
-        }
-        f5Var.a(this);
-    }
-
-    public void setForumIcon(Drawable drawable) {
-        this.e5 = drawable;
-    }
-
-    public void setTopicIcon(TLRPC.TL_forumTopic tL_forumTopic) {
-        int i10;
-        this.c5 = tL_forumTopic;
-        boolean z10 = false;
-        this.h5 = tL_forumTopic != null && tL_forumTopic.closed;
-        if (this.k0) {
-            n0(tL_forumTopic != null && tL_forumTopic.hidden);
-        }
-        this.g5 = tL_forumTopic != null && tL_forumTopic.id == 1;
-        pb1 pb1Var = this.l5;
-        if (tL_forumTopic != null && this != pb1Var.c1) {
-            if (tL_forumTopic.hidden) {
-                this.L1 = true;
-                this.M1 = org.telegram.ui.ActionBar.t6.d9;
-                this.N1 = org.telegram.ui.ActionBar.t6.c9;
-                this.O1 = "Unhide";
-                this.P1 = 2131743909;
-                this.Q1 = org.telegram.ui.ActionBar.t6.y1;
-            } else {
-                this.L1 = true;
-                this.M1 = org.telegram.ui.ActionBar.t6.c9;
-                this.N1 = org.telegram.ui.ActionBar.t6.d9;
-                this.O1 = "Hide";
-                this.P1 = 2131749334;
-                this.Q1 = org.telegram.ui.ActionBar.t6.x1;
-            }
-            invalidate();
-        }
-        if (this.k0) {
-            return;
-        }
-        if (tL_forumTopic != null && tL_forumTopic.id == 1) {
-            setAnimatedEmojiDrawable(null);
-            setForumIcon(gg.e.c(getContext(), 1.0f, pb1Var.getThemedColor(org.telegram.ui.ActionBar.t6.od), false));
-        } else if (tL_forumTopic == null || tL_forumTopic.icon_emoji_id == 0) {
-            setAnimatedEmojiDrawable(null);
-            setForumIcon(gg.e.e(tL_forumTopic));
-        } else {
-            setForumIcon(null);
-            org.telegram.ui.Components.f5 f5Var = this.d5;
-            if (f5Var == null || f5Var.h() != tL_forumTopic.icon_emoji_id) {
-                int i11 = pb1Var.u0 ? 13 : 10;
-                i10 = ((org.telegram.ui.ActionBar.k2) pb1Var).currentAccount;
-                setAnimatedEmojiDrawable(new org.telegram.ui.Components.f5(i11, i10, tL_forumTopic.icon_emoji_id));
+        ArrayList arrayList = nb1Var.b;
+        ArrayList arrayList2 = new ArrayList();
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((fb1) arrayList.get(i11)).c;
+            if (tL_forumTopic != null && tL_forumTopic.pinned) {
+                arrayList2.add(Integer.valueOf(tL_forumTopic.id));
             }
         }
-        if (tL_forumTopic != null && tL_forumTopic.hidden) {
-            z10 = true;
-        }
-        n0(z10);
-        z();
+        nb1Var.getMessagesController().r7.w(arrayList2, nb1Var.a);
     }
 
-    @Override // org.telegram.ui.Cells.v2, org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        super.updateColors();
-        try {
-            if (this.i5 != null) {
-                m0();
+    @Override // s4.u
+    public final void q(s4.c1 c1Var) {
+        if (c1Var != null) {
+            kb1 kb1Var = (kb1) c1Var.a;
+            TLRPC.TL_forumTopic tL_forumTopic = kb1Var.N;
+            nb1 nb1Var = this.e;
+            if (tL_forumTopic != null) {
+                org.telegram.messenger.y00 y00Var = nb1Var.getMessagesController().r7;
+                long j10 = nb1Var.a;
+                TLRPC.TL_forumTopic tL_forumTopic2 = kb1Var.N;
+                y00Var.A(tL_forumTopic2.id, j10, tL_forumTopic2.hidden);
             }
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
+            nb1Var.c1 = kb1Var;
+            ab1 ab1Var = nb1Var.N;
+            boolean z10 = !kb1Var.N.hidden;
+            int i10 = lb1.n3;
+            ab1Var.B1(z10, kb1Var);
+            nb1Var.Z0(true, true);
+            TLRPC.TL_forumTopic tL_forumTopic3 = kb1Var.c5;
+            if (tL_forumTopic3 != null) {
+                kb1Var.setTopicIcon(tL_forumTopic3);
+            }
         }
-    }
-
-    @Override // org.telegram.ui.Cells.v2
-    public final void z() {
-        super.z();
-        m0();
     }
 }

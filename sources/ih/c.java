@@ -22,18 +22,18 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.j21;
 import org.telegram.ui.Components.jf0;
+import org.telegram.ui.Components.k21;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.t80;
 import org.telegram.ui.Components.ve0;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.m40;
-import org.telegram.ui.v50;
+import org.telegram.ui.l40;
+import org.telegram.ui.u50;
 import th.z2;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c extends View {
     public final /* synthetic */ int a;
@@ -66,8 +66,8 @@ public final class c extends View {
         org.telegram.ui.ActionBar.l lVar;
         switch (this.a) {
             case 3:
-                j21 j21Var = (j21) this.d;
-                e6 e6Var = j21Var.e;
+                k21 k21Var = (k21) this.d;
+                e6 e6Var = k21Var.e;
                 float i10 = e6Var.i();
                 if (i10 > 0.0f) {
                     float T1 = i0.T1(0.6f, 1.0f, i10);
@@ -79,9 +79,9 @@ public final class c extends View {
                     float L = i0.L(8.33f);
                     float L2 = i0.L(8.33f);
                     y5 y5Var = (y5) this.b;
-                    y5Var.setColor(y5Var.b.a(t6.w0(j21Var.I, y5Var.a), false));
-                    textColor = j21Var.getTextColor();
-                    y5Var.setColor(i0.b.f(j21Var.F, y5Var.getColor(), textColor));
+                    y5Var.setColor(y5Var.b.a(t6.w0(k21Var.I, y5Var.a), false));
+                    textColor = k21Var.getTextColor();
+                    y5Var.setColor(i0.b.f(k21Var.F, y5Var.getColor(), textColor));
                     y5Var.setAlpha((int) (y5Var.getAlpha() * i10));
                     canvas.drawRoundRect(rectF, L, L2, y5Var);
                     e6Var.p(rectF);
@@ -95,27 +95,27 @@ public final class c extends View {
             case 4:
                 int[] iArr = (int[]) this.b;
                 t0 t0Var = (t0) this.c;
-                m40 m40Var = (m40) this.d;
-                if (m40Var.h <= 0.0f || m40Var.d == null) {
+                l40 l40Var = (l40) this.d;
+                if (l40Var.h <= 0.0f || l40Var.d == null) {
                     canvas2 = canvas;
                 } else {
-                    m40Var.f.reset();
-                    float width = getWidth() / m40Var.c.getWidth();
-                    m40Var.f.postScale(width, width);
-                    m40Var.e.setLocalMatrix(m40Var.f);
-                    m40Var.d.setAlpha((int) (m40Var.h * 255.0f));
+                    l40Var.f.reset();
+                    float width = getWidth() / l40Var.c.getWidth();
+                    l40Var.f.postScale(width, width);
+                    l40Var.e.setLocalMatrix(l40Var.f);
+                    l40Var.d.setAlpha((int) (l40Var.h * 255.0f));
                     canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), m40Var.d);
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), l40Var.d);
                 }
                 if (t0Var != null) {
                     if (!t0Var.isAttachedToWindow() || t0Var.getAlpha() <= 0.5f) {
-                        m40Var.dismiss();
+                        l40Var.dismiss();
                     } else {
                         t0Var.getLocationInWindow(iArr);
                     }
                     canvas2.save();
                     canvas2.translate(iArr[0] - ((1.0f - t0Var.getScaleX()) * t0Var.getMeasuredWidth()), iArr[1] - ((1.0f - t0Var.getScaleY()) * t0Var.getMeasuredHeight()));
-                    if (((g.b) t0Var.b).a(canvas2, t0Var.getMeasuredWidth(), m40Var.h)) {
+                    if (((g.b) t0Var.b).a(canvas2, t0Var.getMeasuredWidth(), l40Var.h)) {
                         invalidate();
                     }
                     canvas2.restore();
@@ -125,15 +125,15 @@ public final class c extends View {
             case 5:
                 super.dispatchDraw(canvas);
                 int L3 = i0.L(48.0f);
-                v50 v50Var = (v50) this.d;
-                int i11 = L3 + ((int) v50Var.b.f);
+                u50 u50Var = (u50) this.d;
+                int i11 = L3 + ((int) u50Var.b.f);
                 Paint paint = (Paint) this.c;
-                paint.setColor(v50Var.getThemedColor(t6.s8));
+                paint.setColor(u50Var.getThemedColor(t6.s8));
                 RectF rectF2 = (RectF) this.b;
                 float measuredWidth = getMeasuredWidth();
-                lVar = ((k2) v50Var).actionBar;
+                lVar = ((k2) u50Var).actionBar;
                 rectF2.set(0.0f, 0.0f, measuredWidth, lVar.getMeasuredHeight() + i11);
-                v50.e0(v50Var, canvas, rectF2, paint);
+                u50.f0(u50Var, canvas, rectF2, paint);
                 break;
             default:
                 super.dispatchDraw(canvas);
@@ -307,7 +307,7 @@ public final class c extends View {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(i0.L(16.66f), ((j21) this.d).e.d + i0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i0.L(16.66f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(i0.L(16.66f), ((k21) this.d).e.d + i0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i0.L(16.66f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -348,17 +348,17 @@ public final class c extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 3:
-                return ((j21) this.d).e == drawable || super.verifyDrawable(drawable);
+                return ((k21) this.d).e == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(v50 v50Var, Context context) {
+    public c(u50 u50Var, Context context) {
         super(context);
         this.a = 5;
-        this.d = v50Var;
+        this.d = u50Var;
         this.b = new RectF();
         this.c = new Paint(1);
     }
@@ -386,13 +386,13 @@ public final class c extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(j21 j21Var, Context context, p6 p6Var) {
+    public c(k21 k21Var, Context context, p6 p6Var) {
         super(context);
         this.a = 3;
-        this.d = j21Var;
+        this.d = k21Var;
         this.c = p6Var;
         this.b = new y5(this, p6Var);
-        j21Var.e.setCallback(this);
+        k21Var.e.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -432,10 +432,10 @@ public final class c extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(m40 m40Var, Context context, t0 t0Var) {
+    public c(l40 l40Var, Context context, t0 t0Var) {
         super(context);
         this.a = 4;
-        this.d = m40Var;
+        this.d = l40Var;
         this.c = t0Var;
         this.b = new int[2];
     }

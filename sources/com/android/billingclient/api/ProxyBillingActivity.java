@@ -11,9 +11,9 @@ import c5.a0;
 import c5.g;
 import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.u;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class ProxyBillingActivity extends Activity {
     public ResultReceiver a;
@@ -67,7 +67,7 @@ public class ProxyBillingActivity extends Activity {
                     i11 = -1;
                     if (intent != null) {
                         u.h("ProxyBillingActivity", "Got null data with resultCode " + i11 + "!");
-                        a2 = a(i11 != -1 ? i11 != 0 ? i11 != 3 ? i11 != 4 ? i11 != 5 ? zs.C1 : zs.D1 : zs.B1 : zs.A1 : zs.z1 : zs.y1, this.e);
+                        a2 = a(i11 != -1 ? i11 != 0 ? i11 != 3 ? i11 != 4 ? i11 != 5 ? at.C1 : at.D1 : at.B1 : at.A1 : at.z1 : at.y1, this.e);
                     } else if (intent.getExtras() != null) {
                         String string = intent.getExtras().getString("ALTERNATIVE_BILLING_USER_CHOICE_DATA");
                         if (string != null) {
@@ -153,7 +153,7 @@ public class ProxyBillingActivity extends Activity {
             pendingIntent = (PendingIntent) getIntent().getParcelableExtra("BUY_INTENT");
             if (getIntent().hasExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT") && getIntent().getBooleanExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT", false)) {
                 this.c = true;
-                this.d = zs.v1;
+                this.d = at.v1;
             }
         } else if (getIntent().hasExtra("IN_APP_MESSAGE_INTENT")) {
             pendingIntent = (PendingIntent) getIntent().getParcelableExtra("IN_APP_MESSAGE_INTENT");
@@ -177,7 +177,7 @@ public class ProxyBillingActivity extends Activity {
             if (resultReceiver != null) {
                 resultReceiver.send(0, null);
             } else {
-                Intent a2 = a(zs.T1, this.e);
+                Intent a2 = a(at.T1, this.e);
                 if (this.c) {
                     a2.putExtra("IS_FIRST_PARTY_PURCHASE", true);
                 }

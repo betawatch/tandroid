@@ -1,39 +1,60 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ThemeActivity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xn implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 b;
+    public final /* synthetic */ wp b;
+    public final /* synthetic */ TLRPC.Dialog c;
 
-    public /* synthetic */ xn(int i10, org.telegram.ui.ActionBar.k2 k2Var) {
+    public /* synthetic */ xn(wp wpVar, TLRPC.Dialog dialog, int i10) {
         this.a = i10;
-        this.b = k2Var;
+        this.b = wpVar;
+        this.c = dialog;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.k2 k2Var = this.b;
-                if (k2Var != null) {
-                    ThemeActivity themeActivity = new ThemeActivity(0);
-                    themeActivity.T0 = true;
-                    k2Var.presentFragment(themeActivity);
-                    break;
+                boolean z10 = v2.a;
+                TLRPC.Dialog dialog = this.c;
+                if (z10) {
+                    f8.b("checkLastDialogMessage for " + dialog.id + " has not message");
+                }
+                wp wpVar = this.b;
+                if (wpVar.getMediaDataController().R(dialog.id, 0L) == null) {
+                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) wpVar.Q.f(dialog.id);
+                    if (dialog2 != null) {
+                        if (v2.a) {
+                            StringBuilder sb2 = new StringBuilder("checkLastDialogMessage for ");
+                            sb2.append(dialog.id);
+                            sb2.append(" current dialog top message ");
+                            i0.a.p(dialog2.top_message, sb2);
+                        }
+                        if (dialog2.top_message == 0) {
+                            wpVar.X(3, dialog.id, false);
+                            break;
+                        }
+                    } else {
+                        if (v2.a) {
+                            f8.b("checkLastDialogMessage for " + dialog.id + " current dialog not found");
+                        }
+                        is messagesStorage = wpVar.getMessagesStorage();
+                        messagesStorage.a.c(new pr(messagesStorage, dialog.id, new xn(wpVar, dialog, 2), 1));
+                        break;
+                    }
                 }
                 break;
             case 1:
-                org.telegram.ui.Components.s4.s0(7, this.b, null);
-                break;
-            case 2:
-                org.telegram.ui.Components.s4.s0(8, this.b, null);
+                this.b.d1.e(this.c.id);
                 break;
             default:
-                this.b.presentFragment(new PremiumPreviewFragment(0, "summarize_limit"));
+                wp wpVar2 = this.b;
+                wpVar2.getClass();
+                wpVar2.X(3, this.c.id, false);
                 break;
         }
     }

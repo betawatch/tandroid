@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x60 extends View {
     public final Bitmap a;
@@ -70,9 +70,9 @@ public final class x60 extends View {
             ViewGroup viewGroup = z60Var.b;
             d dVar = new d(this, 17);
             if (viewGroup == null) {
-                nl0.d(dVar);
+                ol0.d(dVar);
             } else {
-                int i10 = nl0.O;
+                int i10 = ol0.O;
                 org.telegram.messenger.i0.l2(new vg(11, viewGroup, dVar), 15.0f);
             }
         }
@@ -139,7 +139,7 @@ public final class x60 extends View {
                     canvas2.clipPath(path);
                 }
                 Paint paint2 = this.b;
-                paint2.setAlpha(org.telegram.messenger.zs.e4);
+                paint2.setAlpha(org.telegram.messenger.at.e4);
                 canvas2.drawBitmap(bitmap, -rect.left, -rect.top, paint2);
                 canvas2.restore();
                 return;

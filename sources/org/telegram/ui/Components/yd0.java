@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class yd0 implements eg.e {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class yd0 implements eg.e {
                 if (ae0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((org.telegram.ui.bq0) ae0Var).a;
+                PhotoViewer photoViewer = ((org.telegram.ui.zp0) ae0Var).a;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 return photoViewer.O0();
             case 1:
@@ -79,7 +79,7 @@ public final class yd0 implements eg.e {
                 if (ae0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((org.telegram.ui.bq0) ae0Var).a;
+                PhotoViewer photoViewer = ((org.telegram.ui.zp0) ae0Var).a;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 return photoViewer.P0(-90.0f, false, null);
             case 1:
@@ -123,7 +123,7 @@ public final class yd0 implements eg.e {
                 be0Var.getClass();
                 ae0 ae0Var = be0Var.a;
                 if (ae0Var != null) {
-                    ((org.telegram.ui.bq0) ae0Var).b(false);
+                    ((org.telegram.ui.zp0) ae0Var).b(false);
                     break;
                 }
                 break;

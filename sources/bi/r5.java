@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.k9;
 import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class r5 extends c0 implements org.telegram.ui.ActionBar.k6, j9 {
     public final org.telegram.ui.ActionBar.p6 n;
@@ -32,11 +32,11 @@ public final class r5 extends c0 implements org.telegram.ui.ActionBar.k6, j9 {
         n1Var.setAllowNewlines(false);
         n1Var.setInputType(147457);
         n1Var.setGravity(8388659);
-        n1Var.setTextSize(1, Math.max(8, tz.W0 - 2));
+        n1Var.setTextSize(1, Math.max(8, uz.W0 - 2));
         n1Var.setTypeface(org.telegram.messenger.i0.o1("fonts/rmedium.ttf"));
         n1Var.setTextColorKey(org.telegram.ui.ActionBar.t6.Ci);
         n1Var.setAccentHint(true);
-        n1Var.setHint(cd.L0(2131754020, null));
+        n1Var.setHint(dd.L0(2131754020, null));
         n1Var.setListener(new a4.l(this, 8));
         n1Var.setDelegate(new a1.c(this, 13));
         addView(n1Var, w7.b6.e(-1, -2, 51));

@@ -2,17 +2,17 @@ package th;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.ax;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.pz;
+import org.telegram.messenger.at;
+import org.telegram.messenger.bx;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.qz;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.rz;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ai;
 import org.telegram.ui.Components.mg;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x1 implements ai {
     public final /* synthetic */ z2 a;
@@ -23,7 +23,7 @@ public final class x1 implements ai {
 
     @Override // org.telegram.ui.Components.ai
     public final void C(mg mgVar) {
-        zs.f(this.a.l2).d(mgVar);
+        at.f(this.a.l2).d(mgVar);
     }
 
     @Override // org.telegram.ui.Components.ai
@@ -53,7 +53,7 @@ public final class x1 implements ai {
         if (i10 != 8 && i10 != 7 && (i10 != 4 || z2Var.r2.a2.getSelectedPhotos().isEmpty())) {
             ag.v vVar = z2Var.r2;
             if (vVar != null) {
-                vVar.N(i10);
+                vVar.M(i10);
                 return;
             }
             return;
@@ -76,34 +76,34 @@ public final class x1 implements ai {
             for (int i15 = r72; i15 < min; i15++) {
                 int i16 = i14 + i15;
                 if (i16 < selectedPhotosOrder.size()) {
-                    ef efVar = (ef) selectedPhotos.get(selectedPhotosOrder.get(i16));
-                    pz pzVar = new pz();
-                    boolean z16 = efVar.b;
-                    if (z16 || (str = efVar.h) == null) {
-                        String str2 = efVar.I;
+                    ff ffVar = (ff) selectedPhotos.get(selectedPhotosOrder.get(i16));
+                    qz qzVar = new qz();
+                    boolean z16 = ffVar.b;
+                    if (z16 || (str = ffVar.h) == null) {
+                        String str2 = ffVar.I;
                         if (str2 != null) {
-                            pzVar.c = str2;
+                            qzVar.c = str2;
                         }
                     } else {
-                        pzVar.c = str;
+                        qzVar.c = str;
                     }
-                    pzVar.e = efVar.c;
-                    pzVar.f = efVar.g;
-                    pzVar.o = z16;
-                    CharSequence charSequence = efVar.a;
-                    pzVar.d = charSequence != null ? charSequence.toString() : null;
-                    pzVar.i = efVar.n;
-                    pzVar.j = efVar.r;
-                    pzVar.h = efVar.x;
-                    pzVar.k = efVar.s;
-                    pzVar.r = efVar.L;
-                    pzVar.t = qz.h(efVar.a);
-                    pzVar.u = efVar.M;
-                    arrayList.add(pzVar);
-                    efVar.e();
+                    qzVar.e = ffVar.c;
+                    qzVar.f = ffVar.g;
+                    qzVar.o = z16;
+                    CharSequence charSequence = ffVar.a;
+                    qzVar.d = charSequence != null ? charSequence.toString() : null;
+                    qzVar.i = ffVar.n;
+                    qzVar.j = ffVar.r;
+                    qzVar.h = ffVar.x;
+                    qzVar.k = ffVar.s;
+                    qzVar.r = ffVar.L;
+                    qzVar.t = rz.h(ffVar.a);
+                    qzVar.u = ffVar.M;
+                    arrayList.add(qzVar);
+                    ffVar.e();
                 }
             }
-            boolean z17 = i13 == 0 ? ((pz) arrayList.get(r72)).t : r72;
+            boolean z17 = i13 == 0 ? ((qz) arrayList.get(r72)).t : r72;
             HashMap<Object, Object> hashMap = selectedPhotos;
             accountInstance = z2Var.getAccountInstance();
             ArrayList<Object> arrayList2 = selectedPhotosOrder;
@@ -116,7 +116,7 @@ public final class x1 implements ai {
                 z14 = 4;
                 r12 = i17;
             }
-            qz.X(accountInstance, arrayList, j12, null, null, storyItem, null, r12, z10, null, null, z11, i11, i12, z17, null, null, 0L, false, 0L, z2Var.K1.getSendMonoForumPeerId(), z2Var.K1.getSendMessageSuggestionParams(), null, false);
+            rz.X(accountInstance, arrayList, j12, null, null, storyItem, null, r12, z10, null, null, z11, i11, i12, z17, null, null, 0L, false, 0L, z2Var.K1.getSendMonoForumPeerId(), z2Var.K1.getSendMessageSuggestionParams(), null, false);
             i13++;
             z15 = true;
             selectedPhotos = hashMap;
@@ -145,14 +145,14 @@ public final class x1 implements ai {
         accountInstance = z2Var.getAccountInstance();
         CharSequence charSequence2 = charSequence != null ? charSequence : null;
         long j12 = z2Var.k1;
-        org.telegram.messenger.r5 r5Var = qz.I;
-        new Thread(new ax(null, arrayList, j12, accountInstance, charSequence2, false, null, null, null, null, z10, i10, i11, storyItem, null, j10, z11, j11, null)).start();
+        org.telegram.messenger.r5 r5Var = rz.I;
+        new Thread(new bx(null, arrayList, j12, accountInstance, charSequence2, false, null, null, null, null, z10, i10, i11, storyItem, null, j10, z11, j11, null)).start();
         z2Var.i0(j11 <= 0);
     }
 
     @Override // org.telegram.ui.Components.ai
     public final void j0() {
-        this.a.K1.L();
+        this.a.K1.K();
     }
 
     @Override // org.telegram.ui.Components.ai

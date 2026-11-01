@@ -5,16 +5,16 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.cv;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -32,9 +32,10 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         int i10 = this.a;
-        int i11 = 5;
-        final int i12 = 0;
-        final int i13 = 1;
+        int i11 = 4;
+        int i12 = 5;
+        final int i13 = 0;
+        final int i14 = 1;
         Object obj = this.c;
         Object obj2 = this.b;
         Object obj3 = this.d;
@@ -44,21 +45,21 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
                 final vh.d dVar = (vh.d) obj;
                 z2Var.b0 = false;
                 dVar.setLoading(true);
-                ((r5) obj3).a(new q20() { // from class: rh.f6
-                    @Override // org.telegram.messenger.q20
+                ((r5) obj3).a(new r20() { // from class: rh.f6
+                    @Override // org.telegram.messenger.r20
                     public final void a(Object obj4) {
                         Boolean bool = (Boolean) obj4;
-                        switch (i13) {
+                        switch (i14) {
                             case 0:
                                 boolean booleanValue = bool.booleanValue();
                                 final org.telegram.ui.ActionBar.z2 z2Var2 = z2Var;
                                 if (!booleanValue) {
-                                    final int i14 = 0;
+                                    final int i15 = 0;
                                     final vh.d dVar2 = dVar;
                                     org.telegram.messenger.i0.h3(new Runnable() { // from class: rh.h6
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            switch (i14) {
+                                            switch (i15) {
                                                 case 0:
                                                     z2Var2.b0 = false;
                                                     dVar2.setLoading(false);
@@ -79,12 +80,12 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
                                 boolean booleanValue2 = bool.booleanValue();
                                 final org.telegram.ui.ActionBar.z2 z2Var3 = z2Var;
                                 if (!booleanValue2) {
-                                    final int i15 = 1;
+                                    final int i16 = 1;
                                     final vh.d dVar3 = dVar;
                                     org.telegram.messenger.i0.h3(new Runnable() { // from class: rh.h6
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            switch (i15) {
+                                            switch (i16) {
                                                 case 0:
                                                     z2Var3.b0 = false;
                                                     dVar3.setLoading(false);
@@ -110,21 +111,21 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
                 final vh.d dVar2 = (vh.d) obj;
                 z2Var2.b0 = false;
                 dVar2.setLoading(true);
-                ((p5) obj3).a(new q20() { // from class: rh.f6
-                    @Override // org.telegram.messenger.q20
+                ((p5) obj3).a(new r20() { // from class: rh.f6
+                    @Override // org.telegram.messenger.r20
                     public final void a(Object obj4) {
                         Boolean bool = (Boolean) obj4;
-                        switch (i12) {
+                        switch (i13) {
                             case 0:
                                 boolean booleanValue = bool.booleanValue();
                                 final org.telegram.ui.ActionBar.z2 z2Var22 = z2Var2;
                                 if (!booleanValue) {
-                                    final int i14 = 0;
+                                    final int i15 = 0;
                                     final vh.d dVar22 = dVar2;
                                     org.telegram.messenger.i0.h3(new Runnable() { // from class: rh.h6
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            switch (i14) {
+                                            switch (i15) {
                                                 case 0:
                                                     z2Var22.b0 = false;
                                                     dVar22.setLoading(false);
@@ -145,12 +146,12 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
                                 boolean booleanValue2 = bool.booleanValue();
                                 final org.telegram.ui.ActionBar.z2 z2Var3 = z2Var2;
                                 if (!booleanValue2) {
-                                    final int i15 = 1;
+                                    final int i16 = 1;
                                     final vh.d dVar3 = dVar2;
                                     org.telegram.messenger.i0.h3(new Runnable() { // from class: rh.h6
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            switch (i15) {
+                                            switch (i16) {
                                                 case 0:
                                                     z2Var3.b0 = false;
                                                     dVar3.setLoading(false);
@@ -187,11 +188,10 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
             case 4:
                 th.u2 u2Var2 = (th.u2) obj3;
                 th.o7 o7Var = (th.o7) obj;
-                int i14 = 3;
                 ((org.telegram.ui.ActionBar.b1) obj2).performHapticFeedback(3);
                 cc X = cc.X();
                 if (X != null) {
-                    X.Q(R.raw.ic_save_to_gallery, 36, org.telegram.messenger.i0.T2(cd.L0(2131745950, null), new th.o0(i14, u2Var2, o7Var))).j();
+                    X.Q(R.raw.ic_save_to_gallery, 36, org.telegram.messenger.i0.T2(dd.L0(2131745950, null), new th.o0(i11, u2Var2, o7Var))).j();
                     break;
                 }
                 break;
@@ -208,12 +208,12 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
                 th.b bVar = (th.b) obj;
                 z60 z60Var = e8Var.U0;
                 if (z60Var == null || !z60Var.D()) {
-                    vh.m mVar = new vh.m(e8Var, i12);
-                    boolean q6 = d20.i(e8Var.U).q();
-                    vh.m mVar2 = q6 ? null : new vh.m(e8Var, i13);
+                    vh.m mVar = new vh.m(e8Var, i13);
+                    boolean q6 = e20.i(e8Var.U).q();
+                    vh.m mVar2 = q6 ? null : new vh.m(e8Var, i14);
                     z60 F = z60.F(frameLayout, bVar, e8Var.S0);
                     e8Var.U0 = F;
-                    F.p(13, org.telegram.messenger.i0.L(200.0f), cd.M0("StoryPeriodHint"));
+                    F.p(13, org.telegram.messenger.i0.L(200.0f), dd.M0("StoryPeriodHint"));
                     e8Var.U0.k();
                     int i15 = 0;
                     while (true) {
@@ -226,9 +226,9 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
                         } else {
                             int i16 = iArr[i15];
                             z60 z60Var3 = e8Var.U0;
-                            String M0 = i16 == Integer.MAX_VALUE ? cd.M0("StoryPeriodKeep") : cd.G(i16 / 3600, "Hours", new Object[0]);
+                            String M0 = i16 == Integer.MAX_VALUE ? dd.M0("StoryPeriodKeep") : dd.G(i16 / 3600, "Hours", new Object[0]);
                             int i17 = org.telegram.ui.ActionBar.t6.E8;
-                            z60Var3.b(0, null, M0, i17, i17, new org.telegram.utils.twidget.v(mVar, i16, i11));
+                            z60Var3.b(0, null, M0, i17, i17, new org.telegram.utils.twidget.v(mVar, i16, i12));
                             z60Var3.M((q6 || i16 == 86400 || i16 == Integer.MAX_VALUE) ? null : new org.telegram.utils.twidget.v(mVar2, i16, 6));
                             if (e8Var.W0 == i15) {
                                 e8Var.U0.L();
@@ -239,12 +239,12 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
                 }
                 break;
             case 7:
-                ef efVar = (ef) obj2;
+                ff ffVar = (ff) obj2;
                 vh.h2 h2Var = (vh.h2) obj;
                 vh.k2 k2Var = ((vh.g2) obj3).c;
                 ArrayList arrayList = k2Var.h0;
-                if (arrayList.contains(efVar)) {
-                    arrayList.remove(efVar);
+                if (arrayList.contains(ffVar)) {
+                    arrayList.remove(ffVar);
                 } else if (arrayList.size() + 1 > k2Var.R) {
                     int i18 = -k2Var.N;
                     k2Var.N = i18;
@@ -252,7 +252,7 @@ public final /* synthetic */ class e7 implements View.OnClickListener {
                     org.telegram.messenger.t2.D.a();
                     break;
                 } else {
-                    arrayList.add(efVar);
+                    arrayList.add(ffVar);
                 }
                 org.telegram.messenger.i0.a4(k2Var.d);
                 k2Var.j();

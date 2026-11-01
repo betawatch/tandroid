@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
     public static final /* synthetic */ int f0 = 0;
@@ -106,7 +106,7 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
         frameLayout.setClipChildren(false);
-        addView(frameLayout, w7.b6.d(org.telegram.messenger.zs.E2, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.b6.d(org.telegram.messenger.at.E2, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
         int i15 = 0;
         while (i15 < 4) {
             this.w[i15] = new ColorPicker$RadioButton(context);
@@ -163,7 +163,7 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
                                         } else {
                                             fArr[0] = f7 + 60.0f;
                                         }
-                                        colorPicker$RadioButtonArr[2].a(Color.HSVToColor(org.telegram.messenger.zs.e4, fArr));
+                                        colorPicker$RadioButtonArr[2].a(Color.HSVToColor(org.telegram.messenger.at.e4, fArr));
                                     }
                                     bqVar2.c(colorPicker$RadioButtonArr[2].e, 2, true);
                                 } else if (i19 == 3) {
@@ -396,7 +396,7 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
                                     } else {
                                         fArr[0] = f7 + 60.0f;
                                     }
-                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(org.telegram.messenger.zs.e4, fArr));
+                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(org.telegram.messenger.at.e4, fArr));
                                 }
                                 bqVar2.c(colorPicker$RadioButtonArr[2].e, 2, true);
                             } else if (i192 == 3) {
@@ -517,7 +517,7 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
                 }
             }
         });
-        imageView.setContentDescription(org.telegram.messenger.cd.L0(2131754486, null));
+        imageView.setContentDescription(org.telegram.messenger.dd.L0(2131754486, null));
         addView(imageView, w7.b6.d(30, 30.0f, 49, 36.0f, 1.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.g0 g0Var = new org.telegram.ui.ActionBar.g0(this, getContext(), 1);
         this.F = g0Var;
@@ -582,7 +582,7 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
                                     } else {
                                         fArr[0] = f7 + 60.0f;
                                     }
-                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(org.telegram.messenger.zs.e4, fArr));
+                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(org.telegram.messenger.at.e4, fArr));
                                 }
                                 bqVar2.c(colorPicker$RadioButtonArr[2].e, 2, true);
                             } else if (i192 == 3) {
@@ -703,7 +703,7 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
                 }
             }
         });
-        g0Var.setContentDescription(org.telegram.messenger.cd.L0(2131752099, null));
+        g0Var.setContentDescription(org.telegram.messenger.dd.L0(2131752099, null));
         addView(g0Var, w7.b6.d(30, 30.0f, 51, 97.0f, 1.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.H = textView;
@@ -719,10 +719,10 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
             this.I = t0Var;
             t0Var.setLongClickEnabled(false);
             t0Var.setIcon(R.drawable.ic_ab_other);
-            t0Var.setContentDescription(org.telegram.messenger.cd.L0(2131754839, null));
-            t0Var.e(1, R.drawable.msg_edit, org.telegram.messenger.cd.L0(2131747813, null));
-            t0Var.e(2, R.drawable.msg_share, org.telegram.messenger.cd.L0(2131745444, null));
-            t0Var.e(3, R.drawable.msg_delete, org.telegram.messenger.cd.L0(2131751487, null));
+            t0Var.setContentDescription(org.telegram.messenger.dd.L0(2131754839, null));
+            t0Var.e(1, R.drawable.msg_edit, org.telegram.messenger.dd.L0(2131747813, null));
+            t0Var.e(2, R.drawable.msg_share, org.telegram.messenger.dd.L0(2131745444, null));
+            t0Var.e(3, R.drawable.msg_delete, org.telegram.messenger.dd.L0(2131751487, null));
             t0Var.setMenuYOffset(-org.telegram.messenger.i0.L(80.0f));
             t0Var.setSubMenuOpenSide(2);
             t0Var.setDelegate(new t(this, 26));
@@ -784,7 +784,7 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
                                         } else {
                                             fArr[0] = f7 + 60.0f;
                                         }
-                                        colorPicker$RadioButtonArr[2].a(Color.HSVToColor(org.telegram.messenger.zs.e4, fArr));
+                                        colorPicker$RadioButtonArr[2].a(Color.HSVToColor(org.telegram.messenger.at.e4, fArr));
                                     }
                                     bqVar2.c(colorPicker$RadioButtonArr[2].e, 2, true);
                                 } else if (i192 == 3) {
@@ -947,7 +947,7 @@ public class cq extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
         } else {
             fArr[0] = f10 + 20.0f;
         }
-        return Color.HSVToColor(org.telegram.messenger.zs.e4, fArr);
+        return Color.HSVToColor(org.telegram.messenger.at.e4, fArr);
     }
 
     private float getBrightness() {

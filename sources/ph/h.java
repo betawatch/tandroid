@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
@@ -16,7 +16,7 @@ import org.telegram.ui.LaunchActivity;
 import rh.v8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h extends v8 {
     public final /* synthetic */ m m0;
@@ -42,15 +42,15 @@ public final class h extends v8 {
         }
         View[] viewArr = new View[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, mVar.I0);
-        String L0 = cd.L0(2131750352, null);
+        String L0 = dd.L0(2131750352, null);
         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
         x1Var.R = L0;
-        x1Var.T = cd.a0(null, null, 2131750351, Integer.valueOf(mVar.d2.d.gifts_per_round));
+        x1Var.T = dd.a0(null, null, 2131750351, Integer.valueOf(mVar.d2.d.gifts_per_round));
         ih.b bVar = new ih.b(context, mVar.I0, i0.a.f(context, R.drawable.star_small_inner));
         bVar.setTextSize(1, 18.0f);
         a7.V(bVar, t6.j5, mVar.I0);
         a7.m(bVar, 34, t6.Li, mVar.I0);
-        bVar.setHintText(cd.L0(2131750350, null));
+        bVar.setHintText(dd.L0(2131750350, null));
         bVar.setFocusable(true);
         bVar.setInputType(2);
         bVar.setFilters(new InputFilter[]{new InputFilter.LengthFilter(9)});
@@ -66,8 +66,8 @@ public final class h extends v8 {
         alertDialog$Builder.c();
         alertDialog$Builder.o(linearLayout);
         x1Var.a = org.telegram.messenger.i0.L(300.0f);
-        alertDialog$Builder.k(cd.L0(2131750354, null), new org.telegram.ui.web.k0(2, mVar, bVar));
-        alertDialog$Builder.h(cd.L0(2131752589, null), new org.telegram.utils.twidget.t(6));
+        alertDialog$Builder.k(dd.L0(2131750354, null), new org.telegram.ui.web.k0(2, mVar, bVar));
+        alertDialog$Builder.h(dd.L0(2131752589, null), new org.telegram.utils.twidget.t(6));
         org.telegram.ui.ActionBar.x1[] x1VarArr = {x1Var};
         if (Q != null) {
             org.telegram.messenger.i0.Y2(W, Q.getClassGuid());

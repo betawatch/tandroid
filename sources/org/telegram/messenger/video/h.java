@@ -13,17 +13,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import kg.f0;
 import m4.n0;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.ej;
-import org.telegram.messenger.fe;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ge;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
@@ -53,14 +53,14 @@ import org.telegram.ui.Components.s4;
 import org.telegram.ui.Components.t;
 import org.telegram.ui.Components.z60;
 import org.telegram.ui.Components.za0;
-import org.telegram.ui.ex0;
+import org.telegram.ui.dx0;
 import org.telegram.ui.g01;
-import org.telegram.ui.kh0;
-import org.telegram.ui.py0;
-import org.telegram.ui.se0;
+import org.telegram.ui.ih0;
+import org.telegram.ui.oy0;
+import org.telegram.ui.re0;
+import org.telegram.ui.ty0;
 import org.telegram.ui.un;
-import org.telegram.ui.uy0;
-import org.telegram.ui.w50;
+import org.telegram.ui.v50;
 import org.telegram.ui.web.v;
 import ph.i2;
 import rh.h8;
@@ -72,7 +72,7 @@ import w7.b6;
 import xh.e1;
 import xh.f1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -107,7 +107,7 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 break;
             case 1:
                 z60 F = z60.F(((z2) obj4).c, (p6) obj3, (ImageView) obj2);
-                F.c(R.drawable.menu_link_revoke, cd.L0(2131749486, null), (fe) obj, false);
+                F.c(R.drawable.menu_link_revoke, dd.L0(2131749486, null), (ge) obj, false);
                 F.Y = true;
                 F.a0(0.0f, -i0.L(6.0f));
                 F.s = 0;
@@ -118,8 +118,8 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 ((z2) ((l2.f) obj).b).x0.run();
                 break;
             case 3:
-                py0 py0Var = (py0) obj2;
-                uy0.Y(py0Var.a, py0Var.b, ((d4) obj4).getValue() + 1, (((e4) obj3).getValue() + 1) * 60);
+                oy0 oy0Var = (oy0) obj2;
+                ty0.Z(oy0Var.a, oy0Var.b, ((d4) obj4).getValue() + 1, (((e4) obj3).getValue() + 1) * 60);
                 ((z2) ((l2.f) obj).b).x0.run();
                 break;
             case 4:
@@ -134,39 +134,39 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
                 ArrayList arrayList = (ArrayList) obj3;
                 za0 za0Var = (za0) obj2;
-                kh0 kh0Var = (kh0) obj;
+                ih0 ih0Var = (ih0) obj;
                 chatActivityEnterView.R4 = !chatActivityEnterView.R4;
                 for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                    ((jj) arrayList.get(i13)).k.invert_media = chatActivityEnterView.R4;
+                    ((kj) arrayList.get(i13)).k.invert_media = chatActivityEnterView.R4;
                 }
                 za0Var.a(!chatActivityEnterView.R4, true);
                 if (!arrayList.isEmpty()) {
-                    kh0Var.e((jj) arrayList.get(0));
+                    ih0Var.e((kj) arrayList.get(0));
                 }
-                kh0Var.m(!chatActivityEnterView.R4);
+                ih0Var.m(!chatActivityEnterView.R4);
                 break;
             case 7:
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) obj4;
-                ej ejVar = (ej) obj3;
-                jj jjVar = (jj) obj2;
-                kh0 kh0Var2 = (kh0) obj;
+                fj fjVar = (fj) obj3;
+                kj kjVar = (kj) obj2;
+                ih0 ih0Var2 = (ih0) obj;
                 int i14 = ChatActivityEnterView.s5;
                 chatActivityEnterView2.getClass();
-                if (ejVar != null) {
-                    ArrayList arrayList2 = ejVar.d;
+                if (fjVar != null) {
+                    ArrayList arrayList2 = fjVar.d;
                     int size = arrayList2.size();
                     int i15 = 0;
                     while (i15 < size) {
                         Object obj5 = arrayList2.get(i15);
                         i15++;
-                        ((jj) obj5).k.invert_media = chatActivityEnterView2.R4;
+                        ((kj) obj5).k.invert_media = chatActivityEnterView2.R4;
                     }
-                    ejVar.a();
+                    fjVar.a();
                 } else {
-                    jjVar.k.invert_media = chatActivityEnterView2.R4;
+                    kjVar.k.invert_media = chatActivityEnterView2.R4;
                 }
                 chatActivityEnterView2.Z();
-                kh0Var2.g(true);
+                ih0Var2.g(true);
                 chatActivityEnterView2.R4 = false;
                 break;
             case 8:
@@ -176,7 +176,7 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 p6 p6Var = (p6) obj2;
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = biVar.a2;
                 if (chatAttachAlertPhotoLayout != null) {
-                    h8.i1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new s(6, biVar, b1Var), p6Var);
+                    h8.j1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new s(6, biVar, b1Var), p6Var);
                     break;
                 }
                 break;
@@ -191,17 +191,17 @@ public final /* synthetic */ class h implements View.OnClickListener {
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(context2, null);
                     if (!j80Var.y && j80Var.G) {
                         b1 b1Var2 = new b1(context2, true, false);
-                        b1Var2.j(cd.L0(2131751336, null), R.drawable.msg_edit, null);
+                        b1Var2.j(dd.L0(2131751336, null), R.drawable.msg_edit, null);
                         actionBarPopupWindow$ActionBarPopupWindowLayout.a(b1Var2, b6.o(-1, 48));
                         b1Var2.setOnClickListener(new c80(j80Var, c10 == true ? 1 : 0));
                     }
                     b1 b1Var3 = new b1(context2, true, false);
-                    b1Var3.j(cd.L0(2131750481, null), R.drawable.msg_qrcode, null);
+                    b1Var3.j(dd.L0(2131750481, null), R.drawable.msg_qrcode, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.a(b1Var3, b6.o(-1, 48));
                     b1Var3.setOnClickListener(new c80(j80Var, 2));
                     if (!j80Var.F) {
                         b1 b1Var4 = new b1(context2, false, true);
-                        b1Var4.j(cd.L0(2131746040, null), R.drawable.msg_delete, null);
+                        b1Var4.j(dd.L0(2131746040, null), R.drawable.msg_delete, null);
                         int i16 = t6.p7;
                         b1Var4.d(t6.x0(null, i16, false), t6.x0(null, i16, false));
                         b1Var4.setOnClickListener(new c80(j80Var, 3));
@@ -238,9 +238,9 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 }
                 break;
             case 10:
-                se0 se0Var = (se0) obj4;
-                z60 H = z60.H(se0Var.w, se0Var.a);
-                H.c(R.drawable.msg_help, cd.L0(2131745497, null), new w50(se0Var, (String) obj3, (String) obj2, (String) obj, 10), false);
+                re0 re0Var = (re0) obj4;
+                z60 H = z60.H(re0Var.w, re0Var.a);
+                H.c(R.drawable.msg_help, dd.L0(2131745497, null), new v50(re0Var, (String) obj3, (String) obj2, (String) obj, 10), false);
                 H.V(5);
                 H.Z();
                 break;
@@ -249,13 +249,13 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 G.V(5);
                 G.t = false;
                 G.a0(i0.L(12.0f), i0.L(-32.0f));
-                ((q20) obj3).a(G);
+                ((r20) obj3).a(G);
                 break;
             case 12:
                 i2 i2Var = (i2) obj4;
                 v5 v5Var = (v5) obj3;
                 TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
-                i20 i20Var = (i20) obj;
+                j20 j20Var = (j20) obj;
                 ArrayList i17 = v5Var.i();
                 int i18 = 0;
                 while (true) {
@@ -276,13 +276,13 @@ public final /* synthetic */ class h implements View.OnClickListener {
                     ArrayList arrayList3 = v5Var.l;
                     arrayList3.removeAll(i17);
                     if (v5Var.e && !v5Var.c) {
-                        Collections.sort(arrayList3, new ex0(13));
+                        Collections.sort(arrayList3, new dx0(13));
                     }
                     arrayList3.addAll(0, i17);
-                    zs.f(v5Var.a).k(zs.G3, Long.valueOf(v5Var.b), v5Var);
+                    at.f(v5Var.a).k(at.G3, Long.valueOf(v5Var.b), v5Var);
                     v5Var.n();
                     i2Var.dismiss();
-                    ((cc) i20Var.run()).I(R.raw.ic_pin, cd.a0(null, null, 2131750040, rh.e4.A1(savedStarGift2.gift)), cd.a0(null, null, 2131750041, rh.e4.A1(savedStarGift.gift))).j();
+                    ((cc) j20Var.run()).I(R.raw.ic_pin, dd.a0(null, null, 2131750040, rh.e4.A1(savedStarGift2.gift)), dd.a0(null, null, 2131750041, rh.e4.A1(savedStarGift.gift))).j();
                     break;
                 }
                 break;
@@ -297,20 +297,20 @@ public final /* synthetic */ class h implements View.OnClickListener {
                 }
                 storyItem.dialogId = z2Var2.k1;
                 storyItem.messageId = storyItem.id;
-                jj jjVar2 = new jj(z2Var2.l2, storyItem);
-                jjVar2.r0(false);
-                o7Var.V(new t2(chat.id, jjVar2, false));
+                kj kjVar2 = new kj(z2Var2.l2, storyItem);
+                kjVar2.r0(false);
+                o7Var.V(new t2(chat.id, kjVar2, false));
                 break;
             case 14:
                 xh.k kVar = (xh.k) obj4;
                 un unVar = (un) obj3;
-                jj jjVar3 = (jj) obj2;
+                kj kjVar3 = (kj) obj2;
                 String str = (String) obj;
                 if (unVar != null) {
                     kVar.getClass();
-                    unVar.Z9(jjVar3, false, false);
+                    unVar.ea(kjVar3, false, false);
                 }
-                gf.f.q(kVar.getContext(), Uri.parse(str), true, false, false, null, null, false, vp.r1(d20.s0).e6, false);
+                gf.f.q(kVar.getContext(), Uri.parse(str), true, false, false, null, null, false, wp.r1(e20.s0).e6, false);
                 break;
             case 15:
                 String[] strArr = (String[]) obj4;

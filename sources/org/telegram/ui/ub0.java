@@ -1,37 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ub0 extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ yb0 b;
+public final class ub0 implements TextureView.SurfaceTextureListener {
+    public final TextureView.SurfaceTextureListener a;
+    public final /* synthetic */ xb0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ub0(yb0 yb0Var, Context context) {
-        super(context);
-        this.b = yb0Var;
-        this.a = new HashMap();
+    public ub0(xb0 xb0Var, TextureView.SurfaceTextureListener surfaceTextureListener) {
+        this.b = xb0Var;
+        this.a = surfaceTextureListener;
     }
 
-    public final void a() {
-        org.telegram.messenger.ga gaVar = this.b.G;
-        if (gaVar == null) {
-            return;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureAvailable(surfaceTexture, i10, i11);
         }
-        n2.u g10 = gaVar.g();
-        for (Map.Entry entry : this.a.entrySet()) {
-            org.telegram.messenger.fa faVar = (org.telegram.messenger.fa) entry.getKey();
-            View view = (View) entry.getValue();
-            Point a02 = g10.a0(faVar.a());
-            view.setTranslationX(a02.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(org.telegram.messenger.i0.L(22.0f) + (a02.y - view.getMeasuredHeight()));
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        return surfaceTextureListener == null || surfaceTextureListener.onSurfaceTextureDestroyed(surfaceTexture);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureSizeChanged(surfaceTexture, i10, i11);
         }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        ei.r rVar;
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureUpdated(surfaceTexture);
+        }
+        rVar = ((org.telegram.ui.ActionBar.k2) this.b).glassEngine;
+        rVar.g();
     }
 }

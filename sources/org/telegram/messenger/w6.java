@@ -7,9 +7,9 @@ import android.text.SpannableStringBuilder;
 import android.view.ActionMode;
 import android.view.Menu;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.x41;
+import org.telegram.ui.Components.y41;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class w6 extends org.telegram.ui.Components.mt {
     public final org.telegram.ui.Components.w4 Y1;
@@ -48,14 +48,14 @@ public final class w6 extends org.telegram.ui.Components.mt {
             return;
         }
         menu.removeItem(android.R.id.shareText);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cd.L0(2131753671, null));
-        spannableStringBuilder.setSpan(new x41(i0.o()), 0, spannableStringBuilder.length(), 33);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(dd.L0(2131753671, null));
+        spannableStringBuilder.setSpan(new y41(i0.o()), 0, spannableStringBuilder.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(cd.L0(2131749097, null));
-        spannableStringBuilder2.setSpan(new x41(i0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(dd.L0(2131749097, null));
+        spannableStringBuilder2.setSpan(new y41(i0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, cd.L0(2131751745, null));
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, cd.L0(2131746352, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, dd.L0(2131751745, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, dd.L0(2131746352, null));
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.qt, android.widget.TextView

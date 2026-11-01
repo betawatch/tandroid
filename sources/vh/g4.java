@@ -9,14 +9,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g4 extends FrameLayout {
     public final int a;
@@ -33,17 +33,17 @@ public final class g4 extends FrameLayout {
         this.f = false;
         this.h = false;
         this.a = i10;
-        TLRPC.User f7 = d20.i(i10).f();
+        TLRPC.User f7 = e20.i(i10).f();
         jg.a3 a3Var = new jg.a3(this, getContext());
         this.c = a3Var;
         th.w2 w2Var = new th.w2(getContext(), null);
         ag.d2 d2Var = w2Var.a;
         d2Var.getAvatarDrawable().r(f7);
         d2Var.e(f7, d2Var.getAvatarDrawable());
-        String p5 = h20.p(f7);
+        String p5 = i20.p(f7);
         og.c cVar = w2Var.b;
         cVar.l(org.telegram.messenger.k6.m(p5, cVar.getPaint().getFontMetricsInt(), false, null, 0), false);
-        w2Var.c(cd.L0(2131746015, null), false);
+        w2Var.c(dd.L0(2131746015, null), false);
         a3Var.addView(w2Var, w7.b6.d(-1, -2.0f, 55, 0.0f, 17.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_close_white).mutate());
@@ -63,11 +63,11 @@ public final class g4 extends FrameLayout {
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
         frameLayout.addView(imageView2, w7.b6.d(28, 28.0f, 85, 0.0f, 0.0f, 12.0f, 16.0f));
         FrameLayout frameLayout2 = new FrameLayout(activity);
-        frameLayout2.setBackground(org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(22.0f), i0.b.o(-16777216, zs.G1)));
+        frameLayout2.setBackground(org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(22.0f), i0.b.o(-16777216, at.G1)));
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 18.0f);
         textView.setTextColor(1694498815);
-        textView.setText(cd.L0(2131746272, null));
+        textView.setText(dd.L0(2131746272, null));
         frameLayout2.addView(textView, w7.b6.d(-2, -2.0f, 19, 24.0f, 0.0f, 24.0f, 0.0f));
         ImageView imageView3 = new ImageView(activity);
         imageView3.setImageResource(R.drawable.input_attach);

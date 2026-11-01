@@ -4,9 +4,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.view.WindowManager;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class r2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final class r2 extends AnimatorListenerAdapter {
                     }
                 }
                 if (z2Var.K0) {
-                    zs.e().k(99, 512);
+                    at.e().k(99, 512);
                 }
                 z2Var.L0.e();
                 break;
@@ -77,7 +77,7 @@ public final class r2 extends AnimatorListenerAdapter {
                     z2Var.A0 = 0;
                     org.telegram.messenger.i0.g3(new lg.s(this, 22));
                 }
-                zs.e().k(99, 512);
+                at.e().k(99, 512);
                 break;
         }
     }

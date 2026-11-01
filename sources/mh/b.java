@@ -6,10 +6,10 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import w7.u;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b extends Drawable {
     public final a b;
@@ -20,7 +20,7 @@ public final class b extends Drawable {
     public int g;
     public int h;
     public final Paint a = new Paint(2);
-    public int i = zs.e4;
+    public int i = at.e4;
 
     public b(a aVar) {
         this.b = aVar;
@@ -48,7 +48,7 @@ public final class b extends Drawable {
         this.d.translate(f10, f10);
         float f11 = 1.0f / f7;
         this.d.scale(f11, f11);
-        this.b.s(this.d, zs.e4);
+        this.b.r(this.d, at.e4);
         Utilities.stackBlurBitmap(this.c, (int) f10);
         this.d.restore();
     }
@@ -60,7 +60,7 @@ public final class b extends Drawable {
         if (i10 == 255) {
             canvas.save();
             canvas.translate(this.g, this.h);
-            aVar.s(canvas, zs.e4);
+            aVar.r(canvas, at.e4);
             canvas.restore();
             return;
         }
@@ -71,8 +71,8 @@ public final class b extends Drawable {
         double d10 = d / ((1.0d - d) * 6.0d);
         double d11 = 1.0d + d10;
         double sqrt = ((-d11) + Math.sqrt((d11 * d11) - (((-d10) * 4.0d) * (-d)))) / ((-2.0d) * d10);
-        int b10 = u.b((int) (d10 * sqrt * 255.0d), 0, zs.e4);
-        int b11 = u.b((int) (sqrt * 255.0d), 0, zs.e4);
+        int b10 = u.b((int) (d10 * sqrt * 255.0d), 0, at.e4);
+        int b11 = u.b((int) (sqrt * 255.0d), 0, at.e4);
         if (b11 > 0 && this.c != null) {
             Paint paint = this.a;
             paint.setAlpha(b11);
@@ -88,7 +88,7 @@ public final class b extends Drawable {
         if (b10 > 0) {
             canvas.save();
             canvas.translate(this.g, this.h);
-            aVar.s(canvas, b10);
+            aVar.r(canvas, b10);
             canvas.restore();
         }
     }

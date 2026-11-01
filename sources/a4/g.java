@@ -15,11 +15,11 @@ import e2.l0;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class g {
     public final /* synthetic */ int a;
@@ -646,7 +646,7 @@ public final class g {
                 int min = Math.min(i10, 8 - this.e);
                 byte[] bArr = (byte[]) this.b;
                 int i12 = i11 + 1;
-                int i13 = ((bArr[i11] & 255) >> this.e) & (zs.e4 >> (8 - min));
+                int i13 = ((bArr[i11] & 255) >> this.e) & (at.e4 >> (8 - min));
                 while (min < i10) {
                     i13 |= (bArr[i12] & 255) << min;
                     min += 8;
@@ -701,7 +701,7 @@ public final class g {
         if (i16 == 0) {
             return;
         }
-        byte b12 = (byte) (bArr[i11] & (zs.e4 >> i16));
+        byte b12 = (byte) (bArr[i11] & (at.e4 >> i16));
         bArr[i11] = b12;
         int i17 = this.d;
         if (i17 + i16 > 8) {

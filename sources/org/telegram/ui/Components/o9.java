@@ -13,9 +13,9 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class o9 extends FrameLayout implements org.telegram.messenger.us, org.telegram.ui.ActionBar.k6 {
+public final class o9 extends FrameLayout implements org.telegram.messenger.vs, org.telegram.ui.ActionBar.k6 {
     public boolean D;
     public int E;
     public int F;
@@ -23,7 +23,7 @@ public final class o9 extends FrameLayout implements org.telegram.messenger.us, 
     public TextView b;
     public jg.l0 c;
     public jg.l0 d;
-    public fi0 e;
+    public gi0 e;
     public ScrollView f;
     public AnimatorSet h;
     public TLRPC.TL_help_appUpdate n;
@@ -59,9 +59,9 @@ public final class o9 extends FrameLayout implements org.telegram.messenger.us, 
         this.h.start();
     }
 
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == org.telegram.messenger.zs.Y1) {
+        if (i10 == org.telegram.messenger.at.Y1) {
             String str = (String) objArr[0];
             String str2 = this.r;
             if (str2 == null || !str2.equals(str)) {
@@ -71,7 +71,7 @@ public final class o9 extends FrameLayout implements org.telegram.messenger.us, 
             org.telegram.messenger.w0.a.v((Activity) getContext(), this.n.document);
             return;
         }
-        if (i10 == org.telegram.messenger.zs.Z1) {
+        if (i10 == org.telegram.messenger.at.Z1) {
             String str3 = (String) objArr[0];
             String str4 = this.r;
             if (str4 == null || !str4.equals(str3)) {
@@ -80,7 +80,7 @@ public final class o9 extends FrameLayout implements org.telegram.messenger.us, 
             a(false);
             return;
         }
-        if (i10 == org.telegram.messenger.zs.X1) {
+        if (i10 == org.telegram.messenger.at.X1) {
             String str5 = (String) objArr[0];
             String str6 = this.r;
             if (str6 == null || !str6.equals(str5)) {
@@ -106,9 +106,9 @@ public final class o9 extends FrameLayout implements org.telegram.messenger.us, 
     public void setVisibility(int i10) {
         super.setVisibility(i10);
         if (i10 == 8) {
-            org.telegram.messenger.zs.f(this.s).n(this, org.telegram.messenger.zs.Y1);
-            org.telegram.messenger.zs.f(this.s).n(this, org.telegram.messenger.zs.Z1);
-            org.telegram.messenger.zs.f(this.s).n(this, org.telegram.messenger.zs.X1);
+            org.telegram.messenger.at.f(this.s).n(this, org.telegram.messenger.at.Y1);
+            org.telegram.messenger.at.f(this.s).n(this, org.telegram.messenger.at.Z1);
+            org.telegram.messenger.at.f(this.s).n(this, org.telegram.messenger.at.X1);
         }
     }
 

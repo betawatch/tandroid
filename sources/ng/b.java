@@ -22,15 +22,15 @@ import og.x;
 import og.y;
 import og.z;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.i0;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.is;
 import org.telegram.messenger.k6;
 import org.telegram.messenger.u1;
-import org.telegram.messenger.vp;
 import org.telegram.messenger.w3;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -46,15 +46,15 @@ import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import rh.r7;
 import s4.c1;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b extends hg.c {
     public final p6 d;
-    public tk0 f;
+    public uk0 f;
     public m0 h;
     public m0 n;
     public s r;
@@ -66,11 +66,11 @@ public final class b extends hg.c {
     public b(p6 p6Var) {
         this.d = p6Var;
         l lVar = new l(this, 21);
-        hs a02 = hs.a0(d20.s0);
+        is a02 = is.a0(e20.s0);
         a02.a.c(new u(25, a02, lVar));
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 2 || i10 == 11 || i10 == 8 || i10 == 10 || i10 == 15 || i10 == 12 || i10 == 17 || i10 == 18;
@@ -79,7 +79,7 @@ public final class b extends hg.c {
     public final int F(TLRPC.Chat chat) {
         Integer num;
         int i10;
-        TLRPC.ChatFull M0 = vp.r1(d20.s0).M0(chat.id);
+        TLRPC.ChatFull M0 = wp.r1(e20.s0).M0(chat.id);
         if (M0 != null && (i10 = M0.participants_count) > 0) {
             return i10;
         }
@@ -131,21 +131,21 @@ public final class b extends hg.c {
             boolean z11 = eVar.s == i12;
             eVar.s = i12;
             if (i12 == 0) {
-                cVar.k(cd.L0(2131753541, null));
-                eVar.setSubtitle(cd.L0(2131753167, null));
+                cVar.k(dd.L0(2131753541, null));
+                eVar.setSubtitle(dd.L0(2131753167, null));
                 a7.Y(u5Var, t6.r5, p6Var);
                 r8Var.g(16);
                 r8Var.i(-15292942, -15630089);
                 eVar.setDivider(true);
                 a7.a0(eVar, eVar.getContext(), R.drawable.greydivider_bottom, t6.b7);
             } else if (i12 == 1) {
-                cVar.k(cd.L0(2131753593, null));
+                cVar.k(dd.L0(2131753593, null));
                 if (i13 == 1 && user != null) {
-                    eVar.setSubtitle(eVar.e(k6.m(h20.p(user), u5Var.getPaint().getFontMetricsInt(), false, null, 0)));
+                    eVar.setSubtitle(eVar.e(k6.m(i20.p(user), u5Var.getPaint().getFontMetricsInt(), false, null, 0)));
                 } else if (i13 > 0) {
-                    eVar.setSubtitle(eVar.e(cd.G(i13, "Recipient", new Object[0])));
+                    eVar.setSubtitle(eVar.e(dd.G(i13, "Recipient", new Object[0])));
                 } else {
-                    eVar.setSubtitle(eVar.e(cd.L0(2131753285, null)));
+                    eVar.setSubtitle(eVar.e(dd.L0(2131753285, null)));
                 }
                 a7.Y(u5Var, t6.n5, p6Var);
                 r8Var.g(6);
@@ -153,13 +153,13 @@ public final class b extends hg.c {
                 eVar.setDivider(false);
                 a7.a0(eVar, eVar.getContext(), R.drawable.greydivider_top, t6.b7);
             } else if (i12 == 2) {
-                cVar.k(cd.L0(2131753332, null));
+                cVar.k(dd.L0(2131753332, null));
                 if (i13 == 1 && user != null) {
-                    eVar.setSubtitle(eVar.e(k6.m(h20.p(user), u5Var.getPaint().getFontMetricsInt(), false, null, 0)));
+                    eVar.setSubtitle(eVar.e(k6.m(i20.p(user), u5Var.getPaint().getFontMetricsInt(), false, null, 0)));
                 } else if (i13 > 0) {
-                    eVar.setSubtitle(eVar.e(cd.G(i13, "Recipient", new Object[0])));
+                    eVar.setSubtitle(eVar.e(dd.G(i13, "Recipient", new Object[0])));
                 } else {
-                    eVar.setSubtitle(eVar.e(cd.L0(2131753167, null)));
+                    eVar.setSubtitle(eVar.e(dd.L0(2131753167, null)));
                 }
                 a7.Y(u5Var, t6.n5, p6Var);
                 r8Var.g(25);
@@ -167,8 +167,8 @@ public final class b extends hg.c {
                 eVar.setDivider(true);
                 a7.a0(eVar, eVar.getContext(), R.drawable.greydivider_bottom, t6.b7);
             } else if (i12 == 3) {
-                cVar.k(p8.b(cd.L0(2131753257, null)));
-                eVar.setSubtitle(cd.L0(2131753167, null));
+                cVar.k(p8.b(dd.L0(2131753257, null)));
+                eVar.setSubtitle(dd.L0(2131753167, null));
                 a7.Y(u5Var, t6.r5, p6Var);
                 r8Var.g(26);
                 r8Var.i(-146917, -625593);
@@ -211,10 +211,10 @@ public final class b extends hg.c {
                     TLRPC.Chat chat = aVar.e;
                     hVar.f(chat, aVar.i, aVar.g, F(chat));
                 } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
-                    TLRPC.Chat L0 = vp.r1(d20.s0).L0(Long.valueOf(inputPeer.chat_id));
+                    TLRPC.Chat L0 = wp.r1(e20.s0).L0(Long.valueOf(inputPeer.chat_id));
                     hVar.f(L0, aVar.i, aVar.g, F(L0));
                 } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
-                    TLRPC.Chat L02 = vp.r1(d20.s0).L0(Long.valueOf(inputPeer.channel_id));
+                    TLRPC.Chat L02 = wp.r1(e20.s0).L0(Long.valueOf(inputPeer.channel_id));
                     hVar.f(L02, aVar.i, aVar.g, F(L02));
                 }
                 hVar.setChatDeleteListener(this.n);
@@ -233,29 +233,29 @@ public final class b extends hg.c {
                 wVar.s = i16;
                 boolean V = w3.V(chat2);
                 if (i16 == 0) {
-                    cVar2.k(cd.a0(null, null, V ? 2131753598 : 2131753599, new Object[0]));
+                    cVar2.k(dd.a0(null, null, V ? 2131753598 : 2131753599, new Object[0]));
                 } else if (i16 == 1) {
-                    cVar2.k(cd.a0(null, null, V ? 2131753336 : 2131753337, new Object[0]));
+                    cVar2.k(dd.a0(null, null, V ? 2131753336 : 2131753337, new Object[0]));
                 }
                 wVar.f.a(z12, false);
                 wVar.setDivider(z13);
                 a7.Y(wVar.e, t6.n5, wVar.a);
                 if (list2.size() == 0) {
-                    wVar.setSubtitle(wVar.e(cd.L0(2131753522, null)));
+                    wVar.setSubtitle(wVar.e(dd.L0(2131753522, null)));
                     break;
                 } else if (list2.size() <= 3) {
                     if (list2.size() == 1) {
-                        wVar.setSubtitle(wVar.e(cd.a0("BoostingFromAllCountries1", null, 2131753521, ((TLRPC.TL_help_country) list2.get(0)).default_name)));
+                        wVar.setSubtitle(wVar.e(dd.a0("BoostingFromAllCountries1", null, 2131753521, ((TLRPC.TL_help_country) list2.get(0)).default_name)));
                         break;
                     } else if (list2.size() == 2) {
-                        wVar.setSubtitle(wVar.e(cd.a0("BoostingFromAllCountries2", null, 2131753520, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name)));
+                        wVar.setSubtitle(wVar.e(dd.a0("BoostingFromAllCountries2", null, 2131753520, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name)));
                         break;
                     } else {
-                        wVar.setSubtitle(wVar.e(cd.a0("BoostingFromAllCountries3", null, 2131753519, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name, ((TLRPC.TL_help_country) list2.get(2)).default_name)));
+                        wVar.setSubtitle(wVar.e(dd.a0("BoostingFromAllCountries3", null, 2131753519, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name, ((TLRPC.TL_help_country) list2.get(2)).default_name)));
                         break;
                     }
                 } else {
-                    wVar.setSubtitle(wVar.e(cd.G(list2.size(), "BoostingFromCountriesCount", new Object[0])));
+                    wVar.setSubtitle(wVar.e(dd.G(list2.size(), "BoostingFromCountriesCount", new Object[0])));
                     break;
                 }
             case 12:
@@ -270,9 +270,9 @@ public final class b extends hg.c {
                 og.c cVar3 = jVar.d;
                 jVar.w = tLObject;
                 if (i17 >= 12) {
-                    cVar3.k(cd.G(1, "Years", new Object[0]));
+                    cVar3.k(dd.G(1, "Years", new Object[0]));
                 } else {
-                    cVar3.k(cd.G(i17, "Months", new Object[0]));
+                    cVar3.k(dd.G(i17, "Months", new Object[0]));
                 }
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(u1.i().f(i18 > 0 ? j10 / i18 : j10, charSequence.toString()));
@@ -293,7 +293,7 @@ public final class b extends hg.c {
                 zVar.setText(aVar.c);
                 int i20 = aVar.i;
                 f6 f6Var = zVar.r;
-                String G = i20 > 0 ? cd.G(i20, "BoostingBoostsCountTitle", Integer.valueOf(i20)) : "";
+                String G = i20 > 0 ? dd.G(i20, "BoostingBoostsCountTitle", Integer.valueOf(i20)) : "";
                 f6Var.a();
                 f6Var.c(G, true, true);
                 break;
@@ -334,8 +334,8 @@ public final class b extends hg.c {
                     f6Var3.c(yVar.n, z19, true);
                     textView.setText("");
                 } else {
-                    f6Var2.c(cd.H(' ', "GiveawayStars", (int) tL_starsGiveawayOption.stars), false, true);
-                    f6Var3.c(cd.H(',', "BoostingStarOptionPerUser", (int) j11), z19, true);
+                    f6Var2.c(dd.H(' ', "GiveawayStars", (int) tL_starsGiveawayOption.stars), false, true);
+                    f6Var3.c(dd.H(',', "BoostingStarOptionPerUser", (int) j11), z19, true);
                     textView.setText(u1.i().f(tL_starsGiveawayOption.amount, tL_starsGiveawayOption.currency));
                 }
                 int i22 = i21 + 1;
@@ -415,7 +415,7 @@ public final class b extends hg.c {
                 break;
             case 18:
                 r7 r7Var = new r7(context);
-                String L0 = cd.L0(2131747852, null);
+                String L0 = dd.L0(2131747852, null);
                 boolean z10 = r7Var.c == -1;
                 r7Var.c = -1;
                 f6 f6Var = r7Var.a;

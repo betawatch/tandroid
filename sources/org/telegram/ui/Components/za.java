@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.AnimatorSet;
 import java.util.LinkedList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class za implements o1.f {
     public final /* synthetic */ int a;
@@ -66,26 +66,26 @@ public final /* synthetic */ class za implements o1.f {
                 }
                 break;
             default:
-                xh.h3 h3Var = (xh.h3) this.b;
+                xh.i3 i3Var = (xh.i3) this.b;
                 Runnable runnable = (Runnable) this.c;
-                if (jVar == h3Var.G) {
-                    h3Var.G = null;
+                if (jVar == i3Var.G) {
+                    i3Var.G = null;
                     if (runnable != null) {
                         runnable.run();
                     }
-                    Runnable runnable2 = h3Var.E;
+                    Runnable runnable2 = i3Var.E;
                     if (runnable2 != null) {
                         runnable2.run();
                     }
-                    float f11 = h3Var.h;
+                    float f11 = i3Var.h;
                     if (f11 != -1.0f) {
-                        boolean z11 = h3Var.s;
-                        h3Var.s = true;
-                        h3Var.setOffsetY(f11);
-                        h3Var.h = -1.0f;
-                        h3Var.s = z11;
+                        boolean z11 = i3Var.s;
+                        i3Var.s = true;
+                        i3Var.setOffsetY(f11);
+                        i3Var.h = -1.0f;
+                        i3Var.s = z11;
                     }
-                    h3Var.n = -2.14748365E9f;
+                    i3Var.n = -2.14748365E9f;
                     break;
                 }
                 break;

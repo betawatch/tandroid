@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r01 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,18 +52,18 @@ public final /* synthetic */ class r01 implements Runnable {
                 }
                 break;
             case 2:
-                uq0 uq0Var = secretMediaViewer.D;
-                if (uq0Var != null) {
-                    long S = uq0Var.S();
+                sq0 sq0Var = secretMediaViewer.D;
+                if (sq0Var != null) {
+                    long S = sq0Var.S();
                     long U = secretMediaViewer.D.U();
                     if (U == -9223372036854775807L) {
                         S = 0;
                         U = 0;
                     }
                     if (U > 0) {
-                        org.telegram.ui.Components.w61 w61Var = secretMediaViewer.O;
-                        if (!w61Var.f) {
-                            w61Var.h(false, S / U);
+                        org.telegram.ui.Components.x61 x61Var = secretMediaViewer.O;
+                        if (!x61Var.f) {
+                            x61Var.h(false, S / U);
                             secretMediaViewer.P.invalidate();
                         }
                     }
@@ -71,9 +71,9 @@ public final /* synthetic */ class r01 implements Runnable {
                     Arrays.fill(iArr, 0);
                     int[] iArr2 = secretMediaViewer.i1;
                     Arrays.fill(iArr2, 0);
-                    uq0 uq0Var2 = secretMediaViewer.D;
-                    if (uq0Var2 != null) {
-                        long max = Math.max(0L, uq0Var2.S()) / 1000;
+                    sq0 sq0Var2 = secretMediaViewer.D;
+                    if (sq0Var2 != null) {
+                        long max = Math.max(0L, sq0Var2.S()) / 1000;
                         long max2 = Math.max(0L, secretMediaViewer.D.U()) / 1000;
                         iArr[0] = (int) (max / 60);
                         iArr[1] = (int) (max % 60);
@@ -97,9 +97,9 @@ public final /* synthetic */ class r01 implements Runnable {
                 secretMediaViewer.n(false, true);
                 break;
             default:
-                org.telegram.messenger.kc kcVar = secretMediaViewer.g0;
-                if (kcVar != null) {
-                    kcVar.a();
+                org.telegram.messenger.lc lcVar = secretMediaViewer.g0;
+                if (lcVar != null) {
+                    lcVar.a();
                     secretMediaViewer.g0 = null;
                 }
                 secretMediaViewer.h.w0(null);
@@ -115,7 +115,7 @@ public final /* synthetic */ class r01 implements Runnable {
         }
     }
 
-    public /* synthetic */ r01(SecretMediaViewer secretMediaViewer, gs0 gs0Var, int i10) {
+    public /* synthetic */ r01(SecretMediaViewer secretMediaViewer, fs0 fs0Var, int i10) {
         this.a = i10;
         this.b = secretMediaViewer;
     }

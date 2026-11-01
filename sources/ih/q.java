@@ -1,11 +1,11 @@
 package ih;
 
 import java.util.ArrayList;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class q {
     public final int a;
@@ -13,19 +13,19 @@ public final class q {
     public final int c;
     public final byte[] d;
     public final gg.c e;
-    public final q20 f;
+    public final r20 f;
     public String g;
     public boolean h;
     public boolean i;
     public final ArrayList j = new ArrayList();
 
-    public q(int i10, TLRPC.InputPeer inputPeer, int i11, byte[] bArr, gg.c cVar, q20 q20Var) {
+    public q(int i10, TLRPC.InputPeer inputPeer, int i11, byte[] bArr, gg.c cVar, r20 r20Var) {
         this.a = i10;
         this.b = inputPeer;
         this.c = i11;
         this.d = bArr;
         this.e = cVar;
-        this.f = q20Var;
+        this.f = r20Var;
     }
 
     public final void a() {

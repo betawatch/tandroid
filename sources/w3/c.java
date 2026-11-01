@@ -21,14 +21,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.TLObject;
 import u2.z0;
 import v7.c8;
 import v7.t6;
 import vh.w3;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -99,16 +99,16 @@ public abstract class c {
 
     public static int d(x xVar) {
         int A = xVar.A();
-        int i10 = A & zs.L1;
+        int i10 = A & at.L1;
         while ((A & 128) == 128) {
             A = xVar.A();
-            i10 = (i10 << 7) | (A & zs.L1);
+            i10 = (i10 << 7) | (A & at.L1);
         }
         return i10;
     }
 
     public static int e(int i10) {
-        return (i10 >> 24) & zs.e4;
+        return (i10 >> 24) & at.e4;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x008a, code lost:
@@ -258,7 +258,7 @@ public abstract class c {
                             } else {
                                 int A = xVar.A();
                                 i12 = A & 15;
-                                i13 = (A & zs.P3) >> 4;
+                                i13 = (A & at.P3) >> 4;
                             }
                             if (xVar.A() == 1) {
                                 num2 = num3;
@@ -667,10 +667,10 @@ public abstract class c {
                                                                     byte[] bArr3 = bArr2;
                                                                     int i51 = i46;
                                                                     int c11 = c8.c(bArr2[i50], bArr3[i50 + 1], bArr3[i50 + 2], bArr3[i50 + 3]);
-                                                                    int i52 = (c11 >> 16) & zs.e4;
-                                                                    int i53 = ((c11 >> 8) & zs.e4) - 128;
-                                                                    int i54 = (c11 & zs.e4) - 128;
-                                                                    arrayList7.add(String.format("%06x", Integer.valueOf(l0.i(((i54 * 17790) / 10000) + i52, 0, zs.e4) | (l0.i((i52 - ((i54 * 3455) / 10000)) - ((i53 * 7169) / 10000), 0, zs.e4) << 8) | (l0.i(((i53 * 14075) / 10000) + i52, 0, zs.e4) << 16))));
+                                                                    int i52 = (c11 >> 16) & at.e4;
+                                                                    int i53 = ((c11 >> 8) & at.e4) - 128;
+                                                                    int i54 = (c11 & at.e4) - 128;
+                                                                    arrayList7.add(String.format("%06x", Integer.valueOf(l0.i(((i54 * 17790) / 10000) + i52, 0, at.e4) | (l0.i((i52 - ((i54 * 3455) / 10000)) - ((i53 * 7169) / 10000), 0, at.e4) << 8) | (l0.i(((i53 * 14075) / 10000) + i52, 0, at.e4) << 16))));
                                                                     i50 += 4;
                                                                     bArr2 = bArr3;
                                                                     i47 = i47;
@@ -839,7 +839,7 @@ public abstract class c {
                     } else {
                         i11 = i40;
                     }
-                    i12 = (m12 == 0 && m13 == -65536 && (m14 == 65536 || m14 == -65536) && m15 == 0) ? zs.t4 : ((m12 == -65536 || m12 == 65536) && m13 == 0 && m14 == 0 && m15 == -65536) ? zs.K2 : 0;
+                    i12 = (m12 == 0 && m13 == -65536 && (m14 == 65536 || m14 == -65536) && m15 == 0) ? at.t4 : ((m12 == -65536 || m12 == 65536) && m13 == 0 && m14 == 0 && m15 == -65536) ? at.K2 : 0;
                     xVar7.O(16);
                     short x102 = xVar7.x();
                     xVar7.O(2);
@@ -907,7 +907,7 @@ public abstract class c {
                         x xVar12 = e18.c;
                         sVar.e = xVar12;
                         xVar12.N(12);
-                        sVar.b = xVar12.E() & zs.e4;
+                        sVar.b = xVar12.E() & at.e4;
                         sVar.a = xVar12.E();
                         bVar = sVar;
                     }
@@ -1652,7 +1652,7 @@ public abstract class c {
     
         r15 = r1.m() + r13;
         r13 = r1.m();
-        r0 = (r13 >> 24) & org.telegram.messenger.zs.e4;
+        r0 = (r13 >> 24) & org.telegram.messenger.at.e4;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0069, code lost:
     
@@ -1949,7 +1949,7 @@ public abstract class c {
                             }
                         }
                         if (i18 == 12) {
-                            i11 = zs.P3;
+                            i11 = at.P3;
                         } else if (i18 == 13) {
                             i11 = 120;
                         } else if (i18 != 21) {
@@ -2394,7 +2394,7 @@ public abstract class c {
                                     i44 = (xVar.A() >> 5) & 7;
                                     int A3 = xVar.A() & 63;
                                     int A4 = xVar.A();
-                                    int i92 = (A4 >> 1) & zs.L1;
+                                    int i92 = (A4 >> 1) & at.L1;
                                     str6 = (A4 & 1) != 0 ? "H" : "L";
                                     i45 = xVar.A();
                                     xVar.O(A3);

@@ -15,10 +15,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.ArrayList;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
@@ -27,11 +27,11 @@ import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.ep;
 import org.telegram.ui.Components.fg;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.rx0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class e6 extends FrameLayout implements qx0, fe.e {
+public class e6 extends FrameLayout implements rx0, fe.e {
     public final fg D;
     public Integer E;
     public final fe.b a;
@@ -70,7 +70,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
         final int i12 = 0;
         if (onClickListener != null) {
             int i13 = i10 == 1 ? 92 : 58;
-            boolean z10 = cd.X;
+            boolean z10 = dd.X;
             addView(bVar, w7.b6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? i13 : 54.0f, 0.0f, !z10 ? i13 : 54.0f, 0.0f));
             ImageView imageView = new ImageView(context);
             this.h = imageView;
@@ -81,7 +81,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
             int i14 = org.telegram.ui.ActionBar.t6.m6;
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             org.telegram.ui.ActionBar.a7.t(imageView, i14, p6Var, mode);
-            addView(imageView, w7.b6.d(48, 48.0f, (cd.X ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
+            addView(imageView, w7.b6.d(48, 48.0f, (dd.X ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
             ImageView imageView2 = new ImageView(context);
             this.f = imageView2;
             imageView2.setFocusable(false);
@@ -94,25 +94,25 @@ public class e6 extends FrameLayout implements qx0, fe.e {
             imageView2.setImageResource(R.drawable.poll_remove);
             imageView2.setOnClickListener(onClickListener);
             org.telegram.ui.ActionBar.a7.t(imageView2, i14, p6Var, mode);
-            imageView2.setContentDescription(cd.L0(2131751599, null));
-            boolean z11 = cd.X;
+            imageView2.setContentDescription(dd.L0(2131751599, null));
+            boolean z11 = dd.X;
             addView(imageView2, w7.b6.d(48, 50.0f, (z11 ? 3 : 5) | 48, z11 ? 3.0f : 0.0f, 0.0f, z11 ? 0.0f : 3.0f, 0.0f));
             org.telegram.ui.ActionBar.u5 u5Var = new org.telegram.ui.ActionBar.u5(context);
             this.n = u5Var;
             u5Var.setTextSize(13);
-            this.n.setGravity((cd.X ? 3 : 5) | 48);
+            this.n.setGravity((dd.X ? 3 : 5) | 48);
             View view = this.n;
-            boolean z12 = cd.X;
+            boolean z12 = dd.X;
             addView(view, w7.b6.d(48, 24.0f, (z12 ? 3 : 5) | 48, z12 ? 20.0f : 0.0f, 43.0f, z12 ? 0.0f : 20.0f, 0.0f));
             ep epVar = new ep(21, context, p6Var);
             this.r = epVar;
             epVar.b(-1, i14, org.telegram.ui.ActionBar.t6.k7);
-            epVar.setContentDescription(cd.L0(2131754796, null));
+            epVar.setContentDescription(dd.L0(2131754796, null));
             epVar.setDrawUnchecked(true);
             epVar.a(true, false);
             epVar.setAlpha(0.0f);
             epVar.setDrawBackgroundAsArc(8);
-            addView(epVar, w7.b6.d(48, 48.0f, (cd.X ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
+            addView(epVar, w7.b6.d(48, 48.0f, (dd.X ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
             epVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.d6
                 public final /* synthetic */ e6 b;
 
@@ -139,7 +139,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
             });
         } else {
             int i16 = i10 == 1 ? 70 : 19;
-            boolean z13 = cd.X;
+            boolean z13 = dd.X;
             addView(bVar, w7.b6.d(-1, -2.0f, (z13 ? 5 : 3) | 16, z13 ? i16 : 19.0f, 0.0f, z13 ? 19.0f : i16, 0.0f));
         }
         if (i10 == 1) {
@@ -151,7 +151,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
             fgVar.setPadding(L, L, L, L);
             fgVar.setVisibility(8);
             int i17 = this.f == null ? 3 : 38;
-            boolean z14 = cd.X;
+            boolean z14 = dd.X;
             addView(fgVar, w7.b6.d(48, 48.0f, z14 ? 3 : 5, z14 ? i17 : 0.0f, 0.0f, z14 ? 0.0f : i17, 0.0f));
             int i18 = org.telegram.ui.ActionBar.t6.Ji;
             y h03 = org.telegram.ui.ActionBar.t6.h0(org.telegram.ui.ActionBar.t6.w0(i18, p6Var), 1, -1);
@@ -182,7 +182,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
                     }
                 }
             });
-            fgVar.setContentDescription(cd.L0(2131751197, null));
+            fgVar.setContentDescription(dd.L0(2131751197, null));
         }
     }
 
@@ -200,18 +200,18 @@ public class e6 extends FrameLayout implements qx0, fe.e {
         org.telegram.ui.ActionBar.a7.R(eVar2, org.telegram.ui.ActionBar.t6.h0(org.telegram.ui.ActionBar.t6.w0(i10, p6Var), 1, -1), null, org.telegram.ui.ActionBar.a7.N(i10), p6Var);
         w7.e6.a(this.e);
         ih.e eVar3 = this.e;
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         addView(eVar3, w7.b6.d(48, 50.0f, (z10 ? 3 : 5) | 48, z10 ? 4.0f : 0.0f, 0.0f, z10 ? 0.0f : 4.0f, 0.0f));
         fg fgVar = this.D;
         if (fgVar != null) {
-            boolean z11 = cd.X;
+            boolean z11 = dd.X;
             fgVar.setLayoutParams(w7.b6.d(48, 48.0f, (z11 ? 3 : 5) | 48, z11 ? 44 : 0.0f, 1.0f, z11 ? 0.0f : 44, 0.0f));
         }
         ih.b bVar = this.d;
         if (bVar != null) {
-            float f7 = (cd.X ? ((ViewGroup.MarginLayoutParams) bVar.getLayoutParams()).rightMargin : ((ViewGroup.MarginLayoutParams) bVar.getLayoutParams()).leftMargin) / org.telegram.messenger.i0.p;
+            float f7 = (dd.X ? ((ViewGroup.MarginLayoutParams) bVar.getLayoutParams()).rightMargin : ((ViewGroup.MarginLayoutParams) bVar.getLayoutParams()).leftMargin) / org.telegram.messenger.i0.p;
             int i11 = (fgVar != null ? 70 : 19) + 24;
-            boolean z12 = cd.X;
+            boolean z12 = dd.X;
             int i12 = (z12 ? 5 : 3) | 16;
             float f10 = z12 ? i11 : f7;
             if (!z12) {
@@ -231,13 +231,13 @@ public class e6 extends FrameLayout implements qx0, fe.e {
         org.telegram.ui.ActionBar.u5 u5Var = new org.telegram.ui.ActionBar.u5(getContext());
         this.n = u5Var;
         u5Var.setTextSize(13);
-        this.n.setGravity((cd.X ? 3 : 5) | 48);
+        this.n.setGravity((dd.X ? 3 : 5) | 48);
         org.telegram.ui.ActionBar.u5 u5Var2 = this.n;
-        boolean z10 = cd.X;
+        boolean z10 = dd.X;
         addView(u5Var2, w7.b6.d(48, 24.0f, (z10 ? 3 : 5) | 48, z10 ? 20.0f : 0.0f, 17.0f, z10 ? 0.0f : 20.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.qx0
+    @Override // org.telegram.ui.Components.rx0
     public final void d(TextWatcher textWatcher) {
         this.d.addTextChangedListener(textWatcher);
     }
@@ -254,12 +254,12 @@ public class e6 extends FrameLayout implements qx0, fe.e {
         return this.r;
     }
 
-    @Override // org.telegram.ui.Components.qx0
+    @Override // org.telegram.ui.Components.rx0
     public EditTextBoldCursor getEditField() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.Components.qx0
+    @Override // org.telegram.ui.Components.rx0
     public Editable getEditText() {
         return this.d.getText();
     }
@@ -268,7 +268,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
         return this.D;
     }
 
-    @Override // org.telegram.ui.Components.qx0
+    @Override // org.telegram.ui.Components.rx0
     public CharSequence getFieldText() {
         ih.b bVar = this.d;
         if (bVar.length() > 0) {
@@ -277,7 +277,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.qx0
+    @Override // org.telegram.ui.Components.rx0
     public org.telegram.ui.ActionBar.k2 getParentFragment() {
         return null;
     }
@@ -362,7 +362,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
         float L;
         int i10;
         if (this.w && e()) {
-            boolean z10 = cd.X;
+            boolean z10 = dd.X;
             ImageView imageView = this.h;
             if (z10) {
                 L = 0.0f;
@@ -372,7 +372,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
             float f7 = L;
             float measuredHeight = getMeasuredHeight() - 1;
             int measuredWidth = getMeasuredWidth();
-            if (cd.X) {
+            if (dd.X) {
                 i10 = org.telegram.messenger.i0.L(imageView != null ? 58.0f : 20.0f);
             } else {
                 i10 = 0;
@@ -428,7 +428,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
             }
             i12++;
         }
-        bVar.measure(z20.c(this.E != null ? r9.intValue() : this.n == null ? 42 : imageView == null ? 70 : fgVar != null ? zs.a2 : zs.G1, (size - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+        bVar.measure(a30.c(this.E != null ? r9.intValue() : this.n == null ? 42 : imageView == null ? 70 : fgVar != null ? at.a2 : at.G1, (size - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = bVar.getMeasuredHeight();
         setMeasuredDimension(size, Math.max(org.telegram.messenger.i0.L(50.0f), bVar.getMeasuredHeight()) + (this.w ? 1 : 0));
         org.telegram.ui.ActionBar.u5 u5Var2 = this.n;
@@ -442,7 +442,7 @@ public class e6 extends FrameLayout implements qx0, fe.e {
         this.b.a(z10, true);
     }
 
-    @Override // org.telegram.ui.Components.qx0
+    @Override // org.telegram.ui.Components.rx0
     public void setFieldText(CharSequence charSequence) {
         this.d.setText(charSequence);
     }

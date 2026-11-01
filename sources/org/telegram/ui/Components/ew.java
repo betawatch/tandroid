@@ -15,7 +15,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class ew implements Runnable {
     public final /* synthetic */ int a;
@@ -26,13 +26,13 @@ public final class ew implements Runnable {
         this.b = obj;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0091, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x008f, code lost:
     
-        if (r9 < 0) goto L35;
+        if (r12 < 0) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00b2, code lost:
     
-        if (r9 > 0) goto L35;
+        if (r12 > 0) goto L35;
      */
     /* JADX WARN: Type inference failed for: r0v62, types: [org.telegram.ui.Components.ml] */
     @Override // java.lang.Runnable
@@ -42,9 +42,8 @@ public final class ew implements Runnable {
     public final void run() {
         int L;
         int i10;
-        int i11 = 16;
-        final int i12 = 1;
-        final int i13 = 0;
+        final int i11 = 1;
+        final int i12 = 0;
         switch (this.a) {
             case 0:
                 vy vyVar = (vy) this.b;
@@ -71,7 +70,7 @@ public final class ew implements Runnable {
                     tzVar.setEnabled(true);
                     oz ozVar = tzVar.J;
                     if (ozVar != null) {
-                        ((org.telegram.ui.rx) ozVar).b(1.0f);
+                        ((org.telegram.ui.qx) ozVar).b(1.0f);
                         return;
                     }
                     return;
@@ -87,7 +86,7 @@ public final class ew implements Runnable {
                 TextureView textureView = ((x40) this.b).H0.p0;
                 if (textureView != null) {
                     try {
-                        org.telegram.messenger.i0.g3(new at(i11, this, textureView.getBitmap(org.telegram.messenger.i0.L(56.0f), org.telegram.messenger.i0.L(56.0f))));
+                        org.telegram.messenger.i0.g3(new at(16, this, textureView.getBitmap(org.telegram.messenger.i0.L(56.0f), org.telegram.messenger.i0.L(56.0f))));
                         return;
                     } catch (Exception e) {
                         org.telegram.messenger.f8.g(e, true);
@@ -120,65 +119,65 @@ public final class ew implements Runnable {
                 ((zc0) this.b).e();
                 return;
             case 7:
-                mh0 mh0Var = (mh0) this.b;
-                mh0Var.y = true;
-                ValueAnimator valueAnimator2 = mh0Var.z;
+                nh0 nh0Var = (nh0) this.b;
+                nh0Var.y = true;
+                ValueAnimator valueAnimator2 = nh0Var.z;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                mh0Var.x = 0.0f;
+                nh0Var.x = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                mh0Var.z = ofFloat;
-                ofFloat.addUpdateListener(mh0Var.b0);
-                mh0Var.z.setInterpolator(new LinearInterpolator());
-                mh0Var.z.setDuration(150L);
-                mh0Var.z.start();
+                nh0Var.z = ofFloat;
+                ofFloat.addUpdateListener(nh0Var.b0);
+                nh0Var.z.setInterpolator(new LinearInterpolator());
+                nh0Var.z.setDuration(150L);
+                nh0Var.z.start();
                 return;
             case 8:
-                tk0 tk0Var = (tk0) this.b;
-                m.c3 c3Var = tk0Var.f2;
-                int[] iArr = tk0Var.k2;
+                uk0 uk0Var = (uk0) this.b;
+                m.c3 c3Var = uk0Var.f2;
+                int[] iArr = uk0Var.k2;
                 org.telegram.ui.un unVar = (org.telegram.ui.un) c3Var.d;
                 iArr[0] = (int) unVar.L9;
                 iArr[1] = unVar.Ua;
-                if (tk0Var.h2) {
+                if (uk0Var.h2) {
                     L = -org.telegram.messenger.i0.L(12.0f);
-                    tk0Var.M0(0.0f, tk0Var.k2[0]);
+                    uk0Var.M0(0.0f, uk0Var.k2[0]);
                 } else {
                     L = org.telegram.messenger.i0.L(12.0f);
-                    tk0Var.M0(0.0f, tk0Var.getMeasuredHeight() - tk0Var.k2[1]);
+                    uk0Var.M0(0.0f, uk0Var.getMeasuredHeight() - uk0Var.k2[1]);
                 }
-                ((org.telegram.ui.un) tk0Var.f2.d).z0.scrollBy(0, L);
-                if (tk0Var.g2) {
-                    org.telegram.messenger.i0.g3(tk0Var.C2);
+                ((org.telegram.ui.un) uk0Var.f2.d).z0.scrollBy(0, L);
+                if (uk0Var.g2) {
+                    org.telegram.messenger.i0.g3(uk0Var.C2);
                     return;
                 }
                 return;
             case 9:
-                zj0 zj0Var = (zj0) this.b;
-                ew ewVar = zj0Var.i0;
-                if (zj0Var.n) {
+                ak0 ak0Var = (ak0) this.b;
+                ew ewVar = ak0Var.i0;
+                if (ak0Var.n) {
                     org.telegram.messenger.i0.r(ewVar);
                     org.telegram.messenger.i0.h3(ewVar, 4000L);
                     return;
                 } else {
-                    zj0Var.U = false;
-                    zj0Var.invalidate();
+                    ak0Var.U = false;
+                    ak0Var.invalidate();
                     return;
                 }
             case 10:
-                xk0 xk0Var = (xk0) this.b;
-                RecyclerView recyclerView = xk0Var.a;
+                yk0 yk0Var = (yk0) this.b;
+                RecyclerView recyclerView = yk0Var.a;
                 if (recyclerView == null) {
                     return;
                 }
-                if (xk0Var.g) {
-                    recyclerView.scrollBy(0, -xk0Var.i);
+                if (yk0Var.g) {
+                    recyclerView.scrollBy(0, -yk0Var.i);
                     org.telegram.messenger.i0.g3(this);
                     return;
                 } else {
-                    if (xk0Var.h) {
-                        recyclerView.scrollBy(0, xk0Var.i);
+                    if (yk0Var.h) {
+                        recyclerView.scrollBy(0, yk0Var.i);
                         org.telegram.messenger.i0.g3(this);
                         return;
                     }
@@ -199,9 +198,9 @@ public final class ew implements Runnable {
                     }
                     scrollSlidingTextTabStrip.H = false;
                     scrollSlidingTextTabStrip.setEnabled(true);
-                    xl0 xl0Var = scrollSlidingTextTabStrip.b;
-                    if (xl0Var != null) {
-                        xl0Var.E0(1.0f);
+                    yl0 yl0Var = scrollSlidingTextTabStrip.b;
+                    if (yl0Var != null) {
+                        yl0Var.E0(1.0f);
                         return;
                     }
                     return;
@@ -209,44 +208,44 @@ public final class ew implements Runnable {
                 return;
             case 12:
                 ShutterButton shutterButton = (ShutterButton) this.b;
-                eu0 eu0Var = shutterButton.e;
-                if (eu0Var != null) {
-                    final nl nlVar = (nl) eu0Var;
+                fu0 fu0Var = shutterButton.e;
+                if (fu0Var != null) {
+                    final nl nlVar = (nl) fu0Var;
                     ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = nlVar.e;
                     bi biVar = chatAttachAlertPhotoLayout.b;
                     wl wlVar = chatAttachAlertPhotoLayout.R;
-                    int i14 = biVar.K2;
+                    int i13 = biVar.K2;
                     org.telegram.ui.ActionBar.k2 k2Var = biVar.W1;
-                    if ((i14 == 2 || (k2Var instanceof org.telegram.ui.un)) && !chatAttachAlertPhotoLayout.s0 && !biVar.M1 && chatAttachAlertPhotoLayout.P != null && !biVar.x1) {
+                    if ((i13 == 2 || (k2Var instanceof org.telegram.ui.un)) && !chatAttachAlertPhotoLayout.s0 && !biVar.M1 && chatAttachAlertPhotoLayout.P != null && !biVar.x1) {
                         if (k2Var == null) {
                             k2Var = LaunchActivity.Q();
                         }
                         if (k2Var != null && k2Var.getParentActivity() != null) {
                             if (chatAttachAlertPhotoLayout.w0) {
-                                int i15 = 21;
+                                int i14 = 21;
                                 if (chatAttachAlertPhotoLayout.getContext().checkSelfPermission("android.permission.RECORD_AUDIO") == 0) {
-                                    for (int i16 = 0; i16 < 2; i16++) {
-                                        chatAttachAlertPhotoLayout.S[i16].animate().alpha(0.0f).translationX(org.telegram.messenger.i0.L(30.0f)).setDuration(150L).setInterpolator(gr.f).start();
+                                    for (int i15 = 0; i15 < 2; i15++) {
+                                        chatAttachAlertPhotoLayout.S[i15].animate().alpha(0.0f).translationX(org.telegram.messenger.i0.L(30.0f)).setDuration(150L).setInterpolator(gr.f).start();
                                     }
                                     ViewPropertyAnimator duration = chatAttachAlertPhotoLayout.r0.animate().alpha(0.0f).translationX(-org.telegram.messenger.i0.L(30.0f)).setDuration(150L);
                                     gr grVar = gr.f;
                                     duration.setInterpolator(grVar).start();
                                     chatAttachAlertPhotoLayout.q0.animate().alpha(0.0f).setDuration(150L).setInterpolator(grVar).start();
                                     org.telegram.ui.ActionBar.k2 k2Var2 = biVar.W1;
-                                    nlVar.a = org.telegram.messenger.i0.s0((k2Var2 instanceof org.telegram.ui.un) && ((org.telegram.ui.un) k2Var2).z());
+                                    nlVar.a = org.telegram.messenger.i0.s0((k2Var2 instanceof org.telegram.ui.un) && ((org.telegram.ui.un) k2Var2).A());
                                     org.telegram.messenger.i0.W3(wlVar, true);
                                     wlVar.setText(org.telegram.messenger.i0.g0(0, true, false));
                                     chatAttachAlertPhotoLayout.g0 = 0;
                                     chatAttachAlertPhotoLayout.h0 = new Runnable() { // from class: org.telegram.ui.Components.ml
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            switch (i13) {
+                                            switch (i12) {
                                                 case 0:
                                                     ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = nlVar.e;
                                                     if (chatAttachAlertPhotoLayout2.h0 != null) {
-                                                        int i17 = chatAttachAlertPhotoLayout2.g0 + 1;
-                                                        chatAttachAlertPhotoLayout2.g0 = i17;
-                                                        chatAttachAlertPhotoLayout2.R.setText(org.telegram.messenger.i0.g0(i17, true, false));
+                                                        int i16 = chatAttachAlertPhotoLayout2.g0 + 1;
+                                                        chatAttachAlertPhotoLayout2.g0 = i16;
+                                                        chatAttachAlertPhotoLayout2.R.setText(org.telegram.messenger.i0.g0(i16, true, false));
                                                         org.telegram.messenger.i0.h3(chatAttachAlertPhotoLayout2.h0, 1000L);
                                                         break;
                                                     }
@@ -258,16 +257,16 @@ public final class ew implements Runnable {
                                         }
                                     };
                                     org.telegram.messenger.i0.f2(k2Var.getParentActivity());
-                                    CameraController.getInstance().recordVideo(chatAttachAlertPhotoLayout.P.getCameraSessionObject(), nlVar.a, biVar.K2 != 0, new t(nlVar, i15), new Runnable() { // from class: org.telegram.ui.Components.ml
+                                    CameraController.getInstance().recordVideo(chatAttachAlertPhotoLayout.P.getCameraSessionObject(), nlVar.a, biVar.K2 != 0, new t(nlVar, i14), new Runnable() { // from class: org.telegram.ui.Components.ml
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            switch (i12) {
+                                            switch (i11) {
                                                 case 0:
                                                     ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = nlVar.e;
                                                     if (chatAttachAlertPhotoLayout2.h0 != null) {
-                                                        int i17 = chatAttachAlertPhotoLayout2.g0 + 1;
-                                                        chatAttachAlertPhotoLayout2.g0 = i17;
-                                                        chatAttachAlertPhotoLayout2.R.setText(org.telegram.messenger.i0.g0(i17, true, false));
+                                                        int i16 = chatAttachAlertPhotoLayout2.g0 + 1;
+                                                        chatAttachAlertPhotoLayout2.g0 = i16;
+                                                        chatAttachAlertPhotoLayout2.R.setText(org.telegram.messenger.i0.g0(i16, true, false));
                                                         org.telegram.messenger.i0.h3(chatAttachAlertPhotoLayout2.h0, 1000L);
                                                         break;
                                                     }
@@ -278,7 +277,7 @@ public final class ew implements Runnable {
                                             }
                                         }
                                     }, chatAttachAlertPhotoLayout.P);
-                                    chatAttachAlertPhotoLayout.k0.a(fu0.b);
+                                    chatAttachAlertPhotoLayout.k0.a(gu0.b);
                                     chatAttachAlertPhotoLayout.P.runHaptic();
                                     return;
                                 }
@@ -294,18 +293,18 @@ public final class ew implements Runnable {
                 }
                 return;
             case 13:
-                dw0 dw0Var = (dw0) this.b;
-                View view = dw0Var.s;
+                ew0 ew0Var = (ew0) this.b;
+                View view = ew0Var.s;
                 if (view == null) {
-                    dw0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
+                    ew0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
                     return;
                 }
                 if (view.getVisibility() != 0) {
-                    dw0Var.s.setVisibility(0);
-                    dw0Var.s.setAlpha(0.0f);
+                    ew0Var.s.setVisibility(0);
+                    ew0Var.s.setAlpha(0.0f);
                 }
-                dw0Var.s.animate().setListener(null).cancel();
-                dw0Var.s.animate().alpha(1.0f).setDuration(150L).start();
+                ew0Var.s.animate().setListener(null).cancel();
+                ew0Var.s.animate().alpha(1.0f).setDuration(150L).start();
                 return;
             case 14:
                 ((ThemeEditorView) this.b).a = false;
@@ -326,36 +325,36 @@ public final class ew implements Runnable {
                     return;
                 }
             case 15:
-                v71 v71Var = (v71) this.b;
-                if (v71Var.J) {
-                    float f11 = v71Var.f0 + ((SystemClock.elapsedRealtime() <= 17 ? r2 : 17L) / 200.0f);
-                    v71Var.f0 = f11;
-                    v71Var.setAnimationIdicatorProgress(v71Var.a0.getInterpolation(f11));
-                    if (v71Var.f0 > 1.0f) {
-                        v71Var.f0 = 1.0f;
+                w71 w71Var = (w71) this.b;
+                if (w71Var.J) {
+                    float f11 = w71Var.f0 + ((SystemClock.elapsedRealtime() <= 17 ? r2 : 17L) / 200.0f);
+                    w71Var.f0 = f11;
+                    w71Var.setAnimationIdicatorProgress(w71Var.a0.getInterpolation(f11));
+                    if (w71Var.f0 > 1.0f) {
+                        w71Var.f0 = 1.0f;
                     }
-                    if (v71Var.f0 < 1.0f) {
-                        org.telegram.messenger.i0.g3(v71Var.i0);
+                    if (w71Var.f0 < 1.0f) {
+                        org.telegram.messenger.i0.g3(w71Var.i0);
                         return;
                     }
-                    v71Var.J = false;
-                    v71Var.setEnabled(true);
-                    u71 u71Var = v71Var.D;
-                    if (u71Var != null) {
-                        ((n2.u) u71Var).J(1.0f);
+                    w71Var.J = false;
+                    w71Var.setEnabled(true);
+                    v71 v71Var = w71Var.D;
+                    if (v71Var != null) {
+                        ((n2.u) v71Var).J(1.0f);
                         return;
                     }
                     return;
                 }
                 return;
             case 16:
-                org.telegram.ui.y20 y20Var = (org.telegram.ui.y20) this.b;
-                if (!y20Var.b || y20Var.Q0.q2 != null) {
-                    org.telegram.messenger.i0.h3(y20Var.h0, 3000L);
+                org.telegram.ui.x20 x20Var = (org.telegram.ui.x20) this.b;
+                if (!x20Var.b || x20Var.Q0.q2 != null) {
+                    org.telegram.messenger.i0.h3(x20Var.h0, 3000L);
                     return;
                 } else {
-                    y20Var.g0 = false;
-                    y20Var.setUiVisible(false);
+                    x20Var.g0 = false;
+                    x20Var.setUiVisible(false);
                     return;
                 }
             case 17:
@@ -376,7 +375,7 @@ public final class ew implements Runnable {
                 if (b6Var.a == null || b6Var.e == null) {
                     return;
                 }
-                b6Var.V0();
+                b6Var.W0();
                 if (b6Var.s) {
                     b6Var.a.postOnAnimation(this);
                     return;
@@ -391,7 +390,7 @@ public final class ew implements Runnable {
                         if (n6Var.j == 0) {
                             n6Var.j = nanoTime;
                         } else {
-                            float min = Math.min(0.1f, Math.max(0.0f, (nanoTime - r8) * 1.0E-9f));
+                            float min = Math.min(0.1f, Math.max(0.0f, (nanoTime - r7) * 1.0E-9f));
                             n6Var.j = nanoTime;
                             if (n6Var.i - n6Var.h >= 1000000000) {
                                 float exp = 1.0f - ((float) Math.exp((-min) / 1.0f));
@@ -420,7 +419,7 @@ public final class ew implements Runnable {
             case 20:
                 if (org.telegram.utils.twidget.p.h.remove(this)) {
                     org.telegram.messenger.i0.r(this);
-                    ((org.telegram.ui.me) this.b).run();
+                    ((org.telegram.ui.nf) this.b).run();
                     return;
                 }
                 return;
@@ -471,7 +470,7 @@ public final class ew implements Runnable {
                         qh.y yVar2 = (qh.y) this.b;
                         m4.c f20 = qh.y.f(yVar2.k0, yVar2.i0, yVar2.j0, yVar2.O);
                         if (f20 != null) {
-                            org.telegram.messenger.i0.g3(new org.telegram.ui.web.v1(i11, this, f20));
+                            org.telegram.messenger.i0.g3(new org.telegram.ui.web.v1(17, this, f20));
                             return;
                         }
                     } catch (Throwable th2) {
@@ -517,23 +516,23 @@ public final class ew implements Runnable {
                     }
                     layoutManager.c(xVar.c.a, xVar.Q);
                     if (layoutManager.d()) {
-                        int i17 = (int) (xVar.s + xVar.n);
-                        i10 = (i17 - xVar.Q.left) - xVar.H.getPaddingLeft();
+                        int i16 = (int) (xVar.s + xVar.n);
+                        i10 = (i16 - xVar.Q.left) - xVar.H.getPaddingLeft();
                         float f21 = xVar.n;
                         if (f21 < 0.0f) {
                         }
                         if (f21 > 0.0f) {
-                            i10 = ((xVar.c.a.getWidth() + i17) + xVar.Q.right) - (xVar.H.getWidth() - xVar.H.getPaddingRight());
+                            i10 = ((xVar.c.a.getWidth() + i16) + xVar.Q.right) - (xVar.H.getWidth() - xVar.H.getPaddingRight());
                             break;
                         }
                     }
                     i10 = 0;
                     if (layoutManager.e()) {
-                        int i18 = (int) (xVar.w + xVar.r);
-                        int paddingTop = (i18 - xVar.Q.top) - xVar.H.getPaddingTop();
+                        int i17 = (int) (xVar.w + xVar.r);
+                        int paddingTop = (i17 - xVar.Q.top) - xVar.H.getPaddingTop();
                         float f22 = xVar.r;
-                        if ((f22 < 0.0f && paddingTop < 0) || (f22 > 0.0f && (paddingTop = ((xVar.c.a.getHeight() + i18) + xVar.Q.bottom) - (xVar.H.getHeight() - xVar.H.getPaddingBottom())) > 0)) {
-                            i13 = paddingTop;
+                        if ((f22 < 0.0f && paddingTop < 0) || (f22 > 0.0f && (paddingTop = ((xVar.c.a.getHeight() + i17) + xVar.Q.bottom) - (xVar.H.getHeight() - xVar.H.getPaddingBottom())) > 0)) {
+                            i12 = paddingTop;
                         }
                     }
                     if (i10 != 0) {
@@ -541,19 +540,19 @@ public final class ew implements Runnable {
                         xVar.H.getWidth();
                         i10 = uVar.i(width2, i10, j11);
                     }
-                    if (i13 != 0) {
+                    if (i12 != 0) {
                         int height2 = xVar.c.a.getHeight();
                         xVar.H.getHeight();
-                        i13 = uVar.i(height2, i13, j11);
+                        i12 = uVar.i(height2, i12, j11);
                     }
-                    if (i10 == 0 && i13 == 0) {
+                    if (i10 == 0 && i12 == 0) {
                         xVar.R = Long.MIN_VALUE;
                         return;
                     }
                     if (xVar.R == Long.MIN_VALUE) {
                         xVar.R = currentTimeMillis;
                     }
-                    xVar.H.scrollBy(i10, i13);
+                    xVar.H.scrollBy(i10, i12);
                     s4.c1 c1Var = xVar.c;
                     if (c1Var != null) {
                         xVar.p(c1Var);

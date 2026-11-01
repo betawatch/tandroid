@@ -15,10 +15,10 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f2 extends FrameLayout implements org.telegram.ui.Cells.j9, c3 {
-    public final m60 a;
+    public final l60 a;
     public final f4 b;
     public z2 c;
     public final d2 d;
@@ -29,16 +29,16 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.j9, c
     public int r;
     public final Paint s;
 
-    public f2(Context context, final m60 m60Var, f4 f4Var) {
+    public f2(Context context, final l60 l60Var, f4 f4Var) {
         super(context);
         this.s = new Paint();
-        this.a = m60Var;
+        this.a = l60Var;
         this.b = f4Var;
-        d2 d2Var = new d2(this, context, m60Var);
+        d2 d2Var = new d2(this, context, l60Var);
         this.d = d2Var;
         d2Var.setPadding(0, org.telegram.messenger.i0.L(8.0f), 0, org.telegram.messenger.i0.L(8.0f));
         addView(d2Var, w7.b6.c(-2.0f, -1));
-        e2 e2Var = new e2(this, context, m60Var, f4Var);
+        e2 e2Var = new e2(this, context, l60Var, f4Var);
         this.e = e2Var;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -1);
         int L = org.telegram.messenger.i0.L(16.0f);
@@ -47,12 +47,12 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.j9, c
         int L2 = org.telegram.messenger.i0.L(12.0f);
         layoutParams.bottomMargin = L2;
         layoutParams.topMargin = L2;
-        org.telegram.messenger.zs.i(e2Var);
+        org.telegram.messenger.at.i(e2Var);
         d2Var.addView(e2Var, layoutParams);
         d2Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.c2
             @Override // android.view.View.OnScrollChangeListener
             public final void onScrollChange(View view, int i10, int i11, int i12, int i13) {
-                org.telegram.ui.Cells.k9 k9Var = ((h4) m60.this).P0;
+                org.telegram.ui.Cells.k9 k9Var = ((h4) l60.this).P0;
                 if (k9Var == null || !k9Var.x()) {
                     return;
                 }
@@ -152,7 +152,7 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.j9, c
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.z20.a(this);
+        return org.telegram.messenger.a30.a(this);
     }
 
     @Override // org.telegram.ui.Cells.j9

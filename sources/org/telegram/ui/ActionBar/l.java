@@ -36,36 +36,37 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.fv0;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.in0;
+import org.telegram.ui.Components.gv0;
+import org.telegram.ui.Components.jn0;
 import org.telegram.ui.Components.on;
 import org.telegram.ui.Components.sn;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.vz;
-import org.telegram.ui.wv0;
+import org.telegram.ui.vv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class l extends FrameLayout implements fe.e, k6, b5 {
     public CharSequence A0;
     public int A1;
     public boolean B0;
-    public boolean B1;
+    public int B1;
     public boolean C0;
-    public float C1;
+    public boolean C1;
     public boolean D;
     public boolean D0;
-    public ValueAnimator D1;
+    public float D1;
     public y E;
     public boolean E0;
+    public ValueAnimator E1;
     public d F;
     public org.telegram.ui.Cells.a5 F0;
     public String G;
@@ -77,7 +78,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     public boolean J;
     public final p6 J0;
     public boolean K;
-    public uu0 K0;
+    public vu0 K0;
     public boolean L;
     public boolean L0;
     public boolean M;
@@ -92,7 +93,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     public boolean Q0;
     public boolean R;
     public boolean R0;
-    public fv0 S;
+    public gv0 S;
     public sn S0;
     public hh.c T;
     public boolean T0;
@@ -103,50 +104,50 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     public Rect W;
     public tg.b W0;
     public hi.d X0;
-    public s5 Y0;
-    public t0 Z0;
+    public int Y0;
+    public s5 Z0;
     public vg.f a;
     public int a0;
-    public final RectF a1;
+    public t0 a1;
     public vg.f b;
     public boolean b0;
-    public boolean b1;
+    public final RectF b1;
     public vg.f c;
     public CharSequence c0;
-    public Runnable c1;
+    public boolean c1;
     public final u4 d;
     public Drawable d0;
-    public wv0 d1;
+    public Runnable d1;
     public ImageView e;
     public View.OnClickListener e0;
-    public AnimatorSet e1;
+    public vv0 e1;
     public g9 f;
     public String f0;
-    public int f1;
+    public AnimatorSet f1;
     public final Object[] g0;
     public int g1;
     public Drawable h;
     public Runnable h0;
-    public boolean h1;
+    public int h1;
     public boolean i0;
     public boolean i1;
     public Runnable j0;
-    public float j1;
+    public boolean j1;
     public boolean k0;
-    public final fe.f k1;
+    public float k1;
     public int l0;
-    public final fe.b l1;
+    public final fe.f l1;
     public boolean m0;
-    public final fe.f m1;
+    public final fe.b m1;
     public final u5[] n;
     public boolean n0;
-    public final fe.b n1;
+    public final fe.f n1;
     public float o0;
-    public int o1;
+    public final fe.b o1;
     public int p0;
     public int p1;
     public int q0;
-    public boolean q1;
+    public int q1;
     public u5 r;
     public int r0;
     public boolean r1;
@@ -158,18 +159,18 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     public k u0;
     public boolean u1;
     public int v0;
-    public int v1;
+    public boolean v1;
     public View w;
     public boolean w0;
-    public j w1;
+    public int w1;
     public int x;
     public boolean x0;
-    public boolean x1;
+    public j x1;
     public int y;
     public boolean y0;
     public boolean y1;
     public boolean z0;
-    public int z1;
+    public boolean z1;
 
     public l(Context context, p6 p6Var) {
         super(context);
@@ -180,21 +181,21 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         this.M = true;
         this.g0 = new Object[3];
         this.k0 = true;
-        this.l0 = zs.e4;
+        this.l0 = at.e4;
         this.v0 = 0;
         this.M0 = new Paint();
         this.N0 = new Rect();
         this.O0 = new ac.a(this);
-        this.a1 = new RectF();
+        this.b1 = new RectF();
         gr grVar = gr.h;
-        this.k1 = new fe.f(0, this, grVar, 380L);
-        this.l1 = new fe.b(0, this, grVar, 380L, false);
-        this.m1 = new fe.f(0, this, grVar, 320L);
-        this.n1 = new fe.b(0, this, grVar, 320L, false);
-        this.u1 = true;
-        this.v1 = zs.e4;
-        this.B1 = true;
-        this.C1 = 1.0f;
+        this.l1 = new fe.f(0, this, grVar, 380L);
+        this.m1 = new fe.b(0, this, grVar, 380L, false);
+        this.n1 = new fe.f(0, this, grVar, 320L);
+        this.o1 = new fe.b(0, this, grVar, 320L, false);
+        this.v1 = true;
+        this.w1 = at.e4;
+        this.C1 = true;
+        this.D1 = 1.0f;
         this.J0 = p6Var;
         setOnClickListener(new b(this, 0));
     }
@@ -241,19 +242,19 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public final void B(RecyclerView recyclerView, int i10, int i11) {
-        this.z1 = i10;
-        this.A1 = i11;
-        this.y1 = org.telegram.messenger.i0.Q1();
+        this.A1 = i10;
+        this.B1 = i11;
+        this.z1 = org.telegram.messenger.i0.Q1();
         mh.k kVar = new mh.k(23, this, recyclerView);
         recyclerView.j(new ag.u(kVar, 9));
-        if (this.x1) {
+        if (this.y1) {
             kVar.run();
             return;
         }
-        this.x1 = true;
+        this.y1 = true;
         boolean canScrollVertically = recyclerView.canScrollVertically(-1);
-        this.B1 = !canScrollVertically;
-        this.C1 = !canScrollVertically ? 1.0f : 0.0f;
+        this.C1 = !canScrollVertically;
+        this.D1 = !canScrollVertically ? 1.0f : 0.0f;
         f();
     }
 
@@ -317,7 +318,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
             }
         }
         ImageView imageView3 = this.e;
-        if (imageView3 == null || !this.b1) {
+        if (imageView3 == null || !this.c1) {
             return;
         }
         imageView3.setColorFilter(new PorterDuffColorFilter(this.r0, PorterDuff.Mode.SRC_IN));
@@ -457,7 +458,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                 this.r.setVisibility(0);
                 this.r.setAlpha(0.0f);
             }
-            z20.l(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
+            a30.l(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
         }
         u5 u5Var = u5VarArr[1];
         if (u5Var != null) {
@@ -513,7 +514,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         int i11 = 1;
         objArr[1] = Integer.valueOf(i10);
         objArr[2] = runnable;
-        if (this.h1) {
+        if (this.i1) {
             return;
         }
         String str2 = this.f0;
@@ -522,10 +523,10 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
         if (str2 == null || !str2.equals(str)) {
             this.f0 = str;
-            if (this.w1 != null) {
-                this.w1.c(i10 == 2131751805 ? org.telegram.messenger.i0.H2(cd.L0(2131744138, null), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(2.0f)) : null, true);
+            if (this.x1 != null) {
+                this.x1.c(i10 == 2131751805 ? org.telegram.messenger.i0.H2(dd.L0(2131744138, null), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(2.0f)) : null, true);
             }
-            CharSequence L0 = str != null ? cd.L0(i10, str) : this.c0;
+            CharSequence L0 = str != null ? dd.L0(i10, str) : this.c0;
             Drawable drawable = str == null ? this.d0 : null;
             ac.a aVar = this.O0;
             if (str == null || (indexOf = TextUtils.indexOf(L0, "...")) < 0) {
@@ -560,7 +561,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                     if (z10) {
                         aVar.c(u5VarArr[1]);
                     }
-                    this.h1 = true;
+                    this.i1 = true;
                     u5 u5Var4 = u5VarArr[1];
                     u5VarArr[1] = u5VarArr[0];
                     u5VarArr[0] = u5Var4;
@@ -621,11 +622,11 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
         vg.f c11 = bVar.c(this, null, false);
         c11.o(dVar);
-        z20.u(c11, org.telegram.messenger.i0.L(23.0f), 6.0f);
+        a30.u(c11, org.telegram.messenger.i0.L(23.0f), 6.0f);
         this.b = c11;
         vg.f c12 = bVar.c(this, null, false);
         c12.o(dVar);
-        z20.u(c12, org.telegram.messenger.i0.L(23.0f), 6.0f);
+        a30.u(c12, org.telegram.messenger.i0.L(23.0f), 6.0f);
         this.c = c12;
         y yVar = this.E;
         if (yVar != null) {
@@ -691,7 +692,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
             i11 = this.y;
         }
         if (i11 == 0 || this.P0) {
-            zs.e().k(zs.r4, new Object[0]);
+            at.e().k(at.r4, new Object[0]);
         } else if (i0.b.h(i11) < 0.699999988079071d) {
             org.telegram.messenger.i0.o3((Activity) getContext(), false);
         } else {
@@ -704,7 +705,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.P = animatorSet2;
         animatorSet2.playTogether(arrayList);
-        if (this.d1 != null) {
+        if (this.e1 != null) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new a(this, i10));
             this.P.playTogether(ofFloat);
@@ -744,7 +745,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     @Override // org.telegram.ui.ActionBar.b5
     public final boolean a(t0 t0Var, RectF rectF) {
         int L = org.telegram.messenger.i0.L(6.0f);
-        if (t0Var.getParent() == this.E && this.c != null && !this.t1 && !this.Q0 && this.j1 == 0.0f && getActionModeFactor() == 0.0f && !this.c.getBounds().isEmpty()) {
+        if (t0Var.getParent() == this.E && this.c != null && !this.u1 && !this.Q0 && this.k1 == 0.0f && getActionModeFactor() == 0.0f && !this.c.getBounds().isEmpty()) {
             rectF.set(this.c.getBounds());
             float f7 = L;
             rectF.inset(f7, f7);
@@ -760,8 +761,8 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
 
     @Override // org.telegram.ui.ActionBar.k6
     public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(this.B1));
         hashSet.add(Integer.valueOf(this.A1));
-        hashSet.add(Integer.valueOf(this.z1));
     }
 
     @Override // org.telegram.ui.ActionBar.b5
@@ -780,14 +781,14 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
         vg.f c10 = bVar.c(s5Var, null, false);
         c10.o(this.V0);
-        z20.u(c10, org.telegram.messenger.i0.L(23.0f), 6.0f);
+        a30.u(c10, org.telegram.messenger.i0.L(23.0f), 6.0f);
         return c10;
     }
 
     @Override // org.telegram.ui.ActionBar.b5
     public final void d(s5 s5Var, t0 t0Var) {
-        this.Y0 = s5Var;
-        this.Z0 = t0Var;
+        this.Z0 = s5Var;
+        this.a1 = t0Var;
         invalidate();
     }
 
@@ -811,9 +812,9 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         int L = org.telegram.messenger.i0.L(6.0f);
         int L2 = org.telegram.messenger.i0.L(46.0f);
         float actionModeFactor = getActionModeFactor();
-        int i11 = this.q1 ? this.o1 : (int) this.m1.f;
-        if (this.r1) {
-            i11 = Math.max((int) ((1.0f - this.j1) * this.p1), i11);
+        int i11 = this.r1 ? this.p1 : (int) this.n1.f;
+        if (this.s1) {
+            i11 = Math.max((int) ((1.0f - this.k1) * this.q1), i11);
         }
         ImageView imageView = this.e;
         boolean z10 = imageView != null && imageView.getVisibility() == 0;
@@ -821,24 +822,24 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         int i12 = L * 2;
         int i13 = height + L2 + i12;
         vg.f fVar2 = this.a;
-        fe.b bVar = this.n1;
-        if (fVar2 == null || this.Q0 || !this.u1) {
+        fe.b bVar = this.o1;
+        if (fVar2 == null || this.Q0 || !this.v1) {
             f7 = 1.0f;
         } else {
             if (!this.H0 || (u5Var = (u5VarArr = this.n)[0]) == null || u5Var.getVisibility() != 0) {
                 f7 = 1.0f;
-                int i14 = ((this.q1 || this.r1) ? i11 > 0 ? L : 0 : (int) (L * bVar.e)) + i11;
+                int i14 = ((this.r1 || this.s1) ? i11 > 0 ? L : 0 : (int) (L * bVar.e)) + i11;
                 int i15 = L + L2;
                 int max = Math.max(i14, i15);
                 i10 = 2;
                 sn snVar = this.S0;
-                fe.b bVar2 = this.l1;
+                fe.b bVar2 = this.m1;
                 int W1 = org.telegram.messenger.i0.W1(snVar == null ? 0.0f : 1.0f - bVar2.e, i14, max);
                 int W12 = org.telegram.messenger.i0.W1(this.S0 != null ? 1.0f - bVar2.e : 0.0f, z10 ? i15 : 0, i15);
                 int width = getWidth() - W1;
                 int i16 = width - W12;
                 if (this.S0 != null) {
-                    int W13 = org.telegram.messenger.i0.W1(Math.max(this.j1, actionModeFactor), Math.min(i16, ((int) this.k1.f) + i12), i16);
+                    int W13 = org.telegram.messenger.i0.W1(Math.max(this.k1, actionModeFactor), Math.min(i16, ((int) this.l1.f) + i12), i16);
                     W12 = ((width + W12) - W13) / 2;
                     width = W12 + W13;
                     float L3 = org.telegram.messenger.i0.L(3.0f) + ((W12 - ((ViewGroup.MarginLayoutParams) this.S0.getLayoutParams()).leftMargin) - this.S0.getLeftPadding()) + L;
@@ -854,9 +855,9 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                     fVar.setBounds(0, height, L2 + i12, i13);
                     this.b.draw(canvas);
                 }
-                if (this.c != null && i11 > 0 && !this.Q0 && !this.t1 && ((t0Var = this.Z0) == null || t0Var.getParent() != this.E || !a(this.Z0, this.a1))) {
+                if (this.c != null && i11 > 0 && !this.Q0 && !this.u1 && ((t0Var = this.a1) == null || t0Var.getParent() != this.E || !a(this.a1, this.b1))) {
                     this.c.setBounds((getWidth() - Math.max(L2, i11)) - i12, height, getWidth(), i13);
-                    this.c.setAlpha(!this.q1 ? 255 : (int) (bVar.e * 255.0f));
+                    this.c.setAlpha(!this.r1 ? 255 : (int) (bVar.e * 255.0f));
                     this.c.draw(canvas);
                 }
                 if (this.L0 && this.y != 0) {
@@ -864,18 +865,18 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                     int i17 = this.y;
                     Paint paint = this.M0;
                     paint.setColor(i17);
-                    if (this.x1) {
+                    if (this.y1) {
                         this.K0.H(canvas, getY(), this.N0, paint, true);
                     } else {
-                        uu0 uu0Var = this.K0;
+                        vu0 vu0Var = this.K0;
                         float y3 = getY();
-                        float f10 = f7 - (this.y1 ? f7 : this.C1);
-                        uu0Var.getClass();
-                        uu0Var.I(canvas, y3, this.N0, paint, true, org.telegram.messenger.i0.W1(f10, zs.e4, Color.alpha(t6.w0((uu0.E() && tz.o() == i10) ? t6.lg : t6.mg, uu0Var.getResourceProvider()))));
+                        float f10 = f7 - (this.z1 ? f7 : this.D1);
+                        vu0Var.getClass();
+                        vu0Var.I(canvas, y3, this.N0, paint, true, org.telegram.messenger.i0.W1(f10, at.e4, Color.alpha(t6.w0((vu0.E() && uz.o() == i10) ? t6.lg : t6.mg, vu0Var.getResourceProvider()))));
                     }
                 }
-                this.s1 = true;
-                if (this.i1) {
+                this.t1 = true;
+                if (this.j1) {
                     super.dispatchDraw(canvas);
                     return;
                 }
@@ -897,7 +898,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
         if (this.c != null) {
             this.c.setBounds((getWidth() - Math.max(L2, i11)) - i12, height, getWidth(), i13);
-            this.c.setAlpha(!this.q1 ? 255 : (int) (bVar.e * 255.0f));
+            this.c.setAlpha(!this.r1 ? 255 : (int) (bVar.e * 255.0f));
             this.c.draw(canvas);
         }
         if (this.L0) {
@@ -905,11 +906,11 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
             int i172 = this.y;
             Paint paint2 = this.M0;
             paint2.setColor(i172);
-            if (this.x1) {
+            if (this.y1) {
             }
         }
-        this.s1 = true;
-        if (this.i1) {
+        this.t1 = true;
+        if (this.j1) {
         }
     }
 
@@ -960,7 +961,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         if (this.B0 && view == this.e) {
             return true;
         }
-        if (view == this.E && (t0Var = this.Z0) != null && t0Var != null && t0Var.getParent() == this.E && a(this.Z0, this.a1)) {
+        if (view == this.E && (t0Var = this.a1) != null && t0Var != null && t0Var.getParent() == this.E && a(this.a1, this.b1)) {
             return true;
         }
         boolean N = N(view);
@@ -969,7 +970,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
             canvas.clipRect(0.0f, (-getTranslationY()) + (this.I ? org.telegram.messenger.i0.m : 0), getMeasuredWidth(), getMeasuredHeight());
         }
         boolean drawChild = super.drawChild(canvas, view, j10);
-        if (this.R && !this.i0 && !cd.X) {
+        if (this.R && !this.i0 && !dd.X) {
             u5[] u5VarArr = this.n;
             if ((view == u5VarArr[0] || view == u5VarArr[1] || (view == this.F0 && this.G0)) && (B0 = t6.B0()) != null) {
                 u5 u5Var = view == this.F0 ? u5VarArr[0] : (u5) view;
@@ -984,7 +985,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                     B0.setBounds(width, textStartY - B0.getIntrinsicHeight(), B0.getIntrinsicWidth() + width, textStartY);
                     B0.setAlpha((int) (u5Var.getAlpha() * this.F0.getAlpha() * 255.0f));
                     B0.draw(canvas);
-                    if (this.h1) {
+                    if (this.i1) {
                         view.invalidate();
                         invalidate();
                     }
@@ -994,14 +995,14 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                 }
                 if (t6.G1) {
                     if (this.S == null) {
-                        this.S = new fv0(0);
+                        this.S = new gv0(0);
                     }
                 } else if (!this.V && this.S != null) {
                     this.S = null;
                 }
-                fv0 fv0Var = this.S;
-                if (fv0Var != null) {
-                    fv0Var.b(canvas, this);
+                gv0 gv0Var = this.S;
+                if (gv0Var != null) {
+                    gv0Var.b(canvas, this);
                 } else {
                     hh.c cVar = this.T;
                     if (cVar != null) {
@@ -1030,7 +1031,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                                     SecureRandom secureRandom2 = Utilities.b;
                                     float f12 = f11;
                                     boolean z13 = drawChild;
-                                    double nextInt2 = (secureRandom2.nextInt(zs.t4) - 225) * 0.017453292519943295d;
+                                    double nextInt2 = (secureRandom2.nextInt(at.t4) - 225) * 0.017453292519943295d;
                                     boolean z14 = z12;
                                     int i14 = i12;
                                     float cos = (float) Math.cos(nextInt2);
@@ -1125,12 +1126,12 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public final void f() {
-        if (this.x1) {
-            float f7 = this.y1 ? 1.0f : this.C1;
-            int i10 = this.A1;
+        if (this.y1) {
+            float f7 = this.z1 ? 1.0f : this.D1;
+            int i10 = this.B1;
             p6 p6Var = this.J0;
             int w02 = i10 == -1 ? 0 : t6.w0(i10, p6Var);
-            int i11 = this.z1;
+            int i11 = this.A1;
             int w03 = i11 == -1 ? 0 : t6.w0(i11, p6Var);
             if (w03 == 0) {
                 w03 = i0.b.o(w02, 0);
@@ -1147,7 +1148,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public final void g() {
-        if (cd.X) {
+        if (dd.X) {
             return;
         }
         TransitionSet transitionSet = new TransitionSet();
@@ -1177,7 +1178,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public FrameLayout getAdditionalSubTitleOverlayContainer() {
-        return this.w1;
+        return this.x1;
     }
 
     public u5 getAdditionalSubtitleTextView() {
@@ -1237,6 +1238,11 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     @Override // org.telegram.ui.ActionBar.b5
+    public int getMenuRise() {
+        return this.Y0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b5
     public View getMenuView() {
         return this.E;
     }
@@ -1247,7 +1253,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
 
     @Override // org.telegram.ui.ActionBar.b5
     public s5 getOpenMenuOverlay() {
-        return this.Y0;
+        return this.Z0;
     }
 
     public g9 getSearchAvatarImageView() {
@@ -1320,7 +1326,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         on onVar = snVar.e;
         boolean z11 = onVar != null && onVar.getVisibility() == 0;
         int min = Math.min(getMeasuredWidth() - org.telegram.messenger.i0.L(116.0f), this.S0.getVisualWidth());
-        fe.f fVar = this.k1;
+        fe.f fVar = this.l1;
         if (z10) {
             float f7 = min;
             if ((fVar.h ? fVar.g : fVar.f) != f7) {
@@ -1329,7 +1335,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         } else {
             fVar.c(min);
         }
-        this.l1.a(z11, z10);
+        this.m1.a(z11, z10);
     }
 
     @Override // android.view.View
@@ -1359,11 +1365,11 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         if (this.J) {
             max = max2;
         }
-        this.n1.a(max > 0, this.s1);
-        fe.f fVar = this.m1;
+        this.o1.a(max > 0, this.t1);
+        fe.f fVar = this.n1;
         float f7 = max;
         if ((fVar.h ? fVar.g : fVar.f) != f7) {
-            if (this.s1) {
+            if (this.t1) {
                 fVar.a(f7);
             } else {
                 fVar.c(f7);
@@ -1438,7 +1444,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         this.e.setPadding(org.telegram.messenger.i0.L(1.0f), 0, 0, 0);
         addView(this.e, w7.b6.e(54, 54, 51));
         this.e.setOnClickListener(new b(this, 1));
-        this.e.setContentDescription(cd.L0(2131754878, null));
+        this.e.setContentDescription(dd.L0(2131754878, null));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -1452,7 +1458,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                 i10 = this.y;
             }
             if (i10 == 0 || this.P0) {
-                zs.e().k(zs.r4, new Object[0]);
+                at.e().k(at.r4, new Object[0]);
             } else if (i0.b.h(i10) < 0.699999988079071d) {
                 org.telegram.messenger.i0.o3((Activity) getContext(), false);
             } else {
@@ -1473,7 +1479,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         if (this.J) {
             int i10 = this.y;
             if (i10 == 0 || this.x == 0 || this.P0) {
-                zs.e().k(zs.r4, new Object[0]);
+                at.e().k(at.r4, new Object[0]);
             } else if (i0.b.h(i10) < 0.699999988079071d) {
                 org.telegram.messenger.i0.o3((Activity) getContext(), false);
             } else {
@@ -1489,13 +1495,13 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         Drawable B0;
-        if (this.R && !this.i0 && !cd.X && motionEvent.getAction() == 0 && (B0 = t6.B0()) != null && B0.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+        if (this.R && !this.i0 && !dd.X && motionEvent.getAction() == 0 && (B0 = t6.B0()) != null && B0.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
             this.V = true;
-            fv0 fv0Var = this.S;
+            gv0 gv0Var = this.S;
             u5[] u5VarArr = this.n;
-            if (fv0Var == null) {
+            if (gv0Var == null) {
                 this.T = null;
-                this.S = new fv0(0);
+                this.S = new gv0(0);
                 u5VarArr[0].invalidate();
                 invalidate();
             } else {
@@ -1538,9 +1544,9 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         int i18;
         int currentActionBarHeight;
         int i19 = this.I ? org.telegram.messenger.i0.m : 0;
-        if (this.g1 != getMeasuredWidth()) {
-            this.g1 = getMeasuredWidth();
-            h(this.k1.h);
+        if (this.h1 != getMeasuredWidth()) {
+            this.h1 = getMeasuredWidth();
+            h(this.l1.h);
         }
         ImageView imageView = this.e;
         if (imageView == null || imageView.getVisibility() == 8) {
@@ -1550,7 +1556,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
             imageView2.layout(0, i19, imageView2.getMeasuredWidth(), this.e.getMeasuredHeight() + i19);
             L = org.telegram.messenger.i0.L(this.P0 ? 76.0f : org.telegram.messenger.i0.Q1() ? 80.0f : 72.0f);
         }
-        int i20 = L + this.f1;
+        int i20 = L + this.g1;
         y yVar = this.E;
         if (yVar != null && yVar.getVisibility() != 8) {
             int L2 = this.E.p() ? org.telegram.messenger.i0.L(this.m0 ? 0.0f : org.telegram.messenger.i0.Q1() ? 74.0f : 66.0f) : getMeasuredWidth() - this.E.getMeasuredWidth();
@@ -1579,11 +1585,11 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
             }
             i21++;
         }
-        if (this.w1 != null) {
-            int currentActionBarHeight2 = ((((getCurrentActionBarHeight() / 2) - this.w1.getMeasuredHeight()) / 2) + (getCurrentActionBarHeight() / 2)) - org.telegram.messenger.i0.L(2.0f);
-            j jVar = this.w1;
+        if (this.x1 != null) {
+            int currentActionBarHeight2 = ((((getCurrentActionBarHeight() / 2) - this.x1.getMeasuredHeight()) / 2) + (getCurrentActionBarHeight() / 2)) - org.telegram.messenger.i0.L(2.0f);
+            j jVar = this.x1;
             int i23 = currentActionBarHeight2 + i19;
-            jVar.layout(i20, i23, jVar.getMeasuredWidth() + i20, this.w1.getMeasuredHeight() + i23);
+            jVar.layout(i20, i23, jVar.getMeasuredWidth() + i20, this.x1.getMeasuredHeight() + i23);
         }
         u5 u5Var4 = this.r;
         if (u5Var4 != null && u5Var4.getVisibility() != 8) {
@@ -1611,7 +1617,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         int childCount = getChildCount();
         for (int i27 = 0; i27 < childCount; i27++) {
             View childAt = getChildAt(i27);
-            if (childAt.getVisibility() != 8 && childAt != u5VarArr[0] && childAt != u5VarArr[1] && childAt != this.w1 && childAt != this.r && childAt != this.E && childAt != this.e && childAt != this.s && childAt != this.f) {
+            if (childAt.getVisibility() != 8 && childAt != u5VarArr[0] && childAt != u5VarArr[1] && childAt != this.x1 && childAt != this.r && childAt != this.E && childAt != this.e && childAt != this.s && childAt != this.f) {
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                 int measuredWidth4 = childAt.getMeasuredWidth();
                 int measuredHeight = childAt.getMeasuredHeight();
@@ -1619,7 +1625,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                 if (i28 == -1) {
                     i28 = 51;
                 }
-                int i29 = i28 & zs.x1;
+                int i29 = i28 & at.x1;
                 int i30 = i28 & 7;
                 if (i30 == 1) {
                     measuredWidth = ((getMeasuredWidth() - measuredWidth4) / 2) + layoutParams.leftMargin;
@@ -1704,7 +1710,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                 } else if (org.telegram.messenger.i0.Q1()) {
                     f7 = 74.0f;
                 }
-                makeMeasureSpec = z20.c(f7, size, TLObject.FLAG_30);
+                makeMeasureSpec = a30.c(f7, size, TLObject.FLAG_30);
                 if (!lVar.D) {
                     lVar.E.r(0.0f);
                 }
@@ -1796,7 +1802,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                 if (u5Var14 != null && u5Var14.getVisibility() != 8) {
                     lVar.r.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(20.0f), TLObject.FLAG_31));
                 }
-                j jVar = lVar.w1;
+                j jVar = lVar.x1;
                 if (jVar != null) {
                     jVar.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                 }
@@ -1817,7 +1823,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         int i17 = 0;
         while (i17 < childCount) {
             View childAt = lVar.getChildAt(i17);
-            if (childAt.getVisibility() != 8 && childAt != u5VarArr[0] && childAt != u5VarArr[i16] && childAt != lVar.w1 && childAt != lVar.r && childAt != lVar.E && childAt != lVar.e && childAt != lVar.s && childAt != lVar.f) {
+            if (childAt.getVisibility() != 8 && childAt != u5VarArr[0] && childAt != u5VarArr[i16] && childAt != lVar.x1 && childAt != lVar.r && childAt != lVar.E && childAt != lVar.e && childAt != lVar.s && childAt != lVar.f) {
                 lVar.measureChildWithMargins(childAt, i10, 0, View.MeasureSpec.makeMeasureSpec(lVar.getMeasuredHeight(), TLObject.FLAG_30), 0);
             }
             i17++;
@@ -1925,7 +1931,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public void setAdditionalTextLeft(int i10) {
-        this.f1 = i10;
+        this.g1 = i10;
     }
 
     public void setAllowOverlayTitle(boolean z10) {
@@ -1959,7 +1965,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         } else if ((drawable instanceof BitmapDrawable) || (drawable instanceof VectorDrawable)) {
             this.e.setColorFilter(new PorterDuffColorFilter(this.r0, PorterDuff.Mode.SRC_IN));
         }
-        if (this.b1) {
+        if (this.c1) {
             this.e.setColorFilter(new PorterDuffColorFilter(this.r0, PorterDuff.Mode.SRC_IN));
         }
         i();
@@ -2040,16 +2046,16 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
     }
 
-    public void setDrawBlurBackground(uu0 uu0Var) {
+    public void setDrawBlurBackground(vu0 vu0Var) {
         this.L0 = true;
-        this.K0 = uu0Var;
-        uu0Var.O.add(this);
+        this.K0 = vu0Var;
+        vu0Var.O.add(this);
         setBackground(null);
     }
 
     public void setDrawGlassTitle(boolean z10) {
-        if (this.u1 != z10) {
-            this.u1 = z10;
+        if (this.v1 != z10) {
+            this.v1 = z10;
             invalidate();
         }
     }
@@ -2086,6 +2092,14 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public void setForcedMenuMinWidth(int i10) {
+        this.s1 = true;
+        if (this.q1 != i10) {
+            this.q1 = i10;
+            invalidate();
+        }
+    }
+
+    public void setForcedMenuWidth(int i10) {
         this.r1 = true;
         if (this.p1 != i10) {
             this.p1 = i10;
@@ -2093,17 +2107,9 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
     }
 
-    public void setForcedMenuWidth(int i10) {
-        this.q1 = true;
-        if (this.o1 != i10) {
-            this.o1 = i10;
-            invalidate();
-        }
-    }
-
     public void setGlassCenterAlpha(int i10) {
-        if (this.v1 != i10) {
-            this.v1 = i10;
+        if (this.w1 != i10) {
+            this.w1 = i10;
             invalidate();
         }
         vg.f fVar = this.a;
@@ -2126,12 +2132,16 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     public void setMenuGlassFrostedProgress(float f7) {
         hi.d dVar = this.X0;
         if (dVar != null) {
-            dVar.b(f7);
+            dVar.k(f7);
         }
     }
 
     public void setMenuOffsetSuppressed(boolean z10) {
         this.D = z10;
+    }
+
+    public void setMenuRise(int i10) {
+        this.Y0 = i10;
     }
 
     public void setOccupyStatusBar(boolean z10) {
@@ -2143,7 +2153,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public void setOnActionModeFactorChangeListener(Runnable runnable) {
-        this.c1 = runnable;
+        this.d1 = runnable;
     }
 
     public void setOverlayTitleAnimation(boolean z10) {
@@ -2185,8 +2195,8 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public void setSearchFactor(float f7) {
-        if (this.j1 != f7) {
-            this.j1 = f7;
+        if (this.k1 != f7) {
+            this.k1 = f7;
             invalidate();
         }
     }
@@ -2214,8 +2224,8 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
     }
 
     public void setSkipDrawChild(boolean z10) {
-        if (this.i1 != z10) {
-            this.i1 = z10;
+        if (this.j1 != z10) {
+            this.j1 = z10;
             invalidate();
         }
     }
@@ -2344,7 +2354,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
         int i13 = this.y;
         if (i13 == 0 || this.P0) {
-            zs.e().k(zs.r4, new Object[0]);
+            at.e().k(at.r4, new Object[0]);
         } else if (i0.b.h(i13) < 0.699999988079071d) {
             org.telegram.messenger.i0.o3((Activity) getContext(), false);
         } else {
@@ -2357,7 +2367,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.P = animatorSet2;
         animatorSet2.playTogether(arrayList);
-        if (this.d1 != null) {
+        if (this.e1 != null) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new a(this, i10));
             this.P.playTogether(ofFloat);
@@ -2407,7 +2417,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         if (fVar3 != null) {
             fVar3.updateColors();
         }
-        j jVar = this.w1;
+        j jVar = this.x1;
         if (jVar != null) {
             jVar.d();
         }
@@ -2437,11 +2447,11 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         Property property;
         this.n0 = z10;
         j();
-        AnimatorSet animatorSet = this.e1;
+        AnimatorSet animatorSet = this.f1;
         if (animatorSet != null) {
             animatorSet.cancel();
         }
-        this.e1 = new AnimatorSet();
+        this.f1 = new AnimatorSet();
         ArrayList arrayList = new ArrayList();
         boolean x10 = x();
         if (!x10) {
@@ -2456,7 +2466,7 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.o0, z10 ? 1.0f : 0.0f);
         ofFloat.addUpdateListener(new a(this, 2));
-        this.e1.playTogether(ofFloat);
+        this.f1.playTogether(ofFloat);
         int i10 = 0;
         while (true) {
             int size = arrayList.size();
@@ -2472,9 +2482,9 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
                 view.setScaleX(0.95f);
                 view.setScaleY(0.95f);
             }
-            this.e1.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) property, z10 ? 0.0f : 1.0f));
-            this.e1.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, z10 ? 0.95f : 1.0f));
-            AnimatorSet animatorSet2 = this.e1;
+            this.f1.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) property, z10 ? 0.0f : 1.0f));
+            this.f1.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, z10 ? 0.95f : 1.0f));
+            AnimatorSet animatorSet2 = this.f1;
             if (!z10) {
                 f7 = 1.0f;
             }
@@ -2484,12 +2494,12 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         g9 g9Var = this.f;
         if (g9Var != null) {
             g9Var.setVisibility(0);
-            this.e1.playTogether(ObjectAnimator.ofFloat(this.f, (Property<g9, Float>) property, z10 ? 1.0f : 0.0f));
+            this.f1.playTogether(ObjectAnimator.ofFloat(this.f, (Property<g9, Float>) property, z10 ? 1.0f : 0.0f));
         }
         this.z0 = true;
         requestLayout();
-        this.e1.addListener(new f(this, arrayList, z10, x10));
-        this.e1.setDuration(150L).start();
+        this.f1.addListener(new f(this, arrayList, z10, x10));
+        this.f1.setDuration(150L).start();
         ImageView imageView = this.e;
         if (imageView != null) {
             Drawable drawable = imageView.getDrawable();
@@ -2515,23 +2525,23 @@ public class l extends FrameLayout implements fe.e, k6, b5 {
         }
     }
 
-    public void setAdaptiveBackground(in0 in0Var) {
+    public void setAdaptiveBackground(jn0 jn0Var) {
         int i10 = t6.a7;
         int i11 = t6.s8;
-        this.z1 = i10;
-        this.A1 = i11;
-        this.y1 = org.telegram.messenger.i0.Q1();
+        this.A1 = i10;
+        this.B1 = i11;
+        this.z1 = org.telegram.messenger.i0.Q1();
         f();
-        mh.k kVar = new mh.k(22, this, in0Var);
-        in0Var.L.add(kVar);
-        if (this.x1) {
+        mh.k kVar = new mh.k(22, this, jn0Var);
+        jn0Var.L.add(kVar);
+        if (this.y1) {
             kVar.run();
             return;
         }
-        this.x1 = true;
-        boolean canScrollVertically = in0Var.canScrollVertically(-1);
-        this.B1 = !canScrollVertically;
-        this.C1 = !canScrollVertically ? 1.0f : 0.0f;
+        this.y1 = true;
+        boolean canScrollVertically = jn0Var.canScrollVertically(-1);
+        this.C1 = !canScrollVertically;
+        this.D1 = !canScrollVertically ? 1.0f : 0.0f;
         f();
     }
 

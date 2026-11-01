@@ -22,7 +22,7 @@ import lb.b;
 import n6.i;
 import n6.l;
 import nb.e;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import q5.d;
 import r2.y;
 import v7.b7;
@@ -37,7 +37,7 @@ import v7.y8;
 import v7.z6;
 import xa.n;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final x8 a;
@@ -100,7 +100,7 @@ public class LanguageIdentifierImpl implements b {
                 boolean z11 = z10;
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
-                    String e = eVar2.e(str2.substring(0, Math.min(str2.length(), zs.e3)));
+                    String e = eVar2.e(str2.substring(0, Math.min(str2.length(), at.e3)));
                     s9.g gVar = new s9.g();
                     ea.a aVar = new ea.a();
                     aVar.b = e;

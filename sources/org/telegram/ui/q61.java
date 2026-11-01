@@ -1,22 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+import android.content.Context;
+
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class q61 {
-    public String a;
-    public String b;
-    public String c;
-    public boolean d;
-    public String e;
-    public String f;
-    public String g;
-    public boolean h;
-    public String i;
-    public String j;
-    public String k;
-    public boolean l;
-    public String m;
-    public String n;
-    public String o;
-    public boolean p;
+public final class q61 extends c61 {
+    public uh D;
+    public final int w;
+    public final int x;
+    public int y;
+
+    public q61(Context context, int i10, int i11, bg.h hVar, int i12) {
+        super(context, i11, hVar, null);
+        this.w = i10;
+        this.x = i12;
+    }
+
+    @Override // org.telegram.ui.c61
+    public final void b(e61 e61Var) {
+        int i10;
+        if (e61Var == null || (i10 = this.y) < 0) {
+            return;
+        }
+        e61Var.a(this.w, this.x, i10, this.D);
+    }
+
+    @Override // org.telegram.ui.c61
+    public final void c() {
+    }
+
+    @Override // org.telegram.ui.c61
+    public final void f() {
+    }
 }

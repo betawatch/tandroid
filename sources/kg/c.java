@@ -7,21 +7,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.a5;
 import org.telegram.ui.Cells.x3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.tk0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class c extends sk0 {
+public final class c extends tk0 {
     public final p6 c;
     public final int d;
     public final int e;
@@ -41,24 +41,24 @@ public final class c extends sk0 {
         k1Var.o = 0.0f;
         k1Var.p = 0.0f;
         k1Var.q = 1.0f;
-        vp r12 = vp.r1(i10);
-        arrayList.add(new d(r12.E4, r12.F4, cd.L0(2131749388, null), cd.a0(null, null, 2131749389, Integer.valueOf(r12.F4))));
-        arrayList.add(new d(r12.Q4, r12.R4, cd.L0(2131747264, null), cd.a0(null, null, 2131747265, Integer.valueOf(r12.R4))));
-        arrayList.add(new d(r12.S4, r12.T4, cd.L0(2131746604, null), cd.a0(null, null, 2131746605, Integer.valueOf(r12.T4))));
-        arrayList.add(new d(r12.G4, r12.H4, cd.L0(2131745919, null), cd.a0(null, null, 2131745920, Integer.valueOf(r12.H4))));
-        arrayList.add(new d(r12.I4, r12.J4, cd.L0(2131750840, null), cd.a0(null, null, 2131750841, Integer.valueOf(r12.J4))));
-        arrayList.add(new d(r12.Y4, r12.Z4, cd.L0(2131753719, null), cd.a0(null, null, 2131753720, Integer.valueOf(r12.J4))));
-        arrayList.add(new d(r12.U4, r12.V4, cd.L0(2131752554, null), cd.a0(null, null, 2131752555, Integer.valueOf(r12.J4))));
-        arrayList.add(new d(r12.M4, r12.N4, cd.L0(2131750612, null), cd.a0(null, null, 2131750613, Integer.valueOf(r12.N4))));
-        arrayList.add(new d(r12.O4, r12.P4, cd.L0(2131752215, null), cd.a0(null, null, 2131752216, Integer.valueOf(r12.P4))));
-        arrayList.add(new d(3, 4, cd.L0(2131751810, null), cd.a0(null, null, 2131751811, 4)));
-        arrayList.add(new d(r12.x4, r12.y4, cd.L0(2131745333, null), cd.a0(null, null, 2131745334, Integer.valueOf(r12.y4))));
+        wp r12 = wp.r1(i10);
+        arrayList.add(new d(r12.E4, r12.F4, dd.L0(2131749388, null), dd.a0(null, null, 2131749389, Integer.valueOf(r12.F4))));
+        arrayList.add(new d(r12.Q4, r12.R4, dd.L0(2131747264, null), dd.a0(null, null, 2131747265, Integer.valueOf(r12.R4))));
+        arrayList.add(new d(r12.S4, r12.T4, dd.L0(2131746604, null), dd.a0(null, null, 2131746605, Integer.valueOf(r12.T4))));
+        arrayList.add(new d(r12.G4, r12.H4, dd.L0(2131745919, null), dd.a0(null, null, 2131745920, Integer.valueOf(r12.H4))));
+        arrayList.add(new d(r12.I4, r12.J4, dd.L0(2131750840, null), dd.a0(null, null, 2131750841, Integer.valueOf(r12.J4))));
+        arrayList.add(new d(r12.Y4, r12.Z4, dd.L0(2131753719, null), dd.a0(null, null, 2131753720, Integer.valueOf(r12.J4))));
+        arrayList.add(new d(r12.U4, r12.V4, dd.L0(2131752554, null), dd.a0(null, null, 2131752555, Integer.valueOf(r12.J4))));
+        arrayList.add(new d(r12.M4, r12.N4, dd.L0(2131750612, null), dd.a0(null, null, 2131750613, Integer.valueOf(r12.N4))));
+        arrayList.add(new d(r12.O4, r12.P4, dd.L0(2131752215, null), dd.a0(null, null, 2131752216, Integer.valueOf(r12.P4))));
+        arrayList.add(new d(3, 4, dd.L0(2131751810, null), dd.a0(null, null, 2131751811, 4)));
+        arrayList.add(new d(r12.x4, r12.y4, dd.L0(2131745333, null), dd.a0(null, null, 2131745334, Integer.valueOf(r12.y4))));
         this.d = 1;
         this.e = 1;
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -115,7 +115,7 @@ public final class c extends sk0 {
             imageView.setImageDrawable(ea.f.c(context.getDrawable(R.drawable.other_2x_large), (k1) ea.f.d().b));
             f7.addView(imageView, b6.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
             TextView textView = new TextView(context);
-            textView.setText(cd.L0(2131751350, null));
+            textView.setText(dd.L0(2131751350, null));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
             a7.V(textView, t6.G6, p6Var);

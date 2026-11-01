@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -34,7 +34,7 @@ public final /* synthetic */ class u7 implements Runnable {
                     org.telegram.messenger.i0.g3(new u7(v7Var, new ArrayList(), str3));
                     break;
                 } else {
-                    String R0 = org.telegram.messenger.cd.D0().R0(lowerCase, true, false);
+                    String R0 = org.telegram.messenger.dd.D0().R0(lowerCase, true, false);
                     if (!lowerCase.equals(R0) && R0.length() != 0) {
                         str2 = R0;
                     }
@@ -46,17 +46,17 @@ public final /* synthetic */ class u7 implements Runnable {
                     }
                     ArrayList arrayList2 = new ArrayList();
                     for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) arrayList.get(i12);
+                        org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) arrayList.get(i12);
                         int i13 = 0;
                         while (true) {
                             if (i13 < i11) {
                                 String str4 = strArr[i13];
-                                String I0 = jjVar.I0();
+                                String I0 = kjVar.I0();
                                 if (I0 != null && I0.length() != 0) {
                                     if (I0.toLowerCase().contains(str4)) {
-                                        arrayList2.add(jjVar);
+                                        arrayList2.add(kjVar);
                                     } else {
-                                        TLRPC.Document document = jjVar.D == 0 ? jjVar.k.media.webpage.document : jjVar.k.media.document;
+                                        TLRPC.Document document = kjVar.D == 0 ? kjVar.k.media.webpage.document : kjVar.k.media.document;
                                         int i14 = 0;
                                         while (true) {
                                             if (i14 < document.attributes.size()) {
@@ -75,7 +75,7 @@ public final /* synthetic */ class u7 implements Runnable {
                                             }
                                         }
                                         if (z10) {
-                                            arrayList2.add(jjVar);
+                                            arrayList2.add(kjVar);
                                         }
                                     }
                                 }

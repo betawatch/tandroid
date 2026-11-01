@@ -1,9 +1,9 @@
 package bi;
 
-import org.telegram.messenger.d20;
-import org.telegram.ui.kh0;
+import org.telegram.messenger.e20;
+import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final /* synthetic */ class f implements Runnable {
             case 0:
                 t tVar = this.b;
                 tVar.J(true, 2147483646, 0, 0L, false);
-                kh0 kh0Var = tVar.O;
-                if (kh0Var != null) {
-                    kh0Var.g(false);
+                ih0 ih0Var = tVar.O;
+                if (ih0Var != null) {
+                    ih0Var.g(false);
                     tVar.O = null;
                     break;
                 }
@@ -30,16 +30,16 @@ public final /* synthetic */ class f implements Runnable {
             case 1:
                 t tVar2 = this.b;
                 tVar2.J(false, 0, 0, 0L, false);
-                kh0 kh0Var2 = tVar2.O;
-                if (kh0Var2 != null) {
-                    kh0Var2.g(true);
+                ih0 ih0Var2 = tVar2.O;
+                if (ih0Var2 != null) {
+                    ih0Var2.g(true);
                     tVar2.O = null;
                     break;
                 }
                 break;
             case 2:
                 t tVar3 = this.b;
-                if (!d20.i(tVar3.n).q()) {
+                if (!e20.i(tVar3.n).q()) {
                     new kg.i1(tVar3.b.W1, tVar3.getContext(), tVar3.n, 43, true).show();
                     break;
                 }

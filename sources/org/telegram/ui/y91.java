@@ -3,25 +3,30 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class y91 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z91 b;
+    public final /* synthetic */ ca1 b;
 
-    public /* synthetic */ y91(z91 z91Var, int i10) {
+    public /* synthetic */ y91(ca1 ca1Var, int i10) {
         this.a = i10;
-        this.b = z91Var;
+        this.b = ca1Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.b.s.setVisibility(8);
+                ca1 ca1Var = this.b;
+                ca1Var.w = 0;
+                ca1Var.n.setVisibility(8);
+                break;
+            case 1:
+                this.b.w = 0;
                 break;
             default:
-                this.b.b.a.setVisibility(8);
+                this.b.F.setVisibility(8);
                 break;
         }
     }

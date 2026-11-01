@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class i5 extends f1 {
     public static Locale n0;
@@ -109,7 +109,7 @@ public final class i5 extends f1 {
         this.j0 = new ArrayList();
         this.k0 = new HashMap();
         this.l0 = new HashMap();
-        if (vp.r1(this.currentAccount).f7.getBoolean("needGetStatuses", false)) {
+        if (wp.r1(this.currentAccount).f7.getBoolean("needGetStatuses", false)) {
             I();
         }
         hashMap.put("À", "A");
@@ -152,7 +152,7 @@ public final class i5 extends f1 {
             str2 = str2.trim();
         }
         StringBuilder sb2 = new StringBuilder((str != null ? str.length() : 0) + (str2 != null ? str2.length() : 0) + 1);
-        if (cd.Y == 1) {
+        if (dd.Y == 1) {
             if (str == null || str.length() <= 0) {
                 if (str2 != null && str2.length() > 0) {
                     if (i10 > 0 && str2.length() > i10 + 2) {
@@ -205,7 +205,7 @@ public final class i5 extends f1 {
     }
 
     public static String o(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? p((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : cd.L0(2131749337, null);
+        return tLObject instanceof TLRPC.User ? p((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : dd.L0(2131749337, null);
     }
 
     public static String p(TLRPC.User user) {
@@ -307,8 +307,8 @@ public final class i5 extends f1 {
             if (v2.a) {
                 f8.b("load contacts from cache");
             }
-            hs messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new br(messagesStorage, 13));
+            is messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new cr(messagesStorage, 13));
             return;
         }
         if (v2.a) {
@@ -358,7 +358,7 @@ public final class i5 extends f1 {
         while (true) {
             int[] iArr = this.I;
             if (i10 >= iArr.length) {
-                getNotificationCenter().k(zs.k0, new Object[0]);
+                getNotificationCenter().k(at.k0, new Object[0]);
                 return;
             }
             if (z10) {
@@ -370,59 +370,59 @@ public final class i5 extends f1 {
                 switch (i10) {
                     case 0:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 1:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyChatInvite();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 2:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneCall();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 3:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneP2P();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 4:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyProfilePhoto();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 5:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyForwards();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 6:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneNumber();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 7:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyAddedByPhone();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 8:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyVoiceMessages();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 9:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyAbout();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 11:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyBirthday();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 12:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyStarGiftsAutoSave();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 13:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyNoPaidMessages();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                     case 14:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeySavedMusic();
-                        getConnectionsManager().sendRequest(getprivacy, new lo(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new mo(this, i10, 3));
                         break;
                 }
                 i10++;
@@ -440,7 +440,7 @@ public final class i5 extends f1 {
     }
 
     public final void E(HashMap hashMap, ArrayList arrayList, HashMap hashMap2, boolean z10) {
-        Utilities.e.c(new sy(this, z10, new ArrayList(this.e0), hashMap2, hashMap, arrayList));
+        Utilities.e.c(new ty(this, z10, new ArrayList(this.e0), hashMap2, hashMap, arrayList));
     }
 
     public final void F(final HashMap hashMap, final boolean z10, final boolean z11, final boolean z12, final boolean z13, final boolean z14, final boolean z15) {
@@ -1001,7 +1001,7 @@ public final class i5 extends f1 {
                             i0.g3(new Runnable() { // from class: org.telegram.messenger.p4
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    i5.this.getNotificationCenter().k(zs.Q, Integer.valueOf(i13), hashMap10, Boolean.valueOf(z43), Boolean.valueOf(z44));
+                                    i5.this.getNotificationCenter().k(at.Q, Integer.valueOf(i13), hashMap10, Boolean.valueOf(z43), Boolean.valueOf(z44));
                                 }
                             });
                             return;
@@ -1155,10 +1155,10 @@ public final class i5 extends f1 {
             }
         }
         if (!arrayList4.isEmpty()) {
-            hs messagesStorage = getMessagesStorage();
+            is messagesStorage = getMessagesStorage();
             messagesStorage.getClass();
             if (!arrayList4.isEmpty()) {
-                messagesStorage.a.c(new xp(messagesStorage, arrayList4, 0));
+                messagesStorage.a.c(new yp(messagesStorage, arrayList4, 0));
             }
         }
         if (!arrayList3.isEmpty()) {
@@ -1340,20 +1340,20 @@ public final class i5 extends f1 {
                                                     String string5 = query.getString(3);
                                                     ArrayList arrayList4 = f5Var2.f;
                                                     if (string5 == null) {
-                                                        string5 = cd.L0(2131747307, null);
+                                                        string5 = dd.L0(2131747307, null);
                                                     }
                                                     arrayList4.add(string5);
                                                 } else if (i14 == 1) {
-                                                    f5Var2.f.add(cd.L0(2131747309, null));
+                                                    f5Var2.f.add(dd.L0(2131747309, null));
                                                 } else {
                                                     if (i14 == 2) {
-                                                        f5Var2.f.add(cd.L0(2131747307, null));
+                                                        f5Var2.f.add(dd.L0(2131747307, null));
                                                     } else if (i14 == 3) {
-                                                        f5Var2.f.add(cd.L0(2131747297, null));
+                                                        f5Var2.f.add(dd.L0(2131747297, null));
                                                     } else if (i14 == 12) {
-                                                        f5Var2.f.add(cd.L0(2131747308, null));
+                                                        f5Var2.f.add(dd.L0(2131747308, null));
                                                     } else {
-                                                        f5Var2.f.add(cd.L0(2131747298, null));
+                                                        f5Var2.f.add(dd.L0(2131747298, null));
                                                     }
                                                     hashMap5.put(substring, f5Var2);
                                                     contentResolver3 = contentResolver2;
@@ -1587,7 +1587,7 @@ public final class i5 extends f1 {
                                                             f5Var4.e.add(h5Var2.d);
                                                             f5Var4.g.add(str7);
                                                             f5Var4.h.add(0);
-                                                            f5Var4.f.add(cd.L0(2131747298, null));
+                                                            f5Var4.f.add(dd.L0(2131747298, null));
                                                             HashMap hashMap7 = hashMap2 == null ? new HashMap() : hashMap2;
                                                             try {
                                                                 hashMap7.put(h5Var2.b, f5Var4);
@@ -1703,17 +1703,17 @@ public final class i5 extends f1 {
 
     public final void I() {
         L();
-        vp messagesController = getMessagesController();
+        wp messagesController = getMessagesController();
         messagesController.r1.clear();
         messagesController.w1.clear();
-        SharedPreferences.Editor edit = vp.r1(this.currentAccount).f7.edit();
+        SharedPreferences.Editor edit = wp.r1(this.currentAccount).f7.edit();
         edit.putBoolean("needGetStatuses", true).commit();
         getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new v4(2, this, edit));
     }
 
     public final void J(boolean z10) {
         try {
-            if (vp.r1(this.currentAccount).f7.getLong("lastReloadStatusTime", 0L) >= System.currentTimeMillis() - 10800000 && !z10) {
+            if (wp.r1(this.currentAccount).f7.getLong("lastReloadStatusTime", 0L) >= System.currentTimeMillis() - 10800000 && !z10) {
                 return;
             }
             I();
@@ -1728,7 +1728,7 @@ public final class i5 extends f1 {
 
     public final void L() {
         try {
-            vp.r1(this.currentAccount).f7.edit().putLong("lastReloadStatusTime", System.currentTimeMillis()).commit();
+            wp.r1(this.currentAccount).f7.edit().putLong("lastReloadStatusTime", System.currentTimeMillis()).commit();
         } catch (Exception e) {
             f8.g(e, true);
         }
@@ -1779,7 +1779,7 @@ public final class i5 extends f1 {
                 this.P = arrayList;
                 break;
         }
-        getNotificationCenter().k(zs.k0, new Object[0]);
+        getNotificationCenter().k(at.k0, new Object[0]);
         I();
     }
 
@@ -1868,7 +1868,7 @@ public final class i5 extends f1 {
         newInsert3.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.profile");
         newInsert3.withValue("data1", Long.valueOf(user.id));
         newInsert3.withValue("data2", "Telegram Profile");
-        newInsert3.withValue("data3", cd.a0("ContactShortcutMessage", null, 2131751786, str));
+        newInsert3.withValue("data3", dd.a0("ContactShortcutMessage", null, 2131751786, str));
         newInsert3.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert3.build());
         ContentProviderOperation.Builder newInsert4 = ContentProviderOperation.newInsert(uri);
@@ -1876,7 +1876,7 @@ public final class i5 extends f1 {
         newInsert4.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call");
         newInsert4.withValue("data1", Long.valueOf(user.id));
         newInsert4.withValue("data2", "Telegram Voice Call");
-        newInsert4.withValue("data3", cd.a0("ContactShortcutVoiceCall", null, 2131751784, str));
+        newInsert4.withValue("data3", dd.a0("ContactShortcutVoiceCall", null, 2131751784, str));
         newInsert4.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert4.build());
         ContentProviderOperation.Builder newInsert5 = ContentProviderOperation.newInsert(uri);
@@ -1884,7 +1884,7 @@ public final class i5 extends f1 {
         newInsert5.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call.video");
         newInsert5.withValue("data1", Long.valueOf(user.id));
         newInsert5.withValue("data2", "Telegram Video Call");
-        newInsert5.withValue("data3", cd.a0("ContactShortcutVideoCall", null, 2131751785, str));
+        newInsert5.withValue("data3", dd.a0("ContactShortcutVideoCall", null, 2131751785, str));
         newInsert5.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert5.build());
     }
@@ -1966,7 +1966,7 @@ public final class i5 extends f1 {
         if (z10) {
             Utilities.d.c(new a5(this, 3));
         } else {
-            i0.g3(new mg(this, arrayList4, arrayList5, 15));
+            i0.g3(new ng(this, arrayList4, arrayList5, 15));
         }
     }
 
@@ -1981,7 +1981,7 @@ public final class i5 extends f1 {
             TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) this.e0.get(i10);
             TLRPC.User Z1 = getMessagesController().Z1(Long.valueOf(tL_contact.user_id));
             if (Z1 != null) {
-                String j10 = h20.j(Z1, true);
+                String j10 = i20.j(Z1, true);
                 if (j10.length() > 1) {
                     j10 = j10.substring(0, 1);
                 }
@@ -2054,7 +2054,7 @@ public final class i5 extends f1 {
     }
 
     public final void f() {
-        SharedPreferences sharedPreferences = vp.r1(this.currentAccount).f7;
+        SharedPreferences sharedPreferences = wp.r1(this.currentAccount).f7;
         this.y = sharedPreferences.getString("invitelink", null);
         int i10 = sharedPreferences.getInt("invitelinktime", 0);
         if (this.D) {
@@ -2217,8 +2217,8 @@ public final class i5 extends f1 {
             }
             th.r5 r5Var = O1.k;
             r5Var.b.a.c(new bi.e(r5Var, j10, 27));
-            vp.r1(i11).D();
-            zs.f(i11).k(zs.v5, new Object[0]);
+            wp.r1(i11).D();
+            at.f(i11).k(at.v5, new Object[0]);
             TLRPC.InputUser p12 = getMessagesController().p1(user);
             user.contact = false;
             arrayList2.add(Long.valueOf(user.id));
@@ -2291,12 +2291,12 @@ public final class i5 extends f1 {
             str = "https://telegram.org/dl";
         }
         if (i10 <= 1) {
-            return cd.a0(null, null, 2131749126, str);
+            return dd.a0(null, null, 2131749126, str);
         }
         try {
-            return String.format(cd.J0(i10, "InviteTextNum"), Integer.valueOf(i10), str);
+            return String.format(dd.J0(i10, "InviteTextNum"), Integer.valueOf(i10), str);
         } catch (Exception unused) {
-            return cd.a0(null, null, 2131749126, str);
+            return dd.a0(null, null, 2131749126, str);
         }
     }
 

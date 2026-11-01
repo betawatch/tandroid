@@ -18,29 +18,29 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.jc;
 import org.telegram.messenger.v5;
+import org.telegram.messenger.vi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.qf0;
+import org.telegram.ui.pf0;
 import w7.b6;
 import w7.u;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout implements qf0, e, k6 {
+public final class b extends FrameLayout implements pf0, e, k6 {
     public static final RectF V = new RectF();
     public a D;
     public TLRPC.TL_attachMenuBot E;
@@ -61,7 +61,7 @@ public final class b extends FrameLayout implements qf0, e, k6 {
     public TextPaint T;
     public r8 U;
     public final TextView a;
-    public final ei0 b;
+    public final fi0 b;
     public g9 c;
     public p6 d;
     public final Paint e;
@@ -82,10 +82,10 @@ public final class b extends FrameLayout implements qf0, e, k6 {
         this.n = new fe.b(1, this, grVar, 380L, false);
         this.r = new fe.b(2, this, grVar, 380L, false);
         this.S = 1.0f;
-        ei0 ei0Var = new ei0(context);
-        this.b = ei0Var;
-        addView(ei0Var, b6.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
-        ei0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
+        fi0 fi0Var = new fi0(context);
+        this.b = fi0Var;
+        addView(fi0Var, b6.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
+        fi0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextSize(1, 12.0f);
@@ -109,7 +109,7 @@ public final class b extends FrameLayout implements qf0, e, k6 {
         b bVar = new b(context);
         bVar.d = p6Var;
         bVar.D = aVar;
-        bVar.a.setText(cd.L0(i10, null));
+        bVar.a.setText(dd.L0(i10, null));
         bVar.b(false);
         bVar.b.setLayoutParams(b6.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
         bVar.x = t6.w0(t6.Ql, p6Var);
@@ -149,7 +149,7 @@ public final class b extends FrameLayout implements qf0, e, k6 {
         TLRPC.TL_attachMenuBot tL_attachMenuBot = this.E;
         boolean z12 = true;
         if (tL_attachMenuBot != null) {
-            Pattern pattern = ui.R1;
+            Pattern pattern = vi.R1;
             ArrayList<TLRPC.TL_attachMenuBotIcon> arrayList = tL_attachMenuBot.icons;
             int size = arrayList.size();
             int i10 = 0;
@@ -166,13 +166,13 @@ public final class b extends FrameLayout implements qf0, e, k6 {
                 }
             }
             if (tL_attachMenuBotIcon == null) {
-                tL_attachMenuBotIcon = ui.k0(this.E);
+                tL_attachMenuBotIcon = vi.k0(this.E);
                 z12 = false;
             }
             if (tL_attachMenuBotIcon == null || (document = tL_attachMenuBotIcon.icon) == null) {
                 this.c.b();
             } else if (this.P != document.id) {
-                this.c.m(ic.b(document), "24_24_lastframe", ic.b(document), "24_24_lastframe", z12 ? null : v5.f(document, t6.a7, 1.0f, null), this.E);
+                this.c.m(jc.b(document), "24_24_lastframe", jc.b(document), "24_24_lastframe", z12 ? null : v5.f(document, t6.a7, 1.0f, null), this.E);
                 this.P = document.id;
             }
             a();
@@ -185,9 +185,9 @@ public final class b extends FrameLayout implements qf0, e, k6 {
         int i11 = aVar.b;
         int i12 = aVar.a;
         int i13 = aVar.c;
-        ei0 ei0Var = this.b;
+        fi0 fi0Var = this.b;
         if (i13 != -1) {
-            ei0Var.setImageResource(i13);
+            fi0Var.setImageResource(i13);
             a();
             return;
         }
@@ -196,11 +196,11 @@ public final class b extends FrameLayout implements qf0, e, k6 {
             boolean z13 = this.N != z11;
             if (this.O != i14) {
                 this.O = i14;
-                ei0Var.f(i14, 24, 24, null);
+                fi0Var.f(i14, 24, 24, null);
                 z13 = true;
             }
             if (z13) {
-                bi0 animatedDrawable = ei0Var.getAnimatedDrawable();
+                ci0 animatedDrawable = fi0Var.getAnimatedDrawable();
                 if (animatedDrawable == null) {
                     return;
                 }
@@ -234,23 +234,23 @@ public final class b extends FrameLayout implements qf0, e, k6 {
         if (i12 != i11) {
             if (this.O != i14) {
                 this.O = i14;
-                ei0Var.f(i14, 24, 24, null);
-                ei0Var.getAnimatedDrawable().h = false;
+                fi0Var.f(i14, 24, 24, null);
+                fi0Var.getAnimatedDrawable().h = false;
                 if (!z10) {
-                    ei0Var.getAnimatedDrawable().T(true, 0.99f);
+                    fi0Var.getAnimatedDrawable().T(true, 0.99f);
                     return;
                 } else {
-                    ei0Var.getAnimatedDrawable().M(0);
-                    ei0Var.d();
+                    fi0Var.getAnimatedDrawable().M(0);
+                    fi0Var.d();
                     return;
                 }
             }
             return;
         }
-        if (ei0Var.getAnimatedDrawable() == null) {
-            ei0Var.f(this.D.a, 24, 24, null);
+        if (fi0Var.getAnimatedDrawable() == null) {
+            fi0Var.f(this.D.a, 24, 24, null);
         }
-        bi0 animatedDrawable2 = ei0Var.getAnimatedDrawable();
+        ci0 animatedDrawable2 = fi0Var.getAnimatedDrawable();
         if (animatedDrawable2 == null) {
             return;
         }
@@ -266,7 +266,7 @@ public final class b extends FrameLayout implements qf0, e, k6 {
                 animatedDrawable2.M(iArr[0]);
                 animatedDrawable2.P(0);
             }
-            ei0Var.d();
+            fi0Var.d();
         }
     }
 
@@ -388,9 +388,9 @@ public final class b extends FrameLayout implements qf0, e, k6 {
         TextView textView = this.a;
         textView.setScaleX(f7);
         textView.setScaleY(f7);
-        ei0 ei0Var = this.b;
-        ei0Var.setScaleX(f7);
-        ei0Var.setScaleY(f7);
+        fi0 fi0Var = this.b;
+        fi0Var.setScaleX(f7);
+        fi0Var.setScaleY(f7);
         g9 g9Var = this.c;
         if (g9Var != null) {
             g9Var.setScaleX(f7);

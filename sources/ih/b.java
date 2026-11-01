@@ -17,11 +17,11 @@ import org.telegram.messenger.i0;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Cells.e6;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.a21;
-import org.telegram.ui.w21;
+import org.telegram.ui.u21;
+import org.telegram.ui.y11;
 import sg.e0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b extends mt {
     public final /* synthetic */ int Y1;
@@ -116,8 +116,8 @@ public final class b extends mt {
                 break;
             case 2:
                 if (z10) {
-                    ((a21) this.Z1).F.q();
-                    i0.h3(new w21(this, 0), 200L);
+                    ((y11) this.Z1).F.q();
+                    i0.h3(new u21(this, 0), 200L);
                 }
                 super.onFocusChanged(z10, i10, rect);
                 break;
@@ -181,10 +181,10 @@ public final class b extends mt {
                 }
                 break;
             case 2:
-                if (motionEvent.getAction() != 1 || !((a21) this.Z1).F.u()) {
+                if (motionEvent.getAction() != 1 || !((y11) this.Z1).F.u()) {
                     break;
                 } else {
-                    i0.h3(new w21(this, 1), 200L);
+                    i0.h3(new u21(this, 1), 200L);
                     break;
                 }
         }

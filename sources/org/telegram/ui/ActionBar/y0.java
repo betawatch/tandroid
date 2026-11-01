@@ -26,16 +26,16 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.tz;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.tc;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.jb0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class y0 extends FrameLayout implements k6 {
     public final Paint D;
@@ -60,7 +60,7 @@ public abstract class y0 extends FrameLayout implements k6 {
     public boolean W;
     public float a;
     public final lg.s a0;
-    public j20 b;
+    public k20 b;
     public PorterDuffColorFilter b0;
     public final u0 c;
     public float c0;
@@ -114,7 +114,7 @@ public abstract class y0 extends FrameLayout implements k6 {
         TextPaint textPaint = u0Var.a;
         textPaint.setStyle(style);
         textPaint.setStrokeWidth(org.telegram.messenger.i0.N(0.3f));
-        u0Var.b = cd.X ? 5 : 3;
+        u0Var.b = dd.X ? 5 : 3;
         u0 u0Var2 = new u0(this, 1);
         this.d = u0Var2;
         u0Var2.setCallback(this);
@@ -124,7 +124,7 @@ public abstract class y0 extends FrameLayout implements k6 {
         TextPaint textPaint2 = u0Var2.a;
         textPaint2.setStyle(style);
         textPaint2.setStrokeWidth(org.telegram.messenger.i0.N(0.3f));
-        u0Var2.b = cd.X ? 3 : 5;
+        u0Var2.b = dd.X ? 3 : 5;
         paint.setColor(0);
         paint.setShadowLayer(org.telegram.messenger.i0.N(1.33f), 0.0f, org.telegram.messenger.i0.N(0.33f), 1056964608);
         ColorMatrix colorMatrix = new ColorMatrix();
@@ -378,7 +378,7 @@ public abstract class y0 extends FrameLayout implements k6 {
             i10 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + getPaddingRight() + View.MeasureSpec.getSize(i10), TLObject.FLAG_30);
         }
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + org.telegram.messenger.i0.L(44.0f), TLObject.FLAG_30));
-        boolean z10 = tz.o() >= 2 && sc.e(256);
+        boolean z10 = uz.o() >= 2 && tc.e(256);
         if (this.x && this.f == null && !this.W && z10) {
             this.a0.run();
         }
@@ -414,9 +414,9 @@ public abstract class y0 extends FrameLayout implements k6 {
                             i10++;
                         }
                     }
-                    j20 j20Var = this.b;
-                    if (j20Var != null) {
-                        j20Var.a(Float.valueOf(paddingLeft), Boolean.TRUE);
+                    k20 k20Var = this.b;
+                    if (k20Var != null) {
+                        k20Var.a(Float.valueOf(paddingLeft), Boolean.TRUE);
                         return true;
                     }
                 }
@@ -438,9 +438,9 @@ public abstract class y0 extends FrameLayout implements k6 {
             }
             boolean z10 = !this.f0;
             d(false, max);
-            j20 j20Var2 = this.b;
-            if (j20Var2 != null) {
-                j20Var2.a(Float.valueOf(this.a), Boolean.valueOf(z10));
+            k20 k20Var2 = this.b;
+            if (k20Var2 != null) {
+                k20Var2.a(Float.valueOf(this.a), Boolean.valueOf(z10));
             }
         }
         return true;
@@ -468,8 +468,8 @@ public abstract class y0 extends FrameLayout implements k6 {
         invalidate();
     }
 
-    public void setOnValueChange(j20 j20Var) {
-        this.b = j20Var;
+    public void setOnValueChange(k20 k20Var) {
+        this.b = k20Var;
     }
 
     public void setRoundRadiusDp(float f7) {

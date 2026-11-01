@@ -17,9 +17,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class da0 extends FrameLayout implements org.telegram.messenger.us, org.telegram.ui.ActionBar.k6 {
+public final class da0 extends FrameLayout implements org.telegram.messenger.vs, org.telegram.ui.ActionBar.k6 {
     public int D;
     public int E;
     public int F;
@@ -70,25 +70,25 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
         textPaint.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.E8, p6Var));
         int i13 = 2;
         if (arrayList.size() > 1) {
-            SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(i11 == 0 ? org.telegram.messenger.cd.G(arrayList.size(), "MessageContainsEmojiPacks", new Object[0]) : org.telegram.messenger.cd.G(arrayList.size(), "MessageContainsReactionsPacks", new Object[0]));
+            SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(i11 == 0 ? org.telegram.messenger.dd.G(arrayList.size(), "MessageContainsEmojiPacks", new Object[0]) : org.telegram.messenger.dd.G(arrayList.size(), "MessageContainsReactionsPacks", new Object[0]));
             this.n = W2;
-            x41[] x41VarArr = (x41[]) W2.getSpans(0, W2.length(), x41.class);
-            for (int i14 = 0; x41VarArr != null && i14 < x41VarArr.length; i14++) {
-                int spanStart = W2.getSpanStart(x41VarArr[i14]);
-                int spanEnd = W2.getSpanEnd(x41VarArr[i14]);
-                W2.removeSpan(x41VarArr[i14]);
+            y41[] y41VarArr = (y41[]) W2.getSpans(0, W2.length(), y41.class);
+            for (int i14 = 0; y41VarArr != null && i14 < y41VarArr.length; i14++) {
+                int spanStart = W2.getSpanStart(y41VarArr[i14]);
+                int spanEnd = W2.getSpanEnd(y41VarArr[i14]);
+                W2.removeSpan(y41VarArr[i14]);
                 W2.setSpan(new bi.m6(this, i13), spanStart, spanEnd, 33);
             }
             return;
         }
         if (arrayList.size() != 1) {
             if (i11 == 4) {
-                this.n = org.telegram.messenger.i0.R2(org.telegram.messenger.cd.L0(2131744883, null), org.telegram.ui.ActionBar.t6.Uc, 2, null, p6Var);
+                this.n = org.telegram.messenger.i0.R2(org.telegram.messenger.dd.L0(2131744883, null), org.telegram.ui.ActionBar.t6.Uc, 2, null, p6Var);
                 return;
             }
             return;
         }
-        String L0 = i11 == 0 ? org.telegram.messenger.cd.L0(2131748612, null) : i11 == 3 ? org.telegram.messenger.cd.L0(2131748608, null) : org.telegram.messenger.cd.L0(2131748607, null);
+        String L0 = i11 == 0 ? org.telegram.messenger.dd.L0(2131748612, null) : i11 == 3 ? org.telegram.messenger.dd.L0(2131748608, null) : org.telegram.messenger.dd.L0(2131748607, null);
         String[] split = L0.split("%s");
         if (split.length <= 1) {
             this.n = L0;
@@ -96,7 +96,7 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
         }
         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) arrayList.get(0);
         this.b = inputStickerSet;
-        if (inputStickerSet == null || (m0 = org.telegram.messenger.ui.b0(i10).m0(this.b, false)) == null || (stickerSet = m0.set) == null) {
+        if (inputStickerSet == null || (m0 = org.telegram.messenger.vi.b0(i10).m0(this.b, false)) == null || (stickerSet = m0.set) == null) {
             str = null;
             document = null;
         } else {
@@ -128,7 +128,7 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
             t80Var.k(4.0f);
             return;
         }
-        SpannableString spannableString = new SpannableString(org.telegram.messenger.jj.U(document));
+        SpannableString spannableString = new SpannableString(org.telegram.messenger.kj.U(document));
         spannableString.setSpan(new ba0(this, document, this.h.getFontMetricsInt()), 0, spannableString.length(), 33);
         f5 l4 = f5.l(i10, 0, document);
         this.d = l4;
@@ -209,7 +209,7 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
     
         r2 = null;
      */
-    @Override // org.telegram.messenger.us
+    @Override // org.telegram.messenger.vs
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -217,11 +217,11 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
         String str;
         TLRPC.Document document;
         ArrayList<TLRPC.Document> arrayList;
-        if (i10 != org.telegram.messenger.zs.B0 || this.b == null) {
+        if (i10 != org.telegram.messenger.at.B0 || this.b == null) {
             return;
         }
         int i12 = this.a;
-        TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.ui.b0(i12).m0(this.b, false);
+        TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.vi.b0(i12).m0(this.b, false);
         if (m0 == null) {
             return;
         }
@@ -256,7 +256,7 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
         invalidate();
         SpannableString spannableString = new SpannableString(" ");
         spannableString.setSpan(new mg.d2(this, 2), 0, 1, 33);
-        SpannableString spannableString2 = new SpannableString(org.telegram.messenger.jj.U(document));
+        SpannableString spannableString2 = new SpannableString(org.telegram.messenger.kj.U(document));
         spannableString2.setSpan(new ca0(this, document, this.h.getFontMetricsInt()), 0, spannableString2.length(), 33);
         SpannableString spannableString3 = new SpannableString(str);
         spannableString3.setSpan(new bi.m6(this, 2), 0, spannableString3.length(), 33);
@@ -295,7 +295,7 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
         if (f5Var != null) {
             f5Var.a(this);
         }
-        org.telegram.messenger.zs.f(this.a).c(this, org.telegram.messenger.zs.B0);
+        org.telegram.messenger.at.f(this.a).c(this, org.telegram.messenger.at.B0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -305,7 +305,7 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
         if (f5Var != null) {
             f5Var.n(this);
         }
-        org.telegram.messenger.zs.f(this.a).n(this, org.telegram.messenger.zs.B0);
+        org.telegram.messenger.at.f(this.a).n(this, org.telegram.messenger.at.B0);
     }
 
     @Override // android.view.View
@@ -316,7 +316,7 @@ public final class da0 extends FrameLayout implements org.telegram.messenger.us,
             canvas.save();
             canvas.translate(getPaddingLeft(), getPaddingTop());
             TextPaint textPaint = this.h;
-            textPaint.setAlpha(org.telegram.messenger.zs.e4);
+            textPaint.setAlpha(org.telegram.messenger.at.e4);
             this.r.draw(canvas);
             t80 t80Var = this.f;
             if (t80Var != null && this.e) {

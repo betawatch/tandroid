@@ -5,9 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.k2;
@@ -15,12 +15,12 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.u71;
+import org.telegram.ui.s71;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f1 extends kg.v1 {
     public final ArrayList I2;
@@ -38,9 +38,9 @@ public final class f1 extends kg.v1 {
         aVar.setOnClickListener(new ag.g(this, 14));
         aVar.setCloseStyle(true);
         this.b.addView(aVar, b6.d(-1, 64.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i11 = this.t0;
-        tk0Var.setPadding(i11, 0, i11, org.telegram.messenger.i0.L(64.0f));
+        uk0Var.setPadding(i11, 0, i11, org.telegram.messenger.i0.L(64.0f));
         Context context = getContext();
         int i12 = e1.f;
         FrameLayout frameLayout = new FrameLayout(context);
@@ -88,7 +88,7 @@ public final class f1 extends kg.v1 {
         if (Q == null) {
             return;
         }
-        f1 f1Var = new f1(Q, d20.s0, arrayList, Q.getResourceProvider());
+        f1 f1Var = new f1(Q, e20.s0, arrayList, Q.getResourceProvider());
         f1Var.B2 = true;
         f1Var.C2 = true;
         f1Var.show();
@@ -105,10 +105,10 @@ public final class f1 extends kg.v1 {
     }
 
     @Override // kg.v1
-    public final void e1(u71 u71Var) {
+    public final void e1(s71 s71Var) {
         View view = this.t2;
         ArrayList arrayList = this.I2;
-        u71Var.addView(view, b6.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
+        s71Var.addView(view, b6.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
     }
 
     @Override // kg.v1
@@ -119,26 +119,26 @@ public final class f1 extends kg.v1 {
         this.H2.setLineSpacing(org.telegram.messenger.i0.L(2.0f), 1.0f);
         p80 p80Var = this.G2[0];
         ArrayList arrayList = this.I2;
-        p80Var.setText(cd.J0(arrayList.size(), "GiftPremiumGiftsSent"));
+        p80Var.setText(dd.J0(arrayList.size(), "GiftPremiumGiftsSent"));
         ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).bottomMargin = org.telegram.messenger.i0.L(16.0f);
         ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).topMargin = org.telegram.messenger.i0.L(4.0f);
         int size = arrayList.size();
         if (size == 1) {
-            a02 = cd.a0(null, null, 2131749662, cd.a0(null, null, 2131749664, h20.j((TLRPC.User) arrayList.get(0), true)));
+            a02 = dd.a0(null, null, 2131749662, dd.a0(null, null, 2131749664, i20.j((TLRPC.User) arrayList.get(0), true)));
         } else if (size == 2) {
-            a02 = cd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749662, cd.a0("GiftPremiumUsersTwo", null, 2131749657, h20.j((TLRPC.User) arrayList.get(0), true), h20.j((TLRPC.User) arrayList.get(1), true)));
+            a02 = dd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749662, dd.a0("GiftPremiumUsersTwo", null, 2131749657, i20.j((TLRPC.User) arrayList.get(0), true), i20.j((TLRPC.User) arrayList.get(1), true)));
         } else if (size != 3) {
-            a02 = cd.G(arrayList.size() - 3, "GiftPremiumUsersPurchasedMany", cd.a0("GiftPremiumUsersThree", null, 2131749658, h20.j((TLRPC.User) arrayList.get(0), true), h20.j((TLRPC.User) arrayList.get(1), true), h20.j((TLRPC.User) arrayList.get(2), true)));
+            a02 = dd.G(arrayList.size() - 3, "GiftPremiumUsersPurchasedMany", dd.a0("GiftPremiumUsersThree", null, 2131749658, i20.j((TLRPC.User) arrayList.get(0), true), i20.j((TLRPC.User) arrayList.get(1), true), i20.j((TLRPC.User) arrayList.get(2), true)));
         } else {
-            a02 = cd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749662, cd.a0("GiftPremiumUsersThree", null, 2131749658, h20.j((TLRPC.User) arrayList.get(0), true), h20.j((TLRPC.User) arrayList.get(1), true), h20.j((TLRPC.User) arrayList.get(2), true)));
+            a02 = dd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749662, dd.a0("GiftPremiumUsersThree", null, 2131749658, i20.j((TLRPC.User) arrayList.get(0), true), i20.j((TLRPC.User) arrayList.get(1), true), i20.j((TLRPC.User) arrayList.get(2), true)));
         }
         this.H2.setText(org.telegram.messenger.i0.W2(a02));
         this.H2.append("\n");
         this.H2.append("\n");
         if (arrayList.size() == 1) {
-            this.H2.append(org.telegram.messenger.i0.W2(cd.a0("GiftPremiumGiftsSentStatusForUser", null, 2131749677, h20.j((TLRPC.User) arrayList.get(0), true))));
+            this.H2.append(org.telegram.messenger.i0.W2(dd.a0("GiftPremiumGiftsSentStatusForUser", null, 2131749677, i20.j((TLRPC.User) arrayList.get(0), true))));
         } else {
-            this.H2.append(org.telegram.messenger.i0.W2(cd.L0(2131749678, "GiftPremiumGiftsSentStatus")));
+            this.H2.append(org.telegram.messenger.i0.W2(dd.L0(2131749678, "GiftPremiumGiftsSentStatus")));
         }
     }
 

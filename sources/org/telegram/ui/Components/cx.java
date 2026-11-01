@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class cx extends ul0 {
+public class cx extends vl0 {
     public boolean A0;
     public boolean B0;
     public VelocityTracker C0;
@@ -29,7 +29,7 @@ public class cx extends ul0 {
         this.u0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    @Override // org.telegram.ui.Components.ul0, android.widget.HorizontalScrollView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.vl0, android.widget.HorizontalScrollView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.s != null) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -58,7 +58,7 @@ public class cx extends ul0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ul0, android.widget.HorizontalScrollView, android.view.View
+    @Override // org.telegram.ui.Components.vl0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z10;
         vy vyVar = this.D0;

@@ -7,9 +7,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class d9 extends v50 {
+public final class d9 extends u50 {
     public final /* synthetic */ int v0;
     public final /* synthetic */ org.telegram.ui.ActionBar.k2 w0;
 
@@ -20,20 +20,20 @@ public final class d9 extends v50 {
         this.w0 = k2Var;
     }
 
-    @Override // org.telegram.ui.v50
-    public final void r0(HashSet hashSet) {
+    @Override // org.telegram.ui.u50
+    public final void s0(HashSet hashSet) {
         int size = hashSet.size();
         int i10 = this.v0;
         if (size == 1) {
-            TLRPC.User Z1 = org.telegram.messenger.vp.r1(i10).Z1((Long) hashSet.iterator().next());
-            TLRPC.UserFull a2 = org.telegram.messenger.vp.r1(i10).a2(Z1.id);
+            TLRPC.User Z1 = org.telegram.messenger.wp.r1(i10).Z1((Long) hashSet.iterator().next());
+            TLRPC.UserFull a2 = org.telegram.messenger.wp.r1(i10).a2(Z1.id);
             if (a2 == null) {
                 TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
-                tL_users_getFullUser.id = org.telegram.messenger.vp.r1(i10).n1(Z1.id);
+                tL_users_getFullUser.id = org.telegram.messenger.wp.r1(i10).n1(Z1.id);
                 ConnectionsManager.getInstance(i10).sendRequest(tL_users_getFullUser, new mg.w(this, i10, Z1, 3));
                 return;
             }
-            org.telegram.ui.Components.voip.m1.m(Z1, false, a2.video_calls_available, getParentActivity(), a2, org.telegram.messenger.c.a(i10));
+            org.telegram.ui.Components.voip.n1.m(Z1, false, a2.video_calls_available, getParentActivity(), a2, org.telegram.messenger.c.a(i10));
         } else {
             TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
             createconferencecall.random_id = Utilities.b.nextInt();

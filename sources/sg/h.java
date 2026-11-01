@@ -1,9 +1,9 @@
 package sg;
 
-import org.telegram.messenger.cd;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -31,10 +31,10 @@ public final /* synthetic */ class h implements Runnable {
             case 3:
                 if (oVar.O && !oVar.N) {
                     oVar.N = true;
-                    zs.e().k(98, 512);
+                    at.e().k(98, 512);
                     oVar.c.setVisibility(0);
                     oVar.c.setLayerType(2, null);
-                    oVar.i0(oVar.P.e);
+                    oVar.j0(oVar.P.e);
                     oVar.P.a(true, true);
                     break;
                 }
@@ -43,10 +43,10 @@ public final /* synthetic */ class h implements Runnable {
                 gf.f.r(oVar.getParentActivity(), "https://t.me/stickers");
                 break;
             case 5:
-                gf.f.r(oVar.getParentActivity(), cd.L0(2131752409, null));
+                gf.f.r(oVar.getParentActivity(), dd.L0(2131752409, null));
                 break;
             default:
-                oVar.d0(false);
+                oVar.e0(false);
                 break;
         }
     }

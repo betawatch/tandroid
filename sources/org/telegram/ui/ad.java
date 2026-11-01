@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ad implements Runnable {
     public final /* synthetic */ int a;
@@ -15,12 +15,12 @@ public final /* synthetic */ class ad implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.l0(true);
+                this.b.m0(true);
                 break;
             case 1:
                 kd kdVar = this.b;
                 kdVar.k0 = true;
-                kdVar.m0();
+                kdVar.n0();
                 break;
             case 2:
                 kd kdVar2 = this.b;
@@ -31,7 +31,7 @@ public final /* synthetic */ class ad implements Runnable {
                 kdVar2.p0 = null;
                 kdVar2.o0 = null;
                 kdVar2.q0 = 0.0d;
-                kdVar2.j0(false, true);
+                kdVar2.k0(false, true);
                 kdVar2.f.j(null, null, kdVar2.w, null);
                 kdVar2.n.setAnimation(kdVar2.K);
                 kdVar2.K.M(0);
@@ -40,9 +40,9 @@ public final /* synthetic */ class ad implements Runnable {
                 kd kdVar3 = this.b;
                 kdVar3.k0 = true;
                 if (kdVar3.y.length() > 0) {
-                    kdVar3.i0(kdVar3.y.getText().toString());
+                    kdVar3.j0(kdVar3.y.getText().toString());
                 }
-                kdVar3.m0();
+                kdVar3.n0();
                 break;
         }
     }

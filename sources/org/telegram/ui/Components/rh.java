@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class rh implements org.telegram.ui.ko0 {
+public final class rh implements org.telegram.ui.io0 {
     public boolean a;
     public final /* synthetic */ HashMap b;
     public final /* synthetic */ ArrayList c;
@@ -19,12 +19,12 @@ public final class rh implements org.telegram.ui.ko0 {
         this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public final void u0(int i10, boolean z10, boolean z11) {
         if (z10) {
             return;
@@ -39,45 +39,45 @@ public final class rh implements org.telegram.ui.ko0 {
         while (true) {
             ArrayList arrayList2 = this.c;
             if (i11 >= arrayList2.size()) {
-                ((org.telegram.ui.un) this.d.W1).l8(i10, arrayList, z11);
+                ((org.telegram.ui.un) this.d.W1).p8(i10, arrayList, z11);
                 return;
             }
             Object obj = hashMap.get(arrayList2.get(i11));
-            org.telegram.messenger.pz pzVar = new org.telegram.messenger.pz();
-            arrayList.add(pzVar);
-            org.telegram.messenger.hf hfVar = (org.telegram.messenger.hf) obj;
-            String str = hfVar.h;
+            org.telegram.messenger.qz qzVar = new org.telegram.messenger.qz();
+            arrayList.add(qzVar);
+            org.telegram.messenger.jf jfVar = (org.telegram.messenger.jf) obj;
+            String str = jfVar.h;
             if (str != null) {
-                pzVar.c = str;
+                qzVar.c = str;
             } else {
-                pzVar.l = hfVar;
+                qzVar.l = jfVar;
             }
-            pzVar.e = hfVar.c;
-            pzVar.k = hfVar.s;
-            CharSequence charSequence = hfVar.I;
-            pzVar.d = charSequence != null ? charSequence.toString() : null;
-            pzVar.i = hfVar.n;
-            pzVar.j = hfVar.r;
-            pzVar.h = hfVar.x;
-            TLRPC.BotInlineResult botInlineResult = hfVar.N;
-            if (botInlineResult != null && hfVar.H == 1) {
-                pzVar.m = botInlineResult;
-                pzVar.n = hfVar.O;
+            qzVar.e = jfVar.c;
+            qzVar.k = jfVar.s;
+            CharSequence charSequence = jfVar.I;
+            qzVar.d = charSequence != null ? charSequence.toString() : null;
+            qzVar.i = jfVar.n;
+            qzVar.j = jfVar.r;
+            qzVar.h = jfVar.x;
+            TLRPC.BotInlineResult botInlineResult = jfVar.N;
+            if (botInlineResult != null && jfVar.H == 1) {
+                qzVar.m = botInlineResult;
+                qzVar.n = jfVar.O;
             }
             System.currentTimeMillis();
             i11++;
         }
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public final void B(Editable editable) {
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public final /* synthetic */ void h0() {
     }
 
-    @Override // org.telegram.ui.ko0
+    @Override // org.telegram.ui.io0
     public final void y() {
     }
 }

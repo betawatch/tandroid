@@ -39,12 +39,12 @@ import kg.s0;
 import m2.t;
 import m4.c;
 import n2.u;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.p2;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import q0.a;
 import q5.d;
 import r0.b0;
@@ -78,7 +78,7 @@ import s4.y0;
 import s4.z;
 import s4.z0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] Q0 = {R.attr.clipToPadding};
@@ -119,7 +119,7 @@ public class RecyclerView extends ViewGroup {
     public k0 U;
     public EdgeEffect V;
     public EdgeEffect W;
-    public final xj0 a;
+    public final yj0 a;
     public EdgeEffect a0;
     public final e b;
     public EdgeEffect b0;
@@ -931,7 +931,7 @@ public class RecyclerView extends ViewGroup {
         e eVar = this.b;
         if (z12 && (i10 == 2 || i10 == 1)) {
             if (this.y.e()) {
-                if (focusFinder.findNextFocus(this, view, i10 == 2 ? zs.O1 : 33) == null) {
+                if (focusFinder.findNextFocus(this, view, i10 == 2 ? at.O1 : 33) == null) {
                     z10 = true;
                     if (!z10 && this.y.d()) {
                         RecyclerView recyclerView = this.y.b;
@@ -2583,9 +2583,9 @@ public class RecyclerView extends ViewGroup {
     public void setAdapter(g0 g0Var) {
         setLayoutFrozen(false);
         g0 g0Var2 = this.x;
-        xj0 xj0Var = this.a;
+        yj0 yj0Var = this.a;
         if (g0Var2 != null) {
-            g0Var2.a.unregisterObserver(xj0Var);
+            g0Var2.a.unregisterObserver(yj0Var);
             this.x.getClass();
         }
         p0();
@@ -2596,7 +2596,7 @@ public class RecyclerView extends ViewGroup {
         g0 g0Var3 = this.x;
         this.x = g0Var;
         if (g0Var != null) {
-            g0Var.B(xj0Var);
+            g0Var.B(yj0Var);
         }
         n0 n0Var = this.y;
         if (n0Var != null) {
@@ -3269,7 +3269,7 @@ public class RecyclerView extends ViewGroup {
         float a2;
         float a10;
         int i11 = 1;
-        this.a = new xj0(this, i11);
+        this.a = new yj0(this, i11);
         this.b = new e(this);
         this.f = new c(26, (byte) 0);
         this.n = new e0(this, 0);

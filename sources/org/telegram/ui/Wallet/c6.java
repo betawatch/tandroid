@@ -25,11 +25,11 @@ import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c6 {
     public static volatile boolean j0;
@@ -72,10 +72,10 @@ public final class c6 {
     public final RectF f = new RectF(0.0f, 0.0f, 336.0f, 205.0f);
     public final RectF g = new RectF();
     public final RectF h = new RectF(-42.0f, -107.5f, 378.0f, 312.5f);
-    public final float[] i = new float[zs.i2];
-    public final float[] j = new float[zs.i2];
-    public final float[] k = new float[zs.i2];
-    public final float[] l = new float[zs.i2];
+    public final float[] i = new float[at.i2];
+    public final float[] j = new float[at.i2];
+    public final float[] k = new float[at.i2];
+    public final float[] l = new float[at.i2];
     public final float[] m = new float[76];
     public final float[] n = new float[76];
     public final int[] o = new int[76];
@@ -237,8 +237,8 @@ public final class c6 {
             }
             n0 = bitmapArr;
         }
-        int[] iArr2 = new int[zs.N1];
-        int[] iArr3 = new int[zs.N1];
+        int[] iArr2 = new int[at.N1];
+        int[] iArr3 = new int[at.N1];
         int i33 = i28;
         while (true) {
             d = 128.0d;
@@ -249,8 +249,8 @@ public final class c6 {
             }
             float f18 = f11;
             double d11 = ((i33 * 3.141592653589793d) * 2.0d) / 128.0d;
-            iArr2[i33] = Color.argb(Math.round(((float) Math.pow(Math.pow(Math.sin(d11) / 0.64d, 2.0d) + 1.0d, -2.0d)) * 64.0f), zs.e4, zs.e4, zs.e4);
-            iArr3[i33] = Color.argb(Math.round(l(0.18f, 0.88f, (float) Math.abs(Math.cos(Math.atan2(Math.sin(d11) / 2.0d, Math.cos(d11))))) * 255.0f), zs.e4, zs.e4, zs.e4);
+            iArr2[i33] = Color.argb(Math.round(((float) Math.pow(Math.pow(Math.sin(d11) / 0.64d, 2.0d) + 1.0d, -2.0d)) * 64.0f), at.e4, at.e4, at.e4);
+            iArr3[i33] = Color.argb(Math.round(l(0.18f, 0.88f, (float) Math.abs(Math.cos(Math.atan2(Math.sin(d11) / 2.0d, Math.cos(d11))))) * 255.0f), at.e4, at.e4, at.e4);
             i33++;
             z11 = z10 ? 1 : 0;
             f11 = f18;
@@ -292,7 +292,7 @@ public final class c6 {
                 BitmapShader bitmapShader3 = new BitmapShader(bitmap5, tileMode3, tileMode3);
                 this.e.setScale(f19 / m0[i35].getWidth(), f20 / m0[i35].getHeight());
                 bitmapShader3.setLocalMatrix(this.e);
-                int[] iArr4 = new int[zs.N1];
+                int[] iArr4 = new int[at.N1];
                 int i36 = i28;
                 while (i36 <= i12) {
                     double d12 = ((i36 * 3.141592653589793d) * 2.0d) / d10;
@@ -383,7 +383,7 @@ public final class c6 {
 
     public static int d(float f7, float f10, float f11, int i10, int i11) {
         float f12 = f11 * 255.0f;
-        return Color.rgb(Math.min(zs.e4, Math.round((Color.red(i11) * f10) + (Color.red(i10) * f7) + f12)), Math.min(zs.e4, Math.round((Color.green(i11) * f10) + (Color.green(i10) * f7) + f12)), Math.min(zs.e4, Math.round((Color.blue(i11) * f10) + (Color.blue(i10) * f7) + f12)));
+        return Color.rgb(Math.min(at.e4, Math.round((Color.red(i11) * f10) + (Color.red(i10) * f7) + f12)), Math.min(at.e4, Math.round((Color.green(i11) * f10) + (Color.green(i10) * f7) + f12)), Math.min(at.e4, Math.round((Color.blue(i11) * f10) + (Color.blue(i10) * f7) + f12)));
     }
 
     public static float g(int i10) {
@@ -463,7 +463,7 @@ public final class c6 {
         Paint paint = this.b;
         paint.setAlpha(i10);
         canvas.drawBitmap(bitmap, (Rect) null, rectF, paint);
-        paint.setAlpha(zs.e4);
+        paint.setAlpha(at.e4);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -558,7 +558,7 @@ public final class c6 {
                     int i23 = 0;
                     for (int i24 = 3; i23 < i24; i24 = 3) {
                         int i25 = 16 - (i23 * 8);
-                        float g10 = g((i18 >> i25) & zs.e4) * 0.73f;
+                        float g10 = g((i18 >> i25) & at.e4) * 0.73f;
                         float[] fArr4 = fArr2;
                         if (g10 <= 0.0031308f) {
                             pow2 = g10 * 12.92f;
@@ -570,7 +570,7 @@ public final class c6 {
                             pow2 = (((float) Math.pow(g10, 0.4166666567325592d)) * 1.055f) - 0.055f;
                         }
                         fArr4[i23] = pow2;
-                        float g11 = g((i13 >> i25) & zs.e4) * 0.73f;
+                        float g11 = g((i13 >> i25) & at.e4) * 0.73f;
                         fArr3[i23] = g11 <= 0.0031308f ? g11 * 12.92f : (((float) Math.pow(g11, 0.4166666567325592d)) * 1.055f) - 0.055f;
                         i23++;
                         i17 = i13;
@@ -654,7 +654,7 @@ public final class c6 {
                 canvas.clipPath(path);
             }
             canvas.rotate((float) Math.toDegrees(this.U), 168.0f, 102.5f);
-            int round = (i15 != 1 || fArr[9] <= 0.5f) ? zs.e4 : Math.round(fArr[8] * 255.0f);
+            int round = (i15 != 1 || fArr[9] <= 0.5f) ? at.e4 : Math.round(fArr[8] * 255.0f);
             RectF rectF2 = this.h;
             int saveLayerAlpha = round < 255 ? canvas.saveLayerAlpha(rectF2, round) : -1;
             paint.setShader(null);
@@ -672,7 +672,7 @@ public final class c6 {
             if (saveLayerAlpha != -1) {
                 canvas.restoreToCount(saveLayerAlpha);
             }
-            paint.setAlpha(zs.e4);
+            paint.setAlpha(at.e4);
             canvas.restoreToCount(save);
             i15++;
         }
@@ -722,8 +722,8 @@ public final class c6 {
                         }
                     }
                     paint.setShader(null);
-                    i10 = zs.e4;
-                    paint.setAlpha(zs.e4);
+                    i10 = at.e4;
+                    paint.setAlpha(at.e4);
                 } else {
                     blendMode = BlendMode.SOFT_LIGHT;
                     paint.setBlendMode(blendMode);
@@ -732,10 +732,10 @@ public final class c6 {
                     paint.setAlpha(Math.round(53.55f));
                     canvas.drawRect(rectF, paint);
                     paint.setShader(null);
-                    paint.setAlpha(zs.e4);
+                    paint.setAlpha(at.e4);
                     blendMode2 = BlendMode.SRC_OVER;
                     paint.setBlendMode(blendMode2);
-                    i10 = zs.e4;
+                    i10 = at.e4;
                 }
                 rgb = fArr != null ? -13003265 : Color.rgb(Math.min(i10, Math.round(Color.red(this.h0) * 1.12f)), Math.min(i10, Math.round(Color.green(this.h0) * 1.12f)), Math.min(i10, Math.round(Color.blue(this.h0) * 1.12f)));
                 if (this.A != null || this.z != rgb) {
@@ -752,7 +752,7 @@ public final class c6 {
                 }
                 paint2.setColorFilter(null);
                 paint2.setShader(null);
-                paint2.setAlpha(zs.e4);
+                paint2.setAlpha(at.e4);
             }
         }
         z10 = false;
@@ -781,8 +781,8 @@ public final class c6 {
         while (r7 < r6) {
         }
         paint.setShader(null);
-        i10 = zs.e4;
-        paint.setAlpha(zs.e4);
+        i10 = at.e4;
+        paint.setAlpha(at.e4);
         if (fArr != null) {
         }
         if (this.A != null) {
@@ -794,7 +794,7 @@ public final class c6 {
         }
         paint22.setColorFilter(null);
         paint22.setShader(null);
-        paint22.setAlpha(zs.e4);
+        paint22.setAlpha(at.e4);
     }
 
     public final void f(Bitmap[] bitmapArr) {

@@ -10,12 +10,12 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.cd;
-import org.telegram.ui.Components.bi0;
+import org.telegram.messenger.dd;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class m0 extends View {
     public float D;
@@ -39,7 +39,7 @@ public final class m0 extends View {
     public final Paint e;
     public final Paint f;
     public final dc h;
-    public bi0 n;
+    public ci0 n;
     public final StaticLayout r;
     public final float s;
     public final float w;
@@ -106,14 +106,14 @@ public final class m0 extends View {
     }
 
     public final void b(int i10, int i11, CharSequence charSequence) {
-        bi0 bi0Var = this.n;
-        if (bi0Var != null) {
-            bi0Var.setCallback(null);
+        ci0 ci0Var = this.n;
+        if (ci0Var != null) {
+            ci0Var.setCallback(null);
             this.n.C(true);
         }
-        bi0 bi0Var2 = new bi0(i10, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f));
-        this.n = bi0Var2;
-        bi0Var2.setCallback(this);
+        ci0 ci0Var2 = new ci0(i10, org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f));
+        this.n = ci0Var2;
+        ci0Var2.setCallback(this);
         this.n.start();
         StaticLayout staticLayout = new StaticLayout(charSequence, this.c, org.telegram.messenger.i0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.x = staticLayout;
@@ -216,9 +216,9 @@ public final class m0 extends View {
         }
         if (e7 > 0.0f) {
             float f13 = e7 * e;
-            bi0 bi0Var = this.n;
-            if (bi0Var != null) {
-                bi0Var.setAlpha((int) (f13 * f10));
+            ci0 ci0Var = this.n;
+            if (ci0Var != null) {
+                ci0Var.setAlpha((int) (f13 * f10));
                 this.n.setBounds((int) (rectF.left + org.telegram.messenger.i0.L(9.0f)), (int) (rectF.top + org.telegram.messenger.i0.L(6.0f)), (int) (rectF.left + org.telegram.messenger.i0.L(45.0f)), (int) (rectF.top + org.telegram.messenger.i0.L(f7)));
                 this.n.draw(canvas2);
             }
@@ -284,6 +284,6 @@ public final class m0 extends View {
     }
 
     public m0(Context context) {
-        this(context, cd.L0(2131746933, null));
+        this(context, dd.L0(2131746933, null));
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o6 implements org.telegram.ui.ActionBar.b7 {
     public final /* synthetic */ int a;
@@ -38,9 +38,9 @@ public final /* synthetic */ class o6 implements org.telegram.ui.ActionBar.b7 {
                 ((tf0) this.b).M0();
                 break;
             case 4:
-                dn0 dn0Var = ((gn0) this.b).z0;
-                if (dn0Var != null) {
-                    dn0Var.setTextColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.y8, false));
+                en0 en0Var = ((hn0) this.b).z0;
+                if (en0Var != null) {
+                    en0Var.setTextColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.y8, false));
                     break;
                 }
                 break;
@@ -48,10 +48,10 @@ public final /* synthetic */ class o6 implements org.telegram.ui.ActionBar.b7 {
                 ((Runnable) this.b).run();
                 break;
             case 6:
-                ((cx0) this.b).X0(false);
+                ((dx0) this.b).X0(false);
                 break;
             default:
-                ((w41) this.b).d();
+                ((x41) this.b).d();
                 break;
         }
     }

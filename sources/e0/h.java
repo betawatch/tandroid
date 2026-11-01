@@ -16,15 +16,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import k2.t0;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.me;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.ne;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.t5;
-import org.telegram.ui.Components.th0;
+import org.telegram.ui.Components.uh0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
@@ -39,7 +39,7 @@ public final class h {
     public h(View view) {
         this.h = new Paint(1);
         this.d = new t5(view, 350L, gr.h);
-        this.f = new th0(view);
+        this.f = new uh0(view);
         this.g = new dc(view);
         e6 e6Var = new e6(false, false, false);
         this.e = e6Var;
@@ -48,10 +48,10 @@ public final class h {
         e6Var.setCallback(view);
         e6Var.M = (int) (org.telegram.messenger.i0.q.x * 0.3f);
         this.b = false;
-        e6Var.t(cd.L0(2131746454, null), false, true);
-        String L0 = cd.L0(2131746453, null);
+        e6Var.t(dd.L0(2131746454, null), false, true);
+        String L0 = dd.L0(2131746453, null);
         TextPaint textPaint = e6Var.a;
-        this.a = (int) Math.ceil(Math.max(textPaint.measureText(L0), textPaint.measureText(cd.L0(2131746454, null))));
+        this.a = (int) Math.ceil(Math.max(textPaint.measureText(L0), textPaint.measureText(dd.L0(2131746454, null))));
     }
 
     public void a(n0 n0Var) {
@@ -119,11 +119,11 @@ public final class h {
 
     public void d(Canvas canvas, RectF rectF, float f7, float f10, int i10, boolean z10, boolean z11) {
         Paint paint = (Paint) this.h;
-        th0 th0Var = (th0) this.f;
+        uh0 uh0Var = (uh0) this.f;
         e6 e6Var = (e6) this.e;
         if (z10 != this.b) {
             this.b = z10;
-            e6Var.t(cd.L0(z10 ? 2131746453 : 2131746454, null), true, true);
+            e6Var.t(dd.L0(z10 ? 2131746453 : 2131746454, null), true, true);
         }
         int c10 = (int) (e6Var.c() + org.telegram.messenger.i0.L(23.66f));
         float L = org.telegram.messenger.i0.L(17.66f);
@@ -141,16 +141,16 @@ public final class h {
             float L2 = org.telegram.messenger.i0.L(14.0f);
             int L3 = (int) ((rectF.right - org.telegram.messenger.i0.L(3.33f)) - L2);
             float f12 = L2 / 2.0f;
-            th0Var.setBounds(L3, (int) ((rectF.centerY() - f12) + org.telegram.messenger.i0.L(0.33f)), (int) (rectF.right - org.telegram.messenger.i0.L(3.33f)), (int) (rectF.centerY() + f12 + org.telegram.messenger.i0.L(0.33f)));
-            Paint paint2 = th0Var.b;
+            uh0Var.setBounds(L3, (int) ((rectF.centerY() - f12) + org.telegram.messenger.i0.L(0.33f)), (int) (rectF.right - org.telegram.messenger.i0.L(3.33f)), (int) (rectF.centerY() + f12 + org.telegram.messenger.i0.L(0.33f)));
+            Paint paint2 = uh0Var.b;
             paint2.setColor(i10);
-            paint2.setAlpha(th0Var.d);
+            paint2.setAlpha(uh0Var.d);
             boolean z12 = !z10;
-            if (th0Var.e != z12) {
-                th0Var.e = z12;
-                th0Var.a.invalidate();
+            if (uh0Var.e != z12) {
+                uh0Var.e = z12;
+                uh0Var.a.invalidate();
             }
-            th0Var.draw(canvas);
+            uh0Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -190,7 +190,7 @@ public final class h {
         return true;
     }
 
-    public h(Context context, File file, me meVar) {
+    public h(Context context, File file, ne neVar) {
         this.d = new Handler(Looper.getMainLooper());
         this.f = new Object();
         this.g = new HashMap();
@@ -202,8 +202,8 @@ public final class h {
         if (iVar != null) {
             t0Var.d = iVar;
             t0Var.b = false;
-            t0Var.e = new m5.e(this, meVar, false, 6);
-            t0Var.f = new m4.c(8, this, meVar);
+            t0Var.e = new m5.e(this, neVar, false, 6);
+            t0Var.f = new m4.c(8, this, neVar);
             t0Var.g = new oa.d(13);
             this.e = new ki.k(t0Var);
             return;

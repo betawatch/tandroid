@@ -1,90 +1,33 @@
 package org.telegram.ui;
 
-import android.graphics.Typeface;
-import android.provider.Settings;
-import org.telegram.messenger.voip.VoIPService;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t10 implements Runnable {
+public final /* synthetic */ class t10 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b50 b;
+    public final /* synthetic */ org.telegram.ui.Cells.c2[] b;
 
-    public /* synthetic */ t10(b50 b50Var, int i10) {
+    public /* synthetic */ t10(org.telegram.ui.Cells.c2[] c2VarArr, int i10) {
         this.a = i10;
-        this.b = b50Var;
+        this.b = c2VarArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         int i10 = this.a;
-        b50 b50Var = this.b;
+        org.telegram.ui.Cells.c2[] c2VarArr = this.b;
         switch (i10) {
             case 0:
-                if (b50Var.t1()) {
-                    LaunchActivity launchActivity = b50Var.Z1;
-                    Typeface typeface = org.telegram.messenger.i0.a;
-                    if (Settings.canDrawOverlays(launchActivity) && !org.telegram.ui.Components.voip.s0.d0.V) {
-                        b50Var.dismiss();
-                        org.telegram.messenger.i0.h3(new t10(b50Var, 4), 100L);
-                        break;
-                    }
-                }
+                c2VarArr[((Integer) view.getTag()).intValue()].c(!c2VarArr[r5.intValue()].b(), true);
                 break;
             case 1:
-                if (b50Var.R2 != null && b50Var.I3 && VoIPService.getSharedInstance() != null) {
-                    try {
-                        b50Var.s1.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    b50Var.M1(1, true);
-                    org.telegram.messenger.i0.h3(b50Var.o4, 80L);
-                    b50Var.I3 = false;
-                    b50Var.J3 = true;
-                    break;
-                }
-                break;
-            case 2:
-                int i11 = b50Var.K3;
-                if (i11 == 1 || i11 == 2 || i11 == 6 || i11 == 5) {
-                    b50Var.Q1(true, false);
-                    break;
-                }
-            case 3:
-                b50Var.x1();
-                break;
-            case 4:
-                org.telegram.ui.Components.voip.s0.h(b50Var.Z1);
-                break;
-            case 5:
-                b50Var.dismiss();
-                break;
-            case 6:
-                b50Var.N1();
-                org.telegram.messenger.i0.h3(b50Var.u3, 1000L);
-                break;
-            case 7:
-                x30 x30Var = b50Var.i2;
-                if (x30Var != null) {
-                    x30Var.show();
-                    break;
-                }
-                break;
-            case 8:
-                b50Var.a1();
-                b50Var.X0();
-                b50Var.W0();
-                b50Var.w1.setTranslationY((-b50Var.t3.d()) + b50Var.b.getPaddingBottom());
-                b50Var.x1.invalidate();
-                b50Var.b1();
-                b50Var.b.invalidate();
-                break;
-            case 9:
-                org.telegram.messenger.vp.r1(b50Var.k1.a).l0(null);
+                c2VarArr[0].c(!r5.b(), true);
                 break;
             default:
-                b50Var.o5 = null;
-                b50Var.K1(true);
+                RectF rectF = ProfileActivity.S6;
+                c2VarArr[0].c(!r5.b(), true);
                 break;
         }
     }

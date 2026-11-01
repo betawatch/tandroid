@@ -13,7 +13,7 @@ import android.graphics.SweepGradient;
 import android.os.Build;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class t {
     public static Bitmap a;
@@ -33,7 +33,7 @@ public abstract class t {
     public static final float[] o = new float[4];
     public static final float[] p = new float[4];
 
-    public static boolean a(Canvas canvas, RectF rectF, float f7, int i10, float f10) {
+    public static boolean a(float f7, float f10, int i10, Canvas canvas, RectF rectF) {
         float f11;
         float f12;
         float f13;
@@ -228,7 +228,8 @@ public abstract class t {
             int min2 = (int) (Math.min(1.0f, f10) * 255.0f);
             Paint paint3 = j;
             paint3.setAlpha(min2);
-            for (int i24 = 0; i24 < i23; i24++) {
+            int i24 = 0;
+            while (i24 < i23) {
                 int i25 = 0;
                 while (i25 < i22) {
                     int i26 = iArr2[i25];
@@ -237,19 +238,20 @@ public abstract class t {
                     int i29 = iArr2[i28];
                     int i30 = i24 + 1;
                     int i31 = iArr3[i30];
-                    int[] iArr4 = iArr3;
+                    int i32 = i24;
                     Rect rect = k;
                     rect.set(i26, i27, i29, i31);
                     float f31 = fArr6[i25];
-                    float f32 = fArr7[i24];
+                    float f32 = fArr7[i32];
                     float f33 = fArr6[i28];
                     float f34 = fArr7[i30];
                     RectF rectF6 = l;
                     rectF6.set(f31, f32, f33, f34);
                     canvas.drawBitmap(bitmap, rect, rectF6, paint3);
-                    iArr3 = iArr4;
                     i25 = i28;
+                    i24 = i32;
                 }
+                i24++;
             }
         }
         return true;

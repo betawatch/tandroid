@@ -25,13 +25,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.o20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.p20;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -45,16 +45,16 @@ import org.telegram.ui.ActionBar.q3;
 import org.telegram.ui.ActionBar.s3;
 import org.telegram.ui.ActionBar.w5;
 import org.telegram.ui.Cells.p8;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.gi0;
-import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.hi0;
+import org.telegram.ui.Components.ik0;
 import org.webrtc.GlGenericDrawer;
 import rh.h8;
 import rh.x6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk0, mh.a, e2.j, r9.d, Vector.TLDeserializer, r0.m, org.telegram.ui.ActionBar.i1, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.u0, a5.b, rf.l, org.telegram.messenger.t1, t5.b, o20 {
+public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, ik0, mh.a, e2.j, r9.d, Vector.TLDeserializer, r0.m, org.telegram.ui.ActionBar.i1, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.v0, a5.b, rf.l, org.telegram.messenger.t1, t5.b, p20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -171,7 +171,7 @@ public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk
 
     /* JADX WARN: Removed duplicated region for block: B:24:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x0120  */
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -213,12 +213,12 @@ public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk
                         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, p6Var);
                         boolean V = w3.V(chat);
-                        String L0 = cd.L0(V ? 2131753397 : 2131753395, null);
+                        String L0 = dd.L0(V ? 2131753397 : 2131753395, null);
                         org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
                         x1Var.R = L0;
-                        x1Var.T = cd.L0(V ? 2131753396 : 2131753394, null);
-                        alertDialog$Builder.k(cd.L0(2131754486, "Add"), new ag.m(25, atomicBoolean, p1Var));
-                        alertDialog$Builder.h(cd.L0(2131752589, "Cancel"), new m4.v0(13));
+                        x1Var.T = dd.L0(V ? 2131753396 : 2131753394, null);
+                        alertDialog$Builder.k(dd.L0(2131754486, "Add"), new ag.m(25, atomicBoolean, p1Var));
+                        alertDialog$Builder.h(dd.L0(2131752589, "Cancel"), new m4.v0(13));
                         alertDialog$Builder.j(new g(i11, atomicBoolean, eVar));
                         alertDialog$Builder.p();
                     } else if (chat != null) {
@@ -233,7 +233,7 @@ public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk
                     } else {
                         hashSet.add(Long.valueOf(hashCode));
                     }
-                    if (hashSet.size() == vp.r1(d20.s0).p0 + j10 && v1Var.j2 == 3) {
+                    if (hashSet.size() == wp.r1(e20.s0).p0 + j10 && v1Var.j2 == 3) {
                         hashSet.remove(Long.valueOf(hashCode));
                         v1Var.k1();
                         return;
@@ -400,19 +400,19 @@ public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk
         }
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ boolean h1(View view) {
         return false;
     }
 
-    @Override // org.telegram.messenger.o20
+    @Override // org.telegram.messenger.p20
     public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         int i10;
         p6 p6Var;
         rh.h hVar = (rh.h) this.b;
-        a51 a51Var = (a51) obj;
+        b51 b51Var = (b51) obj;
         rh.i iVar = hVar.r;
-        if (!(a51Var.G instanceof TL_stars.StarsTransaction)) {
+        if (!(b51Var.G instanceof TL_stars.StarsTransaction)) {
             if (hVar.h) {
                 hVar.h = false;
                 hVar.a();
@@ -423,9 +423,9 @@ public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk
         Context context = hVar.getContext();
         long j10 = iVar.b;
         i10 = ((k2) iVar).currentAccount;
-        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) a51Var.G;
+        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) b51Var.G;
         p6Var = ((k2) iVar).resourceProvider;
-        h8.j1(context, true, j10, i10, starsTransaction, p6Var);
+        h8.k1(context, true, j10, i10, starsTransaction, p6Var);
     }
 
     @Override // rf.l
@@ -434,7 +434,7 @@ public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk
     }
 
     @Override // org.telegram.ui.ActionBar.i1
-    public void r(KeyEvent keyEvent) {
+    public void p(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.k1 k1Var;
         org.telegram.ui.ActionBar.t0 t0Var = (org.telegram.ui.ActionBar.t0) this.b;
         t0Var.getClass();
@@ -443,18 +443,8 @@ public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk
         }
     }
 
-    @Override // org.webrtc.GlGenericDrawer.TextureCallback
-    public void run(Bitmap bitmap, int i10) {
-        org.telegram.ui.Components.voip.r rVar = (org.telegram.ui.Components.voip.r) this.b;
-        if (bitmap == null || bitmap.getPixel(0, 0) == 0) {
-            return;
-        }
-        Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / zs.K2));
-        org.telegram.messenger.i0.g3(new gi0(28, rVar, bitmap));
-    }
-
     @Override // mh.a
-    public void s(Canvas canvas, int i10) {
+    public void r(Canvas canvas, int i10) {
         mh.j jVar = (mh.j) this.b;
         jVar.getClass();
         canvas.save();
@@ -464,12 +454,22 @@ public final /* synthetic */ class l implements org.telegram.ui.ActionBar.u1, hk
         canvas.restore();
     }
 
+    @Override // org.webrtc.GlGenericDrawer.TextureCallback
+    public void run(Bitmap bitmap, int i10) {
+        org.telegram.ui.Components.voip.r rVar = (org.telegram.ui.Components.voip.r) this.b;
+        if (bitmap == null || bitmap.getPixel(0, 0) == 0) {
+            return;
+        }
+        Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / at.K2));
+        org.telegram.messenger.i0.g3(new hi0(29, rVar, bitmap));
+    }
+
     public /* synthetic */ l(p4.t0 t0Var, p4.s0 s0Var) {
         this.a = 18;
         this.b = t0Var;
     }
 
-    @Override // org.telegram.ui.Components.hk0
+    @Override // org.telegram.ui.Components.ik0
     public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

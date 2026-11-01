@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p6 implements org.telegram.ui.ActionBar.o0, ik0 {
+public final /* synthetic */ class p6 implements org.telegram.ui.ActionBar.o0, jk0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ w7 b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class p6 implements org.telegram.ui.ActionBar.o0, i
         this.b = w7Var;
     }
 
-    @Override // org.telegram.ui.Components.ik0
+    @Override // org.telegram.ui.Components.jk0
     public boolean f(int i10, View view) {
         boolean z10 = view instanceof org.telegram.ui.Cells.w;
         w7 w7Var = this.b;
@@ -48,27 +48,27 @@ public final /* synthetic */ class p6 implements org.telegram.ui.ActionBar.o0, i
             case 1:
                 w7 w7Var2 = this.b;
                 if (i10 == 1 || i10 == 2) {
-                    boolean z10 = org.telegram.messenger.tz.O0;
-                    if ((z10 && i10 == 1) || (org.telegram.messenger.tz.N0 && i10 == 2)) {
+                    boolean z10 = org.telegram.messenger.uz.O0;
+                    if ((z10 && i10 == 1) || (org.telegram.messenger.uz.N0 && i10 == 2)) {
                         MediaController.B().l0(0);
                     } else {
                         MediaController.B().l0(i10);
                     }
                     w7Var2.q1.f();
-                    if (z10 != org.telegram.messenger.tz.O0) {
+                    if (z10 != org.telegram.messenger.uz.O0) {
                         w7Var2.o1.C0();
                         w7Var2.S0(false);
                     }
                 } else if (i10 == 4) {
-                    if (org.telegram.messenger.tz.S0 == 1) {
-                        org.telegram.messenger.tz.E(0);
+                    if (org.telegram.messenger.uz.S0 == 1) {
+                        org.telegram.messenger.uz.E(0);
                     } else {
-                        org.telegram.messenger.tz.E(1);
+                        org.telegram.messenger.uz.E(1);
                     }
-                } else if (org.telegram.messenger.tz.S0 == 2) {
-                    org.telegram.messenger.tz.E(0);
+                } else if (org.telegram.messenger.uz.S0 == 2) {
+                    org.telegram.messenger.uz.E(0);
                 } else {
-                    org.telegram.messenger.tz.E(2);
+                    org.telegram.messenger.uz.E(2);
                 }
                 w7Var2.c1();
                 break;

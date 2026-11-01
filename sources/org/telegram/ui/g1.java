@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class g1 extends s4.g0 {
     public final /* synthetic */ j1 c;
@@ -39,11 +39,11 @@ public final class g1 extends s4.g0 {
         View view = c1Var.a;
         if (i11 == 0) {
             b2 b2Var = (b2) view;
-            b2Var.R = (org.telegram.messenger.bj) i1Var.b.get(pageBlock);
+            b2Var.R = (org.telegram.messenger.cj) i1Var.b.get(pageBlock);
             b2Var.a((TL_iv.pageBlockPhoto) pageBlock, j1Var.x.E.cached_page, false, true);
         } else {
             v2 v2Var = (v2) view;
-            v2Var.T = (org.telegram.messenger.bj) i1Var.b.get(pageBlock);
+            v2Var.T = (org.telegram.messenger.cj) i1Var.b.get(pageBlock);
             TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
             v2Var.b(pageblockvideo, (w2) j1Var.y.D.f(pageblockvideo.video_id), false, true);
         }
@@ -52,6 +52,6 @@ public final class g1 extends s4.g0 {
     @Override // s4.g0
     public final s4.c1 w(ViewGroup viewGroup, int i10) {
         j1 j1Var = this.c;
-        return new org.telegram.ui.Components.ck0(i10 != 0 ? new v2(j1Var.getContext(), j1Var.y, j1Var.x, 2) : new b2(j1Var.getContext(), j1Var.y, j1Var.x, 2));
+        return new org.telegram.ui.Components.dk0(i10 != 0 ? new v2(j1Var.getContext(), j1Var.y, j1Var.x, 2) : new b2(j1Var.getContext(), j1Var.y, j1Var.x, 2));
     }
 }

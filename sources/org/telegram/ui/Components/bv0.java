@@ -1,42 +1,40 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bv0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Document b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.messenger.jj d;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 e;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
+    public final /* synthetic */ dv0 b;
 
-    public /* synthetic */ bv0(TLRPC.Document document, int i10, org.telegram.messenger.jj jjVar, org.telegram.ui.Cells.q1 q1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
-        this.a = i11;
-        this.b = document;
-        this.c = i10;
-        this.d = jjVar;
-        this.e = q1Var;
-        this.f = tL_messages_stickerSet;
+    public /* synthetic */ bv0(dv0 dv0Var, int i10) {
+        this.a = i10;
+        this.b = dv0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                TLRPC.Document document = this.b;
-                String r10 = org.telegram.messenger.b8.r(null, document);
-                int i10 = this.c;
-                org.telegram.messenger.b6.q(i10).a(r10, this.d, this.e);
-                org.telegram.messenger.b8.G(i10).X(document, this.f, 1, 1);
+                dv0 dv0Var = this.b;
+                dv0Var.V0 = false;
+                if (!dv0Var.Y0 && dv0Var.W0) {
+                    dv0Var.C(true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.V0 = false;
+                break;
+            case 2:
+                dv0 dv0Var2 = this.b;
+                dv0Var2.Y0 = false;
+                if (!dv0Var2.V0 && dv0Var2.W0) {
+                    dv0Var2.C(true);
+                    break;
+                }
                 break;
             default:
-                TLRPC.Document document2 = this.b;
-                String r11 = org.telegram.messenger.b8.r(null, document2);
-                int i11 = this.c;
-                org.telegram.messenger.b6.q(i11).a(r11, this.d, this.e);
-                org.telegram.messenger.b8.G(i11).X(document2, this.f, 1, 1);
+                this.b.Y0 = false;
                 break;
         }
     }

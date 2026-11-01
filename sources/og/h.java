@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.w3;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.r8;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h extends d implements k6 {
     public int D;
@@ -42,10 +42,10 @@ public final class h extends d implements k6 {
         imageView.setBackground(t6.h0(x02, 1, -1));
         imageView.setImageResource(R.drawable.poll_remove);
         a7.t(imageView, t6.m6, null, PorterDuff.Mode.MULTIPLY);
-        imageView.setContentDescription(cd.L0(2131751599, null));
-        boolean z10 = cd.X;
+        imageView.setContentDescription(dd.L0(2131751599, null));
+        boolean z10 = dd.X;
         addView(imageView, b6.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
-        this.d.setPadding(i0.L(cd.X ? 24.0f : 0.0f), 0, i0.L(cd.X ? 0.0f : 24.0f), 0);
+        this.d.setPadding(i0.L(dd.X ? 24.0f : 0.0f), 0, i0.L(dd.X ? 0.0f : 24.0f), 0);
     }
 
     @Override // og.d
@@ -69,13 +69,13 @@ public final class h extends d implements k6 {
         boolean V = w3.V(chat);
         if (z10) {
             if (i11 >= 1) {
-                L0 = cd.G(i11, V ? "Subscribers" : "Members", new Object[0]);
+                L0 = dd.G(i11, V ? "Subscribers" : "Members", new Object[0]);
             } else {
-                L0 = cd.L0(V ? 2131751391 : 2131754876, null);
+                L0 = dd.L0(V ? 2131751391 : 2131754876, null);
             }
             setSubtitle(L0);
         } else {
-            setSubtitle(cd.G(i10, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
+            setSubtitle(dd.G(i10, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
         }
         a7.Y(this.e, t6.r5, this.a);
         setDivider(true);

@@ -4,13 +4,13 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.mk0;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.nk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class k implements Runnable {
                     qVar.d0 = new AnimatorSet();
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(qVar.b.d, f10);
                     ofFloat.addUpdateListener(iVar2);
-                    long j10 = zs.x3;
+                    long j10 = at.x3;
                     ofFloat.setDuration(j10);
                     gr grVar = gr.h;
                     ofFloat.setInterpolator(grVar);
@@ -83,10 +83,10 @@ public final /* synthetic */ class k implements Runnable {
                     break;
                 }
             default:
-                tk0 tk0Var = (tk0) ((mk0) obj).b;
-                if (tk0Var.c1 != null && (view = tk0Var.L1) != null) {
-                    tk0Var.j1(view, f10, f7, true);
-                    tk0Var.c1 = null;
+                uk0 uk0Var = (uk0) ((nk0) obj).b;
+                if (uk0Var.c1 != null && (view = uk0Var.L1) != null) {
+                    uk0Var.j1(view, f10, f7, true);
+                    uk0Var.c1 = null;
                     break;
                 }
                 break;

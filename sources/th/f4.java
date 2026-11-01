@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.hc0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class f4 extends FrameLayout {
     public long D;
@@ -82,7 +82,7 @@ public final class f4 extends FrameLayout {
             e4Var.a = storyItem;
             arrayList2.add(e4Var);
         }
-        ArrayList F = vp.r1(this.r.h).h0.F(d20.i(d20.s0).e());
+        ArrayList F = wp.r1(this.r.h).h0.F(e20.i(e20.s0).e());
         if (F != null) {
             for (int i12 = 0; i12 < F.size(); i12++) {
                 d5 d5Var = (d5) F.get(i12);
@@ -207,15 +207,15 @@ public final class f4 extends FrameLayout {
         z3 z3Var = this.h;
         if (f10 == 1.0f && this.f != 1.0f) {
             if (o7Var.O0 != null) {
-                jj jjVar = (jj) o7Var.O0.i.get(Utilities.j(z3Var.getClosestPosition(), o7Var.O0.i.size() - 1, 0));
-                long b10 = x4.b(jjVar);
+                kj kjVar = (kj) o7Var.O0.i.get(Utilities.j(z3Var.getClosestPosition(), o7Var.O0.i.size() - 1, 0));
+                long b10 = x4.b(kjVar);
                 ImageReceiver imageReceiver = l7Var.c;
                 if (imageReceiver != null) {
                     imageReceiver.O0(true, true);
                     l7Var.c = null;
                 }
                 e7 e7Var = o7Var.n0;
-                int i11 = jjVar.l.id;
+                int i11 = kjVar.l.id;
                 o7 o7Var2 = e7Var.N0;
                 int i12 = 0;
                 while (true) {

@@ -8,11 +8,11 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a7;
@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.u5;
 import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.r8;
-import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 import w7.b6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class j1 extends ha {
     public static final int c2 = -1;
@@ -41,7 +41,7 @@ public final class j1 extends ha {
     public final FrameLayout T1;
     public final vh.d U1;
     public final vh.d V1;
-    public p51 W1;
+    public q51 W1;
     public boolean X1;
     public Boolean Y1;
     public int Z1;
@@ -51,7 +51,7 @@ public final class j1 extends ha {
     public j1(Activity activity, TL_account.TL_connectedBot tL_connectedBot, qq qqVar, p6 p6Var) {
         super(2, (Context) activity, p6Var, false);
         this.P1 = tL_connectedBot;
-        TLRPC.User Z1 = vp.r1(this.a).Z1(Long.valueOf(tL_connectedBot.bot_id));
+        TLRPC.User Z1 = wp.r1(this.a).Z1(Long.valueOf(tL_connectedBot.bot_id));
         this.Q1 = Z1;
         this.B1 = org.telegram.messenger.i0.L(36.0f);
         this.r1 = 0.15f;
@@ -75,15 +75,15 @@ public final class j1 extends ha {
         a7.V(textView, t6.G6, p6Var);
         textView.setGravity(17);
         textView.setTypeface(org.telegram.messenger.i0.o());
-        textView.setText(h20.p(Z1));
+        textView.setText(i20.p(Z1));
         linearLayout.addView(textView, b6.s(-1, -2, 1, 32.0f, 15.66f, 32.0f, 3.66f));
-        this.l1.setTitle(h20.p(Z1));
+        this.l1.setTitle(i20.p(Z1));
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 14.0f);
         a7.V(textView2, t6.y6, p6Var);
         m5.l(textView2, 17, null, 2131745577);
         linearLayout.addView(textView2, b6.s(-1, -2, 1, 32.0f, 0.0f, 32.0f, 3.66f));
-        String n10 = h20.n(Z1);
+        String n10 = i20.n(Z1);
         if (!TextUtils.isEmpty(n10)) {
             TextView textView3 = new TextView(activity);
             textView3.setTextSize(1, 14.0f);
@@ -96,9 +96,9 @@ public final class j1 extends ha {
         v0(t6.w0(i11, this.I0));
         Q(i11);
         this.Z1 = this.G0;
-        tk0 tk0Var = this.k1;
+        uk0 uk0Var = this.k1;
         int i12 = this.t0;
-        tk0Var.setPadding(i12, 0, i12, org.telegram.messenger.i0.L(72.0f));
+        uk0Var.setPadding(i12, 0, i12, org.telegram.messenger.i0.L(72.0f));
         this.k1.r1();
         this.k1.setOnItemClickListener(new y0(this, i10));
         FrameLayout frameLayout = new FrameLayout(activity);
@@ -111,13 +111,13 @@ public final class j1 extends ha {
         int w02 = t6.w0(t6.kk, this.I0);
         this.b2 = w02;
         dVar.setColor(w02);
-        dVar.setText(cd.L0(2131744230, null));
+        dVar.setText(dd.L0(2131744230, null));
         dVar.setOnClickListener(new i(this, tL_connectedBot, qqVar, i10));
         frameLayout.addView(dVar, b6.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         vh.d dVar2 = new vh.d(activity, p6Var, true);
         dVar2.setRoundRadius(24);
         this.V1 = dVar2;
-        dVar2.setText(cd.L0(2131752785, null));
+        dVar2.setText(dd.L0(2131752785, null));
         dVar2.setOnClickListener(new t0(i10, this, tL_connectedBot));
         frameLayout.addView(dVar2, b6.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         d1(false);
@@ -133,9 +133,9 @@ public final class j1 extends ha {
         jVar.o(gr.h);
         jVar.n(350L);
         this.k1.setItemAnimator(jVar);
-        p51 p51Var = this.W1;
-        if (p51Var != null) {
-            p51Var.O(false);
+        q51 q51Var = this.W1;
+        if (q51Var != null) {
+            q51Var.O(false);
         }
     }
 
@@ -158,11 +158,11 @@ public final class j1 extends ha {
     }
 
     @Override // org.telegram.ui.Components.ha
-    public final sk0 L0(tk0 tk0Var) {
-        p51 p51Var = new p51(tk0Var, getContext(), this.a, 0, true, new a(this, 2), this.I0);
-        this.W1 = p51Var;
-        p51Var.r = false;
-        return p51Var;
+    public final tk0 L0(uk0 uk0Var) {
+        q51 q51Var = new q51(uk0Var, getContext(), this.a, 0, true, new a(this, 2), this.I0);
+        this.W1 = q51Var;
+        q51Var.r = false;
+        return q51Var;
     }
 
     @Override // org.telegram.ui.Components.ha

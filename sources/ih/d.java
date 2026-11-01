@@ -11,11 +11,11 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import ig.c0;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
 import org.telegram.messenger.l0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a7;
@@ -30,12 +30,12 @@ import org.telegram.ui.Cells.w1;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.lg;
+import org.telegram.ui.ng;
 import org.telegram.ui.un;
 import w7.b6;
 import w7.e6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class d extends FrameLayout implements ViewTreeObserver.OnPreDrawListener, k6 {
     public final int[] D;
@@ -53,7 +53,7 @@ public final class d extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
     public f h;
     public q1 n;
     public int r;
-    public lg s;
+    public ng s;
     public final a5 w;
     public final a5 x;
     public final int y;
@@ -77,7 +77,7 @@ public final class d extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         a7.V(bVar, t6.G6, p6Var);
         a7.H(bVar, t6.Uc, p6Var);
         a7.E(bVar, t6.H6, p6Var);
-        bVar.setHint(cd.L0(2131747198, null));
+        bVar.setHint(dd.L0(2131747198, null));
         bVar.setTextSize(1, 15.0f);
         bVar.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
         bVar.setBackground(null);
@@ -115,7 +115,7 @@ public final class d extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         a5Var2.addView(u5Var, b6.e(54, 24, 53));
         a5Var2.addView(cVar, b6.e(44, 44, 51));
         a5Var2.addView(eVar, b6.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        a5Var2.addView(bVar, b6.d(-1, -2.0f, zs.E1, 39.0f, 0.0f, 47.0f, 0.0f));
+        a5Var2.addView(bVar, b6.d(-1, -2.0f, at.E1, 39.0f, 0.0f, 47.0f, 0.0f));
         bVar.setPadding(i0.L(5.0f), i0.L(11.0f), i0.L(5.0f), i0.L(11.0f));
     }
 
@@ -185,9 +185,9 @@ public final class d extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
                 a5Var.setTranslationY(i0.L(0.66f) + rect.top);
                 return true;
             }
-            lg lgVar = this.s;
-            if (lgVar != null) {
-                lgVar.run();
+            ng ngVar = this.s;
+            if (ngVar != null) {
+                ngVar.run();
                 this.s = null;
             }
         }

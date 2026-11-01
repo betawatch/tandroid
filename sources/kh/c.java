@@ -3,17 +3,17 @@ package kh;
 import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.y;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class c extends Drawable {
     public final y a;
     public int b;
-    public int c = zs.e4;
+    public int c = at.e4;
 
     public c(p6 p6Var) {
         int w02 = t6.w0(t6.i6, p6Var);

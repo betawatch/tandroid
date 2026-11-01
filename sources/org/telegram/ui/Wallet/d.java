@@ -4,22 +4,22 @@ import android.graphics.Bitmap;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.r20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.f11;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements j20 {
+public final /* synthetic */ class d implements k20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -28,9 +28,9 @@ public final /* synthetic */ class d implements j20 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.k20
     public final void a(Object obj, Object obj2) {
-        p51 p51Var;
+        q51 q51Var;
         String str;
         switch (this.a) {
             case 0:
@@ -60,11 +60,11 @@ public final /* synthetic */ class d implements j20 {
                     break;
                 }
             case 2:
-                ((j20) this.b).a((h0) obj, (String) obj2);
+                ((k20) this.b).a((h0) obj, (String) obj2);
                 break;
             case 3:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ((f11) this.b).a((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : e2.z(tL_error2, "closeSession"));
+                ((d01) this.b).a((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : e2.z(tL_error2, "closeSession"));
                 break;
             case 4:
                 e2 e2Var = (e2) this.b;
@@ -87,7 +87,7 @@ public final /* synthetic */ class d implements j20 {
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(a51.k(((z2) this.b).Q1));
+                ((ArrayList) obj).add(b51.k(((a3) this.b).Q1));
                 break;
             case 6:
                 p3 p3Var = (p3) this.b;
@@ -113,18 +113,18 @@ public final /* synthetic */ class d implements j20 {
                     b6Var.R0 = true;
                     b6Var.S0 = password.has_password;
                     ii iiVar = b6Var.a;
-                    if (iiVar != null && (p51Var = iiVar.f3) != null) {
-                        p51Var.O(true);
+                    if (iiVar != null && (q51Var = iiVar.f3) != null) {
+                        q51Var.O(true);
                         break;
                     }
                 }
                 break;
             case 8:
-                q20 q20Var = (q20) this.b;
+                r20 r20Var = (r20) this.b;
                 TL_toncenter.onrampSession onrampsession = (TL_toncenter.onrampSession) obj;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
                 if (onrampsession != null && !TextUtils.isEmpty(onrampsession.url)) {
-                    q20Var.a(null);
+                    r20Var.a(null);
                     org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
                     if (T != null) {
                         gf.f.r(T.getContext(), onrampsession.url);
@@ -134,7 +134,7 @@ public final /* synthetic */ class d implements j20 {
                     if (tL_error4 == null || (str = tL_error4.text) == null) {
                         str = "NO_SESSION";
                     }
-                    q20Var.a(str);
+                    r20Var.a(str);
                     break;
                 }
                 break;

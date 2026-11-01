@@ -17,9 +17,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
 import org.telegram.ui.ActionBar.a7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
@@ -28,19 +28,19 @@ import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.h80;
 import org.telegram.ui.Components.j80;
-import org.telegram.ui.Components.n21;
+import org.telegram.ui.Components.o21;
 import org.telegram.ui.Components.o8;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.h8;
-import org.telegram.ui.v50;
+import org.telegram.ui.u50;
 import rh.c8;
 import th.h4;
 import vh.g4;
 import w7.b6;
 import w7.b9;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class a3 extends FrameLayout implements fe.e {
     public final /* synthetic */ int a;
@@ -88,12 +88,12 @@ public final class a3 extends FrameLayout implements fe.e {
                 super.dispatchDraw(canvas);
                 break;
             case 6:
-                n21 n21Var = (n21) this.b;
-                e6 e6Var = n21Var.f;
+                o21 o21Var = (o21) this.b;
+                e6 e6Var = o21Var.f;
                 float i11 = e6Var.i();
                 int i12 = (i11 > 0.0f ? 1 : (i11 == 0.0f ? 0 : -1));
                 boolean z11 = i12 > 0;
-                float T1 = org.telegram.messenger.i0.T1(0.5f, 1.0f, i11) * n21Var.L;
+                float T1 = org.telegram.messenger.i0.T1(0.5f, 1.0f, i11) * o21Var.L;
                 float L = org.telegram.messenger.i0.L(10.0f);
                 float L2 = org.telegram.messenger.i0.L(8.33f);
                 float width = (getWidth() / 2.0f) + org.telegram.messenger.i0.L(12.0f);
@@ -105,7 +105,7 @@ public final class a3 extends FrameLayout implements fe.e {
                     z10 = z11;
                     f11 = L3;
                     f7 = L2;
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), zs.e4, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), at.e4, 31);
                 } else {
                     f7 = L2;
                     i10 = i12;
@@ -130,7 +130,7 @@ public final class a3 extends FrameLayout implements fe.e {
                     float f14 = max / 2.0f;
                     rectF3.set(f10 - f14, f11 - f7, f10 + f14, f11 + f7);
                     y5 y5Var = (y5) this.d;
-                    y5Var.setColor(t6.r1(i11, y5Var.b.a(t6.w0(n21Var.F, y5Var.a), false)));
+                    y5Var.setColor(t6.r1(i11, y5Var.b.a(t6.w0(o21Var.F, y5Var.a), false)));
                     canvas.drawRoundRect(rectF3, f7, f7, y5Var);
                     e6Var.p(rectF3);
                     e6Var.B = (int) (i11 * 255.0f);
@@ -141,14 +141,14 @@ public final class a3 extends FrameLayout implements fe.e {
                 break;
             case 7:
                 Paint paint2 = (Paint) this.c;
-                v50 v50Var = (v50) this.b;
-                paint2.setColor(v50Var.getThemedColor(t6.d6));
+                u50 u50Var = (u50) this.b;
+                paint2.setColor(u50Var.getThemedColor(t6.d6));
                 canvas.save();
                 canvas.translate(0.0f, -getTop());
                 RectF rectF4 = (RectF) this.d;
                 rectF4.set(0.0f, 0.0f, getWidth(), getHeight());
                 rectF4.offset(0.0f, getTop());
-                v50.e0(v50Var, canvas, rectF4, paint2);
+                u50.f0(u50Var, canvas, rectF4, paint2);
                 canvas.restore();
                 super.dispatchDraw(canvas);
                 break;
@@ -164,7 +164,7 @@ public final class a3 extends FrameLayout implements fe.e {
                 int i13 = 0;
                 while (i13 < g4Var.b) {
                     rectF5.set(N2, org.telegram.messenger.i0.N(8.0f), N2 + N, org.telegram.messenger.i0.N(10.0f));
-                    paint3.setAlpha(i13 < g4Var.b + (-1) ? zs.e4 : 133);
+                    paint3.setAlpha(i13 < g4Var.b + (-1) ? at.e4 : 133);
                     canvas.drawRoundRect(rectF5, org.telegram.messenger.i0.N(1.0f), org.telegram.messenger.i0.N(1.0f), paint3);
                     N2 += org.telegram.messenger.i0.N(2.0f) + N;
                     i13++;
@@ -319,7 +319,7 @@ public final class a3 extends FrameLayout implements fe.e {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 6:
-                return ((n21) this.b).f == drawable || super.verifyDrawable(drawable);
+                return ((o21) this.b).f == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -338,7 +338,7 @@ public final class a3 extends FrameLayout implements fe.e {
         }
         TextView textView = new TextView(context);
         this.d = textView;
-        z20.n(textView, 1, 16.0f);
+        a30.n(textView, 1, 16.0f);
         a7.V(textView, t6.j5, p6Var);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -470,24 +470,24 @@ public final class a3 extends FrameLayout implements fe.e {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a3(v50 v50Var, Context context) {
+    public a3(u50 u50Var, Context context) {
         super(context);
         this.a = 7;
-        this.b = v50Var;
+        this.b = u50Var;
         this.d = new RectF();
         this.c = new Paint(1);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a3(n21 n21Var, Context context, p6 p6Var) {
+    public a3(o21 o21Var, Context context, p6 p6Var) {
         super(context);
         this.a = 6;
-        this.b = n21Var;
+        this.b = o21Var;
         Paint paint = new Paint(1);
         this.c = paint;
         this.d = new y5(this, p6Var);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        n21Var.f.setCallback(this);
+        o21Var.f.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

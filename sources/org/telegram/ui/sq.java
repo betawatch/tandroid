@@ -10,9 +10,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sq implements org.telegram.messenger.q20 {
+public final /* synthetic */ class sq implements org.telegram.messenger.r20 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -22,17 +22,17 @@ public final /* synthetic */ class sq implements org.telegram.messenger.q20 {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ sq(int i10, long j10, Activity activity, ArrayList arrayList, HashMap hashMap, org.telegram.messenger.q20 q20Var, org.telegram.ui.ActionBar.p6 p6Var) {
+    public /* synthetic */ sq(int i10, long j10, Activity activity, ArrayList arrayList, HashMap hashMap, org.telegram.messenger.r20 r20Var, org.telegram.ui.ActionBar.p6 p6Var) {
         this.b = i10;
         this.d = arrayList;
         this.c = j10;
         this.e = activity;
         this.f = p6Var;
-        this.g = q20Var;
+        this.g = r20Var;
         this.h = hashMap;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         int i10 = this.a;
         Serializable serializable = this.h;
@@ -61,12 +61,12 @@ public final /* synthetic */ class sq implements org.telegram.messenger.q20 {
                 ArrayList arrayList = (ArrayList) obj5;
                 Activity activity = (Activity) obj4;
                 org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) obj3;
-                org.telegram.messenger.q20 q20Var = (org.telegram.messenger.q20) obj2;
+                org.telegram.messenger.r20 r20Var = (org.telegram.messenger.r20) obj2;
                 HashMap hashMap = (HashMap) serializable;
                 boolean booleanValue = ((Boolean) obj).booleanValue();
                 int i11 = this.b;
                 if (booleanValue) {
-                    SharedPreferences.Editor edit = org.telegram.messenger.vp.r1(i11).f7.edit();
+                    SharedPreferences.Editor edit = org.telegram.messenger.wp.r1(i11).f7.edit();
                     int size = arrayList.size();
                     int i12 = 0;
                     while (i12 < size) {
@@ -74,24 +74,24 @@ public final /* synthetic */ class sq implements org.telegram.messenger.q20 {
                         i12++;
                         Long l4 = (Long) obj6;
                         long longValue = l4.longValue();
-                        long M1 = org.telegram.messenger.vp.r1(i11).M1(longValue);
+                        long M1 = org.telegram.messenger.wp.r1(i11).M1(longValue);
                         if (M1 <= 0 && longValue > 0) {
-                            M1 = org.telegram.messenger.o5.k(org.telegram.messenger.vp.r1(i11).H2(longValue));
+                            M1 = org.telegram.messenger.o5.k(org.telegram.messenger.wp.r1(i11).H2(longValue));
                         }
                         edit.putLong(org.telegram.ui.Cells.f1.n(longValue, "ask_paid_message_", "_price"), M1);
                         rh.e6.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
                     }
                     edit.apply();
                 }
-                org.telegram.messenger.qb qbVar = new org.telegram.messenger.qb(i11, this.c, activity, arrayList, hashMap, q20Var, p6Var);
+                org.telegram.messenger.rb rbVar = new org.telegram.messenger.rb(i11, this.c, activity, arrayList, hashMap, r20Var, p6Var);
                 if (!rh.e6.y(i11, false).e) {
                     rh.e6 y3 = rh.e6.y(i11, false);
                     y3.e = false;
-                    y3.q(qbVar, false, true);
+                    y3.q(rbVar, false, true);
                     y3.e = true;
                     break;
                 } else {
-                    qbVar.run();
+                    rbVar.run();
                     break;
                 }
                 break;
@@ -99,10 +99,10 @@ public final /* synthetic */ class sq implements org.telegram.messenger.q20 {
                 Pattern pattern = LaunchActivity.D1;
                 TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
                 int i13 = this.b;
-                tL_messages_toggleBotInAttachMenu.bot = org.telegram.messenger.vp.r1(i13).n1(this.c);
+                tL_messages_toggleBotInAttachMenu.bot = org.telegram.messenger.wp.r1(i13).n1(this.c);
                 tL_messages_toggleBotInAttachMenu.enabled = true;
                 tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.yx((LaunchActivity) obj5, i13, (ay) obj4, (org.telegram.ui.ActionBar.k2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.zx((LaunchActivity) obj5, i13, (zx) obj4, (org.telegram.ui.ActionBar.k2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
                 break;
         }
     }
@@ -117,11 +117,11 @@ public final /* synthetic */ class sq implements org.telegram.messenger.q20 {
         this.h = str;
     }
 
-    public /* synthetic */ sq(LaunchActivity launchActivity, int i10, long j10, ay ayVar, org.telegram.ui.ActionBar.k2 k2Var, TLRPC.User user, String str) {
+    public /* synthetic */ sq(LaunchActivity launchActivity, int i10, long j10, zx zxVar, org.telegram.ui.ActionBar.k2 k2Var, TLRPC.User user, String str) {
         this.d = launchActivity;
         this.b = i10;
         this.c = j10;
-        this.e = ayVar;
+        this.e = zxVar;
         this.f = k2Var;
         this.g = user;
         this.h = str;

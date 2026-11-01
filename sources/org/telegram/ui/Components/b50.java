@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b50 extends g50 {
     public ImageReceiver a;
@@ -23,7 +23,7 @@ public final class b50 extends g50 {
     public final void dispatchDraw(Canvas canvas) {
         d50 d50Var = this.c;
         FrameLayout frameLayout = d50Var.x;
-        jl0 jl0Var = d50Var.w;
+        kl0 kl0Var = d50Var.w;
         nh.f fVar = d50Var.y;
         super.dispatchDraw(canvas);
         if (this.a == null) {
@@ -35,7 +35,7 @@ public final class b50 extends g50 {
             invalidate();
         }
         canvas.save();
-        canvas.translate(fVar.getLeft() + frameLayout.getLeft() + jl0Var.getLeft(), fVar.getTop() + frameLayout.getTop() + jl0Var.getTop());
+        canvas.translate(fVar.getLeft() + frameLayout.getLeft() + kl0Var.getLeft(), fVar.getTop() + frameLayout.getTop() + kl0Var.getTop());
         if (this.a.M0 != fVar.getWidth()) {
             float width = fVar.getWidth() / this.a.M0;
             canvas.scale(width, width);

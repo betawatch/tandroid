@@ -1,59 +1,112 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Bitmap;
+import java.io.File;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class ke1 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ WallpapersListActivity a;
+public final class ke1 {
+    public String a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public int f;
+    public TLRPC.TL_wallPaper g;
+    public float h;
+    public final File i;
+    public final boolean j;
+    public final boolean k;
+    public TLRPC.WallPaper l;
+    public Bitmap m;
 
-    public ke1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    public ke1(int i10, int i11, String str, int i12) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        int i13 = i11 == 0 ? 0 : i11 | (-16777216);
+        this.c = i13;
+        this.f = i13 == 0 ? 0 : i12;
+        this.h = 1.0f;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.i5 i5Var;
-        org.telegram.ui.ActionBar.i5 i5Var2;
-        WallpapersListActivity wallpapersListActivity = this.a;
-        LongSparseArray longSparseArray = wallpapersListActivity.e0;
-        if (i10 == -1) {
-            i5Var = ((org.telegram.ui.ActionBar.k2) wallpapersListActivity).simpleActionBar;
-            if (!i5Var.s()) {
-                wallpapersListActivity.finishFragment();
-                return;
+    public final String a() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(String.valueOf(this.b));
+        sb2.append(this.c);
+        sb2.append(this.d);
+        sb2.append(this.e);
+        sb2.append(this.f);
+        sb2.append(this.h);
+        String str = this.a;
+        if (str == null) {
+            str = "";
+        }
+        sb2.append(str);
+        return Utilities.a(sb2.toString());
+    }
+
+    public final String b() {
+        int i10 = this.c;
+        String lowerCase = i10 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (i10 >> 8)) & 255), Byte.valueOf((byte) (i10 & org.telegram.messenger.at.e4))).toLowerCase() : null;
+        int i11 = this.b;
+        String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (i11 >> 8)) & 255), Byte.valueOf((byte) (i11 & org.telegram.messenger.at.e4))).toLowerCase();
+        int i12 = this.d;
+        String lowerCase3 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (i12 >> 8)) & 255), Byte.valueOf((byte) (i12 & org.telegram.messenger.at.e4))).toLowerCase() : null;
+        int i13 = this.e;
+        String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (i13 >> 8)) & 255), Byte.valueOf((byte) (i13 & org.telegram.messenger.at.e4))).toLowerCase() : null;
+        if (lowerCase == null || lowerCase3 == null) {
+            if (lowerCase != null) {
+                String C = a1.g.C(lowerCase2, "-", lowerCase);
+                if (this.g != null) {
+                    StringBuilder i14 = sc.e.i(C, "&rotation=");
+                    i14.append(org.telegram.messenger.i0.s1(this.f, true));
+                    lowerCase2 = i14.toString();
+                } else {
+                    StringBuilder i15 = sc.e.i(C, "?rotation=");
+                    i15.append(org.telegram.messenger.i0.s1(this.f, true));
+                    lowerCase2 = i15.toString();
+                }
             }
-            longSparseArray.clear();
-            i5Var2 = ((org.telegram.ui.ActionBar.k2) wallpapersListActivity).simpleActionBar;
-            i5Var2.r();
-            wallpapersListActivity.H0();
-            return;
+        } else if (lowerCase4 != null) {
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(lowerCase2);
+            sb2.append("~");
+            sb2.append(lowerCase);
+            sb2.append("~");
+            sb2.append(lowerCase3);
+            lowerCase2 = a1.g.r(sb2, "~", lowerCase4);
+        } else {
+            lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3;
         }
-        if (i10 != 4) {
-            if (i10 == 3) {
-                ay ayVar = new ay(org.telegram.ui.Cells.f1.j(3, "onlySelect", "dialogsType", true));
-                ayVar.C2 = new je1(this);
-                wallpapersListActivity.presentFragment(ayVar);
-                return;
-            }
-            return;
+        if (this.g == null) {
+            return a1.g.o(org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).U2, "/bg/", lowerCase2, new StringBuilder("https://"));
         }
-        if (wallpapersListActivity.getParentActivity() == null) {
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
-        String G = org.telegram.messenger.cd.G(longSparseArray.size(), "DeleteBackground", new Object[0]);
-        org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-        x1Var.R = G;
-        x1Var.T = org.telegram.messenger.cd.a0("DeleteChatBackgroundsAlert", null, 2131751555, new Object[0]);
-        alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131751599, null), new je1(this));
-        alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
-        wallpapersListActivity.showDialog(x1Var);
-        TextView textView = (TextView) x1Var.d(-1);
-        if (textView != null) {
-            org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.q7, null);
-        }
+        String str = "https://" + org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).U2 + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
+        return this.j ? sc.e.A(str, "&mode=motion") : str;
+    }
+
+    public ke1(String str, int i10, int i11, int i12, int i13) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        this.c = i11 == 0 ? 0 : i11 | (-16777216);
+        this.d = i12 == 0 ? 0 : i12 | (-16777216);
+        this.e = i13 != 0 ? i13 | (-16777216) : 0;
+        this.h = 1.0f;
+        this.k = true;
+    }
+
+    public ke1(String str, int i10, int i11, int i12, int i13, int i14, float f7, boolean z10, File file) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        int i15 = i11 == 0 ? 0 : i11 | (-16777216);
+        this.c = i15;
+        this.d = i12 == 0 ? 0 : i12 | (-16777216);
+        this.e = i13 != 0 ? i13 | (-16777216) : 0;
+        this.f = i15 == 0 ? 45 : i14;
+        this.h = f7;
+        this.i = file;
+        this.j = z10;
     }
 }

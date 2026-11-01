@@ -26,7 +26,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class jb0 extends Drawable {
     public static final boolean e0;
@@ -34,7 +34,7 @@ public final class jb0 extends Drawable {
     public Matrix A;
     public boolean B;
     public GradientDrawable C;
-    public org.telegram.messenger.l9 D;
+    public org.telegram.messenger.m9 D;
     public boolean E;
     public boolean F;
     public final Runnable G;
@@ -108,7 +108,7 @@ public final class jb0 extends Drawable {
         this.G = new ib0(this, 0);
         this.J = 1.0f;
         this.K = 1.0f;
-        this.L = org.telegram.messenger.zs.e4;
+        this.L = org.telegram.messenger.at.e4;
         this.M = 1.0f;
         this.O = 60;
         this.P = 80;
@@ -391,7 +391,7 @@ public final class jb0 extends Drawable {
         if (this.Z == null) {
             Paint paint = new Paint(3);
             this.Z = paint;
-            paint.setAlpha(org.telegram.messenger.zs.i3);
+            paint.setAlpha(org.telegram.messenger.at.i3);
         }
         Canvas canvas = this.Y;
         Paint paint2 = this.Z;
@@ -468,7 +468,7 @@ public final class jb0 extends Drawable {
             ((View) this.c.get()).invalidate();
         }
         if (this.t) {
-            org.telegram.messenger.zs.e().k(org.telegram.messenger.zs.j4, new Object[0]);
+            org.telegram.messenger.at.e().k(org.telegram.messenger.at.j4, new Object[0]);
             y();
             Runnable runnable = this.G;
             org.telegram.messenger.i0.r(runnable);
@@ -530,7 +530,7 @@ public final class jb0 extends Drawable {
     }
 
     public final void p() {
-        if (Build.VERSION.SDK_INT < 28 || this.Q != null || org.telegram.messenger.tz.o) {
+        if (Build.VERSION.SDK_INT < 28 || this.Q != null || org.telegram.messenger.uz.o) {
             return;
         }
         this.Q = new nb0();
@@ -622,7 +622,7 @@ public final class jb0 extends Drawable {
     }
 
     public final void w(boolean z10) {
-        if (this.h < 1.0f || !org.telegram.messenger.sc.e(32)) {
+        if (this.h < 1.0f || !org.telegram.messenger.tc.e(32)) {
             i();
             return;
         }
@@ -688,9 +688,9 @@ public final class jb0 extends Drawable {
                 if (z13) {
                     float interpolation2 = grVar.getInterpolation(f7);
                     char c10 = interpolation2 <= 0.25f ? (char) 0 : interpolation2 <= 0.5f ? (char) 1 : interpolation2 <= 0.75f ? (char) 2 : (char) 3;
-                    org.telegram.messenger.l9 l9Var = this.D;
-                    if (l9Var != null) {
-                        this.h = ((Float) l9Var.l(this)).floatValue();
+                    org.telegram.messenger.m9 m9Var = this.D;
+                    if (m9Var != null) {
+                        this.h = ((Float) m9Var.l(this)).floatValue();
                     } else {
                         this.h = (j10 / (this.E ? 1000.0f : 2000.0f)) + this.h;
                     }
@@ -735,9 +735,9 @@ public final class jb0 extends Drawable {
                     }
                     z11 = z12;
                 } else {
-                    org.telegram.messenger.l9 l9Var2 = this.D;
-                    if (l9Var2 != null) {
-                        this.h = ((Float) l9Var2.l(this)).floatValue();
+                    org.telegram.messenger.m9 m9Var2 = this.D;
+                    if (m9Var2 != null) {
+                        this.h = ((Float) m9Var2.l(this)).floatValue();
                     } else {
                         this.h = (j10 / (this.B ? 300.0f : 500.0f)) + f7;
                     }
@@ -802,7 +802,7 @@ public final class jb0 extends Drawable {
         this.G = new ib0(this, 0);
         this.J = 1.0f;
         this.K = 1.0f;
-        this.L = org.telegram.messenger.zs.e4;
+        this.L = org.telegram.messenger.at.e4;
         this.M = 1.0f;
         this.O = 60;
         this.P = 80;

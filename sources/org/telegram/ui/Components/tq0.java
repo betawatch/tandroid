@@ -1,30 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class tq0 extends wt0 {
-    public final /* synthetic */ zt0 G;
+public final /* synthetic */ class tq0 implements org.telegram.messenger.r20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ au0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tq0(zt0 zt0Var, Context context) {
-        super(zt0Var, context, 0, true);
-        this.G = zt0Var;
+    public /* synthetic */ tq0(au0 au0Var, int i10) {
+        this.a = i10;
+        this.b = au0Var;
     }
 
-    @Override // org.telegram.ui.Components.wt0, s4.g0
-    public final void f() {
-        super.f();
-        zt0 zt0Var = this.G;
-        ss0 e02 = zt0Var.e0(9);
-        if (e02 != null && e02.n.getVisibility() == 0) {
-            zt0Var.h0.f();
-        }
-        if (e02 != null) {
-            or0 or0Var = e02.w;
-            th.x4 x4Var = this.s;
-            or0Var.e(x4Var != null && (x4Var.k() || (zt0Var.r0() && this.s.g() > 0)), true);
+    @Override // org.telegram.messenger.r20
+    public final void a(Object obj) {
+        int i10 = this.a;
+        int i11 = 7;
+        au0 au0Var = this.b;
+        th.y4 y4Var = (th.y4) obj;
+        switch (i10) {
+            case 0:
+                org.telegram.messenger.i0.h3(new hi0(i11, au0Var, y4Var), 100L);
+                break;
+            default:
+                int[] iArr = au0.s2;
+                org.telegram.messenger.i0.h3(new hi0(i11, au0Var, y4Var), 100L);
+                break;
         }
     }
 }

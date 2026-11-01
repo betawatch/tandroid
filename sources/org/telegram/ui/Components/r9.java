@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class r9 extends tk0 {
+public abstract class r9 extends uk0 {
     public int e3;
     public int f3;
     public boolean g3;
@@ -18,7 +18,7 @@ public abstract class r9 extends tk0 {
         if (getLayoutParams() == null) {
             return;
         }
-        if (!org.telegram.messenger.tz.f()) {
+        if (!org.telegram.messenger.uz.f()) {
             this.e3 = 0;
             ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
         } else {
@@ -27,14 +27,14 @@ public abstract class r9 extends tk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, ug.a
+    @Override // org.telegram.ui.Components.uk0, ug.a
     public final void d(Canvas canvas, RectF rectF) {
         this.i3 = true;
         super.d(canvas, rectF);
         this.i3 = false;
     }
 
-    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         if (this.e3 == 0 || Y0()) {
             super.dispatchDraw(canvas);
@@ -44,7 +44,7 @@ public abstract class r9 extends tk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
         if (view.getY() + view.getMeasuredHeight() >= this.e3 || this.i3 || Y0()) {
             return super.drawChild(canvas, view, j10);
@@ -52,13 +52,13 @@ public abstract class r9 extends tk0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         A1();
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         this.g3 = true;
         A1();
@@ -67,7 +67,7 @@ public abstract class r9 extends tk0 {
         super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public void requestLayout() {
         if (this.g3) {
             return;

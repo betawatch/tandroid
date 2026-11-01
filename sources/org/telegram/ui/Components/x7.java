@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.Random;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x7 {
     public float f;
@@ -38,7 +38,7 @@ public final class x7 {
     }
 
     public final void a(float f7, float f10, float f11, int i10, Canvas canvas) {
-        if (org.telegram.messenger.sc.e(32)) {
+        if (org.telegram.messenger.tc.e(32)) {
             Paint paint = this.h;
             paint.setColor(i10);
             paint.setAlpha((int) (this.n * f11));
@@ -50,7 +50,7 @@ public final class x7 {
         float[] fArr;
         float f11;
         int[] iArr;
-        if (org.telegram.messenger.sc.e(32)) {
+        if (org.telegram.messenger.tc.e(32)) {
             int i10 = 0;
             int i11 = 0;
             while (true) {
@@ -150,7 +150,7 @@ public final class x7 {
     }
 
     public final void c(Canvas canvas, float f7, float f10, boolean z10, float f11, org.telegram.ui.ActionBar.p6 p6Var) {
-        if (org.telegram.messenger.sc.e(32)) {
+        if (org.telegram.messenger.tc.e(32)) {
             int i10 = this.n;
             Paint paint = this.h;
             if (z10) {
@@ -172,7 +172,7 @@ public final class x7 {
         float[] fArr2;
         float[] fArr3;
         float[] fArr4;
-        if (org.telegram.messenger.sc.e(32)) {
+        if (org.telegram.messenger.tc.e(32)) {
             int i10 = 0;
             boolean z11 = fArr != null && fArr[6] == 0.0f;
             float f7 = fArr == null ? 0.0f : fArr[6];

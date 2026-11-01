@@ -1,55 +1,20 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k10 implements org.telegram.messenger.r20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class k10 extends kg.k1 {
+    public final /* synthetic */ int r;
 
-    public /* synthetic */ k10(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k10(int i10, int i11, int i12, int i13, org.telegram.ui.ActionBar.p6 p6Var, int i14) {
+        super(i10, i11, i12, i13, p6Var);
+        this.r = i14;
     }
 
-    @Override // org.telegram.messenger.r20
-    public final Object a(Object obj) {
-        int i10 = this.a;
-        Object obj2 = this.b;
-        switch (i10) {
-            case 0:
-                p10 p10Var = (p10) obj2;
-                p10Var.getClass();
-                if (((View) obj).getParent() == p10Var.c) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                se0 se0Var = (se0) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    org.telegram.messenger.i0.g3(new ne0(se0Var, 3));
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = (ProfileActivity) obj2;
-                URLSpan uRLSpan = (URLSpan) obj;
-                RectF rectF = ProfileActivity.R6;
-                if (uRLSpan == null) {
-                    break;
-                } else {
-                    profileActivity.O4(uRLSpan.getURL(), null);
-                    break;
-                }
+    @Override // kg.k1
+    public final int c(int i10) {
+        switch (this.r) {
         }
-        return Boolean.FALSE;
+        return org.telegram.ui.ActionBar.t6.F0(i10);
     }
 }

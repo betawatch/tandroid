@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h60 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,10 +41,10 @@ public final /* synthetic */ class h60 implements Runnable {
                 i60 i60Var2 = this.b;
                 String str3 = this.c;
                 zf.m1 m1Var = i60Var2.e;
-                org.telegram.ui.tt ttVar = i60Var2.n.d2;
+                org.telegram.ui.st stVar = i60Var2.n.d2;
                 boolean z11 = false;
-                boolean z12 = ttVar != null;
-                if (ttVar != null) {
+                boolean z12 = stVar != null;
+                if (stVar != null) {
                     z11 = true;
                 }
                 m1Var.g(str3, true, z12, true, z11, 0L, false, 0, 0);
@@ -61,7 +61,7 @@ public final /* synthetic */ class h60 implements Runnable {
                 if (lowerCase.length() != 0) {
                     boolean z13 = true;
                     ?? r62 = 0;
-                    String R0 = org.telegram.messenger.cd.D0().R0(lowerCase, true, false);
+                    String R0 = org.telegram.messenger.dd.D0().R0(lowerCase, true, false);
                     if (lowerCase.equals(R0) || R0.length() == 0) {
                         R0 = null;
                     }
@@ -80,13 +80,13 @@ public final /* synthetic */ class h60 implements Runnable {
                         if (z14) {
                             TLRPC.User user = (TLRPC.User) tLObject;
                             str = org.telegram.messenger.i5.m(r62, user.first_name, user.last_name).toLowerCase();
-                            K = org.telegram.messenger.h20.n(user);
+                            K = org.telegram.messenger.i20.n(user);
                         } else {
                             TLRPC.Chat chat = (TLRPC.Chat) tLObject;
                             str = chat.title;
                             K = org.telegram.messenger.w3.K(chat, r62);
                         }
-                        String R02 = org.telegram.messenger.cd.D0().R0(str, z13, r62);
+                        String R02 = org.telegram.messenger.dd.D0().R0(str, z13, r62);
                         if (str.equals(R02)) {
                             R02 = null;
                         }

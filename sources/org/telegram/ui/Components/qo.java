@@ -4,7 +4,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class qo implements org.telegram.ui.ActionBar.b7 {
     public boolean a = false;
@@ -36,11 +36,11 @@ public final class qo implements org.telegram.ui.ActionBar.b7 {
             }
             this.a = true;
         }
-        bi0 bi0Var = dpVar.v1;
+        ci0 ci0Var = dpVar.v1;
         int i12 = org.telegram.ui.ActionBar.t6.Ci;
         int w02 = org.telegram.ui.ActionBar.t6.w0(i12, dpVar.I0);
         dpVar.a2 = w02;
-        bi0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
+        ci0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
         dpVar.E0(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.a7, dpVar.I0));
         if (dpVar.F1) {
             for (int i13 = 0; i13 < bpVar.b(); i13++) {

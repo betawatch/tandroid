@@ -5,10 +5,10 @@ import b2.b2;
 import b2.w1;
 import java.lang.ref.WeakReference;
 import java.util.List;
-import org.telegram.messenger.df;
+import org.telegram.messenger.ef;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d0 implements b2.d1 {
     public final /* synthetic */ int a = 0;
@@ -391,17 +391,17 @@ public final class d0 implements b2.d1 {
                 break;
             default:
                 i2.p pVar = (i2.p) this.b;
-                df dfVar = (df) this.c;
-                org.telegram.messenger.a aVar = dfVar.e;
+                ef efVar = (ef) this.c;
+                org.telegram.messenger.a aVar = efVar.e;
                 if (z10) {
-                    dfVar.c = ((i2.i0) pVar).M0();
+                    efVar.c = ((i2.i0) pVar).M0();
                 } else {
                     long M0 = ((i2.i0) pVar).M0();
-                    long j13 = dfVar.c;
+                    long j13 = efVar.c;
                     if (j13 != -9223372036854775807L && M0 > j13) {
-                        df.a(dfVar, j13, M0);
+                        ef.a(efVar, j13, M0);
                     }
-                    dfVar.c = -9223372036854775807L;
+                    efVar.c = -9223372036854775807L;
                 }
                 org.telegram.messenger.i0.r(aVar);
                 if (!z10) {
@@ -1097,14 +1097,14 @@ public final class d0 implements b2.d1 {
                 }
                 break;
             default:
-                df dfVar = (df) this.c;
+                ef efVar = (ef) this.c;
                 if (i10 == 1) {
-                    long j13 = dfVar.c;
+                    long j13 = efVar.c;
                     if (j13 != -9223372036854775807L) {
-                        df.a(dfVar, j13, e1Var.f);
+                        ef.a(efVar, j13, e1Var.f);
                     }
-                    dfVar.c = ((b2.h) ((i2.p) this.b)).i0() ? e1Var2.f : -9223372036854775807L;
-                    org.telegram.messenger.i0.r(dfVar.e);
+                    efVar.c = ((b2.h) ((i2.p) this.b)).i0() ? e1Var2.f : -9223372036854775807L;
+                    org.telegram.messenger.i0.r(efVar.e);
                     break;
                 }
                 break;
@@ -1417,8 +1417,8 @@ public final class d0 implements b2.d1 {
         }
     }
 
-    public d0(df dfVar, i2.p pVar) {
-        this.c = dfVar;
+    public d0(ef efVar, i2.p pVar) {
+        this.c = efVar;
         this.b = pVar;
     }
 

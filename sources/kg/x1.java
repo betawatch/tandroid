@@ -5,12 +5,12 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.jc;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.v5;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class x1 extends View {
     public final /* synthetic */ y1 a;
@@ -45,10 +45,10 @@ public final class x1 extends View {
         ImageReceiver imageReceiver2 = y1Var.c;
         ImageReceiver imageReceiver3 = y1Var.d;
         if (y1Var.s) {
-            imageReceiver2.q0(ic.b(y1Var.r), null, v5.f(y1Var.r, t6.a7, 0.5f, null), "webp", null, 1);
-            if (jj.X3(y1Var.r)) {
+            imageReceiver2.q0(jc.b(y1Var.r), null, v5.f(y1Var.r, t6.a7, 0.5f, null), "webp", null, 1);
+            if (kj.X3(y1Var.r)) {
                 imageReceiver = imageReceiver3;
-                imageReceiver.t0(ic.d(jj.G1(y1Var.r), y1Var.r), "140_140", null, null, "tgs", null, 1);
+                imageReceiver.t0(jc.d(kj.G1(y1Var.r), y1Var.r), "140_140", null, null, "tgs", null, 1);
                 if (!y1Var.e) {
                     if (y1Var.h == 0.0f) {
                         y1Var.h = 1.0f;

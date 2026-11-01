@@ -41,46 +41,46 @@ import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.js;
-import org.telegram.messenger.u20;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.v20;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.ye;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.w20;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.ze;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ci0;
 import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.fg;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.mj0;
-import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.s9;
-import org.telegram.ui.Components.tu0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.wu0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.do0;
-import org.telegram.ui.yv0;
+import org.telegram.ui.bo0;
+import org.telegram.ui.xv0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
+public abstract class b4 extends wu0 implements jg.x1, jg.h, jg.r1, uu0, k8 {
     public final x3 A0;
     public int A1;
     public final FrameLayout B0;
@@ -98,7 +98,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
     public int H0;
     public boolean H1;
     public int I0;
-    public mj0 I1;
+    public nj0 I1;
     public float J0;
     public jg.h2 J1;
     public ValueAnimator K0;
@@ -160,11 +160,11 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
     public float m1;
     public final org.telegram.messenger.s5 n0;
     public final Paint n1;
-    public final ye o0;
+    public final ze o0;
     public final int o1;
     public boolean p0;
     public final org.telegram.ui.ActionBar.x4 p1;
-    public pu0 q0;
+    public qu0 q0;
     public org.telegram.ui.ActionBar.k1 q1;
     public boolean r0;
     public a4 r1;
@@ -180,7 +180,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
     public AnimatorSet w1;
     public final v3 x0;
     public final o3 x1;
-    public final do0 y0;
+    public final bo0 y0;
     public n5 y1;
     public final m3 z0;
     public ArrayList z1;
@@ -193,12 +193,12 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         	at jadx.core.dex.visitors.InitCodeVariables.initCodeVars(InitCodeVariables.java:48)
         	at jadx.core.dex.visitors.InitCodeVariables.visit(InitCodeVariables.java:29)
         */
-    public b4(android.content.Context r32, boolean r33, java.io.File r34, boolean r35, boolean r36, vh.n8 r37, android.app.Activity r38, int r39, android.graphics.Bitmap r40, android.graphics.Bitmap r41, int r42, java.util.ArrayList r43, vh.n5 r44, int r45, int r46, org.telegram.messenger.ye r47, org.telegram.ui.Components.s9 r48, org.telegram.ui.ActionBar.p6 r49, vh.j4 r50, vh.k4 r51) {
+    public b4(android.content.Context r32, boolean r33, java.io.File r34, boolean r35, boolean r36, vh.n8 r37, android.app.Activity r38, int r39, android.graphics.Bitmap r40, android.graphics.Bitmap r41, int r42, java.util.ArrayList r43, vh.n5 r44, int r45, int r46, org.telegram.messenger.ze r47, org.telegram.ui.Components.s9 r48, org.telegram.ui.ActionBar.p6 r49, vh.j4 r50, vh.k4 r51) {
         /*
             Method dump skipped, instructions count: 1526
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: vh.b4.<init>(android.content.Context, boolean, java.io.File, boolean, boolean, vh.n8, android.app.Activity, int, android.graphics.Bitmap, android.graphics.Bitmap, int, java.util.ArrayList, vh.n5, int, int, org.telegram.messenger.ye, org.telegram.ui.Components.s9, org.telegram.ui.ActionBar.p6, vh.j4, vh.k4):void");
+        throw new UnsupportedOperationException("Method not decompiled: vh.b4.<init>(android.content.Context, boolean, java.io.File, boolean, boolean, vh.n8, android.app.Activity, int, android.graphics.Bitmap, android.graphics.Bitmap, int, java.util.ArrayList, vh.n5, int, int, org.telegram.messenger.ze, org.telegram.ui.Components.s9, org.telegram.ui.ActionBar.p6, vh.j4, vh.k4):void");
     }
 
     public static void D0(jg.g3 g3Var, int i10) {
@@ -207,7 +207,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         g3Var.getEditText().setGravity(i10 != 1 ? i10 != 2 ? 19 : 21 : 17);
         if (i10 == 1) {
             i11 = 4;
-        } else if (i10 == 2 ? !cd.X : cd.X) {
+        } else if (i10 == 2 ? !dd.X : dd.X) {
             i11 = 3;
         }
         g3Var.getEditText().setTextAlignment(i11);
@@ -242,14 +242,14 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         return 2;
     }
 
-    private pu0 getPaintingSize() {
-        pu0 pu0Var = this.q0;
-        if (pu0Var != null) {
-            return pu0Var;
+    private qu0 getPaintingSize() {
+        qu0 qu0Var = this.q0;
+        if (qu0Var != null) {
+            return qu0Var;
         }
-        pu0 pu0Var2 = new pu0(1080.0f, 1920.0f);
-        this.q0 = pu0Var2;
-        return pu0Var2;
+        qu0 qu0Var2 = new qu0(1080.0f, 1920.0f);
+        this.q0 = qu0Var2;
+        return qu0Var2;
     }
 
     private void setCoverPause(boolean z10) {
@@ -262,7 +262,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
             View childAt = x3Var.getChildAt(i10);
             if (childAt instanceof jg.w2) {
                 ImageReceiver imageReceiver = ((jg.w2) childAt).x0;
-                bi0 B = imageReceiver.B();
+                ci0 B = imageReceiver.B();
                 org.telegram.ui.Components.s5 m10 = imageReceiver.m();
                 boolean z11 = !z10;
                 imageReceiver.u0 = z11;
@@ -321,7 +321,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         this.C0.addView(this.F0, w7.b6.d(-1, 40.0f, 80, 52.0f, 0.0f, 52.0f, 0.0f));
         TextView textView = new TextView(context);
         this.Q0 = textView;
-        textView.setText(cd.L0(2131747293, null).toUpperCase());
+        textView.setText(dd.L0(2131747293, null).toUpperCase());
         TextView textView2 = this.Q0;
         int i11 = org.telegram.ui.ActionBar.t6.i6;
         org.telegram.ui.ActionBar.x4 x4Var = this.p1;
@@ -370,7 +370,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         this.F0.addView(this.Q0, w7.b6.l(1.0f, 0, -2));
         TextView textView3 = new TextView(context);
         this.R0 = textView3;
-        textView3.setText(cd.L0(2131747292, null).toUpperCase());
+        textView3.setText(dd.L0(2131747292, null).toUpperCase());
         org.telegram.ui.ActionBar.a7.R(this.R0, org.telegram.ui.ActionBar.t6.h0(org.telegram.ui.ActionBar.t6.w0(i11, x4Var), 7, -1), null, org.telegram.ui.ActionBar.a7.N(i11), x4Var);
         this.R0.setPadding(0, org.telegram.messenger.i0.L(8.0f), 0, org.telegram.messenger.i0.L(8.0f));
         this.R0.setOnClickListener(new View.OnClickListener(this) { // from class: vh.a3
@@ -416,7 +416,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         this.F0.addView(this.R0, w7.b6.l(1.0f, 0, -2));
         TextView textView4 = new TextView(context);
         this.S0 = textView4;
-        textView4.setText(cd.L0(2131747291, null).toUpperCase());
+        textView4.setText(dd.L0(2131747291, null).toUpperCase());
         org.telegram.ui.ActionBar.a7.R(this.S0, org.telegram.ui.ActionBar.t6.h0(org.telegram.ui.ActionBar.t6.w0(i11, x4Var), 7, -1), null, org.telegram.ui.ActionBar.a7.N(i11), x4Var);
         this.S0.setPadding(0, org.telegram.messenger.i0.L(8.0f), 0, org.telegram.messenger.i0.L(8.0f));
         this.S0.setTextColor(-1);
@@ -484,7 +484,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         boolean z11;
         z8 z8Var;
         z8 z8Var2;
-        mj0 mj0Var;
+        nj0 nj0Var;
         int i10;
         boolean z12 = jVar instanceof jg.g3;
         int i11 = 2;
@@ -558,27 +558,27 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                             return true;
                         }
                         jg.h2 h2Var2 = this.J1;
-                        if (h2Var2 != null && h2Var2 != h2Var && (mj0Var = this.I1) != null) {
-                            mj0Var.animate().alpha(0.0f).setListener(new sg.r(mj0Var, 17));
+                        if (h2Var2 != null && h2Var2 != h2Var && (nj0Var = this.I1) != null) {
+                            nj0Var.animate().alpha(0.0f).setListener(new sg.r(nj0Var, 17));
                             this.I1 = null;
                             this.L1 = false;
                             this.K1 = 0.0f;
                         }
                         if (this.I1 == null) {
-                            mj0 mj0Var2 = new mj0(2, this.o1, getContext(), LaunchActivity.Q(), new org.telegram.ui.web.a0(7, new th.b()));
-                            this.I1 = mj0Var2;
-                            w9 w9Var = new w9(this.N1, mj0Var2, 0, false);
+                            nj0 nj0Var2 = new nj0(2, this.o1, getContext(), LaunchActivity.Q(), new org.telegram.ui.web.a0(7, new th.b()));
+                            this.I1 = nj0Var2;
+                            w9 w9Var = new w9(this.N1, nj0Var2, 0, false);
                             this.I1.setPadding(0, org.telegram.messenger.i0.L(22.0f), 0, org.telegram.messenger.i0.L(22.0f));
                             this.v1.addView(this.I1, w7.b6.d(-2, 96.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                             Paint paint = new Paint(1);
                             paint.setColor(i0.b.o(-16777216, 120));
-                            mj0 mj0Var3 = this.I1;
+                            nj0 nj0Var3 = this.I1;
                             bh.d dVar = new bh.d();
                             dVar.e = this;
                             dVar.c = w9Var;
                             dVar.d = paint;
                             dVar.b = new Path();
-                            mj0Var3.setDelegate(dVar);
+                            nj0Var3.setDelegate(dVar);
                             this.I1.p(null, null, true);
                         }
                         this.I1.setFragment(LaunchActivity.Q());
@@ -742,31 +742,31 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                 r14.setVisibility(z10 ? 1 : 0);
                 return;
             }
-            v20 v20Var = (v20) arrayList.get(i11);
-            byte b10 = v20Var.a;
+            w20 w20Var = (w20) arrayList.get(i11);
+            byte b10 = w20Var.a;
             if (b10 == 0) {
-                t3 k02 = k0(v20Var.C, v20Var.B);
-                if ((2 & v20Var.b) != 0) {
+                t3 k02 = k0(w20Var.C, w20Var.B);
+                if ((2 & w20Var.b) != 0) {
                     k02.r(z10);
                 }
                 ViewGroup.LayoutParams layoutParams = k02.getLayoutParams();
-                layoutParams.width = v20Var.q;
-                layoutParams.height = v20Var.r;
+                layoutParams.width = w20Var.q;
+                layoutParams.height = w20Var.r;
                 i10 = size;
                 jVar2 = k02;
             } else if (b10 == 1) {
                 jg.g3 l02 = l0(z10);
-                l02.setType(v20Var.b);
-                l02.setTypeface(v20Var.n);
-                l02.setBaseFontSize(v20Var.m);
-                SpannableString spannableString = new SpannableString(v20Var.j);
-                ?? r42 = v20Var.k;
+                l02.setType(w20Var.b);
+                l02.setTypeface(w20Var.n);
+                l02.setBaseFontSize(w20Var.m);
+                SpannableString spannableString = new SpannableString(w20Var.j);
+                ?? r42 = w20Var.k;
                 int size2 = r42.size();
                 for (?? r62 = z10; r62 < size2; r62++) {
-                    u20 u20Var = (u20) r42.get(r62);
-                    org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(u20Var.document_id, 1.0f, l02.getFontMetricsInt());
-                    int i12 = u20Var.offset;
-                    spannableString.setSpan(o5Var, i12, u20Var.length + i12, 33);
+                    v20 v20Var = (v20) r42.get(r62);
+                    org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(v20Var.document_id, 1.0f, l02.getFontMetricsInt());
+                    int i12 = v20Var.offset;
+                    spannableString.setSpan(o5Var, i12, v20Var.length + i12, 33);
                     size = size;
                 }
                 i10 = size;
@@ -777,26 +777,26 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                     }
                 }
                 l02.setText(m10);
-                D0(l02, v20Var.p);
+                D0(l02, w20Var.p);
                 ig.q1 swatch = l02.getSwatch();
-                swatch.a = v20Var.l;
+                swatch.a = w20Var.l;
                 l02.setSwatch(swatch);
                 jVar2 = l02;
             } else {
                 i10 = size;
                 if (b10 == 2) {
-                    jg.e2 h02 = h0(v20Var.j, false);
-                    h02.G0 = v20Var.u;
+                    jg.e2 h02 = h0(w20Var.j, false);
+                    h02.G0 = w20Var.u;
                     h02.B0 = false;
-                    if ((2 & v20Var.b) != 0) {
+                    if ((2 & w20Var.b) != 0) {
                         h02.r(false);
                     }
-                    if ((v20Var.b & 16) != 0) {
+                    if ((w20Var.b & 16) != 0) {
                         h02.t(false);
                     }
                     ViewGroup.LayoutParams layoutParams2 = h02.getLayoutParams();
-                    layoutParams2.width = v20Var.q;
-                    layoutParams2.height = v20Var.r;
+                    layoutParams2.width = w20Var.q;
+                    layoutParams2.height = w20Var.r;
                     jVar2 = h02;
                 } else {
                     if (b10 == 6) {
@@ -809,44 +809,44 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                         r14.addView(s3Var);
                         d0();
                         jVar = s3Var;
-                        if (v20Var.q > 0) {
+                        if (w20Var.q > 0) {
                             jVar = s3Var;
-                            if (v20Var.r > 0) {
+                            if (w20Var.r > 0) {
                                 ViewGroup.LayoutParams layoutParams3 = s3Var.getLayoutParams();
-                                layoutParams3.width = v20Var.q;
-                                layoutParams3.height = v20Var.r;
+                                layoutParams3.width = w20Var.q;
+                                layoutParams3.height = w20Var.r;
                                 jVar = s3Var;
                             }
                         }
                     } else {
                         f7 = 1.0f;
                         if (b10 == 3) {
-                            jg.z0 g02 = g0(v20Var.N, v20Var.M);
-                            int i13 = v20Var.l;
+                            jg.z0 g02 = g0(w20Var.N, w20Var.M);
+                            int i13 = w20Var.l;
                             if (i13 != 0) {
                                 g02.setColor(i13);
                             }
-                            g02.setType(v20Var.b);
+                            g02.setType(w20Var.b);
                             jVar = g02;
                         } else if (b10 == 8) {
-                            k9 k9Var = v20Var.O;
+                            k9 k9Var = w20Var.O;
                             if (k9Var == null) {
                                 i11++;
                                 size = i10;
                                 z10 = false;
                             } else {
                                 jg.h3 m0 = m0(k9Var);
-                                int i14 = v20Var.l;
+                                int i14 = w20Var.l;
                                 if (i14 != 0) {
                                     m0.setColor(i14);
                                 }
-                                m0.setType(v20Var.b);
+                                m0.setType(w20Var.b);
                                 jVar = m0;
                             }
                         } else if (b10 == 7) {
-                            jg.v0 f02 = f0(v20Var.W);
+                            jg.v0 f02 = f0(w20Var.W);
                             jg.t0 t0Var = f02.q0;
-                            int i15 = v20Var.l;
+                            int i15 = w20Var.l;
                             if (i15 != 0) {
                                 f02.setColor(i15);
                             }
@@ -854,14 +854,14 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                             int i16 = t0Var.h;
                             int i17 = t0Var.f;
                             if (e) {
-                                t0Var.setPreviewType(v20Var.b);
+                                t0Var.setPreviewType(w20Var.b);
                             }
-                            byte b11 = v20Var.b;
+                            byte b11 = w20Var.b;
                             if (b11 == -1) {
                                 f02.setType(3);
                                 t0Var.d();
-                                v20Var.q = ((int) Math.ceil(t0Var.a0)) + i17 + i17;
-                                v20Var.r = ((int) Math.ceil(t0Var.b0)) + i16 + i16;
+                                w20Var.q = ((int) Math.ceil(t0Var.a0)) + i17 + i17;
+                                w20Var.r = ((int) Math.ceil(t0Var.b0)) + i16 + i16;
                                 PointF position = f02.getPosition();
                                 position.y = (this.B1 * 0.3f) + position.y;
                                 f02.setPosition(position);
@@ -874,12 +874,12 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                             }
                         } else if (b10 == 4) {
                             jg.h2 i02 = i0(false);
-                            i02.s(sg.o0.d(v20Var.M.reaction), false);
-                            if (v20Var.M.flipped) {
+                            i02.s(sg.o0.d(w20Var.M.reaction), false);
+                            if (w20Var.M.flipped) {
                                 i02.r(false);
                             }
                             jVar = i02;
-                            if (v20Var.M.dark) {
+                            if (w20Var.M.dark) {
                                 i02.q(false);
                                 jVar = i02;
                             }
@@ -890,9 +890,9 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                 d8 d8Var = o8Var.X0;
                                 if (d8Var != null) {
                                     d8Var.x = j02;
-                                    u61 u61Var = d8Var.y;
-                                    if (u61Var != null) {
-                                        u61Var.A0(j02.u0);
+                                    v61 v61Var = d8Var.y;
+                                    if (v61Var != null) {
+                                        v61Var.A0(j02.u0);
                                     }
                                 }
                                 e8 e8Var = o8Var.c1;
@@ -900,7 +900,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                     e8Var.setHasRoundVideo(true);
                                 }
                                 jVar = j02;
-                                if ((v20Var.b & 2) != 0) {
+                                if ((w20Var.b & 2) != 0) {
                                     boolean z12 = !j02.r0;
                                     j02.r0 = z12;
                                     j02.s0.f(z12, true);
@@ -913,11 +913,11 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                             z10 = false;
                         }
                     }
-                    jVar.setX((v20Var.c * this.A1) - (((f7 - v20Var.v) * v20Var.q) / 2.0f));
-                    jVar.setY((v20Var.d * this.B1) - (((f7 - v20Var.v) * v20Var.r) / 2.0f));
-                    jVar.setPosition(new PointF((v20Var.q / 2.0f) + jVar.getX(), (v20Var.r / 2.0f) + jVar.getY()));
-                    jVar.setScale(v20Var.v);
-                    jVar.setRotation((float) (((-v20Var.e) / 3.141592653589793d) * 180.0d));
+                    jVar.setX((w20Var.c * this.A1) - (((f7 - w20Var.v) * w20Var.q) / 2.0f));
+                    jVar.setY((w20Var.d * this.B1) - (((f7 - w20Var.v) * w20Var.r) / 2.0f));
+                    jVar.setPosition(new PointF((w20Var.q / 2.0f) + jVar.getX(), (w20Var.r / 2.0f) + jVar.getY()));
+                    jVar.setScale(w20Var.v);
+                    jVar.setRotation((float) (((-w20Var.e) / 3.141592653589793d) * 180.0d));
                     i11++;
                     size = i10;
                     z10 = false;
@@ -925,11 +925,11 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
             }
             f7 = 1.0f;
             jVar = jVar2;
-            jVar.setX((v20Var.c * this.A1) - (((f7 - v20Var.v) * v20Var.q) / 2.0f));
-            jVar.setY((v20Var.d * this.B1) - (((f7 - v20Var.v) * v20Var.r) / 2.0f));
-            jVar.setPosition(new PointF((v20Var.q / 2.0f) + jVar.getX(), (v20Var.r / 2.0f) + jVar.getY()));
-            jVar.setScale(v20Var.v);
-            jVar.setRotation((float) (((-v20Var.e) / 3.141592653589793d) * 180.0d));
+            jVar.setX((w20Var.c * this.A1) - (((f7 - w20Var.v) * w20Var.q) / 2.0f));
+            jVar.setY((w20Var.d * this.B1) - (((f7 - w20Var.v) * w20Var.r) / 2.0f));
+            jVar.setPosition(new PointF((w20Var.q / 2.0f) + jVar.getX(), (w20Var.r / 2.0f) + jVar.getY()));
+            jVar.setScale(w20Var.v);
+            jVar.setRotation((float) (((-w20Var.e) / 3.141592653589793d) * 180.0d));
             i11++;
             size = i10;
             z10 = false;
@@ -1018,7 +1018,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
             boolean z10 = vyVar != null && vyVar.getVisibility() == 0;
             vy vyVar2 = this.Y1;
             n8 n8Var = this.v1;
-            if (vyVar2 != null && vyVar2.c1 != d20.s0) {
+            if (vyVar2 != null && vyVar2.c1 != e20.s0) {
                 n8Var.removeView(vyVar2);
                 this.Y1 = null;
             }
@@ -1041,14 +1041,14 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                 if (org.telegram.messenger.i0.Q1()) {
                     this.e2 = org.telegram.messenger.i0.L(150.0f);
                 } else {
-                    this.e2 = vp.c1().getInt("kbd_height", org.telegram.messenger.i0.L(200.0f));
+                    this.e2 = wp.c1().getInt("kbd_height", org.telegram.messenger.i0.L(200.0f));
                 }
             }
             if (this.f2 <= 0) {
                 if (org.telegram.messenger.i0.Q1()) {
                     this.f2 = org.telegram.messenger.i0.L(150.0f);
                 } else {
-                    this.f2 = vp.c1().getInt("kbd_height_land3", org.telegram.messenger.i0.L(200.0f));
+                    this.f2 = wp.c1().getInt("kbd_height_land3", org.telegram.messenger.i0.L(200.0f));
                 }
             }
             Point point = org.telegram.messenger.i0.q;
@@ -1103,7 +1103,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
     }
 
     public final void H0(jg.v0 v0Var) {
-        t5 t5Var = new t5(getContext(), this.p1, this.P1, new rh.e3(6, this, v0Var));
+        t5 t5Var = new t5(getContext(), this.p1, this.P1, new rh.q2(7, this, v0Var));
         if (v0Var != null) {
             jg.s0 s0Var = v0Var.u0;
             t5Var.U1 = true;
@@ -1123,7 +1123,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                 t5Var.f2 = true;
                 t5Var.g2 = false;
             }
-            String L0 = cd.L0(2131744660, null);
+            String L0 = dd.L0(2131744660, null);
             d dVar = t5Var.T1;
             dVar.i(L0, false, true);
             rh.t tVar = t5Var.P1;
@@ -1138,10 +1138,10 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         w0(true);
     }
 
-    public final void I0(jg.z0 z0Var, j20 j20Var) {
+    public final void I0(jg.z0 z0Var, k20 k20Var) {
         TLRPC.MessageMedia messageMedia;
         TLRPC.GeoPoint geoPoint;
-        bi biVar = new bi(getContext(), new r3(this, j20Var), false, true, false, this.p1);
+        bi biVar = new bi(getContext(), new r3(this, k20Var), false, true, false, this.p1);
         biVar.T3 = new hb.a(25);
         ah ahVar = biVar.r3;
         if (z0Var != null && (messageMedia = z0Var.u0) != null && (geoPoint = messageMedia.geo) != null) {
@@ -1182,61 +1182,6 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         int i11 = (int) ((scaleY / 2.0f) + iArr[1]);
         iArr[1] = i11;
         K0(new g3(this, jVar, 1), this, 51, i10, i11 - org.telegram.messenger.i0.L(32.0f), true);
-    }
-
-    @Override // org.telegram.ui.Components.tu0
-    public final void K(int i10, boolean z10) {
-        boolean z11;
-        if (i10 > org.telegram.messenger.i0.L(50.0f) && this.a2 && !org.telegram.messenger.i0.E && !org.telegram.messenger.i0.Q1()) {
-            if (z10) {
-                this.f2 = i10;
-                vp.c1().edit().putInt("kbd_height_land3", this.f2).commit();
-            } else {
-                this.e2 = i10;
-                vp.c1().edit().putInt("kbd_height", this.e2).commit();
-            }
-        }
-        boolean z12 = this.Z1;
-        o3 o3Var = this.x1;
-        if (z12) {
-            int paddingUnderContainer = this.v1.getPaddingUnderContainer() + (z10 ? this.f2 : this.e2);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.Y1.getLayoutParams();
-            int i11 = layoutParams.width;
-            int i12 = org.telegram.messenger.i0.q.x;
-            if (i11 != i12 || layoutParams.height != paddingUnderContainer) {
-                layoutParams.width = i12;
-                layoutParams.height = paddingUnderContainer;
-                this.Y1.setLayoutParams(layoutParams);
-                this.c2 = layoutParams.height;
-                o3Var.a();
-                requestLayout();
-            }
-        }
-        if (this.g2 == i10 && this.h2 == z10) {
-            return;
-        }
-        this.g2 = i10;
-        this.h2 = z10;
-        boolean z13 = this.a2;
-        jg.j jVar = this.s0;
-        if (jVar instanceof jg.g3) {
-            this.a2 = ((jg.g3) jVar).getEditText().isFocused() && o3Var.c();
-        } else {
-            this.a2 = false;
-        }
-        if (this.a2 && this.Z1) {
-            G0(0);
-        }
-        if (this.c2 != 0 && !(z11 = this.a2) && z11 != z13 && !this.Z1) {
-            this.c2 = 0;
-            o3Var.a();
-            requestLayout();
-        }
-        R0();
-        if (z13 && !this.a2 && this.c2 > 0 && this.d2) {
-            this.d2 = false;
-        }
-        P0();
     }
 
     public final void K0(Runnable runnable, b4 b4Var, int i10, int i11, int i12, boolean z10) {
@@ -1285,6 +1230,61 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
             this.r1.setBackgroundDrawable(mutate);
             this.r1.setBackgroundColor(-14145495);
         }
+    }
+
+    @Override // org.telegram.ui.Components.uu0
+    public final void L(int i10, boolean z10) {
+        boolean z11;
+        if (i10 > org.telegram.messenger.i0.L(50.0f) && this.a2 && !org.telegram.messenger.i0.E && !org.telegram.messenger.i0.Q1()) {
+            if (z10) {
+                this.f2 = i10;
+                wp.c1().edit().putInt("kbd_height_land3", this.f2).commit();
+            } else {
+                this.e2 = i10;
+                wp.c1().edit().putInt("kbd_height", this.e2).commit();
+            }
+        }
+        boolean z12 = this.Z1;
+        o3 o3Var = this.x1;
+        if (z12) {
+            int paddingUnderContainer = this.v1.getPaddingUnderContainer() + (z10 ? this.f2 : this.e2);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.Y1.getLayoutParams();
+            int i11 = layoutParams.width;
+            int i12 = org.telegram.messenger.i0.q.x;
+            if (i11 != i12 || layoutParams.height != paddingUnderContainer) {
+                layoutParams.width = i12;
+                layoutParams.height = paddingUnderContainer;
+                this.Y1.setLayoutParams(layoutParams);
+                this.c2 = layoutParams.height;
+                o3Var.a();
+                requestLayout();
+            }
+        }
+        if (this.g2 == i10 && this.h2 == z10) {
+            return;
+        }
+        this.g2 = i10;
+        this.h2 = z10;
+        boolean z13 = this.a2;
+        jg.j jVar = this.s0;
+        if (jVar instanceof jg.g3) {
+            this.a2 = ((jg.g3) jVar).getEditText().isFocused() && o3Var.c();
+        } else {
+            this.a2 = false;
+        }
+        if (this.a2 && this.Z1) {
+            G0(0);
+        }
+        if (this.c2 != 0 && !(z11 = this.a2) && z11 != z13 && !this.Z1) {
+            this.c2 = 0;
+            o3Var.a();
+            requestLayout();
+        }
+        R0();
+        if (z13 && !this.a2 && this.c2 > 0 && this.d2) {
+            this.d2 = false;
+        }
+        P0();
     }
 
     public final void L0(boolean z10) {
@@ -1348,15 +1348,15 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
     public final PointF N0(jg.j jVar) {
         float f7;
         float f10;
-        ye yeVar = this.o0;
-        float f11 = yeVar != null ? 200.0f / yeVar.c : 200.0f;
+        ze zeVar = this.o0;
+        float f11 = zeVar != null ? 200.0f / zeVar.c : 200.0f;
         float f12 = 0.2f;
         if (jVar != null) {
             PointF position = jVar.getPosition();
             float min = Math.min(jVar.getHeight(), jVar.getWidth()) * 0.2f;
             return new PointF(position.x + min, position.y + min);
         }
-        float f13 = yeVar != null ? 100.0f / yeVar.c : 100.0f;
+        float f13 = zeVar != null ? 100.0f / zeVar.c : 100.0f;
         PointF c02 = c0();
         int i10 = 0;
         while (i10 < 10) {
@@ -1454,7 +1454,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         org.telegram.messenger.i0.T3(1.0f, this.Y0, z10, false);
     }
 
-    @Override // org.telegram.ui.Components.vu0, org.telegram.ui.Components.uu0
+    @Override // org.telegram.ui.Components.wu0, org.telegram.ui.Components.vu0
     public final int Q() {
         return this.x1.l - this.v1.getBottomPadding2();
     }
@@ -1491,14 +1491,14 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                 View view = this.G0;
                 view.animate().cancel();
                 view.setVisibility(0);
-                view.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new yv0(12, this, z10)).start();
+                view.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new xv0(12, this, z10)).start();
             }
         }
         z10 = false;
         View view2 = this.G0;
         view2.animate().cancel();
         view2.setVisibility(0);
-        view2.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new yv0(12, this, z10)).start();
+        view2.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new xv0(12, this, z10)).start();
     }
 
     @Override // jg.x1, jg.r1
@@ -1506,7 +1506,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         F0(true);
     }
 
-    @Override // org.telegram.ui.Components.uu0, org.telegram.ui.ActionBar.k6
+    @Override // org.telegram.ui.Components.vu0, org.telegram.ui.ActionBar.k6
     public final void addColorKeys(HashSet hashSet) {
         hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.t6.G8));
         hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.t6.h5));
@@ -1540,7 +1540,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         view.setScaleX(scaleX * 0.5f);
         view.setScaleY(0.5f * scaleY);
         view.setAlpha(0.0f);
-        view.animate().scaleX(scaleX).scaleY(scaleY).alpha(1.0f).setInterpolator(new OvershootInterpolator(3.0f)).setDuration(240L).withEndAction(new d1(2, this, view)).start();
+        view.animate().scaleX(scaleX).scaleY(scaleY).alpha(1.0f).setInterpolator(new OvershootInterpolator(3.0f)).setDuration(240L).withEndAction(new r0(3, this, view)).start();
     }
 
     @Override // jg.r1
@@ -1639,20 +1639,20 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        ye yeVar;
-        if ((view == this.x0 || view == this.y0 || view == this.A0 || view == this.z0) && (yeVar = this.o0) != null) {
+        ze zeVar;
+        if ((view == this.x0 || view == this.y0 || view == this.A0 || view == this.z0) && (zeVar = this.o0) != null) {
             canvas.save();
             r1 = this.w0 ? 0 : org.telegram.messenger.i0.m;
             int currentActionBarHeight = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + r1;
             int measuredWidth = view.getMeasuredWidth();
             int measuredHeight = view.getMeasuredHeight();
-            int i10 = yeVar.k;
+            int i10 = zeVar.k;
             if (i10 != 90 && i10 != 270) {
                 measuredHeight = measuredWidth;
                 measuredWidth = measuredHeight;
             }
-            int scaleX = (int) ((view.getScaleX() * (measuredHeight * yeVar.e)) / yeVar.c);
-            int scaleY = (int) ((view.getScaleY() * (measuredWidth * yeVar.f)) / yeVar.c);
+            int scaleX = (int) ((view.getScaleX() * (measuredHeight * zeVar.e)) / zeVar.c);
+            int scaleY = (int) ((view.getScaleY() * (measuredWidth * zeVar.f)) / zeVar.c);
             float ceil = ((float) Math.ceil((getMeasuredWidth() - scaleX) / 2.0f)) + 0.0f;
             float additionalBottom = (((getAdditionalBottom() + ((getMeasuredHeight() - currentActionBarHeight) - org.telegram.messenger.i0.L(48.0f))) - scaleY) / 2.0f) + org.telegram.messenger.i0.L(8.0f) + r1 + 0.0f;
             canvas.clipRect(Math.max(0.0f, ceil), Math.max(0.0f, additionalBottom), Math.min(ceil + scaleX, getMeasuredWidth()), Math.min(getMeasuredHeight(), additionalBottom + scaleY));
@@ -1703,10 +1703,10 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         v0Var.setMaxWidth(L);
         x3Var.addView(v0Var, w7.b6.c(-2.0f, -2));
         d0();
-        ye yeVar = this.o0;
-        if (yeVar != null) {
-            v0Var.j(1.0f / yeVar.c);
-            v0Var.f(-(yeVar.k + yeVar.d));
+        ze zeVar = this.o0;
+        if (zeVar != null) {
+            v0Var.j(1.0f / zeVar.c);
+            v0Var.f(-(zeVar.k + zeVar.d));
         }
         return v0Var;
     }
@@ -1734,10 +1734,10 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         z0Var.setMaxWidth(L);
         x3Var.addView(z0Var, w7.b6.c(-2.0f, -2));
         d0();
-        ye yeVar = this.o0;
-        if (yeVar != null) {
-            z0Var.j(1.0f / yeVar.c);
-            z0Var.f(-(yeVar.k + yeVar.d));
+        ze zeVar = this.o0;
+        if (zeVar != null) {
+            z0Var.j(1.0f / zeVar.c);
+            z0Var.f(-(zeVar.k + zeVar.d));
         }
         return z0Var;
     }
@@ -1763,9 +1763,9 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
     }
 
     public float getCropRotation() {
-        ye yeVar = this.o0;
-        if (yeVar != null) {
-            return yeVar.d + yeVar.k;
+        ze zeVar = this.o0;
+        if (zeVar != null) {
+            return zeVar.d + zeVar.k;
         }
         return 0.0f;
     }
@@ -1872,7 +1872,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
 
     public final jg.e2 h0(String str, boolean z10) {
         float f7;
-        pu0 pu0Var;
+        qu0 qu0Var;
         this.U1 = true;
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
@@ -1886,23 +1886,23 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         x3 x3Var = this.A0;
         if (f7 > 1.0f) {
             float floor = (float) Math.floor(Math.max(this.A1, x3Var.getMeasuredWidth()) * 0.5d);
-            pu0Var = new pu0(floor, floor / f7);
+            qu0Var = new qu0(floor, floor / f7);
         } else {
             float floor2 = (float) Math.floor(Math.max(this.B1, x3Var.getMeasuredHeight()) * 0.5d);
-            pu0Var = new pu0(f7 * floor2, floor2);
+            qu0Var = new qu0(f7 * floor2, floor2);
         }
-        pu0 pu0Var2 = pu0Var;
+        qu0 qu0Var2 = qu0Var;
         Pair N0 = org.telegram.messenger.i0.N0(str);
         if ((((Integer) N0.first).intValue() / 90) % 2 == 1) {
-            float f10 = pu0Var2.a;
-            pu0Var2.a = pu0Var2.b;
-            pu0Var2.b = f10;
+            float f10 = qu0Var2.a;
+            qu0Var2.a = qu0Var2.b;
+            qu0Var2.b = f10;
         }
         Context context = getContext();
         PointF c02 = c0();
         int intValue = ((Integer) N0.first).intValue();
         ((Integer) N0.second).getClass();
-        jg.e2 e2Var = new jg.e2(context, c02, pu0Var2, str, intValue);
+        jg.e2 e2Var = new jg.e2(context, c02, qu0Var2, str, intValue);
         e2Var.setDelegate(this);
         x3Var.addView(e2Var);
         d0();
@@ -1928,7 +1928,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
 
     public final jg.h2 i0(boolean z10) {
         String str;
-        pu0 pu0Var = new pu0(org.telegram.messenger.i0.L(106.0f), org.telegram.messenger.i0.L(106.0f));
+        qu0 qu0Var = new qu0(org.telegram.messenger.i0.L(106.0f), org.telegram.messenger.i0.L(106.0f));
         PointF c02 = c0();
         x3 x3Var = this.A0;
         if (x3Var.getMeasuredHeight() > 0) {
@@ -1955,10 +1955,10 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         org.telegram.ui.Components.t5 t5Var2 = new org.telegram.ui.Components.t5(h2Var);
         h2Var.x0 = t5Var2;
         h2Var.z0 = 1.0f;
-        h2Var.q0 = pu0Var;
+        h2Var.q0 = qu0Var;
         t5Var2.e(true, 1.0f);
         t5Var.e(true, 1.0f);
-        ArrayList arrayList = ui.b0(d20.s0).h;
+        ArrayList arrayList = vi.b0(e20.s0).h;
         sg.f0 f0Var = h2Var.t0;
         int i11 = 0;
         while (true) {
@@ -1997,8 +1997,8 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
             measuredWidth = this.A1;
         }
         float floor = (float) Math.floor(0.43f * r1);
-        pu0 pu0Var = new pu0(floor, floor);
-        jg.i2 i2Var = new jg.i2(getContext(), new PointF((measuredWidth - (floor / 2.0f)) - org.telegram.messenger.i0.L(16.0f), (pu0Var.b / 2.0f) + org.telegram.messenger.i0.L(72.0f)), pu0Var, str);
+        qu0 qu0Var = new qu0(floor, floor);
+        jg.i2 i2Var = new jg.i2(getContext(), new PointF((measuredWidth - (floor / 2.0f)) - org.telegram.messenger.i0.L(16.0f), (qu0Var.b / 2.0f) + org.telegram.messenger.i0.L(72.0f)), qu0Var, str);
         i2Var.setDelegate(this);
         x3Var.addView(i2Var);
         d0();
@@ -2015,18 +2015,18 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         for (int i10 = 0; i10 < document.attributes.size() && !(document.attributes.get(i10) instanceof TLRPC.TL_documentAttributeSticker); i10++) {
         }
         float f10 = 0.75f;
-        ye yeVar = this.o0;
-        if (yeVar != null) {
-            f7 = -(yeVar.k + yeVar.d);
-            f10 = 0.75f / yeVar.c;
+        ze zeVar = this.o0;
+        if (zeVar != null) {
+            f7 = -(zeVar.k + zeVar.d);
+            f10 = 0.75f / zeVar.c;
         } else {
             f7 = 0.0f;
         }
         jg.q0 q0Var = new jg.q0(c0(), f10, f7);
         Context context = getContext();
         float floor = (float) Math.floor(getPaintingSize().a * 0.5d);
-        t3 t3Var = new t3(this, context, q0Var.a, q0Var.c, q0Var.b, new pu0(floor, floor), document, obj);
-        boolean C4 = jj.C4(document);
+        t3 t3Var = new t3(this, context, q0Var.a, q0Var.c, q0Var.b, new qu0(floor, floor), document, obj);
+        boolean C4 = kj.C4(document);
         ImageReceiver imageReceiver = t3Var.x0;
         if (C4) {
             imageReceiver.o1 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
@@ -2039,7 +2039,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
     }
 
     public final jg.g3 l0(boolean z10) {
-        pu0 paintingSize = getPaintingSize();
+        qu0 paintingSize = getPaintingSize();
         PointF N0 = N0(null);
         jg.g3 g3Var = new jg.g3(getContext(), N0, (int) (paintingSize.a / 9.0f), "", this.j1, this.u0);
         float f7 = paintingSize.a / 9.0f;
@@ -2062,10 +2062,10 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         g3Var.setType(ig.s0.e(i10).h);
         x3Var.addView(g3Var, w7.b6.c(-2.0f, -2));
         d0();
-        ye yeVar = this.o0;
-        if (yeVar != null) {
-            g3Var.j(1.0f / yeVar.c);
-            g3Var.f(-(yeVar.k + yeVar.d));
+        ze zeVar = this.o0;
+        if (zeVar != null) {
+            g3Var.j(1.0f / zeVar.c);
+            g3Var.f(-(zeVar.k + zeVar.d));
         }
         if (z10) {
             y0(g3Var);
@@ -2105,10 +2105,10 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         h3Var.setMaxWidth(L);
         x3Var.addView(h3Var, w7.b6.c(-2.0f, -2));
         d0();
-        ye yeVar = this.o0;
-        if (yeVar != null) {
-            h3Var.j(1.0f / yeVar.c);
-            h3Var.f(-(yeVar.k + yeVar.d));
+        ze zeVar = this.o0;
+        if (zeVar != null) {
+            h3Var.j(1.0f / zeVar.c);
+            h3Var.f(-(zeVar.k + zeVar.d));
         }
         return h3Var;
     }
@@ -2138,16 +2138,16 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
 
     public abstract void o0();
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.uu0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vu0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        mj0 mj0Var = this.I1;
-        if (mj0Var != null) {
-            org.telegram.messenger.i0.E2(mj0Var);
+        nj0 nj0Var = this.I1;
+        if (nj0Var != null) {
+            org.telegram.messenger.i0.E2(nj0Var);
             this.I1 = null;
         }
         super.onDetachedFromWindow();
@@ -2295,12 +2295,12 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                         if (childAt instanceof jg.j) {
                             jg.j jVar = (jg.j) childAt;
                             jVar.getPosition();
-                            v20 v20Var = new v20();
+                            w20 w20Var = new w20();
                             if (arrayList != null) {
                                 boolean z21 = jVar instanceof jg.g3;
                                 int i17 = b4Var.o1;
                                 if (z21) {
-                                    v20Var.a = b11;
+                                    w20Var.a = b11;
                                     jg.g3 g3Var = (jg.g3) jVar;
                                     CharSequence text = g3Var.getText();
                                     if (text instanceof Spanned) {
@@ -2320,25 +2320,25 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                 if (document != null) {
                                                     org.telegram.ui.Components.f5.g(i17).e(document);
                                                 }
-                                                u20 u20Var = new u20();
+                                                v20 v20Var = new v20();
                                                 int i20 = childCount;
                                                 int i21 = i16;
-                                                u20Var.document_id = o5Var.getDocumentId();
-                                                u20Var.document = document;
-                                                u20Var.offset = spanned2.getSpanStart(o5Var);
-                                                u20Var.length = spanned2.getSpanEnd(o5Var) - u20Var.offset;
+                                                v20Var.document_id = o5Var.getDocumentId();
+                                                v20Var.document = document;
+                                                v20Var.offset = spanned2.getSpanStart(o5Var);
+                                                v20Var.length = spanned2.getSpanEnd(o5Var) - v20Var.offset;
                                                 org.telegram.messenger.b8.G(i17);
-                                                u20Var.a = org.telegram.messenger.b8.K(document, null, true, true).getAbsolutePath();
+                                                v20Var.a = org.telegram.messenger.b8.K(document, null, true, true).getAbsolutePath();
                                                 int i22 = 0;
                                                 while (document != null) {
                                                     ArrayList<TLRPC.PhotoSize> arrayList2 = document.thumbs;
-                                                    if (arrayList2 == null || arrayList2.isEmpty() || new File(u20Var.a).exists()) {
+                                                    if (arrayList2 == null || arrayList2.isEmpty() || new File(v20Var.a).exists()) {
                                                         break;
                                                     }
                                                     org.telegram.messenger.b8.G(i17);
                                                     spanned = spanned2;
                                                     z20 = true;
-                                                    u20Var.a = org.telegram.messenger.b8.K(document.thumbs.get(i22), null, true, true).getAbsolutePath();
+                                                    v20Var.a = org.telegram.messenger.b8.K(document.thumbs.get(i22), null, true, true).getAbsolutePath();
                                                     i22++;
                                                     if (i22 >= document.thumbs.size()) {
                                                         break;
@@ -2347,14 +2347,14 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                 }
                                                 spanned = spanned2;
                                                 z20 = true;
-                                                boolean K2 = jj.K2(u20Var.document, z20);
-                                                if (K2 || u0(u20Var.document)) {
-                                                    u20Var.c = (byte) (u20Var.c | (K2 ? (byte) 1 : (byte) 4));
+                                                boolean K2 = kj.K2(v20Var.document, z20);
+                                                if (K2 || u0(v20Var.document)) {
+                                                    v20Var.c = (byte) (v20Var.c | (K2 ? (byte) 1 : (byte) 4));
                                                 }
-                                                if (jj.C4(u20Var.document)) {
-                                                    u20Var.c = (byte) (u20Var.c | 8);
+                                                if (kj.C4(v20Var.document)) {
+                                                    v20Var.c = (byte) (v20Var.c | 8);
                                                 }
-                                                v20Var.k.add(u20Var);
+                                                w20Var.k.add(v20Var);
                                                 if (document != null) {
                                                     BigInteger valueOf = BigInteger.valueOf(5000L);
                                                     b4Var.P0 = b4Var.P0.multiply(valueOf).divide(b4Var.P0.gcd(valueOf));
@@ -2371,138 +2371,138 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                     }
                                     i12 = childCount;
                                     i13 = i16;
-                                    v20Var.j = text.toString();
-                                    v20Var.b = (byte) g3Var.getType();
-                                    v20Var.l = g3Var.getSwatch().a;
-                                    v20Var.m = g3Var.getTextSize();
-                                    v20Var.n = g3Var.getTypeface();
-                                    v20Var.p = g3Var.getAlign();
+                                    w20Var.j = text.toString();
+                                    w20Var.b = (byte) g3Var.getType();
+                                    w20Var.l = g3Var.getSwatch().a;
+                                    w20Var.m = g3Var.getTextSize();
+                                    w20Var.n = g3Var.getTypeface();
+                                    w20Var.p = g3Var.getAlign();
                                 } else {
                                     x3Var = x3Var2;
                                     i12 = childCount;
                                     i13 = i16;
                                     if (jVar instanceof jg.w2) {
-                                        v20Var.a = (byte) 0;
+                                        w20Var.a = (byte) 0;
                                         jg.w2 w2Var = (jg.w2) jVar;
-                                        pu0 baseSize = w2Var.getBaseSize();
-                                        v20Var.f = baseSize.a;
-                                        v20Var.g = baseSize.b;
-                                        v20Var.B = w2Var.getSticker();
-                                        v20Var.C = w2Var.getParentObject();
+                                        qu0 baseSize = w2Var.getBaseSize();
+                                        w20Var.f = baseSize.a;
+                                        w20Var.g = baseSize.b;
+                                        w20Var.B = w2Var.getSticker();
+                                        w20Var.C = w2Var.getParentObject();
                                         TLRPC.Document sticker = w2Var.getSticker();
-                                        org.telegram.messenger.b8.G(d20.s0);
-                                        v20Var.j = org.telegram.messenger.b8.K(sticker, null, true, true).getAbsolutePath();
-                                        if (jj.K2(sticker, true) || u0(sticker)) {
-                                            boolean K22 = jj.K2(sticker, true);
-                                            v20Var.b = (byte) (v20Var.b | (K22 ? (byte) 1 : (byte) 4));
+                                        org.telegram.messenger.b8.G(e20.s0);
+                                        w20Var.j = org.telegram.messenger.b8.K(sticker, null, true, true).getAbsolutePath();
+                                        if (kj.K2(sticker, true) || u0(sticker)) {
+                                            boolean K22 = kj.K2(sticker, true);
+                                            w20Var.b = (byte) (w20Var.b | (K22 ? (byte) 1 : (byte) 4));
                                             r21 = (K22 || u0(sticker)) ? w2Var.getDuration() : 5000L;
                                             if (r21 != 0) {
                                                 BigInteger valueOf2 = BigInteger.valueOf(r21);
                                                 b4Var.P0 = b4Var.P0.multiply(valueOf2).divide(b4Var.P0.gcd(valueOf2));
                                             }
                                         }
-                                        if (jj.C4(sticker)) {
-                                            v20Var.l = -1;
-                                            v20Var.b = (byte) (v20Var.b | 8);
+                                        if (kj.C4(sticker)) {
+                                            w20Var.l = -1;
+                                            w20Var.b = (byte) (w20Var.b | 8);
                                         }
                                         if (w2Var.t0) {
-                                            v20Var.b = (byte) (v20Var.b | 2);
+                                            w20Var.b = (byte) (w20Var.b | 2);
                                         }
                                     } else if (jVar instanceof jg.e2) {
                                         jg.e2 e2Var = (jg.e2) jVar;
-                                        v20Var.a = (byte) 2;
-                                        pu0 baseSize2 = e2Var.getBaseSize();
-                                        v20Var.f = baseSize2.a;
-                                        v20Var.g = baseSize2.b;
-                                        v20Var.j = e2Var.q(i17);
-                                        v20Var.u = e2Var.G0;
+                                        w20Var.a = (byte) 2;
+                                        qu0 baseSize2 = e2Var.getBaseSize();
+                                        w20Var.f = baseSize2.a;
+                                        w20Var.g = baseSize2.b;
+                                        w20Var.j = e2Var.q(i17);
+                                        w20Var.u = e2Var.G0;
                                         if (e2Var.t0) {
-                                            v20Var.b = (byte) (v20Var.b | 2);
+                                            w20Var.b = (byte) (w20Var.b | 2);
                                         }
                                     } else if (jVar instanceof jg.z0) {
                                         jg.z0 z0Var = (jg.z0) jVar;
                                         jg.y0 y0Var = z0Var.q0;
-                                        v20Var.a = (byte) 3;
-                                        v20Var.b = (byte) z0Var.getType();
-                                        v20Var.f = y0Var.getWidth();
-                                        v20Var.g = y0Var.getHeight();
-                                        v20Var.j = y0Var.getText();
-                                        v20Var.l = z0Var.r0 ? z0Var.getColor() : 0;
-                                        v20Var.P = y0Var.D;
-                                        v20Var.N = z0Var.u0;
+                                        w20Var.a = (byte) 3;
+                                        w20Var.b = (byte) z0Var.getType();
+                                        w20Var.f = y0Var.getWidth();
+                                        w20Var.g = y0Var.getHeight();
+                                        w20Var.j = y0Var.getText();
+                                        w20Var.l = z0Var.r0 ? z0Var.getColor() : 0;
+                                        w20Var.P = y0Var.D;
+                                        w20Var.N = z0Var.u0;
                                         TL_stories.MediaArea mediaArea2 = z0Var.v0;
-                                        v20Var.M = mediaArea2;
+                                        w20Var.M = mediaArea2;
                                         mediaArea2.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                         TLRPC.Document codeEmojiDocument = y0Var.getCodeEmojiDocument();
                                         if (codeEmojiDocument != null) {
-                                            u20 u20Var2 = new u20();
-                                            u20Var2.document_id = codeEmojiDocument.id;
-                                            u20Var2.document = codeEmojiDocument;
+                                            v20 v20Var2 = new v20();
+                                            v20Var2.document_id = codeEmojiDocument.id;
+                                            v20Var2.document = codeEmojiDocument;
                                             org.telegram.messenger.b8.G(i17);
-                                            u20Var2.a = org.telegram.messenger.b8.K(codeEmojiDocument, null, true, true).getAbsolutePath();
-                                            boolean K23 = jj.K2(u20Var2.document, true);
-                                            if (K23 || u0(u20Var2.document)) {
-                                                u20Var2.c = (byte) (u20Var2.c | (K23 ? (byte) 1 : (byte) 4));
+                                            v20Var2.a = org.telegram.messenger.b8.K(codeEmojiDocument, null, true, true).getAbsolutePath();
+                                            boolean K23 = kj.K2(v20Var2.document, true);
+                                            if (K23 || u0(v20Var2.document)) {
+                                                v20Var2.c = (byte) (v20Var2.c | (K23 ? (byte) 1 : (byte) 4));
                                             }
-                                            v20Var.k.add(u20Var2);
+                                            w20Var.k.add(v20Var2);
                                         }
                                     } else if (jVar instanceof jg.h3) {
                                         jg.h3 h3Var = (jg.h3) jVar;
                                         jg.y0 y0Var2 = h3Var.q0;
-                                        v20Var.a = (byte) 8;
-                                        v20Var.b = (byte) h3Var.getType();
-                                        v20Var.f = y0Var2.getWidth();
-                                        v20Var.g = y0Var2.getHeight();
-                                        v20Var.j = y0Var2.getText();
-                                        v20Var.l = h3Var.r0 ? h3Var.getColor() : 0;
-                                        v20Var.P = y0Var2.D;
-                                        v20Var.O = h3Var.u0;
+                                        w20Var.a = (byte) 8;
+                                        w20Var.b = (byte) h3Var.getType();
+                                        w20Var.f = y0Var2.getWidth();
+                                        w20Var.g = y0Var2.getHeight();
+                                        w20Var.j = y0Var2.getText();
+                                        w20Var.l = h3Var.r0 ? h3Var.getColor() : 0;
+                                        w20Var.P = y0Var2.D;
+                                        w20Var.O = h3Var.u0;
                                         TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = new TL_stories.TL_mediaAreaWeather();
                                         tL_mediaAreaWeather.emoji = h3Var.u0.c;
                                         tL_mediaAreaWeather.temperature_c = Math.round(r4.d);
                                         tL_mediaAreaWeather.color = y0Var2.f.getColor();
-                                        v20Var.M = tL_mediaAreaWeather;
+                                        w20Var.M = tL_mediaAreaWeather;
                                         tL_mediaAreaWeather.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                         TLRPC.Document codeEmojiDocument2 = y0Var2.getCodeEmojiDocument();
                                         if (codeEmojiDocument2 != null) {
-                                            u20 u20Var3 = new u20();
-                                            u20Var3.document_id = codeEmojiDocument2.id;
-                                            u20Var3.document = codeEmojiDocument2;
+                                            v20 v20Var3 = new v20();
+                                            v20Var3.document_id = codeEmojiDocument2.id;
+                                            v20Var3.document = codeEmojiDocument2;
                                             org.telegram.messenger.b8.G(i17);
-                                            u20Var3.a = org.telegram.messenger.b8.K(codeEmojiDocument2, null, true, true).getAbsolutePath();
-                                            boolean K24 = jj.K2(u20Var3.document, true);
-                                            if (K24 || u0(u20Var3.document)) {
-                                                u20Var3.c = (byte) (u20Var3.c | (K24 ? (byte) 1 : (byte) 4));
+                                            v20Var3.a = org.telegram.messenger.b8.K(codeEmojiDocument2, null, true, true).getAbsolutePath();
+                                            boolean K24 = kj.K2(v20Var3.document, true);
+                                            if (K24 || u0(v20Var3.document)) {
+                                                v20Var3.c = (byte) (v20Var3.c | (K24 ? (byte) 1 : (byte) 4));
                                             }
-                                            v20Var.k.add(u20Var3);
+                                            w20Var.k.add(v20Var3);
                                         }
                                         view = childAt;
                                         z16 = false;
                                         z17 = false;
                                         imageReceiver = null;
-                                        arrayList.add(v20Var);
+                                        arrayList.add(w20Var);
                                         scaleX = view.getScaleX();
                                         float scaleY = view.getScaleY();
                                         float x10 = view.getX();
                                         float y3 = view.getY();
-                                        v20Var.q = view.getWidth();
-                                        v20Var.r = view.getHeight();
-                                        v20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
-                                        v20Var.g = (view.getHeight() * scaleY) / x3Var.getMeasuredHeight();
-                                        v20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x10) / x3Var.getMeasuredWidth();
-                                        v20Var.d = ((((1.0f - scaleY) * view.getHeight()) / 2.0f) + y3) / x3Var.getMeasuredHeight();
-                                        v20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                        v20Var.y = ((view.getWidth() / 2.0f) + x10) / x3Var.getMeasuredWidth();
-                                        v20Var.z = ((view.getHeight() / 2.0f) + y3) / x3Var.getMeasuredHeight();
-                                        v20Var.w = v20Var.q / x3Var.getMeasuredWidth();
-                                        v20Var.x = v20Var.r / x3Var.getMeasuredHeight();
-                                        v20Var.v = scaleX;
+                                        w20Var.q = view.getWidth();
+                                        w20Var.r = view.getHeight();
+                                        w20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
+                                        w20Var.g = (view.getHeight() * scaleY) / x3Var.getMeasuredHeight();
+                                        w20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x10) / x3Var.getMeasuredWidth();
+                                        w20Var.d = ((((1.0f - scaleY) * view.getHeight()) / 2.0f) + y3) / x3Var.getMeasuredHeight();
+                                        w20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                        w20Var.y = ((view.getWidth() / 2.0f) + x10) / x3Var.getMeasuredWidth();
+                                        w20Var.z = ((view.getHeight() / 2.0f) + y3) / x3Var.getMeasuredHeight();
+                                        w20Var.w = w20Var.q / x3Var.getMeasuredWidth();
+                                        w20Var.x = w20Var.r / x3Var.getMeasuredHeight();
+                                        w20Var.v = scaleX;
                                         if (jVar instanceof jg.j1) {
                                             z18 = z16;
                                             if (jVar instanceof jg.w2) {
                                                 ImageReceiver imageReceiver5 = ((jg.w2) jVar).x0;
                                                 RectF rectF = imageReceiver5.P0;
-                                                if (imageReceiver5.U % zs.K2 != 0) {
+                                                if (imageReceiver5.U % at.K2 != 0) {
                                                     width = rectF.height();
                                                     height = rectF.width();
                                                 } else {
@@ -2510,49 +2510,49 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                     height = rectF.height();
                                                 }
                                                 float f7 = width / height;
-                                                float f10 = (v20Var.f / 2.0f) + v20Var.c;
-                                                float f11 = (v20Var.g / 2.0f) + v20Var.d;
+                                                float f10 = (w20Var.f / 2.0f) + w20Var.c;
+                                                float f11 = (w20Var.g / 2.0f) + w20Var.d;
                                                 float measuredWidth = x3Var.getMeasuredWidth() / x3Var.getMeasuredHeight();
                                                 if (f7 > 1.0f) {
-                                                    float f12 = (v20Var.f * measuredWidth) / f7;
-                                                    v20Var.g = f12;
-                                                    v20Var.r = (int) (v20Var.q / f7);
-                                                    v20Var.d = f11 - (f12 / 2.0f);
+                                                    float f12 = (w20Var.f * measuredWidth) / f7;
+                                                    w20Var.g = f12;
+                                                    w20Var.r = (int) (w20Var.q / f7);
+                                                    w20Var.d = f11 - (f12 / 2.0f);
                                                 } else if (f7 < 1.0f) {
-                                                    float f13 = (v20Var.g / measuredWidth) * f7;
-                                                    v20Var.f = f13;
-                                                    v20Var.q = (int) (v20Var.r * f7);
-                                                    v20Var.c = f10 - (f13 / 2.0f);
+                                                    float f13 = (w20Var.g / measuredWidth) * f7;
+                                                    w20Var.f = f13;
+                                                    w20Var.q = (int) (w20Var.r * f7);
+                                                    w20Var.c = f10 - (f13 / 2.0f);
                                                 }
                                             } else {
-                                                TL_stories.MediaArea mediaArea3 = v20Var.M;
+                                                TL_stories.MediaArea mediaArea3 = w20Var.M;
                                                 if (mediaArea3 != null && (((z19 = jVar instanceof jg.z0)) || (jVar instanceof jg.h3) || (jVar instanceof jg.v0) || (jVar instanceof jg.h2))) {
                                                     TL_stories.MediaAreaCoordinates mediaAreaCoordinates2 = mediaArea3.coordinates;
-                                                    float f14 = v20Var.c;
-                                                    float f15 = v20Var.f;
+                                                    float f14 = w20Var.c;
+                                                    float f15 = w20Var.f;
                                                     mediaAreaCoordinates2.x = ((f15 / 2.0f) + f14) * 100.0f;
-                                                    mediaAreaCoordinates2.y = ((v20Var.g / 2.0f) + v20Var.d) * 100.0f;
+                                                    mediaAreaCoordinates2.y = ((w20Var.g / 2.0f) + w20Var.d) * 100.0f;
                                                     if (z19) {
                                                         jg.y0 y0Var3 = ((jg.z0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = z20.x(y0Var3.I * 2 * scaleX, x3Var.getMeasuredWidth(), f15, 100.0f);
-                                                        v20Var.M.coordinates.h = z20.x(y0Var3.J * 2 * scaleY, x3Var.getMeasuredHeight(), v20Var.g, 100.0f);
+                                                        mediaAreaCoordinates2.w = a30.x(y0Var3.I * 2 * scaleX, x3Var.getMeasuredWidth(), f15, 100.0f);
+                                                        w20Var.M.coordinates.h = a30.x(y0Var3.J * 2 * scaleY, x3Var.getMeasuredHeight(), w20Var.g, 100.0f);
                                                     } else if (jVar instanceof jg.h3) {
                                                         jg.y0 y0Var4 = ((jg.h3) jVar).q0;
-                                                        mediaAreaCoordinates2.w = z20.x(y0Var4.I * 2 * scaleX, x3Var.getMeasuredWidth(), f15, 100.0f);
-                                                        v20Var.M.coordinates.h = z20.x(y0Var4.J * 2 * scaleY, x3Var.getMeasuredHeight(), v20Var.g, 100.0f);
+                                                        mediaAreaCoordinates2.w = a30.x(y0Var4.I * 2 * scaleX, x3Var.getMeasuredWidth(), f15, 100.0f);
+                                                        w20Var.M.coordinates.h = a30.x(y0Var4.J * 2 * scaleY, x3Var.getMeasuredHeight(), w20Var.g, 100.0f);
                                                     } else if (jVar instanceof jg.v0) {
                                                         jg.t0 t0Var = ((jg.v0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = z20.x(t0Var.f * 2 * scaleX, x3Var.getMeasuredWidth(), f15, 100.0f);
-                                                        v20Var.M.coordinates.h = z20.x(t0Var.h * 2 * scaleY, x3Var.getMeasuredHeight(), v20Var.g, 100.0f);
+                                                        mediaAreaCoordinates2.w = a30.x(t0Var.f * 2 * scaleX, x3Var.getMeasuredWidth(), f15, 100.0f);
+                                                        w20Var.M.coordinates.h = a30.x(t0Var.h * 2 * scaleY, x3Var.getMeasuredHeight(), w20Var.g, 100.0f);
                                                     } else if (jVar instanceof jg.h2) {
                                                         jg.h2 h2Var = (jg.h2) jVar;
                                                         float padding = ((h2Var.getPadding() * 2) * scaleX) / x3Var.getMeasuredWidth();
                                                         float padding2 = ((h2Var.getPadding() * 2) * scaleX) / x3Var.getMeasuredHeight();
-                                                        TL_stories.MediaAreaCoordinates mediaAreaCoordinates3 = v20Var.M.coordinates;
-                                                        mediaAreaCoordinates3.w = (v20Var.f - padding) * 100.0f;
-                                                        mediaAreaCoordinates3.h = (v20Var.g - padding2) * 100.0f;
+                                                        TL_stories.MediaAreaCoordinates mediaAreaCoordinates3 = w20Var.M.coordinates;
+                                                        mediaAreaCoordinates3.w = (w20Var.f - padding) * 100.0f;
+                                                        mediaAreaCoordinates3.h = (w20Var.g - padding2) * 100.0f;
                                                     }
-                                                    v20Var.M.coordinates.rotation = ((-v20Var.e) / 3.141592653589793d) * 180.0d;
+                                                    w20Var.M.coordinates.rotation = ((-w20Var.e) / 3.141592653589793d) * 180.0d;
                                                     if (z19) {
                                                         radius = ((jg.z0) jVar).q0.getRadius();
                                                     } else if (jVar instanceof jg.h3) {
@@ -2573,14 +2573,14 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                             double r10 = j1Var2.r(rectF2);
                                             rectF2.offset(b1Var2.getX(), b1Var2.getY());
                                             rectF2.offset(c1Var.getX(), c1Var.getY());
-                                            v20Var.M.coordinates.x = (((rectF2.centerX() * scaleX) + z20.v(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / x3Var.getMeasuredWidth()) * 100.0f;
-                                            v20Var.M.coordinates.y = (((rectF2.centerY() * scaleY) + z20.v(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / x3Var.getMeasuredHeight()) * 100.0f;
-                                            v20Var.M.coordinates.w = ((rectF2.width() * scaleX) / x3Var.getMeasuredWidth()) * 100.0f;
-                                            v20Var.M.coordinates.h = ((rectF2.height() * scaleY) / x3Var.getMeasuredHeight()) * 100.0f;
-                                            v20Var.M.coordinates.rotation = ((-v20Var.e) / 3.141592653589793d) * 180.0d;
+                                            w20Var.M.coordinates.x = (((rectF2.centerX() * scaleX) + a30.v(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / x3Var.getMeasuredWidth()) * 100.0f;
+                                            w20Var.M.coordinates.y = (((rectF2.centerY() * scaleY) + a30.v(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / x3Var.getMeasuredHeight()) * 100.0f;
+                                            w20Var.M.coordinates.w = ((rectF2.width() * scaleX) / x3Var.getMeasuredWidth()) * 100.0f;
+                                            w20Var.M.coordinates.h = ((rectF2.height() * scaleY) / x3Var.getMeasuredHeight()) * 100.0f;
+                                            w20Var.M.coordinates.rotation = ((-w20Var.e) / 3.141592653589793d) * 180.0d;
                                             d = r10;
                                         }
-                                        mediaArea = v20Var.M;
+                                        mediaArea = w20Var.M;
                                         if (mediaArea != null && (mediaAreaCoordinates = mediaArea.coordinates) != null && d > 0.0d) {
                                             mediaAreaCoordinates.flags |= 1;
                                             mediaAreaCoordinates.radius = ((scaleX * d) / view.getWidth()) * 100.0d;
@@ -2591,40 +2591,40 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                         if (jVar instanceof jg.v0) {
                                             jg.v0 v0Var = (jg.v0) jVar;
                                             jg.t0 t0Var2 = v0Var.q0;
-                                            v20Var.a = (byte) 7;
+                                            w20Var.a = (byte) 7;
                                             if (t0Var2.e()) {
-                                                v20Var.b = (byte) t0Var2.getPreviewType();
+                                                w20Var.b = (byte) t0Var2.getPreviewType();
                                             } else {
-                                                v20Var.b = (byte) v0Var.getType();
+                                                w20Var.b = (byte) v0Var.getType();
                                             }
-                                            v20Var.f = t0Var2.getWidth();
-                                            v20Var.g = t0Var2.getHeight();
-                                            v20Var.l = v0Var.t0 ? v0Var.getColor() : 0;
-                                            v20Var.P = t0Var2.e;
-                                            v20Var.W = v0Var.u0;
+                                            w20Var.f = t0Var2.getWidth();
+                                            w20Var.g = t0Var2.getHeight();
+                                            w20Var.l = v0Var.t0 ? v0Var.getColor() : 0;
+                                            w20Var.P = t0Var2.e;
+                                            w20Var.W = v0Var.u0;
                                             if (t0Var2.R) {
                                                 ImageReceiver imageReceiver6 = t0Var2.T;
                                                 if (t0Var2.R && imageReceiver6.J() && imageReceiver6.n() != null) {
-                                                    hc.D().O(new BitmapDrawable(imageReceiver6.n()), imageReceiver6.Q, false);
+                                                    ic.D().O(new BitmapDrawable(imageReceiver6.n()), imageReceiver6.Q, false);
                                                 }
-                                                jg.s0 s0Var2 = v20Var.W;
+                                                jg.s0 s0Var2 = w20Var.W;
                                                 s0Var2.a |= 4;
                                                 s0Var2.i = t0Var2.getPhotoSide();
                                             }
                                             TL_stories.TL_mediaAreaUrl tL_mediaAreaUrl = new TL_stories.TL_mediaAreaUrl();
-                                            v20Var.M = tL_mediaAreaUrl;
+                                            w20Var.M = tL_mediaAreaUrl;
                                             jg.s0 s0Var3 = v0Var.u0;
                                             if (s0Var3 != null) {
                                                 TLRPC.WebPage webPage = s0Var3.d;
                                                 tL_mediaAreaUrl.url = (webPage == null || TextUtils.isEmpty(webPage.url)) ? v0Var.u0.c : v0Var.u0.d.url;
-                                                v20Var.M.coordinates = new TL_stories.TL_mediaAreaCoordinates();
+                                                w20Var.M.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                             }
                                         } else {
                                             if (jVar instanceof jg.h2) {
                                                 jg.h2 h2Var2 = (jg.h2) jVar;
-                                                v20Var.a = (byte) 4;
+                                                w20Var.a = (byte) 4;
                                                 TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction = new TL_stories.TL_mediaAreaSuggestedReaction();
-                                                v20Var.M = tL_mediaAreaSuggestedReaction;
+                                                w20Var.M = tL_mediaAreaSuggestedReaction;
                                                 sg.o0 currentReaction = h2Var2.getCurrentReaction();
                                                 if (currentReaction.f != null) {
                                                     TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
@@ -2636,48 +2636,48 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                     tL_reactionCustomEmoji = tL_reactionCustomEmoji2;
                                                 }
                                                 tL_mediaAreaSuggestedReaction.reaction = tL_reactionCustomEmoji;
-                                                TL_stories.MediaArea mediaArea4 = v20Var.M;
+                                                TL_stories.MediaArea mediaArea4 = w20Var.M;
                                                 mediaArea4.dark = h2Var2.r0.a == 1;
                                                 mediaArea4.flipped = h2Var2.y0;
                                                 mediaArea4.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                             } else if (jVar instanceof jg.i2) {
                                                 jg.i2 i2Var = (jg.i2) jVar;
-                                                pu0 baseSize3 = i2Var.getBaseSize();
-                                                v20Var.f = baseSize3.a;
-                                                v20Var.g = baseSize3.b;
-                                                v20Var.a = (byte) 5;
+                                                qu0 baseSize3 = i2Var.getBaseSize();
+                                                w20Var.f = baseSize3.a;
+                                                w20Var.g = baseSize3.b;
+                                                w20Var.a = (byte) 5;
                                                 if (n5Var != null) {
-                                                    v20Var.j = n5Var.o0.getAbsolutePath();
-                                                    v20Var.Q = n5Var.r0;
+                                                    w20Var.j = n5Var.o0.getAbsolutePath();
+                                                    w20Var.Q = n5Var.r0;
                                                     long j10 = n5Var.q0;
-                                                    v20Var.T = j10;
+                                                    w20Var.T = j10;
                                                     float f16 = j10;
-                                                    v20Var.R = (long) (n5Var.s0 * f16);
-                                                    v20Var.S = (long) (n5Var.t0 * f16);
+                                                    w20Var.R = (long) (n5Var.s0 * f16);
+                                                    w20Var.S = (long) (n5Var.t0 * f16);
                                                 }
-                                                v20Var.b = (byte) 4;
+                                                w20Var.b = (byte) 4;
                                                 if (i2Var.r0) {
-                                                    v20Var.b = (byte) (v20Var.b | 2);
+                                                    w20Var.b = (byte) (w20Var.b | 2);
                                                 }
                                             } else if (jVar instanceof jg.j1) {
                                                 jg.j1 j1Var3 = (jg.j1) jVar;
                                                 jg.b1 b1Var3 = j1Var3.q0;
                                                 ArrayList arrayList3 = j1Var3.s0;
                                                 jg.c1 c1Var2 = j1Var3.r0;
-                                                v20Var.a = (byte) 6;
+                                                w20Var.a = (byte) 6;
                                                 int width2 = j1Var3.getWidth();
-                                                v20Var.q = width2;
-                                                v20Var.f = width2;
+                                                w20Var.q = width2;
+                                                w20Var.f = width2;
                                                 int height2 = j1Var3.getHeight();
-                                                v20Var.r = height2;
-                                                v20Var.g = height2;
-                                                jj jjVar = arrayList3.size() > 0 ? (jj) arrayList3.get(0) : null;
-                                                if (jjVar != null && (message = jjVar.k) != null) {
+                                                w20Var.r = height2;
+                                                w20Var.g = height2;
+                                                kj kjVar = arrayList3.size() > 0 ? (kj) arrayList3.get(0) : null;
+                                                if (kjVar != null && (message = kjVar.k) != null) {
                                                     TLRPC.MessageAction messageAction = message.action;
                                                     if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
                                                         TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) messageAction).gift;
                                                         TL_stories.TL_mediaAreaStarGift tL_mediaAreaStarGift = new TL_stories.TL_mediaAreaStarGift();
-                                                        v20Var.M = tL_mediaAreaStarGift;
+                                                        w20Var.M = tL_mediaAreaStarGift;
                                                         tL_mediaAreaStarGift.slug = starGift.slug;
                                                         tL_mediaAreaStarGift.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                                         int i23 = 0;
@@ -2734,26 +2734,26 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                                 z16 = true;
                                                             }
                                                             z17 = true;
-                                                            arrayList.add(v20Var);
+                                                            arrayList.add(w20Var);
                                                             scaleX = view.getScaleX();
                                                             float scaleY2 = view.getScaleY();
                                                             float x102 = view.getX();
                                                             float y32 = view.getY();
-                                                            v20Var.q = view.getWidth();
-                                                            v20Var.r = view.getHeight();
-                                                            v20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
-                                                            v20Var.g = (view.getHeight() * scaleY2) / x3Var.getMeasuredHeight();
-                                                            v20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x102) / x3Var.getMeasuredWidth();
-                                                            v20Var.d = ((((1.0f - scaleY2) * view.getHeight()) / 2.0f) + y32) / x3Var.getMeasuredHeight();
-                                                            v20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                                            v20Var.y = ((view.getWidth() / 2.0f) + x102) / x3Var.getMeasuredWidth();
-                                                            v20Var.z = ((view.getHeight() / 2.0f) + y32) / x3Var.getMeasuredHeight();
-                                                            v20Var.w = v20Var.q / x3Var.getMeasuredWidth();
-                                                            v20Var.x = v20Var.r / x3Var.getMeasuredHeight();
-                                                            v20Var.v = scaleX;
+                                                            w20Var.q = view.getWidth();
+                                                            w20Var.r = view.getHeight();
+                                                            w20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
+                                                            w20Var.g = (view.getHeight() * scaleY2) / x3Var.getMeasuredHeight();
+                                                            w20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x102) / x3Var.getMeasuredWidth();
+                                                            w20Var.d = ((((1.0f - scaleY2) * view.getHeight()) / 2.0f) + y32) / x3Var.getMeasuredHeight();
+                                                            w20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                                            w20Var.y = ((view.getWidth() / 2.0f) + x102) / x3Var.getMeasuredWidth();
+                                                            w20Var.z = ((view.getHeight() / 2.0f) + y32) / x3Var.getMeasuredHeight();
+                                                            w20Var.w = w20Var.q / x3Var.getMeasuredWidth();
+                                                            w20Var.x = w20Var.r / x3Var.getMeasuredHeight();
+                                                            w20Var.v = scaleX;
                                                             if (jVar instanceof jg.j1) {
                                                             }
-                                                            mediaArea = v20Var.M;
+                                                            mediaArea = w20Var.M;
                                                             if (mediaArea != null) {
                                                                 mediaAreaCoordinates.flags |= 1;
                                                                 mediaAreaCoordinates.radius = ((scaleX * d) / view.getWidth()) * 100.0d;
@@ -2768,19 +2768,19 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                                 float r11 = imageReceiver3.r() + s0Var.getX() + c1Var2.getX() + s0Var.F0;
                                                                 float s10 = imageReceiver3.s() + s0Var.getY() + c1Var2.getY() + s0Var.G0;
                                                                 j1Var = j1Var3;
-                                                                v20 v20Var2 = new v20();
-                                                                v20Var2.a = (byte) 0;
-                                                                v20Var2.f = L;
-                                                                v20Var2.g = L;
+                                                                w20 w20Var2 = new w20();
+                                                                w20Var2.a = (byte) 0;
+                                                                w20Var2.f = L;
+                                                                w20Var2.g = L;
                                                                 TLRPC.Document document2 = stargiftattributemodel.document;
-                                                                v20Var2.B = document2;
-                                                                v20Var2.C = starGift;
-                                                                org.telegram.messenger.b8.G(d20.s0);
-                                                                v20Var2.j = org.telegram.messenger.b8.L(document2, true).getAbsolutePath();
-                                                                if (jj.K2(document2, true) || u0(document2)) {
-                                                                    boolean K25 = jj.K2(document2, true);
-                                                                    v20Var2.b = (byte) (v20Var2.b | (K25 ? (byte) 1 : (byte) 4));
-                                                                    bi0 B = imageReceiver3.B();
+                                                                w20Var2.B = document2;
+                                                                w20Var2.C = starGift;
+                                                                org.telegram.messenger.b8.G(e20.s0);
+                                                                w20Var2.j = org.telegram.messenger.b8.L(document2, true).getAbsolutePath();
+                                                                if (kj.K2(document2, true) || u0(document2)) {
+                                                                    boolean K25 = kj.K2(document2, true);
+                                                                    w20Var2.b = (byte) (w20Var2.b | (K25 ? (byte) 1 : (byte) 4));
+                                                                    ci0 B = imageReceiver3.B();
                                                                     if (B != null && (K25 || u0(document2))) {
                                                                         r21 = B.r();
                                                                     }
@@ -2794,30 +2794,30 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                                 float x11 = childAt.getX();
                                                                 float y10 = childAt.getY();
                                                                 int i24 = (int) L;
-                                                                v20Var2.q = i24;
-                                                                v20Var2.r = i24;
-                                                                v20Var2.f = (L * scaleX2) / x3Var.getMeasuredWidth();
-                                                                v20Var2.g = (L * scaleY3) / x3Var.getMeasuredHeight();
-                                                                v20Var2.c = (childAt.getWidth() / 2.0f) + x11;
-                                                                v20Var2.d = (childAt.getHeight() / 2.0f) + y10;
-                                                                float v = z20.v(childAt.getWidth(), 2.0f, scaleX2, r11 * scaleX2);
+                                                                w20Var2.q = i24;
+                                                                w20Var2.r = i24;
+                                                                w20Var2.f = (L * scaleX2) / x3Var.getMeasuredWidth();
+                                                                w20Var2.g = (L * scaleY3) / x3Var.getMeasuredHeight();
+                                                                w20Var2.c = (childAt.getWidth() / 2.0f) + x11;
+                                                                w20Var2.d = (childAt.getHeight() / 2.0f) + y10;
+                                                                float v = a30.v(childAt.getWidth(), 2.0f, scaleX2, r11 * scaleX2);
                                                                 b1Var = b1Var3;
                                                                 imageReceiver4 = imageReceiver3;
                                                                 view = childAt;
                                                                 double d10 = v;
                                                                 double rotation = (float) ((childAt.getRotation() / 180.0f) * 3.141592653589793d);
-                                                                double v10 = z20.v(childAt.getHeight(), 2.0f, scaleY3, s10 * scaleY3);
-                                                                v20Var2.c = (float) (((Math.cos(rotation) * d10) - (Math.sin(rotation) * v10)) + v20Var2.c);
-                                                                float cos = (float) ((Math.cos(rotation) * v10) + (Math.sin(rotation) * d10) + v20Var2.d);
+                                                                double v10 = a30.v(childAt.getHeight(), 2.0f, scaleY3, s10 * scaleY3);
+                                                                w20Var2.c = (float) (((Math.cos(rotation) * d10) - (Math.sin(rotation) * v10)) + w20Var2.c);
+                                                                float cos = (float) ((Math.cos(rotation) * v10) + (Math.sin(rotation) * d10) + w20Var2.d);
                                                                 float f17 = (-L) / 2.0f;
-                                                                float f18 = (f17 * scaleX2) + v20Var2.c;
-                                                                v20Var2.c = f18;
-                                                                v20Var2.d = (f17 * scaleY3) + cos;
-                                                                v20Var2.c = f18 / x3Var.getMeasuredWidth();
-                                                                v20Var2.d /= x3Var.getMeasuredHeight();
-                                                                v20Var2.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                                                v20Var2.v = scaleX2;
-                                                                arrayList.add(v20Var2);
+                                                                float f18 = (f17 * scaleX2) + w20Var2.c;
+                                                                w20Var2.c = f18;
+                                                                w20Var2.d = (f17 * scaleY3) + cos;
+                                                                w20Var2.c = f18 / x3Var.getMeasuredWidth();
+                                                                w20Var2.d /= x3Var.getMeasuredHeight();
+                                                                w20Var2.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                                                w20Var2.v = scaleX2;
+                                                                arrayList.add(w20Var2);
                                                             } else {
                                                                 j1Var = j1Var3;
                                                                 b1Var = b1Var3;
@@ -2828,26 +2828,26 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                             if (z12) {
                                                             }
                                                             z17 = true;
-                                                            arrayList.add(v20Var);
+                                                            arrayList.add(w20Var);
                                                             scaleX = view.getScaleX();
                                                             float scaleY22 = view.getScaleY();
                                                             float x1022 = view.getX();
                                                             float y322 = view.getY();
-                                                            v20Var.q = view.getWidth();
-                                                            v20Var.r = view.getHeight();
-                                                            v20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
-                                                            v20Var.g = (view.getHeight() * scaleY22) / x3Var.getMeasuredHeight();
-                                                            v20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x1022) / x3Var.getMeasuredWidth();
-                                                            v20Var.d = ((((1.0f - scaleY22) * view.getHeight()) / 2.0f) + y322) / x3Var.getMeasuredHeight();
-                                                            v20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                                            v20Var.y = ((view.getWidth() / 2.0f) + x1022) / x3Var.getMeasuredWidth();
-                                                            v20Var.z = ((view.getHeight() / 2.0f) + y322) / x3Var.getMeasuredHeight();
-                                                            v20Var.w = v20Var.q / x3Var.getMeasuredWidth();
-                                                            v20Var.x = v20Var.r / x3Var.getMeasuredHeight();
-                                                            v20Var.v = scaleX;
+                                                            w20Var.q = view.getWidth();
+                                                            w20Var.r = view.getHeight();
+                                                            w20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
+                                                            w20Var.g = (view.getHeight() * scaleY22) / x3Var.getMeasuredHeight();
+                                                            w20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x1022) / x3Var.getMeasuredWidth();
+                                                            w20Var.d = ((((1.0f - scaleY22) * view.getHeight()) / 2.0f) + y322) / x3Var.getMeasuredHeight();
+                                                            w20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                                            w20Var.y = ((view.getWidth() / 2.0f) + x1022) / x3Var.getMeasuredWidth();
+                                                            w20Var.z = ((view.getHeight() / 2.0f) + y322) / x3Var.getMeasuredHeight();
+                                                            w20Var.w = w20Var.q / x3Var.getMeasuredWidth();
+                                                            w20Var.x = w20Var.r / x3Var.getMeasuredHeight();
+                                                            w20Var.v = scaleX;
                                                             if (jVar instanceof jg.j1) {
                                                             }
-                                                            mediaArea = v20Var.M;
+                                                            mediaArea = w20Var.M;
                                                             if (mediaArea != null) {
                                                             }
                                                             z14 = z17;
@@ -2858,43 +2858,43 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                                 j1Var = j1Var3;
                                                 b1Var = b1Var3;
                                                 view = childAt;
-                                                if (jjVar != null) {
+                                                if (kjVar != null) {
                                                     TL_stories.TL_inputMediaAreaChannelPost tL_inputMediaAreaChannelPost = new TL_stories.TL_inputMediaAreaChannelPost();
-                                                    v20Var.M = tL_inputMediaAreaChannelPost;
+                                                    w20Var.M = tL_inputMediaAreaChannelPost;
                                                     tL_inputMediaAreaChannelPost.coordinates = new TL_stories.TL_mediaAreaCoordinates();
-                                                    ((TL_stories.TL_inputMediaAreaChannelPost) v20Var.M).channel = vp.r1(i17).g1(-n5.p(jjVar));
-                                                    TL_stories.TL_inputMediaAreaChannelPost tL_inputMediaAreaChannelPost2 = (TL_stories.TL_inputMediaAreaChannelPost) v20Var.M;
-                                                    Boolean D = n5.D(jjVar);
-                                                    tL_inputMediaAreaChannelPost2.msg_id = D == null ? 0 : D.booleanValue() ? jjVar.k.fwd_from.channel_post : jjVar.f1();
+                                                    ((TL_stories.TL_inputMediaAreaChannelPost) w20Var.M).channel = wp.r1(i17).g1(-n5.p(kjVar));
+                                                    TL_stories.TL_inputMediaAreaChannelPost tL_inputMediaAreaChannelPost2 = (TL_stories.TL_inputMediaAreaChannelPost) w20Var.M;
+                                                    Boolean D = n5.D(kjVar);
+                                                    tL_inputMediaAreaChannelPost2.msg_id = D == null ? 0 : D.booleanValue() ? kjVar.k.fwd_from.channel_post : kjVar.f1();
                                                 } else {
                                                     TL_stories.TL_inputMediaAreaChannelPost tL_inputMediaAreaChannelPost3 = new TL_stories.TL_inputMediaAreaChannelPost();
-                                                    v20Var.M = tL_inputMediaAreaChannelPost3;
+                                                    w20Var.M = tL_inputMediaAreaChannelPost3;
                                                     tL_inputMediaAreaChannelPost3.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                                 }
                                                 imageReceiver = null;
                                                 if (z12) {
                                                 }
                                                 z17 = true;
-                                                arrayList.add(v20Var);
+                                                arrayList.add(w20Var);
                                                 scaleX = view.getScaleX();
                                                 float scaleY222 = view.getScaleY();
                                                 float x10222 = view.getX();
                                                 float y3222 = view.getY();
-                                                v20Var.q = view.getWidth();
-                                                v20Var.r = view.getHeight();
-                                                v20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
-                                                v20Var.g = (view.getHeight() * scaleY222) / x3Var.getMeasuredHeight();
-                                                v20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x10222) / x3Var.getMeasuredWidth();
-                                                v20Var.d = ((((1.0f - scaleY222) * view.getHeight()) / 2.0f) + y3222) / x3Var.getMeasuredHeight();
-                                                v20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                                v20Var.y = ((view.getWidth() / 2.0f) + x10222) / x3Var.getMeasuredWidth();
-                                                v20Var.z = ((view.getHeight() / 2.0f) + y3222) / x3Var.getMeasuredHeight();
-                                                v20Var.w = v20Var.q / x3Var.getMeasuredWidth();
-                                                v20Var.x = v20Var.r / x3Var.getMeasuredHeight();
-                                                v20Var.v = scaleX;
+                                                w20Var.q = view.getWidth();
+                                                w20Var.r = view.getHeight();
+                                                w20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
+                                                w20Var.g = (view.getHeight() * scaleY222) / x3Var.getMeasuredHeight();
+                                                w20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x10222) / x3Var.getMeasuredWidth();
+                                                w20Var.d = ((((1.0f - scaleY222) * view.getHeight()) / 2.0f) + y3222) / x3Var.getMeasuredHeight();
+                                                w20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                                w20Var.y = ((view.getWidth() / 2.0f) + x10222) / x3Var.getMeasuredWidth();
+                                                w20Var.z = ((view.getHeight() / 2.0f) + y3222) / x3Var.getMeasuredHeight();
+                                                w20Var.w = w20Var.q / x3Var.getMeasuredWidth();
+                                                w20Var.x = w20Var.r / x3Var.getMeasuredHeight();
+                                                w20Var.v = scaleX;
                                                 if (jVar instanceof jg.j1) {
                                                 }
-                                                mediaArea = v20Var.M;
+                                                mediaArea = w20Var.M;
                                                 if (mediaArea != null) {
                                                 }
                                                 z14 = z17;
@@ -2904,26 +2904,26 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                             z16 = true;
                                             z17 = true;
                                             imageReceiver = null;
-                                            arrayList.add(v20Var);
+                                            arrayList.add(w20Var);
                                             scaleX = view.getScaleX();
                                             float scaleY2222 = view.getScaleY();
                                             float x102222 = view.getX();
                                             float y32222 = view.getY();
-                                            v20Var.q = view.getWidth();
-                                            v20Var.r = view.getHeight();
-                                            v20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
-                                            v20Var.g = (view.getHeight() * scaleY2222) / x3Var.getMeasuredHeight();
-                                            v20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x102222) / x3Var.getMeasuredWidth();
-                                            v20Var.d = ((((1.0f - scaleY2222) * view.getHeight()) / 2.0f) + y32222) / x3Var.getMeasuredHeight();
-                                            v20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                            v20Var.y = ((view.getWidth() / 2.0f) + x102222) / x3Var.getMeasuredWidth();
-                                            v20Var.z = ((view.getHeight() / 2.0f) + y32222) / x3Var.getMeasuredHeight();
-                                            v20Var.w = v20Var.q / x3Var.getMeasuredWidth();
-                                            v20Var.x = v20Var.r / x3Var.getMeasuredHeight();
-                                            v20Var.v = scaleX;
+                                            w20Var.q = view.getWidth();
+                                            w20Var.r = view.getHeight();
+                                            w20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
+                                            w20Var.g = (view.getHeight() * scaleY2222) / x3Var.getMeasuredHeight();
+                                            w20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x102222) / x3Var.getMeasuredWidth();
+                                            w20Var.d = ((((1.0f - scaleY2222) * view.getHeight()) / 2.0f) + y32222) / x3Var.getMeasuredHeight();
+                                            w20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                            w20Var.y = ((view.getWidth() / 2.0f) + x102222) / x3Var.getMeasuredWidth();
+                                            w20Var.z = ((view.getHeight() / 2.0f) + y32222) / x3Var.getMeasuredHeight();
+                                            w20Var.w = w20Var.q / x3Var.getMeasuredWidth();
+                                            w20Var.x = w20Var.r / x3Var.getMeasuredHeight();
+                                            w20Var.v = scaleX;
                                             if (jVar instanceof jg.j1) {
                                             }
-                                            mediaArea = v20Var.M;
+                                            mediaArea = w20Var.M;
                                             if (mediaArea != null) {
                                             }
                                             z14 = z17;
@@ -2937,26 +2937,26 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                 z16 = false;
                                 z17 = true;
                                 imageReceiver = null;
-                                arrayList.add(v20Var);
+                                arrayList.add(w20Var);
                                 scaleX = view.getScaleX();
                                 float scaleY22222 = view.getScaleY();
                                 float x1022222 = view.getX();
                                 float y322222 = view.getY();
-                                v20Var.q = view.getWidth();
-                                v20Var.r = view.getHeight();
-                                v20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
-                                v20Var.g = (view.getHeight() * scaleY22222) / x3Var.getMeasuredHeight();
-                                v20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x1022222) / x3Var.getMeasuredWidth();
-                                v20Var.d = ((((1.0f - scaleY22222) * view.getHeight()) / 2.0f) + y322222) / x3Var.getMeasuredHeight();
-                                v20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                v20Var.y = ((view.getWidth() / 2.0f) + x1022222) / x3Var.getMeasuredWidth();
-                                v20Var.z = ((view.getHeight() / 2.0f) + y322222) / x3Var.getMeasuredHeight();
-                                v20Var.w = v20Var.q / x3Var.getMeasuredWidth();
-                                v20Var.x = v20Var.r / x3Var.getMeasuredHeight();
-                                v20Var.v = scaleX;
+                                w20Var.q = view.getWidth();
+                                w20Var.r = view.getHeight();
+                                w20Var.f = (view.getWidth() * scaleX) / x3Var.getMeasuredWidth();
+                                w20Var.g = (view.getHeight() * scaleY22222) / x3Var.getMeasuredHeight();
+                                w20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x1022222) / x3Var.getMeasuredWidth();
+                                w20Var.d = ((((1.0f - scaleY22222) * view.getHeight()) / 2.0f) + y322222) / x3Var.getMeasuredHeight();
+                                w20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                w20Var.y = ((view.getWidth() / 2.0f) + x1022222) / x3Var.getMeasuredWidth();
+                                w20Var.z = ((view.getHeight() / 2.0f) + y322222) / x3Var.getMeasuredHeight();
+                                w20Var.w = w20Var.q / x3Var.getMeasuredWidth();
+                                w20Var.x = w20Var.r / x3Var.getMeasuredHeight();
+                                w20Var.v = scaleX;
                                 if (jVar instanceof jg.j1) {
                                 }
-                                mediaArea = v20Var.M;
+                                mediaArea = w20Var.M;
                                 if (mediaArea != null) {
                                 }
                                 z14 = z17;
@@ -2970,7 +2970,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                 z15 = false;
                                 imageReceiver = null;
                             }
-                            if (z14 && ((z11 || (z12 && v20Var.a == 6)) && bitmap != null)) {
+                            if (z14 && ((z11 || (z12 && w20Var.a == 6)) && bitmap != null)) {
                                 Canvas canvas2 = new Canvas(bitmap);
                                 float width3 = bitmap.getWidth() / x3Var.getMeasuredWidth();
                                 int i25 = 0;
@@ -2982,9 +2982,9 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                     } else {
                                         canvas3.save();
                                         canvas3.scale(width3, width3);
-                                        canvas3.translate(v20Var.c * x3Var.getMeasuredWidth(), v20Var.d * x3Var.getMeasuredHeight());
+                                        canvas3.translate(w20Var.c * x3Var.getMeasuredWidth(), w20Var.d * x3Var.getMeasuredHeight());
                                         canvas3.scale(view.getScaleX(), view.getScaleY());
-                                        canvas3.rotate(view.getRotation(), ((v20Var.f / 2.0f) / view.getScaleX()) * x3Var.getMeasuredWidth(), ((v20Var.g / 2.0f) / view.getScaleY()) * x3Var.getMeasuredHeight());
+                                        canvas3.rotate(view.getRotation(), ((w20Var.f / 2.0f) / view.getScaleX()) * x3Var.getMeasuredWidth(), ((w20Var.g / 2.0f) / view.getScaleY()) * x3Var.getMeasuredHeight());
                                         view2 = view;
                                         if (!(view2 instanceof jg.g3) || view2.getHeight() <= 0 || view2.getWidth() <= 0) {
                                             canvas = canvas2;
@@ -3021,7 +3021,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
                                             int scaleX3 = (int) (view2.getScaleX() * view2.getWidth());
                                             int scaleY4 = (int) (view2.getScaleY() * view2.getHeight());
                                             Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                                            Bitmap b12 = js.b(scaleX3, scaleY4);
+                                            Bitmap b12 = ks.b(scaleX3, scaleY4);
                                             Canvas canvas4 = new Canvas(b12);
                                             canvas = canvas2;
                                             canvas4.scale(view2.getScaleX(), view2.getScaleY());
@@ -3145,7 +3145,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
             View childAt = x3Var.getChildAt(i10);
             if (childAt instanceof jg.w2) {
                 ImageReceiver imageReceiver = ((jg.w2) childAt).x0;
-                bi0 B = imageReceiver.B();
+                ci0 B = imageReceiver.B();
                 imageReceiver.m();
                 if (B != null) {
                     B.N(Math.round(((j10 % B.r()) / B.r()) * B.e[0]), true, false);
@@ -3214,7 +3214,7 @@ public abstract class b4 extends vu0 implements jg.x1, jg.h, jg.r1, tu0, k8 {
         fArr[1] = pivotY;
     }
 
-    @Override // org.telegram.ui.Components.uu0, org.telegram.ui.ActionBar.k6
+    @Override // org.telegram.ui.Components.vu0, org.telegram.ui.ActionBar.k6
     public final void updateColors() {
         this.n1.setColor(-15132391);
     }

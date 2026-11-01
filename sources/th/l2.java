@@ -3,17 +3,17 @@ package th;
 import android.text.TextUtils;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.messenger.co;
-import org.telegram.messenger.r10;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.eo;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.u10;
+import org.telegram.messenger.vi;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.m31;
+import org.telegram.ui.Components.n31;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
                 z2 z2Var5 = this.b.x;
                 y2 y2Var = z2Var5.x1;
                 y2Var.a.translated = false;
-                r5 r5Var = vp.r1(z2Var5.l2).O1().k;
+                r5 r5Var = wp.r1(z2Var5.l2).O1().k;
                 TL_stories.StoryItem storyItem = y2Var.a;
                 r5Var.k(storyItem.dialogId, storyItem);
                 z2Var5.n0();
@@ -91,32 +91,32 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
                     o7Var.Z0 = true;
                     o7Var.d0();
                 }
-                r5 r5Var2 = vp.r1(z2Var6.l2).O1().k;
+                r5 r5Var2 = wp.r1(z2Var6.l2).O1().k;
                 TL_stories.StoryItem storyItem2 = y2Var2.a;
                 r5Var2.k(storyItem2.dialogId, storyItem2);
                 long currentTimeMillis = System.currentTimeMillis();
                 o2 o2Var = new o2(u2Var6, 1);
-                t10 t10Var = vp.r1(z2Var6.l2).t7;
+                u10 u10Var = wp.r1(z2Var6.l2).t7;
                 TL_stories.StoryItem storyItem3 = y2Var2.a;
                 bi.e eVar = new bi.e(o2Var, currentTimeMillis, 25);
-                HashSet hashSet = t10Var.J;
+                HashSet hashSet = u10Var.J;
                 if (storyItem3 != null) {
-                    r10 r10Var = new r10();
-                    String M0 = m31.M0();
+                    s10 s10Var = new s10();
+                    String M0 = n31.M0();
                     if (storyItem3.translatedText != null && TextUtils.equals(storyItem3.translatedLng, M0)) {
                         eVar.run();
-                    } else if (hashSet.contains(r10Var)) {
+                    } else if (hashSet.contains(s10Var)) {
                         eVar.run();
                     } else {
-                        hashSet.add(r10Var);
+                        hashSet.add(s10Var);
                         TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
                         tL_messages_translateText.flags |= 2;
                         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
                         tL_textWithEntities.text = storyItem3.caption;
                         tL_textWithEntities.entities = storyItem3.entities;
                         tL_messages_translateText.text.add(tL_textWithEntities);
-                        tL_messages_translateText.to_lang = t10.D(M0);
-                        t10Var.getConnectionsManager().sendRequest(tL_messages_translateText, new co(t10Var, storyItem3, M0, r10Var, eVar, tL_textWithEntities, 1));
+                        tL_messages_translateText.to_lang = u10.D(M0);
+                        u10Var.getConnectionsManager().sendRequest(tL_messages_translateText, new eo(u10Var, storyItem3, M0, s10Var, eVar, tL_textWithEntities, 1));
                     }
                 }
                 z2Var6.d1(false);
@@ -200,7 +200,7 @@ public final /* synthetic */ class l2 implements View.OnClickListener {
                 break;
             case 14:
                 z2 z2Var12 = this.b.x;
-                ui.b0(z2Var12.l2).N1(z2Var12.k1);
+                vi.b0(z2Var12.l2).N1(z2Var12.k1);
                 z2Var12.B1.l0(z2Var12.k1, true, false);
                 u2 u2Var14 = z2Var12.c1;
                 if (u2Var14 != null) {

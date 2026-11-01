@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class nb implements org.telegram.ui.Cells.q0 {
     public final /* synthetic */ pb a;
@@ -24,18 +24,18 @@ public final class nb implements org.telegram.ui.Cells.q0 {
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", -j10);
             i11 = ((org.telegram.ui.ActionBar.k2) sbVar).currentAccount;
-            if (org.telegram.messenger.vp.r1(i11).E(bundle, sbVar, null, null)) {
+            if (org.telegram.messenger.wp.r1(i11).E(bundle, sbVar, null, null)) {
                 sbVar.presentFragment(new un(bundle), true);
                 return;
             }
             return;
         }
         i10 = ((org.telegram.ui.ActionBar.k2) sbVar).currentAccount;
-        if (j10 != org.telegram.messenger.d20.i(i10).e()) {
+        if (j10 != org.telegram.messenger.e20.i(i10).e()) {
             Bundle k10 = org.telegram.ui.Cells.f1.k(j10, "user_id");
-            sb.t0(sbVar, k10, j10);
+            sb.u0(sbVar, k10, j10);
             ProfileActivity profileActivity = new ProfileActivity(k10, null);
-            profileActivity.f5(0);
+            profileActivity.g5(0);
             sbVar.presentFragment(profileActivity);
         }
     }
@@ -43,7 +43,7 @@ public final class nb implements org.telegram.ui.Cells.q0 {
     @Override // org.telegram.ui.Cells.q0
     public final void F(org.telegram.ui.Cells.s0 s0Var) {
         sb sbVar = this.a.n;
-        org.telegram.messenger.jj messageObject = s0Var.getMessageObject();
+        org.telegram.messenger.kj messageObject = s0Var.getMessageObject();
         if (messageObject.D == 22) {
             zc zcVar = new zc(a());
             zcVar.l0 = sbVar;
@@ -55,7 +55,7 @@ public final class nb implements org.telegram.ui.Cells.q0 {
         if (w9 == null) {
             PhotoViewer.v1().i2(messageObject, null, 0L, 0L, 0L, sbVar.B0);
         } else {
-            PhotoViewer.v1().g2(w9.location, org.telegram.messenger.ic.i(w9, messageObject.k.action.photo), sbVar.B0);
+            PhotoViewer.v1().g2(w9.location, org.telegram.messenger.jc.i(w9, messageObject.k.action.photo), sbVar.B0);
         }
     }
 
@@ -83,7 +83,7 @@ public final class nb implements org.telegram.ui.Cells.q0 {
     public final boolean i1(org.telegram.ui.Cells.s0 s0Var, float f7, float f10) {
         sb sbVar = this.a.n;
         int i10 = sb.Q0;
-        return sbVar.T0(s0Var, 0.0f, 0.0f);
+        return sbVar.U0(s0Var, 0.0f, 0.0f);
     }
 
     @Override // org.telegram.ui.Cells.q0
@@ -96,7 +96,7 @@ public final class nb implements org.telegram.ui.Cells.q0 {
         Object obj = sbVar.y0.containsKey(tL_chatInviteExported.link) ? sbVar.y0.get(tL_chatInviteExported.link) : null;
         if (obj != null) {
             if (obj instanceof TLRPC.TL_messages_exportedChatInvite) {
-                sb.E0(sbVar, (TLRPC.TL_messages_exportedChatInvite) obj, sbVar.z0);
+                sb.F0(sbVar, (TLRPC.TL_messages_exportedChatInvite) obj, sbVar.z0);
                 return;
             } else {
                 org.telegram.messenger.m5.n(null, 2131748923, org.telegram.ui.Components.cc.a0(sbVar), R.raw.linkbroken, 36);

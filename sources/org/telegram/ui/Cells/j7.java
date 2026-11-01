@@ -2,63 +2,63 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.r20;
-import org.telegram.messenger.xe;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.s20;
+import org.telegram.messenger.ye;
 import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.z41;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class j7 extends z41 {
+public final class j7 extends a51 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        z41.h(new j7());
+        a51.h(new j7());
     }
 
-    public static a51 i(xe xeVar, r20 r20Var) {
-        a51 K = a51.K(j7.class);
-        K.G = xeVar;
-        K.H = r20Var;
+    public static b51 i(ye yeVar, s20 s20Var) {
+        b51 K = b51.K(j7.class);
+        K.G = yeVar;
+        K.H = s20Var;
         return K;
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
         k7 k7Var = (k7) view;
-        Object obj = a51Var.G;
-        if (obj instanceof jj) {
-            k7Var.f((jj) obj, z10);
-        } else if (obj instanceof xe) {
-            xe xeVar = (xe) obj;
-            k7Var.setTag(xeVar);
-            k7Var.f(xeVar.e, z10);
+        Object obj = b51Var.G;
+        if (obj instanceof kj) {
+            k7Var.f((kj) obj, z10);
+        } else if (obj instanceof ye) {
+            ye yeVar = (ye) obj;
+            k7Var.setTag(yeVar);
+            k7Var.f(yeVar.e, z10);
         }
-        Object obj2 = a51Var.H;
-        if (obj2 instanceof r20) {
-            k7Var.setNeedPlayMessageListener((r20) obj2);
+        Object obj2 = b51Var.H;
+        if (obj2 instanceof s20) {
+            k7Var.setNeedPlayMessageListener((s20) obj2);
         }
-        k7Var.e(a51Var.e, false);
+        k7Var.e(b51Var.e, false);
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final boolean c(a51 a51Var, a51 a51Var2) {
-        return a51Var.d == a51Var2.d && a51Var.G == a51Var2.G;
+    @Override // org.telegram.ui.Components.a51
+    public final boolean c(b51 b51Var, b51 b51Var2) {
+        return b51Var.d == b51Var2.d && b51Var.G == b51Var2.G;
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+    @Override // org.telegram.ui.Components.a51
+    public final View d(Context context, uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
         k7 k7Var = new k7(0, context, p6Var);
         k7Var.setCheckForButtonPress(true);
         return k7Var;
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final boolean e(a51 a51Var, a51 a51Var2) {
-        return a51Var.d == a51Var2.d && a51Var.G == a51Var2.G;
+    @Override // org.telegram.ui.Components.a51
+    public final boolean e(b51 b51Var, b51 b51Var2) {
+        return b51Var.d == b51Var2.d && b51Var.G == b51Var2.G;
     }
 }

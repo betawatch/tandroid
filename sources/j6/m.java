@@ -30,15 +30,15 @@ import java.util.Iterator;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeoutException;
+import org.telegram.messenger.at;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.zs;
 import org.telegram.ui.Cells.t2;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.lg;
+import org.telegram.ui.ng;
 import v7.t6;
 import v7.u7;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class m implements OnSuccessListener, fe.l {
     public static m e;
@@ -144,7 +144,7 @@ public final class m implements OnSuccessListener, fe.l {
             fe.h hVar = (fe.h) it.next();
             fArr[((Integer) hVar.a).intValue()] = hVar.c();
         }
-        ((lg) this.c).run();
+        ((ng) this.c).run();
     }
 
     public void g() {
@@ -178,7 +178,7 @@ public final class m implements OnSuccessListener, fe.l {
     public void i(Throwable th2) {
         z zVar = (z) this.d;
         if (th2 instanceof TimeoutException) {
-            zVar.F(zs.n1, 28, c0.p);
+            zVar.F(at.n1, 28, c0.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
             zVar.F(95, 28, c0.p);

@@ -1,55 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
+import android.net.Uri;
 import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.text.style.URLSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class d51 extends MetricAffectingSpan {
-    public final CharSequence a;
-    public final int b;
-    public final int c;
-    public final byte d;
-    public final yz0 e;
+public final class d51 extends URLSpan {
+    public final zz0 a;
 
-    public d51(CharSequence charSequence, int i10, int i11, byte b10, yz0 yz0Var) {
-        this.a = charSequence;
-        this.b = i10;
-        this.c = i11;
-        this.d = b10;
-        this.e = yz0Var;
+    public d51(String str, zz0 zz0Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = zz0Var;
     }
 
-    @Override // android.text.style.CharacterStyle
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        gf.f.o(view.getContext(), Uri.parse(getURL()));
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.i0.L(org.telegram.messenger.tz.W0 - 1));
-        byte b10 = this.d;
-        if (b10 == 2) {
-            textPaint.setColor(-1);
-        } else if (b10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Tc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Sc, false));
+        super.updateDrawState(textPaint);
+        zz0 zz0Var = this.a;
+        if (zz0Var != null) {
+            zz0Var.a(textPaint);
         }
-        yz0 yz0Var = this.e;
-        if (yz0Var != null) {
-            yz0Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
-            textPaint.setUnderlineText(false);
-        }
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.i0.L(org.telegram.messenger.tz.W0 - 1));
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        yz0 yz0Var = this.e;
-        if (yz0Var != null) {
-            yz0Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
-        }
+        textPaint.setUnderlineText(true);
     }
 }

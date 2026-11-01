@@ -11,9 +11,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class zx extends sk0 {
+public final class zx extends tk0 {
     public at E;
     public boolean F;
     public int G;
@@ -43,7 +43,7 @@ public final class zx extends sk0 {
         this.e = z10 ? null : new cy(vyVar, context);
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -75,7 +75,7 @@ public final class zx extends sk0 {
                 vyVar.l0.put(str3, messages_botresults);
             }
             if (!z12 && messages_botresults.cache_time != 0) {
-                org.telegram.messenger.hs.a0(vyVar.c1).v1(str3, messages_botresults);
+                org.telegram.messenger.is.a0(vyVar.c1).v1(str3, messages_botresults);
             }
             this.r = messages_botresults.next_offset;
             int i10 = 0;
@@ -151,7 +151,7 @@ public final class zx extends sk0 {
         wv wvVar = vyVar.h0;
         yv yvVar = vyVar.o0;
         int i12 = vyVar.c1;
-        TLObject e22 = org.telegram.messenger.vp.r1(i11).e2(org.telegram.messenger.vp.r1(i12).M3);
+        TLObject e22 = org.telegram.messenger.wp.r1(i11).e2(org.telegram.messenger.wp.r1(i12).M3);
         boolean z13 = e22 instanceof TLRPC.User;
         boolean z14 = this.d;
         if (!z13) {
@@ -159,7 +159,7 @@ public final class zx extends sk0 {
                 if (!this.F) {
                     this.F = true;
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-                    tL_contacts_resolveUsername.username = org.telegram.messenger.vp.r1(i12).M3;
+                    tL_contacts_resolveUsername.username = org.telegram.messenger.wp.r1(i12).M3;
                     ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new x1(this, 4));
                 }
                 if (z14) {
@@ -212,7 +212,7 @@ public final class zx extends sk0 {
         }
         if (z12) {
             this.h = -1;
-            org.telegram.messenger.hs.a0(i12).M(n10, requestDelegate);
+            org.telegram.messenger.is.a0(i12).M(n10, requestDelegate);
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
@@ -220,7 +220,7 @@ public final class zx extends sk0 {
             str = "";
         }
         tL_messages_getInlineBotResults.query = str;
-        tL_messages_getInlineBotResults.bot = org.telegram.messenger.vp.r1(i12).p1(this.n);
+        tL_messages_getInlineBotResults.bot = org.telegram.messenger.wp.r1(i12).p1(this.n);
         tL_messages_getInlineBotResults.offset = str2;
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         this.h = ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getInlineBotResults, requestDelegate);
@@ -267,7 +267,7 @@ public final class zx extends sk0 {
         wv wvVar = vyVar.h0;
         int currentPosition = cxVar.getCurrentPosition();
         if (currentPosition != vyVar.r0 && currentPosition != vyVar.s0) {
-            H((String) org.telegram.messenger.vp.r1(vyVar.c1).d4.get(currentPosition - vyVar.t0));
+            H((String) org.telegram.messenger.wp.r1(vyVar.c1).d4.get(currentPosition - vyVar.t0));
             return;
         }
         s4.g0 adapter = wvVar.getAdapter();
@@ -346,7 +346,7 @@ public final class zx extends sk0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) vyVar.i1.get(i15);
-                        pu0 C1 = yy.C1(ayVar.F1(document, document.attributes));
+                        qu0 C1 = yy.C1(ayVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * L) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -402,7 +402,7 @@ public final class zx extends sk0 {
                 view = view3;
             } else {
                 org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(this.c, false, false, vyVar.Z1, vyVar.i2);
-                n8Var.a(0, org.telegram.messenger.cd.L0(2131750835, null));
+                n8Var.a(0, org.telegram.messenger.dd.L0(2131750835, null));
                 s4.o0 o0Var2 = new s4.o0(-1, -2);
                 ((ViewGroup.MarginLayoutParams) o0Var2).topMargin = org.telegram.messenger.i0.L(2.5f);
                 ((ViewGroup.MarginLayoutParams) o0Var2).bottomMargin = org.telegram.messenger.i0.L(5.5f);
@@ -415,6 +415,6 @@ public final class zx extends sk0 {
             h2Var.setCanPreviewGif(true);
             view = h2Var;
         }
-        return new ck0(view);
+        return new dk0(view);
     }
 }

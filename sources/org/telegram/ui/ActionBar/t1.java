@@ -18,15 +18,15 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
+import org.telegram.messenger.a30;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.fi0;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.xt;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t1 extends LinearLayout implements k6 {
     public boolean a;
@@ -195,7 +195,7 @@ public final class t1 extends LinearLayout implements k6 {
         }
         int paddingTop = (size2 - getPaddingTop()) - getPaddingBottom();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        int c10 = z20.c(48.0f, paddingLeft, TLObject.FLAG_30);
+        int c10 = a30.c(48.0f, paddingLeft, TLObject.FLAG_30);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30);
         ViewGroup viewGroup = x1Var.v0;
         if (viewGroup != null) {
@@ -203,7 +203,7 @@ public final class t1 extends LinearLayout implements k6 {
             for (int i16 = 0; i16 < childCount; i16++) {
                 View childAt = x1Var.v0.getChildAt(i16);
                 if (childAt instanceof TextView) {
-                    ((TextView) childAt).setMaxWidth(org.telegram.messenger.i0.L(z20.y(24.0f, paddingLeft, 2)));
+                    ((TextView) childAt).setMaxWidth(org.telegram.messenger.i0.L(a30.y(24.0f, paddingLeft, 2)));
                 }
             }
             x1Var.v0.measure(makeMeasureSpec, i11);
@@ -228,9 +228,9 @@ public final class t1 extends LinearLayout implements k6 {
             LinearLayout.LayoutParams layoutParams3 = (LinearLayout.LayoutParams) x1Var.h.getLayoutParams();
             i12 -= (x1Var.h.getMeasuredHeight() + layoutParams3.bottomMargin) + layoutParams3.topMargin;
         }
-        ei0 ei0Var = x1Var.m0;
-        if (ei0Var != null) {
-            ei0Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(x1Var.a0), TLObject.FLAG_30));
+        fi0 fi0Var = x1Var.m0;
+        if (fi0Var != null) {
+            fi0Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(x1Var.a0), TLObject.FLAG_30));
             i12 -= x1Var.m0.getMeasuredHeight();
         }
         View view = x1Var.V;

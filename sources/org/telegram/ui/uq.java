@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class uq implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -118,25 +118,25 @@ public final class uq implements ViewTreeObserver.OnPreDrawListener {
                 return true;
             case 2:
                 int i17 = 0;
-                org.telegram.ui.Components.wj0 wj0Var = (org.telegram.ui.Components.wj0) obj;
-                SparseArray sparseArray = wj0Var.b;
-                org.telegram.ui.Components.tk0 tk0Var = wj0Var.a;
-                tk0Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                wj0Var.h.remove(this);
-                int childCount3 = tk0Var.getChildCount();
+                org.telegram.ui.Components.xj0 xj0Var = (org.telegram.ui.Components.xj0) obj;
+                SparseArray sparseArray = xj0Var.b;
+                org.telegram.ui.Components.uk0 uk0Var = xj0Var.a;
+                uk0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                xj0Var.h.remove(this);
+                int childCount3 = uk0Var.getChildCount();
                 AnimatorSet animatorSet3 = new AnimatorSet();
                 while (i14 < childCount3) {
-                    View childAt3 = tk0Var.getChildAt(i14);
-                    tk0Var.getClass();
+                    View childAt3 = uk0Var.getChildAt(i14);
+                    uk0Var.getClass();
                     int R = RecyclerView.R(childAt3);
                     if (childAt3 != view && R >= i12 - 1 && sparseArray.get(R, null) == null) {
                         sparseArray.put(R, Float.valueOf(0.0f));
-                        wj0Var.d = z11;
-                        tk0Var.invalidate();
+                        xj0Var.d = z11;
+                        uk0Var.invalidate();
                         ValueAnimator ofFloat5 = ValueAnimator.ofFloat(0.0f, 1.0f);
                         ofFloat5.addUpdateListener(new nh.b(this, R, 6));
                         ofFloat5.addListener(new bi.d5(this, R, 11));
-                        ofFloat5.setStartDelay((int) ((Math.min(tk0Var.getMeasuredHeight(), Math.max(i17, childAt3.getTop())) / tk0Var.getMeasuredHeight()) * 100.0f));
+                        ofFloat5.setStartDelay((int) ((Math.min(uk0Var.getMeasuredHeight(), Math.max(i17, childAt3.getTop())) / uk0Var.getMeasuredHeight()) * 100.0f));
                         ofFloat5.setDuration(200L);
                         animatorSet3.playTogether(ofFloat5);
                     }
@@ -144,14 +144,14 @@ public final class uq implements ViewTreeObserver.OnPreDrawListener {
                     z11 = true;
                     i17 = 0;
                 }
-                wj0Var.g.add(animatorSet3);
+                xj0Var.g.add(animatorSet3);
                 animatorSet3.start();
                 animatorSet3.addListener(new bg.f(28, this, animatorSet3));
                 return false;
             default:
-                z00 z00Var = (z00) obj;
-                z00Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                ag.b1 b1Var = z00Var.b;
+                y00 y00Var = (y00) obj;
+                y00Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                ag.b1 b1Var = y00Var.b;
                 int childCount4 = b1Var.getChildCount();
                 AnimatorSet animatorSet4 = new AnimatorSet();
                 int i18 = 0;
@@ -192,8 +192,8 @@ public final class uq implements ViewTreeObserver.OnPreDrawListener {
                 }
                 float f13 = f11;
                 int i19 = i14;
-                animatorSet4.addListener(new p00(this));
-                z00Var.l0.d();
+                animatorSet4.addListener(new o00(this));
+                y00Var.l0.d();
                 animatorSet4.start();
                 if (view != null && view.getParent() == null) {
                     b1Var.addView(view);
@@ -205,7 +205,7 @@ public final class uq implements ViewTreeObserver.OnPreDrawListener {
                         fArr2[i19] = view.getAlpha();
                         fArr2[1] = f13;
                         ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr2);
-                        ofFloat7.addListener(new p00(this, layoutManager3));
+                        ofFloat7.addListener(new o00(this, layoutManager3));
                         ofFloat7.start();
                     }
                 }

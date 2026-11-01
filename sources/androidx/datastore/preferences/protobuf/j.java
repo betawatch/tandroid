@@ -2,9 +2,9 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class j extends r0 {
     public static final Logger h = Logger.getLogger(j.class.getName());
@@ -301,17 +301,17 @@ public final class j extends r0 {
         int i11 = this.f;
         int i12 = i11 + 1;
         this.f = i12;
-        byte b10 = (byte) (i10 & zs.e4);
+        byte b10 = (byte) (i10 & at.e4);
         byte[] bArr = this.d;
         bArr[i11] = b10;
         int i13 = i11 + 2;
         this.f = i13;
-        bArr[i12] = (byte) ((i10 >> 8) & zs.e4);
+        bArr[i12] = (byte) ((i10 >> 8) & at.e4);
         int i14 = i11 + 3;
         this.f = i14;
-        bArr[i13] = (byte) ((i10 >> 16) & zs.e4);
+        bArr[i13] = (byte) ((i10 >> 16) & at.e4);
         this.f = i11 + 4;
-        bArr[i14] = (byte) ((i10 >> 24) & zs.e4);
+        bArr[i14] = (byte) ((i10 >> 24) & at.e4);
     }
 
     public final void n(long j10) {
@@ -331,15 +331,15 @@ public final class j extends r0 {
         bArr[i13] = (byte) (255 & (j10 >> 24));
         int i15 = i10 + 5;
         this.f = i15;
-        bArr[i14] = (byte) (((int) (j10 >> 32)) & zs.e4);
+        bArr[i14] = (byte) (((int) (j10 >> 32)) & at.e4);
         int i16 = i10 + 6;
         this.f = i16;
-        bArr[i15] = (byte) (((int) (j10 >> 40)) & zs.e4);
+        bArr[i15] = (byte) (((int) (j10 >> 40)) & at.e4);
         int i17 = i10 + 7;
         this.f = i17;
-        bArr[i16] = (byte) (((int) (j10 >> 48)) & zs.e4);
+        bArr[i16] = (byte) (((int) (j10 >> 48)) & at.e4);
         this.f = i10 + 8;
-        bArr[i17] = (byte) (((int) (j10 >> 56)) & zs.e4);
+        bArr[i17] = (byte) (((int) (j10 >> 56)) & at.e4);
     }
 
     public final void o(int i10, int i11) {
@@ -353,7 +353,7 @@ public final class j extends r0 {
             while ((i10 & (-128)) != 0) {
                 int i11 = this.f;
                 this.f = i11 + 1;
-                r1.j(bArr, i11, (byte) ((i10 & zs.L1) | 128));
+                r1.j(bArr, i11, (byte) ((i10 & at.L1) | 128));
                 i10 >>>= 7;
             }
             int i12 = this.f;
@@ -364,7 +364,7 @@ public final class j extends r0 {
         while ((i10 & (-128)) != 0) {
             int i13 = this.f;
             this.f = i13 + 1;
-            bArr[i13] = (byte) ((i10 & zs.L1) | 128);
+            bArr[i13] = (byte) ((i10 & at.L1) | 128);
             i10 >>>= 7;
         }
         int i14 = this.f;
@@ -379,7 +379,7 @@ public final class j extends r0 {
             while ((j10 & (-128)) != 0) {
                 int i10 = this.f;
                 this.f = i10 + 1;
-                r1.j(bArr, i10, (byte) ((((int) j10) & zs.L1) | 128));
+                r1.j(bArr, i10, (byte) ((((int) j10) & at.L1) | 128));
                 j10 >>>= 7;
             }
             int i11 = this.f;
@@ -390,7 +390,7 @@ public final class j extends r0 {
         while ((j10 & (-128)) != 0) {
             int i12 = this.f;
             this.f = i12 + 1;
-            bArr[i12] = (byte) ((((int) j10) & zs.L1) | 128);
+            bArr[i12] = (byte) ((((int) j10) & at.L1) | 128);
             j10 >>>= 7;
         }
         int i13 = this.f;

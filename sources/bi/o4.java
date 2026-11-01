@@ -9,22 +9,22 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.cs;
+import org.telegram.messenger.ds;
 import org.telegram.messenger.f8;
-import org.telegram.messenger.gp;
-import org.telegram.messenger.j20;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.gx0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.u1, i5.g, gp, x2.l, cs {
+public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.u1, i5.g, hp, x2.l, ds {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -39,9 +39,9 @@ public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.u1, i
         this.b = z10;
     }
 
-    @Override // org.telegram.messenger.gp
+    @Override // org.telegram.messenger.hp
     public boolean a(TLRPC.TL_error tL_error) {
-        return ProfileActivity.e0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (org.telegram.ui.ActionBar.k2) this.e, tL_error);
+        return ProfileActivity.f0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (org.telegram.ui.ActionBar.k2) this.e, tL_error);
     }
 
     @Override // x2.l
@@ -138,34 +138,34 @@ public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.u1, i
                 break;
             case 1:
             default:
-                fx0 fx0Var = (fx0) this.c;
-                j20 j20Var = (j20) this.d;
+                gx0 gx0Var = (gx0) this.c;
+                k20 k20Var = (k20) this.d;
                 Context context = (Context) this.e;
                 boolean z11 = this.b;
-                String trim2 = fx0Var.getText().toString().trim();
+                String trim2 = gx0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(org.telegram.messenger.i0.N3(trim2.toString()))) {
-                    org.telegram.messenger.i0.v1(fx0Var);
+                    org.telegram.messenger.i0.v1(gx0Var);
                     org.telegram.ui.ActionBar.x1 x1Var2 = new org.telegram.ui.ActionBar.x1(3, context, z11 ? null : new th.b());
                     x1Var2.r(250L);
-                    j20Var.a(trim2, new kg.d0(x1Var2, x1Var, fx0Var, 4));
+                    k20Var.a(trim2, new kg.d0(x1Var2, x1Var, gx0Var, 4));
                     break;
                 } else {
-                    fx0Var.setErrorText(".");
-                    org.telegram.messenger.i0.F3(-6.0f, fx0Var, null);
+                    gx0Var.setErrorText(".");
+                    org.telegram.messenger.i0.F3(-6.0f, gx0Var, null);
                     org.telegram.messenger.t2.D.a();
-                    org.telegram.messenger.i0.J3(fx0Var);
+                    org.telegram.messenger.i0.J3(gx0Var);
                     break;
                 }
                 break;
             case 2:
                 un unVar = (un) this.c;
-                vp vpVar = (vp) this.d;
+                wp wpVar = (wp) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z12 = this.b;
-                vpVar.G2 = 1;
-                vp.d1().edit().putInt("secretWebpage2", unVar.getMessagesController().G2).commit();
+                wpVar.G2 = 1;
+                wp.d1().edit().putInt("secretWebpage2", unVar.getMessagesController().G2).commit();
                 unVar.X5 = null;
-                unVar.ob(charSequence, z12);
+                unVar.tb(charSequence, z12);
                 break;
             case 3:
                 boolean z13 = this.b;
@@ -190,7 +190,7 @@ public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.u1, i
         }
     }
 
-    @Override // org.telegram.messenger.cs
+    @Override // org.telegram.messenger.ds
     public void run(long j10) {
         yh.e eVar = (yh.e) this.c;
         org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) this.d;
@@ -202,7 +202,7 @@ public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.u1, i
         }
         eVar.b = -j10;
         eVar.c = eVar.getMessagesController().L0(Long.valueOf(j10));
-        eVar.Z(str, this.b);
+        eVar.a0(str, this.b);
     }
 
     public /* synthetic */ o4(Object obj, Object obj2, boolean z10, Object obj3, int i10) {

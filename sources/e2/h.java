@@ -5,11 +5,11 @@ import android.text.TextUtils;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import v7.r6;
 import v7.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^rgb\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
@@ -125,7 +125,7 @@ public abstract class h {
                 return (-16777216) | parseLong;
             }
             if (replace.length() == 9) {
-                return ((parseLong & zs.e4) << 24) | (parseLong >>> 8);
+                return ((parseLong & at.e4) << 24) | (parseLong >>> 8);
             }
             throw new IllegalArgumentException();
         }

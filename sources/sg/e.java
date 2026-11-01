@@ -3,9 +3,9 @@ package sg;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.ImageView;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class e extends ImageView {
     public long a;
@@ -20,7 +20,7 @@ public final class e extends ImageView {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        q20 q20Var;
+        r20 r20Var;
         int action = motionEvent.getAction();
         f fVar = this.b;
         if (action == 0) {
@@ -33,8 +33,8 @@ public final class e extends ImageView {
             org.telegram.messenger.i0.h3(new org.telegram.utils.twidget.v(fVar, 350, 3), 350);
         } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
             fVar.b = false;
-            if (!fVar.c && (q20Var = fVar.d) != null) {
-                q20Var.a(Boolean.FALSE);
+            if (!fVar.c && (r20Var = fVar.d) != null) {
+                r20Var.a(Boolean.FALSE);
                 try {
                     fVar.a.performHapticFeedback(3);
                 } catch (Exception unused) {

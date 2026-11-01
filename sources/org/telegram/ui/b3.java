@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b3 extends FrameLayout {
     public final LinearLayout a;
@@ -37,13 +37,13 @@ public final class b3 extends FrameLayout {
         textView.setTextSize(1, 19.0f);
         textView.setTypeface(org.telegram.messenger.i0.o());
         textView.setTextColor(-1);
-        TextView f7 = org.telegram.messenger.z20.f(linearLayout, textView, w7.b6.t(-2, -2, 3, 0, 4, 0, 2), context);
+        TextView f7 = org.telegram.messenger.a30.f(linearLayout, textView, w7.b6.t(-2, -2, 3, 0, 4, 0, 2), context);
         this.e = f7;
         f7.setTextSize(1, 15.0f);
         f7.setTextColor(-1);
         f7.setSingleLine(false);
         f7.setMaxLines(3);
-        TextView f10 = org.telegram.messenger.z20.f(linearLayout, f7, w7.b6.t(-2, -2, 3, 0, 0, 0, 1), context);
+        TextView f10 = org.telegram.messenger.a30.f(linearLayout, f7, w7.b6.t(-2, -2, 3, 0, 0, 0, 1), context);
         this.f = f10;
         f10.setTextSize(1, 12.0f);
         f10.setTextColor(-1);
@@ -52,12 +52,12 @@ public final class b3 extends FrameLayout {
         vh.d dVar = new vh.d(context, null, true);
         this.h = dVar;
         dVar.setMinWidth(org.telegram.messenger.i0.L(140.0f));
-        dVar.i(org.telegram.messenger.cd.L0(2131746355, null), false, true);
+        dVar.i(org.telegram.messenger.dd.L0(2131746355, null), false, true);
         linearLayout.addView(dVar, w7.b6.t(-2, 40, 3, 0, 12, 0, 0));
     }
 
     public final void a(String str, String str2) {
-        this.d.setText(org.telegram.messenger.cd.L0(2131742948, null));
+        this.d.setText(org.telegram.messenger.dd.L0(2131742948, null));
         org.telegram.messenger.m5.q(null, null, 2131742950, new Object[]{str}, this.e);
         this.f.setText(str2);
     }
@@ -90,6 +90,6 @@ public final class b3 extends FrameLayout {
             return;
         }
         this.b = true;
-        org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).c2(this.c, "tg_placeholders_android", "🧐", "100_100");
+        org.telegram.messenger.vi.b0(org.telegram.messenger.e20.s0).c2(this.c, "tg_placeholders_android", "🧐", "100_100");
     }
 }

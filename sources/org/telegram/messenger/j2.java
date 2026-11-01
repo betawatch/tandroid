@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class j2 extends f1 {
     public static volatile j2[] f = new j2[4];
@@ -91,12 +91,12 @@ public final class j2 extends f1 {
         } else {
             inputPeer = null;
             final long n10 = o5.n(inputPeer);
-            if (inputPeer != null || n10 <= 0 || !h20.v(getMessagesController().Z1(Long.valueOf(n10)))) {
+            if (inputPeer != null || n10 <= 0 || !i20.v(getMessagesController().Z1(Long.valueOf(n10)))) {
                 return true;
             }
             final long[] jArr = new long[list.size()];
             for (int i10 = 0; i10 < list.size(); i10++) {
-                jArr[i10] = ((jj) list.get(i10)).f1();
+                jArr[i10] = ((kj) list.get(i10)).f1();
             }
             if (z10) {
                 j11 = ((TLRPC.TL_messages_sendMessage) tLObject).random_id;
@@ -115,7 +115,7 @@ public final class j2 extends f1 {
                         while (i11 < size) {
                             Long l4 = arrayList.get(i11);
                             i11++;
-                            j12 = ui.p(j12, l4.longValue());
+                            j12 = vi.p(j12, l4.longValue());
                             inputPeer = inputPeer;
                         }
                         inputPeer3 = inputPeer;
@@ -131,7 +131,7 @@ public final class j2 extends f1 {
                             while (i12 < size2) {
                                 TLRPC.TL_inputSingleMedia tL_inputSingleMedia = arrayList2.get(i12);
                                 i12++;
-                                j11 = ui.p(j11, tL_inputSingleMedia.random_id);
+                                j11 = vi.p(j11, tL_inputSingleMedia.random_id);
                             }
                         } else {
                             j11 = 0;
@@ -170,16 +170,16 @@ public final class j2 extends f1 {
                         E = ~j11;
                     } else {
                         getSendMessagesHelper().getClass();
-                        E = qz.E();
+                        E = rz.E();
                     }
                     if (TextUtils.isEmpty(str)) {
-                        str = cd.L0(2131744005, null);
+                        str = dd.L0(2131744005, null);
                     } else if (str.length() > 16) {
                         str = str.substring(0, 16) + "...";
                     }
                     final String str2 = str;
-                    bs bsVar = new bs() { // from class: org.telegram.messenger.a2
-                        @Override // org.telegram.messenger.bs
+                    cs csVar = new cs() { // from class: org.telegram.messenger.a2
+                        @Override // org.telegram.messenger.cs
                         public final void a(int i14) {
                             j2 j2Var = j2.this;
                             TLObject tLObject2 = tLObject;
@@ -230,12 +230,12 @@ public final class j2 extends f1 {
                     LongSparseArray longSparseArray = this.d;
                     List list2 = (List) longSparseArray.get(n11);
                     if (list2 != null) {
-                        list2.add(bsVar);
+                        list2.add(csVar);
                         return false;
                     }
                     int i14 = 1;
                     ArrayList arrayList4 = new ArrayList(1);
-                    arrayList4.add(bsVar);
+                    arrayList4.add(csVar);
                     longSparseArray.put(n11, arrayList4);
                     TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
                     tL_messages_createForumTopic.title = TextUtils.isEmpty(str2) ? "#New Chat" : str2;
@@ -243,8 +243,8 @@ public final class j2 extends f1 {
                     tL_messages_createForumTopic.peer = inputPeer3;
                     tL_messages_createForumTopic.random_id = E;
                     final long j13 = E;
-                    getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new a3.b(i14), new j20() { // from class: org.telegram.messenger.c2
-                        @Override // org.telegram.messenger.j20
+                    getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new a3.b(i14), new k20() { // from class: org.telegram.messenger.c2
+                        @Override // org.telegram.messenger.k20
                         public final void a(Object obj, Object obj2) {
                             ArrayList<TLRPC.Update> arrayList5;
                             TLRPC.Updates updates = (TLRPC.Updates) obj;
@@ -273,7 +273,7 @@ public final class j2 extends f1 {
                                     arrayList5 = arrayList6;
                                     if (update2 instanceof TL_update.TL_updateNewMessage) {
                                         TLRPC.Message message = ((TL_update.TL_updateNewMessage) update2).message;
-                                        if (i16 == 0 && message != null && (message.action instanceof TLRPC.TL_messageActionTopicCreate) && jj.B0(message) == j14) {
+                                        if (i16 == 0 && message != null && (message.action instanceof TLRPC.TL_messageActionTopicCreate) && kj.B0(message) == j14) {
                                             i16 = message.id;
                                         }
                                     }
@@ -311,7 +311,7 @@ public final class j2 extends f1 {
                             tL_forumTopic.title_missing = true;
                             j2Var.getMessagesController().r7.q(j14, tL_forumTopic, true);
                             j2Var.f(i15, j14);
-                            j2Var.getNotificationCenter().k(zs.J5, new h2(j14, i15));
+                            j2Var.getNotificationCenter().k(at.J5, new h2(j14, i15));
                         }
                     });
                     return false;
@@ -329,11 +329,11 @@ public final class j2 extends f1 {
     }
 
     public final boolean c(int i10, long j10) {
-        LongSparseArray s10 = this.a.s(j10, i10);
-        if (s10 != null && s10.size() > 0) {
-            int size = s10.size();
+        LongSparseArray p5 = this.a.p(j10, i10);
+        if (p5 != null && p5.size() > 0) {
+            int size = p5.size();
             for (int i11 = 0; i11 < size; i11++) {
-                if (!((e2) s10.valueAt(i11)).e) {
+                if (!((e2) p5.valueAt(i11)).e) {
                     return true;
                 }
             }
@@ -351,7 +351,7 @@ public final class j2 extends f1 {
         if (e2Var == null) {
             return;
         }
-        getNotificationCenter().k(zs.L5, new f2(j10, e2Var.b, j12));
+        getNotificationCenter().k(at.L5, new f2(j10, e2Var.b, j12));
     }
 
     public final void f(int i10, long j10) {
@@ -361,7 +361,7 @@ public final class j2 extends f1 {
             longSparseArray.remove(j10);
             Iterator it = list.iterator();
             while (it.hasNext()) {
-                ((bs) it.next()).a(i10);
+                ((cs) it.next()).a(i10);
             }
         }
     }
@@ -370,18 +370,18 @@ public final class j2 extends f1 {
         long j11;
         long j12;
         long j13 = i10;
-        LongSparseArray s10 = this.a.s(j10, j13);
-        if (s10 == null) {
+        LongSparseArray p5 = this.a.p(j10, j13);
+        if (p5 == null) {
             return;
         }
-        int size = s10.size();
+        int size = p5.size();
         int i11 = 0;
         while (i11 < size) {
-            e2 e2Var = (e2) s10.valueAt(i11);
+            e2 e2Var = (e2) p5.valueAt(i11);
             if (e2Var.e) {
                 long j14 = j13;
                 j11 = j10;
-                getNotificationCenter().k(zs.L5, new f2(j11, e2Var.b, j14));
+                getNotificationCenter().k(at.L5, new f2(j11, e2Var.b, j14));
                 this.a.P(j11, j14, e2Var.a);
                 j12 = j14;
                 i11--;

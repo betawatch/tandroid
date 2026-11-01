@@ -12,14 +12,14 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.d00;
-import org.telegram.messenger.r20;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.e00;
+import org.telegram.messenger.s20;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public class f2 {
     public boolean B;
@@ -34,7 +34,7 @@ public class f2 {
     public long S;
     public boolean g;
     public boolean h;
-    public r20 l;
+    public s20 l;
     public boolean m;
     public final int p;
     public boolean q;
@@ -114,7 +114,7 @@ public class f2 {
             }
             int i14 = this.O;
             if (i14 == 9) {
-                this.d[i13] = d00.d(i13 == 0 ? R.raw.premium_object_folder : i13 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                this.d[i13] = e00.d(i13 == 0 ? R.raw.premium_object_folder : i13 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else {
                 int i15 = R.raw.premium_object_star2;
@@ -124,7 +124,7 @@ public class f2 {
                     } else if (i13 == 1) {
                         i15 = R.raw.filled_crown_on;
                     }
-                    this.d[i13] = d00.d(i15, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                    this.d[i13] = e00.d(i15, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                     this.e[i13] = true;
                 } else {
                     int i16 = R.raw.premium_object_like;
@@ -134,7 +134,7 @@ public class f2 {
                         } else if (i13 == 1) {
                             i16 = R.raw.premium_object_smile2;
                         }
-                        this.d[i13] = d00.d(i16, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                        this.d[i13] = e00.d(i16, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                         this.e[i13] = true;
                     } else {
                         int i17 = R.raw.premium_object_user;
@@ -142,7 +142,7 @@ public class f2 {
                             if (i13 != 0) {
                                 i17 = i13 == 1 ? R.raw.cache_photos : R.raw.cache_profile_photos;
                             }
-                            this.d[i13] = d00.d(i17, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                            this.d[i13] = e00.d(i17, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                             this.e[i13] = true;
                         } else if (i14 == i12) {
                             if (i13 == 0) {
@@ -150,7 +150,7 @@ public class f2 {
                             } else if (i13 != 1) {
                                 i16 = R.raw.premium_object_noads;
                             }
-                            this.d[i13] = d00.d(i16, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                            this.d[i13] = e00.d(i16, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                             this.e[i13] = true;
                         } else if (i14 == 7) {
                             if (i13 == 0) {
@@ -158,23 +158,23 @@ public class f2 {
                             } else if (i13 == 1) {
                                 i17 = R.raw.premium_object_video;
                             }
-                            this.d[i13] = d00.d(i17, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                            this.d[i13] = e00.d(i17, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                             this.e[i13] = true;
                         } else if (i14 == 43) {
-                            this.d[i13] = d00.d(i13 == 0 ? R.raw.premium_object_list : i13 == 1 ? R.raw.premium_object_math : i13 == 2 ? R.raw.premium_object_table : i13 == i12 ? R.raw.premium_object_superscript : i13 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                            this.d[i13] = e00.d(i13 == 0 ? R.raw.premium_object_list : i13 == 1 ? R.raw.premium_object_math : i13 == 2 ? R.raw.premium_object_table : i13 == i12 ? R.raw.premium_object_superscript : i13 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                             this.e[i13] = true;
                         } else if (i14 == 1001) {
-                            this.d[i13] = d00.d(R.raw.premium_object_fire, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                            this.d[i13] = e00.d(R.raw.premium_object_fire, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                             this.e[i13] = true;
                         } else if (i14 == 1002) {
-                            this.d[i13] = d00.d(R.raw.premium_object_star2, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                            this.d[i13] = e00.d(R.raw.premium_object_star2, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                             this.e[i13] = true;
                         } else if (i14 == 24) {
-                            this.d[i13] = d00.d(i13 == 0 ? R.raw.premium_object_tag : i13 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
+                            this.d[i13] = e00.d(i13 == 0 ? R.raw.premium_object_tag : i13 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, L, L, i0.b.o(t6.w0(this.Q, this.P), 30));
                             this.e[i13] = true;
                         } else if (i14 == 28) {
                             if (i13 == 0) {
-                                this.d[i13] = d00.d(R.raw.filled_premium_dollar, L, L, i0.b.o(t6.w0(this.Q, this.P), zs.e4));
+                                this.d[i13] = e00.d(R.raw.filled_premium_dollar, L, L, i0.b.o(t6.w0(this.Q, this.P), at.e4));
                                 this.f[i13] = true;
                             }
                             Bitmap createBitmap = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
@@ -215,7 +215,7 @@ public class f2 {
                                         e.setPathEffect(new CornerPathEffect(org.telegram.messenger.i0.N(this.r / 5.0f)));
                                     }
                                     if (this.L) {
-                                        e.setAlpha(zs.e4);
+                                        e.setAlpha(at.e4);
                                     } else if (this.K) {
                                         e.setAlpha(60);
                                     } else {
@@ -223,7 +223,7 @@ public class f2 {
                                     }
                                     canvas.drawPath(path, e);
                                     e.setPathEffect(null);
-                                    e.setAlpha(zs.e4);
+                                    e.setAlpha(at.e4);
                                 }
                                 if (!this.K) {
                                     Utilities.stackBlurBitmap(createBitmap, 2);
@@ -236,7 +236,7 @@ public class f2 {
                             }
                         } else {
                             if (i14 == 105 && i13 == 0) {
-                                this.d[i13] = d00.d(R.raw.premium_object_star2, L, L, b());
+                                this.d[i13] = e00.d(R.raw.premium_object_star2, L, L, b());
                             }
                             Bitmap createBitmap2 = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
                             this.d[i13] = createBitmap2;
@@ -275,7 +275,7 @@ public class f2 {
     }
 
     public int b() {
-        return this.O == 100 ? i0.b.o(t6.w0(this.Q, this.P), zs.e3) : t6.w0(this.Q, this.P);
+        return this.O == 100 ? i0.b.o(t6.w0(this.Q, this.P), at.e3) : t6.w0(this.Q, this.P);
     }
 
     public final void c() {

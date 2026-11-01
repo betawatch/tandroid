@@ -7,7 +7,7 @@ import androidx.appcompat.widget.SearchView;
 import m.s3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class t implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class t implements View.OnLayoutChangeListener {
         Object obj = this.b;
         switch (i18) {
             case 0:
-                w.f0((w) obj);
+                w.g0((w) obj);
                 break;
             case 1:
                 SearchView searchView = (SearchView) obj;
@@ -55,12 +55,12 @@ public final class t implements View.OnLayoutChangeListener {
                     d2Var.setSwipeOffsetAnimationDisallowed(false);
                 }
                 m2Var.D.n(true, true);
-                final e2.f fVar = new e2.f(null);
+                final e2.f fVar = new e2.f((int[]) null);
                 fVar.d();
                 if (m2Var.G0 || m2Var.r()) {
                     d2Var.f(d2Var.getTopActionBarOffsetY() + (-d2Var.getOffsetY()), false, new xh.d0(fVar, 6));
                 } else {
-                    o1.j jVar = new o1.j((Object) d2Var, (o1.h) xh.h3.b0, 0.0f);
+                    o1.j jVar = new o1.j((Object) d2Var, (o1.h) xh.i3.b0, 0.0f);
                     o1.k kVar = new o1.k(0.0f);
                     kVar.a(0.75f);
                     kVar.b(500.0f);

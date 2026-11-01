@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public class gs extends p51 {
+public class gs extends q51 {
     public final int P;
     public final int Q;
     public final boolean R;
@@ -32,8 +32,8 @@ public class gs extends p51 {
     public boolean i0;
     public final r2 j0;
 
-    public gs(tk0 tk0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(tk0Var, context, i10, 0, true, null, p6Var);
+    public gs(uk0 uk0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(uk0Var, context, i10, 0, true, null, p6Var);
         this.T = new ArrayList();
         this.U = new ArrayList();
         this.V = new ArrayList();
@@ -45,19 +45,19 @@ public class gs extends p51 {
         this.Q = i11;
         this.R = z10;
         this.S = new fs(i10, new bs(this, 1));
-        this.Y = org.telegram.messenger.i0.G2(org.telegram.messenger.i0.T2(org.telegram.messenger.cd.L0(2131754177, null), new cs(this, p6Var, context)), true);
+        this.Y = org.telegram.messenger.i0.G2(org.telegram.messenger.i0.T2(org.telegram.messenger.dd.L0(2131754177, null), new cs(this, p6Var, context)), true);
         O(false);
-        org.telegram.messenger.ui.b0(i10).M0(true);
+        org.telegram.messenger.vi.b0(i10).M0(true);
     }
 
     public final void W() {
         boolean isEmpty = TextUtils.isEmpty(this.g0);
-        tk0 tk0Var = this.d;
+        uk0 uk0Var = this.d;
         if (isEmpty) {
             if (!this.i0) {
-                if (tk0Var != null) {
-                    for (int i10 = 0; i10 < tk0Var.getChildCount(); i10++) {
-                        if (!(tk0Var.getChildAt(i10) instanceof zz)) {
+                if (uk0Var != null) {
+                    for (int i10 = 0; i10 < uk0Var.getChildCount(); i10++) {
+                        if (!(uk0Var.getChildAt(i10) instanceof zz)) {
                         }
                     }
                 }
@@ -65,13 +65,13 @@ public class gs extends p51 {
             this.S.a();
             break;
         }
-        if (this.d0 && !this.b0 && tk0Var != null) {
+        if (this.d0 && !this.b0 && uk0Var != null) {
             int i11 = 0;
             while (true) {
-                if (i11 >= tk0Var.getChildCount()) {
+                if (i11 >= uk0Var.getChildCount()) {
                     break;
                 }
-                if (!(tk0Var.getChildAt(i11) instanceof zz)) {
+                if (!(uk0Var.getChildAt(i11) instanceof zz)) {
                     i11++;
                 } else if (this.d0 && !this.b0 && !TextUtils.isEmpty(this.g0)) {
                     X(true);
@@ -106,13 +106,13 @@ public class gs extends p51 {
         if (z10) {
             ArrayList arrayList = this.V;
             if (!arrayList.isEmpty()) {
-                org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) i0.a.g(1, arrayList);
+                org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) i0.a.g(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.e0;
-                tL_messages_searchGlobal.offset_id = jjVar.f1();
-                if (jjVar.k.peer_id == null) {
+                tL_messages_searchGlobal.offset_id = kjVar.f1();
+                if (kjVar.k.peer_id == null) {
                     tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
                 } else {
-                    tL_messages_searchGlobal.offset_peer = org.telegram.messenger.vp.r1(i12).l1(jjVar.k.peer_id);
+                    tL_messages_searchGlobal.offset_peer = org.telegram.messenger.wp.r1(i12).l1(kjVar.k.peer_id);
                 }
                 org.telegram.messenger.i0.h3(new org.telegram.messenger.voip.p0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
                 if (z10) {

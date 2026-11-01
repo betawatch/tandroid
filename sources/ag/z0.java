@@ -7,12 +7,12 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.qz;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.r5;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.rz;
+import org.telegram.messenger.wp;
 import org.telegram.ui.Cells.d8;
 import org.telegram.ui.Cells.j5;
 import org.telegram.ui.Cells.ma;
@@ -21,19 +21,19 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.e01;
 import org.telegram.ui.zc;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements q20 {
+public final /* synthetic */ class z0 implements r20 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ z0(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
-        jj messageObject;
-        jj messageObject2;
+        kj messageObject;
+        kj messageObject2;
         switch (this.a) {
             case 0:
                 View view = (View) obj;
@@ -55,7 +55,7 @@ public final /* synthetic */ class z0 implements q20 {
             case 3:
                 break;
             case 4:
-                r5 r5Var = qz.I;
+                r5 r5Var = rz.I;
                 break;
             case 5:
                 HashMap hashMap = org.telegram.ui.ActionBar.i3.K;
@@ -67,13 +67,12 @@ public final /* synthetic */ class z0 implements q20 {
                 int i11 = ma.n;
                 break;
             case 8:
-                zc.e1((View) obj);
+                zc.f1((View) obj);
                 break;
             case 9:
                 View view3 = (View) obj;
                 if ((view3 instanceof org.telegram.ui.Cells.q1) && (messageObject = ((org.telegram.ui.Cells.q1) view3).getMessageObject()) != null) {
                     messageObject.K1 = true;
-                    messageObject.H = true;
                     break;
                 }
                 break;
@@ -81,6 +80,7 @@ public final /* synthetic */ class z0 implements q20 {
                 View view4 = (View) obj;
                 if ((view4 instanceof org.telegram.ui.Cells.q1) && (messageObject2 = ((org.telegram.ui.Cells.q1) view4).getMessageObject()) != null) {
                     messageObject2.K1 = true;
+                    messageObject2.H = true;
                     break;
                 }
                 break;
@@ -131,22 +131,22 @@ public final /* synthetic */ class z0 implements q20 {
                 if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
                     org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
                     if (T != null) {
-                        T.presentFragment(ProfileActivity.z4(l4.longValue()));
+                        T.presentFragment(ProfileActivity.A4(l4.longValue()));
                         break;
                     }
                 } else {
-                    org.telegram.messenger.i0.g3(new org.telegram.ui.Components.voip.m0(12));
+                    org.telegram.messenger.i0.g3(new org.telegram.ui.Components.voip.n0(12));
                     break;
                 }
                 break;
             case 18:
-                RectF rectF = ProfileActivity.R6;
+                RectF rectF = ProfileActivity.S6;
                 break;
             case 19:
                 HashSet hashSet = (HashSet) obj;
-                String str = cd.D0().B.f;
-                hashSet.addAll(e01.c0());
-                SharedPreferences.Editor edit = vp.d1().edit();
+                String str = dd.D0().B.f;
+                hashSet.addAll(e01.d0());
+                SharedPreferences.Editor edit = wp.d1().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
                 } else {
@@ -156,7 +156,7 @@ public final /* synthetic */ class z0 implements q20 {
                 e01.s = false;
                 for (int i12 = 0; i12 < 4; i12++) {
                     try {
-                        vp.r1(i12).t7.g();
+                        wp.r1(i12).t7.g();
                     } catch (Exception unused) {
                     }
                 }
@@ -167,13 +167,13 @@ public final /* synthetic */ class z0 implements q20 {
                 view9.setScaleY(1.0f);
                 break;
             case 21:
-                ArrayList arrayList = org.telegram.ui.Wallet.u2.a;
+                ArrayList arrayList = org.telegram.ui.Wallet.v2.a;
                 break;
             case 22:
-                ((org.telegram.ui.Wallet.s2) obj).a();
+                ((org.telegram.ui.Wallet.t2) obj).a();
                 break;
             case 23:
-                ((org.telegram.ui.Wallet.s2) obj).b();
+                ((org.telegram.ui.Wallet.t2) obj).b();
                 break;
             case 24:
                 View view10 = (View) obj;

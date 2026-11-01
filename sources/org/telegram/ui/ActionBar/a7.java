@@ -18,15 +18,15 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.zs;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.i40;
-import org.telegram.ui.y30;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.h40;
+import org.telegram.ui.x30;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public abstract class a7 {
     public static final z6 a = new z6();
@@ -74,12 +74,12 @@ public abstract class a7 {
         m(recyclerView, 21, i10, p6Var);
     }
 
-    public static void J(int i10, i40 i40Var) {
-        m(i40Var, 20, i10, null);
+    public static void J(int i10, h40 h40Var) {
+        m(h40Var, 20, i10, null);
     }
 
-    public static void K(tk0 tk0Var, int i10, p6 p6Var) {
-        m(tk0Var, 20, i10, p6Var);
+    public static void K(uk0 uk0Var, int i10, p6 p6Var) {
+        m(uk0Var, 20, i10, p6Var);
     }
 
     public static w6 L(float f7, int i10) {
@@ -169,8 +169,8 @@ public abstract class a7 {
             default:
                 switch (i11) {
                     case 20:
-                        if (view instanceof tk0) {
-                            ((tk0) view).setSelectorDrawableColor(i10);
+                        if (view instanceof uk0) {
+                            ((uk0) view).setSelectorDrawableColor(i10);
                             break;
                         }
                         break;
@@ -205,10 +205,10 @@ public abstract class a7 {
                         if (view instanceof EditTextBoldCursor) {
                             EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
                             switch (i11) {
-                                case zs.T /* 30 */:
+                                case at.T /* 30 */:
                                     editTextBoldCursor.setCursorColor(i10);
                                     break;
-                                case zs.U /* 31 */:
+                                case at.U /* 31 */:
                                     editTextBoldCursor.setLineColor(i10);
                                     break;
                                 case 32:
@@ -513,8 +513,8 @@ public abstract class a7 {
                             default:
                                 switch (i15) {
                                     case 20:
-                                        if (view instanceof tk0) {
-                                            f7 = ((tk0) view).getSelectorDrawableColor();
+                                        if (view instanceof uk0) {
+                                            f7 = ((uk0) view).getSelectorDrawableColor();
                                             break;
                                         } else {
                                             i10 = u6Var5.g;
@@ -564,10 +564,10 @@ public abstract class a7 {
                                         if (view instanceof EditTextBoldCursor) {
                                             EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
                                             switch (i15) {
-                                                case zs.T /* 30 */:
+                                                case at.T /* 30 */:
                                                     f7 = editTextBoldCursor.getCursorColor();
                                                     break;
-                                                case zs.U /* 31 */:
+                                                case at.U /* 31 */:
                                                     f7 = editTextBoldCursor.getLineColor();
                                                     break;
                                                 case 32:
@@ -665,8 +665,8 @@ public abstract class a7 {
         }
     }
 
-    public static void e(y30 y30Var, int i10) {
-        m(y30Var, 5, i10, null);
+    public static void e(x30 x30Var, int i10) {
+        m(x30Var, 5, i10, null);
     }
 
     public static w6 f(int i10) {

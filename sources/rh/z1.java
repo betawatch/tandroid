@@ -1,13 +1,13 @@
 package rh;
 
 import android.text.TextUtils;
-import org.telegram.messenger.q20;
+import org.telegram.messenger.r20;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z1 implements q20 {
+public final /* synthetic */ class z1 implements r20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ e4 b;
     public final /* synthetic */ gf.e c;
@@ -20,7 +20,7 @@ public final /* synthetic */ class z1 implements q20 {
         this.d = i2Var;
     }
 
-    @Override // org.telegram.messenger.q20
+    @Override // org.telegram.messenger.r20
     public final void a(Object obj) {
         String str = (String) obj;
         switch (this.a) {
@@ -35,7 +35,7 @@ public final /* synthetic */ class z1 implements q20 {
                     e4Var.dismiss();
                     org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
                     if (T instanceof org.telegram.ui.Wallet.b6) {
-                        ((org.telegram.ui.Wallet.b6) T).N0();
+                        ((org.telegram.ui.Wallet.b6) T).O0();
                         break;
                     }
                 } else {

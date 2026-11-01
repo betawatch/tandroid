@@ -2,13 +2,13 @@ package rh;
 
 import android.content.Context;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.d20;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.jj;
-import org.telegram.messenger.vp;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -20,11 +20,11 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sn;
 import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class c6 {
     public final x5 a;
-    public final jj b;
+    public final kj b;
     public final un c;
     public final wb d;
     public final qb e;
@@ -41,14 +41,14 @@ public final class c6 {
     public boolean j = false;
     public Long n = null;
 
-    public c6(e6 e6Var, x5 x5Var, jj jjVar, un unVar, boolean z10) {
+    public c6(e6 e6Var, x5 x5Var, kj kjVar, un unVar, boolean z10) {
         this.q = e6Var;
         boolean z11 = false;
         z11 = false;
         a6 a6Var = new a6(this, z11 ? 1 : 0);
         this.p = a6Var;
         this.a = x5Var;
-        this.b = jjVar;
+        this.b = kjVar;
         this.c = unVar;
         Context t10 = e6.t(unVar);
         qb qbVar = new qb(t10, unVar.xa);
@@ -56,7 +56,7 @@ public final class c6 {
         qbVar.c(R.raw.stars_topup, new String[0]);
         qbVar.b.setText(d());
         ub ubVar = new ub(t10, unVar.xa, true, false);
-        ubVar.e(cd.L0(2131745041, null));
+        ubVar.e(dd.L0(2131745041, null));
         ubVar.b = new a6(this, 1);
         d6 d6Var = new d6(t10, unVar.xa);
         this.f = d6Var;
@@ -86,14 +86,14 @@ public final class c6 {
         b10.v = a6Var;
         this.h = 0L;
         System.currentTimeMillis();
-        if (jjVar.k.reactions != null) {
+        if (kjVar.k.reactions != null) {
             int i11 = 0;
             while (true) {
-                if (i11 >= jjVar.k.reactions.results.size()) {
+                if (i11 >= kjVar.k.reactions.results.size()) {
                     break;
                 }
-                if (jjVar.k.reactions.results.get(i11).reaction instanceof TLRPC.TL_reactionPaid) {
-                    z11 = jjVar.k.reactions.results.get(i11).chosen;
+                if (kjVar.k.reactions.results.get(i11).reaction instanceof TLRPC.TL_reactionPaid) {
+                    z11 = kjVar.k.reactions.results.get(i11).chosen;
                     break;
                 }
                 i11++;
@@ -115,20 +115,20 @@ public final class c6 {
         int i11 = (int) (-this.h);
         boolean z10 = this.g;
         long c10 = c();
-        jj jjVar = this.b;
-        jjVar.f(i11, c10, z10);
+        kj kjVar = this.b;
+        kjVar.f(i11, c10, z10);
         e6Var.g -= this.h;
-        zs.f(i10).k(zs.y3, new Object[0]);
-        zs.f(i10).k(zs.o1, Long.valueOf(jj.B0(jjVar.k)), Integer.valueOf(jjVar.f1()), jjVar.k.reactions);
+        at.f(i10).k(at.y3, new Object[0]);
+        at.f(i10).k(at.o1, Long.valueOf(kj.B0(kjVar.k)), Integer.valueOf(kjVar.f1()), kjVar.k.reactions);
         if (e6Var.B == this) {
             e6Var.B = null;
         }
     }
 
     public final void b() {
-        jj jjVar;
+        kj kjVar;
         String str;
-        int i10 = zs.y3;
+        int i10 = at.y3;
         org.telegram.messenger.i0.r(this.p);
         int i11 = 0;
         if (!this.l) {
@@ -136,10 +136,10 @@ public final class c6 {
             this.b.f((int) (-this.h), c(), this.g);
             e6 e6Var = this.q;
             e6Var.g -= this.h;
-            zs.f(e6Var.a).k(i10, new Object[0]);
+            at.f(e6Var.a).k(i10, new Object[0]);
         } else if (!this.i && !this.j) {
             e6 y3 = e6.y(this.q.a, false);
-            vp r12 = vp.r1(this.q.a);
+            wp r12 = wp.r1(this.q.a);
             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.q.a);
             long j10 = this.h;
             if (!y3.e || y3.q(null, false, false).amount >= j10) {
@@ -151,7 +151,7 @@ public final class c6 {
                 tL_messages_sendPaidReaction.count = (int) this.h;
                 tL_messages_sendPaidReaction.flags |= 1;
                 long c10 = c();
-                if (c10 == 0 || c10 == d20.i(this.q.a).e()) {
+                if (c10 == 0 || c10 == e20.i(this.q.a).e()) {
                     tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyDefault();
                 } else if (c10 == 2666000) {
                     tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyAnonymous();
@@ -167,10 +167,10 @@ public final class c6 {
                 this.b.f((int) (-this.h), c(), this.g);
                 e6 e6Var2 = this.q;
                 e6Var2.g = 0L;
-                zs.f(e6Var2.a).k(i10, new Object[0]);
-                zs.f(this.q.a).k(zs.o1, Long.valueOf(jj.B0(this.b.k)), Integer.valueOf(this.b.f1()), this.b.k.reactions);
+                at.f(e6Var2.a).k(i10, new Object[0]);
+                at.f(this.q.a).k(at.o1, Long.valueOf(kj.B0(this.b.k)), Integer.valueOf(this.b.f1()), this.b.k.reactions);
                 if (this.a.a >= 0) {
-                    str = h20.k(this.c.getMessagesController().Z1(Long.valueOf(this.a.a)));
+                    str = i20.k(this.c.getMessagesController().Z1(Long.valueOf(this.a.a)));
                 } else {
                     TLRPC.Chat L0 = this.c.getMessagesController().L0(Long.valueOf(-this.a.a));
                     str = L0 == null ? "" : L0.title;
@@ -188,7 +188,7 @@ public final class c6 {
         }
         this.d.b();
         i4 i4Var = this.o;
-        if (i4Var != null && (jjVar = this.b) != null && jjVar.f1() == i4Var.c) {
+        if (i4Var != null && (kjVar = this.b) != null && kjVar.f1() == i4Var.c) {
             this.o.c();
         }
         e6 e6Var3 = this.q;
@@ -203,6 +203,6 @@ public final class c6 {
     }
 
     public final String d() {
-        return c() == 2666000 ? cd.L0(2131745047, null) : (c() == 0 || c() == d20.i(this.q.a).e()) ? cd.L0(2131745043, null) : cd.a0(null, null, 2131745042, org.telegram.messenger.o5.t(c()));
+        return c() == 2666000 ? dd.L0(2131745047, null) : (c() == 0 || c() == e20.i(this.q.a).e()) ? dd.L0(2131745043, null) : dd.a0(null, null, 2131745042, org.telegram.messenger.o5.t(c()));
     }
 }

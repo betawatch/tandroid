@@ -6,13 +6,13 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public abstract class n1 extends tk0 {
+public abstract class n1 extends uk0 {
     public static final Paint j3;
     public static final Paint k3;
     public static final Path l3;
@@ -58,7 +58,7 @@ public abstract class n1 extends tk0 {
         }
         RectF rectF = org.telegram.messenger.i0.P;
         rectF.set(f7 - f11, f10 - f11, f7 + f11, f10 + f11);
-        paint.setAlpha(zs.e4);
+        paint.setAlpha(at.e4);
         canvas.drawArc(rectF, -45.0f, -180.0f, true, paint);
         Path path = l3;
         path.rewind();

@@ -1,25 +1,25 @@
 package ei;
 
-import org.telegram.ui.Components.in0;
+import org.telegram.ui.Components.jn0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
 public final class l implements Runnable {
     public int a;
     public int b;
-    public final /* synthetic */ in0 c;
+    public final /* synthetic */ jn0 c;
     public final /* synthetic */ r d;
 
-    public l(r rVar, in0 in0Var) {
+    public l(r rVar, jn0 jn0Var) {
         this.d = rVar;
-        this.c = in0Var;
+        this.c = jn0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        in0 in0Var = this.c;
-        int scrollX = in0Var.getScrollX();
-        int scrollY = in0Var.getScrollY();
+        jn0 jn0Var = this.c;
+        int scrollX = jn0Var.getScrollX();
+        int scrollY = jn0Var.getScrollY();
         int i10 = scrollX - this.a;
         r rVar = this.d;
         rVar.k += i10;

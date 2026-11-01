@@ -26,13 +26,13 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.l;
 import k1.n;
 import kg.i1;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.a30;
+import org.telegram.messenger.at;
+import org.telegram.messenger.dd;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.jj;
+import org.telegram.messenger.kj;
 import org.telegram.messenger.u0;
-import org.telegram.messenger.z20;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.ActionBar.p6;
@@ -41,18 +41,18 @@ import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.s0;
 import org.telegram.ui.Cells.v2;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.gi0;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.hi0;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.n5;
-import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.rz0;
 import org.telegram.ui.Components.wr;
-import org.telegram.ui.et0;
-import org.telegram.ui.kt0;
-import org.telegram.ui.tz0;
+import org.telegram.ui.hr0;
+import org.telegram.ui.jt0;
+import org.telegram.ui.sz0;
 import org.telegram.ui.un;
-import org.telegram.ui.x91;
-import org.telegram.ui.xz0;
+import org.telegram.ui.v91;
+import org.telegram.ui.wz0;
 import sg.m0;
 import sg.o0;
 import sg.p0;
@@ -67,9 +67,9 @@ import yd.t;
 import z9.w0;
 import z9.x0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes4.dex */
-public final class f implements lj0, xz0 {
+public final class f implements mj0, wz0 {
     public static volatile f f;
     public final /* synthetic */ int a;
     public Object b;
@@ -114,24 +114,24 @@ public final class f implements lj0, xz0 {
         return (Message) obj;
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ boolean A() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.xz0
+    @Override // org.telegram.ui.wz0
     public void b() {
-        i0.h3(new tz0((k2) this.b, (Context) this.c, (p6) this.d, (gi0) this.e, 2), 200L);
+        i0.h3(new sz0((k2) this.b, (Context) this.c, (p6) this.d, (hi0) this.e, 2), 200L);
     }
 
-    @Override // org.telegram.ui.xz0
+    @Override // org.telegram.ui.wz0
     public void c() {
-        i0.h3(new et0(27, (k2) this.b, (gi0) this.e), 200L);
+        i0.h3(new hr0(28, (k2) this.b, (hi0) this.e), 200L);
     }
 
-    @Override // org.telegram.ui.xz0
+    @Override // org.telegram.ui.wz0
     public void d() {
         k2 k2Var = (k2) this.b;
         k2Var.showDialog(new i1(k2Var, 3, true));
@@ -154,7 +154,7 @@ public final class f implements lj0, xz0 {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ boolean f() {
         switch (this.a) {
         }
@@ -167,19 +167,19 @@ public final class f implements lj0, xz0 {
         RectF rectF = i0.P;
         float f7 = i10;
         rectF.set(0.0f, 0.0f, f7, i0.L(14.66f));
-        canvas.saveLayerAlpha(rectF, zs.e4, 31);
-        if (cd.X) {
+        canvas.saveLayerAlpha(rectF, at.e4, 31);
+        if (dd.X) {
             canvas.translate(f7, 0.0f);
         }
         int L = i10 - i0.L(25.0f);
         int i11 = 0;
         while (i11 < arrayList.size()) {
             wr wrVar = (wr) arrayList.get(i11);
-            L = z20.w(4.0f, wrVar.g, L);
+            L = a30.w(4.0f, wrVar.g, L);
             if (L < 0) {
                 break;
             }
-            if (cd.X) {
+            if (dd.X) {
                 canvas.translate(-wrVar.g, 0.0f);
                 wrVar.a(canvas);
                 canvas.translate(-i0.L(4.0f), 0.0f);
@@ -196,20 +196,20 @@ public final class f implements lj0, xz0 {
                 v2 v2Var = (v2) this.b;
                 wr wrVar3 = new wr();
                 wrVar3.a = size;
-                qz0 qz0Var = new qz0(i0.a.i(size, "+"), 10.0f, i0.o());
-                qz0Var.r(v2Var);
-                wrVar3.c = qz0Var;
+                rz0 rz0Var = new rz0(i0.a.i(size, "+"), 10.0f, i0.o());
+                rz0Var.r(v2Var);
+                wrVar3.c = rz0Var;
                 int L2 = i0.L(9.32f);
-                qz0 qz0Var2 = wrVar3.c;
-                wrVar3.g = L2 + ((int) qz0Var2.c);
-                qz0Var2.i();
+                rz0 rz0Var2 = wrVar3.c;
+                wrVar3.g = L2 + ((int) rz0Var2.c);
+                rz0Var2.i();
                 int i12 = t6.n8;
                 wrVar3.f = i12;
                 wrVar3.e = true;
                 wrVar3.d = t6.x0(null, i12, false);
                 this.e = wrVar3;
             }
-            if (cd.X) {
+            if (dd.X) {
                 canvas.translate(-((wr) this.e).g, 0.0f);
                 ((wr) this.e).a(canvas);
                 canvas.translate(-i0.L(4.0f), 0.0f);
@@ -221,7 +221,7 @@ public final class f implements lj0, xz0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ boolean h() {
         switch (this.a) {
         }
@@ -699,7 +699,7 @@ public final class f implements lj0, xz0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         int i11 = this.a;
     }
@@ -713,7 +713,7 @@ public final class f implements lj0, xz0 {
         Log.d("SessionLifecycleClient", "Queued message " + message.what + ". Queue size " + linkedBlockingDeque.size());
     }
 
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     public /* synthetic */ void t() {
         int i10 = this.a;
     }
@@ -772,7 +772,7 @@ public final class f implements lj0, xz0 {
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00ec  */
-    @Override // org.telegram.ui.Components.lj0
+    @Override // org.telegram.ui.Components.mj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -792,26 +792,26 @@ public final class f implements lj0, xz0 {
         switch (this.a) {
             case 10:
                 un unVar = (un) this.b;
-                z A8 = unVar.A8(((jj) this.c).f1(), true);
+                z E8 = unVar.E8(((kj) this.c).f1(), true);
                 float f15 = 0.0f;
-                if (A8 instanceof q1) {
-                    p0 p0Var3 = ((q1) A8).N;
+                if (E8 instanceof q1) {
+                    p0 p0Var3 = ((q1) E8).N;
                     m0 l11 = p0Var3.l(o0Var);
                     if (l11 == null) {
                         f11 = 0.0f;
                         f7 = f11;
-                        unVar.qb(A8, (jj) this.c, (mj0) this.d, view, f15, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-                        ((kt0) this.e).c(false);
+                        unVar.vb(E8, (kj) this.c, (nj0) this.d, view, f15, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+                        ((jt0) this.e).c(false);
                         break;
                     } else {
                         f15 = p0Var3.b + l11.w + (l11.z / 2.0f);
                         f10 = p0Var3.c + l11.x;
                         i10 = l11.A;
                     }
-                } else if (!(A8 instanceof s0) || (l4 = (p0Var = ((s0) A8).E0).l(o0Var)) == null) {
+                } else if (!(E8 instanceof s0) || (l4 = (p0Var = ((s0) E8).E0).l(o0Var)) == null) {
                     f7 = 0.0f;
-                    unVar.qb(A8, (jj) this.c, (mj0) this.d, view, f15, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-                    ((kt0) this.e).c(false);
+                    unVar.vb(E8, (kj) this.c, (nj0) this.d, view, f15, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+                    ((jt0) this.e).c(false);
                 } else {
                     f15 = p0Var.b + l4.w + (l4.z / 2.0f);
                     f10 = p0Var.c + l4.x;
@@ -819,31 +819,31 @@ public final class f implements lj0, xz0 {
                 }
                 f11 = f10 + (i10 / 2.0f);
                 f7 = f11;
-                unVar.qb(A8, (jj) this.c, (mj0) this.d, view, f15, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-                ((kt0) this.e).c(false);
+                unVar.vb(E8, (kj) this.c, (nj0) this.d, view, f15, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+                ((jt0) this.e).c(false);
                 break;
             default:
                 un unVar2 = (un) this.b;
-                z A82 = unVar2.A8(((jj) this.c).f1(), true);
+                z E82 = unVar2.E8(((kj) this.c).f1(), true);
                 float f16 = 0.0f;
-                if (A82 instanceof q1) {
-                    p0 p0Var4 = ((q1) A82).N;
+                if (E82 instanceof q1) {
+                    p0 p0Var4 = ((q1) E82).N;
                     m0 l12 = p0Var4.l(o0Var);
                     if (l12 == null) {
                         f14 = 0.0f;
                         f12 = f14;
-                        unVar2.qb(A82, (jj) this.c, (mj0) this.d, view, f16, f12, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-                        ((x91) this.e).c(false);
+                        unVar2.vb(E82, (kj) this.c, (nj0) this.d, view, f16, f12, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+                        ((v91) this.e).c(false);
                         break;
                     } else {
                         f16 = p0Var4.b + l12.w + (l12.z / 2.0f);
                         f13 = p0Var4.c + l12.x;
                         i11 = l12.A;
                     }
-                } else if (!(A82 instanceof s0) || (l10 = (p0Var2 = ((s0) A82).E0).l(o0Var)) == null) {
+                } else if (!(E82 instanceof s0) || (l10 = (p0Var2 = ((s0) E82).E0).l(o0Var)) == null) {
                     f12 = 0.0f;
-                    unVar2.qb(A82, (jj) this.c, (mj0) this.d, view, f16, f12, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-                    ((x91) this.e).c(false);
+                    unVar2.vb(E82, (kj) this.c, (nj0) this.d, view, f16, f12, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+                    ((v91) this.e).c(false);
                 } else {
                     f16 = p0Var2.b + l10.w + (l10.z / 2.0f);
                     f13 = p0Var2.c + l10.x;
@@ -851,8 +851,8 @@ public final class f implements lj0, xz0 {
                 }
                 f14 = f13 + (i11 / 2.0f);
                 f12 = f14;
-                unVar2.qb(A82, (jj) this.c, (mj0) this.d, view, f16, f12, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-                ((x91) this.e).c(false);
+                unVar2.vb(E82, (kj) this.c, (nj0) this.d, view, f16, f12, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
+                ((v91) this.e).c(false);
                 break;
         }
     }

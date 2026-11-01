@@ -7,12 +7,12 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.z20;
+import org.telegram.messenger.a30;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class b extends View {
     public final e6 a;
@@ -60,7 +60,7 @@ public final class b extends View {
             this.c = ofFloat;
             ofFloat.addUpdateListener(new bg.k(this, 13));
             this.c.addListener(new bg.e(this, 13));
-            z20.j(2.0f, this.c);
+            a30.j(2.0f, this.c);
             this.c.setDuration(200L);
             this.c.start();
         }

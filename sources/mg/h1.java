@@ -4,12 +4,12 @@ import android.os.CountDownTimer;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.Date;
-import org.telegram.messenger.cd;
+import org.telegram.messenger.dd;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.u5;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class h1 extends CountDownTimer {
     public final /* synthetic */ o1 a;
@@ -23,7 +23,7 @@ public final class h1 extends CountDownTimer {
     @Override // android.os.CountDownTimer
     public final void onTick(long j10) {
         o1 o1Var = this.a;
-        tk0 tk0Var = o1Var.k1;
+        uk0 uk0Var = o1Var.k1;
         ArrayList arrayList = o1Var.Q1;
         ArrayList arrayList2 = new ArrayList(arrayList.size());
         int size = arrayList.size();
@@ -42,8 +42,8 @@ public final class h1 extends CountDownTimer {
         if (arrayList2.isEmpty()) {
             return;
         }
-        for (int i11 = 0; i11 < tk0Var.getChildCount(); i11++) {
-            View childAt = tk0Var.getChildAt(i11);
+        for (int i11 = 0; i11 < uk0Var.getChildCount(); i11++) {
+            View childAt = uk0Var.getChildAt(i11);
             if (childAt instanceof qg.k) {
                 qg.k kVar = (qg.k) childAt;
                 if (arrayList2.contains(kVar.getBoost())) {
@@ -51,12 +51,12 @@ public final class h1 extends CountDownTimer {
                     og.c cVar = kVar.d;
                     int i12 = kVar.J.cooldown_until_date;
                     if (i12 > 0) {
-                        kVar.setSubtitle(cd.a0(null, null, 2131753594, qg.k.f((i12 * 1000) - System.currentTimeMillis())));
+                        kVar.setSubtitle(dd.a0(null, null, 2131753594, qg.k.f((i12 * 1000) - System.currentTimeMillis())));
                         cVar.setAlpha(0.65f);
                         u5Var.setAlpha(0.65f);
                         kVar.i(false, 0.3f);
                     } else {
-                        kVar.setSubtitle(cd.a0(null, null, 2131753661, cd.D0().n0().format(new Date(kVar.J.expires * 1000))));
+                        kVar.setSubtitle(dd.a0(null, null, 2131753661, dd.D0().n0().format(new Date(kVar.J.expires * 1000))));
                         if (cVar.getAlpha() < 1.0f) {
                             cVar.animate().alpha(1.0f).start();
                             u5Var.animate().alpha(1.0f).start();

@@ -7,10 +7,10 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public abstract class q6 {
     public static final Unsafe a;
@@ -213,14 +213,14 @@ public abstract class q6 {
         long j11 = (-4) & j10;
         int i10 = p6Var.a.getInt(obj, j11);
         int i11 = ((~((int) j10)) & 3) << 3;
-        p6Var.a.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(zs.e4 << i11))));
+        p6Var.a.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(at.e4 << i11))));
     }
 
     public static void d(Object obj, long j10, byte b10) {
         p6 p6Var = c;
         long j11 = (-4) & j10;
         int i10 = (((int) j10) & 3) << 3;
-        p6Var.a.putInt(obj, j11, ((255 & b10) << i10) | (p6Var.a.getInt(obj, j11) & (~(zs.e4 << i10))));
+        p6Var.a.putInt(obj, j11, ((255 & b10) << i10) | (p6Var.a.getInt(obj, j11) & (~(at.e4 << i10))));
     }
 
     public static int e(Object obj, long j10) {
@@ -264,11 +264,11 @@ public abstract class q6 {
     }
 
     public static /* bridge */ /* synthetic */ boolean m(Object obj, long j10) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & zs.e4)) != 0;
+        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & at.e4)) != 0;
     }
 
     public static /* bridge */ /* synthetic */ boolean n(Object obj, long j10) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & zs.e4)) != 0;
+        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & at.e4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

@@ -4,14 +4,14 @@ import android.view.View;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.b50;
-import org.telegram.ui.e30;
+import org.telegram.ui.a50;
+import org.telegram.ui.d30;
 import s4.c1;
 import sg.h0;
 import sg.k0;
 import sg.o0;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final class i extends s4.j {
     public final /* synthetic */ k F;
@@ -44,12 +44,12 @@ public final class i extends s4.j {
         if (!(view instanceof d) || (jVar = kVar.X0) == null) {
             return;
         }
-        b50 b50Var = ((e30) jVar).a;
-        k0 k0Var = new k0(b50Var.getContext(), null, b50Var.B1, (d) view, null, 0.0f, 0.0f, o0Var, b50Var.a, 1, false);
+        a50 a50Var = ((d30) jVar).a;
+        k0 k0Var = new k0(a50Var.getContext(), null, a50Var.B1, (d) view, null, 0.0f, 0.0f, o0Var, a50Var.a, 1, false);
         k0.B = k0Var;
         h0 h0Var = k0Var.i;
         h0Var.setTag(R.id.parent_tag, 1);
-        b50Var.c.addView(h0Var);
+        a50Var.c.addView(h0Var);
         k0Var.s = true;
         k0Var.y = System.currentTimeMillis();
     }

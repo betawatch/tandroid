@@ -18,9 +18,9 @@ import java.util.concurrent.Executor;
 import kotlin.jvm.internal.i;
 import mg.c0;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.qi;
+import org.telegram.messenger.r20;
 import org.telegram.messenger.ri;
+import org.telegram.messenger.si;
 import org.telegram.messenger.t1;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -33,10 +33,10 @@ import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.s4;
 import org.telegram.ui.Components.yb0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.i31;
-import org.telegram.ui.mw0;
-import org.telegram.ui.se0;
-import org.telegram.ui.w50;
+import org.telegram.ui.g31;
+import org.telegram.ui.lw0;
+import org.telegram.ui.re0;
+import org.telegram.ui.v50;
 import r2.y;
 import rh.e6;
 import sg.o0;
@@ -46,9 +46,9 @@ import v0.h;
 import v0.m;
 import v0.o;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements OnFailureListener, u1, yb0, n, ri, t1, i7 {
+public final /* synthetic */ class a implements OnFailureListener, u1, yb0, n, si, t1, i7 {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -70,25 +70,25 @@ public final /* synthetic */ class a implements OnFailureListener, u1, yb0, n, r
 
     @Override // c5.n
     public void b(g gVar, List list) {
-        i0.g3(new c0((se0) this.a, gVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (w50) this.e, 6));
+        i0.g3(new c0((re0) this.a, gVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (v50) this.e, 6));
     }
 
-    @Override // org.telegram.messenger.ri
+    @Override // org.telegram.messenger.si
     public void c(String str, ArrayList arrayList) {
         TLRPC.TL_availableReaction tL_availableReaction;
-        i31 i31Var = (i31) this.a;
+        g31 g31Var = (g31) this.a;
         LinkedHashSet linkedHashSet = (LinkedHashSet) this.b;
         HashMap hashMap = (HashMap) this.c;
         ArrayList arrayList2 = (ArrayList) this.d;
         Runnable runnable = (Runnable) this.e;
-        i31Var.getClass();
+        g31Var.getClass();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             try {
-                if (((qi) arrayList.get(i10)).a.startsWith("animated_")) {
-                    linkedHashSet.add(Long.valueOf(Long.parseLong(((qi) arrayList.get(i10)).a.substring(9))));
+                if (((ri) arrayList.get(i10)).a.startsWith("animated_")) {
+                    linkedHashSet.add(Long.valueOf(Long.parseLong(((ri) arrayList.get(i10)).a.substring(9))));
                 } else {
-                    int i11 = i31Var.W;
-                    if ((i11 == 1 || i11 == 11 || i11 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((qi) arrayList.get(i10)).a)) != null) {
+                    int i11 = g31Var.W;
+                    if ((i11 == 1 || i11 == 11 || i11 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((ri) arrayList.get(i10)).a)) != null) {
                         arrayList2.add(o0.c(tL_availableReaction));
                     }
                 }
@@ -103,11 +103,11 @@ public final /* synthetic */ class a implements OnFailureListener, u1, yb0, n, r
         i3 i3Var = (i3) this.a;
         boolean[] zArr = (boolean[]) this.b;
         h3 h3Var = (h3) this.c;
-        q20 q20Var = (q20) this.d;
+        r20 r20Var = (r20) this.d;
         x1[] x1VarArr = (x1[]) this.e;
         zArr[0] = true;
         i3Var.h(i3Var.x, h3Var, true);
-        q20Var.a(Boolean.TRUE);
+        r20Var.a(Boolean.TRUE);
         x1VarArr[0].dismiss();
     }
 
@@ -132,9 +132,9 @@ public final /* synthetic */ class a implements OnFailureListener, u1, yb0, n, r
             rectF5.set(centerX - width2, centerY - height, centerX + width2, centerY + height);
         } catch (Exception unused) {
         }
-        mw0 mw0Var = (mw0) yVar.b;
+        lw0 lw0Var = (lw0) yVar.b;
         int i10 = ProfileStoriesView.s0;
-        mw0Var.a(canvas, c3Var, c3Var2);
+        lw0Var.a(canvas, c3Var, c3Var2);
         rectF4.set(rectF2);
         rectF5.set(rectF3);
     }

@@ -27,16 +27,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
+import org.telegram.messenger.at;
 import org.telegram.messenger.f8;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.messenger.w0;
-import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.cg;
 import sc.h;
 import sc.j;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final class d extends j {
     public static final f l;
@@ -90,7 +90,7 @@ public final class d extends j {
             }
         }
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(String.valueOf(ipAddress & zs.e4) + '.' + ((ipAddress >> 8) & zs.e4) + '.' + ((ipAddress >> 16) & zs.e4) + '.' + ((ipAddress >> 24) & zs.e4));
+        sb2.append(String.valueOf(ipAddress & at.e4) + '.' + ((ipAddress >> 8) & at.e4) + '.' + ((ipAddress >> 16) & at.e4) + '.' + ((ipAddress >> 24) & at.e4));
         sb2.append(":61578");
         return sb2.toString();
     }

@@ -9,9 +9,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class y20 extends sk0 {
+public final class y20 extends tk0 {
     public final Context c;
     public final zf.m1 d;
     public w20 e;
@@ -39,7 +39,7 @@ public final class y20 extends sk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sk0
+    @Override // org.telegram.ui.Components.tk0
     public final boolean D(s4.c1 c1Var) {
         View view = c1Var.a;
         return !((view instanceof org.telegram.ui.Cells.e5) && this.x.W1.contains(Long.valueOf(((org.telegram.ui.Cells.e5) view).getUserId()))) && c1Var.f == 0;
@@ -115,11 +115,11 @@ public final class y20 extends sk0 {
             }
             org.telegram.ui.Cells.z3 z3Var = (org.telegram.ui.Cells.z3) view;
             if (i11 == this.s) {
-                z3Var.setText(org.telegram.messenger.cd.L0(2131752377, null));
+                z3Var.setText(org.telegram.messenger.dd.L0(2131752377, null));
                 return;
             } else {
                 if (i11 == this.w) {
-                    z3Var.setText(org.telegram.messenger.cd.L0(2131749544, null));
+                    z3Var.setText(org.telegram.messenger.dd.L0(2131749544, null));
                     return;
                 }
                 return;
@@ -135,14 +135,14 @@ public final class y20 extends sk0 {
                 if (z10) {
                     Z1 = (TLRPC.User) tLObject;
                 } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                    Z1 = org.telegram.messenger.vp.r1(z20Var.a).Z1(Long.valueOf(org.telegram.messenger.jj.C1(((TLRPC.ChannelParticipant) tLObject).peer)));
+                    Z1 = org.telegram.messenger.wp.r1(z20Var.a).Z1(Long.valueOf(org.telegram.messenger.kj.C1(((TLRPC.ChannelParticipant) tLObject).peer)));
                 } else if (!(tLObject instanceof TLRPC.ChatParticipant)) {
                     return;
                 } else {
-                    Z1 = org.telegram.messenger.vp.r1(z20Var.a).Z1(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
+                    Z1 = org.telegram.messenger.wp.r1(z20Var.a).Z1(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
                 }
                 TLRPC.User user = Z1;
-                String n10 = org.telegram.messenger.h20.n(user);
+                String n10 = org.telegram.messenger.i20.n(user);
                 size = m1Var.g.size();
                 if (size != 0) {
                     int i14 = size + 1;
@@ -176,7 +176,7 @@ public final class y20 extends sk0 {
                             }
                         }
                         if (str != null) {
-                            String p5 = org.telegram.messenger.h20.p(user);
+                            String p5 = org.telegram.messenger.i20.p(user);
                             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(p5);
                             int A12 = org.telegram.messenger.i0.A1(p5, str);
                             if (A12 != -1) {
@@ -213,7 +213,7 @@ public final class y20 extends sk0 {
                 if (z10) {
                 }
                 TLRPC.User user2 = Z1;
-                String n102 = org.telegram.messenger.h20.n(user2);
+                String n102 = org.telegram.messenger.i20.n(user2);
                 size = m1Var.g.size();
                 if (size != 0) {
                 }
@@ -236,7 +236,7 @@ public final class y20 extends sk0 {
         if (z10) {
         }
         TLRPC.User user22 = Z1;
-        String n1022 = org.telegram.messenger.h20.n(user22);
+        String n1022 = org.telegram.messenger.i20.n(user22);
         size = m1Var.g.size();
         if (size != 0) {
         }
@@ -286,6 +286,6 @@ public final class y20 extends sk0 {
             e5Var2.setDividerColor(org.telegram.ui.ActionBar.t6.hh);
             e5Var = e5Var2;
         }
-        return new ck0(e5Var);
+        return new dk0(e5Var);
     }
 }

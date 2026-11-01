@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.zs;
+import org.telegram.messenger.at;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.a7;
 import v7.a8;
@@ -35,7 +35,7 @@ import z7.hb;
 import z7.xe;
 import z7.xf;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -263,7 +263,7 @@ public final /* synthetic */ class o implements Runnable {
                             m10.c();
                             m1.v((m1) m10.b, i13);
                             b10.e((m1) m10.a());
-                            z0Var.a.a((r1) b10.a(), zs.G3);
+                            z0Var.a.a((r1) b10.a(), at.G3);
                             break;
                         default:
                             a5.a aVar = new a5.a(10, 3);

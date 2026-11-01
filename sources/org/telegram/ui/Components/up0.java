@@ -1,87 +1,97 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import java.util.HashSet;
+import java.util.Random;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class up0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zt0 b;
+public final class up0 extends View implements org.telegram.ui.ActionBar.k6 {
+    public Random a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public Paint e;
+    public float f;
+    public float h;
+    public float n;
 
-    public /* synthetic */ up0(zt0 zt0Var, int i10) {
-        this.a = i10;
-        this.b = zt0Var;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.c;
+        Paint paint2 = this.b;
+        super.onDraw(canvas);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.at.e4, 31);
+        float f7 = 3.0f;
+        int measuredWidth = (getMeasuredWidth() / 2) - org.telegram.messenger.i0.L(3.0f);
+        int L = org.telegram.messenger.i0.L(1.0f) + ((org.telegram.messenger.i0.L(1.0f) + measuredWidth) * 7);
+        gr grVar = gr.g;
+        float f10 = this.f;
+        float interpolation = grVar.getInterpolation(f10 > 0.4f ? (f10 - 0.4f) / 0.6f : 0.0f);
+        float f11 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
+        canvas.save();
+        canvas.translate(0.0f, (-org.telegram.messenger.m5.B(4.0f, getMeasuredHeight(), L)) * f11);
+        int i10 = 0;
+        for (int i11 = 7; i10 < i11; i11 = 7) {
+            int L2 = ((org.telegram.messenger.i0.L(1.0f) + measuredWidth) * i10) + org.telegram.messenger.i0.L(f7);
+            RectF rectF = org.telegram.messenger.i0.P;
+            float f12 = L2;
+            float f13 = L2 + measuredWidth;
+            rectF.set(0.0f, f12, measuredWidth, f13);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f), paint2);
+            rectF.set(org.telegram.messenger.i0.L(1.0f) + measuredWidth, f12, org.telegram.messenger.m5.C(1.0f, measuredWidth, measuredWidth), f13);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f), paint2);
+            i10++;
+            f7 = f7;
+        }
+        float f14 = f7;
+        canvas.restore();
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), org.telegram.messenger.i0.L(4.0f), this.d);
+        canvas.translate(0.0f, getMeasuredHeight() - org.telegram.messenger.i0.L(4.0f));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), org.telegram.messenger.i0.L(4.0f), this.e);
+        canvas.restore();
+        float measuredHeight = ((getMeasuredHeight() - org.telegram.messenger.i0.L(21.0f)) * f11) + org.telegram.messenger.i0.L(f14);
+        RectF rectF2 = org.telegram.messenger.i0.P;
+        rectF2.set(getMeasuredWidth() - org.telegram.messenger.i0.L(f14), measuredHeight, getMeasuredWidth(), org.telegram.messenger.i0.L(15.0f) + measuredHeight);
+        canvas.drawRoundRect(rectF2, org.telegram.messenger.i0.L(1.5f), org.telegram.messenger.i0.L(1.5f), paint);
+        float centerY = rectF2.centerY();
+        float L3 = org.telegram.messenger.i0.L(0.5f) + measuredWidth;
+        rectF2.set(L3 - org.telegram.messenger.i0.L(8.0f), centerY - org.telegram.messenger.i0.L(f14), L3 + org.telegram.messenger.i0.L(8.0f), centerY + org.telegram.messenger.i0.L(f14));
+        canvas.drawRoundRect(rectF2, org.telegram.messenger.i0.L(f14), org.telegram.messenger.i0.L(f14), paint);
+        float f15 = this.f + 0.016f;
+        this.f = f15;
+        if (f15 > 1.0f) {
+            this.h = this.n;
+            float abs = Math.abs(this.a.nextInt() % 1001) / 1000.0f;
+            this.n = abs;
+            if (abs > this.h) {
+                this.n = abs + 0.3f;
+            } else {
+                this.n = abs - 0.3f;
+            }
+            this.n = Math.max(0.0f, Math.min(1.0f, this.n));
+            this.f = 0.0f;
+        }
+        invalidate();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                zt0 zt0Var = this.b;
-                int closestTab = zt0Var.getClosestTab();
-                z60 H = z60.H(zt0Var.x1, view);
-                H.J = false;
-                if (zt0Var.Z(closestTab, new k2.m0(H))) {
-                    if (closestTab == 13 || closestTab == 11) {
-                        H.a0(0.0f, -org.telegram.messenger.i0.L(52.0f));
-                    } else {
-                        H.Y = true;
-                    }
-                    H.s = 0;
-                    H.Z();
-                    break;
-                }
-                break;
-            case 1:
-                zt0 zt0Var2 = this.b;
-                org.telegram.ui.ActionBar.p5 p5Var = zt0Var2.I;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = p5Var.b;
-                if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.d();
-                }
-                if (zt0Var2.Z(zt0Var2.getClosestTab(), new n2.u(zt0Var2, 14))) {
-                    p5Var.U(null, null);
-                    break;
-                }
-                break;
-            case 2:
-                this.b.T(true);
-                break;
-            case 3:
-                zt0 zt0Var3 = this.b;
-                zq0 zq0Var = zt0Var3.b0;
-                vq0 vq0Var = zt0Var3.a0;
-                if (zt0Var3.s0.getAlpha() >= 0.1f) {
-                    if (vq0Var != null && vq0Var.g()) {
-                        vq0Var.i();
-                    }
-                    if (zq0Var != null && zq0Var.f) {
-                        yt0 s12 = zt0Var3.s1(zt0Var3.r1(zt0Var3.getClosestTab()));
-                        ss0 e02 = zt0Var3.e0(s12.a);
-                        if (e02 != null) {
-                            zq0Var.setReorderingAlbums(false);
-                            dr0 dr0Var = e02.h;
-                            for (int i10 = 0; i10 < dr0Var.getChildCount(); i10++) {
-                                View childAt = dr0Var.getChildAt(i10);
-                                if (childAt instanceof org.telegram.ui.Cells.s7) {
-                                    ((org.telegram.ui.Cells.s7) childAt).l(false, true);
-                                }
-                            }
-                            xt0 xt0Var = s12.c;
-                            if (xt0Var != null && xt0Var.y) {
-                                xt0Var.y = false;
-                                break;
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.k2 k2Var = this.b.x1;
-                k2Var.getMessagesController().f7.edit().putBoolean("story_keep", true).apply();
-                vh.o8.D(k2Var.getParentActivity(), k2Var.getCurrentAccount()).Q(null);
-                break;
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        try {
+            Paint paint = this.b;
+            int i10 = org.telegram.ui.ActionBar.t6.dg;
+            paint.setColor(i0.b.o(org.telegram.ui.ActionBar.t6.x0(null, i10, false), 76));
+            this.c.setColor(org.telegram.ui.ActionBar.t6.x0(null, i10, false));
+            invalidate();
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

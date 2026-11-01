@@ -1,12 +1,12 @@
 package mg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.vi;
 import org.telegram.ui.ActionBar.k2;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,11 +34,11 @@ public final /* synthetic */ class w1 implements Runnable {
                 break;
             case 3:
                 f2 f2Var = i2Var.R1;
-                f2Var.b.r(cd.L0(2131745853, null), true);
+                f2Var.b.r(dd.L0(2131745853, null), true);
                 break;
             case 4:
                 f2 f2Var2 = i2Var.R1;
-                f2Var2.b.r(cd.L0(2131749659, null), true);
+                f2Var2.b.r(dd.L0(2131749659, null), true);
                 break;
             case 5:
                 i2Var.e1();
@@ -47,7 +47,7 @@ public final /* synthetic */ class w1 implements Runnable {
             case 6:
                 ArrayList arrayList = i2Var.b2;
                 if (arrayList.isEmpty()) {
-                    arrayList.addAll(ui.b0(i2Var.a).i1);
+                    arrayList.addAll(vi.b0(i2Var.a).i1);
                     i2Var.o1(true, true);
                     break;
                 }

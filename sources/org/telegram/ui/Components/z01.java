@@ -1,62 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
-public final class z01 extends FrameLayout {
-    public final ImageView a;
-    public final x01 b;
-    public final /* synthetic */ ThemeEditorView.EditorAlert c;
+public final class z01 implements TextWatcher {
+    public final /* synthetic */ a11 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z01(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context);
-        this.c = editorAlert;
-        View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(18.0f), -854795));
-        addView(view, w7.b6.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.b6.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setScaleType(scaleType);
-        w01 w01Var = new w01();
-        imageView2.setImageDrawable(w01Var);
-        w01Var.f = org.telegram.messenger.i0.L(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, w7.b6.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new db0(this, 18));
-        x01 x01Var = new x01(this, context);
-        this.b = x01Var;
-        x01Var.setTextSize(1, 16.0f);
-        x01Var.setHintTextColor(-6774617);
-        x01Var.setTextColor(-14540254);
-        x01Var.setBackgroundDrawable(null);
-        x01Var.setPadding(0, 0, 0, 0);
-        x01Var.setMaxLines(1);
-        x01Var.setLines(1);
-        x01Var.setSingleLine(true);
-        x01Var.setImeOptions(268435459);
-        x01Var.setHint(org.telegram.messenger.cd.L0(2131745853, null));
-        x01Var.setCursorColor(-11491093);
-        x01Var.setCursorSize(org.telegram.messenger.i0.L(20.0f));
-        x01Var.setCursorWidth(1.5f);
-        addView(x01Var, w7.b6.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
-        x01Var.addTextChangedListener(new y01(this));
-        x01Var.setOnEditorActionListener(new t0(this, 10));
+    public z01(a11 a11Var) {
+        this.a = a11Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10 = this.a.b.length() > 0;
+        if (z10 != (this.a.a.getAlpha() != 0.0f)) {
+            this.a.a.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).scaleX(z10 ? 1.0f : 0.1f).scaleY(z10 ? 1.0f : 0.1f).start();
+        }
+        String obj = this.a.b.getText().toString();
+        if (obj.length() != 0) {
+            xy xyVar = this.a.c.l1;
+            if (xyVar != null) {
+                xyVar.setText(org.telegram.messenger.dd.L0(2131748183, null));
+            }
+        } else {
+            s4.g0 adapter = this.a.c.j1.getAdapter();
+            ThemeEditorView.EditorAlert editorAlert = this.a.c;
+            if (adapter != editorAlert.o1) {
+                int J0 = ThemeEditorView.EditorAlert.J0(editorAlert);
+                this.a.c.l1.setText(org.telegram.messenger.dd.L0(2131748247, null));
+                this.a.c.l1.c();
+                ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
+                editorAlert2.j1.setAdapter(editorAlert2.o1);
+                this.a.c.o1.f();
+                if (J0 > 0) {
+                    this.a.c.n1.h1(0, -J0);
+                }
+            }
+        }
+        w01 w01Var = this.a.c.p1;
+        if (w01Var == null || obj.equals(w01Var.n)) {
+            return;
+        }
+        w01Var.n = obj;
+        if (w01Var.h != null) {
+            Utilities.g.a(w01Var.h);
+            w01Var.h = null;
+        }
+        if (obj.length() != 0) {
+            int i10 = w01Var.d + 1;
+            w01Var.d = i10;
+            w01Var.h = new ki0(w01Var, obj, i10, 12);
+            Utilities.g.d(w01Var.h, 300L);
+            return;
+        }
+        w01Var.e.clear();
+        ThemeEditorView.EditorAlert editorAlert3 = w01Var.r;
+        editorAlert3.w1 = ThemeEditorView.EditorAlert.J0(editorAlert3);
+        w01Var.d = -1;
+        w01Var.f();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

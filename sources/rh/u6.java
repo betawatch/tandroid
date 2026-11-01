@@ -2,22 +2,22 @@ package rh;
 
 import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.j20;
+import org.telegram.messenger.k20;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u6 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ j20 c;
+    public final /* synthetic */ k20 c;
     public final /* synthetic */ vh.d d;
     public final /* synthetic */ EditTextBoldCursor e;
     public final /* synthetic */ org.telegram.ui.ActionBar.z2[] f;
 
-    public /* synthetic */ u6(boolean[] zArr, j20 j20Var, EditTextBoldCursor editTextBoldCursor, vh.d dVar, org.telegram.ui.ActionBar.z2[] z2VarArr) {
+    public /* synthetic */ u6(boolean[] zArr, k20 k20Var, EditTextBoldCursor editTextBoldCursor, vh.d dVar, org.telegram.ui.ActionBar.z2[] z2VarArr) {
         this.b = zArr;
-        this.c = j20Var;
+        this.c = k20Var;
         this.e = editTextBoldCursor;
         this.d = dVar;
         this.f = z2VarArr;
@@ -49,9 +49,9 @@ public final /* synthetic */ class u6 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ u6(boolean[] zArr, j20 j20Var, vh.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.z2[] z2VarArr) {
+    public /* synthetic */ u6(boolean[] zArr, k20 k20Var, vh.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.z2[] z2VarArr) {
         this.b = zArr;
-        this.c = j20Var;
+        this.c = k20Var;
         this.d = dVar;
         this.e = editTextBoldCursor;
         this.f = z2VarArr;
